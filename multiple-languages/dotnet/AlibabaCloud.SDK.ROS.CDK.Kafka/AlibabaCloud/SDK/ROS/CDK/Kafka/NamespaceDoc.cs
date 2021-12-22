@@ -8,8 +8,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
     /// This module is part of the AliCloud ROS Cloud Development Kit (ROS CDK) project.
     ///
     /// <code><![CDATA[
-    /// // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
-    /// using Alicloud.Ros.Cdk.Kafka;
+    /// // Example automatically generated from non-compiling source. May contain errors.
+    /// import * as KAFKA from '@alicloud/ros-cdk-kafka';
     /// ]]></code>
     /// </remarks>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]

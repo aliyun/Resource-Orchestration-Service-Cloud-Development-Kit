@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * Properties for defining a `ALIYUN::Config::DeliveryChannel`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.628Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.DeliveryChannelProps")
 @software.amazon.jsii.Jsii.Proxy(DeliveryChannelProps.Jsii$Proxy.class)
 public interface DeliveryChannelProps extends software.amazon.jsii.JsiiSerializable {
@@ -84,12 +84,12 @@ public interface DeliveryChannelProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link DeliveryChannelProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DeliveryChannelProps> {
-        private java.lang.Object deliveryChannelAssumeRoleArn;
-        private java.lang.Object deliveryChannelTargetArn;
-        private java.lang.Object deliveryChannelType;
-        private java.lang.Object deliveryChannelCondition;
-        private java.lang.Object deliveryChannelName;
-        private java.lang.Object description;
+        java.lang.Object deliveryChannelAssumeRoleArn;
+        java.lang.Object deliveryChannelTargetArn;
+        java.lang.Object deliveryChannelType;
+        java.lang.Object deliveryChannelCondition;
+        java.lang.Object deliveryChannelName;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link DeliveryChannelProps#getDeliveryChannelAssumeRoleArn}
@@ -270,7 +270,7 @@ public interface DeliveryChannelProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public DeliveryChannelProps build() {
-            return new Jsii$Proxy(deliveryChannelAssumeRoleArn, deliveryChannelTargetArn, deliveryChannelType, deliveryChannelCondition, deliveryChannelName, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -303,14 +303,14 @@ public interface DeliveryChannelProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object deliveryChannelAssumeRoleArn, final java.lang.Object deliveryChannelTargetArn, final java.lang.Object deliveryChannelType, final java.lang.Object deliveryChannelCondition, final java.lang.Object deliveryChannelName, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.deliveryChannelAssumeRoleArn = java.util.Objects.requireNonNull(deliveryChannelAssumeRoleArn, "deliveryChannelAssumeRoleArn is required");
-            this.deliveryChannelTargetArn = java.util.Objects.requireNonNull(deliveryChannelTargetArn, "deliveryChannelTargetArn is required");
-            this.deliveryChannelType = java.util.Objects.requireNonNull(deliveryChannelType, "deliveryChannelType is required");
-            this.deliveryChannelCondition = deliveryChannelCondition;
-            this.deliveryChannelName = deliveryChannelName;
-            this.description = description;
+            this.deliveryChannelAssumeRoleArn = java.util.Objects.requireNonNull(builder.deliveryChannelAssumeRoleArn, "deliveryChannelAssumeRoleArn is required");
+            this.deliveryChannelTargetArn = java.util.Objects.requireNonNull(builder.deliveryChannelTargetArn, "deliveryChannelTargetArn is required");
+            this.deliveryChannelType = java.util.Objects.requireNonNull(builder.deliveryChannelType, "deliveryChannelType is required");
+            this.deliveryChannelCondition = builder.deliveryChannelCondition;
+            this.deliveryChannelName = builder.deliveryChannelName;
+            this.description = builder.description;
         }
 
         @Override

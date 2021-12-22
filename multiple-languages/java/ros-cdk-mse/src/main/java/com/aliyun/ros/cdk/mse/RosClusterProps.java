@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * Properties for defining a `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.690Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.360Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -104,22 +104,22 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterProps> {
-        private java.lang.Object clusterSpecification;
-        private java.lang.Object clusterType;
-        private java.lang.Object clusterVersion;
-        private java.lang.Object instanceCount;
-        private java.lang.Object netType;
-        private java.lang.Object aclEntryList;
-        private java.lang.Object clusterAliasName;
-        private java.lang.Object connectionType;
-        private java.lang.Object diskCapacity;
-        private java.lang.Object diskType;
-        private java.lang.Object privateSlbSpecification;
-        private java.lang.Object pubNetworkFlow;
-        private java.lang.Object pubSlbSpecification;
-        private java.lang.Object requestPars;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
+        java.lang.Object clusterSpecification;
+        java.lang.Object clusterType;
+        java.lang.Object clusterVersion;
+        java.lang.Object instanceCount;
+        java.lang.Object netType;
+        java.lang.Object aclEntryList;
+        java.lang.Object clusterAliasName;
+        java.lang.Object connectionType;
+        java.lang.Object diskCapacity;
+        java.lang.Object diskType;
+        java.lang.Object privateSlbSpecification;
+        java.lang.Object pubNetworkFlow;
+        java.lang.Object pubSlbSpecification;
+        java.lang.Object requestPars;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosClusterProps#getClusterSpecification}
@@ -286,7 +286,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @param diskCapacity the value to be set.
          * @return {@code this}
          */
-        public Builder diskCapacity(java.lang.String diskCapacity) {
+        public Builder diskCapacity(java.lang.Number diskCapacity) {
             this.diskCapacity = diskCapacity;
             return this;
         }
@@ -448,7 +448,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosClusterProps build() {
-            return new Jsii$Proxy(clusterSpecification, clusterType, clusterVersion, instanceCount, netType, aclEntryList, clusterAliasName, connectionType, diskCapacity, diskType, privateSlbSpecification, pubNetworkFlow, pubSlbSpecification, requestPars, vpcId, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -501,24 +501,24 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clusterSpecification, final java.lang.Object clusterType, final java.lang.Object clusterVersion, final java.lang.Object instanceCount, final java.lang.Object netType, final java.lang.Object aclEntryList, final java.lang.Object clusterAliasName, final java.lang.Object connectionType, final java.lang.Object diskCapacity, final java.lang.Object diskType, final java.lang.Object privateSlbSpecification, final java.lang.Object pubNetworkFlow, final java.lang.Object pubSlbSpecification, final java.lang.Object requestPars, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clusterSpecification = java.util.Objects.requireNonNull(clusterSpecification, "clusterSpecification is required");
-            this.clusterType = java.util.Objects.requireNonNull(clusterType, "clusterType is required");
-            this.clusterVersion = java.util.Objects.requireNonNull(clusterVersion, "clusterVersion is required");
-            this.instanceCount = java.util.Objects.requireNonNull(instanceCount, "instanceCount is required");
-            this.netType = java.util.Objects.requireNonNull(netType, "netType is required");
-            this.aclEntryList = aclEntryList;
-            this.clusterAliasName = clusterAliasName;
-            this.connectionType = connectionType;
-            this.diskCapacity = diskCapacity;
-            this.diskType = diskType;
-            this.privateSlbSpecification = privateSlbSpecification;
-            this.pubNetworkFlow = pubNetworkFlow;
-            this.pubSlbSpecification = pubSlbSpecification;
-            this.requestPars = requestPars;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
+            this.clusterSpecification = java.util.Objects.requireNonNull(builder.clusterSpecification, "clusterSpecification is required");
+            this.clusterType = java.util.Objects.requireNonNull(builder.clusterType, "clusterType is required");
+            this.clusterVersion = java.util.Objects.requireNonNull(builder.clusterVersion, "clusterVersion is required");
+            this.instanceCount = java.util.Objects.requireNonNull(builder.instanceCount, "instanceCount is required");
+            this.netType = java.util.Objects.requireNonNull(builder.netType, "netType is required");
+            this.aclEntryList = builder.aclEntryList;
+            this.clusterAliasName = builder.clusterAliasName;
+            this.connectionType = builder.connectionType;
+            this.diskCapacity = builder.diskCapacity;
+            this.diskType = builder.diskType;
+            this.privateSlbSpecification = builder.privateSlbSpecification;
+            this.pubNetworkFlow = builder.pubNetworkFlow;
+            this.pubSlbSpecification = builder.pubSlbSpecification;
+            this.requestPars = builder.requestPars;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
         }
 
         @Override

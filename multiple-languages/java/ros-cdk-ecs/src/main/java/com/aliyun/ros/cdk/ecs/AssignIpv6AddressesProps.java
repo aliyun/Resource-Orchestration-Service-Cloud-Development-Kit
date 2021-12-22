@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.909Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.498Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignIpv6AddressesProps")
 @software.amazon.jsii.Jsii.Proxy(AssignIpv6AddressesProps.Jsii$Proxy.class)
 public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,9 +42,9 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link AssignIpv6AddressesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AssignIpv6AddressesProps> {
-        private java.lang.Object networkInterfaceId;
-        private java.lang.Object ipv6AddressCount;
-        private java.lang.Object ipv6Addresses;
+        java.lang.Object networkInterfaceId;
+        java.lang.Object ipv6AddressCount;
+        java.lang.Object ipv6Addresses;
 
         /**
          * Sets the value of {@link AssignIpv6AddressesProps#getNetworkInterfaceId}
@@ -119,7 +119,7 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public AssignIpv6AddressesProps build() {
-            return new Jsii$Proxy(networkInterfaceId, ipv6AddressCount, ipv6Addresses);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -146,11 +146,11 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object networkInterfaceId, final java.lang.Object ipv6AddressCount, final java.lang.Object ipv6Addresses) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.networkInterfaceId = java.util.Objects.requireNonNull(networkInterfaceId, "networkInterfaceId is required");
-            this.ipv6AddressCount = ipv6AddressCount;
-            this.ipv6Addresses = ipv6Addresses;
+            this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
+            this.ipv6AddressCount = builder.ipv6AddressCount;
+            this.ipv6Addresses = builder.ipv6Addresses;
         }
 
         @Override

@@ -43,6 +43,11 @@ export interface LogstoreProps {
     readonly enableTracking?: boolean | ros.IResolvable;
 
     /**
+     * Property encryptConf: Data encryption config
+     */
+    readonly encryptConf?: RosLogstore.EncryptConfProperty | ros.IResolvable;
+
+    /**
      * Property maxSplitShard: The maximum number of shards when splitting automatically. Must be specified if AutoSplit is set to true.
      * Allowed Values: 1-64.
      */
@@ -101,6 +106,7 @@ export class Logstore extends ros.Resource {
             maxSplitShard: props.maxSplitShard,
             autoSplit: props.autoSplit === undefined || props.autoSplit === null ? false : props.autoSplit,
             enableTracking: props.enableTracking === undefined || props.enableTracking === null ? false : props.enableTracking,
+            encryptConf: props.encryptConf,
             ttl: props.ttl === undefined || props.ttl === null ? 30 : props.ttl,
             shardCount: props.shardCount === undefined || props.shardCount === null ? 2 : props.shardCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

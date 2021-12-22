@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AssignPrivateIpAddresses`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.910Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.500Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignPrivateIpAddressesProps")
 @software.amazon.jsii.Jsii.Proxy(AssignPrivateIpAddressesProps.Jsii$Proxy.class)
 public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,9 +43,9 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
      * A builder for {@link AssignPrivateIpAddressesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AssignPrivateIpAddressesProps> {
-        private java.lang.Object networkInterfaceId;
-        private java.lang.Object privateIpAddresses;
-        private java.lang.Object secondaryPrivateIpAddressCount;
+        java.lang.Object networkInterfaceId;
+        java.lang.Object privateIpAddresses;
+        java.lang.Object secondaryPrivateIpAddressCount;
 
         /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getNetworkInterfaceId}
@@ -124,7 +124,7 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
          */
         @Override
         public AssignPrivateIpAddressesProps build() {
-            return new Jsii$Proxy(networkInterfaceId, privateIpAddresses, secondaryPrivateIpAddressCount);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -151,11 +151,11 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object networkInterfaceId, final java.lang.Object privateIpAddresses, final java.lang.Object secondaryPrivateIpAddressCount) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.networkInterfaceId = java.util.Objects.requireNonNull(networkInterfaceId, "networkInterfaceId is required");
-            this.privateIpAddresses = privateIpAddresses;
-            this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+            this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
+            this.privateIpAddresses = builder.privateIpAddresses;
+            this.secondaryPrivateIpAddressCount = builder.secondaryPrivateIpAddressCount;
         }
 
         @Override

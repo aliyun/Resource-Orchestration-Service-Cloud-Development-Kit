@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::ForwardEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.949Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.542Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ForwardEntryProps")
 @software.amazon.jsii.Jsii.Proxy(ForwardEntryProps.Jsii$Proxy.class)
 public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getExternalIp();
 
     /**
-     * Property externalPort: Source port, now support [1-65535]|Any.
+     * Property externalPort: Source port, now support [1-65535]|Any|x/y.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getExternalPort();
 
@@ -29,7 +29,7 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getInternalIp();
 
     /**
-     * Property internalPort: Destination port, now support [1-65535]|Any.
+     * Property internalPort: Destination port, now support [1-65535]|Any|x/y.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInternalPort();
 
@@ -37,6 +37,20 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
      * Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getIpProtocol();
+
+    /**
+     * Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getForwardEntryName() {
+        return null;
+    }
+
+    /**
+     * Property portBreak: Specifies whether to remove limits on the port range.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPortBreak() {
+        return null;
+    }
 
     /**
      * @return a {@link Builder} of {@link ForwardEntryProps}
@@ -48,12 +62,14 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link ForwardEntryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ForwardEntryProps> {
-        private java.lang.Object externalIp;
-        private java.lang.Object externalPort;
-        private java.lang.Object forwardTableId;
-        private java.lang.Object internalIp;
-        private java.lang.Object internalPort;
-        private java.lang.Object ipProtocol;
+        java.lang.Object externalIp;
+        java.lang.Object externalPort;
+        java.lang.Object forwardTableId;
+        java.lang.Object internalIp;
+        java.lang.Object internalPort;
+        java.lang.Object ipProtocol;
+        java.lang.Object forwardEntryName;
+        java.lang.Object portBreak;
 
         /**
          * Sets the value of {@link ForwardEntryProps#getExternalIp}
@@ -77,7 +93,7 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ForwardEntryProps#getExternalPort}
-         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any. This parameter is required.
+         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any|x/y. This parameter is required.
          * @return {@code this}
          */
         public Builder externalPort(java.lang.String externalPort) {
@@ -87,7 +103,7 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ForwardEntryProps#getExternalPort}
-         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any. This parameter is required.
+         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any|x/y. This parameter is required.
          * @return {@code this}
          */
         public Builder externalPort(com.aliyun.ros.cdk.core.IResolvable externalPort) {
@@ -137,7 +153,7 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ForwardEntryProps#getInternalPort}
-         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any. This parameter is required.
+         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any|x/y. This parameter is required.
          * @return {@code this}
          */
         public Builder internalPort(java.lang.String internalPort) {
@@ -147,7 +163,7 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ForwardEntryProps#getInternalPort}
-         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any. This parameter is required.
+         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any|x/y. This parameter is required.
          * @return {@code this}
          */
         public Builder internalPort(com.aliyun.ros.cdk.core.IResolvable internalPort) {
@@ -176,13 +192,53 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ForwardEntryProps#getForwardEntryName}
+         * @param forwardEntryName Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+         * @return {@code this}
+         */
+        public Builder forwardEntryName(java.lang.String forwardEntryName) {
+            this.forwardEntryName = forwardEntryName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ForwardEntryProps#getForwardEntryName}
+         * @param forwardEntryName Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+         * @return {@code this}
+         */
+        public Builder forwardEntryName(com.aliyun.ros.cdk.core.IResolvable forwardEntryName) {
+            this.forwardEntryName = forwardEntryName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ForwardEntryProps#getPortBreak}
+         * @param portBreak Property portBreak: Specifies whether to remove limits on the port range.
+         * @return {@code this}
+         */
+        public Builder portBreak(java.lang.Boolean portBreak) {
+            this.portBreak = portBreak;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ForwardEntryProps#getPortBreak}
+         * @param portBreak Property portBreak: Specifies whether to remove limits on the port range.
+         * @return {@code this}
+         */
+        public Builder portBreak(com.aliyun.ros.cdk.core.IResolvable portBreak) {
+            this.portBreak = portBreak;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link ForwardEntryProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public ForwardEntryProps build() {
-            return new Jsii$Proxy(externalIp, externalPort, forwardTableId, internalIp, internalPort, ipProtocol);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -197,6 +253,8 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object internalIp;
         private final java.lang.Object internalPort;
         private final java.lang.Object ipProtocol;
+        private final java.lang.Object forwardEntryName;
+        private final java.lang.Object portBreak;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -210,19 +268,23 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
             this.internalIp = software.amazon.jsii.Kernel.get(this, "internalIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internalPort = software.amazon.jsii.Kernel.get(this, "internalPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.forwardEntryName = software.amazon.jsii.Kernel.get(this, "forwardEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.portBreak = software.amazon.jsii.Kernel.get(this, "portBreak", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object externalIp, final java.lang.Object externalPort, final java.lang.Object forwardTableId, final java.lang.Object internalIp, final java.lang.Object internalPort, final java.lang.Object ipProtocol) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.externalIp = java.util.Objects.requireNonNull(externalIp, "externalIp is required");
-            this.externalPort = java.util.Objects.requireNonNull(externalPort, "externalPort is required");
-            this.forwardTableId = java.util.Objects.requireNonNull(forwardTableId, "forwardTableId is required");
-            this.internalIp = java.util.Objects.requireNonNull(internalIp, "internalIp is required");
-            this.internalPort = java.util.Objects.requireNonNull(internalPort, "internalPort is required");
-            this.ipProtocol = java.util.Objects.requireNonNull(ipProtocol, "ipProtocol is required");
+            this.externalIp = java.util.Objects.requireNonNull(builder.externalIp, "externalIp is required");
+            this.externalPort = java.util.Objects.requireNonNull(builder.externalPort, "externalPort is required");
+            this.forwardTableId = java.util.Objects.requireNonNull(builder.forwardTableId, "forwardTableId is required");
+            this.internalIp = java.util.Objects.requireNonNull(builder.internalIp, "internalIp is required");
+            this.internalPort = java.util.Objects.requireNonNull(builder.internalPort, "internalPort is required");
+            this.ipProtocol = java.util.Objects.requireNonNull(builder.ipProtocol, "ipProtocol is required");
+            this.forwardEntryName = builder.forwardEntryName;
+            this.portBreak = builder.portBreak;
         }
 
         @Override
@@ -256,6 +318,16 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getForwardEntryName() {
+            return this.forwardEntryName;
+        }
+
+        @Override
+        public final java.lang.Object getPortBreak() {
+            return this.portBreak;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -267,6 +339,12 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
             data.set("internalIp", om.valueToTree(this.getInternalIp()));
             data.set("internalPort", om.valueToTree(this.getInternalPort()));
             data.set("ipProtocol", om.valueToTree(this.getIpProtocol()));
+            if (this.getForwardEntryName() != null) {
+                data.set("forwardEntryName", om.valueToTree(this.getForwardEntryName()));
+            }
+            if (this.getPortBreak() != null) {
+                data.set("portBreak", om.valueToTree(this.getPortBreak()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.ForwardEntryProps"));
@@ -290,7 +368,9 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
             if (!forwardTableId.equals(that.forwardTableId)) return false;
             if (!internalIp.equals(that.internalIp)) return false;
             if (!internalPort.equals(that.internalPort)) return false;
-            return this.ipProtocol.equals(that.ipProtocol);
+            if (!ipProtocol.equals(that.ipProtocol)) return false;
+            if (this.forwardEntryName != null ? !this.forwardEntryName.equals(that.forwardEntryName) : that.forwardEntryName != null) return false;
+            return this.portBreak != null ? this.portBreak.equals(that.portBreak) : that.portBreak == null;
         }
 
         @Override
@@ -301,6 +381,8 @@ public interface ForwardEntryProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.internalIp.hashCode());
             result = 31 * result + (this.internalPort.hashCode());
             result = 31 * result + (this.ipProtocol.hashCode());
+            result = 31 * result + (this.forwardEntryName != null ? this.forwardEntryName.hashCode() : 0);
+            result = 31 * result + (this.portBreak != null ? this.portBreak.hashCode() : 0);
             return result;
         }
     }

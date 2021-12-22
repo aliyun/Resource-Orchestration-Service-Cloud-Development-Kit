@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::NetworkInterfaceAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.719Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterfaceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosNetworkInterfaceAttachmentProps.Jsii$Proxy.class)
 public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,9 +32,9 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
      * A builder for {@link RosNetworkInterfaceAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosNetworkInterfaceAttachmentProps> {
-        private java.lang.Object instanceId;
-        private java.lang.Object networkInterfaceId;
-        private java.lang.Object trunkNetworkInstanceId;
+        java.lang.Object instanceId;
+        java.lang.Object networkInterfaceId;
+        java.lang.Object trunkNetworkInstanceId;
 
         /**
          * Sets the value of {@link RosNetworkInterfaceAttachmentProps#getInstanceId}
@@ -103,7 +103,7 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
          */
         @Override
         public RosNetworkInterfaceAttachmentProps build() {
-            return new Jsii$Proxy(instanceId, networkInterfaceId, trunkNetworkInstanceId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -130,11 +130,11 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object networkInterfaceId, final java.lang.Object trunkNetworkInstanceId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.networkInterfaceId = java.util.Objects.requireNonNull(networkInterfaceId, "networkInterfaceId is required");
-            this.trunkNetworkInstanceId = trunkNetworkInstanceId;
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
+            this.trunkNetworkInstanceId = builder.trunkNetworkInstanceId;
         }
 
         @Override

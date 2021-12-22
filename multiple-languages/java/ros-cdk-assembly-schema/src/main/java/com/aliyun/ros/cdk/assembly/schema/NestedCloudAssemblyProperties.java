@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Artifact properties for nested cloud assemblies.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.612Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.NestedCloudAssemblyProperties")
 @software.amazon.jsii.Jsii.Proxy(NestedCloudAssemblyProperties.Jsii$Proxy.class)
 public interface NestedCloudAssemblyProperties extends software.amazon.jsii.JsiiSerializable {
@@ -32,8 +32,8 @@ public interface NestedCloudAssemblyProperties extends software.amazon.jsii.Jsii
      * A builder for {@link NestedCloudAssemblyProperties}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NestedCloudAssemblyProperties> {
-        private java.lang.String directoryName;
-        private java.lang.String displayName;
+        java.lang.String directoryName;
+        java.lang.String displayName;
 
         /**
          * Sets the value of {@link NestedCloudAssemblyProperties#getDirectoryName}
@@ -62,7 +62,7 @@ public interface NestedCloudAssemblyProperties extends software.amazon.jsii.Jsii
          */
         @Override
         public NestedCloudAssemblyProperties build() {
-            return new Jsii$Proxy(directoryName, displayName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -87,10 +87,10 @@ public interface NestedCloudAssemblyProperties extends software.amazon.jsii.Jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String directoryName, final java.lang.String displayName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.directoryName = java.util.Objects.requireNonNull(directoryName, "directoryName is required");
-            this.displayName = displayName;
+            this.directoryName = java.util.Objects.requireNonNull(builder.directoryName, "directoryName is required");
+            this.displayName = builder.displayName;
         }
 
         @Override

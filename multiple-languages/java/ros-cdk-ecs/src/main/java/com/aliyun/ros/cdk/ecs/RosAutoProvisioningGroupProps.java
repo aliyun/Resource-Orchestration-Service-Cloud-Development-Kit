@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AutoProvisioningGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.629Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosAutoProvisioningGroupProps.Jsii$Proxy.class)
 public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -148,28 +148,28 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
      * A builder for {@link RosAutoProvisioningGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAutoProvisioningGroupProps> {
-        private java.lang.Object totalTargetCapacity;
-        private java.lang.Object autoProvisioningGroupName;
-        private java.lang.Object autoProvisioningGroupType;
-        private java.lang.Object checkExecutionStatus;
-        private java.lang.Object defaultTargetCapacityType;
-        private java.lang.Object description;
-        private java.lang.Object excessCapacityTerminationPolicy;
-        private java.lang.Object launchConfiguration;
-        private java.lang.Object launchTemplateConfig;
-        private java.lang.Object launchTemplateId;
-        private java.lang.Object launchTemplateVersion;
-        private java.lang.Object maxSpotPrice;
-        private java.lang.Object payAsYouGoAllocationStrategy;
-        private java.lang.Object payAsYouGoTargetCapacity;
-        private java.lang.Object spotAllocationStrategy;
-        private java.lang.Object spotInstanceInterruptionBehavior;
-        private java.lang.Object spotInstancePoolsToUseCount;
-        private java.lang.Object spotTargetCapacity;
-        private java.lang.Object terminateInstances;
-        private java.lang.Object terminateInstancesWithExpiration;
-        private java.lang.Object validFrom;
-        private java.lang.Object validUntil;
+        java.lang.Object totalTargetCapacity;
+        java.lang.Object autoProvisioningGroupName;
+        java.lang.Object autoProvisioningGroupType;
+        java.lang.Object checkExecutionStatus;
+        java.lang.Object defaultTargetCapacityType;
+        java.lang.Object description;
+        java.lang.Object excessCapacityTerminationPolicy;
+        java.lang.Object launchConfiguration;
+        java.lang.Object launchTemplateConfig;
+        java.lang.Object launchTemplateId;
+        java.lang.Object launchTemplateVersion;
+        java.lang.Object maxSpotPrice;
+        java.lang.Object payAsYouGoAllocationStrategy;
+        java.lang.Object payAsYouGoTargetCapacity;
+        java.lang.Object spotAllocationStrategy;
+        java.lang.Object spotInstanceInterruptionBehavior;
+        java.lang.Object spotInstancePoolsToUseCount;
+        java.lang.Object spotTargetCapacity;
+        java.lang.Object terminateInstances;
+        java.lang.Object terminateInstancesWithExpiration;
+        java.lang.Object validFrom;
+        java.lang.Object validUntil;
 
         /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getTotalTargetCapacity}
@@ -618,7 +618,7 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
          */
         @Override
         public RosAutoProvisioningGroupProps build() {
-            return new Jsii$Proxy(totalTargetCapacity, autoProvisioningGroupName, autoProvisioningGroupType, checkExecutionStatus, defaultTargetCapacityType, description, excessCapacityTerminationPolicy, launchConfiguration, launchTemplateConfig, launchTemplateId, launchTemplateVersion, maxSpotPrice, payAsYouGoAllocationStrategy, payAsYouGoTargetCapacity, spotAllocationStrategy, spotInstanceInterruptionBehavior, spotInstancePoolsToUseCount, spotTargetCapacity, terminateInstances, terminateInstancesWithExpiration, validFrom, validUntil);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -683,30 +683,30 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object totalTargetCapacity, final java.lang.Object autoProvisioningGroupName, final java.lang.Object autoProvisioningGroupType, final java.lang.Object checkExecutionStatus, final java.lang.Object defaultTargetCapacityType, final java.lang.Object description, final java.lang.Object excessCapacityTerminationPolicy, final java.lang.Object launchConfiguration, final java.lang.Object launchTemplateConfig, final java.lang.Object launchTemplateId, final java.lang.Object launchTemplateVersion, final java.lang.Object maxSpotPrice, final java.lang.Object payAsYouGoAllocationStrategy, final java.lang.Object payAsYouGoTargetCapacity, final java.lang.Object spotAllocationStrategy, final java.lang.Object spotInstanceInterruptionBehavior, final java.lang.Object spotInstancePoolsToUseCount, final java.lang.Object spotTargetCapacity, final java.lang.Object terminateInstances, final java.lang.Object terminateInstancesWithExpiration, final java.lang.Object validFrom, final java.lang.Object validUntil) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.totalTargetCapacity = java.util.Objects.requireNonNull(totalTargetCapacity, "totalTargetCapacity is required");
-            this.autoProvisioningGroupName = autoProvisioningGroupName;
-            this.autoProvisioningGroupType = autoProvisioningGroupType;
-            this.checkExecutionStatus = checkExecutionStatus;
-            this.defaultTargetCapacityType = defaultTargetCapacityType;
-            this.description = description;
-            this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
-            this.launchConfiguration = launchConfiguration;
-            this.launchTemplateConfig = launchTemplateConfig;
-            this.launchTemplateId = launchTemplateId;
-            this.launchTemplateVersion = launchTemplateVersion;
-            this.maxSpotPrice = maxSpotPrice;
-            this.payAsYouGoAllocationStrategy = payAsYouGoAllocationStrategy;
-            this.payAsYouGoTargetCapacity = payAsYouGoTargetCapacity;
-            this.spotAllocationStrategy = spotAllocationStrategy;
-            this.spotInstanceInterruptionBehavior = spotInstanceInterruptionBehavior;
-            this.spotInstancePoolsToUseCount = spotInstancePoolsToUseCount;
-            this.spotTargetCapacity = spotTargetCapacity;
-            this.terminateInstances = terminateInstances;
-            this.terminateInstancesWithExpiration = terminateInstancesWithExpiration;
-            this.validFrom = validFrom;
-            this.validUntil = validUntil;
+            this.totalTargetCapacity = java.util.Objects.requireNonNull(builder.totalTargetCapacity, "totalTargetCapacity is required");
+            this.autoProvisioningGroupName = builder.autoProvisioningGroupName;
+            this.autoProvisioningGroupType = builder.autoProvisioningGroupType;
+            this.checkExecutionStatus = builder.checkExecutionStatus;
+            this.defaultTargetCapacityType = builder.defaultTargetCapacityType;
+            this.description = builder.description;
+            this.excessCapacityTerminationPolicy = builder.excessCapacityTerminationPolicy;
+            this.launchConfiguration = builder.launchConfiguration;
+            this.launchTemplateConfig = builder.launchTemplateConfig;
+            this.launchTemplateId = builder.launchTemplateId;
+            this.launchTemplateVersion = builder.launchTemplateVersion;
+            this.maxSpotPrice = builder.maxSpotPrice;
+            this.payAsYouGoAllocationStrategy = builder.payAsYouGoAllocationStrategy;
+            this.payAsYouGoTargetCapacity = builder.payAsYouGoTargetCapacity;
+            this.spotAllocationStrategy = builder.spotAllocationStrategy;
+            this.spotInstanceInterruptionBehavior = builder.spotInstanceInterruptionBehavior;
+            this.spotInstancePoolsToUseCount = builder.spotInstancePoolsToUseCount;
+            this.spotTargetCapacity = builder.spotTargetCapacity;
+            this.terminateInstances = builder.terminateInstances;
+            this.terminateInstancesWithExpiration = builder.terminateInstancesWithExpiration;
+            this.validFrom = builder.validFrom;
+            this.validUntil = builder.validUntil;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MonitorGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.592Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.159Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitorGroupProps")
 @software.amazon.jsii.Jsii.Proxy(MonitorGroupProps.Jsii$Proxy.class)
 public interface MonitorGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,8 +33,8 @@ public interface MonitorGroupProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link MonitorGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MonitorGroupProps> {
-        private java.lang.Object groupName;
-        private java.lang.Object contactGroups;
+        java.lang.Object groupName;
+        java.lang.Object contactGroups;
 
         /**
          * Sets the value of {@link MonitorGroupProps#getGroupName}
@@ -87,7 +87,7 @@ public interface MonitorGroupProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public MonitorGroupProps build() {
-            return new Jsii$Proxy(groupName, contactGroups);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -112,10 +112,10 @@ public interface MonitorGroupProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object groupName, final java.lang.Object contactGroups) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
-            this.contactGroups = contactGroups;
+            this.groupName = java.util.Objects.requireNonNull(builder.groupName, "groupName is required");
+            this.contactGroups = builder.contactGroups;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::IpSets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.525Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.116Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosIpSetsProps")
 @software.amazon.jsii.Jsii.Proxy(RosIpSetsProps.Jsii$Proxy.class)
 public interface RosIpSetsProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,8 +26,8 @@ public interface RosIpSetsProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosIpSetsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosIpSetsProps> {
-        private java.lang.Object accelerateRegion;
-        private java.lang.Object acceleratorId;
+        java.lang.Object accelerateRegion;
+        java.lang.Object acceleratorId;
 
         /**
          * Sets the value of {@link RosIpSetsProps#getAccelerateRegion}
@@ -76,7 +76,7 @@ public interface RosIpSetsProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosIpSetsProps build() {
-            return new Jsii$Proxy(accelerateRegion, acceleratorId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,10 +101,10 @@ public interface RosIpSetsProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object accelerateRegion, final java.lang.Object acceleratorId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.accelerateRegion = java.util.Objects.requireNonNull(accelerateRegion, "accelerateRegion is required");
-            this.acceleratorId = java.util.Objects.requireNonNull(acceleratorId, "acceleratorId is required");
+            this.accelerateRegion = java.util.Objects.requireNonNull(builder.accelerateRegion, "accelerateRegion is required");
+            this.acceleratorId = java.util.Objects.requireNonNull(builder.acceleratorId, "acceleratorId is required");
         }
 
         @Override

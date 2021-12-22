@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::SearchIndex`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.740Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.405Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosSearchIndexProps")
 @software.amazon.jsii.Jsii.Proxy(RosSearchIndexProps.Jsii$Proxy.class)
 public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,12 +46,12 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosSearchIndexProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSearchIndexProps> {
-        private java.lang.Object fieldSchemas;
-        private java.lang.Object indexName;
-        private java.lang.Object instanceName;
-        private java.lang.Object tableName;
-        private java.lang.Object indexSetting;
-        private java.lang.Object indexSort;
+        java.lang.Object fieldSchemas;
+        java.lang.Object indexName;
+        java.lang.Object instanceName;
+        java.lang.Object tableName;
+        java.lang.Object indexSetting;
+        java.lang.Object indexSort;
 
         /**
          * Sets the value of {@link RosSearchIndexProps#getFieldSchemas}
@@ -180,7 +180,7 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosSearchIndexProps build() {
-            return new Jsii$Proxy(fieldSchemas, indexName, instanceName, tableName, indexSetting, indexSort);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -213,14 +213,14 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object fieldSchemas, final java.lang.Object indexName, final java.lang.Object instanceName, final java.lang.Object tableName, final java.lang.Object indexSetting, final java.lang.Object indexSort) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.fieldSchemas = java.util.Objects.requireNonNull(fieldSchemas, "fieldSchemas is required");
-            this.indexName = java.util.Objects.requireNonNull(indexName, "indexName is required");
-            this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
-            this.tableName = java.util.Objects.requireNonNull(tableName, "tableName is required");
-            this.indexSetting = indexSetting;
-            this.indexSort = indexSort;
+            this.fieldSchemas = java.util.Objects.requireNonNull(builder.fieldSchemas, "fieldSchemas is required");
+            this.indexName = java.util.Objects.requireNonNull(builder.indexName, "indexName is required");
+            this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+            this.tableName = java.util.Objects.requireNonNull(builder.tableName, "tableName is required");
+            this.indexSetting = builder.indexSetting;
+            this.indexSort = builder.indexSort;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * Properties for defining a `ALIYUN::CDN::DomainConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.398Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.810Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainConfigProps")
 @software.amazon.jsii.Jsii.Proxy(DomainConfigProps.Jsii$Proxy.class)
 public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link DomainConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DomainConfigProps> {
-        private java.lang.Object domainNames;
-        private java.lang.Object functions;
+        java.lang.Object domainNames;
+        java.lang.Object functions;
 
         /**
          * Sets the value of {@link DomainConfigProps#getDomainNames}
@@ -78,7 +78,7 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public DomainConfigProps build() {
-            return new Jsii$Proxy(domainNames, functions);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domainNames, final java.lang.Object functions) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domainNames = java.util.Objects.requireNonNull(domainNames, "domainNames is required");
-            this.functions = java.util.Objects.requireNonNull(functions, "functions is required");
+            this.domainNames = java.util.Objects.requireNonNull(builder.domainNames, "domainNames is required");
+            this.functions = java.util.Objects.requireNonNull(builder.functions, "functions is required");
         }
 
         @Override

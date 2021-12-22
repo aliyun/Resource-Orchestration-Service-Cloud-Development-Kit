@@ -81,6 +81,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: ClassicInnerConnectionPort: The classic inner connection port of the instance
+        /// </remarks>
+        [JsiiProperty(name: "attrClassicInnerConnectionPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClassicInnerConnectionPort
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ClassicInnerConnectionString: The classic inner connection string of the instance
+        /// </remarks>
+        [JsiiProperty(name: "attrClassicInnerConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClassicInnerConnectionString
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: ConnectionDomain: Connection domain of created instance.
         /// </remarks>
         [JsiiProperty(name: "attrConnectionDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -94,6 +112,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// </remarks>
         [JsiiProperty(name: "attrConnections", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnections
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: DirectConnectionPort: The direct connection port of the instance
+        /// </remarks>
+        [JsiiProperty(name: "attrDirectConnectionPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDirectConnectionPort
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: DirectConnectionString: The direct connection string of the instance
+        /// </remarks>
+        [JsiiProperty(name: "attrDirectConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDirectConnectionString
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -207,6 +243,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: PublicConnectionPort: The public connection port of the instance
+        /// </remarks>
+        [JsiiProperty(name: "attrPublicConnectionPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicConnectionPort
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: PublicConnectionString: The public connection string of the instance
+        /// </remarks>
+        [JsiiProperty(name: "attrPublicConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicConnectionString
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: QPS: The queries per second (QPS) supported by the instance.
         /// </remarks>
         [JsiiProperty(name: "attrQps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -229,6 +283,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// </remarks>
         [JsiiProperty(name: "attrVpcId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: VpcPrivateConnectionPort: The vpc private connection port of the instance
+        /// </remarks>
+        [JsiiProperty(name: "attrVpcPrivateConnectionPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcPrivateConnectionPort
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: VpcPrivateConnectionString: The vpc private connection string of the instance
+        /// </remarks>
+        [JsiiProperty(name: "attrVpcPrivateConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcPrivateConnectionString
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -265,6 +337,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: autoPay: Indicates whether automatic payment is enabled. Valid values:
+        /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+        /// true: Automatic payment is enabled. The payment is automatically made.
+        /// Default is False
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AutoPay
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: autoRenewDuration: The auto-renewal period. Valid values: 1 to 12.
+        /// When the instance is about to expire, the instance is automatically renewed
+        /// based on the number of months specified by this parameter.
+        /// Note This parameter is valid only when ChargeType is set to PrePaid.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoRenewDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AutoRenewDuration
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: backupPolicy: Backup policy
         /// </remarks>
         [JsiiOptional]
@@ -281,6 +381,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         [JsiiOptional]
         [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? Capacity
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: connections: Connection address
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "connections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty\"}]}}", isOptional: true)]
+        public virtual object? Connections
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: deletionForce: Whether destroy instance when it is in recycle. Default is false
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DeletionForce
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -320,17 +442,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceConnection: Instance connection message.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "instanceConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.InstanceConnectionProperty\"}]}}", isOptional: true)]
-        public virtual object? InstanceConnection
-        {
-            get => GetInstanceProperty<object?>();
-            set => SetInstanceProperty(value);
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: instanceMaintainTime: Instance maintain time.
         /// </remarks>
         [JsiiOptional]
@@ -364,7 +475,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+        /// <strong>Property</strong>: period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -567,135 +678,316 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 set;
             }
         }
-        [JsiiInterface(nativeType: typeof(IInstanceConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.InstanceConnectionProperty")]
-        public interface IInstanceConnectionProperty
+        [JsiiInterface(nativeType: typeof(IClassicInnerConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.ClassicInnerConnectionProperty")]
+        public interface IClassicInnerConnectionProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: ipType: The network type of the new endpoint. Value values:
-            /// - Private: internal network.
-            /// - Public: public network.
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
             /// </remarks>
-            [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? IpType
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ConnectionPort
             {
-                get
-                {
-                    return null;
-                }
+                get;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint.
-            /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format.
-            /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits.
-            /// The prefix can be 8 to 64 characters in length.
+            /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
             /// </remarks>
-            [JsiiProperty(name: "newConnectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? NewConnectionString
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ConnectionString
             {
-                get
-                {
-                    return null;
-                }
+                get;
             }
 
-            /// <remarks>
-            /// <strong>Property</strong>: port: The service port of the instance.
-            /// Valid values: 1024 to 65535.
-            /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Port
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            [JsiiTypeProxy(nativeType: typeof(IInstanceConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.InstanceConnectionProperty")]
-            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IInstanceConnectionProperty
+            [JsiiTypeProxy(nativeType: typeof(IClassicInnerConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.ClassicInnerConnectionProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IClassicInnerConnectionProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: ipType: The network type of the new endpoint. Value values:
-                /// - Private: internal network.
-                /// - Public: public network.
+                /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+                /// </remarks>
+                [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ConnectionPort
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+                /// The prefix must be 8 to 64 characters in length,
+                /// and can contain lowercase letters and digits.
+                /// It must start with a lowercase letter.
+                /// </remarks>
+                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ConnectionString
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosPrepayInstance.ClassicInnerConnectionProperty")]
+        public class ClassicInnerConnectionProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IClassicInnerConnectionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ConnectionPort
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
+            /// </remarks>
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ConnectionString
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IConnectionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty")]
+        public interface IConnectionsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: classicInnerConnection: Classic intranet address.
+            /// </remarks>
+            [JsiiProperty(name: "classicInnerConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ClassicInnerConnectionProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ClassicInnerConnection
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: directConnection: Direct connection address. The instance is a cluster instance.
+            /// You can apply for a direct connection endpoint as required.
+            /// </remarks>
+            [JsiiProperty(name: "directConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.DirectConnectionProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DirectConnection
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: publicConnection: Public address.
+            /// </remarks>
+            [JsiiProperty(name: "publicConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PublicConnection
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcPrivateConnection: Vpc intranet address.
+            /// </remarks>
+            [JsiiProperty(name: "vpcPrivateConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VpcPrivateConnection
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IConnectionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IConnectionsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: classicInnerConnection: Classic intranet address.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? IpType
+                [JsiiProperty(name: "classicInnerConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ClassicInnerConnectionProperty\"}]}}", isOptional: true)]
+                public object? ClassicInnerConnection
                 {
                     get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint.
-                /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format.
-                /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits.
-                /// The prefix can be 8 to 64 characters in length.
+                /// <strong>Property</strong>: directConnection: Direct connection address. The instance is a cluster instance.
+                /// You can apply for a direct connection endpoint as required.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "newConnectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? NewConnectionString
+                [JsiiProperty(name: "directConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.DirectConnectionProperty\"}]}}", isOptional: true)]
+                public object? DirectConnection
                 {
                     get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: port: The service port of the instance.
-                /// Valid values: 1024 to 65535.
+                /// <strong>Property</strong>: publicConnection: Public address.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Port
+                [JsiiProperty(name: "publicConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty\"}]}}", isOptional: true)]
+                public object? PublicConnection
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vpcPrivateConnection: Vpc intranet address.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vpcPrivateConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty\"}]}}", isOptional: true)]
+                public object? VpcPrivateConnection
                 {
                     get => GetInstanceProperty<object?>();
                 }
             }
         }
-        [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosPrepayInstance.InstanceConnectionProperty")]
-        public class InstanceConnectionProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IInstanceConnectionProperty
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty")]
+        public class ConnectionsProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IConnectionsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: ipType: The network type of the new endpoint. Value values:
-            /// - Private: internal network.
-            /// - Public: public network.
+            /// <strong>Property</strong>: classicInnerConnection: Classic intranet address.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-            public object? IpType
+            [JsiiProperty(name: "classicInnerConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ClassicInnerConnectionProperty\"}]}}", isOptional: true, isOverride: true)]
+            public object? ClassicInnerConnection
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint.
-            /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format.
-            /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits.
-            /// The prefix can be 8 to 64 characters in length.
+            /// <strong>Property</strong>: directConnection: Direct connection address. The instance is a cluster instance.
+            /// You can apply for a direct connection endpoint as required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "newConnectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-            public object? NewConnectionString
+            [JsiiProperty(name: "directConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.DirectConnectionProperty\"}]}}", isOptional: true, isOverride: true)]
+            public object? DirectConnection
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: port: The service port of the instance.
-            /// Valid values: 1024 to 65535.
+            /// <strong>Property</strong>: publicConnection: Public address.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-            public object? Port
+            [JsiiProperty(name: "publicConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty\"}]}}", isOptional: true, isOverride: true)]
+            public object? PublicConnection
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcPrivateConnection: Vpc intranet address.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcPrivateConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty\"}]}}", isOptional: true, isOverride: true)]
+            public object? VpcPrivateConnection
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IDirectConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.DirectConnectionProperty")]
+        public interface IDirectConnectionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ConnectionPort
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
+            /// </remarks>
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ConnectionString
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IDirectConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.DirectConnectionProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IDirectConnectionProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+                /// </remarks>
+                [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ConnectionPort
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+                /// The prefix must be 8 to 64 characters in length,
+                /// and can contain lowercase letters and digits.
+                /// It must start with a lowercase letter.
+                /// </remarks>
+                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ConnectionString
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosPrepayInstance.DirectConnectionProperty")]
+        public class DirectConnectionProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IDirectConnectionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ConnectionPort
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
+            /// </remarks>
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ConnectionString
             {
                 get;
                 set;
@@ -801,6 +1093,87 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 set;
             }
         }
+        [JsiiInterface(nativeType: typeof(IPublicConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty")]
+        public interface IPublicConnectionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ConnectionPort
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
+            /// </remarks>
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ConnectionString
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IPublicConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IPublicConnectionProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+                /// </remarks>
+                [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ConnectionPort
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+                /// The prefix must be 8 to 64 characters in length,
+                /// and can contain lowercase letters and digits.
+                /// It must start with a lowercase letter.
+                /// </remarks>
+                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ConnectionString
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty")]
+        public class PublicConnectionProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IPublicConnectionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ConnectionPort
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
+            /// </remarks>
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ConnectionString
+            {
+                get;
+                set;
+            }
+        }
         [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.TagsProperty")]
         public interface ITagsProperty
         {
@@ -874,6 +1247,87 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? Value
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IVpcPrivateConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty")]
+        public interface IVpcPrivateConnectionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ConnectionPort
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
+            /// </remarks>
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ConnectionString
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IVpcPrivateConnectionProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IVpcPrivateConnectionProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+                /// </remarks>
+                [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ConnectionPort
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+                /// The prefix must be 8 to 64 characters in length,
+                /// and can contain lowercase letters and digits.
+                /// It must start with a lowercase letter.
+                /// </remarks>
+                [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ConnectionString
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty")]
+        public class VpcPrivateConnectionProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IVpcPrivateConnectionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ConnectionPort
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionString: The prefix of the public endpoint.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
+            /// </remarks>
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ConnectionString
             {
                 get;
                 set;

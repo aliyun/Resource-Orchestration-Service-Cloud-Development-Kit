@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Construction properties for {@link Resource}.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.667Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.510Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ResourceProps")
 @software.amazon.jsii.Jsii.Proxy(ResourceProps.Jsii$Proxy.class)
 public interface ResourceProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,7 +34,7 @@ public interface ResourceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ResourceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ResourceProps> {
-        private java.lang.String physicalName;
+        java.lang.String physicalName;
 
         /**
          * Sets the value of {@link ResourceProps#getPhysicalName}
@@ -59,7 +59,7 @@ public interface ResourceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ResourceProps build() {
-            return new Jsii$Proxy(physicalName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -82,9 +82,9 @@ public interface ResourceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String physicalName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.physicalName = physicalName;
+            this.physicalName = builder.physicalName;
         }
 
         @Override

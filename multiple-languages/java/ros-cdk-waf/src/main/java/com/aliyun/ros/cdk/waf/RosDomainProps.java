@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::Domain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.301Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:59.043Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosDomainProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainProps.Jsii$Proxy.class)
 public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -106,22 +106,22 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosDomainProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDomainProps> {
-        private java.lang.Object domainName;
-        private java.lang.Object instanceId;
-        private java.lang.Object isAccessProduct;
-        private java.lang.Object sourceIps;
-        private java.lang.Object clusterType;
-        private java.lang.Object connectionTime;
-        private java.lang.Object http2Port;
-        private java.lang.Object httpPort;
-        private java.lang.Object httpsPort;
-        private java.lang.Object httpsRedirect;
-        private java.lang.Object httpToUserIp;
-        private java.lang.Object loadBalancing;
-        private java.lang.Object logHeaders;
-        private java.lang.Object readTime;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object writeTime;
+        java.lang.Object domainName;
+        java.lang.Object instanceId;
+        java.lang.Object isAccessProduct;
+        java.lang.Object sourceIps;
+        java.lang.Object clusterType;
+        java.lang.Object connectionTime;
+        java.lang.Object http2Port;
+        java.lang.Object httpPort;
+        java.lang.Object httpsPort;
+        java.lang.Object httpsRedirect;
+        java.lang.Object httpToUserIp;
+        java.lang.Object loadBalancing;
+        java.lang.Object logHeaders;
+        java.lang.Object readTime;
+        java.lang.Object resourceGroupId;
+        java.lang.Object writeTime;
 
         /**
          * Sets the value of {@link RosDomainProps#getDomainName}
@@ -450,7 +450,7 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosDomainProps build() {
-            return new Jsii$Proxy(domainName, instanceId, isAccessProduct, sourceIps, clusterType, connectionTime, http2Port, httpPort, httpsPort, httpsRedirect, httpToUserIp, loadBalancing, logHeaders, readTime, resourceGroupId, writeTime);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -503,24 +503,24 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object instanceId, final java.lang.Object isAccessProduct, final java.lang.Object sourceIps, final java.lang.Object clusterType, final java.lang.Object connectionTime, final java.lang.Object http2Port, final java.lang.Object httpPort, final java.lang.Object httpsPort, final java.lang.Object httpsRedirect, final java.lang.Object httpToUserIp, final java.lang.Object loadBalancing, final java.lang.Object logHeaders, final java.lang.Object readTime, final java.lang.Object resourceGroupId, final java.lang.Object writeTime) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.isAccessProduct = java.util.Objects.requireNonNull(isAccessProduct, "isAccessProduct is required");
-            this.sourceIps = java.util.Objects.requireNonNull(sourceIps, "sourceIps is required");
-            this.clusterType = clusterType;
-            this.connectionTime = connectionTime;
-            this.http2Port = http2Port;
-            this.httpPort = httpPort;
-            this.httpsPort = httpsPort;
-            this.httpsRedirect = httpsRedirect;
-            this.httpToUserIp = httpToUserIp;
-            this.loadBalancing = loadBalancing;
-            this.logHeaders = logHeaders;
-            this.readTime = readTime;
-            this.resourceGroupId = resourceGroupId;
-            this.writeTime = writeTime;
+            this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.isAccessProduct = java.util.Objects.requireNonNull(builder.isAccessProduct, "isAccessProduct is required");
+            this.sourceIps = java.util.Objects.requireNonNull(builder.sourceIps, "sourceIps is required");
+            this.clusterType = builder.clusterType;
+            this.connectionTime = builder.connectionTime;
+            this.http2Port = builder.http2Port;
+            this.httpPort = builder.httpPort;
+            this.httpsPort = builder.httpsPort;
+            this.httpsRedirect = builder.httpsRedirect;
+            this.httpToUserIp = builder.httpToUserIp;
+            this.loadBalancing = builder.loadBalancing;
+            this.logHeaders = builder.logHeaders;
+            this.readTime = builder.readTime;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.writeTime = builder.writeTime;
         }
 
         @Override

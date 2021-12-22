@@ -19,6 +19,11 @@ export interface RoleProps {
     readonly roleName: string | ros.IResolvable;
 
     /**
+     * Property deletionForce: Whether force detach the policies attached to the role. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property description: Remark information, up to 1024 characters or Chinese characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -76,6 +81,7 @@ export class Role extends ros.Resource {
             roleName: props.roleName,
             description: props.description,
             policies: props.policies,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             assumeRolePolicyDocument: props.assumeRolePolicyDocument,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRole;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.177Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.731Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityGroupCloneProps.Jsii$Proxy.class)
 public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -64,14 +64,14 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link RosSecurityGroupCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSecurityGroupCloneProps> {
-        private java.lang.Object sourceSecurityGroupId;
-        private java.lang.Object description;
-        private java.lang.Object destinationRegionId;
-        private java.lang.Object networkType;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object securityGroupName;
-        private java.lang.Object securityGroupType;
-        private java.lang.Object vpcId;
+        java.lang.Object sourceSecurityGroupId;
+        java.lang.Object description;
+        java.lang.Object destinationRegionId;
+        java.lang.Object networkType;
+        java.lang.Object resourceGroupId;
+        java.lang.Object securityGroupName;
+        java.lang.Object securityGroupType;
+        java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosSecurityGroupCloneProps#getSourceSecurityGroupId}
@@ -240,7 +240,7 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
          */
         @Override
         public RosSecurityGroupCloneProps build() {
-            return new Jsii$Proxy(sourceSecurityGroupId, description, destinationRegionId, networkType, resourceGroupId, securityGroupName, securityGroupType, vpcId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -277,16 +277,16 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object sourceSecurityGroupId, final java.lang.Object description, final java.lang.Object destinationRegionId, final java.lang.Object networkType, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupName, final java.lang.Object securityGroupType, final java.lang.Object vpcId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.sourceSecurityGroupId = java.util.Objects.requireNonNull(sourceSecurityGroupId, "sourceSecurityGroupId is required");
-            this.description = description;
-            this.destinationRegionId = destinationRegionId;
-            this.networkType = networkType;
-            this.resourceGroupId = resourceGroupId;
-            this.securityGroupName = securityGroupName;
-            this.securityGroupType = securityGroupType;
-            this.vpcId = vpcId;
+            this.sourceSecurityGroupId = java.util.Objects.requireNonNull(builder.sourceSecurityGroupId, "sourceSecurityGroupId is required");
+            this.description = builder.description;
+            this.destinationRegionId = builder.destinationRegionId;
+            this.networkType = builder.networkType;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.securityGroupName = builder.securityGroupName;
+            this.securityGroupType = builder.securityGroupType;
+            this.vpcId = builder.vpcId;
         }
 
         @Override

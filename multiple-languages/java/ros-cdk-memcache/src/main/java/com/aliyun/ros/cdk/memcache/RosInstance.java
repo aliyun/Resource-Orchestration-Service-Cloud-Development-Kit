@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * A ROS template type:  `ALIYUN::Memcache::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.628Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.311Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -462,9 +462,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<BackupPolicyProperty> {
-            private java.lang.Object preferredBackupPeriod;
-            private java.lang.Object preferredBackupTime;
-            private java.lang.Object enableBackupLog;
+            java.lang.Object preferredBackupPeriod;
+            java.lang.Object preferredBackupTime;
+            java.lang.Object enableBackupLog;
 
             /**
              * Sets the value of {@link BackupPolicyProperty#getPreferredBackupPeriod}
@@ -540,7 +540,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public BackupPolicyProperty build() {
-                return new Jsii$Proxy(preferredBackupPeriod, preferredBackupTime, enableBackupLog);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -568,11 +568,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object preferredBackupPeriod, final java.lang.Object preferredBackupTime, final java.lang.Object enableBackupLog) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.preferredBackupPeriod = java.util.Objects.requireNonNull(preferredBackupPeriod, "preferredBackupPeriod is required");
-                this.preferredBackupTime = java.util.Objects.requireNonNull(preferredBackupTime, "preferredBackupTime is required");
-                this.enableBackupLog = enableBackupLog;
+                this.preferredBackupPeriod = java.util.Objects.requireNonNull(builder.preferredBackupPeriod, "preferredBackupPeriod is required");
+                this.preferredBackupTime = java.util.Objects.requireNonNull(builder.preferredBackupTime, "preferredBackupTime is required");
+                this.enableBackupLog = builder.enableBackupLog;
             }
 
             @Override

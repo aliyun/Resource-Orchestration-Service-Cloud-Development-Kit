@@ -34,5 +34,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             get;
             set;
         }
+
+        /// <summary>Property showProgressEvent: Whether to generate progress changed event.</summary>
+        /// <remarks>
+        /// Default to Disabled.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "showProgressEvent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ShowProgressEvent
+        {
+            get;
+            set;
+        }
     }
 }

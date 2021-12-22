@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * A ROS template type:  `ALIYUN::CLOUDFW::AddressBook`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.561Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.107Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosAddressBook")
 public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -237,8 +237,8 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagListProperty> {
-            private java.lang.Object tagKey;
-            private java.lang.Object tagValue;
+            java.lang.Object tagKey;
+            java.lang.Object tagValue;
 
             /**
              * Sets the value of {@link TagListProperty#getTagKey}
@@ -292,7 +292,7 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagListProperty build() {
-                return new Jsii$Proxy(tagKey, tagValue);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -318,10 +318,10 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object tagKey, final java.lang.Object tagValue) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tagKey = tagKey;
-                this.tagValue = tagValue;
+                this.tagKey = builder.tagKey;
+                this.tagValue = builder.tagValue;
             }
 
             @Override

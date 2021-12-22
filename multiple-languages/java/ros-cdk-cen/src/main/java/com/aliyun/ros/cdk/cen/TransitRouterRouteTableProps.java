@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.544Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterRouteTableProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterRouteTableProps.Jsii$Proxy.class)
 public interface TransitRouterRouteTableProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,9 +37,9 @@ public interface TransitRouterRouteTableProps extends software.amazon.jsii.JsiiS
      * A builder for {@link TransitRouterRouteTableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TransitRouterRouteTableProps> {
-        private java.lang.Object transitRouterId;
-        private java.lang.Object transitRouterRouteTableDescription;
-        private java.lang.Object transitRouterRouteTableName;
+        java.lang.Object transitRouterId;
+        java.lang.Object transitRouterRouteTableDescription;
+        java.lang.Object transitRouterRouteTableName;
 
         /**
          * Sets the value of {@link TransitRouterRouteTableProps#getTransitRouterId}
@@ -108,7 +108,7 @@ public interface TransitRouterRouteTableProps extends software.amazon.jsii.JsiiS
          */
         @Override
         public TransitRouterRouteTableProps build() {
-            return new Jsii$Proxy(transitRouterId, transitRouterRouteTableDescription, transitRouterRouteTableName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -135,11 +135,11 @@ public interface TransitRouterRouteTableProps extends software.amazon.jsii.JsiiS
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object transitRouterId, final java.lang.Object transitRouterRouteTableDescription, final java.lang.Object transitRouterRouteTableName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.transitRouterId = java.util.Objects.requireNonNull(transitRouterId, "transitRouterId is required");
-            this.transitRouterRouteTableDescription = transitRouterRouteTableDescription;
-            this.transitRouterRouteTableName = transitRouterRouteTableName;
+            this.transitRouterId = java.util.Objects.requireNonNull(builder.transitRouterId, "transitRouterId is required");
+            this.transitRouterRouteTableDescription = builder.transitRouterRouteTableDescription;
+            this.transitRouterRouteTableName = builder.transitRouterRouteTableName;
         }
 
         @Override

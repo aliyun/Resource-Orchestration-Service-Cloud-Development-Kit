@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  `ALIYUN::RAM::Role`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.829Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.534Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole")
 public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -111,6 +111,24 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeletionForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "deletionForce", value);
+    }
+
+    /**
+     */
+    public void setDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deletionForce", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -191,8 +209,8 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AssumeRolePolicyDocumentProperty> {
-            private java.lang.Object statement;
-            private java.lang.Object version;
+            java.lang.Object statement;
+            java.lang.Object version;
 
             /**
              * Sets the value of {@link AssumeRolePolicyDocumentProperty#getStatement}
@@ -246,7 +264,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AssumeRolePolicyDocumentProperty build() {
-                return new Jsii$Proxy(statement, version);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -272,10 +290,10 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object statement, final java.lang.Object version) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.statement = java.util.Objects.requireNonNull(statement, "statement is required");
-                this.version = java.util.Objects.requireNonNull(version, "version is required");
+                this.statement = java.util.Objects.requireNonNull(builder.statement, "statement is required");
+                this.version = java.util.Objects.requireNonNull(builder.version, "version is required");
             }
 
             @Override
@@ -492,27 +510,27 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConditionProperty> {
-            private java.lang.Object bool;
-            private java.lang.Object dateEquals;
-            private java.lang.Object dateGreaterThan;
-            private java.lang.Object dateGreaterThanEquals;
-            private java.lang.Object dateLessThan;
-            private java.lang.Object dateLessThanEquals;
-            private java.lang.Object dateNotEquals;
-            private java.lang.Object ipAddress;
-            private java.lang.Object notIpAddress;
-            private java.lang.Object numericEquals;
-            private java.lang.Object numericGreaterThan;
-            private java.lang.Object numericGreaterThanEquals;
-            private java.lang.Object numericLessThan;
-            private java.lang.Object numericLessThanEquals;
-            private java.lang.Object numericNotEquals;
-            private java.lang.Object stringEquals;
-            private java.lang.Object stringEqualsIgnoreCase;
-            private java.lang.Object stringLike;
-            private java.lang.Object stringNotEquals;
-            private java.lang.Object stringNotEqualsIgnoreCase;
-            private java.lang.Object stringNotLike;
+            java.lang.Object bool;
+            java.lang.Object dateEquals;
+            java.lang.Object dateGreaterThan;
+            java.lang.Object dateGreaterThanEquals;
+            java.lang.Object dateLessThan;
+            java.lang.Object dateLessThanEquals;
+            java.lang.Object dateNotEquals;
+            java.lang.Object ipAddress;
+            java.lang.Object notIpAddress;
+            java.lang.Object numericEquals;
+            java.lang.Object numericGreaterThan;
+            java.lang.Object numericGreaterThanEquals;
+            java.lang.Object numericLessThan;
+            java.lang.Object numericLessThanEquals;
+            java.lang.Object numericNotEquals;
+            java.lang.Object stringEquals;
+            java.lang.Object stringEqualsIgnoreCase;
+            java.lang.Object stringLike;
+            java.lang.Object stringNotEquals;
+            java.lang.Object stringNotEqualsIgnoreCase;
+            java.lang.Object stringNotLike;
 
             /**
              * Sets the value of {@link ConditionProperty#getBool}
@@ -984,7 +1002,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConditionProperty build() {
-                return new Jsii$Proxy(bool, dateEquals, dateGreaterThan, dateGreaterThanEquals, dateLessThan, dateLessThanEquals, dateNotEquals, ipAddress, notIpAddress, numericEquals, numericGreaterThan, numericGreaterThanEquals, numericLessThan, numericLessThanEquals, numericNotEquals, stringEquals, stringEqualsIgnoreCase, stringLike, stringNotEquals, stringNotEqualsIgnoreCase, stringNotLike);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1048,29 +1066,29 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object bool, final java.lang.Object dateEquals, final java.lang.Object dateGreaterThan, final java.lang.Object dateGreaterThanEquals, final java.lang.Object dateLessThan, final java.lang.Object dateLessThanEquals, final java.lang.Object dateNotEquals, final java.lang.Object ipAddress, final java.lang.Object notIpAddress, final java.lang.Object numericEquals, final java.lang.Object numericGreaterThan, final java.lang.Object numericGreaterThanEquals, final java.lang.Object numericLessThan, final java.lang.Object numericLessThanEquals, final java.lang.Object numericNotEquals, final java.lang.Object stringEquals, final java.lang.Object stringEqualsIgnoreCase, final java.lang.Object stringLike, final java.lang.Object stringNotEquals, final java.lang.Object stringNotEqualsIgnoreCase, final java.lang.Object stringNotLike) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.bool = bool;
-                this.dateEquals = dateEquals;
-                this.dateGreaterThan = dateGreaterThan;
-                this.dateGreaterThanEquals = dateGreaterThanEquals;
-                this.dateLessThan = dateLessThan;
-                this.dateLessThanEquals = dateLessThanEquals;
-                this.dateNotEquals = dateNotEquals;
-                this.ipAddress = ipAddress;
-                this.notIpAddress = notIpAddress;
-                this.numericEquals = numericEquals;
-                this.numericGreaterThan = numericGreaterThan;
-                this.numericGreaterThanEquals = numericGreaterThanEquals;
-                this.numericLessThan = numericLessThan;
-                this.numericLessThanEquals = numericLessThanEquals;
-                this.numericNotEquals = numericNotEquals;
-                this.stringEquals = stringEquals;
-                this.stringEqualsIgnoreCase = stringEqualsIgnoreCase;
-                this.stringLike = stringLike;
-                this.stringNotEquals = stringNotEquals;
-                this.stringNotEqualsIgnoreCase = stringNotEqualsIgnoreCase;
-                this.stringNotLike = stringNotLike;
+                this.bool = builder.bool;
+                this.dateEquals = builder.dateEquals;
+                this.dateGreaterThan = builder.dateGreaterThan;
+                this.dateGreaterThanEquals = builder.dateGreaterThanEquals;
+                this.dateLessThan = builder.dateLessThan;
+                this.dateLessThanEquals = builder.dateLessThanEquals;
+                this.dateNotEquals = builder.dateNotEquals;
+                this.ipAddress = builder.ipAddress;
+                this.notIpAddress = builder.notIpAddress;
+                this.numericEquals = builder.numericEquals;
+                this.numericGreaterThan = builder.numericGreaterThan;
+                this.numericGreaterThanEquals = builder.numericGreaterThanEquals;
+                this.numericLessThan = builder.numericLessThan;
+                this.numericLessThanEquals = builder.numericLessThanEquals;
+                this.numericNotEquals = builder.numericNotEquals;
+                this.stringEquals = builder.stringEquals;
+                this.stringEqualsIgnoreCase = builder.stringEqualsIgnoreCase;
+                this.stringLike = builder.stringLike;
+                this.stringNotEquals = builder.stringNotEquals;
+                this.stringNotEqualsIgnoreCase = builder.stringNotEqualsIgnoreCase;
+                this.stringNotLike = builder.stringNotLike;
             }
 
             @Override
@@ -1351,9 +1369,9 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PoliciesProperty> {
-            private java.lang.Object policyDocument;
-            private java.lang.Object policyName;
-            private java.lang.Object description;
+            java.lang.Object policyDocument;
+            java.lang.Object policyName;
+            java.lang.Object description;
 
             /**
              * Sets the value of {@link PoliciesProperty#getPolicyDocument}
@@ -1429,7 +1447,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PoliciesProperty build() {
-                return new Jsii$Proxy(policyDocument, policyName, description);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1457,11 +1475,11 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object policyDocument, final java.lang.Object policyName, final java.lang.Object description) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.policyDocument = java.util.Objects.requireNonNull(policyDocument, "policyDocument is required");
-                this.policyName = java.util.Objects.requireNonNull(policyName, "policyName is required");
-                this.description = description;
+                this.policyDocument = java.util.Objects.requireNonNull(builder.policyDocument, "policyDocument is required");
+                this.policyName = java.util.Objects.requireNonNull(builder.policyName, "policyName is required");
+                this.description = builder.description;
             }
 
             @Override
@@ -1555,8 +1573,8 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PolicyDocumentProperty> {
-            private java.lang.Object statement;
-            private java.lang.Object version;
+            java.lang.Object statement;
+            java.lang.Object version;
 
             /**
              * Sets the value of {@link PolicyDocumentProperty#getStatement}
@@ -1610,7 +1628,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PolicyDocumentProperty build() {
-                return new Jsii$Proxy(statement, version);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1636,10 +1654,10 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object statement, final java.lang.Object version) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.statement = statement;
-                this.version = version;
+                this.statement = builder.statement;
+                this.version = builder.version;
             }
 
             @Override
@@ -1741,10 +1759,10 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PolicyDocumentStatementProperty> {
-            private java.lang.Object action;
-            private java.lang.Object condition;
-            private java.lang.Object effect;
-            private java.lang.Object resource;
+            java.lang.Object action;
+            java.lang.Object condition;
+            java.lang.Object effect;
+            java.lang.Object resource;
 
             /**
              * Sets the value of {@link PolicyDocumentStatementProperty#getAction}
@@ -1842,7 +1860,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PolicyDocumentStatementProperty build() {
-                return new Jsii$Proxy(action, condition, effect, resource);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1872,12 +1890,12 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.Object effect, final java.lang.Object resource) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.action = action;
-                this.condition = condition;
-                this.effect = effect;
-                this.resource = resource;
+                this.action = builder.action;
+                this.condition = builder.condition;
+                this.effect = builder.effect;
+                this.resource = builder.resource;
             }
 
             @Override
@@ -1992,9 +2010,9 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PrincipalProperty> {
-            private java.lang.Object federated;
-            private java.lang.Object ram;
-            private java.lang.Object service;
+            java.lang.Object federated;
+            java.lang.Object ram;
+            java.lang.Object service;
 
             /**
              * Sets the value of {@link PrincipalProperty#getFederated}
@@ -2070,7 +2088,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PrincipalProperty build() {
-                return new Jsii$Proxy(federated, ram, service);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2098,11 +2116,11 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object federated, final java.lang.Object ram, final java.lang.Object service) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.federated = federated;
-                this.ram = ram;
-                this.service = service;
+                this.federated = builder.federated;
+                this.ram = builder.ram;
+                this.service = builder.service;
             }
 
             @Override
@@ -2214,10 +2232,10 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<StatementProperty> {
-            private java.lang.Object action;
-            private java.lang.Object condition;
-            private java.lang.Object effect;
-            private java.lang.Object principal;
+            java.lang.Object action;
+            java.lang.Object condition;
+            java.lang.Object effect;
+            java.lang.Object principal;
 
             /**
              * Sets the value of {@link StatementProperty#getAction}
@@ -2315,7 +2333,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public StatementProperty build() {
-                return new Jsii$Proxy(action, condition, effect, principal);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2345,12 +2363,12 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.Object effect, final java.lang.Object principal) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.action = action;
-                this.condition = condition;
-                this.effect = effect;
-                this.principal = principal;
+                this.action = builder.action;
+                this.condition = builder.condition;
+                this.effect = builder.effect;
+                this.principal = builder.principal;
             }
 
             @Override
@@ -2483,6 +2501,23 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder roleName(final com.aliyun.ros.cdk.core.IResolvable roleName) {
             this.props.roleName(roleName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deletionForce This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deletionForce This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
             return this;
         }
 

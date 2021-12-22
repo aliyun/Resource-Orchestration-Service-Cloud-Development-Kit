@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to AMI context provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.606Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.461Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.AmiContextQuery")
 @software.amazon.jsii.Jsii.Proxy(AmiContextQuery.Jsii$Proxy.class)
 public interface AmiContextQuery extends software.amazon.jsii.JsiiSerializable {
@@ -42,10 +42,10 @@ public interface AmiContextQuery extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AmiContextQuery}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AmiContextQuery> {
-        private java.lang.String account;
-        private java.util.Map<java.lang.String, java.util.List<java.lang.String>> filters;
-        private java.lang.String region;
-        private java.util.List<java.lang.String> owners;
+        java.lang.String account;
+        java.util.Map<java.lang.String, java.util.List<java.lang.String>> filters;
+        java.lang.String region;
+        java.util.List<java.lang.String> owners;
 
         /**
          * Sets the value of {@link AmiContextQuery#getAccount}
@@ -95,7 +95,7 @@ public interface AmiContextQuery extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public AmiContextQuery build() {
-            return new Jsii$Proxy(account, filters, region, owners);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -125,12 +125,12 @@ public interface AmiContextQuery extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String account, final java.util.Map<java.lang.String, ? extends java.util.List<java.lang.String>> filters, final java.lang.String region, final java.util.List<java.lang.String> owners) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.account = java.util.Objects.requireNonNull(account, "account is required");
-            this.filters = (java.util.Map<java.lang.String, java.util.List<java.lang.String>>)java.util.Objects.requireNonNull(filters, "filters is required");
-            this.region = java.util.Objects.requireNonNull(region, "region is required");
-            this.owners = owners;
+            this.account = java.util.Objects.requireNonNull(builder.account, "account is required");
+            this.filters = (java.util.Map<java.lang.String, java.util.List<java.lang.String>>)java.util.Objects.requireNonNull(builder.filters, "filters is required");
+            this.region = java.util.Objects.requireNonNull(builder.region, "region is required");
+            this.owners = builder.owners;
         }
 
         @Override

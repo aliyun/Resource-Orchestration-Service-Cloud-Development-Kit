@@ -41,6 +41,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// RocketMQ: RocketMQ
         /// SAE: Serverless App Engine
         /// SLS: Log Service
+        /// TrafficMirror: VPC Traffic Mirroring
         /// VS: Video Surveillance
         /// Xtrace: Tracing Anlaysis
         /// </remarks>
@@ -91,6 +92,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// RocketMQ: RocketMQ
             /// SAE: Serverless App Engine
             /// SLS: Log Service
+            /// TrafficMirror: VPC Traffic Mirroring
             /// VS: Video Surveillance
             /// Xtrace: Tracing Anlaysis
             /// </remarks>

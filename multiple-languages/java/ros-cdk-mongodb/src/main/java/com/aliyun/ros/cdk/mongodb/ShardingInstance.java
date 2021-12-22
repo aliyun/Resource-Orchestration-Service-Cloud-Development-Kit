@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * A ROS resource type:  `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.683Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.352Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstance")
 public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -343,6 +343,27 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder protocolType(final com.aliyun.ros.cdk.core.IResolvable protocolType) {
             this.props.protocolType(protocolType);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS template type:  `ALIYUN::EMR::ClusterServiceConfigs`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.356Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.904Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosClusterServiceConfigs")
 public class RosClusterServiceConfigs extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -174,15 +174,15 @@ public class RosClusterServiceConfigs extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ServiceConfigsProperty> {
-            private java.lang.Object configParams;
-            private java.lang.Object serviceName;
-            private java.lang.Object comment;
-            private java.lang.Object configType;
-            private java.lang.Object customConfigParams;
-            private java.lang.Object gatewayClusterIdList;
-            private java.lang.Object groupId;
-            private java.lang.Object hostInstanceId;
-            private java.lang.Object refreshHostConfig;
+            java.lang.Object configParams;
+            java.lang.Object serviceName;
+            java.lang.Object comment;
+            java.lang.Object configType;
+            java.lang.Object customConfigParams;
+            java.lang.Object gatewayClusterIdList;
+            java.lang.Object groupId;
+            java.lang.Object hostInstanceId;
+            java.lang.Object refreshHostConfig;
 
             /**
              * Sets the value of {@link ServiceConfigsProperty#getConfigParams}
@@ -390,7 +390,7 @@ public class RosClusterServiceConfigs extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ServiceConfigsProperty build() {
-                return new Jsii$Proxy(configParams, serviceName, comment, configType, customConfigParams, gatewayClusterIdList, groupId, hostInstanceId, refreshHostConfig);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -430,17 +430,17 @@ public class RosClusterServiceConfigs extends com.aliyun.ros.cdk.core.RosResourc
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object configParams, final java.lang.Object serviceName, final java.lang.Object comment, final java.lang.Object configType, final java.lang.Object customConfigParams, final java.lang.Object gatewayClusterIdList, final java.lang.Object groupId, final java.lang.Object hostInstanceId, final java.lang.Object refreshHostConfig) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.configParams = java.util.Objects.requireNonNull(configParams, "configParams is required");
-                this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
-                this.comment = comment;
-                this.configType = configType;
-                this.customConfigParams = customConfigParams;
-                this.gatewayClusterIdList = gatewayClusterIdList;
-                this.groupId = groupId;
-                this.hostInstanceId = hostInstanceId;
-                this.refreshHostConfig = refreshHostConfig;
+                this.configParams = java.util.Objects.requireNonNull(builder.configParams, "configParams is required");
+                this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+                this.comment = builder.comment;
+                this.configType = builder.configType;
+                this.customConfigParams = builder.customConfigParams;
+                this.gatewayClusterIdList = builder.gatewayClusterIdList;
+                this.groupId = builder.groupId;
+                this.hostInstanceId = builder.hostInstanceId;
+                this.refreshHostConfig = builder.refreshHostConfig;
             }
 
             @Override

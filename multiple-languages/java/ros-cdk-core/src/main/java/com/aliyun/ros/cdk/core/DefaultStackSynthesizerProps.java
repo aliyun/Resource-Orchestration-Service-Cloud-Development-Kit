@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Configuration properties for DefaultStackSynthesizer.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.647Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.490Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DefaultStackSynthesizerProps")
 @software.amazon.jsii.Jsii.Proxy(DefaultStackSynthesizerProps.Jsii$Proxy.class)
 public interface DefaultStackSynthesizerProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,7 +28,7 @@ public interface DefaultStackSynthesizerProps extends software.amazon.jsii.JsiiS
      * A builder for {@link DefaultStackSynthesizerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DefaultStackSynthesizerProps> {
-        private java.lang.String qualifier;
+        java.lang.String qualifier;
 
         /**
          * Sets the value of {@link DefaultStackSynthesizerProps#getQualifier}
@@ -49,7 +49,7 @@ public interface DefaultStackSynthesizerProps extends software.amazon.jsii.JsiiS
          */
         @Override
         public DefaultStackSynthesizerProps build() {
-            return new Jsii$Proxy(qualifier);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -72,9 +72,9 @@ public interface DefaultStackSynthesizerProps extends software.amazon.jsii.JsiiS
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String qualifier) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.qualifier = qualifier;
+            this.qualifier = builder.qualifier;
         }
 
         @Override

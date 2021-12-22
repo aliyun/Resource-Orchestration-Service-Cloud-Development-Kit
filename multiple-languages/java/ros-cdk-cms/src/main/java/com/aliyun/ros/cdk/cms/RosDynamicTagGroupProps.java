@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::DynamicTagGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.596Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.162Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosDynamicTagGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosDynamicTagGroupProps.Jsii$Proxy.class)
 public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -56,13 +56,13 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosDynamicTagGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDynamicTagGroupProps> {
-        private java.lang.Object contactGroupList;
-        private java.lang.Object tagKey;
-        private java.lang.Object enableInstallAgent;
-        private java.lang.Object enableSubscribeEvent;
-        private java.lang.Object matchExpress;
-        private java.lang.Object matchExpressFilterRelation;
-        private java.lang.Object templateIdList;
+        java.lang.Object contactGroupList;
+        java.lang.Object tagKey;
+        java.lang.Object enableInstallAgent;
+        java.lang.Object enableSubscribeEvent;
+        java.lang.Object matchExpress;
+        java.lang.Object matchExpressFilterRelation;
+        java.lang.Object templateIdList;
 
         /**
          * Sets the value of {@link RosDynamicTagGroupProps#getContactGroupList}
@@ -211,7 +211,7 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosDynamicTagGroupProps build() {
-            return new Jsii$Proxy(contactGroupList, tagKey, enableInstallAgent, enableSubscribeEvent, matchExpress, matchExpressFilterRelation, templateIdList);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -246,15 +246,15 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object contactGroupList, final java.lang.Object tagKey, final java.lang.Object enableInstallAgent, final java.lang.Object enableSubscribeEvent, final java.lang.Object matchExpress, final java.lang.Object matchExpressFilterRelation, final java.lang.Object templateIdList) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.contactGroupList = java.util.Objects.requireNonNull(contactGroupList, "contactGroupList is required");
-            this.tagKey = java.util.Objects.requireNonNull(tagKey, "tagKey is required");
-            this.enableInstallAgent = enableInstallAgent;
-            this.enableSubscribeEvent = enableSubscribeEvent;
-            this.matchExpress = matchExpress;
-            this.matchExpressFilterRelation = matchExpressFilterRelation;
-            this.templateIdList = templateIdList;
+            this.contactGroupList = java.util.Objects.requireNonNull(builder.contactGroupList, "contactGroupList is required");
+            this.tagKey = java.util.Objects.requireNonNull(builder.tagKey, "tagKey is required");
+            this.enableInstallAgent = builder.enableInstallAgent;
+            this.enableSubscribeEvent = builder.enableSubscribeEvent;
+            this.matchExpress = builder.matchExpress;
+            this.matchExpressFilterRelation = builder.matchExpressFilterRelation;
+            this.templateIdList = builder.templateIdList;
         }
 
         @Override

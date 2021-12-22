@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::VPC`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.181Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.737Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosVPC")
 public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -147,6 +147,24 @@ public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Isp() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6Isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6Isp(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6Isp", value);
+    }
+
+    /**
+     */
+    public void setIpv6Isp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6Isp", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -165,6 +183,24 @@ public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryCidrBlock() {
+        return software.amazon.jsii.Kernel.get(this, "secondaryCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecondaryCidrBlock(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryCidrBlock", value);
+    }
+
+    /**
+     */
+    public void setSecondaryCidrBlock(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryCidrBlock", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> getTags() {
         return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
     }
@@ -173,6 +209,24 @@ public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUserCidr() {
+        return software.amazon.jsii.Kernel.get(this, "userCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUserCidr(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "userCidr", value);
+    }
+
+    /**
+     */
+    public void setUserCidr(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "userCidr", value);
     }
 
     /**
@@ -223,8 +277,8 @@ public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -278,7 +332,7 @@ public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -304,10 +358,10 @@ public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -457,6 +511,23 @@ public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param ipv6Isp This parameter is required.
+         */
+        public Builder ipv6Isp(final java.lang.String ipv6Isp) {
+            this.props.ipv6Isp(ipv6Isp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6Isp This parameter is required.
+         */
+        public Builder ipv6Isp(final com.aliyun.ros.cdk.core.IResolvable ipv6Isp) {
+            this.props.ipv6Isp(ipv6Isp);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param resourceGroupId This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
@@ -474,10 +545,44 @@ public class RosVPC extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param secondaryCidrBlock This parameter is required.
+         */
+        public Builder secondaryCidrBlock(final java.lang.String secondaryCidrBlock) {
+            this.props.secondaryCidrBlock(secondaryCidrBlock);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param secondaryCidrBlock This parameter is required.
+         */
+        public Builder secondaryCidrBlock(final com.aliyun.ros.cdk.core.IResolvable secondaryCidrBlock) {
+            this.props.secondaryCidrBlock(secondaryCidrBlock);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param tags This parameter is required.
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param userCidr This parameter is required.
+         */
+        public Builder userCidr(final java.lang.String userCidr) {
+            this.props.userCidr(userCidr);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param userCidr This parameter is required.
+         */
+        public Builder userCidr(final com.aliyun.ros.cdk.core.IResolvable userCidr) {
+            this.props.userCidr(userCidr);
             return this;
         }
 

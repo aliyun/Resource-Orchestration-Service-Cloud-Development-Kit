@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::MonitorGroupInstances`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.606Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.172Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMonitorGroupInstances")
 public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -135,10 +135,10 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InstancesProperty> {
-            private java.lang.Object category;
-            private java.lang.Object instanceId;
-            private java.lang.Object instanceName;
-            private java.lang.Object regionId;
+            java.lang.Object category;
+            java.lang.Object instanceId;
+            java.lang.Object instanceName;
+            java.lang.Object regionId;
 
             /**
              * Sets the value of {@link InstancesProperty#getCategory}
@@ -236,7 +236,7 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InstancesProperty build() {
-                return new Jsii$Proxy(category, instanceId, instanceName, regionId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -266,12 +266,12 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object category, final java.lang.Object instanceId, final java.lang.Object instanceName, final java.lang.Object regionId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.category = java.util.Objects.requireNonNull(category, "category is required");
-                this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-                this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
-                this.regionId = java.util.Objects.requireNonNull(regionId, "regionId is required");
+                this.category = java.util.Objects.requireNonNull(builder.category, "category is required");
+                this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+                this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+                this.regionId = java.util.Objects.requireNonNull(builder.regionId, "regionId is required");
             }
 
             @Override

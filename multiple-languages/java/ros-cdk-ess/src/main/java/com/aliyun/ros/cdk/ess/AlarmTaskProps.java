@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::AlarmTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.370Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.918Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.AlarmTaskProps")
 @software.amazon.jsii.Jsii.Proxy(AlarmTaskProps.Jsii$Proxy.class)
 public interface AlarmTaskProps extends software.amazon.jsii.JsiiSerializable {
@@ -101,19 +101,19 @@ public interface AlarmTaskProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AlarmTaskProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AlarmTaskProps> {
-        private java.lang.Object alarmAction;
-        private java.lang.Object metricName;
-        private java.lang.Object scalingGroupId;
-        private java.lang.Object threshold;
-        private java.lang.Object comparisonOperator;
-        private java.lang.Object description;
-        private java.lang.Object dimensions;
-        private java.lang.Object evaluationCount;
-        private java.lang.Object groupId;
-        private java.lang.Object metricType;
-        private java.lang.Object name;
-        private java.lang.Object period;
-        private java.lang.Object statistics;
+        java.lang.Object alarmAction;
+        java.lang.Object metricName;
+        java.lang.Object scalingGroupId;
+        java.lang.Object threshold;
+        java.lang.Object comparisonOperator;
+        java.lang.Object description;
+        java.lang.Object dimensions;
+        java.lang.Object evaluationCount;
+        java.lang.Object groupId;
+        java.lang.Object metricType;
+        java.lang.Object name;
+        java.lang.Object period;
+        java.lang.Object statistics;
 
         /**
          * Sets the value of {@link AlarmTaskProps#getAlarmAction}
@@ -382,7 +382,7 @@ public interface AlarmTaskProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public AlarmTaskProps build() {
-            return new Jsii$Proxy(alarmAction, metricName, scalingGroupId, threshold, comparisonOperator, description, dimensions, evaluationCount, groupId, metricType, name, period, statistics);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -429,21 +429,21 @@ public interface AlarmTaskProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object alarmAction, final java.lang.Object metricName, final java.lang.Object scalingGroupId, final java.lang.Object threshold, final java.lang.Object comparisonOperator, final java.lang.Object description, final java.lang.Object dimensions, final java.lang.Object evaluationCount, final java.lang.Object groupId, final java.lang.Object metricType, final java.lang.Object name, final java.lang.Object period, final java.lang.Object statistics) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.alarmAction = java.util.Objects.requireNonNull(alarmAction, "alarmAction is required");
-            this.metricName = java.util.Objects.requireNonNull(metricName, "metricName is required");
-            this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
-            this.threshold = java.util.Objects.requireNonNull(threshold, "threshold is required");
-            this.comparisonOperator = comparisonOperator;
-            this.description = description;
-            this.dimensions = dimensions;
-            this.evaluationCount = evaluationCount;
-            this.groupId = groupId;
-            this.metricType = metricType;
-            this.name = name;
-            this.period = period;
-            this.statistics = statistics;
+            this.alarmAction = java.util.Objects.requireNonNull(builder.alarmAction, "alarmAction is required");
+            this.metricName = java.util.Objects.requireNonNull(builder.metricName, "metricName is required");
+            this.scalingGroupId = java.util.Objects.requireNonNull(builder.scalingGroupId, "scalingGroupId is required");
+            this.threshold = java.util.Objects.requireNonNull(builder.threshold, "threshold is required");
+            this.comparisonOperator = builder.comparisonOperator;
+            this.description = builder.description;
+            this.dimensions = builder.dimensions;
+            this.evaluationCount = builder.evaluationCount;
+            this.groupId = builder.groupId;
+            this.metricType = builder.metricType;
+            this.name = builder.name;
+            this.period = builder.period;
+            this.statistics = builder.statistics;
         }
 
         @Override

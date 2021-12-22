@@ -58,6 +58,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             set;
         }
 
+        /// <summary>Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.</summary>
+        /// <remarks>
+        /// Default is false
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DeletionForce
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "deployOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.DeployOptionProperty\"}]}}", isOptional: true, isOverride: true)]
@@ -99,6 +111,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         [JsiiOptional]
         [JsiiProperty(name: "ioMaxSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? IoMaxSpec
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property openConnector: Whether open kafka connector or not.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "openConnector", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? OpenConnector
         {
             get;
             set;

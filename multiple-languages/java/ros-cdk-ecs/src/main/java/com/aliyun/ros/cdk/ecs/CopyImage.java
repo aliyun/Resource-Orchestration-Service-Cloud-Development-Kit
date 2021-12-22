@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::CopyImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.928Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.515Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CopyImage")
 public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
 
@@ -49,10 +49,24 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDestinationRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDestinationRegionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute ImageId: ID of the source custom image.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageId() {
         return software.amazon.jsii.Kernel.get(this, "attrImageId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute SourceRegionId: ID of the region to where the source image belongs.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceRegionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -212,6 +226,31 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder kmsKeyId(final com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.props.kmsKeyId(kmsKeyId);
+            return this;
+        }
+
+        /**
+         * Property sourceRegionId: ID of the region to where the source image belongs.
+         * <p>
+         * Default is current region ID.
+         * <p>
+         * @return {@code this}
+         * @param sourceRegionId Property sourceRegionId: ID of the region to where the source image belongs. This parameter is required.
+         */
+        public Builder sourceRegionId(final java.lang.String sourceRegionId) {
+            this.props.sourceRegionId(sourceRegionId);
+            return this;
+        }
+        /**
+         * Property sourceRegionId: ID of the region to where the source image belongs.
+         * <p>
+         * Default is current region ID.
+         * <p>
+         * @return {@code this}
+         * @param sourceRegionId Property sourceRegionId: ID of the region to where the source image belongs. This parameter is required.
+         */
+        public Builder sourceRegionId(final com.aliyun.ros.cdk.core.IResolvable sourceRegionId) {
+            this.props.sourceRegionId(sourceRegionId);
             return this;
         }
 

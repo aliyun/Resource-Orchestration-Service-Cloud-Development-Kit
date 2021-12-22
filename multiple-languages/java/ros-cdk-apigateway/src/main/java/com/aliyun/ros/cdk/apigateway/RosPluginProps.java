@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Plugin`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.322Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.658Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosPluginProps")
 @software.amazon.jsii.Jsii.Proxy(RosPluginProps.Jsii$Proxy.class)
 public interface RosPluginProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,10 +36,10 @@ public interface RosPluginProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosPluginProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosPluginProps> {
-        private java.lang.Object pluginData;
-        private java.lang.Object pluginName;
-        private java.lang.Object pluginType;
-        private java.lang.Object description;
+        java.lang.Object pluginData;
+        java.lang.Object pluginName;
+        java.lang.Object pluginType;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link RosPluginProps#getPluginData}
@@ -128,7 +128,7 @@ public interface RosPluginProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosPluginProps build() {
-            return new Jsii$Proxy(pluginData, pluginName, pluginType, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -157,12 +157,12 @@ public interface RosPluginProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object pluginData, final java.lang.Object pluginName, final java.lang.Object pluginType, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.pluginData = java.util.Objects.requireNonNull(pluginData, "pluginData is required");
-            this.pluginName = java.util.Objects.requireNonNull(pluginName, "pluginName is required");
-            this.pluginType = java.util.Objects.requireNonNull(pluginType, "pluginType is required");
-            this.description = description;
+            this.pluginData = java.util.Objects.requireNonNull(builder.pluginData, "pluginData is required");
+            this.pluginName = java.util.Objects.requireNonNull(builder.pluginName, "pluginName is required");
+            this.pluginType = java.util.Objects.requireNonNull(builder.pluginType, "pluginType is required");
+            this.description = builder.description;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.735Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityGroupProps.Jsii$Proxy.class)
 public interface RosSecurityGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -66,14 +66,14 @@ public interface RosSecurityGroupProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosSecurityGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSecurityGroupProps> {
-        private java.lang.Object description;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object securityGroupEgress;
-        private java.lang.Object securityGroupIngress;
-        private java.lang.Object securityGroupName;
-        private java.lang.Object securityGroupType;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> tags;
-        private java.lang.Object vpcId;
+        java.lang.Object description;
+        java.lang.Object resourceGroupId;
+        java.lang.Object securityGroupEgress;
+        java.lang.Object securityGroupIngress;
+        java.lang.Object securityGroupName;
+        java.lang.Object securityGroupType;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> tags;
+        java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosSecurityGroupProps#getDescription}
@@ -233,7 +233,7 @@ public interface RosSecurityGroupProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosSecurityGroupProps build() {
-            return new Jsii$Proxy(description, resourceGroupId, securityGroupEgress, securityGroupIngress, securityGroupName, securityGroupType, tags, vpcId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -271,16 +271,16 @@ public interface RosSecurityGroupProps extends software.amazon.jsii.JsiiSerializ
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupEgress, final java.lang.Object securityGroupIngress, final java.lang.Object securityGroupName, final java.lang.Object securityGroupType, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> tags, final java.lang.Object vpcId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.description = description;
-            this.resourceGroupId = resourceGroupId;
-            this.securityGroupEgress = securityGroupEgress;
-            this.securityGroupIngress = securityGroupIngress;
-            this.securityGroupName = securityGroupName;
-            this.securityGroupType = securityGroupType;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty>)tags;
-            this.vpcId = vpcId;
+            this.description = builder.description;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.securityGroupEgress = builder.securityGroupEgress;
+            this.securityGroupIngress = builder.securityGroupIngress;
+            this.securityGroupName = builder.securityGroupName;
+            this.securityGroupType = builder.securityGroupType;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty>)builder.tags;
+            this.vpcId = builder.vpcId;
         }
 
         @Override

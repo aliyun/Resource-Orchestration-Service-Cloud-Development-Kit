@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.289Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.619Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,7 +38,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property autoPay: Indicates whether automatic payment is enabled.
      * <p>
-     * Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     * Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+     * true: Automatic payment is enabled. The payment is automatically made.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -50,6 +52,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
+        return null;
+    }
+
+    /**
+     * Property deletionForce: Whether force delete the instance even if its status is START_FAILED.
+     * <p>
+     * Default value is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
         return null;
     }
 
@@ -81,14 +92,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.Object httpsPolicy;
-        private java.lang.Object instanceName;
-        private java.lang.Object instanceSpec;
-        private java.lang.Object zoneId;
-        private java.lang.Object autoPay;
-        private java.lang.Object chargeType;
-        private java.lang.Object duration;
-        private java.lang.Object pricingCycle;
+        java.lang.Object httpsPolicy;
+        java.lang.Object instanceName;
+        java.lang.Object instanceSpec;
+        java.lang.Object zoneId;
+        java.lang.Object autoPay;
+        java.lang.Object chargeType;
+        java.lang.Object deletionForce;
+        java.lang.Object duration;
+        java.lang.Object pricingCycle;
 
         /**
          * Sets the value of {@link InstanceProps#getHttpsPolicy}
@@ -181,7 +193,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getAutoPay}
          * @param autoPay Property autoPay: Indicates whether automatic payment is enabled.
-         *                Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+         *                Valid values:
+         *                false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         *                true: Automatic payment is enabled. The payment is automatically made.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -192,7 +206,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getAutoPay}
          * @param autoPay Property autoPay: Indicates whether automatic payment is enabled.
-         *                Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+         *                Valid values:
+         *                false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         *                true: Automatic payment is enabled. The payment is automatically made.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -219,6 +235,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force delete the instance even if its status is START_FAILED.
+         *                      Default value is false.
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force delete the instance even if its status is START_FAILED.
+         *                      Default value is false.
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
             return this;
         }
 
@@ -273,7 +311,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public InstanceProps build() {
-            return new Jsii$Proxy(httpsPolicy, instanceName, instanceSpec, zoneId, autoPay, chargeType, duration, pricingCycle);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -288,6 +326,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object zoneId;
         private final java.lang.Object autoPay;
         private final java.lang.Object chargeType;
+        private final java.lang.Object deletionForce;
         private final java.lang.Object duration;
         private final java.lang.Object pricingCycle;
 
@@ -303,6 +342,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -310,16 +350,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object httpsPolicy, final java.lang.Object instanceName, final java.lang.Object instanceSpec, final java.lang.Object zoneId, final java.lang.Object autoPay, final java.lang.Object chargeType, final java.lang.Object duration, final java.lang.Object pricingCycle) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.httpsPolicy = java.util.Objects.requireNonNull(httpsPolicy, "httpsPolicy is required");
-            this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
-            this.instanceSpec = java.util.Objects.requireNonNull(instanceSpec, "instanceSpec is required");
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
-            this.autoPay = autoPay;
-            this.chargeType = chargeType;
-            this.duration = duration;
-            this.pricingCycle = pricingCycle;
+            this.httpsPolicy = java.util.Objects.requireNonNull(builder.httpsPolicy, "httpsPolicy is required");
+            this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+            this.instanceSpec = java.util.Objects.requireNonNull(builder.instanceSpec, "instanceSpec is required");
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.autoPay = builder.autoPay;
+            this.chargeType = builder.chargeType;
+            this.deletionForce = builder.deletionForce;
+            this.duration = builder.duration;
+            this.pricingCycle = builder.pricingCycle;
         }
 
         @Override
@@ -353,6 +394,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
+        }
+
+        @Override
         public final java.lang.Object getDuration() {
             return this.duration;
         }
@@ -377,6 +423,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getChargeType() != null) {
                 data.set("chargeType", om.valueToTree(this.getChargeType()));
+            }
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
             if (this.getDuration() != null) {
                 data.set("duration", om.valueToTree(this.getDuration()));
@@ -408,6 +457,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (!zoneId.equals(that.zoneId)) return false;
             if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
             return this.pricingCycle != null ? this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle == null;
         }
@@ -420,6 +470,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.zoneId.hashCode());
             result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
             result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
             return result;

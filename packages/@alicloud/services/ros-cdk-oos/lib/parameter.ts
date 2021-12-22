@@ -76,8 +76,8 @@ export class Parameter extends ros.Resource {
 
         const rosParameter = new RosParameter(this, id,  {
             type: props.type,
-            constraints: props.constraints,
             description: props.description,
+            constraints: props.constraints,
             value: props.value,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

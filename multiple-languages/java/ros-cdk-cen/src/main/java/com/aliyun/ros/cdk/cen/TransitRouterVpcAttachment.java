@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS resource type:  `ALIYUN::CEN::TransitRouterVpcAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.546Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.024Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachment")
 public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -188,27 +188,6 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property autoCreateVpcRoute:.
-         * <p>
-         * @return {@code this}
-         * @param autoCreateVpcRoute Property autoCreateVpcRoute:. This parameter is required.
-         */
-        public Builder autoCreateVpcRoute(final java.lang.String autoCreateVpcRoute) {
-            this.props.autoCreateVpcRoute(autoCreateVpcRoute);
-            return this;
-        }
-        /**
-         * Property autoCreateVpcRoute:.
-         * <p>
-         * @return {@code this}
-         * @param autoCreateVpcRoute Property autoCreateVpcRoute:. This parameter is required.
-         */
-        public Builder autoCreateVpcRoute(final com.aliyun.ros.cdk.core.IResolvable autoCreateVpcRoute) {
-            this.props.autoCreateVpcRoute(autoCreateVpcRoute);
-            return this;
-        }
-
-        /**
          * Property cenId: CenId.
          * <p>
          * @return {@code this}
@@ -247,69 +226,6 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
          */
         public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.props.chargeType(chargeType);
-            return this;
-        }
-
-        /**
-         * Property resourceType: ResourceType.
-         * <p>
-         * @return {@code this}
-         * @param resourceType Property resourceType: ResourceType. This parameter is required.
-         */
-        public Builder resourceType(final java.lang.String resourceType) {
-            this.props.resourceType(resourceType);
-            return this;
-        }
-        /**
-         * Property resourceType: ResourceType.
-         * <p>
-         * @return {@code this}
-         * @param resourceType Property resourceType: ResourceType. This parameter is required.
-         */
-        public Builder resourceType(final com.aliyun.ros.cdk.core.IResolvable resourceType) {
-            this.props.resourceType(resourceType);
-            return this;
-        }
-
-        /**
-         * Property routeTableAssociationEnabled:.
-         * <p>
-         * @return {@code this}
-         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled:. This parameter is required.
-         */
-        public Builder routeTableAssociationEnabled(final java.lang.String routeTableAssociationEnabled) {
-            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
-            return this;
-        }
-        /**
-         * Property routeTableAssociationEnabled:.
-         * <p>
-         * @return {@code this}
-         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled:. This parameter is required.
-         */
-        public Builder routeTableAssociationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
-            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
-            return this;
-        }
-
-        /**
-         * Property routeTablePropagationEnabled:.
-         * <p>
-         * @return {@code this}
-         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled:. This parameter is required.
-         */
-        public Builder routeTablePropagationEnabled(final java.lang.String routeTablePropagationEnabled) {
-            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
-            return this;
-        }
-        /**
-         * Property routeTablePropagationEnabled:.
-         * <p>
-         * @return {@code this}
-         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled:. This parameter is required.
-         */
-        public Builder routeTablePropagationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
-            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
             return this;
         }
 

@@ -231,6 +231,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: startListener: Whether start listener after listener created. Default True.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "startListener", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? StartListener
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: vServerGroupId: The id of the VServerGroup which use in listener.
         /// </remarks>
         [JsiiOptional]

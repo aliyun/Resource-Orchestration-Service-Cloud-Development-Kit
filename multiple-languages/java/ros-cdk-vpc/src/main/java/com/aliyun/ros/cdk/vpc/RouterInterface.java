@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::RouterInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.236Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.990Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouterInterface")
 public class RouterInterface extends com.aliyun.ros.cdk.core.Resource {
 
@@ -163,7 +163,9 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoPay: Indicates whether automatic payment is enabled.
          * <p>
-         * Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+         * Valid values:
+         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         * true: Automatic payment is enabled. The payment is automatically made.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
@@ -175,7 +177,9 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoPay: Indicates whether automatic payment is enabled.
          * <p>
-         * Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+         * Valid values:
+         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         * true: Automatic payment is enabled. The payment is automatically made.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.

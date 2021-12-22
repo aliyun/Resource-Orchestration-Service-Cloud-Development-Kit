@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * Properties for defining a `ALIYUN::FOAS::Project`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.500Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.RosProjectProps")
 @software.amazon.jsii.Jsii.Proxy(RosProjectProps.Jsii$Proxy.class)
 public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,12 +48,12 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosProjectProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosProjectProps> {
-        private java.lang.Object deployType;
-        private java.lang.Object managerIds;
-        private java.lang.Object name;
-        private java.lang.Object clusterId;
-        private java.lang.Object description;
-        private java.lang.Object orderId;
+        java.lang.Object deployType;
+        java.lang.Object managerIds;
+        java.lang.Object name;
+        java.lang.Object clusterId;
+        java.lang.Object description;
+        java.lang.Object orderId;
 
         /**
          * Sets the value of {@link RosProjectProps#getDeployType}
@@ -182,7 +182,7 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosProjectProps build() {
-            return new Jsii$Proxy(deployType, managerIds, name, clusterId, description, orderId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -215,14 +215,14 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object deployType, final java.lang.Object managerIds, final java.lang.Object name, final java.lang.Object clusterId, final java.lang.Object description, final java.lang.Object orderId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.deployType = java.util.Objects.requireNonNull(deployType, "deployType is required");
-            this.managerIds = java.util.Objects.requireNonNull(managerIds, "managerIds is required");
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.clusterId = clusterId;
-            this.description = description;
-            this.orderId = orderId;
+            this.deployType = java.util.Objects.requireNonNull(builder.deployType, "deployType is required");
+            this.managerIds = java.util.Objects.requireNonNull(builder.managerIds, "managerIds is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.clusterId = builder.clusterId;
+            this.description = builder.description;
+            this.orderId = builder.orderId;
         }
 
         @Override

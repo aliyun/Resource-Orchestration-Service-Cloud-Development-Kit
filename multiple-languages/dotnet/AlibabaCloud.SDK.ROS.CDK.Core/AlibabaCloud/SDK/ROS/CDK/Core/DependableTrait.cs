@@ -15,12 +15,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     /// <strong>Stability</strong>: Experimental
     /// </remarks>
     /// <example>
-    /// <code>// Example automatically generated. See https://github.com/aws/jsii/issues/826
+    /// <code>// Example automatically generated from non-compiling source. May contain errors.
     /// // Usage
-    /// var roots = DependableTrait.Get(construct).DependencyRoots;
+    /// const roots = DependableTrait.get(construct).dependencyRoots;
     /// 
     /// // Definition
-    /// DependableTrait.Implement(construct, new Struct { get dependencyRoots() { return []; }
+    /// DependableTrait.implement(construct, {
+    ///   get dependencyRoots() { return []; }
     /// });</code>
     /// </example>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait), fullyQualifiedName: "@alicloud/ros-cdk-core.DependableTrait")]
@@ -90,12 +91,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         /// <example>
-        /// <code>// Example automatically generated. See https://github.com/aws/jsii/issues/826
+        /// <code>// Example automatically generated from non-compiling source. May contain errors.
         /// // Usage
-        /// var roots = DependableTrait.Get(construct).DependencyRoots;
+        /// const roots = DependableTrait.get(construct).dependencyRoots;
         /// 
         /// // Definition
-        /// DependableTrait.Implement(construct, new Struct { get dependencyRoots() { return []; }
+        /// DependableTrait.implement(construct, {
+        ///   get dependencyRoots() { return []; }
         /// });</code>
         /// </example>
         [JsiiTypeProxy(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait), fullyQualifiedName: "@alicloud/ros-cdk-core.DependableTrait")]

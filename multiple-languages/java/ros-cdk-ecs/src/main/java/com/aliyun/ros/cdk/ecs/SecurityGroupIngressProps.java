@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroupIngress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.780Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupIngressProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupIngressProps.Jsii$Proxy.class)
 public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSerializable {
@@ -113,18 +113,18 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link SecurityGroupIngressProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SecurityGroupIngressProps> {
-        private java.lang.Object ipProtocol;
-        private java.lang.Object portRange;
-        private java.lang.Object description;
-        private java.lang.Object ipv6SourceCidrIp;
-        private java.lang.Object nicType;
-        private java.lang.Object policy;
-        private java.lang.Object priority;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object sourceCidrIp;
-        private java.lang.Object sourceGroupId;
-        private java.lang.Object sourceGroupOwnerId;
-        private java.lang.Object sourcePortRange;
+        java.lang.Object ipProtocol;
+        java.lang.Object portRange;
+        java.lang.Object description;
+        java.lang.Object ipv6SourceCidrIp;
+        java.lang.Object nicType;
+        java.lang.Object policy;
+        java.lang.Object priority;
+        java.lang.Object securityGroupId;
+        java.lang.Object sourceCidrIp;
+        java.lang.Object sourceGroupId;
+        java.lang.Object sourceGroupOwnerId;
+        java.lang.Object sourcePortRange;
 
         /**
          * Sets the value of {@link SecurityGroupIngressProps#getIpProtocol}
@@ -389,7 +389,7 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public SecurityGroupIngressProps build() {
-            return new Jsii$Proxy(ipProtocol, portRange, description, ipv6SourceCidrIp, nicType, policy, priority, securityGroupId, sourceCidrIp, sourceGroupId, sourceGroupOwnerId, sourcePortRange);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -434,20 +434,20 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object ipProtocol, final java.lang.Object portRange, final java.lang.Object description, final java.lang.Object ipv6SourceCidrIp, final java.lang.Object nicType, final java.lang.Object policy, final java.lang.Object priority, final java.lang.Object securityGroupId, final java.lang.Object sourceCidrIp, final java.lang.Object sourceGroupId, final java.lang.Object sourceGroupOwnerId, final java.lang.Object sourcePortRange) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.ipProtocol = java.util.Objects.requireNonNull(ipProtocol, "ipProtocol is required");
-            this.portRange = java.util.Objects.requireNonNull(portRange, "portRange is required");
-            this.description = description;
-            this.ipv6SourceCidrIp = ipv6SourceCidrIp;
-            this.nicType = nicType;
-            this.policy = policy;
-            this.priority = priority;
-            this.securityGroupId = securityGroupId;
-            this.sourceCidrIp = sourceCidrIp;
-            this.sourceGroupId = sourceGroupId;
-            this.sourceGroupOwnerId = sourceGroupOwnerId;
-            this.sourcePortRange = sourcePortRange;
+            this.ipProtocol = java.util.Objects.requireNonNull(builder.ipProtocol, "ipProtocol is required");
+            this.portRange = java.util.Objects.requireNonNull(builder.portRange, "portRange is required");
+            this.description = builder.description;
+            this.ipv6SourceCidrIp = builder.ipv6SourceCidrIp;
+            this.nicType = builder.nicType;
+            this.policy = builder.policy;
+            this.priority = builder.priority;
+            this.securityGroupId = builder.securityGroupId;
+            this.sourceCidrIp = builder.sourceCidrIp;
+            this.sourceGroupId = builder.sourceGroupId;
+            this.sourceGroupOwnerId = builder.sourceGroupOwnerId;
+            this.sourcePortRange = builder.sourcePortRange;
         }
 
         @Override

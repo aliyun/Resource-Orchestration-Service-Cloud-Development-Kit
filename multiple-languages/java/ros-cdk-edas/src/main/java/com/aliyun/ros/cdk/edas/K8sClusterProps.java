@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::K8sCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.248Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.820Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.K8sClusterProps")
 @software.amazon.jsii.Jsii.Proxy(K8sClusterProps.Jsii$Proxy.class)
 public interface K8sClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,9 +37,9 @@ public interface K8sClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link K8sClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<K8sClusterProps> {
-        private java.lang.Object csClusterId;
-        private java.lang.Object enableAsm;
-        private java.lang.Object namespaceId;
+        java.lang.Object csClusterId;
+        java.lang.Object enableAsm;
+        java.lang.Object namespaceId;
 
         /**
          * Sets the value of {@link K8sClusterProps#getCsClusterId}
@@ -108,7 +108,7 @@ public interface K8sClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public K8sClusterProps build() {
-            return new Jsii$Proxy(csClusterId, enableAsm, namespaceId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -135,11 +135,11 @@ public interface K8sClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object csClusterId, final java.lang.Object enableAsm, final java.lang.Object namespaceId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.csClusterId = java.util.Objects.requireNonNull(csClusterId, "csClusterId is required");
-            this.enableAsm = enableAsm;
-            this.namespaceId = namespaceId;
+            this.csClusterId = java.util.Objects.requireNonNull(builder.csClusterId, "csClusterId is required");
+            this.enableAsm = builder.enableAsm;
+            this.namespaceId = builder.namespaceId;
         }
 
         @Override

@@ -1,5 +1,11 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.17] (2021-12-22)
+
+### Features
+
+-  Update ROS resource sdk packages， add ALIYUN::ADB and ALIYUN::GPDB remove ALIYUN::UIS
+
 ## [ros-cdk-cli 1.0.16] (2021-12-16)
 
 ### Features

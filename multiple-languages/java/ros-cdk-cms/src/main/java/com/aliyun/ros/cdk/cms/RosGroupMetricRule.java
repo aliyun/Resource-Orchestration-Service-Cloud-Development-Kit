@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::GroupMetricRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.600Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.167Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosGroupMetricRule")
 public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -369,10 +369,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CriticalProperty> {
-            private java.lang.Object comparisonOperator;
-            private java.lang.Object statistics;
-            private java.lang.Object threshold;
-            private java.lang.Object times;
+            java.lang.Object comparisonOperator;
+            java.lang.Object statistics;
+            java.lang.Object threshold;
+            java.lang.Object times;
 
             /**
              * Sets the value of {@link CriticalProperty#getComparisonOperator}
@@ -470,7 +470,7 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CriticalProperty build() {
-                return new Jsii$Proxy(comparisonOperator, statistics, threshold, times);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -500,12 +500,12 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
-                this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
-                this.threshold = java.util.Objects.requireNonNull(threshold, "threshold is required");
-                this.times = java.util.Objects.requireNonNull(times, "times is required");
+                this.comparisonOperator = java.util.Objects.requireNonNull(builder.comparisonOperator, "comparisonOperator is required");
+                this.statistics = java.util.Objects.requireNonNull(builder.statistics, "statistics is required");
+                this.threshold = java.util.Objects.requireNonNull(builder.threshold, "threshold is required");
+                this.times = java.util.Objects.requireNonNull(builder.times, "times is required");
             }
 
             @Override
@@ -612,9 +612,9 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EscalationsProperty> {
-            private java.lang.Object critical;
-            private java.lang.Object info;
-            private java.lang.Object warn;
+            java.lang.Object critical;
+            java.lang.Object info;
+            java.lang.Object warn;
 
             /**
              * Sets the value of {@link EscalationsProperty#getCritical}
@@ -690,7 +690,7 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public EscalationsProperty build() {
-                return new Jsii$Proxy(critical, info, warn);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -718,11 +718,11 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object critical, final java.lang.Object info, final java.lang.Object warn) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.critical = critical;
-                this.info = info;
-                this.warn = warn;
+                this.critical = builder.critical;
+                this.info = builder.info;
+                this.warn = builder.warn;
             }
 
             @Override
@@ -826,10 +826,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InfoProperty> {
-            private java.lang.Object comparisonOperator;
-            private java.lang.Object statistics;
-            private java.lang.Object threshold;
-            private java.lang.Object times;
+            java.lang.Object comparisonOperator;
+            java.lang.Object statistics;
+            java.lang.Object threshold;
+            java.lang.Object times;
 
             /**
              * Sets the value of {@link InfoProperty#getComparisonOperator}
@@ -927,7 +927,7 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InfoProperty build() {
-                return new Jsii$Proxy(comparisonOperator, statistics, threshold, times);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -957,12 +957,12 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
-                this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
-                this.threshold = java.util.Objects.requireNonNull(threshold, "threshold is required");
-                this.times = java.util.Objects.requireNonNull(times, "times is required");
+                this.comparisonOperator = java.util.Objects.requireNonNull(builder.comparisonOperator, "comparisonOperator is required");
+                this.statistics = java.util.Objects.requireNonNull(builder.statistics, "statistics is required");
+                this.threshold = java.util.Objects.requireNonNull(builder.threshold, "threshold is required");
+                this.times = java.util.Objects.requireNonNull(builder.times, "times is required");
             }
 
             @Override
@@ -1068,10 +1068,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<WarnProperty> {
-            private java.lang.Object comparisonOperator;
-            private java.lang.Object statistics;
-            private java.lang.Object threshold;
-            private java.lang.Object times;
+            java.lang.Object comparisonOperator;
+            java.lang.Object statistics;
+            java.lang.Object threshold;
+            java.lang.Object times;
 
             /**
              * Sets the value of {@link WarnProperty#getComparisonOperator}
@@ -1169,7 +1169,7 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public WarnProperty build() {
-                return new Jsii$Proxy(comparisonOperator, statistics, threshold, times);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1199,12 +1199,12 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
-                this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
-                this.threshold = java.util.Objects.requireNonNull(threshold, "threshold is required");
-                this.times = java.util.Objects.requireNonNull(times, "times is required");
+                this.comparisonOperator = java.util.Objects.requireNonNull(builder.comparisonOperator, "comparisonOperator is required");
+                this.statistics = java.util.Objects.requireNonNull(builder.statistics, "statistics is required");
+                this.threshold = java.util.Objects.requireNonNull(builder.threshold, "threshold is required");
+                this.times = java.util.Objects.requireNonNull(builder.times, "times is required");
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::DiskAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.086Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.640Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDiskAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskAttachmentProps.Jsii$Proxy.class)
 public interface RosDiskAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,11 +44,11 @@ public interface RosDiskAttachmentProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosDiskAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDiskAttachmentProps> {
-        private java.lang.Object diskId;
-        private java.lang.Object instanceId;
-        private java.lang.Object deleteAutoSnapshot;
-        private java.lang.Object deleteWithInstance;
-        private java.lang.Object device;
+        java.lang.Object diskId;
+        java.lang.Object instanceId;
+        java.lang.Object deleteAutoSnapshot;
+        java.lang.Object deleteWithInstance;
+        java.lang.Object device;
 
         /**
          * Sets the value of {@link RosDiskAttachmentProps#getDiskId}
@@ -157,7 +157,7 @@ public interface RosDiskAttachmentProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public RosDiskAttachmentProps build() {
-            return new Jsii$Proxy(diskId, instanceId, deleteAutoSnapshot, deleteWithInstance, device);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -188,13 +188,13 @@ public interface RosDiskAttachmentProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object diskId, final java.lang.Object instanceId, final java.lang.Object deleteAutoSnapshot, final java.lang.Object deleteWithInstance, final java.lang.Object device) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.diskId = java.util.Objects.requireNonNull(diskId, "diskId is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.deleteAutoSnapshot = deleteAutoSnapshot;
-            this.deleteWithInstance = deleteWithInstance;
-            this.device = device;
+            this.diskId = java.util.Objects.requireNonNull(builder.diskId, "diskId is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.deleteAutoSnapshot = builder.deleteAutoSnapshot;
+            this.deleteWithInstance = builder.deleteWithInstance;
+            this.device = builder.device;
         }
 
         @Override

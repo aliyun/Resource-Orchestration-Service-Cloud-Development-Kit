@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * Properties for defining a `ALIYUN::DATAHUB::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.739Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.325Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,13 +52,13 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTopicProps> {
-        private java.lang.Object comment;
-        private java.lang.Object projectName;
-        private java.lang.Object recordType;
-        private java.lang.Object topicName;
-        private java.lang.Object lifecycle;
-        private java.lang.Object recordSchema;
-        private java.lang.Object shardCount;
+        java.lang.Object comment;
+        java.lang.Object projectName;
+        java.lang.Object recordType;
+        java.lang.Object topicName;
+        java.lang.Object lifecycle;
+        java.lang.Object recordSchema;
+        java.lang.Object shardCount;
 
         /**
          * Sets the value of {@link RosTopicProps#getComment}
@@ -207,7 +207,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosTopicProps build() {
-            return new Jsii$Proxy(comment, projectName, recordType, topicName, lifecycle, recordSchema, shardCount);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -242,15 +242,15 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object comment, final java.lang.Object projectName, final java.lang.Object recordType, final java.lang.Object topicName, final java.lang.Object lifecycle, final java.lang.Object recordSchema, final java.lang.Object shardCount) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.comment = java.util.Objects.requireNonNull(comment, "comment is required");
-            this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
-            this.recordType = java.util.Objects.requireNonNull(recordType, "recordType is required");
-            this.topicName = java.util.Objects.requireNonNull(topicName, "topicName is required");
-            this.lifecycle = lifecycle;
-            this.recordSchema = recordSchema;
-            this.shardCount = shardCount;
+            this.comment = java.util.Objects.requireNonNull(builder.comment, "comment is required");
+            this.projectName = java.util.Objects.requireNonNull(builder.projectName, "projectName is required");
+            this.recordType = java.util.Objects.requireNonNull(builder.recordType, "recordType is required");
+            this.topicName = java.util.Objects.requireNonNull(builder.topicName, "topicName is required");
+            this.lifecycle = builder.lifecycle;
+            this.recordSchema = builder.recordSchema;
+            this.shardCount = builder.shardCount;
         }
 
         @Override

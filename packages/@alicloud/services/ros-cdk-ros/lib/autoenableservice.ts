@@ -41,6 +41,7 @@ export interface AutoEnableServiceProps {
      * RocketMQ: RocketMQ
      * SAE: Serverless App Engine
      * SLS: Log Service
+     * TrafficMirror: VPC Traffic Mirroring
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
      *

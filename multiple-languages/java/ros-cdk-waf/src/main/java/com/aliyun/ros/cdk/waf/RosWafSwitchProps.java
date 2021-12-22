@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::WafSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.310Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:59.047Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosWafSwitchProps")
 @software.amazon.jsii.Jsii.Proxy(RosWafSwitchProps.Jsii$Proxy.class)
 public interface RosWafSwitchProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,10 +36,10 @@ public interface RosWafSwitchProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosWafSwitchProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosWafSwitchProps> {
-        private java.lang.Object domain;
-        private java.lang.Object instanceId;
-        private java.lang.Object serviceOn;
-        private java.lang.Object region;
+        java.lang.Object domain;
+        java.lang.Object instanceId;
+        java.lang.Object serviceOn;
+        java.lang.Object region;
 
         /**
          * Sets the value of {@link RosWafSwitchProps#getDomain}
@@ -128,7 +128,7 @@ public interface RosWafSwitchProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosWafSwitchProps build() {
-            return new Jsii$Proxy(domain, instanceId, serviceOn, region);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -157,12 +157,12 @@ public interface RosWafSwitchProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domain, final java.lang.Object instanceId, final java.lang.Object serviceOn, final java.lang.Object region) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domain = java.util.Objects.requireNonNull(domain, "domain is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.serviceOn = java.util.Objects.requireNonNull(serviceOn, "serviceOn is required");
-            this.region = region;
+            this.domain = java.util.Objects.requireNonNull(builder.domain, "domain is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.serviceOn = java.util.Objects.requireNonNull(builder.serviceOn, "serviceOn is required");
+            this.region = builder.region;
         }
 
         @Override

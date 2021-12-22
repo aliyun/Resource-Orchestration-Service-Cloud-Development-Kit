@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::VPC`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.215Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.785Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Vpc")
 public class Vpc extends com.aliyun.ros.cdk.core.Resource {
 
@@ -216,6 +216,41 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ipv6Isp: The Internet service provider (ISP) for IPv6 addresses of the VPC.
+         * <p>
+         * Valid values:
+         * BGP(default): Alibaba Cloud BGP IPv6
+         * ChinaMobile: China Mobile (single line)
+         * ChinaUnicom: China Unicom (single line)
+         * ChinaTelecom: China Telecom (single line)
+         * Note If your Alibaba Cloud account is allowed to activate single-ISP bandwidth, you can set the parameter to ChinaTelecom, ChinaUnicom, and ChinaMobile.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Isp Property ipv6Isp: The Internet service provider (ISP) for IPv6 addresses of the VPC. This parameter is required.
+         */
+        public Builder ipv6Isp(final java.lang.String ipv6Isp) {
+            this.props().ipv6Isp(ipv6Isp);
+            return this;
+        }
+        /**
+         * Property ipv6Isp: The Internet service provider (ISP) for IPv6 addresses of the VPC.
+         * <p>
+         * Valid values:
+         * BGP(default): Alibaba Cloud BGP IPv6
+         * ChinaMobile: China Mobile (single line)
+         * ChinaUnicom: China Unicom (single line)
+         * ChinaTelecom: China Telecom (single line)
+         * Note If your Alibaba Cloud account is allowed to activate single-ISP bandwidth, you can set the parameter to ChinaTelecom, ChinaUnicom, and ChinaMobile.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Isp Property ipv6Isp: The Internet service provider (ISP) for IPv6 addresses of the VPC. This parameter is required.
+         */
+        public Builder ipv6Isp(final com.aliyun.ros.cdk.core.IResolvable ipv6Isp) {
+            this.props().ipv6Isp(ipv6Isp);
+            return this;
+        }
+
+        /**
          * Property resourceGroupId: Resource group id.
          * <p>
          * @return {@code this}
@@ -237,6 +272,53 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property secondaryCidrBlock: The secondary IPv4 CIDR block.
+         * <p>
+         * You can specify one of the following standard IPv4 CIDR blocks or their
+         * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
+         * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
+         * submit a ticket. When you add a secondary IPv4 CIDR block, take note of
+         * the following rules:
+         * <p>
+         * <ol>
+         * <li>The CIDR block cannot start with 0.</li>
+         * <li>The subnet mask must be 8 to 24 bits in length.
+         * The secondary CIDR block cannot overlap with the primary
+         * CIDR block or an existing secondary CIDR block.</li>
+         * </ol>
+         * <p>
+         * @return {@code this}
+         * @param secondaryCidrBlock Property secondaryCidrBlock: The secondary IPv4 CIDR block. This parameter is required.
+         */
+        public Builder secondaryCidrBlock(final java.lang.String secondaryCidrBlock) {
+            this.props().secondaryCidrBlock(secondaryCidrBlock);
+            return this;
+        }
+        /**
+         * Property secondaryCidrBlock: The secondary IPv4 CIDR block.
+         * <p>
+         * You can specify one of the following standard IPv4 CIDR blocks or their
+         * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
+         * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
+         * submit a ticket. When you add a secondary IPv4 CIDR block, take note of
+         * the following rules:
+         * <p>
+         * <ol>
+         * <li>The CIDR block cannot start with 0.</li>
+         * <li>The subnet mask must be 8 to 24 bits in length.
+         * The secondary CIDR block cannot overlap with the primary
+         * CIDR block or an existing secondary CIDR block.</li>
+         * </ol>
+         * <p>
+         * @return {@code this}
+         * @param secondaryCidrBlock Property secondaryCidrBlock: The secondary IPv4 CIDR block. This parameter is required.
+         */
+        public Builder secondaryCidrBlock(final com.aliyun.ros.cdk.core.IResolvable secondaryCidrBlock) {
+            this.props().secondaryCidrBlock(secondaryCidrBlock);
+            return this;
+        }
+
+        /**
          * Property tags: Tags to attach to vpc.
          * <p>
          * Max support 20 tags to add during create vpc. Each tag with two properties Key and Value, and Key is required.
@@ -246,6 +328,31 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> tags) {
             this.props().tags(tags);
+            return this;
+        }
+
+        /**
+         * Property userCidr: The user CIDR block.
+         * <p>
+         * Separate multiple CIDR blocks with commas (,). At most three CIDR blocks are supported.
+         * <p>
+         * @return {@code this}
+         * @param userCidr Property userCidr: The user CIDR block. This parameter is required.
+         */
+        public Builder userCidr(final java.lang.String userCidr) {
+            this.props().userCidr(userCidr);
+            return this;
+        }
+        /**
+         * Property userCidr: The user CIDR block.
+         * <p>
+         * Separate multiple CIDR blocks with commas (,). At most three CIDR blocks are supported.
+         * <p>
+         * @return {@code this}
+         * @param userCidr Property userCidr: The user CIDR block. This parameter is required.
+         */
+        public Builder userCidr(final com.aliyun.ros.cdk.core.IResolvable userCidr) {
+            this.props().userCidr(userCidr);
             return this;
         }
 

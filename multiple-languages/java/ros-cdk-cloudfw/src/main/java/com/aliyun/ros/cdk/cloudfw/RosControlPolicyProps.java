@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.564Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.115Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosControlPolicyProps.Jsii$Proxy.class)
 public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -82,20 +82,20 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosControlPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosControlPolicyProps> {
-        private java.lang.Object aclAction;
-        private java.lang.Object applicationName;
-        private java.lang.Object description;
-        private java.lang.Object destination;
-        private java.lang.Object destinationType;
-        private java.lang.Object direction;
-        private java.lang.Object newOrder;
-        private java.lang.Object proto;
-        private java.lang.Object source;
-        private java.lang.Object sourceType;
-        private java.lang.Object destPort;
-        private java.lang.Object destPortGroup;
-        private java.lang.Object destPortType;
-        private java.lang.Object regionId;
+        java.lang.Object aclAction;
+        java.lang.Object applicationName;
+        java.lang.Object description;
+        java.lang.Object destination;
+        java.lang.Object destinationType;
+        java.lang.Object direction;
+        java.lang.Object newOrder;
+        java.lang.Object proto;
+        java.lang.Object source;
+        java.lang.Object sourceType;
+        java.lang.Object destPort;
+        java.lang.Object destPortGroup;
+        java.lang.Object destPortType;
+        java.lang.Object regionId;
 
         /**
          * Sets the value of {@link RosControlPolicyProps#getAclAction}
@@ -384,7 +384,7 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosControlPolicyProps build() {
-            return new Jsii$Proxy(aclAction, applicationName, description, destination, destinationType, direction, newOrder, proto, source, sourceType, destPort, destPortGroup, destPortType, regionId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -433,22 +433,22 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object aclAction, final java.lang.Object applicationName, final java.lang.Object description, final java.lang.Object destination, final java.lang.Object destinationType, final java.lang.Object direction, final java.lang.Object newOrder, final java.lang.Object proto, final java.lang.Object source, final java.lang.Object sourceType, final java.lang.Object destPort, final java.lang.Object destPortGroup, final java.lang.Object destPortType, final java.lang.Object regionId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.aclAction = java.util.Objects.requireNonNull(aclAction, "aclAction is required");
-            this.applicationName = java.util.Objects.requireNonNull(applicationName, "applicationName is required");
-            this.description = java.util.Objects.requireNonNull(description, "description is required");
-            this.destination = java.util.Objects.requireNonNull(destination, "destination is required");
-            this.destinationType = java.util.Objects.requireNonNull(destinationType, "destinationType is required");
-            this.direction = java.util.Objects.requireNonNull(direction, "direction is required");
-            this.newOrder = java.util.Objects.requireNonNull(newOrder, "newOrder is required");
-            this.proto = java.util.Objects.requireNonNull(proto, "proto is required");
-            this.source = java.util.Objects.requireNonNull(source, "source is required");
-            this.sourceType = java.util.Objects.requireNonNull(sourceType, "sourceType is required");
-            this.destPort = destPort;
-            this.destPortGroup = destPortGroup;
-            this.destPortType = destPortType;
-            this.regionId = regionId;
+            this.aclAction = java.util.Objects.requireNonNull(builder.aclAction, "aclAction is required");
+            this.applicationName = java.util.Objects.requireNonNull(builder.applicationName, "applicationName is required");
+            this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
+            this.destination = java.util.Objects.requireNonNull(builder.destination, "destination is required");
+            this.destinationType = java.util.Objects.requireNonNull(builder.destinationType, "destinationType is required");
+            this.direction = java.util.Objects.requireNonNull(builder.direction, "direction is required");
+            this.newOrder = java.util.Objects.requireNonNull(builder.newOrder, "newOrder is required");
+            this.proto = java.util.Objects.requireNonNull(builder.proto, "proto is required");
+            this.source = java.util.Objects.requireNonNull(builder.source, "source is required");
+            this.sourceType = java.util.Objects.requireNonNull(builder.sourceType, "sourceType is required");
+            this.destPort = builder.destPort;
+            this.destPortGroup = builder.destPortGroup;
+            this.destPortType = builder.destPortType;
+            this.regionId = builder.regionId;
         }
 
         @Override

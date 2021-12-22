@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScheduledTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.456Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScheduledTaskProps")
 @software.amazon.jsii.Jsii.Proxy(ScheduledTaskProps.Jsii$Proxy.class)
 public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializable {
@@ -116,15 +116,15 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link ScheduledTaskProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ScheduledTaskProps> {
-        private java.lang.Object launchTime;
-        private java.lang.Object scheduledAction;
-        private java.lang.Object description;
-        private java.lang.Object launchExpirationTime;
-        private java.lang.Object recurrenceEndTime;
-        private java.lang.Object recurrenceType;
-        private java.lang.Object recurrenceValue;
-        private java.lang.Object scheduledTaskName;
-        private java.lang.Object taskEnabled;
+        java.lang.Object launchTime;
+        java.lang.Object scheduledAction;
+        java.lang.Object description;
+        java.lang.Object launchExpirationTime;
+        java.lang.Object recurrenceEndTime;
+        java.lang.Object recurrenceType;
+        java.lang.Object recurrenceValue;
+        java.lang.Object scheduledTaskName;
+        java.lang.Object taskEnabled;
 
         /**
          * Sets the value of {@link ScheduledTaskProps#getLaunchTime}
@@ -375,7 +375,7 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public ScheduledTaskProps build() {
-            return new Jsii$Proxy(launchTime, scheduledAction, description, launchExpirationTime, recurrenceEndTime, recurrenceType, recurrenceValue, scheduledTaskName, taskEnabled);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -414,17 +414,17 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object launchTime, final java.lang.Object scheduledAction, final java.lang.Object description, final java.lang.Object launchExpirationTime, final java.lang.Object recurrenceEndTime, final java.lang.Object recurrenceType, final java.lang.Object recurrenceValue, final java.lang.Object scheduledTaskName, final java.lang.Object taskEnabled) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.launchTime = java.util.Objects.requireNonNull(launchTime, "launchTime is required");
-            this.scheduledAction = java.util.Objects.requireNonNull(scheduledAction, "scheduledAction is required");
-            this.description = description;
-            this.launchExpirationTime = launchExpirationTime;
-            this.recurrenceEndTime = recurrenceEndTime;
-            this.recurrenceType = recurrenceType;
-            this.recurrenceValue = recurrenceValue;
-            this.scheduledTaskName = scheduledTaskName;
-            this.taskEnabled = taskEnabled;
+            this.launchTime = java.util.Objects.requireNonNull(builder.launchTime, "launchTime is required");
+            this.scheduledAction = java.util.Objects.requireNonNull(builder.scheduledAction, "scheduledAction is required");
+            this.description = builder.description;
+            this.launchExpirationTime = builder.launchExpirationTime;
+            this.recurrenceEndTime = builder.recurrenceEndTime;
+            this.recurrenceType = builder.recurrenceType;
+            this.recurrenceValue = builder.recurrenceValue;
+            this.scheduledTaskName = builder.scheduledTaskName;
+            this.taskEnabled = builder.taskEnabled;
         }
 
         @Override

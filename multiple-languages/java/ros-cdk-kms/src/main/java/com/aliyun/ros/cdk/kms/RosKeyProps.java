@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Properties for defining a `ALIYUN::KMS::Key`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.607Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.267Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosKeyProps")
 @software.amazon.jsii.Jsii.Proxy(RosKeyProps.Jsii$Proxy.class)
 public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
@@ -66,14 +66,14 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosKeyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosKeyProps> {
-        private java.lang.Object description;
-        private java.lang.Object enable;
-        private java.lang.Object enableAutomaticRotation;
-        private java.lang.Object keySpec;
-        private java.lang.Object keyUsage;
-        private java.lang.Object pendingWindowInDays;
-        private java.lang.Object protectionLevel;
-        private java.lang.Object rotationInterval;
+        java.lang.Object description;
+        java.lang.Object enable;
+        java.lang.Object enableAutomaticRotation;
+        java.lang.Object keySpec;
+        java.lang.Object keyUsage;
+        java.lang.Object pendingWindowInDays;
+        java.lang.Object protectionLevel;
+        java.lang.Object rotationInterval;
 
         /**
          * Sets the value of {@link RosKeyProps#getDescription}
@@ -242,7 +242,7 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosKeyProps build() {
-            return new Jsii$Proxy(description, enable, enableAutomaticRotation, keySpec, keyUsage, pendingWindowInDays, protectionLevel, rotationInterval);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -279,16 +279,16 @@ public interface RosKeyProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object enable, final java.lang.Object enableAutomaticRotation, final java.lang.Object keySpec, final java.lang.Object keyUsage, final java.lang.Object pendingWindowInDays, final java.lang.Object protectionLevel, final java.lang.Object rotationInterval) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.description = description;
-            this.enable = enable;
-            this.enableAutomaticRotation = enableAutomaticRotation;
-            this.keySpec = keySpec;
-            this.keyUsage = keyUsage;
-            this.pendingWindowInDays = pendingWindowInDays;
-            this.protectionLevel = protectionLevel;
-            this.rotationInterval = rotationInterval;
+            this.description = builder.description;
+            this.enable = builder.enable;
+            this.enableAutomaticRotation = builder.enableAutomaticRotation;
+            this.keySpec = builder.keySpec;
+            this.keyUsage = builder.keyUsage;
+            this.pendingWindowInDays = builder.pendingWindowInDays;
+            this.protectionLevel = builder.protectionLevel;
+            this.rotationInterval = builder.rotationInterval;
         }
 
         @Override

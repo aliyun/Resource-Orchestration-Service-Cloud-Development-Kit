@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::BgpNetwork`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.157Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.896Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpNetworkProps")
 @software.amazon.jsii.Jsii.Proxy(BgpNetworkProps.Jsii$Proxy.class)
 public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link BgpNetworkProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BgpNetworkProps> {
-        private java.lang.Object dstCidrBlock;
-        private java.lang.Object routerId;
+        java.lang.Object dstCidrBlock;
+        java.lang.Object routerId;
 
         /**
          * Sets the value of {@link BgpNetworkProps#getDstCidrBlock}
@@ -78,7 +78,7 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public BgpNetworkProps build() {
-            return new Jsii$Proxy(dstCidrBlock, routerId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object dstCidrBlock, final java.lang.Object routerId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dstCidrBlock = java.util.Objects.requireNonNull(dstCidrBlock, "dstCidrBlock is required");
-            this.routerId = java.util.Objects.requireNonNull(routerId, "routerId is required");
+            this.dstCidrBlock = java.util.Objects.requireNonNull(builder.dstCidrBlock, "dstCidrBlock is required");
+            this.routerId = java.util.Objects.requireNonNull(builder.routerId, "routerId is required");
         }
 
         @Override

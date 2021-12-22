@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * A ROS template type:  `ALIYUN::GWS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.531Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.143Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -436,9 +436,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AppListProperty> {
-            private java.lang.Object appArgs;
-            private java.lang.Object appName;
-            private java.lang.Object appPath;
+            java.lang.Object appArgs;
+            java.lang.Object appName;
+            java.lang.Object appPath;
 
             /**
              * Sets the value of {@link AppListProperty#getAppArgs}
@@ -514,7 +514,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AppListProperty build() {
-                return new Jsii$Proxy(appArgs, appName, appPath);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -542,11 +542,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object appArgs, final java.lang.Object appName, final java.lang.Object appPath) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.appArgs = appArgs;
-                this.appName = appName;
-                this.appPath = appPath;
+                this.appArgs = builder.appArgs;
+                this.appName = builder.appName;
+                this.appPath = builder.appPath;
             }
 
             @Override

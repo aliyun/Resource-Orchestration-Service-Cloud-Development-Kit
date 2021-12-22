@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS resource type:  `ALIYUN::REDIS::PrepayInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstance")
 public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -96,6 +96,20 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ClassicInnerConnectionPort: The classic inner connection port of the instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClassicInnerConnectionPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrClassicInnerConnectionPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ClassicInnerConnectionString: The classic inner connection string of the instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClassicInnerConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrClassicInnerConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute ConnectionDomain: Connection domain of created instance.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnectionDomain() {
@@ -107,6 +121,20 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnections() {
         return software.amazon.jsii.Kernel.get(this, "attrConnections", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute DirectConnectionPort: The direct connection port of the instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDirectConnectionPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrDirectConnectionPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute DirectConnectionString: The direct connection string of the instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDirectConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrDirectConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -194,6 +222,20 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute PublicConnectionPort: The public connection port of the instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicConnectionPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicConnectionPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute PublicConnectionString: The public connection string of the instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute QPS: The queries per second (QPS) supported by the instance.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrQps() {
@@ -212,6 +254,20 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcId() {
         return software.amazon.jsii.Kernel.get(this, "attrVpcId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute VpcPrivateConnectionPort: The vpc private connection port of the instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcPrivateConnectionPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcPrivateConnectionPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute VpcPrivateConnectionString: The vpc private connection string of the instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcPrivateConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcPrivateConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -262,6 +318,68 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property autoPay: Indicates whether automatic payment is enabled.
+         * <p>
+         * Valid values:
+         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         * true: Automatic payment is enabled. The payment is automatically made.
+         * Default is False
+         * <p>
+         * @return {@code this}
+         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
+         */
+        public Builder autoPay(final java.lang.Boolean autoPay) {
+            this.props().autoPay(autoPay);
+            return this;
+        }
+        /**
+         * Property autoPay: Indicates whether automatic payment is enabled.
+         * <p>
+         * Valid values:
+         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         * true: Automatic payment is enabled. The payment is automatically made.
+         * Default is False
+         * <p>
+         * @return {@code this}
+         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
+         */
+        public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
+            this.props().autoPay(autoPay);
+            return this;
+        }
+
+        /**
+         * Property autoRenewDuration: The auto-renewal period.
+         * <p>
+         * Valid values: 1 to 12.
+         * When the instance is about to expire, the instance is automatically renewed
+         * based on the number of months specified by this parameter.
+         * Note This parameter is valid only when ChargeType is set to PrePaid.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewDuration Property autoRenewDuration: The auto-renewal period. This parameter is required.
+         */
+        public Builder autoRenewDuration(final java.lang.Number autoRenewDuration) {
+            this.props().autoRenewDuration(autoRenewDuration);
+            return this;
+        }
+        /**
+         * Property autoRenewDuration: The auto-renewal period.
+         * <p>
+         * Valid values: 1 to 12.
+         * When the instance is about to expire, the instance is automatically renewed
+         * based on the number of months specified by this parameter.
+         * Note This parameter is valid only when ChargeType is set to PrePaid.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewDuration Property autoRenewDuration: The auto-renewal period. This parameter is required.
+         */
+        public Builder autoRenewDuration(final com.aliyun.ros.cdk.core.IResolvable autoRenewDuration) {
+            this.props().autoRenewDuration(autoRenewDuration);
+            return this;
+        }
+
+        /**
          * Property backupPolicy: Backup policy.
          * <p>
          * @return {@code this}
@@ -300,6 +418,52 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder capacity(final com.aliyun.ros.cdk.core.IResolvable capacity) {
             this.props().capacity(capacity);
+            return this;
+        }
+
+        /**
+         * Property connections: Connection address.
+         * <p>
+         * @return {@code this}
+         * @param connections Property connections: Connection address. This parameter is required.
+         */
+        public Builder connections(final com.aliyun.ros.cdk.core.IResolvable connections) {
+            this.props().connections(connections);
+            return this;
+        }
+        /**
+         * Property connections: Connection address.
+         * <p>
+         * @return {@code this}
+         * @param connections Property connections: Connection address. This parameter is required.
+         */
+        public Builder connections(final com.aliyun.ros.cdk.redis.RosPrepayInstance.ConnectionsProperty connections) {
+            this.props().connections(connections);
+            return this;
+        }
+
+        /**
+         * Property deletionForce: Whether destroy instance when it is in recycle.
+         * <p>
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether destroy instance when it is in recycle. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props().deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether destroy instance when it is in recycle.
+         * <p>
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether destroy instance when it is in recycle. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props().deletionForce(deletionForce);
             return this;
         }
 
@@ -375,27 +539,6 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property instanceConnection: Instance connection message.
-         * <p>
-         * @return {@code this}
-         * @param instanceConnection Property instanceConnection: Instance connection message. This parameter is required.
-         */
-        public Builder instanceConnection(final com.aliyun.ros.cdk.core.IResolvable instanceConnection) {
-            this.props().instanceConnection(instanceConnection);
-            return this;
-        }
-        /**
-         * Property instanceConnection: Instance connection message.
-         * <p>
-         * @return {@code this}
-         * @param instanceConnection Property instanceConnection: Instance connection message. This parameter is required.
-         */
-        public Builder instanceConnection(final com.aliyun.ros.cdk.redis.RosPrepayInstance.InstanceConnectionProperty instanceConnection) {
-            this.props().instanceConnection(instanceConnection);
-            return this;
-        }
-
-        /**
          * Property instanceMaintainTime: Instance maintain time.
          * <p>
          * @return {@code this}
@@ -459,20 +602,20 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+         * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
          * <p>
          * @return {@code this}
-         * @param period Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month. This parameter is required.
+         * @param period Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props().period(period);
             return this;
         }
         /**
-         * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+         * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
          * <p>
          * @return {@code this}
-         * @param period Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month. This parameter is required.
+         * @param period Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props().period(period);

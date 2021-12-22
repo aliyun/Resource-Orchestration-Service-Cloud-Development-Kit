@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.785Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.450Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -72,12 +72,12 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DBInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBInstanceProps> {
-        private java.lang.Object characterSetName;
-        private java.lang.Object dbClusterId;
-        private java.lang.Object dbName;
-        private java.lang.Object accountName;
-        private java.lang.Object accountPrivilege;
-        private java.lang.Object dbDescription;
+        java.lang.Object characterSetName;
+        java.lang.Object dbClusterId;
+        java.lang.Object dbName;
+        java.lang.Object accountName;
+        java.lang.Object accountPrivilege;
+        java.lang.Object dbDescription;
 
         /**
          * Sets the value of {@link DBInstanceProps#getCharacterSetName}
@@ -234,7 +234,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public DBInstanceProps build() {
-            return new Jsii$Proxy(characterSetName, dbClusterId, dbName, accountName, accountPrivilege, dbDescription);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -267,14 +267,14 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object characterSetName, final java.lang.Object dbClusterId, final java.lang.Object dbName, final java.lang.Object accountName, final java.lang.Object accountPrivilege, final java.lang.Object dbDescription) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.characterSetName = java.util.Objects.requireNonNull(characterSetName, "characterSetName is required");
-            this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
-            this.dbName = java.util.Objects.requireNonNull(dbName, "dbName is required");
-            this.accountName = accountName;
-            this.accountPrivilege = accountPrivilege;
-            this.dbDescription = dbDescription;
+            this.characterSetName = java.util.Objects.requireNonNull(builder.characterSetName, "characterSetName is required");
+            this.dbClusterId = java.util.Objects.requireNonNull(builder.dbClusterId, "dbClusterId is required");
+            this.dbName = java.util.Objects.requireNonNull(builder.dbName, "dbName is required");
+            this.accountName = builder.accountName;
+            this.accountPrivilege = builder.accountPrivilege;
+            this.dbDescription = builder.dbDescription;
         }
 
         @Override

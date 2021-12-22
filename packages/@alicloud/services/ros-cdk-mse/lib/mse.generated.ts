@@ -48,9 +48,9 @@ export interface RosClusterProps {
     readonly connectionType?: string | ros.IResolvable;
 
     /**
-     * @Property diskCapacity:
+     * @Property diskCapacity: disk capacity, unit: G
      */
-    readonly diskCapacity?: string | ros.IResolvable;
+    readonly diskCapacity?: number | ros.IResolvable;
 
     /**
      * @Property diskType: disk type
@@ -113,7 +113,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('clusterAliasName', ros.validateString)(properties.clusterAliasName));
     errors.collect(ros.propertyValidator('instanceCount', ros.requiredValidator)(properties.instanceCount));
     errors.collect(ros.propertyValidator('instanceCount', ros.validateNumber)(properties.instanceCount));
-    errors.collect(ros.propertyValidator('diskCapacity', ros.validateString)(properties.diskCapacity));
+    errors.collect(ros.propertyValidator('diskCapacity', ros.validateNumber)(properties.diskCapacity));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('requestPars', ros.validateString)(properties.requestPars));
     errors.collect(ros.propertyValidator('pubNetworkFlow', ros.validateString)(properties.pubNetworkFlow));
@@ -144,7 +144,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       AclEntryList: ros.listMapper(ros.stringToRosTemplate)(properties.aclEntryList),
       ClusterAliasName: ros.stringToRosTemplate(properties.clusterAliasName),
       ConnectionType: ros.stringToRosTemplate(properties.connectionType),
-      DiskCapacity: ros.stringToRosTemplate(properties.diskCapacity),
+      DiskCapacity: ros.numberToRosTemplate(properties.diskCapacity),
       DiskType: ros.stringToRosTemplate(properties.diskType),
       PrivateSlbSpecification: ros.stringToRosTemplate(properties.privateSlbSpecification),
       PubNetworkFlow: ros.stringToRosTemplate(properties.pubNetworkFlow),
@@ -353,9 +353,9 @@ export class RosCluster extends ros.RosResource {
     public connectionType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property diskCapacity:
+     * @Property diskCapacity: disk capacity, unit: G
      */
-    public diskCapacity: string | ros.IResolvable | undefined;
+    public diskCapacity: number | ros.IResolvable | undefined;
 
     /**
      * @Property diskType: disk type

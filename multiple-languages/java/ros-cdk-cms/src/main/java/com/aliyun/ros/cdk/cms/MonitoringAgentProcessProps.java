@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MonitoringAgentProcess`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.593Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitoringAgentProcessProps")
 @software.amazon.jsii.Jsii.Proxy(MonitoringAgentProcessProps.Jsii$Proxy.class)
 public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,9 +37,9 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link MonitoringAgentProcessProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MonitoringAgentProcessProps> {
-        private java.lang.Object instanceId;
-        private java.lang.Object processName;
-        private java.lang.Object processUser;
+        java.lang.Object instanceId;
+        java.lang.Object processName;
+        java.lang.Object processUser;
 
         /**
          * Sets the value of {@link MonitoringAgentProcessProps#getInstanceId}
@@ -108,7 +108,7 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
          */
         @Override
         public MonitoringAgentProcessProps build() {
-            return new Jsii$Proxy(instanceId, processName, processUser);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -135,11 +135,11 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object processName, final java.lang.Object processUser) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.processName = processName;
-            this.processUser = processUser;
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.processName = builder.processName;
+            this.processUser = builder.processUser;
         }
 
         @Override

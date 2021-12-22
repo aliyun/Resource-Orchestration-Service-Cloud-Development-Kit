@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::HpcCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.950Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.543Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.HpcClusterProps")
 @software.amazon.jsii.Jsii.Proxy(HpcClusterProps.Jsii$Proxy.class)
 public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,8 +37,8 @@ public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link HpcClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<HpcClusterProps> {
-        private java.lang.Object name;
-        private java.lang.Object description;
+        java.lang.Object name;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link HpcClusterProps#getName}
@@ -97,7 +97,7 @@ public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public HpcClusterProps build() {
-            return new Jsii$Proxy(name, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -122,10 +122,10 @@ public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.description = description;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.description = builder.description;
         }
 
         @Override

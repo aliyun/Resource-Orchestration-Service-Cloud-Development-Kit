@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenInstanceAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.413Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstanceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(CenInstanceAttachmentProps.Jsii$Proxy.class)
 public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -49,11 +49,11 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link CenInstanceAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CenInstanceAttachmentProps> {
-        private java.lang.Object cenId;
-        private java.lang.Object childInstanceId;
-        private java.lang.Object childInstanceRegionId;
-        private java.lang.Object childInstanceType;
-        private java.lang.Object childInstanceOwnerId;
+        java.lang.Object cenId;
+        java.lang.Object childInstanceId;
+        java.lang.Object childInstanceRegionId;
+        java.lang.Object childInstanceType;
+        java.lang.Object childInstanceOwnerId;
 
         /**
          * Sets the value of {@link CenInstanceAttachmentProps#getCenId}
@@ -166,7 +166,7 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
          */
         @Override
         public CenInstanceAttachmentProps build() {
-            return new Jsii$Proxy(cenId, childInstanceId, childInstanceRegionId, childInstanceType, childInstanceOwnerId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -197,13 +197,13 @@ public interface CenInstanceAttachmentProps extends software.amazon.jsii.JsiiSer
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cenId, final java.lang.Object childInstanceId, final java.lang.Object childInstanceRegionId, final java.lang.Object childInstanceType, final java.lang.Object childInstanceOwnerId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
-            this.childInstanceId = java.util.Objects.requireNonNull(childInstanceId, "childInstanceId is required");
-            this.childInstanceRegionId = java.util.Objects.requireNonNull(childInstanceRegionId, "childInstanceRegionId is required");
-            this.childInstanceType = java.util.Objects.requireNonNull(childInstanceType, "childInstanceType is required");
-            this.childInstanceOwnerId = childInstanceOwnerId;
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
+            this.childInstanceId = java.util.Objects.requireNonNull(builder.childInstanceId, "childInstanceId is required");
+            this.childInstanceRegionId = java.util.Objects.requireNonNull(builder.childInstanceRegionId, "childInstanceRegionId is required");
+            this.childInstanceType = java.util.Objects.requireNonNull(builder.childInstanceType, "childInstanceType is required");
+            this.childInstanceOwnerId = builder.childInstanceOwnerId;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::MachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.140Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.880Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosMachineGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosMachineGroupProps.Jsii$Proxy.class)
 public interface RosMachineGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,12 +54,12 @@ public interface RosMachineGroupProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosMachineGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMachineGroupProps> {
-        private java.lang.Object groupAttribute;
-        private java.lang.Object groupName;
-        private java.lang.Object groupType;
-        private java.lang.Object machineIdentifyType;
-        private java.lang.Object machineList;
-        private java.lang.Object projectName;
+        java.lang.Object groupAttribute;
+        java.lang.Object groupName;
+        java.lang.Object groupType;
+        java.lang.Object machineIdentifyType;
+        java.lang.Object machineList;
+        java.lang.Object projectName;
 
         /**
          * Sets the value of {@link RosMachineGroupProps#getGroupAttribute}
@@ -188,7 +188,7 @@ public interface RosMachineGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RosMachineGroupProps build() {
-            return new Jsii$Proxy(groupAttribute, groupName, groupType, machineIdentifyType, machineList, projectName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -221,14 +221,14 @@ public interface RosMachineGroupProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object groupAttribute, final java.lang.Object groupName, final java.lang.Object groupType, final java.lang.Object machineIdentifyType, final java.lang.Object machineList, final java.lang.Object projectName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.groupAttribute = groupAttribute;
-            this.groupName = groupName;
-            this.groupType = groupType;
-            this.machineIdentifyType = machineIdentifyType;
-            this.machineList = machineList;
-            this.projectName = projectName;
+            this.groupAttribute = builder.groupAttribute;
+            this.groupName = builder.groupName;
+            this.groupType = builder.groupType;
+            this.machineIdentifyType = builder.machineIdentifyType;
+            this.machineList = builder.machineList;
+            this.projectName = builder.projectName;
         }
 
         @Override

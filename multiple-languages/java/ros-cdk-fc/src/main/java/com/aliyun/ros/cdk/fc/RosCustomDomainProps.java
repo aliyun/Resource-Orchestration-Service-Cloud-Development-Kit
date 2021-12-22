@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.476Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.048Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosCustomDomainProps")
 @software.amazon.jsii.Jsii.Proxy(RosCustomDomainProps.Jsii$Proxy.class)
 public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,11 +44,11 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosCustomDomainProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCustomDomainProps> {
-        private java.lang.Object domainName;
-        private java.lang.Object protocol;
-        private java.lang.Object apiVersion;
-        private java.lang.Object certConfig;
-        private java.lang.Object routeConfig;
+        java.lang.Object domainName;
+        java.lang.Object protocol;
+        java.lang.Object apiVersion;
+        java.lang.Object certConfig;
+        java.lang.Object routeConfig;
 
         /**
          * Sets the value of {@link RosCustomDomainProps#getDomainName}
@@ -157,7 +157,7 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RosCustomDomainProps build() {
-            return new Jsii$Proxy(domainName, protocol, apiVersion, certConfig, routeConfig);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -188,13 +188,13 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object protocol, final java.lang.Object apiVersion, final java.lang.Object certConfig, final java.lang.Object routeConfig) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
-            this.protocol = java.util.Objects.requireNonNull(protocol, "protocol is required");
-            this.apiVersion = apiVersion;
-            this.certConfig = certConfig;
-            this.routeConfig = routeConfig;
+            this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
+            this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
+            this.apiVersion = builder.apiVersion;
+            this.certConfig = builder.certConfig;
+            this.routeConfig = builder.routeConfig;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::Audit`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.136Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.855Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAuditProps")
 @software.amazon.jsii.Jsii.Proxy(RosAuditProps.Jsii$Proxy.class)
 public interface RosAuditProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,9 +32,9 @@ public interface RosAuditProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosAuditProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAuditProps> {
-        private java.lang.Object displayName;
-        private java.lang.Object variableMap;
-        private java.lang.Object multiAccount;
+        java.lang.Object displayName;
+        java.lang.Object variableMap;
+        java.lang.Object multiAccount;
 
         /**
          * Sets the value of {@link RosAuditProps#getDisplayName}
@@ -103,7 +103,7 @@ public interface RosAuditProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosAuditProps build() {
-            return new Jsii$Proxy(displayName, variableMap, multiAccount);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -130,11 +130,11 @@ public interface RosAuditProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object displayName, final java.lang.Object variableMap, final java.lang.Object multiAccount) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.displayName = java.util.Objects.requireNonNull(displayName, "displayName is required");
-            this.variableMap = java.util.Objects.requireNonNull(variableMap, "variableMap is required");
-            this.multiAccount = multiAccount;
+            this.displayName = java.util.Objects.requireNonNull(builder.displayName, "displayName is required");
+            this.variableMap = java.util.Objects.requireNonNull(builder.variableMap, "variableMap is required");
+            this.multiAccount = builder.multiAccount;
         }
 
         @Override

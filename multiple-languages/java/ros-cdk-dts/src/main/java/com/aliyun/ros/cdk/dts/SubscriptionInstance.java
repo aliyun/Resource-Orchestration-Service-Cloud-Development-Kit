@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS resource type:  `ALIYUN::DTS::SubscriptionInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.434Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SubscriptionInstance")
 public class SubscriptionInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -146,27 +146,120 @@ public class SubscriptionInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle.
+         * Property payType: Payment type.
          * <p>
-         * Default: MySQL.
+         * Valid value:
+         * PostPaid: Pay-as-you-go, which is default value.
+         * PrePaid: subscription.
          * <p>
          * @return {@code this}
-         * @param sourceEndpointInstanceType Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle. This parameter is required.
+         * @param payType Property payType: Payment type. This parameter is required.
+         */
+        public Builder payType(final java.lang.String payType) {
+            this.props().payType(payType);
+            return this;
+        }
+        /**
+         * Property payType: Payment type.
+         * <p>
+         * Valid value:
+         * PostPaid: Pay-as-you-go, which is default value.
+         * PrePaid: subscription.
+         * <p>
+         * @return {@code this}
+         * @param payType Property payType: Payment type. This parameter is required.
+         */
+        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.props().payType(payType);
+            return this;
+        }
+
+        /**
+         * Property period: The unit of the subscription length.
+         * <p>
+         * Valid values: Year and Month.
+         * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The unit of the subscription length. This parameter is required.
+         */
+        public Builder period(final java.lang.String period) {
+            this.props().period(period);
+            return this;
+        }
+        /**
+         * Property period: The unit of the subscription length.
+         * <p>
+         * Valid values: Year and Month.
+         * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The unit of the subscription length. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props().period(period);
+            return this;
+        }
+
+        /**
+         * Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database.
+         * <p>
+         * PolarDB: PolarDB for MySQL cluster.
+         * polardb_o: PolarDB O Edition cluster.
+         * polardb_pg: PolarDB for PostgreSQL cluster.
+         * DRDS: PolarDB-X instance V1.0 or V2.0.
+         * PostgreSQL: self-managed PostgreSQL database.
+         * Oracle: self-managed Oracle database.
+         * <p>
+         * @return {@code this}
+         * @param sourceEndpointInstanceType Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database. This parameter is required.
          */
         public Builder sourceEndpointInstanceType(final java.lang.String sourceEndpointInstanceType) {
             this.props().sourceEndpointInstanceType(sourceEndpointInstanceType);
             return this;
         }
         /**
-         * Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle.
+         * Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database.
          * <p>
-         * Default: MySQL.
+         * PolarDB: PolarDB for MySQL cluster.
+         * polardb_o: PolarDB O Edition cluster.
+         * polardb_pg: PolarDB for PostgreSQL cluster.
+         * DRDS: PolarDB-X instance V1.0 or V2.0.
+         * PostgreSQL: self-managed PostgreSQL database.
+         * Oracle: self-managed Oracle database.
          * <p>
          * @return {@code this}
-         * @param sourceEndpointInstanceType Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle. This parameter is required.
+         * @param sourceEndpointInstanceType Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database. This parameter is required.
          */
         public Builder sourceEndpointInstanceType(final com.aliyun.ros.cdk.core.IResolvable sourceEndpointInstanceType) {
             this.props().sourceEndpointInstanceType(sourceEndpointInstanceType);
+            return this;
+        }
+
+        /**
+         * Property usedTime: The subscription length.
+         * <p>
+         * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+         * You can set the Period parameter to specify the unit of the subscription length.
+         * <p>
+         * @return {@code this}
+         * @param usedTime Property usedTime: The subscription length. This parameter is required.
+         */
+        public Builder usedTime(final java.lang.Number usedTime) {
+            this.props().usedTime(usedTime);
+            return this;
+        }
+        /**
+         * Property usedTime: The subscription length.
+         * <p>
+         * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+         * You can set the Period parameter to specify the unit of the subscription length.
+         * <p>
+         * @return {@code this}
+         * @param usedTime Property usedTime: The subscription length. This parameter is required.
+         */
+        public Builder usedTime(final com.aliyun.ros.cdk.core.IResolvable usedTime) {
+            this.props().usedTime(usedTime);
             return this;
         }
 

@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-adb.DBCluster=com.aliyun.ros.cdk.adb.DBCluster
+@alicloud/ros-cdk-adb.DBClusterProps=com.aliyun.ros.cdk.adb.DBClusterProps
+@alicloud/ros-cdk-adb.RosDBCluster=com.aliyun.ros.cdk.adb.RosDBCluster
+@alicloud/ros-cdk-adb.RosDBClusterProps=com.aliyun.ros.cdk.adb.RosDBClusterProps

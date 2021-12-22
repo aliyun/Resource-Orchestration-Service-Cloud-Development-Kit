@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.879Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackageProps.Jsii$Proxy.class)
 public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -111,17 +111,17 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link CenBandwidthPackageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CenBandwidthPackageProps> {
-        private java.lang.Object bandwidth;
-        private java.lang.Object geographicRegionAId;
-        private java.lang.Object geographicRegionBId;
-        private java.lang.Object autoPay;
-        private java.lang.Object autoRenew;
-        private java.lang.Object autoRenewDuration;
-        private java.lang.Object bandwidthPackageChargeType;
-        private java.lang.Object description;
-        private java.lang.Object name;
-        private java.lang.Object period;
-        private java.lang.Object pricingCycle;
+        java.lang.Object bandwidth;
+        java.lang.Object geographicRegionAId;
+        java.lang.Object geographicRegionBId;
+        java.lang.Object autoPay;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewDuration;
+        java.lang.Object bandwidthPackageChargeType;
+        java.lang.Object description;
+        java.lang.Object name;
+        java.lang.Object period;
+        java.lang.Object pricingCycle;
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getBandwidth}
@@ -374,7 +374,7 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public CenBandwidthPackageProps build() {
-            return new Jsii$Proxy(bandwidth, geographicRegionAId, geographicRegionBId, autoPay, autoRenew, autoRenewDuration, bandwidthPackageChargeType, description, name, period, pricingCycle);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -417,19 +417,19 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object geographicRegionAId, final java.lang.Object geographicRegionBId, final java.lang.Object autoPay, final java.lang.Object autoRenew, final java.lang.Object autoRenewDuration, final java.lang.Object bandwidthPackageChargeType, final java.lang.Object description, final java.lang.Object name, final java.lang.Object period, final java.lang.Object pricingCycle) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
-            this.geographicRegionAId = java.util.Objects.requireNonNull(geographicRegionAId, "geographicRegionAId is required");
-            this.geographicRegionBId = java.util.Objects.requireNonNull(geographicRegionBId, "geographicRegionBId is required");
-            this.autoPay = autoPay;
-            this.autoRenew = autoRenew;
-            this.autoRenewDuration = autoRenewDuration;
-            this.bandwidthPackageChargeType = bandwidthPackageChargeType;
-            this.description = description;
-            this.name = name;
-            this.period = period;
-            this.pricingCycle = pricingCycle;
+            this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
+            this.geographicRegionAId = java.util.Objects.requireNonNull(builder.geographicRegionAId, "geographicRegionAId is required");
+            this.geographicRegionBId = java.util.Objects.requireNonNull(builder.geographicRegionBId, "geographicRegionBId is required");
+            this.autoPay = builder.autoPay;
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewDuration = builder.autoRenewDuration;
+            this.bandwidthPackageChargeType = builder.bandwidthPackageChargeType;
+            this.description = builder.description;
+            this.name = builder.name;
+            this.period = builder.period;
+            this.pricingCycle = builder.pricingCycle;
         }
 
         @Override

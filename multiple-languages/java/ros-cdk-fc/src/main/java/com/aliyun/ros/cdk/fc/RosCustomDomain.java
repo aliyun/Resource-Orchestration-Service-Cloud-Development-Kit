@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.465Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.047Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosCustomDomain")
 public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -190,9 +190,9 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CertConfigProperty> {
-            private java.lang.Object certificate;
-            private java.lang.Object certName;
-            private java.lang.Object privateKey;
+            java.lang.Object certificate;
+            java.lang.Object certName;
+            java.lang.Object privateKey;
 
             /**
              * Sets the value of {@link CertConfigProperty#getCertificate}
@@ -268,7 +268,7 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CertConfigProperty build() {
-                return new Jsii$Proxy(certificate, certName, privateKey);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -296,11 +296,11 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object certificate, final java.lang.Object certName, final java.lang.Object privateKey) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.certificate = java.util.Objects.requireNonNull(certificate, "certificate is required");
-                this.certName = java.util.Objects.requireNonNull(certName, "certName is required");
-                this.privateKey = java.util.Objects.requireNonNull(privateKey, "privateKey is required");
+                this.certificate = java.util.Objects.requireNonNull(builder.certificate, "certificate is required");
+                this.certName = java.util.Objects.requireNonNull(builder.certName, "certName is required");
+                this.privateKey = java.util.Objects.requireNonNull(builder.privateKey, "privateKey is required");
             }
 
             @Override
@@ -383,7 +383,7 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RouteConfigProperty> {
-            private java.lang.Object routes;
+            java.lang.Object routes;
 
             /**
              * Sets the value of {@link RouteConfigProperty#getRoutes}
@@ -415,7 +415,7 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RouteConfigProperty build() {
-                return new Jsii$Proxy(routes);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -439,9 +439,9 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object routes) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.routes = java.util.Objects.requireNonNull(routes, "routes is required");
+                this.routes = java.util.Objects.requireNonNull(builder.routes, "routes is required");
             }
 
             @Override
@@ -525,10 +525,10 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RoutesProperty> {
-            private java.lang.Object functionName;
-            private java.lang.Object path;
-            private java.lang.Object serviceName;
-            private java.lang.Object qualifier;
+            java.lang.Object functionName;
+            java.lang.Object path;
+            java.lang.Object serviceName;
+            java.lang.Object qualifier;
 
             /**
              * Sets the value of {@link RoutesProperty#getFunctionName}
@@ -626,7 +626,7 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RoutesProperty build() {
-                return new Jsii$Proxy(functionName, path, serviceName, qualifier);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -656,12 +656,12 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object path, final java.lang.Object serviceName, final java.lang.Object qualifier) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
-                this.path = java.util.Objects.requireNonNull(path, "path is required");
-                this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
-                this.qualifier = qualifier;
+                this.functionName = java.util.Objects.requireNonNull(builder.functionName, "functionName is required");
+                this.path = java.util.Objects.requireNonNull(builder.path, "path is required");
+                this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+                this.qualifier = builder.qualifier;
             }
 
             @Override

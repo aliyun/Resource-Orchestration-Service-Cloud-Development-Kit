@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::Disk`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.084Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDisk")
 public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -101,6 +101,24 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAutoSnapshotPolicyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "autoSnapshotPolicyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBurstingEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "burstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBurstingEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "burstingEnabled", value);
+    }
+
+    /**
+     */
+    public void setBurstingEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "burstingEnabled", value);
     }
 
     /**
@@ -227,6 +245,24 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPerformanceLevel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "performanceLevel", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
+        return software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProvisionedIops(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "provisionedIops", value);
+    }
+
+    /**
+     */
+    public void setProvisionedIops(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "provisionedIops", value);
     }
 
     /**
@@ -361,8 +397,8 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -416,7 +452,7 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -442,10 +478,10 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -556,6 +592,23 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder autoSnapshotPolicyId(final com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyId) {
             this.props.autoSnapshotPolicyId(autoSnapshotPolicyId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param burstingEnabled This parameter is required.
+         */
+        public Builder burstingEnabled(final java.lang.Boolean burstingEnabled) {
+            this.props.burstingEnabled(burstingEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param burstingEnabled This parameter is required.
+         */
+        public Builder burstingEnabled(final com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
+            this.props.burstingEnabled(burstingEnabled);
             return this;
         }
 
@@ -675,6 +728,23 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder performanceLevel(final com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
             this.props.performanceLevel(performanceLevel);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param provisionedIops This parameter is required.
+         */
+        public Builder provisionedIops(final java.lang.Number provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param provisionedIops This parameter is required.
+         */
+        public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
             return this;
         }
 

@@ -24,6 +24,16 @@ export interface ZoneProps {
      * Property remark: 50 characters at most. It can only contain numbers, Chinese, English and special characters: "_-,.，。".
      */
     readonly remark?: string | ros.IResolvable;
+
+    /**
+     * Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
+     */
+    readonly zoneTag?: string | ros.IResolvable;
+
+    /**
+     * Property zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+     */
+    readonly zoneType?: string | ros.IResolvable;
 }
 
 /**
@@ -37,14 +47,24 @@ export class Zone extends ros.Resource {
      */
 
     /**
-     * Attribute ZoneId: Zone ID
+     * Attribute ZoneId: Zone ID.
      */
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * Attribute ZoneName: Zone name
+     * Attribute ZoneName: Zone name.
      */
     public readonly attrZoneName: ros.IResolvable;
+
+    /**
+     * Attribute ZoneTag: Zone label.
+     */
+    public readonly attrZoneTag: ros.IResolvable;
+
+    /**
+     * Attribute ZoneType: Zone type.
+     */
+    public readonly attrZoneType: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::PVTZ::Zone`.
@@ -59,10 +79,14 @@ export class Zone extends ros.Resource {
         const rosZone = new RosZone(this, id,  {
             zoneName: props.zoneName,
             proxyPattern: props.proxyPattern === undefined || props.proxyPattern === null ? 'ZONE' : props.proxyPattern,
+            zoneTag: props.zoneTag,
+            zoneType: props.zoneType,
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZone;
         this.attrZoneId = rosZone.attrZoneId;
         this.attrZoneName = rosZone.attrZoneName;
+        this.attrZoneTag = rosZone.attrZoneTag;
+        this.attrZoneType = rosZone.attrZoneType;
     }
 }

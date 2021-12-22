@@ -94,6 +94,36 @@ export class ServerlessKubernetesCluster extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
+     * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: ros.IResolvable;
@@ -130,6 +160,12 @@ export class ServerlessKubernetesCluster extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServerlessKubernetesCluster;
         this.attrClusterId = rosServerlessKubernetesCluster.attrClusterId;
+        this.attrDefaultUserKubeConfig = rosServerlessKubernetesCluster.attrDefaultUserKubeConfig;
+        this.attrNodes = rosServerlessKubernetesCluster.attrNodes;
+        this.attrPrivateUserKubConfig = rosServerlessKubernetesCluster.attrPrivateUserKubConfig;
+        this.attrScalingConfigurationId = rosServerlessKubernetesCluster.attrScalingConfigurationId;
+        this.attrScalingGroupId = rosServerlessKubernetesCluster.attrScalingGroupId;
+        this.attrScalingRuleId = rosServerlessKubernetesCluster.attrScalingRuleId;
         this.attrTaskId = rosServerlessKubernetesCluster.attrTaskId;
         this.attrWorkerRamRoleName = rosServerlessKubernetesCluster.attrWorkerRamRoleName;
     }

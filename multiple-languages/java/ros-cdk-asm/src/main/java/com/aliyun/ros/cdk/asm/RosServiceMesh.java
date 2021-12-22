@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.asm;
 /**
  * A ROS template type:  `ALIYUN::ASM::ServiceMesh`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.353Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.asm.$Module.class, fqn = "@alicloud/ros-cdk-asm.RosServiceMesh")
 public class RosServiceMesh extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -427,12 +427,12 @@ public class RosServiceMesh extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<OPAProperty> {
-            private java.lang.Object opaLimitCpu;
-            private java.lang.Object opaLimitMemory;
-            private java.lang.Object opaLogLevel;
-            private java.lang.Object opaRequestCpu;
-            private java.lang.Object opaRequestMemory;
-            private java.lang.Object openAgentPolicy;
+            java.lang.Object opaLimitCpu;
+            java.lang.Object opaLimitMemory;
+            java.lang.Object opaLogLevel;
+            java.lang.Object opaRequestCpu;
+            java.lang.Object opaRequestMemory;
+            java.lang.Object openAgentPolicy;
 
             /**
              * Sets the value of {@link OPAProperty#getOpaLimitCpu}
@@ -574,7 +574,7 @@ public class RosServiceMesh extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public OPAProperty build() {
-                return new Jsii$Proxy(opaLimitCpu, opaLimitMemory, opaLogLevel, opaRequestCpu, opaRequestMemory, openAgentPolicy);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -608,14 +608,14 @@ public class RosServiceMesh extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object opaLimitCpu, final java.lang.Object opaLimitMemory, final java.lang.Object opaLogLevel, final java.lang.Object opaRequestCpu, final java.lang.Object opaRequestMemory, final java.lang.Object openAgentPolicy) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.opaLimitCpu = opaLimitCpu;
-                this.opaLimitMemory = opaLimitMemory;
-                this.opaLogLevel = opaLogLevel;
-                this.opaRequestCpu = opaRequestCpu;
-                this.opaRequestMemory = opaRequestMemory;
-                this.openAgentPolicy = openAgentPolicy;
+                this.opaLimitCpu = builder.opaLimitCpu;
+                this.opaLimitMemory = builder.opaLimitMemory;
+                this.opaLogLevel = builder.opaLogLevel;
+                this.opaRequestCpu = builder.opaRequestCpu;
+                this.opaRequestMemory = builder.opaRequestMemory;
+                this.openAgentPolicy = builder.openAgentPolicy;
             }
 
             @Override
@@ -764,11 +764,11 @@ public class RosServiceMesh extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ProxyProperty> {
-            private java.lang.Object clusterDomain;
-            private java.lang.Object proxyLimitCpu;
-            private java.lang.Object proxyLimitMemory;
-            private java.lang.Object proxyRequestCpu;
-            private java.lang.Object proxyRequestMemory;
+            java.lang.Object clusterDomain;
+            java.lang.Object proxyLimitCpu;
+            java.lang.Object proxyLimitMemory;
+            java.lang.Object proxyRequestCpu;
+            java.lang.Object proxyRequestMemory;
 
             /**
              * Sets the value of {@link ProxyProperty#getClusterDomain}
@@ -888,7 +888,7 @@ public class RosServiceMesh extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ProxyProperty build() {
-                return new Jsii$Proxy(clusterDomain, proxyLimitCpu, proxyLimitMemory, proxyRequestCpu, proxyRequestMemory);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -920,13 +920,13 @@ public class RosServiceMesh extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object clusterDomain, final java.lang.Object proxyLimitCpu, final java.lang.Object proxyLimitMemory, final java.lang.Object proxyRequestCpu, final java.lang.Object proxyRequestMemory) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.clusterDomain = clusterDomain;
-                this.proxyLimitCpu = proxyLimitCpu;
-                this.proxyLimitMemory = proxyLimitMemory;
-                this.proxyRequestCpu = proxyRequestCpu;
-                this.proxyRequestMemory = proxyRequestMemory;
+                this.clusterDomain = builder.clusterDomain;
+                this.proxyLimitCpu = builder.proxyLimitCpu;
+                this.proxyLimitMemory = builder.proxyLimitMemory;
+                this.proxyRequestCpu = builder.proxyRequestCpu;
+                this.proxyRequestMemory = builder.proxyRequestMemory;
             }
 
             @Override

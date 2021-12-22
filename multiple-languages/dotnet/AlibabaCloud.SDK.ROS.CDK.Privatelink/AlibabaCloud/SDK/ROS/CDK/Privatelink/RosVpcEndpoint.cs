@@ -107,6 +107,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <remarks>
+        /// <strong>Attribute</strong>: ZoneDomains: The zone domains.
+        /// </remarks>
+        [JsiiProperty(name: "attrZoneDomains", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneDomains
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {

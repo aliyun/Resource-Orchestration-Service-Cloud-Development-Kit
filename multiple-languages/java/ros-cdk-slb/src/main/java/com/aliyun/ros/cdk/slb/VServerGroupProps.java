@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::VServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.108Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.813Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.VServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(VServerGroupProps.Jsii$Proxy.class)
 public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,9 +35,9 @@ public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link VServerGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VServerGroupProps> {
-        private java.lang.Object loadBalancerId;
-        private java.lang.Object vServerGroupName;
-        private java.lang.Object backendServers;
+        java.lang.Object loadBalancerId;
+        java.lang.Object vServerGroupName;
+        java.lang.Object backendServers;
 
         /**
          * Sets the value of {@link VServerGroupProps#getLoadBalancerId}
@@ -106,7 +106,7 @@ public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public VServerGroupProps build() {
-            return new Jsii$Proxy(loadBalancerId, vServerGroupName, backendServers);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -133,11 +133,11 @@ public interface VServerGroupProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object loadBalancerId, final java.lang.Object vServerGroupName, final java.lang.Object backendServers) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
-            this.vServerGroupName = java.util.Objects.requireNonNull(vServerGroupName, "vServerGroupName is required");
-            this.backendServers = backendServers;
+            this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
+            this.vServerGroupName = java.util.Objects.requireNonNull(builder.vServerGroupName, "vServerGroupName is required");
+            this.backendServers = builder.backendServers;
         }
 
         @Override

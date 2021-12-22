@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.937Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PeeringRouterInterfaceBindingProps")
 @software.amazon.jsii.Jsii.Proxy(PeeringRouterInterfaceBindingProps.Jsii$Proxy.class)
 public interface PeeringRouterInterfaceBindingProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,10 +42,10 @@ public interface PeeringRouterInterfaceBindingProps extends software.amazon.jsii
      * A builder for {@link PeeringRouterInterfaceBindingProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<PeeringRouterInterfaceBindingProps> {
-        private java.lang.Object oppositeInterfaceId;
-        private java.lang.Object routerInterfaceId;
-        private java.lang.Object oppositeInterfaceOwnerId;
-        private java.lang.Object oppositeRouterId;
+        java.lang.Object oppositeInterfaceId;
+        java.lang.Object routerInterfaceId;
+        java.lang.Object oppositeInterfaceOwnerId;
+        java.lang.Object oppositeRouterId;
 
         /**
          * Sets the value of {@link PeeringRouterInterfaceBindingProps#getOppositeInterfaceId}
@@ -134,7 +134,7 @@ public interface PeeringRouterInterfaceBindingProps extends software.amazon.jsii
          */
         @Override
         public PeeringRouterInterfaceBindingProps build() {
-            return new Jsii$Proxy(oppositeInterfaceId, routerInterfaceId, oppositeInterfaceOwnerId, oppositeRouterId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -163,12 +163,12 @@ public interface PeeringRouterInterfaceBindingProps extends software.amazon.jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object oppositeInterfaceId, final java.lang.Object routerInterfaceId, final java.lang.Object oppositeInterfaceOwnerId, final java.lang.Object oppositeRouterId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.oppositeInterfaceId = java.util.Objects.requireNonNull(oppositeInterfaceId, "oppositeInterfaceId is required");
-            this.routerInterfaceId = java.util.Objects.requireNonNull(routerInterfaceId, "routerInterfaceId is required");
-            this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
-            this.oppositeRouterId = oppositeRouterId;
+            this.oppositeInterfaceId = java.util.Objects.requireNonNull(builder.oppositeInterfaceId, "oppositeInterfaceId is required");
+            this.routerInterfaceId = java.util.Objects.requireNonNull(builder.routerInterfaceId, "routerInterfaceId is required");
+            this.oppositeInterfaceOwnerId = builder.oppositeInterfaceOwnerId;
+            this.oppositeRouterId = builder.oppositeRouterId;
         }
 
         @Override

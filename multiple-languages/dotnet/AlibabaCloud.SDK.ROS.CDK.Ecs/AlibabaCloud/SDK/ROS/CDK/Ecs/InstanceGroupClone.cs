@@ -32,16 +32,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         {
         }
 
-        /// <summary>Attribute HostNames: Host names of created instance.</summary>
+        /// <summary>Attribute HostNames: Host names of created instances.</summary>
         [JsiiProperty(name: "attrHostNames", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHostNames
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute InnerIps: Inner IP address list of the specified instance.</summary>
+        /// <summary>Attribute InnerIps: Inner IP address list of the specified instances.</summary>
         /// <remarks>
-        /// Only for classical instance.
+        /// Only for classical instances.
         /// </remarks>
         [JsiiProperty(name: "attrInnerIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInnerIps
@@ -49,9 +49,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute InstanceIds: The instance id list of created ecs instance.</summary>
+        /// <summary>Attribute InstanceIds: The instance id list of created ecs instances.</summary>
         [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceIds
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances.</summary>
+        /// <remarks>
+        /// Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+        /// </remarks>
+        [JsiiProperty(name: "attrIpv6Addresses", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpv6Addresses
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances.</summary>
+        /// <remarks>
+        /// Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+        /// </remarks>
+        [JsiiProperty(name: "attrIpv6AddressIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpv6AddressIds
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -63,7 +83,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute PrivateIps: Private IP address list of created ecs instance.</summary>
+        /// <summary>Attribute PrivateIps: Private IP address list of created ecs instances.</summary>
         /// <remarks>
         /// Only for VPC instance.
         /// </remarks>
@@ -73,14 +93,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute PublicIps: Public IP address list of created ecs instance.</summary>
+        /// <summary>Attribute PublicIps: Public IP address list of created ecs instances.</summary>
         [JsiiProperty(name: "attrPublicIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicIps
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute ZoneIds: Zone id of created instance.</summary>
+        /// <summary>Attribute ZoneIds: Zone id of created instances.</summary>
         [JsiiProperty(name: "attrZoneIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneIds
         {

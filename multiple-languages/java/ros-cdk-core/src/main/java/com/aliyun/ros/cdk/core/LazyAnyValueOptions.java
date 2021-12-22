@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options for creating lazy untyped tokens.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.663Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.506Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.LazyAnyValueOptions")
 @software.amazon.jsii.Jsii.Proxy(LazyAnyValueOptions.Jsii$Proxy.class)
 public interface LazyAnyValueOptions extends software.amazon.jsii.JsiiSerializable {
@@ -36,8 +36,8 @@ public interface LazyAnyValueOptions extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link LazyAnyValueOptions}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LazyAnyValueOptions> {
-        private java.lang.String displayHint;
-        private java.lang.Boolean omitEmptyArray;
+        java.lang.String displayHint;
+        java.lang.Boolean omitEmptyArray;
 
         /**
          * Sets the value of {@link LazyAnyValueOptions#getDisplayHint}
@@ -66,7 +66,7 @@ public interface LazyAnyValueOptions extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public LazyAnyValueOptions build() {
-            return new Jsii$Proxy(displayHint, omitEmptyArray);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -91,10 +91,10 @@ public interface LazyAnyValueOptions extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String displayHint, final java.lang.Boolean omitEmptyArray) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.displayHint = displayHint;
-            this.omitEmptyArray = omitEmptyArray;
+            this.displayHint = builder.displayHint;
+            this.omitEmptyArray = builder.omitEmptyArray;
         }
 
         @Override

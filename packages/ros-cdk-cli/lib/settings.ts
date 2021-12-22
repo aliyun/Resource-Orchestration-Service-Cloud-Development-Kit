@@ -41,8 +41,8 @@ export class Configuration {
 
   constructor(commandLineArguments?: Arguments) {
     this.commandLineArguments = commandLineArguments
-        ? Settings.fromCommandLineArguments(commandLineArguments)
-        : new Settings();
+      ? Settings.fromCommandLineArguments(commandLineArguments)
+      : new Settings();
     this.commandLineContext = this.commandLineArguments.subSettings([CONTEXT_KEY]).makeReadOnly();
   }
 
@@ -69,17 +69,17 @@ export class Configuration {
     this._projectContext = await loadAndLog(PROJECT_CONTEXT);
 
     this.context = new Context(
-        this.commandLineContext,
-        this.projectConfig.subSettings([CONTEXT_KEY]).makeReadOnly(),
-        this.projectContext,
+      this.commandLineContext,
+      this.projectConfig.subSettings([CONTEXT_KEY]).makeReadOnly(),
+      this.projectContext,
     );
 
     // Build settings from what's left
     this.settings = this.defaultConfig
-        .merge(userConfig)
-        .merge(this.projectConfig)
-        .merge(this.commandLineArguments)
-        .makeReadOnly();
+      .merge(userConfig)
+      .merge(this.projectConfig)
+      .merge(this.commandLineArguments)
+      .makeReadOnly();
 
     debug('merged settings:', this.settings.all);
 
@@ -230,7 +230,7 @@ export class Settings {
         debug('CLI argument context: %s=%s', parts[0], parts[1]);
         if (parts[0].match(/^aliyun:.+/)) {
           throw new Error(
-              `User-provided context cannot use keys prefixed with 'aliyun:', but ${parts[0]} was provided.`,
+            `User-provided context cannot use keys prefixed with 'aliyun:', but ${parts[0]} was provided.`,
           );
         }
         context[parts[0]] = parts[1];

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.771Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.423Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterEndpointProps.Jsii$Proxy.class)
 public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSerializable {
@@ -71,12 +71,12 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link DBClusterEndpointProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBClusterEndpointProps> {
-        private java.lang.Object dbClusterId;
-        private java.lang.Object autoAddNewNodes;
-        private java.lang.Object endpointConfig;
-        private java.lang.Object endpointType;
-        private java.lang.Object nodes;
-        private java.lang.Object readWriteMode;
+        java.lang.Object dbClusterId;
+        java.lang.Object autoAddNewNodes;
+        java.lang.Object endpointConfig;
+        java.lang.Object endpointType;
+        java.lang.Object nodes;
+        java.lang.Object readWriteMode;
 
         /**
          * Sets the value of {@link DBClusterEndpointProps#getDbClusterId}
@@ -223,7 +223,7 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public DBClusterEndpointProps build() {
-            return new Jsii$Proxy(dbClusterId, autoAddNewNodes, endpointConfig, endpointType, nodes, readWriteMode);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -256,14 +256,14 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object dbClusterId, final java.lang.Object autoAddNewNodes, final java.lang.Object endpointConfig, final java.lang.Object endpointType, final java.lang.Object nodes, final java.lang.Object readWriteMode) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
-            this.autoAddNewNodes = autoAddNewNodes;
-            this.endpointConfig = endpointConfig;
-            this.endpointType = endpointType;
-            this.nodes = nodes;
-            this.readWriteMode = readWriteMode;
+            this.dbClusterId = java.util.Objects.requireNonNull(builder.dbClusterId, "dbClusterId is required");
+            this.autoAddNewNodes = builder.autoAddNewNodes;
+            this.endpointConfig = builder.endpointConfig;
+            this.endpointType = builder.endpointType;
+            this.nodes = builder.nodes;
+            this.readWriteMode = builder.readWriteMode;
         }
 
         @Override

@@ -40,6 +40,11 @@ export interface VSwitchProps {
     readonly tags?: RosVSwitch.TagsProperty[];
 
     /**
+     * Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
+     */
+    readonly vpcIpv6CidrBlock?: string | ros.IResolvable;
+
+    /**
      * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly vSwitchName?: string | ros.IResolvable;
@@ -86,6 +91,7 @@ export class VSwitch extends ros.Resource {
             zoneId: props.zoneId,
             cidrBlock: props.cidrBlock,
             vSwitchName: props.vSwitchName,
+            vpcIpv6CidrBlock: props.vpcIpv6CidrBlock,
             ipv6CidrBlock: props.ipv6CidrBlock,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

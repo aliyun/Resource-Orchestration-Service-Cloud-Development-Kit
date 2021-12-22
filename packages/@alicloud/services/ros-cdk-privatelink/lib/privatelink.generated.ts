@@ -169,6 +169,11 @@ export class RosVpcEndpoint extends ros.RosResource {
      */
     public readonly attrVpcId: ros.IResolvable;
 
+    /**
+     * @Attribute ZoneDomains: The zone domains.
+     */
+    public readonly attrZoneDomains: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -226,6 +231,7 @@ export class RosVpcEndpoint extends ros.RosResource {
         this.attrServiceId = this.getAtt('ServiceId');
         this.attrServiceName = this.getAtt('ServiceName');
         this.attrVpcId = this.getAtt('VpcId');
+        this.attrZoneDomains = this.getAtt('ZoneDomains');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.securityGroupId = props.securityGroupId;
@@ -321,6 +327,13 @@ export interface RosVpcEndpointServiceProps {
     readonly connectBandwidth?: number | ros.IResolvable;
 
     /**
+     * @Property payer: The payer of the endpoint service. Valid values: 
+     * Endpoint: the service consumer. 
+     * EndpointService: the service provider.
+     */
+    readonly payer?: string | ros.IResolvable;
+
+    /**
      * @Property resource:
      */
     readonly resource?: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable;
@@ -334,6 +347,13 @@ export interface RosVpcEndpointServiceProps {
      * @Property user: Account IDs to the whitelist of an endpoint service.
      */
     readonly user?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.
+     * true: yes. 
+     * false (default): no
+     */
+    readonly zoneAffinityEnabled?: boolean | ros.IResolvable;
 }
 
 /**
@@ -346,6 +366,13 @@ export interface RosVpcEndpointServiceProps {
 function RosVpcEndpointServicePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.payer && (typeof properties.payer) !== 'object') {
+        errors.collect(ros.propertyValidator('payer', ros.validateAllowedValues)({
+          data: properties.payer,
+          allowedValues: ["Endpoint","EndpointService"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payer', ros.validateString)(properties.payer));
     if(properties.user && (Array.isArray(properties.user) || (typeof properties.user) === 'string')) {
         errors.collect(ros.propertyValidator('user', ros.validateLength)({
             data: properties.user.length,
@@ -378,6 +405,7 @@ function RosVpcEndpointServicePropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('connectBandwidth', ros.validateNumber)(properties.connectBandwidth));
+    errors.collect(ros.propertyValidator('zoneAffinityEnabled', ros.validateBoolean)(properties.zoneAffinityEnabled));
     errors.collect(ros.propertyValidator('autoAcceptEnabled', ros.validateBoolean)(properties.autoAcceptEnabled));
     return errors.wrap('supplied properties not correct for "RosVpcEndpointServiceProps"');
 }
@@ -398,9 +426,11 @@ function rosVpcEndpointServicePropsToRosTemplate(properties: any, enableResource
     return {
       AutoAcceptEnabled: ros.booleanToRosTemplate(properties.autoAcceptEnabled),
       ConnectBandwidth: ros.numberToRosTemplate(properties.connectBandwidth),
+      Payer: ros.stringToRosTemplate(properties.payer),
       Resource: ros.listMapper(rosVpcEndpointServiceResourcePropertyToRosTemplate)(properties.resource),
       ServiceDescription: ros.stringToRosTemplate(properties.serviceDescription),
       User: ros.listMapper(ros.stringToRosTemplate)(properties.user),
+      ZoneAffinityEnabled: ros.booleanToRosTemplate(properties.zoneAffinityEnabled),
     };
 }
 
@@ -464,6 +494,13 @@ export class RosVpcEndpointService extends ros.RosResource {
     public connectBandwidth: number | ros.IResolvable | undefined;
 
     /**
+     * @Property payer: The payer of the endpoint service. Valid values: 
+     * Endpoint: the service consumer. 
+     * EndpointService: the service provider.
+     */
+    public payer: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resource:
      */
     public resource: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -477,6 +514,13 @@ export class RosVpcEndpointService extends ros.RosResource {
      * @Property user: Account IDs to the whitelist of an endpoint service.
      */
     public user: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.
+     * true: yes. 
+     * false (default): no
+     */
+    public zoneAffinityEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::PrivateLink::VpcEndpointService`.
@@ -497,9 +541,11 @@ export class RosVpcEndpointService extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.autoAcceptEnabled = props.autoAcceptEnabled;
         this.connectBandwidth = props.connectBandwidth;
+        this.payer = props.payer;
         this.resource = props.resource;
         this.serviceDescription = props.serviceDescription;
         this.user = props.user;
+        this.zoneAffinityEnabled = props.zoneAffinityEnabled;
     }
 
 
@@ -507,9 +553,11 @@ export class RosVpcEndpointService extends ros.RosResource {
         return {
             autoAcceptEnabled: this.autoAcceptEnabled,
             connectBandwidth: this.connectBandwidth,
+            payer: this.payer,
             resource: this.resource,
             serviceDescription: this.serviceDescription,
             user: this.user,
+            zoneAffinityEnabled: this.zoneAffinityEnabled,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

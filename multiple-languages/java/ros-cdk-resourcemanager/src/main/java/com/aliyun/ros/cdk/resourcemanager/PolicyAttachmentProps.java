@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::PolicyAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.005Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.698Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.PolicyAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(PolicyAttachmentProps.Jsii$Proxy.class)
 public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -45,11 +45,11 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link PolicyAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<PolicyAttachmentProps> {
-        private java.lang.Object policyName;
-        private java.lang.Object policyType;
-        private java.lang.Object principalName;
-        private java.lang.Object principalType;
-        private java.lang.Object resourceGroupId;
+        java.lang.Object policyName;
+        java.lang.Object policyType;
+        java.lang.Object principalName;
+        java.lang.Object principalType;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link PolicyAttachmentProps#getPolicyName}
@@ -160,7 +160,7 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public PolicyAttachmentProps build() {
-            return new Jsii$Proxy(policyName, policyType, principalName, principalType, resourceGroupId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -191,13 +191,13 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object policyName, final java.lang.Object policyType, final java.lang.Object principalName, final java.lang.Object principalType, final java.lang.Object resourceGroupId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.policyName = java.util.Objects.requireNonNull(policyName, "policyName is required");
-            this.policyType = java.util.Objects.requireNonNull(policyType, "policyType is required");
-            this.principalName = java.util.Objects.requireNonNull(principalName, "principalName is required");
-            this.principalType = java.util.Objects.requireNonNull(principalType, "principalType is required");
-            this.resourceGroupId = java.util.Objects.requireNonNull(resourceGroupId, "resourceGroupId is required");
+            this.policyName = java.util.Objects.requireNonNull(builder.policyName, "policyName is required");
+            this.policyType = java.util.Objects.requireNonNull(builder.policyType, "policyType is required");
+            this.principalName = java.util.Objects.requireNonNull(builder.principalName, "principalName is required");
+            this.principalType = java.util.Objects.requireNonNull(builder.principalType, "principalType is required");
+            this.resourceGroupId = java.util.Objects.requireNonNull(builder.resourceGroupId, "resourceGroupId is required");
         }
 
         @Override

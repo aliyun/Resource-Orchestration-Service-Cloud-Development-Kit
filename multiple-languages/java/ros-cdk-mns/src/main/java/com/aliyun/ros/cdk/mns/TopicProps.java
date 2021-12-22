@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Properties for defining a `ALIYUN::MNS::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.660Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.322Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.TopicProps")
 @software.amazon.jsii.Jsii.Proxy(TopicProps.Jsii$Proxy.class)
 public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,9 +42,9 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link TopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TopicProps> {
-        private java.lang.Object topicName;
-        private java.lang.Object loggingEnabled;
-        private java.lang.Object maximumMessageSize;
+        java.lang.Object topicName;
+        java.lang.Object loggingEnabled;
+        java.lang.Object maximumMessageSize;
 
         /**
          * Sets the value of {@link TopicProps#getTopicName}
@@ -119,7 +119,7 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public TopicProps build() {
-            return new Jsii$Proxy(topicName, loggingEnabled, maximumMessageSize);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -146,11 +146,11 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object topicName, final java.lang.Object loggingEnabled, final java.lang.Object maximumMessageSize) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.topicName = java.util.Objects.requireNonNull(topicName, "topicName is required");
-            this.loggingEnabled = loggingEnabled;
-            this.maximumMessageSize = maximumMessageSize;
+            this.topicName = java.util.Objects.requireNonNull(builder.topicName, "topicName is required");
+            this.loggingEnabled = builder.loggingEnabled;
+            this.maximumMessageSize = builder.maximumMessageSize;
         }
 
         @Override

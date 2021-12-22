@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::AutoEnableService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.035Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.722Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosAutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(RosAutoEnableServiceProps.Jsii$Proxy.class)
 public interface RosAutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -22,7 +22,7 @@ public interface RosAutoEnableServiceProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link RosAutoEnableServiceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAutoEnableServiceProps> {
-        private java.lang.Object serviceName;
+        java.lang.Object serviceName;
 
         /**
          * Sets the value of {@link RosAutoEnableServiceProps#getServiceName}
@@ -51,7 +51,7 @@ public interface RosAutoEnableServiceProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public RosAutoEnableServiceProps build() {
-            return new Jsii$Proxy(serviceName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -74,9 +74,9 @@ public interface RosAutoEnableServiceProps extends software.amazon.jsii.JsiiSeri
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object serviceName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
         }
 
         @Override

@@ -137,6 +137,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             set;
         }
 
+        /// <summary>Property networkType: The type of the created NAT gateway.</summary>
+        /// <remarks>
+        /// Internet: public network NAT gateway.
+        /// Intranet: VPC NAT gateway.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NetworkType
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property pricingCycle: Price cycle of the resource.</summary>
         /// <remarks>
         /// This property has no default value.

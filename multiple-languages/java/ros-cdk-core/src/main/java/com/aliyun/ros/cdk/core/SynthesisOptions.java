@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * @deprecated use `app.synth()` or `stage.synth()` instead
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:31.112Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.535Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.SynthesisOptions")
 @software.amazon.jsii.Jsii.Proxy(SynthesisOptions.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
@@ -48,9 +48,9 @@ public interface SynthesisOptions extends software.amazon.jsii.JsiiSerializable,
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
     @Deprecated
     public static final class Builder implements software.amazon.jsii.Builder<SynthesisOptions> {
-        private java.lang.String outdir;
-        private java.lang.Boolean skipValidation;
-        private com.aliyun.ros.cdk.cxapi.RuntimeInfo runtimeInfo;
+        java.lang.String outdir;
+        java.lang.Boolean skipValidation;
+        com.aliyun.ros.cdk.cxapi.RuntimeInfo runtimeInfo;
 
         /**
          * Sets the value of {@link SynthesisOptions#getOutdir}
@@ -95,7 +95,7 @@ public interface SynthesisOptions extends software.amazon.jsii.JsiiSerializable,
         @Deprecated
         @Override
         public SynthesisOptions build() {
-            return new Jsii$Proxy(outdir, skipValidation, runtimeInfo);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -124,11 +124,11 @@ public interface SynthesisOptions extends software.amazon.jsii.JsiiSerializable,
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String outdir, final java.lang.Boolean skipValidation, final com.aliyun.ros.cdk.cxapi.RuntimeInfo runtimeInfo) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.outdir = outdir;
-            this.skipValidation = skipValidation;
-            this.runtimeInfo = runtimeInfo;
+            this.outdir = builder.outdir;
+            this.skipValidation = builder.skipValidation;
+            this.runtimeInfo = builder.runtimeInfo;
         }
 
         @Override

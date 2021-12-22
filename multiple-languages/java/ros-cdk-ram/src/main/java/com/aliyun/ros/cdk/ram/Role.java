@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::Role`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.812Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.526Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.Role")
 public class Role extends com.aliyun.ros.cdk.core.Resource {
 
@@ -142,6 +142,31 @@ public class Role extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder roleName(final com.aliyun.ros.cdk.core.IResolvable roleName) {
             this.props.roleName(roleName);
+            return this;
+        }
+
+        /**
+         * Property deletionForce: Whether force detach the policies attached to the role.
+         * <p>
+         * Default value is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force detach the policies attached to the role. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether force detach the policies attached to the role.
+         * <p>
+         * Default value is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force detach the policies attached to the role. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
             return this;
         }
 

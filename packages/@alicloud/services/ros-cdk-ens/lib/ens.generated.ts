@@ -139,10 +139,10 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
     errors.collect(ros.propertyValidator('dataDiskSize', ros.requiredValidator)(properties.dataDiskSize));
     errors.collect(ros.propertyValidator('dataDiskSize', ros.validateNumber)(properties.dataDiskSize));
-    errors.collect(ros.propertyValidator('ensRegionId', ros.requiredValidator)(properties.ensRegionId));
-    errors.collect(ros.propertyValidator('ensRegionId', ros.validateString)(properties.ensRegionId));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('ensRegionId', ros.requiredValidator)(properties.ensRegionId));
+    errors.collect(ros.propertyValidator('ensRegionId', ros.validateString)(properties.ensRegionId));
     errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');

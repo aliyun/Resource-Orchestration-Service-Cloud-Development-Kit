@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS template type:  `ALIYUN::PrivateLink::VpcEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.795Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.465Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpoint")
 public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -82,6 +82,12 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcId() {
         return software.amazon.jsii.Kernel.get(this, "attrVpcId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneDomains() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneDomains", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -251,8 +257,8 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ZoneProperty> {
-            private java.lang.Object vSwitchId;
-            private java.lang.Object zoneId;
+            java.lang.Object vSwitchId;
+            java.lang.Object zoneId;
 
             /**
              * Sets the value of {@link ZoneProperty#getVSwitchId}
@@ -306,7 +312,7 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ZoneProperty build() {
-                return new Jsii$Proxy(vSwitchId, zoneId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -332,10 +338,10 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-                this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
+                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
             }
 
             @Override

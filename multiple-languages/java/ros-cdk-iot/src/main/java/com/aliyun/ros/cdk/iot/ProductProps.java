@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::Product`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.543Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.200Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.ProductProps")
 @software.amazon.jsii.Jsii.Proxy(ProductProps.Jsii$Proxy.class)
 public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
@@ -186,20 +186,20 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ProductProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ProductProps> {
-        private java.lang.Object nodeType;
-        private java.lang.Object productName;
-        private java.lang.Object aliyunCommodityCode;
-        private java.lang.Object authType;
-        private java.lang.Object categoryKey;
-        private java.lang.Object dataFormat;
-        private java.lang.Object description;
-        private java.lang.Object id2;
-        private java.lang.Object iotInstanceId;
-        private java.lang.Object joinPermissionId;
-        private java.lang.Object netType;
-        private java.lang.Object protocolType;
-        private java.lang.Object publishAuto;
-        private java.lang.Object resourceGroupId;
+        java.lang.Object nodeType;
+        java.lang.Object productName;
+        java.lang.Object aliyunCommodityCode;
+        java.lang.Object authType;
+        java.lang.Object categoryKey;
+        java.lang.Object dataFormat;
+        java.lang.Object description;
+        java.lang.Object id2;
+        java.lang.Object iotInstanceId;
+        java.lang.Object joinPermissionId;
+        java.lang.Object netType;
+        java.lang.Object protocolType;
+        java.lang.Object publishAuto;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link ProductProps#getNodeType}
@@ -608,7 +608,7 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ProductProps build() {
-            return new Jsii$Proxy(nodeType, productName, aliyunCommodityCode, authType, categoryKey, dataFormat, description, id2, iotInstanceId, joinPermissionId, netType, protocolType, publishAuto, resourceGroupId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -657,22 +657,22 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object nodeType, final java.lang.Object productName, final java.lang.Object aliyunCommodityCode, final java.lang.Object authType, final java.lang.Object categoryKey, final java.lang.Object dataFormat, final java.lang.Object description, final java.lang.Object id2, final java.lang.Object iotInstanceId, final java.lang.Object joinPermissionId, final java.lang.Object netType, final java.lang.Object protocolType, final java.lang.Object publishAuto, final java.lang.Object resourceGroupId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.nodeType = java.util.Objects.requireNonNull(nodeType, "nodeType is required");
-            this.productName = java.util.Objects.requireNonNull(productName, "productName is required");
-            this.aliyunCommodityCode = aliyunCommodityCode;
-            this.authType = authType;
-            this.categoryKey = categoryKey;
-            this.dataFormat = dataFormat;
-            this.description = description;
-            this.id2 = id2;
-            this.iotInstanceId = iotInstanceId;
-            this.joinPermissionId = joinPermissionId;
-            this.netType = netType;
-            this.protocolType = protocolType;
-            this.publishAuto = publishAuto;
-            this.resourceGroupId = resourceGroupId;
+            this.nodeType = java.util.Objects.requireNonNull(builder.nodeType, "nodeType is required");
+            this.productName = java.util.Objects.requireNonNull(builder.productName, "productName is required");
+            this.aliyunCommodityCode = builder.aliyunCommodityCode;
+            this.authType = builder.authType;
+            this.categoryKey = builder.categoryKey;
+            this.dataFormat = builder.dataFormat;
+            this.description = builder.description;
+            this.id2 = builder.id2;
+            this.iotInstanceId = builder.iotInstanceId;
+            this.joinPermissionId = builder.joinPermissionId;
+            this.netType = builder.netType;
+            this.protocolType = builder.protocolType;
+            this.publishAuto = builder.publishAuto;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override

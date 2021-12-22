@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::Savedsearch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.141Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.882Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosSavedsearch")
 public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -142,11 +142,11 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DetailProperty> {
-            private java.lang.Object logstore;
-            private java.lang.Object savedsearchName;
-            private java.lang.Object searchQuery;
-            private java.lang.Object topic;
-            private java.lang.Object displayName;
+            java.lang.Object logstore;
+            java.lang.Object savedsearchName;
+            java.lang.Object searchQuery;
+            java.lang.Object topic;
+            java.lang.Object displayName;
 
             /**
              * Sets the value of {@link DetailProperty#getLogstore}
@@ -266,7 +266,7 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DetailProperty build() {
-                return new Jsii$Proxy(logstore, savedsearchName, searchQuery, topic, displayName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -298,13 +298,13 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object logstore, final java.lang.Object savedsearchName, final java.lang.Object searchQuery, final java.lang.Object topic, final java.lang.Object displayName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.logstore = java.util.Objects.requireNonNull(logstore, "logstore is required");
-                this.savedsearchName = java.util.Objects.requireNonNull(savedsearchName, "savedsearchName is required");
-                this.searchQuery = java.util.Objects.requireNonNull(searchQuery, "searchQuery is required");
-                this.topic = java.util.Objects.requireNonNull(topic, "topic is required");
-                this.displayName = displayName;
+                this.logstore = java.util.Objects.requireNonNull(builder.logstore, "logstore is required");
+                this.savedsearchName = java.util.Objects.requireNonNull(builder.savedsearchName, "savedsearchName is required");
+                this.searchQuery = java.util.Objects.requireNonNull(builder.searchQuery, "searchQuery is required");
+                this.topic = java.util.Objects.requireNonNull(builder.topic, "topic is required");
+                this.displayName = builder.displayName;
             }
 
             @Override

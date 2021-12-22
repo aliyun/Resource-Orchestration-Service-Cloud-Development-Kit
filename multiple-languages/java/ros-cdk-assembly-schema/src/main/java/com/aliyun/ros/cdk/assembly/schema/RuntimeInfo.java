@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Information about the application's runtime components.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.612Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.RuntimeInfo")
 @software.amazon.jsii.Jsii.Proxy(RuntimeInfo.Jsii$Proxy.class)
 public interface RuntimeInfo extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,7 @@ public interface RuntimeInfo extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RuntimeInfo}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RuntimeInfo> {
-        private java.util.Map<java.lang.String, java.lang.String> libraries;
+        java.util.Map<java.lang.String, java.lang.String> libraries;
 
         /**
          * Sets the value of {@link RuntimeInfo#getLibraries}
@@ -42,7 +42,7 @@ public interface RuntimeInfo extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RuntimeInfo build() {
-            return new Jsii$Proxy(libraries);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -65,9 +65,9 @@ public interface RuntimeInfo extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.util.Map<java.lang.String, java.lang.String> libraries) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.libraries = java.util.Objects.requireNonNull(libraries, "libraries is required");
+            this.libraries = java.util.Objects.requireNonNull(builder.libraries, "libraries is required");
         }
 
         @Override

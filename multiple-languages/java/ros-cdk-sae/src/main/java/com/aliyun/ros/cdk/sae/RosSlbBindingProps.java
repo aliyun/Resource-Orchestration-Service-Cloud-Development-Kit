@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Properties for defining a `ALIYUN::SAE::SlbBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.050Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.757Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosSlbBindingProps")
 @software.amazon.jsii.Jsii.Proxy(RosSlbBindingProps.Jsii$Proxy.class)
 public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,11 +46,11 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosSlbBindingProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSlbBindingProps> {
-        private java.lang.Object appId;
-        private java.lang.Object internet;
-        private java.lang.Object internetSlbId;
-        private java.lang.Object intranet;
-        private java.lang.Object intranetSlbId;
+        java.lang.Object appId;
+        java.lang.Object internet;
+        java.lang.Object internetSlbId;
+        java.lang.Object intranet;
+        java.lang.Object intranetSlbId;
 
         /**
          * Sets the value of {@link RosSlbBindingProps#getAppId}
@@ -159,7 +159,7 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosSlbBindingProps build() {
-            return new Jsii$Proxy(appId, internet, internetSlbId, intranet, intranetSlbId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -190,13 +190,13 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object appId, final java.lang.Object internet, final java.lang.Object internetSlbId, final java.lang.Object intranet, final java.lang.Object intranetSlbId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.appId = java.util.Objects.requireNonNull(appId, "appId is required");
-            this.internet = internet;
-            this.internetSlbId = internetSlbId;
-            this.intranet = intranet;
-            this.intranetSlbId = intranetSlbId;
+            this.appId = java.util.Objects.requireNonNull(builder.appId, "appId is required");
+            this.internet = builder.internet;
+            this.internetSlbId = builder.internetSlbId;
+            this.intranet = builder.intranet;
+            this.intranetSlbId = builder.intranetSlbId;
         }
 
         @Override

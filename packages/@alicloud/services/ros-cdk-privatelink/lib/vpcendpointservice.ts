@@ -21,6 +21,13 @@ export interface VpcEndpointServiceProps {
     readonly connectBandwidth?: number | ros.IResolvable;
 
     /**
+     * Property payer: The payer of the endpoint service. Valid values: 
+     * Endpoint: the service consumer. 
+     * EndpointService: the service provider.
+     */
+    readonly payer?: string | ros.IResolvable;
+
+    /**
      * Property resource:
      */
     readonly resource?: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable;
@@ -34,6 +41,13 @@ export interface VpcEndpointServiceProps {
      * Property user: Account IDs to the whitelist of an endpoint service.
      */
     readonly user?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.
+     * true: yes. 
+     * false (default): no
+     */
+    readonly zoneAffinityEnabled?: boolean | ros.IResolvable;
 }
 
 /**
@@ -87,10 +101,12 @@ export class VpcEndpointService extends ros.Resource {
         super(scope, id);
 
         const rosVpcEndpointService = new RosVpcEndpointService(this, id,  {
+            payer: props.payer,
             user: props.user,
             serviceDescription: props.serviceDescription,
             resource: props.resource,
             connectBandwidth: props.connectBandwidth,
+            zoneAffinityEnabled: props.zoneAffinityEnabled,
             autoAcceptEnabled: props.autoAcceptEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcEndpointService;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingRuleProps.Jsii$Proxy.class)
 public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -118,23 +118,23 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosScalingRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScalingRuleProps> {
-        private java.lang.Object scalingGroupId;
-        private java.lang.Object adjustmentType;
-        private java.lang.Object adjustmentValue;
-        private java.lang.Object cooldown;
-        private java.lang.Object disableScaleIn;
-        private java.lang.Object estimatedInstanceWarmup;
-        private java.lang.Object initialMaxSize;
-        private java.lang.Object metricName;
-        private java.lang.Object minAdjustmentMagnitude;
-        private java.lang.Object predictiveScalingMode;
-        private java.lang.Object predictiveTaskBufferTime;
-        private java.lang.Object predictiveValueBehavior;
-        private java.lang.Object predictiveValueBuffer;
-        private java.lang.Object scalingRuleName;
-        private java.lang.Object scalingRuleType;
-        private java.lang.Object stepAdjustment;
-        private java.lang.Object targetValue;
+        java.lang.Object scalingGroupId;
+        java.lang.Object adjustmentType;
+        java.lang.Object adjustmentValue;
+        java.lang.Object cooldown;
+        java.lang.Object disableScaleIn;
+        java.lang.Object estimatedInstanceWarmup;
+        java.lang.Object initialMaxSize;
+        java.lang.Object metricName;
+        java.lang.Object minAdjustmentMagnitude;
+        java.lang.Object predictiveScalingMode;
+        java.lang.Object predictiveTaskBufferTime;
+        java.lang.Object predictiveValueBehavior;
+        java.lang.Object predictiveValueBuffer;
+        java.lang.Object scalingRuleName;
+        java.lang.Object scalingRuleType;
+        java.lang.Object stepAdjustment;
+        java.lang.Object targetValue;
 
         /**
          * Sets the value of {@link RosScalingRuleProps#getScalingGroupId}
@@ -483,7 +483,7 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosScalingRuleProps build() {
-            return new Jsii$Proxy(scalingGroupId, adjustmentType, adjustmentValue, cooldown, disableScaleIn, estimatedInstanceWarmup, initialMaxSize, metricName, minAdjustmentMagnitude, predictiveScalingMode, predictiveTaskBufferTime, predictiveValueBehavior, predictiveValueBuffer, scalingRuleName, scalingRuleType, stepAdjustment, targetValue);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -538,25 +538,25 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object adjustmentType, final java.lang.Object adjustmentValue, final java.lang.Object cooldown, final java.lang.Object disableScaleIn, final java.lang.Object estimatedInstanceWarmup, final java.lang.Object initialMaxSize, final java.lang.Object metricName, final java.lang.Object minAdjustmentMagnitude, final java.lang.Object predictiveScalingMode, final java.lang.Object predictiveTaskBufferTime, final java.lang.Object predictiveValueBehavior, final java.lang.Object predictiveValueBuffer, final java.lang.Object scalingRuleName, final java.lang.Object scalingRuleType, final java.lang.Object stepAdjustment, final java.lang.Object targetValue) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
-            this.adjustmentType = adjustmentType;
-            this.adjustmentValue = adjustmentValue;
-            this.cooldown = cooldown;
-            this.disableScaleIn = disableScaleIn;
-            this.estimatedInstanceWarmup = estimatedInstanceWarmup;
-            this.initialMaxSize = initialMaxSize;
-            this.metricName = metricName;
-            this.minAdjustmentMagnitude = minAdjustmentMagnitude;
-            this.predictiveScalingMode = predictiveScalingMode;
-            this.predictiveTaskBufferTime = predictiveTaskBufferTime;
-            this.predictiveValueBehavior = predictiveValueBehavior;
-            this.predictiveValueBuffer = predictiveValueBuffer;
-            this.scalingRuleName = scalingRuleName;
-            this.scalingRuleType = scalingRuleType;
-            this.stepAdjustment = stepAdjustment;
-            this.targetValue = targetValue;
+            this.scalingGroupId = java.util.Objects.requireNonNull(builder.scalingGroupId, "scalingGroupId is required");
+            this.adjustmentType = builder.adjustmentType;
+            this.adjustmentValue = builder.adjustmentValue;
+            this.cooldown = builder.cooldown;
+            this.disableScaleIn = builder.disableScaleIn;
+            this.estimatedInstanceWarmup = builder.estimatedInstanceWarmup;
+            this.initialMaxSize = builder.initialMaxSize;
+            this.metricName = builder.metricName;
+            this.minAdjustmentMagnitude = builder.minAdjustmentMagnitude;
+            this.predictiveScalingMode = builder.predictiveScalingMode;
+            this.predictiveTaskBufferTime = builder.predictiveTaskBufferTime;
+            this.predictiveValueBehavior = builder.predictiveValueBehavior;
+            this.predictiveValueBuffer = builder.predictiveValueBuffer;
+            this.scalingRuleName = builder.scalingRuleName;
+            this.scalingRuleType = builder.scalingRuleType;
+            this.stepAdjustment = builder.stepAdjustment;
+            this.targetValue = builder.targetValue;
         }
 
         @Override

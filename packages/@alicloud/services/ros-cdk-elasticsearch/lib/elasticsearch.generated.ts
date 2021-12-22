@@ -33,6 +33,16 @@ export interface RosInstanceProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property enableKibanaPrivate: Enables or disables intranet access to Kibana.
+     */
+    readonly enableKibanaPrivate?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableKibanaPublic: Enables or disables Internet access to Kibana.
+     */
+    readonly enableKibanaPublic?: boolean | ros.IResolvable;
+
+    /**
      * @Property enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
      */
     readonly enablePublic?: boolean | ros.IResolvable;
@@ -76,6 +86,18 @@ export interface RosInstanceProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosInstance.TagsProperty[];
+
+    /**
+     * @Property ymlConfig: In the YML Configuration section of the Cluster 
+     * Configuration page of your Alibaba Cloud Elasticsearch cluster, 
+     * you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.
+     */
+    readonly ymlConfig?: RosInstance.YMLConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property zoneCount: undefined
+     */
+    readonly zoneCount?: number | ros.IResolvable;
 }
 
 /**
@@ -97,8 +119,10 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('enableKibanaPrivate', ros.validateBoolean)(properties.enableKibanaPrivate));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('publicWhitelist', ros.listValidator(ros.validateAny))(properties.publicWhitelist));
+    errors.collect(ros.propertyValidator('enableKibanaPublic', ros.validateBoolean)(properties.enableKibanaPublic));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
@@ -122,6 +146,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dataNode', ros.requiredValidator)(properties.dataNode));
     errors.collect(ros.propertyValidator('dataNode', RosInstance_DataNodePropertyValidator)(properties.dataNode));
     errors.collect(ros.propertyValidator('kibanaWhitelist', ros.listValidator(ros.validateAny))(properties.kibanaWhitelist));
+    errors.collect(ros.propertyValidator('ymlConfig', RosInstance_YMLConfigPropertyValidator)(properties.ymlConfig));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -130,6 +155,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
+    if(properties.zoneCount && (typeof properties.zoneCount) !== 'object') {
+        errors.collect(ros.propertyValidator('zoneCount', ros.validateAllowedValues)({
+          data: properties.zoneCount,
+          allowedValues: [1,2,3],
+        }));
+    }
+    errors.collect(ros.propertyValidator('zoneCount', ros.validateNumber)(properties.zoneCount));
     errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
@@ -154,6 +186,8 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       Version: ros.stringToRosTemplate(properties.version),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       Description: ros.stringToRosTemplate(properties.description),
+      EnableKibanaPrivate: ros.booleanToRosTemplate(properties.enableKibanaPrivate),
+      EnableKibanaPublic: ros.booleanToRosTemplate(properties.enableKibanaPublic),
       EnablePublic: ros.booleanToRosTemplate(properties.enablePublic),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       KibanaWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.kibanaWhitelist),
@@ -163,6 +197,8 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       PublicWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.publicWhitelist),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      YMLConfig: rosInstanceYMLConfigPropertyToRosTemplate(properties.ymlConfig),
+      ZoneCount: ros.numberToRosTemplate(properties.zoneCount),
     };
 }
 
@@ -259,6 +295,16 @@ export class RosInstance extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property enableKibanaPrivate: Enables or disables intranet access to Kibana.
+     */
+    public enableKibanaPrivate: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableKibanaPublic: Enables or disables Internet access to Kibana.
+     */
+    public enableKibanaPublic: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
      */
     public enablePublic: boolean | ros.IResolvable | undefined;
@@ -304,6 +350,18 @@ export class RosInstance extends ros.RosResource {
     public tags: RosInstance.TagsProperty[] | undefined;
 
     /**
+     * @Property ymlConfig: In the YML Configuration section of the Cluster 
+     * Configuration page of your Alibaba Cloud Elasticsearch cluster, 
+     * you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.
+     */
+    public ymlConfig: RosInstance.YMLConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneCount: undefined
+     */
+    public zoneCount: number | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::ElasticSearch::Instance`.
      *
      * @param scope - scope in which this resource is defined
@@ -329,6 +387,8 @@ export class RosInstance extends ros.RosResource {
         this.version = props.version;
         this.vSwitchId = props.vSwitchId;
         this.description = props.description;
+        this.enableKibanaPrivate = props.enableKibanaPrivate;
+        this.enableKibanaPublic = props.enableKibanaPublic;
         this.enablePublic = props.enablePublic;
         this.instanceChargeType = props.instanceChargeType;
         this.kibanaWhitelist = props.kibanaWhitelist;
@@ -338,6 +398,8 @@ export class RosInstance extends ros.RosResource {
         this.publicWhitelist = props.publicWhitelist;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
+        this.ymlConfig = props.ymlConfig;
+        this.zoneCount = props.zoneCount;
     }
 
 
@@ -348,6 +410,8 @@ export class RosInstance extends ros.RosResource {
             version: this.version,
             vSwitchId: this.vSwitchId,
             description: this.description,
+            enableKibanaPrivate: this.enableKibanaPrivate,
+            enableKibanaPublic: this.enableKibanaPublic,
             enablePublic: this.enablePublic,
             instanceChargeType: this.instanceChargeType,
             kibanaWhitelist: this.kibanaWhitelist,
@@ -357,6 +421,8 @@ export class RosInstance extends ros.RosResource {
             publicWhitelist: this.publicWhitelist,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
+            ymlConfig: this.ymlConfig,
+            zoneCount: this.zoneCount,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -370,9 +436,18 @@ export namespace RosInstance {
      */
     export interface DataNodeProperty {
         /**
-         * @Property diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency.
+         * @Property diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency, cloud_essd
          */
         readonly diskType: string | ros.IResolvable;
+        /**
+         * @Property diskEncryption: Whether to enable cloud disk encryption.
+         */
+        readonly diskEncryption?: boolean | ros.IResolvable;
+        /**
+         * @Property performanceLevel: The performance level of the ESSD. When the storage type is cloud_essd, 
+     * this parameter is required and supports PL1, PL2, and PL3.
+         */
+        readonly performanceLevel?: string | ros.IResolvable;
         /**
          * @Property amount: The Elasticsearch cluster's data node quantity, between 2 and 50.
          */
@@ -403,10 +478,18 @@ function RosInstance_DataNodePropertyValidator(properties: any): ros.ValidationR
     if(properties.diskType && (typeof properties.diskType) !== 'object') {
         errors.collect(ros.propertyValidator('diskType', ros.validateAllowedValues)({
           data: properties.diskType,
-          allowedValues: ["cloud_ssd","cloud_efficiency"],
+          allowedValues: ["cloud_ssd","cloud_efficiency","cloud_essd"],
         }));
     }
     errors.collect(ros.propertyValidator('diskType', ros.validateString)(properties.diskType));
+    errors.collect(ros.propertyValidator('diskEncryption', ros.validateBoolean)(properties.diskEncryption));
+    if(properties.performanceLevel && (typeof properties.performanceLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('performanceLevel', ros.validateAllowedValues)({
+          data: properties.performanceLevel,
+          allowedValues: ["PL1","PL2","PL3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
     errors.collect(ros.propertyValidator('amount', ros.requiredValidator)(properties.amount));
     if(properties.amount && (typeof properties.amount) !== 'object') {
         errors.collect(ros.propertyValidator('amount', ros.validateRange)({
@@ -436,6 +519,8 @@ function rosInstanceDataNodePropertyToRosTemplate(properties: any): any {
     RosInstance_DataNodePropertyValidator(properties).assertSuccess();
     return {
       DiskType: ros.stringToRosTemplate(properties.diskType),
+      DiskEncryption: ros.booleanToRosTemplate(properties.diskEncryption),
+      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
       Amount: ros.numberToRosTemplate(properties.amount),
       DiskSize: ros.numberToRosTemplate(properties.diskSize),
       Spec: ros.stringToRosTemplate(properties.spec),
@@ -547,5 +632,88 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
     return {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface YMLConfigProperty {
+        /**
+         * @Property createIndex: Specifies whether to automatically create an index when a new document 
+     * is uploaded to your Elasticsearch cluster but no index exists. 
+     * We recommend that you disable Auto Indexing because indexes created 
+     * by this feature may not meet your business requirements. 
+     * This parameter corresponds to the action.auto_create_index configuration 
+     * item in the YML file. The default value of this configuration item is false.
+         */
+        readonly createIndex?: string | ros.IResolvable;
+        /**
+         * @Property destructiveRequiresName: Specifies whether to specify the index name when you delete an index. 
+     * If you set this parameter to Allow Wildcards, you can use wildcards to 
+     * delete multiple indexes at a time. Deleted indexes cannot be recovered. 
+     * Exercise caution when you configure this parameter.
+     * This parameter corresponds to the action.destructive_requires_name configuration 
+     * item in the YML file. The default value of this configuration item is true.
+         */
+        readonly destructiveRequiresName?: boolean | ros.IResolvable;
+        /**
+         * @Property otherConfigs: Other Configurations.
+         */
+        readonly otherConfigs?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property watcher: If you enable Watcher, you can use the X-Pack Watcher feature. 
+     * You must clear the .watcher-history* index on a regular basis to free up disk space.
+     * This parameter corresponds to the xpack.watcher.enabled configuration item in the YML file. 
+     * The default value of this configuration item is false.
+         */
+        readonly watcher?: boolean | ros.IResolvable;
+        /**
+         * @Property auditLog: If you enable Audit Log Indexing, the system generates audit logs 
+     * for the create, delete, modify, and search operations that are performed 
+     * in the Elasticsearch cluster. These logs consume disk space and affect 
+     * cluster performance. Therefore, we recommend that you disable Audit Log 
+     * Indexing and exercise caution when you configure this parameter.
+     * This parameter is unavailable for Elasticsearch clusters of V7.0 or later.
+         */
+        readonly auditLog?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `YMLConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `YMLConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_YMLConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('createIndex', ros.validateString)(properties.createIndex));
+    errors.collect(ros.propertyValidator('destructiveRequiresName', ros.validateBoolean)(properties.destructiveRequiresName));
+    errors.collect(ros.propertyValidator('otherConfigs', ros.hashValidator(ros.validateAny))(properties.otherConfigs));
+    errors.collect(ros.propertyValidator('watcher', ros.validateBoolean)(properties.watcher));
+    errors.collect(ros.propertyValidator('auditLog', ros.validateBoolean)(properties.auditLog));
+    return errors.wrap('supplied properties not correct for "YMLConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearch::Instance.YMLConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `YMLConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearch::Instance.YMLConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceYMLConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_YMLConfigPropertyValidator(properties).assertSuccess();
+    return {
+      CreateIndex: ros.stringToRosTemplate(properties.createIndex),
+      DestructiveRequiresName: ros.booleanToRosTemplate(properties.destructiveRequiresName),
+      OtherConfigs: ros.hashMapper(ros.objectToRosTemplate)(properties.otherConfigs),
+      Watcher: ros.booleanToRosTemplate(properties.watcher),
+      AuditLog: ros.booleanToRosTemplate(properties.auditLog),
     };
 }

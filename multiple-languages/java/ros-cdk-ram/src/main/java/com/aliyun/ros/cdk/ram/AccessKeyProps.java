@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::AccessKey`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.808Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.488Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AccessKeyProps")
 @software.amazon.jsii.Jsii.Proxy(AccessKeyProps.Jsii$Proxy.class)
 public interface AccessKeyProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,7 @@ public interface AccessKeyProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AccessKeyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AccessKeyProps> {
-        private java.lang.Object userName;
+        java.lang.Object userName;
 
         /**
          * Sets the value of {@link AccessKeyProps#getUserName}
@@ -52,7 +52,7 @@ public interface AccessKeyProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public AccessKeyProps build() {
-            return new Jsii$Proxy(userName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -75,9 +75,9 @@ public interface AccessKeyProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object userName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
+            this.userName = java.util.Objects.requireNonNull(builder.userName, "userName is required");
         }
 
         @Override

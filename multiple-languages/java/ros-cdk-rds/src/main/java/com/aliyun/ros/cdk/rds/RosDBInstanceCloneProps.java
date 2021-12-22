@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.949Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.632Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceCloneProps.Jsii$Proxy.class)
 public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -254,46 +254,46 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosDBInstanceCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDBInstanceCloneProps> {
-        private java.lang.Object dbInstanceId;
-        private java.lang.Object payType;
-        private java.lang.Object allocatePublicConnection;
-        private java.lang.Object backupId;
-        private java.lang.Object backupRetentionPeriod;
-        private java.lang.Object backupType;
-        private java.lang.Object category;
-        private java.lang.Object connectionStringPrefix;
-        private java.lang.Object connectionStringType;
-        private java.lang.Object dbInstanceClass;
-        private java.lang.Object dbInstanceDescription;
-        private java.lang.Object dbInstanceStorage;
-        private java.lang.Object dbInstanceStorageType;
-        private java.lang.Object dbMappings;
-        private java.lang.Object dbNames;
-        private java.lang.Object dedicatedHostGroupId;
-        private java.lang.Object instanceNetworkType;
-        private java.lang.Object maintainTime;
-        private java.lang.Object masterUsername;
-        private java.lang.Object masterUserPassword;
-        private java.lang.Object masterUserType;
-        private java.lang.Object period;
-        private java.lang.Object periodType;
-        private java.lang.Object port;
-        private java.lang.Object preferredBackupPeriod;
-        private java.lang.Object preferredBackupTime;
-        private java.lang.Object privateIpAddress;
-        private java.lang.Object restoreTable;
-        private java.lang.Object restoreTime;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object securityIpList;
-        private java.lang.Object slaveZoneIds;
-        private java.lang.Object sqlCollectorStatus;
-        private java.lang.Object sslSetting;
-        private java.lang.Object tableMeta;
-        private java.util.Map<java.lang.String, java.lang.Object> tags;
-        private java.lang.Object timeoutInMinutes;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object dbInstanceId;
+        java.lang.Object payType;
+        java.lang.Object allocatePublicConnection;
+        java.lang.Object backupId;
+        java.lang.Object backupRetentionPeriod;
+        java.lang.Object backupType;
+        java.lang.Object category;
+        java.lang.Object connectionStringPrefix;
+        java.lang.Object connectionStringType;
+        java.lang.Object dbInstanceClass;
+        java.lang.Object dbInstanceDescription;
+        java.lang.Object dbInstanceStorage;
+        java.lang.Object dbInstanceStorageType;
+        java.lang.Object dbMappings;
+        java.lang.Object dbNames;
+        java.lang.Object dedicatedHostGroupId;
+        java.lang.Object instanceNetworkType;
+        java.lang.Object maintainTime;
+        java.lang.Object masterUsername;
+        java.lang.Object masterUserPassword;
+        java.lang.Object masterUserType;
+        java.lang.Object period;
+        java.lang.Object periodType;
+        java.lang.Object port;
+        java.lang.Object preferredBackupPeriod;
+        java.lang.Object preferredBackupTime;
+        java.lang.Object privateIpAddress;
+        java.lang.Object restoreTable;
+        java.lang.Object restoreTime;
+        java.lang.Object securityGroupId;
+        java.lang.Object securityIpList;
+        java.lang.Object slaveZoneIds;
+        java.lang.Object sqlCollectorStatus;
+        java.lang.Object sslSetting;
+        java.lang.Object tableMeta;
+        java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object timeoutInMinutes;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceId}
@@ -1093,7 +1093,7 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosDBInstanceCloneProps build() {
-            return new Jsii$Proxy(dbInstanceId, payType, allocatePublicConnection, backupId, backupRetentionPeriod, backupType, category, connectionStringPrefix, connectionStringType, dbInstanceClass, dbInstanceDescription, dbInstanceStorage, dbInstanceStorageType, dbMappings, dbNames, dedicatedHostGroupId, instanceNetworkType, maintainTime, masterUsername, masterUserPassword, masterUserType, period, periodType, port, preferredBackupPeriod, preferredBackupTime, privateIpAddress, restoreTable, restoreTime, securityGroupId, securityIpList, slaveZoneIds, sqlCollectorStatus, sslSetting, tableMeta, tags, timeoutInMinutes, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1195,48 +1195,48 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object dbInstanceId, final java.lang.Object payType, final java.lang.Object allocatePublicConnection, final java.lang.Object backupId, final java.lang.Object backupRetentionPeriod, final java.lang.Object backupType, final java.lang.Object category, final java.lang.Object connectionStringPrefix, final java.lang.Object connectionStringType, final java.lang.Object dbInstanceClass, final java.lang.Object dbInstanceDescription, final java.lang.Object dbInstanceStorage, final java.lang.Object dbInstanceStorageType, final java.lang.Object dbMappings, final java.lang.Object dbNames, final java.lang.Object dedicatedHostGroupId, final java.lang.Object instanceNetworkType, final java.lang.Object maintainTime, final java.lang.Object masterUsername, final java.lang.Object masterUserPassword, final java.lang.Object masterUserType, final java.lang.Object period, final java.lang.Object periodType, final java.lang.Object port, final java.lang.Object preferredBackupPeriod, final java.lang.Object preferredBackupTime, final java.lang.Object privateIpAddress, final java.lang.Object restoreTable, final java.lang.Object restoreTime, final java.lang.Object securityGroupId, final java.lang.Object securityIpList, final java.lang.Object slaveZoneIds, final java.lang.Object sqlCollectorStatus, final java.lang.Object sslSetting, final java.lang.Object tableMeta, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object timeoutInMinutes, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
-            this.payType = java.util.Objects.requireNonNull(payType, "payType is required");
-            this.allocatePublicConnection = allocatePublicConnection;
-            this.backupId = backupId;
-            this.backupRetentionPeriod = backupRetentionPeriod;
-            this.backupType = backupType;
-            this.category = category;
-            this.connectionStringPrefix = connectionStringPrefix;
-            this.connectionStringType = connectionStringType;
-            this.dbInstanceClass = dbInstanceClass;
-            this.dbInstanceDescription = dbInstanceDescription;
-            this.dbInstanceStorage = dbInstanceStorage;
-            this.dbInstanceStorageType = dbInstanceStorageType;
-            this.dbMappings = dbMappings;
-            this.dbNames = dbNames;
-            this.dedicatedHostGroupId = dedicatedHostGroupId;
-            this.instanceNetworkType = instanceNetworkType;
-            this.maintainTime = maintainTime;
-            this.masterUsername = masterUsername;
-            this.masterUserPassword = masterUserPassword;
-            this.masterUserType = masterUserType;
-            this.period = period;
-            this.periodType = periodType;
-            this.port = port;
-            this.preferredBackupPeriod = preferredBackupPeriod;
-            this.preferredBackupTime = preferredBackupTime;
-            this.privateIpAddress = privateIpAddress;
-            this.restoreTable = restoreTable;
-            this.restoreTime = restoreTime;
-            this.securityGroupId = securityGroupId;
-            this.securityIpList = securityIpList;
-            this.slaveZoneIds = slaveZoneIds;
-            this.sqlCollectorStatus = sqlCollectorStatus;
-            this.sslSetting = sslSetting;
-            this.tableMeta = tableMeta;
-            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
-            this.timeoutInMinutes = timeoutInMinutes;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
+            this.payType = java.util.Objects.requireNonNull(builder.payType, "payType is required");
+            this.allocatePublicConnection = builder.allocatePublicConnection;
+            this.backupId = builder.backupId;
+            this.backupRetentionPeriod = builder.backupRetentionPeriod;
+            this.backupType = builder.backupType;
+            this.category = builder.category;
+            this.connectionStringPrefix = builder.connectionStringPrefix;
+            this.connectionStringType = builder.connectionStringType;
+            this.dbInstanceClass = builder.dbInstanceClass;
+            this.dbInstanceDescription = builder.dbInstanceDescription;
+            this.dbInstanceStorage = builder.dbInstanceStorage;
+            this.dbInstanceStorageType = builder.dbInstanceStorageType;
+            this.dbMappings = builder.dbMappings;
+            this.dbNames = builder.dbNames;
+            this.dedicatedHostGroupId = builder.dedicatedHostGroupId;
+            this.instanceNetworkType = builder.instanceNetworkType;
+            this.maintainTime = builder.maintainTime;
+            this.masterUsername = builder.masterUsername;
+            this.masterUserPassword = builder.masterUserPassword;
+            this.masterUserType = builder.masterUserType;
+            this.period = builder.period;
+            this.periodType = builder.periodType;
+            this.port = builder.port;
+            this.preferredBackupPeriod = builder.preferredBackupPeriod;
+            this.preferredBackupTime = builder.preferredBackupTime;
+            this.privateIpAddress = builder.privateIpAddress;
+            this.restoreTable = builder.restoreTable;
+            this.restoreTime = builder.restoreTime;
+            this.securityGroupId = builder.securityGroupId;
+            this.securityIpList = builder.securityIpList;
+            this.slaveZoneIds = builder.slaveZoneIds;
+            this.sqlCollectorStatus = builder.sqlCollectorStatus;
+            this.sslSetting = builder.sslSetting;
+            this.tableMeta = builder.tableMeta;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
+            this.timeoutInMinutes = builder.timeoutInMinutes;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

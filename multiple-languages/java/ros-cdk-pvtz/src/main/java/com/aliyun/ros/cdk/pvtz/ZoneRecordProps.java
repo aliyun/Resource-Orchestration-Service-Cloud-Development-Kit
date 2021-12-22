@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::ZoneRecord`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.806Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneRecordProps")
 @software.amazon.jsii.Jsii.Proxy(ZoneRecordProps.Jsii$Proxy.class)
 public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
@@ -59,13 +59,13 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ZoneRecordProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ZoneRecordProps> {
-        private java.lang.Object rr;
-        private java.lang.Object status;
-        private java.lang.Object type;
-        private java.lang.Object value;
-        private java.lang.Object zoneId;
-        private java.lang.Object priority;
-        private java.lang.Object ttl;
+        java.lang.Object rr;
+        java.lang.Object status;
+        java.lang.Object type;
+        java.lang.Object value;
+        java.lang.Object zoneId;
+        java.lang.Object priority;
+        java.lang.Object ttl;
 
         /**
          * Sets the value of {@link ZoneRecordProps#getRr}
@@ -216,7 +216,7 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ZoneRecordProps build() {
-            return new Jsii$Proxy(rr, status, type, value, zoneId, priority, ttl);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -251,15 +251,15 @@ public interface ZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object rr, final java.lang.Object status, final java.lang.Object type, final java.lang.Object value, final java.lang.Object zoneId, final java.lang.Object priority, final java.lang.Object ttl) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.rr = java.util.Objects.requireNonNull(rr, "rr is required");
-            this.status = java.util.Objects.requireNonNull(status, "status is required");
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.value = java.util.Objects.requireNonNull(value, "value is required");
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
-            this.priority = priority;
-            this.ttl = ttl;
+            this.rr = java.util.Objects.requireNonNull(builder.rr, "rr is required");
+            this.status = java.util.Objects.requireNonNull(builder.status, "status is required");
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.priority = builder.priority;
+            this.ttl = builder.ttl;
         }
 
         @Override

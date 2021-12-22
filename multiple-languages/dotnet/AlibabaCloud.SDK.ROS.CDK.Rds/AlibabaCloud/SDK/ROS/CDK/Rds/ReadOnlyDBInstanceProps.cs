@@ -69,6 +69,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             set;
         }
 
+        /// <summary>Property autoRenew: Specifies whether to enable auto-renewal.</summary>
+        /// <remarks>
+        /// Valid values: true and false. Note
+        /// :Monthly subscription: The auto-renewal cycle is one month.
+        /// Annual subscription: The auto-renewal cycle is one year.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AutoRenew
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property category: The edition of the instance.</summary>
         /// <remarks>
         /// Valid values:
@@ -116,11 +130,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property payType: The billing method.</summary>
         /// <remarks>
-        /// The system only supports Pay-As-You-Go. Valid value: Postpaid.
+        /// Valid value: Postpaid, Prepaid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? PayType
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property period: Prepaid time period.</summary>
+        /// <remarks>
+        /// While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Period
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property periodType: Charge period for created instances.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "periodType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PeriodType
         {
             get;
             set;

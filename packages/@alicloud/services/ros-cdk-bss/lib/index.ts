@@ -1,3 +1,4 @@
+export * from './resourcepackage';
 export * from './waitorder';
 
 // ALIYUN::BSS Resources:

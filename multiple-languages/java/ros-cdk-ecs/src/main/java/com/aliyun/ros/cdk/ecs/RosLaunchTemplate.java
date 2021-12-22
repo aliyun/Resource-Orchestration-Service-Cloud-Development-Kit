@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::LaunchTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.134Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.710Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosLaunchTemplate")
 public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -680,13 +680,13 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DiskMappingsProperty> {
-            private java.lang.Object category;
-            private java.lang.Object deleteWithInstance;
-            private java.lang.Object description;
-            private java.lang.Object diskName;
-            private java.lang.Object encrypted;
-            private java.lang.Object size;
-            private java.lang.Object snapshotId;
+            java.lang.Object category;
+            java.lang.Object deleteWithInstance;
+            java.lang.Object description;
+            java.lang.Object diskName;
+            java.lang.Object encrypted;
+            java.lang.Object size;
+            java.lang.Object snapshotId;
 
             /**
              * Sets the value of {@link DiskMappingsProperty#getCategory}
@@ -850,7 +850,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DiskMappingsProperty build() {
-                return new Jsii$Proxy(category, deleteWithInstance, description, diskName, encrypted, size, snapshotId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -886,15 +886,15 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object category, final java.lang.Object deleteWithInstance, final java.lang.Object description, final java.lang.Object diskName, final java.lang.Object encrypted, final java.lang.Object size, final java.lang.Object snapshotId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.category = category;
-                this.deleteWithInstance = deleteWithInstance;
-                this.description = description;
-                this.diskName = diskName;
-                this.encrypted = encrypted;
-                this.size = size;
-                this.snapshotId = snapshotId;
+                this.category = builder.category;
+                this.deleteWithInstance = builder.deleteWithInstance;
+                this.description = builder.description;
+                this.diskName = builder.diskName;
+                this.encrypted = builder.encrypted;
+                this.size = builder.size;
+                this.snapshotId = builder.snapshotId;
             }
 
             @Override
@@ -1053,11 +1053,11 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NetworkInterfacesProperty> {
-            private java.lang.Object description;
-            private java.lang.Object networkInterfaceName;
-            private java.lang.Object primaryIpAddress;
-            private java.lang.Object securityGroupId;
-            private java.lang.Object vSwitchId;
+            java.lang.Object description;
+            java.lang.Object networkInterfaceName;
+            java.lang.Object primaryIpAddress;
+            java.lang.Object securityGroupId;
+            java.lang.Object vSwitchId;
 
             /**
              * Sets the value of {@link NetworkInterfacesProperty#getDescription}
@@ -1177,7 +1177,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NetworkInterfacesProperty build() {
-                return new Jsii$Proxy(description, networkInterfaceName, primaryIpAddress, securityGroupId, vSwitchId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1209,13 +1209,13 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object networkInterfaceName, final java.lang.Object primaryIpAddress, final java.lang.Object securityGroupId, final java.lang.Object vSwitchId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.description = description;
-                this.networkInterfaceName = networkInterfaceName;
-                this.primaryIpAddress = primaryIpAddress;
-                this.securityGroupId = securityGroupId;
-                this.vSwitchId = vSwitchId;
+                this.description = builder.description;
+                this.networkInterfaceName = builder.networkInterfaceName;
+                this.primaryIpAddress = builder.primaryIpAddress;
+                this.securityGroupId = builder.securityGroupId;
+                this.vSwitchId = builder.vSwitchId;
             }
 
             @Override
@@ -1333,8 +1333,8 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -1388,7 +1388,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1414,10 +1414,10 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = key;
-                this.value = value;
+                this.key = builder.key;
+                this.value = builder.value;
             }
 
             @Override
@@ -1505,8 +1505,8 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TemplateTagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TemplateTagsProperty#getKey}
@@ -1560,7 +1560,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TemplateTagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1586,10 +1586,10 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = key;
-                this.value = value;
+                this.key = builder.key;
+                this.value = builder.value;
             }
 
             @Override

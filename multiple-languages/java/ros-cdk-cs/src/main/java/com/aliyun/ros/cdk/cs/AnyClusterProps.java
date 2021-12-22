@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::AnyCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.648Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.221Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.AnyClusterProps")
 @software.amazon.jsii.Jsii.Proxy(AnyClusterProps.Jsii$Proxy.class)
 public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,7 @@ public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AnyClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AnyClusterProps> {
-        private java.lang.Object clusterConfig;
+        java.lang.Object clusterConfig;
 
         /**
          * Sets the value of {@link AnyClusterProps#getClusterConfig}
@@ -52,7 +52,7 @@ public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public AnyClusterProps build() {
-            return new Jsii$Proxy(clusterConfig);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -75,9 +75,9 @@ public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clusterConfig) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clusterConfig = java.util.Objects.requireNonNull(clusterConfig, "clusterConfig is required");
+            this.clusterConfig = java.util.Objects.requireNonNull(builder.clusterConfig, "clusterConfig is required");
         }
 
         @Override

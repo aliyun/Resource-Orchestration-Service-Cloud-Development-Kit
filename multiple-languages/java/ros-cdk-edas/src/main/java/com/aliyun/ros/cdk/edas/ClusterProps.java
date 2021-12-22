@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.237Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.793Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,12 +62,12 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ClusterProps> {
-        private java.lang.Object clusterName;
-        private java.lang.Object clusterType;
-        private java.lang.Object networkMode;
-        private java.lang.Object logicalRegionId;
-        private java.lang.Object oversoldFactor;
-        private java.lang.Object vpcId;
+        java.lang.Object clusterName;
+        java.lang.Object clusterType;
+        java.lang.Object networkMode;
+        java.lang.Object logicalRegionId;
+        java.lang.Object oversoldFactor;
+        java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link ClusterProps#getClusterName}
@@ -204,7 +204,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ClusterProps build() {
-            return new Jsii$Proxy(clusterName, clusterType, networkMode, logicalRegionId, oversoldFactor, vpcId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -237,14 +237,14 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clusterName, final java.lang.Object clusterType, final java.lang.Object networkMode, final java.lang.Object logicalRegionId, final java.lang.Object oversoldFactor, final java.lang.Object vpcId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clusterName = java.util.Objects.requireNonNull(clusterName, "clusterName is required");
-            this.clusterType = java.util.Objects.requireNonNull(clusterType, "clusterType is required");
-            this.networkMode = java.util.Objects.requireNonNull(networkMode, "networkMode is required");
-            this.logicalRegionId = logicalRegionId;
-            this.oversoldFactor = oversoldFactor;
-            this.vpcId = vpcId;
+            this.clusterName = java.util.Objects.requireNonNull(builder.clusterName, "clusterName is required");
+            this.clusterType = java.util.Objects.requireNonNull(builder.clusterType, "clusterType is required");
+            this.networkMode = java.util.Objects.requireNonNull(builder.networkMode, "networkMode is required");
+            this.logicalRegionId = builder.logicalRegionId;
+            this.oversoldFactor = builder.oversoldFactor;
+            this.vpcId = builder.vpcId;
         }
 
         @Override

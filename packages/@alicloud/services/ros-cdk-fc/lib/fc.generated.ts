@@ -641,6 +641,7 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
     errors.collect(ros.propertyValidator('environmentVariables', ros.hashValidator(ros.validateAny))(properties.environmentVariables));
     errors.collect(ros.propertyValidator('initializer', ros.validateString)(properties.initializer));
+    errors.collect(ros.propertyValidator('initializationTimeout', ros.validateNumber)(properties.initializationTimeout));
     errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
     if(properties.serviceName && (Array.isArray(properties.serviceName) || (typeof properties.serviceName) === 'string')) {
         errors.collect(ros.propertyValidator('serviceName', ros.validateLength)({
@@ -650,7 +651,6 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
-    errors.collect(ros.propertyValidator('initializationTimeout', ros.validateNumber)(properties.initializationTimeout));
     if(properties.instanceConcurrency && (typeof properties.instanceConcurrency) !== 'object') {
         errors.collect(ros.propertyValidator('instanceConcurrency', ros.validateRange)({
             data: properties.instanceConcurrency,
@@ -1038,15 +1038,15 @@ export namespace RosFunction {
          */
         readonly args?: string | ros.IResolvable;
         /**
+         * @Property command: Container start command. For example: ["/code/myserver"]
+         */
+        readonly command?: string | ros.IResolvable;
+        /**
          * @Property accelerationType: Whether to enable image acceleration. Valid Values:
      * Default: Indicates that image acceleration is enabled.
      * None: Indicates that image acceleration is disabled.
          */
         readonly accelerationType?: string | ros.IResolvable;
-        /**
-         * @Property command: Container start command. For example: ["/code/myserver"]
-         */
-        readonly command?: string | ros.IResolvable;
         /**
          * @Property image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com/fc-demo/helloworld:v1beta1
          */
@@ -1064,8 +1064,8 @@ function RosFunction_CustomContainerConfigPropertyValidator(properties: any): ro
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('args', ros.validateString)(properties.args));
-    errors.collect(ros.propertyValidator('accelerationType', ros.validateString)(properties.accelerationType));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
+    errors.collect(ros.propertyValidator('accelerationType', ros.validateString)(properties.accelerationType));
     errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
     return errors.wrap('supplied properties not correct for "CustomContainerConfigProperty"');
@@ -1084,8 +1084,8 @@ function rosFunctionCustomContainerConfigPropertyToRosTemplate(properties: any):
     RosFunction_CustomContainerConfigPropertyValidator(properties).assertSuccess();
     return {
       Args: ros.stringToRosTemplate(properties.args),
-      AccelerationType: ros.stringToRosTemplate(properties.accelerationType),
       Command: ros.stringToRosTemplate(properties.command),
+      AccelerationType: ros.stringToRosTemplate(properties.accelerationType),
       Image: ros.stringToRosTemplate(properties.image),
     };
 }
@@ -1356,6 +1356,236 @@ Failure: Sync invoke fails.
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosFunctionInvokerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::FC::Layer`
+ */
+export interface RosLayerProps {
+
+    /**
+     * @Property code: The code of layer.
+     */
+    readonly code: RosLayer.CodeProperty | ros.IResolvable;
+
+    /**
+     * @Property compatibleRuntime: The runtime environment supported by the layer. For example:nodejs12, nodejs10, nodejs8, nodejs6, python3, and python2.7
+     */
+    readonly compatibleRuntime: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property layerName: The name of layer
+     */
+    readonly layerName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the layer.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLayerProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLayerProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLayerPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('compatibleRuntime', ros.requiredValidator)(properties.compatibleRuntime));
+    if(properties.compatibleRuntime && (Array.isArray(properties.compatibleRuntime) || (typeof properties.compatibleRuntime) === 'string')) {
+        errors.collect(ros.propertyValidator('compatibleRuntime', ros.validateLength)({
+            data: properties.compatibleRuntime.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('compatibleRuntime', ros.listValidator(ros.validateString))(properties.compatibleRuntime));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('layerName', ros.requiredValidator)(properties.layerName));
+    if(properties.layerName && (Array.isArray(properties.layerName) || (typeof properties.layerName) === 'string')) {
+        errors.collect(ros.propertyValidator('layerName', ros.validateLength)({
+            data: properties.layerName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    if(properties.layerName && (typeof properties.layerName) !== 'object') {
+        errors.collect(ros.propertyValidator('layerName', ros.validateAllowedPattern)({
+          data: properties.layerName,
+          reg: /[a-zA-Z][_a-zA-Z0-9-]+/
+        }));
+    }
+    errors.collect(ros.propertyValidator('layerName', ros.validateString)(properties.layerName));
+    errors.collect(ros.propertyValidator('code', ros.requiredValidator)(properties.code));
+    errors.collect(ros.propertyValidator('code', RosLayer_CodePropertyValidator)(properties.code));
+    return errors.wrap('supplied properties not correct for "RosLayerProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Layer` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLayerProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Layer` resource.
+ */
+// @ts-ignore TS6133
+function rosLayerPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLayerPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Code: rosLayerCodePropertyToRosTemplate(properties.code),
+      CompatibleRuntime: ros.listMapper(ros.stringToRosTemplate)(properties.compatibleRuntime),
+      LayerName: ros.stringToRosTemplate(properties.layerName),
+      Description: ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::FC::Layer`
+ */
+export class RosLayer extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::Layer";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Arn: The name of the layer resource.
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
+     * @Attribute LayerName: The name of layer
+     */
+    public readonly attrLayerName: ros.IResolvable;
+
+    /**
+     * @Attribute Version: The version of the layer resource.
+     */
+    public readonly attrVersion: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property code: The code of layer.
+     */
+    public code: RosLayer.CodeProperty | ros.IResolvable;
+
+    /**
+     * @Property compatibleRuntime: The runtime environment supported by the layer. For example:nodejs12, nodejs10, nodejs8, nodejs6, python3, and python2.7
+     */
+    public compatibleRuntime: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property layerName: The name of layer
+     */
+    public layerName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the layer.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::FC::Layer`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLayerProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLayer.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
+        this.attrLayerName = this.getAtt('LayerName');
+        this.attrVersion = this.getAtt('Version');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.code = props.code;
+        this.compatibleRuntime = props.compatibleRuntime;
+        this.layerName = props.layerName;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            code: this.code,
+            compatibleRuntime: this.compatibleRuntime,
+            layerName: this.layerName,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLayerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosLayer {
+    /**
+     * @stability external
+     */
+    export interface CodeProperty {
+        /**
+         * @Property zipFile: The function code that is encoded in Base64. 
+     * Priority: ZipFile > OssBucketName&OssObjectName.
+         */
+        readonly zipFile?: string | ros.IResolvable;
+        /**
+         * @Property ossObjectName: The name of the OSS object that stores the ZIP package of the function code. 
+     * Priority: ZipFile > OssBucketName&OssObjectName.
+         */
+        readonly ossObjectName?: string | ros.IResolvable;
+        /**
+         * @Property ossBucketName: The name of the Object Storage Service (OSS) bucket that 
+     * stores the ZIP package of the function code.
+     * Priority: ZipFile > OssBucketName&OssObjectName.
+         */
+        readonly ossBucketName?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CodeProperty`
+ *
+ * @param properties - the TypeScript properties of a `CodeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLayer_CodePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zipFile', ros.validateString)(properties.zipFile));
+    errors.collect(ros.propertyValidator('ossObjectName', ros.validateString)(properties.ossObjectName));
+    errors.collect(ros.propertyValidator('ossBucketName', ros.validateString)(properties.ossBucketName));
+    return errors.wrap('supplied properties not correct for "CodeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Layer.Code` resource
+ *
+ * @param properties - the TypeScript properties of a `CodeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Layer.Code` resource.
+ */
+// @ts-ignore TS6133
+function rosLayerCodePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLayer_CodePropertyValidator(properties).assertSuccess();
+    return {
+      ZipFile: ros.stringToRosTemplate(properties.zipFile),
+      OssObjectName: ros.stringToRosTemplate(properties.ossObjectName),
+      OssBucketName: ros.stringToRosTemplate(properties.ossBucketName),
+    };
 }
 
 /**

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.402Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -53,11 +53,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.Object instanceName;
-        private java.lang.Object clusterType;
-        private java.lang.Object description;
-        private java.lang.Object network;
-        private java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> tags;
+        java.lang.Object instanceName;
+        java.lang.Object clusterType;
+        java.lang.Object description;
+        java.lang.Object network;
+        java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> tags;
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceName}
@@ -158,7 +158,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public InstanceProps build() {
-            return new Jsii$Proxy(instanceName, clusterType, description, network, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -190,13 +190,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object clusterType, final java.lang.Object description, final java.lang.Object network, final java.util.List<? extends com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
-            this.clusterType = clusterType;
-            this.description = description;
-            this.network = network;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty>)tags;
+            this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+            this.clusterType = builder.clusterType;
+            this.description = builder.description;
+            this.network = builder.network;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty>)builder.tags;
         }
 
         @Override

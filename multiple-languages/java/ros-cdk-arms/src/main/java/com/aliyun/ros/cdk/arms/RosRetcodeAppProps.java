@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a `ALIYUN::ARMS::RetcodeApp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.351Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.738Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosRetcodeAppProps")
 @software.amazon.jsii.Jsii.Proxy(RosRetcodeAppProps.Jsii$Proxy.class)
 public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,9 +30,9 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosRetcodeAppProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRetcodeAppProps> {
-        private java.lang.Object regionId;
-        private java.lang.Object retcodeAppName;
-        private java.lang.Object retcodeAppType;
+        java.lang.Object regionId;
+        java.lang.Object retcodeAppName;
+        java.lang.Object retcodeAppType;
 
         /**
          * Sets the value of {@link RosRetcodeAppProps#getRegionId}
@@ -101,7 +101,7 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosRetcodeAppProps build() {
-            return new Jsii$Proxy(regionId, retcodeAppName, retcodeAppType);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -128,11 +128,11 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object regionId, final java.lang.Object retcodeAppName, final java.lang.Object retcodeAppType) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.regionId = java.util.Objects.requireNonNull(regionId, "regionId is required");
-            this.retcodeAppName = java.util.Objects.requireNonNull(retcodeAppName, "retcodeAppName is required");
-            this.retcodeAppType = java.util.Objects.requireNonNull(retcodeAppType, "retcodeAppType is required");
+            this.regionId = java.util.Objects.requireNonNull(builder.regionId, "regionId is required");
+            this.retcodeAppName = java.util.Objects.requireNonNull(builder.retcodeAppName, "retcodeAppName is required");
+            this.retcodeAppType = java.util.Objects.requireNonNull(builder.retcodeAppType, "retcodeAppType is required");
         }
 
         @Override

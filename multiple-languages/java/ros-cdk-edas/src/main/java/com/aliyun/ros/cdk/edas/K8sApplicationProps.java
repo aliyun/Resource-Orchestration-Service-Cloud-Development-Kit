@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::K8sApplication`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.243Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.813Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.K8sApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(K8sApplicationProps.Jsii$Proxy.class)
 public interface K8sApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -438,54 +438,54 @@ public interface K8sApplicationProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link K8sApplicationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<K8sApplicationProps> {
-        private java.lang.Object appName;
-        private java.lang.Object clusterId;
-        private java.lang.Object applicationDescription;
-        private java.lang.Object command;
-        private java.lang.Object commandArgs;
-        private java.lang.Object deployAcrossNodes;
-        private java.lang.Object deployAcrossZones;
-        private java.lang.Object edasContainerVersion;
-        private java.lang.Object enableAhas;
-        private java.lang.Object envs;
-        private java.lang.Object imageUrl;
-        private java.lang.Object internetSlbId;
-        private java.lang.Object internetSlbPort;
-        private java.lang.Object internetSlbProtocol;
-        private java.lang.Object internetTargetPort;
-        private java.lang.Object intranetSlbId;
-        private java.lang.Object intranetSlbPort;
-        private java.lang.Object intranetSlbProtocol;
-        private java.lang.Object intranetTargetPort;
-        private java.lang.Object isMultilingualApp;
-        private java.lang.Object javaStartUpConfig;
-        private java.lang.Object jdk;
-        private java.lang.Object limitCpu;
-        private java.lang.Object limitMem;
-        private java.lang.Object liveness;
-        private java.lang.Object localVolume;
-        private java.lang.Object logicalRegionId;
-        private java.lang.Object mountDescs;
-        private java.lang.Object namespace;
-        private java.lang.Object nasId;
-        private java.lang.Object packageType;
-        private java.lang.Object packageUrl;
-        private java.lang.Object packageVersion;
-        private java.lang.Object postStart;
-        private java.lang.Object preStop;
-        private java.lang.Object readiness;
-        private java.lang.Object replicas;
-        private java.lang.Object repoId;
-        private java.lang.Object requestsCpu;
-        private java.lang.Object requestsMem;
-        private java.lang.Object runtimeClassName;
-        private java.lang.Object slsConfigs;
-        private java.lang.Object storageType;
-        private java.lang.Object timeout;
-        private java.lang.Object uriEncoding;
-        private java.lang.Object useBodyEncoding;
-        private java.lang.Object webContainer;
-        private java.lang.Object webContainerConfig;
+        java.lang.Object appName;
+        java.lang.Object clusterId;
+        java.lang.Object applicationDescription;
+        java.lang.Object command;
+        java.lang.Object commandArgs;
+        java.lang.Object deployAcrossNodes;
+        java.lang.Object deployAcrossZones;
+        java.lang.Object edasContainerVersion;
+        java.lang.Object enableAhas;
+        java.lang.Object envs;
+        java.lang.Object imageUrl;
+        java.lang.Object internetSlbId;
+        java.lang.Object internetSlbPort;
+        java.lang.Object internetSlbProtocol;
+        java.lang.Object internetTargetPort;
+        java.lang.Object intranetSlbId;
+        java.lang.Object intranetSlbPort;
+        java.lang.Object intranetSlbProtocol;
+        java.lang.Object intranetTargetPort;
+        java.lang.Object isMultilingualApp;
+        java.lang.Object javaStartUpConfig;
+        java.lang.Object jdk;
+        java.lang.Object limitCpu;
+        java.lang.Object limitMem;
+        java.lang.Object liveness;
+        java.lang.Object localVolume;
+        java.lang.Object logicalRegionId;
+        java.lang.Object mountDescs;
+        java.lang.Object namespace;
+        java.lang.Object nasId;
+        java.lang.Object packageType;
+        java.lang.Object packageUrl;
+        java.lang.Object packageVersion;
+        java.lang.Object postStart;
+        java.lang.Object preStop;
+        java.lang.Object readiness;
+        java.lang.Object replicas;
+        java.lang.Object repoId;
+        java.lang.Object requestsCpu;
+        java.lang.Object requestsMem;
+        java.lang.Object runtimeClassName;
+        java.lang.Object slsConfigs;
+        java.lang.Object storageType;
+        java.lang.Object timeout;
+        java.lang.Object uriEncoding;
+        java.lang.Object useBodyEncoding;
+        java.lang.Object webContainer;
+        java.lang.Object webContainerConfig;
 
         /**
          * Sets the value of {@link K8sApplicationProps#getAppName}
@@ -1552,7 +1552,7 @@ public interface K8sApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public K8sApplicationProps build() {
-            return new Jsii$Proxy(appName, clusterId, applicationDescription, command, commandArgs, deployAcrossNodes, deployAcrossZones, edasContainerVersion, enableAhas, envs, imageUrl, internetSlbId, internetSlbPort, internetSlbProtocol, internetTargetPort, intranetSlbId, intranetSlbPort, intranetSlbProtocol, intranetTargetPort, isMultilingualApp, javaStartUpConfig, jdk, limitCpu, limitMem, liveness, localVolume, logicalRegionId, mountDescs, namespace, nasId, packageType, packageUrl, packageVersion, postStart, preStop, readiness, replicas, repoId, requestsCpu, requestsMem, runtimeClassName, slsConfigs, storageType, timeout, uriEncoding, useBodyEncoding, webContainer, webContainerConfig);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1669,56 +1669,56 @@ public interface K8sApplicationProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object appName, final java.lang.Object clusterId, final java.lang.Object applicationDescription, final java.lang.Object command, final java.lang.Object commandArgs, final java.lang.Object deployAcrossNodes, final java.lang.Object deployAcrossZones, final java.lang.Object edasContainerVersion, final java.lang.Object enableAhas, final java.lang.Object envs, final java.lang.Object imageUrl, final java.lang.Object internetSlbId, final java.lang.Object internetSlbPort, final java.lang.Object internetSlbProtocol, final java.lang.Object internetTargetPort, final java.lang.Object intranetSlbId, final java.lang.Object intranetSlbPort, final java.lang.Object intranetSlbProtocol, final java.lang.Object intranetTargetPort, final java.lang.Object isMultilingualApp, final java.lang.Object javaStartUpConfig, final java.lang.Object jdk, final java.lang.Object limitCpu, final java.lang.Object limitMem, final java.lang.Object liveness, final java.lang.Object localVolume, final java.lang.Object logicalRegionId, final java.lang.Object mountDescs, final java.lang.Object namespace, final java.lang.Object nasId, final java.lang.Object packageType, final java.lang.Object packageUrl, final java.lang.Object packageVersion, final java.lang.Object postStart, final java.lang.Object preStop, final java.lang.Object readiness, final java.lang.Object replicas, final java.lang.Object repoId, final java.lang.Object requestsCpu, final java.lang.Object requestsMem, final java.lang.Object runtimeClassName, final java.lang.Object slsConfigs, final java.lang.Object storageType, final java.lang.Object timeout, final java.lang.Object uriEncoding, final java.lang.Object useBodyEncoding, final java.lang.Object webContainer, final java.lang.Object webContainerConfig) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.appName = java.util.Objects.requireNonNull(appName, "appName is required");
-            this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
-            this.applicationDescription = applicationDescription;
-            this.command = command;
-            this.commandArgs = commandArgs;
-            this.deployAcrossNodes = deployAcrossNodes;
-            this.deployAcrossZones = deployAcrossZones;
-            this.edasContainerVersion = edasContainerVersion;
-            this.enableAhas = enableAhas;
-            this.envs = envs;
-            this.imageUrl = imageUrl;
-            this.internetSlbId = internetSlbId;
-            this.internetSlbPort = internetSlbPort;
-            this.internetSlbProtocol = internetSlbProtocol;
-            this.internetTargetPort = internetTargetPort;
-            this.intranetSlbId = intranetSlbId;
-            this.intranetSlbPort = intranetSlbPort;
-            this.intranetSlbProtocol = intranetSlbProtocol;
-            this.intranetTargetPort = intranetTargetPort;
-            this.isMultilingualApp = isMultilingualApp;
-            this.javaStartUpConfig = javaStartUpConfig;
-            this.jdk = jdk;
-            this.limitCpu = limitCpu;
-            this.limitMem = limitMem;
-            this.liveness = liveness;
-            this.localVolume = localVolume;
-            this.logicalRegionId = logicalRegionId;
-            this.mountDescs = mountDescs;
-            this.namespace = namespace;
-            this.nasId = nasId;
-            this.packageType = packageType;
-            this.packageUrl = packageUrl;
-            this.packageVersion = packageVersion;
-            this.postStart = postStart;
-            this.preStop = preStop;
-            this.readiness = readiness;
-            this.replicas = replicas;
-            this.repoId = repoId;
-            this.requestsCpu = requestsCpu;
-            this.requestsMem = requestsMem;
-            this.runtimeClassName = runtimeClassName;
-            this.slsConfigs = slsConfigs;
-            this.storageType = storageType;
-            this.timeout = timeout;
-            this.uriEncoding = uriEncoding;
-            this.useBodyEncoding = useBodyEncoding;
-            this.webContainer = webContainer;
-            this.webContainerConfig = webContainerConfig;
+            this.appName = java.util.Objects.requireNonNull(builder.appName, "appName is required");
+            this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
+            this.applicationDescription = builder.applicationDescription;
+            this.command = builder.command;
+            this.commandArgs = builder.commandArgs;
+            this.deployAcrossNodes = builder.deployAcrossNodes;
+            this.deployAcrossZones = builder.deployAcrossZones;
+            this.edasContainerVersion = builder.edasContainerVersion;
+            this.enableAhas = builder.enableAhas;
+            this.envs = builder.envs;
+            this.imageUrl = builder.imageUrl;
+            this.internetSlbId = builder.internetSlbId;
+            this.internetSlbPort = builder.internetSlbPort;
+            this.internetSlbProtocol = builder.internetSlbProtocol;
+            this.internetTargetPort = builder.internetTargetPort;
+            this.intranetSlbId = builder.intranetSlbId;
+            this.intranetSlbPort = builder.intranetSlbPort;
+            this.intranetSlbProtocol = builder.intranetSlbProtocol;
+            this.intranetTargetPort = builder.intranetTargetPort;
+            this.isMultilingualApp = builder.isMultilingualApp;
+            this.javaStartUpConfig = builder.javaStartUpConfig;
+            this.jdk = builder.jdk;
+            this.limitCpu = builder.limitCpu;
+            this.limitMem = builder.limitMem;
+            this.liveness = builder.liveness;
+            this.localVolume = builder.localVolume;
+            this.logicalRegionId = builder.logicalRegionId;
+            this.mountDescs = builder.mountDescs;
+            this.namespace = builder.namespace;
+            this.nasId = builder.nasId;
+            this.packageType = builder.packageType;
+            this.packageUrl = builder.packageUrl;
+            this.packageVersion = builder.packageVersion;
+            this.postStart = builder.postStart;
+            this.preStop = builder.preStop;
+            this.readiness = builder.readiness;
+            this.replicas = builder.replicas;
+            this.repoId = builder.repoId;
+            this.requestsCpu = builder.requestsCpu;
+            this.requestsMem = builder.requestsMem;
+            this.runtimeClassName = builder.runtimeClassName;
+            this.slsConfigs = builder.slsConfigs;
+            this.storageType = builder.storageType;
+            this.timeout = builder.timeout;
+            this.uriEncoding = builder.uriEncoding;
+            this.useBodyEncoding = builder.useBodyEncoding;
+            this.webContainer = builder.webContainer;
+            this.webContainerConfig = builder.webContainerConfig;
         }
 
         @Override

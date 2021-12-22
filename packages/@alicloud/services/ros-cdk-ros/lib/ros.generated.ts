@@ -40,6 +40,7 @@ export interface RosAutoEnableServiceProps {
      * RocketMQ: RocketMQ
      * SAE: Serverless App Engine
      * SLS: Log Service
+     * TrafficMirror: VPC Traffic Mirroring
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
      *
@@ -61,7 +62,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","OSS","MNS","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","AHAS","BrainIndustrial","OTS","PrivateLink"],
+          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","AHAS","BrainIndustrial","OTS","PrivateLink"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -136,6 +137,7 @@ export class RosAutoEnableService extends ros.RosResource {
      * RocketMQ: RocketMQ
      * SAE: Serverless App Engine
      * SLS: Log Service
+     * TrafficMirror: VPC Traffic Mirroring
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
      *
@@ -665,6 +667,11 @@ export interface RosWaitConditionProps {
      * @Property count: The number of success signals that must be received before the stack creation process continues.
      */
     readonly count?: number | ros.IResolvable;
+
+    /**
+     * @Property showProgressEvent: Whether to generate progress changed event. Default to Disabled.
+     */
+    readonly showProgressEvent?: string | ros.IResolvable;
 }
 
 /**
@@ -677,6 +684,13 @@ export interface RosWaitConditionProps {
 function RosWaitConditionPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.showProgressEvent && (typeof properties.showProgressEvent) !== 'object') {
+        errors.collect(ros.propertyValidator('showProgressEvent', ros.validateAllowedValues)({
+          data: properties.showProgressEvent,
+          allowedValues: ["EnabledIfCreateStack","Disabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('showProgressEvent', ros.validateString)(properties.showProgressEvent));
     errors.collect(ros.propertyValidator('timeout', ros.requiredValidator)(properties.timeout));
     if(properties.timeout && (typeof properties.timeout) !== 'object') {
         errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
@@ -709,6 +723,7 @@ function rosWaitConditionPropsToRosTemplate(properties: any, enableResourcePrope
       Handle: ros.stringToRosTemplate(properties.handle),
       Timeout: ros.numberToRosTemplate(properties.timeout),
       Count: ros.numberToRosTemplate(properties.count),
+      ShowProgressEvent: ros.stringToRosTemplate(properties.showProgressEvent),
     };
 }
 
@@ -760,6 +775,11 @@ export class RosWaitCondition extends ros.RosResource {
     public count: number | ros.IResolvable | undefined;
 
     /**
+     * @Property showProgressEvent: Whether to generate progress changed event. Default to Disabled.
+     */
+    public showProgressEvent: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::ROS::WaitCondition`.
      *
      * @param scope - scope in which this resource is defined
@@ -776,6 +796,7 @@ export class RosWaitCondition extends ros.RosResource {
         this.handle = props.handle;
         this.timeout = props.timeout;
         this.count = props.count;
+        this.showProgressEvent = props.showProgressEvent;
     }
 
 
@@ -784,6 +805,7 @@ export class RosWaitCondition extends ros.RosResource {
             handle: this.handle,
             timeout: this.timeout,
             count: this.count,
+            showProgressEvent: this.showProgressEvent,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

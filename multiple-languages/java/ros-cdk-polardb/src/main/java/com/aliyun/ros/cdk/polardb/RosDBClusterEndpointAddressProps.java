@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpointAddress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.791Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.456Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterEndpointAddressProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterEndpointAddressProps.Jsii$Proxy.class)
 public interface RosDBClusterEndpointAddressProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,10 +38,10 @@ public interface RosDBClusterEndpointAddressProps extends software.amazon.jsii.J
      * A builder for {@link RosDBClusterEndpointAddressProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDBClusterEndpointAddressProps> {
-        private java.lang.Object dbClusterId;
-        private java.lang.Object dbEndpointId;
-        private java.lang.Object connectionStringPrefix;
-        private java.lang.Object netType;
+        java.lang.Object dbClusterId;
+        java.lang.Object dbEndpointId;
+        java.lang.Object connectionStringPrefix;
+        java.lang.Object netType;
 
         /**
          * Sets the value of {@link RosDBClusterEndpointAddressProps#getDbClusterId}
@@ -130,7 +130,7 @@ public interface RosDBClusterEndpointAddressProps extends software.amazon.jsii.J
          */
         @Override
         public RosDBClusterEndpointAddressProps build() {
-            return new Jsii$Proxy(dbClusterId, dbEndpointId, connectionStringPrefix, netType);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -159,12 +159,12 @@ public interface RosDBClusterEndpointAddressProps extends software.amazon.jsii.J
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object dbClusterId, final java.lang.Object dbEndpointId, final java.lang.Object connectionStringPrefix, final java.lang.Object netType) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
-            this.dbEndpointId = java.util.Objects.requireNonNull(dbEndpointId, "dbEndpointId is required");
-            this.connectionStringPrefix = connectionStringPrefix;
-            this.netType = netType;
+            this.dbClusterId = java.util.Objects.requireNonNull(builder.dbClusterId, "dbClusterId is required");
+            this.dbEndpointId = java.util.Objects.requireNonNull(builder.dbEndpointId, "dbEndpointId is required");
+            this.connectionStringPrefix = builder.connectionStringPrefix;
+            this.netType = builder.netType;
         }
 
         @Override

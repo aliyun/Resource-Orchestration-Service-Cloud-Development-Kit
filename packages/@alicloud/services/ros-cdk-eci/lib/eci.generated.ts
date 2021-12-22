@@ -1109,25 +1109,25 @@ export namespace RosContainerGroup {
          */
         readonly memory?: number | ros.IResolvable;
         /**
-         * @Property arg: The arguments passed to the commands. A maximum of 10 arguments are supported.
-         */
-        readonly arg?: Array<string | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property port: The open ports and protocols. You can set a maximum of 100 ports.
          */
         readonly port?: Array<RosContainerGroup.InitContainerPortProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property arg: The arguments passed to the commands. A maximum of 10 arguments are supported.
+         */
+        readonly arg?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property securityContext: The security context of the container group.
          */
         readonly securityContext?: RosContainerGroup.InitContainerSecurityContextProperty | ros.IResolvable;
         /**
-         * @Property cpu: The number of vCPUs assigned to the container. Unit: vCPUs (cores).
-         */
-        readonly cpu?: number | ros.IResolvable;
-        /**
          * @Property volumeMount: The number of volumes that are mounted to the container. A maximum of 16 volumes are supported.
          */
         readonly volumeMount?: Array<RosContainerGroup.InitContainerVolumeMountProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property cpu: The number of vCPUs assigned to the container. Unit: vCPUs (cores).
+         */
+        readonly cpu?: number | ros.IResolvable;
         /**
          * @Property image: The container image.
          */
@@ -1163,14 +1163,6 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
     }
     errors.collect(ros.propertyValidator('command', ros.listValidator(ros.validateString))(properties.command));
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
-    if(properties.arg && (Array.isArray(properties.arg) || (typeof properties.arg) === 'string')) {
-        errors.collect(ros.propertyValidator('arg', ros.validateLength)({
-            data: properties.arg.length,
-            min: undefined,
-            max: 10,
-          }));
-    }
-    errors.collect(ros.propertyValidator('arg', ros.listValidator(ros.validateString))(properties.arg));
     if(properties.port && (Array.isArray(properties.port) || (typeof properties.port) === 'string')) {
         errors.collect(ros.propertyValidator('port', ros.validateLength)({
             data: properties.port.length,
@@ -1179,8 +1171,15 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
           }));
     }
     errors.collect(ros.propertyValidator('port', ros.listValidator(RosContainerGroup_InitContainerPortPropertyValidator))(properties.port));
+    if(properties.arg && (Array.isArray(properties.arg) || (typeof properties.arg) === 'string')) {
+        errors.collect(ros.propertyValidator('arg', ros.validateLength)({
+            data: properties.arg.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('arg', ros.listValidator(ros.validateString))(properties.arg));
     errors.collect(ros.propertyValidator('securityContext', RosContainerGroup_InitContainerSecurityContextPropertyValidator)(properties.securityContext));
-    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     if(properties.volumeMount && (Array.isArray(properties.volumeMount) || (typeof properties.volumeMount) === 'string')) {
         errors.collect(ros.propertyValidator('volumeMount', ros.validateLength)({
             data: properties.volumeMount.length,
@@ -1189,6 +1188,7 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
           }));
     }
     errors.collect(ros.propertyValidator('volumeMount', ros.listValidator(RosContainerGroup_InitContainerVolumeMountPropertyValidator))(properties.volumeMount));
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
     if(properties.environmentVar && (Array.isArray(properties.environmentVar) || (typeof properties.environmentVar) === 'string')) {
         errors.collect(ros.propertyValidator('environmentVar', ros.validateLength)({
@@ -1218,11 +1218,11 @@ function rosContainerGroupInitContainerPropertyToRosTemplate(properties: any): a
       ImagePullPolicy: ros.stringToRosTemplate(properties.imagePullPolicy),
       Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
       Memory: ros.numberToRosTemplate(properties.memory),
-      Arg: ros.listMapper(ros.stringToRosTemplate)(properties.arg),
       Port: ros.listMapper(rosContainerGroupInitContainerPortPropertyToRosTemplate)(properties.port),
+      Arg: ros.listMapper(ros.stringToRosTemplate)(properties.arg),
       SecurityContext: rosContainerGroupInitContainerSecurityContextPropertyToRosTemplate(properties.securityContext),
-      Cpu: ros.numberToRosTemplate(properties.cpu),
       VolumeMount: ros.listMapper(rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate)(properties.volumeMount),
+      Cpu: ros.numberToRosTemplate(properties.cpu),
       Image: ros.stringToRosTemplate(properties.image),
       EnvironmentVar: ros.listMapper(rosContainerGroupInitContainerEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
       Name: ros.stringToRosTemplate(properties.name),

@@ -14,6 +14,10 @@
 @alicloud/ros-cdk-vpc.CommonBandwidthPackageProps=com.aliyun.ros.cdk.vpc.CommonBandwidthPackageProps
 @alicloud/ros-cdk-vpc.CustomerGateway=com.aliyun.ros.cdk.vpc.CustomerGateway
 @alicloud/ros-cdk-vpc.CustomerGatewayProps=com.aliyun.ros.cdk.vpc.CustomerGatewayProps
+@alicloud/ros-cdk-vpc.DhcpOptionsSet=com.aliyun.ros.cdk.vpc.DhcpOptionsSet
+@alicloud/ros-cdk-vpc.DhcpOptionsSetAttachment=com.aliyun.ros.cdk.vpc.DhcpOptionsSetAttachment
+@alicloud/ros-cdk-vpc.DhcpOptionsSetAttachmentProps=com.aliyun.ros.cdk.vpc.DhcpOptionsSetAttachmentProps
+@alicloud/ros-cdk-vpc.DhcpOptionsSetProps=com.aliyun.ros.cdk.vpc.DhcpOptionsSetProps
 @alicloud/ros-cdk-vpc.EIPAssociation=com.aliyun.ros.cdk.vpc.EIPAssociation
 @alicloud/ros-cdk-vpc.EIPAssociationProps=com.aliyun.ros.cdk.vpc.EIPAssociationProps
 @alicloud/ros-cdk-vpc.EIPProps=com.aliyun.ros.cdk.vpc.EIPProps
@@ -58,6 +62,10 @@
 @alicloud/ros-cdk-vpc.RosCommonBandwidthPackageProps=com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackageProps
 @alicloud/ros-cdk-vpc.RosCustomerGateway=com.aliyun.ros.cdk.vpc.RosCustomerGateway
 @alicloud/ros-cdk-vpc.RosCustomerGatewayProps=com.aliyun.ros.cdk.vpc.RosCustomerGatewayProps
+@alicloud/ros-cdk-vpc.RosDhcpOptionsSet=com.aliyun.ros.cdk.vpc.RosDhcpOptionsSet
+@alicloud/ros-cdk-vpc.RosDhcpOptionsSetAttachment=com.aliyun.ros.cdk.vpc.RosDhcpOptionsSetAttachment
+@alicloud/ros-cdk-vpc.RosDhcpOptionsSetAttachmentProps=com.aliyun.ros.cdk.vpc.RosDhcpOptionsSetAttachmentProps
+@alicloud/ros-cdk-vpc.RosDhcpOptionsSetProps=com.aliyun.ros.cdk.vpc.RosDhcpOptionsSetProps
 @alicloud/ros-cdk-vpc.RosEIP=com.aliyun.ros.cdk.vpc.RosEIP
 @alicloud/ros-cdk-vpc.RosEIP.TagsProperty=com.aliyun.ros.cdk.vpc.RosEIP$TagsProperty
 @alicloud/ros-cdk-vpc.RosEIPAssociation=com.aliyun.ros.cdk.vpc.RosEIPAssociation

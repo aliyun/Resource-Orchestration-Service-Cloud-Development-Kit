@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::VSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.215Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.784Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VSwitchProps")
 @software.amazon.jsii.Jsii.Proxy(VSwitchProps.Jsii$Proxy.class)
 public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,6 +52,13 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcIpv6CidrBlock() {
+        return null;
+    }
+
+    /**
      * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchName() {
@@ -68,13 +75,14 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link VSwitchProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VSwitchProps> {
-        private java.lang.Object cidrBlock;
-        private java.lang.Object vpcId;
-        private java.lang.Object zoneId;
-        private java.lang.Object description;
-        private java.lang.Object ipv6CidrBlock;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags;
-        private java.lang.Object vSwitchName;
+        java.lang.Object cidrBlock;
+        java.lang.Object vpcId;
+        java.lang.Object zoneId;
+        java.lang.Object description;
+        java.lang.Object ipv6CidrBlock;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags;
+        java.lang.Object vpcIpv6CidrBlock;
+        java.lang.Object vSwitchName;
 
         /**
          * Sets the value of {@link VSwitchProps#getCidrBlock}
@@ -195,6 +203,26 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VSwitchProps#getVpcIpv6CidrBlock}
+         * @param vpcIpv6CidrBlock Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
+         * @return {@code this}
+         */
+        public Builder vpcIpv6CidrBlock(java.lang.String vpcIpv6CidrBlock) {
+            this.vpcIpv6CidrBlock = vpcIpv6CidrBlock;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VSwitchProps#getVpcIpv6CidrBlock}
+         * @param vpcIpv6CidrBlock Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
+         * @return {@code this}
+         */
+        public Builder vpcIpv6CidrBlock(com.aliyun.ros.cdk.core.IResolvable vpcIpv6CidrBlock) {
+            this.vpcIpv6CidrBlock = vpcIpv6CidrBlock;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VSwitchProps#getVSwitchName}
          * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * @return {@code this}
@@ -221,7 +249,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public VSwitchProps build() {
-            return new Jsii$Proxy(cidrBlock, vpcId, zoneId, description, ipv6CidrBlock, tags, vSwitchName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -236,6 +264,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object description;
         private final java.lang.Object ipv6CidrBlock;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags;
+        private final java.lang.Object vpcIpv6CidrBlock;
         private final java.lang.Object vSwitchName;
 
         /**
@@ -250,6 +279,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6CidrBlock = software.amazon.jsii.Kernel.get(this, "ipv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty.class)));
+            this.vpcIpv6CidrBlock = software.amazon.jsii.Kernel.get(this, "vpcIpv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchName = software.amazon.jsii.Kernel.get(this, "vSwitchName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -257,15 +287,16 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object cidrBlock, final java.lang.Object vpcId, final java.lang.Object zoneId, final java.lang.Object description, final java.lang.Object ipv6CidrBlock, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags, final java.lang.Object vSwitchName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cidrBlock = java.util.Objects.requireNonNull(cidrBlock, "cidrBlock is required");
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
-            this.description = description;
-            this.ipv6CidrBlock = ipv6CidrBlock;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty>)tags;
-            this.vSwitchName = vSwitchName;
+            this.cidrBlock = java.util.Objects.requireNonNull(builder.cidrBlock, "cidrBlock is required");
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.description = builder.description;
+            this.ipv6CidrBlock = builder.ipv6CidrBlock;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty>)builder.tags;
+            this.vpcIpv6CidrBlock = builder.vpcIpv6CidrBlock;
+            this.vSwitchName = builder.vSwitchName;
         }
 
         @Override
@@ -299,6 +330,11 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getVpcIpv6CidrBlock() {
+            return this.vpcIpv6CidrBlock;
+        }
+
+        @Override
         public final java.lang.Object getVSwitchName() {
             return this.vSwitchName;
         }
@@ -320,6 +356,9 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
+            }
+            if (this.getVpcIpv6CidrBlock() != null) {
+                data.set("vpcIpv6CidrBlock", om.valueToTree(this.getVpcIpv6CidrBlock()));
             }
             if (this.getVSwitchName() != null) {
                 data.set("vSwitchName", om.valueToTree(this.getVSwitchName()));
@@ -348,6 +387,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.ipv6CidrBlock != null ? !this.ipv6CidrBlock.equals(that.ipv6CidrBlock) : that.ipv6CidrBlock != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.vpcIpv6CidrBlock != null ? !this.vpcIpv6CidrBlock.equals(that.vpcIpv6CidrBlock) : that.vpcIpv6CidrBlock != null) return false;
             return this.vSwitchName != null ? this.vSwitchName.equals(that.vSwitchName) : that.vSwitchName == null;
         }
 
@@ -359,6 +399,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.ipv6CidrBlock != null ? this.ipv6CidrBlock.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.vpcIpv6CidrBlock != null ? this.vpcIpv6CidrBlock.hashCode() : 0);
             result = 31 * result + (this.vSwitchName != null ? this.vSwitchName.hashCode() : 0);
             return result;
         }

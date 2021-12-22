@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS template type:  `ALIYUN::OTS::VpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.757Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.407Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosVpcBinder")
 public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -141,10 +141,10 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VpcsProperty> {
-            private java.lang.Object instanceVpcName;
-            private java.lang.Object network;
-            private java.lang.Object virtualSwitchId;
-            private java.lang.Object vpcId;
+            java.lang.Object instanceVpcName;
+            java.lang.Object network;
+            java.lang.Object virtualSwitchId;
+            java.lang.Object vpcId;
 
             /**
              * Sets the value of {@link VpcsProperty#getInstanceVpcName}
@@ -242,7 +242,7 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public VpcsProperty build() {
-                return new Jsii$Proxy(instanceVpcName, network, virtualSwitchId, vpcId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -272,12 +272,12 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object instanceVpcName, final java.lang.Object network, final java.lang.Object virtualSwitchId, final java.lang.Object vpcId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceVpcName = java.util.Objects.requireNonNull(instanceVpcName, "instanceVpcName is required");
-                this.network = java.util.Objects.requireNonNull(network, "network is required");
-                this.virtualSwitchId = java.util.Objects.requireNonNull(virtualSwitchId, "virtualSwitchId is required");
-                this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
+                this.instanceVpcName = java.util.Objects.requireNonNull(builder.instanceVpcName, "instanceVpcName is required");
+                this.network = java.util.Objects.requireNonNull(builder.network, "network is required");
+                this.virtualSwitchId = java.util.Objects.requireNonNull(builder.virtualSwitchId, "virtualSwitchId is required");
+                this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             }
 
             @Override

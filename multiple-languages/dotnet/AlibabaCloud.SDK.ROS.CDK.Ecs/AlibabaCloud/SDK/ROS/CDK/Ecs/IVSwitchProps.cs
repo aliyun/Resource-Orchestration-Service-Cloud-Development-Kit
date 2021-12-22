@@ -72,6 +72,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.</summary>
+        [JsiiProperty(name: "vpcIpv6CidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VpcIpv6CidrBlock
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>
         [JsiiProperty(name: "vSwitchName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -144,6 +155,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public AlibabaCloud.SDK.ROS.CDK.Ecs.RosVSwitch.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosVSwitch.ITagsProperty[]?>();
+            }
+
+            /// <summary>Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcIpv6CidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcIpv6CidrBlock
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>

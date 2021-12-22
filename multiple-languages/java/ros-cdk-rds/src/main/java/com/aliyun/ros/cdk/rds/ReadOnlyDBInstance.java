@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.931Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.614Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstance")
 public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -239,6 +239,35 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property autoRenew: Specifies whether to enable auto-renewal.
+         * <p>
+         * Valid values: true and false. Note
+         * :Monthly subscription: The auto-renewal cycle is one month.
+         * Annual subscription: The auto-renewal cycle is one year.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal. This parameter is required.
+         */
+        public Builder autoRenew(final java.lang.Boolean autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * Property autoRenew: Specifies whether to enable auto-renewal.
+         * <p>
+         * Valid values: true and false. Note
+         * :Monthly subscription: The auto-renewal cycle is one month.
+         * Annual subscription: The auto-renewal cycle is one year.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal. This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
          * Property category: The edition of the instance.
          * <p>
          * Valid values:
@@ -336,7 +365,7 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property payType: The billing method.
          * <p>
-         * The system only supports Pay-As-You-Go. Valid value: Postpaid.
+         * Valid value: Postpaid, Prepaid.
          * <p>
          * @return {@code this}
          * @param payType Property payType: The billing method. This parameter is required.
@@ -348,13 +377,59 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property payType: The billing method.
          * <p>
-         * The system only supports Pay-As-You-Go. Valid value: Postpaid.
+         * Valid value: Postpaid, Prepaid.
          * <p>
          * @return {@code this}
          * @param payType Property payType: The billing method. This parameter is required.
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
             this.props.payType(payType);
+            return this;
+        }
+
+        /**
+         * Property period: Prepaid time period.
+         * <p>
+         * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: Prepaid time period. This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * Property period: Prepaid time period.
+         * <p>
+         * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: Prepaid time period. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property periodType: Charge period for created instances.
+         * <p>
+         * @return {@code this}
+         * @param periodType Property periodType: Charge period for created instances. This parameter is required.
+         */
+        public Builder periodType(final java.lang.String periodType) {
+            this.props.periodType(periodType);
+            return this;
+        }
+        /**
+         * Property periodType: Charge period for created instances.
+         * <p>
+         * @return {@code this}
+         * @param periodType Property periodType: Charge period for created instances. This parameter is required.
+         */
+        public Builder periodType(final com.aliyun.ros.cdk.core.IResolvable periodType) {
+            this.props.periodType(periodType);
             return this;
         }
 

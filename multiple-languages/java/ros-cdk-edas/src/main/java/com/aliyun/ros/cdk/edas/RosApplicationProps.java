@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::Application`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.252Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.821Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationProps.Jsii$Proxy.class)
 public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -68,15 +68,15 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosApplicationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosApplicationProps> {
-        private java.lang.Object applicationName;
-        private java.lang.Object clusterId;
-        private java.lang.Object buildPackId;
-        private java.lang.Object componentIds;
-        private java.lang.Object description;
-        private java.lang.Object ecuInfo;
-        private java.lang.Object healthCheckUrl;
-        private java.lang.Object logicalRegionId;
-        private java.lang.Object packageType;
+        java.lang.Object applicationName;
+        java.lang.Object clusterId;
+        java.lang.Object buildPackId;
+        java.lang.Object componentIds;
+        java.lang.Object description;
+        java.lang.Object ecuInfo;
+        java.lang.Object healthCheckUrl;
+        java.lang.Object logicalRegionId;
+        java.lang.Object packageType;
 
         /**
          * Sets the value of {@link RosApplicationProps#getApplicationName}
@@ -265,7 +265,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosApplicationProps build() {
-            return new Jsii$Proxy(applicationName, clusterId, buildPackId, componentIds, description, ecuInfo, healthCheckUrl, logicalRegionId, packageType);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -304,17 +304,17 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object applicationName, final java.lang.Object clusterId, final java.lang.Object buildPackId, final java.lang.Object componentIds, final java.lang.Object description, final java.lang.Object ecuInfo, final java.lang.Object healthCheckUrl, final java.lang.Object logicalRegionId, final java.lang.Object packageType) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.applicationName = java.util.Objects.requireNonNull(applicationName, "applicationName is required");
-            this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
-            this.buildPackId = buildPackId;
-            this.componentIds = componentIds;
-            this.description = description;
-            this.ecuInfo = ecuInfo;
-            this.healthCheckUrl = healthCheckUrl;
-            this.logicalRegionId = logicalRegionId;
-            this.packageType = packageType;
+            this.applicationName = java.util.Objects.requireNonNull(builder.applicationName, "applicationName is required");
+            this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
+            this.buildPackId = builder.buildPackId;
+            this.componentIds = builder.componentIds;
+            this.description = builder.description;
+            this.ecuInfo = builder.ecuInfo;
+            this.healthCheckUrl = builder.healthCheckUrl;
+            this.logicalRegionId = builder.logicalRegionId;
+            this.packageType = builder.packageType;
         }
 
         @Override

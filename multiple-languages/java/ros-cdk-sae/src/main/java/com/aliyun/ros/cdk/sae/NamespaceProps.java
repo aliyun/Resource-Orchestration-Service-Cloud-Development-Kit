@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Properties for defining a `ALIYUN::SAE::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.754Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.NamespaceProps")
 @software.amazon.jsii.Jsii.Proxy(NamespaceProps.Jsii$Proxy.class)
 public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,9 +37,9 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link NamespaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NamespaceProps> {
-        private java.lang.Object namespaceId;
-        private java.lang.Object namespaceName;
-        private java.lang.Object namespaceDescription;
+        java.lang.Object namespaceId;
+        java.lang.Object namespaceName;
+        java.lang.Object namespaceDescription;
 
         /**
          * Sets the value of {@link NamespaceProps#getNamespaceId}
@@ -110,7 +110,7 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public NamespaceProps build() {
-            return new Jsii$Proxy(namespaceId, namespaceName, namespaceDescription);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -137,11 +137,11 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object namespaceId, final java.lang.Object namespaceName, final java.lang.Object namespaceDescription) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.namespaceId = java.util.Objects.requireNonNull(namespaceId, "namespaceId is required");
-            this.namespaceName = java.util.Objects.requireNonNull(namespaceName, "namespaceName is required");
-            this.namespaceDescription = namespaceDescription;
+            this.namespaceId = java.util.Objects.requireNonNull(builder.namespaceId, "namespaceId is required");
+            this.namespaceName = java.util.Objects.requireNonNull(builder.namespaceName, "namespaceName is required");
+            this.namespaceDescription = builder.namespaceDescription;
         }
 
         @Override

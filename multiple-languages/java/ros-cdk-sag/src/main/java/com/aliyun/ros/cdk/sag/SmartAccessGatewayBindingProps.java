@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::SmartAccessGatewayBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.069Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.767Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.SmartAccessGatewayBindingProps")
 @software.amazon.jsii.Jsii.Proxy(SmartAccessGatewayBindingProps.Jsii$Proxy.class)
 public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.Jsi
      * A builder for {@link SmartAccessGatewayBindingProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SmartAccessGatewayBindingProps> {
-        private java.lang.Object ccnId;
-        private java.lang.Object smartAgId;
+        java.lang.Object ccnId;
+        java.lang.Object smartAgId;
 
         /**
          * Sets the value of {@link SmartAccessGatewayBindingProps#getCcnId}
@@ -78,7 +78,7 @@ public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.Jsi
          */
         @Override
         public SmartAccessGatewayBindingProps build() {
-            return new Jsii$Proxy(ccnId, smartAgId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.Jsi
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object ccnId, final java.lang.Object smartAgId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.ccnId = java.util.Objects.requireNonNull(ccnId, "ccnId is required");
-            this.smartAgId = java.util.Objects.requireNonNull(smartAgId, "smartAgId is required");
+            this.ccnId = java.util.Objects.requireNonNull(builder.ccnId, "ccnId is required");
+            this.smartAgId = java.util.Objects.requireNonNull(builder.smartAgId, "smartAgId is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::RouteTable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.219Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.956Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouteTableProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouteTableProps.Jsii$Proxy.class)
 public interface RosRouteTableProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,10 +40,10 @@ public interface RosRouteTableProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosRouteTableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRouteTableProps> {
-        private java.lang.Object vpcId;
-        private java.lang.Object description;
-        private java.lang.Object routeTableName;
-        private java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags;
+        java.lang.Object vpcId;
+        java.lang.Object description;
+        java.lang.Object routeTableName;
+        java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosRouteTableProps#getVpcId}
@@ -123,7 +123,7 @@ public interface RosRouteTableProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosRouteTableProps build() {
-            return new Jsii$Proxy(vpcId, description, routeTableName, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -153,12 +153,12 @@ public interface RosRouteTableProps extends software.amazon.jsii.JsiiSerializabl
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object vpcId, final java.lang.Object description, final java.lang.Object routeTableName, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.description = description;
-            this.routeTableName = routeTableName;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty>)tags;
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.description = builder.description;
+            this.routeTableName = builder.routeTableName;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty>)builder.tags;
         }
 
         @Override

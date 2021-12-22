@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::ClusterMember`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.255Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.824Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosClusterMemberProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterMemberProps.Jsii$Proxy.class)
 public interface RosClusterMemberProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,9 +30,9 @@ public interface RosClusterMemberProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosClusterMemberProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterMemberProps> {
-        private java.lang.Object clusterId;
-        private java.lang.Object instanceIds;
-        private java.lang.Object password;
+        java.lang.Object clusterId;
+        java.lang.Object instanceIds;
+        java.lang.Object password;
 
         /**
          * Sets the value of {@link RosClusterMemberProps#getClusterId}
@@ -101,7 +101,7 @@ public interface RosClusterMemberProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosClusterMemberProps build() {
-            return new Jsii$Proxy(clusterId, instanceIds, password);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -128,11 +128,11 @@ public interface RosClusterMemberProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clusterId, final java.lang.Object instanceIds, final java.lang.Object password) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
-            this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
-            this.password = java.util.Objects.requireNonNull(password, "password is required");
+            this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
+            this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
+            this.password = java.util.Objects.requireNonNull(builder.password, "password is required");
         }
 
         @Override

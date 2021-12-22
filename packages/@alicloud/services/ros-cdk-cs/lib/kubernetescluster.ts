@@ -195,6 +195,11 @@ export interface KubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * Property runtime: The container runtime of the cluster. The default runtime is Docker.
+     */
+    readonly runtime?: RosKubernetesCluster.RuntimeProperty | ros.IResolvable;
+
+    /**
      * Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -320,6 +325,36 @@ export class KubernetesCluster extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
+     * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: ros.IResolvable;
@@ -347,14 +382,15 @@ export class KubernetesCluster extends ros.Resource {
             addons: props.addons,
             masterSystemDiskSize: props.masterSystemDiskSize === undefined || props.masterSystemDiskSize === null ? 120 : props.masterSystemDiskSize,
             workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
+            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             nodePortRange: props.nodePortRange === undefined || props.nodePortRange === null ? '30000-65535' : props.nodePortRange,
             masterCount: props.masterCount === undefined || props.masterCount === null ? 3 : props.masterCount,
-            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             sshFlags: props.sshFlags,
             masterVSwitchIds: props.masterVSwitchIds,
             name: props.name,
             taint: props.taint,
             masterDataDisks: props.masterDataDisks,
+            runtime: props.runtime,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             podVswitchIds: props.podVswitchIds,
@@ -368,8 +404,8 @@ export class KubernetesCluster extends ros.Resource {
             kubernetesVersion: props.kubernetesVersion,
             masterInstanceChargeType: props.masterInstanceChargeType === undefined || props.masterInstanceChargeType === null ? 'PostPaid' : props.masterInstanceChargeType,
             containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
-            workerInstanceChargeType: props.workerInstanceChargeType === undefined || props.workerInstanceChargeType === null ? 'PostPaid' : props.workerInstanceChargeType,
             cpuPolicy: props.cpuPolicy,
+            workerInstanceChargeType: props.workerInstanceChargeType === undefined || props.workerInstanceChargeType === null ? 'PostPaid' : props.workerInstanceChargeType,
             keyPair: props.keyPair,
             masterInstanceTypes: props.masterInstanceTypes,
             workerDataDisks: props.workerDataDisks,
@@ -388,6 +424,12 @@ export class KubernetesCluster extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKubernetesCluster;
         this.attrClusterId = rosKubernetesCluster.attrClusterId;
+        this.attrDefaultUserKubeConfig = rosKubernetesCluster.attrDefaultUserKubeConfig;
+        this.attrNodes = rosKubernetesCluster.attrNodes;
+        this.attrPrivateUserKubConfig = rosKubernetesCluster.attrPrivateUserKubConfig;
+        this.attrScalingConfigurationId = rosKubernetesCluster.attrScalingConfigurationId;
+        this.attrScalingGroupId = rosKubernetesCluster.attrScalingGroupId;
+        this.attrScalingRuleId = rosKubernetesCluster.attrScalingRuleId;
         this.attrTaskId = rosKubernetesCluster.attrTaskId;
         this.attrWorkerRamRoleName = rosKubernetesCluster.attrWorkerRamRoleName;
     }

@@ -39,6 +39,11 @@ export interface NetworkInterfaceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
+     */
+    readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
+
+    /**
      * Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -98,6 +103,7 @@ export class NetworkInterface extends ros.Resource {
             description: props.description,
             privateIpAddresses: props.privateIpAddresses,
             resourceGroupId: props.resourceGroupId,
+            secondaryPrivateIpAddressCount: props.secondaryPrivateIpAddressCount,
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
             networkInterfaceName: props.networkInterfaceName,

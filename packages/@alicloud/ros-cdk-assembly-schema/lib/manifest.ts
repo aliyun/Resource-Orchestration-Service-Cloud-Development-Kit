@@ -7,7 +7,7 @@ import * as assembly from "./cloud-assembly";
 // in which case we want to instruct the user to upgrade his CLI.
 // see exec.ts#createAssembly
 export const VERSION_MISMATCH: string =
-    "Cloud assembly schema version mismatch";
+  "Cloud assembly schema version mismatch";
 
 // tslint:disable: no-var-requires
 
@@ -33,8 +33,8 @@ export class Manifest {
    * @param filePath - output file path.
    */
   public static saveAssemblyManifest(
-      manifest: assembly.AssemblyManifest,
-      filePath: string
+    manifest: assembly.AssemblyManifest,
+    filePath: string
   ) {
     Manifest.saveManifest(manifest, filePath, ASSEMBLY_SCHEMA, Manifest.patchStackTagsOnWrite);
   }
@@ -45,7 +45,7 @@ export class Manifest {
    * @param filePath - path to the manifest file.
    */
   public static loadAssemblyManifest(
-      filePath: string
+    filePath: string
   ): assembly.AssemblyManifest {
     return Manifest.loadManifest(filePath, ASSEMBLY_SCHEMA, Manifest.patchStackTagsOnRead);
   }
@@ -74,8 +74,8 @@ export class Manifest {
   }
 
   private static validate(
-      manifest: { version: string },
-      schema: jsonschema.Schema
+    manifest: { version: string },
+    schema: jsonschema.Schema
   ) {
     function parseVersion(version: string) {
       const ver = semver.valid(version);
@@ -93,7 +93,7 @@ export class Manifest {
       // we use a well known error prefix so that the CLI can identify this specific error
       // and print some more context to the user.
       throw new Error(
-          `${VERSION_MISMATCH}: Maximum schema version supported is ${maxSupported}, but found ${actual}`
+        `${VERSION_MISMATCH}: Maximum schema version supported is ${maxSupported}, but found ${actual}`
       );
     }
 
@@ -120,9 +120,9 @@ export class Manifest {
   }
 
   private static loadManifest(
-      filePath: string,
-      schema: jsonschema.Schema,
-      preprocess?: (obj: any) => any
+    filePath: string,
+    schema: jsonschema.Schema,
+    preprocess?: (obj: any) => any
   ) {
     let obj = JSON.parse(fs.readFileSync(filePath, { encoding: "utf-8" }));
     if (preprocess) {

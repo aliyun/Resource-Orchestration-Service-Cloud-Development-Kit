@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a `ALIYUN::HBR::RestoreJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.536Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.179Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RestoreJobProps")
 @software.amazon.jsii.Jsii.Proxy(RestoreJobProps.Jsii$Proxy.class)
 public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {
@@ -73,15 +73,15 @@ public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RestoreJobProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RestoreJobProps> {
-        private java.lang.Object restoreType;
-        private java.lang.Object snapshotId;
-        private java.lang.Object sourceClientId;
-        private java.lang.Object sourceInstanceId;
-        private java.lang.Object sourceType;
-        private java.lang.Object targetClientId;
-        private java.lang.Object targetInstanceId;
-        private java.lang.Object targetPath;
-        private java.lang.Object vaultId;
+        java.lang.Object restoreType;
+        java.lang.Object snapshotId;
+        java.lang.Object sourceClientId;
+        java.lang.Object sourceInstanceId;
+        java.lang.Object sourceType;
+        java.lang.Object targetClientId;
+        java.lang.Object targetInstanceId;
+        java.lang.Object targetPath;
+        java.lang.Object vaultId;
 
         /**
          * Sets the value of {@link RestoreJobProps#getRestoreType}
@@ -280,7 +280,7 @@ public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RestoreJobProps build() {
-            return new Jsii$Proxy(restoreType, snapshotId, sourceClientId, sourceInstanceId, sourceType, targetClientId, targetInstanceId, targetPath, vaultId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -319,17 +319,17 @@ public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object restoreType, final java.lang.Object snapshotId, final java.lang.Object sourceClientId, final java.lang.Object sourceInstanceId, final java.lang.Object sourceType, final java.lang.Object targetClientId, final java.lang.Object targetInstanceId, final java.lang.Object targetPath, final java.lang.Object vaultId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.restoreType = java.util.Objects.requireNonNull(restoreType, "restoreType is required");
-            this.snapshotId = java.util.Objects.requireNonNull(snapshotId, "snapshotId is required");
-            this.sourceClientId = java.util.Objects.requireNonNull(sourceClientId, "sourceClientId is required");
-            this.sourceInstanceId = java.util.Objects.requireNonNull(sourceInstanceId, "sourceInstanceId is required");
-            this.sourceType = java.util.Objects.requireNonNull(sourceType, "sourceType is required");
-            this.targetClientId = java.util.Objects.requireNonNull(targetClientId, "targetClientId is required");
-            this.targetInstanceId = java.util.Objects.requireNonNull(targetInstanceId, "targetInstanceId is required");
-            this.targetPath = java.util.Objects.requireNonNull(targetPath, "targetPath is required");
-            this.vaultId = java.util.Objects.requireNonNull(vaultId, "vaultId is required");
+            this.restoreType = java.util.Objects.requireNonNull(builder.restoreType, "restoreType is required");
+            this.snapshotId = java.util.Objects.requireNonNull(builder.snapshotId, "snapshotId is required");
+            this.sourceClientId = java.util.Objects.requireNonNull(builder.sourceClientId, "sourceClientId is required");
+            this.sourceInstanceId = java.util.Objects.requireNonNull(builder.sourceInstanceId, "sourceInstanceId is required");
+            this.sourceType = java.util.Objects.requireNonNull(builder.sourceType, "sourceType is required");
+            this.targetClientId = java.util.Objects.requireNonNull(builder.targetClientId, "targetClientId is required");
+            this.targetInstanceId = java.util.Objects.requireNonNull(builder.targetInstanceId, "targetInstanceId is required");
+            this.targetPath = java.util.Objects.requireNonNull(builder.targetPath, "targetPath is required");
+            this.vaultId = java.util.Objects.requireNonNull(builder.vaultId, "vaultId is required");
         }
 
         @Override

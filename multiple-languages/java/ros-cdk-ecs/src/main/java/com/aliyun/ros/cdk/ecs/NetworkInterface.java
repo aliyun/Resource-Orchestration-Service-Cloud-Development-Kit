@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::NetworkInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.997Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.608Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterface")
 public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
 
@@ -253,6 +253,27 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
+         * <p>
+         * @return {@code this}
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS. This parameter is required.
+         */
+        public Builder secondaryPrivateIpAddressCount(final java.lang.Number secondaryPrivateIpAddressCount) {
+            this.props.secondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
+            return this;
+        }
+        /**
+         * Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
+         * <p>
+         * @return {@code this}
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS. This parameter is required.
+         */
+        public Builder secondaryPrivateIpAddressCount(final com.aliyun.ros.cdk.core.IResolvable secondaryPrivateIpAddressCount) {
+            this.props.secondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
             return this;
         }
 

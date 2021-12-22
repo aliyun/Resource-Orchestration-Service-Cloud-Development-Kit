@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIPSegment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.946Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPSegmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPSegmentProps.Jsii$Proxy.class)
 public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,11 +46,11 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosEIPSegmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEIPSegmentProps> {
-        private java.lang.Object eipMask;
-        private java.lang.Object bandwidth;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object netmode;
-        private java.lang.Object resourceGroupId;
+        java.lang.Object eipMask;
+        java.lang.Object bandwidth;
+        java.lang.Object internetChargeType;
+        java.lang.Object netmode;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosEIPSegmentProps#getEipMask}
@@ -159,7 +159,7 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosEIPSegmentProps build() {
-            return new Jsii$Proxy(eipMask, bandwidth, internetChargeType, netmode, resourceGroupId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -190,13 +190,13 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object eipMask, final java.lang.Object bandwidth, final java.lang.Object internetChargeType, final java.lang.Object netmode, final java.lang.Object resourceGroupId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.eipMask = java.util.Objects.requireNonNull(eipMask, "eipMask is required");
-            this.bandwidth = bandwidth;
-            this.internetChargeType = internetChargeType;
-            this.netmode = netmode;
-            this.resourceGroupId = resourceGroupId;
+            this.eipMask = java.util.Objects.requireNonNull(builder.eipMask, "eipMask is required");
+            this.bandwidth = builder.bandwidth;
+            this.internetChargeType = builder.internetChargeType;
+            this.netmode = builder.netmode;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override

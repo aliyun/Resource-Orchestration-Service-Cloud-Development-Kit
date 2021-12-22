@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * Properties for defining a `ALIYUN::ROCKETMQ::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.017Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.710Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,11 +42,11 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTopicProps> {
-        private java.lang.Object instanceId;
-        private java.lang.Object messageType;
-        private java.lang.Object topic;
-        private java.lang.Object perm;
-        private java.lang.Object remark;
+        java.lang.Object instanceId;
+        java.lang.Object messageType;
+        java.lang.Object topic;
+        java.lang.Object perm;
+        java.lang.Object remark;
 
         /**
          * Sets the value of {@link RosTopicProps#getInstanceId}
@@ -155,7 +155,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosTopicProps build() {
-            return new Jsii$Proxy(instanceId, messageType, topic, perm, remark);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -186,13 +186,13 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object messageType, final java.lang.Object topic, final java.lang.Object perm, final java.lang.Object remark) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.messageType = java.util.Objects.requireNonNull(messageType, "messageType is required");
-            this.topic = java.util.Objects.requireNonNull(topic, "topic is required");
-            this.perm = perm;
-            this.remark = remark;
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.messageType = java.util.Objects.requireNonNull(builder.messageType, "messageType is required");
+            this.topic = java.util.Objects.requireNonNull(builder.topic, "topic is required");
+            this.perm = builder.perm;
+            this.remark = builder.remark;
         }
 
         @Override

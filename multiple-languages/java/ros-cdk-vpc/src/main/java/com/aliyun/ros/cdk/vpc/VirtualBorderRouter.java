@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::VirtualBorderRouter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.263Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.997Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VirtualBorderRouter")
 public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource {
 
@@ -56,10 +56,24 @@ public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute RouteTableId: The ID of the route table of the VBR.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRouteTableId() {
+        return software.amazon.jsii.Kernel.get(this, "attrRouteTableId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute VbrId: The ID of the VBR.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVbrId() {
         return software.amazon.jsii.Kernel.get(this, "attrVbrId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute VlanInterfaceId: The ID of the VBR interface.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVlanInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVlanInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -195,7 +209,7 @@ public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property vlanId: The VLAN ID of the VBR.
          * <p>
-         * Valid values: 1 to 2999.
+         * Valid values: 0 to 2999.
          * Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
          * two VBRs of the same physical connection must be different.
          * <p>
@@ -209,7 +223,7 @@ public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property vlanId: The VLAN ID of the VBR.
          * <p>
-         * Valid values: 1 to 2999.
+         * Valid values: 0 to 2999.
          * Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
          * two VBRs of the same physical connection must be different.
          * <p>

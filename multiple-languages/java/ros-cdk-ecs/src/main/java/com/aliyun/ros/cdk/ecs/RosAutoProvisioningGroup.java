@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::AutoProvisioningGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.033Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.613Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup")
 public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -551,16 +551,16 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DataDiskProperty> {
-            private java.lang.Object category;
-            private java.lang.Object deleteWithInstance;
-            private java.lang.Object description;
-            private java.lang.Object diskName;
-            private java.lang.Object encrypted;
-            private java.lang.Object internetChargeType;
-            private java.lang.Object kmsKeyId;
-            private java.lang.Object performanceLevel;
-            private java.lang.Object size;
-            private java.lang.Object snapshotId;
+            java.lang.Object category;
+            java.lang.Object deleteWithInstance;
+            java.lang.Object description;
+            java.lang.Object diskName;
+            java.lang.Object encrypted;
+            java.lang.Object internetChargeType;
+            java.lang.Object kmsKeyId;
+            java.lang.Object performanceLevel;
+            java.lang.Object size;
+            java.lang.Object snapshotId;
 
             /**
              * Sets the value of {@link DataDiskProperty#getCategory}
@@ -790,7 +790,7 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DataDiskProperty build() {
-                return new Jsii$Proxy(category, deleteWithInstance, description, diskName, encrypted, internetChargeType, kmsKeyId, performanceLevel, size, snapshotId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -832,18 +832,18 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object category, final java.lang.Object deleteWithInstance, final java.lang.Object description, final java.lang.Object diskName, final java.lang.Object encrypted, final java.lang.Object internetChargeType, final java.lang.Object kmsKeyId, final java.lang.Object performanceLevel, final java.lang.Object size, final java.lang.Object snapshotId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.category = category;
-                this.deleteWithInstance = deleteWithInstance;
-                this.description = description;
-                this.diskName = diskName;
-                this.encrypted = encrypted;
-                this.internetChargeType = internetChargeType;
-                this.kmsKeyId = kmsKeyId;
-                this.performanceLevel = performanceLevel;
-                this.size = size;
-                this.snapshotId = snapshotId;
+                this.category = builder.category;
+                this.deleteWithInstance = builder.deleteWithInstance;
+                this.description = builder.description;
+                this.diskName = builder.diskName;
+                this.encrypted = builder.encrypted;
+                this.internetChargeType = builder.internetChargeType;
+                this.kmsKeyId = builder.kmsKeyId;
+                this.performanceLevel = builder.performanceLevel;
+                this.size = builder.size;
+                this.snapshotId = builder.snapshotId;
             }
 
             @Override
@@ -1154,29 +1154,29 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LaunchConfigurationProperty> {
-            private java.lang.Object imageId;
-            private java.lang.Object securityGroupId;
-            private java.lang.Object creditSpecification;
-            private java.lang.Object dataDisk;
-            private java.lang.Object hostName;
-            private java.lang.Object instanceDescription;
-            private java.lang.Object instanceName;
-            private java.lang.Object internetChargeType;
-            private java.lang.Object internetMaxBandwidthIn;
-            private java.lang.Object internetMaxBandwidthOut;
-            private java.lang.Object ioOptimized;
-            private java.lang.Object keyPairName;
-            private java.lang.Object passwordInherit;
-            private java.lang.Object ramRoleName;
-            private java.lang.Object resourceGroupId;
-            private java.lang.Object securityEnhancementStrategy;
-            private java.lang.Object systemDiskCategory;
-            private java.lang.Object systemDiskDescription;
-            private java.lang.Object systemDiskName;
-            private java.lang.Object systemDiskPerformanceLevel;
-            private java.lang.Object systemDiskSize;
-            private java.lang.Object tag;
-            private java.lang.Object userData;
+            java.lang.Object imageId;
+            java.lang.Object securityGroupId;
+            java.lang.Object creditSpecification;
+            java.lang.Object dataDisk;
+            java.lang.Object hostName;
+            java.lang.Object instanceDescription;
+            java.lang.Object instanceName;
+            java.lang.Object internetChargeType;
+            java.lang.Object internetMaxBandwidthIn;
+            java.lang.Object internetMaxBandwidthOut;
+            java.lang.Object ioOptimized;
+            java.lang.Object keyPairName;
+            java.lang.Object passwordInherit;
+            java.lang.Object ramRoleName;
+            java.lang.Object resourceGroupId;
+            java.lang.Object securityEnhancementStrategy;
+            java.lang.Object systemDiskCategory;
+            java.lang.Object systemDiskDescription;
+            java.lang.Object systemDiskName;
+            java.lang.Object systemDiskPerformanceLevel;
+            java.lang.Object systemDiskSize;
+            java.lang.Object tag;
+            java.lang.Object userData;
 
             /**
              * Sets the value of {@link LaunchConfigurationProperty#getImageId}
@@ -1692,7 +1692,7 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public LaunchConfigurationProperty build() {
-                return new Jsii$Proxy(imageId, securityGroupId, creditSpecification, dataDisk, hostName, instanceDescription, instanceName, internetChargeType, internetMaxBandwidthIn, internetMaxBandwidthOut, ioOptimized, keyPairName, passwordInherit, ramRoleName, resourceGroupId, securityEnhancementStrategy, systemDiskCategory, systemDiskDescription, systemDiskName, systemDiskPerformanceLevel, systemDiskSize, tag, userData);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1760,31 +1760,31 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object imageId, final java.lang.Object securityGroupId, final java.lang.Object creditSpecification, final java.lang.Object dataDisk, final java.lang.Object hostName, final java.lang.Object instanceDescription, final java.lang.Object instanceName, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object keyPairName, final java.lang.Object passwordInherit, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object securityEnhancementStrategy, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskDescription, final java.lang.Object systemDiskName, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.lang.Object tag, final java.lang.Object userData) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
-                this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
-                this.creditSpecification = creditSpecification;
-                this.dataDisk = dataDisk;
-                this.hostName = hostName;
-                this.instanceDescription = instanceDescription;
-                this.instanceName = instanceName;
-                this.internetChargeType = internetChargeType;
-                this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-                this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-                this.ioOptimized = ioOptimized;
-                this.keyPairName = keyPairName;
-                this.passwordInherit = passwordInherit;
-                this.ramRoleName = ramRoleName;
-                this.resourceGroupId = resourceGroupId;
-                this.securityEnhancementStrategy = securityEnhancementStrategy;
-                this.systemDiskCategory = systemDiskCategory;
-                this.systemDiskDescription = systemDiskDescription;
-                this.systemDiskName = systemDiskName;
-                this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
-                this.systemDiskSize = systemDiskSize;
-                this.tag = tag;
-                this.userData = userData;
+                this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
+                this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+                this.creditSpecification = builder.creditSpecification;
+                this.dataDisk = builder.dataDisk;
+                this.hostName = builder.hostName;
+                this.instanceDescription = builder.instanceDescription;
+                this.instanceName = builder.instanceName;
+                this.internetChargeType = builder.internetChargeType;
+                this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
+                this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
+                this.ioOptimized = builder.ioOptimized;
+                this.keyPairName = builder.keyPairName;
+                this.passwordInherit = builder.passwordInherit;
+                this.ramRoleName = builder.ramRoleName;
+                this.resourceGroupId = builder.resourceGroupId;
+                this.securityEnhancementStrategy = builder.securityEnhancementStrategy;
+                this.systemDiskCategory = builder.systemDiskCategory;
+                this.systemDiskDescription = builder.systemDiskDescription;
+                this.systemDiskName = builder.systemDiskName;
+                this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
+                this.systemDiskSize = builder.systemDiskSize;
+                this.tag = builder.tag;
+                this.userData = builder.userData;
             }
 
             @Override
@@ -2097,11 +2097,11 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LaunchTemplateConfigProperty> {
-            private java.lang.Object vSwitchId;
-            private java.lang.Object instanceType;
-            private java.lang.Object maxPrice;
-            private java.lang.Object priority;
-            private java.lang.Object weightedCapacity;
+            java.lang.Object vSwitchId;
+            java.lang.Object instanceType;
+            java.lang.Object maxPrice;
+            java.lang.Object priority;
+            java.lang.Object weightedCapacity;
 
             /**
              * Sets the value of {@link LaunchTemplateConfigProperty#getVSwitchId}
@@ -2221,7 +2221,7 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public LaunchTemplateConfigProperty build() {
-                return new Jsii$Proxy(vSwitchId, instanceType, maxPrice, priority, weightedCapacity);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2253,13 +2253,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object vSwitchId, final java.lang.Object instanceType, final java.lang.Object maxPrice, final java.lang.Object priority, final java.lang.Object weightedCapacity) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-                this.instanceType = instanceType;
-                this.maxPrice = maxPrice;
-                this.priority = priority;
-                this.weightedCapacity = weightedCapacity;
+                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.instanceType = builder.instanceType;
+                this.maxPrice = builder.maxPrice;
+                this.priority = builder.priority;
+                this.weightedCapacity = builder.weightedCapacity;
             }
 
             @Override
@@ -2373,8 +2373,8 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagProperty#getKey}
@@ -2428,7 +2428,7 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2454,10 +2454,10 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override

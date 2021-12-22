@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::BgpPeer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.157Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.897Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpPeerProps")
 @software.amazon.jsii.Jsii.Proxy(BgpPeerProps.Jsii$Proxy.class)
 public interface BgpPeerProps extends software.amazon.jsii.JsiiSerializable {
@@ -41,9 +41,9 @@ public interface BgpPeerProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link BgpPeerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BgpPeerProps> {
-        private java.lang.Object bgpGroupId;
-        private java.lang.Object enableBfd;
-        private java.lang.Object peerIpAddress;
+        java.lang.Object bgpGroupId;
+        java.lang.Object enableBfd;
+        java.lang.Object peerIpAddress;
 
         /**
          * Sets the value of {@link BgpPeerProps#getBgpGroupId}
@@ -118,7 +118,7 @@ public interface BgpPeerProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public BgpPeerProps build() {
-            return new Jsii$Proxy(bgpGroupId, enableBfd, peerIpAddress);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -145,11 +145,11 @@ public interface BgpPeerProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object bgpGroupId, final java.lang.Object enableBfd, final java.lang.Object peerIpAddress) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bgpGroupId = java.util.Objects.requireNonNull(bgpGroupId, "bgpGroupId is required");
-            this.enableBfd = enableBfd;
-            this.peerIpAddress = peerIpAddress;
+            this.bgpGroupId = java.util.Objects.requireNonNull(builder.bgpGroupId, "bgpGroupId is required");
+            this.enableBfd = builder.enableBfd;
+            this.peerIpAddress = builder.peerIpAddress;
         }
 
         @Override

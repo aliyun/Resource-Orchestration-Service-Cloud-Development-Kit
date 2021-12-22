@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.652Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupProps.Jsii$Proxy.class)
 public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -58,13 +58,13 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosGroupProps> {
-        private java.lang.Object groupName;
-        private java.lang.Object description;
-        private java.lang.Object instanceId;
-        private java.lang.Object internetEnable;
-        private java.lang.Object passthroughHeaders;
-        private java.util.List<com.aliyun.ros.cdk.apigateway.RosGroup.TagsProperty> tags;
-        private java.lang.Object vpcIntranetEnable;
+        java.lang.Object groupName;
+        java.lang.Object description;
+        java.lang.Object instanceId;
+        java.lang.Object internetEnable;
+        java.lang.Object passthroughHeaders;
+        java.util.List<com.aliyun.ros.cdk.apigateway.RosGroup.TagsProperty> tags;
+        java.lang.Object vpcIntranetEnable;
 
         /**
          * Sets the value of {@link RosGroupProps#getGroupName}
@@ -204,7 +204,7 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosGroupProps build() {
-            return new Jsii$Proxy(groupName, description, instanceId, internetEnable, passthroughHeaders, tags, vpcIntranetEnable);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -240,15 +240,15 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object groupName, final java.lang.Object description, final java.lang.Object instanceId, final java.lang.Object internetEnable, final java.lang.Object passthroughHeaders, final java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosGroup.TagsProperty> tags, final java.lang.Object vpcIntranetEnable) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
-            this.description = description;
-            this.instanceId = instanceId;
-            this.internetEnable = internetEnable;
-            this.passthroughHeaders = passthroughHeaders;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosGroup.TagsProperty>)tags;
-            this.vpcIntranetEnable = vpcIntranetEnable;
+            this.groupName = java.util.Objects.requireNonNull(builder.groupName, "groupName is required");
+            this.description = builder.description;
+            this.instanceId = builder.instanceId;
+            this.internetEnable = builder.internetEnable;
+            this.passthroughHeaders = builder.passthroughHeaders;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosGroup.TagsProperty>)builder.tags;
+            this.vpcIntranetEnable = builder.vpcIntranetEnable;
         }
 
         @Override

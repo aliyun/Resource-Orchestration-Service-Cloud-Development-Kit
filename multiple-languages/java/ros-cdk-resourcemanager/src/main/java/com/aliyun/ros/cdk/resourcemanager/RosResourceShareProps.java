@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::ResourceShare`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.013Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.705Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosResourceShareProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceShareProps.Jsii$Proxy.class)
 public interface RosResourceShareProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,9 +34,9 @@ public interface RosResourceShareProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosResourceShareProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosResourceShareProps> {
-        private java.lang.Object resourceShareName;
-        private java.lang.Object resources;
-        private java.lang.Object targets;
+        java.lang.Object resourceShareName;
+        java.lang.Object resources;
+        java.lang.Object targets;
 
         /**
          * Sets the value of {@link RosResourceShareProps#getResourceShareName}
@@ -105,7 +105,7 @@ public interface RosResourceShareProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosResourceShareProps build() {
-            return new Jsii$Proxy(resourceShareName, resources, targets);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -132,11 +132,11 @@ public interface RosResourceShareProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object resourceShareName, final java.lang.Object resources, final java.lang.Object targets) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.resourceShareName = java.util.Objects.requireNonNull(resourceShareName, "resourceShareName is required");
-            this.resources = resources;
-            this.targets = targets;
+            this.resourceShareName = java.util.Objects.requireNonNull(builder.resourceShareName, "resourceShareName is required");
+            this.resources = builder.resources;
+            this.targets = builder.targets;
         }
 
         @Override

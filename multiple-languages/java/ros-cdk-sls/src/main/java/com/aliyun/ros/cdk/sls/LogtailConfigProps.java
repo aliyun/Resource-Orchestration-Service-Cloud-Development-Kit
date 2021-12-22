@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::LogtailConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.841Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.LogtailConfigProps")
 @software.amazon.jsii.Jsii.Proxy(LogtailConfigProps.Jsii$Proxy.class)
 public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -128,11 +128,11 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link LogtailConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LogtailConfigProps> {
-        private java.lang.Object logstoreName;
-        private java.lang.Object logtailConfigName;
-        private java.lang.Object projectName;
-        private java.lang.Object cloneFrom;
-        private java.lang.Object rawConfigData;
+        java.lang.Object logstoreName;
+        java.lang.Object logtailConfigName;
+        java.lang.Object projectName;
+        java.lang.Object cloneFrom;
+        java.lang.Object rawConfigData;
 
         /**
          * Sets the value of {@link LogtailConfigProps#getLogstoreName}
@@ -393,7 +393,7 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public LogtailConfigProps build() {
-            return new Jsii$Proxy(logstoreName, logtailConfigName, projectName, cloneFrom, rawConfigData);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -424,13 +424,13 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object logstoreName, final java.lang.Object logtailConfigName, final java.lang.Object projectName, final java.lang.Object cloneFrom, final java.lang.Object rawConfigData) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.logstoreName = java.util.Objects.requireNonNull(logstoreName, "logstoreName is required");
-            this.logtailConfigName = java.util.Objects.requireNonNull(logtailConfigName, "logtailConfigName is required");
-            this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
-            this.cloneFrom = cloneFrom;
-            this.rawConfigData = rawConfigData;
+            this.logstoreName = java.util.Objects.requireNonNull(builder.logstoreName, "logstoreName is required");
+            this.logtailConfigName = java.util.Objects.requireNonNull(builder.logtailConfigName, "logtailConfigName is required");
+            this.projectName = java.util.Objects.requireNonNull(builder.projectName, "projectName is required");
+            this.cloneFrom = builder.cloneFrom;
+            this.rawConfigData = builder.rawConfigData;
         }
 
         @Override

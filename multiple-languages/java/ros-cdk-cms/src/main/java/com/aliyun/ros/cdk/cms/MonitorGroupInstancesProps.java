@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MonitorGroupInstances`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.592Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.159Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitorGroupInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(MonitorGroupInstancesProps.Jsii$Proxy.class)
 public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link MonitorGroupInstancesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MonitorGroupInstancesProps> {
-        private java.lang.Object groupId;
-        private java.lang.Object instances;
+        java.lang.Object groupId;
+        java.lang.Object instances;
 
         /**
          * Sets the value of {@link MonitorGroupInstancesProps#getGroupId}
@@ -78,7 +78,7 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
          */
         @Override
         public MonitorGroupInstancesProps build() {
-            return new Jsii$Proxy(groupId, instances);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object groupId, final java.lang.Object instances) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
-            this.instances = java.util.Objects.requireNonNull(instances, "instances is required");
+            this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
+            this.instances = java.util.Objects.requireNonNull(builder.instances, "instances is required");
         }
 
         @Override

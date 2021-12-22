@@ -152,8 +152,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateString)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('couponNo', ros.validateString)(properties.couponNo));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * A ROS template type:  `ALIYUN::ECI::ContainerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.868Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.477Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup")
 public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -645,10 +645,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AcrRegistryInfoProperty> {
-            private java.lang.Object instanceId;
-            private java.lang.Object domain;
-            private java.lang.Object instanceName;
-            private java.lang.Object regionId;
+            java.lang.Object instanceId;
+            java.lang.Object domain;
+            java.lang.Object instanceName;
+            java.lang.Object regionId;
 
             /**
              * Sets the value of {@link AcrRegistryInfoProperty#getInstanceId}
@@ -746,7 +746,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AcrRegistryInfoProperty build() {
-                return new Jsii$Proxy(instanceId, domain, instanceName, regionId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -776,12 +776,12 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object domain, final java.lang.Object instanceName, final java.lang.Object regionId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-                this.domain = domain;
-                this.instanceName = instanceName;
-                this.regionId = regionId;
+                this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+                this.domain = builder.domain;
+                this.instanceName = builder.instanceName;
+                this.regionId = builder.regionId;
             }
 
             @Override
@@ -885,8 +885,8 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigFileVolumeConfigFileToPathProperty> {
-            private java.lang.Object path;
-            private java.lang.Object content;
+            java.lang.Object path;
+            java.lang.Object content;
 
             /**
              * Sets the value of {@link ConfigFileVolumeConfigFileToPathProperty#getPath}
@@ -940,7 +940,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConfigFileVolumeConfigFileToPathProperty build() {
-                return new Jsii$Proxy(path, content);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -966,10 +966,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object path, final java.lang.Object content) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.path = java.util.Objects.requireNonNull(path, "path is required");
-                this.content = content;
+                this.path = java.util.Objects.requireNonNull(builder.path, "path is required");
+                this.content = builder.content;
             }
 
             @Override
@@ -1156,23 +1156,23 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ContainerProperty> {
-            private java.lang.Object image;
-            private java.lang.Object name;
-            private java.lang.Object arg;
-            private java.lang.Object command;
-            private java.lang.Object cpu;
-            private java.lang.Object environmentVar;
-            private java.lang.Object imagePullPolicy;
-            private java.lang.Object livenessProbe;
-            private java.lang.Object memory;
-            private java.lang.Object port;
-            private java.lang.Object readinessProbe;
-            private java.lang.Object securityContext;
-            private java.lang.Object stdin;
-            private java.lang.Object stdinOnce;
-            private java.lang.Object tty;
-            private java.lang.Object volumeMount;
-            private java.lang.Object workingDir;
+            java.lang.Object image;
+            java.lang.Object name;
+            java.lang.Object arg;
+            java.lang.Object command;
+            java.lang.Object cpu;
+            java.lang.Object environmentVar;
+            java.lang.Object imagePullPolicy;
+            java.lang.Object livenessProbe;
+            java.lang.Object memory;
+            java.lang.Object port;
+            java.lang.Object readinessProbe;
+            java.lang.Object securityContext;
+            java.lang.Object stdin;
+            java.lang.Object stdinOnce;
+            java.lang.Object tty;
+            java.lang.Object volumeMount;
+            java.lang.Object workingDir;
 
             /**
              * Sets the value of {@link ContainerProperty#getImage}
@@ -1556,7 +1556,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ContainerProperty build() {
-                return new Jsii$Proxy(image, name, arg, command, cpu, environmentVar, imagePullPolicy, livenessProbe, memory, port, readinessProbe, securityContext, stdin, stdinOnce, tty, volumeMount, workingDir);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1612,25 +1612,25 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object image, final java.lang.Object name, final java.lang.Object arg, final java.lang.Object command, final java.lang.Object cpu, final java.lang.Object environmentVar, final java.lang.Object imagePullPolicy, final java.lang.Object livenessProbe, final java.lang.Object memory, final java.lang.Object port, final java.lang.Object readinessProbe, final java.lang.Object securityContext, final java.lang.Object stdin, final java.lang.Object stdinOnce, final java.lang.Object tty, final java.lang.Object volumeMount, final java.lang.Object workingDir) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.image = java.util.Objects.requireNonNull(image, "image is required");
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.arg = arg;
-                this.command = command;
-                this.cpu = cpu;
-                this.environmentVar = environmentVar;
-                this.imagePullPolicy = imagePullPolicy;
-                this.livenessProbe = livenessProbe;
-                this.memory = memory;
-                this.port = port;
-                this.readinessProbe = readinessProbe;
-                this.securityContext = securityContext;
-                this.stdin = stdin;
-                this.stdinOnce = stdinOnce;
-                this.tty = tty;
-                this.volumeMount = volumeMount;
-                this.workingDir = workingDir;
+                this.image = java.util.Objects.requireNonNull(builder.image, "image is required");
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.arg = builder.arg;
+                this.command = builder.command;
+                this.cpu = builder.cpu;
+                this.environmentVar = builder.environmentVar;
+                this.imagePullPolicy = builder.imagePullPolicy;
+                this.livenessProbe = builder.livenessProbe;
+                this.memory = builder.memory;
+                this.port = builder.port;
+                this.readinessProbe = builder.readinessProbe;
+                this.securityContext = builder.securityContext;
+                this.stdin = builder.stdin;
+                this.stdinOnce = builder.stdinOnce;
+                this.tty = builder.tty;
+                this.volumeMount = builder.volumeMount;
+                this.workingDir = builder.workingDir;
             }
 
             @Override
@@ -1871,9 +1871,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DnsConfigProperty> {
-            private java.lang.Object nameServer;
-            private java.lang.Object option;
-            private java.lang.Object search;
+            java.lang.Object nameServer;
+            java.lang.Object option;
+            java.lang.Object search;
 
             /**
              * Sets the value of {@link DnsConfigProperty#getNameServer}
@@ -1949,7 +1949,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DnsConfigProperty build() {
-                return new Jsii$Proxy(nameServer, option, search);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1977,11 +1977,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object nameServer, final java.lang.Object option, final java.lang.Object search) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.nameServer = nameServer;
-                this.option = option;
-                this.search = search;
+                this.nameServer = builder.nameServer;
+                this.option = builder.option;
+                this.search = builder.search;
             }
 
             @Override
@@ -2086,9 +2086,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EnvironmentVarProperty> {
-            private java.lang.Object fieldRefFieldPath;
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object fieldRefFieldPath;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link EnvironmentVarProperty#getFieldRefFieldPath}
@@ -2164,7 +2164,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public EnvironmentVarProperty build() {
-                return new Jsii$Proxy(fieldRefFieldPath, key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2192,11 +2192,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object fieldRefFieldPath, final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.fieldRefFieldPath = fieldRefFieldPath;
-                this.key = key;
-                this.value = value;
+                this.fieldRefFieldPath = builder.fieldRefFieldPath;
+                this.key = builder.key;
+                this.value = builder.value;
             }
 
             @Override
@@ -2294,8 +2294,8 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HostAliaseProperty> {
-            private java.lang.Object hostname;
-            private java.lang.Object ip;
+            java.lang.Object hostname;
+            java.lang.Object ip;
 
             /**
              * Sets the value of {@link HostAliaseProperty#getHostname}
@@ -2349,7 +2349,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HostAliaseProperty build() {
-                return new Jsii$Proxy(hostname, ip);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2375,10 +2375,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object hostname, final java.lang.Object ip) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.hostname = hostname;
-                this.ip = ip;
+                this.hostname = builder.hostname;
+                this.ip = builder.ip;
             }
 
             @Override
@@ -2467,9 +2467,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ImageRegistryCredentialProperty> {
-            private java.lang.Object password;
-            private java.lang.Object server;
-            private java.lang.Object userName;
+            java.lang.Object password;
+            java.lang.Object server;
+            java.lang.Object userName;
 
             /**
              * Sets the value of {@link ImageRegistryCredentialProperty#getPassword}
@@ -2545,7 +2545,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ImageRegistryCredentialProperty build() {
-                return new Jsii$Proxy(password, server, userName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2573,11 +2573,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object password, final java.lang.Object server, final java.lang.Object userName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.password = java.util.Objects.requireNonNull(password, "password is required");
-                this.server = java.util.Objects.requireNonNull(server, "server is required");
-                this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
+                this.password = java.util.Objects.requireNonNull(builder.password, "password is required");
+                this.server = java.util.Objects.requireNonNull(builder.server, "server is required");
+                this.userName = java.util.Objects.requireNonNull(builder.userName, "userName is required");
             }
 
             @Override
@@ -2676,9 +2676,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InitContainerEnvironmentVarProperty> {
-            private java.lang.Object fieldRefFieldPath;
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object fieldRefFieldPath;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link InitContainerEnvironmentVarProperty#getFieldRefFieldPath}
@@ -2754,7 +2754,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InitContainerEnvironmentVarProperty build() {
-                return new Jsii$Proxy(fieldRefFieldPath, key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2782,11 +2782,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object fieldRefFieldPath, final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.fieldRefFieldPath = fieldRefFieldPath;
-                this.key = key;
-                this.value = value;
+                this.fieldRefFieldPath = builder.fieldRefFieldPath;
+                this.key = builder.key;
+                this.value = builder.value;
             }
 
             @Override
@@ -2884,8 +2884,8 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InitContainerPortProperty> {
-            private java.lang.Object port;
-            private java.lang.Object protocol;
+            java.lang.Object port;
+            java.lang.Object protocol;
 
             /**
              * Sets the value of {@link InitContainerPortProperty#getPort}
@@ -2939,7 +2939,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InitContainerPortProperty build() {
-                return new Jsii$Proxy(port, protocol);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2965,10 +2965,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object port, final java.lang.Object protocol) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.port = port;
-                this.protocol = protocol;
+                this.port = builder.port;
+                this.protocol = builder.protocol;
             }
 
             @Override
@@ -3126,18 +3126,18 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InitContainerProperty> {
-            private java.lang.Object arg;
-            private java.lang.Object command;
-            private java.lang.Object cpu;
-            private java.lang.Object environmentVar;
-            private java.lang.Object image;
-            private java.lang.Object imagePullPolicy;
-            private java.lang.Object memory;
-            private java.lang.Object name;
-            private java.lang.Object port;
-            private java.lang.Object securityContext;
-            private java.lang.Object volumeMount;
-            private java.lang.Object workingDir;
+            java.lang.Object arg;
+            java.lang.Object command;
+            java.lang.Object cpu;
+            java.lang.Object environmentVar;
+            java.lang.Object image;
+            java.lang.Object imagePullPolicy;
+            java.lang.Object memory;
+            java.lang.Object name;
+            java.lang.Object port;
+            java.lang.Object securityContext;
+            java.lang.Object volumeMount;
+            java.lang.Object workingDir;
 
             /**
              * Sets the value of {@link InitContainerProperty#getArg}
@@ -3411,7 +3411,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InitContainerProperty build() {
-                return new Jsii$Proxy(arg, command, cpu, environmentVar, image, imagePullPolicy, memory, name, port, securityContext, volumeMount, workingDir);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -3457,20 +3457,20 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object arg, final java.lang.Object command, final java.lang.Object cpu, final java.lang.Object environmentVar, final java.lang.Object image, final java.lang.Object imagePullPolicy, final java.lang.Object memory, final java.lang.Object name, final java.lang.Object port, final java.lang.Object securityContext, final java.lang.Object volumeMount, final java.lang.Object workingDir) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.arg = arg;
-                this.command = command;
-                this.cpu = cpu;
-                this.environmentVar = environmentVar;
-                this.image = image;
-                this.imagePullPolicy = imagePullPolicy;
-                this.memory = memory;
-                this.name = name;
-                this.port = port;
-                this.securityContext = securityContext;
-                this.volumeMount = volumeMount;
-                this.workingDir = workingDir;
+                this.arg = builder.arg;
+                this.command = builder.command;
+                this.cpu = builder.cpu;
+                this.environmentVar = builder.environmentVar;
+                this.image = builder.image;
+                this.imagePullPolicy = builder.imagePullPolicy;
+                this.memory = builder.memory;
+                this.name = builder.name;
+                this.port = builder.port;
+                this.securityContext = builder.securityContext;
+                this.volumeMount = builder.volumeMount;
+                this.workingDir = builder.workingDir;
             }
 
             @Override
@@ -3665,9 +3665,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InitContainerSecurityContextProperty> {
-            private java.lang.Object capabilityAdd;
-            private java.lang.Object readOnlyRootFilesystem;
-            private java.lang.Object runAsUser;
+            java.lang.Object capabilityAdd;
+            java.lang.Object readOnlyRootFilesystem;
+            java.lang.Object runAsUser;
 
             /**
              * Sets the value of {@link InitContainerSecurityContextProperty#getCapabilityAdd}
@@ -3743,7 +3743,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InitContainerSecurityContextProperty build() {
-                return new Jsii$Proxy(capabilityAdd, readOnlyRootFilesystem, runAsUser);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -3771,11 +3771,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object capabilityAdd, final java.lang.Object readOnlyRootFilesystem, final java.lang.Object runAsUser) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.capabilityAdd = capabilityAdd;
-                this.readOnlyRootFilesystem = readOnlyRootFilesystem;
-                this.runAsUser = runAsUser;
+                this.capabilityAdd = builder.capabilityAdd;
+                this.readOnlyRootFilesystem = builder.readOnlyRootFilesystem;
+                this.runAsUser = builder.runAsUser;
             }
 
             @Override
@@ -3880,9 +3880,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InitContainerVolumeMountProperty> {
-            private java.lang.Object mountPath;
-            private java.lang.Object name;
-            private java.lang.Object readOnly;
+            java.lang.Object mountPath;
+            java.lang.Object name;
+            java.lang.Object readOnly;
 
             /**
              * Sets the value of {@link InitContainerVolumeMountProperty#getMountPath}
@@ -3958,7 +3958,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InitContainerVolumeMountProperty build() {
-                return new Jsii$Proxy(mountPath, name, readOnly);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -3986,11 +3986,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object mountPath, final java.lang.Object name, final java.lang.Object readOnly) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.mountPath = mountPath;
-                this.name = name;
-                this.readOnly = readOnly;
+                this.mountPath = builder.mountPath;
+                this.name = builder.name;
+                this.readOnly = builder.readOnly;
             }
 
             @Override
@@ -4144,16 +4144,16 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LivenessProbeProperty> {
-            private java.lang.Object execCommand;
-            private java.lang.Object failureThreshold;
-            private java.lang.Object httpGetPath;
-            private java.lang.Object httpGetPort;
-            private java.lang.Object httpGetScheme;
-            private java.lang.Object initialDelaySeconds;
-            private java.lang.Object periodSeconds;
-            private java.lang.Object successThreshold;
-            private java.lang.Object tcpSocketPort;
-            private java.lang.Object timeoutSeconds;
+            java.lang.Object execCommand;
+            java.lang.Object failureThreshold;
+            java.lang.Object httpGetPath;
+            java.lang.Object httpGetPort;
+            java.lang.Object httpGetScheme;
+            java.lang.Object initialDelaySeconds;
+            java.lang.Object periodSeconds;
+            java.lang.Object successThreshold;
+            java.lang.Object tcpSocketPort;
+            java.lang.Object timeoutSeconds;
 
             /**
              * Sets the value of {@link LivenessProbeProperty#getExecCommand}
@@ -4383,7 +4383,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public LivenessProbeProperty build() {
-                return new Jsii$Proxy(execCommand, failureThreshold, httpGetPath, httpGetPort, httpGetScheme, initialDelaySeconds, periodSeconds, successThreshold, tcpSocketPort, timeoutSeconds);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -4425,18 +4425,18 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object execCommand, final java.lang.Object failureThreshold, final java.lang.Object httpGetPath, final java.lang.Object httpGetPort, final java.lang.Object httpGetScheme, final java.lang.Object initialDelaySeconds, final java.lang.Object periodSeconds, final java.lang.Object successThreshold, final java.lang.Object tcpSocketPort, final java.lang.Object timeoutSeconds) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.execCommand = execCommand;
-                this.failureThreshold = failureThreshold;
-                this.httpGetPath = httpGetPath;
-                this.httpGetPort = httpGetPort;
-                this.httpGetScheme = httpGetScheme;
-                this.initialDelaySeconds = initialDelaySeconds;
-                this.periodSeconds = periodSeconds;
-                this.successThreshold = successThreshold;
-                this.tcpSocketPort = tcpSocketPort;
-                this.timeoutSeconds = timeoutSeconds;
+                this.execCommand = builder.execCommand;
+                this.failureThreshold = builder.failureThreshold;
+                this.httpGetPath = builder.httpGetPath;
+                this.httpGetPort = builder.httpGetPort;
+                this.httpGetScheme = builder.httpGetScheme;
+                this.initialDelaySeconds = builder.initialDelaySeconds;
+                this.periodSeconds = builder.periodSeconds;
+                this.successThreshold = builder.successThreshold;
+                this.tcpSocketPort = builder.tcpSocketPort;
+                this.timeoutSeconds = builder.timeoutSeconds;
             }
 
             @Override
@@ -4604,8 +4604,8 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<OptionProperty> {
-            private java.lang.Object name;
-            private java.lang.Object value;
+            java.lang.Object name;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link OptionProperty#getName}
@@ -4659,7 +4659,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public OptionProperty build() {
-                return new Jsii$Proxy(name, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -4685,10 +4685,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.value = value;
+                this.name = builder.name;
+                this.value = builder.value;
             }
 
             @Override
@@ -4776,8 +4776,8 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PortProperty> {
-            private java.lang.Object port;
-            private java.lang.Object protocol;
+            java.lang.Object port;
+            java.lang.Object protocol;
 
             /**
              * Sets the value of {@link PortProperty#getPort}
@@ -4831,7 +4831,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PortProperty build() {
-                return new Jsii$Proxy(port, protocol);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -4857,10 +4857,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object port, final java.lang.Object protocol) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.port = port;
-                this.protocol = protocol;
+                this.port = builder.port;
+                this.protocol = builder.protocol;
             }
 
             @Override
@@ -5004,16 +5004,16 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReadinessProbeProperty> {
-            private java.lang.Object execCommand;
-            private java.lang.Object failureThreshold;
-            private java.lang.Object httpGetPath;
-            private java.lang.Object httpGetPort;
-            private java.lang.Object httpGetScheme;
-            private java.lang.Object initialDelaySeconds;
-            private java.lang.Object periodSeconds;
-            private java.lang.Object successThreshold;
-            private java.lang.Object tcpSocketPort;
-            private java.lang.Object timeoutSeconds;
+            java.lang.Object execCommand;
+            java.lang.Object failureThreshold;
+            java.lang.Object httpGetPath;
+            java.lang.Object httpGetPort;
+            java.lang.Object httpGetScheme;
+            java.lang.Object initialDelaySeconds;
+            java.lang.Object periodSeconds;
+            java.lang.Object successThreshold;
+            java.lang.Object tcpSocketPort;
+            java.lang.Object timeoutSeconds;
 
             /**
              * Sets the value of {@link ReadinessProbeProperty#getExecCommand}
@@ -5243,7 +5243,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ReadinessProbeProperty build() {
-                return new Jsii$Proxy(execCommand, failureThreshold, httpGetPath, httpGetPort, httpGetScheme, initialDelaySeconds, periodSeconds, successThreshold, tcpSocketPort, timeoutSeconds);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5285,18 +5285,18 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object execCommand, final java.lang.Object failureThreshold, final java.lang.Object httpGetPath, final java.lang.Object httpGetPort, final java.lang.Object httpGetScheme, final java.lang.Object initialDelaySeconds, final java.lang.Object periodSeconds, final java.lang.Object successThreshold, final java.lang.Object tcpSocketPort, final java.lang.Object timeoutSeconds) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.execCommand = execCommand;
-                this.failureThreshold = failureThreshold;
-                this.httpGetPath = httpGetPath;
-                this.httpGetPort = httpGetPort;
-                this.httpGetScheme = httpGetScheme;
-                this.initialDelaySeconds = initialDelaySeconds;
-                this.periodSeconds = periodSeconds;
-                this.successThreshold = successThreshold;
-                this.tcpSocketPort = tcpSocketPort;
-                this.timeoutSeconds = timeoutSeconds;
+                this.execCommand = builder.execCommand;
+                this.failureThreshold = builder.failureThreshold;
+                this.httpGetPath = builder.httpGetPath;
+                this.httpGetPort = builder.httpGetPort;
+                this.httpGetScheme = builder.httpGetScheme;
+                this.initialDelaySeconds = builder.initialDelaySeconds;
+                this.periodSeconds = builder.periodSeconds;
+                this.successThreshold = builder.successThreshold;
+                this.tcpSocketPort = builder.tcpSocketPort;
+                this.timeoutSeconds = builder.timeoutSeconds;
             }
 
             @Override
@@ -5471,9 +5471,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SecurityContextProperty> {
-            private java.lang.Object capabilityAdd;
-            private java.lang.Object readOnlyRootFilesystem;
-            private java.lang.Object runAsUser;
+            java.lang.Object capabilityAdd;
+            java.lang.Object readOnlyRootFilesystem;
+            java.lang.Object runAsUser;
 
             /**
              * Sets the value of {@link SecurityContextProperty#getCapabilityAdd}
@@ -5549,7 +5549,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SecurityContextProperty build() {
-                return new Jsii$Proxy(capabilityAdd, readOnlyRootFilesystem, runAsUser);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5577,11 +5577,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object capabilityAdd, final java.lang.Object readOnlyRootFilesystem, final java.lang.Object runAsUser) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.capabilityAdd = capabilityAdd;
-                this.readOnlyRootFilesystem = readOnlyRootFilesystem;
-                this.runAsUser = runAsUser;
+                this.capabilityAdd = builder.capabilityAdd;
+                this.readOnlyRootFilesystem = builder.readOnlyRootFilesystem;
+                this.runAsUser = builder.runAsUser;
             }
 
             @Override
@@ -5679,8 +5679,8 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SecurityContextSysctlProperty> {
-            private java.lang.Object name;
-            private java.lang.Object value;
+            java.lang.Object name;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link SecurityContextSysctlProperty#getName}
@@ -5734,7 +5734,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SecurityContextSysctlProperty build() {
-                return new Jsii$Proxy(name, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5760,10 +5760,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.value = value;
+                this.name = builder.name;
+                this.value = builder.value;
             }
 
             @Override
@@ -5849,8 +5849,8 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagProperty#getKey}
@@ -5904,7 +5904,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5930,10 +5930,10 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -6026,9 +6026,9 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VolumeMountProperty> {
-            private java.lang.Object mountPath;
-            private java.lang.Object name;
-            private java.lang.Object readOnly;
+            java.lang.Object mountPath;
+            java.lang.Object name;
+            java.lang.Object readOnly;
 
             /**
              * Sets the value of {@link VolumeMountProperty#getMountPath}
@@ -6104,7 +6104,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public VolumeMountProperty build() {
-                return new Jsii$Proxy(mountPath, name, readOnly);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -6132,11 +6132,11 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object mountPath, final java.lang.Object name, final java.lang.Object readOnly) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.mountPath = mountPath;
-                this.name = name;
-                this.readOnly = readOnly;
+                this.mountPath = builder.mountPath;
+                this.name = builder.name;
+                this.readOnly = builder.readOnly;
             }
 
             @Override
@@ -6265,13 +6265,13 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VolumeProperty> {
-            private java.lang.Object name;
-            private java.lang.Object type;
-            private java.lang.Object configFileVolumeConfigFileToPath;
-            private java.lang.Object emptyDirVolumeMedium;
-            private java.lang.Object nfsVolumePath;
-            private java.lang.Object nfsVolumeReadOnly;
-            private java.lang.Object nfsVolumeServer;
+            java.lang.Object name;
+            java.lang.Object type;
+            java.lang.Object configFileVolumeConfigFileToPath;
+            java.lang.Object emptyDirVolumeMedium;
+            java.lang.Object nfsVolumePath;
+            java.lang.Object nfsVolumeReadOnly;
+            java.lang.Object nfsVolumeServer;
 
             /**
              * Sets the value of {@link VolumeProperty#getName}
@@ -6435,7 +6435,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public VolumeProperty build() {
-                return new Jsii$Proxy(name, type, configFileVolumeConfigFileToPath, emptyDirVolumeMedium, nfsVolumePath, nfsVolumeReadOnly, nfsVolumeServer);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -6471,15 +6471,15 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object configFileVolumeConfigFileToPath, final java.lang.Object emptyDirVolumeMedium, final java.lang.Object nfsVolumePath, final java.lang.Object nfsVolumeReadOnly, final java.lang.Object nfsVolumeServer) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
-                this.configFileVolumeConfigFileToPath = configFileVolumeConfigFileToPath;
-                this.emptyDirVolumeMedium = emptyDirVolumeMedium;
-                this.nfsVolumePath = nfsVolumePath;
-                this.nfsVolumeReadOnly = nfsVolumeReadOnly;
-                this.nfsVolumeServer = nfsVolumeServer;
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.configFileVolumeConfigFileToPath = builder.configFileVolumeConfigFileToPath;
+                this.emptyDirVolumeMedium = builder.emptyDirVolumeMedium;
+                this.nfsVolumePath = builder.nfsVolumePath;
+                this.nfsVolumeReadOnly = builder.nfsVolumeReadOnly;
+                this.nfsVolumeServer = builder.nfsVolumeServer;
             }
 
             @Override

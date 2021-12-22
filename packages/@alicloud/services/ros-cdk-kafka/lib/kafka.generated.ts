@@ -36,6 +36,11 @@ export interface RosInstanceProps {
     readonly topicQuota: number | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. Default is false
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * @Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required
      */
     readonly deployOption?: RosInstance.DeployOptionProperty | ros.IResolvable;
@@ -60,6 +65,11 @@ export interface RosInstanceProps {
      *
      */
     readonly ioMaxSpec?: string | ros.IResolvable;
+
+    /**
+     * @Property openConnector: Whether open kafka connector or not
+     */
+    readonly openConnector?: boolean | ros.IResolvable;
 
     /**
      * @Property payType: Pay by hour or month.
@@ -97,15 +107,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('deployType', ros.validateNumber)(properties.deployType));
-    errors.collect(ros.propertyValidator('diskType', ros.requiredValidator)(properties.diskType));
-    if(properties.diskType && (typeof properties.diskType) !== 'object') {
-        errors.collect(ros.propertyValidator('diskType', ros.validateAllowedValues)({
-          data: properties.diskType,
-          allowedValues: ["0","1"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('diskType', ros.validateString)(properties.diskType));
-    errors.collect(ros.propertyValidator('deployOption', RosInstance_DeployOptionPropertyValidator)(properties.deployOption));
     errors.collect(ros.propertyValidator('eipMax', ros.validateNumber)(properties.eipMax));
     if(properties.specType && (typeof properties.specType) !== 'object') {
         errors.collect(ros.propertyValidator('specType', ros.validateAllowedValues)({
@@ -115,11 +116,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('specType', ros.validateString)(properties.specType));
     errors.collect(ros.propertyValidator('ioMax', ros.validateNumber)(properties.ioMax));
-    errors.collect(ros.propertyValidator('ioMaxSpec', ros.validateString)(properties.ioMaxSpec));
-    errors.collect(ros.propertyValidator('diskSize', ros.requiredValidator)(properties.diskSize));
-    errors.collect(ros.propertyValidator('diskSize', ros.validateNumber)(properties.diskSize));
-    errors.collect(ros.propertyValidator('topicQuota', ros.requiredValidator)(properties.topicQuota));
-    errors.collect(ros.propertyValidator('topicQuota', ros.validateNumber)(properties.topicQuota));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
@@ -127,6 +123,21 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('diskType', ros.requiredValidator)(properties.diskType));
+    if(properties.diskType && (typeof properties.diskType) !== 'object') {
+        errors.collect(ros.propertyValidator('diskType', ros.validateAllowedValues)({
+          data: properties.diskType,
+          allowedValues: ["0","1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('diskType', ros.validateString)(properties.diskType));
+    errors.collect(ros.propertyValidator('deployOption', RosInstance_DeployOptionPropertyValidator)(properties.deployOption));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('ioMaxSpec', ros.validateString)(properties.ioMaxSpec));
+    errors.collect(ros.propertyValidator('diskSize', ros.requiredValidator)(properties.diskSize));
+    errors.collect(ros.propertyValidator('diskSize', ros.validateNumber)(properties.diskSize));
+    errors.collect(ros.propertyValidator('topicQuota', ros.requiredValidator)(properties.topicQuota));
+    errors.collect(ros.propertyValidator('topicQuota', ros.validateNumber)(properties.topicQuota));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -135,6 +146,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('openConnector', ros.validateBoolean)(properties.openConnector));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -156,10 +168,12 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       DiskSize: ros.numberToRosTemplate(properties.diskSize),
       DiskType: ros.stringToRosTemplate(properties.diskType),
       TopicQuota: ros.numberToRosTemplate(properties.topicQuota),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       DeployOption: rosInstanceDeployOptionPropertyToRosTemplate(properties.deployOption),
       EipMax: ros.numberToRosTemplate(properties.eipMax),
       IoMax: ros.numberToRosTemplate(properties.ioMax),
       IoMaxSpec: ros.stringToRosTemplate(properties.ioMaxSpec),
+      OpenConnector: ros.booleanToRosTemplate(properties.openConnector),
       PayType: ros.stringToRosTemplate(properties.payType),
       SpecType: ros.stringToRosTemplate(properties.specType),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
@@ -227,6 +241,11 @@ export class RosInstance extends ros.RosResource {
     public topicQuota: number | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. Default is false
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required
      */
     public deployOption: RosInstance.DeployOptionProperty | ros.IResolvable | undefined;
@@ -251,6 +270,11 @@ export class RosInstance extends ros.RosResource {
      *
      */
     public ioMaxSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property openConnector: Whether open kafka connector or not
+     */
+    public openConnector: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property payType: Pay by hour or month.
@@ -287,10 +311,12 @@ export class RosInstance extends ros.RosResource {
         this.diskSize = props.diskSize;
         this.diskType = props.diskType;
         this.topicQuota = props.topicQuota;
+        this.deletionForce = props.deletionForce;
         this.deployOption = props.deployOption;
         this.eipMax = props.eipMax;
         this.ioMax = props.ioMax;
         this.ioMaxSpec = props.ioMaxSpec;
+        this.openConnector = props.openConnector;
         this.payType = props.payType;
         this.specType = props.specType;
         this.tags = props.tags;
@@ -303,10 +329,12 @@ export class RosInstance extends ros.RosResource {
             diskSize: this.diskSize,
             diskType: this.diskType,
             topicQuota: this.topicQuota,
+            deletionForce: this.deletionForce,
             deployOption: this.deployOption,
             eipMax: this.eipMax,
             ioMax: this.ioMax,
             ioMaxSpec: this.ioMaxSpec,
+            openConnector: this.openConnector,
             payType: this.payType,
             specType: this.specType,
             tags: this.tags,

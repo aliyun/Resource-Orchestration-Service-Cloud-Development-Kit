@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::Role`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.812Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.527Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RoleProps")
 @software.amazon.jsii.Jsii.Proxy(RoleProps.Jsii$Proxy.class)
 public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,15 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
      * Property roleName: Specifies the role name, containing up to 64 characters.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRoleName();
+
+    /**
+     * Property deletionForce: Whether force detach the policies attached to the role.
+     * <p>
+     * Default value is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
 
     /**
      * Property description: Remark information, up to 1024 characters or Chinese characters.
@@ -52,11 +61,12 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RoleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RoleProps> {
-        private java.lang.Object assumeRolePolicyDocument;
-        private java.lang.Object roleName;
-        private java.lang.Object description;
-        private java.lang.Object maxSessionDuration;
-        private java.lang.Object policies;
+        java.lang.Object assumeRolePolicyDocument;
+        java.lang.Object roleName;
+        java.lang.Object deletionForce;
+        java.lang.Object description;
+        java.lang.Object maxSessionDuration;
+        java.lang.Object policies;
 
         /**
          * Sets the value of {@link RoleProps#getAssumeRolePolicyDocument}
@@ -95,6 +105,28 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder roleName(com.aliyun.ros.cdk.core.IResolvable roleName) {
             this.roleName = roleName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RoleProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force detach the policies attached to the role.
+         *                      Default value is false.
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RoleProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force detach the policies attached to the role.
+         *                      Default value is false.
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
             return this;
         }
 
@@ -169,7 +201,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RoleProps build() {
-            return new Jsii$Proxy(assumeRolePolicyDocument, roleName, description, maxSessionDuration, policies);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -180,6 +212,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RoleProps {
         private final java.lang.Object assumeRolePolicyDocument;
         private final java.lang.Object roleName;
+        private final java.lang.Object deletionForce;
         private final java.lang.Object description;
         private final java.lang.Object maxSessionDuration;
         private final java.lang.Object policies;
@@ -192,6 +225,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.assumeRolePolicyDocument = software.amazon.jsii.Kernel.get(this, "assumeRolePolicyDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxSessionDuration = software.amazon.jsii.Kernel.get(this, "maxSessionDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -200,13 +234,14 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object assumeRolePolicyDocument, final java.lang.Object roleName, final java.lang.Object description, final java.lang.Object maxSessionDuration, final java.lang.Object policies) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.assumeRolePolicyDocument = java.util.Objects.requireNonNull(assumeRolePolicyDocument, "assumeRolePolicyDocument is required");
-            this.roleName = java.util.Objects.requireNonNull(roleName, "roleName is required");
-            this.description = description;
-            this.maxSessionDuration = maxSessionDuration;
-            this.policies = policies;
+            this.assumeRolePolicyDocument = java.util.Objects.requireNonNull(builder.assumeRolePolicyDocument, "assumeRolePolicyDocument is required");
+            this.roleName = java.util.Objects.requireNonNull(builder.roleName, "roleName is required");
+            this.deletionForce = builder.deletionForce;
+            this.description = builder.description;
+            this.maxSessionDuration = builder.maxSessionDuration;
+            this.policies = builder.policies;
         }
 
         @Override
@@ -217,6 +252,11 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getRoleName() {
             return this.roleName;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
         }
 
         @Override
@@ -242,6 +282,9 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
 
             data.set("assumeRolePolicyDocument", om.valueToTree(this.getAssumeRolePolicyDocument()));
             data.set("roleName", om.valueToTree(this.getRoleName()));
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -271,6 +314,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!assumeRolePolicyDocument.equals(that.assumeRolePolicyDocument)) return false;
             if (!roleName.equals(that.roleName)) return false;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.maxSessionDuration != null ? !this.maxSessionDuration.equals(that.maxSessionDuration) : that.maxSessionDuration != null) return false;
             return this.policies != null ? this.policies.equals(that.policies) : that.policies == null;
@@ -280,6 +324,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.assumeRolePolicyDocument.hashCode();
             result = 31 * result + (this.roleName.hashCode());
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.maxSessionDuration != null ? this.maxSessionDuration.hashCode() : 0);
             result = 31 * result + (this.policies != null ? this.policies.hashCode() : 0);

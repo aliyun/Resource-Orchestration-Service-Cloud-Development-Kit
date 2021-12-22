@@ -35,6 +35,11 @@ export class NetworkInterfaceAttachment extends ros.Resource {
      */
 
     /**
+     * Attribute InstanceId: ID of ECS instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
      * Attribute NetworkInterfaceId: ID of your Network Interface.
      */
     public readonly attrNetworkInterfaceId: ros.IResolvable;
@@ -60,6 +65,7 @@ export class NetworkInterfaceAttachment extends ros.Resource {
             networkInterfaceId: props.networkInterfaceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNetworkInterfaceAttachment;
+        this.attrInstanceId = rosNetworkInterfaceAttachment.attrInstanceId;
         this.attrNetworkInterfaceId = rosNetworkInterfaceAttachment.attrNetworkInterfaceId;
         this.attrTrunkNetworkInstanceId = rosNetworkInterfaceAttachment.attrTrunkNetworkInstanceId;
     }

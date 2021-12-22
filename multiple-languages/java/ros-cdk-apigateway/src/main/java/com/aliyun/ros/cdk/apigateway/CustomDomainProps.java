@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.282Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.610Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.CustomDomainProps")
 @software.amazon.jsii.Jsii.Proxy(CustomDomainProps.Jsii$Proxy.class)
 public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -49,11 +49,11 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link CustomDomainProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CustomDomainProps> {
-        private java.lang.Object domainName;
-        private java.lang.Object groupId;
-        private java.lang.Object certificateBody;
-        private java.lang.Object certificateName;
-        private java.lang.Object certificatePrivateKey;
+        java.lang.Object domainName;
+        java.lang.Object groupId;
+        java.lang.Object certificateBody;
+        java.lang.Object certificateName;
+        java.lang.Object certificatePrivateKey;
 
         /**
          * Sets the value of {@link CustomDomainProps#getDomainName}
@@ -162,7 +162,7 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public CustomDomainProps build() {
-            return new Jsii$Proxy(domainName, groupId, certificateBody, certificateName, certificatePrivateKey);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -193,13 +193,13 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object groupId, final java.lang.Object certificateBody, final java.lang.Object certificateName, final java.lang.Object certificatePrivateKey) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
-            this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
-            this.certificateBody = certificateBody;
-            this.certificateName = certificateName;
-            this.certificatePrivateKey = certificatePrivateKey;
+            this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
+            this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
+            this.certificateBody = builder.certificateBody;
+            this.certificateName = builder.certificateName;
+            this.certificatePrivateKey = builder.certificatePrivateKey;
         }
 
         @Override

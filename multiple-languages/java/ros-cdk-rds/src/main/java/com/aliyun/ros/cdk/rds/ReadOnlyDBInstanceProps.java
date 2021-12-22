@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.616Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ReadOnlyDBInstanceProps.Jsii$Proxy.class)
 public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -49,6 +49,17 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
+     * Property autoRenew: Specifies whether to enable auto-renewal.
+     * <p>
+     * Valid values: true and false. Note
+     * :Monthly subscription: The auto-renewal cycle is one month.
+     * Annual subscription: The auto-renewal cycle is one year.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
+        return null;
+    }
+
+    /**
      * Property category: The edition of the instance.
      * <p>
      * Valid values:
@@ -88,9 +99,25 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
     /**
      * Property payType: The billing method.
      * <p>
-     * The system only supports Pay-As-You-Go. Valid value: Postpaid.
+     * Valid value: Postpaid, Prepaid.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
+        return null;
+    }
+
+    /**
+     * Property period: Prepaid time period.
+     * <p>
+     * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return null;
+    }
+
+    /**
+     * Property periodType: Charge period for created instances.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodType() {
         return null;
     }
 
@@ -154,20 +181,23 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link ReadOnlyDBInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ReadOnlyDBInstanceProps> {
-        private java.lang.Object dbInstanceClass;
-        private java.lang.Object dbInstanceId;
-        private java.lang.Object dbInstanceStorage;
-        private java.lang.Object engineVersion;
-        private java.lang.Object zoneId;
-        private java.lang.Object category;
-        private java.lang.Object dbInstanceDescription;
-        private java.lang.Object dbInstanceStorageType;
-        private java.lang.Object payType;
-        private java.lang.Object privateIpAddress;
-        private java.lang.Object resourceGroupId;
-        private java.util.Map<java.lang.String, java.lang.Object> tags;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
+        java.lang.Object dbInstanceClass;
+        java.lang.Object dbInstanceId;
+        java.lang.Object dbInstanceStorage;
+        java.lang.Object engineVersion;
+        java.lang.Object zoneId;
+        java.lang.Object autoRenew;
+        java.lang.Object category;
+        java.lang.Object dbInstanceDescription;
+        java.lang.Object dbInstanceStorageType;
+        java.lang.Object payType;
+        java.lang.Object period;
+        java.lang.Object periodType;
+        java.lang.Object privateIpAddress;
+        java.lang.Object resourceGroupId;
+        java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceClass}
@@ -292,6 +322,32 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getAutoRenew}
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal.
+         *                  Valid values: true and false. Note
+         *                  :Monthly subscription: The auto-renewal cycle is one month.
+         *                  Annual subscription: The auto-renewal cycle is one year.
+         * @return {@code this}
+         */
+        public Builder autoRenew(java.lang.Boolean autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getAutoRenew}
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal.
+         *                  Valid values: true and false. Note
+         *                  :Monthly subscription: The auto-renewal cycle is one month.
+         *                  Annual subscription: The auto-renewal cycle is one year.
+         * @return {@code this}
+         */
+        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getCategory}
          * @param category Property category: The edition of the instance.
          *                 Valid values:
@@ -382,7 +438,7 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPayType}
          * @param payType Property payType: The billing method.
-         *                The system only supports Pay-As-You-Go. Valid value: Postpaid.
+         *                Valid value: Postpaid, Prepaid.
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -393,11 +449,53 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPayType}
          * @param payType Property payType: The billing method.
-         *                The system only supports Pay-As-You-Go. Valid value: Postpaid.
+         *                Valid value: Postpaid, Prepaid.
          * @return {@code this}
          */
         public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
             this.payType = payType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getPeriod}
+         * @param period Property period: Prepaid time period.
+         *               While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * @return {@code this}
+         */
+        public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getPeriod}
+         * @param period Property period: Prepaid time period.
+         *               While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getPeriodType}
+         * @param periodType Property periodType: Charge period for created instances.
+         * @return {@code this}
+         */
+        public Builder periodType(java.lang.String periodType) {
+            this.periodType = periodType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getPeriodType}
+         * @param periodType Property periodType: Charge period for created instances.
+         * @return {@code this}
+         */
+        public Builder periodType(com.aliyun.ros.cdk.core.IResolvable periodType) {
+            this.periodType = periodType;
             return this;
         }
 
@@ -513,7 +611,7 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public ReadOnlyDBInstanceProps build() {
-            return new Jsii$Proxy(dbInstanceClass, dbInstanceId, dbInstanceStorage, engineVersion, zoneId, category, dbInstanceDescription, dbInstanceStorageType, payType, privateIpAddress, resourceGroupId, tags, vpcId, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -527,10 +625,13 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object dbInstanceStorage;
         private final java.lang.Object engineVersion;
         private final java.lang.Object zoneId;
+        private final java.lang.Object autoRenew;
         private final java.lang.Object category;
         private final java.lang.Object dbInstanceDescription;
         private final java.lang.Object dbInstanceStorageType;
         private final java.lang.Object payType;
+        private final java.lang.Object period;
+        private final java.lang.Object periodType;
         private final java.lang.Object privateIpAddress;
         private final java.lang.Object resourceGroupId;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
@@ -548,10 +649,13 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceStorageType = software.amazon.jsii.Kernel.get(this, "dbInstanceStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
@@ -563,22 +667,25 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object dbInstanceClass, final java.lang.Object dbInstanceId, final java.lang.Object dbInstanceStorage, final java.lang.Object engineVersion, final java.lang.Object zoneId, final java.lang.Object category, final java.lang.Object dbInstanceDescription, final java.lang.Object dbInstanceStorageType, final java.lang.Object payType, final java.lang.Object privateIpAddress, final java.lang.Object resourceGroupId, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dbInstanceClass = java.util.Objects.requireNonNull(dbInstanceClass, "dbInstanceClass is required");
-            this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
-            this.dbInstanceStorage = java.util.Objects.requireNonNull(dbInstanceStorage, "dbInstanceStorage is required");
-            this.engineVersion = java.util.Objects.requireNonNull(engineVersion, "engineVersion is required");
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
-            this.category = category;
-            this.dbInstanceDescription = dbInstanceDescription;
-            this.dbInstanceStorageType = dbInstanceStorageType;
-            this.payType = payType;
-            this.privateIpAddress = privateIpAddress;
-            this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
+            this.dbInstanceClass = java.util.Objects.requireNonNull(builder.dbInstanceClass, "dbInstanceClass is required");
+            this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
+            this.dbInstanceStorage = java.util.Objects.requireNonNull(builder.dbInstanceStorage, "dbInstanceStorage is required");
+            this.engineVersion = java.util.Objects.requireNonNull(builder.engineVersion, "engineVersion is required");
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.autoRenew = builder.autoRenew;
+            this.category = builder.category;
+            this.dbInstanceDescription = builder.dbInstanceDescription;
+            this.dbInstanceStorageType = builder.dbInstanceStorageType;
+            this.payType = builder.payType;
+            this.period = builder.period;
+            this.periodType = builder.periodType;
+            this.privateIpAddress = builder.privateIpAddress;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
         }
 
         @Override
@@ -607,6 +714,11 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getAutoRenew() {
+            return this.autoRenew;
+        }
+
+        @Override
         public final java.lang.Object getCategory() {
             return this.category;
         }
@@ -624,6 +736,16 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getPayType() {
             return this.payType;
+        }
+
+        @Override
+        public final java.lang.Object getPeriod() {
+            return this.period;
+        }
+
+        @Override
+        public final java.lang.Object getPeriodType() {
+            return this.periodType;
         }
 
         @Override
@@ -662,6 +784,9 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             data.set("dbInstanceStorage", om.valueToTree(this.getDbInstanceStorage()));
             data.set("engineVersion", om.valueToTree(this.getEngineVersion()));
             data.set("zoneId", om.valueToTree(this.getZoneId()));
+            if (this.getAutoRenew() != null) {
+                data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
+            }
             if (this.getCategory() != null) {
                 data.set("category", om.valueToTree(this.getCategory()));
             }
@@ -673,6 +798,12 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getPayType() != null) {
                 data.set("payType", om.valueToTree(this.getPayType()));
+            }
+            if (this.getPeriod() != null) {
+                data.set("period", om.valueToTree(this.getPeriod()));
+            }
+            if (this.getPeriodType() != null) {
+                data.set("periodType", om.valueToTree(this.getPeriodType()));
             }
             if (this.getPrivateIpAddress() != null) {
                 data.set("privateIpAddress", om.valueToTree(this.getPrivateIpAddress()));
@@ -712,10 +843,13 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             if (!dbInstanceStorage.equals(that.dbInstanceStorage)) return false;
             if (!engineVersion.equals(that.engineVersion)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
+            if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
             if (this.dbInstanceStorageType != null ? !this.dbInstanceStorageType.equals(that.dbInstanceStorageType) : that.dbInstanceStorageType != null) return false;
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
+            if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.periodType != null ? !this.periodType.equals(that.periodType) : that.periodType != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -730,10 +864,13 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.dbInstanceStorage.hashCode());
             result = 31 * result + (this.engineVersion.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
+            result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
             result = 31 * result + (this.dbInstanceStorageType != null ? this.dbInstanceStorageType.hashCode() : 0);
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
+            result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.periodType != null ? this.periodType.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

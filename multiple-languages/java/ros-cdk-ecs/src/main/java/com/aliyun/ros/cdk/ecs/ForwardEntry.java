@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::ForwardEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.948Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.541Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ForwardEntry")
 public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
 
@@ -111,20 +111,20 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property externalPort: Source port, now support [1-65535]|Any.
+         * Property externalPort: Source port, now support [1-65535]|Any|x/y.
          * <p>
          * @return {@code this}
-         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any. This parameter is required.
+         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any|x/y. This parameter is required.
          */
         public Builder externalPort(final java.lang.String externalPort) {
             this.props.externalPort(externalPort);
             return this;
         }
         /**
-         * Property externalPort: Source port, now support [1-65535]|Any.
+         * Property externalPort: Source port, now support [1-65535]|Any|x/y.
          * <p>
          * @return {@code this}
-         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any. This parameter is required.
+         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any|x/y. This parameter is required.
          */
         public Builder externalPort(final com.aliyun.ros.cdk.core.IResolvable externalPort) {
             this.props.externalPort(externalPort);
@@ -174,20 +174,20 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property internalPort: Destination port, now support [1-65535]|Any.
+         * Property internalPort: Destination port, now support [1-65535]|Any|x/y.
          * <p>
          * @return {@code this}
-         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any. This parameter is required.
+         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any|x/y. This parameter is required.
          */
         public Builder internalPort(final java.lang.String internalPort) {
             this.props.internalPort(internalPort);
             return this;
         }
         /**
-         * Property internalPort: Destination port, now support [1-65535]|Any.
+         * Property internalPort: Destination port, now support [1-65535]|Any|x/y.
          * <p>
          * @return {@code this}
-         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any. This parameter is required.
+         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any|x/y. This parameter is required.
          */
         public Builder internalPort(final com.aliyun.ros.cdk.core.IResolvable internalPort) {
             this.props.internalPort(internalPort);
@@ -212,6 +212,48 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder ipProtocol(final com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
             this.props.ipProtocol(ipProtocol);
+            return this;
+        }
+
+        /**
+         * Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param forwardEntryName Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://. This parameter is required.
+         */
+        public Builder forwardEntryName(final java.lang.String forwardEntryName) {
+            this.props.forwardEntryName(forwardEntryName);
+            return this;
+        }
+        /**
+         * Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param forwardEntryName Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://. This parameter is required.
+         */
+        public Builder forwardEntryName(final com.aliyun.ros.cdk.core.IResolvable forwardEntryName) {
+            this.props.forwardEntryName(forwardEntryName);
+            return this;
+        }
+
+        /**
+         * Property portBreak: Specifies whether to remove limits on the port range.
+         * <p>
+         * @return {@code this}
+         * @param portBreak Property portBreak: Specifies whether to remove limits on the port range. This parameter is required.
+         */
+        public Builder portBreak(final java.lang.Boolean portBreak) {
+            this.props.portBreak(portBreak);
+            return this;
+        }
+        /**
+         * Property portBreak: Specifies whether to remove limits on the port range.
+         * <p>
+         * @return {@code this}
+         * @param portBreak Property portBreak: Specifies whether to remove limits on the port range. This parameter is required.
+         */
+        public Builder portBreak(final com.aliyun.ros.cdk.core.IResolvable portBreak) {
+            this.props.portBreak(portBreak);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::LogServiceEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.298Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:59.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.LogServiceEnableProps")
 @software.amazon.jsii.Jsii.Proxy(LogServiceEnableProps.Jsii$Proxy.class)
 public interface LogServiceEnableProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,8 +30,8 @@ public interface LogServiceEnableProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link LogServiceEnableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LogServiceEnableProps> {
-        private java.lang.Object domain;
-        private java.lang.Object instanceId;
+        java.lang.Object domain;
+        java.lang.Object instanceId;
 
         /**
          * Sets the value of {@link LogServiceEnableProps#getDomain}
@@ -82,7 +82,7 @@ public interface LogServiceEnableProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public LogServiceEnableProps build() {
-            return new Jsii$Proxy(domain, instanceId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -107,10 +107,10 @@ public interface LogServiceEnableProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domain, final java.lang.Object instanceId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domain = java.util.Objects.requireNonNull(domain, "domain is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
+            this.domain = java.util.Objects.requireNonNull(builder.domain, "domain is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
         }
 
         @Override

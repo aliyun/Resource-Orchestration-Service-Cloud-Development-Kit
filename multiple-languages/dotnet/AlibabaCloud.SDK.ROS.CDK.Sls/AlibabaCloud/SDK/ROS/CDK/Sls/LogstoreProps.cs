@@ -72,6 +72,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             set;
         }
 
+        /// <summary>Property encryptConf: Data encryption config.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "encryptConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty\"}]}}", isOptional: true, isOverride: true)]
+        public object? EncryptConf
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property maxSplitShard: The maximum number of shards when splitting automatically.</summary>
         /// <remarks>
         /// Must be specified if AutoSplit is set to true.

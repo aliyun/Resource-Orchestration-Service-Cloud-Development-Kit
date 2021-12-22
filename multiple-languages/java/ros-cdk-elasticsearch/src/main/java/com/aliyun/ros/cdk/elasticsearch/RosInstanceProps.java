@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * Properties for defining a `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.315Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.867Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,18 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableKibanaPrivate() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableKibanaPublic() {
         return null;
     }
 
@@ -85,6 +97,18 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getYmlConfig() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneCount() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosInstanceProps}
      */
     static Builder builder() {
@@ -94,20 +118,24 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
-        private java.lang.Object dataNode;
-        private java.lang.Object password;
-        private java.lang.Object version;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object description;
-        private java.lang.Object enablePublic;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object kibanaWhitelist;
-        private java.lang.Object masterNode;
-        private java.lang.Object period;
-        private java.lang.Object privateWhitelist;
-        private java.lang.Object publicWhitelist;
-        private java.lang.Object resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags;
+        java.lang.Object dataNode;
+        java.lang.Object password;
+        java.lang.Object version;
+        java.lang.Object vSwitchId;
+        java.lang.Object description;
+        java.lang.Object enableKibanaPrivate;
+        java.lang.Object enableKibanaPublic;
+        java.lang.Object enablePublic;
+        java.lang.Object instanceChargeType;
+        java.lang.Object kibanaWhitelist;
+        java.lang.Object masterNode;
+        java.lang.Object period;
+        java.lang.Object privateWhitelist;
+        java.lang.Object publicWhitelist;
+        java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags;
+        java.lang.Object ymlConfig;
+        java.lang.Object zoneCount;
 
         /**
          * Sets the value of {@link RosInstanceProps#getDataNode}
@@ -206,6 +234,46 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEnableKibanaPrivate}
+         * @param enableKibanaPrivate the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableKibanaPrivate(java.lang.Boolean enableKibanaPrivate) {
+            this.enableKibanaPrivate = enableKibanaPrivate;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEnableKibanaPrivate}
+         * @param enableKibanaPrivate the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableKibanaPrivate(com.aliyun.ros.cdk.core.IResolvable enableKibanaPrivate) {
+            this.enableKibanaPrivate = enableKibanaPrivate;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEnableKibanaPublic}
+         * @param enableKibanaPublic the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableKibanaPublic(java.lang.Boolean enableKibanaPublic) {
+            this.enableKibanaPublic = enableKibanaPublic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEnableKibanaPublic}
+         * @param enableKibanaPublic the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableKibanaPublic(com.aliyun.ros.cdk.core.IResolvable enableKibanaPublic) {
+            this.enableKibanaPublic = enableKibanaPublic;
             return this;
         }
 
@@ -381,13 +449,53 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getYmlConfig}
+         * @param ymlConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder ymlConfig(com.aliyun.ros.cdk.core.IResolvable ymlConfig) {
+            this.ymlConfig = ymlConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getYmlConfig}
+         * @param ymlConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder ymlConfig(com.aliyun.ros.cdk.elasticsearch.RosInstance.YMLConfigProperty ymlConfig) {
+            this.ymlConfig = ymlConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getZoneCount}
+         * @param zoneCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneCount(java.lang.Number zoneCount) {
+            this.zoneCount = zoneCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getZoneCount}
+         * @param zoneCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneCount(com.aliyun.ros.cdk.core.IResolvable zoneCount) {
+            this.zoneCount = zoneCount;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosInstanceProps build() {
-            return new Jsii$Proxy(dataNode, password, version, vSwitchId, description, enablePublic, instanceChargeType, kibanaWhitelist, masterNode, period, privateWhitelist, publicWhitelist, resourceGroupId, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -401,6 +509,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object version;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object description;
+        private final java.lang.Object enableKibanaPrivate;
+        private final java.lang.Object enableKibanaPublic;
         private final java.lang.Object enablePublic;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object kibanaWhitelist;
@@ -410,6 +520,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object publicWhitelist;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags;
+        private final java.lang.Object ymlConfig;
+        private final java.lang.Object zoneCount;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -422,6 +534,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableKibanaPrivate = software.amazon.jsii.Kernel.get(this, "enableKibanaPrivate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableKibanaPublic = software.amazon.jsii.Kernel.get(this, "enableKibanaPublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enablePublic = software.amazon.jsii.Kernel.get(this, "enablePublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kibanaWhitelist = software.amazon.jsii.Kernel.get(this, "kibanaWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -431,28 +545,34 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.publicWhitelist = software.amazon.jsii.Kernel.get(this, "publicWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty.class)));
+            this.ymlConfig = software.amazon.jsii.Kernel.get(this, "ymlConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneCount = software.amazon.jsii.Kernel.get(this, "zoneCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object dataNode, final java.lang.Object password, final java.lang.Object version, final java.lang.Object vSwitchId, final java.lang.Object description, final java.lang.Object enablePublic, final java.lang.Object instanceChargeType, final java.lang.Object kibanaWhitelist, final java.lang.Object masterNode, final java.lang.Object period, final java.lang.Object privateWhitelist, final java.lang.Object publicWhitelist, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dataNode = java.util.Objects.requireNonNull(dataNode, "dataNode is required");
-            this.password = java.util.Objects.requireNonNull(password, "password is required");
-            this.version = java.util.Objects.requireNonNull(version, "version is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-            this.description = description;
-            this.enablePublic = enablePublic;
-            this.instanceChargeType = instanceChargeType;
-            this.kibanaWhitelist = kibanaWhitelist;
-            this.masterNode = masterNode;
-            this.period = period;
-            this.privateWhitelist = privateWhitelist;
-            this.publicWhitelist = publicWhitelist;
-            this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty>)tags;
+            this.dataNode = java.util.Objects.requireNonNull(builder.dataNode, "dataNode is required");
+            this.password = java.util.Objects.requireNonNull(builder.password, "password is required");
+            this.version = java.util.Objects.requireNonNull(builder.version, "version is required");
+            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.description = builder.description;
+            this.enableKibanaPrivate = builder.enableKibanaPrivate;
+            this.enableKibanaPublic = builder.enableKibanaPublic;
+            this.enablePublic = builder.enablePublic;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.kibanaWhitelist = builder.kibanaWhitelist;
+            this.masterNode = builder.masterNode;
+            this.period = builder.period;
+            this.privateWhitelist = builder.privateWhitelist;
+            this.publicWhitelist = builder.publicWhitelist;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty>)builder.tags;
+            this.ymlConfig = builder.ymlConfig;
+            this.zoneCount = builder.zoneCount;
         }
 
         @Override
@@ -478,6 +598,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getEnableKibanaPrivate() {
+            return this.enableKibanaPrivate;
+        }
+
+        @Override
+        public final java.lang.Object getEnableKibanaPublic() {
+            return this.enableKibanaPublic;
         }
 
         @Override
@@ -526,6 +656,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getYmlConfig() {
+            return this.ymlConfig;
+        }
+
+        @Override
+        public final java.lang.Object getZoneCount() {
+            return this.zoneCount;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -537,6 +677,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getEnableKibanaPrivate() != null) {
+                data.set("enableKibanaPrivate", om.valueToTree(this.getEnableKibanaPrivate()));
+            }
+            if (this.getEnableKibanaPublic() != null) {
+                data.set("enableKibanaPublic", om.valueToTree(this.getEnableKibanaPublic()));
             }
             if (this.getEnablePublic() != null) {
                 data.set("enablePublic", om.valueToTree(this.getEnablePublic()));
@@ -565,6 +711,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getYmlConfig() != null) {
+                data.set("ymlConfig", om.valueToTree(this.getYmlConfig()));
+            }
+            if (this.getZoneCount() != null) {
+                data.set("zoneCount", om.valueToTree(this.getZoneCount()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-elasticsearch.RosInstanceProps"));
@@ -588,6 +740,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (!version.equals(that.version)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.enableKibanaPrivate != null ? !this.enableKibanaPrivate.equals(that.enableKibanaPrivate) : that.enableKibanaPrivate != null) return false;
+            if (this.enableKibanaPublic != null ? !this.enableKibanaPublic.equals(that.enableKibanaPublic) : that.enableKibanaPublic != null) return false;
             if (this.enablePublic != null ? !this.enablePublic.equals(that.enablePublic) : that.enablePublic != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.kibanaWhitelist != null ? !this.kibanaWhitelist.equals(that.kibanaWhitelist) : that.kibanaWhitelist != null) return false;
@@ -596,7 +750,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.privateWhitelist != null ? !this.privateWhitelist.equals(that.privateWhitelist) : that.privateWhitelist != null) return false;
             if (this.publicWhitelist != null ? !this.publicWhitelist.equals(that.publicWhitelist) : that.publicWhitelist != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
-            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.ymlConfig != null ? !this.ymlConfig.equals(that.ymlConfig) : that.ymlConfig != null) return false;
+            return this.zoneCount != null ? this.zoneCount.equals(that.zoneCount) : that.zoneCount == null;
         }
 
         @Override
@@ -606,6 +762,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.version.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.enableKibanaPrivate != null ? this.enableKibanaPrivate.hashCode() : 0);
+            result = 31 * result + (this.enableKibanaPublic != null ? this.enableKibanaPublic.hashCode() : 0);
             result = 31 * result + (this.enablePublic != null ? this.enablePublic.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.kibanaWhitelist != null ? this.kibanaWhitelist.hashCode() : 0);
@@ -615,6 +773,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.publicWhitelist != null ? this.publicWhitelist.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.ymlConfig != null ? this.ymlConfig.hashCode() : 0);
+            result = 31 * result + (this.zoneCount != null ? this.zoneCount.hashCode() : 0);
             return result;
         }
     }

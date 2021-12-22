@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::SynchronizationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.858Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSynchronizationJobProps")
 @software.amazon.jsii.Jsii.Proxy(RosSynchronizationJobProps.Jsii$Proxy.class)
 public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSerializable {
@@ -86,19 +86,19 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link RosSynchronizationJobProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSynchronizationJobProps> {
-        private java.lang.Object destinationEndpoint;
-        private java.lang.Object destRegion;
-        private java.lang.Object sourceEndpoint;
-        private java.lang.Object sourceRegion;
-        private java.lang.Object synchronizationJobClass;
-        private java.lang.Object dataInitialization;
-        private java.lang.Object networkType;
-        private java.lang.Object payType;
-        private java.lang.Object period;
-        private java.lang.Object structureInitialization;
-        private java.lang.Object synchronizationObjects;
-        private java.lang.Object topology;
-        private java.lang.Object usedTime;
+        java.lang.Object destinationEndpoint;
+        java.lang.Object destRegion;
+        java.lang.Object sourceEndpoint;
+        java.lang.Object sourceRegion;
+        java.lang.Object synchronizationJobClass;
+        java.lang.Object dataInitialization;
+        java.lang.Object networkType;
+        java.lang.Object payType;
+        java.lang.Object period;
+        java.lang.Object structureInitialization;
+        java.lang.Object synchronizationObjects;
+        java.lang.Object topology;
+        java.lang.Object usedTime;
 
         /**
          * Sets the value of {@link RosSynchronizationJobProps#getDestinationEndpoint}
@@ -367,7 +367,7 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
          */
         @Override
         public RosSynchronizationJobProps build() {
-            return new Jsii$Proxy(destinationEndpoint, destRegion, sourceEndpoint, sourceRegion, synchronizationJobClass, dataInitialization, networkType, payType, period, structureInitialization, synchronizationObjects, topology, usedTime);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -414,21 +414,21 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object destinationEndpoint, final java.lang.Object destRegion, final java.lang.Object sourceEndpoint, final java.lang.Object sourceRegion, final java.lang.Object synchronizationJobClass, final java.lang.Object dataInitialization, final java.lang.Object networkType, final java.lang.Object payType, final java.lang.Object period, final java.lang.Object structureInitialization, final java.lang.Object synchronizationObjects, final java.lang.Object topology, final java.lang.Object usedTime) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.destinationEndpoint = java.util.Objects.requireNonNull(destinationEndpoint, "destinationEndpoint is required");
-            this.destRegion = java.util.Objects.requireNonNull(destRegion, "destRegion is required");
-            this.sourceEndpoint = java.util.Objects.requireNonNull(sourceEndpoint, "sourceEndpoint is required");
-            this.sourceRegion = java.util.Objects.requireNonNull(sourceRegion, "sourceRegion is required");
-            this.synchronizationJobClass = java.util.Objects.requireNonNull(synchronizationJobClass, "synchronizationJobClass is required");
-            this.dataInitialization = dataInitialization;
-            this.networkType = networkType;
-            this.payType = payType;
-            this.period = period;
-            this.structureInitialization = structureInitialization;
-            this.synchronizationObjects = synchronizationObjects;
-            this.topology = topology;
-            this.usedTime = usedTime;
+            this.destinationEndpoint = java.util.Objects.requireNonNull(builder.destinationEndpoint, "destinationEndpoint is required");
+            this.destRegion = java.util.Objects.requireNonNull(builder.destRegion, "destRegion is required");
+            this.sourceEndpoint = java.util.Objects.requireNonNull(builder.sourceEndpoint, "sourceEndpoint is required");
+            this.sourceRegion = java.util.Objects.requireNonNull(builder.sourceRegion, "sourceRegion is required");
+            this.synchronizationJobClass = java.util.Objects.requireNonNull(builder.synchronizationJobClass, "synchronizationJobClass is required");
+            this.dataInitialization = builder.dataInitialization;
+            this.networkType = builder.networkType;
+            this.payType = builder.payType;
+            this.period = builder.period;
+            this.structureInitialization = builder.structureInitialization;
+            this.synchronizationObjects = builder.synchronizationObjects;
+            this.topology = builder.topology;
+            this.usedTime = builder.usedTime;
         }
 
         @Override

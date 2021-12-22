@@ -829,7 +829,7 @@ export interface RosDBInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -1096,8 +1096,8 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
     if(properties.backUpCategory && (typeof properties.backUpCategory) !== 'object') {
         errors.collect(ros.propertyValidator('backUpCategory', ros.validateAllowedValues)({
@@ -1107,6 +1107,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
     errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
           data: properties.connectionStringType,
@@ -1114,7 +1115,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
-    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
         errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
           data: properties.masterUserType,
@@ -1588,7 +1588,7 @@ export class RosDBInstance extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     public slaveZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -2058,7 +2058,7 @@ export interface RosDBInstanceCloneProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
-     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -2157,8 +2157,8 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('backupId', ros.validateString)(properties.backupId));
     errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
-    errors.collect(ros.propertyValidator('dbNames', ros.validateString)(properties.dbNames));
     errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
+    errors.collect(ros.propertyValidator('dbNames', ros.validateString)(properties.dbNames));
     if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
         errors.collect(ros.propertyValidator('slaveZoneIds', ros.validateLength)({
             data: properties.slaveZoneIds.length,
@@ -2559,7 +2559,7 @@ export class RosDBInstanceClone extends ros.RosResource {
     public securityIpList: string | ros.IResolvable | undefined;
 
     /**
-     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     public slaveZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -3724,7 +3724,7 @@ export interface RosPrepayDBInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -3992,8 +3992,8 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.quantity && (typeof properties.quantity) !== 'object') {
         errors.collect(ros.propertyValidator('quantity', ros.validateRange)({
             data: properties.quantity,
@@ -4012,6 +4012,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
     errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
           data: properties.connectionStringType,
@@ -4019,7 +4020,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
-    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     errors.collect(ros.propertyValidator('couponCode', ros.validateString)(properties.couponCode));
     if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
         errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
@@ -4509,7 +4509,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     public slaveZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -4827,6 +4827,13 @@ export interface RosReadOnlyDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Specifies whether to enable auto-renewal. Valid values: true and false. Note
+     * :Monthly subscription: The auto-renewal cycle is one month.
+     * Annual subscription: The auto-renewal cycle is one year.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * - Basic
      * - HighAvailability
@@ -4848,9 +4855,19 @@ export interface RosReadOnlyDBInstanceProps {
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
-     * @Property payType: The billing method. The system only supports Pay-As-You-Go. Valid value: Postpaid.
+     * @Property payType: The billing method. Valid value: Postpaid, Prepaid.
      */
     readonly payType?: string | ros.IResolvable;
+
+    /**
+     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodType: Charge period for created instances.
+     */
+    readonly periodType?: string | ros.IResolvable;
 
     /**
      * @Property privateIpAddress: The private IP address of the read-only instance. It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
@@ -4900,6 +4917,13 @@ export interface RosReadOnlyDBInstanceProps {
 function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.periodType && (typeof properties.periodType) !== 'object') {
+        errors.collect(ros.propertyValidator('periodType', ros.validateAllowedValues)({
+          data: properties.periodType,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
@@ -4923,17 +4947,26 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateRange)({
+            data: properties.period,
+            min: 1,
+            max: 9,
+          }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Postpaid"],
+          allowedValues: ["Prepaid","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     if(properties.dbInstanceStorageType && (typeof properties.dbInstanceStorageType) !== 'object') {
         errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateAllowedValues)({
           data: properties.dbInstanceStorageType,
-          allowedValues: ["local_ssd/ephemeral_ssd","cloud_ssd","cloud_essd"],
+          allowedValues: ["local_ssd","ephemeral_ssd","cloud_ssd","cloud_essd"],
         }));
     }
     errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
@@ -4965,10 +4998,13 @@ function rosReadOnlyDBInstancePropsToRosTemplate(properties: any, enableResource
       DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
       EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       Category: ros.stringToRosTemplate(properties.category),
       DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
       DBInstanceStorageType: ros.stringToRosTemplate(properties.dbInstanceStorageType),
       PayType: ros.stringToRosTemplate(properties.payType),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodType: ros.stringToRosTemplate(properties.periodType),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
@@ -5039,6 +5075,13 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Specifies whether to enable auto-renewal. Valid values: true and false. Note
+     * :Monthly subscription: The auto-renewal cycle is one month.
+     * Annual subscription: The auto-renewal cycle is one year.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property category: The edition of the instance. Valid values:
      * - Basic
      * - HighAvailability
@@ -5060,9 +5103,19 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property payType: The billing method. The system only supports Pay-As-You-Go. Valid value: Postpaid.
+     * @Property payType: The billing method. Valid value: Postpaid, Prepaid.
      */
     public payType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodType: Charge period for created instances.
+     */
+    public periodType: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateIpAddress: The private IP address of the read-only instance. It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
@@ -5120,10 +5173,13 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
         this.dbInstanceStorage = props.dbInstanceStorage;
         this.engineVersion = props.engineVersion;
         this.zoneId = props.zoneId;
+        this.autoRenew = props.autoRenew;
         this.category = props.category;
         this.dbInstanceDescription = props.dbInstanceDescription;
         this.dbInstanceStorageType = props.dbInstanceStorageType;
         this.payType = props.payType;
+        this.period = props.period;
+        this.periodType = props.periodType;
         this.privateIpAddress = props.privateIpAddress;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
@@ -5139,10 +5195,13 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
             dbInstanceStorage: this.dbInstanceStorage,
             engineVersion: this.engineVersion,
             zoneId: this.zoneId,
+            autoRenew: this.autoRenew,
             category: this.category,
             dbInstanceDescription: this.dbInstanceDescription,
             dbInstanceStorageType: this.dbInstanceStorageType,
             payType: this.payType,
+            period: this.period,
+            periodType: this.periodType,
             privateIpAddress: this.privateIpAddress,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,

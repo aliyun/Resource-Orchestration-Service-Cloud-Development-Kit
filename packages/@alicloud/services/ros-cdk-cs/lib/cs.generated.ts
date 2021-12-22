@@ -66,6 +66,36 @@ export class RosAnyCluster extends ros.RosResource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
+     * @Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: ros.IResolvable;
@@ -93,6 +123,12 @@ export class RosAnyCluster extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosAnyClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAnyCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
+        this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrNodes = this.getAtt('Nodes');
+        this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
+        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+        this.attrScalingRuleId = this.getAtt('ScalingRuleId');
         this.attrTaskId = this.getAtt('TaskId');
         this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
@@ -109,6 +145,1241 @@ export class RosAnyCluster extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAnyClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CS::ClusterNodePool`
+ */
+export interface RosClusterNodePoolProps {
+
+    /**
+     * @Property clusterId: Cluster ID.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property scalingGroup: The configurations of the scaling group used by the node pool.
+     */
+    readonly scalingGroup: RosClusterNodePool.ScalingGroupProperty | ros.IResolvable;
+
+    /**
+     * @Property autoScaling: The configurations of auto scaling.
+     */
+    readonly autoScaling?: RosClusterNodePool.AutoScalingProperty | ros.IResolvable;
+
+    /**
+     * @Property count: The number of nodes in the node pool.
+     */
+    readonly count?: number | ros.IResolvable;
+
+    /**
+     * @Property kubernetesConfig: The configurations of the ACK cluster.
+     */
+    readonly kubernetesConfig?: RosClusterNodePool.KubernetesConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property management: The configurations of the managed node pool.
+     */
+    readonly management?: RosClusterNodePool.ManagementProperty | ros.IResolvable;
+
+    /**
+     * @Property nodePoolInfo: The configurations of the node pool.
+     */
+    readonly nodePoolInfo?: RosClusterNodePool.NodePoolInfoProperty | ros.IResolvable;
+
+    /**
+     * @Property teeConfig: The configurations of confidential computing.
+     */
+    readonly teeConfig?: RosClusterNodePool.TeeConfigProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClusterNodePoolProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClusterNodePoolProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePoolPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('teeConfig', RosClusterNodePool_TeeConfigPropertyValidator)(properties.teeConfig));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('nodePoolInfo', RosClusterNodePool_NodePoolInfoPropertyValidator)(properties.nodePoolInfo));
+    errors.collect(ros.propertyValidator('kubernetesConfig', RosClusterNodePool_KubernetesConfigPropertyValidator)(properties.kubernetesConfig));
+    errors.collect(ros.propertyValidator('count', ros.validateNumber)(properties.count));
+    errors.collect(ros.propertyValidator('management', RosClusterNodePool_ManagementPropertyValidator)(properties.management));
+    errors.collect(ros.propertyValidator('autoScaling', RosClusterNodePool_AutoScalingPropertyValidator)(properties.autoScaling));
+    errors.collect(ros.propertyValidator('scalingGroup', ros.requiredValidator)(properties.scalingGroup));
+    errors.collect(ros.propertyValidator('scalingGroup', RosClusterNodePool_ScalingGroupPropertyValidator)(properties.scalingGroup));
+    return errors.wrap('supplied properties not correct for "RosClusterNodePoolProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClusterNodePoolProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClusterNodePoolPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      ScalingGroup: rosClusterNodePoolScalingGroupPropertyToRosTemplate(properties.scalingGroup),
+      AutoScaling: rosClusterNodePoolAutoScalingPropertyToRosTemplate(properties.autoScaling),
+      Count: ros.numberToRosTemplate(properties.count),
+      KubernetesConfig: rosClusterNodePoolKubernetesConfigPropertyToRosTemplate(properties.kubernetesConfig),
+      Management: rosClusterNodePoolManagementPropertyToRosTemplate(properties.management),
+      NodePoolInfo: rosClusterNodePoolNodePoolInfoPropertyToRosTemplate(properties.nodePoolInfo),
+      TeeConfig: rosClusterNodePoolTeeConfigPropertyToRosTemplate(properties.teeConfig),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CS::ClusterNodePool`
+ */
+export class RosClusterNodePool extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterNodePool";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute NodePoolId: Cluster node pool ID.
+     */
+    public readonly attrNodePoolId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterId: Cluster ID.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property scalingGroup: The configurations of the scaling group used by the node pool.
+     */
+    public scalingGroup: RosClusterNodePool.ScalingGroupProperty | ros.IResolvable;
+
+    /**
+     * @Property autoScaling: The configurations of auto scaling.
+     */
+    public autoScaling: RosClusterNodePool.AutoScalingProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property count: The number of nodes in the node pool.
+     */
+    public count: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property kubernetesConfig: The configurations of the ACK cluster.
+     */
+    public kubernetesConfig: RosClusterNodePool.KubernetesConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property management: The configurations of the managed node pool.
+     */
+    public management: RosClusterNodePool.ManagementProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property nodePoolInfo: The configurations of the node pool.
+     */
+    public nodePoolInfo: RosClusterNodePool.NodePoolInfoProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property teeConfig: The configurations of confidential computing.
+     */
+    public teeConfig: RosClusterNodePool.TeeConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CS::ClusterNodePool`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClusterNodePoolProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClusterNodePool.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNodePoolId = this.getAtt('NodePoolId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterId = props.clusterId;
+        this.scalingGroup = props.scalingGroup;
+        this.autoScaling = props.autoScaling;
+        this.count = props.count;
+        this.kubernetesConfig = props.kubernetesConfig;
+        this.management = props.management;
+        this.nodePoolInfo = props.nodePoolInfo;
+        this.teeConfig = props.teeConfig;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterId: this.clusterId,
+            scalingGroup: this.scalingGroup,
+            autoScaling: this.autoScaling,
+            count: this.count,
+            kubernetesConfig: this.kubernetesConfig,
+            management: this.management,
+            nodePoolInfo: this.nodePoolInfo,
+            teeConfig: this.teeConfig,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClusterNodePoolPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface AutoScalingProperty {
+        /**
+         * @Property eipBandwidth: The peak bandwidth of the EIP. Unit: Mbps
+         */
+        readonly eipBandwidth?: number | ros.IResolvable;
+        /**
+         * @Property type: The instance types that can be used for the auto scaling of the node pool. Valid values:
+     * cpu: regular instance.
+     * gpu: GPU-accelerated instance.
+     * gpushare: shared GPU-accelerated instance.
+     * spot: preemptible instance.
+     * Default value: cpu.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property isBondEip: Specifies whether to associate an elastic IP address (EIP) with the node pool. Valid values:
+     * true: associates an EIP with the node pool.
+     * false: does not associate an EIP with the node pool.
+     * Default value: false.
+         */
+        readonly isBondEip?: boolean | ros.IResolvable;
+        /**
+         * @Property minInstances: The minimum number of Elastic Compute Service (ECS) instances in the scaling group.
+         */
+        readonly minInstances?: number | ros.IResolvable;
+        /**
+         * @Property enable: Specifies whether to enable auto scaling. Valid values:
+     * true: enables auto scaling.
+     * false: disables auto scaling.
+     * If you set this parameter to false, other parameters in the auto_scaling section do not take effect.
+         */
+        readonly enable: boolean | ros.IResolvable;
+        /**
+         * @Property maxInstances: The maximum number of Elastic Compute Service (ECS) instances in the scaling group.
+         */
+        readonly maxInstances?: number | ros.IResolvable;
+        /**
+         * @Property eipInternetChargeType: The billing method of the EIP. Valid values:
+     * PayByBandwidth: pay-by-bandwidth.
+     * PayByTraffic: pay-by-data-transfer.
+     * Default value: PayByBandwidth.
+         */
+        readonly eipInternetChargeType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AutoScalingProperty`
+ *
+ * @param properties - the TypeScript properties of a `AutoScalingProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_AutoScalingPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.eipBandwidth && (typeof properties.eipBandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('eipBandwidth', ros.validateRange)({
+            data: properties.eipBandwidth,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('eipBandwidth', ros.validateNumber)(properties.eipBandwidth));
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('isBondEip', ros.validateBoolean)(properties.isBondEip));
+    errors.collect(ros.propertyValidator('minInstances', ros.validateNumber)(properties.minInstances));
+    errors.collect(ros.propertyValidator('enable', ros.requiredValidator)(properties.enable));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    errors.collect(ros.propertyValidator('maxInstances', ros.validateNumber)(properties.maxInstances));
+    if(properties.eipInternetChargeType && (typeof properties.eipInternetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('eipInternetChargeType', ros.validateAllowedValues)({
+          data: properties.eipInternetChargeType,
+          allowedValues: ["PayByBandwidth","PayByTraffic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('eipInternetChargeType', ros.validateString)(properties.eipInternetChargeType));
+    return errors.wrap('supplied properties not correct for "AutoScalingProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.AutoScaling` resource
+ *
+ * @param properties - the TypeScript properties of a `AutoScalingProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.AutoScaling` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolAutoScalingPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_AutoScalingPropertyValidator(properties).assertSuccess();
+    return {
+      EipBandwidth: ros.numberToRosTemplate(properties.eipBandwidth),
+      Type: ros.stringToRosTemplate(properties.type),
+      IsBondEip: ros.booleanToRosTemplate(properties.isBondEip),
+      MinInstances: ros.numberToRosTemplate(properties.minInstances),
+      Enable: ros.booleanToRosTemplate(properties.enable),
+      MaxInstances: ros.numberToRosTemplate(properties.maxInstances),
+      EipInternetChargeType: ros.stringToRosTemplate(properties.eipInternetChargeType),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface DataDisksProperty {
+        /**
+         * @Property category: The type of data disk. Valid values:
+     * cloud: basic disk.
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+     * Default value: cloud_efficiency.
+         */
+        readonly category?: string | ros.IResolvable;
+        /**
+         * @Property encrypted: Specifies whether to encrypt a data disk. Valid values:
+     * true: encrypts a data disk.
+     * false: does not encrypt a data disk.
+     * Default value: false.
+         */
+        readonly encrypted?: boolean | ros.IResolvable;
+        /**
+         * @Property performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         */
+        readonly performanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property size: The size of a data disk. The size is measured in GiB.
+     * Valid values: 40 to 32768.
+         */
+        readonly size?: number | ros.IResolvable;
+        /**
+         * @Property autoSnapshotPolicyId: The ID of an automatic snapshot policy. Automatic backup is performed for a disk based on the specified automatic snapshot policy.
+     * By default, this parameter is empty. This indicates that automatic backup is disabled.
+         */
+        readonly autoSnapshotPolicyId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DataDisksProperty`
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_DataDisksPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
+    return errors.wrap('supplied properties not correct for "DataDisksProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.DataDisks` resource
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.DataDisks` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolDataDisksPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_DataDisksPropertyValidator(properties).assertSuccess();
+    return {
+      Category: ros.stringToRosTemplate(properties.category),
+      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
+      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
+      Size: ros.numberToRosTemplate(properties.size),
+      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface KubernetesConfigProperty {
+        /**
+         * @Property cpuPolicy: The CPU policy. The following policies are supported if the Kubernetes version of the cluster is 1.12.6 or later. Valid values:
+     * static: This policy allows pods with specific resource characteristics on the node to be granted with enhanced CPU affinity and exclusivity.
+     * none: This policy indicates that the default CPU affinity is used.
+     * Default value: none.
+         */
+        readonly cpuPolicy?: string | ros.IResolvable;
+        /**
+         * @Property runtime: The name of the container runtime.
+         */
+        readonly runtime: string | ros.IResolvable;
+        /**
+         * @Property cmsEnabled: Specifies whether to install the CloudMonitor agent on ECS nodes. After the CloudMonitor agent is installed on ECS nodes, you can view monitoring information about the instances in the CloudMonitor console. We recommend that you install the CloudMonitor agent. Valid values:
+     * true: installs the CloudMonitor agent on ECS nodes.
+     * false: does not install the CloudMonitor agent on ECS nodes.
+     * Default value: false.
+         */
+        readonly cmsEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property userData: The user-defined data.
+         */
+        readonly userData?: string | ros.IResolvable;
+        /**
+         * @Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix. The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+     * - The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.
+     * - The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.
+         */
+        readonly nodeNameMode?: string | ros.IResolvable;
+        /**
+         * @Property runtimeVersion: The version of the container runtime.
+         */
+        readonly runtimeVersion: string | ros.IResolvable;
+        /**
+         * @Property labels: You can add labels to nodes that are added to the cluster.
+         */
+        readonly labels?: Array<RosClusterNodePool.LabelsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property unschedulable: Set new nodes to unschedulable. If true, newly added nodes become unschedulable after they are registered to the cluster. You can enable scheduling for the nodes on the Nodes page in the console.
+         */
+        readonly unschedulable?: boolean | ros.IResolvable;
+        /**
+         * @Property taints: The taints of the nodes.
+         */
+        readonly taints?: Array<RosClusterNodePool.TaintsProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `KubernetesConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `KubernetesConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_KubernetesConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
+    errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
+    errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
+    errors.collect(ros.propertyValidator('cmsEnabled', ros.validateBoolean)(properties.cmsEnabled));
+    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
+    errors.collect(ros.propertyValidator('nodeNameMode', ros.validateString)(properties.nodeNameMode));
+    errors.collect(ros.propertyValidator('runtimeVersion', ros.requiredValidator)(properties.runtimeVersion));
+    errors.collect(ros.propertyValidator('runtimeVersion', ros.validateString)(properties.runtimeVersion));
+    if(properties.labels && (Array.isArray(properties.labels) || (typeof properties.labels) === 'string')) {
+        errors.collect(ros.propertyValidator('labels', ros.validateLength)({
+            data: properties.labels.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('labels', ros.listValidator(RosClusterNodePool_LabelsPropertyValidator))(properties.labels));
+    errors.collect(ros.propertyValidator('unschedulable', ros.validateBoolean)(properties.unschedulable));
+    if(properties.taints && (Array.isArray(properties.taints) || (typeof properties.taints) === 'string')) {
+        errors.collect(ros.propertyValidator('taints', ros.validateLength)({
+            data: properties.taints.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('taints', ros.listValidator(RosClusterNodePool_TaintsPropertyValidator))(properties.taints));
+    return errors.wrap('supplied properties not correct for "KubernetesConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.KubernetesConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `KubernetesConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.KubernetesConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolKubernetesConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_KubernetesConfigPropertyValidator(properties).assertSuccess();
+    return {
+      CpuPolicy: ros.stringToRosTemplate(properties.cpuPolicy),
+      Runtime: ros.stringToRosTemplate(properties.runtime),
+      CmsEnabled: ros.booleanToRosTemplate(properties.cmsEnabled),
+      UserData: ros.stringToRosTemplate(properties.userData),
+      NodeNameMode: ros.stringToRosTemplate(properties.nodeNameMode),
+      RuntimeVersion: ros.stringToRosTemplate(properties.runtimeVersion),
+      Labels: ros.listMapper(rosClusterNodePoolLabelsPropertyToRosTemplate)(properties.labels),
+      Unschedulable: ros.booleanToRosTemplate(properties.unschedulable),
+      Taints: ros.listMapper(rosClusterNodePoolTaintsPropertyToRosTemplate)(properties.taints),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface LabelsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_LabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "LabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.Labels` resource
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.Labels` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_LabelsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface ManagementProperty {
+        /**
+         * @Property upgradeConfig: The configurations of auto upgrading. The configurations take effect only when Enable=true is specified.
+         */
+        readonly upgradeConfig?: RosClusterNodePool.UpgradeConfigProperty | ros.IResolvable;
+        /**
+         * @Property autoRepair: Specifies whether to enable auto repairing. This parameter takes effect only when Enable=true is specified.
+     * true: enables auto repairing.
+     * false: disables auto repairing.
+         */
+        readonly autoRepair?: boolean | ros.IResolvable;
+        /**
+         * @Property enable: Specifies whether to enable managed node pools. Valid values:
+     * true: enables managed node pools.
+     * false: disables managed node pools. The other parameters in this section take effect only when Enable=true is specified.
+         */
+        readonly enable: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ManagementProperty`
+ *
+ * @param properties - the TypeScript properties of a `ManagementProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_ManagementPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('upgradeConfig', RosClusterNodePool_UpgradeConfigPropertyValidator)(properties.upgradeConfig));
+    errors.collect(ros.propertyValidator('autoRepair', ros.validateBoolean)(properties.autoRepair));
+    errors.collect(ros.propertyValidator('enable', ros.requiredValidator)(properties.enable));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    return errors.wrap('supplied properties not correct for "ManagementProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.Management` resource
+ *
+ * @param properties - the TypeScript properties of a `ManagementProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.Management` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolManagementPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_ManagementPropertyValidator(properties).assertSuccess();
+    return {
+      UpgradeConfig: rosClusterNodePoolUpgradeConfigPropertyToRosTemplate(properties.upgradeConfig),
+      AutoRepair: ros.booleanToRosTemplate(properties.autoRepair),
+      Enable: ros.booleanToRosTemplate(properties.enable),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface NodePoolInfoProperty {
+        /**
+         * @Property resourceGroupId: The ID of the resource group to which the node pool belongs.
+         */
+        readonly resourceGroupId?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the node pool.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `NodePoolInfoProperty`
+ *
+ * @param properties - the TypeScript properties of a `NodePoolInfoProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_NodePoolInfoPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "NodePoolInfoProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.NodePoolInfo` resource
+ *
+ * @param properties - the TypeScript properties of a `NodePoolInfoProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.NodePoolInfo` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolNodePoolInfoPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_NodePoolInfoPropertyValidator(properties).assertSuccess();
+    return {
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface ScalingGroupProperty {
+        /**
+         * @Property spotInstanceRemedy: Specifies whether to supplement preemptible instances. If this parameter is set to true, when the scaling group receives a system message that a preemptible instance is to be reclaimed, the scaling group attempts to create a new instance to replace this instance. Valid values:
+     * true: supplements preemptible instances.
+     * false: does not supplement preemptible instances.
+         */
+        readonly spotInstanceRemedy?: boolean | ros.IResolvable;
+        /**
+         * @Property platform: The release version of the operating system. Valid values:
+     * CentOS, AliyunLinux, Windows, WindowsCore.
+     * Default value: AliyunLinux.
+         */
+        readonly platform?: string | ros.IResolvable;
+        /**
+         * @Property dataDisks: The configurations of data disks.
+         */
+        readonly dataDisks?: Array<RosClusterNodePool.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property systemDiskSize: The system disk size of a node. Unit: GiB. Valid values: 40 to 500.
+         */
+        readonly systemDiskSize: number | ros.IResolvable;
+        /**
+         * @Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the required number of ECS instances if preemptible instances cannot be created due to reasons such as the cost or insufficient inventory. This parameter takes effect when multi_az_policy is set to COST_OPTIMIZED. Valid values:
+     * true: automatically creates pay-as-you-go instances to meet the required number of ECS instances if preemptible instances cannot be created.
+     * false: does not create pay-as-you-go instances to meet the required number of ECS instances if preemptible instances cannot be created.
+         */
+        readonly compensateWithOnDemand?: boolean | ros.IResolvable;
+        /**
+         * @Property instanceChargeType: The billing method of nodes in the node pool. Valid values:
+     * PrePaid: subscription.
+     * PostPaid: pay-as-you-go.
+     * Default value: PostPaid.
+         */
+        readonly instanceChargeType?: string | ros.IResolvable;
+        /**
+         * @Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances among the extra instances that exceed the number specified by on_demand_base_capacity. Valid values: 0 to 100.
+         */
+        readonly onDemandPercentageAboveBaseCapacity?: number | ros.IResolvable;
+        /**
+         * @Property autoRenew: Specifies whether to enable auto-renewal for nodes in the node pool. This parameter takes effect only when instance_charge_type is set to PrePaid. Valid values:
+     * true: enables auto-renewal.
+     * false: disables auto-renewal.
+     * Default value: true.
+         */
+        readonly autoRenew?: boolean | ros.IResolvable;
+        /**
+         * @Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances that must be kept in the scaling group. Valid values: 0 to 1000. When the number of pay-as-you-go instances is lower than this value, pay-as-you-go instances are preferably created to meet the required number.
+         */
+        readonly onDemandBaseCapacity?: number | ros.IResolvable;
+        /**
+         * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         */
+        readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property imageId: The ID of a custom image. By default, the image provided by ACK is used.
+         */
+        readonly imageId?: string | ros.IResolvable;
+        /**
+         * @Property spotPriceLimit: The instance type for preemptible instances and the price limit of the instance type.
+         */
+        readonly spotPriceLimit?: Array<RosClusterNodePool.SpotPriceLimitProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property instanceTypes: The ECS instance types of the nodes.
+         */
+        readonly instanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property tags: Adds labels only to ECS instances.
+     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+         */
+        readonly tags?: RosClusterNodePool.TagsProperty[];
+        /**
+         * @Property spotStrategy: The type of preemptible instance. Valid values:
+     * NoSpot: non-preemptible instance.
+     * SpotWithPriceLimit: specifies the highest bid for a preemptible instance.
+     * SpotAsPriceGo: automatically submits bids based on the up-to-date market price.
+         */
+        readonly spotStrategy?: string | ros.IResolvable;
+        /**
+         * @Property loginPassword: The password used to log on to the nodes by using SSH. You must set KeyPair or LoginPassword. The password must be 8 to 30 characters in length, and must contain at least three of the following character types: uppercase letters, lowercase letters, digits, and special characters.
+         */
+        readonly loginPassword?: string | ros.IResolvable;
+        /**
+         * @Property multiAzPolicy: The scaling policy of ECS instances in a multi-zone scaling group. Valid values:
+     * PRIORITY: the scaling group is scaled based on the VSwitchIds.N parameter. When ECS instances cannot be created in the zone where the vSwitch with the highest priority is deployed, the system attempts to create ECS instances in the zone where the vSwitch with the next highest priority is deployed.
+     * COST_OPTIMIZED: ECS instances are created based on the unit price of vCPUs in ascending order. Preemptible instances are preferably created when multiple instance types are specified in the scaling configurations. You can set the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient inventory.
+     * BALANCE: ECS instances are evenly distributed across multiple zones specified by the scaling group. If ECS instances are not evenly distributed across multiple zones due to insufficient inventory, you can call the RebalanceInstances operation to balance the instance distribution among zones.
+     * Default value: PRIORITY.
+         */
+        readonly multiAzPolicy?: string | ros.IResolvable;
+        /**
+         * @Property autoRenewPeriod: The auto-renewal period for nodes in the node pool. This parameter takes effect and is required only when instance_charge_type is set to PrePaid and auto_renew is set to true. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12.
+     * Default value: 1
+         */
+        readonly autoRenewPeriod?: number | ros.IResolvable;
+        /**
+         * @Property scalingPolicy: The scaling mode of the scaling group. Valid values:
+     * release: the standard mode. ECS instances are created and released based on the resource usage.
+     * recycle: the swift mode. ECS instances are created, stopped, or started during scaling events. This reduces the time required for the next scale-out event. When the instance is stopped, you are charged only for the storage service. This does not apply to ECS instances attached with local disks.
+     * Default value:release.
+         */
+        readonly scalingPolicy?: string | ros.IResolvable;
+        /**
+         * @Property keyPair: The name of the key pair used to log on to the nodes. You must set KeyPair or LoginPassword.
+         */
+        readonly keyPair?: string | ros.IResolvable;
+        /**
+         * @Property vSwitchIds: The IDs of vSwitches.
+         */
+        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property securityGroupId: The ID of the security group to which the nodes belong.
+         */
+        readonly securityGroupId?: string | ros.IResolvable;
+        /**
+         * @Property spotInstancePools: The number of available instance types. The scaling group creates preemptible instances of multiple instance types at the lowest cost. Valid values: 1 to 10.
+         */
+        readonly spotInstancePools?: number | ros.IResolvable;
+        /**
+         * @Property period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12. 
+     * Default value: 1.
+         */
+        readonly period?: number | ros.IResolvable;
+        /**
+         * @Property internetChargeType: Bandwidth billing method. Valid values: PayByTraffic or PayByBandwidth.
+         */
+        readonly internetChargeType?: string | ros.IResolvable;
+        /**
+         * @Property systemDiskCategory: The type of system disk. Valid values:
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+     * Default value: cloud_efficiency.
+         */
+        readonly systemDiskCategory?: string | ros.IResolvable;
+        /**
+         * @Property internetMaxBandwidthOut: The release version of the operating system. Valid values:
+     * CentOS, AliyunLinux, Windows, WindowsCore.
+     * Default value: AliyunLinux.
+         */
+        readonly internetMaxBandwidthOut?: number | ros.IResolvable;
+        /**
+         * @Property rdsInstances: The IDs of the ApsaraDB RDS instances.
+         */
+        readonly rdsInstances?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+         */
+        readonly periodUnit?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScalingGroupProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_ScalingGroupPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('spotInstanceRemedy', ros.validateBoolean)(properties.spotInstanceRemedy));
+    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
+    if(properties.dataDisks && (Array.isArray(properties.dataDisks) || (typeof properties.dataDisks) === 'string')) {
+        errors.collect(ros.propertyValidator('dataDisks', ros.validateLength)({
+            data: properties.dataDisks.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosClusterNodePool_DataDisksPropertyValidator))(properties.dataDisks));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('compensateWithOnDemand', ros.validateBoolean)(properties.compensateWithOnDemand));
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    if(properties.onDemandPercentageAboveBaseCapacity && (typeof properties.onDemandPercentageAboveBaseCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('onDemandPercentageAboveBaseCapacity', ros.validateRange)({
+            data: properties.onDemandPercentageAboveBaseCapacity,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('onDemandPercentageAboveBaseCapacity', ros.validateNumber)(properties.onDemandPercentageAboveBaseCapacity));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    if(properties.onDemandBaseCapacity && (typeof properties.onDemandBaseCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('onDemandBaseCapacity', ros.validateRange)({
+            data: properties.onDemandBaseCapacity,
+            min: 0,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('onDemandBaseCapacity', ros.validateNumber)(properties.onDemandBaseCapacity));
+    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.spotPriceLimit && (Array.isArray(properties.spotPriceLimit) || (typeof properties.spotPriceLimit) === 'string')) {
+        errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateLength)({
+            data: properties.spotPriceLimit.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.listValidator(RosClusterNodePool_SpotPriceLimitPropertyValidator))(properties.spotPriceLimit));
+    errors.collect(ros.propertyValidator('instanceTypes', ros.requiredValidator)(properties.instanceTypes));
+    if(properties.instanceTypes && (Array.isArray(properties.instanceTypes) || (typeof properties.instanceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceTypes', ros.validateLength)({
+            data: properties.instanceTypes.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosClusterNodePool_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
+    errors.collect(ros.propertyValidator('multiAzPolicy', ros.validateString)(properties.multiAzPolicy));
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('scalingPolicy', ros.validateString)(properties.scalingPolicy));
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    if(properties.spotInstancePools && (typeof properties.spotInstancePools) !== 'object') {
+        errors.collect(ros.propertyValidator('spotInstancePools', ros.validateRange)({
+            data: properties.spotInstancePools,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('spotInstancePools', ros.validateNumber)(properties.spotInstancePools));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateRange)({
+            data: properties.period,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
+    if(properties.rdsInstances && (Array.isArray(properties.rdsInstances) || (typeof properties.rdsInstances) === 'string')) {
+        errors.collect(ros.propertyValidator('rdsInstances', ros.validateLength)({
+            data: properties.rdsInstances.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rdsInstances', ros.listValidator(ros.validateString))(properties.rdsInstances));
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "ScalingGroupProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.ScalingGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.ScalingGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolScalingGroupPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_ScalingGroupPropertyValidator(properties).assertSuccess();
+    return {
+      SpotInstanceRemedy: ros.booleanToRosTemplate(properties.spotInstanceRemedy),
+      Platform: ros.stringToRosTemplate(properties.platform),
+      DataDisks: ros.listMapper(rosClusterNodePoolDataDisksPropertyToRosTemplate)(properties.dataDisks),
+      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
+      CompensateWithOnDemand: ros.booleanToRosTemplate(properties.compensateWithOnDemand),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      OnDemandPercentageAboveBaseCapacity: ros.numberToRosTemplate(properties.onDemandPercentageAboveBaseCapacity),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      OnDemandBaseCapacity: ros.numberToRosTemplate(properties.onDemandBaseCapacity),
+      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      SpotPriceLimit: ros.listMapper(rosClusterNodePoolSpotPriceLimitPropertyToRosTemplate)(properties.spotPriceLimit),
+      InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
+      Tags: ros.listMapper(rosClusterNodePoolTagsPropertyToRosTemplate)(properties.tags),
+      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
+      LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
+      MultiAzPolicy: ros.stringToRosTemplate(properties.multiAzPolicy),
+      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
+      ScalingPolicy: ros.stringToRosTemplate(properties.scalingPolicy),
+      KeyPair: ros.stringToRosTemplate(properties.keyPair),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      SpotInstancePools: ros.numberToRosTemplate(properties.spotInstancePools),
+      Period: ros.numberToRosTemplate(properties.period),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      RdsInstances: ros.listMapper(ros.stringToRosTemplate)(properties.rdsInstances),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface SpotPriceLimitProperty {
+        /**
+         * @Property priceLimit: The price limit of a preemptible instance.
+         */
+        readonly priceLimit: number | ros.IResolvable;
+        /**
+         * @Property instanceType: The instance type for preemptible instances.
+         */
+        readonly instanceType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SpotPriceLimitProperty`
+ *
+ * @param properties - the TypeScript properties of a `SpotPriceLimitProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_SpotPriceLimitPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('priceLimit', ros.requiredValidator)(properties.priceLimit));
+    errors.collect(ros.propertyValidator('priceLimit', ros.validateNumber)(properties.priceLimit));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    return errors.wrap('supplied properties not correct for "SpotPriceLimitProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.SpotPriceLimit` resource
+ *
+ * @param properties - the TypeScript properties of a `SpotPriceLimitProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.SpotPriceLimit` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolSpotPriceLimitPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_SpotPriceLimitPropertyValidator(properties).assertSuccess();
+    return {
+      PriceLimit: ros.numberToRosTemplate(properties.priceLimit),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface TaintsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property effect: The scheduling policy. Valid values:
+     * NoSchedule: Pods that do not tolerate this taint are not scheduled to nodes with this taint. This policy affects only the scheduling process and takes effect only for pods to be scheduled. Scheduled pods are not subject to this policy.
+     * NoExecute: Pods that do not tolerate this taint are evicted after this taint is added to the node.
+     * PreferNoSchedule: a preference policy on pods. Scheduled pods are not subject to this policy. If this taint is added to a node, the system tries to not schedule pods that do not tolerate this taint to the node.
+     * Default value: NoSchedule.
+         */
+        readonly effect: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TaintsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TaintsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_TaintsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('effect', ros.requiredValidator)(properties.effect));
+    errors.collect(ros.propertyValidator('effect', ros.validateString)(properties.effect));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TaintsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.Taints` resource
+ *
+ * @param properties - the TypeScript properties of a `TaintsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.Taints` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolTaintsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_TaintsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Effect: ros.stringToRosTemplate(properties.effect),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface TeeConfigProperty {
+        /**
+         * @Property teeEnable: Specifies whether to enable confidential computing for the cluster.
+         */
+        readonly teeEnable: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TeeConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TeeConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_TeeConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('teeEnable', ros.requiredValidator)(properties.teeEnable));
+    errors.collect(ros.propertyValidator('teeEnable', ros.validateBoolean)(properties.teeEnable));
+    return errors.wrap('supplied properties not correct for "TeeConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.TeeConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TeeConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.TeeConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolTeeConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_TeeConfigPropertyValidator(properties).assertSuccess();
+    return {
+      TeeEnable: ros.booleanToRosTemplate(properties.teeEnable),
+    };
+}
+
+export namespace RosClusterNodePool {
+    /**
+     * @stability external
+     */
+    export interface UpgradeConfigProperty {
+        /**
+         * @Property autoUpgrade: Specifies whether to enable auto upgrading. Valid values:
+     * true: enables auto upgrading.
+     * false: disables auto upgrading.
+         */
+        readonly autoUpgrade?: boolean | ros.IResolvable;
+        /**
+         * @Property surgePercentage: The ratio of extra nodes to the nodes in the node pool. You must set this parameter or Surge.
+         */
+        readonly surgePercentage?: number | ros.IResolvable;
+        /**
+         * @Property surge: The number of extra nodes that can be added to the node pool during an auto upgrade.
+         */
+        readonly surge?: number | ros.IResolvable;
+        /**
+         * @Property maxUnavailable: The maximum number of nodes that can be in the unschedulable state.
+     * Valid values: 1 to 1000.
+     * Default value: 1.
+         */
+        readonly maxUnavailable?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `UpgradeConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `UpgradeConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterNodePool_UpgradeConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('autoUpgrade', ros.validateBoolean)(properties.autoUpgrade));
+    errors.collect(ros.propertyValidator('surgePercentage', ros.validateNumber)(properties.surgePercentage));
+    errors.collect(ros.propertyValidator('surge', ros.validateNumber)(properties.surge));
+    if(properties.maxUnavailable && (typeof properties.maxUnavailable) !== 'object') {
+        errors.collect(ros.propertyValidator('maxUnavailable', ros.validateRange)({
+            data: properties.maxUnavailable,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxUnavailable', ros.validateNumber)(properties.maxUnavailable));
+    return errors.wrap('supplied properties not correct for "UpgradeConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.UpgradeConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `UpgradeConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterNodePool.UpgradeConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterNodePoolUpgradeConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterNodePool_UpgradeConfigPropertyValidator(properties).assertSuccess();
+    return {
+      AutoUpgrade: ros.booleanToRosTemplate(properties.autoUpgrade),
+      SurgePercentage: ros.numberToRosTemplate(properties.surgePercentage),
+      Surge: ros.numberToRosTemplate(properties.surge),
+      MaxUnavailable: ros.numberToRosTemplate(properties.maxUnavailable),
+    };
 }
 
 /**
@@ -303,6 +1574,11 @@ export interface RosKubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
+     */
+    readonly runtime?: RosKubernetesCluster.RuntimeProperty | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -448,14 +1724,6 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('masterSystemDiskSize', ros.validateNumber)(properties.masterSystemDiskSize));
     errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
-    errors.collect(ros.propertyValidator('nodePortRange', ros.validateString)(properties.nodePortRange));
-    if(properties.masterCount && (typeof properties.masterCount) !== 'object') {
-        errors.collect(ros.propertyValidator('masterCount', ros.validateAllowedValues)({
-          data: properties.masterCount,
-          allowedValues: [3,5],
-        }));
-    }
-    errors.collect(ros.propertyValidator('masterCount', ros.validateNumber)(properties.masterCount));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -464,6 +1732,14 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
+    errors.collect(ros.propertyValidator('nodePortRange', ros.validateString)(properties.nodePortRange));
+    if(properties.masterCount && (typeof properties.masterCount) !== 'object') {
+        errors.collect(ros.propertyValidator('masterCount', ros.validateAllowedValues)({
+          data: properties.masterCount,
+          allowedValues: [3,5],
+        }));
+    }
+    errors.collect(ros.propertyValidator('masterCount', ros.validateNumber)(properties.masterCount));
     errors.collect(ros.propertyValidator('sshFlags', ros.validateBoolean)(properties.sshFlags));
     errors.collect(ros.propertyValidator('masterVSwitchIds', ros.requiredValidator)(properties.masterVSwitchIds));
     if(properties.masterVSwitchIds && (Array.isArray(properties.masterVSwitchIds) || (typeof properties.masterVSwitchIds) === 'string')) {
@@ -478,6 +1754,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
     errors.collect(ros.propertyValidator('masterDataDisks', ros.listValidator(RosKubernetesCluster_MasterDataDisksPropertyValidator))(properties.masterDataDisks));
+    errors.collect(ros.propertyValidator('runtime', RosKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
@@ -511,6 +1788,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('masterInstanceChargeType', ros.validateString)(properties.masterInstanceChargeType));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
+    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
     if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
           data: properties.workerInstanceChargeType,
@@ -518,7 +1796,6 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
-    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
     errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('masterInstanceTypes', ros.requiredValidator)(properties.masterInstanceTypes));
     if(properties.masterInstanceTypes && (Array.isArray(properties.masterInstanceTypes) || (typeof properties.masterInstanceTypes) === 'string')) {
@@ -622,6 +1899,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
       PodVswitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
+      Runtime: rosKubernetesClusterRuntimePropertyToRosTemplate(properties.runtime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
@@ -659,6 +1937,36 @@ export class RosKubernetesCluster extends ros.RosResource {
      * @Attribute ClusterId: Cluster instance ID.
      */
     public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
 
     /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
@@ -860,6 +2168,11 @@ export class RosKubernetesCluster extends ros.RosResource {
     public proxyMode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
+     */
+    public runtime: RosKubernetesCluster.RuntimeProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
@@ -978,6 +2291,12 @@ export class RosKubernetesCluster extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
+        this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrNodes = this.getAtt('Nodes');
+        this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
+        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+        this.attrScalingRuleId = this.getAtt('ScalingRuleId');
         this.attrTaskId = this.getAtt('TaskId');
         this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
@@ -1011,6 +2330,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.numOfNodes = props.numOfNodes;
         this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
+        this.runtime = props.runtime;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
@@ -1061,6 +2381,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             numOfNodes: this.numOfNodes,
             podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
+            runtime: this.runtime,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
@@ -1194,6 +2515,54 @@ function rosKubernetesClusterMasterDataDisksPropertyToRosTemplate(properties: an
     return {
       Category: ros.stringToRosTemplate(properties.category),
       Size: ros.numberToRosTemplate(properties.size),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface RuntimeProperty {
+        /**
+         * @Property version: The version of the container runtime.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the container runtime. Supports containerd, docker or sandboxed-container.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RuntimeProperty`
+ *
+ * @param properties - the TypeScript properties of a `RuntimeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_RuntimePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RuntimeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.Runtime` resource
+ *
+ * @param properties - the TypeScript properties of a `RuntimeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.Runtime` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterRuntimePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_RuntimePropertyValidator(properties).assertSuccess();
+    return {
+      Version: ros.stringToRosTemplate(properties.version),
+      Name: ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1587,6 +2956,36 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
+     * @Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: ros.IResolvable;
@@ -1751,6 +3150,12 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosManagedEdgeKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosManagedEdgeKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
+        this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrNodes = this.getAtt('Nodes');
+        this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
+        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+        this.attrScalingRuleId = this.getAtt('ScalingRuleId');
         this.attrTaskId = this.getAtt('TaskId');
         this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
@@ -2029,6 +3434,11 @@ export interface RosManagedKubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
+     */
+    readonly runtime?: RosManagedKubernetesCluster.RuntimeProperty | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -2169,6 +3579,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
+    errors.collect(ros.propertyValidator('runtime', RosManagedKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
@@ -2188,6 +3599,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
           data: properties.workerInstanceChargeType,
@@ -2195,7 +3607,6 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
-    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
@@ -2215,7 +3626,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     if(properties.numOfNodes && (typeof properties.numOfNodes) !== 'object') {
         errors.collect(ros.propertyValidator('numOfNodes', ros.validateRange)({
             data: properties.numOfNodes,
-            min: 2,
+            min: 0,
             max: 300,
           }));
     }
@@ -2263,6 +3674,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
       PodVswitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
+      Runtime: rosManagedKubernetesClusterRuntimePropertyToRosTemplate(properties.runtime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
@@ -2299,6 +3711,36 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Attribute ClusterId: Cluster instance ID.
      */
     public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
 
     /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
@@ -2420,6 +3862,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public proxyMode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
+     */
+    public runtime: RosManagedKubernetesCluster.RuntimeProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
@@ -2531,6 +3978,12 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosManagedKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosManagedKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
+        this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrNodes = this.getAtt('Nodes');
+        this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
+        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+        this.attrScalingRuleId = this.getAtt('ScalingRuleId');
         this.attrTaskId = this.getAtt('TaskId');
         this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
@@ -2552,6 +4005,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.numOfNodes = props.numOfNodes;
         this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
+        this.runtime = props.runtime;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
@@ -2589,6 +4043,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             numOfNodes: this.numOfNodes,
             podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
+            runtime: this.runtime,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
@@ -2667,6 +4122,54 @@ function rosManagedKubernetesClusterAddonsPropertyToRosTemplate(properties: any)
       Version: ros.stringToRosTemplate(properties.version),
       Config: ros.stringToRosTemplate(properties.config),
       Disabled: ros.booleanToRosTemplate(properties.disabled),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface RuntimeProperty {
+        /**
+         * @Property version: The version of the container runtime.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the container runtime. Supports containerd, Docker or Sandboxed-Container.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RuntimeProperty`
+ *
+ * @param properties - the TypeScript properties of a `RuntimeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_RuntimePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RuntimeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.Runtime` resource
+ *
+ * @param properties - the TypeScript properties of a `RuntimeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.Runtime` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterRuntimePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_RuntimePropertyValidator(properties).assertSuccess();
+    return {
+      Version: ros.stringToRosTemplate(properties.version),
       Name: ros.stringToRosTemplate(properties.name),
     };
 }
@@ -2937,6 +4440,36 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
+     * @Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: ros.IResolvable;
@@ -3028,6 +4561,12 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosServerlessKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosServerlessKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
+        this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrNodes = this.getAtt('Nodes');
+        this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
+        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+        this.attrScalingRuleId = this.getAtt('ScalingRuleId');
         this.attrTaskId = this.getAtt('TaskId');
         this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 

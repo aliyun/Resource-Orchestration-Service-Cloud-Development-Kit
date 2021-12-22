@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Deployment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.283Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.613Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.DeploymentProps")
 @software.amazon.jsii.Jsii.Proxy(DeploymentProps.Jsii$Proxy.class)
 public interface DeploymentProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,11 +47,11 @@ public interface DeploymentProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DeploymentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DeploymentProps> {
-        private java.lang.Object apiId;
-        private java.lang.Object groupId;
-        private java.lang.Object stageName;
-        private java.lang.Object description;
-        private java.lang.Object historyVersion;
+        java.lang.Object apiId;
+        java.lang.Object groupId;
+        java.lang.Object stageName;
+        java.lang.Object description;
+        java.lang.Object historyVersion;
 
         /**
          * Sets the value of {@link DeploymentProps#getApiId}
@@ -160,7 +160,7 @@ public interface DeploymentProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public DeploymentProps build() {
-            return new Jsii$Proxy(apiId, groupId, stageName, description, historyVersion);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -191,13 +191,13 @@ public interface DeploymentProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object apiId, final java.lang.Object groupId, final java.lang.Object stageName, final java.lang.Object description, final java.lang.Object historyVersion) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.apiId = java.util.Objects.requireNonNull(apiId, "apiId is required");
-            this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
-            this.stageName = java.util.Objects.requireNonNull(stageName, "stageName is required");
-            this.description = description;
-            this.historyVersion = historyVersion;
+            this.apiId = java.util.Objects.requireNonNull(builder.apiId, "apiId is required");
+            this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
+            this.stageName = java.util.Objects.requireNonNull(builder.stageName, "stageName is required");
+            this.description = builder.description;
+            this.historyVersion = builder.historyVersion;
         }
 
         @Override

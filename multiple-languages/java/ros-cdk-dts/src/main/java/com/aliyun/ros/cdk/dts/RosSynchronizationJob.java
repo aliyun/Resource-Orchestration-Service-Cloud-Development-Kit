@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS template type:  `ALIYUN::DTS::SynchronizationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.855Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.428Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSynchronizationJob")
 public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -320,7 +320,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnExcludesProperty> {
-            private java.lang.Object columnName;
+            java.lang.Object columnName;
 
             /**
              * Sets the value of {@link ColumnExcludesProperty#getColumnName}
@@ -352,7 +352,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ColumnExcludesProperty build() {
-                return new Jsii$Proxy(columnName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -376,9 +376,9 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columnName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.columnName = columnName;
+                this.columnName = builder.columnName;
             }
 
             @Override
@@ -456,8 +456,8 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnIncludesProperty> {
-            private java.lang.Object columnName;
-            private java.lang.Object newColumnName;
+            java.lang.Object columnName;
+            java.lang.Object newColumnName;
 
             /**
              * Sets the value of {@link ColumnIncludesProperty#getColumnName}
@@ -511,7 +511,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ColumnIncludesProperty build() {
-                return new Jsii$Proxy(columnName, newColumnName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -537,10 +537,10 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columnName, final java.lang.Object newColumnName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.columnName = columnName;
-                this.newColumnName = newColumnName;
+                this.columnName = builder.columnName;
+                this.newColumnName = builder.newColumnName;
             }
 
             @Override
@@ -661,13 +661,13 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DestinationEndpointProperty> {
-            private java.lang.Object instanceType;
-            private java.lang.Object instanceId;
-            private java.lang.Object instanceTypeForCreation;
-            private java.lang.Object ip;
-            private java.lang.Object password;
-            private java.lang.Object port;
-            private java.lang.Object userName;
+            java.lang.Object instanceType;
+            java.lang.Object instanceId;
+            java.lang.Object instanceTypeForCreation;
+            java.lang.Object ip;
+            java.lang.Object password;
+            java.lang.Object port;
+            java.lang.Object userName;
 
             /**
              * Sets the value of {@link DestinationEndpointProperty#getInstanceType}
@@ -831,7 +831,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DestinationEndpointProperty build() {
-                return new Jsii$Proxy(instanceType, instanceId, instanceTypeForCreation, ip, password, port, userName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -867,15 +867,15 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object instanceType, final java.lang.Object instanceId, final java.lang.Object instanceTypeForCreation, final java.lang.Object ip, final java.lang.Object password, final java.lang.Object port, final java.lang.Object userName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-                this.instanceId = instanceId;
-                this.instanceTypeForCreation = instanceTypeForCreation;
-                this.ip = ip;
-                this.password = password;
-                this.port = port;
-                this.userName = userName;
+                this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+                this.instanceId = builder.instanceId;
+                this.instanceTypeForCreation = builder.instanceTypeForCreation;
+                this.ip = builder.ip;
+                this.password = builder.password;
+                this.port = builder.port;
+                this.userName = builder.userName;
             }
 
             @Override
@@ -1058,15 +1058,15 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SourceEndpointProperty> {
-            private java.lang.Object instanceType;
-            private java.lang.Object instanceId;
-            private java.lang.Object instanceTypeForCreation;
-            private java.lang.Object ip;
-            private java.lang.Object ownerId;
-            private java.lang.Object password;
-            private java.lang.Object port;
-            private java.lang.Object role;
-            private java.lang.Object userName;
+            java.lang.Object instanceType;
+            java.lang.Object instanceId;
+            java.lang.Object instanceTypeForCreation;
+            java.lang.Object ip;
+            java.lang.Object ownerId;
+            java.lang.Object password;
+            java.lang.Object port;
+            java.lang.Object role;
+            java.lang.Object userName;
 
             /**
              * Sets the value of {@link SourceEndpointProperty#getInstanceType}
@@ -1274,7 +1274,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SourceEndpointProperty build() {
-                return new Jsii$Proxy(instanceType, instanceId, instanceTypeForCreation, ip, ownerId, password, port, role, userName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1314,17 +1314,17 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object instanceType, final java.lang.Object instanceId, final java.lang.Object instanceTypeForCreation, final java.lang.Object ip, final java.lang.Object ownerId, final java.lang.Object password, final java.lang.Object port, final java.lang.Object role, final java.lang.Object userName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-                this.instanceId = instanceId;
-                this.instanceTypeForCreation = instanceTypeForCreation;
-                this.ip = ip;
-                this.ownerId = ownerId;
-                this.password = password;
-                this.port = port;
-                this.role = role;
-                this.userName = userName;
+                this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+                this.instanceId = builder.instanceId;
+                this.instanceTypeForCreation = builder.instanceTypeForCreation;
+                this.ip = builder.ip;
+                this.ownerId = builder.ownerId;
+                this.password = builder.password;
+                this.port = builder.port;
+                this.role = builder.role;
+                this.userName = builder.userName;
             }
 
             @Override
@@ -1508,12 +1508,12 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SynchronizationObjectsProperty> {
-            private java.lang.Object dbName;
-            private java.lang.Object newDbName;
-            private java.lang.Object newSchemaName;
-            private java.lang.Object schemaName;
-            private java.lang.Object tableExcludes;
-            private java.lang.Object tableIncludes;
+            java.lang.Object dbName;
+            java.lang.Object newDbName;
+            java.lang.Object newSchemaName;
+            java.lang.Object schemaName;
+            java.lang.Object tableExcludes;
+            java.lang.Object tableIncludes;
 
             /**
              * Sets the value of {@link SynchronizationObjectsProperty#getDbName}
@@ -1655,7 +1655,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SynchronizationObjectsProperty build() {
-                return new Jsii$Proxy(dbName, newDbName, newSchemaName, schemaName, tableExcludes, tableIncludes);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1689,14 +1689,14 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object dbName, final java.lang.Object newDbName, final java.lang.Object newSchemaName, final java.lang.Object schemaName, final java.lang.Object tableExcludes, final java.lang.Object tableIncludes) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.dbName = dbName;
-                this.newDbName = newDbName;
-                this.newSchemaName = newSchemaName;
-                this.schemaName = schemaName;
-                this.tableExcludes = tableExcludes;
-                this.tableIncludes = tableIncludes;
+                this.dbName = builder.dbName;
+                this.newDbName = builder.newDbName;
+                this.newSchemaName = builder.newSchemaName;
+                this.schemaName = builder.schemaName;
+                this.tableExcludes = builder.tableExcludes;
+                this.tableIncludes = builder.tableIncludes;
             }
 
             @Override
@@ -1817,7 +1817,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TableExcludesProperty> {
-            private java.lang.Object tableName;
+            java.lang.Object tableName;
 
             /**
              * Sets the value of {@link TableExcludesProperty#getTableName}
@@ -1849,7 +1849,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TableExcludesProperty build() {
-                return new Jsii$Proxy(tableName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1873,9 +1873,9 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object tableName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tableName = tableName;
+                this.tableName = builder.tableName;
             }
 
             @Override
@@ -1974,11 +1974,11 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TableIncludesProperty> {
-            private java.lang.Object columnExcludes;
-            private java.lang.Object columnIncludes;
-            private java.lang.Object filterCondition;
-            private java.lang.Object newTableName;
-            private java.lang.Object tableName;
+            java.lang.Object columnExcludes;
+            java.lang.Object columnIncludes;
+            java.lang.Object filterCondition;
+            java.lang.Object newTableName;
+            java.lang.Object tableName;
 
             /**
              * Sets the value of {@link TableIncludesProperty#getColumnExcludes}
@@ -2098,7 +2098,7 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TableIncludesProperty build() {
-                return new Jsii$Proxy(columnExcludes, columnIncludes, filterCondition, newTableName, tableName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2130,13 +2130,13 @@ public class RosSynchronizationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columnExcludes, final java.lang.Object columnIncludes, final java.lang.Object filterCondition, final java.lang.Object newTableName, final java.lang.Object tableName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.columnExcludes = columnExcludes;
-                this.columnIncludes = columnIncludes;
-                this.filterCondition = filterCondition;
-                this.newTableName = newTableName;
-                this.tableName = tableName;
+                this.columnExcludes = builder.columnExcludes;
+                this.columnIncludes = builder.columnIncludes;
+                this.filterCondition = builder.filterCondition;
+                this.newTableName = builder.newTableName;
+                this.tableName = builder.tableName;
             }
 
             @Override

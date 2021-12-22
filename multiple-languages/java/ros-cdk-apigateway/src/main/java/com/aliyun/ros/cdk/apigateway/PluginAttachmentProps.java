@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::PluginAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.305Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.628Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.PluginAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(PluginAttachmentProps.Jsii$Proxy.class)
 public interface PluginAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,9 +38,9 @@ public interface PluginAttachmentProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link PluginAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<PluginAttachmentProps> {
-        private java.lang.Object apiId;
-        private java.lang.Object pluginId;
-        private java.lang.Object stageName;
+        java.lang.Object apiId;
+        java.lang.Object pluginId;
+        java.lang.Object stageName;
 
         /**
          * Sets the value of {@link PluginAttachmentProps#getApiId}
@@ -117,7 +117,7 @@ public interface PluginAttachmentProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public PluginAttachmentProps build() {
-            return new Jsii$Proxy(apiId, pluginId, stageName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -144,11 +144,11 @@ public interface PluginAttachmentProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object apiId, final java.lang.Object pluginId, final java.lang.Object stageName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.apiId = java.util.Objects.requireNonNull(apiId, "apiId is required");
-            this.pluginId = java.util.Objects.requireNonNull(pluginId, "pluginId is required");
-            this.stageName = java.util.Objects.requireNonNull(stageName, "stageName is required");
+            this.apiId = java.util.Objects.requireNonNull(builder.apiId, "apiId is required");
+            this.pluginId = java.util.Objects.requireNonNull(builder.pluginId, "pluginId is required");
+            this.stageName = java.util.Objects.requireNonNull(builder.stageName, "stageName is required");
         }
 
         @Override

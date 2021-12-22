@@ -25,7 +25,19 @@ export interface LoadBalancerProps {
     readonly autoPay?: boolean | ros.IResolvable;
 
     /**
-     * Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
+     * Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
+     * When PricingCycle = month, the value range is 1-9
+     * When PeriodUnit = year, the value range is 1-3
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
+     * Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
@@ -209,14 +221,16 @@ export class LoadBalancer extends ros.Resource {
         super(scope, id);
 
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
+            autoRenewPeriod: props.autoRenewPeriod,
             resourceGroupId: props.resourceGroupId,
             pricingCycle: props.pricingCycle,
             addressIpVersion: props.addressIpVersion,
             vSwitchId: props.vSwitchId,
+            autoRenew: props.autoRenew,
             duration: props.duration,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
             payType: props.payType,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
             slaveZoneId: props.slaveZoneId,
             modificationProtectionStatus: props.modificationProtectionStatus,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'paybytraffic' : props.internetChargeType,

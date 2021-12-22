@@ -34,6 +34,16 @@ export interface InstanceProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property enableKibanaPrivate: Enables or disables intranet access to Kibana.
+     */
+    readonly enableKibanaPrivate?: boolean | ros.IResolvable;
+
+    /**
+     * Property enableKibanaPublic: Enables or disables Internet access to Kibana.
+     */
+    readonly enableKibanaPublic?: boolean | ros.IResolvable;
+
+    /**
      * Property enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
      */
     readonly enablePublic?: boolean | ros.IResolvable;
@@ -77,6 +87,18 @@ export interface InstanceProps {
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosInstance.TagsProperty[];
+
+    /**
+     * Property ymlConfig: In the YML Configuration section of the Cluster 
+     * Configuration page of your Alibaba Cloud Elasticsearch cluster, 
+     * you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.
+     */
+    readonly ymlConfig?: RosInstance.YMLConfigProperty | ros.IResolvable;
+
+    /**
+     * Property zoneCount: undefined
+     */
+    readonly zoneCount?: number | ros.IResolvable;
 }
 
 /**
@@ -152,8 +174,10 @@ export class Instance extends ros.Resource {
         const rosInstance = new RosInstance(this, id,  {
             masterNode: props.masterNode,
             description: props.description,
+            enableKibanaPrivate: props.enableKibanaPrivate,
             resourceGroupId: props.resourceGroupId,
             publicWhitelist: props.publicWhitelist,
+            enableKibanaPublic: props.enableKibanaPublic,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
@@ -162,7 +186,9 @@ export class Instance extends ros.Resource {
             version: props.version,
             dataNode: props.dataNode,
             kibanaWhitelist: props.kibanaWhitelist,
+            ymlConfig: props.ymlConfig,
             tags: props.tags,
+            zoneCount: props.zoneCount,
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

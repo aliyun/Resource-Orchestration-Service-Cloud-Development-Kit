@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization props for a stage.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:31.111Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.534Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StageProps")
 @software.amazon.jsii.Jsii.Proxy(StageProps.Jsii$Proxy.class)
 public interface StageProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,7 +33,7 @@ public interface StageProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link StageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<StageProps> {
-        private java.lang.String outdir;
+        java.lang.String outdir;
 
         /**
          * Sets the value of {@link StageProps#getOutdir}
@@ -59,7 +59,7 @@ public interface StageProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public StageProps build() {
-            return new Jsii$Proxy(outdir);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -82,9 +82,9 @@ public interface StageProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String outdir) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.outdir = outdir;
+            this.outdir = builder.outdir;
         }
 
         @Override

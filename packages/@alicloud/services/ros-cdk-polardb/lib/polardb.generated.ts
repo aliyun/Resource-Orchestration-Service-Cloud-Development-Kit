@@ -1448,7 +1448,6 @@ function RosDBClusterEndpointPropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('readWriteMode', ros.validateString)(properties.readWriteMode));
-    errors.collect(ros.propertyValidator('endpointConfig', RosDBClusterEndpoint_EndpointConfigPropertyValidator)(properties.endpointConfig));
     if(properties.nodes && (Array.isArray(properties.nodes) || (typeof properties.nodes) === 'string')) {
         errors.collect(ros.propertyValidator('nodes', ros.validateLength)({
             data: properties.nodes.length,
@@ -1457,6 +1456,7 @@ function RosDBClusterEndpointPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('nodes', ros.listValidator(ros.validateAny))(properties.nodes));
+    errors.collect(ros.propertyValidator('endpointConfig', RosDBClusterEndpoint_EndpointConfigPropertyValidator)(properties.endpointConfig));
     return errors.wrap('supplied properties not correct for "RosDBClusterEndpointProps"');
 }
 

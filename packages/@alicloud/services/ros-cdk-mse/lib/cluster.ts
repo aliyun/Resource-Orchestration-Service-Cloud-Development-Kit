@@ -49,9 +49,9 @@ export interface ClusterProps {
     readonly connectionType?: string | ros.IResolvable;
 
     /**
-     * Property diskCapacity:
+     * Property diskCapacity: disk capacity, unit: G
      */
-    readonly diskCapacity?: string | ros.IResolvable;
+    readonly diskCapacity?: number | ros.IResolvable;
 
     /**
      * Property diskType: disk type

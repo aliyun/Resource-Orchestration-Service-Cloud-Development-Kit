@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::TransitRouter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.470Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.998Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterProps")
 @software.amazon.jsii.Jsii.Proxy(RosTransitRouterProps.Jsii$Proxy.class)
 public interface RosTransitRouterProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,9 +34,9 @@ public interface RosTransitRouterProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosTransitRouterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTransitRouterProps> {
-        private java.lang.Object cenId;
-        private java.lang.Object transitRouterDescription;
-        private java.lang.Object transitRouterName;
+        java.lang.Object cenId;
+        java.lang.Object transitRouterDescription;
+        java.lang.Object transitRouterName;
 
         /**
          * Sets the value of {@link RosTransitRouterProps#getCenId}
@@ -105,7 +105,7 @@ public interface RosTransitRouterProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosTransitRouterProps build() {
-            return new Jsii$Proxy(cenId, transitRouterDescription, transitRouterName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -132,11 +132,11 @@ public interface RosTransitRouterProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cenId, final java.lang.Object transitRouterDescription, final java.lang.Object transitRouterName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
-            this.transitRouterDescription = transitRouterDescription;
-            this.transitRouterName = transitRouterName;
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
+            this.transitRouterDescription = builder.transitRouterDescription;
+            this.transitRouterName = builder.transitRouterName;
         }
 
         @Override

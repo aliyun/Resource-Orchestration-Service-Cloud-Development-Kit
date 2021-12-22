@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MetricRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.590Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.156Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MetricRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(MetricRuleTargetsProps.Jsii$Proxy.class)
 public interface MetricRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface MetricRuleTargetsProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link MetricRuleTargetsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MetricRuleTargetsProps> {
-        private java.lang.Object ruleId;
-        private java.lang.Object targets;
+        java.lang.Object ruleId;
+        java.lang.Object targets;
 
         /**
          * Sets the value of {@link MetricRuleTargetsProps#getRuleId}
@@ -78,7 +78,7 @@ public interface MetricRuleTargetsProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public MetricRuleTargetsProps build() {
-            return new Jsii$Proxy(ruleId, targets);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface MetricRuleTargetsProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object ruleId, final java.lang.Object targets) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.ruleId = java.util.Objects.requireNonNull(ruleId, "ruleId is required");
-            this.targets = java.util.Objects.requireNonNull(targets, "targets is required");
+            this.ruleId = java.util.Objects.requireNonNull(builder.ruleId, "ruleId is required");
+            this.targets = java.util.Objects.requireNonNull(builder.targets, "targets is required");
         }
 
         @Override

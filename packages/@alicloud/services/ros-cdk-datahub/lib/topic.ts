@@ -80,8 +80,8 @@ export class Topic extends ros.Resource {
             projectName: props.projectName,
             lifecycle: props.lifecycle === undefined || props.lifecycle === null ? 3 : props.lifecycle,
             recordSchema: props.recordSchema,
-            shardCount: props.shardCount === undefined || props.shardCount === null ? 1 : props.shardCount,
             topicName: props.topicName,
+            shardCount: props.shardCount === undefined || props.shardCount === null ? 1 : props.shardCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTopic;
         this.attrProjectName = rosTopic.attrProjectName;

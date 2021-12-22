@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a `ALIYUN::ARMS::AlertContact`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.339Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.726Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.AlertContactProps")
 @software.amazon.jsii.Jsii.Proxy(AlertContactProps.Jsii$Proxy.class)
 public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable {
@@ -67,13 +67,13 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link AlertContactProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AlertContactProps> {
-        private java.lang.Object contactName;
-        private java.lang.Object dingRobotWebhookUrl;
-        private java.lang.Object email;
-        private java.lang.Object phoneNum;
-        private java.lang.Object proxyUserId;
-        private java.lang.Object regionId;
-        private java.lang.Object systemNoc;
+        java.lang.Object contactName;
+        java.lang.Object dingRobotWebhookUrl;
+        java.lang.Object email;
+        java.lang.Object phoneNum;
+        java.lang.Object proxyUserId;
+        java.lang.Object regionId;
+        java.lang.Object systemNoc;
 
         /**
          * Sets the value of {@link AlertContactProps#getContactName}
@@ -224,7 +224,7 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public AlertContactProps build() {
-            return new Jsii$Proxy(contactName, dingRobotWebhookUrl, email, phoneNum, proxyUserId, regionId, systemNoc);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -259,15 +259,15 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object contactName, final java.lang.Object dingRobotWebhookUrl, final java.lang.Object email, final java.lang.Object phoneNum, final java.lang.Object proxyUserId, final java.lang.Object regionId, final java.lang.Object systemNoc) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.contactName = java.util.Objects.requireNonNull(contactName, "contactName is required");
-            this.dingRobotWebhookUrl = dingRobotWebhookUrl;
-            this.email = email;
-            this.phoneNum = phoneNum;
-            this.proxyUserId = proxyUserId;
-            this.regionId = regionId;
-            this.systemNoc = systemNoc;
+            this.contactName = java.util.Objects.requireNonNull(builder.contactName, "contactName is required");
+            this.dingRobotWebhookUrl = builder.dingRobotWebhookUrl;
+            this.email = builder.email;
+            this.phoneNum = builder.phoneNum;
+            this.proxyUserId = builder.proxyUserId;
+            this.regionId = builder.regionId;
+            this.systemNoc = builder.systemNoc;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * Properties for defining a `ALIYUN::EHPC::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.296Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.855Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -291,44 +291,44 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ClusterProps> {
-        private java.lang.Object ecsOrderComputeCount;
-        private java.lang.Object ecsOrderComputeInstanceType;
-        private java.lang.Object ecsOrderLoginCount;
-        private java.lang.Object ecsOrderLoginInstanceType;
-        private java.lang.Object ecsOrderManagerInstanceType;
-        private java.lang.Object ehpcVersion;
-        private java.lang.Object name;
-        private java.lang.Object osTag;
-        private java.lang.Object volumeId;
-        private java.lang.Object volumeMountpoint;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object accountType;
-        private java.lang.Object application;
-        private java.lang.Object autoRenew;
-        private java.lang.Object autoRenewPeriod;
-        private java.lang.Object computeSpotPriceLimit;
-        private java.lang.Object computeSpotStrategy;
-        private java.lang.Object deployMode;
-        private java.lang.Object description;
-        private java.lang.Object ecsChargeType;
-        private java.lang.Object ecsOrderManagerCount;
-        private java.lang.Object haEnable;
-        private java.lang.Object imageId;
-        private java.lang.Object imageOwnerAlias;
-        private java.lang.Object jobQueue;
-        private java.lang.Object keyPairName;
-        private java.lang.Object password;
-        private java.lang.Object period;
-        private java.lang.Object periodUnit;
-        private java.lang.Object postInstallScript;
-        private java.lang.Object remoteDirectory;
-        private java.lang.Object sccClusterId;
-        private java.lang.Object schedulerType;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object securityGroupName;
-        private java.lang.Object volumeProtocol;
-        private java.lang.Object volumeType;
-        private java.lang.Object zoneId;
+        java.lang.Object ecsOrderComputeCount;
+        java.lang.Object ecsOrderComputeInstanceType;
+        java.lang.Object ecsOrderLoginCount;
+        java.lang.Object ecsOrderLoginInstanceType;
+        java.lang.Object ecsOrderManagerInstanceType;
+        java.lang.Object ehpcVersion;
+        java.lang.Object name;
+        java.lang.Object osTag;
+        java.lang.Object volumeId;
+        java.lang.Object volumeMountpoint;
+        java.lang.Object vSwitchId;
+        java.lang.Object accountType;
+        java.lang.Object application;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object computeSpotPriceLimit;
+        java.lang.Object computeSpotStrategy;
+        java.lang.Object deployMode;
+        java.lang.Object description;
+        java.lang.Object ecsChargeType;
+        java.lang.Object ecsOrderManagerCount;
+        java.lang.Object haEnable;
+        java.lang.Object imageId;
+        java.lang.Object imageOwnerAlias;
+        java.lang.Object jobQueue;
+        java.lang.Object keyPairName;
+        java.lang.Object password;
+        java.lang.Object period;
+        java.lang.Object periodUnit;
+        java.lang.Object postInstallScript;
+        java.lang.Object remoteDirectory;
+        java.lang.Object sccClusterId;
+        java.lang.Object schedulerType;
+        java.lang.Object securityGroupId;
+        java.lang.Object securityGroupName;
+        java.lang.Object volumeProtocol;
+        java.lang.Object volumeType;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link ClusterProps#getEcsOrderComputeCount}
@@ -1129,7 +1129,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ClusterProps build() {
-            return new Jsii$Proxy(ecsOrderComputeCount, ecsOrderComputeInstanceType, ecsOrderLoginCount, ecsOrderLoginInstanceType, ecsOrderManagerInstanceType, ehpcVersion, name, osTag, volumeId, volumeMountpoint, vSwitchId, accountType, application, autoRenew, autoRenewPeriod, computeSpotPriceLimit, computeSpotStrategy, deployMode, description, ecsChargeType, ecsOrderManagerCount, haEnable, imageId, imageOwnerAlias, jobQueue, keyPairName, password, period, periodUnit, postInstallScript, remoteDirectory, sccClusterId, schedulerType, securityGroupId, securityGroupName, volumeProtocol, volumeType, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1226,46 +1226,46 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object ecsOrderComputeCount, final java.lang.Object ecsOrderComputeInstanceType, final java.lang.Object ecsOrderLoginCount, final java.lang.Object ecsOrderLoginInstanceType, final java.lang.Object ecsOrderManagerInstanceType, final java.lang.Object ehpcVersion, final java.lang.Object name, final java.lang.Object osTag, final java.lang.Object volumeId, final java.lang.Object volumeMountpoint, final java.lang.Object vSwitchId, final java.lang.Object accountType, final java.lang.Object application, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object computeSpotPriceLimit, final java.lang.Object computeSpotStrategy, final java.lang.Object deployMode, final java.lang.Object description, final java.lang.Object ecsChargeType, final java.lang.Object ecsOrderManagerCount, final java.lang.Object haEnable, final java.lang.Object imageId, final java.lang.Object imageOwnerAlias, final java.lang.Object jobQueue, final java.lang.Object keyPairName, final java.lang.Object password, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object postInstallScript, final java.lang.Object remoteDirectory, final java.lang.Object sccClusterId, final java.lang.Object schedulerType, final java.lang.Object securityGroupId, final java.lang.Object securityGroupName, final java.lang.Object volumeProtocol, final java.lang.Object volumeType, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.ecsOrderComputeCount = java.util.Objects.requireNonNull(ecsOrderComputeCount, "ecsOrderComputeCount is required");
-            this.ecsOrderComputeInstanceType = java.util.Objects.requireNonNull(ecsOrderComputeInstanceType, "ecsOrderComputeInstanceType is required");
-            this.ecsOrderLoginCount = java.util.Objects.requireNonNull(ecsOrderLoginCount, "ecsOrderLoginCount is required");
-            this.ecsOrderLoginInstanceType = java.util.Objects.requireNonNull(ecsOrderLoginInstanceType, "ecsOrderLoginInstanceType is required");
-            this.ecsOrderManagerInstanceType = java.util.Objects.requireNonNull(ecsOrderManagerInstanceType, "ecsOrderManagerInstanceType is required");
-            this.ehpcVersion = java.util.Objects.requireNonNull(ehpcVersion, "ehpcVersion is required");
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.osTag = java.util.Objects.requireNonNull(osTag, "osTag is required");
-            this.volumeId = java.util.Objects.requireNonNull(volumeId, "volumeId is required");
-            this.volumeMountpoint = java.util.Objects.requireNonNull(volumeMountpoint, "volumeMountpoint is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-            this.accountType = accountType;
-            this.application = application;
-            this.autoRenew = autoRenew;
-            this.autoRenewPeriod = autoRenewPeriod;
-            this.computeSpotPriceLimit = computeSpotPriceLimit;
-            this.computeSpotStrategy = computeSpotStrategy;
-            this.deployMode = deployMode;
-            this.description = description;
-            this.ecsChargeType = ecsChargeType;
-            this.ecsOrderManagerCount = ecsOrderManagerCount;
-            this.haEnable = haEnable;
-            this.imageId = imageId;
-            this.imageOwnerAlias = imageOwnerAlias;
-            this.jobQueue = jobQueue;
-            this.keyPairName = keyPairName;
-            this.password = password;
-            this.period = period;
-            this.periodUnit = periodUnit;
-            this.postInstallScript = postInstallScript;
-            this.remoteDirectory = remoteDirectory;
-            this.sccClusterId = sccClusterId;
-            this.schedulerType = schedulerType;
-            this.securityGroupId = securityGroupId;
-            this.securityGroupName = securityGroupName;
-            this.volumeProtocol = volumeProtocol;
-            this.volumeType = volumeType;
-            this.zoneId = zoneId;
+            this.ecsOrderComputeCount = java.util.Objects.requireNonNull(builder.ecsOrderComputeCount, "ecsOrderComputeCount is required");
+            this.ecsOrderComputeInstanceType = java.util.Objects.requireNonNull(builder.ecsOrderComputeInstanceType, "ecsOrderComputeInstanceType is required");
+            this.ecsOrderLoginCount = java.util.Objects.requireNonNull(builder.ecsOrderLoginCount, "ecsOrderLoginCount is required");
+            this.ecsOrderLoginInstanceType = java.util.Objects.requireNonNull(builder.ecsOrderLoginInstanceType, "ecsOrderLoginInstanceType is required");
+            this.ecsOrderManagerInstanceType = java.util.Objects.requireNonNull(builder.ecsOrderManagerInstanceType, "ecsOrderManagerInstanceType is required");
+            this.ehpcVersion = java.util.Objects.requireNonNull(builder.ehpcVersion, "ehpcVersion is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.osTag = java.util.Objects.requireNonNull(builder.osTag, "osTag is required");
+            this.volumeId = java.util.Objects.requireNonNull(builder.volumeId, "volumeId is required");
+            this.volumeMountpoint = java.util.Objects.requireNonNull(builder.volumeMountpoint, "volumeMountpoint is required");
+            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.accountType = builder.accountType;
+            this.application = builder.application;
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.computeSpotPriceLimit = builder.computeSpotPriceLimit;
+            this.computeSpotStrategy = builder.computeSpotStrategy;
+            this.deployMode = builder.deployMode;
+            this.description = builder.description;
+            this.ecsChargeType = builder.ecsChargeType;
+            this.ecsOrderManagerCount = builder.ecsOrderManagerCount;
+            this.haEnable = builder.haEnable;
+            this.imageId = builder.imageId;
+            this.imageOwnerAlias = builder.imageOwnerAlias;
+            this.jobQueue = builder.jobQueue;
+            this.keyPairName = builder.keyPairName;
+            this.password = builder.password;
+            this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
+            this.postInstallScript = builder.postInstallScript;
+            this.remoteDirectory = builder.remoteDirectory;
+            this.sccClusterId = builder.sccClusterId;
+            this.schedulerType = builder.schedulerType;
+            this.securityGroupId = builder.securityGroupId;
+            this.securityGroupName = builder.securityGroupName;
+            this.volumeProtocol = builder.volumeProtocol;
+            this.volumeType = builder.volumeType;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

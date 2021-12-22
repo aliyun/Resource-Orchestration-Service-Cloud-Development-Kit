@@ -70,9 +70,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
-        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <summary>Property tags: Tags to attach to security group.</summary>
         /// <remarks>
-        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// Max support 20 tags to add during create security group. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosSecurityGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * Properties for defining a `ALIYUN::GWS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.531Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.143Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,11 +44,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterProps> {
-        private java.lang.Object clusterType;
-        private java.lang.Object vpcId;
-        private java.lang.Object name;
-        private java.lang.Object policy;
-        private java.lang.Object vSwitchId;
+        java.lang.Object clusterType;
+        java.lang.Object vpcId;
+        java.lang.Object name;
+        java.lang.Object policy;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosClusterProps#getClusterType}
@@ -157,7 +157,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosClusterProps build() {
-            return new Jsii$Proxy(clusterType, vpcId, name, policy, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -188,13 +188,13 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clusterType, final java.lang.Object vpcId, final java.lang.Object name, final java.lang.Object policy, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clusterType = java.util.Objects.requireNonNull(clusterType, "clusterType is required");
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.name = name;
-            this.policy = policy;
-            this.vSwitchId = vSwitchId;
+            this.clusterType = java.util.Objects.requireNonNull(builder.clusterType, "clusterType is required");
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.name = builder.name;
+            this.policy = builder.policy;
+            this.vSwitchId = builder.vSwitchId;
         }
 
         @Override

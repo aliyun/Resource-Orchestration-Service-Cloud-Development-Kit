@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::ResourceDirectory`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.012Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.704Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosResourceDirectoryProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceDirectoryProps.Jsii$Proxy.class)
 public interface RosResourceDirectoryProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,7 +26,7 @@ public interface RosResourceDirectoryProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public RosResourceDirectoryProps build() {
-            return new Jsii$Proxy();
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -47,7 +47,7 @@ public interface RosResourceDirectoryProps extends software.amazon.jsii.JsiiSeri
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy() {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         }
 

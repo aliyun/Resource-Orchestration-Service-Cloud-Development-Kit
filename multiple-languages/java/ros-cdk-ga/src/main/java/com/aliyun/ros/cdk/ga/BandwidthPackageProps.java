@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::BandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.503Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.082Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(BandwidthPackageProps.Jsii$Proxy.class)
 public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -98,18 +98,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link BandwidthPackageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BandwidthPackageProps> {
-        private java.lang.Object bandwidth;
-        private java.lang.Object type;
-        private java.lang.Object autoPay;
-        private java.lang.Object autoUseCoupon;
-        private java.lang.Object bandwidthType;
-        private java.lang.Object billingType;
-        private java.lang.Object cbnGeographicRegionIdA;
-        private java.lang.Object cbnGeographicRegionIdB;
-        private java.lang.Object chargeType;
-        private java.lang.Object duration;
-        private java.lang.Object pricingCycle;
-        private java.lang.Object ratio;
+        java.lang.Object bandwidth;
+        java.lang.Object type;
+        java.lang.Object autoPay;
+        java.lang.Object autoUseCoupon;
+        java.lang.Object bandwidthType;
+        java.lang.Object billingType;
+        java.lang.Object cbnGeographicRegionIdA;
+        java.lang.Object cbnGeographicRegionIdB;
+        java.lang.Object chargeType;
+        java.lang.Object duration;
+        java.lang.Object pricingCycle;
+        java.lang.Object ratio;
 
         /**
          * Sets the value of {@link BandwidthPackageProps#getBandwidth}
@@ -358,7 +358,7 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public BandwidthPackageProps build() {
-            return new Jsii$Proxy(bandwidth, type, autoPay, autoUseCoupon, bandwidthType, billingType, cbnGeographicRegionIdA, cbnGeographicRegionIdB, chargeType, duration, pricingCycle, ratio);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -403,20 +403,20 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object type, final java.lang.Object autoPay, final java.lang.Object autoUseCoupon, final java.lang.Object bandwidthType, final java.lang.Object billingType, final java.lang.Object cbnGeographicRegionIdA, final java.lang.Object cbnGeographicRegionIdB, final java.lang.Object chargeType, final java.lang.Object duration, final java.lang.Object pricingCycle, final java.lang.Object ratio) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.autoPay = autoPay;
-            this.autoUseCoupon = autoUseCoupon;
-            this.bandwidthType = bandwidthType;
-            this.billingType = billingType;
-            this.cbnGeographicRegionIdA = cbnGeographicRegionIdA;
-            this.cbnGeographicRegionIdB = cbnGeographicRegionIdB;
-            this.chargeType = chargeType;
-            this.duration = duration;
-            this.pricingCycle = pricingCycle;
-            this.ratio = ratio;
+            this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.autoPay = builder.autoPay;
+            this.autoUseCoupon = builder.autoUseCoupon;
+            this.bandwidthType = builder.bandwidthType;
+            this.billingType = builder.billingType;
+            this.cbnGeographicRegionIdA = builder.cbnGeographicRegionIdA;
+            this.cbnGeographicRegionIdB = builder.cbnGeographicRegionIdB;
+            this.chargeType = builder.chargeType;
+            this.duration = builder.duration;
+            this.pricingCycle = builder.pricingCycle;
+            this.ratio = builder.ratio;
         }
 
         @Override

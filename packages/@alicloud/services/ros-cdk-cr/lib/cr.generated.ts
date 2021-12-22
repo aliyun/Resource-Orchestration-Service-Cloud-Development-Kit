@@ -603,3 +603,148 @@ function rosRepositoryRepoSourcePropertyToRosTemplate(properties: any): any {
       IsDisableCache: ros.booleanToRosTemplate(properties.isDisableCache),
     };
 }
+
+/**
+ * Properties for defining a `ALIYUN::CR::UserInfo`
+ */
+export interface RosUserInfoProps {
+
+    /**
+     * @Property user: User info. If user exists, will update user info.
+     */
+    readonly user: RosUserInfo.UserProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosUserInfoProps`
+ *
+ * @param properties - the TypeScript properties of a `RosUserInfoProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserInfoPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('user', ros.requiredValidator)(properties.user));
+    errors.collect(ros.propertyValidator('user', RosUserInfo_UserPropertyValidator)(properties.user));
+    return errors.wrap('supplied properties not correct for "RosUserInfoProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::UserInfo` resource
+ *
+ * @param properties - the TypeScript properties of a `RosUserInfoProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::UserInfo` resource.
+ */
+// @ts-ignore TS6133
+function rosUserInfoPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosUserInfoPropsValidator(properties).assertSuccess();
+    }
+    return {
+      User: rosUserInfoUserPropertyToRosTemplate(properties.user),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CR::UserInfo`
+ */
+export class RosUserInfo extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::UserInfo";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute LoginName: Login name.
+     */
+    public readonly attrLoginName: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: User ID.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property user: User info. If user exists, will update user info.
+     */
+    public user: RosUserInfo.UserProperty | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::CR::UserInfo`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosUserInfoProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosUserInfo.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrLoginName = this.getAtt('LoginName');
+        this.attrUserId = this.getAtt('UserId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.user = props.user;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            user: this.user,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosUserInfoPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosUserInfo {
+    /**
+     * @stability external
+     */
+    export interface UserProperty {
+        /**
+         * @Property password: Password.
+         */
+        readonly password: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `UserProperty`
+ *
+ * @param properties - the TypeScript properties of a `UserProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserInfo_UserPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "UserProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::UserInfo.User` resource
+ *
+ * @param properties - the TypeScript properties of a `UserProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::UserInfo.User` resource.
+ */
+// @ts-ignore TS6133
+function rosUserInfoUserPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosUserInfo_UserPropertyValidator(properties).assertSuccess();
+    return {
+      Password: ros.stringToRosTemplate(properties.password),
+    };
+}

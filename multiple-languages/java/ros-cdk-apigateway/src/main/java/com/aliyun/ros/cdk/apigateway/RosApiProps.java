@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Api`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.313Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.642Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosApiProps")
 @software.amazon.jsii.Jsii.Proxy(RosApiProps.Jsii$Proxy.class)
 public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
@@ -130,27 +130,27 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosApiProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosApiProps> {
-        private java.lang.Object apiName;
-        private java.lang.Object groupId;
-        private java.lang.Object requestConfig;
-        private java.lang.Object resultSample;
-        private java.lang.Object resultType;
-        private java.lang.Object serviceConfig;
-        private java.lang.Object visibility;
-        private java.lang.Object appCodeAuthType;
-        private java.lang.Object authType;
-        private java.lang.Object constParameters;
-        private java.lang.Object description;
-        private java.lang.Object disableInternet;
-        private java.lang.Object errorCodeSamples;
-        private java.lang.Object failResultSample;
-        private java.lang.Object forceNonceCheck;
-        private java.lang.Object openIdConnectConfig;
-        private java.lang.Object requestParameters;
-        private java.lang.Object serviceParameters;
-        private java.lang.Object serviceParametersMap;
-        private java.lang.Object systemParameters;
-        private java.util.List<com.aliyun.ros.cdk.apigateway.RosApi.TagsProperty> tags;
+        java.lang.Object apiName;
+        java.lang.Object groupId;
+        java.lang.Object requestConfig;
+        java.lang.Object resultSample;
+        java.lang.Object resultType;
+        java.lang.Object serviceConfig;
+        java.lang.Object visibility;
+        java.lang.Object appCodeAuthType;
+        java.lang.Object authType;
+        java.lang.Object constParameters;
+        java.lang.Object description;
+        java.lang.Object disableInternet;
+        java.lang.Object errorCodeSamples;
+        java.lang.Object failResultSample;
+        java.lang.Object forceNonceCheck;
+        java.lang.Object openIdConnectConfig;
+        java.lang.Object requestParameters;
+        java.lang.Object serviceParameters;
+        java.lang.Object serviceParametersMap;
+        java.lang.Object systemParameters;
+        java.util.List<com.aliyun.ros.cdk.apigateway.RosApi.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosApiProps#getApiName}
@@ -570,7 +570,7 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosApiProps build() {
-            return new Jsii$Proxy(apiName, groupId, requestConfig, resultSample, resultType, serviceConfig, visibility, appCodeAuthType, authType, constParameters, description, disableInternet, errorCodeSamples, failResultSample, forceNonceCheck, openIdConnectConfig, requestParameters, serviceParameters, serviceParametersMap, systemParameters, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -634,29 +634,29 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object apiName, final java.lang.Object groupId, final java.lang.Object requestConfig, final java.lang.Object resultSample, final java.lang.Object resultType, final java.lang.Object serviceConfig, final java.lang.Object visibility, final java.lang.Object appCodeAuthType, final java.lang.Object authType, final java.lang.Object constParameters, final java.lang.Object description, final java.lang.Object disableInternet, final java.lang.Object errorCodeSamples, final java.lang.Object failResultSample, final java.lang.Object forceNonceCheck, final java.lang.Object openIdConnectConfig, final java.lang.Object requestParameters, final java.lang.Object serviceParameters, final java.lang.Object serviceParametersMap, final java.lang.Object systemParameters, final java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosApi.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.apiName = java.util.Objects.requireNonNull(apiName, "apiName is required");
-            this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
-            this.requestConfig = java.util.Objects.requireNonNull(requestConfig, "requestConfig is required");
-            this.resultSample = java.util.Objects.requireNonNull(resultSample, "resultSample is required");
-            this.resultType = java.util.Objects.requireNonNull(resultType, "resultType is required");
-            this.serviceConfig = java.util.Objects.requireNonNull(serviceConfig, "serviceConfig is required");
-            this.visibility = java.util.Objects.requireNonNull(visibility, "visibility is required");
-            this.appCodeAuthType = appCodeAuthType;
-            this.authType = authType;
-            this.constParameters = constParameters;
-            this.description = description;
-            this.disableInternet = disableInternet;
-            this.errorCodeSamples = errorCodeSamples;
-            this.failResultSample = failResultSample;
-            this.forceNonceCheck = forceNonceCheck;
-            this.openIdConnectConfig = openIdConnectConfig;
-            this.requestParameters = requestParameters;
-            this.serviceParameters = serviceParameters;
-            this.serviceParametersMap = serviceParametersMap;
-            this.systemParameters = systemParameters;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosApi.TagsProperty>)tags;
+            this.apiName = java.util.Objects.requireNonNull(builder.apiName, "apiName is required");
+            this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
+            this.requestConfig = java.util.Objects.requireNonNull(builder.requestConfig, "requestConfig is required");
+            this.resultSample = java.util.Objects.requireNonNull(builder.resultSample, "resultSample is required");
+            this.resultType = java.util.Objects.requireNonNull(builder.resultType, "resultType is required");
+            this.serviceConfig = java.util.Objects.requireNonNull(builder.serviceConfig, "serviceConfig is required");
+            this.visibility = java.util.Objects.requireNonNull(builder.visibility, "visibility is required");
+            this.appCodeAuthType = builder.appCodeAuthType;
+            this.authType = builder.authType;
+            this.constParameters = builder.constParameters;
+            this.description = builder.description;
+            this.disableInternet = builder.disableInternet;
+            this.errorCodeSamples = builder.errorCodeSamples;
+            this.failResultSample = builder.failResultSample;
+            this.forceNonceCheck = builder.forceNonceCheck;
+            this.openIdConnectConfig = builder.openIdConnectConfig;
+            this.requestParameters = builder.requestParameters;
+            this.serviceParameters = builder.serviceParameters;
+            this.serviceParametersMap = builder.serviceParametersMap;
+            this.systemParameters = builder.systemParameters;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosApi.TagsProperty>)builder.tags;
         }
 
         @Override

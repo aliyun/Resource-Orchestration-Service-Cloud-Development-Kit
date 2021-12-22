@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::ProvisionConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.480Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.053Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosProvisionConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosProvisionConfigProps.Jsii$Proxy.class)
 public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,10 +34,10 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosProvisionConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosProvisionConfigProps> {
-        private java.lang.Object functionName;
-        private java.lang.Object qualifier;
-        private java.lang.Object serviceName;
-        private java.lang.Object target;
+        java.lang.Object functionName;
+        java.lang.Object qualifier;
+        java.lang.Object serviceName;
+        java.lang.Object target;
 
         /**
          * Sets the value of {@link RosProvisionConfigProps#getFunctionName}
@@ -126,7 +126,7 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosProvisionConfigProps build() {
-            return new Jsii$Proxy(functionName, qualifier, serviceName, target);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -155,12 +155,12 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object qualifier, final java.lang.Object serviceName, final java.lang.Object target) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
-            this.qualifier = java.util.Objects.requireNonNull(qualifier, "qualifier is required");
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
-            this.target = java.util.Objects.requireNonNull(target, "target is required");
+            this.functionName = java.util.Objects.requireNonNull(builder.functionName, "functionName is required");
+            this.qualifier = java.util.Objects.requireNonNull(builder.qualifier, "qualifier is required");
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+            this.target = java.util.Objects.requireNonNull(builder.target, "target is required");
         }
 
         @Override

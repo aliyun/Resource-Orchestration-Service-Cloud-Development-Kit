@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * Properties for defining a `ALIYUN::FOAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.497Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.071Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,12 +62,12 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ClusterProps> {
-        private java.lang.Object clusterName;
-        private java.lang.Object description;
-        private java.lang.Object ossBucket;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object order;
-        private java.lang.Object orderId;
+        java.lang.Object clusterName;
+        java.lang.Object description;
+        java.lang.Object ossBucket;
+        java.lang.Object vSwitchId;
+        java.lang.Object order;
+        java.lang.Object orderId;
 
         /**
          * Sets the value of {@link ClusterProps#getClusterName}
@@ -210,7 +210,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ClusterProps build() {
-            return new Jsii$Proxy(clusterName, description, ossBucket, vSwitchId, order, orderId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -243,14 +243,14 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clusterName, final java.lang.Object description, final java.lang.Object ossBucket, final java.lang.Object vSwitchId, final java.lang.Object order, final java.lang.Object orderId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clusterName = java.util.Objects.requireNonNull(clusterName, "clusterName is required");
-            this.description = java.util.Objects.requireNonNull(description, "description is required");
-            this.ossBucket = java.util.Objects.requireNonNull(ossBucket, "ossBucket is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-            this.order = order;
-            this.orderId = orderId;
+            this.clusterName = java.util.Objects.requireNonNull(builder.clusterName, "clusterName is required");
+            this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
+            this.ossBucket = java.util.Objects.requireNonNull(builder.ossBucket, "ossBucket is required");
+            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.order = builder.order;
+            this.orderId = builder.orderId;
         }
 
         @Override

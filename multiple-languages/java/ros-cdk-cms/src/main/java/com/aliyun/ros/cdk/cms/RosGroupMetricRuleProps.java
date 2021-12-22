@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::GroupMetricRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.601Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosGroupMetricRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupMetricRuleProps.Jsii$Proxy.class)
 public interface RosGroupMetricRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -94,21 +94,21 @@ public interface RosGroupMetricRuleProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosGroupMetricRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosGroupMetricRuleProps> {
-        private java.lang.Object category;
-        private java.lang.Object escalations;
-        private java.lang.Object groupId;
-        private java.lang.Object metricName;
-        private java.lang.Object namespace;
-        private java.lang.Object ruleId;
-        private java.lang.Object ruleName;
-        private java.lang.Object dimensions;
-        private java.lang.Object effectiveInterval;
-        private java.lang.Object emailSubject;
-        private java.lang.Object interval;
-        private java.lang.Object noEffectiveInterval;
-        private java.lang.Object period;
-        private java.lang.Object silenceTime;
-        private java.lang.Object webhook;
+        java.lang.Object category;
+        java.lang.Object escalations;
+        java.lang.Object groupId;
+        java.lang.Object metricName;
+        java.lang.Object namespace;
+        java.lang.Object ruleId;
+        java.lang.Object ruleName;
+        java.lang.Object dimensions;
+        java.lang.Object effectiveInterval;
+        java.lang.Object emailSubject;
+        java.lang.Object interval;
+        java.lang.Object noEffectiveInterval;
+        java.lang.Object period;
+        java.lang.Object silenceTime;
+        java.lang.Object webhook;
 
         /**
          * Sets the value of {@link RosGroupMetricRuleProps#getCategory}
@@ -417,7 +417,7 @@ public interface RosGroupMetricRuleProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosGroupMetricRuleProps build() {
-            return new Jsii$Proxy(category, escalations, groupId, metricName, namespace, ruleId, ruleName, dimensions, effectiveInterval, emailSubject, interval, noEffectiveInterval, period, silenceTime, webhook);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -468,23 +468,23 @@ public interface RosGroupMetricRuleProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object category, final java.lang.Object escalations, final java.lang.Object groupId, final java.lang.Object metricName, final java.lang.Object namespace, final java.lang.Object ruleId, final java.lang.Object ruleName, final java.lang.Object dimensions, final java.lang.Object effectiveInterval, final java.lang.Object emailSubject, final java.lang.Object interval, final java.lang.Object noEffectiveInterval, final java.lang.Object period, final java.lang.Object silenceTime, final java.lang.Object webhook) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.category = java.util.Objects.requireNonNull(category, "category is required");
-            this.escalations = java.util.Objects.requireNonNull(escalations, "escalations is required");
-            this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
-            this.metricName = java.util.Objects.requireNonNull(metricName, "metricName is required");
-            this.namespace = java.util.Objects.requireNonNull(namespace, "namespace is required");
-            this.ruleId = java.util.Objects.requireNonNull(ruleId, "ruleId is required");
-            this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
-            this.dimensions = dimensions;
-            this.effectiveInterval = effectiveInterval;
-            this.emailSubject = emailSubject;
-            this.interval = interval;
-            this.noEffectiveInterval = noEffectiveInterval;
-            this.period = period;
-            this.silenceTime = silenceTime;
-            this.webhook = webhook;
+            this.category = java.util.Objects.requireNonNull(builder.category, "category is required");
+            this.escalations = java.util.Objects.requireNonNull(builder.escalations, "escalations is required");
+            this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
+            this.metricName = java.util.Objects.requireNonNull(builder.metricName, "metricName is required");
+            this.namespace = java.util.Objects.requireNonNull(builder.namespace, "namespace is required");
+            this.ruleId = java.util.Objects.requireNonNull(builder.ruleId, "ruleId is required");
+            this.ruleName = java.util.Objects.requireNonNull(builder.ruleName, "ruleName is required");
+            this.dimensions = builder.dimensions;
+            this.effectiveInterval = builder.effectiveInterval;
+            this.emailSubject = builder.emailSubject;
+            this.interval = builder.interval;
+            this.noEffectiveInterval = builder.noEffectiveInterval;
+            this.period = builder.period;
+            this.silenceTime = builder.silenceTime;
+            this.webhook = builder.webhook;
         }
 
         @Override

@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.664Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.508Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.NestedStackProps")
 @software.amazon.jsii.Jsii.Proxy(NestedStackProps.Jsii$Proxy.class)
 public interface NestedStackProps extends software.amazon.jsii.JsiiSerializable {
@@ -31,10 +31,10 @@ public interface NestedStackProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link NestedStackProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NestedStackProps> {
-        private java.util.Map<java.lang.String, java.lang.Object> parameters;
-        private java.lang.String templateBody;
-        private java.lang.String templateUrl;
-        private java.lang.Number timeout;
+        java.util.Map<java.lang.String, java.lang.Object> parameters;
+        java.lang.String templateBody;
+        java.lang.String templateUrl;
+        java.lang.Number timeout;
 
         /**
          * Sets the value of {@link NestedStackProps#getParameters}
@@ -84,7 +84,7 @@ public interface NestedStackProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public NestedStackProps build() {
-            return new Jsii$Proxy(parameters, templateBody, templateUrl, timeout);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -114,12 +114,12 @@ public interface NestedStackProps extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters, final java.lang.String templateBody, final java.lang.String templateUrl, final java.lang.Number timeout) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.parameters = (java.util.Map<java.lang.String, java.lang.Object>)parameters;
-            this.templateBody = templateBody;
-            this.templateUrl = templateUrl;
-            this.timeout = timeout;
+            this.parameters = (java.util.Map<java.lang.String, java.lang.Object>)builder.parameters;
+            this.templateBody = builder.templateBody;
+            this.templateUrl = builder.templateUrl;
+            this.timeout = builder.timeout;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.855Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.AccountProps")
 @software.amazon.jsii.Jsii.Proxy(AccountProps.Jsii$Proxy.class)
 public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -63,11 +63,11 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AccountProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AccountProps> {
-        private java.lang.Object accountName;
-        private java.lang.Object accountPassword;
-        private java.lang.Object dbInstanceId;
-        private java.lang.Object accountDescription;
-        private java.lang.Object accountType;
+        java.lang.Object accountName;
+        java.lang.Object accountPassword;
+        java.lang.Object dbInstanceId;
+        java.lang.Object accountDescription;
+        java.lang.Object accountType;
 
         /**
          * Sets the value of {@link AccountProps#getAccountName}
@@ -200,7 +200,7 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public AccountProps build() {
-            return new Jsii$Proxy(accountName, accountPassword, dbInstanceId, accountDescription, accountType);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -231,13 +231,13 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object accountName, final java.lang.Object accountPassword, final java.lang.Object dbInstanceId, final java.lang.Object accountDescription, final java.lang.Object accountType) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.accountName = java.util.Objects.requireNonNull(accountName, "accountName is required");
-            this.accountPassword = java.util.Objects.requireNonNull(accountPassword, "accountPassword is required");
-            this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
-            this.accountDescription = accountDescription;
-            this.accountType = accountType;
+            this.accountName = java.util.Objects.requireNonNull(builder.accountName, "accountName is required");
+            this.accountPassword = java.util.Objects.requireNonNull(builder.accountPassword, "accountPassword is required");
+            this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
+            this.accountDescription = builder.accountDescription;
+            this.accountType = builder.accountType;
         }
 
         @Override

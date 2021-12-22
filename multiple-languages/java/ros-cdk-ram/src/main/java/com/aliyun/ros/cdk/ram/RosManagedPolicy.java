@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  `ALIYUN::RAM::ManagedPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.815Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.532Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosManagedPolicy")
 public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -219,8 +219,8 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PolicyDocumentProperty> {
-            private java.lang.Object statement;
-            private java.lang.Object version;
+            java.lang.Object statement;
+            java.lang.Object version;
 
             /**
              * Sets the value of {@link PolicyDocumentProperty#getStatement}
@@ -274,7 +274,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PolicyDocumentProperty build() {
-                return new Jsii$Proxy(statement, version);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -300,10 +300,10 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object statement, final java.lang.Object version) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.statement = statement;
-                this.version = version;
+                this.statement = builder.statement;
+                this.version = builder.version;
             }
 
             @Override
@@ -405,10 +405,10 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<StatementProperty> {
-            private java.lang.Object action;
-            private java.lang.Object condition;
-            private java.lang.Object effect;
-            private java.lang.Object resource;
+            java.lang.Object action;
+            java.lang.Object condition;
+            java.lang.Object effect;
+            java.lang.Object resource;
 
             /**
              * Sets the value of {@link StatementProperty#getAction}
@@ -506,7 +506,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public StatementProperty build() {
-                return new Jsii$Proxy(action, condition, effect, resource);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -536,12 +536,12 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.Object effect, final java.lang.Object resource) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.action = action;
-                this.condition = condition;
-                this.effect = effect;
-                this.resource = resource;
+                this.action = builder.action;
+                this.condition = builder.condition;
+                this.effect = builder.effect;
+                this.resource = builder.resource;
             }
 
             @Override

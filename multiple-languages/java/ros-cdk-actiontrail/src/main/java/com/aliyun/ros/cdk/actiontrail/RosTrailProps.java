@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * Properties for defining a `ALIYUN::ACTIONTRAIL::Trail`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.266Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.RosTrailProps")
 @software.amazon.jsii.Jsii.Proxy(RosTrailProps.Jsii$Proxy.class)
 public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,13 +54,13 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTrailProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTrailProps> {
-        private java.lang.Object name;
-        private java.lang.Object ossBucketName;
-        private java.lang.Object roleName;
-        private java.lang.Object eventRw;
-        private java.lang.Object ossKeyPrefix;
-        private java.lang.Object slsProjectArn;
-        private java.lang.Object slsWriteRoleArn;
+        java.lang.Object name;
+        java.lang.Object ossBucketName;
+        java.lang.Object roleName;
+        java.lang.Object eventRw;
+        java.lang.Object ossKeyPrefix;
+        java.lang.Object slsProjectArn;
+        java.lang.Object slsWriteRoleArn;
 
         /**
          * Sets the value of {@link RosTrailProps#getName}
@@ -209,7 +209,7 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosTrailProps build() {
-            return new Jsii$Proxy(name, ossBucketName, roleName, eventRw, ossKeyPrefix, slsProjectArn, slsWriteRoleArn);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -244,15 +244,15 @@ public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object ossBucketName, final java.lang.Object roleName, final java.lang.Object eventRw, final java.lang.Object ossKeyPrefix, final java.lang.Object slsProjectArn, final java.lang.Object slsWriteRoleArn) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.ossBucketName = java.util.Objects.requireNonNull(ossBucketName, "ossBucketName is required");
-            this.roleName = java.util.Objects.requireNonNull(roleName, "roleName is required");
-            this.eventRw = eventRw;
-            this.ossKeyPrefix = ossKeyPrefix;
-            this.slsProjectArn = slsProjectArn;
-            this.slsWriteRoleArn = slsWriteRoleArn;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.ossBucketName = java.util.Objects.requireNonNull(builder.ossBucketName, "ossBucketName is required");
+            this.roleName = java.util.Objects.requireNonNull(builder.roleName, "roleName is required");
+            this.eventRw = builder.eventRw;
+            this.ossKeyPrefix = builder.ossKeyPrefix;
+            this.slsProjectArn = builder.slsProjectArn;
+            this.slsWriteRoleArn = builder.slsWriteRoleArn;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options to configure TagManager behavior.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:31.114Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.537Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.TagManagerOptions")
 @software.amazon.jsii.Jsii.Proxy(TagManagerOptions.Jsii$Proxy.class)
 public interface TagManagerOptions extends software.amazon.jsii.JsiiSerializable {
@@ -29,7 +29,7 @@ public interface TagManagerOptions extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link TagManagerOptions}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TagManagerOptions> {
-        private java.lang.String tagPropertyName;
+        java.lang.String tagPropertyName;
 
         /**
          * Sets the value of {@link TagManagerOptions#getTagPropertyName}
@@ -49,7 +49,7 @@ public interface TagManagerOptions extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public TagManagerOptions build() {
-            return new Jsii$Proxy(tagPropertyName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -72,9 +72,9 @@ public interface TagManagerOptions extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String tagPropertyName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.tagPropertyName = tagPropertyName;
+            this.tagPropertyName = builder.tagPropertyName;
         }
 
         @Override

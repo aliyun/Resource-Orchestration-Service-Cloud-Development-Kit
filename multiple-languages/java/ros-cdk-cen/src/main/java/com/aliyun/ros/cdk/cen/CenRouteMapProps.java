@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenRouteMap`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.433Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.942Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenRouteMapProps")
 @software.amazon.jsii.Jsii.Proxy(CenRouteMapProps.Jsii$Proxy.class)
 public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable {
@@ -290,33 +290,33 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link CenRouteMapProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CenRouteMapProps> {
-        private java.lang.Object cenId;
-        private java.lang.Object cenRegionId;
-        private java.lang.Object mapResult;
-        private java.lang.Object priority;
-        private java.lang.Object transmitDirection;
-        private java.lang.Object asPathMatchMode;
-        private java.lang.Object cidrMatchMode;
-        private java.lang.Object communityMatchMode;
-        private java.lang.Object communityOperateMode;
-        private java.lang.Object description;
-        private java.lang.Object destinationChildInstanceTypes;
-        private java.lang.Object destinationCidrBlocks;
-        private java.lang.Object destinationInstanceIds;
-        private java.lang.Object destinationInstanceIdsReverseMatch;
-        private java.lang.Object destinationRouteTableIds;
-        private java.lang.Object matchAsns;
-        private java.lang.Object matchCommunitySet;
-        private java.lang.Object nextPriority;
-        private java.lang.Object operateCommunitySet;
-        private java.lang.Object preference;
-        private java.lang.Object prependAsPath;
-        private java.lang.Object routeTypes;
-        private java.lang.Object sourceChildInstanceTypes;
-        private java.lang.Object sourceInstanceIds;
-        private java.lang.Object sourceInstanceIdsReverseMatch;
-        private java.lang.Object sourceRegionIds;
-        private java.lang.Object sourceRouteTableIds;
+        java.lang.Object cenId;
+        java.lang.Object cenRegionId;
+        java.lang.Object mapResult;
+        java.lang.Object priority;
+        java.lang.Object transmitDirection;
+        java.lang.Object asPathMatchMode;
+        java.lang.Object cidrMatchMode;
+        java.lang.Object communityMatchMode;
+        java.lang.Object communityOperateMode;
+        java.lang.Object description;
+        java.lang.Object destinationChildInstanceTypes;
+        java.lang.Object destinationCidrBlocks;
+        java.lang.Object destinationInstanceIds;
+        java.lang.Object destinationInstanceIdsReverseMatch;
+        java.lang.Object destinationRouteTableIds;
+        java.lang.Object matchAsns;
+        java.lang.Object matchCommunitySet;
+        java.lang.Object nextPriority;
+        java.lang.Object operateCommunitySet;
+        java.lang.Object preference;
+        java.lang.Object prependAsPath;
+        java.lang.Object routeTypes;
+        java.lang.Object sourceChildInstanceTypes;
+        java.lang.Object sourceInstanceIds;
+        java.lang.Object sourceInstanceIdsReverseMatch;
+        java.lang.Object sourceRegionIds;
+        java.lang.Object sourceRouteTableIds;
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCenId}
@@ -1001,7 +1001,7 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public CenRouteMapProps build() {
-            return new Jsii$Proxy(cenId, cenRegionId, mapResult, priority, transmitDirection, asPathMatchMode, cidrMatchMode, communityMatchMode, communityOperateMode, description, destinationChildInstanceTypes, destinationCidrBlocks, destinationInstanceIds, destinationInstanceIdsReverseMatch, destinationRouteTableIds, matchAsns, matchCommunitySet, nextPriority, operateCommunitySet, preference, prependAsPath, routeTypes, sourceChildInstanceTypes, sourceInstanceIds, sourceInstanceIdsReverseMatch, sourceRegionIds, sourceRouteTableIds);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1076,35 +1076,35 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cenId, final java.lang.Object cenRegionId, final java.lang.Object mapResult, final java.lang.Object priority, final java.lang.Object transmitDirection, final java.lang.Object asPathMatchMode, final java.lang.Object cidrMatchMode, final java.lang.Object communityMatchMode, final java.lang.Object communityOperateMode, final java.lang.Object description, final java.lang.Object destinationChildInstanceTypes, final java.lang.Object destinationCidrBlocks, final java.lang.Object destinationInstanceIds, final java.lang.Object destinationInstanceIdsReverseMatch, final java.lang.Object destinationRouteTableIds, final java.lang.Object matchAsns, final java.lang.Object matchCommunitySet, final java.lang.Object nextPriority, final java.lang.Object operateCommunitySet, final java.lang.Object preference, final java.lang.Object prependAsPath, final java.lang.Object routeTypes, final java.lang.Object sourceChildInstanceTypes, final java.lang.Object sourceInstanceIds, final java.lang.Object sourceInstanceIdsReverseMatch, final java.lang.Object sourceRegionIds, final java.lang.Object sourceRouteTableIds) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
-            this.cenRegionId = java.util.Objects.requireNonNull(cenRegionId, "cenRegionId is required");
-            this.mapResult = java.util.Objects.requireNonNull(mapResult, "mapResult is required");
-            this.priority = java.util.Objects.requireNonNull(priority, "priority is required");
-            this.transmitDirection = java.util.Objects.requireNonNull(transmitDirection, "transmitDirection is required");
-            this.asPathMatchMode = asPathMatchMode;
-            this.cidrMatchMode = cidrMatchMode;
-            this.communityMatchMode = communityMatchMode;
-            this.communityOperateMode = communityOperateMode;
-            this.description = description;
-            this.destinationChildInstanceTypes = destinationChildInstanceTypes;
-            this.destinationCidrBlocks = destinationCidrBlocks;
-            this.destinationInstanceIds = destinationInstanceIds;
-            this.destinationInstanceIdsReverseMatch = destinationInstanceIdsReverseMatch;
-            this.destinationRouteTableIds = destinationRouteTableIds;
-            this.matchAsns = matchAsns;
-            this.matchCommunitySet = matchCommunitySet;
-            this.nextPriority = nextPriority;
-            this.operateCommunitySet = operateCommunitySet;
-            this.preference = preference;
-            this.prependAsPath = prependAsPath;
-            this.routeTypes = routeTypes;
-            this.sourceChildInstanceTypes = sourceChildInstanceTypes;
-            this.sourceInstanceIds = sourceInstanceIds;
-            this.sourceInstanceIdsReverseMatch = sourceInstanceIdsReverseMatch;
-            this.sourceRegionIds = sourceRegionIds;
-            this.sourceRouteTableIds = sourceRouteTableIds;
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
+            this.cenRegionId = java.util.Objects.requireNonNull(builder.cenRegionId, "cenRegionId is required");
+            this.mapResult = java.util.Objects.requireNonNull(builder.mapResult, "mapResult is required");
+            this.priority = java.util.Objects.requireNonNull(builder.priority, "priority is required");
+            this.transmitDirection = java.util.Objects.requireNonNull(builder.transmitDirection, "transmitDirection is required");
+            this.asPathMatchMode = builder.asPathMatchMode;
+            this.cidrMatchMode = builder.cidrMatchMode;
+            this.communityMatchMode = builder.communityMatchMode;
+            this.communityOperateMode = builder.communityOperateMode;
+            this.description = builder.description;
+            this.destinationChildInstanceTypes = builder.destinationChildInstanceTypes;
+            this.destinationCidrBlocks = builder.destinationCidrBlocks;
+            this.destinationInstanceIds = builder.destinationInstanceIds;
+            this.destinationInstanceIdsReverseMatch = builder.destinationInstanceIdsReverseMatch;
+            this.destinationRouteTableIds = builder.destinationRouteTableIds;
+            this.matchAsns = builder.matchAsns;
+            this.matchCommunitySet = builder.matchCommunitySet;
+            this.nextPriority = builder.nextPriority;
+            this.operateCommunitySet = builder.operateCommunitySet;
+            this.preference = builder.preference;
+            this.prependAsPath = builder.prependAsPath;
+            this.routeTypes = builder.routeTypes;
+            this.sourceChildInstanceTypes = builder.sourceChildInstanceTypes;
+            this.sourceInstanceIds = builder.sourceInstanceIds;
+            this.sourceInstanceIdsReverseMatch = builder.sourceInstanceIdsReverseMatch;
+            this.sourceRegionIds = builder.sourceRegionIds;
+            this.sourceRouteTableIds = builder.sourceRouteTableIds;
         }
 
         @Override

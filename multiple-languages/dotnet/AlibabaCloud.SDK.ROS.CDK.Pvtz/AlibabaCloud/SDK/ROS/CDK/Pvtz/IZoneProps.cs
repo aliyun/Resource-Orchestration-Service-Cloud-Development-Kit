@@ -44,6 +44,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             }
         }
 
+        /// <summary>Property zoneTag: Zone label.</summary>
+        /// <remarks>
+        /// It will be ignored when ZoneType is AUTH_ZONE.
+        /// </remarks>
+        [JsiiProperty(name: "zoneTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneTag
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property zoneType: Zone type.</summary>
+        /// <remarks>
+        /// For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+        /// </remarks>
+        [JsiiProperty(name: "zoneType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::PVTZ::Zone`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IZoneProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.ZoneProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pvtz.IZoneProps
@@ -78,6 +106,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             [JsiiOptional]
             [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Remark
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property zoneTag: Zone label.</summary>
+            /// <remarks>
+            /// It will be ignored when ZoneType is AUTH_ZONE.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneTag
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property zoneType: Zone type.</summary>
+            /// <remarks>
+            /// For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneType
             {
                 get => GetInstanceProperty<object?>();
             }

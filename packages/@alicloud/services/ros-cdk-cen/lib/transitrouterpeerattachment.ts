@@ -39,21 +39,6 @@ export interface TransitRouterPeerAttachmentProps {
     readonly peerTransitRouterRegionId?: string | ros.IResolvable;
 
     /**
-     * Property resourceType: ResourceType
-     */
-    readonly resourceType?: string | ros.IResolvable;
-
-    /**
-     * Property routeTableAssociationEnabled:
-     */
-    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
-
-    /**
-     * Property routeTablePropagationEnabled:
-     */
-    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
-
-    /**
      * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
@@ -161,12 +146,9 @@ export class TransitRouterPeerAttachment extends ros.Resource {
 
         const rosTransitRouterPeerAttachment = new RosTransitRouterPeerAttachment(this, id,  {
             autoPublishRouteEnabled: props.autoPublishRouteEnabled,
-            routeTableAssociationEnabled: props.routeTableAssociationEnabled,
-            routeTablePropagationEnabled: props.routeTablePropagationEnabled,
             bandwidth: props.bandwidth,
             cenId: props.cenId,
             transitRouterAttachmentName: props.transitRouterAttachmentName,
-            resourceType: props.resourceType,
             peerTransitRouterId: props.peerTransitRouterId,
             cenBandwidthPackageId: props.cenBandwidthPackageId,
             transitRouterAttachmentDescription: props.transitRouterAttachmentDescription,

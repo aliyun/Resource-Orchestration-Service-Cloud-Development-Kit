@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.085Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.801Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackendServerToVServerGroupAdditionProps.Jsii$Proxy.class)
 public interface RosBackendServerToVServerGroupAdditionProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,8 +26,8 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
      * A builder for {@link RosBackendServerToVServerGroupAdditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosBackendServerToVServerGroupAdditionProps> {
-        private java.lang.Object backendServers;
-        private java.lang.Object vServerGroupId;
+        java.lang.Object backendServers;
+        java.lang.Object vServerGroupId;
 
         /**
          * Sets the value of {@link RosBackendServerToVServerGroupAdditionProps#getBackendServers}
@@ -76,7 +76,7 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
          */
         @Override
         public RosBackendServerToVServerGroupAdditionProps build() {
-            return new Jsii$Proxy(backendServers, vServerGroupId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,10 +101,10 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object backendServers, final java.lang.Object vServerGroupId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.backendServers = java.util.Objects.requireNonNull(backendServers, "backendServers is required");
-            this.vServerGroupId = java.util.Objects.requireNonNull(vServerGroupId, "vServerGroupId is required");
+            this.backendServers = java.util.Objects.requireNonNull(builder.backendServers, "backendServers is required");
+            this.vServerGroupId = java.util.Objects.requireNonNull(builder.vServerGroupId, "vServerGroupId is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::Logstore`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.113Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.838Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.LogstoreProps")
 @software.amazon.jsii.Jsii.Proxy(LogstoreProps.Jsii$Proxy.class)
 public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,6 +50,13 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
      * Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableTracking() {
+        return null;
+    }
+
+    /**
+     * Property encryptConf: Data encryption config.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptConf() {
         return null;
     }
 
@@ -101,15 +108,16 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link LogstoreProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LogstoreProps> {
-        private java.lang.Object logstoreName;
-        private java.lang.Object projectName;
-        private java.lang.Object appendMeta;
-        private java.lang.Object autoSplit;
-        private java.lang.Object enableTracking;
-        private java.lang.Object maxSplitShard;
-        private java.lang.Object preserveStorage;
-        private java.lang.Object shardCount;
-        private java.lang.Object ttl;
+        java.lang.Object logstoreName;
+        java.lang.Object projectName;
+        java.lang.Object appendMeta;
+        java.lang.Object autoSplit;
+        java.lang.Object enableTracking;
+        java.lang.Object encryptConf;
+        java.lang.Object maxSplitShard;
+        java.lang.Object preserveStorage;
+        java.lang.Object shardCount;
+        java.lang.Object ttl;
 
         /**
          * Sets the value of {@link LogstoreProps#getLogstoreName}
@@ -230,6 +238,26 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link LogstoreProps#getEncryptConf}
+         * @param encryptConf Property encryptConf: Data encryption config.
+         * @return {@code this}
+         */
+        public Builder encryptConf(com.aliyun.ros.cdk.core.IResolvable encryptConf) {
+            this.encryptConf = encryptConf;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LogstoreProps#getEncryptConf}
+         * @param encryptConf Property encryptConf: Data encryption config.
+         * @return {@code this}
+         */
+        public Builder encryptConf(com.aliyun.ros.cdk.sls.RosLogstore.EncryptConfProperty encryptConf) {
+            this.encryptConf = encryptConf;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogstoreProps#getMaxSplitShard}
          * @param maxSplitShard Property maxSplitShard: The maximum number of shards when splitting automatically.
          *                      Must be specified if AutoSplit is set to true.
@@ -328,7 +356,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public LogstoreProps build() {
-            return new Jsii$Proxy(logstoreName, projectName, appendMeta, autoSplit, enableTracking, maxSplitShard, preserveStorage, shardCount, ttl);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -342,6 +370,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object appendMeta;
         private final java.lang.Object autoSplit;
         private final java.lang.Object enableTracking;
+        private final java.lang.Object encryptConf;
         private final java.lang.Object maxSplitShard;
         private final java.lang.Object preserveStorage;
         private final java.lang.Object shardCount;
@@ -358,6 +387,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             this.appendMeta = software.amazon.jsii.Kernel.get(this, "appendMeta", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoSplit = software.amazon.jsii.Kernel.get(this, "autoSplit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableTracking = software.amazon.jsii.Kernel.get(this, "enableTracking", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encryptConf = software.amazon.jsii.Kernel.get(this, "encryptConf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxSplitShard = software.amazon.jsii.Kernel.get(this, "maxSplitShard", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.preserveStorage = software.amazon.jsii.Kernel.get(this, "preserveStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -367,17 +397,18 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object logstoreName, final java.lang.Object projectName, final java.lang.Object appendMeta, final java.lang.Object autoSplit, final java.lang.Object enableTracking, final java.lang.Object maxSplitShard, final java.lang.Object preserveStorage, final java.lang.Object shardCount, final java.lang.Object ttl) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.logstoreName = java.util.Objects.requireNonNull(logstoreName, "logstoreName is required");
-            this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
-            this.appendMeta = appendMeta;
-            this.autoSplit = autoSplit;
-            this.enableTracking = enableTracking;
-            this.maxSplitShard = maxSplitShard;
-            this.preserveStorage = preserveStorage;
-            this.shardCount = shardCount;
-            this.ttl = ttl;
+            this.logstoreName = java.util.Objects.requireNonNull(builder.logstoreName, "logstoreName is required");
+            this.projectName = java.util.Objects.requireNonNull(builder.projectName, "projectName is required");
+            this.appendMeta = builder.appendMeta;
+            this.autoSplit = builder.autoSplit;
+            this.enableTracking = builder.enableTracking;
+            this.encryptConf = builder.encryptConf;
+            this.maxSplitShard = builder.maxSplitShard;
+            this.preserveStorage = builder.preserveStorage;
+            this.shardCount = builder.shardCount;
+            this.ttl = builder.ttl;
         }
 
         @Override
@@ -403,6 +434,11 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getEnableTracking() {
             return this.enableTracking;
+        }
+
+        @Override
+        public final java.lang.Object getEncryptConf() {
+            return this.encryptConf;
         }
 
         @Override
@@ -442,6 +478,9 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getEnableTracking() != null) {
                 data.set("enableTracking", om.valueToTree(this.getEnableTracking()));
             }
+            if (this.getEncryptConf() != null) {
+                data.set("encryptConf", om.valueToTree(this.getEncryptConf()));
+            }
             if (this.getMaxSplitShard() != null) {
                 data.set("maxSplitShard", om.valueToTree(this.getMaxSplitShard()));
             }
@@ -477,6 +516,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             if (this.appendMeta != null ? !this.appendMeta.equals(that.appendMeta) : that.appendMeta != null) return false;
             if (this.autoSplit != null ? !this.autoSplit.equals(that.autoSplit) : that.autoSplit != null) return false;
             if (this.enableTracking != null ? !this.enableTracking.equals(that.enableTracking) : that.enableTracking != null) return false;
+            if (this.encryptConf != null ? !this.encryptConf.equals(that.encryptConf) : that.encryptConf != null) return false;
             if (this.maxSplitShard != null ? !this.maxSplitShard.equals(that.maxSplitShard) : that.maxSplitShard != null) return false;
             if (this.preserveStorage != null ? !this.preserveStorage.equals(that.preserveStorage) : that.preserveStorage != null) return false;
             if (this.shardCount != null ? !this.shardCount.equals(that.shardCount) : that.shardCount != null) return false;
@@ -490,6 +530,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.appendMeta != null ? this.appendMeta.hashCode() : 0);
             result = 31 * result + (this.autoSplit != null ? this.autoSplit.hashCode() : 0);
             result = 31 * result + (this.enableTracking != null ? this.enableTracking.hashCode() : 0);
+            result = 31 * result + (this.encryptConf != null ? this.encryptConf.hashCode() : 0);
             result = 31 * result + (this.maxSplitShard != null ? this.maxSplitShard.hashCode() : 0);
             result = 31 * result + (this.preserveStorage != null ? this.preserveStorage.hashCode() : 0);
             result = 31 * result + (this.shardCount != null ? this.shardCount.hashCode() : 0);

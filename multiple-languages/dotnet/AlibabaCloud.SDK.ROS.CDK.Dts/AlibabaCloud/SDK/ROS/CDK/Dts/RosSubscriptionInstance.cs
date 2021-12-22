@@ -105,11 +105,55 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle. Default: MySQL.
+        /// <strong>Property</strong>: payType: Payment type. Valid value:
+        /// PostPaid: Pay-as-you-go, which is default value.
+        /// PrePaid: subscription.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PayType
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: period: The unit of the subscription length. Valid values: Year and Month.
+        /// Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Period
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database.
+        /// PolarDB: PolarDB for MySQL cluster.
+        /// polardb_o: PolarDB O Edition cluster.
+        /// polardb_pg: PolarDB for PostgreSQL cluster.
+        /// DRDS: PolarDB-X instance V1.0 or V2.0.
+        /// PostgreSQL: self-managed PostgreSQL database.
+        /// Oracle: self-managed Oracle database.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sourceEndpointInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? SourceEndpointInstanceType
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: usedTime: The subscription length.
+        /// Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+        /// You can set the Period parameter to specify the unit of the subscription length.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? UsedTime
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);

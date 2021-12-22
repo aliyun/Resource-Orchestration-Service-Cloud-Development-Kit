@@ -78,6 +78,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
+        /// <summary>Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SecondaryPrivateIpAddressCount
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property securityGroupId: The ID of the security group that the ENI joins.</summary>
         /// <remarks>
         /// The security group and the ENI must be in a same VPC.

@@ -93,6 +93,11 @@ export class VpcEndpoint extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
+     * Attribute ZoneDomains: The zone domains.
+     */
+    public readonly attrZoneDomains: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::PrivateLink::VpcEndpoint`.
      *
      * Param scope - scope in which this resource is defined
@@ -119,5 +124,6 @@ export class VpcEndpoint extends ros.Resource {
         this.attrServiceId = rosVpcEndpoint.attrServiceId;
         this.attrServiceName = rosVpcEndpoint.attrServiceName;
         this.attrVpcId = rosVpcEndpoint.attrVpcId;
+        this.attrZoneDomains = rosVpcEndpoint.attrZoneDomains;
     }
 }

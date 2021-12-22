@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Properties for defining a `ALIYUN::DNS::DomainRecord`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.804Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.403Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomainRecordProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainRecordProps.Jsii$Proxy.class)
 public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,13 +52,13 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosDomainRecordProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDomainRecordProps> {
-        private java.lang.Object domainName;
-        private java.lang.Object rr;
-        private java.lang.Object type;
-        private java.lang.Object value;
-        private java.lang.Object line;
-        private java.lang.Object priority;
-        private java.lang.Object ttl;
+        java.lang.Object domainName;
+        java.lang.Object rr;
+        java.lang.Object type;
+        java.lang.Object value;
+        java.lang.Object line;
+        java.lang.Object priority;
+        java.lang.Object ttl;
 
         /**
          * Sets the value of {@link RosDomainRecordProps#getDomainName}
@@ -207,7 +207,7 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RosDomainRecordProps build() {
-            return new Jsii$Proxy(domainName, rr, type, value, line, priority, ttl);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -242,15 +242,15 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object rr, final java.lang.Object type, final java.lang.Object value, final java.lang.Object line, final java.lang.Object priority, final java.lang.Object ttl) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
-            this.rr = java.util.Objects.requireNonNull(rr, "rr is required");
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.value = java.util.Objects.requireNonNull(value, "value is required");
-            this.line = line;
-            this.priority = priority;
-            this.ttl = ttl;
+            this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
+            this.rr = java.util.Objects.requireNonNull(builder.rr, "rr is required");
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            this.line = builder.line;
+            this.priority = builder.priority;
+            this.ttl = builder.ttl;
         }
 
         @Override

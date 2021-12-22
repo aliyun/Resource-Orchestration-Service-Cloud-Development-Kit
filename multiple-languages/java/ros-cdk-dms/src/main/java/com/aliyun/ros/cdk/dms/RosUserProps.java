@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * Properties for defining a `ALIYUN::DMS::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.794Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.368Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosUserProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserProps.Jsii$Proxy.class)
 public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,12 +52,12 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosUserProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosUserProps> {
-        private java.lang.Object uid;
-        private java.lang.Object mobile;
-        private java.lang.Object roleNames;
-        private java.lang.Object status;
-        private java.lang.Object tid;
-        private java.lang.Object userName;
+        java.lang.Object uid;
+        java.lang.Object mobile;
+        java.lang.Object roleNames;
+        java.lang.Object status;
+        java.lang.Object tid;
+        java.lang.Object userName;
 
         /**
          * Sets the value of {@link RosUserProps#getUid}
@@ -186,7 +186,7 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosUserProps build() {
-            return new Jsii$Proxy(uid, mobile, roleNames, status, tid, userName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -219,14 +219,14 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object uid, final java.lang.Object mobile, final java.lang.Object roleNames, final java.lang.Object status, final java.lang.Object tid, final java.lang.Object userName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.uid = java.util.Objects.requireNonNull(uid, "uid is required");
-            this.mobile = mobile;
-            this.roleNames = roleNames;
-            this.status = status;
-            this.tid = tid;
-            this.userName = userName;
+            this.uid = java.util.Objects.requireNonNull(builder.uid, "uid is required");
+            this.mobile = builder.mobile;
+            this.roleNames = builder.roleNames;
+            this.status = builder.status;
+            this.tid = builder.tid;
+            this.userName = builder.userName;
         }
 
         @Override

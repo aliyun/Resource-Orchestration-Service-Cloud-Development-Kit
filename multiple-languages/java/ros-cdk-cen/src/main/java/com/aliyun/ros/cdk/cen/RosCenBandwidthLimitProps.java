@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthLimit`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.439Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.969Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenBandwidthLimitProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenBandwidthLimitProps.Jsii$Proxy.class)
 public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,10 +34,10 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link RosCenBandwidthLimitProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCenBandwidthLimitProps> {
-        private java.lang.Object bandwidthLimit;
-        private java.lang.Object cenId;
-        private java.lang.Object localRegionId;
-        private java.lang.Object oppositeRegionId;
+        java.lang.Object bandwidthLimit;
+        java.lang.Object cenId;
+        java.lang.Object localRegionId;
+        java.lang.Object oppositeRegionId;
 
         /**
          * Sets the value of {@link RosCenBandwidthLimitProps#getBandwidthLimit}
@@ -126,7 +126,7 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public RosCenBandwidthLimitProps build() {
-            return new Jsii$Proxy(bandwidthLimit, cenId, localRegionId, oppositeRegionId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -155,12 +155,12 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object bandwidthLimit, final java.lang.Object cenId, final java.lang.Object localRegionId, final java.lang.Object oppositeRegionId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bandwidthLimit = java.util.Objects.requireNonNull(bandwidthLimit, "bandwidthLimit is required");
-            this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
-            this.localRegionId = java.util.Objects.requireNonNull(localRegionId, "localRegionId is required");
-            this.oppositeRegionId = java.util.Objects.requireNonNull(oppositeRegionId, "oppositeRegionId is required");
+            this.bandwidthLimit = java.util.Objects.requireNonNull(builder.bandwidthLimit, "bandwidthLimit is required");
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
+            this.localRegionId = java.util.Objects.requireNonNull(builder.localRegionId, "localRegionId is required");
+            this.oppositeRegionId = java.util.Objects.requireNonNull(builder.oppositeRegionId, "oppositeRegionId is required");
         }
 
         @Override

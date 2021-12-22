@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Command`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.928Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.514Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CommandProps")
 @software.amazon.jsii.Jsii.Proxy(CommandProps.Jsii$Proxy.class)
 public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
@@ -71,13 +71,13 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link CommandProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CommandProps> {
-        private java.lang.Object type;
-        private java.lang.Object commandContent;
-        private java.lang.Object description;
-        private java.lang.Object enableParameter;
-        private java.lang.Object name;
-        private java.lang.Object timeout;
-        private java.lang.Object workingDir;
+        java.lang.Object type;
+        java.lang.Object commandContent;
+        java.lang.Object description;
+        java.lang.Object enableParameter;
+        java.lang.Object name;
+        java.lang.Object timeout;
+        java.lang.Object workingDir;
 
         /**
          * Sets the value of {@link CommandProps#getType}
@@ -232,7 +232,7 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public CommandProps build() {
-            return new Jsii$Proxy(type, commandContent, description, enableParameter, name, timeout, workingDir);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -267,15 +267,15 @@ public interface CommandProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object type, final java.lang.Object commandContent, final java.lang.Object description, final java.lang.Object enableParameter, final java.lang.Object name, final java.lang.Object timeout, final java.lang.Object workingDir) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.commandContent = commandContent;
-            this.description = description;
-            this.enableParameter = enableParameter;
-            this.name = name;
-            this.timeout = timeout;
-            this.workingDir = workingDir;
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.commandContent = builder.commandContent;
+            this.description = builder.description;
+            this.enableParameter = builder.enableParameter;
+            this.name = builder.name;
+            this.timeout = builder.timeout;
+            this.workingDir = builder.workingDir;
         }
 
         @Override

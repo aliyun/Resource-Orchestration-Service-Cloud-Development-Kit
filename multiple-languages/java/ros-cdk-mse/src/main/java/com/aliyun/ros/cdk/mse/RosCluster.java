@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * A ROS template type:  `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.688Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.359Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -375,7 +375,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setDiskCapacity(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+    public void setDiskCapacity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
         software.amazon.jsii.Kernel.set(this, "diskCapacity", value);
     }
 
@@ -677,7 +677,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param diskCapacity This parameter is required.
          */
-        public Builder diskCapacity(final java.lang.String diskCapacity) {
+        public Builder diskCapacity(final java.lang.Number diskCapacity) {
             this.props.diskCapacity(diskCapacity);
             return this;
         }

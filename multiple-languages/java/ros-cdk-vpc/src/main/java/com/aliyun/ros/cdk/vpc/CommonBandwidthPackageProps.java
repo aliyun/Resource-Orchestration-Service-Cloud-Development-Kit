@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::CommonBandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.172Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.899Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CommonBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(CommonBandwidthPackageProps.Jsii$Proxy.class)
 public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -97,15 +97,15 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link CommonBandwidthPackageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CommonBandwidthPackageProps> {
-        private java.lang.Object bandwidth;
-        private java.lang.Object description;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object isp;
-        private java.lang.Object name;
-        private java.lang.Object ratio;
-        private java.lang.Object resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> tags;
-        private java.lang.Object zone;
+        java.lang.Object bandwidth;
+        java.lang.Object description;
+        java.lang.Object internetChargeType;
+        java.lang.Object isp;
+        java.lang.Object name;
+        java.lang.Object ratio;
+        java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> tags;
+        java.lang.Object zone;
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getBandwidth}
@@ -308,7 +308,7 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
          */
         @Override
         public CommonBandwidthPackageProps build() {
-            return new Jsii$Proxy(bandwidth, description, internetChargeType, isp, name, ratio, resourceGroupId, tags, zone);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -348,17 +348,17 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object description, final java.lang.Object internetChargeType, final java.lang.Object isp, final java.lang.Object name, final java.lang.Object ratio, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> tags, final java.lang.Object zone) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
-            this.description = description;
-            this.internetChargeType = internetChargeType;
-            this.isp = isp;
-            this.name = name;
-            this.ratio = ratio;
-            this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty>)tags;
-            this.zone = zone;
+            this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
+            this.description = builder.description;
+            this.internetChargeType = builder.internetChargeType;
+            this.isp = builder.isp;
+            this.name = builder.name;
+            this.ratio = builder.ratio;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty>)builder.tags;
+            this.zone = builder.zone;
         }
 
         @Override

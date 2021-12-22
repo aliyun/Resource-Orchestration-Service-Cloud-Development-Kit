@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::AutoEnableService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.020Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.715Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(AutoEnableServiceProps.Jsii$Proxy.class)
 public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,6 +43,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      * RocketMQ: RocketMQ
      * SAE: Serverless App Engine
      * SLS: Log Service
+     * TrafficMirror: VPC Traffic Mirroring
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
      */
@@ -58,7 +59,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link AutoEnableServiceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AutoEnableServiceProps> {
-        private java.lang.Object serviceName;
+        java.lang.Object serviceName;
 
         /**
          * Sets the value of {@link AutoEnableServiceProps#getServiceName}
@@ -95,6 +96,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    RocketMQ: RocketMQ
          *                    SAE: Serverless App Engine
          *                    SLS: Log Service
+         *                    TrafficMirror: VPC Traffic Mirroring
          *                    VS: Video Surveillance
          *                    Xtrace: Tracing Anlaysis
          * @return {@code this}
@@ -139,6 +141,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    RocketMQ: RocketMQ
          *                    SAE: Serverless App Engine
          *                    SLS: Log Service
+         *                    TrafficMirror: VPC Traffic Mirroring
          *                    VS: Video Surveillance
          *                    Xtrace: Tracing Anlaysis
          * @return {@code this}
@@ -155,7 +158,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public AutoEnableServiceProps build() {
-            return new Jsii$Proxy(serviceName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -178,9 +181,9 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object serviceName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
         }
 
         @Override

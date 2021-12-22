@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS template type:  `ALIYUN::DTS::SubscriptionInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.853Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.424Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionInstance")
 public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -99,6 +99,42 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
+        return software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPayType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "payType", value);
+    }
+
+    /**
+     */
+    public void setPayType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "payType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSourceEndpointInstanceType() {
         return software.amazon.jsii.Kernel.get(this, "sourceEndpointInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -113,6 +149,24 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
      */
     public void setSourceEndpointInstanceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sourceEndpointInstanceType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
+        return software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUsedTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "usedTime", value);
+    }
+
+    /**
+     */
+    public void setUsedTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "usedTime", value);
     }
     /**
      */
@@ -169,12 +223,12 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigurationProperty> {
-            private java.lang.Object sourceEndpoint;
-            private java.lang.Object subscriptionDataType;
-            private java.lang.Object subscriptionObject;
-            private java.lang.Object subscriptionInstance;
-            private java.lang.Object subscriptionInstanceName;
-            private java.lang.Object subscriptionInstanceNetworkType;
+            java.lang.Object sourceEndpoint;
+            java.lang.Object subscriptionDataType;
+            java.lang.Object subscriptionObject;
+            java.lang.Object subscriptionInstance;
+            java.lang.Object subscriptionInstanceName;
+            java.lang.Object subscriptionInstanceNetworkType;
 
             /**
              * Sets the value of {@link ConfigurationProperty#getSourceEndpoint}
@@ -316,7 +370,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConfigurationProperty build() {
-                return new Jsii$Proxy(sourceEndpoint, subscriptionDataType, subscriptionObject, subscriptionInstance, subscriptionInstanceName, subscriptionInstanceNetworkType);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -350,14 +404,14 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object sourceEndpoint, final java.lang.Object subscriptionDataType, final java.lang.Object subscriptionObject, final java.lang.Object subscriptionInstance, final java.lang.Object subscriptionInstanceName, final java.lang.Object subscriptionInstanceNetworkType) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.sourceEndpoint = java.util.Objects.requireNonNull(sourceEndpoint, "sourceEndpoint is required");
-                this.subscriptionDataType = java.util.Objects.requireNonNull(subscriptionDataType, "subscriptionDataType is required");
-                this.subscriptionObject = java.util.Objects.requireNonNull(subscriptionObject, "subscriptionObject is required");
-                this.subscriptionInstance = subscriptionInstance;
-                this.subscriptionInstanceName = subscriptionInstanceName;
-                this.subscriptionInstanceNetworkType = subscriptionInstanceNetworkType;
+                this.sourceEndpoint = java.util.Objects.requireNonNull(builder.sourceEndpoint, "sourceEndpoint is required");
+                this.subscriptionDataType = java.util.Objects.requireNonNull(builder.subscriptionDataType, "subscriptionDataType is required");
+                this.subscriptionObject = java.util.Objects.requireNonNull(builder.subscriptionObject, "subscriptionObject is required");
+                this.subscriptionInstance = builder.subscriptionInstance;
+                this.subscriptionInstanceName = builder.subscriptionInstanceName;
+                this.subscriptionInstanceNetworkType = builder.subscriptionInstanceNetworkType;
             }
 
             @Override
@@ -529,16 +583,16 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SourceEndpointProperty> {
-            private java.lang.Object instanceType;
-            private java.lang.Object password;
-            private java.lang.Object userName;
-            private java.lang.Object databaseName;
-            private java.lang.Object instanceId;
-            private java.lang.Object ip;
-            private java.lang.Object oracleSid;
-            private java.lang.Object ownerId;
-            private java.lang.Object port;
-            private java.lang.Object role;
+            java.lang.Object instanceType;
+            java.lang.Object password;
+            java.lang.Object userName;
+            java.lang.Object databaseName;
+            java.lang.Object instanceId;
+            java.lang.Object ip;
+            java.lang.Object oracleSid;
+            java.lang.Object ownerId;
+            java.lang.Object port;
+            java.lang.Object role;
 
             /**
              * Sets the value of {@link SourceEndpointProperty#getInstanceType}
@@ -768,7 +822,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SourceEndpointProperty build() {
-                return new Jsii$Proxy(instanceType, password, userName, databaseName, instanceId, ip, oracleSid, ownerId, port, role);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -810,18 +864,18 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object instanceType, final java.lang.Object password, final java.lang.Object userName, final java.lang.Object databaseName, final java.lang.Object instanceId, final java.lang.Object ip, final java.lang.Object oracleSid, final java.lang.Object ownerId, final java.lang.Object port, final java.lang.Object role) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-                this.password = java.util.Objects.requireNonNull(password, "password is required");
-                this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
-                this.databaseName = databaseName;
-                this.instanceId = instanceId;
-                this.ip = ip;
-                this.oracleSid = oracleSid;
-                this.ownerId = ownerId;
-                this.port = port;
-                this.role = role;
+                this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+                this.password = java.util.Objects.requireNonNull(builder.password, "password is required");
+                this.userName = java.util.Objects.requireNonNull(builder.userName, "userName is required");
+                this.databaseName = builder.databaseName;
+                this.instanceId = builder.instanceId;
+                this.ip = builder.ip;
+                this.oracleSid = builder.oracleSid;
+                this.ownerId = builder.ownerId;
+                this.port = builder.port;
+                this.role = builder.role;
             }
 
             @Override
@@ -979,8 +1033,8 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SubscriptionDataTypeProperty> {
-            private java.lang.Object ddl;
-            private java.lang.Object dml;
+            java.lang.Object ddl;
+            java.lang.Object dml;
 
             /**
              * Sets the value of {@link SubscriptionDataTypeProperty#getDdl}
@@ -1034,7 +1088,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SubscriptionDataTypeProperty build() {
-                return new Jsii$Proxy(ddl, dml);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1060,10 +1114,10 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object ddl, final java.lang.Object dml) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.ddl = java.util.Objects.requireNonNull(ddl, "ddl is required");
-                this.dml = java.util.Objects.requireNonNull(dml, "dml is required");
+                this.ddl = java.util.Objects.requireNonNull(builder.ddl, "ddl is required");
+                this.dml = java.util.Objects.requireNonNull(builder.dml, "dml is required");
             }
 
             @Override
@@ -1143,8 +1197,8 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SubscriptionInstanceProperty> {
-            private java.lang.Object vpcId;
-            private java.lang.Object vSwitchId;
+            java.lang.Object vpcId;
+            java.lang.Object vSwitchId;
 
             /**
              * Sets the value of {@link SubscriptionInstanceProperty#getVpcId}
@@ -1198,7 +1252,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SubscriptionInstanceProperty build() {
-                return new Jsii$Proxy(vpcId, vSwitchId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1224,10 +1278,10 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-                this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
+                this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             }
 
             @Override
@@ -1318,9 +1372,9 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SubscriptionObjectProperty> {
-            private java.lang.Object dbName;
-            private java.lang.Object tableExcludes;
-            private java.lang.Object tableIncludes;
+            java.lang.Object dbName;
+            java.lang.Object tableExcludes;
+            java.lang.Object tableIncludes;
 
             /**
              * Sets the value of {@link SubscriptionObjectProperty#getDbName}
@@ -1396,7 +1450,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SubscriptionObjectProperty build() {
-                return new Jsii$Proxy(dbName, tableExcludes, tableIncludes);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1424,11 +1478,11 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object dbName, final java.lang.Object tableExcludes, final java.lang.Object tableIncludes) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.dbName = dbName;
-                this.tableExcludes = tableExcludes;
-                this.tableIncludes = tableIncludes;
+                this.dbName = builder.dbName;
+                this.tableExcludes = builder.tableExcludes;
+                this.tableIncludes = builder.tableIncludes;
             }
 
             @Override
@@ -1519,7 +1573,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TableExcludesProperty> {
-            private java.lang.Object tableName;
+            java.lang.Object tableName;
 
             /**
              * Sets the value of {@link TableExcludesProperty#getTableName}
@@ -1551,7 +1605,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TableExcludesProperty build() {
-                return new Jsii$Proxy(tableName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1575,9 +1629,9 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object tableName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tableName = tableName;
+                this.tableName = builder.tableName;
             }
 
             @Override
@@ -1648,7 +1702,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TableIncludesProperty> {
-            private java.lang.Object tableName;
+            java.lang.Object tableName;
 
             /**
              * Sets the value of {@link TableIncludesProperty#getTableName}
@@ -1680,7 +1734,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TableIncludesProperty build() {
-                return new Jsii$Proxy(tableName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1704,9 +1758,9 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object tableName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tableName = tableName;
+                this.tableName = builder.tableName;
             }
 
             @Override
@@ -1797,6 +1851,40 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
 
         /**
          * @return {@code this}
+         * @param payType This parameter is required.
+         */
+        public Builder payType(final java.lang.String payType) {
+            this.props.payType(payType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param payType This parameter is required.
+         */
+        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.props.payType(payType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final java.lang.String period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param sourceEndpointInstanceType This parameter is required.
          */
         public Builder sourceEndpointInstanceType(final java.lang.String sourceEndpointInstanceType) {
@@ -1809,6 +1897,23 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         public Builder sourceEndpointInstanceType(final com.aliyun.ros.cdk.core.IResolvable sourceEndpointInstanceType) {
             this.props.sourceEndpointInstanceType(sourceEndpointInstanceType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param usedTime This parameter is required.
+         */
+        public Builder usedTime(final java.lang.Number usedTime) {
+            this.props.usedTime(usedTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param usedTime This parameter is required.
+         */
+        public Builder usedTime(final com.aliyun.ros.cdk.core.IResolvable usedTime) {
+            this.props.usedTime(usedTime);
             return this;
         }
 

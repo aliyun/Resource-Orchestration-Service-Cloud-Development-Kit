@@ -34,7 +34,7 @@ export interface VirtualBorderRouterProps {
     readonly physicalConnectionId: string | ros.IResolvable;
 
     /**
-     * Property vlanId: The VLAN ID of the VBR. Valid values: 1 to 2999.
+     * Property vlanId: The VLAN ID of the VBR. Valid values: 0 to 2999.
      * Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
      * two VBRs of the same physical connection must be different.
      */
@@ -78,9 +78,19 @@ export class VirtualBorderRouter extends ros.Resource {
     public readonly attrName: ros.IResolvable;
 
     /**
+     * Attribute RouteTableId: The ID of the route table of the VBR.
+     */
+    public readonly attrRouteTableId: ros.IResolvable;
+
+    /**
      * Attribute VbrId: The ID of the VBR.
      */
     public readonly attrVbrId: ros.IResolvable;
+
+    /**
+     * Attribute VlanInterfaceId: The ID of the VBR interface.
+     */
+    public readonly attrVlanInterfaceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::VirtualBorderRouter`.
@@ -104,6 +114,8 @@ export class VirtualBorderRouter extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVirtualBorderRouter;
         this.attrName = rosVirtualBorderRouter.attrName;
+        this.attrRouteTableId = rosVirtualBorderRouter.attrRouteTableId;
         this.attrVbrId = rosVirtualBorderRouter.attrVbrId;
+        this.attrVlanInterfaceId = rosVirtualBorderRouter.attrVlanInterfaceId;
     }
 }

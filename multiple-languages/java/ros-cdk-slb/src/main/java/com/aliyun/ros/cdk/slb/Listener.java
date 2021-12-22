@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.772Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -560,6 +560,31 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder serverCertificateId(final com.aliyun.ros.cdk.core.IResolvable serverCertificateId) {
             this.props.serverCertificateId(serverCertificateId);
+            return this;
+        }
+
+        /**
+         * Property startListener: Whether start listener after listener created.
+         * <p>
+         * Default True.
+         * <p>
+         * @return {@code this}
+         * @param startListener Property startListener: Whether start listener after listener created. This parameter is required.
+         */
+        public Builder startListener(final java.lang.Boolean startListener) {
+            this.props.startListener(startListener);
+            return this;
+        }
+        /**
+         * Property startListener: Whether start listener after listener created.
+         * <p>
+         * Default True.
+         * <p>
+         * @return {@code this}
+         * @param startListener Property startListener: Whether start listener after listener created. This parameter is required.
+         */
+        public Builder startListener(final com.aliyun.ros.cdk.core.IResolvable startListener) {
+            this.props.startListener(startListener);
             return this;
         }
 

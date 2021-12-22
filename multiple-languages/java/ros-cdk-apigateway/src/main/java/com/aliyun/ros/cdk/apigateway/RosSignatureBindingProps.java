@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::SignatureBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.324Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosSignatureBindingProps")
 @software.amazon.jsii.Jsii.Proxy(RosSignatureBindingProps.Jsii$Proxy.class)
 public interface RosSignatureBindingProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,10 +34,10 @@ public interface RosSignatureBindingProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link RosSignatureBindingProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSignatureBindingProps> {
-        private java.lang.Object apiIds;
-        private java.lang.Object groupId;
-        private java.lang.Object signatureId;
-        private java.lang.Object stageName;
+        java.lang.Object apiIds;
+        java.lang.Object groupId;
+        java.lang.Object signatureId;
+        java.lang.Object stageName;
 
         /**
          * Sets the value of {@link RosSignatureBindingProps#getApiIds}
@@ -126,7 +126,7 @@ public interface RosSignatureBindingProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public RosSignatureBindingProps build() {
-            return new Jsii$Proxy(apiIds, groupId, signatureId, stageName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -155,12 +155,12 @@ public interface RosSignatureBindingProps extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.Object groupId, final java.lang.Object signatureId, final java.lang.Object stageName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.apiIds = java.util.Objects.requireNonNull(apiIds, "apiIds is required");
-            this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
-            this.signatureId = java.util.Objects.requireNonNull(signatureId, "signatureId is required");
-            this.stageName = java.util.Objects.requireNonNull(stageName, "stageName is required");
+            this.apiIds = java.util.Objects.requireNonNull(builder.apiIds, "apiIds is required");
+            this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
+            this.signatureId = java.util.Objects.requireNonNull(builder.signatureId, "signatureId is required");
+            this.stageName = java.util.Objects.requireNonNull(builder.stageName, "stageName is required");
         }
 
         @Override

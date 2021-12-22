@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Properties for defining a `ALIYUN::MNS::Queue`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.637Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.316Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.QueueProps")
 @software.amazon.jsii.Jsii.Proxy(QueueProps.Jsii$Proxy.class)
 public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
@@ -82,13 +82,13 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link QueueProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<QueueProps> {
-        private java.lang.Object queueName;
-        private java.lang.Object delaySeconds;
-        private java.lang.Object loggingEnabled;
-        private java.lang.Object maximumMessageSize;
-        private java.lang.Object messageRetentionPeriod;
-        private java.lang.Object pollingWaitSeconds;
-        private java.lang.Object visibilityTimeout;
+        java.lang.Object queueName;
+        java.lang.Object delaySeconds;
+        java.lang.Object loggingEnabled;
+        java.lang.Object maximumMessageSize;
+        java.lang.Object messageRetentionPeriod;
+        java.lang.Object pollingWaitSeconds;
+        java.lang.Object visibilityTimeout;
 
         /**
          * Sets the value of {@link QueueProps#getQueueName}
@@ -259,7 +259,7 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public QueueProps build() {
-            return new Jsii$Proxy(queueName, delaySeconds, loggingEnabled, maximumMessageSize, messageRetentionPeriod, pollingWaitSeconds, visibilityTimeout);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -294,15 +294,15 @@ public interface QueueProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object queueName, final java.lang.Object delaySeconds, final java.lang.Object loggingEnabled, final java.lang.Object maximumMessageSize, final java.lang.Object messageRetentionPeriod, final java.lang.Object pollingWaitSeconds, final java.lang.Object visibilityTimeout) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.queueName = java.util.Objects.requireNonNull(queueName, "queueName is required");
-            this.delaySeconds = delaySeconds;
-            this.loggingEnabled = loggingEnabled;
-            this.maximumMessageSize = maximumMessageSize;
-            this.messageRetentionPeriod = messageRetentionPeriod;
-            this.pollingWaitSeconds = pollingWaitSeconds;
-            this.visibilityTimeout = visibilityTimeout;
+            this.queueName = java.util.Objects.requireNonNull(builder.queueName, "queueName is required");
+            this.delaySeconds = builder.delaySeconds;
+            this.loggingEnabled = builder.loggingEnabled;
+            this.maximumMessageSize = builder.maximumMessageSize;
+            this.messageRetentionPeriod = builder.messageRetentionPeriod;
+            this.pollingWaitSeconds = builder.pollingWaitSeconds;
+            this.visibilityTimeout = builder.visibilityTimeout;
         }
 
         @Override

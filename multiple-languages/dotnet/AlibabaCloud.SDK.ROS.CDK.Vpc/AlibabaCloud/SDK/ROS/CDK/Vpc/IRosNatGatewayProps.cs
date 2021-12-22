@@ -148,6 +148,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: networkType: The type of the created NAT gateway.
+        /// Internet: public network NAT gateway.
+        /// Intranet: VPC NAT gateway.
+        /// </remarks>
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NetworkType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: pricingCycle: Price cycle of the resource. This property has no default value.
         /// </remarks>
         [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -302,6 +317,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "natType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NatType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: networkType: The type of the created NAT gateway.
+            /// Internet: public network NAT gateway.
+            /// Intranet: VPC NAT gateway.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkType
             {
                 get => GetInstanceProperty<object?>();
             }

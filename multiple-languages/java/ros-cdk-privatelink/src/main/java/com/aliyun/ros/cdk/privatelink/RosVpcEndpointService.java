@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS template type:  `ALIYUN::PrivateLink::VpcEndpointService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.796Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpointService")
 public class RosVpcEndpointService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -129,6 +129,24 @@ public class RosVpcEndpointService extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPayer() {
+        return software.amazon.jsii.Kernel.get(this, "payer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPayer(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "payer", value);
+    }
+
+    /**
+     */
+    public void setPayer(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "payer", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResource() {
         return software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -180,6 +198,24 @@ public class RosVpcEndpointService extends com.aliyun.ros.cdk.core.RosResource {
     public void setUser(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "user", value);
     }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneAffinityEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "zoneAffinityEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneAffinityEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "zoneAffinityEnabled", value);
+    }
+
+    /**
+     */
+    public void setZoneAffinityEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneAffinityEnabled", value);
+    }
     /**
      */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpointService.ResourceProperty")
@@ -214,9 +250,9 @@ public class RosVpcEndpointService extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ResourceProperty> {
-            private java.lang.Object resourceId;
-            private java.lang.Object resourceType;
-            private java.lang.Object zoneId;
+            java.lang.Object resourceId;
+            java.lang.Object resourceType;
+            java.lang.Object zoneId;
 
             /**
              * Sets the value of {@link ResourceProperty#getResourceId}
@@ -292,7 +328,7 @@ public class RosVpcEndpointService extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ResourceProperty build() {
-                return new Jsii$Proxy(resourceId, resourceType, zoneId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -320,11 +356,11 @@ public class RosVpcEndpointService extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object resourceId, final java.lang.Object resourceType, final java.lang.Object zoneId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.resourceId = java.util.Objects.requireNonNull(resourceId, "resourceId is required");
-                this.resourceType = java.util.Objects.requireNonNull(resourceType, "resourceType is required");
-                this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
+                this.resourceId = java.util.Objects.requireNonNull(builder.resourceId, "resourceId is required");
+                this.resourceType = java.util.Objects.requireNonNull(builder.resourceType, "resourceType is required");
+                this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
             }
 
             @Override
@@ -446,6 +482,23 @@ public class RosVpcEndpointService extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param payer This parameter is required.
+         */
+        public Builder payer(final java.lang.String payer) {
+            this.props.payer(payer);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param payer This parameter is required.
+         */
+        public Builder payer(final com.aliyun.ros.cdk.core.IResolvable payer) {
+            this.props.payer(payer);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param resource This parameter is required.
          */
         public Builder resource(final com.aliyun.ros.cdk.core.IResolvable resource) {
@@ -492,6 +545,23 @@ public class RosVpcEndpointService extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder user(final java.util.List<? extends java.lang.Object> user) {
             this.props.user(user);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneAffinityEnabled This parameter is required.
+         */
+        public Builder zoneAffinityEnabled(final java.lang.Boolean zoneAffinityEnabled) {
+            this.props.zoneAffinityEnabled(zoneAffinityEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneAffinityEnabled This parameter is required.
+         */
+        public Builder zoneAffinityEnabled(final com.aliyun.ros.cdk.core.IResolvable zoneAffinityEnabled) {
+            this.props.zoneAffinityEnabled(zoneAffinityEnabled);
             return this;
         }
 

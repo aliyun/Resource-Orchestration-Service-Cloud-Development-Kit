@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::AnycastEIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.202Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.939Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosAnycastEIPProps")
 @software.amazon.jsii.Jsii.Proxy(RosAnycastEIPProps.Jsii$Proxy.class)
 public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,11 +48,11 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosAnycastEIPProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAnycastEIPProps> {
-        private java.lang.Object description;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object name;
-        private java.lang.Object serviceLocation;
+        java.lang.Object description;
+        java.lang.Object instanceChargeType;
+        java.lang.Object internetChargeType;
+        java.lang.Object name;
+        java.lang.Object serviceLocation;
 
         /**
          * Sets the value of {@link RosAnycastEIPProps#getDescription}
@@ -161,7 +161,7 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosAnycastEIPProps build() {
-            return new Jsii$Proxy(description, instanceChargeType, internetChargeType, name, serviceLocation);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -192,13 +192,13 @@ public interface RosAnycastEIPProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object instanceChargeType, final java.lang.Object internetChargeType, final java.lang.Object name, final java.lang.Object serviceLocation) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.description = description;
-            this.instanceChargeType = instanceChargeType;
-            this.internetChargeType = internetChargeType;
-            this.name = name;
-            this.serviceLocation = serviceLocation;
+            this.description = builder.description;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.internetChargeType = builder.internetChargeType;
+            this.name = builder.name;
+            this.serviceLocation = builder.serviceLocation;
         }
 
         @Override

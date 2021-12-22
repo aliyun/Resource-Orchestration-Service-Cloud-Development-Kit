@@ -19,6 +19,11 @@ export interface DiskProps {
     readonly autoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
+     * Property burstingEnabled: Whether enable bursting.
+     */
+    readonly burstingEnabled?: boolean | ros.IResolvable;
+
+    /**
      * Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to false.
      */
     readonly deleteAutoSnapshot?: boolean | ros.IResolvable;
@@ -29,7 +34,7 @@ export interface DiskProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region.
+     * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
      */
     readonly diskCategory?: string | ros.IResolvable;
 
@@ -52,6 +57,11 @@ export interface DiskProps {
      * Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     readonly performanceLevel?: string | ros.IResolvable;
+
+    /**
+     * Property provisionedIops: Provisioning IOPS.
+     */
+    readonly provisionedIops?: number | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
@@ -115,6 +125,7 @@ export class Disk extends ros.Resource {
         super(scope, id);
 
         const rosDisk = new RosDisk(this, id,  {
+            burstingEnabled: props.burstingEnabled,
             description: props.description,
             kmsKeyId: props.kmsKeyId,
             resourceGroupId: props.resourceGroupId,
@@ -127,6 +138,7 @@ export class Disk extends ros.Resource {
             autoSnapshotPolicyId: props.autoSnapshotPolicyId,
             storageSetPartitionNumber: props.storageSetPartitionNumber,
             diskName: props.diskName,
+            provisionedIops: props.provisionedIops,
             snapshotId: props.snapshotId,
             storageSetId: props.storageSetId,
             tags: props.tags,

@@ -150,6 +150,11 @@ export interface InstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * Property securityGroupIds: The ID list of security group to which to assign the instance. The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
      */
     readonly spotPriceLimit?: string | ros.IResolvable;
@@ -233,12 +238,12 @@ export class Instance extends ros.Resource {
     public readonly attrInnerIp: ros.IResolvable;
 
     /**
-     * Attribute InstanceId: The instance id of created ecs instance
+     * Attribute InstanceId: The instance ID of created ecs instance
      */
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Attribute PrimaryNetworkInterfaceId: Primary network interface id of created instance.
+     * Attribute PrimaryNetworkInterfaceId: Primary network interface ID of created instance.
      */
     public readonly attrPrimaryNetworkInterfaceId: ros.IResolvable;
 
@@ -253,7 +258,12 @@ export class Instance extends ros.Resource {
     public readonly attrPublicIp: ros.IResolvable;
 
     /**
-     * Attribute ZoneId: Zone id of created instance.
+     * Attribute SecurityGroupIds: Security group ID list of created instance.
+     */
+    public readonly attrSecurityGroupIds: ros.IResolvable;
+
+    /**
+     * Attribute ZoneId: Zone ID of created instance.
      */
     public readonly attrZoneId: ros.IResolvable;
 
@@ -273,8 +283,8 @@ export class Instance extends ros.Resource {
             description: props.description,
             resourceGroupId: props.resourceGroupId,
             diskMappings: props.diskMappings,
-            systemDiskSize: props.systemDiskSize,
             userData: props.userData,
+            systemDiskSize: props.systemDiskSize,
             systemDiskDescription: props.systemDiskDescription,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
@@ -299,6 +309,7 @@ export class Instance extends ros.Resource {
             securityGroupId: props.securityGroupId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             deletionProtection: props.deletionProtection,
+            securityGroupIds: props.securityGroupIds,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
             instanceName: props.instanceName,
@@ -316,6 +327,7 @@ export class Instance extends ros.Resource {
         this.attrPrimaryNetworkInterfaceId = rosInstance.attrPrimaryNetworkInterfaceId;
         this.attrPrivateIp = rosInstance.attrPrivateIp;
         this.attrPublicIp = rosInstance.attrPublicIp;
+        this.attrSecurityGroupIds = rosInstance.attrSecurityGroupIds;
         this.attrZoneId = rosInstance.attrZoneId;
     }
 }

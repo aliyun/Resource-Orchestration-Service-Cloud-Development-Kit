@@ -37,6 +37,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: payer: The payer of the endpoint service. Valid values:
+        /// Endpoint: the service consumer.
+        /// EndpointService: the service provider.
+        /// </remarks>
+        [JsiiProperty(name: "payer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Payer
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resource:
         /// </remarks>
         [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpointService.ResourceProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -75,6 +90,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.
+        /// true: yes.
+        /// false (default): no
+        /// </remarks>
+        [JsiiProperty(name: "zoneAffinityEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneAffinityEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::PrivateLink::VpcEndpointService`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRosVpcEndpointServiceProps), fullyQualifiedName: "@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Privatelink.IRosVpcEndpointServiceProps
@@ -106,6 +136,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: payer: The payer of the endpoint service. Valid values:
+            /// Endpoint: the service consumer.
+            /// EndpointService: the service provider.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "payer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Payer
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: resource:
             /// </remarks>
             [JsiiOptional]
@@ -131,6 +173,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             [JsiiOptional]
             [JsiiProperty(name: "user", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? User
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.
+            /// true: yes.
+            /// false (default): no
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneAffinityEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneAffinityEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

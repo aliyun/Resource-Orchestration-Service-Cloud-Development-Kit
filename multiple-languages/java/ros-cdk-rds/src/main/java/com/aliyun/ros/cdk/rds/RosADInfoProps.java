@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::ADInfo`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.937Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.622Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosADInfoProps")
 @software.amazon.jsii.Jsii.Proxy(RosADInfoProps.Jsii$Proxy.class)
 public interface RosADInfoProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,11 +38,11 @@ public interface RosADInfoProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosADInfoProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosADInfoProps> {
-        private java.lang.Object adAccountName;
-        private java.lang.Object addns;
-        private java.lang.Object adPassword;
-        private java.lang.Object adServerIpAddress;
-        private java.lang.Object dbInstanceId;
+        java.lang.Object adAccountName;
+        java.lang.Object addns;
+        java.lang.Object adPassword;
+        java.lang.Object adServerIpAddress;
+        java.lang.Object dbInstanceId;
 
         /**
          * Sets the value of {@link RosADInfoProps#getAdAccountName}
@@ -151,7 +151,7 @@ public interface RosADInfoProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosADInfoProps build() {
-            return new Jsii$Proxy(adAccountName, addns, adPassword, adServerIpAddress, dbInstanceId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -182,13 +182,13 @@ public interface RosADInfoProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object adAccountName, final java.lang.Object addns, final java.lang.Object adPassword, final java.lang.Object adServerIpAddress, final java.lang.Object dbInstanceId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.adAccountName = java.util.Objects.requireNonNull(adAccountName, "adAccountName is required");
-            this.addns = java.util.Objects.requireNonNull(addns, "addns is required");
-            this.adPassword = java.util.Objects.requireNonNull(adPassword, "adPassword is required");
-            this.adServerIpAddress = java.util.Objects.requireNonNull(adServerIpAddress, "adServerIpAddress is required");
-            this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
+            this.adAccountName = java.util.Objects.requireNonNull(builder.adAccountName, "adAccountName is required");
+            this.addns = java.util.Objects.requireNonNull(builder.addns, "addns is required");
+            this.adPassword = java.util.Objects.requireNonNull(builder.adPassword, "adPassword is required");
+            this.adServerIpAddress = java.util.Objects.requireNonNull(builder.adServerIpAddress, "adServerIpAddress is required");
+            this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
         }
 
         @Override

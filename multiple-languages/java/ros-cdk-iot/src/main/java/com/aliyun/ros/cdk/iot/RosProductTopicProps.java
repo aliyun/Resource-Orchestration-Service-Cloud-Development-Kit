@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::ProductTopic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.562Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.212Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosProductTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosProductTopicProps.Jsii$Proxy.class)
 public interface RosProductTopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,11 +42,11 @@ public interface RosProductTopicProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosProductTopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosProductTopicProps> {
-        private java.lang.Object operation;
-        private java.lang.Object productKey;
-        private java.lang.Object topicShortName;
-        private java.lang.Object desc;
-        private java.lang.Object iotInstanceId;
+        java.lang.Object operation;
+        java.lang.Object productKey;
+        java.lang.Object topicShortName;
+        java.lang.Object desc;
+        java.lang.Object iotInstanceId;
 
         /**
          * Sets the value of {@link RosProductTopicProps#getOperation}
@@ -155,7 +155,7 @@ public interface RosProductTopicProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RosProductTopicProps build() {
-            return new Jsii$Proxy(operation, productKey, topicShortName, desc, iotInstanceId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -186,13 +186,13 @@ public interface RosProductTopicProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object operation, final java.lang.Object productKey, final java.lang.Object topicShortName, final java.lang.Object desc, final java.lang.Object iotInstanceId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.operation = java.util.Objects.requireNonNull(operation, "operation is required");
-            this.productKey = java.util.Objects.requireNonNull(productKey, "productKey is required");
-            this.topicShortName = java.util.Objects.requireNonNull(topicShortName, "topicShortName is required");
-            this.desc = desc;
-            this.iotInstanceId = iotInstanceId;
+            this.operation = java.util.Objects.requireNonNull(builder.operation, "operation is required");
+            this.productKey = java.util.Objects.requireNonNull(builder.productKey, "productKey is required");
+            this.topicShortName = java.util.Objects.requireNonNull(builder.topicShortName, "topicShortName is required");
+            this.desc = builder.desc;
+            this.iotInstanceId = builder.iotInstanceId;
         }
 
         @Override

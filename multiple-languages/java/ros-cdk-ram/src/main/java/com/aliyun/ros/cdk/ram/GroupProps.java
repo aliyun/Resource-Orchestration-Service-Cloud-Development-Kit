@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.810Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.491Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,9 +37,9 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link GroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<GroupProps> {
-        private java.lang.Object groupName;
-        private java.lang.Object comments;
-        private java.lang.Object policies;
+        java.lang.Object groupName;
+        java.lang.Object comments;
+        java.lang.Object policies;
 
         /**
          * Sets the value of {@link GroupProps#getGroupName}
@@ -108,7 +108,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public GroupProps build() {
-            return new Jsii$Proxy(groupName, comments, policies);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -135,11 +135,11 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object groupName, final java.lang.Object comments, final java.lang.Object policies) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
-            this.comments = comments;
-            this.policies = policies;
+            this.groupName = java.util.Objects.requireNonNull(builder.groupName, "groupName is required");
+            this.comments = builder.comments;
+            this.policies = builder.policies;
         }
 
         @Override

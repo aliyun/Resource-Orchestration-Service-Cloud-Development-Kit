@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::JoinSecurityGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.993Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.603Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.JoinSecurityGroupProps")
 @software.amazon.jsii.Jsii.Proxy(JoinSecurityGroupProps.Jsii$Proxy.class)
 public interface JoinSecurityGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,10 +44,10 @@ public interface JoinSecurityGroupProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link JoinSecurityGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<JoinSecurityGroupProps> {
-        private java.lang.Object securityGroupId;
-        private java.lang.Object instanceId;
-        private java.lang.Object instanceIdList;
-        private java.lang.Object networkInterfaceList;
+        java.lang.Object securityGroupId;
+        java.lang.Object instanceId;
+        java.lang.Object instanceIdList;
+        java.lang.Object networkInterfaceList;
 
         /**
          * Sets the value of {@link JoinSecurityGroupProps#getSecurityGroupId}
@@ -136,7 +136,7 @@ public interface JoinSecurityGroupProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public JoinSecurityGroupProps build() {
-            return new Jsii$Proxy(securityGroupId, instanceId, instanceIdList, networkInterfaceList);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -165,12 +165,12 @@ public interface JoinSecurityGroupProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object securityGroupId, final java.lang.Object instanceId, final java.lang.Object instanceIdList, final java.lang.Object networkInterfaceList) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
-            this.instanceId = instanceId;
-            this.instanceIdList = instanceIdList;
-            this.networkInterfaceList = networkInterfaceList;
+            this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+            this.instanceId = builder.instanceId;
+            this.instanceIdList = builder.instanceIdList;
+            this.networkInterfaceList = builder.networkInterfaceList;
         }
 
         @Override

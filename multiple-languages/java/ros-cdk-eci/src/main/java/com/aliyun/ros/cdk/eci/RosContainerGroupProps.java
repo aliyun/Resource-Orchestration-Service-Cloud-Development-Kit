@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a `ALIYUN::ECI::ContainerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.878Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.488Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosContainerGroupProps.Jsii$Proxy.class)
 public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -172,33 +172,33 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosContainerGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosContainerGroupProps> {
-        private java.lang.Object container;
-        private java.lang.Object containerGroupName;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object acrRegistryInfo;
-        private java.lang.Object activeDeadlineSeconds;
-        private java.lang.Object autoMatchImageCache;
-        private java.lang.Object cpu;
-        private java.lang.Object dnsConfig;
-        private java.lang.Object eipInstanceId;
-        private java.lang.Object hostAliase;
-        private java.lang.Object imageRegistryCredential;
-        private java.lang.Object imageSnapshotId;
-        private java.lang.Object initContainer;
-        private java.lang.Object instanceType;
-        private java.lang.Object ipv6AddressCount;
-        private java.lang.Object memory;
-        private java.lang.Object ramRoleName;
-        private java.lang.Object restartPolicy;
-        private java.lang.Object securityContextSysctl;
-        private java.lang.Object slsEnable;
-        private java.lang.Object spotPriceLimit;
-        private java.lang.Object spotStrategy;
-        private java.lang.Object tag;
-        private java.lang.Object terminationGracePeriodSeconds;
-        private java.lang.Object volume;
-        private java.lang.Object zoneId;
+        java.lang.Object container;
+        java.lang.Object containerGroupName;
+        java.lang.Object securityGroupId;
+        java.lang.Object vSwitchId;
+        java.lang.Object acrRegistryInfo;
+        java.lang.Object activeDeadlineSeconds;
+        java.lang.Object autoMatchImageCache;
+        java.lang.Object cpu;
+        java.lang.Object dnsConfig;
+        java.lang.Object eipInstanceId;
+        java.lang.Object hostAliase;
+        java.lang.Object imageRegistryCredential;
+        java.lang.Object imageSnapshotId;
+        java.lang.Object initContainer;
+        java.lang.Object instanceType;
+        java.lang.Object ipv6AddressCount;
+        java.lang.Object memory;
+        java.lang.Object ramRoleName;
+        java.lang.Object restartPolicy;
+        java.lang.Object securityContextSysctl;
+        java.lang.Object slsEnable;
+        java.lang.Object spotPriceLimit;
+        java.lang.Object spotStrategy;
+        java.lang.Object tag;
+        java.lang.Object terminationGracePeriodSeconds;
+        java.lang.Object volume;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosContainerGroupProps#getContainer}
@@ -747,7 +747,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public RosContainerGroupProps build() {
-            return new Jsii$Proxy(container, containerGroupName, securityGroupId, vSwitchId, acrRegistryInfo, activeDeadlineSeconds, autoMatchImageCache, cpu, dnsConfig, eipInstanceId, hostAliase, imageRegistryCredential, imageSnapshotId, initContainer, instanceType, ipv6AddressCount, memory, ramRoleName, restartPolicy, securityContextSysctl, slsEnable, spotPriceLimit, spotStrategy, tag, terminationGracePeriodSeconds, volume, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -822,35 +822,35 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object container, final java.lang.Object containerGroupName, final java.lang.Object securityGroupId, final java.lang.Object vSwitchId, final java.lang.Object acrRegistryInfo, final java.lang.Object activeDeadlineSeconds, final java.lang.Object autoMatchImageCache, final java.lang.Object cpu, final java.lang.Object dnsConfig, final java.lang.Object eipInstanceId, final java.lang.Object hostAliase, final java.lang.Object imageRegistryCredential, final java.lang.Object imageSnapshotId, final java.lang.Object initContainer, final java.lang.Object instanceType, final java.lang.Object ipv6AddressCount, final java.lang.Object memory, final java.lang.Object ramRoleName, final java.lang.Object restartPolicy, final java.lang.Object securityContextSysctl, final java.lang.Object slsEnable, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.lang.Object tag, final java.lang.Object terminationGracePeriodSeconds, final java.lang.Object volume, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.container = java.util.Objects.requireNonNull(container, "container is required");
-            this.containerGroupName = java.util.Objects.requireNonNull(containerGroupName, "containerGroupName is required");
-            this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-            this.acrRegistryInfo = acrRegistryInfo;
-            this.activeDeadlineSeconds = activeDeadlineSeconds;
-            this.autoMatchImageCache = autoMatchImageCache;
-            this.cpu = cpu;
-            this.dnsConfig = dnsConfig;
-            this.eipInstanceId = eipInstanceId;
-            this.hostAliase = hostAliase;
-            this.imageRegistryCredential = imageRegistryCredential;
-            this.imageSnapshotId = imageSnapshotId;
-            this.initContainer = initContainer;
-            this.instanceType = instanceType;
-            this.ipv6AddressCount = ipv6AddressCount;
-            this.memory = memory;
-            this.ramRoleName = ramRoleName;
-            this.restartPolicy = restartPolicy;
-            this.securityContextSysctl = securityContextSysctl;
-            this.slsEnable = slsEnable;
-            this.spotPriceLimit = spotPriceLimit;
-            this.spotStrategy = spotStrategy;
-            this.tag = tag;
-            this.terminationGracePeriodSeconds = terminationGracePeriodSeconds;
-            this.volume = volume;
-            this.zoneId = zoneId;
+            this.container = java.util.Objects.requireNonNull(builder.container, "container is required");
+            this.containerGroupName = java.util.Objects.requireNonNull(builder.containerGroupName, "containerGroupName is required");
+            this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.acrRegistryInfo = builder.acrRegistryInfo;
+            this.activeDeadlineSeconds = builder.activeDeadlineSeconds;
+            this.autoMatchImageCache = builder.autoMatchImageCache;
+            this.cpu = builder.cpu;
+            this.dnsConfig = builder.dnsConfig;
+            this.eipInstanceId = builder.eipInstanceId;
+            this.hostAliase = builder.hostAliase;
+            this.imageRegistryCredential = builder.imageRegistryCredential;
+            this.imageSnapshotId = builder.imageSnapshotId;
+            this.initContainer = builder.initContainer;
+            this.instanceType = builder.instanceType;
+            this.ipv6AddressCount = builder.ipv6AddressCount;
+            this.memory = builder.memory;
+            this.ramRoleName = builder.ramRoleName;
+            this.restartPolicy = builder.restartPolicy;
+            this.securityContextSysctl = builder.securityContextSysctl;
+            this.slsEnable = builder.slsEnable;
+            this.spotPriceLimit = builder.spotPriceLimit;
+            this.spotStrategy = builder.spotStrategy;
+            this.tag = builder.tag;
+            this.terminationGracePeriodSeconds = builder.terminationGracePeriodSeconds;
+            this.volume = builder.volume;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

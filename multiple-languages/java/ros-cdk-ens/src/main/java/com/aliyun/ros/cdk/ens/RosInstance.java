@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * A ROS template type:  `ALIYUN::ENS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.363Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.910Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

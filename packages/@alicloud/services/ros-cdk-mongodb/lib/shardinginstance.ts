@@ -64,6 +64,11 @@ export interface ShardingInstanceProps {
     readonly protocolType?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
     readonly restoreTime?: string | ros.IResolvable;
@@ -151,6 +156,7 @@ export class ShardingInstance extends ros.Resource {
             tdeStatus: props.tdeStatus,
             engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '3.4' : props.engineVersion,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             autoRenew: props.autoRenew,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,

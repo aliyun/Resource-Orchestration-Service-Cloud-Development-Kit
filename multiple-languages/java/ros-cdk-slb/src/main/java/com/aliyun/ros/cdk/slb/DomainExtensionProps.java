@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::DomainExtension`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.772Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.DomainExtensionProps")
 @software.amazon.jsii.Jsii.Proxy(DomainExtensionProps.Jsii$Proxy.class)
 public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializable {
@@ -41,10 +41,10 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link DomainExtensionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DomainExtensionProps> {
-        private java.lang.Object domain;
-        private java.lang.Object listenerPort;
-        private java.lang.Object loadBalancerId;
-        private java.lang.Object serverCertificateId;
+        java.lang.Object domain;
+        java.lang.Object listenerPort;
+        java.lang.Object loadBalancerId;
+        java.lang.Object serverCertificateId;
 
         /**
          * Sets the value of {@link DomainExtensionProps#getDomain}
@@ -137,7 +137,7 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public DomainExtensionProps build() {
-            return new Jsii$Proxy(domain, listenerPort, loadBalancerId, serverCertificateId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -166,12 +166,12 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domain, final java.lang.Object listenerPort, final java.lang.Object loadBalancerId, final java.lang.Object serverCertificateId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domain = java.util.Objects.requireNonNull(domain, "domain is required");
-            this.listenerPort = java.util.Objects.requireNonNull(listenerPort, "listenerPort is required");
-            this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
-            this.serverCertificateId = java.util.Objects.requireNonNull(serverCertificateId, "serverCertificateId is required");
+            this.domain = java.util.Objects.requireNonNull(builder.domain, "domain is required");
+            this.listenerPort = java.util.Objects.requireNonNull(builder.listenerPort, "listenerPort is required");
+            this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
+            this.serverCertificateId = java.util.Objects.requireNonNull(builder.serverCertificateId, "serverCertificateId is required");
         }
 
         @Override

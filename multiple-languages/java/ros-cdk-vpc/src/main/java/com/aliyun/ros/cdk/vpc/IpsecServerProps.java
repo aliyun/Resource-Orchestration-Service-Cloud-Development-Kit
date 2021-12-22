@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::IpsecServer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.912Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IpsecServerProps")
 @software.amazon.jsii.Jsii.Proxy(IpsecServerProps.Jsii$Proxy.class)
 public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable {
@@ -87,15 +87,15 @@ public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link IpsecServerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<IpsecServerProps> {
-        private java.lang.Object clientIpPool;
-        private java.lang.Object localSubnet;
-        private java.lang.Object vpnGatewayId;
-        private java.lang.Object effectImmediately;
-        private java.lang.Object ikeConfig;
-        private java.lang.Object ipsecConfig;
-        private java.lang.Object ipsecServerName;
-        private java.lang.Object psk;
-        private java.lang.Object pskEnabled;
+        java.lang.Object clientIpPool;
+        java.lang.Object localSubnet;
+        java.lang.Object vpnGatewayId;
+        java.lang.Object effectImmediately;
+        java.lang.Object ikeConfig;
+        java.lang.Object ipsecConfig;
+        java.lang.Object ipsecServerName;
+        java.lang.Object psk;
+        java.lang.Object pskEnabled;
 
         /**
          * Sets the value of {@link IpsecServerProps#getClientIpPool}
@@ -296,7 +296,7 @@ public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public IpsecServerProps build() {
-            return new Jsii$Proxy(clientIpPool, localSubnet, vpnGatewayId, effectImmediately, ikeConfig, ipsecConfig, ipsecServerName, psk, pskEnabled);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -335,17 +335,17 @@ public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clientIpPool, final java.lang.Object localSubnet, final java.lang.Object vpnGatewayId, final java.lang.Object effectImmediately, final java.lang.Object ikeConfig, final java.lang.Object ipsecConfig, final java.lang.Object ipsecServerName, final java.lang.Object psk, final java.lang.Object pskEnabled) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clientIpPool = java.util.Objects.requireNonNull(clientIpPool, "clientIpPool is required");
-            this.localSubnet = java.util.Objects.requireNonNull(localSubnet, "localSubnet is required");
-            this.vpnGatewayId = java.util.Objects.requireNonNull(vpnGatewayId, "vpnGatewayId is required");
-            this.effectImmediately = effectImmediately;
-            this.ikeConfig = ikeConfig;
-            this.ipsecConfig = ipsecConfig;
-            this.ipsecServerName = ipsecServerName;
-            this.psk = psk;
-            this.pskEnabled = pskEnabled;
+            this.clientIpPool = java.util.Objects.requireNonNull(builder.clientIpPool, "clientIpPool is required");
+            this.localSubnet = java.util.Objects.requireNonNull(builder.localSubnet, "localSubnet is required");
+            this.vpnGatewayId = java.util.Objects.requireNonNull(builder.vpnGatewayId, "vpnGatewayId is required");
+            this.effectImmediately = builder.effectImmediately;
+            this.ikeConfig = builder.ikeConfig;
+            this.ipsecConfig = builder.ipsecConfig;
+            this.ipsecServerName = builder.ipsecServerName;
+            this.psk = builder.psk;
+            this.pskEnabled = builder.pskEnabled;
         }
 
         @Override

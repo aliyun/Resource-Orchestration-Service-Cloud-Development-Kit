@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * A ROS template type:  `ALIYUN::OOS::Execution`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.374Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecution")
 public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -287,10 +287,10 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ResourceOptionsProperty> {
-            private java.lang.Object cancelOnDelete;
-            private java.lang.Object failureStatuses;
-            private java.lang.Object successStatuses;
-            private java.lang.Object timeout;
+            java.lang.Object cancelOnDelete;
+            java.lang.Object failureStatuses;
+            java.lang.Object successStatuses;
+            java.lang.Object timeout;
 
             /**
              * Sets the value of {@link ResourceOptionsProperty#getCancelOnDelete}
@@ -388,7 +388,7 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ResourceOptionsProperty build() {
-                return new Jsii$Proxy(cancelOnDelete, failureStatuses, successStatuses, timeout);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -418,12 +418,12 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object cancelOnDelete, final java.lang.Object failureStatuses, final java.lang.Object successStatuses, final java.lang.Object timeout) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.cancelOnDelete = cancelOnDelete;
-                this.failureStatuses = failureStatuses;
-                this.successStatuses = successStatuses;
-                this.timeout = timeout;
+                this.cancelOnDelete = builder.cancelOnDelete;
+                this.failureStatuses = builder.failureStatuses;
+                this.successStatuses = builder.successStatuses;
+                this.timeout = builder.timeout;
             }
 
             @Override

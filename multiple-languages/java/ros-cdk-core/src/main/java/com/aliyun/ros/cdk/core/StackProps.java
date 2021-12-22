@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:31.109Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.532Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StackProps")
 @software.amazon.jsii.Jsii.Proxy(StackProps.Jsii$Proxy.class)
 public interface StackProps extends software.amazon.jsii.JsiiSerializable {
@@ -63,13 +63,13 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link StackProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<StackProps> {
-        private java.lang.String description;
-        private java.lang.Boolean enableResourcePropertyConstraint;
-        private java.util.Map<java.lang.String, java.lang.Object> metadata;
-        private java.lang.String stackName;
-        private com.aliyun.ros.cdk.core.IStackSynthesizer synthesizer;
-        private java.util.Map<java.lang.String, java.lang.String> tags;
-        private java.lang.String version;
+        java.lang.String description;
+        java.lang.Boolean enableResourcePropertyConstraint;
+        java.util.Map<java.lang.String, java.lang.Object> metadata;
+        java.lang.String stackName;
+        com.aliyun.ros.cdk.core.IStackSynthesizer synthesizer;
+        java.util.Map<java.lang.String, java.lang.String> tags;
+        java.lang.String version;
 
         /**
          * Sets the value of {@link StackProps#getDescription}
@@ -149,7 +149,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public StackProps build() {
-            return new Jsii$Proxy(description, enableResourcePropertyConstraint, metadata, stackName, synthesizer, tags, version);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -185,15 +185,15 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String description, final java.lang.Boolean enableResourcePropertyConstraint, final java.util.Map<java.lang.String, ? extends java.lang.Object> metadata, final java.lang.String stackName, final com.aliyun.ros.cdk.core.IStackSynthesizer synthesizer, final java.util.Map<java.lang.String, java.lang.String> tags, final java.lang.String version) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.description = description;
-            this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-            this.metadata = (java.util.Map<java.lang.String, java.lang.Object>)metadata;
-            this.stackName = stackName;
-            this.synthesizer = synthesizer;
-            this.tags = tags;
-            this.version = version;
+            this.description = builder.description;
+            this.enableResourcePropertyConstraint = builder.enableResourcePropertyConstraint;
+            this.metadata = (java.util.Map<java.lang.String, java.lang.Object>)builder.metadata;
+            this.stackName = builder.stackName;
+            this.synthesizer = builder.synthesizer;
+            this.tags = builder.tags;
+            this.version = builder.version;
         }
 
         @Override

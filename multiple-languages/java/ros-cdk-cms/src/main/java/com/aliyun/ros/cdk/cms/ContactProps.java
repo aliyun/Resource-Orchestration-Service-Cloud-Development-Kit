@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::Contact`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.583Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.129Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ContactProps")
 @software.amazon.jsii.Jsii.Proxy(ContactProps.Jsii$Proxy.class)
 public interface ContactProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,9 +33,9 @@ public interface ContactProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ContactProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ContactProps> {
-        private java.lang.Object channels;
-        private java.lang.Object contactName;
-        private java.lang.Object describe;
+        java.lang.Object channels;
+        java.lang.Object contactName;
+        java.lang.Object describe;
 
         /**
          * Sets the value of {@link ContactProps#getChannels}
@@ -104,7 +104,7 @@ public interface ContactProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ContactProps build() {
-            return new Jsii$Proxy(channels, contactName, describe);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -131,11 +131,11 @@ public interface ContactProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object channels, final java.lang.Object contactName, final java.lang.Object describe) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.channels = java.util.Objects.requireNonNull(channels, "channels is required");
-            this.contactName = java.util.Objects.requireNonNull(contactName, "contactName is required");
-            this.describe = java.util.Objects.requireNonNull(describe, "describe is required");
+            this.channels = java.util.Objects.requireNonNull(builder.channels, "channels is required");
+            this.contactName = java.util.Objects.requireNonNull(builder.contactName, "contactName is required");
+            this.describe = java.util.Objects.requireNonNull(builder.describe, "describe is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::GrantCcnToCen`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.065Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.763Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.GrantCcnToCenProps")
 @software.amazon.jsii.Jsii.Proxy(GrantCcnToCenProps.Jsii$Proxy.class)
 public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,9 +33,9 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link GrantCcnToCenProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<GrantCcnToCenProps> {
-        private java.lang.Object ccnInstanceId;
-        private java.lang.Object cenInstanceId;
-        private java.lang.Object cenUid;
+        java.lang.Object ccnInstanceId;
+        java.lang.Object cenInstanceId;
+        java.lang.Object cenUid;
 
         /**
          * Sets the value of {@link GrantCcnToCenProps#getCcnInstanceId}
@@ -104,7 +104,7 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public GrantCcnToCenProps build() {
-            return new Jsii$Proxy(ccnInstanceId, cenInstanceId, cenUid);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -131,11 +131,11 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object ccnInstanceId, final java.lang.Object cenInstanceId, final java.lang.Object cenUid) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.ccnInstanceId = java.util.Objects.requireNonNull(ccnInstanceId, "ccnInstanceId is required");
-            this.cenInstanceId = java.util.Objects.requireNonNull(cenInstanceId, "cenInstanceId is required");
-            this.cenUid = java.util.Objects.requireNonNull(cenUid, "cenUid is required");
+            this.ccnInstanceId = java.util.Objects.requireNonNull(builder.ccnInstanceId, "ccnInstanceId is required");
+            this.cenInstanceId = java.util.Objects.requireNonNull(builder.cenInstanceId, "cenInstanceId is required");
+            this.cenUid = java.util.Objects.requireNonNull(builder.cenUid, "cenUid is required");
         }
 
         @Override

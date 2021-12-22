@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Current resolution context for tokens.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.658Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.501Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IResolveContext")
 @software.amazon.jsii.Jsii.Proxy(IResolveContext.Jsii$Proxy.class)
 public interface IResolveContext extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.401Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.940Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroup")
 public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -449,8 +449,8 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NotificationConfigurationsProperty> {
-            private java.lang.Object notificationArn;
-            private java.lang.Object notificationTypes;
+            java.lang.Object notificationArn;
+            java.lang.Object notificationTypes;
 
             /**
              * Sets the value of {@link NotificationConfigurationsProperty#getNotificationArn}
@@ -504,7 +504,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NotificationConfigurationsProperty build() {
-                return new Jsii$Proxy(notificationArn, notificationTypes);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -530,10 +530,10 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object notificationArn, final java.lang.Object notificationTypes) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.notificationArn = java.util.Objects.requireNonNull(notificationArn, "notificationArn is required");
-                this.notificationTypes = java.util.Objects.requireNonNull(notificationTypes, "notificationTypes is required");
+                this.notificationArn = java.util.Objects.requireNonNull(builder.notificationArn, "notificationArn is required");
+                this.notificationTypes = java.util.Objects.requireNonNull(builder.notificationTypes, "notificationTypes is required");
             }
 
             @Override
@@ -615,8 +615,8 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -670,7 +670,7 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -696,10 +696,10 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override

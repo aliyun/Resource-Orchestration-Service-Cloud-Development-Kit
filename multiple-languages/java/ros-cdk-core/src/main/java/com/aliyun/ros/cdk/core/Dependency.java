@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A single dependency.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.649Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.492Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Dependency")
 @software.amazon.jsii.Jsii.Proxy(Dependency.Jsii$Proxy.class)
 public interface Dependency extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface Dependency extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link Dependency}
      */
     public static final class Builder implements software.amazon.jsii.Builder<Dependency> {
-        private com.aliyun.ros.cdk.core.IConstruct source;
-        private com.aliyun.ros.cdk.core.IConstruct target;
+        com.aliyun.ros.cdk.core.IConstruct source;
+        com.aliyun.ros.cdk.core.IConstruct target;
 
         /**
          * Sets the value of {@link Dependency#getSource}
@@ -58,7 +58,7 @@ public interface Dependency extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public Dependency build() {
-            return new Jsii$Proxy(source, target);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -83,10 +83,10 @@ public interface Dependency extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final com.aliyun.ros.cdk.core.IConstruct source, final com.aliyun.ros.cdk.core.IConstruct target) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.source = java.util.Objects.requireNonNull(source, "source is required");
-            this.target = java.util.Objects.requireNonNull(target, "target is required");
+            this.source = java.util.Objects.requireNonNull(builder.source, "source is required");
+            this.target = java.util.Objects.requireNonNull(builder.target, "target is required");
         }
 
         @Override

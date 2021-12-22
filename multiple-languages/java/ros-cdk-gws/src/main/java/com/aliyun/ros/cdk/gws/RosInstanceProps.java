@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * Properties for defining a `ALIYUN::GWS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.533Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.145Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -108,23 +108,23 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
-        private java.lang.Object clusterId;
-        private java.lang.Object imageId;
-        private java.lang.Object instanceType;
-        private java.lang.Object systemDiskCategory;
-        private java.lang.Object systemDiskSize;
-        private java.lang.Object workMode;
-        private java.lang.Object allocatePublicAddress;
-        private java.lang.Object appList;
-        private java.lang.Object autoRenew;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object internetMaxBandwidthIn;
-        private java.lang.Object internetMaxBandwidthOut;
-        private java.lang.Object name;
-        private java.lang.Object period;
-        private java.lang.Object periodUnit;
-        private java.lang.Object vSwitchId;
+        java.lang.Object clusterId;
+        java.lang.Object imageId;
+        java.lang.Object instanceType;
+        java.lang.Object systemDiskCategory;
+        java.lang.Object systemDiskSize;
+        java.lang.Object workMode;
+        java.lang.Object allocatePublicAddress;
+        java.lang.Object appList;
+        java.lang.Object autoRenew;
+        java.lang.Object instanceChargeType;
+        java.lang.Object internetChargeType;
+        java.lang.Object internetMaxBandwidthIn;
+        java.lang.Object internetMaxBandwidthOut;
+        java.lang.Object name;
+        java.lang.Object period;
+        java.lang.Object periodUnit;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosInstanceProps#getClusterId}
@@ -473,7 +473,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosInstanceProps build() {
-            return new Jsii$Proxy(clusterId, imageId, instanceType, systemDiskCategory, systemDiskSize, workMode, allocatePublicAddress, appList, autoRenew, instanceChargeType, internetChargeType, internetMaxBandwidthIn, internetMaxBandwidthOut, name, period, periodUnit, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -528,25 +528,25 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clusterId, final java.lang.Object imageId, final java.lang.Object instanceType, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskSize, final java.lang.Object workMode, final java.lang.Object allocatePublicAddress, final java.lang.Object appList, final java.lang.Object autoRenew, final java.lang.Object instanceChargeType, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object name, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
-            this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
-            this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-            this.systemDiskCategory = java.util.Objects.requireNonNull(systemDiskCategory, "systemDiskCategory is required");
-            this.systemDiskSize = java.util.Objects.requireNonNull(systemDiskSize, "systemDiskSize is required");
-            this.workMode = java.util.Objects.requireNonNull(workMode, "workMode is required");
-            this.allocatePublicAddress = allocatePublicAddress;
-            this.appList = appList;
-            this.autoRenew = autoRenew;
-            this.instanceChargeType = instanceChargeType;
-            this.internetChargeType = internetChargeType;
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-            this.name = name;
-            this.period = period;
-            this.periodUnit = periodUnit;
-            this.vSwitchId = vSwitchId;
+            this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
+            this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
+            this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+            this.systemDiskCategory = java.util.Objects.requireNonNull(builder.systemDiskCategory, "systemDiskCategory is required");
+            this.systemDiskSize = java.util.Objects.requireNonNull(builder.systemDiskSize, "systemDiskSize is required");
+            this.workMode = java.util.Objects.requireNonNull(builder.workMode, "workMode is required");
+            this.allocatePublicAddress = builder.allocatePublicAddress;
+            this.appList = builder.appList;
+            this.autoRenew = builder.autoRenew;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.internetChargeType = builder.internetChargeType;
+            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
+            this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
+            this.name = builder.name;
+            this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
+            this.vSwitchId = builder.vSwitchId;
         }
 
         @Override

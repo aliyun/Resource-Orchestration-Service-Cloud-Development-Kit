@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.799Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.471Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointProps.Jsii$Proxy.class)
 public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable {
@@ -74,13 +74,13 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link VpcEndpointProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VpcEndpointProps> {
-        private java.lang.Object securityGroupId;
-        private java.lang.Object vpcId;
-        private java.lang.Object endpointDescription;
-        private java.lang.Object endpointName;
-        private java.lang.Object serviceId;
-        private java.lang.Object serviceName;
-        private java.lang.Object zone;
+        java.lang.Object securityGroupId;
+        java.lang.Object vpcId;
+        java.lang.Object endpointDescription;
+        java.lang.Object endpointName;
+        java.lang.Object serviceId;
+        java.lang.Object serviceName;
+        java.lang.Object zone;
 
         /**
          * Sets the value of {@link VpcEndpointProps#getSecurityGroupId}
@@ -241,7 +241,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public VpcEndpointProps build() {
-            return new Jsii$Proxy(securityGroupId, vpcId, endpointDescription, endpointName, serviceId, serviceName, zone);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -276,15 +276,15 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object securityGroupId, final java.lang.Object vpcId, final java.lang.Object endpointDescription, final java.lang.Object endpointName, final java.lang.Object serviceId, final java.lang.Object serviceName, final java.lang.Object zone) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.endpointDescription = endpointDescription;
-            this.endpointName = endpointName;
-            this.serviceId = serviceId;
-            this.serviceName = serviceName;
-            this.zone = zone;
+            this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.endpointDescription = builder.endpointDescription;
+            this.endpointName = builder.endpointName;
+            this.serviceId = builder.serviceId;
+            this.serviceName = builder.serviceName;
+            this.zone = builder.zone;
         }
 
         @Override

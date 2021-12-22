@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::RamAccountAlias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.811Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.525Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RamAccountAlias")
 public class RamAccountAlias extends com.aliyun.ros.cdk.core.Resource {
 
@@ -92,9 +92,10 @@ public class RamAccountAlias extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property accountAlias: The alias of the Alibaba Cloud account.
          * <p>
-         * The alias must be 3 to 32 characters in length, and can contain lowercase letters,
-         * digits, and hyphens (-).
-         * Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+         * The alias must be 1 to 50 characters in length, and can contain lowercase letters,
+         * digits, hyphens (-), periods (.) and underscores (_).
+         * Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a
+         * hyphen (-) and cannot have two consecutive hyphens (-).
          * <p>
          * @return {@code this}
          * @param accountAlias Property accountAlias: The alias of the Alibaba Cloud account. This parameter is required.
@@ -106,9 +107,10 @@ public class RamAccountAlias extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property accountAlias: The alias of the Alibaba Cloud account.
          * <p>
-         * The alias must be 3 to 32 characters in length, and can contain lowercase letters,
-         * digits, and hyphens (-).
-         * Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+         * The alias must be 1 to 50 characters in length, and can contain lowercase letters,
+         * digits, hyphens (-), periods (.) and underscores (_).
+         * Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a
+         * hyphen (-) and cannot have two consecutive hyphens (-).
          * <p>
          * @return {@code this}
          * @param accountAlias Property accountAlias: The alias of the Alibaba Cloud account. This parameter is required.

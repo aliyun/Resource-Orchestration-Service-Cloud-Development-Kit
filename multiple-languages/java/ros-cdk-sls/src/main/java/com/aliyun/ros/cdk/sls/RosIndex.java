@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::Index`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.136Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.856Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosIndex")
 public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -195,10 +195,10 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<FullTextIndexProperty> {
-            private java.lang.Object enable;
-            private java.lang.Object caseSensitive;
-            private java.lang.Object delimiter;
-            private java.lang.Object includeChinese;
+            java.lang.Object enable;
+            java.lang.Object caseSensitive;
+            java.lang.Object delimiter;
+            java.lang.Object includeChinese;
 
             /**
              * Sets the value of {@link FullTextIndexProperty#getEnable}
@@ -296,7 +296,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public FullTextIndexProperty build() {
-                return new Jsii$Proxy(enable, caseSensitive, delimiter, includeChinese);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -326,12 +326,12 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object enable, final java.lang.Object caseSensitive, final java.lang.Object delimiter, final java.lang.Object includeChinese) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.enable = java.util.Objects.requireNonNull(enable, "enable is required");
-                this.caseSensitive = caseSensitive;
-                this.delimiter = delimiter;
-                this.includeChinese = includeChinese;
+                this.enable = java.util.Objects.requireNonNull(builder.enable, "enable is required");
+                this.caseSensitive = builder.caseSensitive;
+                this.delimiter = builder.delimiter;
+                this.includeChinese = builder.includeChinese;
             }
 
             @Override
@@ -447,10 +447,10 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<JsonKeyIndicesProperty> {
-            private java.lang.Object name;
-            private java.lang.Object type;
-            private java.lang.Object alias;
-            private java.lang.Object enableAnalytics;
+            java.lang.Object name;
+            java.lang.Object type;
+            java.lang.Object alias;
+            java.lang.Object enableAnalytics;
 
             /**
              * Sets the value of {@link JsonKeyIndicesProperty#getName}
@@ -548,7 +548,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public JsonKeyIndicesProperty build() {
-                return new Jsii$Proxy(name, type, alias, enableAnalytics);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -578,12 +578,12 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object alias, final java.lang.Object enableAnalytics) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
-                this.alias = alias;
-                this.enableAnalytics = enableAnalytics;
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.alias = builder.alias;
+                this.enableAnalytics = builder.enableAnalytics;
             }
 
             @Override
@@ -725,14 +725,14 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<KeyIndicesProperty> {
-            private java.lang.Object name;
-            private java.lang.Object type;
-            private java.lang.Object alias;
-            private java.lang.Object caseSensitive;
-            private java.lang.Object delimiter;
-            private java.lang.Object enableAnalytics;
-            private java.lang.Object includeChinese;
-            private java.lang.Object jsonKeyIndices;
+            java.lang.Object name;
+            java.lang.Object type;
+            java.lang.Object alias;
+            java.lang.Object caseSensitive;
+            java.lang.Object delimiter;
+            java.lang.Object enableAnalytics;
+            java.lang.Object includeChinese;
+            java.lang.Object jsonKeyIndices;
 
             /**
              * Sets the value of {@link KeyIndicesProperty#getName}
@@ -918,7 +918,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public KeyIndicesProperty build() {
-                return new Jsii$Proxy(name, type, alias, caseSensitive, delimiter, enableAnalytics, includeChinese, jsonKeyIndices);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -956,16 +956,16 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object alias, final java.lang.Object caseSensitive, final java.lang.Object delimiter, final java.lang.Object enableAnalytics, final java.lang.Object includeChinese, final java.lang.Object jsonKeyIndices) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
-                this.alias = alias;
-                this.caseSensitive = caseSensitive;
-                this.delimiter = delimiter;
-                this.enableAnalytics = enableAnalytics;
-                this.includeChinese = includeChinese;
-                this.jsonKeyIndices = jsonKeyIndices;
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.alias = builder.alias;
+                this.caseSensitive = builder.caseSensitive;
+                this.delimiter = builder.delimiter;
+                this.enableAnalytics = builder.enableAnalytics;
+                this.includeChinese = builder.includeChinese;
+                this.jsonKeyIndices = builder.jsonKeyIndices;
             }
 
             @Override

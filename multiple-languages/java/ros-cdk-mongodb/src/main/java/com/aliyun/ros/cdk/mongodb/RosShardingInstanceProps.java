@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * Properties for defining a `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.678Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.332Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosShardingInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosShardingInstanceProps.Jsii$Proxy.class)
 public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -65,6 +65,12 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProtocolType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -132,26 +138,27 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link RosShardingInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosShardingInstanceProps> {
-        private java.lang.Object configServer;
-        private java.lang.Object mongos;
-        private java.lang.Object replicaSet;
-        private java.lang.Object accountPassword;
-        private java.lang.Object autoRenew;
-        private java.lang.Object chargeType;
-        private java.lang.Object dbInstanceDescription;
-        private java.lang.Object engineVersion;
-        private java.lang.Object networkType;
-        private java.lang.Object period;
-        private java.lang.Object protocolType;
-        private java.lang.Object restoreTime;
-        private java.lang.Object securityIpArray;
-        private java.lang.Object srcDbInstanceId;
-        private java.lang.Object storageEngine;
-        private java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags;
-        private java.lang.Object tdeStatus;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object configServer;
+        java.lang.Object mongos;
+        java.lang.Object replicaSet;
+        java.lang.Object accountPassword;
+        java.lang.Object autoRenew;
+        java.lang.Object chargeType;
+        java.lang.Object dbInstanceDescription;
+        java.lang.Object engineVersion;
+        java.lang.Object networkType;
+        java.lang.Object period;
+        java.lang.Object protocolType;
+        java.lang.Object resourceGroupId;
+        java.lang.Object restoreTime;
+        java.lang.Object securityIpArray;
+        java.lang.Object srcDbInstanceId;
+        java.lang.Object storageEngine;
+        java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags;
+        java.lang.Object tdeStatus;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosShardingInstanceProps#getConfigServer}
@@ -374,6 +381,26 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosShardingInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosShardingInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosShardingInstanceProps#getRestoreTime}
          * @param restoreTime the value to be set.
          * @return {@code this}
@@ -551,7 +578,7 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public RosShardingInstanceProps build() {
-            return new Jsii$Proxy(configServer, mongos, replicaSet, accountPassword, autoRenew, chargeType, dbInstanceDescription, engineVersion, networkType, period, protocolType, restoreTime, securityIpArray, srcDbInstanceId, storageEngine, tags, tdeStatus, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -571,6 +598,7 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object networkType;
         private final java.lang.Object period;
         private final java.lang.Object protocolType;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object restoreTime;
         private final java.lang.Object securityIpArray;
         private final java.lang.Object srcDbInstanceId;
@@ -598,6 +626,7 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.restoreTime = software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpArray = software.amazon.jsii.Kernel.get(this, "securityIpArray", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.srcDbInstanceId = software.amazon.jsii.Kernel.get(this, "srcDbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -613,28 +642,29 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object configServer, final java.lang.Object mongos, final java.lang.Object replicaSet, final java.lang.Object accountPassword, final java.lang.Object autoRenew, final java.lang.Object chargeType, final java.lang.Object dbInstanceDescription, final java.lang.Object engineVersion, final java.lang.Object networkType, final java.lang.Object period, final java.lang.Object protocolType, final java.lang.Object restoreTime, final java.lang.Object securityIpArray, final java.lang.Object srcDbInstanceId, final java.lang.Object storageEngine, final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags, final java.lang.Object tdeStatus, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.configServer = java.util.Objects.requireNonNull(configServer, "configServer is required");
-            this.mongos = java.util.Objects.requireNonNull(mongos, "mongos is required");
-            this.replicaSet = java.util.Objects.requireNonNull(replicaSet, "replicaSet is required");
-            this.accountPassword = accountPassword;
-            this.autoRenew = autoRenew;
-            this.chargeType = chargeType;
-            this.dbInstanceDescription = dbInstanceDescription;
-            this.engineVersion = engineVersion;
-            this.networkType = networkType;
-            this.period = period;
-            this.protocolType = protocolType;
-            this.restoreTime = restoreTime;
-            this.securityIpArray = securityIpArray;
-            this.srcDbInstanceId = srcDbInstanceId;
-            this.storageEngine = storageEngine;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty>)tags;
-            this.tdeStatus = tdeStatus;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.configServer = java.util.Objects.requireNonNull(builder.configServer, "configServer is required");
+            this.mongos = java.util.Objects.requireNonNull(builder.mongos, "mongos is required");
+            this.replicaSet = java.util.Objects.requireNonNull(builder.replicaSet, "replicaSet is required");
+            this.accountPassword = builder.accountPassword;
+            this.autoRenew = builder.autoRenew;
+            this.chargeType = builder.chargeType;
+            this.dbInstanceDescription = builder.dbInstanceDescription;
+            this.engineVersion = builder.engineVersion;
+            this.networkType = builder.networkType;
+            this.period = builder.period;
+            this.protocolType = builder.protocolType;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.restoreTime = builder.restoreTime;
+            this.securityIpArray = builder.securityIpArray;
+            this.srcDbInstanceId = builder.srcDbInstanceId;
+            this.storageEngine = builder.storageEngine;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty>)builder.tags;
+            this.tdeStatus = builder.tdeStatus;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override
@@ -690,6 +720,11 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         @Override
         public final java.lang.Object getProtocolType() {
             return this.protocolType;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -770,6 +805,9 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.getProtocolType() != null) {
                 data.set("protocolType", om.valueToTree(this.getProtocolType()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getRestoreTime() != null) {
                 data.set("restoreTime", om.valueToTree(this.getRestoreTime()));
             }
@@ -826,6 +864,7 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.protocolType != null ? !this.protocolType.equals(that.protocolType) : that.protocolType != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.restoreTime != null ? !this.restoreTime.equals(that.restoreTime) : that.restoreTime != null) return false;
             if (this.securityIpArray != null ? !this.securityIpArray.equals(that.securityIpArray) : that.securityIpArray != null) return false;
             if (this.srcDbInstanceId != null ? !this.srcDbInstanceId.equals(that.srcDbInstanceId) : that.srcDbInstanceId != null) return false;
@@ -850,6 +889,7 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.protocolType != null ? this.protocolType.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.restoreTime != null ? this.restoreTime.hashCode() : 0);
             result = 31 * result + (this.securityIpArray != null ? this.securityIpArray.hashCode() : 0);
             result = 31 * result + (this.srcDbInstanceId != null ? this.srcDbInstanceId.hashCode() : 0);

@@ -147,8 +147,8 @@ export class Function extends ros.Resource {
             runtime: props.runtime,
             environmentVariables: props.environmentVariables,
             initializer: props.initializer,
-            serviceName: props.serviceName,
             initializationTimeout: props.initializationTimeout,
+            serviceName: props.serviceName,
             instanceConcurrency: props.instanceConcurrency,
             instanceType: props.instanceType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

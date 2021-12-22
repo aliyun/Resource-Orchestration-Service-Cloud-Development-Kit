@@ -53,10 +53,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
+        /// <summary>Property ipv6Isp: The Internet service provider (ISP) for IPv6 addresses of the VPC.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// BGP(default): Alibaba Cloud BGP IPv6
+        /// ChinaMobile: China Mobile (single line)
+        /// ChinaUnicom: China Unicom (single line)
+        /// ChinaTelecom: China Telecom (single line)
+        /// Note If your Alibaba Cloud account is allowed to activate single-ISP bandwidth, you can set the parameter to ChinaTelecom, ChinaUnicom, and ChinaMobile.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv6Isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Ipv6Isp
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property resourceGroupId: Resource group id.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property secondaryCidrBlock: The secondary IPv4 CIDR block.</summary>
+        /// <remarks>
+        /// You can specify one of the following standard IPv4 CIDR blocks or their
+        /// subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
+        /// and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
+        /// submit a ticket. When you add a secondary IPv4 CIDR block, take note of
+        /// the following rules:
+        ///
+        /// <list type="number">
+        /// <description>The CIDR block cannot start with 0.</description>
+        /// <description>The subnet mask must be 8 to 24 bits in length.
+        /// The secondary CIDR block cannot overlap with the primary
+        /// CIDR block or an existing secondary CIDR block.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "secondaryCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SecondaryCidrBlock
         {
             get;
             set;
@@ -69,6 +109,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosVPC.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
         public AlibabaCloud.SDK.ROS.CDK.Ecs.RosVPC.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property userCidr: The user CIDR block.</summary>
+        /// <remarks>
+        /// Separate multiple CIDR blocks with commas (,). At most three CIDR blocks are supported.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "userCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? UserCidr
         {
             get;
             set;

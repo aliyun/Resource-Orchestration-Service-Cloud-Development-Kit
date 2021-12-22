@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::Project`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.131Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.845Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ProjectProps")
 @software.amazon.jsii.Jsii.Proxy(ProjectProps.Jsii$Proxy.class)
 public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,9 +43,9 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ProjectProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ProjectProps> {
-        private java.lang.Object name;
-        private java.lang.Object description;
-        private java.util.List<com.aliyun.ros.cdk.sls.RosProject.TagsProperty> tags;
+        java.lang.Object name;
+        java.lang.Object description;
+        java.util.List<com.aliyun.ros.cdk.sls.RosProject.TagsProperty> tags;
 
         /**
          * Sets the value of {@link ProjectProps#getName}
@@ -112,7 +112,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ProjectProps build() {
-            return new Jsii$Proxy(name, description, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -140,11 +140,11 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object description, final java.util.List<? extends com.aliyun.ros.cdk.sls.RosProject.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.description = description;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.sls.RosProject.TagsProperty>)tags;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.description = builder.description;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.sls.RosProject.TagsProperty>)builder.tags;
         }
 
         @Override

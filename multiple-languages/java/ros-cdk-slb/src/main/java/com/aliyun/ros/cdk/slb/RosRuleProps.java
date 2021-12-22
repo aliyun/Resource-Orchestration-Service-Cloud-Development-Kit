@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.106Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.810Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRuleProps.Jsii$Proxy.class)
 public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,9 +30,9 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRuleProps> {
-        private java.lang.Object listenerPort;
-        private java.lang.Object loadBalancerId;
-        private java.lang.Object ruleList;
+        java.lang.Object listenerPort;
+        java.lang.Object loadBalancerId;
+        java.lang.Object ruleList;
 
         /**
          * Sets the value of {@link RosRuleProps#getListenerPort}
@@ -101,7 +101,7 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosRuleProps build() {
-            return new Jsii$Proxy(listenerPort, loadBalancerId, ruleList);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -128,11 +128,11 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object listenerPort, final java.lang.Object loadBalancerId, final java.lang.Object ruleList) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.listenerPort = java.util.Objects.requireNonNull(listenerPort, "listenerPort is required");
-            this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
-            this.ruleList = java.util.Objects.requireNonNull(ruleList, "ruleList is required");
+            this.listenerPort = java.util.Objects.requireNonNull(builder.listenerPort, "listenerPort is required");
+            this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
+            this.ruleList = java.util.Objects.requireNonNull(builder.ruleList, "ruleList is required");
         }
 
         @Override

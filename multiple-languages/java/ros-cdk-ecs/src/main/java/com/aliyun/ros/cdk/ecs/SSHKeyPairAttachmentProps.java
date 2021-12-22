@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.205Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.774Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SSHKeyPairAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(SSHKeyPairAttachmentProps.Jsii$Proxy.class)
 public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,8 +30,8 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link SSHKeyPairAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SSHKeyPairAttachmentProps> {
-        private java.lang.Object instanceIds;
-        private java.lang.Object keyPairName;
+        java.lang.Object instanceIds;
+        java.lang.Object keyPairName;
 
         /**
          * Sets the value of {@link SSHKeyPairAttachmentProps#getInstanceIds}
@@ -82,7 +82,7 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public SSHKeyPairAttachmentProps build() {
-            return new Jsii$Proxy(instanceIds, keyPairName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -107,10 +107,10 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceIds, final java.lang.Object keyPairName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
-            this.keyPairName = java.util.Objects.requireNonNull(keyPairName, "keyPairName is required");
+            this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
+            this.keyPairName = java.util.Objects.requireNonNull(builder.keyPairName, "keyPairName is required");
         }
 
         @Override

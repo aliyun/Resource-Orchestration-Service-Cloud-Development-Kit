@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancerClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.103Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.808Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancerCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosLoadBalancerCloneProps.Jsii$Proxy.class)
 public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -64,14 +64,14 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link RosLoadBalancerCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosLoadBalancerCloneProps> {
-        private java.lang.Object sourceLoadBalancerId;
-        private java.lang.Object backendServers;
-        private java.lang.Object backendServersPolicy;
-        private java.lang.Object loadBalancerName;
-        private java.lang.Object resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags;
-        private java.lang.Object tagsPolicy;
-        private java.lang.Object vSwitchId;
+        java.lang.Object sourceLoadBalancerId;
+        java.lang.Object backendServers;
+        java.lang.Object backendServersPolicy;
+        java.lang.Object loadBalancerName;
+        java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags;
+        java.lang.Object tagsPolicy;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosLoadBalancerCloneProps#getSourceLoadBalancerId}
@@ -231,7 +231,7 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public RosLoadBalancerCloneProps build() {
-            return new Jsii$Proxy(sourceLoadBalancerId, backendServers, backendServersPolicy, loadBalancerName, resourceGroupId, tags, tagsPolicy, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -269,16 +269,16 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object sourceLoadBalancerId, final java.lang.Object backendServers, final java.lang.Object backendServersPolicy, final java.lang.Object loadBalancerName, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags, final java.lang.Object tagsPolicy, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.sourceLoadBalancerId = java.util.Objects.requireNonNull(sourceLoadBalancerId, "sourceLoadBalancerId is required");
-            this.backendServers = backendServers;
-            this.backendServersPolicy = backendServersPolicy;
-            this.loadBalancerName = loadBalancerName;
-            this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty>)tags;
-            this.tagsPolicy = tagsPolicy;
-            this.vSwitchId = vSwitchId;
+            this.sourceLoadBalancerId = java.util.Objects.requireNonNull(builder.sourceLoadBalancerId, "sourceLoadBalancerId is required");
+            this.backendServers = builder.backendServers;
+            this.backendServersPolicy = builder.backendServersPolicy;
+            this.loadBalancerName = builder.loadBalancerName;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty>)builder.tags;
+            this.tagsPolicy = builder.tagsPolicy;
+            this.vSwitchId = builder.vSwitchId;
         }
 
         @Override

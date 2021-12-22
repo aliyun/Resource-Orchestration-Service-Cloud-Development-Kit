@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::ControlPolicyAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.009Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.702Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosControlPolicyAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosControlPolicyAttachmentProps.Jsii$Proxy.class)
 public interface RosControlPolicyAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,8 +26,8 @@ public interface RosControlPolicyAttachmentProps extends software.amazon.jsii.Js
      * A builder for {@link RosControlPolicyAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosControlPolicyAttachmentProps> {
-        private java.lang.Object policyId;
-        private java.lang.Object targetId;
+        java.lang.Object policyId;
+        java.lang.Object targetId;
 
         /**
          * Sets the value of {@link RosControlPolicyAttachmentProps#getPolicyId}
@@ -76,7 +76,7 @@ public interface RosControlPolicyAttachmentProps extends software.amazon.jsii.Js
          */
         @Override
         public RosControlPolicyAttachmentProps build() {
-            return new Jsii$Proxy(policyId, targetId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,10 +101,10 @@ public interface RosControlPolicyAttachmentProps extends software.amazon.jsii.Js
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object policyId, final java.lang.Object targetId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.policyId = java.util.Objects.requireNonNull(policyId, "policyId is required");
-            this.targetId = java.util.Objects.requireNonNull(targetId, "targetId is required");
+            this.policyId = java.util.Objects.requireNonNull(builder.policyId, "policyId is required");
+            this.targetId = java.util.Objects.requireNonNull(builder.targetId, "targetId is required");
         }
 
         @Override

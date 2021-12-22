@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::FileSystem`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.717Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.365Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.FileSystemProps")
 @software.amazon.jsii.Jsii.Proxy(FileSystemProps.Jsii$Proxy.class)
 public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
@@ -140,21 +140,21 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link FileSystemProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<FileSystemProps> {
-        private java.lang.Object protocolType;
-        private java.lang.Object storageType;
-        private java.lang.Object bandwidth;
-        private java.lang.Object capacity;
-        private java.lang.Object chargeType;
-        private java.lang.Object deletionForce;
-        private java.lang.Object description;
-        private java.lang.Object duration;
-        private java.lang.Object encryptType;
-        private java.lang.Object fileSystemType;
-        private java.lang.Object snapshotId;
-        private java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object protocolType;
+        java.lang.Object storageType;
+        java.lang.Object bandwidth;
+        java.lang.Object capacity;
+        java.lang.Object chargeType;
+        java.lang.Object deletionForce;
+        java.lang.Object description;
+        java.lang.Object duration;
+        java.lang.Object encryptType;
+        java.lang.Object fileSystemType;
+        java.lang.Object snapshotId;
+        java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link FileSystemProps#getProtocolType}
@@ -477,7 +477,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public FileSystemProps build() {
-            return new Jsii$Proxy(protocolType, storageType, bandwidth, capacity, chargeType, deletionForce, description, duration, encryptType, fileSystemType, snapshotId, tags, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -529,23 +529,23 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object protocolType, final java.lang.Object storageType, final java.lang.Object bandwidth, final java.lang.Object capacity, final java.lang.Object chargeType, final java.lang.Object deletionForce, final java.lang.Object description, final java.lang.Object duration, final java.lang.Object encryptType, final java.lang.Object fileSystemType, final java.lang.Object snapshotId, final java.util.List<? extends com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.protocolType = java.util.Objects.requireNonNull(protocolType, "protocolType is required");
-            this.storageType = java.util.Objects.requireNonNull(storageType, "storageType is required");
-            this.bandwidth = bandwidth;
-            this.capacity = capacity;
-            this.chargeType = chargeType;
-            this.deletionForce = deletionForce;
-            this.description = description;
-            this.duration = duration;
-            this.encryptType = encryptType;
-            this.fileSystemType = fileSystemType;
-            this.snapshotId = snapshotId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty>)tags;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.protocolType = java.util.Objects.requireNonNull(builder.protocolType, "protocolType is required");
+            this.storageType = java.util.Objects.requireNonNull(builder.storageType, "storageType is required");
+            this.bandwidth = builder.bandwidth;
+            this.capacity = builder.capacity;
+            this.chargeType = builder.chargeType;
+            this.deletionForce = builder.deletionForce;
+            this.description = builder.description;
+            this.duration = builder.duration;
+            this.encryptType = builder.encryptType;
+            this.fileSystemType = builder.fileSystemType;
+            this.snapshotId = builder.snapshotId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty>)builder.tags;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

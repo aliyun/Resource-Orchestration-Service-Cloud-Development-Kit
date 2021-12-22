@@ -8,7 +8,7 @@ package com.aliyun.ros.cdk.core;
  * a number of things that would otherwise be arguments to resolve() in a
  * readable way.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.665Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.509Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ResolveOptions")
 @software.amazon.jsii.Jsii.Proxy(ResolveOptions.Jsii$Proxy.class)
 public interface ResolveOptions extends software.amazon.jsii.JsiiSerializable {
@@ -42,9 +42,9 @@ public interface ResolveOptions extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ResolveOptions}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ResolveOptions> {
-        private com.aliyun.ros.cdk.core.ITokenResolver resolver;
-        private com.aliyun.ros.cdk.core.IConstruct scope;
-        private java.lang.Boolean preparing;
+        com.aliyun.ros.cdk.core.ITokenResolver resolver;
+        com.aliyun.ros.cdk.core.IConstruct scope;
+        java.lang.Boolean preparing;
 
         /**
          * Sets the value of {@link ResolveOptions#getResolver}
@@ -83,7 +83,7 @@ public interface ResolveOptions extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ResolveOptions build() {
-            return new Jsii$Proxy(resolver, scope, preparing);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -110,11 +110,11 @@ public interface ResolveOptions extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final com.aliyun.ros.cdk.core.ITokenResolver resolver, final com.aliyun.ros.cdk.core.IConstruct scope, final java.lang.Boolean preparing) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.resolver = java.util.Objects.requireNonNull(resolver, "resolver is required");
-            this.scope = java.util.Objects.requireNonNull(scope, "scope is required");
-            this.preparing = preparing;
+            this.resolver = java.util.Objects.requireNonNull(builder.resolver, "resolver is required");
+            this.scope = java.util.Objects.requireNonNull(builder.scope, "scope is required");
+            this.preparing = builder.preparing;
         }
 
         @Override

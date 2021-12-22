@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::VpnGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.266Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.999Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnGateway")
 public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
 
@@ -164,24 +164,24 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: True: Automatically pays the bill for the VPN gateway.
+         * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
          * <p>
-         * False (default): Does not automatically pay the bill for the VPN gateway.
+         * false (default): Does not automatically pay the bill for the VPN gateway.
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: True: Automatically pays the bill for the VPN gateway. This parameter is required.
+         * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway. This parameter is required.
          */
         public Builder autoPay(final java.lang.Boolean autoPay) {
             this.props.autoPay(autoPay);
             return this;
         }
         /**
-         * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: True: Automatically pays the bill for the VPN gateway.
+         * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
          * <p>
-         * False (default): Does not automatically pay the bill for the VPN gateway.
+         * false (default): Does not automatically pay the bill for the VPN gateway.
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: True: Automatically pays the bill for the VPN gateway. This parameter is required.
+         * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway. This parameter is required.
          */
         public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
             this.props.autoPay(autoPay);

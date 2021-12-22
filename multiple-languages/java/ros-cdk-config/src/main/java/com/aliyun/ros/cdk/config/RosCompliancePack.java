@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * A ROS template type:  `ALIYUN::Config::CompliancePack`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.630Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.186Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosCompliancePack")
 public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -220,9 +220,9 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigRuleParametersProperty> {
-            private java.lang.Object parameterName;
-            private java.lang.Object parameterValue;
-            private java.lang.Object required;
+            java.lang.Object parameterName;
+            java.lang.Object parameterValue;
+            java.lang.Object required;
 
             /**
              * Sets the value of {@link ConfigRuleParametersProperty#getParameterName}
@@ -298,7 +298,7 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConfigRuleParametersProperty build() {
-                return new Jsii$Proxy(parameterName, parameterValue, required);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -326,11 +326,11 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object parameterName, final java.lang.Object parameterValue, final java.lang.Object required) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.parameterName = parameterName;
-                this.parameterValue = parameterValue;
-                this.required = required;
+                this.parameterName = builder.parameterName;
+                this.parameterValue = builder.parameterValue;
+                this.required = builder.required;
             }
 
             @Override
@@ -442,10 +442,10 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigRulesProperty> {
-            private java.lang.Object configRuleId;
-            private java.lang.Object configRuleName;
-            private java.lang.Object configRuleParameters;
-            private java.lang.Object managedRuleIdentifier;
+            java.lang.Object configRuleId;
+            java.lang.Object configRuleName;
+            java.lang.Object configRuleParameters;
+            java.lang.Object managedRuleIdentifier;
 
             /**
              * Sets the value of {@link ConfigRulesProperty#getConfigRuleId}
@@ -543,7 +543,7 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConfigRulesProperty build() {
-                return new Jsii$Proxy(configRuleId, configRuleName, configRuleParameters, managedRuleIdentifier);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -573,12 +573,12 @@ public class RosCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object configRuleId, final java.lang.Object configRuleName, final java.lang.Object configRuleParameters, final java.lang.Object managedRuleIdentifier) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.configRuleId = configRuleId;
-                this.configRuleName = configRuleName;
-                this.configRuleParameters = configRuleParameters;
-                this.managedRuleIdentifier = managedRuleIdentifier;
+                this.configRuleId = builder.configRuleId;
+                this.configRuleName = builder.configRuleName;
+                this.configRuleParameters = builder.configRuleParameters;
+                this.managedRuleIdentifier = builder.managedRuleIdentifier;
             }
 
             @Override

@@ -3,10 +3,34 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Properties for defining a `ALIYUN::REDIS::PrepayInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.980Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.663Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayInstanceProps.Jsii$Proxy.class)
 public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     * Property autoPay: Indicates whether automatic payment is enabled.
+     * <p>
+     * Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+     * true: Automatic payment is enabled. The payment is automatically made.
+     * Default is False
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
+        return null;
+    }
+
+    /**
+     * Property autoRenewDuration: The auto-renewal period.
+     * <p>
+     * Valid values: 1 to 12.
+     * When the instance is about to expire, the instance is automatically renewed
+     * based on the number of months specified by this parameter.
+     * Note This parameter is valid only when ChargeType is set to PrePaid.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewDuration() {
+        return null;
+    }
 
     /**
      * Property backupPolicy: Backup policy.
@@ -19,6 +43,22 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
      * Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCapacity() {
+        return null;
+    }
+
+    /**
+     * Property connections: Connection address.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnections() {
+        return null;
+    }
+
+    /**
+     * Property deletionForce: Whether destroy instance when it is in recycle.
+     * <p>
+     * Default is false
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
         return null;
     }
 
@@ -48,13 +88,6 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property instanceConnection: Instance connection message.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceConnection() {
-        return null;
-    }
-
-    /**
      * Property instanceMaintainTime: Instance maintain time.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceMaintainTime() {
@@ -76,7 +109,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+     * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -157,23 +190,82 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link PrepayInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<PrepayInstanceProps> {
-        private java.lang.Object backupPolicy;
-        private java.lang.Object capacity;
-        private java.lang.Object engineVersion;
-        private java.lang.Object evictionPolicy;
-        private java.lang.Object instanceClass;
-        private java.lang.Object instanceConnection;
-        private java.lang.Object instanceMaintainTime;
-        private java.lang.Object instanceName;
-        private java.lang.Object password;
-        private java.lang.Object period;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object sslEnabled;
-        private java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags;
-        private java.lang.Object vpcId;
-        private java.lang.Object vpcPasswordFree;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object autoPay;
+        java.lang.Object autoRenewDuration;
+        java.lang.Object backupPolicy;
+        java.lang.Object capacity;
+        java.lang.Object connections;
+        java.lang.Object deletionForce;
+        java.lang.Object engineVersion;
+        java.lang.Object evictionPolicy;
+        java.lang.Object instanceClass;
+        java.lang.Object instanceMaintainTime;
+        java.lang.Object instanceName;
+        java.lang.Object password;
+        java.lang.Object period;
+        java.lang.Object securityGroupId;
+        java.lang.Object sslEnabled;
+        java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags;
+        java.lang.Object vpcId;
+        java.lang.Object vpcPasswordFree;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getAutoPay}
+         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled.
+         *                Valid values:
+         *                false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         *                true: Automatic payment is enabled. The payment is automatically made.
+         *                Default is False
+         * @return {@code this}
+         */
+        public Builder autoPay(java.lang.Boolean autoPay) {
+            this.autoPay = autoPay;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getAutoPay}
+         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled.
+         *                Valid values:
+         *                false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         *                true: Automatic payment is enabled. The payment is automatically made.
+         *                Default is False
+         * @return {@code this}
+         */
+        public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
+            this.autoPay = autoPay;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getAutoRenewDuration}
+         * @param autoRenewDuration Property autoRenewDuration: The auto-renewal period.
+         *                          Valid values: 1 to 12.
+         *                          When the instance is about to expire, the instance is automatically renewed
+         *                          based on the number of months specified by this parameter.
+         *                          Note This parameter is valid only when ChargeType is set to PrePaid.
+         * @return {@code this}
+         */
+        public Builder autoRenewDuration(java.lang.Number autoRenewDuration) {
+            this.autoRenewDuration = autoRenewDuration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getAutoRenewDuration}
+         * @param autoRenewDuration Property autoRenewDuration: The auto-renewal period.
+         *                          Valid values: 1 to 12.
+         *                          When the instance is about to expire, the instance is automatically renewed
+         *                          based on the number of months specified by this parameter.
+         *                          Note This parameter is valid only when ChargeType is set to PrePaid.
+         * @return {@code this}
+         */
+        public Builder autoRenewDuration(com.aliyun.ros.cdk.core.IResolvable autoRenewDuration) {
+            this.autoRenewDuration = autoRenewDuration;
+            return this;
+        }
 
         /**
          * Sets the value of {@link PrepayInstanceProps#getBackupPolicy}
@@ -212,6 +304,48 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder capacity(com.aliyun.ros.cdk.core.IResolvable capacity) {
             this.capacity = capacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getConnections}
+         * @param connections Property connections: Connection address.
+         * @return {@code this}
+         */
+        public Builder connections(com.aliyun.ros.cdk.core.IResolvable connections) {
+            this.connections = connections;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getConnections}
+         * @param connections Property connections: Connection address.
+         * @return {@code this}
+         */
+        public Builder connections(com.aliyun.ros.cdk.redis.RosPrepayInstance.ConnectionsProperty connections) {
+            this.connections = connections;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether destroy instance when it is in recycle.
+         *                      Default is false
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether destroy instance when it is in recycle.
+         *                      Default is false
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
             return this;
         }
 
@@ -280,26 +414,6 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
-         * Sets the value of {@link PrepayInstanceProps#getInstanceConnection}
-         * @param instanceConnection Property instanceConnection: Instance connection message.
-         * @return {@code this}
-         */
-        public Builder instanceConnection(com.aliyun.ros.cdk.core.IResolvable instanceConnection) {
-            this.instanceConnection = instanceConnection;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link PrepayInstanceProps#getInstanceConnection}
-         * @param instanceConnection Property instanceConnection: Instance connection message.
-         * @return {@code this}
-         */
-        public Builder instanceConnection(com.aliyun.ros.cdk.redis.RosPrepayInstance.InstanceConnectionProperty instanceConnection) {
-            this.instanceConnection = instanceConnection;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link PrepayInstanceProps#getInstanceMaintainTime}
          * @param instanceMaintainTime Property instanceMaintainTime: Instance maintain time.
          * @return {@code this}
@@ -361,7 +475,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link PrepayInstanceProps#getPeriod}
-         * @param period Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+         * @param period Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -371,7 +485,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link PrepayInstanceProps#getPeriod}
-         * @param period Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+         * @param period Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -540,7 +654,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public PrepayInstanceProps build() {
-            return new Jsii$Proxy(backupPolicy, capacity, engineVersion, evictionPolicy, instanceClass, instanceConnection, instanceMaintainTime, instanceName, password, period, securityGroupId, sslEnabled, tags, vpcId, vpcPasswordFree, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -549,12 +663,15 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PrepayInstanceProps {
+        private final java.lang.Object autoPay;
+        private final java.lang.Object autoRenewDuration;
         private final java.lang.Object backupPolicy;
         private final java.lang.Object capacity;
+        private final java.lang.Object connections;
+        private final java.lang.Object deletionForce;
         private final java.lang.Object engineVersion;
         private final java.lang.Object evictionPolicy;
         private final java.lang.Object instanceClass;
-        private final java.lang.Object instanceConnection;
         private final java.lang.Object instanceMaintainTime;
         private final java.lang.Object instanceName;
         private final java.lang.Object password;
@@ -573,12 +690,15 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenewDuration = software.amazon.jsii.Kernel.get(this, "autoRenewDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupPolicy = software.amazon.jsii.Kernel.get(this, "backupPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.capacity = software.amazon.jsii.Kernel.get(this, "capacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connections = software.amazon.jsii.Kernel.get(this, "connections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.evictionPolicy = software.amazon.jsii.Kernel.get(this, "evictionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceClass = software.amazon.jsii.Kernel.get(this, "instanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.instanceConnection = software.amazon.jsii.Kernel.get(this, "instanceConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceMaintainTime = software.amazon.jsii.Kernel.get(this, "instanceMaintainTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -596,25 +716,38 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object backupPolicy, final java.lang.Object capacity, final java.lang.Object engineVersion, final java.lang.Object evictionPolicy, final java.lang.Object instanceClass, final java.lang.Object instanceConnection, final java.lang.Object instanceMaintainTime, final java.lang.Object instanceName, final java.lang.Object password, final java.lang.Object period, final java.lang.Object securityGroupId, final java.lang.Object sslEnabled, final java.util.List<? extends com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vpcPasswordFree, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.backupPolicy = backupPolicy;
-            this.capacity = capacity;
-            this.engineVersion = engineVersion;
-            this.evictionPolicy = evictionPolicy;
-            this.instanceClass = instanceClass;
-            this.instanceConnection = instanceConnection;
-            this.instanceMaintainTime = instanceMaintainTime;
-            this.instanceName = instanceName;
-            this.password = password;
-            this.period = period;
-            this.securityGroupId = securityGroupId;
-            this.sslEnabled = sslEnabled;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty>)tags;
-            this.vpcId = vpcId;
-            this.vpcPasswordFree = vpcPasswordFree;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.autoPay = builder.autoPay;
+            this.autoRenewDuration = builder.autoRenewDuration;
+            this.backupPolicy = builder.backupPolicy;
+            this.capacity = builder.capacity;
+            this.connections = builder.connections;
+            this.deletionForce = builder.deletionForce;
+            this.engineVersion = builder.engineVersion;
+            this.evictionPolicy = builder.evictionPolicy;
+            this.instanceClass = builder.instanceClass;
+            this.instanceMaintainTime = builder.instanceMaintainTime;
+            this.instanceName = builder.instanceName;
+            this.password = builder.password;
+            this.period = builder.period;
+            this.securityGroupId = builder.securityGroupId;
+            this.sslEnabled = builder.sslEnabled;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty>)builder.tags;
+            this.vpcId = builder.vpcId;
+            this.vpcPasswordFree = builder.vpcPasswordFree;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
+        }
+
+        @Override
+        public final java.lang.Object getAutoPay() {
+            return this.autoPay;
+        }
+
+        @Override
+        public final java.lang.Object getAutoRenewDuration() {
+            return this.autoRenewDuration;
         }
 
         @Override
@@ -625,6 +758,16 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getCapacity() {
             return this.capacity;
+        }
+
+        @Override
+        public final java.lang.Object getConnections() {
+            return this.connections;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
         }
 
         @Override
@@ -640,11 +783,6 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getInstanceClass() {
             return this.instanceClass;
-        }
-
-        @Override
-        public final java.lang.Object getInstanceConnection() {
-            return this.instanceConnection;
         }
 
         @Override
@@ -708,11 +846,23 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getAutoPay() != null) {
+                data.set("autoPay", om.valueToTree(this.getAutoPay()));
+            }
+            if (this.getAutoRenewDuration() != null) {
+                data.set("autoRenewDuration", om.valueToTree(this.getAutoRenewDuration()));
+            }
             if (this.getBackupPolicy() != null) {
                 data.set("backupPolicy", om.valueToTree(this.getBackupPolicy()));
             }
             if (this.getCapacity() != null) {
                 data.set("capacity", om.valueToTree(this.getCapacity()));
+            }
+            if (this.getConnections() != null) {
+                data.set("connections", om.valueToTree(this.getConnections()));
+            }
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
             if (this.getEngineVersion() != null) {
                 data.set("engineVersion", om.valueToTree(this.getEngineVersion()));
@@ -722,9 +872,6 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getInstanceClass() != null) {
                 data.set("instanceClass", om.valueToTree(this.getInstanceClass()));
-            }
-            if (this.getInstanceConnection() != null) {
-                data.set("instanceConnection", om.valueToTree(this.getInstanceConnection()));
             }
             if (this.getInstanceMaintainTime() != null) {
                 data.set("instanceMaintainTime", om.valueToTree(this.getInstanceMaintainTime()));
@@ -777,12 +924,15 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
 
             PrepayInstanceProps.Jsii$Proxy that = (PrepayInstanceProps.Jsii$Proxy) o;
 
+            if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
+            if (this.autoRenewDuration != null ? !this.autoRenewDuration.equals(that.autoRenewDuration) : that.autoRenewDuration != null) return false;
             if (this.backupPolicy != null ? !this.backupPolicy.equals(that.backupPolicy) : that.backupPolicy != null) return false;
             if (this.capacity != null ? !this.capacity.equals(that.capacity) : that.capacity != null) return false;
+            if (this.connections != null ? !this.connections.equals(that.connections) : that.connections != null) return false;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.engineVersion != null ? !this.engineVersion.equals(that.engineVersion) : that.engineVersion != null) return false;
             if (this.evictionPolicy != null ? !this.evictionPolicy.equals(that.evictionPolicy) : that.evictionPolicy != null) return false;
             if (this.instanceClass != null ? !this.instanceClass.equals(that.instanceClass) : that.instanceClass != null) return false;
-            if (this.instanceConnection != null ? !this.instanceConnection.equals(that.instanceConnection) : that.instanceConnection != null) return false;
             if (this.instanceMaintainTime != null ? !this.instanceMaintainTime.equals(that.instanceMaintainTime) : that.instanceMaintainTime != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
@@ -798,12 +948,15 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         @Override
         public final int hashCode() {
-            int result = this.backupPolicy != null ? this.backupPolicy.hashCode() : 0;
+            int result = this.autoPay != null ? this.autoPay.hashCode() : 0;
+            result = 31 * result + (this.autoRenewDuration != null ? this.autoRenewDuration.hashCode() : 0);
+            result = 31 * result + (this.backupPolicy != null ? this.backupPolicy.hashCode() : 0);
             result = 31 * result + (this.capacity != null ? this.capacity.hashCode() : 0);
+            result = 31 * result + (this.connections != null ? this.connections.hashCode() : 0);
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.engineVersion != null ? this.engineVersion.hashCode() : 0);
             result = 31 * result + (this.evictionPolicy != null ? this.evictionPolicy.hashCode() : 0);
             result = 31 * result + (this.instanceClass != null ? this.instanceClass.hashCode() : 0);
-            result = 31 * result + (this.instanceConnection != null ? this.instanceConnection.hashCode() : 0);
             result = 31 * result + (this.instanceMaintainTime != null ? this.instanceMaintainTime.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.password != null ? this.password.hashCode() : 0);

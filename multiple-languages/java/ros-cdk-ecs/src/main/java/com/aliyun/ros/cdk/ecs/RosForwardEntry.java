@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::ForwardEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.097Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.641Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosForwardEntry")
 public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -170,6 +170,42 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getForwardEntryName() {
+        return software.amazon.jsii.Kernel.get(this, "forwardEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setForwardEntryName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "forwardEntryName", value);
+    }
+
+    /**
+     */
+    public void setForwardEntryName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "forwardEntryName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPortBreak() {
+        return software.amazon.jsii.Kernel.get(this, "portBreak", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPortBreak(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "portBreak", value);
+    }
+
+    /**
+     */
+    public void setPortBreak(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "portBreak", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ecs.RosForwardEntry}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.RosForwardEntry> {
@@ -294,6 +330,40 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder ipProtocol(final com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
             this.props.ipProtocol(ipProtocol);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param forwardEntryName This parameter is required.
+         */
+        public Builder forwardEntryName(final java.lang.String forwardEntryName) {
+            this.props.forwardEntryName(forwardEntryName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param forwardEntryName This parameter is required.
+         */
+        public Builder forwardEntryName(final com.aliyun.ros.cdk.core.IResolvable forwardEntryName) {
+            this.props.forwardEntryName(forwardEntryName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param portBreak This parameter is required.
+         */
+        public Builder portBreak(final java.lang.Boolean portBreak) {
+            this.props.portBreak(portBreak);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param portBreak This parameter is required.
+         */
+        public Builder portBreak(final com.aliyun.ros.cdk.core.IResolvable portBreak) {
+            this.props.portBreak(portBreak);
             return this;
         }
 

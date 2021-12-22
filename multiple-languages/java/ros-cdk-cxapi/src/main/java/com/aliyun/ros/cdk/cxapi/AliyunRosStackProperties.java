@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Artifact properties for ROS stacks.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.619Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.473Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.AliyunRosStackProperties")
 @software.amazon.jsii.Jsii.Proxy(AliyunRosStackProperties.Jsii$Proxy.class)
 public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSerializable {
@@ -39,9 +39,9 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
      * A builder for {@link AliyunRosStackProperties}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AliyunRosStackProperties> {
-        private java.lang.String templateFile;
-        private java.util.Map<java.lang.String, java.lang.String> parameters;
-        private java.lang.String stackName;
+        java.lang.String templateFile;
+        java.util.Map<java.lang.String, java.lang.String> parameters;
+        java.lang.String stackName;
 
         /**
          * Sets the value of {@link AliyunRosStackProperties#getTemplateFile}
@@ -80,7 +80,7 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public AliyunRosStackProperties build() {
-            return new Jsii$Proxy(templateFile, parameters, stackName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -107,11 +107,11 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String templateFile, final java.util.Map<java.lang.String, java.lang.String> parameters, final java.lang.String stackName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.templateFile = java.util.Objects.requireNonNull(templateFile, "templateFile is required");
-            this.parameters = parameters;
-            this.stackName = stackName;
+            this.templateFile = java.util.Objects.requireNonNull(builder.templateFile, "templateFile is required");
+            this.parameters = builder.parameters;
+            this.stackName = builder.stackName;
         }
 
         @Override

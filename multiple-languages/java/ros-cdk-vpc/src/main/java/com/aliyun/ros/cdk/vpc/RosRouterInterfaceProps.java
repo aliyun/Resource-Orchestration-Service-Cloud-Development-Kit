@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::RouterInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.220Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.957Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouterInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouterInterfaceProps.Jsii$Proxy.class)
 public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -128,25 +128,25 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosRouterInterfaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRouterInterfaceProps> {
-        private java.lang.Object role;
-        private java.lang.Object routerId;
-        private java.lang.Object accessPointId;
-        private java.lang.Object autoPay;
-        private java.lang.Object description;
-        private java.lang.Object healthCheckSourceIp;
-        private java.lang.Object healthCheckTargetIp;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object name;
-        private java.lang.Object oppositeAccessPointId;
-        private java.lang.Object oppositeInterfaceId;
-        private java.lang.Object oppositeInterfaceOwnerId;
-        private java.lang.Object oppositeRegionId;
-        private java.lang.Object oppositeRouterId;
-        private java.lang.Object oppositeRouterType;
-        private java.lang.Object period;
-        private java.lang.Object pricingCycle;
-        private java.lang.Object routerType;
-        private java.lang.Object spec;
+        java.lang.Object role;
+        java.lang.Object routerId;
+        java.lang.Object accessPointId;
+        java.lang.Object autoPay;
+        java.lang.Object description;
+        java.lang.Object healthCheckSourceIp;
+        java.lang.Object healthCheckTargetIp;
+        java.lang.Object instanceChargeType;
+        java.lang.Object name;
+        java.lang.Object oppositeAccessPointId;
+        java.lang.Object oppositeInterfaceId;
+        java.lang.Object oppositeInterfaceOwnerId;
+        java.lang.Object oppositeRegionId;
+        java.lang.Object oppositeRouterId;
+        java.lang.Object oppositeRouterType;
+        java.lang.Object period;
+        java.lang.Object pricingCycle;
+        java.lang.Object routerType;
+        java.lang.Object spec;
 
         /**
          * Sets the value of {@link RosRouterInterfaceProps#getRole}
@@ -535,7 +535,7 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosRouterInterfaceProps build() {
-            return new Jsii$Proxy(role, routerId, accessPointId, autoPay, description, healthCheckSourceIp, healthCheckTargetIp, instanceChargeType, name, oppositeAccessPointId, oppositeInterfaceId, oppositeInterfaceOwnerId, oppositeRegionId, oppositeRouterId, oppositeRouterType, period, pricingCycle, routerType, spec);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -594,27 +594,27 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object role, final java.lang.Object routerId, final java.lang.Object accessPointId, final java.lang.Object autoPay, final java.lang.Object description, final java.lang.Object healthCheckSourceIp, final java.lang.Object healthCheckTargetIp, final java.lang.Object instanceChargeType, final java.lang.Object name, final java.lang.Object oppositeAccessPointId, final java.lang.Object oppositeInterfaceId, final java.lang.Object oppositeInterfaceOwnerId, final java.lang.Object oppositeRegionId, final java.lang.Object oppositeRouterId, final java.lang.Object oppositeRouterType, final java.lang.Object period, final java.lang.Object pricingCycle, final java.lang.Object routerType, final java.lang.Object spec) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.role = java.util.Objects.requireNonNull(role, "role is required");
-            this.routerId = java.util.Objects.requireNonNull(routerId, "routerId is required");
-            this.accessPointId = accessPointId;
-            this.autoPay = autoPay;
-            this.description = description;
-            this.healthCheckSourceIp = healthCheckSourceIp;
-            this.healthCheckTargetIp = healthCheckTargetIp;
-            this.instanceChargeType = instanceChargeType;
-            this.name = name;
-            this.oppositeAccessPointId = oppositeAccessPointId;
-            this.oppositeInterfaceId = oppositeInterfaceId;
-            this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
-            this.oppositeRegionId = oppositeRegionId;
-            this.oppositeRouterId = oppositeRouterId;
-            this.oppositeRouterType = oppositeRouterType;
-            this.period = period;
-            this.pricingCycle = pricingCycle;
-            this.routerType = routerType;
-            this.spec = spec;
+            this.role = java.util.Objects.requireNonNull(builder.role, "role is required");
+            this.routerId = java.util.Objects.requireNonNull(builder.routerId, "routerId is required");
+            this.accessPointId = builder.accessPointId;
+            this.autoPay = builder.autoPay;
+            this.description = builder.description;
+            this.healthCheckSourceIp = builder.healthCheckSourceIp;
+            this.healthCheckTargetIp = builder.healthCheckTargetIp;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.name = builder.name;
+            this.oppositeAccessPointId = builder.oppositeAccessPointId;
+            this.oppositeInterfaceId = builder.oppositeInterfaceId;
+            this.oppositeInterfaceOwnerId = builder.oppositeInterfaceOwnerId;
+            this.oppositeRegionId = builder.oppositeRegionId;
+            this.oppositeRouterId = builder.oppositeRouterId;
+            this.oppositeRouterType = builder.oppositeRouterType;
+            this.period = builder.period;
+            this.pricingCycle = builder.pricingCycle;
+            this.routerType = builder.routerType;
+            this.spec = builder.spec;
         }
 
         @Override

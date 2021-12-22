@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Signature`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.324Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.661Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosSignatureProps")
 @software.amazon.jsii.Jsii.Proxy(RosSignatureProps.Jsii$Proxy.class)
 public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,9 +30,9 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosSignatureProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSignatureProps> {
-        private java.lang.Object signatureKey;
-        private java.lang.Object signatureName;
-        private java.lang.Object signatureSecret;
+        java.lang.Object signatureKey;
+        java.lang.Object signatureName;
+        java.lang.Object signatureSecret;
 
         /**
          * Sets the value of {@link RosSignatureProps#getSignatureKey}
@@ -101,7 +101,7 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosSignatureProps build() {
-            return new Jsii$Proxy(signatureKey, signatureName, signatureSecret);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -128,11 +128,11 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object signatureKey, final java.lang.Object signatureName, final java.lang.Object signatureSecret) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.signatureKey = java.util.Objects.requireNonNull(signatureKey, "signatureKey is required");
-            this.signatureName = java.util.Objects.requireNonNull(signatureName, "signatureName is required");
-            this.signatureSecret = java.util.Objects.requireNonNull(signatureSecret, "signatureSecret is required");
+            this.signatureKey = java.util.Objects.requireNonNull(builder.signatureKey, "signatureKey is required");
+            this.signatureName = java.util.Objects.requireNonNull(builder.signatureName, "signatureName is required");
+            this.signatureSecret = java.util.Objects.requireNonNull(builder.signatureSecret, "signatureSecret is required");
         }
 
         @Override

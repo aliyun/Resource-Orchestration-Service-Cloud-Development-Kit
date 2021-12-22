@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::LogtailConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.138Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.878Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosLogtailConfig")
 public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -191,8 +191,8 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CloneFromProperty> {
-            private java.lang.Object logtailConfigName;
-            private java.lang.Object projectName;
+            java.lang.Object logtailConfigName;
+            java.lang.Object projectName;
 
             /**
              * Sets the value of {@link CloneFromProperty#getLogtailConfigName}
@@ -246,7 +246,7 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CloneFromProperty build() {
-                return new Jsii$Proxy(logtailConfigName, projectName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -272,10 +272,10 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object logtailConfigName, final java.lang.Object projectName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.logtailConfigName = java.util.Objects.requireNonNull(logtailConfigName, "logtailConfigName is required");
-                this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
+                this.logtailConfigName = java.util.Objects.requireNonNull(builder.logtailConfigName, "logtailConfigName is required");
+                this.projectName = java.util.Objects.requireNonNull(builder.projectName, "projectName is required");
             }
 
             @Override

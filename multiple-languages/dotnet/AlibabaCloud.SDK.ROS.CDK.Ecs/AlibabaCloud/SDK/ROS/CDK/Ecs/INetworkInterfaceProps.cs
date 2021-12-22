@@ -85,6 +85,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.</summary>
+        [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecondaryPrivateIpAddressCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property securityGroupId: The ID of the security group that the ENI joins.</summary>
         /// <remarks>
         /// The security group and the ENI must be in a same VPC.
@@ -193,6 +204,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecondaryPrivateIpAddressCount
             {
                 get => GetInstanceProperty<object?>();
             }

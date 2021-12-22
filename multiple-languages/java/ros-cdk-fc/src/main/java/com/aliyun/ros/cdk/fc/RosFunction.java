@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Function`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.476Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.048Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -419,10 +419,10 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AsyncConfigurationProperty> {
-            private java.lang.Object destination;
-            private java.lang.Object maxAsyncEventAgeInSeconds;
-            private java.lang.Object maxAsyncRetryAttempts;
-            private java.lang.Object statefulInvocation;
+            java.lang.Object destination;
+            java.lang.Object maxAsyncEventAgeInSeconds;
+            java.lang.Object maxAsyncRetryAttempts;
+            java.lang.Object statefulInvocation;
 
             /**
              * Sets the value of {@link AsyncConfigurationProperty#getDestination}
@@ -520,7 +520,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AsyncConfigurationProperty build() {
-                return new Jsii$Proxy(destination, maxAsyncEventAgeInSeconds, maxAsyncRetryAttempts, statefulInvocation);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -550,12 +550,12 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object destination, final java.lang.Object maxAsyncEventAgeInSeconds, final java.lang.Object maxAsyncRetryAttempts, final java.lang.Object statefulInvocation) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.destination = destination;
-                this.maxAsyncEventAgeInSeconds = maxAsyncEventAgeInSeconds;
-                this.maxAsyncRetryAttempts = maxAsyncRetryAttempts;
-                this.statefulInvocation = statefulInvocation;
+                this.destination = builder.destination;
+                this.maxAsyncEventAgeInSeconds = builder.maxAsyncEventAgeInSeconds;
+                this.maxAsyncRetryAttempts = builder.maxAsyncRetryAttempts;
+                this.statefulInvocation = builder.statefulInvocation;
             }
 
             @Override
@@ -677,10 +677,10 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CodeProperty> {
-            private java.lang.Object ossBucketName;
-            private java.lang.Object ossObjectName;
-            private java.lang.Object sourceCode;
-            private java.lang.Object zipFile;
+            java.lang.Object ossBucketName;
+            java.lang.Object ossObjectName;
+            java.lang.Object sourceCode;
+            java.lang.Object zipFile;
 
             /**
              * Sets the value of {@link CodeProperty#getOssBucketName}
@@ -778,7 +778,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CodeProperty build() {
-                return new Jsii$Proxy(ossBucketName, ossObjectName, sourceCode, zipFile);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -808,12 +808,12 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object ossBucketName, final java.lang.Object ossObjectName, final java.lang.Object sourceCode, final java.lang.Object zipFile) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.ossBucketName = ossBucketName;
-                this.ossObjectName = ossObjectName;
-                this.sourceCode = sourceCode;
-                this.zipFile = zipFile;
+                this.ossBucketName = builder.ossBucketName;
+                this.ossObjectName = builder.ossObjectName;
+                this.sourceCode = builder.sourceCode;
+                this.zipFile = builder.zipFile;
             }
 
             @Override
@@ -933,10 +933,10 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CustomContainerConfigProperty> {
-            private java.lang.Object image;
-            private java.lang.Object accelerationType;
-            private java.lang.Object args;
-            private java.lang.Object command;
+            java.lang.Object image;
+            java.lang.Object accelerationType;
+            java.lang.Object args;
+            java.lang.Object command;
 
             /**
              * Sets the value of {@link CustomContainerConfigProperty#getImage}
@@ -1034,7 +1034,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CustomContainerConfigProperty build() {
-                return new Jsii$Proxy(image, accelerationType, args, command);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1064,12 +1064,12 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object image, final java.lang.Object accelerationType, final java.lang.Object args, final java.lang.Object command) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.image = java.util.Objects.requireNonNull(image, "image is required");
-                this.accelerationType = accelerationType;
-                this.args = args;
-                this.command = command;
+                this.image = java.util.Objects.requireNonNull(builder.image, "image is required");
+                this.accelerationType = builder.accelerationType;
+                this.args = builder.args;
+                this.command = builder.command;
             }
 
             @Override
@@ -1175,8 +1175,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DestinationProperty> {
-            private java.lang.Object onFailure;
-            private java.lang.Object onSuccess;
+            java.lang.Object onFailure;
+            java.lang.Object onSuccess;
 
             /**
              * Sets the value of {@link DestinationProperty#getOnFailure}
@@ -1230,7 +1230,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DestinationProperty build() {
-                return new Jsii$Proxy(onFailure, onSuccess);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1256,10 +1256,10 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object onFailure, final java.lang.Object onSuccess) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.onFailure = onFailure;
-                this.onSuccess = onSuccess;
+                this.onFailure = builder.onFailure;
+                this.onSuccess = builder.onSuccess;
             }
 
             @Override

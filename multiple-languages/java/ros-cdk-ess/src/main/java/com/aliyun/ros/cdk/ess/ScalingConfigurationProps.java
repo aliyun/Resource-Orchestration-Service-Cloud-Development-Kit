@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.417Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingConfigurationProps.Jsii$Proxy.class)
 public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -298,38 +298,38 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link ScalingConfigurationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ScalingConfigurationProps> {
-        private java.lang.Object scalingGroupId;
-        private java.lang.Object creditSpecification;
-        private java.lang.Object deploymentSetId;
-        private java.lang.Object diskMappings;
-        private java.lang.Object hpcClusterId;
-        private java.lang.Object imageFamily;
-        private java.lang.Object imageId;
-        private java.lang.Object instanceId;
-        private java.lang.Object instanceName;
-        private java.lang.Object instanceType;
-        private java.lang.Object instanceTypes;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object internetMaxBandwidthIn;
-        private java.lang.Object internetMaxBandwidthOut;
-        private java.lang.Object ioOptimized;
-        private java.lang.Object ipv6AddressCount;
-        private java.lang.Object keyPairName;
-        private java.lang.Object loadBalancerWeight;
-        private java.lang.Object passwordInherit;
-        private java.lang.Object ramRoleName;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object scalingConfigurationName;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object spotPriceLimit;
-        private java.lang.Object spotPriceLimitForInstanceType;
-        private java.lang.Object spotStrategy;
-        private java.lang.Object systemDiskAutoSnapshotPolicyId;
-        private java.lang.Object systemDiskCategory;
-        private java.lang.Object systemDiskPerformanceLevel;
-        private java.lang.Object systemDiskSize;
-        private java.lang.Object tagList;
-        private java.lang.Object userData;
+        java.lang.Object scalingGroupId;
+        java.lang.Object creditSpecification;
+        java.lang.Object deploymentSetId;
+        java.lang.Object diskMappings;
+        java.lang.Object hpcClusterId;
+        java.lang.Object imageFamily;
+        java.lang.Object imageId;
+        java.lang.Object instanceId;
+        java.lang.Object instanceName;
+        java.lang.Object instanceType;
+        java.lang.Object instanceTypes;
+        java.lang.Object internetChargeType;
+        java.lang.Object internetMaxBandwidthIn;
+        java.lang.Object internetMaxBandwidthOut;
+        java.lang.Object ioOptimized;
+        java.lang.Object ipv6AddressCount;
+        java.lang.Object keyPairName;
+        java.lang.Object loadBalancerWeight;
+        java.lang.Object passwordInherit;
+        java.lang.Object ramRoleName;
+        java.lang.Object resourceGroupId;
+        java.lang.Object scalingConfigurationName;
+        java.lang.Object securityGroupId;
+        java.lang.Object spotPriceLimit;
+        java.lang.Object spotPriceLimitForInstanceType;
+        java.lang.Object spotStrategy;
+        java.lang.Object systemDiskAutoSnapshotPolicyId;
+        java.lang.Object systemDiskCategory;
+        java.lang.Object systemDiskPerformanceLevel;
+        java.lang.Object systemDiskSize;
+        java.lang.Object tagList;
+        java.lang.Object userData;
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getScalingGroupId}
@@ -1062,7 +1062,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public ScalingConfigurationProps build() {
-            return new Jsii$Proxy(scalingGroupId, creditSpecification, deploymentSetId, diskMappings, hpcClusterId, imageFamily, imageId, instanceId, instanceName, instanceType, instanceTypes, internetChargeType, internetMaxBandwidthIn, internetMaxBandwidthOut, ioOptimized, ipv6AddressCount, keyPairName, loadBalancerWeight, passwordInherit, ramRoleName, resourceGroupId, scalingConfigurationName, securityGroupId, spotPriceLimit, spotPriceLimitForInstanceType, spotStrategy, systemDiskAutoSnapshotPolicyId, systemDiskCategory, systemDiskPerformanceLevel, systemDiskSize, tagList, userData);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1147,40 +1147,40 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object creditSpecification, final java.lang.Object deploymentSetId, final java.lang.Object diskMappings, final java.lang.Object hpcClusterId, final java.lang.Object imageFamily, final java.lang.Object imageId, final java.lang.Object instanceId, final java.lang.Object instanceName, final java.lang.Object instanceType, final java.lang.Object instanceTypes, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object ipv6AddressCount, final java.lang.Object keyPairName, final java.lang.Object loadBalancerWeight, final java.lang.Object passwordInherit, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object scalingConfigurationName, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotPriceLimitForInstanceType, final java.lang.Object spotStrategy, final java.lang.Object systemDiskAutoSnapshotPolicyId, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.lang.Object tagList, final java.lang.Object userData) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
-            this.creditSpecification = creditSpecification;
-            this.deploymentSetId = deploymentSetId;
-            this.diskMappings = diskMappings;
-            this.hpcClusterId = hpcClusterId;
-            this.imageFamily = imageFamily;
-            this.imageId = imageId;
-            this.instanceId = instanceId;
-            this.instanceName = instanceName;
-            this.instanceType = instanceType;
-            this.instanceTypes = instanceTypes;
-            this.internetChargeType = internetChargeType;
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-            this.ioOptimized = ioOptimized;
-            this.ipv6AddressCount = ipv6AddressCount;
-            this.keyPairName = keyPairName;
-            this.loadBalancerWeight = loadBalancerWeight;
-            this.passwordInherit = passwordInherit;
-            this.ramRoleName = ramRoleName;
-            this.resourceGroupId = resourceGroupId;
-            this.scalingConfigurationName = scalingConfigurationName;
-            this.securityGroupId = securityGroupId;
-            this.spotPriceLimit = spotPriceLimit;
-            this.spotPriceLimitForInstanceType = spotPriceLimitForInstanceType;
-            this.spotStrategy = spotStrategy;
-            this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
-            this.systemDiskCategory = systemDiskCategory;
-            this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
-            this.systemDiskSize = systemDiskSize;
-            this.tagList = tagList;
-            this.userData = userData;
+            this.scalingGroupId = java.util.Objects.requireNonNull(builder.scalingGroupId, "scalingGroupId is required");
+            this.creditSpecification = builder.creditSpecification;
+            this.deploymentSetId = builder.deploymentSetId;
+            this.diskMappings = builder.diskMappings;
+            this.hpcClusterId = builder.hpcClusterId;
+            this.imageFamily = builder.imageFamily;
+            this.imageId = builder.imageId;
+            this.instanceId = builder.instanceId;
+            this.instanceName = builder.instanceName;
+            this.instanceType = builder.instanceType;
+            this.instanceTypes = builder.instanceTypes;
+            this.internetChargeType = builder.internetChargeType;
+            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
+            this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
+            this.ioOptimized = builder.ioOptimized;
+            this.ipv6AddressCount = builder.ipv6AddressCount;
+            this.keyPairName = builder.keyPairName;
+            this.loadBalancerWeight = builder.loadBalancerWeight;
+            this.passwordInherit = builder.passwordInherit;
+            this.ramRoleName = builder.ramRoleName;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.scalingConfigurationName = builder.scalingConfigurationName;
+            this.securityGroupId = builder.securityGroupId;
+            this.spotPriceLimit = builder.spotPriceLimit;
+            this.spotPriceLimitForInstanceType = builder.spotPriceLimitForInstanceType;
+            this.spotStrategy = builder.spotStrategy;
+            this.systemDiskAutoSnapshotPolicyId = builder.systemDiskAutoSnapshotPolicyId;
+            this.systemDiskCategory = builder.systemDiskCategory;
+            this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
+            this.systemDiskSize = builder.systemDiskSize;
+            this.tagList = builder.tagList;
+            this.userData = builder.userData;
         }
 
         @Override

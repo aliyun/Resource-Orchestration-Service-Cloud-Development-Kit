@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * Properties for defining a `ALIYUN::ROCKETMQ::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.016Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.708Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.RosGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupProps.Jsii$Proxy.class)
 public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,10 +38,10 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosGroupProps> {
-        private java.lang.Object groupId;
-        private java.lang.Object instanceId;
-        private java.lang.Object groupType;
-        private java.lang.Object remark;
+        java.lang.Object groupId;
+        java.lang.Object instanceId;
+        java.lang.Object groupType;
+        java.lang.Object remark;
 
         /**
          * Sets the value of {@link RosGroupProps#getGroupId}
@@ -130,7 +130,7 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosGroupProps build() {
-            return new Jsii$Proxy(groupId, instanceId, groupType, remark);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -159,12 +159,12 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object groupId, final java.lang.Object instanceId, final java.lang.Object groupType, final java.lang.Object remark) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.groupType = groupType;
-            this.remark = remark;
+            this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.groupType = builder.groupType;
+            this.remark = builder.remark;
         }
 
         @Override

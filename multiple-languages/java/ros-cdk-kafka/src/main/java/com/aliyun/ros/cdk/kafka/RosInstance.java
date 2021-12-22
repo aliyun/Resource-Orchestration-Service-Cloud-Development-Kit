@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS template type:  `ALIYUN::KAFKA::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.573Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.254Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -147,6 +147,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeletionForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "deletionForce", value);
+    }
+
+    /**
+     */
+    public void setDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deletionForce", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDeployOption() {
         return software.amazon.jsii.Kernel.get(this, "deployOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -215,6 +233,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setIoMaxSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ioMaxSpec", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOpenConnector() {
+        return software.amazon.jsii.Kernel.get(this, "openConnector", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOpenConnector(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "openConnector", value);
+    }
+
+    /**
+     */
+    public void setOpenConnector(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "openConnector", value);
     }
 
     /**
@@ -349,16 +385,16 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DeployOptionProperty> {
-            private java.lang.Object deployModule;
-            private java.lang.Object vSwitchId;
-            private java.lang.Object isEipInner;
-            private java.lang.Object isSetUserAndPassword;
-            private java.lang.Object name;
-            private java.lang.Object password;
-            private java.lang.Object securityGroup;
-            private java.lang.Object username;
-            private java.lang.Object vpcId;
-            private java.lang.Object zoneId;
+            java.lang.Object deployModule;
+            java.lang.Object vSwitchId;
+            java.lang.Object isEipInner;
+            java.lang.Object isSetUserAndPassword;
+            java.lang.Object name;
+            java.lang.Object password;
+            java.lang.Object securityGroup;
+            java.lang.Object username;
+            java.lang.Object vpcId;
+            java.lang.Object zoneId;
 
             /**
              * Sets the value of {@link DeployOptionProperty#getDeployModule}
@@ -588,7 +624,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DeployOptionProperty build() {
-                return new Jsii$Proxy(deployModule, vSwitchId, isEipInner, isSetUserAndPassword, name, password, securityGroup, username, vpcId, zoneId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -630,18 +666,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object deployModule, final java.lang.Object vSwitchId, final java.lang.Object isEipInner, final java.lang.Object isSetUserAndPassword, final java.lang.Object name, final java.lang.Object password, final java.lang.Object securityGroup, final java.lang.Object username, final java.lang.Object vpcId, final java.lang.Object zoneId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.deployModule = java.util.Objects.requireNonNull(deployModule, "deployModule is required");
-                this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-                this.isEipInner = isEipInner;
-                this.isSetUserAndPassword = isSetUserAndPassword;
-                this.name = name;
-                this.password = password;
-                this.securityGroup = securityGroup;
-                this.username = username;
-                this.vpcId = vpcId;
-                this.zoneId = zoneId;
+                this.deployModule = java.util.Objects.requireNonNull(builder.deployModule, "deployModule is required");
+                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.isEipInner = builder.isEipInner;
+                this.isSetUserAndPassword = builder.isSetUserAndPassword;
+                this.name = builder.name;
+                this.password = builder.password;
+                this.securityGroup = builder.securityGroup;
+                this.username = builder.username;
+                this.vpcId = builder.vpcId;
+                this.zoneId = builder.zoneId;
             }
 
             @Override
@@ -803,8 +839,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -858,7 +894,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -884,10 +920,10 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -1037,6 +1073,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param deletionForce This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deletionForce This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param deployOption This parameter is required.
          */
         public Builder deployOption(final com.aliyun.ros.cdk.core.IResolvable deployOption) {
@@ -1100,6 +1153,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder ioMaxSpec(final com.aliyun.ros.cdk.core.IResolvable ioMaxSpec) {
             this.props.ioMaxSpec(ioMaxSpec);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param openConnector This parameter is required.
+         */
+        public Builder openConnector(final java.lang.Boolean openConnector) {
+            this.props.openConnector(openConnector);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param openConnector This parameter is required.
+         */
+        public Builder openConnector(final com.aliyun.ros.cdk.core.IResolvable openConnector) {
+            this.props.openConnector(openConnector);
             return this;
         }
 

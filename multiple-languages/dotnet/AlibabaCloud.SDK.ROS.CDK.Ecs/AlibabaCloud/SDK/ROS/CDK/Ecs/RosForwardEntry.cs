@@ -77,7 +77,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: externalPort: Source port, now support [1-65535]|Any
+        /// <strong>Property</strong>: externalPort: Source port, now support [1-65535]|Any|x/y
         /// </remarks>
         [JsiiProperty(name: "externalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ExternalPort
@@ -107,7 +107,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: internalPort: Destination port, now support [1-65535]|Any
+        /// <strong>Property</strong>: internalPort: Destination port, now support [1-65535]|Any|x/y
         /// </remarks>
         [JsiiProperty(name: "internalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object InternalPort
@@ -123,6 +123,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         public virtual object IpProtocol
         {
             get => GetInstanceProperty<object>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "forwardEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ForwardEntryName
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: portBreak: Specifies whether to remove limits on the port range.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "portBreak", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PortBreak
+        {
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

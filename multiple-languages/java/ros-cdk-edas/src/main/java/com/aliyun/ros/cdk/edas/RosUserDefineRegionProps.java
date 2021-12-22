@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::UserDefineRegion`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.290Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosUserDefineRegionProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserDefineRegionProps.Jsii$Proxy.class)
 public interface RosUserDefineRegionProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,10 +38,10 @@ public interface RosUserDefineRegionProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link RosUserDefineRegionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosUserDefineRegionProps> {
-        private java.lang.Object regionName;
-        private java.lang.Object regionTag;
-        private java.lang.Object debugEnable;
-        private java.lang.Object description;
+        java.lang.Object regionName;
+        java.lang.Object regionTag;
+        java.lang.Object debugEnable;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link RosUserDefineRegionProps#getRegionName}
@@ -130,7 +130,7 @@ public interface RosUserDefineRegionProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public RosUserDefineRegionProps build() {
-            return new Jsii$Proxy(regionName, regionTag, debugEnable, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -159,12 +159,12 @@ public interface RosUserDefineRegionProps extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object regionName, final java.lang.Object regionTag, final java.lang.Object debugEnable, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.regionName = java.util.Objects.requireNonNull(regionName, "regionName is required");
-            this.regionTag = java.util.Objects.requireNonNull(regionTag, "regionTag is required");
-            this.debugEnable = debugEnable;
-            this.description = description;
+            this.regionName = java.util.Objects.requireNonNull(builder.regionName, "regionName is required");
+            this.regionTag = java.util.Objects.requireNonNull(builder.regionTag, "regionTag is required");
+            this.debugEnable = builder.debugEnable;
+            this.description = builder.description;
         }
 
         @Override

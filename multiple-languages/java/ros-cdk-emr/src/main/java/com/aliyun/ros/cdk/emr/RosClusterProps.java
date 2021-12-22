@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Properties for defining a `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.353Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.902Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -230,44 +230,44 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterProps> {
-        private java.lang.Object chargeType;
-        private java.lang.Object clusterType;
-        private java.lang.Object emrVer;
-        private java.lang.Object hostGroup;
-        private java.lang.Object name;
-        private java.lang.Object netType;
-        private java.lang.Object useLocalMetaDb;
-        private java.lang.Object zoneId;
-        private java.lang.Object authorizeContent;
-        private java.lang.Object autoRenew;
-        private java.lang.Object bootstrapAction;
-        private java.lang.Object config;
-        private java.lang.Object configurations;
-        private java.lang.Object depositType;
-        private java.lang.Object easEnable;
-        private java.lang.Object highAvailabilityEnable;
-        private java.lang.Object initCustomHiveMetaDb;
-        private java.lang.Object instanceGeneration;
-        private java.lang.Object ioOptimized;
-        private java.lang.Object isOpenPublicIp;
-        private java.lang.Object keyPairName;
-        private java.lang.Object logPath;
-        private java.lang.Object machineType;
-        private java.lang.Object masterPwd;
-        private java.lang.Object metaStoreConf;
-        private java.lang.Object metaStoreType;
-        private java.lang.Object optionSoftWareList;
-        private java.lang.Object period;
-        private java.lang.Object relatedClusterId;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object securityGroupName;
-        private java.lang.Object sshEnable;
-        private java.lang.Object useCustomHiveMetaDb;
-        private java.lang.Object userDefinedEmrEcsRole;
-        private java.lang.Object userInfo;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object whiteListType;
+        java.lang.Object chargeType;
+        java.lang.Object clusterType;
+        java.lang.Object emrVer;
+        java.lang.Object hostGroup;
+        java.lang.Object name;
+        java.lang.Object netType;
+        java.lang.Object useLocalMetaDb;
+        java.lang.Object zoneId;
+        java.lang.Object authorizeContent;
+        java.lang.Object autoRenew;
+        java.lang.Object bootstrapAction;
+        java.lang.Object config;
+        java.lang.Object configurations;
+        java.lang.Object depositType;
+        java.lang.Object easEnable;
+        java.lang.Object highAvailabilityEnable;
+        java.lang.Object initCustomHiveMetaDb;
+        java.lang.Object instanceGeneration;
+        java.lang.Object ioOptimized;
+        java.lang.Object isOpenPublicIp;
+        java.lang.Object keyPairName;
+        java.lang.Object logPath;
+        java.lang.Object machineType;
+        java.lang.Object masterPwd;
+        java.lang.Object metaStoreConf;
+        java.lang.Object metaStoreType;
+        java.lang.Object optionSoftWareList;
+        java.lang.Object period;
+        java.lang.Object relatedClusterId;
+        java.lang.Object securityGroupId;
+        java.lang.Object securityGroupName;
+        java.lang.Object sshEnable;
+        java.lang.Object useCustomHiveMetaDb;
+        java.lang.Object userDefinedEmrEcsRole;
+        java.lang.Object userInfo;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object whiteListType;
 
         /**
          * Sets the value of {@link RosClusterProps#getChargeType}
@@ -1036,7 +1036,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosClusterProps build() {
-            return new Jsii$Proxy(chargeType, clusterType, emrVer, hostGroup, name, netType, useLocalMetaDb, zoneId, authorizeContent, autoRenew, bootstrapAction, config, configurations, depositType, easEnable, highAvailabilityEnable, initCustomHiveMetaDb, instanceGeneration, ioOptimized, isOpenPublicIp, keyPairName, logPath, machineType, masterPwd, metaStoreConf, metaStoreType, optionSoftWareList, period, relatedClusterId, securityGroupId, securityGroupName, sshEnable, useCustomHiveMetaDb, userDefinedEmrEcsRole, userInfo, vpcId, vSwitchId, whiteListType);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1133,46 +1133,46 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object chargeType, final java.lang.Object clusterType, final java.lang.Object emrVer, final java.lang.Object hostGroup, final java.lang.Object name, final java.lang.Object netType, final java.lang.Object useLocalMetaDb, final java.lang.Object zoneId, final java.lang.Object authorizeContent, final java.lang.Object autoRenew, final java.lang.Object bootstrapAction, final java.lang.Object config, final java.lang.Object configurations, final java.lang.Object depositType, final java.lang.Object easEnable, final java.lang.Object highAvailabilityEnable, final java.lang.Object initCustomHiveMetaDb, final java.lang.Object instanceGeneration, final java.lang.Object ioOptimized, final java.lang.Object isOpenPublicIp, final java.lang.Object keyPairName, final java.lang.Object logPath, final java.lang.Object machineType, final java.lang.Object masterPwd, final java.lang.Object metaStoreConf, final java.lang.Object metaStoreType, final java.lang.Object optionSoftWareList, final java.lang.Object period, final java.lang.Object relatedClusterId, final java.lang.Object securityGroupId, final java.lang.Object securityGroupName, final java.lang.Object sshEnable, final java.lang.Object useCustomHiveMetaDb, final java.lang.Object userDefinedEmrEcsRole, final java.lang.Object userInfo, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object whiteListType) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.chargeType = java.util.Objects.requireNonNull(chargeType, "chargeType is required");
-            this.clusterType = java.util.Objects.requireNonNull(clusterType, "clusterType is required");
-            this.emrVer = java.util.Objects.requireNonNull(emrVer, "emrVer is required");
-            this.hostGroup = java.util.Objects.requireNonNull(hostGroup, "hostGroup is required");
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.netType = java.util.Objects.requireNonNull(netType, "netType is required");
-            this.useLocalMetaDb = java.util.Objects.requireNonNull(useLocalMetaDb, "useLocalMetaDb is required");
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
-            this.authorizeContent = authorizeContent;
-            this.autoRenew = autoRenew;
-            this.bootstrapAction = bootstrapAction;
-            this.config = config;
-            this.configurations = configurations;
-            this.depositType = depositType;
-            this.easEnable = easEnable;
-            this.highAvailabilityEnable = highAvailabilityEnable;
-            this.initCustomHiveMetaDb = initCustomHiveMetaDb;
-            this.instanceGeneration = instanceGeneration;
-            this.ioOptimized = ioOptimized;
-            this.isOpenPublicIp = isOpenPublicIp;
-            this.keyPairName = keyPairName;
-            this.logPath = logPath;
-            this.machineType = machineType;
-            this.masterPwd = masterPwd;
-            this.metaStoreConf = metaStoreConf;
-            this.metaStoreType = metaStoreType;
-            this.optionSoftWareList = optionSoftWareList;
-            this.period = period;
-            this.relatedClusterId = relatedClusterId;
-            this.securityGroupId = securityGroupId;
-            this.securityGroupName = securityGroupName;
-            this.sshEnable = sshEnable;
-            this.useCustomHiveMetaDb = useCustomHiveMetaDb;
-            this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
-            this.userInfo = userInfo;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.whiteListType = whiteListType;
+            this.chargeType = java.util.Objects.requireNonNull(builder.chargeType, "chargeType is required");
+            this.clusterType = java.util.Objects.requireNonNull(builder.clusterType, "clusterType is required");
+            this.emrVer = java.util.Objects.requireNonNull(builder.emrVer, "emrVer is required");
+            this.hostGroup = java.util.Objects.requireNonNull(builder.hostGroup, "hostGroup is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.netType = java.util.Objects.requireNonNull(builder.netType, "netType is required");
+            this.useLocalMetaDb = java.util.Objects.requireNonNull(builder.useLocalMetaDb, "useLocalMetaDb is required");
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.authorizeContent = builder.authorizeContent;
+            this.autoRenew = builder.autoRenew;
+            this.bootstrapAction = builder.bootstrapAction;
+            this.config = builder.config;
+            this.configurations = builder.configurations;
+            this.depositType = builder.depositType;
+            this.easEnable = builder.easEnable;
+            this.highAvailabilityEnable = builder.highAvailabilityEnable;
+            this.initCustomHiveMetaDb = builder.initCustomHiveMetaDb;
+            this.instanceGeneration = builder.instanceGeneration;
+            this.ioOptimized = builder.ioOptimized;
+            this.isOpenPublicIp = builder.isOpenPublicIp;
+            this.keyPairName = builder.keyPairName;
+            this.logPath = builder.logPath;
+            this.machineType = builder.machineType;
+            this.masterPwd = builder.masterPwd;
+            this.metaStoreConf = builder.metaStoreConf;
+            this.metaStoreType = builder.metaStoreType;
+            this.optionSoftWareList = builder.optionSoftWareList;
+            this.period = builder.period;
+            this.relatedClusterId = builder.relatedClusterId;
+            this.securityGroupId = builder.securityGroupId;
+            this.securityGroupName = builder.securityGroupName;
+            this.sshEnable = builder.sshEnable;
+            this.useCustomHiveMetaDb = builder.useCustomHiveMetaDb;
+            this.userDefinedEmrEcsRole = builder.userDefinedEmrEcsRole;
+            this.userInfo = builder.userInfo;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.whiteListType = builder.whiteListType;
         }
 
         @Override

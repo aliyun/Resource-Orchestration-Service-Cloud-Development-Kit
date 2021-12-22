@@ -194,7 +194,12 @@ export interface InstanceGroupCloneProps {
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
-     * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+     * Property systemDiskBurstingEnabled: Whether enable bursting.
+     */
+    readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -207,6 +212,11 @@ export interface InstanceGroupCloneProps {
      * Property systemDiskDiskName: Name of created system disk.Old instances will not be changed.
      */
     readonly systemDiskDiskName?: string | ros.IResolvable;
+
+    /**
+     * Property systemDiskProvisionedIops: Provisioning IOPS.
+     */
+    readonly systemDiskProvisionedIops?: number | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -232,19 +242,29 @@ export class InstanceGroupClone extends ros.Resource {
      */
 
     /**
-     * Attribute HostNames: Host names of created instance.
+     * Attribute HostNames: Host names of created instances.
      */
     public readonly attrHostNames: ros.IResolvable;
 
     /**
-     * Attribute InnerIps: Inner IP address list of the specified instance. Only for classical instance.
+     * Attribute InnerIps: Inner IP address list of the specified instances. Only for classical instances.
      */
     public readonly attrInnerIps: ros.IResolvable;
 
     /**
-     * Attribute InstanceIds: The instance id list of created ecs instance
+     * Attribute InstanceIds: The instance id list of created ecs instances
      */
     public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances. Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public readonly attrIpv6AddressIds: ros.IResolvable;
+
+    /**
+     * Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances. Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public readonly attrIpv6Addresses: ros.IResolvable;
 
     /**
      * Attribute OrderId: The order id list of created instance.
@@ -252,17 +272,17 @@ export class InstanceGroupClone extends ros.Resource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Attribute PrivateIps: Private IP address list of created ecs instance. Only for VPC instance.
+     * Attribute PrivateIps: Private IP address list of created ecs instances. Only for VPC instance.
      */
     public readonly attrPrivateIps: ros.IResolvable;
 
     /**
-     * Attribute PublicIps: Public IP address list of created ecs instance.
+     * Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * Attribute ZoneIds: Zone id of created instance.
+     * Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
 
@@ -278,9 +298,10 @@ export class InstanceGroupClone extends ros.Resource {
 
         const rosInstanceGroupClone = new RosInstanceGroupClone(this, id,  {
             description: props.description,
-            resourceGroupId: props.resourceGroupId,
             diskMappings: props.diskMappings,
+            resourceGroupId: props.resourceGroupId,
             systemDiskDescription: props.systemDiskDescription,
+            systemDiskProvisionedIops: props.systemDiskProvisionedIops,
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
             ipv6Addresses: props.ipv6Addresses,
             sourceInstanceId: props.sourceInstanceId,
@@ -308,8 +329,9 @@ export class InstanceGroupClone extends ros.Resource {
             securityGroupIds: props.securityGroupIds,
             loadBalancerIdToAttach: props.loadBalancerIdToAttach,
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
-            eniMappings: props.eniMappings,
             instanceName: props.instanceName,
+            eniMappings: props.eniMappings,
+            systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,
             deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
             internetMaxBandwidthIn: props.internetMaxBandwidthIn === undefined || props.internetMaxBandwidthIn === null ? 200 : props.internetMaxBandwidthIn,
@@ -321,6 +343,8 @@ export class InstanceGroupClone extends ros.Resource {
         this.attrHostNames = rosInstanceGroupClone.attrHostNames;
         this.attrInnerIps = rosInstanceGroupClone.attrInnerIps;
         this.attrInstanceIds = rosInstanceGroupClone.attrInstanceIds;
+        this.attrIpv6AddressIds = rosInstanceGroupClone.attrIpv6AddressIds;
+        this.attrIpv6Addresses = rosInstanceGroupClone.attrIpv6Addresses;
         this.attrOrderId = rosInstanceGroupClone.attrOrderId;
         this.attrPrivateIps = rosInstanceGroupClone.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroupClone.attrPublicIps;

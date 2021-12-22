@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.798Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.469Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcEndpointServiceAttachmentProps.Jsii$Proxy.class)
 public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,9 +30,9 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
      * A builder for {@link RosVpcEndpointServiceAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpcEndpointServiceAttachmentProps> {
-        private java.lang.Object resourceId;
-        private java.lang.Object resourceType;
-        private java.lang.Object serviceId;
+        java.lang.Object resourceId;
+        java.lang.Object resourceType;
+        java.lang.Object serviceId;
 
         /**
          * Sets the value of {@link RosVpcEndpointServiceAttachmentProps#getResourceId}
@@ -101,7 +101,7 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
          */
         @Override
         public RosVpcEndpointServiceAttachmentProps build() {
-            return new Jsii$Proxy(resourceId, resourceType, serviceId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -128,11 +128,11 @@ public interface RosVpcEndpointServiceAttachmentProps extends software.amazon.js
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object resourceId, final java.lang.Object resourceType, final java.lang.Object serviceId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.resourceId = java.util.Objects.requireNonNull(resourceId, "resourceId is required");
-            this.resourceType = java.util.Objects.requireNonNull(resourceType, "resourceType is required");
-            this.serviceId = java.util.Objects.requireNonNull(serviceId, "serviceId is required");
+            this.resourceId = java.util.Objects.requireNonNull(builder.resourceId, "resourceId is required");
+            this.resourceType = java.util.Objects.requireNonNull(builder.resourceType, "resourceType is required");
+            this.serviceId = java.util.Objects.requireNonNull(builder.serviceId, "serviceId is required");
         }
 
         @Override

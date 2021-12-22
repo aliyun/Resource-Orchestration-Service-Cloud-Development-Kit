@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::EventRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.586Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.135Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRuleProps")
 @software.amazon.jsii.Jsii.Proxy(EventRuleProps.Jsii$Proxy.class)
 public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -64,12 +64,12 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link EventRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<EventRuleProps> {
-        private java.lang.Object eventPattern;
-        private java.lang.Object ruleName;
-        private java.lang.Object description;
-        private java.lang.Object eventType;
-        private java.lang.Object groupId;
-        private java.lang.Object state;
+        java.lang.Object eventPattern;
+        java.lang.Object ruleName;
+        java.lang.Object description;
+        java.lang.Object eventType;
+        java.lang.Object groupId;
+        java.lang.Object state;
 
         /**
          * Sets the value of {@link EventRuleProps#getEventPattern}
@@ -210,7 +210,7 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public EventRuleProps build() {
-            return new Jsii$Proxy(eventPattern, ruleName, description, eventType, groupId, state);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -243,14 +243,14 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object eventPattern, final java.lang.Object ruleName, final java.lang.Object description, final java.lang.Object eventType, final java.lang.Object groupId, final java.lang.Object state) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.eventPattern = java.util.Objects.requireNonNull(eventPattern, "eventPattern is required");
-            this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
-            this.description = description;
-            this.eventType = eventType;
-            this.groupId = groupId;
-            this.state = state;
+            this.eventPattern = java.util.Objects.requireNonNull(builder.eventPattern, "eventPattern is required");
+            this.ruleName = java.util.Objects.requireNonNull(builder.ruleName, "ruleName is required");
+            this.description = builder.description;
+            this.eventType = builder.eventType;
+            this.groupId = builder.groupId;
+            this.state = builder.state;
         }
 
         @Override

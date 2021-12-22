@@ -8,8 +8,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
     /// This module is part of the AliCloud ROS Cloud Development Kit (ROS CDK) project.
     ///
     /// <code><![CDATA[
-    /// // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
-    /// using Alicloud.Ros.Cdk.Pvtz;
+    /// // Example automatically generated from non-compiling source. May contain errors.
+    /// import * as PVTZ from '@alicloud/ros-cdk-pvtz';
     /// ]]></code>
     /// </remarks>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]

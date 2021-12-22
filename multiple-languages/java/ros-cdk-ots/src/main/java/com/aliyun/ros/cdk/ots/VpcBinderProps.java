@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::VpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.761Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.412Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.VpcBinderProps")
 @software.amazon.jsii.Jsii.Proxy(VpcBinderProps.Jsii$Proxy.class)
 public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link VpcBinderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VpcBinderProps> {
-        private java.lang.Object instanceName;
-        private java.lang.Object vpcs;
+        java.lang.Object instanceName;
+        java.lang.Object vpcs;
 
         /**
          * Sets the value of {@link VpcBinderProps#getInstanceName}
@@ -78,7 +78,7 @@ public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public VpcBinderProps build() {
-            return new Jsii$Proxy(instanceName, vpcs);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object vpcs) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
-            this.vpcs = java.util.Objects.requireNonNull(vpcs, "vpcs is required");
+            this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+            this.vpcs = java.util.Objects.requireNonNull(builder.vpcs, "vpcs is required");
         }
 
         @Override

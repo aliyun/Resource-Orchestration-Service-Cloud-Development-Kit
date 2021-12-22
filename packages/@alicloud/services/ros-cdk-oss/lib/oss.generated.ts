@@ -371,13 +371,13 @@ export namespace RosBucket {
      */
     export interface CORSRuleProperty {
         /**
-         * @Property maxAgeSeconds: undefined
-         */
-        readonly maxAgeSeconds?: number | ros.IResolvable;
-        /**
          * @Property allowedMethod: undefined
          */
         readonly allowedMethod?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property maxAgeSeconds: undefined
+         */
+        readonly maxAgeSeconds?: number | ros.IResolvable;
         /**
          * @Property exposeHeader: undefined
          */
@@ -402,8 +402,8 @@ export namespace RosBucket {
 function RosBucket_CORSRulePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('maxAgeSeconds', ros.validateNumber)(properties.maxAgeSeconds));
     errors.collect(ros.propertyValidator('allowedMethod', ros.listValidator(ros.validateString))(properties.allowedMethod));
+    errors.collect(ros.propertyValidator('maxAgeSeconds', ros.validateNumber)(properties.maxAgeSeconds));
     errors.collect(ros.propertyValidator('exposeHeader', ros.listValidator(ros.validateString))(properties.exposeHeader));
     errors.collect(ros.propertyValidator('allowedOrigin', ros.listValidator(ros.validateString))(properties.allowedOrigin));
     errors.collect(ros.propertyValidator('allowedHeader', ros.listValidator(ros.validateString))(properties.allowedHeader));
@@ -422,8 +422,8 @@ function rosBucketCORSRulePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosBucket_CORSRulePropertyValidator(properties).assertSuccess();
     return {
-      MaxAgeSeconds: ros.numberToRosTemplate(properties.maxAgeSeconds),
       AllowedMethod: ros.listMapper(ros.stringToRosTemplate)(properties.allowedMethod),
+      MaxAgeSeconds: ros.numberToRosTemplate(properties.maxAgeSeconds),
       ExposeHeader: ros.listMapper(ros.stringToRosTemplate)(properties.exposeHeader),
       AllowedOrigin: ros.listMapper(ros.stringToRosTemplate)(properties.allowedOrigin),
       AllowedHeader: ros.listMapper(ros.stringToRosTemplate)(properties.allowedHeader),
@@ -443,10 +443,6 @@ export namespace RosBucket {
          * @Property days: undefined
          */
         readonly days?: number | ros.IResolvable;
-        /**
-         * @Property date: undefined
-         */
-        readonly date?: string | ros.IResolvable;
     }
 }
 /**
@@ -461,7 +457,6 @@ function RosBucket_ExpirationPropertyValidator(properties: any): ros.ValidationR
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('createdBeforeDate', ros.validateString)(properties.createdBeforeDate));
     errors.collect(ros.propertyValidator('days', ros.validateNumber)(properties.days));
-    errors.collect(ros.propertyValidator('date', ros.validateString)(properties.date));
     return errors.wrap('supplied properties not correct for "ExpirationProperty"');
 }
 
@@ -479,7 +474,6 @@ function rosBucketExpirationPropertyToRosTemplate(properties: any): any {
     return {
       CreatedBeforeDate: ros.stringToRosTemplate(properties.createdBeforeDate),
       Days: ros.numberToRosTemplate(properties.days),
-      Date: ros.stringToRosTemplate(properties.date),
     };
 }
 

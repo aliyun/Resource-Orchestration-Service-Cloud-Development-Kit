@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::CopyImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.516Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CopyImageProps")
 @software.amazon.jsii.Jsii.Proxy(CopyImageProps.Jsii$Proxy.class)
 public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,6 +47,15 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property sourceRegionId: ID of the region to where the source image belongs.
+     * <p>
+     * Default is current region ID.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceRegionId() {
+        return null;
+    }
+
+    /**
      * Property tag:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTag() {
@@ -63,13 +72,14 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link CopyImageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CopyImageProps> {
-        private java.lang.Object destinationRegionId;
-        private java.lang.Object imageId;
-        private java.lang.Object destinationDescription;
-        private java.lang.Object destinationImageName;
-        private java.lang.Object encrypted;
-        private java.lang.Object kmsKeyId;
-        private java.lang.Object tag;
+        java.lang.Object destinationRegionId;
+        java.lang.Object imageId;
+        java.lang.Object destinationDescription;
+        java.lang.Object destinationImageName;
+        java.lang.Object encrypted;
+        java.lang.Object kmsKeyId;
+        java.lang.Object sourceRegionId;
+        java.lang.Object tag;
 
         /**
          * Sets the value of {@link CopyImageProps#getDestinationRegionId}
@@ -192,6 +202,28 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link CopyImageProps#getSourceRegionId}
+         * @param sourceRegionId Property sourceRegionId: ID of the region to where the source image belongs.
+         *                       Default is current region ID.
+         * @return {@code this}
+         */
+        public Builder sourceRegionId(java.lang.String sourceRegionId) {
+            this.sourceRegionId = sourceRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CopyImageProps#getSourceRegionId}
+         * @param sourceRegionId Property sourceRegionId: ID of the region to where the source image belongs.
+         *                       Default is current region ID.
+         * @return {@code this}
+         */
+        public Builder sourceRegionId(com.aliyun.ros.cdk.core.IResolvable sourceRegionId) {
+            this.sourceRegionId = sourceRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CopyImageProps#getTag}
          * @param tag Property tag:.
          * @return {@code this}
@@ -218,7 +250,7 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public CopyImageProps build() {
-            return new Jsii$Proxy(destinationRegionId, imageId, destinationDescription, destinationImageName, encrypted, kmsKeyId, tag);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -233,6 +265,7 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object destinationImageName;
         private final java.lang.Object encrypted;
         private final java.lang.Object kmsKeyId;
+        private final java.lang.Object sourceRegionId;
         private final java.lang.Object tag;
 
         /**
@@ -247,21 +280,23 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
             this.destinationImageName = software.amazon.jsii.Kernel.get(this, "destinationImageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceRegionId = software.amazon.jsii.Kernel.get(this, "sourceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object destinationRegionId, final java.lang.Object imageId, final java.lang.Object destinationDescription, final java.lang.Object destinationImageName, final java.lang.Object encrypted, final java.lang.Object kmsKeyId, final java.lang.Object tag) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.destinationRegionId = java.util.Objects.requireNonNull(destinationRegionId, "destinationRegionId is required");
-            this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
-            this.destinationDescription = destinationDescription;
-            this.destinationImageName = destinationImageName;
-            this.encrypted = encrypted;
-            this.kmsKeyId = kmsKeyId;
-            this.tag = tag;
+            this.destinationRegionId = java.util.Objects.requireNonNull(builder.destinationRegionId, "destinationRegionId is required");
+            this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
+            this.destinationDescription = builder.destinationDescription;
+            this.destinationImageName = builder.destinationImageName;
+            this.encrypted = builder.encrypted;
+            this.kmsKeyId = builder.kmsKeyId;
+            this.sourceRegionId = builder.sourceRegionId;
+            this.tag = builder.tag;
         }
 
         @Override
@@ -295,6 +330,11 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getSourceRegionId() {
+            return this.sourceRegionId;
+        }
+
+        @Override
         public final java.lang.Object getTag() {
             return this.tag;
         }
@@ -318,6 +358,9 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getKmsKeyId() != null) {
                 data.set("kmsKeyId", om.valueToTree(this.getKmsKeyId()));
+            }
+            if (this.getSourceRegionId() != null) {
+                data.set("sourceRegionId", om.valueToTree(this.getSourceRegionId()));
             }
             if (this.getTag() != null) {
                 data.set("tag", om.valueToTree(this.getTag()));
@@ -346,6 +389,7 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
             if (this.destinationImageName != null ? !this.destinationImageName.equals(that.destinationImageName) : that.destinationImageName != null) return false;
             if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
             if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
+            if (this.sourceRegionId != null ? !this.sourceRegionId.equals(that.sourceRegionId) : that.sourceRegionId != null) return false;
             return this.tag != null ? this.tag.equals(that.tag) : that.tag == null;
         }
 
@@ -357,6 +401,7 @@ public interface CopyImageProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.destinationImageName != null ? this.destinationImageName.hashCode() : 0);
             result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
             result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
+            result = 31 * result + (this.sourceRegionId != null ? this.sourceRegionId.hashCode() : 0);
             result = 31 * result + (this.tag != null ? this.tag.hashCode() : 0);
             return result;
         }

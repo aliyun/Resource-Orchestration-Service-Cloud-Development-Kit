@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.705Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.291Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -46,6 +46,42 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterId() {
         return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDefaultUserKubeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrDefaultUserKubeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNodes() {
+        return software.amazon.jsii.Kernel.get(this, "attrNodes", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrivateUserKubConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrivateUserKubConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingConfigurationId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingConfigurationId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -381,6 +417,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRuntime() {
+        return software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRuntime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "runtime", value);
+    }
+
+    /**
+     */
+    public void setRuntime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.RuntimeProperty value) {
+        software.amazon.jsii.Kernel.set(this, "runtime", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -687,10 +741,10 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AddonsProperty> {
-            private java.lang.Object name;
-            private java.lang.Object config;
-            private java.lang.Object disabled;
-            private java.lang.Object version;
+            java.lang.Object name;
+            java.lang.Object config;
+            java.lang.Object disabled;
+            java.lang.Object version;
 
             /**
              * Sets the value of {@link AddonsProperty#getName}
@@ -788,7 +842,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AddonsProperty build() {
-                return new Jsii$Proxy(name, config, disabled, version);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -818,12 +872,12 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object config, final java.lang.Object disabled, final java.lang.Object version) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.config = config;
-                this.disabled = disabled;
-                this.version = version;
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.config = builder.config;
+                this.disabled = builder.disabled;
+                this.version = builder.version;
             }
 
             @Override
@@ -898,6 +952,174 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty")
+    @software.amazon.jsii.Jsii.Proxy(RuntimeProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface RuntimeProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link RuntimeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link RuntimeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<RuntimeProperty> {
+            java.lang.Object name;
+            java.lang.Object version;
+
+            /**
+             * Sets the value of {@link RuntimeProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(java.lang.String name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuntimeProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuntimeProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(java.lang.String version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuntimeProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(com.aliyun.ros.cdk.core.IResolvable version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link RuntimeProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public RuntimeProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link RuntimeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RuntimeProperty {
+            private final java.lang.Object name;
+            private final java.lang.Object version;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.version = builder.version;
+            }
+
+            @Override
+            public final java.lang.Object getName() {
+                return this.name;
+            }
+
+            @Override
+            public final java.lang.Object getVersion() {
+                return this.version;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("name", om.valueToTree(this.getName()));
+                if (this.getVersion() != null) {
+                    data.set("version", om.valueToTree(this.getVersion()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                RuntimeProperty.Jsii$Proxy that = (RuntimeProperty.Jsii$Proxy) o;
+
+                if (!name.equals(that.name)) return false;
+                return this.version != null ? this.version.equals(that.version) : that.version == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.name.hashCode();
+                result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -927,8 +1149,8 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -982,7 +1204,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1008,10 +1230,10 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -1093,8 +1315,8 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<WorkerDataDisksProperty> {
-            private java.lang.Object category;
-            private java.lang.Object size;
+            java.lang.Object category;
+            java.lang.Object size;
 
             /**
              * Sets the value of {@link WorkerDataDisksProperty#getCategory}
@@ -1148,7 +1370,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public WorkerDataDisksProperty build() {
-                return new Jsii$Proxy(category, size);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1174,10 +1396,10 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object category, final java.lang.Object size) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.category = java.util.Objects.requireNonNull(category, "category is required");
-                this.size = java.util.Objects.requireNonNull(size, "size is required");
+                this.category = java.util.Objects.requireNonNull(builder.category, "category is required");
+                this.size = java.util.Objects.requireNonNull(builder.size, "size is required");
             }
 
             @Override
@@ -1541,6 +1763,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder proxyMode(final com.aliyun.ros.cdk.core.IResolvable proxyMode) {
             this.props.proxyMode(proxyMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param runtime This parameter is required.
+         */
+        public Builder runtime(final com.aliyun.ros.cdk.core.IResolvable runtime) {
+            this.props.runtime(runtime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param runtime This parameter is required.
+         */
+        public Builder runtime(final com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.RuntimeProperty runtime) {
+            this.props.runtime(runtime);
             return this;
         }
 

@@ -1021,10 +1021,10 @@ export interface RosInstanceProps {
 function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('bigScreen', ros.requiredValidator)(properties.bigScreen));
-    errors.collect(ros.propertyValidator('bigScreen', ros.validateString)(properties.bigScreen));
     errors.collect(ros.propertyValidator('prefessionalService', ros.requiredValidator)(properties.prefessionalService));
     errors.collect(ros.propertyValidator('prefessionalService', ros.validateString)(properties.prefessionalService));
+    errors.collect(ros.propertyValidator('bigScreen', ros.requiredValidator)(properties.bigScreen));
+    errors.collect(ros.propertyValidator('bigScreen', ros.validateString)(properties.bigScreen));
     errors.collect(ros.propertyValidator('extDomainPackage', ros.requiredValidator)(properties.extDomainPackage));
     errors.collect(ros.propertyValidator('extDomainPackage', ros.validateString)(properties.extDomainPackage));
     errors.collect(ros.propertyValidator('logTime', ros.requiredValidator)(properties.logTime));

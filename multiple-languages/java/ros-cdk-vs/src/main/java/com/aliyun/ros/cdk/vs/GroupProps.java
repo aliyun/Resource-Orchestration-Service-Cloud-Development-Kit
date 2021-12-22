@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vs;
 /**
  * Properties for defining a `ALIYUN::VS::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.272Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:59.025Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vs.$Module.class, fqn = "@alicloud/ros-cdk-vs.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -89,17 +89,17 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link GroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<GroupProps> {
-        private java.lang.Object inProtocol;
-        private java.lang.Object name;
-        private java.lang.Object outProtocol;
-        private java.lang.Object playDomain;
-        private java.lang.Object pushDomain;
-        private java.lang.Object region;
-        private java.lang.Object app;
-        private java.lang.Object callback;
-        private java.lang.Object description;
-        private java.lang.Object enabled;
-        private java.lang.Object lazyPull;
+        java.lang.Object inProtocol;
+        java.lang.Object name;
+        java.lang.Object outProtocol;
+        java.lang.Object playDomain;
+        java.lang.Object pushDomain;
+        java.lang.Object region;
+        java.lang.Object app;
+        java.lang.Object callback;
+        java.lang.Object description;
+        java.lang.Object enabled;
+        java.lang.Object lazyPull;
 
         /**
          * Sets the value of {@link GroupProps#getInProtocol}
@@ -334,7 +334,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public GroupProps build() {
-            return new Jsii$Proxy(inProtocol, name, outProtocol, playDomain, pushDomain, region, app, callback, description, enabled, lazyPull);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -377,19 +377,19 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object inProtocol, final java.lang.Object name, final java.lang.Object outProtocol, final java.lang.Object playDomain, final java.lang.Object pushDomain, final java.lang.Object region, final java.lang.Object app, final java.lang.Object callback, final java.lang.Object description, final java.lang.Object enabled, final java.lang.Object lazyPull) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.inProtocol = java.util.Objects.requireNonNull(inProtocol, "inProtocol is required");
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.outProtocol = java.util.Objects.requireNonNull(outProtocol, "outProtocol is required");
-            this.playDomain = java.util.Objects.requireNonNull(playDomain, "playDomain is required");
-            this.pushDomain = java.util.Objects.requireNonNull(pushDomain, "pushDomain is required");
-            this.region = java.util.Objects.requireNonNull(region, "region is required");
-            this.app = app;
-            this.callback = callback;
-            this.description = description;
-            this.enabled = enabled;
-            this.lazyPull = lazyPull;
+            this.inProtocol = java.util.Objects.requireNonNull(builder.inProtocol, "inProtocol is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.outProtocol = java.util.Objects.requireNonNull(builder.outProtocol, "outProtocol is required");
+            this.playDomain = java.util.Objects.requireNonNull(builder.playDomain, "playDomain is required");
+            this.pushDomain = java.util.Objects.requireNonNull(builder.pushDomain, "pushDomain is required");
+            this.region = java.util.Objects.requireNonNull(builder.region, "region is required");
+            this.app = builder.app;
+            this.callback = builder.callback;
+            this.description = builder.description;
+            this.enabled = builder.enabled;
+            this.lazyPull = builder.lazyPull;
         }
 
         @Override

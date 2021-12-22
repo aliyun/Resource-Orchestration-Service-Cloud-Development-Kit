@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VirtualBorderRouter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.263Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.997Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VirtualBorderRouterProps")
 @software.amazon.jsii.Jsii.Proxy(VirtualBorderRouterProps.Jsii$Proxy.class)
 public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,7 +37,7 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
     /**
      * Property vlanId: The VLAN ID of the VBR.
      * <p>
-     * Valid values: 1 to 2999.
+     * Valid values: 0 to 2999.
      * Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
      * two VBRs of the same physical connection must be different.
      */
@@ -82,14 +82,14 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link VirtualBorderRouterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VirtualBorderRouterProps> {
-        private java.lang.Object localGatewayIp;
-        private java.lang.Object peerGatewayIp;
-        private java.lang.Object peeringSubnetMask;
-        private java.lang.Object physicalConnectionId;
-        private java.lang.Object vlanId;
-        private java.lang.Object circuitCode;
-        private java.lang.Object description;
-        private java.lang.Object name;
+        java.lang.Object localGatewayIp;
+        java.lang.Object peerGatewayIp;
+        java.lang.Object peeringSubnetMask;
+        java.lang.Object physicalConnectionId;
+        java.lang.Object vlanId;
+        java.lang.Object circuitCode;
+        java.lang.Object description;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link VirtualBorderRouterProps#getLocalGatewayIp}
@@ -182,7 +182,7 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link VirtualBorderRouterProps#getVlanId}
          * @param vlanId Property vlanId: The VLAN ID of the VBR. This parameter is required.
-         *               Valid values: 1 to 2999.
+         *               Valid values: 0 to 2999.
          *               Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
          *               two VBRs of the same physical connection must be different.
          * @return {@code this}
@@ -195,7 +195,7 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link VirtualBorderRouterProps#getVlanId}
          * @param vlanId Property vlanId: The VLAN ID of the VBR. This parameter is required.
-         *               Valid values: 1 to 2999.
+         *               Valid values: 0 to 2999.
          *               Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
          *               two VBRs of the same physical connection must be different.
          * @return {@code this}
@@ -282,7 +282,7 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public VirtualBorderRouterProps build() {
-            return new Jsii$Proxy(localGatewayIp, peerGatewayIp, peeringSubnetMask, physicalConnectionId, vlanId, circuitCode, description, name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -319,16 +319,16 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object localGatewayIp, final java.lang.Object peerGatewayIp, final java.lang.Object peeringSubnetMask, final java.lang.Object physicalConnectionId, final java.lang.Object vlanId, final java.lang.Object circuitCode, final java.lang.Object description, final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.localGatewayIp = java.util.Objects.requireNonNull(localGatewayIp, "localGatewayIp is required");
-            this.peerGatewayIp = java.util.Objects.requireNonNull(peerGatewayIp, "peerGatewayIp is required");
-            this.peeringSubnetMask = java.util.Objects.requireNonNull(peeringSubnetMask, "peeringSubnetMask is required");
-            this.physicalConnectionId = java.util.Objects.requireNonNull(physicalConnectionId, "physicalConnectionId is required");
-            this.vlanId = java.util.Objects.requireNonNull(vlanId, "vlanId is required");
-            this.circuitCode = circuitCode;
-            this.description = description;
-            this.name = name;
+            this.localGatewayIp = java.util.Objects.requireNonNull(builder.localGatewayIp, "localGatewayIp is required");
+            this.peerGatewayIp = java.util.Objects.requireNonNull(builder.peerGatewayIp, "peerGatewayIp is required");
+            this.peeringSubnetMask = java.util.Objects.requireNonNull(builder.peeringSubnetMask, "peeringSubnetMask is required");
+            this.physicalConnectionId = java.util.Objects.requireNonNull(builder.physicalConnectionId, "physicalConnectionId is required");
+            this.vlanId = java.util.Objects.requireNonNull(builder.vlanId, "vlanId is required");
+            this.circuitCode = builder.circuitCode;
+            this.description = builder.description;
+            this.name = builder.name;
         }
 
         @Override

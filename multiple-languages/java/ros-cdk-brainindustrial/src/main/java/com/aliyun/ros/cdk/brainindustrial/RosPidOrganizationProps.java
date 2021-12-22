@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.brainindustrial;
 /**
  * Properties for defining a `ALIYUN::BrainIndustrial::PidOrganization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.388Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.764Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.brainindustrial.$Module.class, fqn = "@alicloud/ros-cdk-brainindustrial.RosPidOrganizationProps")
 @software.amazon.jsii.Jsii.Proxy(RosPidOrganizationProps.Jsii$Proxy.class)
 public interface RosPidOrganizationProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface RosPidOrganizationProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosPidOrganizationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosPidOrganizationProps> {
-        private java.lang.Object pidOrganizationName;
-        private java.lang.Object parentPidOrganizationId;
+        java.lang.Object pidOrganizationName;
+        java.lang.Object parentPidOrganizationId;
 
         /**
          * Sets the value of {@link RosPidOrganizationProps#getPidOrganizationName}
@@ -78,7 +78,7 @@ public interface RosPidOrganizationProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosPidOrganizationProps build() {
-            return new Jsii$Proxy(pidOrganizationName, parentPidOrganizationId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface RosPidOrganizationProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object pidOrganizationName, final java.lang.Object parentPidOrganizationId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.pidOrganizationName = java.util.Objects.requireNonNull(pidOrganizationName, "pidOrganizationName is required");
-            this.parentPidOrganizationId = parentPidOrganizationId;
+            this.pidOrganizationName = java.util.Objects.requireNonNull(builder.pidOrganizationName, "pidOrganizationName is required");
+            this.parentPidOrganizationId = builder.parentPidOrganizationId;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::Ipv6Gateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.181Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.931Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Ipv6GatewayProps")
 @software.amazon.jsii.Jsii.Proxy(Ipv6GatewayProps.Jsii$Proxy.class)
 public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -61,11 +61,11 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link Ipv6GatewayProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<Ipv6GatewayProps> {
-        private java.lang.Object vpcId;
-        private java.lang.Object description;
-        private java.lang.Object name;
-        private java.lang.Object spec;
-        private java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags;
+        java.lang.Object vpcId;
+        java.lang.Object description;
+        java.lang.Object name;
+        java.lang.Object spec;
+        java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags;
 
         /**
          * Sets the value of {@link Ipv6GatewayProps#getVpcId}
@@ -176,7 +176,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public Ipv6GatewayProps build() {
-            return new Jsii$Proxy(vpcId, description, name, spec, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -208,13 +208,13 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object vpcId, final java.lang.Object description, final java.lang.Object name, final java.lang.Object spec, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.description = description;
-            this.name = name;
-            this.spec = spec;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty>)tags;
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.description = builder.description;
+            this.name = builder.name;
+            this.spec = builder.spec;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty>)builder.tags;
         }
 
         @Override

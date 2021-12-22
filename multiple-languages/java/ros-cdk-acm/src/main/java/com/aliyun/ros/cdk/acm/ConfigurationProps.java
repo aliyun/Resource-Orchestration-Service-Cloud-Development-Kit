@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm;
 /**
  * Properties for defining a `ALIYUN::ACM::Configuration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.234Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.543Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.ConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ConfigurationProps.Jsii$Proxy.class)
 public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -72,14 +72,14 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link ConfigurationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ConfigurationProps> {
-        private java.lang.Object content;
-        private java.lang.Object dataId;
-        private java.lang.Object namespaceId;
-        private java.lang.Object appName;
-        private java.lang.Object desc;
-        private java.lang.Object group;
-        private java.lang.String tags;
-        private java.lang.Object type;
+        java.lang.Object content;
+        java.lang.Object dataId;
+        java.lang.Object namespaceId;
+        java.lang.Object appName;
+        java.lang.Object desc;
+        java.lang.Object group;
+        java.lang.String tags;
+        java.lang.Object type;
 
         /**
          * Sets the value of {@link ConfigurationProps#getContent}
@@ -244,7 +244,7 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public ConfigurationProps build() {
-            return new Jsii$Proxy(content, dataId, namespaceId, appName, desc, group, tags, type);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -281,16 +281,16 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object content, final java.lang.Object dataId, final java.lang.Object namespaceId, final java.lang.Object appName, final java.lang.Object desc, final java.lang.Object group, final java.lang.String tags, final java.lang.Object type) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.content = java.util.Objects.requireNonNull(content, "content is required");
-            this.dataId = java.util.Objects.requireNonNull(dataId, "dataId is required");
-            this.namespaceId = java.util.Objects.requireNonNull(namespaceId, "namespaceId is required");
-            this.appName = appName;
-            this.desc = desc;
-            this.group = group;
-            this.tags = tags;
-            this.type = type;
+            this.content = java.util.Objects.requireNonNull(builder.content, "content is required");
+            this.dataId = java.util.Objects.requireNonNull(builder.dataId, "dataId is required");
+            this.namespaceId = java.util.Objects.requireNonNull(builder.namespaceId, "namespaceId is required");
+            this.appName = builder.appName;
+            this.desc = builder.desc;
+            this.group = builder.group;
+            this.tags = builder.tags;
+            this.type = builder.type;
         }
 
         @Override

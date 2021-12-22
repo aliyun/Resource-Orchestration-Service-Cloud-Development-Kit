@@ -133,12 +133,12 @@ export class InstanceClone extends ros.Resource {
     public readonly attrInnerIp: ros.IResolvable;
 
     /**
-     * Attribute InstanceId: The instance id of created ecs instance
+     * Attribute InstanceId: The instance ID of created ecs instance
      */
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Attribute PrimaryNetworkInterfaceId: Primary network interface id of created instance.
+     * Attribute PrimaryNetworkInterfaceId: Primary network interface ID of created instance.
      */
     public readonly attrPrimaryNetworkInterfaceId: ros.IResolvable;
 
@@ -153,7 +153,12 @@ export class InstanceClone extends ros.Resource {
     public readonly attrPublicIp: ros.IResolvable;
 
     /**
-     * Attribute ZoneId: Zone id of created instance.
+     * Attribute SecurityGroupIds: Security group ID list of created instance.
+     */
+    public readonly attrSecurityGroupIds: ros.IResolvable;
+
+    /**
+     * Attribute ZoneId: Zone ID of created instance.
      */
     public readonly attrZoneId: ros.IResolvable;
 
@@ -196,6 +201,7 @@ export class InstanceClone extends ros.Resource {
         this.attrPrimaryNetworkInterfaceId = rosInstanceClone.attrPrimaryNetworkInterfaceId;
         this.attrPrivateIp = rosInstanceClone.attrPrivateIp;
         this.attrPublicIp = rosInstanceClone.attrPublicIp;
+        this.attrSecurityGroupIds = rosInstanceClone.attrSecurityGroupIds;
         this.attrZoneId = rosInstanceClone.attrZoneId;
     }
 }

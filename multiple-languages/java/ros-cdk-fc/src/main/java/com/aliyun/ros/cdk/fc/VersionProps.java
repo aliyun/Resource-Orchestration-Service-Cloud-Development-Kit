@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Version`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.490Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.060Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.VersionProps")
 @software.amazon.jsii.Jsii.Proxy(VersionProps.Jsii$Proxy.class)
 public interface VersionProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,8 +30,8 @@ public interface VersionProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link VersionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VersionProps> {
-        private java.lang.Object serviceName;
-        private java.lang.Object description;
+        java.lang.Object serviceName;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link VersionProps#getServiceName}
@@ -80,7 +80,7 @@ public interface VersionProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public VersionProps build() {
-            return new Jsii$Proxy(serviceName, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -105,10 +105,10 @@ public interface VersionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object serviceName, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
-            this.description = description;
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+            this.description = builder.description;
         }
 
         @Override

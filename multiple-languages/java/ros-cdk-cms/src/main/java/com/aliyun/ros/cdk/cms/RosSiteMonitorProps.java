@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::SiteMonitor`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.608Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.175Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosSiteMonitorProps")
 @software.amazon.jsii.Jsii.Proxy(RosSiteMonitorProps.Jsii$Proxy.class)
 public interface RosSiteMonitorProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,13 +54,13 @@ public interface RosSiteMonitorProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosSiteMonitorProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSiteMonitorProps> {
-        private java.lang.Object address;
-        private java.lang.Object taskName;
-        private java.lang.Object taskType;
-        private java.lang.Object alertIds;
-        private java.lang.Object interval;
-        private java.lang.Object ispCities;
-        private java.lang.Object optionsJson;
+        java.lang.Object address;
+        java.lang.Object taskName;
+        java.lang.Object taskType;
+        java.lang.Object alertIds;
+        java.lang.Object interval;
+        java.lang.Object ispCities;
+        java.lang.Object optionsJson;
 
         /**
          * Sets the value of {@link RosSiteMonitorProps#getAddress}
@@ -209,7 +209,7 @@ public interface RosSiteMonitorProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosSiteMonitorProps build() {
-            return new Jsii$Proxy(address, taskName, taskType, alertIds, interval, ispCities, optionsJson);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -244,15 +244,15 @@ public interface RosSiteMonitorProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object address, final java.lang.Object taskName, final java.lang.Object taskType, final java.lang.Object alertIds, final java.lang.Object interval, final java.lang.Object ispCities, final java.lang.Object optionsJson) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.address = java.util.Objects.requireNonNull(address, "address is required");
-            this.taskName = java.util.Objects.requireNonNull(taskName, "taskName is required");
-            this.taskType = java.util.Objects.requireNonNull(taskType, "taskType is required");
-            this.alertIds = alertIds;
-            this.interval = interval;
-            this.ispCities = ispCities;
-            this.optionsJson = optionsJson;
+            this.address = java.util.Objects.requireNonNull(builder.address, "address is required");
+            this.taskName = java.util.Objects.requireNonNull(builder.taskName, "taskName is required");
+            this.taskType = java.util.Objects.requireNonNull(builder.taskType, "taskType is required");
+            this.alertIds = builder.alertIds;
+            this.interval = builder.interval;
+            this.ispCities = builder.ispCities;
+            this.optionsJson = builder.optionsJson;
         }
 
         @Override

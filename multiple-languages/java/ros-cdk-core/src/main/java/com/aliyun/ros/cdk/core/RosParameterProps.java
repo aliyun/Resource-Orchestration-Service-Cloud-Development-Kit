@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.671Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.526Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosParameterProps")
 @software.amazon.jsii.Jsii.Proxy(RosParameterProps.Jsii$Proxy.class)
 public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable {
@@ -79,22 +79,22 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosParameterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosParameterProps> {
-        private java.lang.String allowedPattern;
-        private java.util.List<java.lang.Object> allowedValues;
-        private java.lang.String associationProperty;
-        private java.util.Map<java.lang.String, java.lang.Object> associationPropertyMetadata;
-        private java.lang.Boolean confirm;
-        private java.lang.Object constraintDescription;
-        private java.lang.Object defaultValue;
-        private java.lang.Object description;
-        private java.lang.String label;
-        private java.lang.Number maxLength;
-        private java.lang.Number maxValue;
-        private java.lang.Number minLength;
-        private java.lang.Number minValue;
-        private java.lang.Boolean noEcho;
-        private java.lang.Boolean textArea;
-        private com.aliyun.ros.cdk.core.RosParameterType type;
+        java.lang.String allowedPattern;
+        java.util.List<java.lang.Object> allowedValues;
+        java.lang.String associationProperty;
+        java.util.Map<java.lang.String, java.lang.Object> associationPropertyMetadata;
+        java.lang.Boolean confirm;
+        java.lang.Object constraintDescription;
+        java.lang.Object defaultValue;
+        java.lang.Object description;
+        java.lang.String label;
+        java.lang.Number maxLength;
+        java.lang.Number maxValue;
+        java.lang.Number minLength;
+        java.lang.Number minValue;
+        java.lang.Boolean noEcho;
+        java.lang.Boolean textArea;
+        com.aliyun.ros.cdk.core.RosParameterType type;
 
         /**
          * Sets the value of {@link RosParameterProps#getAllowedPattern}
@@ -285,7 +285,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosParameterProps build() {
-            return new Jsii$Proxy(allowedPattern, allowedValues, associationProperty, associationPropertyMetadata, confirm, constraintDescription, defaultValue, description, label, maxLength, maxValue, minLength, minValue, noEcho, textArea, type);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -339,24 +339,24 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String allowedPattern, final java.util.List<? extends java.lang.Object> allowedValues, final java.lang.String associationProperty, final java.util.Map<java.lang.String, ? extends java.lang.Object> associationPropertyMetadata, final java.lang.Boolean confirm, final java.lang.Object constraintDescription, final java.lang.Object defaultValue, final java.lang.Object description, final java.lang.String label, final java.lang.Number maxLength, final java.lang.Number maxValue, final java.lang.Number minLength, final java.lang.Number minValue, final java.lang.Boolean noEcho, final java.lang.Boolean textArea, final com.aliyun.ros.cdk.core.RosParameterType type) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.allowedPattern = allowedPattern;
-            this.allowedValues = (java.util.List<java.lang.Object>)allowedValues;
-            this.associationProperty = associationProperty;
-            this.associationPropertyMetadata = (java.util.Map<java.lang.String, java.lang.Object>)associationPropertyMetadata;
-            this.confirm = confirm;
-            this.constraintDescription = constraintDescription;
-            this.defaultValue = defaultValue;
-            this.description = description;
-            this.label = label;
-            this.maxLength = maxLength;
-            this.maxValue = maxValue;
-            this.minLength = minLength;
-            this.minValue = minValue;
-            this.noEcho = noEcho;
-            this.textArea = textArea;
-            this.type = type;
+            this.allowedPattern = builder.allowedPattern;
+            this.allowedValues = (java.util.List<java.lang.Object>)builder.allowedValues;
+            this.associationProperty = builder.associationProperty;
+            this.associationPropertyMetadata = (java.util.Map<java.lang.String, java.lang.Object>)builder.associationPropertyMetadata;
+            this.confirm = builder.confirm;
+            this.constraintDescription = builder.constraintDescription;
+            this.defaultValue = builder.defaultValue;
+            this.description = builder.description;
+            this.label = builder.label;
+            this.maxLength = builder.maxLength;
+            this.maxValue = builder.maxValue;
+            this.minLength = builder.minLength;
+            this.minValue = builder.minValue;
+            this.noEcho = builder.noEcho;
+            this.textArea = builder.textArea;
+            this.type = builder.type;
         }
 
         @Override

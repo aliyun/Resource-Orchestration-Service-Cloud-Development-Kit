@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.208Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.945Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPProps.Jsii$Proxy.class)
 public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
@@ -96,19 +96,19 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosEIPProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEIPProps> {
-        private java.lang.Object autoPay;
-        private java.lang.Object bandwidth;
-        private java.lang.Object deletionProtection;
-        private java.lang.Object description;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object isp;
-        private java.lang.Object name;
-        private java.lang.Object netmode;
-        private java.lang.Object period;
-        private java.lang.Object pricingCycle;
-        private java.lang.Object resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
+        java.lang.Object autoPay;
+        java.lang.Object bandwidth;
+        java.lang.Object deletionProtection;
+        java.lang.Object description;
+        java.lang.Object instanceChargeType;
+        java.lang.Object internetChargeType;
+        java.lang.Object isp;
+        java.lang.Object name;
+        java.lang.Object netmode;
+        java.lang.Object period;
+        java.lang.Object pricingCycle;
+        java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosEIPProps#getAutoPay}
@@ -368,7 +368,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosEIPProps build() {
-            return new Jsii$Proxy(autoPay, bandwidth, deletionProtection, description, instanceChargeType, internetChargeType, isp, name, netmode, period, pricingCycle, resourceGroupId, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -416,21 +416,21 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object autoPay, final java.lang.Object bandwidth, final java.lang.Object deletionProtection, final java.lang.Object description, final java.lang.Object instanceChargeType, final java.lang.Object internetChargeType, final java.lang.Object isp, final java.lang.Object name, final java.lang.Object netmode, final java.lang.Object period, final java.lang.Object pricingCycle, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.autoPay = autoPay;
-            this.bandwidth = bandwidth;
-            this.deletionProtection = deletionProtection;
-            this.description = description;
-            this.instanceChargeType = instanceChargeType;
-            this.internetChargeType = internetChargeType;
-            this.isp = isp;
-            this.name = name;
-            this.netmode = netmode;
-            this.period = period;
-            this.pricingCycle = pricingCycle;
-            this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty>)tags;
+            this.autoPay = builder.autoPay;
+            this.bandwidth = builder.bandwidth;
+            this.deletionProtection = builder.deletionProtection;
+            this.description = builder.description;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.internetChargeType = builder.internetChargeType;
+            this.isp = builder.isp;
+            this.name = builder.name;
+            this.netmode = builder.netmode;
+            this.period = builder.period;
+            this.pricingCycle = builder.pricingCycle;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty>)builder.tags;
         }
 
         @Override

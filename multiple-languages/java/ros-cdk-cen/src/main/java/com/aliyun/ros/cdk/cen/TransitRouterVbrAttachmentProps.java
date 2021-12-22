@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::TransitRouterVbrAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.545Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVbrAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterVbrAttachmentProps.Jsii$Proxy.class)
 public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -24,27 +24,6 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
      * Property cenId: CenId.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCenId() {
-        return null;
-    }
-
-    /**
-     * Property resourceType: ResourceType.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceType() {
-        return null;
-    }
-
-    /**
-     * Property routeTableAssociationEnabled:.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTableAssociationEnabled() {
-        return null;
-    }
-
-    /**
-     * Property routeTablePropagationEnabled:.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTablePropagationEnabled() {
         return null;
     }
 
@@ -86,16 +65,13 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
      * A builder for {@link TransitRouterVbrAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TransitRouterVbrAttachmentProps> {
-        private java.lang.Object vbrId;
-        private java.lang.Object autoPublishRouteEnabled;
-        private java.lang.Object cenId;
-        private java.lang.Object resourceType;
-        private java.lang.Object routeTableAssociationEnabled;
-        private java.lang.Object routeTablePropagationEnabled;
-        private java.lang.Object transitRouterAttachmentDescription;
-        private java.lang.Object transitRouterAttachmentName;
-        private java.lang.Object transitRouterId;
-        private java.lang.Object vbrOwnerId;
+        java.lang.Object vbrId;
+        java.lang.Object autoPublishRouteEnabled;
+        java.lang.Object cenId;
+        java.lang.Object transitRouterAttachmentDescription;
+        java.lang.Object transitRouterAttachmentName;
+        java.lang.Object transitRouterId;
+        java.lang.Object vbrOwnerId;
 
         /**
          * Sets the value of {@link TransitRouterVbrAttachmentProps#getVbrId}
@@ -154,66 +130,6 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
          */
         public Builder cenId(com.aliyun.ros.cdk.core.IResolvable cenId) {
             this.cenId = cenId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link TransitRouterVbrAttachmentProps#getResourceType}
-         * @param resourceType Property resourceType: ResourceType.
-         * @return {@code this}
-         */
-        public Builder resourceType(java.lang.String resourceType) {
-            this.resourceType = resourceType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link TransitRouterVbrAttachmentProps#getResourceType}
-         * @param resourceType Property resourceType: ResourceType.
-         * @return {@code this}
-         */
-        public Builder resourceType(com.aliyun.ros.cdk.core.IResolvable resourceType) {
-            this.resourceType = resourceType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link TransitRouterVbrAttachmentProps#getRouteTableAssociationEnabled}
-         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled:.
-         * @return {@code this}
-         */
-        public Builder routeTableAssociationEnabled(java.lang.String routeTableAssociationEnabled) {
-            this.routeTableAssociationEnabled = routeTableAssociationEnabled;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link TransitRouterVbrAttachmentProps#getRouteTableAssociationEnabled}
-         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled:.
-         * @return {@code this}
-         */
-        public Builder routeTableAssociationEnabled(com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
-            this.routeTableAssociationEnabled = routeTableAssociationEnabled;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link TransitRouterVbrAttachmentProps#getRouteTablePropagationEnabled}
-         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled:.
-         * @return {@code this}
-         */
-        public Builder routeTablePropagationEnabled(java.lang.String routeTablePropagationEnabled) {
-            this.routeTablePropagationEnabled = routeTablePropagationEnabled;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link TransitRouterVbrAttachmentProps#getRouteTablePropagationEnabled}
-         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled:.
-         * @return {@code this}
-         */
-        public Builder routeTablePropagationEnabled(com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
-            this.routeTablePropagationEnabled = routeTablePropagationEnabled;
             return this;
         }
 
@@ -304,7 +220,7 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
          */
         @Override
         public TransitRouterVbrAttachmentProps build() {
-            return new Jsii$Proxy(vbrId, autoPublishRouteEnabled, cenId, resourceType, routeTableAssociationEnabled, routeTablePropagationEnabled, transitRouterAttachmentDescription, transitRouterAttachmentName, transitRouterId, vbrOwnerId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -316,9 +232,6 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
         private final java.lang.Object vbrId;
         private final java.lang.Object autoPublishRouteEnabled;
         private final java.lang.Object cenId;
-        private final java.lang.Object resourceType;
-        private final java.lang.Object routeTableAssociationEnabled;
-        private final java.lang.Object routeTablePropagationEnabled;
         private final java.lang.Object transitRouterAttachmentDescription;
         private final java.lang.Object transitRouterAttachmentName;
         private final java.lang.Object transitRouterId;
@@ -333,9 +246,6 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
             this.vbrId = software.amazon.jsii.Kernel.get(this, "vbrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPublishRouteEnabled = software.amazon.jsii.Kernel.get(this, "autoPublishRouteEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.routeTableAssociationEnabled = software.amazon.jsii.Kernel.get(this, "routeTableAssociationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.routeTablePropagationEnabled = software.amazon.jsii.Kernel.get(this, "routeTablePropagationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterAttachmentDescription = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterAttachmentName = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterId = software.amazon.jsii.Kernel.get(this, "transitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -345,18 +255,15 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object vbrId, final java.lang.Object autoPublishRouteEnabled, final java.lang.Object cenId, final java.lang.Object resourceType, final java.lang.Object routeTableAssociationEnabled, final java.lang.Object routeTablePropagationEnabled, final java.lang.Object transitRouterAttachmentDescription, final java.lang.Object transitRouterAttachmentName, final java.lang.Object transitRouterId, final java.lang.Object vbrOwnerId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.vbrId = java.util.Objects.requireNonNull(vbrId, "vbrId is required");
-            this.autoPublishRouteEnabled = autoPublishRouteEnabled;
-            this.cenId = cenId;
-            this.resourceType = resourceType;
-            this.routeTableAssociationEnabled = routeTableAssociationEnabled;
-            this.routeTablePropagationEnabled = routeTablePropagationEnabled;
-            this.transitRouterAttachmentDescription = transitRouterAttachmentDescription;
-            this.transitRouterAttachmentName = transitRouterAttachmentName;
-            this.transitRouterId = transitRouterId;
-            this.vbrOwnerId = vbrOwnerId;
+            this.vbrId = java.util.Objects.requireNonNull(builder.vbrId, "vbrId is required");
+            this.autoPublishRouteEnabled = builder.autoPublishRouteEnabled;
+            this.cenId = builder.cenId;
+            this.transitRouterAttachmentDescription = builder.transitRouterAttachmentDescription;
+            this.transitRouterAttachmentName = builder.transitRouterAttachmentName;
+            this.transitRouterId = builder.transitRouterId;
+            this.vbrOwnerId = builder.vbrOwnerId;
         }
 
         @Override
@@ -372,21 +279,6 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
         @Override
         public final java.lang.Object getCenId() {
             return this.cenId;
-        }
-
-        @Override
-        public final java.lang.Object getResourceType() {
-            return this.resourceType;
-        }
-
-        @Override
-        public final java.lang.Object getRouteTableAssociationEnabled() {
-            return this.routeTableAssociationEnabled;
-        }
-
-        @Override
-        public final java.lang.Object getRouteTablePropagationEnabled() {
-            return this.routeTablePropagationEnabled;
         }
 
         @Override
@@ -422,15 +314,6 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
             if (this.getCenId() != null) {
                 data.set("cenId", om.valueToTree(this.getCenId()));
             }
-            if (this.getResourceType() != null) {
-                data.set("resourceType", om.valueToTree(this.getResourceType()));
-            }
-            if (this.getRouteTableAssociationEnabled() != null) {
-                data.set("routeTableAssociationEnabled", om.valueToTree(this.getRouteTableAssociationEnabled()));
-            }
-            if (this.getRouteTablePropagationEnabled() != null) {
-                data.set("routeTablePropagationEnabled", om.valueToTree(this.getRouteTablePropagationEnabled()));
-            }
             if (this.getTransitRouterAttachmentDescription() != null) {
                 data.set("transitRouterAttachmentDescription", om.valueToTree(this.getTransitRouterAttachmentDescription()));
             }
@@ -464,9 +347,6 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
             if (!vbrId.equals(that.vbrId)) return false;
             if (this.autoPublishRouteEnabled != null ? !this.autoPublishRouteEnabled.equals(that.autoPublishRouteEnabled) : that.autoPublishRouteEnabled != null) return false;
             if (this.cenId != null ? !this.cenId.equals(that.cenId) : that.cenId != null) return false;
-            if (this.resourceType != null ? !this.resourceType.equals(that.resourceType) : that.resourceType != null) return false;
-            if (this.routeTableAssociationEnabled != null ? !this.routeTableAssociationEnabled.equals(that.routeTableAssociationEnabled) : that.routeTableAssociationEnabled != null) return false;
-            if (this.routeTablePropagationEnabled != null ? !this.routeTablePropagationEnabled.equals(that.routeTablePropagationEnabled) : that.routeTablePropagationEnabled != null) return false;
             if (this.transitRouterAttachmentDescription != null ? !this.transitRouterAttachmentDescription.equals(that.transitRouterAttachmentDescription) : that.transitRouterAttachmentDescription != null) return false;
             if (this.transitRouterAttachmentName != null ? !this.transitRouterAttachmentName.equals(that.transitRouterAttachmentName) : that.transitRouterAttachmentName != null) return false;
             if (this.transitRouterId != null ? !this.transitRouterId.equals(that.transitRouterId) : that.transitRouterId != null) return false;
@@ -478,9 +358,6 @@ public interface TransitRouterVbrAttachmentProps extends software.amazon.jsii.Js
             int result = this.vbrId.hashCode();
             result = 31 * result + (this.autoPublishRouteEnabled != null ? this.autoPublishRouteEnabled.hashCode() : 0);
             result = 31 * result + (this.cenId != null ? this.cenId.hashCode() : 0);
-            result = 31 * result + (this.resourceType != null ? this.resourceType.hashCode() : 0);
-            result = 31 * result + (this.routeTableAssociationEnabled != null ? this.routeTableAssociationEnabled.hashCode() : 0);
-            result = 31 * result + (this.routeTablePropagationEnabled != null ? this.routeTablePropagationEnabled.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentDescription != null ? this.transitRouterAttachmentDescription.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentName != null ? this.transitRouterAttachmentName.hashCode() : 0);
             result = 31 * result + (this.transitRouterId != null ? this.transitRouterId.hashCode() : 0);

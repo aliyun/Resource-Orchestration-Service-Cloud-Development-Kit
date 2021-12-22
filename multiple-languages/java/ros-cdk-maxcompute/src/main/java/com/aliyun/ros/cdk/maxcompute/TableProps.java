@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * Properties for defining a `ALIYUN::MaxCompute::Table`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.620Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.280Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.TableProps")
 @software.amazon.jsii.Jsii.Proxy(TableProps.Jsii$Proxy.class)
 public interface TableProps extends software.amazon.jsii.JsiiSerializable {
@@ -72,13 +72,13 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link TableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TableProps> {
-        private java.lang.Object name;
-        private java.lang.Object project;
-        private java.lang.Object comment;
-        private java.lang.Object ifNotExists;
-        private java.lang.Object lifecycle;
-        private java.lang.Object schema;
-        private java.lang.Object stringSchema;
+        java.lang.Object name;
+        java.lang.Object project;
+        java.lang.Object comment;
+        java.lang.Object ifNotExists;
+        java.lang.Object lifecycle;
+        java.lang.Object schema;
+        java.lang.Object stringSchema;
 
         /**
          * Sets the value of {@link TableProps#getName}
@@ -241,7 +241,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public TableProps build() {
-            return new Jsii$Proxy(name, project, comment, ifNotExists, lifecycle, schema, stringSchema);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -276,15 +276,15 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object project, final java.lang.Object comment, final java.lang.Object ifNotExists, final java.lang.Object lifecycle, final java.lang.Object schema, final java.lang.Object stringSchema) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.project = java.util.Objects.requireNonNull(project, "project is required");
-            this.comment = comment;
-            this.ifNotExists = ifNotExists;
-            this.lifecycle = lifecycle;
-            this.schema = schema;
-            this.stringSchema = stringSchema;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.project = java.util.Objects.requireNonNull(builder.project, "project is required");
+            this.comment = builder.comment;
+            this.ifNotExists = builder.ifNotExists;
+            this.lifecycle = builder.lifecycle;
+            this.schema = builder.schema;
+            this.stringSchema = builder.stringSchema;
         }
 
         @Override

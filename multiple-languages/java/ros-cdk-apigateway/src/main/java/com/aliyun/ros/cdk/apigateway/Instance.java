@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.287Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.617Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -239,7 +239,9 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoPay: Indicates whether automatic payment is enabled.
          * <p>
-         * Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+         * Valid values:
+         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         * true: Automatic payment is enabled. The payment is automatically made.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
@@ -251,7 +253,9 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoPay: Indicates whether automatic payment is enabled.
          * <p>
-         * Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+         * Valid values:
+         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+         * true: Automatic payment is enabled. The payment is automatically made.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
@@ -283,6 +287,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.props.chargeType(chargeType);
+            return this;
+        }
+
+        /**
+         * Property deletionForce: Whether force delete the instance even if its status is START_FAILED.
+         * <p>
+         * Default value is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force delete the instance even if its status is START_FAILED. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether force delete the instance even if its status is START_FAILED.
+         * <p>
+         * Default value is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force delete the instance even if its status is START_FAILED. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
             return this;
         }
 

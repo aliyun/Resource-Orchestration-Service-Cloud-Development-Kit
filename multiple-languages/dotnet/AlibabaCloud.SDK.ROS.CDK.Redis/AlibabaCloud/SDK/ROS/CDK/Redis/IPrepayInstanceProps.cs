@@ -8,6 +8,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
     [JsiiInterface(nativeType: typeof(IPrepayInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.PrepayInstanceProps")]
     public interface IPrepayInstanceProps
     {
+        /// <summary>Property autoPay: Indicates whether automatic payment is enabled.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+        /// true: Automatic payment is enabled. The payment is automatically made.
+        /// Default is False
+        /// </remarks>
+        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoPay
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property autoRenewDuration: The auto-renewal period.</summary>
+        /// <remarks>
+        /// Valid values: 1 to 12.
+        /// When the instance is about to expire, the instance is automatically renewed
+        /// based on the number of months specified by this parameter.
+        /// Note This parameter is valid only when ChargeType is set to PrePaid.
+        /// </remarks>
+        [JsiiProperty(name: "autoRenewDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenewDuration
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property backupPolicy: Backup policy.</summary>
         [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.BackupPolicyProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -23,6 +57,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Capacity
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property connections: Connection address.</summary>
+        [JsiiProperty(name: "connections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Connections
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property deletionForce: Whether destroy instance when it is in recycle.</summary>
+        /// <remarks>
+        /// Default is false
+        /// </remarks>
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionForce
         {
             get
             {
@@ -69,17 +128,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
-        /// <summary>Property instanceConnection: Instance connection message.</summary>
-        [JsiiProperty(name: "instanceConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.InstanceConnectionProperty\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? InstanceConnection
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property instanceMaintainTime: Instance maintain time.</summary>
         [JsiiProperty(name: "instanceMaintainTime", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.InstanceMaintainTimeProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -113,7 +161,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
-        /// <summary>Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.</summary>
+        /// <summary>Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.</summary>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Period
@@ -229,6 +277,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             {
             }
 
+            /// <summary>Property autoPay: Indicates whether automatic payment is enabled.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+            /// true: Automatic payment is enabled. The payment is automatically made.
+            /// Default is False
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoPay
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property autoRenewDuration: The auto-renewal period.</summary>
+            /// <remarks>
+            /// Valid values: 1 to 12.
+            /// When the instance is about to expire, the instance is automatically renewed
+            /// based on the number of months specified by this parameter.
+            /// Note This parameter is valid only when ChargeType is set to PrePaid.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenewDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenewDuration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property backupPolicy: Backup policy.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.BackupPolicyProperty\"}]}}", isOptional: true)]
@@ -241,6 +317,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Capacity
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property connections: Connection address.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "connections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty\"}]}}", isOptional: true)]
+            public object? Connections
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionForce: Whether destroy instance when it is in recycle.</summary>
+            /// <remarks>
+            /// Default is false
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionForce
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -275,14 +370,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property instanceConnection: Instance connection message.</summary>
-            [JsiiOptional]
-            [JsiiProperty(name: "instanceConnection", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.InstanceConnectionProperty\"}]}}", isOptional: true)]
-            public object? InstanceConnection
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
             /// <summary>Property instanceMaintainTime: Instance maintain time.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "instanceMaintainTime", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.InstanceMaintainTimeProperty\"}]}}", isOptional: true)]
@@ -307,7 +394,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.</summary>
+            /// <summary>Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period

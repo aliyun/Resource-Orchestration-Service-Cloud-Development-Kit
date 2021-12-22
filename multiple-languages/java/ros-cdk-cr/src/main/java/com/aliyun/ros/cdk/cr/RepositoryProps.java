@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::Repository`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.643Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.213Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RepositoryProps")
 @software.amazon.jsii.Jsii.Proxy(RepositoryProps.Jsii$Proxy.class)
 public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,12 +52,12 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RepositoryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RepositoryProps> {
-        private java.lang.Object repoName;
-        private java.lang.Object repoNamespace;
-        private java.lang.Object repoType;
-        private java.lang.Object summary;
-        private java.lang.Object detail;
-        private java.lang.Object repoSource;
+        java.lang.Object repoName;
+        java.lang.Object repoNamespace;
+        java.lang.Object repoType;
+        java.lang.Object summary;
+        java.lang.Object detail;
+        java.lang.Object repoSource;
 
         /**
          * Sets the value of {@link RepositoryProps#getRepoName}
@@ -186,7 +186,7 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RepositoryProps build() {
-            return new Jsii$Proxy(repoName, repoNamespace, repoType, summary, detail, repoSource);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -219,14 +219,14 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object repoName, final java.lang.Object repoNamespace, final java.lang.Object repoType, final java.lang.Object summary, final java.lang.Object detail, final java.lang.Object repoSource) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.repoName = java.util.Objects.requireNonNull(repoName, "repoName is required");
-            this.repoNamespace = java.util.Objects.requireNonNull(repoNamespace, "repoNamespace is required");
-            this.repoType = java.util.Objects.requireNonNull(repoType, "repoType is required");
-            this.summary = java.util.Objects.requireNonNull(summary, "summary is required");
-            this.detail = detail;
-            this.repoSource = repoSource;
+            this.repoName = java.util.Objects.requireNonNull(builder.repoName, "repoName is required");
+            this.repoNamespace = java.util.Objects.requireNonNull(builder.repoNamespace, "repoNamespace is required");
+            this.repoType = java.util.Objects.requireNonNull(builder.repoType, "repoType is required");
+            this.summary = java.util.Objects.requireNonNull(builder.summary, "summary is required");
+            this.detail = builder.detail;
+            this.repoSource = builder.repoSource;
         }
 
         @Override

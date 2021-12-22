@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.395Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.927Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfiguration")
 public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -725,16 +725,16 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DiskMappingsProperty> {
-            private java.lang.Object autoSnapshotPolicyId;
-            private java.lang.Object category;
-            private java.lang.Object description;
-            private java.lang.Object device;
-            private java.lang.Object diskName;
-            private java.lang.Object encrypted;
-            private java.lang.Object kmsKeyId;
-            private java.lang.Object performanceLevel;
-            private java.lang.Object size;
-            private java.lang.Object snapshotId;
+            java.lang.Object autoSnapshotPolicyId;
+            java.lang.Object category;
+            java.lang.Object description;
+            java.lang.Object device;
+            java.lang.Object diskName;
+            java.lang.Object encrypted;
+            java.lang.Object kmsKeyId;
+            java.lang.Object performanceLevel;
+            java.lang.Object size;
+            java.lang.Object snapshotId;
 
             /**
              * Sets the value of {@link DiskMappingsProperty#getAutoSnapshotPolicyId}
@@ -964,7 +964,7 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DiskMappingsProperty build() {
-                return new Jsii$Proxy(autoSnapshotPolicyId, category, description, device, diskName, encrypted, kmsKeyId, performanceLevel, size, snapshotId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1006,18 +1006,18 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object autoSnapshotPolicyId, final java.lang.Object category, final java.lang.Object description, final java.lang.Object device, final java.lang.Object diskName, final java.lang.Object encrypted, final java.lang.Object kmsKeyId, final java.lang.Object performanceLevel, final java.lang.Object size, final java.lang.Object snapshotId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-                this.category = category;
-                this.description = description;
-                this.device = device;
-                this.diskName = diskName;
-                this.encrypted = encrypted;
-                this.kmsKeyId = kmsKeyId;
-                this.performanceLevel = performanceLevel;
-                this.size = size;
-                this.snapshotId = snapshotId;
+                this.autoSnapshotPolicyId = builder.autoSnapshotPolicyId;
+                this.category = builder.category;
+                this.description = builder.description;
+                this.device = builder.device;
+                this.diskName = builder.diskName;
+                this.encrypted = builder.encrypted;
+                this.kmsKeyId = builder.kmsKeyId;
+                this.performanceLevel = builder.performanceLevel;
+                this.size = builder.size;
+                this.snapshotId = builder.snapshotId;
             }
 
             @Override
@@ -1183,8 +1183,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagListProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagListProperty#getKey}
@@ -1238,7 +1238,7 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagListProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1264,10 +1264,10 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override

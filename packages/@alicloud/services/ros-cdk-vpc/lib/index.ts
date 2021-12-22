@@ -6,6 +6,8 @@ export * from './bgppeer';
 export * from './commonbandwidthpackage';
 export * from './commonbandwidthpackageip';
 export * from './customergateway';
+export * from './dhcpoptionsset';
+export * from './dhcpoptionssetattachment';
 export * from './eip';
 export * from './eipassociation';
 export * from './eipsegment';

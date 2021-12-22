@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Pvtz.RosZone))!;
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ZoneId: Zone ID
+        /// <strong>Attribute</strong>: ZoneId: Zone ID.
         /// </remarks>
         [JsiiProperty(name: "attrZoneId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneId
@@ -54,10 +54,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ZoneName: Zone name
+        /// <strong>Attribute</strong>: ZoneName: Zone name.
         /// </remarks>
         [JsiiProperty(name: "attrZoneName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ZoneTag: Zone label.
+        /// </remarks>
+        [JsiiProperty(name: "attrZoneTag", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneTag
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ZoneType: Zone type.
+        /// </remarks>
+        [JsiiProperty(name: "attrZoneType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneType
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -104,6 +122,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         [JsiiOptional]
         [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? Remark
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ZoneTag
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ZoneType
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);

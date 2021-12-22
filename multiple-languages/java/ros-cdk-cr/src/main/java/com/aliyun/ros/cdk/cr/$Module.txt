@@ -11,3 +11,8 @@
 @alicloud/ros-cdk-cr.RosRepository=com.aliyun.ros.cdk.cr.RosRepository
 @alicloud/ros-cdk-cr.RosRepository.RepoSourceProperty=com.aliyun.ros.cdk.cr.RosRepository$RepoSourceProperty
 @alicloud/ros-cdk-cr.RosRepositoryProps=com.aliyun.ros.cdk.cr.RosRepositoryProps
+@alicloud/ros-cdk-cr.RosUserInfo=com.aliyun.ros.cdk.cr.RosUserInfo
+@alicloud/ros-cdk-cr.RosUserInfo.UserProperty=com.aliyun.ros.cdk.cr.RosUserInfo$UserProperty
+@alicloud/ros-cdk-cr.RosUserInfoProps=com.aliyun.ros.cdk.cr.RosUserInfoProps
+@alicloud/ros-cdk-cr.UserInfo=com.aliyun.ros.cdk.cr.UserInfo
+@alicloud/ros-cdk-cr.UserInfoProps=com.aliyun.ros.cdk.cr.UserInfoProps

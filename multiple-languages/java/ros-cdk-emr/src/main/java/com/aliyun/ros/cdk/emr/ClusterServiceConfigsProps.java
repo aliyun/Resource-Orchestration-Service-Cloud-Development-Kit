@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Properties for defining a `ALIYUN::EMR::ClusterServiceConfigs`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.347Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.879Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.ClusterServiceConfigsProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterServiceConfigsProps.Jsii$Proxy.class)
 public interface ClusterServiceConfigsProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface ClusterServiceConfigsProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link ClusterServiceConfigsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ClusterServiceConfigsProps> {
-        private java.lang.Object clusterId;
-        private java.lang.Object serviceConfigs;
+        java.lang.Object clusterId;
+        java.lang.Object serviceConfigs;
 
         /**
          * Sets the value of {@link ClusterServiceConfigsProps#getClusterId}
@@ -78,7 +78,7 @@ public interface ClusterServiceConfigsProps extends software.amazon.jsii.JsiiSer
          */
         @Override
         public ClusterServiceConfigsProps build() {
-            return new Jsii$Proxy(clusterId, serviceConfigs);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface ClusterServiceConfigsProps extends software.amazon.jsii.JsiiSer
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object clusterId, final java.lang.Object serviceConfigs) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
-            this.serviceConfigs = java.util.Objects.requireNonNull(serviceConfigs, "serviceConfigs is required");
+            this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
+            this.serviceConfigs = java.util.Objects.requireNonNull(builder.serviceConfigs, "serviceConfigs is required");
         }
 
         @Override

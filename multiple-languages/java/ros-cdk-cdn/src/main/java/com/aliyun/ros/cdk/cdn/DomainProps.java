@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * Properties for defining a `ALIYUN::CDN::Domain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.398Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.811Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -80,14 +80,14 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DomainProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DomainProps> {
-        private java.lang.Object cdnType;
-        private java.lang.Object domainName;
-        private java.lang.Object checkUrl;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object scope;
-        private java.lang.Object sources;
-        private java.util.List<com.aliyun.ros.cdk.cdn.RosDomain.TagsProperty> tags;
-        private java.lang.Object topLevelDomain;
+        java.lang.Object cdnType;
+        java.lang.Object domainName;
+        java.lang.Object checkUrl;
+        java.lang.Object resourceGroupId;
+        java.lang.Object scope;
+        java.lang.Object sources;
+        java.util.List<com.aliyun.ros.cdk.cdn.RosDomain.TagsProperty> tags;
+        java.lang.Object topLevelDomain;
 
         /**
          * Sets the value of {@link DomainProps#getCdnType}
@@ -256,7 +256,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public DomainProps build() {
-            return new Jsii$Proxy(cdnType, domainName, checkUrl, resourceGroupId, scope, sources, tags, topLevelDomain);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -294,16 +294,16 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object cdnType, final java.lang.Object domainName, final java.lang.Object checkUrl, final java.lang.Object resourceGroupId, final java.lang.Object scope, final java.lang.Object sources, final java.util.List<? extends com.aliyun.ros.cdk.cdn.RosDomain.TagsProperty> tags, final java.lang.Object topLevelDomain) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cdnType = java.util.Objects.requireNonNull(cdnType, "cdnType is required");
-            this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
-            this.checkUrl = checkUrl;
-            this.resourceGroupId = resourceGroupId;
-            this.scope = scope;
-            this.sources = sources;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.cdn.RosDomain.TagsProperty>)tags;
-            this.topLevelDomain = topLevelDomain;
+            this.cdnType = java.util.Objects.requireNonNull(builder.cdnType, "cdnType is required");
+            this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
+            this.checkUrl = builder.checkUrl;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.scope = builder.scope;
+            this.sources = builder.sources;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cdn.RosDomain.TagsProperty>)builder.tags;
+            this.topLevelDomain = builder.topLevelDomain;
         }
 
         @Override

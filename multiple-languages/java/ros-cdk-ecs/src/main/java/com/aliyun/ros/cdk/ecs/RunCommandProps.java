@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::RunCommand`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.202Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.771Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RunCommandProps.Jsii$Proxy.class)
 public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
@@ -155,19 +155,19 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RunCommandProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RunCommandProps> {
-        private java.lang.Object commandContent;
-        private java.lang.Object instanceIds;
-        private java.lang.Object type;
-        private java.lang.Object contentEncoding;
-        private java.lang.Object description;
-        private java.lang.Object enableParameter;
-        private java.lang.Object frequency;
-        private java.lang.Object keepCommand;
-        private java.lang.Object name;
-        private java.lang.Object parameters;
-        private java.lang.Object timed;
-        private java.lang.Object timeout;
-        private java.lang.Object workingDir;
+        java.lang.Object commandContent;
+        java.lang.Object instanceIds;
+        java.lang.Object type;
+        java.lang.Object contentEncoding;
+        java.lang.Object description;
+        java.lang.Object enableParameter;
+        java.lang.Object frequency;
+        java.lang.Object keepCommand;
+        java.lang.Object name;
+        java.lang.Object parameters;
+        java.lang.Object timed;
+        java.lang.Object timeout;
+        java.lang.Object workingDir;
 
         /**
          * Sets the value of {@link RunCommandProps#getCommandContent}
@@ -514,7 +514,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RunCommandProps build() {
-            return new Jsii$Proxy(commandContent, instanceIds, type, contentEncoding, description, enableParameter, frequency, keepCommand, name, parameters, timed, timeout, workingDir);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -561,21 +561,21 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object commandContent, final java.lang.Object instanceIds, final java.lang.Object type, final java.lang.Object contentEncoding, final java.lang.Object description, final java.lang.Object enableParameter, final java.lang.Object frequency, final java.lang.Object keepCommand, final java.lang.Object name, final java.lang.Object parameters, final java.lang.Object timed, final java.lang.Object timeout, final java.lang.Object workingDir) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.commandContent = java.util.Objects.requireNonNull(commandContent, "commandContent is required");
-            this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.contentEncoding = contentEncoding;
-            this.description = description;
-            this.enableParameter = enableParameter;
-            this.frequency = frequency;
-            this.keepCommand = keepCommand;
-            this.name = name;
-            this.parameters = parameters;
-            this.timed = timed;
-            this.timeout = timeout;
-            this.workingDir = workingDir;
+            this.commandContent = java.util.Objects.requireNonNull(builder.commandContent, "commandContent is required");
+            this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.contentEncoding = builder.contentEncoding;
+            this.description = builder.description;
+            this.enableParameter = builder.enableParameter;
+            this.frequency = builder.frequency;
+            this.keepCommand = builder.keepCommand;
+            this.name = builder.name;
+            this.parameters = builder.parameters;
+            this.timed = builder.timed;
+            this.timeout = builder.timeout;
+            this.workingDir = builder.workingDir;
         }
 
         @Override

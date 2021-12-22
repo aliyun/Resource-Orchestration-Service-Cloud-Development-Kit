@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::NetworkAcl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.215Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.952Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNetworkAcl")
 public class RosNetworkAcl extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -218,13 +218,13 @@ public class RosNetworkAcl extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EgressAclEntriesProperty> {
-            private java.lang.Object policy;
-            private java.lang.Object port;
-            private java.lang.Object protocol;
-            private java.lang.Object description;
-            private java.lang.Object destinationCidrIp;
-            private java.lang.Object entryType;
-            private java.lang.Object networkAclEntryName;
+            java.lang.Object policy;
+            java.lang.Object port;
+            java.lang.Object protocol;
+            java.lang.Object description;
+            java.lang.Object destinationCidrIp;
+            java.lang.Object entryType;
+            java.lang.Object networkAclEntryName;
 
             /**
              * Sets the value of {@link EgressAclEntriesProperty#getPolicy}
@@ -388,7 +388,7 @@ public class RosNetworkAcl extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public EgressAclEntriesProperty build() {
-                return new Jsii$Proxy(policy, port, protocol, description, destinationCidrIp, entryType, networkAclEntryName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -424,15 +424,15 @@ public class RosNetworkAcl extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object policy, final java.lang.Object port, final java.lang.Object protocol, final java.lang.Object description, final java.lang.Object destinationCidrIp, final java.lang.Object entryType, final java.lang.Object networkAclEntryName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.policy = java.util.Objects.requireNonNull(policy, "policy is required");
-                this.port = java.util.Objects.requireNonNull(port, "port is required");
-                this.protocol = java.util.Objects.requireNonNull(protocol, "protocol is required");
-                this.description = description;
-                this.destinationCidrIp = destinationCidrIp;
-                this.entryType = entryType;
-                this.networkAclEntryName = networkAclEntryName;
+                this.policy = java.util.Objects.requireNonNull(builder.policy, "policy is required");
+                this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
+                this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
+                this.description = builder.description;
+                this.destinationCidrIp = builder.destinationCidrIp;
+                this.entryType = builder.entryType;
+                this.networkAclEntryName = builder.networkAclEntryName;
             }
 
             @Override
@@ -593,13 +593,13 @@ public class RosNetworkAcl extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<IngressAclEntriesProperty> {
-            private java.lang.Object policy;
-            private java.lang.Object port;
-            private java.lang.Object protocol;
-            private java.lang.Object description;
-            private java.lang.Object entryType;
-            private java.lang.Object networkAclEntryName;
-            private java.lang.Object sourceCidrIp;
+            java.lang.Object policy;
+            java.lang.Object port;
+            java.lang.Object protocol;
+            java.lang.Object description;
+            java.lang.Object entryType;
+            java.lang.Object networkAclEntryName;
+            java.lang.Object sourceCidrIp;
 
             /**
              * Sets the value of {@link IngressAclEntriesProperty#getPolicy}
@@ -763,7 +763,7 @@ public class RosNetworkAcl extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public IngressAclEntriesProperty build() {
-                return new Jsii$Proxy(policy, port, protocol, description, entryType, networkAclEntryName, sourceCidrIp);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -799,15 +799,15 @@ public class RosNetworkAcl extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object policy, final java.lang.Object port, final java.lang.Object protocol, final java.lang.Object description, final java.lang.Object entryType, final java.lang.Object networkAclEntryName, final java.lang.Object sourceCidrIp) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.policy = java.util.Objects.requireNonNull(policy, "policy is required");
-                this.port = java.util.Objects.requireNonNull(port, "port is required");
-                this.protocol = java.util.Objects.requireNonNull(protocol, "protocol is required");
-                this.description = description;
-                this.entryType = entryType;
-                this.networkAclEntryName = networkAclEntryName;
-                this.sourceCidrIp = sourceCidrIp;
+                this.policy = java.util.Objects.requireNonNull(builder.policy, "policy is required");
+                this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
+                this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
+                this.description = builder.description;
+                this.entryType = builder.entryType;
+                this.networkAclEntryName = builder.networkAclEntryName;
+                this.sourceCidrIp = builder.sourceCidrIp;
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.106Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.647Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceCloneProps.Jsii$Proxy.class)
 public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -136,26 +136,26 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosInstanceCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceCloneProps> {
-        private java.lang.Object sourceInstanceId;
-        private java.lang.Object backendServerWeight;
-        private java.lang.Object deletionProtection;
-        private java.lang.Object description;
-        private java.lang.Object diskMappings;
-        private java.lang.Object imageId;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object instanceName;
-        private java.lang.Object internetMaxBandwidthIn;
-        private java.lang.Object keyPairName;
-        private java.lang.Object loadBalancerIdToAttach;
-        private java.lang.Object password;
-        private java.lang.Object period;
-        private java.lang.Object ramRoleName;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object spotPriceLimit;
-        private java.lang.Object spotStrategy;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> tags;
-        private java.lang.Object zoneId;
+        java.lang.Object sourceInstanceId;
+        java.lang.Object backendServerWeight;
+        java.lang.Object deletionProtection;
+        java.lang.Object description;
+        java.lang.Object diskMappings;
+        java.lang.Object imageId;
+        java.lang.Object instanceChargeType;
+        java.lang.Object instanceName;
+        java.lang.Object internetMaxBandwidthIn;
+        java.lang.Object keyPairName;
+        java.lang.Object loadBalancerIdToAttach;
+        java.lang.Object password;
+        java.lang.Object period;
+        java.lang.Object ramRoleName;
+        java.lang.Object resourceGroupId;
+        java.lang.Object securityGroupId;
+        java.lang.Object spotPriceLimit;
+        java.lang.Object spotStrategy;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> tags;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosInstanceCloneProps#getSourceInstanceId}
@@ -555,7 +555,7 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosInstanceCloneProps build() {
-            return new Jsii$Proxy(sourceInstanceId, backendServerWeight, deletionProtection, description, diskMappings, imageId, instanceChargeType, instanceName, internetMaxBandwidthIn, keyPairName, loadBalancerIdToAttach, password, period, ramRoleName, resourceGroupId, securityGroupId, spotPriceLimit, spotStrategy, tags, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -617,28 +617,28 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object sourceInstanceId, final java.lang.Object backendServerWeight, final java.lang.Object deletionProtection, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object imageId, final java.lang.Object instanceChargeType, final java.lang.Object instanceName, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object keyPairName, final java.lang.Object loadBalancerIdToAttach, final java.lang.Object password, final java.lang.Object period, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> tags, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.sourceInstanceId = java.util.Objects.requireNonNull(sourceInstanceId, "sourceInstanceId is required");
-            this.backendServerWeight = backendServerWeight;
-            this.deletionProtection = deletionProtection;
-            this.description = description;
-            this.diskMappings = diskMappings;
-            this.imageId = imageId;
-            this.instanceChargeType = instanceChargeType;
-            this.instanceName = instanceName;
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            this.keyPairName = keyPairName;
-            this.loadBalancerIdToAttach = loadBalancerIdToAttach;
-            this.password = password;
-            this.period = period;
-            this.ramRoleName = ramRoleName;
-            this.resourceGroupId = resourceGroupId;
-            this.securityGroupId = securityGroupId;
-            this.spotPriceLimit = spotPriceLimit;
-            this.spotStrategy = spotStrategy;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty>)tags;
-            this.zoneId = zoneId;
+            this.sourceInstanceId = java.util.Objects.requireNonNull(builder.sourceInstanceId, "sourceInstanceId is required");
+            this.backendServerWeight = builder.backendServerWeight;
+            this.deletionProtection = builder.deletionProtection;
+            this.description = builder.description;
+            this.diskMappings = builder.diskMappings;
+            this.imageId = builder.imageId;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.instanceName = builder.instanceName;
+            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
+            this.keyPairName = builder.keyPairName;
+            this.loadBalancerIdToAttach = builder.loadBalancerIdToAttach;
+            this.password = builder.password;
+            this.period = builder.period;
+            this.ramRoleName = builder.ramRoleName;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.securityGroupId = builder.securityGroupId;
+            this.spotPriceLimit = builder.spotPriceLimit;
+            this.spotStrategy = builder.spotStrategy;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty>)builder.tags;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

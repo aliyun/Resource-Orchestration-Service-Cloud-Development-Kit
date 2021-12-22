@@ -76,8 +76,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property diskCapacity:.</summary>
-        [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        /// <summary>Property diskCapacity: disk capacity, unit: G.</summary>
+        [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DiskCapacity
         {
@@ -231,9 +231,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property diskCapacity:.</summary>
+            /// <summary>Property diskCapacity: disk capacity, unit: G.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DiskCapacity
             {
                 get => GetInstanceProperty<object?>();

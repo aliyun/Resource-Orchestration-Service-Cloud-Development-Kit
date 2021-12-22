@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::Alert`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.131Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.846Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert")
 public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -149,12 +149,12 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigurationProperty> {
-            private java.lang.Object condition;
-            private java.lang.Object dashboard;
-            private java.lang.Object queryList;
-            private java.lang.Object throttling;
-            private java.lang.Object notificationList;
-            private java.lang.Object notifyThreshold;
+            java.lang.Object condition;
+            java.lang.Object dashboard;
+            java.lang.Object queryList;
+            java.lang.Object throttling;
+            java.lang.Object notificationList;
+            java.lang.Object notifyThreshold;
 
             /**
              * Sets the value of {@link ConfigurationProperty#getCondition}
@@ -296,7 +296,7 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConfigurationProperty build() {
-                return new Jsii$Proxy(condition, dashboard, queryList, throttling, notificationList, notifyThreshold);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -330,14 +330,14 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object condition, final java.lang.Object dashboard, final java.lang.Object queryList, final java.lang.Object throttling, final java.lang.Object notificationList, final java.lang.Object notifyThreshold) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.condition = java.util.Objects.requireNonNull(condition, "condition is required");
-                this.dashboard = java.util.Objects.requireNonNull(dashboard, "dashboard is required");
-                this.queryList = java.util.Objects.requireNonNull(queryList, "queryList is required");
-                this.throttling = java.util.Objects.requireNonNull(throttling, "throttling is required");
-                this.notificationList = notificationList;
-                this.notifyThreshold = notifyThreshold;
+                this.condition = java.util.Objects.requireNonNull(builder.condition, "condition is required");
+                this.dashboard = java.util.Objects.requireNonNull(builder.dashboard, "dashboard is required");
+                this.queryList = java.util.Objects.requireNonNull(builder.queryList, "queryList is required");
+                this.throttling = java.util.Objects.requireNonNull(builder.throttling, "throttling is required");
+                this.notificationList = builder.notificationList;
+                this.notifyThreshold = builder.notifyThreshold;
             }
 
             @Override
@@ -484,13 +484,13 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DetailProperty> {
-            private java.lang.Object configuration;
-            private java.lang.Object displayName;
-            private java.lang.Object name;
-            private java.lang.Object schedule;
-            private java.lang.Object description;
-            private java.lang.Object state;
-            private java.lang.Object type;
+            java.lang.Object configuration;
+            java.lang.Object displayName;
+            java.lang.Object name;
+            java.lang.Object schedule;
+            java.lang.Object description;
+            java.lang.Object state;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link DetailProperty#getConfiguration}
@@ -654,7 +654,7 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DetailProperty build() {
-                return new Jsii$Proxy(configuration, displayName, name, schedule, description, state, type);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -690,15 +690,15 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object configuration, final java.lang.Object displayName, final java.lang.Object name, final java.lang.Object schedule, final java.lang.Object description, final java.lang.Object state, final java.lang.Object type) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.configuration = java.util.Objects.requireNonNull(configuration, "configuration is required");
-                this.displayName = java.util.Objects.requireNonNull(displayName, "displayName is required");
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.schedule = java.util.Objects.requireNonNull(schedule, "schedule is required");
-                this.description = description;
-                this.state = state;
-                this.type = type;
+                this.configuration = java.util.Objects.requireNonNull(builder.configuration, "configuration is required");
+                this.displayName = java.util.Objects.requireNonNull(builder.displayName, "displayName is required");
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.schedule = java.util.Objects.requireNonNull(builder.schedule, "schedule is required");
+                this.description = builder.description;
+                this.state = builder.state;
+                this.type = builder.type;
             }
 
             @Override
@@ -847,11 +847,11 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NotificationListProperty> {
-            private java.lang.Object type;
-            private java.lang.Object content;
-            private java.lang.Object emailList;
-            private java.lang.Object mobileList;
-            private java.lang.Object serviceUri;
+            java.lang.Object type;
+            java.lang.Object content;
+            java.lang.Object emailList;
+            java.lang.Object mobileList;
+            java.lang.Object serviceUri;
 
             /**
              * Sets the value of {@link NotificationListProperty#getType}
@@ -971,7 +971,7 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NotificationListProperty build() {
-                return new Jsii$Proxy(type, content, emailList, mobileList, serviceUri);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1003,13 +1003,13 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object type, final java.lang.Object content, final java.lang.Object emailList, final java.lang.Object mobileList, final java.lang.Object serviceUri) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
-                this.content = content;
-                this.emailList = emailList;
-                this.mobileList = mobileList;
-                this.serviceUri = serviceUri;
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.content = builder.content;
+                this.emailList = builder.emailList;
+                this.mobileList = builder.mobileList;
+                this.serviceUri = builder.serviceUri;
             }
 
             @Override
@@ -1141,12 +1141,12 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<QueryListProperty> {
-            private java.lang.Object chartTitle;
-            private java.lang.Object end;
-            private java.lang.Object logStore;
-            private java.lang.Object query;
-            private java.lang.Object start;
-            private java.lang.Object timeSpanType;
+            java.lang.Object chartTitle;
+            java.lang.Object end;
+            java.lang.Object logStore;
+            java.lang.Object query;
+            java.lang.Object start;
+            java.lang.Object timeSpanType;
 
             /**
              * Sets the value of {@link QueryListProperty#getChartTitle}
@@ -1288,7 +1288,7 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public QueryListProperty build() {
-                return new Jsii$Proxy(chartTitle, end, logStore, query, start, timeSpanType);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1322,14 +1322,14 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object chartTitle, final java.lang.Object end, final java.lang.Object logStore, final java.lang.Object query, final java.lang.Object start, final java.lang.Object timeSpanType) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.chartTitle = java.util.Objects.requireNonNull(chartTitle, "chartTitle is required");
-                this.end = java.util.Objects.requireNonNull(end, "end is required");
-                this.logStore = java.util.Objects.requireNonNull(logStore, "logStore is required");
-                this.query = java.util.Objects.requireNonNull(query, "query is required");
-                this.start = java.util.Objects.requireNonNull(start, "start is required");
-                this.timeSpanType = java.util.Objects.requireNonNull(timeSpanType, "timeSpanType is required");
+                this.chartTitle = java.util.Objects.requireNonNull(builder.chartTitle, "chartTitle is required");
+                this.end = java.util.Objects.requireNonNull(builder.end, "end is required");
+                this.logStore = java.util.Objects.requireNonNull(builder.logStore, "logStore is required");
+                this.query = java.util.Objects.requireNonNull(builder.query, "query is required");
+                this.start = java.util.Objects.requireNonNull(builder.start, "start is required");
+                this.timeSpanType = java.util.Objects.requireNonNull(builder.timeSpanType, "timeSpanType is required");
             }
 
             @Override
@@ -1478,13 +1478,13 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ScheduleProperty> {
-            private java.lang.Object type;
-            private java.lang.Object cronExpression;
-            private java.lang.Object dayOfWeek;
-            private java.lang.Object delay;
-            private java.lang.Object hour;
-            private java.lang.Object interval;
-            private java.lang.Object runImmediately;
+            java.lang.Object type;
+            java.lang.Object cronExpression;
+            java.lang.Object dayOfWeek;
+            java.lang.Object delay;
+            java.lang.Object hour;
+            java.lang.Object interval;
+            java.lang.Object runImmediately;
 
             /**
              * Sets the value of {@link ScheduleProperty#getType}
@@ -1648,7 +1648,7 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ScheduleProperty build() {
-                return new Jsii$Proxy(type, cronExpression, dayOfWeek, delay, hour, interval, runImmediately);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1684,15 +1684,15 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object type, final java.lang.Object cronExpression, final java.lang.Object dayOfWeek, final java.lang.Object delay, final java.lang.Object hour, final java.lang.Object interval, final java.lang.Object runImmediately) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
-                this.cronExpression = cronExpression;
-                this.dayOfWeek = dayOfWeek;
-                this.delay = delay;
-                this.hour = hour;
-                this.interval = interval;
-                this.runImmediately = runImmediately;
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.cronExpression = builder.cronExpression;
+                this.dayOfWeek = builder.dayOfWeek;
+                this.delay = builder.delay;
+                this.hour = builder.hour;
+                this.interval = builder.interval;
+                this.runImmediately = builder.runImmediately;
             }
 
             @Override

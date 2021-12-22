@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::RouteTableAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.219Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.956Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouteTableAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouteTableAssociationProps.Jsii$Proxy.class)
 public interface RosRouteTableAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,8 +26,8 @@ public interface RosRouteTableAssociationProps extends software.amazon.jsii.Jsii
      * A builder for {@link RosRouteTableAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRouteTableAssociationProps> {
-        private java.lang.Object routeTableId;
-        private java.lang.Object vSwitchId;
+        java.lang.Object routeTableId;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosRouteTableAssociationProps#getRouteTableId}
@@ -76,7 +76,7 @@ public interface RosRouteTableAssociationProps extends software.amazon.jsii.Jsii
          */
         @Override
         public RosRouteTableAssociationProps build() {
-            return new Jsii$Proxy(routeTableId, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,10 +101,10 @@ public interface RosRouteTableAssociationProps extends software.amazon.jsii.Jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object routeTableId, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.routeTableId = java.util.Objects.requireNonNull(routeTableId, "routeTableId is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
+            this.routeTableId = java.util.Objects.requireNonNull(builder.routeTableId, "routeTableId is required");
+            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
         }
 
         @Override

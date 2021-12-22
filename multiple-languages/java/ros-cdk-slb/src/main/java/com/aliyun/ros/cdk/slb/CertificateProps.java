@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Certificate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.073Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.771Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.CertificateProps")
 @software.amazon.jsii.Jsii.Proxy(CertificateProps.Jsii$Proxy.class)
 public interface CertificateProps extends software.amazon.jsii.JsiiSerializable {
@@ -74,14 +74,14 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link CertificateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CertificateProps> {
-        private java.lang.Object certificate;
-        private java.lang.Object aliCloudCertificateId;
-        private java.lang.Object aliCloudCertificateName;
-        private java.lang.Object certificateName;
-        private java.lang.Object certificateType;
-        private java.lang.Object privateKey;
-        private java.lang.Object resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> tags;
+        java.lang.Object certificate;
+        java.lang.Object aliCloudCertificateId;
+        java.lang.Object aliCloudCertificateName;
+        java.lang.Object certificateName;
+        java.lang.Object certificateType;
+        java.lang.Object privateKey;
+        java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> tags;
 
         /**
          * Sets the value of {@link CertificateProps#getCertificate}
@@ -242,7 +242,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public CertificateProps build() {
-            return new Jsii$Proxy(certificate, aliCloudCertificateId, aliCloudCertificateName, certificateName, certificateType, privateKey, resourceGroupId, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -280,16 +280,16 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object certificate, final java.lang.Object aliCloudCertificateId, final java.lang.Object aliCloudCertificateName, final java.lang.Object certificateName, final java.lang.Object certificateType, final java.lang.Object privateKey, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.certificate = java.util.Objects.requireNonNull(certificate, "certificate is required");
-            this.aliCloudCertificateId = aliCloudCertificateId;
-            this.aliCloudCertificateName = aliCloudCertificateName;
-            this.certificateName = certificateName;
-            this.certificateType = certificateType;
-            this.privateKey = privateKey;
-            this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty>)tags;
+            this.certificate = java.util.Objects.requireNonNull(builder.certificate, "certificate is required");
+            this.aliCloudCertificateId = builder.aliCloudCertificateId;
+            this.aliCloudCertificateName = builder.aliCloudCertificateName;
+            this.certificateName = builder.certificateName;
+            this.certificateType = builder.certificateType;
+            this.privateKey = builder.privateKey;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty>)builder.tags;
         }
 
         @Override

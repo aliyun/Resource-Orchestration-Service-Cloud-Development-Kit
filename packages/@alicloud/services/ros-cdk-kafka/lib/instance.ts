@@ -37,6 +37,11 @@ export interface InstanceProps {
     readonly topicQuota: number | ros.IResolvable;
 
     /**
+     * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. Default is false
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required
      */
     readonly deployOption?: RosInstance.DeployOptionProperty | ros.IResolvable;
@@ -61,6 +66,11 @@ export interface InstanceProps {
      *
      */
     readonly ioMaxSpec?: string | ros.IResolvable;
+
+    /**
+     * Property openConnector: Whether open kafka connector or not
+     */
+    readonly openConnector?: boolean | ros.IResolvable;
 
     /**
      * Property payType: Pay by hour or month.
@@ -117,16 +127,18 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             deployType: props.deployType,
-            diskType: props.diskType,
-            deployOption: props.deployOption,
             eipMax: props.eipMax,
             specType: props.specType,
             ioMax: props.ioMax,
+            payType: props.payType === undefined || props.payType === null ? 'Hour' : props.payType,
+            diskType: props.diskType,
+            deployOption: props.deployOption,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             ioMaxSpec: props.ioMaxSpec,
             diskSize: props.diskSize,
             topicQuota: props.topicQuota,
-            payType: props.payType === undefined || props.payType === null ? 'Hour' : props.payType,
             tags: props.tags,
+            openConnector: props.openConnector === undefined || props.openConnector === null ? false : props.openConnector,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrInstanceId = rosInstance.attrInstanceId;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.482Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.002Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterRouteTableAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosTransitRouterRouteTableAssociationProps.Jsii$Proxy.class)
 public interface RosTransitRouterRouteTableAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,8 +26,8 @@ public interface RosTransitRouterRouteTableAssociationProps extends software.ama
      * A builder for {@link RosTransitRouterRouteTableAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTransitRouterRouteTableAssociationProps> {
-        private java.lang.Object transitRouterAttachmentId;
-        private java.lang.Object transitRouterRouteTableId;
+        java.lang.Object transitRouterAttachmentId;
+        java.lang.Object transitRouterRouteTableId;
 
         /**
          * Sets the value of {@link RosTransitRouterRouteTableAssociationProps#getTransitRouterAttachmentId}
@@ -76,7 +76,7 @@ public interface RosTransitRouterRouteTableAssociationProps extends software.ama
          */
         @Override
         public RosTransitRouterRouteTableAssociationProps build() {
-            return new Jsii$Proxy(transitRouterAttachmentId, transitRouterRouteTableId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,10 +101,10 @@ public interface RosTransitRouterRouteTableAssociationProps extends software.ama
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object transitRouterAttachmentId, final java.lang.Object transitRouterRouteTableId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.transitRouterAttachmentId = java.util.Objects.requireNonNull(transitRouterAttachmentId, "transitRouterAttachmentId is required");
-            this.transitRouterRouteTableId = java.util.Objects.requireNonNull(transitRouterRouteTableId, "transitRouterRouteTableId is required");
+            this.transitRouterAttachmentId = java.util.Objects.requireNonNull(builder.transitRouterAttachmentId, "transitRouterAttachmentId is required");
+            this.transitRouterRouteTableId = java.util.Objects.requireNonNull(builder.transitRouterRouteTableId, "transitRouterRouteTableId is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Route`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.722Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRouteProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouteProps.Jsii$Proxy.class)
 public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,10 +11,6 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDestinationCidrBlock();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getRouteId();
 
     /**
      */
@@ -48,12 +44,11 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosRouteProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRouteProps> {
-        private java.lang.Object destinationCidrBlock;
-        private java.lang.Object routeId;
-        private java.lang.Object routeTableId;
-        private java.lang.Object nextHopId;
-        private java.lang.Object nextHopList;
-        private java.lang.Object nextHopType;
+        java.lang.Object destinationCidrBlock;
+        java.lang.Object routeTableId;
+        java.lang.Object nextHopId;
+        java.lang.Object nextHopList;
+        java.lang.Object nextHopType;
 
         /**
          * Sets the value of {@link RosRouteProps#getDestinationCidrBlock}
@@ -72,26 +67,6 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder destinationCidrBlock(com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
             this.destinationCidrBlock = destinationCidrBlock;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosRouteProps#getRouteId}
-         * @param routeId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder routeId(java.lang.String routeId) {
-            this.routeId = routeId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosRouteProps#getRouteId}
-         * @param routeId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder routeId(com.aliyun.ros.cdk.core.IResolvable routeId) {
-            this.routeId = routeId;
             return this;
         }
 
@@ -182,7 +157,7 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosRouteProps build() {
-            return new Jsii$Proxy(destinationCidrBlock, routeId, routeTableId, nextHopId, nextHopList, nextHopType);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -192,7 +167,6 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRouteProps {
         private final java.lang.Object destinationCidrBlock;
-        private final java.lang.Object routeId;
         private final java.lang.Object routeTableId;
         private final java.lang.Object nextHopId;
         private final java.lang.Object nextHopList;
@@ -205,7 +179,6 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.destinationCidrBlock = software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.routeId = software.amazon.jsii.Kernel.get(this, "routeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routeTableId = software.amazon.jsii.Kernel.get(this, "routeTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nextHopId = software.amazon.jsii.Kernel.get(this, "nextHopId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nextHopList = software.amazon.jsii.Kernel.get(this, "nextHopList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -215,24 +188,18 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object destinationCidrBlock, final java.lang.Object routeId, final java.lang.Object routeTableId, final java.lang.Object nextHopId, final java.lang.Object nextHopList, final java.lang.Object nextHopType) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.destinationCidrBlock = java.util.Objects.requireNonNull(destinationCidrBlock, "destinationCidrBlock is required");
-            this.routeId = java.util.Objects.requireNonNull(routeId, "routeId is required");
-            this.routeTableId = java.util.Objects.requireNonNull(routeTableId, "routeTableId is required");
-            this.nextHopId = nextHopId;
-            this.nextHopList = nextHopList;
-            this.nextHopType = nextHopType;
+            this.destinationCidrBlock = java.util.Objects.requireNonNull(builder.destinationCidrBlock, "destinationCidrBlock is required");
+            this.routeTableId = java.util.Objects.requireNonNull(builder.routeTableId, "routeTableId is required");
+            this.nextHopId = builder.nextHopId;
+            this.nextHopList = builder.nextHopList;
+            this.nextHopType = builder.nextHopType;
         }
 
         @Override
         public final java.lang.Object getDestinationCidrBlock() {
             return this.destinationCidrBlock;
-        }
-
-        @Override
-        public final java.lang.Object getRouteId() {
-            return this.routeId;
         }
 
         @Override
@@ -262,7 +229,6 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("destinationCidrBlock", om.valueToTree(this.getDestinationCidrBlock()));
-            data.set("routeId", om.valueToTree(this.getRouteId()));
             data.set("routeTableId", om.valueToTree(this.getRouteTableId()));
             if (this.getNextHopId() != null) {
                 data.set("nextHopId", om.valueToTree(this.getNextHopId()));
@@ -292,7 +258,6 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
             RosRouteProps.Jsii$Proxy that = (RosRouteProps.Jsii$Proxy) o;
 
             if (!destinationCidrBlock.equals(that.destinationCidrBlock)) return false;
-            if (!routeId.equals(that.routeId)) return false;
             if (!routeTableId.equals(that.routeTableId)) return false;
             if (this.nextHopId != null ? !this.nextHopId.equals(that.nextHopId) : that.nextHopId != null) return false;
             if (this.nextHopList != null ? !this.nextHopList.equals(that.nextHopList) : that.nextHopList != null) return false;
@@ -302,7 +267,6 @@ public interface RosRouteProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.destinationCidrBlock.hashCode();
-            result = 31 * result + (this.routeId.hashCode());
             result = 31 * result + (this.routeTableId.hashCode());
             result = 31 * result + (this.nextHopId != null ? this.nextHopId.hashCode() : 0);
             result = 31 * result + (this.nextHopList != null ? this.nextHopList.hashCode() : 0);

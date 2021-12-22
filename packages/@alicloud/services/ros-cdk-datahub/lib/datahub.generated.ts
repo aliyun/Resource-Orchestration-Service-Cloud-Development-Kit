@@ -207,14 +207,6 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('lifecycle', ros.validateNumber)(properties.lifecycle));
     errors.collect(ros.propertyValidator('recordSchema', ros.validateString)(properties.recordSchema));
-    if(properties.shardCount && (typeof properties.shardCount) !== 'object') {
-        errors.collect(ros.propertyValidator('shardCount', ros.validateRange)({
-            data: properties.shardCount,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('shardCount', ros.validateNumber)(properties.shardCount));
     errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
     if(properties.topicName && (Array.isArray(properties.topicName) || (typeof properties.topicName) === 'string')) {
         errors.collect(ros.propertyValidator('topicName', ros.validateLength)({
@@ -224,6 +216,14 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
+    if(properties.shardCount && (typeof properties.shardCount) !== 'object') {
+        errors.collect(ros.propertyValidator('shardCount', ros.validateRange)({
+            data: properties.shardCount,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('shardCount', ros.validateNumber)(properties.shardCount));
     return errors.wrap('supplied properties not correct for "RosTopicProps"');
 }
 

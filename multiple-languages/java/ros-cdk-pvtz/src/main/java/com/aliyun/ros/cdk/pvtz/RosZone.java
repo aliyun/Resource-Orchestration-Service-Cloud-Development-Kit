@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS template type:  `ALIYUN::PVTZ::Zone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.802Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.478Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZone")
 public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -52,6 +52,18 @@ public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneName() {
         return software.amazon.jsii.Kernel.get(this, "attrZoneName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneTag() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneTag", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneType() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -119,6 +131,42 @@ public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRemark(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "remark", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneTag() {
+        return software.amazon.jsii.Kernel.get(this, "zoneTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneTag(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneTag", value);
+    }
+
+    /**
+     */
+    public void setZoneTag(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneTag", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneType() {
+        return software.amazon.jsii.Kernel.get(this, "zoneType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneType", value);
+    }
+
+    /**
+     */
+    public void setZoneType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneType", value);
     }
 
     /**
@@ -195,6 +243,40 @@ public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder remark(final com.aliyun.ros.cdk.core.IResolvable remark) {
             this.props.remark(remark);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneTag This parameter is required.
+         */
+        public Builder zoneTag(final java.lang.String zoneTag) {
+            this.props.zoneTag(zoneTag);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneTag This parameter is required.
+         */
+        public Builder zoneTag(final com.aliyun.ros.cdk.core.IResolvable zoneTag) {
+            this.props.zoneTag(zoneTag);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneType This parameter is required.
+         */
+        public Builder zoneType(final java.lang.String zoneType) {
+            this.props.zoneType(zoneType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneType This parameter is required.
+         */
+        public Builder zoneType(final com.aliyun.ros.cdk.core.IResolvable zoneType) {
+            this.props.zoneType(zoneType);
             return this;
         }
 

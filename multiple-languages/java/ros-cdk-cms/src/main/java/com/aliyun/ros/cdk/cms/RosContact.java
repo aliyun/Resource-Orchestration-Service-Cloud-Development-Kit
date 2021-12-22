@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::Contact`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.593Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosContact")
 public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -161,10 +161,10 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ChannelsProperty> {
-            private java.lang.Object aliIm;
-            private java.lang.Object dingWebHook;
-            private java.lang.Object mail;
-            private java.lang.Object sms;
+            java.lang.Object aliIm;
+            java.lang.Object dingWebHook;
+            java.lang.Object mail;
+            java.lang.Object sms;
 
             /**
              * Sets the value of {@link ChannelsProperty#getAliIm}
@@ -262,7 +262,7 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ChannelsProperty build() {
-                return new Jsii$Proxy(aliIm, dingWebHook, mail, sms);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -292,12 +292,12 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object aliIm, final java.lang.Object dingWebHook, final java.lang.Object mail, final java.lang.Object sms) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.aliIm = aliIm;
-                this.dingWebHook = dingWebHook;
-                this.mail = mail;
-                this.sms = sms;
+                this.aliIm = builder.aliIm;
+                this.dingWebHook = builder.dingWebHook;
+                this.mail = builder.mail;
+                this.sms = builder.sms;
             }
 
             @Override

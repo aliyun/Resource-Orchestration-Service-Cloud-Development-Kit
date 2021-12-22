@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::Index`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.112Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.817Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.IndexProps")
 @software.amazon.jsii.Jsii.Proxy(IndexProps.Jsii$Proxy.class)
 public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
@@ -61,11 +61,11 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link IndexProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<IndexProps> {
-        private java.lang.Object fullTextIndex;
-        private java.lang.Object logstoreName;
-        private java.lang.Object projectName;
-        private java.lang.Object keyIndices;
-        private java.lang.Object logReduce;
+        java.lang.Object fullTextIndex;
+        java.lang.Object logstoreName;
+        java.lang.Object projectName;
+        java.lang.Object keyIndices;
+        java.lang.Object logReduce;
 
         /**
          * Sets the value of {@link IndexProps#getFullTextIndex}
@@ -192,7 +192,7 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public IndexProps build() {
-            return new Jsii$Proxy(fullTextIndex, logstoreName, projectName, keyIndices, logReduce);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -223,13 +223,13 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object fullTextIndex, final java.lang.Object logstoreName, final java.lang.Object projectName, final java.lang.Object keyIndices, final java.lang.Object logReduce) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.fullTextIndex = java.util.Objects.requireNonNull(fullTextIndex, "fullTextIndex is required");
-            this.logstoreName = java.util.Objects.requireNonNull(logstoreName, "logstoreName is required");
-            this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
-            this.keyIndices = keyIndices;
-            this.logReduce = logReduce;
+            this.fullTextIndex = java.util.Objects.requireNonNull(builder.fullTextIndex, "fullTextIndex is required");
+            this.logstoreName = java.util.Objects.requireNonNull(builder.logstoreName, "logstoreName is required");
+            this.projectName = java.util.Objects.requireNonNull(builder.projectName, "projectName is required");
+            this.keyIndices = builder.keyIndices;
+            this.logReduce = builder.logReduce;
         }
 
         @Override

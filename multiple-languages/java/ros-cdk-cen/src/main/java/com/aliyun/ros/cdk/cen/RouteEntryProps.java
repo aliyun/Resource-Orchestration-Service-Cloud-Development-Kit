@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::RouteEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.499Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.013Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RouteEntryProps.Jsii$Proxy.class)
 public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,12 +48,12 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RouteEntryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RouteEntryProps> {
-        private java.lang.Object cenId;
-        private java.lang.Object childInstanceId;
-        private java.lang.Object childInstanceRegionId;
-        private java.lang.Object childInstanceRouteTableId;
-        private java.lang.Object childInstanceType;
-        private java.lang.Object destinationCidrBlock;
+        java.lang.Object cenId;
+        java.lang.Object childInstanceId;
+        java.lang.Object childInstanceRegionId;
+        java.lang.Object childInstanceRouteTableId;
+        java.lang.Object childInstanceType;
+        java.lang.Object destinationCidrBlock;
 
         /**
          * Sets the value of {@link RouteEntryProps#getCenId}
@@ -182,7 +182,7 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RouteEntryProps build() {
-            return new Jsii$Proxy(cenId, childInstanceId, childInstanceRegionId, childInstanceRouteTableId, childInstanceType, destinationCidrBlock);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -215,14 +215,14 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cenId, final java.lang.Object childInstanceId, final java.lang.Object childInstanceRegionId, final java.lang.Object childInstanceRouteTableId, final java.lang.Object childInstanceType, final java.lang.Object destinationCidrBlock) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
-            this.childInstanceId = java.util.Objects.requireNonNull(childInstanceId, "childInstanceId is required");
-            this.childInstanceRegionId = java.util.Objects.requireNonNull(childInstanceRegionId, "childInstanceRegionId is required");
-            this.childInstanceRouteTableId = java.util.Objects.requireNonNull(childInstanceRouteTableId, "childInstanceRouteTableId is required");
-            this.childInstanceType = java.util.Objects.requireNonNull(childInstanceType, "childInstanceType is required");
-            this.destinationCidrBlock = java.util.Objects.requireNonNull(destinationCidrBlock, "destinationCidrBlock is required");
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
+            this.childInstanceId = java.util.Objects.requireNonNull(builder.childInstanceId, "childInstanceId is required");
+            this.childInstanceRegionId = java.util.Objects.requireNonNull(builder.childInstanceRegionId, "childInstanceRegionId is required");
+            this.childInstanceRouteTableId = java.util.Objects.requireNonNull(builder.childInstanceRouteTableId, "childInstanceRouteTableId is required");
+            this.childInstanceType = java.util.Objects.requireNonNull(builder.childInstanceType, "childInstanceType is required");
+            this.destinationCidrBlock = java.util.Objects.requireNonNull(builder.destinationCidrBlock, "destinationCidrBlock is required");
         }
 
         @Override

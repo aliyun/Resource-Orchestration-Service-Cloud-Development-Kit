@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::RamAccountAlias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.829Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.534Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRamAccountAliasProps")
 @software.amazon.jsii.Jsii.Proxy(RosRamAccountAliasProps.Jsii$Proxy.class)
 public interface RosRamAccountAliasProps extends software.amazon.jsii.JsiiSerializable {
@@ -22,7 +22,7 @@ public interface RosRamAccountAliasProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosRamAccountAliasProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRamAccountAliasProps> {
-        private java.lang.Object accountAlias;
+        java.lang.Object accountAlias;
 
         /**
          * Sets the value of {@link RosRamAccountAliasProps#getAccountAlias}
@@ -51,7 +51,7 @@ public interface RosRamAccountAliasProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosRamAccountAliasProps build() {
-            return new Jsii$Proxy(accountAlias);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -74,9 +74,9 @@ public interface RosRamAccountAliasProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object accountAlias) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.accountAlias = java.util.Objects.requireNonNull(accountAlias, "accountAlias is required");
+            this.accountAlias = java.util.Objects.requireNonNull(builder.accountAlias, "accountAlias is required");
         }
 
         @Override

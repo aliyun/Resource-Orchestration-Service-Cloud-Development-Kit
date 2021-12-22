@@ -4,6 +4,7 @@ export * from './cenbandwidthpackageassociation';
 export * from './ceninstance';
 export * from './ceninstanceattachment';
 export * from './cenroutemap';
+export * from './cenrouteservice';
 export * from './cenvbrhealthcheck';
 export * from './routeentry';
 export * from './transitrouter';

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Properties to string encodings.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.650Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.492Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.EncodingOptions")
 @software.amazon.jsii.Jsii.Proxy(EncodingOptions.Jsii$Proxy.class)
 public interface EncodingOptions extends software.amazon.jsii.JsiiSerializable {
@@ -25,7 +25,7 @@ public interface EncodingOptions extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link EncodingOptions}
      */
     public static final class Builder implements software.amazon.jsii.Builder<EncodingOptions> {
-        private java.lang.String displayHint;
+        java.lang.String displayHint;
 
         /**
          * Sets the value of {@link EncodingOptions#getDisplayHint}
@@ -44,7 +44,7 @@ public interface EncodingOptions extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public EncodingOptions build() {
-            return new Jsii$Proxy(displayHint);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -67,9 +67,9 @@ public interface EncodingOptions extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String displayHint) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.displayHint = displayHint;
+            this.displayHint = builder.displayHint;
         }
 
         @Override

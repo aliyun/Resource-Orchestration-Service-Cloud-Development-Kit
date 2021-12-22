@@ -256,8 +256,8 @@ export class Instance extends ros.Resource {
             imageId: props.imageId,
             paymentType: props.paymentType,
             dataDiskSize: props.dataDiskSize,
-            ensRegionId: props.ensRegionId,
             instanceType: props.instanceType,
+            ensRegionId: props.ensRegionId,
             hostName: props.hostName,
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

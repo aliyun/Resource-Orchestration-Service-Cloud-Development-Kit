@@ -27,6 +27,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
+        /// <summary>Property burstingEnabled: Whether enable bursting.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "burstingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? BurstingEnabled
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.</summary>
         /// <remarks>
         /// Default to false.
@@ -51,7 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
-        /// <summary>Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region.</summary>
+        /// <summary>Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "diskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? DiskCategory
@@ -91,6 +100,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiOptional]
         [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? PerformanceLevel
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property provisionedIops: Provisioning IOPS.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProvisionedIops
         {
             get;
             set;

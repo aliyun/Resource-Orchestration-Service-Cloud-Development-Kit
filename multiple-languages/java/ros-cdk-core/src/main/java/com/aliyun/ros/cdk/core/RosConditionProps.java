@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.668Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.511Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosConditionProps")
 @software.amazon.jsii.Jsii.Proxy(RosConditionProps.Jsii$Proxy.class)
 public interface RosConditionProps extends software.amazon.jsii.JsiiSerializable {
@@ -24,7 +24,7 @@ public interface RosConditionProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosConditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosConditionProps> {
-        private com.aliyun.ros.cdk.core.IRosConditionExpression expression;
+        com.aliyun.ros.cdk.core.IRosConditionExpression expression;
 
         /**
          * Sets the value of {@link RosConditionProps#getExpression}
@@ -43,7 +43,7 @@ public interface RosConditionProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosConditionProps build() {
-            return new Jsii$Proxy(expression);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -66,9 +66,9 @@ public interface RosConditionProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final com.aliyun.ros.cdk.core.IRosConditionExpression expression) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.expression = expression;
+            this.expression = builder.expression;
         }
 
         @Override

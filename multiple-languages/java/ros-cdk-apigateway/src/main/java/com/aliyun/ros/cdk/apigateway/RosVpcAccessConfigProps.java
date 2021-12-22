@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::VpcAccessConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.328Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.671Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosVpcAccessConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcAccessConfigProps.Jsii$Proxy.class)
 public interface RosVpcAccessConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,10 +34,10 @@ public interface RosVpcAccessConfigProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosVpcAccessConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpcAccessConfigProps> {
-        private java.lang.Object instanceId;
-        private java.lang.Object name;
-        private java.lang.Object port;
-        private java.lang.Object vpcId;
+        java.lang.Object instanceId;
+        java.lang.Object name;
+        java.lang.Object port;
+        java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosVpcAccessConfigProps#getInstanceId}
@@ -126,7 +126,7 @@ public interface RosVpcAccessConfigProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosVpcAccessConfigProps build() {
-            return new Jsii$Proxy(instanceId, name, port, vpcId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -155,12 +155,12 @@ public interface RosVpcAccessConfigProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object name, final java.lang.Object port, final java.lang.Object vpcId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.port = java.util.Objects.requireNonNull(port, "port is required");
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
         }
 
         @Override

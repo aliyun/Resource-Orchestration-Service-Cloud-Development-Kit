@@ -31,17 +31,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoCreateVpcRoute:
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "autoCreateVpcRoute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-        public object? AutoCreateVpcRoute
-        {
-            get;
-            set;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: cenId: CenId
         /// </remarks>
         [JsiiOptional]
@@ -58,39 +47,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         [JsiiOptional]
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? ChargeType
-        {
-            get;
-            set;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: resourceType: ResourceType
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-        public object? ResourceType
-        {
-            get;
-            set;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: routeTableAssociationEnabled:
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-        public object? RouteTableAssociationEnabled
-        {
-            get;
-            set;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: routeTablePropagationEnabled:
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-        public object? RouteTablePropagationEnabled
         {
             get;
             set;

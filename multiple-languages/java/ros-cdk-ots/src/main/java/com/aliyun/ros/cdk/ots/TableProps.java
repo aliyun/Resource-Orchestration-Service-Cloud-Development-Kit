@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::Table`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.760Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.410Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.TableProps")
 @software.amazon.jsii.Jsii.Proxy(TableProps.Jsii$Proxy.class)
 public interface TableProps extends software.amazon.jsii.JsiiSerializable {
@@ -83,15 +83,15 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link TableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TableProps> {
-        private java.lang.Object instanceName;
-        private java.lang.Object primaryKey;
-        private java.lang.Object tableName;
-        private java.lang.Object columns;
-        private java.lang.Object deviationCellVersionInSec;
-        private java.lang.Object maxVersions;
-        private java.lang.Object reservedThroughput;
-        private java.lang.Object secondaryIndices;
-        private java.lang.Object timeToLive;
+        java.lang.Object instanceName;
+        java.lang.Object primaryKey;
+        java.lang.Object tableName;
+        java.lang.Object columns;
+        java.lang.Object deviationCellVersionInSec;
+        java.lang.Object maxVersions;
+        java.lang.Object reservedThroughput;
+        java.lang.Object secondaryIndices;
+        java.lang.Object timeToLive;
 
         /**
          * Sets the value of {@link TableProps#getInstanceName}
@@ -288,7 +288,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public TableProps build() {
-            return new Jsii$Proxy(instanceName, primaryKey, tableName, columns, deviationCellVersionInSec, maxVersions, reservedThroughput, secondaryIndices, timeToLive);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -327,17 +327,17 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object primaryKey, final java.lang.Object tableName, final java.lang.Object columns, final java.lang.Object deviationCellVersionInSec, final java.lang.Object maxVersions, final java.lang.Object reservedThroughput, final java.lang.Object secondaryIndices, final java.lang.Object timeToLive) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
-            this.primaryKey = java.util.Objects.requireNonNull(primaryKey, "primaryKey is required");
-            this.tableName = java.util.Objects.requireNonNull(tableName, "tableName is required");
-            this.columns = columns;
-            this.deviationCellVersionInSec = deviationCellVersionInSec;
-            this.maxVersions = maxVersions;
-            this.reservedThroughput = reservedThroughput;
-            this.secondaryIndices = secondaryIndices;
-            this.timeToLive = timeToLive;
+            this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+            this.primaryKey = java.util.Objects.requireNonNull(builder.primaryKey, "primaryKey is required");
+            this.tableName = java.util.Objects.requireNonNull(builder.tableName, "tableName is required");
+            this.columns = builder.columns;
+            this.deviationCellVersionInSec = builder.deviationCellVersionInSec;
+            this.maxVersions = builder.maxVersions;
+            this.reservedThroughput = builder.reservedThroughput;
+            this.secondaryIndices = builder.secondaryIndices;
+            this.timeToLive = builder.timeToLive;
         }
 
         @Override

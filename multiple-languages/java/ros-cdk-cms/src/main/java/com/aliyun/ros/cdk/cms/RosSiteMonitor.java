@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::SiteMonitor`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.608Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.174Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosSiteMonitor")
 public class RosSiteMonitor extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -215,8 +215,8 @@ public class RosSiteMonitor extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<IspCitiesProperty> {
-            private java.lang.Object city;
-            private java.lang.Object isp;
+            java.lang.Object city;
+            java.lang.Object isp;
 
             /**
              * Sets the value of {@link IspCitiesProperty#getCity}
@@ -270,7 +270,7 @@ public class RosSiteMonitor extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public IspCitiesProperty build() {
-                return new Jsii$Proxy(city, isp);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -296,10 +296,10 @@ public class RosSiteMonitor extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object city, final java.lang.Object isp) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.city = java.util.Objects.requireNonNull(city, "city is required");
-                this.isp = java.util.Objects.requireNonNull(isp, "isp is required");
+                this.city = java.util.Objects.requireNonNull(builder.city, "city is required");
+                this.isp = java.util.Objects.requireNonNull(builder.isp, "isp is required");
             }
 
             @Override

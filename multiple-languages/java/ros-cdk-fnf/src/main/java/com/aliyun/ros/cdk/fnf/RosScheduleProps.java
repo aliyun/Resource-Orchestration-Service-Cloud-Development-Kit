@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * Properties for defining a `ALIYUN::FNF::Schedule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.494Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.067Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.RosScheduleProps")
 @software.amazon.jsii.Jsii.Proxy(RosScheduleProps.Jsii$Proxy.class)
 public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,12 +48,12 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosScheduleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScheduleProps> {
-        private java.lang.Object cronExpression;
-        private java.lang.Object flowName;
-        private java.lang.Object scheduleName;
-        private java.lang.Object description;
-        private java.lang.Object enable;
-        private java.lang.Object payload;
+        java.lang.Object cronExpression;
+        java.lang.Object flowName;
+        java.lang.Object scheduleName;
+        java.lang.Object description;
+        java.lang.Object enable;
+        java.lang.Object payload;
 
         /**
          * Sets the value of {@link RosScheduleProps#getCronExpression}
@@ -182,7 +182,7 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosScheduleProps build() {
-            return new Jsii$Proxy(cronExpression, flowName, scheduleName, description, enable, payload);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -215,14 +215,14 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cronExpression, final java.lang.Object flowName, final java.lang.Object scheduleName, final java.lang.Object description, final java.lang.Object enable, final java.lang.Object payload) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cronExpression = java.util.Objects.requireNonNull(cronExpression, "cronExpression is required");
-            this.flowName = java.util.Objects.requireNonNull(flowName, "flowName is required");
-            this.scheduleName = java.util.Objects.requireNonNull(scheduleName, "scheduleName is required");
-            this.description = description;
-            this.enable = enable;
-            this.payload = payload;
+            this.cronExpression = java.util.Objects.requireNonNull(builder.cronExpression, "cronExpression is required");
+            this.flowName = java.util.Objects.requireNonNull(builder.flowName, "flowName is required");
+            this.scheduleName = java.util.Objects.requireNonNull(builder.scheduleName, "scheduleName is required");
+            this.description = builder.description;
+            this.enable = builder.enable;
+            this.payload = builder.payload;
         }
 
         @Override

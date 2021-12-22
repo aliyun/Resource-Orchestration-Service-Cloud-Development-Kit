@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.115Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone")
 public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -58,6 +58,18 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceIds() {
         return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6Addresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6Addresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6AddressIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6AddressIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -711,6 +723,24 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskBurstingEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskBurstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskBurstingEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskBurstingEnabled", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskBurstingEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskBurstingEnabled", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -765,6 +795,24 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskProvisionedIops() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskProvisionedIops(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskProvisionedIops", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskProvisionedIops(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskProvisionedIops", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> getTags() {
         return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
     }
@@ -808,6 +856,13 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getAutoSnapshotPolicyId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getBurstingEnabled() {
             return null;
         }
 
@@ -863,6 +918,13 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
             return null;
         }
@@ -879,16 +941,18 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DiskMappingsProperty> {
-            private java.lang.Object size;
-            private java.lang.Object autoSnapshotPolicyId;
-            private java.lang.Object category;
-            private java.lang.Object description;
-            private java.lang.Object device;
-            private java.lang.Object diskName;
-            private java.lang.Object encrypted;
-            private java.lang.Object kmsKeyId;
-            private java.lang.Object performanceLevel;
-            private java.lang.Object snapshotId;
+            java.lang.Object size;
+            java.lang.Object autoSnapshotPolicyId;
+            java.lang.Object burstingEnabled;
+            java.lang.Object category;
+            java.lang.Object description;
+            java.lang.Object device;
+            java.lang.Object diskName;
+            java.lang.Object encrypted;
+            java.lang.Object kmsKeyId;
+            java.lang.Object performanceLevel;
+            java.lang.Object provisionedIops;
+            java.lang.Object snapshotId;
 
             /**
              * Sets the value of {@link DiskMappingsProperty#getSize}
@@ -931,6 +995,28 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder autoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyId) {
                 this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getBurstingEnabled}
+             * @param burstingEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder burstingEnabled(java.lang.Boolean burstingEnabled) {
+                this.burstingEnabled = burstingEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getBurstingEnabled}
+             * @param burstingEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder burstingEnabled(com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
+                this.burstingEnabled = burstingEnabled;
                 return this;
             }
 
@@ -1089,6 +1175,28 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getProvisionedIops}
+             * @param provisionedIops the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder provisionedIops(java.lang.Number provisionedIops) {
+                this.provisionedIops = provisionedIops;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getProvisionedIops}
+             * @param provisionedIops the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder provisionedIops(com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+                this.provisionedIops = provisionedIops;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getSnapshotId}
              * @param snapshotId the value to be set.
              * @return {@code this}
@@ -1118,7 +1226,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DiskMappingsProperty build() {
-                return new Jsii$Proxy(size, autoSnapshotPolicyId, category, description, device, diskName, encrypted, kmsKeyId, performanceLevel, snapshotId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1130,6 +1238,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DiskMappingsProperty {
             private final java.lang.Object size;
             private final java.lang.Object autoSnapshotPolicyId;
+            private final java.lang.Object burstingEnabled;
             private final java.lang.Object category;
             private final java.lang.Object description;
             private final java.lang.Object device;
@@ -1137,6 +1246,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object encrypted;
             private final java.lang.Object kmsKeyId;
             private final java.lang.Object performanceLevel;
+            private final java.lang.Object provisionedIops;
             private final java.lang.Object snapshotId;
 
             /**
@@ -1147,6 +1257,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.burstingEnabled = software.amazon.jsii.Kernel.get(this, "burstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1154,24 +1265,27 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.provisionedIops = software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object size, final java.lang.Object autoSnapshotPolicyId, final java.lang.Object category, final java.lang.Object description, final java.lang.Object device, final java.lang.Object diskName, final java.lang.Object encrypted, final java.lang.Object kmsKeyId, final java.lang.Object performanceLevel, final java.lang.Object snapshotId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.size = java.util.Objects.requireNonNull(size, "size is required");
-                this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-                this.category = category;
-                this.description = description;
-                this.device = device;
-                this.diskName = diskName;
-                this.encrypted = encrypted;
-                this.kmsKeyId = kmsKeyId;
-                this.performanceLevel = performanceLevel;
-                this.snapshotId = snapshotId;
+                this.size = java.util.Objects.requireNonNull(builder.size, "size is required");
+                this.autoSnapshotPolicyId = builder.autoSnapshotPolicyId;
+                this.burstingEnabled = builder.burstingEnabled;
+                this.category = builder.category;
+                this.description = builder.description;
+                this.device = builder.device;
+                this.diskName = builder.diskName;
+                this.encrypted = builder.encrypted;
+                this.kmsKeyId = builder.kmsKeyId;
+                this.performanceLevel = builder.performanceLevel;
+                this.provisionedIops = builder.provisionedIops;
+                this.snapshotId = builder.snapshotId;
             }
 
             @Override
@@ -1182,6 +1296,11 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getAutoSnapshotPolicyId() {
                 return this.autoSnapshotPolicyId;
+            }
+
+            @Override
+            public final java.lang.Object getBurstingEnabled() {
+                return this.burstingEnabled;
             }
 
             @Override
@@ -1220,6 +1339,11 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getProvisionedIops() {
+                return this.provisionedIops;
+            }
+
+            @Override
             public final java.lang.Object getSnapshotId() {
                 return this.snapshotId;
             }
@@ -1233,6 +1357,9 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("size", om.valueToTree(this.getSize()));
                 if (this.getAutoSnapshotPolicyId() != null) {
                     data.set("autoSnapshotPolicyId", om.valueToTree(this.getAutoSnapshotPolicyId()));
+                }
+                if (this.getBurstingEnabled() != null) {
+                    data.set("burstingEnabled", om.valueToTree(this.getBurstingEnabled()));
                 }
                 if (this.getCategory() != null) {
                     data.set("category", om.valueToTree(this.getCategory()));
@@ -1254,6 +1381,9 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getPerformanceLevel() != null) {
                     data.set("performanceLevel", om.valueToTree(this.getPerformanceLevel()));
+                }
+                if (this.getProvisionedIops() != null) {
+                    data.set("provisionedIops", om.valueToTree(this.getProvisionedIops()));
                 }
                 if (this.getSnapshotId() != null) {
                     data.set("snapshotId", om.valueToTree(this.getSnapshotId()));
@@ -1278,6 +1408,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!size.equals(that.size)) return false;
                 if (this.autoSnapshotPolicyId != null ? !this.autoSnapshotPolicyId.equals(that.autoSnapshotPolicyId) : that.autoSnapshotPolicyId != null) return false;
+                if (this.burstingEnabled != null ? !this.burstingEnabled.equals(that.burstingEnabled) : that.burstingEnabled != null) return false;
                 if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
                 if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
                 if (this.device != null ? !this.device.equals(that.device) : that.device != null) return false;
@@ -1285,6 +1416,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
                 if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
                 if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
+                if (this.provisionedIops != null ? !this.provisionedIops.equals(that.provisionedIops) : that.provisionedIops != null) return false;
                 return this.snapshotId != null ? this.snapshotId.equals(that.snapshotId) : that.snapshotId == null;
             }
 
@@ -1292,6 +1424,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.size.hashCode();
                 result = 31 * result + (this.autoSnapshotPolicyId != null ? this.autoSnapshotPolicyId.hashCode() : 0);
+                result = 31 * result + (this.burstingEnabled != null ? this.burstingEnabled.hashCode() : 0);
                 result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
                 result = 31 * result + (this.device != null ? this.device.hashCode() : 0);
@@ -1299,6 +1432,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
                 result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
                 result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
+                result = 31 * result + (this.provisionedIops != null ? this.provisionedIops.hashCode() : 0);
                 result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
                 return result;
             }
@@ -1354,11 +1488,11 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EniMappingsProperty> {
-            private java.lang.Object securityGroupId;
-            private java.lang.Object vSwitchId;
-            private java.lang.Object description;
-            private java.lang.Object networkInterfaceName;
-            private java.lang.Object primaryIpAddress;
+            java.lang.Object securityGroupId;
+            java.lang.Object vSwitchId;
+            java.lang.Object description;
+            java.lang.Object networkInterfaceName;
+            java.lang.Object primaryIpAddress;
 
             /**
              * Sets the value of {@link EniMappingsProperty#getSecurityGroupId}
@@ -1478,7 +1612,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public EniMappingsProperty build() {
-                return new Jsii$Proxy(securityGroupId, vSwitchId, description, networkInterfaceName, primaryIpAddress);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1510,13 +1644,13 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object securityGroupId, final java.lang.Object vSwitchId, final java.lang.Object description, final java.lang.Object networkInterfaceName, final java.lang.Object primaryIpAddress) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
-                this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-                this.description = description;
-                this.networkInterfaceName = networkInterfaceName;
-                this.primaryIpAddress = primaryIpAddress;
+                this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.description = builder.description;
+                this.networkInterfaceName = builder.networkInterfaceName;
+                this.primaryIpAddress = builder.primaryIpAddress;
             }
 
             @Override
@@ -1628,8 +1762,8 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -1683,7 +1817,7 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1709,10 +1843,10 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -2372,6 +2506,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param systemDiskBurstingEnabled This parameter is required.
+         */
+        public Builder systemDiskBurstingEnabled(final java.lang.Boolean systemDiskBurstingEnabled) {
+            this.props.systemDiskBurstingEnabled(systemDiskBurstingEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskBurstingEnabled This parameter is required.
+         */
+        public Builder systemDiskBurstingEnabled(final com.aliyun.ros.cdk.core.IResolvable systemDiskBurstingEnabled) {
+            this.props.systemDiskBurstingEnabled(systemDiskBurstingEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param systemDiskCategory This parameter is required.
          */
         public Builder systemDiskCategory(final java.lang.String systemDiskCategory) {
@@ -2418,6 +2569,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder systemDiskDiskName(final com.aliyun.ros.cdk.core.IResolvable systemDiskDiskName) {
             this.props.systemDiskDiskName(systemDiskDiskName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param systemDiskProvisionedIops This parameter is required.
+         */
+        public Builder systemDiskProvisionedIops(final java.lang.Number systemDiskProvisionedIops) {
+            this.props.systemDiskProvisionedIops(systemDiskProvisionedIops);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskProvisionedIops This parameter is required.
+         */
+        public Builder systemDiskProvisionedIops(final com.aliyun.ros.cdk.core.IResolvable systemDiskProvisionedIops) {
+            this.props.systemDiskProvisionedIops(systemDiskProvisionedIops);
             return this;
         }
 

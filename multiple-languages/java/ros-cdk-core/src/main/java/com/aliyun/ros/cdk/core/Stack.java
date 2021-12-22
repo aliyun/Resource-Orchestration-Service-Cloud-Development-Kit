@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A root construct which represents a single ROS stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.529Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.ITaggable {
 
@@ -303,8 +303,8 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
      * Example:
      * <p>
      * <blockquote><pre>
-     * // Example automatically generated. See https://github.com/aws/jsii/issues/826
-     * MyStack.template.getJson();
+     * // Example automatically generated from non-compiling source. May contain errors.
+     * MyStack.template.json
      * </pre></blockquote>
      */
     public @org.jetbrains.annotations.NotNull java.lang.String getTemplateFile() {

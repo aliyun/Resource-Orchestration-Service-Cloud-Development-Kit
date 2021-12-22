@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::EventRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.598Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.164Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleTargets")
 public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -208,9 +208,9 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ContactParametersProperty> {
-            private java.lang.Object contactGroupName;
-            private java.lang.Object id;
-            private java.lang.Object level;
+            java.lang.Object contactGroupName;
+            java.lang.Object id;
+            java.lang.Object level;
 
             /**
              * Sets the value of {@link ContactParametersProperty#getContactGroupName}
@@ -286,7 +286,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ContactParametersProperty build() {
-                return new Jsii$Proxy(contactGroupName, id, level);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -314,11 +314,11 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object contactGroupName, final java.lang.Object id, final java.lang.Object level) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.contactGroupName = contactGroupName;
-                this.id = id;
-                this.level = level;
+                this.contactGroupName = builder.contactGroupName;
+                this.id = builder.id;
+                this.level = builder.level;
             }
 
             @Override
@@ -430,10 +430,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<FcParametersProperty> {
-            private java.lang.Object functionName;
-            private java.lang.Object id;
-            private java.lang.Object region;
-            private java.lang.Object serviceName;
+            java.lang.Object functionName;
+            java.lang.Object id;
+            java.lang.Object region;
+            java.lang.Object serviceName;
 
             /**
              * Sets the value of {@link FcParametersProperty#getFunctionName}
@@ -531,7 +531,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public FcParametersProperty build() {
-                return new Jsii$Proxy(functionName, id, region, serviceName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -561,12 +561,12 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object id, final java.lang.Object region, final java.lang.Object serviceName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.functionName = functionName;
-                this.id = id;
-                this.region = region;
-                this.serviceName = serviceName;
+                this.functionName = builder.functionName;
+                this.id = builder.id;
+                this.region = builder.region;
+                this.serviceName = builder.serviceName;
             }
 
             @Override
@@ -681,9 +681,9 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MnsParametersProperty> {
-            private java.lang.Object id;
-            private java.lang.Object queue;
-            private java.lang.Object region;
+            java.lang.Object id;
+            java.lang.Object queue;
+            java.lang.Object region;
 
             /**
              * Sets the value of {@link MnsParametersProperty#getId}
@@ -759,7 +759,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MnsParametersProperty build() {
-                return new Jsii$Proxy(id, queue, region);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -787,11 +787,11 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object id, final java.lang.Object queue, final java.lang.Object region) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.id = id;
-                this.queue = queue;
-                this.region = region;
+                this.id = builder.id;
+                this.queue = builder.queue;
+                this.region = builder.region;
             }
 
             @Override
@@ -903,10 +903,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SlsParametersProperty> {
-            private java.lang.Object id;
-            private java.lang.Object logStore;
-            private java.lang.Object project;
-            private java.lang.Object region;
+            java.lang.Object id;
+            java.lang.Object logStore;
+            java.lang.Object project;
+            java.lang.Object region;
 
             /**
              * Sets the value of {@link SlsParametersProperty#getId}
@@ -1004,7 +1004,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SlsParametersProperty build() {
-                return new Jsii$Proxy(id, logStore, project, region);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1034,12 +1034,12 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object id, final java.lang.Object logStore, final java.lang.Object project, final java.lang.Object region) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.id = id;
-                this.logStore = logStore;
-                this.project = project;
-                this.region = region;
+                this.id = builder.id;
+                this.logStore = builder.logStore;
+                this.project = builder.project;
+                this.region = builder.region;
             }
 
             @Override
@@ -1161,10 +1161,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<WebhookParametersProperty> {
-            private java.lang.Object id;
-            private java.lang.Object method;
-            private java.lang.Object protocol;
-            private java.lang.Object url;
+            java.lang.Object id;
+            java.lang.Object method;
+            java.lang.Object protocol;
+            java.lang.Object url;
 
             /**
              * Sets the value of {@link WebhookParametersProperty#getId}
@@ -1262,7 +1262,7 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public WebhookParametersProperty build() {
-                return new Jsii$Proxy(id, method, protocol, url);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1292,12 +1292,12 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object id, final java.lang.Object method, final java.lang.Object protocol, final java.lang.Object url) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.id = id;
-                this.method = method;
-                this.protocol = protocol;
-                this.url = url;
+                this.id = builder.id;
+                this.method = builder.method;
+                this.protocol = builder.protocol;
+                this.url = builder.url;
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::BgpGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.156Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.895Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpGroupProps")
 @software.amazon.jsii.Jsii.Proxy(BgpGroupProps.Jsii$Proxy.class)
 public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -74,13 +74,13 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link BgpGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BgpGroupProps> {
-        private java.lang.Object peerAsn;
-        private java.lang.Object routerId;
-        private java.lang.Object authKey;
-        private java.lang.Object description;
-        private java.lang.Object isFakeAsn;
-        private java.lang.Object localAsn;
-        private java.lang.Object name;
+        java.lang.Object peerAsn;
+        java.lang.Object routerId;
+        java.lang.Object authKey;
+        java.lang.Object description;
+        java.lang.Object isFakeAsn;
+        java.lang.Object localAsn;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link BgpGroupProps#getPeerAsn}
@@ -245,7 +245,7 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public BgpGroupProps build() {
-            return new Jsii$Proxy(peerAsn, routerId, authKey, description, isFakeAsn, localAsn, name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -280,15 +280,15 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object peerAsn, final java.lang.Object routerId, final java.lang.Object authKey, final java.lang.Object description, final java.lang.Object isFakeAsn, final java.lang.Object localAsn, final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.peerAsn = java.util.Objects.requireNonNull(peerAsn, "peerAsn is required");
-            this.routerId = java.util.Objects.requireNonNull(routerId, "routerId is required");
-            this.authKey = authKey;
-            this.description = description;
-            this.isFakeAsn = isFakeAsn;
-            this.localAsn = localAsn;
-            this.name = name;
+            this.peerAsn = java.util.Objects.requireNonNull(builder.peerAsn, "peerAsn is required");
+            this.routerId = java.util.Objects.requireNonNull(builder.routerId, "routerId is required");
+            this.authKey = builder.authKey;
+            this.description = builder.description;
+            this.isFakeAsn = builder.isFakeAsn;
+            this.localAsn = builder.localAsn;
+            this.name = builder.name;
         }
 
         @Override

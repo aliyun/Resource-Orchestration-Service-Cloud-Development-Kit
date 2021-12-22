@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * Properties for defining a `ALIYUN::TSDB::HiTSDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.145Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.886Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.HiTSDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(HiTSDBInstanceProps.Jsii$Proxy.class)
 public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -95,16 +95,16 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link HiTSDBInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<HiTSDBInstanceProps> {
-        private java.lang.Object instanceClass;
-        private java.lang.Object instanceStorage;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
-        private java.lang.Object duration;
-        private java.lang.Object instanceAlias;
-        private java.lang.Object payType;
-        private java.lang.Object pricingCycle;
-        private java.lang.Object securityIpList;
+        java.lang.Object instanceClass;
+        java.lang.Object instanceStorage;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
+        java.lang.Object duration;
+        java.lang.Object instanceAlias;
+        java.lang.Object payType;
+        java.lang.Object pricingCycle;
+        java.lang.Object securityIpList;
 
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getInstanceClass}
@@ -337,7 +337,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public HiTSDBInstanceProps build() {
-            return new Jsii$Proxy(instanceClass, instanceStorage, vpcId, vSwitchId, zoneId, duration, instanceAlias, payType, pricingCycle, securityIpList);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -378,18 +378,18 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceClass, final java.lang.Object instanceStorage, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId, final java.lang.Object duration, final java.lang.Object instanceAlias, final java.lang.Object payType, final java.lang.Object pricingCycle, final java.lang.Object securityIpList) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceClass = java.util.Objects.requireNonNull(instanceClass, "instanceClass is required");
-            this.instanceStorage = java.util.Objects.requireNonNull(instanceStorage, "instanceStorage is required");
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
-            this.duration = duration;
-            this.instanceAlias = instanceAlias;
-            this.payType = payType;
-            this.pricingCycle = pricingCycle;
-            this.securityIpList = securityIpList;
+            this.instanceClass = java.util.Objects.requireNonNull(builder.instanceClass, "instanceClass is required");
+            this.instanceStorage = java.util.Objects.requireNonNull(builder.instanceStorage, "instanceStorage is required");
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.duration = builder.duration;
+            this.instanceAlias = builder.instanceAlias;
+            this.payType = builder.payType;
+            this.pricingCycle = builder.pricingCycle;
+            this.securityIpList = builder.securityIpList;
         }
 
         @Override

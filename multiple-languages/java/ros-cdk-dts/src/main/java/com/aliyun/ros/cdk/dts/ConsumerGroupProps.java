@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::ConsumerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.822Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.416Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.ConsumerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ConsumerGroupProps.Jsii$Proxy.class)
 public interface ConsumerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,10 +38,10 @@ public interface ConsumerGroupProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link ConsumerGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ConsumerGroupProps> {
-        private java.lang.Object consumerGroupName;
-        private java.lang.Object consumerGroupPassword;
-        private java.lang.Object consumerGroupUserName;
-        private java.lang.Object subscriptionInstanceId;
+        java.lang.Object consumerGroupName;
+        java.lang.Object consumerGroupPassword;
+        java.lang.Object consumerGroupUserName;
+        java.lang.Object subscriptionInstanceId;
 
         /**
          * Sets the value of {@link ConsumerGroupProps#getConsumerGroupName}
@@ -130,7 +130,7 @@ public interface ConsumerGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public ConsumerGroupProps build() {
-            return new Jsii$Proxy(consumerGroupName, consumerGroupPassword, consumerGroupUserName, subscriptionInstanceId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -159,12 +159,12 @@ public interface ConsumerGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object consumerGroupName, final java.lang.Object consumerGroupPassword, final java.lang.Object consumerGroupUserName, final java.lang.Object subscriptionInstanceId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.consumerGroupName = java.util.Objects.requireNonNull(consumerGroupName, "consumerGroupName is required");
-            this.consumerGroupPassword = java.util.Objects.requireNonNull(consumerGroupPassword, "consumerGroupPassword is required");
-            this.consumerGroupUserName = java.util.Objects.requireNonNull(consumerGroupUserName, "consumerGroupUserName is required");
-            this.subscriptionInstanceId = java.util.Objects.requireNonNull(subscriptionInstanceId, "subscriptionInstanceId is required");
+            this.consumerGroupName = java.util.Objects.requireNonNull(builder.consumerGroupName, "consumerGroupName is required");
+            this.consumerGroupPassword = java.util.Objects.requireNonNull(builder.consumerGroupPassword, "consumerGroupPassword is required");
+            this.consumerGroupUserName = java.util.Objects.requireNonNull(builder.consumerGroupUserName, "consumerGroupUserName is required");
+            this.subscriptionInstanceId = java.util.Objects.requireNonNull(builder.subscriptionInstanceId, "subscriptionInstanceId is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Properties for defining a `ALIYUN::OSS::Bucket`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.734Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.400Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketProps")
 @software.amazon.jsii.Jsii.Proxy(RosBucketProps.Jsii$Proxy.class)
 public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
@@ -88,18 +88,18 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosBucketProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosBucketProps> {
-        private java.lang.Object bucketName;
-        private java.lang.Object accessControl;
-        private java.lang.Object corsConfiguration;
-        private java.lang.Object deletionForce;
-        private java.lang.Object lifecycleConfiguration;
-        private java.lang.Object loggingConfiguration;
-        private java.lang.Object policy;
-        private java.lang.Object refererConfiguration;
-        private java.lang.Object serverSideEncryptionConfiguration;
-        private java.lang.Object storageClass;
-        private java.util.Map<java.lang.String, java.lang.Object> tags;
-        private java.lang.Object websiteConfiguration;
+        java.lang.Object bucketName;
+        java.lang.Object accessControl;
+        java.lang.Object corsConfiguration;
+        java.lang.Object deletionForce;
+        java.lang.Object lifecycleConfiguration;
+        java.lang.Object loggingConfiguration;
+        java.lang.Object policy;
+        java.lang.Object refererConfiguration;
+        java.lang.Object serverSideEncryptionConfiguration;
+        java.lang.Object storageClass;
+        java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object websiteConfiguration;
 
         /**
          * Sets the value of {@link RosBucketProps#getBucketName}
@@ -339,7 +339,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosBucketProps build() {
-            return new Jsii$Proxy(bucketName, accessControl, corsConfiguration, deletionForce, lifecycleConfiguration, loggingConfiguration, policy, refererConfiguration, serverSideEncryptionConfiguration, storageClass, tags, websiteConfiguration);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -385,20 +385,20 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object bucketName, final java.lang.Object accessControl, final java.lang.Object corsConfiguration, final java.lang.Object deletionForce, final java.lang.Object lifecycleConfiguration, final java.lang.Object loggingConfiguration, final java.lang.Object policy, final java.lang.Object refererConfiguration, final java.lang.Object serverSideEncryptionConfiguration, final java.lang.Object storageClass, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object websiteConfiguration) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bucketName = java.util.Objects.requireNonNull(bucketName, "bucketName is required");
-            this.accessControl = accessControl;
-            this.corsConfiguration = corsConfiguration;
-            this.deletionForce = deletionForce;
-            this.lifecycleConfiguration = lifecycleConfiguration;
-            this.loggingConfiguration = loggingConfiguration;
-            this.policy = policy;
-            this.refererConfiguration = refererConfiguration;
-            this.serverSideEncryptionConfiguration = serverSideEncryptionConfiguration;
-            this.storageClass = storageClass;
-            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
-            this.websiteConfiguration = websiteConfiguration;
+            this.bucketName = java.util.Objects.requireNonNull(builder.bucketName, "bucketName is required");
+            this.accessControl = builder.accessControl;
+            this.corsConfiguration = builder.corsConfiguration;
+            this.deletionForce = builder.deletionForce;
+            this.lifecycleConfiguration = builder.lifecycleConfiguration;
+            this.loggingConfiguration = builder.loggingConfiguration;
+            this.policy = builder.policy;
+            this.refererConfiguration = builder.refererConfiguration;
+            this.serverSideEncryptionConfiguration = builder.serverSideEncryptionConfiguration;
+            this.storageClass = builder.storageClass;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
+            this.websiteConfiguration = builder.websiteConfiguration;
         }
 
         @Override

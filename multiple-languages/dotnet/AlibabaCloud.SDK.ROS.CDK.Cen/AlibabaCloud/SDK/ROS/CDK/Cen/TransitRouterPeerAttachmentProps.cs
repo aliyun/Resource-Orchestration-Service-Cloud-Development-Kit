@@ -63,33 +63,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             set;
         }
 
-        /// <summary>Property resourceType: ResourceType.</summary>
-        [JsiiOptional]
-        [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-        public object? ResourceType
-        {
-            get;
-            set;
-        }
-
-        /// <summary>Property routeTableAssociationEnabled:.</summary>
-        [JsiiOptional]
-        [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-        public object? RouteTableAssociationEnabled
-        {
-            get;
-            set;
-        }
-
-        /// <summary>Property routeTablePropagationEnabled:.</summary>
-        [JsiiOptional]
-        [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-        public object? RouteTablePropagationEnabled
-        {
-            get;
-            set;
-        }
-
         /// <summary>Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.672Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.242Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -229,30 +229,30 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * A builder for {@link ManagedEdgeKubernetesClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ManagedEdgeKubernetesClusterProps> {
-        private java.lang.Object name;
-        private java.lang.Object numOfNodes;
-        private java.lang.Object addons;
-        private java.lang.Object cloudMonitorFlags;
-        private java.lang.Object clusterSpec;
-        private java.lang.Object containerCidr;
-        private java.lang.Object disableRollback;
-        private java.lang.Object endpointPublicAccess;
-        private java.lang.Object keyPair;
-        private java.lang.Object loginPassword;
-        private java.lang.Object profile;
-        private java.lang.Object proxyMode;
-        private java.lang.Object serviceCidr;
-        private java.lang.Object snatEntry;
-        private java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
-        private java.lang.Object timeoutMins;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchIds;
-        private java.lang.Object workerDataDisk;
-        private java.lang.Object workerDataDiskCategory;
-        private java.lang.Object workerDataDiskSize;
-        private java.lang.Object workerInstanceTypes;
-        private java.lang.Object workerSystemDiskCategory;
-        private java.lang.Object workerSystemDiskSize;
+        java.lang.Object name;
+        java.lang.Object numOfNodes;
+        java.lang.Object addons;
+        java.lang.Object cloudMonitorFlags;
+        java.lang.Object clusterSpec;
+        java.lang.Object containerCidr;
+        java.lang.Object disableRollback;
+        java.lang.Object endpointPublicAccess;
+        java.lang.Object keyPair;
+        java.lang.Object loginPassword;
+        java.lang.Object profile;
+        java.lang.Object proxyMode;
+        java.lang.Object serviceCidr;
+        java.lang.Object snatEntry;
+        java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
+        java.lang.Object timeoutMins;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchIds;
+        java.lang.Object workerDataDisk;
+        java.lang.Object workerDataDiskCategory;
+        java.lang.Object workerDataDiskSize;
+        java.lang.Object workerInstanceTypes;
+        java.lang.Object workerSystemDiskCategory;
+        java.lang.Object workerSystemDiskSize;
 
         /**
          * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getName}
@@ -790,7 +790,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          */
         @Override
         public ManagedEdgeKubernetesClusterProps build() {
-            return new Jsii$Proxy(name, numOfNodes, addons, cloudMonitorFlags, clusterSpec, containerCidr, disableRollback, endpointPublicAccess, keyPair, loginPassword, profile, proxyMode, serviceCidr, snatEntry, tags, timeoutMins, vpcId, vSwitchIds, workerDataDisk, workerDataDiskCategory, workerDataDiskSize, workerInstanceTypes, workerSystemDiskCategory, workerSystemDiskSize);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -860,32 +860,32 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object numOfNodes, final java.lang.Object addons, final java.lang.Object cloudMonitorFlags, final java.lang.Object clusterSpec, final java.lang.Object containerCidr, final java.lang.Object disableRollback, final java.lang.Object endpointPublicAccess, final java.lang.Object keyPair, final java.lang.Object loginPassword, final java.lang.Object profile, final java.lang.Object proxyMode, final java.lang.Object serviceCidr, final java.lang.Object snatEntry, final java.util.List<? extends com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags, final java.lang.Object timeoutMins, final java.lang.Object vpcId, final java.lang.Object vSwitchIds, final java.lang.Object workerDataDisk, final java.lang.Object workerDataDiskCategory, final java.lang.Object workerDataDiskSize, final java.lang.Object workerInstanceTypes, final java.lang.Object workerSystemDiskCategory, final java.lang.Object workerSystemDiskSize) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.numOfNodes = java.util.Objects.requireNonNull(numOfNodes, "numOfNodes is required");
-            this.addons = addons;
-            this.cloudMonitorFlags = cloudMonitorFlags;
-            this.clusterSpec = clusterSpec;
-            this.containerCidr = containerCidr;
-            this.disableRollback = disableRollback;
-            this.endpointPublicAccess = endpointPublicAccess;
-            this.keyPair = keyPair;
-            this.loginPassword = loginPassword;
-            this.profile = profile;
-            this.proxyMode = proxyMode;
-            this.serviceCidr = serviceCidr;
-            this.snatEntry = snatEntry;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty>)tags;
-            this.timeoutMins = timeoutMins;
-            this.vpcId = vpcId;
-            this.vSwitchIds = vSwitchIds;
-            this.workerDataDisk = workerDataDisk;
-            this.workerDataDiskCategory = workerDataDiskCategory;
-            this.workerDataDiskSize = workerDataDiskSize;
-            this.workerInstanceTypes = workerInstanceTypes;
-            this.workerSystemDiskCategory = workerSystemDiskCategory;
-            this.workerSystemDiskSize = workerSystemDiskSize;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.numOfNodes = java.util.Objects.requireNonNull(builder.numOfNodes, "numOfNodes is required");
+            this.addons = builder.addons;
+            this.cloudMonitorFlags = builder.cloudMonitorFlags;
+            this.clusterSpec = builder.clusterSpec;
+            this.containerCidr = builder.containerCidr;
+            this.disableRollback = builder.disableRollback;
+            this.endpointPublicAccess = builder.endpointPublicAccess;
+            this.keyPair = builder.keyPair;
+            this.loginPassword = builder.loginPassword;
+            this.profile = builder.profile;
+            this.proxyMode = builder.proxyMode;
+            this.serviceCidr = builder.serviceCidr;
+            this.snatEntry = builder.snatEntry;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty>)builder.tags;
+            this.timeoutMins = builder.timeoutMins;
+            this.vpcId = builder.vpcId;
+            this.vSwitchIds = builder.vSwitchIds;
+            this.workerDataDisk = builder.workerDataDisk;
+            this.workerDataDiskCategory = builder.workerDataDiskCategory;
+            this.workerDataDiskSize = builder.workerDataDiskSize;
+            this.workerInstanceTypes = builder.workerInstanceTypes;
+            this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
+            this.workerSystemDiskSize = builder.workerSystemDiskSize;
         }
 
         @Override

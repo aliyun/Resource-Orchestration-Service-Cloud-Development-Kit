@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::CustomResource`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.035Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.723Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosCustomResourceProps")
 @software.amazon.jsii.Jsii.Proxy(RosCustomResourceProps.Jsii$Proxy.class)
 public interface RosCustomResourceProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,10 +38,10 @@ public interface RosCustomResourceProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosCustomResourceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCustomResourceProps> {
-        private java.lang.Object serviceToken;
-        private java.lang.Object timeout;
-        private java.lang.Object httpConfig;
-        private java.lang.Object parameters;
+        java.lang.Object serviceToken;
+        java.lang.Object timeout;
+        java.lang.Object httpConfig;
+        java.lang.Object parameters;
 
         /**
          * Sets the value of {@link RosCustomResourceProps#getServiceToken}
@@ -130,7 +130,7 @@ public interface RosCustomResourceProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public RosCustomResourceProps build() {
-            return new Jsii$Proxy(serviceToken, timeout, httpConfig, parameters);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -159,12 +159,12 @@ public interface RosCustomResourceProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object serviceToken, final java.lang.Object timeout, final java.lang.Object httpConfig, final java.lang.Object parameters) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.serviceToken = java.util.Objects.requireNonNull(serviceToken, "serviceToken is required");
-            this.timeout = java.util.Objects.requireNonNull(timeout, "timeout is required");
-            this.httpConfig = httpConfig;
-            this.parameters = parameters;
+            this.serviceToken = java.util.Objects.requireNonNull(builder.serviceToken, "serviceToken is required");
+            this.timeout = java.util.Objects.requireNonNull(builder.timeout, "timeout is required");
+            this.httpConfig = builder.httpConfig;
+            this.parameters = builder.parameters;
         }
 
         @Override

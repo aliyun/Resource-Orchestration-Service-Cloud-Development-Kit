@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::ACLRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.067Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.764Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosACLRuleProps.Jsii$Proxy.class)
 public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,16 +62,16 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosACLRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosACLRuleProps> {
-        private java.lang.Object aclId;
-        private java.lang.Object destCidr;
-        private java.lang.Object destPortRange;
-        private java.lang.Object direction;
-        private java.lang.Object ipProtocol;
-        private java.lang.Object policy;
-        private java.lang.Object sourceCidr;
-        private java.lang.Object sourcePortRange;
-        private java.lang.Object description;
-        private java.lang.Object priority;
+        java.lang.Object aclId;
+        java.lang.Object destCidr;
+        java.lang.Object destPortRange;
+        java.lang.Object direction;
+        java.lang.Object ipProtocol;
+        java.lang.Object policy;
+        java.lang.Object sourceCidr;
+        java.lang.Object sourcePortRange;
+        java.lang.Object description;
+        java.lang.Object priority;
 
         /**
          * Sets the value of {@link RosACLRuleProps#getAclId}
@@ -280,7 +280,7 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosACLRuleProps build() {
-            return new Jsii$Proxy(aclId, destCidr, destPortRange, direction, ipProtocol, policy, sourceCidr, sourcePortRange, description, priority);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -321,18 +321,18 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object aclId, final java.lang.Object destCidr, final java.lang.Object destPortRange, final java.lang.Object direction, final java.lang.Object ipProtocol, final java.lang.Object policy, final java.lang.Object sourceCidr, final java.lang.Object sourcePortRange, final java.lang.Object description, final java.lang.Object priority) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.aclId = java.util.Objects.requireNonNull(aclId, "aclId is required");
-            this.destCidr = java.util.Objects.requireNonNull(destCidr, "destCidr is required");
-            this.destPortRange = java.util.Objects.requireNonNull(destPortRange, "destPortRange is required");
-            this.direction = java.util.Objects.requireNonNull(direction, "direction is required");
-            this.ipProtocol = java.util.Objects.requireNonNull(ipProtocol, "ipProtocol is required");
-            this.policy = java.util.Objects.requireNonNull(policy, "policy is required");
-            this.sourceCidr = java.util.Objects.requireNonNull(sourceCidr, "sourceCidr is required");
-            this.sourcePortRange = java.util.Objects.requireNonNull(sourcePortRange, "sourcePortRange is required");
-            this.description = description;
-            this.priority = priority;
+            this.aclId = java.util.Objects.requireNonNull(builder.aclId, "aclId is required");
+            this.destCidr = java.util.Objects.requireNonNull(builder.destCidr, "destCidr is required");
+            this.destPortRange = java.util.Objects.requireNonNull(builder.destPortRange, "destPortRange is required");
+            this.direction = java.util.Objects.requireNonNull(builder.direction, "direction is required");
+            this.ipProtocol = java.util.Objects.requireNonNull(builder.ipProtocol, "ipProtocol is required");
+            this.policy = java.util.Objects.requireNonNull(builder.policy, "policy is required");
+            this.sourceCidr = java.util.Objects.requireNonNull(builder.sourceCidr, "sourceCidr is required");
+            this.sourcePortRange = java.util.Objects.requireNonNull(builder.sourcePortRange, "sourcePortRange is required");
+            this.description = builder.description;
+            this.priority = builder.priority;
         }
 
         @Override

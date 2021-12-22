@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Disk`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.087Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.640Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDiskProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskProps.Jsii$Proxy.class)
 public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,6 +15,12 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoSnapshotPolicyId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBurstingEnabled() {
         return null;
     }
 
@@ -57,6 +63,12 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPerformanceLevel() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
         return null;
     }
 
@@ -106,21 +118,23 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosDiskProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDiskProps> {
-        private java.lang.Object zoneId;
-        private java.lang.Object autoSnapshotPolicyId;
-        private java.lang.Object deleteAutoSnapshot;
-        private java.lang.Object description;
-        private java.lang.Object diskCategory;
-        private java.lang.Object diskName;
-        private java.lang.Object encrypted;
-        private java.lang.Object kmsKeyId;
-        private java.lang.Object performanceLevel;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object size;
-        private java.lang.Object snapshotId;
-        private java.lang.Object storageSetId;
-        private java.lang.Object storageSetPartitionNumber;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty> tags;
+        java.lang.Object zoneId;
+        java.lang.Object autoSnapshotPolicyId;
+        java.lang.Object burstingEnabled;
+        java.lang.Object deleteAutoSnapshot;
+        java.lang.Object description;
+        java.lang.Object diskCategory;
+        java.lang.Object diskName;
+        java.lang.Object encrypted;
+        java.lang.Object kmsKeyId;
+        java.lang.Object performanceLevel;
+        java.lang.Object provisionedIops;
+        java.lang.Object resourceGroupId;
+        java.lang.Object size;
+        java.lang.Object snapshotId;
+        java.lang.Object storageSetId;
+        java.lang.Object storageSetPartitionNumber;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosDiskProps#getZoneId}
@@ -159,6 +173,26 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder autoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyId) {
             this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDiskProps#getBurstingEnabled}
+         * @param burstingEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder burstingEnabled(java.lang.Boolean burstingEnabled) {
+            this.burstingEnabled = burstingEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDiskProps#getBurstingEnabled}
+         * @param burstingEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder burstingEnabled(com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
+            this.burstingEnabled = burstingEnabled;
             return this;
         }
 
@@ -303,6 +337,26 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDiskProps#getProvisionedIops}
+         * @param provisionedIops the value to be set.
+         * @return {@code this}
+         */
+        public Builder provisionedIops(java.lang.Number provisionedIops) {
+            this.provisionedIops = provisionedIops;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDiskProps#getProvisionedIops}
+         * @param provisionedIops the value to be set.
+         * @return {@code this}
+         */
+        public Builder provisionedIops(com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.provisionedIops = provisionedIops;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDiskProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -420,7 +474,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosDiskProps build() {
-            return new Jsii$Proxy(zoneId, autoSnapshotPolicyId, deleteAutoSnapshot, description, diskCategory, diskName, encrypted, kmsKeyId, performanceLevel, resourceGroupId, size, snapshotId, storageSetId, storageSetPartitionNumber, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -431,6 +485,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDiskProps {
         private final java.lang.Object zoneId;
         private final java.lang.Object autoSnapshotPolicyId;
+        private final java.lang.Object burstingEnabled;
         private final java.lang.Object deleteAutoSnapshot;
         private final java.lang.Object description;
         private final java.lang.Object diskCategory;
@@ -438,6 +493,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object encrypted;
         private final java.lang.Object kmsKeyId;
         private final java.lang.Object performanceLevel;
+        private final java.lang.Object provisionedIops;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object size;
         private final java.lang.Object snapshotId;
@@ -453,6 +509,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.burstingEnabled = software.amazon.jsii.Kernel.get(this, "burstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deleteAutoSnapshot = software.amazon.jsii.Kernel.get(this, "deleteAutoSnapshot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskCategory = software.amazon.jsii.Kernel.get(this, "diskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -460,6 +517,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.provisionedIops = software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -472,23 +530,25 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object zoneId, final java.lang.Object autoSnapshotPolicyId, final java.lang.Object deleteAutoSnapshot, final java.lang.Object description, final java.lang.Object diskCategory, final java.lang.Object diskName, final java.lang.Object encrypted, final java.lang.Object kmsKeyId, final java.lang.Object performanceLevel, final java.lang.Object resourceGroupId, final java.lang.Object size, final java.lang.Object snapshotId, final java.lang.Object storageSetId, final java.lang.Object storageSetPartitionNumber, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
-            this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-            this.deleteAutoSnapshot = deleteAutoSnapshot;
-            this.description = description;
-            this.diskCategory = diskCategory;
-            this.diskName = diskName;
-            this.encrypted = encrypted;
-            this.kmsKeyId = kmsKeyId;
-            this.performanceLevel = performanceLevel;
-            this.resourceGroupId = resourceGroupId;
-            this.size = size;
-            this.snapshotId = snapshotId;
-            this.storageSetId = storageSetId;
-            this.storageSetPartitionNumber = storageSetPartitionNumber;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty>)tags;
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.autoSnapshotPolicyId = builder.autoSnapshotPolicyId;
+            this.burstingEnabled = builder.burstingEnabled;
+            this.deleteAutoSnapshot = builder.deleteAutoSnapshot;
+            this.description = builder.description;
+            this.diskCategory = builder.diskCategory;
+            this.diskName = builder.diskName;
+            this.encrypted = builder.encrypted;
+            this.kmsKeyId = builder.kmsKeyId;
+            this.performanceLevel = builder.performanceLevel;
+            this.provisionedIops = builder.provisionedIops;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.size = builder.size;
+            this.snapshotId = builder.snapshotId;
+            this.storageSetId = builder.storageSetId;
+            this.storageSetPartitionNumber = builder.storageSetPartitionNumber;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosDisk.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -499,6 +559,11 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getAutoSnapshotPolicyId() {
             return this.autoSnapshotPolicyId;
+        }
+
+        @Override
+        public final java.lang.Object getBurstingEnabled() {
+            return this.burstingEnabled;
         }
 
         @Override
@@ -534,6 +599,11 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getPerformanceLevel() {
             return this.performanceLevel;
+        }
+
+        @Override
+        public final java.lang.Object getProvisionedIops() {
+            return this.provisionedIops;
         }
 
         @Override
@@ -576,6 +646,9 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getAutoSnapshotPolicyId() != null) {
                 data.set("autoSnapshotPolicyId", om.valueToTree(this.getAutoSnapshotPolicyId()));
             }
+            if (this.getBurstingEnabled() != null) {
+                data.set("burstingEnabled", om.valueToTree(this.getBurstingEnabled()));
+            }
             if (this.getDeleteAutoSnapshot() != null) {
                 data.set("deleteAutoSnapshot", om.valueToTree(this.getDeleteAutoSnapshot()));
             }
@@ -596,6 +669,9 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getPerformanceLevel() != null) {
                 data.set("performanceLevel", om.valueToTree(this.getPerformanceLevel()));
+            }
+            if (this.getProvisionedIops() != null) {
+                data.set("provisionedIops", om.valueToTree(this.getProvisionedIops()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -635,6 +711,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!zoneId.equals(that.zoneId)) return false;
             if (this.autoSnapshotPolicyId != null ? !this.autoSnapshotPolicyId.equals(that.autoSnapshotPolicyId) : that.autoSnapshotPolicyId != null) return false;
+            if (this.burstingEnabled != null ? !this.burstingEnabled.equals(that.burstingEnabled) : that.burstingEnabled != null) return false;
             if (this.deleteAutoSnapshot != null ? !this.deleteAutoSnapshot.equals(that.deleteAutoSnapshot) : that.deleteAutoSnapshot != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.diskCategory != null ? !this.diskCategory.equals(that.diskCategory) : that.diskCategory != null) return false;
@@ -642,6 +719,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
             if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
             if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
+            if (this.provisionedIops != null ? !this.provisionedIops.equals(that.provisionedIops) : that.provisionedIops != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.size != null ? !this.size.equals(that.size) : that.size != null) return false;
             if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
@@ -654,6 +732,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.zoneId.hashCode();
             result = 31 * result + (this.autoSnapshotPolicyId != null ? this.autoSnapshotPolicyId.hashCode() : 0);
+            result = 31 * result + (this.burstingEnabled != null ? this.burstingEnabled.hashCode() : 0);
             result = 31 * result + (this.deleteAutoSnapshot != null ? this.deleteAutoSnapshot.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.diskCategory != null ? this.diskCategory.hashCode() : 0);
@@ -661,6 +740,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
             result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
             result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
+            result = 31 * result + (this.provisionedIops != null ? this.provisionedIops.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.size != null ? this.size.hashCode() : 0);
             result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);

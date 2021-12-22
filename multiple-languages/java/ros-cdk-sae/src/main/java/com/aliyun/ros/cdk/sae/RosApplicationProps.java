@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Properties for defining a `ALIYUN::SAE::Application`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.048Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.755Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationProps.Jsii$Proxy.class)
 public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -210,40 +210,40 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosApplicationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosApplicationProps> {
-        private java.lang.Object appName;
-        private java.lang.Object cpu;
-        private java.lang.Object memory;
-        private java.lang.Object namespaceId;
-        private java.lang.Object packageType;
-        private java.lang.Object replicas;
-        private java.lang.Object appDescription;
-        private java.lang.Object command;
-        private java.lang.Object commandArgs;
-        private java.lang.Object customHostAlias;
-        private java.lang.Object deploy;
-        private java.lang.Object edasContainerVersion;
-        private java.lang.Object envs;
-        private java.lang.Object imageUrl;
-        private java.lang.Object jarStartArgs;
-        private java.lang.Object jarStartOptions;
-        private java.lang.Object jdk;
-        private java.lang.Object liveness;
-        private java.lang.Object mountDesc;
-        private java.lang.Object mountHost;
-        private java.lang.Object nasId;
-        private java.lang.Object packageUrl;
-        private java.lang.Object packageVersion;
-        private java.lang.Object postStart;
-        private java.lang.Object preStop;
-        private java.lang.Object readiness;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object slsConfigs;
-        private java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags;
-        private java.lang.Object timezone;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object warStartOptions;
-        private java.lang.Object webContainer;
+        java.lang.Object appName;
+        java.lang.Object cpu;
+        java.lang.Object memory;
+        java.lang.Object namespaceId;
+        java.lang.Object packageType;
+        java.lang.Object replicas;
+        java.lang.Object appDescription;
+        java.lang.Object command;
+        java.lang.Object commandArgs;
+        java.lang.Object customHostAlias;
+        java.lang.Object deploy;
+        java.lang.Object edasContainerVersion;
+        java.lang.Object envs;
+        java.lang.Object imageUrl;
+        java.lang.Object jarStartArgs;
+        java.lang.Object jarStartOptions;
+        java.lang.Object jdk;
+        java.lang.Object liveness;
+        java.lang.Object mountDesc;
+        java.lang.Object mountHost;
+        java.lang.Object nasId;
+        java.lang.Object packageUrl;
+        java.lang.Object packageVersion;
+        java.lang.Object postStart;
+        java.lang.Object preStop;
+        java.lang.Object readiness;
+        java.lang.Object securityGroupId;
+        java.lang.Object slsConfigs;
+        java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags;
+        java.lang.Object timezone;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object warStartOptions;
+        java.lang.Object webContainer;
 
         /**
          * Sets the value of {@link RosApplicationProps#getAppName}
@@ -923,7 +923,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosApplicationProps build() {
-            return new Jsii$Proxy(appName, cpu, memory, namespaceId, packageType, replicas, appDescription, command, commandArgs, customHostAlias, deploy, edasContainerVersion, envs, imageUrl, jarStartArgs, jarStartOptions, jdk, liveness, mountDesc, mountHost, nasId, packageUrl, packageVersion, postStart, preStop, readiness, securityGroupId, slsConfigs, tags, timezone, vpcId, vSwitchId, warStartOptions, webContainer);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1013,42 +1013,42 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object appName, final java.lang.Object cpu, final java.lang.Object memory, final java.lang.Object namespaceId, final java.lang.Object packageType, final java.lang.Object replicas, final java.lang.Object appDescription, final java.lang.Object command, final java.lang.Object commandArgs, final java.lang.Object customHostAlias, final java.lang.Object deploy, final java.lang.Object edasContainerVersion, final java.lang.Object envs, final java.lang.Object imageUrl, final java.lang.Object jarStartArgs, final java.lang.Object jarStartOptions, final java.lang.Object jdk, final java.lang.Object liveness, final java.lang.Object mountDesc, final java.lang.Object mountHost, final java.lang.Object nasId, final java.lang.Object packageUrl, final java.lang.Object packageVersion, final java.lang.Object postStart, final java.lang.Object preStop, final java.lang.Object readiness, final java.lang.Object securityGroupId, final java.lang.Object slsConfigs, final java.util.List<? extends com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags, final java.lang.Object timezone, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object warStartOptions, final java.lang.Object webContainer) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.appName = java.util.Objects.requireNonNull(appName, "appName is required");
-            this.cpu = java.util.Objects.requireNonNull(cpu, "cpu is required");
-            this.memory = java.util.Objects.requireNonNull(memory, "memory is required");
-            this.namespaceId = java.util.Objects.requireNonNull(namespaceId, "namespaceId is required");
-            this.packageType = java.util.Objects.requireNonNull(packageType, "packageType is required");
-            this.replicas = java.util.Objects.requireNonNull(replicas, "replicas is required");
-            this.appDescription = appDescription;
-            this.command = command;
-            this.commandArgs = commandArgs;
-            this.customHostAlias = customHostAlias;
-            this.deploy = deploy;
-            this.edasContainerVersion = edasContainerVersion;
-            this.envs = envs;
-            this.imageUrl = imageUrl;
-            this.jarStartArgs = jarStartArgs;
-            this.jarStartOptions = jarStartOptions;
-            this.jdk = jdk;
-            this.liveness = liveness;
-            this.mountDesc = mountDesc;
-            this.mountHost = mountHost;
-            this.nasId = nasId;
-            this.packageUrl = packageUrl;
-            this.packageVersion = packageVersion;
-            this.postStart = postStart;
-            this.preStop = preStop;
-            this.readiness = readiness;
-            this.securityGroupId = securityGroupId;
-            this.slsConfigs = slsConfigs;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty>)tags;
-            this.timezone = timezone;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.warStartOptions = warStartOptions;
-            this.webContainer = webContainer;
+            this.appName = java.util.Objects.requireNonNull(builder.appName, "appName is required");
+            this.cpu = java.util.Objects.requireNonNull(builder.cpu, "cpu is required");
+            this.memory = java.util.Objects.requireNonNull(builder.memory, "memory is required");
+            this.namespaceId = java.util.Objects.requireNonNull(builder.namespaceId, "namespaceId is required");
+            this.packageType = java.util.Objects.requireNonNull(builder.packageType, "packageType is required");
+            this.replicas = java.util.Objects.requireNonNull(builder.replicas, "replicas is required");
+            this.appDescription = builder.appDescription;
+            this.command = builder.command;
+            this.commandArgs = builder.commandArgs;
+            this.customHostAlias = builder.customHostAlias;
+            this.deploy = builder.deploy;
+            this.edasContainerVersion = builder.edasContainerVersion;
+            this.envs = builder.envs;
+            this.imageUrl = builder.imageUrl;
+            this.jarStartArgs = builder.jarStartArgs;
+            this.jarStartOptions = builder.jarStartOptions;
+            this.jdk = builder.jdk;
+            this.liveness = builder.liveness;
+            this.mountDesc = builder.mountDesc;
+            this.mountHost = builder.mountHost;
+            this.nasId = builder.nasId;
+            this.packageUrl = builder.packageUrl;
+            this.packageVersion = builder.packageVersion;
+            this.postStart = builder.postStart;
+            this.preStop = builder.preStop;
+            this.readiness = builder.readiness;
+            this.securityGroupId = builder.securityGroupId;
+            this.slsConfigs = builder.slsConfigs;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty>)builder.tags;
+            this.timezone = builder.timezone;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.warStartOptions = builder.warStartOptions;
+            this.webContainer = builder.webContainer;
         }
 
         @Override

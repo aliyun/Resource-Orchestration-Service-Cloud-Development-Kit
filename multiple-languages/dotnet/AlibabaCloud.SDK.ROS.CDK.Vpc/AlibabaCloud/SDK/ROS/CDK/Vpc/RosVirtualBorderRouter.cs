@@ -54,10 +54,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: RouteTableId: The ID of the route table of the VBR.
+        /// </remarks>
+        [JsiiProperty(name: "attrRouteTableId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRouteTableId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: VbrId: The ID of the VBR.
         /// </remarks>
         [JsiiProperty(name: "attrVbrId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVbrId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: VlanInterfaceId: The ID of the VBR interface.
+        /// </remarks>
+        [JsiiProperty(name: "attrVlanInterfaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVlanInterfaceId
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -121,7 +139,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vlanId: The VLAN ID of the VBR. Valid values: 1 to 2999.
+        /// <strong>Property</strong>: vlanId: The VLAN ID of the VBR. Valid values: 0 to 2999.
         /// Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
         /// two VBRs of the same physical connection must be different.
         /// </remarks>

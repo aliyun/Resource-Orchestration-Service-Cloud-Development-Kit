@@ -3,6 +3,155 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::PVTZ::UserVpcAuthorization`
+ */
+export interface RosUserVpcAuthorizationProps {
+
+    /**
+     * @Property authorizedUserId: The account ID of the user who authorizes the resource.
+     */
+    readonly authorizedUserId: string | ros.IResolvable;
+
+    /**
+     * @Property authChannel: Authorization channel. Valid values:
+     * AUTH_CODE: Verification code authorization, to verify whether the verification code passed in by AuthCode is correct.
+     * RESOURCE_DIRECTORY: Resource directory authorization, verify whether the AuthorizedUserId and the current account have resource directory credit.When it is empty, it is the same as AUTH_CODE, that is, verification code authorization.
+     */
+    readonly authChannel?: string | ros.IResolvable;
+
+    /**
+     * @Property authCode: Verification code, if AuthChannel takes "AUTH_CODE" or is empty, it is mandatory.
+     */
+    readonly authCode?: string | ros.IResolvable;
+
+    /**
+     * @Property authType: Authorization type.
+     */
+    readonly authType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosUserVpcAuthorizationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosUserVpcAuthorizationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserVpcAuthorizationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('authCode', ros.validateString)(properties.authCode));
+    errors.collect(ros.propertyValidator('authChannel', ros.validateString)(properties.authChannel));
+    errors.collect(ros.propertyValidator('authorizedUserId', ros.requiredValidator)(properties.authorizedUserId));
+    errors.collect(ros.propertyValidator('authorizedUserId', ros.validateString)(properties.authorizedUserId));
+    errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    return errors.wrap('supplied properties not correct for "RosUserVpcAuthorizationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::UserVpcAuthorization` resource
+ *
+ * @param properties - the TypeScript properties of a `RosUserVpcAuthorizationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::UserVpcAuthorization` resource.
+ */
+// @ts-ignore TS6133
+function rosUserVpcAuthorizationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosUserVpcAuthorizationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AuthorizedUserId: ros.stringToRosTemplate(properties.authorizedUserId),
+      AuthChannel: ros.stringToRosTemplate(properties.authChannel),
+      AuthCode: ros.stringToRosTemplate(properties.authCode),
+      AuthType: ros.stringToRosTemplate(properties.authType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::PVTZ::UserVpcAuthorization`
+ */
+export class RosUserVpcAuthorization extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::UserVpcAuthorization";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AuthType: Authorization type.
+     */
+    public readonly attrAuthType: ros.IResolvable;
+
+    /**
+     * @Attribute AuthorizedUserId: The account ID of the user who authorizes the resource.
+     */
+    public readonly attrAuthorizedUserId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property authorizedUserId: The account ID of the user who authorizes the resource.
+     */
+    public authorizedUserId: string | ros.IResolvable;
+
+    /**
+     * @Property authChannel: Authorization channel. Valid values:
+     * AUTH_CODE: Verification code authorization, to verify whether the verification code passed in by AuthCode is correct.
+     * RESOURCE_DIRECTORY: Resource directory authorization, verify whether the AuthorizedUserId and the current account have resource directory credit.When it is empty, it is the same as AUTH_CODE, that is, verification code authorization.
+     */
+    public authChannel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property authCode: Verification code, if AuthChannel takes "AUTH_CODE" or is empty, it is mandatory.
+     */
+    public authCode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property authType: Authorization type.
+     */
+    public authType: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::PVTZ::UserVpcAuthorization`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosUserVpcAuthorizationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosUserVpcAuthorization.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAuthType = this.getAtt('AuthType');
+        this.attrAuthorizedUserId = this.getAtt('AuthorizedUserId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.authorizedUserId = props.authorizedUserId;
+        this.authChannel = props.authChannel;
+        this.authCode = props.authCode;
+        this.authType = props.authType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            authorizedUserId: this.authorizedUserId,
+            authChannel: this.authChannel,
+            authCode: this.authCode,
+            authType: this.authType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosUserVpcAuthorizationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::PVTZ::Zone`
  */
 export interface RosZoneProps {
@@ -23,6 +172,16 @@ export interface RosZoneProps {
      * @Property remark: 50 characters at most. It can only contain numbers, Chinese, English and special characters: "_-,.，。".
      */
     readonly remark?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
+     */
+    readonly zoneTag?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+     */
+    readonly zoneType?: string | ros.IResolvable;
 }
 
 /**
@@ -44,6 +203,8 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('proxyPattern', ros.validateString)(properties.proxyPattern));
+    errors.collect(ros.propertyValidator('zoneTag', ros.validateString)(properties.zoneTag));
+    errors.collect(ros.propertyValidator('zoneType', ros.validateString)(properties.zoneType));
     if(properties.remark && (Array.isArray(properties.remark) || (typeof properties.remark) === 'string')) {
         errors.collect(ros.propertyValidator('remark', ros.validateLength)({
             data: properties.remark.length,
@@ -78,6 +239,8 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
       ZoneName: ros.stringToRosTemplate(properties.zoneName),
       ProxyPattern: ros.stringToRosTemplate(properties.proxyPattern),
       Remark: ros.stringToRosTemplate(properties.remark),
+      ZoneTag: ros.stringToRosTemplate(properties.zoneTag),
+      ZoneType: ros.stringToRosTemplate(properties.zoneType),
     };
 }
 
@@ -96,14 +259,24 @@ export class RosZone extends ros.RosResource {
      */
 
     /**
-     * @Attribute ZoneId: Zone ID
+     * @Attribute ZoneId: Zone ID.
      */
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * @Attribute ZoneName: Zone name
+     * @Attribute ZoneName: Zone name.
      */
     public readonly attrZoneName: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneTag: Zone label.
+     */
+    public readonly attrZoneTag: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneType: Zone type.
+     */
+    public readonly attrZoneType: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -126,6 +299,16 @@ export class RosZone extends ros.RosResource {
     public remark: string | ros.IResolvable | undefined;
 
     /**
+     * @Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
+     */
+    public zoneTag: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+     */
+    public zoneType: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::PVTZ::Zone`.
      *
      * @param scope - scope in which this resource is defined
@@ -136,11 +319,15 @@ export class RosZone extends ros.RosResource {
         super(scope, id, { type: RosZone.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrZoneId = this.getAtt('ZoneId');
         this.attrZoneName = this.getAtt('ZoneName');
+        this.attrZoneTag = this.getAtt('ZoneTag');
+        this.attrZoneType = this.getAtt('ZoneType');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.zoneName = props.zoneName;
         this.proxyPattern = props.proxyPattern;
         this.remark = props.remark;
+        this.zoneTag = props.zoneTag;
+        this.zoneType = props.zoneType;
     }
 
 
@@ -149,6 +336,8 @@ export class RosZone extends ros.RosResource {
             zoneName: this.zoneName,
             proxyPattern: this.proxyPattern,
             remark: this.remark,
+            zoneTag: this.zoneTag,
+            zoneType: this.zoneType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

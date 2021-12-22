@@ -120,6 +120,11 @@ export interface ListenerProps {
     readonly serverCertificateId?: string | ros.IResolvable;
 
     /**
+     * Property startListener: Whether start listener after listener created. Default True.
+     */
+    readonly startListener?: boolean | ros.IResolvable;
+
+    /**
      * Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
     readonly vServerGroupId?: string | ros.IResolvable;
@@ -173,6 +178,7 @@ export class Listener extends ros.Resource {
             bandwidth: props.bandwidth,
             masterSlaveServerGroupId: props.masterSlaveServerGroupId,
             serverCertificateId: props.serverCertificateId,
+            startListener: props.startListener === undefined || props.startListener === null ? true : props.startListener,
             httpConfig: props.httpConfig,
             aclType: props.aclType,
             protocol: props.protocol,

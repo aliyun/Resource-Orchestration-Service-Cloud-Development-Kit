@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.asm;
 /**
  * Properties for defining a `ALIYUN::ASM::ServiceMesh`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.381Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.752Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.asm.$Module.class, fqn = "@alicloud/ros-cdk-asm.ServiceMeshProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceMeshProps.Jsii$Proxy.class)
 public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable {
@@ -155,23 +155,23 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link ServiceMeshProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ServiceMeshProps> {
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitches;
-        private java.lang.Object apiServerPublicEip;
-        private java.lang.Object auditProject;
-        private java.lang.Object customizedZipkin;
-        private java.lang.Object enableAudit;
-        private java.lang.Object includeIpRanges;
-        private java.lang.Object istioVersion;
-        private java.lang.Object localityLoadBalancing;
-        private java.lang.Object name;
-        private java.lang.Object opa;
-        private java.lang.Object outboundTrafficPolicy;
-        private java.lang.Object pilotPublicEip;
-        private java.lang.Object proxy;
-        private java.lang.Object telemetry;
-        private java.lang.Object traceSampling;
-        private java.lang.Object tracing;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitches;
+        java.lang.Object apiServerPublicEip;
+        java.lang.Object auditProject;
+        java.lang.Object customizedZipkin;
+        java.lang.Object enableAudit;
+        java.lang.Object includeIpRanges;
+        java.lang.Object istioVersion;
+        java.lang.Object localityLoadBalancing;
+        java.lang.Object name;
+        java.lang.Object opa;
+        java.lang.Object outboundTrafficPolicy;
+        java.lang.Object pilotPublicEip;
+        java.lang.Object proxy;
+        java.lang.Object telemetry;
+        java.lang.Object traceSampling;
+        java.lang.Object tracing;
 
         /**
          * Sets the value of {@link ServiceMeshProps#getVpcId}
@@ -550,7 +550,7 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public ServiceMeshProps build() {
-            return new Jsii$Proxy(vpcId, vSwitches, apiServerPublicEip, auditProject, customizedZipkin, enableAudit, includeIpRanges, istioVersion, localityLoadBalancing, name, opa, outboundTrafficPolicy, pilotPublicEip, proxy, telemetry, traceSampling, tracing);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -605,25 +605,25 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object vpcId, final java.lang.Object vSwitches, final java.lang.Object apiServerPublicEip, final java.lang.Object auditProject, final java.lang.Object customizedZipkin, final java.lang.Object enableAudit, final java.lang.Object includeIpRanges, final java.lang.Object istioVersion, final java.lang.Object localityLoadBalancing, final java.lang.Object name, final java.lang.Object opa, final java.lang.Object outboundTrafficPolicy, final java.lang.Object pilotPublicEip, final java.lang.Object proxy, final java.lang.Object telemetry, final java.lang.Object traceSampling, final java.lang.Object tracing) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.vSwitches = java.util.Objects.requireNonNull(vSwitches, "vSwitches is required");
-            this.apiServerPublicEip = apiServerPublicEip;
-            this.auditProject = auditProject;
-            this.customizedZipkin = customizedZipkin;
-            this.enableAudit = enableAudit;
-            this.includeIpRanges = includeIpRanges;
-            this.istioVersion = istioVersion;
-            this.localityLoadBalancing = localityLoadBalancing;
-            this.name = name;
-            this.opa = opa;
-            this.outboundTrafficPolicy = outboundTrafficPolicy;
-            this.pilotPublicEip = pilotPublicEip;
-            this.proxy = proxy;
-            this.telemetry = telemetry;
-            this.traceSampling = traceSampling;
-            this.tracing = tracing;
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.vSwitches = java.util.Objects.requireNonNull(builder.vSwitches, "vSwitches is required");
+            this.apiServerPublicEip = builder.apiServerPublicEip;
+            this.auditProject = builder.auditProject;
+            this.customizedZipkin = builder.customizedZipkin;
+            this.enableAudit = builder.enableAudit;
+            this.includeIpRanges = builder.includeIpRanges;
+            this.istioVersion = builder.istioVersion;
+            this.localityLoadBalancing = builder.localityLoadBalancing;
+            this.name = builder.name;
+            this.opa = builder.opa;
+            this.outboundTrafficPolicy = builder.outboundTrafficPolicy;
+            this.pilotPublicEip = builder.pilotPublicEip;
+            this.proxy = builder.proxy;
+            this.telemetry = builder.telemetry;
+            this.traceSampling = builder.traceSampling;
+            this.tracing = builder.tracing;
         }
 
         @Override

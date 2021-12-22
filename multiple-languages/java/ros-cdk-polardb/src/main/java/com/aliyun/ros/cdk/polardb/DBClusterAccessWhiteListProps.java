@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.769Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.421Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterAccessWhiteListProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterAccessWhiteListProps.Jsii$Proxy.class)
 public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,9 +47,9 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
      * A builder for {@link DBClusterAccessWhiteListProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBClusterAccessWhiteListProps> {
-        private java.lang.Object dbClusterId;
-        private java.lang.Object securityIps;
-        private java.lang.Object dbClusterIpArrayName;
+        java.lang.Object dbClusterId;
+        java.lang.Object securityIps;
+        java.lang.Object dbClusterIpArrayName;
 
         /**
          * Sets the value of {@link DBClusterAccessWhiteListProps#getDbClusterId}
@@ -138,7 +138,7 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
          */
         @Override
         public DBClusterAccessWhiteListProps build() {
-            return new Jsii$Proxy(dbClusterId, securityIps, dbClusterIpArrayName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -165,11 +165,11 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object dbClusterId, final java.lang.Object securityIps, final java.lang.Object dbClusterIpArrayName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
-            this.securityIps = java.util.Objects.requireNonNull(securityIps, "securityIps is required");
-            this.dbClusterIpArrayName = dbClusterIpArrayName;
+            this.dbClusterId = java.util.Objects.requireNonNull(builder.dbClusterId, "dbClusterId is required");
+            this.securityIps = java.util.Objects.requireNonNull(builder.securityIps, "securityIps is required");
+            this.dbClusterIpArrayName = builder.dbClusterIpArrayName;
         }
 
         @Override

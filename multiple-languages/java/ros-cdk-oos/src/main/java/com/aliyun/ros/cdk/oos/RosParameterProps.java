@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a `ALIYUN::OOS::Parameter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.728Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.375Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosParameterProps")
 @software.amazon.jsii.Jsii.Proxy(RosParameterProps.Jsii$Proxy.class)
 public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,11 +42,11 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosParameterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosParameterProps> {
-        private java.lang.Object name;
-        private java.lang.Object type;
-        private java.lang.Object value;
-        private java.lang.Object constraints;
-        private java.lang.Object description;
+        java.lang.Object name;
+        java.lang.Object type;
+        java.lang.Object value;
+        java.lang.Object constraints;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link RosParameterProps#getName}
@@ -155,7 +155,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosParameterProps build() {
-            return new Jsii$Proxy(name, type, value, constraints, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -186,13 +186,13 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object value, final java.lang.Object constraints, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.value = java.util.Objects.requireNonNull(value, "value is required");
-            this.constraints = constraints;
-            this.description = description;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            this.constraints = builder.constraints;
+            this.description = builder.description;
         }
 
         @Override

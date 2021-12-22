@@ -966,9 +966,10 @@ export interface RosRamAccountAliasProps {
 
     /**
      * @Property accountAlias: The alias of the Alibaba Cloud account.
-     * The alias must be 3 to 32 characters in length, and can contain lowercase letters,
-     * digits, and hyphens (-).
-     * Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+     * The alias must be 1 to 50 characters in length, and can contain lowercase letters,
+     * digits, hyphens (-), periods (.) and underscores (_).
+     * Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a 
+     * hyphen (-) and cannot have two consecutive hyphens (-).
      */
     readonly accountAlias: string | ros.IResolvable;
 }
@@ -987,14 +988,14 @@ function RosRamAccountAliasPropsValidator(properties: any): ros.ValidationResult
     if(properties.accountAlias && (typeof properties.accountAlias) !== 'object') {
         errors.collect(ros.propertyValidator('accountAlias', ros.validateAllowedPattern)({
           data: properties.accountAlias,
-          reg: /^(?!-)([a-z0-9]+|-(?!-))+(?<!-)$/
+          reg: /[-0-9.a-zA-Z_]{1,50}/
         }));
     }
     if(properties.accountAlias && (Array.isArray(properties.accountAlias) || (typeof properties.accountAlias) === 'string')) {
         errors.collect(ros.propertyValidator('accountAlias', ros.validateLength)({
             data: properties.accountAlias.length,
-            min: 3,
-            max: 32,
+            min: 1,
+            max: 50,
           }));
     }
     errors.collect(ros.propertyValidator('accountAlias', ros.validateString)(properties.accountAlias));
@@ -1043,9 +1044,10 @@ export class RosRamAccountAlias extends ros.RosResource {
 
     /**
      * @Property accountAlias: The alias of the Alibaba Cloud account.
-     * The alias must be 3 to 32 characters in length, and can contain lowercase letters,
-     * digits, and hyphens (-).
-     * Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+     * The alias must be 1 to 50 characters in length, and can contain lowercase letters,
+     * digits, hyphens (-), periods (.) and underscores (_).
+     * Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a 
+     * hyphen (-) and cannot have two consecutive hyphens (-).
      */
     public accountAlias: string | ros.IResolvable;
 
@@ -1089,6 +1091,11 @@ export interface RosRoleProps {
      * @Property roleName: Specifies the role name, containing up to 64 characters.
      */
     readonly roleName: string | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether force detach the policies attached to the role. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
      * @Property description: Remark information, up to 1024 characters or Chinese characters.
@@ -1137,6 +1144,7 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('policies', ros.listValidator(RosRole_PoliciesPropertyValidator))(properties.policies));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('assumeRolePolicyDocument', ros.requiredValidator)(properties.assumeRolePolicyDocument));
     errors.collect(ros.propertyValidator('assumeRolePolicyDocument', RosRole_AssumeRolePolicyDocumentPropertyValidator)(properties.assumeRolePolicyDocument));
     return errors.wrap('supplied properties not correct for "RosRoleProps"');
@@ -1158,6 +1166,7 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
     return {
       AssumeRolePolicyDocument: rosRoleAssumeRolePolicyDocumentPropertyToRosTemplate(properties.assumeRolePolicyDocument),
       RoleName: ros.stringToRosTemplate(properties.roleName),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       Description: ros.stringToRosTemplate(properties.description),
       MaxSessionDuration: ros.numberToRosTemplate(properties.maxSessionDuration),
       Policies: ros.listMapper(rosRolePoliciesPropertyToRosTemplate)(properties.policies),
@@ -1207,6 +1216,11 @@ export class RosRole extends ros.RosResource {
     public roleName: string | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Whether force detach the policies attached to the role. Default value is false.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Remark information, up to 1024 characters or Chinese characters.
      */
     public description: string | ros.IResolvable | undefined;
@@ -1239,6 +1253,7 @@ export class RosRole extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.assumeRolePolicyDocument = props.assumeRolePolicyDocument;
         this.roleName = props.roleName;
+        this.deletionForce = props.deletionForce;
         this.description = props.description;
         this.maxSessionDuration = props.maxSessionDuration;
         this.policies = props.policies;
@@ -1249,6 +1264,7 @@ export class RosRole extends ros.RosResource {
         return {
             assumeRolePolicyDocument: this.assumeRolePolicyDocument,
             roleName: this.roleName,
+            deletionForce: this.deletionForce,
             description: this.description,
             maxSessionDuration: this.maxSessionDuration,
             policies: this.policies,
@@ -1350,13 +1366,13 @@ export namespace RosRole {
          */
         readonly dateLessThanEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
         /**
-         * @Property numericEquals: undefined
-         */
-        readonly numericEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
-        /**
          * @Property dateGreaterThanEquals: undefined
          */
         readonly dateGreaterThanEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property numericEquals: undefined
+         */
+        readonly numericEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
         /**
          * @Property dateLessThan: undefined
          */
@@ -1418,8 +1434,8 @@ function RosRole_ConditionPropertyValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('numericLessThan', ros.hashValidator(ros.validateAny))(properties.numericLessThan));
     errors.collect(ros.propertyValidator('numericGreaterThan', ros.hashValidator(ros.validateAny))(properties.numericGreaterThan));
     errors.collect(ros.propertyValidator('dateLessThanEquals', ros.hashValidator(ros.validateAny))(properties.dateLessThanEquals));
-    errors.collect(ros.propertyValidator('numericEquals', ros.hashValidator(ros.validateAny))(properties.numericEquals));
     errors.collect(ros.propertyValidator('dateGreaterThanEquals', ros.hashValidator(ros.validateAny))(properties.dateGreaterThanEquals));
+    errors.collect(ros.propertyValidator('numericEquals', ros.hashValidator(ros.validateAny))(properties.numericEquals));
     errors.collect(ros.propertyValidator('dateLessThan', ros.hashValidator(ros.validateAny))(properties.dateLessThan));
     errors.collect(ros.propertyValidator('dateNotEquals', ros.hashValidator(ros.validateAny))(properties.dateNotEquals));
     errors.collect(ros.propertyValidator('stringNotLike', ros.hashValidator(ros.validateAny))(properties.stringNotLike));
@@ -1454,8 +1470,8 @@ function rosRoleConditionPropertyToRosTemplate(properties: any): any {
       NumericLessThan: ros.hashMapper(ros.objectToRosTemplate)(properties.numericLessThan),
       NumericGreaterThan: ros.hashMapper(ros.objectToRosTemplate)(properties.numericGreaterThan),
       DateLessThanEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.dateLessThanEquals),
-      NumericEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.numericEquals),
       DateGreaterThanEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.dateGreaterThanEquals),
+      NumericEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.numericEquals),
       DateLessThan: ros.hashMapper(ros.objectToRosTemplate)(properties.dateLessThan),
       DateNotEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.dateNotEquals),
       StringNotLike: ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotLike),
@@ -2248,7 +2264,6 @@ function RosUserPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
     errors.collect(ros.propertyValidator('policies', ros.listValidator(RosUser_PoliciesPropertyValidator))(properties.policies));
     errors.collect(ros.propertyValidator('email', ros.validateString)(properties.email));
-    errors.collect(ros.propertyValidator('groups', ros.listValidator(ros.validateAny))(properties.groups));
     if(properties.comments && (Array.isArray(properties.comments) || (typeof properties.comments) === 'string')) {
         errors.collect(ros.propertyValidator('comments', ros.validateLength)({
             data: properties.comments.length,
@@ -2257,6 +2272,7 @@ function RosUserPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('comments', ros.validateString)(properties.comments));
+    errors.collect(ros.propertyValidator('groups', ros.listValidator(ros.validateAny))(properties.groups));
     errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
     errors.collect(ros.propertyValidator('loginProfile', RosUser_LoginProfilePropertyValidator)(properties.loginProfile));
     errors.collect(ros.propertyValidator('mobilePhone', ros.validateString)(properties.mobilePhone));
