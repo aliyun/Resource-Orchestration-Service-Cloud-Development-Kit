@@ -1,5 +1,15 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.18] (2021-12-30)
+
+### Features
+
+-  ros-cdk-cli adding ros-cdk deploy --skip-if-no-changes When stack do not contains any new changes to skip stack checks.([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/31))
+
+### Bug Fixes
+
+-  Fix Typescript/Javascript/Java/Python/C# init project execute unittest error bug.
+
 ## [ros-cdk-cli 1.0.17] (2021-12-22)
 
 ### Features
