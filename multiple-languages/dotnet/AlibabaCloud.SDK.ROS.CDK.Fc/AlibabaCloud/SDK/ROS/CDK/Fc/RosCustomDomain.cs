@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -200,7 +200,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: certificate: certificate
             /// </remarks>
-            [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Certificate
             {
                 get;
@@ -210,7 +210,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: certName: custom certificate name
             /// </remarks>
-            [JsiiProperty(name: "certName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "certName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object CertName
             {
                 get;
@@ -220,7 +220,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: privateKey: private key
             /// </remarks>
-            [JsiiProperty(name: "privateKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "privateKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PrivateKey
             {
                 get;
@@ -264,7 +264,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: routes: PathConfig Array
             /// </remarks>
-            [JsiiProperty(name: "routes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosCustomDomain.RoutesProperty\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+            [JsiiProperty(name: "routes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosCustomDomain.RoutesProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Routes
             {
                 get;
@@ -367,7 +367,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: functionName: Path to the function, for example: "login"
             /// </remarks>
-            [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FunctionName
             {
                 get;
@@ -377,7 +377,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: path: HTTP request path when a function is called with a custom domain name, for example: "/login/*"
             /// </remarks>
-            [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Path
             {
                 get;
@@ -387,7 +387,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: serviceName: Path to the service, for example: "blogService"
             /// </remarks>
-            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServiceName
             {
                 get;
@@ -398,7 +398,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: qualifier: Service version or alias
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Qualifier
             {
                 get;

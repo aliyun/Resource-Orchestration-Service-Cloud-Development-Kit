@@ -2036,8 +2036,8 @@ export interface RosLoadBalancerProps {
 
     /**
      * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-     * When PricingCycle = month, the value range is 1-9
-     * When PeriodUnit = year, the value range is 1-3
+     * When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+     * When PeriodUnit = year, the value range is 1-3.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -2141,11 +2141,10 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateRange)({
-            data: properties.autoRenewPeriod,
-            min: 1,
-            max: 9,
-          }));
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriod,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
@@ -2380,8 +2379,8 @@ export class RosLoadBalancer extends ros.RosResource {
 
     /**
      * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-     * When PricingCycle = month, the value range is 1-9
-     * When PeriodUnit = year, the value range is 1-3
+     * When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+     * When PeriodUnit = year, the value range is 1-3.
      */
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 

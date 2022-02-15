@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.793Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.470Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -308,20 +308,24 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+         * <p>
+         * When PeriodUnit = year, the value range is 1-3.
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36. This parameter is required.
          */
         public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
             this.props().autoRenewPeriod(autoRenewPeriod);
             return this;
         }
         /**
-         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+         * <p>
+         * When PeriodUnit = year, the value range is 1-3.
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36. This parameter is required.
          */
         public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
             this.props().autoRenewPeriod(autoRenewPeriod);

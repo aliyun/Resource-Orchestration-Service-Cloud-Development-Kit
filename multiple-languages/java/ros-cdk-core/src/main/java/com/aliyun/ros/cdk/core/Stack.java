@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A root construct which represents a single ROS stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.529Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:06.813Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.ITaggable {
 
@@ -303,7 +303,6 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
      * Example:
      * <p>
      * <blockquote><pre>
-     * // Example automatically generated from non-compiling source. May contain errors.
      * MyStack.template.json
      * </pre></blockquote>
      */

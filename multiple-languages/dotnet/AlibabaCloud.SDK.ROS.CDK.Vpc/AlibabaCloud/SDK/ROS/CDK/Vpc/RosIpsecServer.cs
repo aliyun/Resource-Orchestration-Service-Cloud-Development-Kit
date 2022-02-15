@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -373,7 +373,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ikeAuthAlg: The authentication algorithm negotiated in the first phase. Default value: sha1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ikeAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ikeAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IkeAuthAlg
             {
                 get;
@@ -384,7 +384,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ikeEncAlg: Encryption algorithm negotiated in the first stage. Default value: aes.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ikeEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ikeEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IkeEncAlg
             {
                 get;
@@ -395,7 +395,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ikeLifetime: The life cycle of the SA negotiated in the first phase. Default value: 86400, in seconds.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ikeLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ikeLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IkeLifetime
             {
                 get;
@@ -406,7 +406,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ikeMode: Negotiation mode of the IKE version. Default value: main.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ikeMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ikeMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IkeMode
             {
                 get;
@@ -417,7 +417,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ikePfs: The Diffie-Hellman key exchange algorithm used in the first stage of negotiation. Default value: group2.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ikePfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ikePfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IkePfs
             {
                 get;
@@ -428,7 +428,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ikeVersion: The version of the IKE protocol. Value: ikev1 or ikev2, default value: ikev2.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ikeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ikeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IkeVersion
             {
                 get;
@@ -439,7 +439,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: localId: IPsec server ID. Support FQDN and IP address format, the default value is the VPN gateway public network IP address.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "localId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "localId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? LocalId
             {
                 get;
@@ -450,7 +450,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: remoteId: Peer ID. Support FQDN and IP address format, the default value is empty.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "remoteId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "remoteId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RemoteId
             {
                 get;
@@ -567,7 +567,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ipsecAuthAlg: The authentication algorithm negotiated in the second phase. Default value: sha1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipsecAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ipsecAuthAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IpsecAuthAlg
             {
                 get;
@@ -578,7 +578,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ipsecEncAlg: Encryption algorithm negotiated in the second stage. Default value: aes.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipsecEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ipsecEncAlg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IpsecEncAlg
             {
                 get;
@@ -589,7 +589,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ipsecLifetime: The lifetime of the SA negotiated in the second stage. Default value: 86400, in seconds.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipsecLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ipsecLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IpsecLifetime
             {
                 get;
@@ -600,7 +600,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: ipsecPfs: The Diffie-Hellman key exchange algorithm used in the second phase of negotiation. Default value: group2.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipsecPfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ipsecPfs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IpsecPfs
             {
                 get;

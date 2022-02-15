@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.214Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.156Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosNamespaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosNamespaceProps.Jsii$Proxy.class)
 public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,12 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosNamespaceProps}
      */
     static Builder builder() {
@@ -37,6 +43,7 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object namespace;
         java.lang.Object autoCreate;
         java.lang.Object defaultVisibility;
+        java.lang.Object instanceId;
 
         /**
          * Sets the value of {@link RosNamespaceProps#getNamespace}
@@ -99,6 +106,26 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosNamespaceProps#getInstanceId}
+         * @param instanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceId(java.lang.String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNamespaceProps#getInstanceId}
+         * @param instanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosNamespaceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -117,6 +144,7 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object namespace;
         private final java.lang.Object autoCreate;
         private final java.lang.Object defaultVisibility;
+        private final java.lang.Object instanceId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -127,6 +155,7 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoCreate = software.amazon.jsii.Kernel.get(this, "autoCreate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultVisibility = software.amazon.jsii.Kernel.get(this, "defaultVisibility", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -137,6 +166,7 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
             this.namespace = java.util.Objects.requireNonNull(builder.namespace, "namespace is required");
             this.autoCreate = builder.autoCreate;
             this.defaultVisibility = builder.defaultVisibility;
+            this.instanceId = builder.instanceId;
         }
 
         @Override
@@ -155,6 +185,11 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getInstanceId() {
+            return this.instanceId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -166,6 +201,9 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getDefaultVisibility() != null) {
                 data.set("defaultVisibility", om.valueToTree(this.getDefaultVisibility()));
+            }
+            if (this.getInstanceId() != null) {
+                data.set("instanceId", om.valueToTree(this.getInstanceId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -187,7 +225,8 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
 
             if (!namespace.equals(that.namespace)) return false;
             if (this.autoCreate != null ? !this.autoCreate.equals(that.autoCreate) : that.autoCreate != null) return false;
-            return this.defaultVisibility != null ? this.defaultVisibility.equals(that.defaultVisibility) : that.defaultVisibility == null;
+            if (this.defaultVisibility != null ? !this.defaultVisibility.equals(that.defaultVisibility) : that.defaultVisibility != null) return false;
+            return this.instanceId != null ? this.instanceId.equals(that.instanceId) : that.instanceId == null;
         }
 
         @Override
@@ -195,6 +234,7 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
             int result = this.namespace.hashCode();
             result = 31 * result + (this.autoCreate != null ? this.autoCreate.hashCode() : 0);
             result = 31 * result + (this.defaultVisibility != null ? this.defaultVisibility.hashCode() : 0);
+            result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             return result;
         }
     }

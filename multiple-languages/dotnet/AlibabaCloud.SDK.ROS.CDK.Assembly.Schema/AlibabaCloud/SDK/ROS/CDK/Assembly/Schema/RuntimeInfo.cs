@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class RuntimeInfo : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IRuntimeInfo
     {
         /// <summary>The list of libraries loaded in the application, associated with their versions.</summary>
-        [JsiiProperty(name: "libraries", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOverride: true)]
+        [JsiiProperty(name: "libraries", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}")]
         public System.Collections.Generic.IDictionary<string, string> Libraries
         {
             get;

@@ -39,7 +39,7 @@ export interface InstanceGroupProps {
     readonly autoRenew?: string | ros.IResolvable;
 
     /**
-     * Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
+     * Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.Old instances will not be changed.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 

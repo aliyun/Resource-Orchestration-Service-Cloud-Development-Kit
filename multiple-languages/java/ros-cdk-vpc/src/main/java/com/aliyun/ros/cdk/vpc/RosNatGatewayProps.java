@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.952Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.597Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosNatGatewayProps.Jsii$Proxy.class)
 public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -84,12 +84,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getSpec() {
-        return null;
-    }
-
-    /**
-     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> getTags() {
         return null;
     }
@@ -117,7 +111,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object natType;
         java.lang.Object networkType;
         java.lang.Object pricingCycle;
-        java.lang.Object spec;
         java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
         /**
@@ -381,26 +374,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
-         * Sets the value of {@link RosNatGatewayProps#getSpec}
-         * @param spec the value to be set.
-         * @return {@code this}
-         */
-        public Builder spec(java.lang.String spec) {
-            this.spec = spec;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosNatGatewayProps#getSpec}
-         * @param spec the value to be set.
-         * @return {@code this}
-         */
-        public Builder spec(com.aliyun.ros.cdk.core.IResolvable spec) {
-            this.spec = spec;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosNatGatewayProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -440,7 +413,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object natType;
         private final java.lang.Object networkType;
         private final java.lang.Object pricingCycle;
-        private final java.lang.Object spec;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
         /**
@@ -462,7 +434,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.natType = software.amazon.jsii.Kernel.get(this, "natType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty.class)));
         }
 
@@ -485,7 +456,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.natType = builder.natType;
             this.networkType = builder.networkType;
             this.pricingCycle = builder.pricingCycle;
-            this.spec = builder.spec;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty>)builder.tags;
         }
 
@@ -555,11 +525,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.Object getSpec() {
-            return this.spec;
-        }
-
-        @Override
         public final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> getTags() {
             return this.tags;
         }
@@ -605,9 +570,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
-            if (this.getSpec() != null) {
-                data.set("spec", om.valueToTree(this.getSpec()));
-            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -642,7 +604,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.natType != null ? !this.natType.equals(that.natType) : that.natType != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
-            if (this.spec != null ? !this.spec.equals(that.spec) : that.spec != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -661,7 +622,6 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.natType != null ? this.natType.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
-            result = 31 * result + (this.spec != null ? this.spec.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

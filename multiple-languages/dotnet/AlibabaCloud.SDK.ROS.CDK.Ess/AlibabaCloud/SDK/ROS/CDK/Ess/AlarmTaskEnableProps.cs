@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
     public class AlarmTaskEnableProps : AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskEnableProps
     {
         /// <summary>Property alarmTaskId: The id of alarm task.</summary>
-        [JsiiProperty(name: "alarmTaskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "alarmTaskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AlarmTaskId
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <summary>Property enable: Enable alarm task or not.</summary>
-        [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Enable
         {
             get;

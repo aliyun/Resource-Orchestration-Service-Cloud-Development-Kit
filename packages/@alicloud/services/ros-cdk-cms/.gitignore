@@ -5,4 +5,4 @@ dist
 tsconfig.json
 .jsii
 .npmignore
-tsconfig.json
+*.tgz

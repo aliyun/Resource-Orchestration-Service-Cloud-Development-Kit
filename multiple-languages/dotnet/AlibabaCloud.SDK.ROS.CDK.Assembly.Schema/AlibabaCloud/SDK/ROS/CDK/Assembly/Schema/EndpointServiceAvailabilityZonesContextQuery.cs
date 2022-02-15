@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class EndpointServiceAvailabilityZonesContextQuery : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IEndpointServiceAvailabilityZonesContextQuery
     {
         /// <summary>Query account.</summary>
-        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}")]
         public string Account
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         }
 
         /// <summary>Query region.</summary>
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}")]
         public string Region
         {
             get;
@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         }
 
         /// <summary>Query service name.</summary>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}")]
         public string ServiceName
         {
             get;

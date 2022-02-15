@@ -1,4 +1,8 @@
 @alicloud/ros-cdk-mse.Cluster=com.aliyun.ros.cdk.mse.Cluster
 @alicloud/ros-cdk-mse.ClusterProps=com.aliyun.ros.cdk.mse.ClusterProps
+@alicloud/ros-cdk-mse.Gateway=com.aliyun.ros.cdk.mse.Gateway
+@alicloud/ros-cdk-mse.GatewayProps=com.aliyun.ros.cdk.mse.GatewayProps
 @alicloud/ros-cdk-mse.RosCluster=com.aliyun.ros.cdk.mse.RosCluster
 @alicloud/ros-cdk-mse.RosClusterProps=com.aliyun.ros.cdk.mse.RosClusterProps
+@alicloud/ros-cdk-mse.RosGateway=com.aliyun.ros.cdk.mse.RosGateway
+@alicloud/ros-cdk-mse.RosGatewayProps=com.aliyun.ros.cdk.mse.RosGatewayProps

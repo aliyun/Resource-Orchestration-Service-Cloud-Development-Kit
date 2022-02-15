@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * Properties for defining a `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.259Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.105Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.TopicProps")
 @software.amazon.jsii.Jsii.Proxy(TopicProps.Jsii$Proxy.class)
 public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,50 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getTopic();
 
     /**
+     * Property compactTopic: The log cleanup policy for the topic.
+     * <p>
+     * This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+     * false: uses the default log cleanup policy.
+     * true: uses the Apache Kafka log compaction policy.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCompactTopic() {
+        return null;
+    }
+
+    /**
+     * Property config: Supplementary configuration.
+     * <p>
+     * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConfig() {
+        return null;
+    }
+
+    /**
+     * Property localTopic: The storage engine of the topic.
+     * <p>
+     * Valid values:
+     * false: the Cloud Storage mode.
+     * true: the Local Storage mode.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLocalTopic() {
+        return null;
+    }
+
+    /**
+     * Property minInsyncReplicas: The minimum number of ISR sync replicas.
+     * <p>
+     * This parameter can only be specified if the LocalTopic value is true.
+     * The value must be less than the number of Topic copies.
+     * The number of synchronous replicas is limited to 1~3.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinInsyncReplicas() {
+        return null;
+    }
+
+    /**
      * Property partitionNum: The number of partitions in the topic.
      * <p>
      * Valid values:
@@ -45,6 +89,17 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
      * risk of data skew.Note:For special requirements,submit a ticket.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPartitionNum() {
+        return null;
+    }
+
+    /**
+     * Property replicationFactor: The number of copies of the topic.
+     * <p>
+     * This parameter can only be specified if the LocalTopic value is true.
+     * The number of copies is limited to 1~3.
+     * Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReplicationFactor() {
         return null;
     }
 
@@ -61,7 +116,12 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object instanceId;
         java.lang.Object remark;
         java.lang.Object topic;
+        java.lang.Object compactTopic;
+        java.lang.Object config;
+        java.lang.Object localTopic;
+        java.lang.Object minInsyncReplicas;
         java.lang.Object partitionNum;
+        java.lang.Object replicationFactor;
 
         /**
          * Sets the value of {@link TopicProps#getInstanceId}
@@ -144,6 +204,110 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getCompactTopic}
+         * @param compactTopic Property compactTopic: The log cleanup policy for the topic.
+         *                     This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+         *                     false: uses the default log cleanup policy.
+         *                     true: uses the Apache Kafka log compaction policy.
+         * @return {@code this}
+         */
+        public Builder compactTopic(java.lang.Boolean compactTopic) {
+            this.compactTopic = compactTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getCompactTopic}
+         * @param compactTopic Property compactTopic: The log cleanup policy for the topic.
+         *                     This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+         *                     false: uses the default log cleanup policy.
+         *                     true: uses the Apache Kafka log compaction policy.
+         * @return {@code this}
+         */
+        public Builder compactTopic(com.aliyun.ros.cdk.core.IResolvable compactTopic) {
+            this.compactTopic = compactTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getConfig}
+         * @param config Property config: Supplementary configuration.
+         *               Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+         *               This parameter can only be specified if the LocalTopic value is true.
+         *               NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+         * @return {@code this}
+         */
+        public Builder config(com.aliyun.ros.cdk.core.IResolvable config) {
+            this.config = config;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getConfig}
+         * @param config Property config: Supplementary configuration.
+         *               Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+         *               This parameter can only be specified if the LocalTopic value is true.
+         *               NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+         * @return {@code this}
+         */
+        public Builder config(java.util.Map<java.lang.String, ? extends java.lang.Object> config) {
+            this.config = config;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getLocalTopic}
+         * @param localTopic Property localTopic: The storage engine of the topic.
+         *                   Valid values:
+         *                   false: the Cloud Storage mode.
+         *                   true: the Local Storage mode.
+         * @return {@code this}
+         */
+        public Builder localTopic(java.lang.Boolean localTopic) {
+            this.localTopic = localTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getLocalTopic}
+         * @param localTopic Property localTopic: The storage engine of the topic.
+         *                   Valid values:
+         *                   false: the Cloud Storage mode.
+         *                   true: the Local Storage mode.
+         * @return {@code this}
+         */
+        public Builder localTopic(com.aliyun.ros.cdk.core.IResolvable localTopic) {
+            this.localTopic = localTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getMinInsyncReplicas}
+         * @param minInsyncReplicas Property minInsyncReplicas: The minimum number of ISR sync replicas.
+         *                          This parameter can only be specified if the LocalTopic value is true.
+         *                          The value must be less than the number of Topic copies.
+         *                          The number of synchronous replicas is limited to 1~3.
+         * @return {@code this}
+         */
+        public Builder minInsyncReplicas(java.lang.Number minInsyncReplicas) {
+            this.minInsyncReplicas = minInsyncReplicas;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getMinInsyncReplicas}
+         * @param minInsyncReplicas Property minInsyncReplicas: The minimum number of ISR sync replicas.
+         *                          This parameter can only be specified if the LocalTopic value is true.
+         *                          The value must be less than the number of Topic copies.
+         *                          The number of synchronous replicas is limited to 1~3.
+         * @return {@code this}
+         */
+        public Builder minInsyncReplicas(com.aliyun.ros.cdk.core.IResolvable minInsyncReplicas) {
+            this.minInsyncReplicas = minInsyncReplicas;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getPartitionNum}
          * @param partitionNum Property partitionNum: The number of partitions in the topic.
          *                     Valid values:
@@ -172,6 +336,32 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getReplicationFactor}
+         * @param replicationFactor Property replicationFactor: The number of copies of the topic.
+         *                          This parameter can only be specified if the LocalTopic value is true.
+         *                          The number of copies is limited to 1~3.
+         *                          Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+         * @return {@code this}
+         */
+        public Builder replicationFactor(java.lang.Number replicationFactor) {
+            this.replicationFactor = replicationFactor;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getReplicationFactor}
+         * @param replicationFactor Property replicationFactor: The number of copies of the topic.
+         *                          This parameter can only be specified if the LocalTopic value is true.
+         *                          The number of copies is limited to 1~3.
+         *                          Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+         * @return {@code this}
+         */
+        public Builder replicationFactor(com.aliyun.ros.cdk.core.IResolvable replicationFactor) {
+            this.replicationFactor = replicationFactor;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link TopicProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -190,7 +380,12 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object instanceId;
         private final java.lang.Object remark;
         private final java.lang.Object topic;
+        private final java.lang.Object compactTopic;
+        private final java.lang.Object config;
+        private final java.lang.Object localTopic;
+        private final java.lang.Object minInsyncReplicas;
         private final java.lang.Object partitionNum;
+        private final java.lang.Object replicationFactor;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -201,7 +396,12 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.compactTopic = software.amazon.jsii.Kernel.get(this, "compactTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.localTopic = software.amazon.jsii.Kernel.get(this, "localTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minInsyncReplicas = software.amazon.jsii.Kernel.get(this, "minInsyncReplicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.partitionNum = software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.replicationFactor = software.amazon.jsii.Kernel.get(this, "replicationFactor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -212,7 +412,12 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
             this.remark = java.util.Objects.requireNonNull(builder.remark, "remark is required");
             this.topic = java.util.Objects.requireNonNull(builder.topic, "topic is required");
+            this.compactTopic = builder.compactTopic;
+            this.config = builder.config;
+            this.localTopic = builder.localTopic;
+            this.minInsyncReplicas = builder.minInsyncReplicas;
             this.partitionNum = builder.partitionNum;
+            this.replicationFactor = builder.replicationFactor;
         }
 
         @Override
@@ -231,8 +436,33 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getCompactTopic() {
+            return this.compactTopic;
+        }
+
+        @Override
+        public final java.lang.Object getConfig() {
+            return this.config;
+        }
+
+        @Override
+        public final java.lang.Object getLocalTopic() {
+            return this.localTopic;
+        }
+
+        @Override
+        public final java.lang.Object getMinInsyncReplicas() {
+            return this.minInsyncReplicas;
+        }
+
+        @Override
         public final java.lang.Object getPartitionNum() {
             return this.partitionNum;
+        }
+
+        @Override
+        public final java.lang.Object getReplicationFactor() {
+            return this.replicationFactor;
         }
 
         @Override
@@ -244,8 +474,23 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
             data.set("instanceId", om.valueToTree(this.getInstanceId()));
             data.set("remark", om.valueToTree(this.getRemark()));
             data.set("topic", om.valueToTree(this.getTopic()));
+            if (this.getCompactTopic() != null) {
+                data.set("compactTopic", om.valueToTree(this.getCompactTopic()));
+            }
+            if (this.getConfig() != null) {
+                data.set("config", om.valueToTree(this.getConfig()));
+            }
+            if (this.getLocalTopic() != null) {
+                data.set("localTopic", om.valueToTree(this.getLocalTopic()));
+            }
+            if (this.getMinInsyncReplicas() != null) {
+                data.set("minInsyncReplicas", om.valueToTree(this.getMinInsyncReplicas()));
+            }
             if (this.getPartitionNum() != null) {
                 data.set("partitionNum", om.valueToTree(this.getPartitionNum()));
+            }
+            if (this.getReplicationFactor() != null) {
+                data.set("replicationFactor", om.valueToTree(this.getReplicationFactor()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -268,7 +513,12 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
             if (!instanceId.equals(that.instanceId)) return false;
             if (!remark.equals(that.remark)) return false;
             if (!topic.equals(that.topic)) return false;
-            return this.partitionNum != null ? this.partitionNum.equals(that.partitionNum) : that.partitionNum == null;
+            if (this.compactTopic != null ? !this.compactTopic.equals(that.compactTopic) : that.compactTopic != null) return false;
+            if (this.config != null ? !this.config.equals(that.config) : that.config != null) return false;
+            if (this.localTopic != null ? !this.localTopic.equals(that.localTopic) : that.localTopic != null) return false;
+            if (this.minInsyncReplicas != null ? !this.minInsyncReplicas.equals(that.minInsyncReplicas) : that.minInsyncReplicas != null) return false;
+            if (this.partitionNum != null ? !this.partitionNum.equals(that.partitionNum) : that.partitionNum != null) return false;
+            return this.replicationFactor != null ? this.replicationFactor.equals(that.replicationFactor) : that.replicationFactor == null;
         }
 
         @Override
@@ -276,7 +526,12 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.instanceId.hashCode();
             result = 31 * result + (this.remark.hashCode());
             result = 31 * result + (this.topic.hashCode());
+            result = 31 * result + (this.compactTopic != null ? this.compactTopic.hashCode() : 0);
+            result = 31 * result + (this.config != null ? this.config.hashCode() : 0);
+            result = 31 * result + (this.localTopic != null ? this.localTopic.hashCode() : 0);
+            result = 31 * result + (this.minInsyncReplicas != null ? this.minInsyncReplicas.hashCode() : 0);
             result = 31 * result + (this.partitionNum != null ? this.partitionNum.hashCode() : 0);
+            result = 31 * result + (this.replicationFactor != null ? this.replicationFactor.hashCode() : 0);
             return result;
         }
     }

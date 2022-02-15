@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.932Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.566Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGateway")
 public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
 
@@ -300,7 +300,6 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * Valid values:
          * PayBySpec: billed on a pay-by-specification basis.
-         * PayByLcu: billed on a pay-by-LCU basis.
          * <p>
          * @return {@code this}
          * @param internetChargeType Property internetChargeType: The billing method for the NAT gateway. This parameter is required.
@@ -314,7 +313,6 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * Valid values:
          * PayBySpec: billed on a pay-by-specification basis.
-         * PayByLcu: billed on a pay-by-LCU basis.
          * <p>
          * @return {@code this}
          * @param internetChargeType Property internetChargeType: The billing method for the NAT gateway. This parameter is required.
@@ -427,31 +425,6 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.props.pricingCycle(pricingCycle);
-            return this;
-        }
-
-        /**
-         * Property spec: NAT gateway specification.
-         * <p>
-         * Now support 'Small|Middle|Large|XLarge.1'
-         * <p>
-         * @return {@code this}
-         * @param spec Property spec: NAT gateway specification. This parameter is required.
-         */
-        public Builder spec(final java.lang.String spec) {
-            this.props.spec(spec);
-            return this;
-        }
-        /**
-         * Property spec: NAT gateway specification.
-         * <p>
-         * Now support 'Small|Middle|Large|XLarge.1'
-         * <p>
-         * @return {@code this}
-         * @param spec Property spec: NAT gateway specification. This parameter is required.
-         */
-        public Builder spec(final com.aliyun.ros.cdk.core.IResolvable spec) {
-            this.props.spec(spec);
             return this;
         }
 

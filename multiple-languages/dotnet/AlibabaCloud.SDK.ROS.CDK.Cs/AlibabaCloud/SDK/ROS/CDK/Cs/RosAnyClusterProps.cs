@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// <strong>Property</strong>: clusterConfig: Cluster config.
         /// </remarks>
-        [JsiiProperty(name: "clusterConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOverride: true)]
+        [JsiiProperty(name: "clusterConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         public object ClusterConfig
         {
             get;

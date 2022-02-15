@@ -9,6 +9,8 @@ dist/
 package-lock.json
 .idea
 
+.python-version
+
 # this file will only be used local when the jar has not been upload to central or remote repo
 scripts/install-packages
 
@@ -20,3 +22,7 @@ multiple-languages/java-test/bin
 multiple-languages/java-test/target
 multiple-languages/java-test/.classpath
 multiple-languages/java-test/.project
+
+tmp_specification_origin.json
+
+packages/@alicloud/test/

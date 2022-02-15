@@ -39,6 +39,11 @@ export interface CopyImageProps {
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of the resource group to which the image copy belongs. If not provided, the image copy belongs to the default resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property sourceRegionId: ID of the region to where the source image belongs. Default is current region ID.
      */
     readonly sourceRegionId?: string | ros.IResolvable;
@@ -87,6 +92,7 @@ export class CopyImage extends ros.Resource {
         const rosCopyImage = new RosCopyImage(this, id,  {
             sourceRegionId: props.sourceRegionId,
             kmsKeyId: props.kmsKeyId,
+            resourceGroupId: props.resourceGroupId,
             destinationRegionId: props.destinationRegionId,
             encrypted: props.encrypted,
             imageId: props.imageId,

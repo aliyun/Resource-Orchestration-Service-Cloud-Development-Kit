@@ -1,4 +1,13 @@
 @alicloud/ros-cdk-tsdb.HiTSDBInstance=com.aliyun.ros.cdk.tsdb.HiTSDBInstance
 @alicloud/ros-cdk-tsdb.HiTSDBInstanceProps=com.aliyun.ros.cdk.tsdb.HiTSDBInstanceProps
+@alicloud/ros-cdk-tsdb.InfluxDBDatabase=com.aliyun.ros.cdk.tsdb.InfluxDBDatabase
+@alicloud/ros-cdk-tsdb.InfluxDBDatabaseProps=com.aliyun.ros.cdk.tsdb.InfluxDBDatabaseProps
+@alicloud/ros-cdk-tsdb.InfluxDBUser=com.aliyun.ros.cdk.tsdb.InfluxDBUser
+@alicloud/ros-cdk-tsdb.InfluxDBUserProps=com.aliyun.ros.cdk.tsdb.InfluxDBUserProps
 @alicloud/ros-cdk-tsdb.RosHiTSDBInstance=com.aliyun.ros.cdk.tsdb.RosHiTSDBInstance
 @alicloud/ros-cdk-tsdb.RosHiTSDBInstanceProps=com.aliyun.ros.cdk.tsdb.RosHiTSDBInstanceProps
+@alicloud/ros-cdk-tsdb.RosInfluxDBDatabase=com.aliyun.ros.cdk.tsdb.RosInfluxDBDatabase
+@alicloud/ros-cdk-tsdb.RosInfluxDBDatabaseProps=com.aliyun.ros.cdk.tsdb.RosInfluxDBDatabaseProps
+@alicloud/ros-cdk-tsdb.RosInfluxDBUser=com.aliyun.ros.cdk.tsdb.RosInfluxDBUser
+@alicloud/ros-cdk-tsdb.RosInfluxDBUser.DatabasePermissionsProperty=com.aliyun.ros.cdk.tsdb.RosInfluxDBUser$DatabasePermissionsProperty
+@alicloud/ros-cdk-tsdb.RosInfluxDBUserProps=com.aliyun.ros.cdk.tsdb.RosInfluxDBUserProps

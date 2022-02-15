@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: "tags"
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tagPropertyName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "tagPropertyName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? TagPropertyName
         {
             get;

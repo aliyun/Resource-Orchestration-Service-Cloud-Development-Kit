@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - None.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "expression", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "expression", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression? Expression
         {
             get;

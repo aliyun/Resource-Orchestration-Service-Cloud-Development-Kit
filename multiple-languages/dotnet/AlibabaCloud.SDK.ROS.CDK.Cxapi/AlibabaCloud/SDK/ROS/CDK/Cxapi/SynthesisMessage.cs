@@ -9,21 +9,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cxapi.SynthesisMessage")]
     public class SynthesisMessage : AlibabaCloud.SDK.ROS.CDK.Cxapi.ISynthesisMessage
     {
-        [JsiiProperty(name: "entry", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.MetadataEntry\"}", isOverride: true)]
+        [JsiiProperty(name: "entry", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.MetadataEntry\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IMetadataEntry Entry
         {
             get;
             set;
         }
 
-        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
         public string Id
         {
             get;
             set;
         }
 
-        [JsiiProperty(name: "level", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cxapi.SynthesisMessageLevel\"}", isOverride: true)]
+        [JsiiProperty(name: "level", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cxapi.SynthesisMessageLevel\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Cxapi.SynthesisMessageLevel Level
         {
             get;

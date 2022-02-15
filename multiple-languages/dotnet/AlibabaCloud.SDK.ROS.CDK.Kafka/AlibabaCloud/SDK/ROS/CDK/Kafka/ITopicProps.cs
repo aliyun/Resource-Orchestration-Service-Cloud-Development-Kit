@@ -45,6 +45,70 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             get;
         }
 
+        /// <summary>Property compactTopic: The log cleanup policy for the topic.</summary>
+        /// <remarks>
+        /// This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+        /// false: uses the default log cleanup policy.
+        /// true: uses the Apache Kafka log compaction policy.
+        /// </remarks>
+        [JsiiProperty(name: "compactTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CompactTopic
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property config: Supplementary configuration.</summary>
+        /// <remarks>
+        /// Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+        /// This parameter can only be specified if the LocalTopic value is true.
+        /// NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+        /// </remarks>
+        [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Config
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property localTopic: The storage engine of the topic.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// false: the Cloud Storage mode.
+        /// true: the Local Storage mode.
+        /// </remarks>
+        [JsiiProperty(name: "localTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LocalTopic
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property minInsyncReplicas: The minimum number of ISR sync replicas.</summary>
+        /// <remarks>
+        /// This parameter can only be specified if the LocalTopic value is true.
+        /// The value must be less than the number of Topic copies.
+        /// The number of synchronous replicas is limited to 1~3.
+        /// </remarks>
+        [JsiiProperty(name: "minInsyncReplicas", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MinInsyncReplicas
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property partitionNum: The number of partitions in the topic.</summary>
         /// <remarks>
         /// Valid values:
@@ -55,6 +119,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PartitionNum
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property replicationFactor: The number of copies of the topic.</summary>
+        /// <remarks>
+        /// This parameter can only be specified if the LocalTopic value is true.
+        /// The number of copies is limited to 1~3.
+        /// Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+        /// </remarks>
+        [JsiiProperty(name: "replicationFactor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ReplicationFactor
         {
             get
             {
@@ -107,6 +187,58 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property compactTopic: The log cleanup policy for the topic.</summary>
+            /// <remarks>
+            /// This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+            /// false: uses the default log cleanup policy.
+            /// true: uses the Apache Kafka log compaction policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "compactTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CompactTopic
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property config: Supplementary configuration.</summary>
+            /// <remarks>
+            /// Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+            /// This parameter can only be specified if the LocalTopic value is true.
+            /// NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? Config
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property localTopic: The storage engine of the topic.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// false: the Cloud Storage mode.
+            /// true: the Local Storage mode.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "localTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LocalTopic
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property minInsyncReplicas: The minimum number of ISR sync replicas.</summary>
+            /// <remarks>
+            /// This parameter can only be specified if the LocalTopic value is true.
+            /// The value must be less than the number of Topic copies.
+            /// The number of synchronous replicas is limited to 1~3.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "minInsyncReplicas", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MinInsyncReplicas
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property partitionNum: The number of partitions in the topic.</summary>
             /// <remarks>
             /// Valid values:
@@ -117,6 +249,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             [JsiiOptional]
             [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PartitionNum
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property replicationFactor: The number of copies of the topic.</summary>
+            /// <remarks>
+            /// This parameter can only be specified if the LocalTopic value is true.
+            /// The number of copies is limited to 1~3.
+            /// Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "replicationFactor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ReplicationFactor
             {
                 get => GetInstanceProperty<object?>();
             }

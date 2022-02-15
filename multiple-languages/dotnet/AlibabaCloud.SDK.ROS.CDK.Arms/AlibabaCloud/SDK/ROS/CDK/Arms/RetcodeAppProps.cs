@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
         /// </remarks>
-        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RegionId
         {
             get;
@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         }
 
         /// <summary>Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.</summary>
-        [JsiiProperty(name: "retcodeAppName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "retcodeAppName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RetcodeAppName
         {
             get;
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
         /// </remarks>
-        [JsiiProperty(name: "retcodeAppType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "retcodeAppType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RetcodeAppType
         {
             get;

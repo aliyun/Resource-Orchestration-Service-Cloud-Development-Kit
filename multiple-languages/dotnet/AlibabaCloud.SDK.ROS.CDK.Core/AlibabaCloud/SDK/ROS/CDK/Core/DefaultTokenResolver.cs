@@ -36,7 +36,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
-        [JsiiMethod(name: "resolveList", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"xs\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]", isOverride: true)]
+        [JsiiMethod(name: "resolveList", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"xs\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]")]
         public virtual object ResolveList(string[] xs, AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext context)
         {
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(string[]), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext)}, new object[]{xs, context})!;
@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
-        [JsiiMethod(name: "resolveString", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"fragments\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.TokenizedStringFragments\"}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]", isOverride: true)]
+        [JsiiMethod(name: "resolveString", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"fragments\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.TokenizedStringFragments\"}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]")]
         public virtual object ResolveString(AlibabaCloud.SDK.ROS.CDK.Core.TokenizedStringFragments fragments, AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext context)
         {
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.TokenizedStringFragments), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext)}, new object[]{fragments, context})!;
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
-        [JsiiMethod(name: "resolveToken", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"t\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}},{\"name\":\"postProcessor\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IPostProcessor\"}}]", isOverride: true)]
+        [JsiiMethod(name: "resolveToken", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"t\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}},{\"name\":\"postProcessor\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IPostProcessor\"}}]")]
         public virtual object ResolveToken(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable t, AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext context, AlibabaCloud.SDK.ROS.CDK.Core.IPostProcessor postProcessor)
         {
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IPostProcessor)}, new object[]{t, context, postProcessor})!;

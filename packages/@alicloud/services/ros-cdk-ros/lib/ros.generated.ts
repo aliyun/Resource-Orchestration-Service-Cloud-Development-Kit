@@ -450,6 +450,180 @@ function rosCustomResourceHttpConfigPropertyToRosTemplate(properties: any): any 
 }
 
 /**
+ * Properties for defining a `ALIYUN::ROS::Sleep`
+ */
+export interface RosSleepProps {
+
+    /**
+     * @Property createDuration: The number of seconds to wait before resource creation.
+     */
+    readonly createDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property deleteDuration: The number of seconds to wait before resource deletion.
+     */
+    readonly deleteDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property triggers: Arbitrary map of values that, when changed, will run update or update rollback delays again.
+     */
+    readonly triggers?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property updateDuration: The number of seconds to wait before resource update. It only triggers when the property Triggers change and the status of stack is UPDATE_IN_PROGRESS.
+     */
+    readonly updateDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property updateRollbackDuration: The number of seconds to wait before resource update rollback. It only triggers when stack update failed and resource was updated.
+     */
+    readonly updateRollbackDuration?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSleepProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSleepProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSleepPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.deleteDuration && (typeof properties.deleteDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('deleteDuration', ros.validateRange)({
+            data: properties.deleteDuration,
+            min: 0,
+            max: 1800,
+          }));
+    }
+    errors.collect(ros.propertyValidator('deleteDuration', ros.validateNumber)(properties.deleteDuration));
+    if(properties.updateRollbackDuration && (typeof properties.updateRollbackDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('updateRollbackDuration', ros.validateRange)({
+            data: properties.updateRollbackDuration,
+            min: 0,
+            max: 1800,
+          }));
+    }
+    errors.collect(ros.propertyValidator('updateRollbackDuration', ros.validateNumber)(properties.updateRollbackDuration));
+    if(properties.updateDuration && (typeof properties.updateDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('updateDuration', ros.validateRange)({
+            data: properties.updateDuration,
+            min: 0,
+            max: 1800,
+          }));
+    }
+    errors.collect(ros.propertyValidator('updateDuration', ros.validateNumber)(properties.updateDuration));
+    if(properties.createDuration && (typeof properties.createDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('createDuration', ros.validateRange)({
+            data: properties.createDuration,
+            min: 0,
+            max: 1800,
+          }));
+    }
+    errors.collect(ros.propertyValidator('createDuration', ros.validateNumber)(properties.createDuration));
+    errors.collect(ros.propertyValidator('triggers', ros.hashValidator(ros.validateAny))(properties.triggers));
+    return errors.wrap('supplied properties not correct for "RosSleepProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::Sleep` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSleepProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::Sleep` resource.
+ */
+// @ts-ignore TS6133
+function rosSleepPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSleepPropsValidator(properties).assertSuccess();
+    }
+    return {
+      CreateDuration: ros.numberToRosTemplate(properties.createDuration),
+      DeleteDuration: ros.numberToRosTemplate(properties.deleteDuration),
+      Triggers: ros.hashMapper(ros.objectToRosTemplate)(properties.triggers),
+      UpdateDuration: ros.numberToRosTemplate(properties.updateDuration),
+      UpdateRollbackDuration: ros.numberToRosTemplate(properties.updateRollbackDuration),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ROS::Sleep`
+ */
+export class RosSleep extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::Sleep";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property createDuration: The number of seconds to wait before resource creation.
+     */
+    public createDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property deleteDuration: The number of seconds to wait before resource deletion.
+     */
+    public deleteDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property triggers: Arbitrary map of values that, when changed, will run update or update rollback delays again.
+     */
+    public triggers: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property updateDuration: The number of seconds to wait before resource update. It only triggers when the property Triggers change and the status of stack is UPDATE_IN_PROGRESS.
+     */
+    public updateDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property updateRollbackDuration: The number of seconds to wait before resource update rollback. It only triggers when stack update failed and resource was updated.
+     */
+    public updateRollbackDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ROS::Sleep`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSleepProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSleep.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.createDuration = props.createDuration;
+        this.deleteDuration = props.deleteDuration;
+        this.triggers = props.triggers;
+        this.updateDuration = props.updateDuration;
+        this.updateRollbackDuration = props.updateRollbackDuration;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            createDuration: this.createDuration,
+            deleteDuration: this.deleteDuration,
+            triggers: this.triggers,
+            updateDuration: this.updateDuration,
+            updateRollbackDuration: this.updateRollbackDuration,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSleepPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::ROS::Stack`
  */
 export interface RosStackProps {
@@ -525,7 +699,7 @@ function RosStackPropsValidator(properties: any): ros.ValidationResult {
     if(properties.templateId && (typeof properties.templateId) !== 'object') {
         errors.collect(ros.propertyValidator('templateId', ros.validateAllowedPattern)({
           data: properties.templateId,
-          reg: /^([0-9a-f]{8}[-][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{12})|(acs[:]ros[:][*][:]\d+[:]template\/[0-9a-f]{8}[-][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{12})$/
+          reg: /^([0-9a-f]{8}[-][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{12})|(acs[:]ros[:][*][:]\d+[:]template\/[0-9a-f]{8}[-][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{12})|(acs[:]ros[:]template[/][-_a-zA-Z0-9]+[/][-_a-zA-Z0-9]+)$/
         }));
     }
     errors.collect(ros.propertyValidator('templateId', ros.validateString)(properties.templateId));

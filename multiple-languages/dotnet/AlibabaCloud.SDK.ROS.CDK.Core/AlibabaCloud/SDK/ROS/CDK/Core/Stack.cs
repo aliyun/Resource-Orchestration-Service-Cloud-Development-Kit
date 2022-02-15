@@ -162,7 +162,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// This method is usually implemented by framework-level constructs such as <c>Stack</c> and <c>Asset</c>
         /// as they participate in synthesizing the cloud assembly.
         /// </remarks>
-        [JsiiMethod(name: "synthesize", parametersJson: "[{\"name\":\"session\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ISynthesisSession\"}}]", isOverride: true)]
+        [JsiiMethod(name: "synthesize", parametersJson: "[{\"name\":\"session\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ISynthesisSession\"}}]")]
         protected override void Synthesize(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession session)
         {
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession)}, new object[]{session});
@@ -242,8 +242,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
 
         /// <summary>The name of the ROS template file emitted to the output directory during synthesis.</summary>
         /// <example>
-        /// <code>// Example automatically generated from non-compiling source. May contain errors.
-        /// MyStack.template.json</code>
+        /// <code>MyStack.template.json</code>
         /// </example>
         [JsiiProperty(name: "templateFile", typeJson: "{\"primitive\":\"string\"}")]
         public virtual string TemplateFile

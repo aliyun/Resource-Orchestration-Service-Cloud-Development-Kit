@@ -108,7 +108,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: internetChargeType: The billing method for the NAT gateway. Valid values:
         /// PayBySpec: billed on a pay-by-specification basis.
-        /// PayByLcu: billed on a pay-by-LCU basis.
         /// </remarks>
         [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -168,19 +167,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PricingCycle
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: spec: NAT gateway specification. Now support 'Small|Middle|Large|XLarge.1'
-        /// </remarks>
-        [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Spec
         {
             get
             {
@@ -291,7 +277,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <remarks>
             /// <strong>Property</strong>: internetChargeType: The billing method for the NAT gateway. Valid values:
             /// PayBySpec: billed on a pay-by-specification basis.
-            /// PayByLcu: billed on a pay-by-LCU basis.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -339,16 +324,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PricingCycle
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: spec: NAT gateway specification. Now support 'Small|Middle|Large|XLarge.1'
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Spec
             {
                 get => GetInstanceProperty<object?>();
             }

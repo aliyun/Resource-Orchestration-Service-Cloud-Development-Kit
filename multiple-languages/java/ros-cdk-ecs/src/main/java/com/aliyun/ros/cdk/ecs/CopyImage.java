@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::CopyImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.515Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.353Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CopyImage")
 public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
 
@@ -226,6 +226,31 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder kmsKeyId(final com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.props.kmsKeyId(kmsKeyId);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the image copy belongs.
+         * <p>
+         * If not provided, the image copy belongs to the default resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the image copy belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the image copy belongs.
+         * <p>
+         * If not provided, the image copy belongs to the default resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the image copy belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

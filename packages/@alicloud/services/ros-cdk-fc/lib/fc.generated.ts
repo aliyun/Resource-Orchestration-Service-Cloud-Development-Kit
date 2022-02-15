@@ -2052,11 +2052,19 @@ export namespace RosService {
          */
         readonly project?: string | ros.IResolvable;
         /**
+         * @Property logBeginRule: The log rotation rule. Log are split based on the rule. The log blocks obtained after the splitting are written to Log Service. Valid values:
+     * None: disables the log splitting rule. This is the default value.
+     * DefaultRegex: sets the log splitting rule to the default regular expression. If you set this parameter to DefaultRegex, logs are split based on the data in a log. For example, the line that contains 2021-10-10 in the log is considered as the first line of a log block. The first line and the following consecutive lines that do not contain dates in the log are written to Log Service as a whole.
+         */
+        readonly logBeginRule?: string | ros.IResolvable;
+        /**
          * @Property logstore: The log store name of Logs service
          */
         readonly logstore?: string | ros.IResolvable;
         /**
-         * @Property enableRequestMetrics: Whether enable request metrics.
+         * @Property enableRequestMetrics: Specifies whether to enable the request-level metrics. If you enable this feature, you can view the time and memory that are consumed for a specific invocation of each function in the service. Valid values:
+     * false: disables request-level metrics.
+     * true: enables request-level metrics. Default value: true.
          */
         readonly enableRequestMetrics?: boolean | ros.IResolvable;
     }
@@ -2072,6 +2080,7 @@ function RosService_LogConfigPropertyValidator(properties: any): ros.ValidationR
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('logBeginRule', ros.validateString)(properties.logBeginRule));
     errors.collect(ros.propertyValidator('logstore', ros.validateString)(properties.logstore));
     errors.collect(ros.propertyValidator('enableRequestMetrics', ros.validateBoolean)(properties.enableRequestMetrics));
     return errors.wrap('supplied properties not correct for "LogConfigProperty"');
@@ -2090,6 +2099,7 @@ function rosServiceLogConfigPropertyToRosTemplate(properties: any): any {
     RosService_LogConfigPropertyValidator(properties).assertSuccess();
     return {
       Project: ros.stringToRosTemplate(properties.project),
+      LogBeginRule: ros.stringToRosTemplate(properties.logBeginRule),
       Logstore: ros.stringToRosTemplate(properties.logstore),
       EnableRequestMetrics: ros.booleanToRosTemplate(properties.enableRequestMetrics),
     };

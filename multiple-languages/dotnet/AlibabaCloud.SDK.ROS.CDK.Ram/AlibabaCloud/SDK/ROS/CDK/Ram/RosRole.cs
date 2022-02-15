@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -204,7 +204,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: statement: A policy consists of one or more statements.
             /// </remarks>
-            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.StatementProperty\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.StatementProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Statement
             {
                 get;
@@ -214,7 +214,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
-            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Version
             {
                 get;
@@ -722,7 +722,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: bool: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "bool", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "bool", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Bool
             {
                 get;
@@ -733,7 +733,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: dateEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dateEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dateEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? DateEquals
             {
                 get;
@@ -744,7 +744,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: dateGreaterThan: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dateGreaterThan", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dateGreaterThan", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? DateGreaterThan
             {
                 get;
@@ -755,7 +755,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: dateGreaterThanEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dateGreaterThanEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dateGreaterThanEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? DateGreaterThanEquals
             {
                 get;
@@ -766,7 +766,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: dateLessThan: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dateLessThan", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dateLessThan", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? DateLessThan
             {
                 get;
@@ -777,7 +777,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: dateLessThanEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dateLessThanEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dateLessThanEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? DateLessThanEquals
             {
                 get;
@@ -788,7 +788,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: dateNotEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dateNotEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dateNotEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? DateNotEquals
             {
                 get;
@@ -799,7 +799,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: ipAddress: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipAddress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ipAddress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? IpAddress
             {
                 get;
@@ -810,7 +810,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: notIpAddress: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "notIpAddress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "notIpAddress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? NotIpAddress
             {
                 get;
@@ -821,7 +821,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: numericEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "numericEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "numericEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? NumericEquals
             {
                 get;
@@ -832,7 +832,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: numericGreaterThan: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "numericGreaterThan", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "numericGreaterThan", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? NumericGreaterThan
             {
                 get;
@@ -843,7 +843,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: numericGreaterThanEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "numericGreaterThanEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "numericGreaterThanEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? NumericGreaterThanEquals
             {
                 get;
@@ -854,7 +854,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: numericLessThan: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "numericLessThan", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "numericLessThan", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? NumericLessThan
             {
                 get;
@@ -865,7 +865,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: numericLessThanEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "numericLessThanEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "numericLessThanEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? NumericLessThanEquals
             {
                 get;
@@ -876,7 +876,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: numericNotEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "numericNotEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "numericNotEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? NumericNotEquals
             {
                 get;
@@ -887,7 +887,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: stringEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "stringEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "stringEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? StringEquals
             {
                 get;
@@ -898,7 +898,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: stringEqualsIgnoreCase: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "stringEqualsIgnoreCase", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "stringEqualsIgnoreCase", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? StringEqualsIgnoreCase
             {
                 get;
@@ -909,7 +909,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: stringLike: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "stringLike", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "stringLike", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? StringLike
             {
                 get;
@@ -920,7 +920,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: stringNotEquals: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "stringNotEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "stringNotEquals", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? StringNotEquals
             {
                 get;
@@ -931,7 +931,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: stringNotEqualsIgnoreCase: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "stringNotEqualsIgnoreCase", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "stringNotEqualsIgnoreCase", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? StringNotEqualsIgnoreCase
             {
                 get;
@@ -942,7 +942,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: stringNotLike: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "stringNotLike", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "stringNotLike", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? StringNotLike
             {
                 get;
@@ -1027,7 +1027,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: policyDocument: A policy document that describes what actions are allowed on which resources.
             /// </remarks>
-            [JsiiProperty(name: "policyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PolicyDocumentProperty\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "policyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PolicyDocumentProperty\"}]}}")]
             public object PolicyDocument
             {
                 get;
@@ -1037,7 +1037,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: policyName: Specifies the authorization policy name, containing up to 128 characters.
             /// </remarks>
-            [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PolicyName
             {
                 get;
@@ -1048,7 +1048,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: description: Specifies the authorization policy description, containing up to 1024 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
             {
                 get;
@@ -1119,7 +1119,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: statement: A policy consists of one or more statements.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PolicyDocumentStatementProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PolicyDocumentStatementProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Statement
             {
                 get;
@@ -1130,7 +1130,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Version
             {
                 get;
@@ -1247,7 +1247,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: action: What actions you will allow.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "action", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "action", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Action
             {
                 get;
@@ -1258,7 +1258,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: condition: What conditions should be satisfied.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Condition
             {
                 get;
@@ -1269,7 +1269,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: effect: What the effect will be when the user requests access-either allow or deny.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Effect
             {
                 get;
@@ -1280,7 +1280,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: resource: Which resources you allow the action on.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Resource
             {
                 get;
@@ -1374,7 +1374,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: federated: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "federated", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "federated", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Federated
             {
                 get;
@@ -1385,7 +1385,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: ram: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ram", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ram", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Ram
             {
                 get;
@@ -1396,7 +1396,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: service: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "service", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "service", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Service
             {
                 get;
@@ -1513,7 +1513,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: action: What action you will allow.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "action", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "action", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Action
             {
                 get;
@@ -1524,7 +1524,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: condition: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.ConditionProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.ConditionProperty\"}]}}", isOptional: true)]
             public object? Condition
             {
                 get;
@@ -1535,7 +1535,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: effect: What the effect will be when the user requests access-either allow or deny.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Effect
             {
                 get;
@@ -1546,7 +1546,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: principal: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "principal", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PrincipalProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "principal", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PrincipalProperty\"}]}}", isOptional: true)]
             public object? Principal
             {
                 get;

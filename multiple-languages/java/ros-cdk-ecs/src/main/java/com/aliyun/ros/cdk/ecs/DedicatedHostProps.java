@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::DedicatedHost`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.535Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.358Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DedicatedHostProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostProps.Jsii$Proxy.class)
 public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,7 +50,7 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property autoRenewPeriod: The time period of auto renew.
      * <p>
-     * When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+     * When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
@@ -288,7 +288,7 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link DedicatedHostProps#getAutoRenewPeriod}
          * @param autoRenewPeriod Property autoRenewPeriod: The time period of auto renew.
-         *                        When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+         *                        When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
@@ -299,7 +299,7 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link DedicatedHostProps#getAutoRenewPeriod}
          * @param autoRenewPeriod Property autoRenewPeriod: The time period of auto renew.
-         *                        When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+         *                        When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {

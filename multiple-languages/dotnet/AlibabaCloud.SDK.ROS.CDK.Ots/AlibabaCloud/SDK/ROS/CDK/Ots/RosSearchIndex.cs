@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -341,7 +341,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: fieldName: This parameter specifies the name of the field (column) to index.
             /// The field can be a primary key column or an attribute column.
             /// </remarks>
-            [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldName
             {
                 get;
@@ -352,7 +352,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: fieldType: This parameter specifies the type of the field. Type: FieldType.
             /// For more information, see the description of field types for a search index.
             /// </remarks>
-            [JsiiProperty(name: "fieldType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "fieldType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldType
             {
                 get;
@@ -364,7 +364,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// You can specify this parameter if the column is a TEXT column. Type: AnalyzerType.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "analyzer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "analyzer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Analyzer
             {
                 get;
@@ -375,7 +375,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: enableSortAndAgg: This parameter specifies whether to enable sorting and aggregation for the column.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "enableSortAndAgg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "enableSortAndAgg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableSortAndAgg
             {
                 get;
@@ -387,7 +387,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// The default is true, which means to build an inverted index or a spatial index for the column; if it is set to false, the column will not be indexed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "index", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "index", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Index
             {
                 get;
@@ -400,7 +400,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// Example: ["a","b","c"]. You do not need to explicitly specify this parameter for NESTED columns because they are arrays.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "isArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "isArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IsArray
             {
                 get;
@@ -413,7 +413,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// This configuration optimizes query performance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Store
             {
                 get;
@@ -425,7 +425,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// If the column is a NESTED column, you must specify this parameter to configure the index types of subcolumns in the NESTED column.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "subFieldSchemas", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.SubFieldSchemasProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "subFieldSchemas", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.SubFieldSchemasProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? SubFieldSchemas
             {
                 get;
@@ -515,7 +515,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: fieldName: Sorted field name.
             /// </remarks>
-            [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldName
             {
                 get;
@@ -526,7 +526,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: sortMode: Sorting method when there are multiple values in the field.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sortMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sortMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortMode
             {
                 get;
@@ -537,7 +537,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: sortOrder: The sort order can be sorted in ascending or descending order, the default is ascending(SortOrder.ASC).
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortOrder
             {
                 get;
@@ -645,7 +645,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: fieldName: Sorted field name.
             /// </remarks>
-            [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldName
             {
                 get;
@@ -655,7 +655,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: points: The parameter of GeoDistanceSort
             /// </remarks>
-            [JsiiProperty(name: "points", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "points", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Points
             {
                 get;
@@ -666,7 +666,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: sortMode: Sorting method when there are multiple values in the field.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sortMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sortMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortMode
             {
                 get;
@@ -677,7 +677,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: sortOrder: The sort order can be sorted in ascending or descending order
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortOrder
             {
                 get;
@@ -734,7 +734,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// The data with the same routing field values is distributed to the same data partition.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "routingFields", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "routingFields", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RoutingFields
             {
                 get;
@@ -784,7 +784,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// - PrimaryKeySort: The index is sorted by primary key in ascending or descending order.
             /// - FieldSort: The index is sorted by a specified column in ascending or descending order.
             /// </remarks>
-            [JsiiProperty(name: "sorters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.SortersProperty\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+            [JsiiProperty(name: "sorters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.SortersProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Sorters
             {
                 get;
@@ -832,7 +832,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: sortOrder: The sort order can be sorted in ascending or descending order, the default is ascending(SortOrder.ASC).
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortOrder
             {
                 get;
@@ -880,7 +880,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: sortOrder: The sort order can be sorted in ascending or descending order
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortOrder
             {
                 get;
@@ -1004,7 +1004,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// Only fields that are indexed and have sorting and statistical aggregation functions enabled can be pre-sorted
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "fieldSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.FieldSortProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "fieldSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.FieldSortProperty\"}]}}", isOptional: true)]
             public object? FieldSort
             {
                 get;
@@ -1015,7 +1015,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: geoDistanceSort: You can use GeoDistanceSort to sort the query result based on distances of geographical locations.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "geoDistanceSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.GeoDistanceSortProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "geoDistanceSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.GeoDistanceSortProperty\"}]}}", isOptional: true)]
             public object? GeoDistanceSort
             {
                 get;
@@ -1026,7 +1026,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: primaryKeySort: You can use PrimaryKeySort to sort the query result based on the order of primary key columns.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "primaryKeySort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.PrimaryKeySortProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "primaryKeySort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.PrimaryKeySortProperty\"}]}}", isOptional: true)]
             public object? PrimaryKeySort
             {
                 get;
@@ -1039,7 +1039,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// Note Note that you must set ScoreSort to sort the query result by keyword relevance score. Otherwise, the query result is sorted based on the value of the IndexSort field.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "scoreSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.ScoreSortProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "scoreSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.ScoreSortProperty\"}]}}", isOptional: true)]
             public object? ScoreSort
             {
                 get;
@@ -1233,7 +1233,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: fieldName: This parameter specifies the name of the field (column) to index.
             /// The field can be a primary key column or an attribute column.
             /// </remarks>
-            [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldName
             {
                 get;
@@ -1244,7 +1244,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: fieldType: This parameter specifies the type of the field. Type: FieldType.
             /// For more information, see the description of field types for a search index.
             /// </remarks>
-            [JsiiProperty(name: "fieldType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "fieldType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldType
             {
                 get;
@@ -1256,7 +1256,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// You can specify this parameter if the column is a TEXT column. Type: AnalyzerType.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "analyzer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "analyzer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Analyzer
             {
                 get;
@@ -1267,7 +1267,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: enableSortAndAgg: This parameter specifies whether to enable sorting and aggregation for the column.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "enableSortAndAgg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "enableSortAndAgg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableSortAndAgg
             {
                 get;
@@ -1279,7 +1279,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// The default is true, which means to build an inverted index or a spatial index for the column; if it is set to false, the column will not be indexed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "index", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "index", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Index
             {
                 get;
@@ -1292,7 +1292,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// Example: ["a","b","c"]. You do not need to explicitly specify this parameter for NESTED columns because they are arrays.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "isArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "isArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IsArray
             {
                 get;
@@ -1305,7 +1305,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// This configuration optimizes query performance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Store
             {
                 get;

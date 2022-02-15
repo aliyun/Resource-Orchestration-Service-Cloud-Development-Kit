@@ -49,7 +49,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
-        [JsiiMethod(name: "resolve", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"_context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]", isOverride: true)]
+        [JsiiMethod(name: "resolve", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"_context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]")]
         public virtual object Resolve(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext context)
         {
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext)}, new object[]{context})!;
@@ -75,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
-        [JsiiMethod(name: "toString", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", isOverride: true)]
+        [JsiiMethod(name: "toString", returnsJson: "{\"type\":{\"primitive\":\"string\"}}")]
         public override string ToString()
         {
             return InvokeInstanceMethod<string>(new System.Type[]{}, new object[]{})!;

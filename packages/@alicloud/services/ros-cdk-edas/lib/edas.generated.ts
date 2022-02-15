@@ -4538,6 +4538,315 @@ export class RosK8sCluster extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::EDAS::K8sSlbBinding`
+ */
+export interface RosK8sSlbBindingProps {
+
+    /**
+     * @Property appId: The ID of the application.
+     */
+    readonly appId: string | ros.IResolvable;
+
+    /**
+     * @Property clusterId: The ID of the cluster.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property servicePortInfos: The information about the ports.
+     */
+    readonly servicePortInfos: Array<RosK8sSlbBinding.ServicePortInfosProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the SLB instance. Valid values: internet and intranet.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property loadBalancerId: The ID of the load balancer instance. If you leave this parameter empty, Enterprise Distributed Application Service (EDAS) automatically purchases an SLB instance.
+     */
+    readonly loadBalancerId?: string | ros.IResolvable;
+
+    /**
+     * @Property scheduler: The scheduling algorithm. Valid values: 
+     * wrr: Backend servers that have higher weights receive more requests than those that have lower weights.
+     * rr: Requests are distributed to backend servers in sequence.
+     * Default value: rr
+     */
+    readonly scheduler?: string | ros.IResolvable;
+
+    /**
+     * @Property specification: The specification of the load balancer instance.
+     */
+    readonly specification?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosK8sSlbBindingProps`
+ *
+ * @param properties - the TypeScript properties of a `RosK8sSlbBindingProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosK8sSlbBindingPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["internet","intranet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
+    errors.collect(ros.propertyValidator('specification', ros.validateString)(properties.specification));
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('servicePortInfos', ros.requiredValidator)(properties.servicePortInfos));
+    if(properties.servicePortInfos && (Array.isArray(properties.servicePortInfos) || (typeof properties.servicePortInfos) === 'string')) {
+        errors.collect(ros.propertyValidator('servicePortInfos', ros.validateLength)({
+            data: properties.servicePortInfos.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('servicePortInfos', ros.listValidator(RosK8sSlbBinding_ServicePortInfosPropertyValidator))(properties.servicePortInfos));
+    return errors.wrap('supplied properties not correct for "RosK8sSlbBindingProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EDAS::K8sSlbBinding` resource
+ *
+ * @param properties - the TypeScript properties of a `RosK8sSlbBindingProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EDAS::K8sSlbBinding` resource.
+ */
+// @ts-ignore TS6133
+function rosK8sSlbBindingPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosK8sSlbBindingPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AppId: ros.stringToRosTemplate(properties.appId),
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      ServicePortInfos: ros.listMapper(rosK8sSlbBindingServicePortInfosPropertyToRosTemplate)(properties.servicePortInfos),
+      Type: ros.stringToRosTemplate(properties.type),
+      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
+      Scheduler: ros.stringToRosTemplate(properties.scheduler),
+      Specification: ros.stringToRosTemplate(properties.specification),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::EDAS::K8sSlbBinding`
+ */
+export class RosK8sSlbBinding extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EDAS::K8sSlbBinding";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Address: The address of load balancer instance.
+     */
+    public readonly attrAddress: ros.IResolvable;
+
+    /**
+     * @Attribute AppId: The ID of the application.
+     */
+    public readonly attrAppId: ros.IResolvable;
+
+    /**
+     * @Attribute ChangeOrderId: The ID of the change process.
+     */
+    public readonly attrChangeOrderId: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerId: The ID of load balancer instance.
+     */
+    public readonly attrLoadBalancerId: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerName: The name of load balancer instance defined in EDAS.
+     */
+    public readonly attrLoadBalancerName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appId: The ID of the application.
+     */
+    public appId: string | ros.IResolvable;
+
+    /**
+     * @Property clusterId: The ID of the cluster.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property servicePortInfos: The information about the ports.
+     */
+    public servicePortInfos: Array<RosK8sSlbBinding.ServicePortInfosProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the SLB instance. Valid values: internet and intranet.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property loadBalancerId: The ID of the load balancer instance. If you leave this parameter empty, Enterprise Distributed Application Service (EDAS) automatically purchases an SLB instance.
+     */
+    public loadBalancerId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property scheduler: The scheduling algorithm. Valid values: 
+     * wrr: Backend servers that have higher weights receive more requests than those that have lower weights.
+     * rr: Requests are distributed to backend servers in sequence.
+     * Default value: rr
+     */
+    public scheduler: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property specification: The specification of the load balancer instance.
+     */
+    public specification: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::EDAS::K8sSlbBinding`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosK8sSlbBindingProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosK8sSlbBinding.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAddress = this.getAtt('Address');
+        this.attrAppId = this.getAtt('AppId');
+        this.attrChangeOrderId = this.getAtt('ChangeOrderId');
+        this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
+        this.attrLoadBalancerName = this.getAtt('LoadBalancerName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appId = props.appId;
+        this.clusterId = props.clusterId;
+        this.servicePortInfos = props.servicePortInfos;
+        this.type = props.type;
+        this.loadBalancerId = props.loadBalancerId;
+        this.scheduler = props.scheduler;
+        this.specification = props.specification;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appId: this.appId,
+            clusterId: this.clusterId,
+            servicePortInfos: this.servicePortInfos,
+            type: this.type,
+            loadBalancerId: this.loadBalancerId,
+            scheduler: this.scheduler,
+            specification: this.specification,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosK8sSlbBindingPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosK8sSlbBinding {
+    /**
+     * @stability external
+     */
+    export interface ServicePortInfosProperty {
+        /**
+         * @Property targetPort: The backend port. Valid values: 1 to 65535.
+         */
+        readonly targetPort: number | ros.IResolvable;
+        /**
+         * @Property loadBalancerProtocol: The protocol of load balancer. Valid values: TCP and HTTPS. If the HTTP protocol is used, set this parameter to TCP.
+         */
+        readonly loadBalancerProtocol: string | ros.IResolvable;
+        /**
+         * @Property certId: The ID of the certificate. This parameter is required if the HTTPS protocol is used.
+         */
+        readonly certId?: string | ros.IResolvable;
+        /**
+         * @Property port: The frontend port. Valid values: 1 to 65535. Each port must be unique.
+         */
+        readonly port: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServicePortInfosProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServicePortInfosProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosK8sSlbBinding_ServicePortInfosPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('targetPort', ros.requiredValidator)(properties.targetPort));
+    if(properties.targetPort && (typeof properties.targetPort) !== 'object') {
+        errors.collect(ros.propertyValidator('targetPort', ros.validateRange)({
+            data: properties.targetPort,
+            min: 1,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('targetPort', ros.validateNumber)(properties.targetPort));
+    errors.collect(ros.propertyValidator('loadBalancerProtocol', ros.requiredValidator)(properties.loadBalancerProtocol));
+    if(properties.loadBalancerProtocol && (typeof properties.loadBalancerProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('loadBalancerProtocol', ros.validateAllowedValues)({
+          data: properties.loadBalancerProtocol,
+          allowedValues: ["TCP","HTTPS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('loadBalancerProtocol', ros.validateString)(properties.loadBalancerProtocol));
+    errors.collect(ros.propertyValidator('certId', ros.validateString)(properties.certId));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 1,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    return errors.wrap('supplied properties not correct for "ServicePortInfosProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EDAS::K8sSlbBinding.ServicePortInfos` resource
+ *
+ * @param properties - the TypeScript properties of a `ServicePortInfosProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EDAS::K8sSlbBinding.ServicePortInfos` resource.
+ */
+// @ts-ignore TS6133
+function rosK8sSlbBindingServicePortInfosPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosK8sSlbBinding_ServicePortInfosPropertyValidator(properties).assertSuccess();
+    return {
+      TargetPort: ros.numberToRosTemplate(properties.targetPort),
+      LoadBalancerProtocol: ros.stringToRosTemplate(properties.loadBalancerProtocol),
+      CertId: ros.stringToRosTemplate(properties.certId),
+      Port: ros.numberToRosTemplate(properties.port),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::EDAS::UserDefineRegion`
  */
 export interface RosUserDefineRegionProps {

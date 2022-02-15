@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS resource type:  `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.258Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.104Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 
@@ -188,6 +188,122 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property compactTopic: The log cleanup policy for the topic.
+         * <p>
+         * This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+         * false: uses the default log cleanup policy.
+         * true: uses the Apache Kafka log compaction policy.
+         * <p>
+         * @return {@code this}
+         * @param compactTopic Property compactTopic: The log cleanup policy for the topic. This parameter is required.
+         */
+        public Builder compactTopic(final java.lang.Boolean compactTopic) {
+            this.props.compactTopic(compactTopic);
+            return this;
+        }
+        /**
+         * Property compactTopic: The log cleanup policy for the topic.
+         * <p>
+         * This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+         * false: uses the default log cleanup policy.
+         * true: uses the Apache Kafka log compaction policy.
+         * <p>
+         * @return {@code this}
+         * @param compactTopic Property compactTopic: The log cleanup policy for the topic. This parameter is required.
+         */
+        public Builder compactTopic(final com.aliyun.ros.cdk.core.IResolvable compactTopic) {
+            this.props.compactTopic(compactTopic);
+            return this;
+        }
+
+        /**
+         * Property config: Supplementary configuration.
+         * <p>
+         * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+         * This parameter can only be specified if the LocalTopic value is true.
+         * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+         * <p>
+         * @return {@code this}
+         * @param config Property config: Supplementary configuration. This parameter is required.
+         */
+        public Builder config(final com.aliyun.ros.cdk.core.IResolvable config) {
+            this.props.config(config);
+            return this;
+        }
+        /**
+         * Property config: Supplementary configuration.
+         * <p>
+         * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+         * This parameter can only be specified if the LocalTopic value is true.
+         * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+         * <p>
+         * @return {@code this}
+         * @param config Property config: Supplementary configuration. This parameter is required.
+         */
+        public Builder config(final java.util.Map<java.lang.String, ? extends java.lang.Object> config) {
+            this.props.config(config);
+            return this;
+        }
+
+        /**
+         * Property localTopic: The storage engine of the topic.
+         * <p>
+         * Valid values:
+         * false: the Cloud Storage mode.
+         * true: the Local Storage mode.
+         * <p>
+         * @return {@code this}
+         * @param localTopic Property localTopic: The storage engine of the topic. This parameter is required.
+         */
+        public Builder localTopic(final java.lang.Boolean localTopic) {
+            this.props.localTopic(localTopic);
+            return this;
+        }
+        /**
+         * Property localTopic: The storage engine of the topic.
+         * <p>
+         * Valid values:
+         * false: the Cloud Storage mode.
+         * true: the Local Storage mode.
+         * <p>
+         * @return {@code this}
+         * @param localTopic Property localTopic: The storage engine of the topic. This parameter is required.
+         */
+        public Builder localTopic(final com.aliyun.ros.cdk.core.IResolvable localTopic) {
+            this.props.localTopic(localTopic);
+            return this;
+        }
+
+        /**
+         * Property minInsyncReplicas: The minimum number of ISR sync replicas.
+         * <p>
+         * This parameter can only be specified if the LocalTopic value is true.
+         * The value must be less than the number of Topic copies.
+         * The number of synchronous replicas is limited to 1~3.
+         * <p>
+         * @return {@code this}
+         * @param minInsyncReplicas Property minInsyncReplicas: The minimum number of ISR sync replicas. This parameter is required.
+         */
+        public Builder minInsyncReplicas(final java.lang.Number minInsyncReplicas) {
+            this.props.minInsyncReplicas(minInsyncReplicas);
+            return this;
+        }
+        /**
+         * Property minInsyncReplicas: The minimum number of ISR sync replicas.
+         * <p>
+         * This parameter can only be specified if the LocalTopic value is true.
+         * The value must be less than the number of Topic copies.
+         * The number of synchronous replicas is limited to 1~3.
+         * <p>
+         * @return {@code this}
+         * @param minInsyncReplicas Property minInsyncReplicas: The minimum number of ISR sync replicas. This parameter is required.
+         */
+        public Builder minInsyncReplicas(final com.aliyun.ros.cdk.core.IResolvable minInsyncReplicas) {
+            this.props.minInsyncReplicas(minInsyncReplicas);
+            return this;
+        }
+
+        /**
          * Property partitionNum: The number of partitions in the topic.
          * <p>
          * Valid values:
@@ -215,6 +331,35 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder partitionNum(final com.aliyun.ros.cdk.core.IResolvable partitionNum) {
             this.props.partitionNum(partitionNum);
+            return this;
+        }
+
+        /**
+         * Property replicationFactor: The number of copies of the topic.
+         * <p>
+         * This parameter can only be specified if the LocalTopic value is true.
+         * The number of copies is limited to 1~3.
+         * Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+         * <p>
+         * @return {@code this}
+         * @param replicationFactor Property replicationFactor: The number of copies of the topic. This parameter is required.
+         */
+        public Builder replicationFactor(final java.lang.Number replicationFactor) {
+            this.props.replicationFactor(replicationFactor);
+            return this;
+        }
+        /**
+         * Property replicationFactor: The number of copies of the topic.
+         * <p>
+         * This parameter can only be specified if the LocalTopic value is true.
+         * The number of copies is limited to 1~3.
+         * Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+         * <p>
+         * @return {@code this}
+         * @param replicationFactor Property replicationFactor: The number of copies of the topic. This parameter is required.
+         */
+        public Builder replicationFactor(final com.aliyun.ros.cdk.core.IResolvable replicationFactor) {
+            this.props.replicationFactor(replicationFactor);
             return this;
         }
 

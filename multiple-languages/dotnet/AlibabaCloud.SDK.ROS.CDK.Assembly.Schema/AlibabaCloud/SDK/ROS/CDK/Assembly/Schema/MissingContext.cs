@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class MissingContext : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IMissingContext
     {
         /// <summary>The missing context key.</summary>
-        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}")]
         public string Key
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         }
 
         /// <summary>A set of provider-specific options.</summary>
-        [JsiiProperty(name: "props", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.AmiContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.AvailabilityZonesContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.HostedZoneContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.SSMParameterContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.VpcContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.EndpointServiceAvailabilityZonesContextQuery\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "props", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.AmiContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.AvailabilityZonesContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.HostedZoneContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.SSMParameterContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.VpcContextQuery\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.EndpointServiceAvailabilityZonesContextQuery\"}]}}")]
         public object Props
         {
             get;
@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         }
 
         /// <summary>The provider from which we expect this context key to be obtained.</summary>
-        [JsiiProperty(name: "provider", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.ContextProvider\"}", isOverride: true)]
+        [JsiiProperty(name: "provider", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.ContextProvider\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.ContextProvider Provider
         {
             get;

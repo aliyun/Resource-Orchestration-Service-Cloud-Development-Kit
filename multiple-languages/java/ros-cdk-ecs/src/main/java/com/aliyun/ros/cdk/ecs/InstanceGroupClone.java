@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.565Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.384Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -252,7 +252,7 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoRenewPeriod: The time period of auto renew.
          * <p>
-         * When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
+         * When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.Old instances will not be changed.
          * <p>
          * @return {@code this}
          * @param autoRenewPeriod Property autoRenewPeriod: The time period of auto renew. This parameter is required.
@@ -264,7 +264,7 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoRenewPeriod: The time period of auto renew.
          * <p>
-         * When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
+         * When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.Old instances will not be changed.
          * <p>
          * @return {@code this}
          * @param autoRenewPeriod Property autoRenewPeriod: The time period of auto renew. This parameter is required.

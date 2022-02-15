@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -45,10 +45,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Cr.RosRepository))!;
 
         /// <remarks>
-        /// <strong>Attribute</strong>: RepoId: The repo id
+        /// <strong>Attribute</strong>: InstanceId: The ID of the enterprise edition instance which repository belongs to.
+        /// </remarks>
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: RepoId: The repository ID.
         /// </remarks>
         [JsiiProperty(name: "attrRepoId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRepoId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: RepoName: The name of the repository.
+        /// </remarks>
+        [JsiiProperty(name: "attrRepoName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRepoName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: RepoNamespace: The name of the namespace to which the repository belongs.
+        /// </remarks>
+        [JsiiProperty(name: "attrRepoNamespace", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRepoNamespace
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: RepoType: The type of the repository.
+        /// </remarks>
+        [JsiiProperty(name: "attrRepoType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRepoType
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -67,7 +103,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: repoName: the name of the repo
+        /// <strong>Property</strong>: repoName: The name of the repository.
         /// </remarks>
         [JsiiProperty(name: "repoName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object RepoName
@@ -77,7 +113,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: repoNamespace: the namespace the repo belongs to
+        /// <strong>Property</strong>: repoNamespace: The name of the namespace to which the repository belongs.
         /// </remarks>
         [JsiiProperty(name: "repoNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object RepoNamespace
@@ -87,7 +123,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: repoType: repository visibility, public or private
+        /// <strong>Property</strong>: repoType: The type of the repository. Valid values: PUBLIC, PRIVATE.
         /// </remarks>
         [JsiiProperty(name: "repoType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object RepoType
@@ -97,7 +133,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: summary: description or something alike
+        /// <strong>Property</strong>: summary: The summary of the repository.
         /// </remarks>
         [JsiiProperty(name: "summary", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Summary
@@ -107,11 +143,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: detail: detailed configuration in markdown format
+        /// <strong>Property</strong>: detail: The description of the repository.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "detail", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? Detail
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: instanceId: The ID of the enterprise edition instance which repository belongs to. If not provided, will use personal edition instance as default.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstanceId
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -123,6 +170,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         [JsiiOptional]
         [JsiiProperty(name: "repoSource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cr.RosRepository.RepoSourceProperty\"}]}}", isOptional: true)]
         public virtual object? RepoSource
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tagImmutability: Specifies whether the repository is immutable. Only takes effect when InstanceId is specified.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tagImmutability", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? TagImmutability
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -256,7 +314,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             /// <remarks>
             /// <strong>Property</strong>: isAutoBuild: Whether to enable automatic construction
             /// </remarks>
-            [JsiiProperty(name: "isAutoBuild", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "isAutoBuild", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object IsAutoBuild
             {
                 get;
@@ -266,7 +324,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             /// <remarks>
             /// <strong>Property</strong>: isDisableCache: Whether to disable Cache at build time
             /// </remarks>
-            [JsiiProperty(name: "isDisableCache", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "isDisableCache", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object IsDisableCache
             {
                 get;
@@ -276,7 +334,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             /// <remarks>
             /// <strong>Property</strong>: isOversea: Whether to enable overseas construction
             /// </remarks>
-            [JsiiProperty(name: "isOversea", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "isOversea", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object IsOversea
             {
                 get;
@@ -286,7 +344,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             /// <remarks>
             /// <strong>Property</strong>: sourceRepoName: Source code warehouse name
             /// </remarks>
-            [JsiiProperty(name: "sourceRepoName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "sourceRepoName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourceRepoName
             {
                 get;
@@ -296,7 +354,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             /// <remarks>
             /// <strong>Property</strong>: sourceRepoNamespace: Source code repository namespace
             /// </remarks>
-            [JsiiProperty(name: "sourceRepoNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "sourceRepoNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourceRepoNamespace
             {
                 get;
@@ -307,7 +365,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             /// <strong>Property</strong>: sourceRepoType: code source type. Allow values:
             /// CODE, GITHUB, GITLAB, BITBUCKET. Enterprise Edition additional support CODEUP and GITEE
             /// </remarks>
-            [JsiiProperty(name: "sourceRepoType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "sourceRepoType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SourceRepoType
             {
                 get;

@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class ArtifactManifest : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IArtifactManifest
     {
         /// <summary>The type of artifact.</summary>
-        [JsiiProperty(name: "type", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.ArtifactType\"}", isOverride: true)]
+        [JsiiProperty(name: "type", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.ArtifactType\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.ArtifactType Type
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: - no dependencies.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dependencies", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "dependencies", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
         public string[]? Dependencies
         {
             get;
@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: - no metadata.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "metadata", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.MetadataEntry\"},\"kind\":\"array\"}},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "metadata", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.MetadataEntry\"},\"kind\":\"array\"}},\"kind\":\"map\"}}", isOptional: true)]
         public System.Collections.Generic.IDictionary<string, AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IMetadataEntry[]>? Metadata
         {
             get;
@@ -47,7 +47,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: - no properties.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "properties", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.AliyunRosStackProperties\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.TreeArtifactProperties\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.NestedCloudAssemblyProperties\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "properties", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.AliyunRosStackProperties\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.TreeArtifactProperties\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.NestedCloudAssemblyProperties\"}]}}", isOptional: true)]
         public object? Properties
         {
             get;

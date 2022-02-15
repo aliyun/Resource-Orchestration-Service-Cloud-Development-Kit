@@ -8,7 +8,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class RemovalPolicyOptions : AlibabaCloud.SDK.ROS.CDK.Core.IRemovalPolicyOptions
     {
         [JsiiOptional]
-        [JsiiProperty(name: "applyToUpdateReplacePolicy", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "applyToUpdateReplacePolicy", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? ApplyToUpdateReplacePolicy
         {
             get;
@@ -16,7 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "defaultPolicy", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RemovalPolicy\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "defaultPolicy", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RemovalPolicy\"}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Core.RemovalPolicy? DefaultPolicy
         {
             get;

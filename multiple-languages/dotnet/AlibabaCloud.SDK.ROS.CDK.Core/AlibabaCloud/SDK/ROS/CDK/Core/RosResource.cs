@@ -91,7 +91,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// For example,
         ///
         /// <code><![CDATA[
-        /// // Example automatically generated from non-compiling source. May contain errors.
         /// addOverride('Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes', ['myattribute'])
         /// addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'INCLUDE')
         /// ]]></code>
@@ -176,7 +175,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
 
         /// <summary>Returns a string representation of this construct.</summary>
         /// <returns>a string representation of this resource</returns>
-        [JsiiMethod(name: "toString", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", isOverride: true)]
+        [JsiiMethod(name: "toString", returnsJson: "{\"type\":{\"primitive\":\"string\"}}")]
         public override string ToString()
         {
             return InvokeInstanceMethod<string>(new System.Type[]{}, new object[]{})!;

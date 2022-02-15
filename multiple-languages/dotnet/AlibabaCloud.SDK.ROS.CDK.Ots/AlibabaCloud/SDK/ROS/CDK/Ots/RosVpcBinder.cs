@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -191,7 +191,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: instanceVpcName: Custom name, need to be unique under the OTS instance.
             /// </remarks>
-            [JsiiProperty(name: "instanceVpcName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "instanceVpcName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceVpcName
             {
                 get;
@@ -204,7 +204,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// 2. A VPC instance only allows requests from all VPCs it is bound to.
             /// 3, VPC_CONSOLE instance only allows requests from the console and all VPCs it is bound to
             /// </remarks>
-            [JsiiProperty(name: "network", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "network", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Network
             {
                 get;
@@ -214,7 +214,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: virtualSwitchId: vSwitch Id.
             /// </remarks>
-            [JsiiProperty(name: "virtualSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "virtualSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VirtualSwitchId
             {
                 get;
@@ -224,7 +224,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: vpcId: Vpc Id.
             /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VpcId
             {
                 get;

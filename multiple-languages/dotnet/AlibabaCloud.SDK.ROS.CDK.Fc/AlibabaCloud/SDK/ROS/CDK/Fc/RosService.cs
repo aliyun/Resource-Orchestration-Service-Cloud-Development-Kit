@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -241,11 +241,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         public interface ILogConfigProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: enableRequestMetrics: Whether enable request metrics.
+            /// <strong>Property</strong>: enableRequestMetrics: Specifies whether to enable the request-level metrics. If you enable this feature, you can view the time and memory that are consumed for a specific invocation of each function in the service. Valid values:
+            /// false: disables request-level metrics.
+            /// true: enables request-level metrics. Default value: true.
             /// </remarks>
             [JsiiProperty(name: "enableRequestMetrics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? EnableRequestMetrics
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: logBeginRule: The log rotation rule. Log are split based on the rule. The log blocks obtained after the splitting are written to Log Service. Valid values:
+            /// None: disables the log splitting rule. This is the default value.
+            /// DefaultRegex: sets the log splitting rule to the default regular expression. If you set this parameter to DefaultRegex, logs are split based on the data in a log. For example, the line that contains 2021-10-10 in the log is considered as the first line of a log block. The first line and the following consecutive lines that do not contain dates in the log are written to Log Service as a whole.
+            /// </remarks>
+            [JsiiProperty(name: "logBeginRule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LogBeginRule
             {
                 get
                 {
@@ -287,11 +304,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: enableRequestMetrics: Whether enable request metrics.
+                /// <strong>Property</strong>: enableRequestMetrics: Specifies whether to enable the request-level metrics. If you enable this feature, you can view the time and memory that are consumed for a specific invocation of each function in the service. Valid values:
+                /// false: disables request-level metrics.
+                /// true: enables request-level metrics. Default value: true.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "enableRequestMetrics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? EnableRequestMetrics
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: logBeginRule: The log rotation rule. Log are split based on the rule. The log blocks obtained after the splitting are written to Log Service. Valid values:
+                /// None: disables the log splitting rule. This is the default value.
+                /// DefaultRegex: sets the log splitting rule to the default regular expression. If you set this parameter to DefaultRegex, logs are split based on the data in a log. For example, the line that contains 2021-10-10 in the log is considered as the first line of a log block. The first line and the following consecutive lines that do not contain dates in the log are written to Log Service as a whole.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "logBeginRule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? LogBeginRule
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -321,11 +352,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         public class LogConfigProperty : AlibabaCloud.SDK.ROS.CDK.Fc.RosService.ILogConfigProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: enableRequestMetrics: Whether enable request metrics.
+            /// <strong>Property</strong>: enableRequestMetrics: Specifies whether to enable the request-level metrics. If you enable this feature, you can view the time and memory that are consumed for a specific invocation of each function in the service. Valid values:
+            /// false: disables request-level metrics.
+            /// true: enables request-level metrics. Default value: true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "enableRequestMetrics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "enableRequestMetrics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableRequestMetrics
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: logBeginRule: The log rotation rule. Log are split based on the rule. The log blocks obtained after the splitting are written to Log Service. Valid values:
+            /// None: disables the log splitting rule. This is the default value.
+            /// DefaultRegex: sets the log splitting rule to the default regular expression. If you set this parameter to DefaultRegex, logs are split based on the data in a log. For example, the line that contains 2021-10-10 in the log is considered as the first line of a log block. The first line and the following consecutive lines that do not contain dates in the log are written to Log Service as a whole.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "logBeginRule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LogBeginRule
             {
                 get;
                 set;
@@ -335,7 +381,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: logstore: The log store name of Logs service
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Logstore
             {
                 get;
@@ -346,7 +392,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: project: The project name of Logs service
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Project
             {
                 get;
@@ -408,7 +454,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: mountDir: A local mount point.
             /// </remarks>
-            [JsiiProperty(name: "mountDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "mountDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MountDir
             {
                 get;
@@ -418,7 +464,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: serverAddr: The address of NAS instance.
             /// </remarks>
-            [JsiiProperty(name: "serverAddr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "serverAddr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServerAddr
             {
                 get;
@@ -498,7 +544,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: groupId: Group ID
             /// </remarks>
-            [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object GroupId
             {
                 get;
@@ -508,7 +554,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: mountPoints: Mount points
             /// </remarks>
-            [JsiiProperty(name: "mountPoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.MountPointsProperty\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+            [JsiiProperty(name: "mountPoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.MountPointsProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object MountPoints
             {
                 get;
@@ -518,7 +564,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: userId: User ID
             /// </remarks>
-            [JsiiProperty(name: "userId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "userId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object UserId
             {
                 get;
@@ -585,7 +631,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: key: undefined
             /// </remarks>
-            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Key
             {
                 get;
@@ -596,7 +642,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: value: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Value
             {
                 get;
@@ -667,7 +713,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: params: The tracing analysis parameters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "params", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "params", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Params
             {
                 get;
@@ -678,7 +724,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: type: The type of the tracing analysis system.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Type
             {
                 get;
@@ -758,7 +804,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: securityGroupId: Security group ID
             /// </remarks>
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SecurityGroupId
             {
                 get;
@@ -768,7 +814,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: vpcId: VPC ID
             /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VpcId
             {
                 get;
@@ -778,7 +824,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: vSwitchIds: List of VSwitch IDs
             /// </remarks>
-            [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VSwitchIds
             {
                 get;

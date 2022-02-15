@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.232Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.177Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(KubernetesClusterProps.Jsii$Proxy.class)
 public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -272,6 +272,13 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property resourceGroupId: The ID of resource group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * Property runtime: The container runtime of the cluster.
      * <p>
      * The default runtime is Docker.
@@ -477,6 +484,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object numOfNodes;
         java.lang.Object podVswitchIds;
         java.lang.Object proxyMode;
+        java.lang.Object resourceGroupId;
         java.lang.Object runtime;
         java.lang.Object securityGroupId;
         java.lang.Object serviceCidr;
@@ -1174,6 +1182,26 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link KubernetesClusterProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KubernetesClusterProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link KubernetesClusterProps#getRuntime}
          * @param runtime Property runtime: The container runtime of the cluster.
          *                The default runtime is Docker.
@@ -1619,6 +1647,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object numOfNodes;
         private final java.lang.Object podVswitchIds;
         private final java.lang.Object proxyMode;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object runtime;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceCidr;
@@ -1672,6 +1701,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.podVswitchIds = software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1726,6 +1756,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.numOfNodes = builder.numOfNodes;
             this.podVswitchIds = builder.podVswitchIds;
             this.proxyMode = builder.proxyMode;
+            this.resourceGroupId = builder.resourceGroupId;
             this.runtime = builder.runtime;
             this.securityGroupId = builder.securityGroupId;
             this.serviceCidr = builder.serviceCidr;
@@ -1888,6 +1919,11 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getProxyMode() {
             return this.proxyMode;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -2056,6 +2092,9 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.getProxyMode() != null) {
                 data.set("proxyMode", om.valueToTree(this.getProxyMode()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getRuntime() != null) {
                 data.set("runtime", om.valueToTree(this.getRuntime()));
             }
@@ -2154,6 +2193,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
             if (this.podVswitchIds != null ? !this.podVswitchIds.equals(that.podVswitchIds) : that.podVswitchIds != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.runtime != null ? !this.runtime.equals(that.runtime) : that.runtime != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
@@ -2204,6 +2244,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
             result = 31 * result + (this.podVswitchIds != null ? this.podVswitchIds.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.runtime != null ? this.runtime.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);

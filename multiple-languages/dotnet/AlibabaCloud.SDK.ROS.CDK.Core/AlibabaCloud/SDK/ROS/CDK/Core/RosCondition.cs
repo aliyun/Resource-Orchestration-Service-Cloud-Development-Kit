@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>Synthesizes the condition.</summary>
-        [JsiiMethod(name: "resolve", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"_context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]", isOverride: true)]
+        [JsiiMethod(name: "resolve", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"_context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]")]
         public virtual object Resolve(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext context)
         {
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext)}, new object[]{context})!;

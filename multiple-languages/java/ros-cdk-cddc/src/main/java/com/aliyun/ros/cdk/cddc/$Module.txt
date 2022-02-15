@@ -1,0 +1,9 @@
+@alicloud/ros-cdk-cddc.DedicatedHost=com.aliyun.ros.cdk.cddc.DedicatedHost
+@alicloud/ros-cdk-cddc.DedicatedHostGroup=com.aliyun.ros.cdk.cddc.DedicatedHostGroup
+@alicloud/ros-cdk-cddc.DedicatedHostGroupProps=com.aliyun.ros.cdk.cddc.DedicatedHostGroupProps
+@alicloud/ros-cdk-cddc.DedicatedHostProps=com.aliyun.ros.cdk.cddc.DedicatedHostProps
+@alicloud/ros-cdk-cddc.RosDedicatedHost=com.aliyun.ros.cdk.cddc.RosDedicatedHost
+@alicloud/ros-cdk-cddc.RosDedicatedHost.TagsProperty=com.aliyun.ros.cdk.cddc.RosDedicatedHost$TagsProperty
+@alicloud/ros-cdk-cddc.RosDedicatedHostGroup=com.aliyun.ros.cdk.cddc.RosDedicatedHostGroup
+@alicloud/ros-cdk-cddc.RosDedicatedHostGroupProps=com.aliyun.ros.cdk.cddc.RosDedicatedHostGroupProps
+@alicloud/ros-cdk-cddc.RosDedicatedHostProps=com.aliyun.ros.cdk.cddc.RosDedicatedHostProps

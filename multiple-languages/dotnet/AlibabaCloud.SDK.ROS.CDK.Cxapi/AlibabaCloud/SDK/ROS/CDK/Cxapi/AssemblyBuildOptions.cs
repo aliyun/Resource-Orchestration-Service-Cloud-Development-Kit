@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         /// <strong>Default</strong>: - if this option is not specified, runtime info will not be included
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "runtimeInfo", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cxapi.RuntimeInfo\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "runtimeInfo", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cxapi.RuntimeInfo\"}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Cxapi.IRuntimeInfo? RuntimeInfo
         {
             get;

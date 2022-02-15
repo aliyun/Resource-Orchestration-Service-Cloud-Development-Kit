@@ -1,112 +1,193 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	
+	
   
+	
 	<PropertyGroup>
 		
+		
     
+		
 		<!-- Package Identification -->
 		
+		
     
+		
 		<Description>Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com</Description>
 		
+		
     
+		
 		<PackageId>AlibabaCloud.SDK.ROS.CDK.Ros</PackageId>
 		
+		
     
+		
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		
-    
-		<PackageVersion>1.0.3</PackageVersion>
 		
     
+		
+		<PackageVersion>1.0.4</PackageVersion>
+		
+		
+    
+		
 		<!-- Additional Metadata -->
 		
+		
     
+		
 		<Authors>ROS Development Team</Authors>
 		
+		
     
+		
 		<Language>en-US</Language>
 		
+		
     
+		
 		<ProjectUrl>https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</ProjectUrl>
 		
+		
     
+		
 		<RepositoryUrl>https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</RepositoryUrl>
 		
+		
     
+		
 		<RepositoryType>git</RepositoryType>
 		
+		
     
+		
 		<!-- Build Configuration -->
 		
+		
     
+		
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		
+		
     
+		
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		
+		
     
+		
 		<IncludeSymbols>true</IncludeSymbols>
 		
+		
     
+		
 		<IncludeSource>true</IncludeSource>
 		
+		
     
+		
 		<Nullable>enable</Nullable>
 		
+		
     
+		
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		
+		
     
+		
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		
+		
   
+		
+		<AssemblyName>AlibabaCloud.SDK.ROS.CDK.Ros</AssemblyName>
+		
+		
+		<RootNamespace>AlibabaCloud.SDK.ROS.CDK.Ros</RootNamespace>
+		
+		
+		<OutputType>Library</OutputType>
+		
+	
 		<AssemblyName>AlibabaCloud.SDK.ROS.CDK.Ros</AssemblyName>
 		<RootNamespace>AlibabaCloud.SDK.ROS.CDK.Ros</RootNamespace>
 		<OutputType>Library</OutputType>
 	</PropertyGroup>
 	
-  
-	<ItemGroup>
-		
-    
-		<EmbeddedResource Include="alicloud-ros-cdk-ros-1.0.3.tgz"/>
-		
-  
-	</ItemGroup>
 	
   
+	
 	<ItemGroup>
 		
-    
-		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.49.0,2.0.0)"/>
 		
     
-		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Core" Version="[1.0.5,2.0.0)"/>
+		
+		<EmbeddedResource Include="alicloud-ros-cdk-ros-1.0.4.tgz"/>
+		
+		
+  
+	
+	</ItemGroup>
+	
+	
+  
+	
+	<ItemGroup>
+		
 		
     
+		
+		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.53.0,2.0.0)"/>
+		
+		
+    
+		
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Core" Version="[1.0.6,2.0.0)"/>
+		
+		
+    
+		
 		<PackageReference Include="Constructs" Version="[3.0.4,4.0.0)"/>
 		
+		
   
+	
 	</ItemGroup>
 	
+	
   
+	
 	<PropertyGroup>
 		
+		
     
+		
 		<!-- Silence [Obsolete] warnings -->
 		
+		
     
+		
 		<NoWarn>0612,0618</NoWarn>
 		
+		
     
+		
 		<!-- Treat warnings symptomatic of code generation bugs as errors -->
 		
+		
     
+		
 		<WarningsAsErrors>0108,0109</WarningsAsErrors>
 		
+		
   
+	
 	</PropertyGroup>
 	
+	
+
 
 </Project>

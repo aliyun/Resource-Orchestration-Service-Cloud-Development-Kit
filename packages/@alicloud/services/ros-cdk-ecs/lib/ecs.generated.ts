@@ -1769,6 +1769,11 @@ export interface RosCopyImageProps {
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The ID of the resource group to which the image copy belongs. If not provided, the image copy belongs to the default resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property sourceRegionId: ID of the region to where the source image belongs. Default is current region ID.
      */
     readonly sourceRegionId?: string | ros.IResolvable;
@@ -1791,6 +1796,7 @@ function RosCopyImagePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('sourceRegionId', ros.validateString)(properties.sourceRegionId));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('destinationRegionId', ros.requiredValidator)(properties.destinationRegionId));
     errors.collect(ros.propertyValidator('destinationRegionId', ros.validateString)(properties.destinationRegionId));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
@@ -1822,6 +1828,7 @@ function rosCopyImagePropsToRosTemplate(properties: any, enableResourcePropertyC
       DestinationImageName: ros.stringToRosTemplate(properties.destinationImageName),
       Encrypted: ros.booleanToRosTemplate(properties.encrypted),
       KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SourceRegionId: ros.stringToRosTemplate(properties.sourceRegionId),
       Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
     };
@@ -1890,6 +1897,11 @@ export class RosCopyImage extends ros.RosResource {
     public kmsKeyId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The ID of the resource group to which the image copy belongs. If not provided, the image copy belongs to the default resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property sourceRegionId: ID of the region to where the source image belongs. Default is current region ID.
      */
     public sourceRegionId: string | ros.IResolvable | undefined;
@@ -1919,6 +1931,7 @@ export class RosCopyImage extends ros.RosResource {
         this.destinationImageName = props.destinationImageName;
         this.encrypted = props.encrypted;
         this.kmsKeyId = props.kmsKeyId;
+        this.resourceGroupId = props.resourceGroupId;
         this.sourceRegionId = props.sourceRegionId;
         this.tag = props.tag;
     }
@@ -1932,6 +1945,7 @@ export class RosCopyImage extends ros.RosResource {
             destinationImageName: this.destinationImageName,
             encrypted: this.encrypted,
             kmsKeyId: this.kmsKeyId,
+            resourceGroupId: this.resourceGroupId,
             sourceRegionId: this.sourceRegionId,
             tag: this.tag,
         };
@@ -2036,7 +2050,7 @@ export interface RosCustomImageProps {
     readonly platform?: string | ros.IResolvable;
 
     /**
-     * @Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+     * @Property resourceGroupId: The ID of the resource group to which to assign the custom image.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 
@@ -2178,7 +2192,7 @@ export class RosCustomImage extends ros.RosResource {
     public platform: string | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+     * @Property resourceGroupId: The ID of the resource group to which to assign the custom image.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
 
@@ -2395,7 +2409,7 @@ export interface RosDedicatedHostProps {
     readonly autoRenew?: string | ros.IResolvable;
 
     /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -2468,7 +2482,7 @@ function RosDedicatedHostPropsValidator(properties: any): ros.ValidationResult {
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
           data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
+          allowedValues: [1,2,3,6,12,24,36,48,60],
         }));
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
@@ -2643,7 +2657,7 @@ export class RosDedicatedHost extends ros.RosResource {
     public autoRenew: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.
      */
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
@@ -3074,7 +3088,7 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     if(properties.diskCategory && (typeof properties.diskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('diskCategory', ros.validateAllowedValues)({
           data: properties.diskCategory,
-          allowedValues: ["cloud","cloud_ssd","cloud_essd","cloud_efficiency","san_ssd","san_efficiency","cloud_auto"],
+          allowedValues: ["cloud","cloud_ssd","cloud_essd","cloud_efficiency","san_ssd","san_efficiency","cloud_auto","cloud_plx"],
         }));
     }
     errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
@@ -3869,7 +3883,7 @@ export interface RosInstanceProps {
     readonly autoRenew?: string | ros.IResolvable;
 
     /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -4133,7 +4147,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
           data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
+          allowedValues: [1,2,3,6,12,24,36,48,60],
         }));
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
@@ -4191,7 +4205,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
             data: properties.internetMaxBandwidthOut,
             min: 0,
-            max: 200,
+            max: undefined,
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
@@ -4200,7 +4214,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
             data: properties.internetMaxBandwidthIn,
             min: 1,
-            max: 200,
+            max: undefined,
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
@@ -4357,7 +4371,7 @@ export class RosInstance extends ros.RosResource {
     public autoRenew: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.
      */
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
@@ -4706,7 +4720,7 @@ function RosInstance_DiskMappingsPropertyValidator(properties: any): ros.Validat
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -5301,7 +5315,7 @@ function RosInstanceClone_DiskMappingsPropertyValidator(properties: any): ros.Va
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -5420,7 +5434,7 @@ export interface RosInstanceGroupProps {
     readonly autoRenew?: string | ros.IResolvable;
 
     /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
+     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.Old instances will not be changed.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -5748,7 +5762,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
             data: properties.internetMaxBandwidthOut,
             min: 0,
-            max: 200,
+            max: undefined,
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
@@ -5850,7 +5864,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
           data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
+          allowedValues: [1,2,3,6,12,24,36,48,60],
         }));
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
@@ -5885,7 +5899,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
             data: properties.internetMaxBandwidthIn,
             min: 1,
-            max: 200,
+            max: undefined,
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
@@ -6055,7 +6069,7 @@ export class RosInstanceGroup extends ros.RosResource {
     public autoRenew: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
+     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.Old instances will not be changed.
      */
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
@@ -6527,7 +6541,7 @@ function RosInstanceGroup_DiskMappingsPropertyValidator(properties: any): ros.Va
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -6718,7 +6732,7 @@ export interface RosInstanceGroupCloneProps {
     readonly autoRenew?: string | ros.IResolvable;
 
     /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
+     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.Old instances will not be changed.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -7001,7 +7015,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
           data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
+          allowedValues: [1,2,3,6,12,24,36,48,60],
         }));
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
@@ -7228,7 +7242,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public autoRenew: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
+     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12, 24, 36, 48, 60. Default value is 1.Old instances will not be changed.
      */
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
@@ -7616,7 +7630,7 @@ function RosInstanceGroupClone_DiskMappingsPropertyValidator(properties: any): r
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -8333,7 +8347,7 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
@@ -8357,7 +8371,7 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
         errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
             data: properties.internetMaxBandwidthIn,
             min: 1,
-            max: 200,
+            max: undefined,
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
@@ -8742,7 +8756,7 @@ function RosLaunchTemplate_DiskMappingsPropertyValidator(properties: any): ros.V
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));

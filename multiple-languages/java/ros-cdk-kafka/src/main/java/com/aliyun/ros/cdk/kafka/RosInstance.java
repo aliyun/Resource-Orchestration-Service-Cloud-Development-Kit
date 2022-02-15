@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS template type:  `ALIYUN::KAFKA::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.254Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.100Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -320,6 +320,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getIsEipInner() {
             return null;
         }
@@ -349,6 +356,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroup() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServiceVersion() {
             return null;
         }
 
@@ -387,11 +401,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<DeployOptionProperty> {
             java.lang.Object deployModule;
             java.lang.Object vSwitchId;
+            java.lang.Object config;
             java.lang.Object isEipInner;
             java.lang.Object isSetUserAndPassword;
             java.lang.Object name;
             java.lang.Object password;
             java.lang.Object securityGroup;
+            java.lang.Object serviceVersion;
             java.lang.Object username;
             java.lang.Object vpcId;
             java.lang.Object zoneId;
@@ -437,6 +453,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
                 this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeployOptionProperty#getConfig}
+             * @param config the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder config(com.aliyun.ros.cdk.core.IResolvable config) {
+                this.config = config;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeployOptionProperty#getConfig}
+             * @param config the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder config(java.util.Map<java.lang.String, ? extends java.lang.Object> config) {
+                this.config = config;
                 return this;
             }
 
@@ -551,6 +589,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DeployOptionProperty#getServiceVersion}
+             * @param serviceVersion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serviceVersion(java.lang.String serviceVersion) {
+                this.serviceVersion = serviceVersion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeployOptionProperty#getServiceVersion}
+             * @param serviceVersion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serviceVersion(com.aliyun.ros.cdk.core.IResolvable serviceVersion) {
+                this.serviceVersion = serviceVersion;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DeployOptionProperty#getUsername}
              * @param username the value to be set.
              * @return {@code this}
@@ -636,11 +696,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeployOptionProperty {
             private final java.lang.Object deployModule;
             private final java.lang.Object vSwitchId;
+            private final java.lang.Object config;
             private final java.lang.Object isEipInner;
             private final java.lang.Object isSetUserAndPassword;
             private final java.lang.Object name;
             private final java.lang.Object password;
             private final java.lang.Object securityGroup;
+            private final java.lang.Object serviceVersion;
             private final java.lang.Object username;
             private final java.lang.Object vpcId;
             private final java.lang.Object zoneId;
@@ -653,11 +715,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.deployModule = software.amazon.jsii.Kernel.get(this, "deployModule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.isEipInner = software.amazon.jsii.Kernel.get(this, "isEipInner", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.isSetUserAndPassword = software.amazon.jsii.Kernel.get(this, "isSetUserAndPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.securityGroup = software.amazon.jsii.Kernel.get(this, "securityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serviceVersion = software.amazon.jsii.Kernel.get(this, "serviceVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.username = software.amazon.jsii.Kernel.get(this, "username", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -670,11 +734,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.deployModule = java.util.Objects.requireNonNull(builder.deployModule, "deployModule is required");
                 this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.config = builder.config;
                 this.isEipInner = builder.isEipInner;
                 this.isSetUserAndPassword = builder.isSetUserAndPassword;
                 this.name = builder.name;
                 this.password = builder.password;
                 this.securityGroup = builder.securityGroup;
+                this.serviceVersion = builder.serviceVersion;
                 this.username = builder.username;
                 this.vpcId = builder.vpcId;
                 this.zoneId = builder.zoneId;
@@ -688,6 +754,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getVSwitchId() {
                 return this.vSwitchId;
+            }
+
+            @Override
+            public final java.lang.Object getConfig() {
+                return this.config;
             }
 
             @Override
@@ -716,6 +787,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getServiceVersion() {
+                return this.serviceVersion;
+            }
+
+            @Override
             public final java.lang.Object getUsername() {
                 return this.username;
             }
@@ -738,6 +814,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
                 data.set("deployModule", om.valueToTree(this.getDeployModule()));
                 data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+                if (this.getConfig() != null) {
+                    data.set("config", om.valueToTree(this.getConfig()));
+                }
                 if (this.getIsEipInner() != null) {
                     data.set("isEipInner", om.valueToTree(this.getIsEipInner()));
                 }
@@ -752,6 +831,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getSecurityGroup() != null) {
                     data.set("securityGroup", om.valueToTree(this.getSecurityGroup()));
+                }
+                if (this.getServiceVersion() != null) {
+                    data.set("serviceVersion", om.valueToTree(this.getServiceVersion()));
                 }
                 if (this.getUsername() != null) {
                     data.set("username", om.valueToTree(this.getUsername()));
@@ -782,11 +864,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!deployModule.equals(that.deployModule)) return false;
                 if (!vSwitchId.equals(that.vSwitchId)) return false;
+                if (this.config != null ? !this.config.equals(that.config) : that.config != null) return false;
                 if (this.isEipInner != null ? !this.isEipInner.equals(that.isEipInner) : that.isEipInner != null) return false;
                 if (this.isSetUserAndPassword != null ? !this.isSetUserAndPassword.equals(that.isSetUserAndPassword) : that.isSetUserAndPassword != null) return false;
                 if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
                 if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
                 if (this.securityGroup != null ? !this.securityGroup.equals(that.securityGroup) : that.securityGroup != null) return false;
+                if (this.serviceVersion != null ? !this.serviceVersion.equals(that.serviceVersion) : that.serviceVersion != null) return false;
                 if (this.username != null ? !this.username.equals(that.username) : that.username != null) return false;
                 if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
                 return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
@@ -796,11 +880,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.deployModule.hashCode();
                 result = 31 * result + (this.vSwitchId.hashCode());
+                result = 31 * result + (this.config != null ? this.config.hashCode() : 0);
                 result = 31 * result + (this.isEipInner != null ? this.isEipInner.hashCode() : 0);
                 result = 31 * result + (this.isSetUserAndPassword != null ? this.isSetUserAndPassword.hashCode() : 0);
                 result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
                 result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
                 result = 31 * result + (this.securityGroup != null ? this.securityGroup.hashCode() : 0);
+                result = 31 * result + (this.serviceVersion != null ? this.serviceVersion.hashCode() : 0);
                 result = 31 * result + (this.username != null ? this.username.hashCode() : 0);
                 result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
                 result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);

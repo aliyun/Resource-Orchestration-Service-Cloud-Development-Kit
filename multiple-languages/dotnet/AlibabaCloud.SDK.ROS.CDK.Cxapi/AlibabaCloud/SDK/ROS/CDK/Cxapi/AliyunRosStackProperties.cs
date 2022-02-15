@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
     public class AliyunRosStackProperties : AlibabaCloud.SDK.ROS.CDK.Cxapi.IAliyunRosStackProperties
     {
         /// <summary>A file relative to the assembly root which contains the ROS template for this stack.</summary>
-        [JsiiProperty(name: "templateFile", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "templateFile", typeJson: "{\"primitive\":\"string\"}")]
         public string TemplateFile
         {
             get;
@@ -20,7 +20,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
 
         /// <summary>Values for ROS stack parameters that should be passed when the stack is deployed.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "parameters", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "parameters", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOptional: true)]
         public System.Collections.Generic.IDictionary<string, string>? Parameters
         {
             get;
@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         /// <strong>Default</strong>: - name derived from artifact ID
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "stackName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "stackName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? StackName
         {
             get;

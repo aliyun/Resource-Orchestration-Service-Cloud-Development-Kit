@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.223Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.172Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesCluster")
 public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -897,6 +897,27 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder proxyMode(final com.aliyun.ros.cdk.core.IResolvable proxyMode) {
             this.props.proxyMode(proxyMode);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

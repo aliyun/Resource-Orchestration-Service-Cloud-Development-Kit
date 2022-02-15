@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class ValidationError : AlibabaCloud.SDK.ROS.CDK.Core.IValidationError
     {
         /// <summary>The error message.</summary>
-        [JsiiProperty(name: "message", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "message", typeJson: "{\"primitive\":\"string\"}")]
         public string Message
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>The construct which emitted the error.</summary>
-        [JsiiProperty(name: "source", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}", isOverride: true)]
+        [JsiiProperty(name: "source", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Core.Construct Source
         {
             get;

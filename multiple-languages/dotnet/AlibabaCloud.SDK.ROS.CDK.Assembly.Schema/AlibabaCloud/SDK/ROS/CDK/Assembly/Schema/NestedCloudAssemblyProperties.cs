@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class NestedCloudAssemblyProperties : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.INestedCloudAssemblyProperties
     {
         /// <summary>Relative path to the nested cloud assembly.</summary>
-        [JsiiProperty(name: "directoryName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "directoryName", typeJson: "{\"primitive\":\"string\"}")]
         public string DirectoryName
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: - The artifact ID
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? DisplayName
         {
             get;

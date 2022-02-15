@@ -51,7 +51,7 @@ export interface CustomImageProps {
     readonly platform?: string | ros.IResolvable;
 
     /**
-     * Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+     * Property resourceGroupId: The ID of the resource group to which to assign the custom image.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::CustomImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.519Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.355Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CustomImageProps")
 @software.amazon.jsii.Jsii.Proxy(CustomImageProps.Jsii$Proxy.class)
 public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable {
@@ -71,7 +71,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+     * Property resourceGroupId: The ID of the resource group to which to assign the custom image.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
@@ -284,7 +284,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CustomImageProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which to assign the custom image.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -294,7 +294,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CustomImageProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which to assign the custom image.
          * @return {@code this}
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {

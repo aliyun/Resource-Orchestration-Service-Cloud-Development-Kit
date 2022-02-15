@@ -141,6 +141,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: tagKeyLogicScope:
+        /// </remarks>
+        [JsiiProperty(name: "tagKeyLogicScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TagKeyLogicScope
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: tagKeyScope: The rule monitors the tag key, only applies to rules created based on managed rules
         /// </remarks>
         [JsiiProperty(name: "tagKeyScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -284,6 +297,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupIdsScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupIdsScope
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tagKeyLogicScope:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tagKeyLogicScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TagKeyLogicScope
             {
                 get => GetInstanceProperty<object?>();
             }

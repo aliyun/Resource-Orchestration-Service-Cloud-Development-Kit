@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
     public class DomainGroupProps : AlibabaCloud.SDK.ROS.CDK.Dns.IDomainGroupProps
     {
         /// <summary>Property groupName: Domain name group name.</summary>
-        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object GroupName
         {
             get;

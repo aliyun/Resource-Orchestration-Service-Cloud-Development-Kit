@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -387,7 +387,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// Valid values: -9.999999E18 to 9.999999E18.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "metricIntervalLowerBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "metricIntervalLowerBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MetricIntervalLowerBound
             {
                 get;
@@ -399,7 +399,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// Valid values: -9.999999E18 to 9.999999E18.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "metricIntervalUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "metricIntervalUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MetricIntervalUpperBound
             {
                 get;
@@ -410,7 +410,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// <strong>Property</strong>: scalingAdjustment: The specified number of ECS instances to be adjusted in step adjustment.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "scalingAdjustment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "scalingAdjustment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ScalingAdjustment
             {
                 get;

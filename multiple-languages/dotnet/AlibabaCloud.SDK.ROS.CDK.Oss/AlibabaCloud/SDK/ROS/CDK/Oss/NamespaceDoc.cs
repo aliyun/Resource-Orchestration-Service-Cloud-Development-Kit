@@ -8,7 +8,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
     /// This module is part of the AliCloud ROS Cloud Development Kit (ROS CDK) project.
     ///
     /// <code><![CDATA[
-    /// // Example automatically generated from non-compiling source. May contain errors.
     /// import * as OSS from '@alicloud/ros-cdk-oss';
     /// ]]></code>
     /// </remarks>

@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class Dependency : AlibabaCloud.SDK.ROS.CDK.Core.IDependency
     {
         /// <summary>Source the dependency.</summary>
-        [JsiiProperty(name: "source", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}", isOverride: true)]
+        [JsiiProperty(name: "source", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Core.IConstruct Source
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>Target of the dependency.</summary>
-        [JsiiProperty(name: "target", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}", isOverride: true)]
+        [JsiiProperty(name: "target", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Core.IConstruct Target
         {
             get;

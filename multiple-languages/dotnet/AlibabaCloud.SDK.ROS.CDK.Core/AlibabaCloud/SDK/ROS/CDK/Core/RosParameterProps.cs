@@ -8,7 +8,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class RosParameterProps : AlibabaCloud.SDK.ROS.CDK.Core.IRosParameterProps
     {
         [JsiiOptional]
-        [JsiiProperty(name: "allowedPattern", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "allowedPattern", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? AllowedPattern
         {
             get;
@@ -16,7 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "allowedValues", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "allowedValues", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}}", isOptional: true)]
         public object[]? AllowedValues
         {
             get;
@@ -24,7 +24,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "associationProperty", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "associationProperty", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? AssociationProperty
         {
             get;
@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "associationPropertyMetadata", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "associationPropertyMetadata", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
         public System.Collections.Generic.IDictionary<string, object>? AssociationPropertyMetadata
         {
             get;
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "confirm", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "confirm", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? Confirm
         {
             get;
@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "constraintDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "constraintDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? ConstraintDescription
         {
             get;
@@ -56,7 +56,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "defaultValue", typeJson: "{\"primitive\":\"any\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "defaultValue", typeJson: "{\"primitive\":\"any\"}", isOptional: true)]
         public object? DefaultValue
         {
             get;
@@ -64,7 +64,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? Description
         {
             get;
@@ -72,7 +72,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "label", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "label", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? Label
         {
             get;
@@ -80,7 +80,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "maxLength", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "maxLength", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
         public double? MaxLength
         {
             get;
@@ -88,7 +88,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "maxValue", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "maxValue", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
         public double? MaxValue
         {
             get;
@@ -96,7 +96,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "minLength", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "minLength", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
         public double? MinLength
         {
             get;
@@ -104,7 +104,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "minValue", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "minValue", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
         public double? MinValue
         {
             get;
@@ -112,7 +112,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "noEcho", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "noEcho", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? NoEcho
         {
             get;
@@ -120,7 +120,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "textArea", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "textArea", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? TextArea
         {
             get;
@@ -128,7 +128,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "type", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RosParameterType\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "type", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RosParameterType\"}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Core.RosParameterType? Type
         {
             get;

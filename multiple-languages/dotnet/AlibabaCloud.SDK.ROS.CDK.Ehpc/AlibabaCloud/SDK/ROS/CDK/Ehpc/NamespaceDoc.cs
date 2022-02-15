@@ -8,7 +8,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
     /// This module is part of the AliCloud ROS Cloud Development Kit (ROS CDK) project.
     ///
     /// <code><![CDATA[
-    /// // Example automatically generated from non-compiling source. May contain errors.
     /// import * as EHPC from '@alicloud/ros-cdk-ehpc';
     /// ]]></code>
     /// </remarks>

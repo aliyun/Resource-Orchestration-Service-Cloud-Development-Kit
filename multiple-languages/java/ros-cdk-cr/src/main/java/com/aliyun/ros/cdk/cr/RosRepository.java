@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * A ROS template type:  `ALIYUN::CR::Repository`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.215Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.159Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosRepository")
 public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,32 @@ public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRepoId() {
         return software.amazon.jsii.Kernel.get(this, "attrRepoId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRepoName() {
+        return software.amazon.jsii.Kernel.get(this, "attrRepoName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRepoNamespace() {
+        return software.amazon.jsii.Kernel.get(this, "attrRepoNamespace", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRepoType() {
+        return software.amazon.jsii.Kernel.get(this, "attrRepoType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -153,6 +177,24 @@ public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
+    }
+
+    /**
+     */
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRepoSource() {
         return software.amazon.jsii.Kernel.get(this, "repoSource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -167,6 +209,24 @@ public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRepoSource(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cr.RosRepository.RepoSourceProperty value) {
         software.amazon.jsii.Kernel.set(this, "repoSource", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTagImmutability() {
+        return software.amazon.jsii.Kernel.get(this, "tagImmutability", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTagImmutability(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "tagImmutability", value);
+    }
+
+    /**
+     */
+    public void setTagImmutability(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tagImmutability", value);
     }
     /**
      */
@@ -602,6 +662,23 @@ public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final java.lang.String instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param repoSource This parameter is required.
          */
         public Builder repoSource(final com.aliyun.ros.cdk.core.IResolvable repoSource) {
@@ -614,6 +691,23 @@ public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder repoSource(final com.aliyun.ros.cdk.cr.RosRepository.RepoSourceProperty repoSource) {
             this.props.repoSource(repoSource);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tagImmutability This parameter is required.
+         */
+        public Builder tagImmutability(final java.lang.Boolean tagImmutability) {
+            this.props.tagImmutability(tagImmutability);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tagImmutability This parameter is required.
+         */
+        public Builder tagImmutability(final com.aliyun.ros.cdk.core.IResolvable tagImmutability) {
+            this.props.tagImmutability(tagImmutability);
             return this;
         }
 

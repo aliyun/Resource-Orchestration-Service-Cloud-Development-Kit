@@ -184,19 +184,24 @@ export class RosInstanceEndpointAclPolicy extends ros.RosResource {
 export interface RosNamespaceProps {
 
     /**
-     * @Property namespace: domain name
+     * @Property namespace: The name of the namespace.
      */
     readonly namespace: string | ros.IResolvable;
 
     /**
-     * @Property autoCreate: whether auto create repository
+     * @Property autoCreate: Specifies whether to automatically create an image repository.
      */
     readonly autoCreate?: boolean | ros.IResolvable;
 
     /**
-     * @Property defaultVisibility: repository default visibility, public or private
+     * @Property defaultVisibility: The default type of the repository that is automatically created. Valid values: PUBLIC, PRIVATE.
      */
     readonly defaultVisibility?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the enterprise edition instance which namespace belongs to. If not provided, will use personal edition instance as default.
+     */
+    readonly instanceId?: string | ros.IResolvable;
 }
 
 /**
@@ -209,6 +214,7 @@ export interface RosNamespaceProps {
 function RosNamespacePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('autoCreate', ros.validateBoolean)(properties.autoCreate));
     if(properties.defaultVisibility && (typeof properties.defaultVisibility) !== 'object') {
         errors.collect(ros.propertyValidator('defaultVisibility', ros.validateAllowedValues)({
@@ -246,6 +252,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
       Namespace: ros.stringToRosTemplate(properties.namespace),
       AutoCreate: ros.booleanToRosTemplate(properties.autoCreate),
       DefaultVisibility: ros.stringToRosTemplate(properties.defaultVisibility),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
     };
 }
 
@@ -264,7 +271,17 @@ export class RosNamespace extends ros.RosResource {
      */
 
     /**
-     * @Attribute NamespaceId: The namespace id
+     * @Attribute InstanceId: The ID of the enterprise edition instance which namespace belongs to.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Namespace: The namespace.
+     */
+    public readonly attrNamespace: ros.IResolvable;
+
+    /**
+     * @Attribute NamespaceId: The namespace ID.
      */
     public readonly attrNamespaceId: ros.IResolvable;
 
@@ -272,19 +289,24 @@ export class RosNamespace extends ros.RosResource {
 
 
     /**
-     * @Property namespace: domain name
+     * @Property namespace: The name of the namespace.
      */
     public namespace: string | ros.IResolvable;
 
     /**
-     * @Property autoCreate: whether auto create repository
+     * @Property autoCreate: Specifies whether to automatically create an image repository.
      */
     public autoCreate: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property defaultVisibility: repository default visibility, public or private
+     * @Property defaultVisibility: The default type of the repository that is automatically created. Valid values: PUBLIC, PRIVATE.
      */
     public defaultVisibility: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The ID of the enterprise edition instance which namespace belongs to. If not provided, will use personal edition instance as default.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CR::Namespace`.
@@ -295,12 +317,15 @@ export class RosNamespace extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosNamespaceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosNamespace.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrNamespace = this.getAtt('Namespace');
         this.attrNamespaceId = this.getAtt('NamespaceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.namespace = props.namespace;
         this.autoCreate = props.autoCreate;
         this.defaultVisibility = props.defaultVisibility;
+        this.instanceId = props.instanceId;
     }
 
 
@@ -309,6 +334,7 @@ export class RosNamespace extends ros.RosResource {
             namespace: this.namespace,
             autoCreate: this.autoCreate,
             defaultVisibility: this.defaultVisibility,
+            instanceId: this.instanceId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -322,34 +348,44 @@ export class RosNamespace extends ros.RosResource {
 export interface RosRepositoryProps {
 
     /**
-     * @Property repoName: the name of the repo
+     * @Property repoName: The name of the repository.
      */
     readonly repoName: string | ros.IResolvable;
 
     /**
-     * @Property repoNamespace: the namespace the repo belongs to
+     * @Property repoNamespace: The name of the namespace to which the repository belongs.
      */
     readonly repoNamespace: string | ros.IResolvable;
 
     /**
-     * @Property repoType: repository visibility, public or private
+     * @Property repoType: The type of the repository. Valid values: PUBLIC, PRIVATE.
      */
     readonly repoType: string | ros.IResolvable;
 
     /**
-     * @Property summary: description or something alike
+     * @Property summary: The summary of the repository.
      */
     readonly summary: string | ros.IResolvable;
 
     /**
-     * @Property detail: detailed configuration in markdown format
+     * @Property detail: The description of the repository.
      */
     readonly detail?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the enterprise edition instance which repository belongs to. If not provided, will use personal edition instance as default.
+     */
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * @Property repoSource: Code Source message.
      */
     readonly repoSource?: RosRepository.RepoSourceProperty | ros.IResolvable;
+
+    /**
+     * @Property tagImmutability: Specifies whether the repository is immutable. Only takes effect when InstanceId is specified.
+     */
+    readonly tagImmutability?: boolean | ros.IResolvable;
 }
 
 /**
@@ -362,6 +398,7 @@ export interface RosRepositoryProps {
 function RosRepositoryPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tagImmutability', ros.validateBoolean)(properties.tagImmutability));
     errors.collect(ros.propertyValidator('repoNamespace', ros.requiredValidator)(properties.repoNamespace));
     if(properties.repoNamespace && (Array.isArray(properties.repoNamespace) || (typeof properties.repoNamespace) === 'string')) {
         errors.collect(ros.propertyValidator('repoNamespace', ros.validateLength)({
@@ -379,6 +416,7 @@ function RosRepositoryPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('repoType', ros.validateString)(properties.repoType));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('repoName', ros.requiredValidator)(properties.repoName));
     if(properties.repoName && (Array.isArray(properties.repoName) || (typeof properties.repoName) === 'string')) {
         errors.collect(ros.propertyValidator('repoName', ros.validateLength)({
@@ -428,7 +466,9 @@ function rosRepositoryPropsToRosTemplate(properties: any, enableResourceProperty
       RepoType: ros.stringToRosTemplate(properties.repoType),
       Summary: ros.stringToRosTemplate(properties.summary),
       Detail: ros.stringToRosTemplate(properties.detail),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
       RepoSource: rosRepositoryRepoSourcePropertyToRosTemplate(properties.repoSource),
+      TagImmutability: ros.booleanToRosTemplate(properties.tagImmutability),
     };
 }
 
@@ -447,42 +487,72 @@ export class RosRepository extends ros.RosResource {
      */
 
     /**
-     * @Attribute RepoId: The repo id
+     * @Attribute InstanceId: The ID of the enterprise edition instance which repository belongs to.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute RepoId: The repository ID.
      */
     public readonly attrRepoId: ros.IResolvable;
+
+    /**
+     * @Attribute RepoName: The name of the repository.
+     */
+    public readonly attrRepoName: ros.IResolvable;
+
+    /**
+     * @Attribute RepoNamespace: The name of the namespace to which the repository belongs.
+     */
+    public readonly attrRepoNamespace: ros.IResolvable;
+
+    /**
+     * @Attribute RepoType: The type of the repository.
+     */
+    public readonly attrRepoType: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property repoName: the name of the repo
+     * @Property repoName: The name of the repository.
      */
     public repoName: string | ros.IResolvable;
 
     /**
-     * @Property repoNamespace: the namespace the repo belongs to
+     * @Property repoNamespace: The name of the namespace to which the repository belongs.
      */
     public repoNamespace: string | ros.IResolvable;
 
     /**
-     * @Property repoType: repository visibility, public or private
+     * @Property repoType: The type of the repository. Valid values: PUBLIC, PRIVATE.
      */
     public repoType: string | ros.IResolvable;
 
     /**
-     * @Property summary: description or something alike
+     * @Property summary: The summary of the repository.
      */
     public summary: string | ros.IResolvable;
 
     /**
-     * @Property detail: detailed configuration in markdown format
+     * @Property detail: The description of the repository.
      */
     public detail: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The ID of the enterprise edition instance which repository belongs to. If not provided, will use personal edition instance as default.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property repoSource: Code Source message.
      */
     public repoSource: RosRepository.RepoSourceProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property tagImmutability: Specifies whether the repository is immutable. Only takes effect when InstanceId is specified.
+     */
+    public tagImmutability: boolean | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CR::Repository`.
@@ -493,7 +563,11 @@ export class RosRepository extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRepositoryProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRepository.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
         this.attrRepoId = this.getAtt('RepoId');
+        this.attrRepoName = this.getAtt('RepoName');
+        this.attrRepoNamespace = this.getAtt('RepoNamespace');
+        this.attrRepoType = this.getAtt('RepoType');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.repoName = props.repoName;
@@ -501,7 +575,9 @@ export class RosRepository extends ros.RosResource {
         this.repoType = props.repoType;
         this.summary = props.summary;
         this.detail = props.detail;
+        this.instanceId = props.instanceId;
         this.repoSource = props.repoSource;
+        this.tagImmutability = props.tagImmutability;
     }
 
 
@@ -512,7 +588,9 @@ export class RosRepository extends ros.RosResource {
             repoType: this.repoType,
             summary: this.summary,
             detail: this.detail,
+            instanceId: this.instanceId,
             repoSource: this.repoSource,
+            tagImmutability: this.tagImmutability,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

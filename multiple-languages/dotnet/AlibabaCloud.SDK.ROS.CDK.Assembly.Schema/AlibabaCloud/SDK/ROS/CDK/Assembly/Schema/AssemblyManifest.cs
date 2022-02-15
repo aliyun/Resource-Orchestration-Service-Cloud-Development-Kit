@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class AssemblyManifest : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IAssemblyManifest
     {
         /// <summary>Protocol version.</summary>
-        [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}")]
         public string Version
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: - no artifacts.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "artifacts", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.ArtifactManifest\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "artifacts", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.ArtifactManifest\"},\"kind\":\"map\"}}", isOptional: true)]
         public System.Collections.Generic.IDictionary<string, AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IArtifactManifest>? Artifacts
         {
             get;
@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: - no missing context.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "missing", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.MissingContext\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "missing", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.MissingContext\"},\"kind\":\"array\"}}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IMissingContext[]? Missing
         {
             get;
@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: - no info.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "runtime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.RuntimeInfo\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "runtime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.RuntimeInfo\"}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IRuntimeInfo? Runtime
         {
             get;

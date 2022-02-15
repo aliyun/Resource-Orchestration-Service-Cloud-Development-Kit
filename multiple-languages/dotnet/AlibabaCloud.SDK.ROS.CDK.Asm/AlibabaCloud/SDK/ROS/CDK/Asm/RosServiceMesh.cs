@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -421,7 +421,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: opaLimitCpu: The limit on the CPU of the OPA container.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "opaLimitCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "opaLimitCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OpaLimitCpu
             {
                 get;
@@ -432,7 +432,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: opaLimitMemory: The limit on the memory size of the OPA container.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "opaLimitMemory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "opaLimitMemory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OpaLimitMemory
             {
                 get;
@@ -443,7 +443,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: opaLogLevel: The log level of the OPA container.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "opaLogLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "opaLogLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OpaLogLevel
             {
                 get;
@@ -454,7 +454,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: opaRequestCpu: The number of CPU cores requested by the OPA container.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "opaRequestCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "opaRequestCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OpaRequestCpu
             {
                 get;
@@ -465,7 +465,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: opaRequestMemory: The size of the memory requested by the OPA container.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "opaRequestMemory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "opaRequestMemory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OpaRequestMemory
             {
                 get;
@@ -477,7 +477,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// Valid values: true and false. Default value: false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "openAgentPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "openAgentPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OpenAgentPolicy
             {
                 get;
@@ -617,7 +617,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: clusterDomain: The domain name of the cluster.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "clusterDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "clusterDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ClusterDomain
             {
                 get;
@@ -628,7 +628,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: proxyLimitCpu: The limit on the CPU of the sidecar.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "proxyLimitCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "proxyLimitCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProxyLimitCpu
             {
                 get;
@@ -639,7 +639,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: proxyLimitMemory: The limit on the memory size of the sidecar.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "proxyLimitMemory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "proxyLimitMemory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProxyLimitMemory
             {
                 get;
@@ -650,7 +650,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: proxyRequestCpu: The number of CPU cores requested by the sidecar.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "proxyRequestCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "proxyRequestCpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProxyRequestCpu
             {
                 get;
@@ -661,7 +661,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             /// <strong>Property</strong>: proxyRequestMemory: The size of the memory requested by the sidecar.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "proxyRequestMemory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "proxyRequestMemory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProxyRequestMemory
             {
                 get;

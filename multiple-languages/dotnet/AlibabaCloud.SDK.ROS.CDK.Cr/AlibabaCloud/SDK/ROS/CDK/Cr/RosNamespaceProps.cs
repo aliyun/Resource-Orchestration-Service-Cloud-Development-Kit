@@ -11,9 +11,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
     public class RosNamespaceProps : AlibabaCloud.SDK.ROS.CDK.Cr.IRosNamespaceProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: namespace: domain name
+        /// <strong>Property</strong>: namespace: The name of the namespace.
         /// </remarks>
-        [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Namespace
         {
             get;
@@ -21,10 +21,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoCreate: whether auto create repository
+        /// <strong>Property</strong>: autoCreate: Specifies whether to automatically create an image repository.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoCreate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "autoCreate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoCreate
         {
             get;
@@ -32,11 +32,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: defaultVisibility: repository default visibility, public or private
+        /// <strong>Property</strong>: defaultVisibility: The default type of the repository that is automatically created. Valid values: PUBLIC, PRIVATE.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "defaultVisibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "defaultVisibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DefaultVisibility
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: instanceId: The ID of the enterprise edition instance which namespace belongs to. If not provided, will use personal edition instance as default.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InstanceId
         {
             get;
             set;

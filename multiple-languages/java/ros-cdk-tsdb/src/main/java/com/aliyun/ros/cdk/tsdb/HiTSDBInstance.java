@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * A ROS resource type:  `ALIYUN::TSDB::HiTSDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.534Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.HiTSDBInstance")
 public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -255,6 +255,27 @@ public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * Property diskCategory: The category of disk.
+         * <p>
+         * @return {@code this}
+         * @param diskCategory Property diskCategory: The category of disk. This parameter is required.
+         */
+        public Builder diskCategory(final java.lang.String diskCategory) {
+            this.props.diskCategory(diskCategory);
+            return this;
+        }
+        /**
+         * Property diskCategory: The category of disk.
+         * <p>
+         * @return {@code this}
+         * @param diskCategory Property diskCategory: The category of disk. This parameter is required.
+         */
+        public Builder diskCategory(final com.aliyun.ros.cdk.core.IResolvable diskCategory) {
+            this.props.diskCategory(diskCategory);
             return this;
         }
 

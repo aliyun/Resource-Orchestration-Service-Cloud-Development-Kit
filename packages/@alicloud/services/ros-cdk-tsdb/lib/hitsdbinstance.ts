@@ -41,6 +41,11 @@ export interface HiTSDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * Property diskCategory: The category of disk.
+     */
+    readonly diskCategory?: string | ros.IResolvable;
+
+    /**
      * Property duration: The validity period of the instance. This parameter is valid only when the PayType parameter is set to PREPAY. Default value: 1.
      */
     readonly duration?: number | ros.IResolvable;
@@ -129,6 +134,7 @@ export class HiTSDBInstance extends ros.Resource {
             pricingCycle: props.pricingCycle,
             securityIpList: props.securityIpList,
             vSwitchId: props.vSwitchId,
+            diskCategory: props.diskCategory,
             instanceClass: props.instanceClass,
             duration: props.duration,
             payType: props.payType === undefined || props.payType === null ? 'POSTPAY' : props.payType,

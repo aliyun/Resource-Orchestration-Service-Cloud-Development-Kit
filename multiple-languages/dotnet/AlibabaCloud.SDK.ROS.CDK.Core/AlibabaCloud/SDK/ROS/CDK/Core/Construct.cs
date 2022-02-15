@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// This is an advanced framework feature. Only use this if you
         /// understand the implications.
         /// </remarks>
-        [JsiiMethod(name: "onPrepare", isOverride: true)]
+        [JsiiMethod(name: "onPrepare")]
         protected override void OnPrepare()
         {
             InvokeInstanceVoidMethod(new System.Type[]{}, new object[]{});
@@ -58,7 +58,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// This method is usually implemented by framework-level constructs such as <c>Stack</c> and <c>Asset</c>
         /// as they participate in synthesizing the cloud assembly.
         /// </remarks>
-        [JsiiMethod(name: "onSynthesize", parametersJson: "[{\"docs\":{\"summary\":\"The synthesis session.\"},\"name\":\"session\",\"type\":{\"fqn\":\"constructs.ISynthesisSession\"}}]", isOverride: true)]
+        [JsiiMethod(name: "onSynthesize", parametersJson: "[{\"docs\":{\"summary\":\"The synthesis session.\"},\"name\":\"session\",\"type\":{\"fqn\":\"constructs.ISynthesisSession\"}}]")]
         protected override void OnSynthesize(Constructs.ISynthesisSession session)
         {
             InvokeInstanceVoidMethod(new System.Type[]{typeof(Constructs.ISynthesisSession)}, new object[]{session});
@@ -70,7 +70,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// This method can be implemented by derived constructs in order to perform
         /// validation logic. It is called on all constructs before synthesis.
         /// </remarks>
-        [JsiiMethod(name: "onValidate", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}}", isOverride: true)]
+        [JsiiMethod(name: "onValidate", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}}")]
         protected override string[] OnValidate()
         {
             return InvokeInstanceMethod<string[]>(new System.Type[]{}, new object[]{})!;
