@@ -103,6 +103,7 @@ export interface DeployOptions {
     sync: boolean;
     outputsFile: boolean;
     skipIfNoChanges: boolean;
+    disableRollback: boolean;
 }
 export interface DestroyOptions {
     stackNames: string[];

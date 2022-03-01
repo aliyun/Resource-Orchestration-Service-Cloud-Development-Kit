@@ -89,6 +89,7 @@ async function parseCommandLineArguments() {
         .option('timeoutMinutes', { type: 'number', alias: 't', desc: 'The timeout minutes', default: 20 })
           .option('sync', { type: 'boolean', desc: 'Sync deploy stack', default: false })
           .option('skip-if-no-changes', { type: 'boolean', desc: 'When stack do not contains any new changes skip stack checks', default: false })
+          .option('disable-rollback', { type: 'boolean', desc: 'Disable rollback when creating resource stack fails', default: false })
           .option('outputs-file', { type: 'boolean', desc: 'Stack outputs will be written as JSON', default: false }),
     )
     .command(
@@ -341,7 +342,8 @@ async function initCommandLine() {
           timeout: args.timeoutMinutes,
           sync: args.sync,
           outputsFile: args['outputs-file'],
-          skipIfNoChanges: args['skip-if-no-changes']
+          skipIfNoChanges: args['skip-if-no-changes'],
+          disableRollback: args['disable-rollback']
         });
         return;
 

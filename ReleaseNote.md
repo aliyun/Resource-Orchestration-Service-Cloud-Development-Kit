@@ -1,5 +1,17 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.19] (2021-12-30)
+
+### Features
+
+-  Update ROS resource sdk packages.
+
+### Bug Fixes
+
+-  Fix Synchronous deployment stack raise user flow control ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/34)) .
+
+-  Fix Synchronous deployment stack failed command return code error. ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/35)) .
+
 ## [ros-cdk-cli 1.0.18] (2021-12-30)
 
 ### Features

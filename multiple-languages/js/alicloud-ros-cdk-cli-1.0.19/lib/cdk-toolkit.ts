@@ -492,17 +492,19 @@ export class CdkToolkit {
         const client = await this.getRosClient();
         let templateBody = fs.readFileSync(`./cdk.out/${stackName}.template.json`);
         let ClientToken = generateSafeId();
-
+        let disableRollback = options.disableRollback
         let content: { [name: string]: any } = {
             StackName: stackName.toString(),
             RegionId: region,
             TimeoutInMinutes: options.timeout,
             TemplateBody: templateBody,
-            ClientToken: ClientToken
+            ClientToken: ClientToken,
+            DisableRollback: disableRollback
         };
         let sync = options.sync
         let outputs = options.outputsFile
         let skipIfNoChanges = options.skipIfNoChanges
+
 
         if (stacks.stackArtifacts[0].tags) {
             let count: number = 1;
@@ -1189,47 +1191,64 @@ export class CdkToolkit {
             const block = new RewritableBlock(stream);
             withDefaultPrinterObj = setInterval(async function () {
                 await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'deploy')
-            }, 3000);
+            }, 5000);
             while (true) {
-                let params = {
-                    RegionId: content['RegionId'],
-                    StackId: createResult.StackId
-                };
-                const getStackResult = await client.getStack(params, requestOptions)
-                const status = getStackResult.Status
-                const statusReason = getStackResult.StatusReason
-                const stackName = getStackResult.StackName
-                const outputs = getStackResult.Outputs
-                const regComplete = RegExp(/COMPLETE/)
-                const regFailed = RegExp(/FAILED/)
-                if (regComplete.exec(status) || regFailed.exec(status)) {
-                    clearInterval(withDefaultPrinterObj);
-                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'deploy')
-                    if (outputs !== undefined) {
-                        print('\nOutputs:');
-                        stackOutputs[stackName] = outputs;
-                        for (const output of outputs) {
-                            const value = output['OutputValue'];
-                            const key = output['OutputKey'];
-                            const description = output['Description'];
-                            print('\n Key: %s  Value: %s Description: %s', colors.cyan(key), colors.cyan(value), colors.cyan(description));
+                try {
+                    await sleep(1000)
+                    let params = {
+                        RegionId: content['RegionId'],
+                        StackId: createResult.StackId
+                    };
+                    const getStackResult = await client.getStack(params, requestOptions)
+                    const status = getStackResult.Status
+                    const statusReason = getStackResult.StatusReason
+                    const stackName = getStackResult.StackName
+                    const outputs = getStackResult.Outputs
+                    const regComplete = RegExp(/COMPLETE/)
+                    const regFailed = RegExp(/FAILED/)
+                    if (regComplete.exec(status) || regFailed.exec(status)) {
+                        clearInterval(withDefaultPrinterObj);
+                        await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'deploy')
+                        if (outputs !== undefined) {
+                            print('\nOutputs:');
+                            stackOutputs[stackName] = outputs;
+                            for (const output of outputs) {
+                                const value = output['OutputValue'];
+                                const key = output['OutputKey'];
+                                const description = output['Description'];
+                                print('\n Key: %s  Value: %s Description: %s', colors.cyan(key), colors.cyan(value), colors.cyan(description));
+                            }
+                            if (outputsFile) {
+                                fs.writeFileSync(path.join(LOCAL_PATH + OUTPUTS_JSON), JSON.stringify(stackOutputs, null, '\t'));
+                            }
                         }
-                        if (outputsFile) {
-                            fs.writeFileSync(path.join(LOCAL_PATH + OUTPUTS_JSON), JSON.stringify(stackOutputs, null, '\t'));
+                        success(
+                            `\n ✅ The deployment(sync deploy stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
+                            colors.blue(status),
+                            colors.blue(statusReason),
+                            colors.blue(getStackResult.StackId)
+                        );
+                        await this.updateStackInfo(stackName, createResult.StackId);
+                        if (regComplete.exec(status)) {
+                            if (status.toString() == 'CREATE_ROLLBACK_COMPLETE') {
+                                exit(2)
+                            }
+                            exit(0)
+                        } else if (regFailed.exec(status)) {
+                            exit(2)
                         }
+                        break
                     }
-                    success(
-                        `\n ✅ The deployment(sync deploy stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
-                        colors.blue(status),
-                        colors.blue(statusReason),
-                        colors.blue(getStackResult.StackId)
-                    );
-                    await this.updateStackInfo(stackName, createResult.StackId);
-
-                    break
+                } catch (e) {
+                    if (e.code == 'Throttling.User' || e.code == 'Throttling' || e.code == 'Throttling.API') {
+                        await sleep(30000)
+                    } else {
+                        error('fail to sync create stack: %s %s', e.code, e.message)
+                        clearInterval(withDefaultPrinterObj);
+                        exit(1)
+                    }
                 }
             }
-            exit(0)
         } catch (e) {
             error('fail to sync create stack: %s %s', e.code, e.message)
             clearInterval(withDefaultPrinterObj);
@@ -1292,57 +1311,75 @@ export class CdkToolkit {
             const block = new RewritableBlock(stream);
             withDefaultPrinterObj = setInterval(async function () {
                 await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'update')
-            }, 3000);
+            }, 5000);
             while (true) {
-                const getNewStackResult = await client.getStack(params, requestOptions)
-                const status = getNewStackResult.Status
-                const statusReason = getNewStackResult.StatusReason
-                const stackName = getNewStackResult.StackName
-                const outputs = getNewStackResult.Outputs
-                const newUpdateTime = getNewStackResult.UpdateTime ? getNewStackResult.UpdateTime : ""
-                if (newUpdateTime == originalUpdateTime) {
-                    // stack update in progress or update did not begin
-                    continue
-                }
-                const regComplete = RegExp(/COMPLETE/)
-                const regFailed = RegExp(/FAILED/)
-                if (regComplete.exec(status) || regFailed.exec(status)) {
-                    clearInterval(withDefaultPrinterObj);
-                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'update')
-                    if (outputs !== undefined) {
-                        print('\nOutputs:');
-                        stackOutputs[stackName] = outputs;
-                        for (const output of outputs) {
-                            const value = output['OutputValue'];
-                            const key = output['OutputKey'];
-                            const description = output['Description'];
-                            print('\n Key: %s  Value: %s Description: %s', colors.cyan(key), colors.cyan(value), colors.cyan(description));
-                        }
-                        if (outputsFile) {
-                            fs.writeFileSync(path.join(LOCAL_PATH + OUTPUTS_JSON), JSON.stringify(stackOutputs, null, '\t'));
-                        }
+                try {
+                    await sleep(1000)
+                    const getNewStackResult = await client.getStack(params, requestOptions)
+                    const status = getNewStackResult.Status
+                    const statusReason = getNewStackResult.StatusReason
+                    const stackName = getNewStackResult.StackName
+                    const outputs = getNewStackResult.Outputs
+                    const newUpdateTime = getNewStackResult.UpdateTime ? getNewStackResult.UpdateTime : ""
+                    if (newUpdateTime == originalUpdateTime) {
+                        // stack update in progress or update did not begin
+                        continue
                     }
+                    const regComplete = RegExp(/COMPLETE/)
+                    const regFailed = RegExp(/FAILED/)
+                    if (regComplete.exec(status) || regFailed.exec(status)) {
+                        clearInterval(withDefaultPrinterObj);
+                        await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'update')
+                        if (outputs !== undefined) {
+                            print('\nOutputs:');
+                            stackOutputs[stackName] = outputs;
+                            for (const output of outputs) {
+                                const value = output['OutputValue'];
+                                const key = output['OutputKey'];
+                                const description = output['Description'];
+                                print('\n Key: %s  Value: %s Description: %s', colors.cyan(key), colors.cyan(value), colors.cyan(description));
+                            }
+                            if (outputsFile) {
+                                fs.writeFileSync(path.join(LOCAL_PATH + OUTPUTS_JSON), JSON.stringify(stackOutputs, null, '\t'));
+                            }
+                        }
 
-                    success(
-                        `\n ✅ The deployment(sync update stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
-                        colors.blue(status),
-                        colors.blue(statusReason),
-                        colors.blue(getNewStackResult.StackId),
-                    );
-                    await this.updateStackInfo(stackName, createResult.StackId);
-                    exit(0)
-                    break
-                } else {
-                    await sleep(5000);
+                        success(
+                            `\n ✅ The deployment(sync update stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
+                            colors.blue(status),
+                            colors.blue(statusReason),
+                            colors.blue(getNewStackResult.StackId),
+                        );
+                        await this.updateStackInfo(stackName, createResult.StackId);
+                        if (regComplete.exec(status)) {
+                            if (status.toString() == 'ROLLBACK_COMPLETE') {
+                                exit(2)
+                            }
+                            exit(0)
+                        } else if (regFailed.exec(status)) {
+                            exit(2)
+                        }
+                        break
+                    } else {
+                        await sleep(5000);
+                    }
+                } catch (e) {
+                    if (e.code == 'Throttling.User' || e.code == 'Throttling' || e.code == 'Throttling.API') {
+                        await sleep(30000)
+                    } else {
+                        error('fail to sync update stack: %s %s', e.code, e.message)
+                        clearInterval(withDefaultPrinterObj);
+                        exit(1)
+                    }
                 }
             }
+
         } catch (e) {
             if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
                 await this.updateStackInfo(content['StackName'], content['StackId']);
                 success('The stack is completely the same, there is no need to update.')
                 exit(0)
-            }
-            else {
+            } else {
                 error('fail to sync update stack: %s %s', e.code, e.message)
                 clearInterval(withDefaultPrinterObj);
                 exit(1)
@@ -1356,32 +1393,47 @@ export class CdkToolkit {
             const block = new RewritableBlock(stream);
             withDefaultPrinterObj = setInterval(async function () {
                 await CdkToolkit.withDefaultPrinter(client, content, requestOptions, content['StackId'], block, 'destroy')
-            }, 3000);
+            }, 5000);
             while (true) {
-                let params = {
-                    RegionId: content['RegionId'],
-                    StackId: content['StackId']
-                };
-                const getStackResult = await client.getStack(params, requestOptions)
-                const status = getStackResult.Status
-                const statusReason = getStackResult.StatusReason
-                const stackName = getStackResult.StackName
-                const regComplete = RegExp(/COMPLETE/)
-                const regFailed = RegExp(/FAILED/)
-                if (regComplete.exec(status) || regFailed.exec(status)) {
-                    clearInterval(withDefaultPrinterObj);
-                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, content['StackId'], block, 'destroy')
-                    success(
-                        `\n ✅ The task(sync destroy stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
-                        colors.blue(status),
-                        colors.blue(statusReason),
-                        colors.blue(getStackResult.StackId)
-                    );
-                    await this.updateStackInfo(stackName, DESTROY_STACK);
-                    break
+                try {
+                    await sleep(1000)
+                    let params = {
+                        RegionId: content['RegionId'],
+                        StackId: content['StackId']
+                    };
+                    const getStackResult = await client.getStack(params, requestOptions)
+                    const status = getStackResult.Status
+                    const statusReason = getStackResult.StatusReason
+                    const stackName = getStackResult.StackName
+                    const regComplete = RegExp(/COMPLETE/)
+                    const regFailed = RegExp(/FAILED/)
+                    if (regComplete.exec(status) || regFailed.exec(status)) {
+                        clearInterval(withDefaultPrinterObj);
+                        await CdkToolkit.withDefaultPrinter(client, content, requestOptions, content['StackId'], block, 'destroy')
+                        success(
+                            `\n ✅ The task(sync destroy stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
+                            colors.blue(status),
+                            colors.blue(statusReason),
+                            colors.blue(getStackResult.StackId)
+                        );
+                        await this.updateStackInfo(stackName, DESTROY_STACK);
+                        if (regComplete.exec(status)) {
+                            exit(0)
+                        } else if (regFailed.exec(status)) {
+                            exit(2)
+                        }
+                        break
+                    }
+                } catch (e) {
+                    if (e.code == 'Throttling.User' || e.code == 'Throttling' || e.code == 'Throttling.API') {
+                        await sleep(30000)
+                    } else {
+                        error('fail to sync destroy stack: %s %s', e.code, e.message)
+                        clearInterval(withDefaultPrinterObj);
+                        exit(1)
+                    }
                 }
             }
-            exit(0)
         } catch (e) {
             error('fail to sync destroy stack: %s %s', e.code, e.message)
             clearInterval(withDefaultPrinterObj);
@@ -1411,6 +1463,7 @@ export interface DeployOptions {
     sync: boolean;
     outputsFile: boolean;
     skipIfNoChanges: boolean;
+    disableRollback: boolean;
 }
 
 export interface DestroyOptions {
@@ -1487,11 +1540,20 @@ export function readLanguageInfo() {
 }
 
 export function padLeft(n: number, x: string): string {
-    return ' '.repeat(Math.max(0, n - x.length)) + x;
+    if (x) {
+        return ' '.repeat(Math.max(0, n - x.length)) + x;
+    } else {
+        return ''
+    }
+
 }
 
 export function padRight(n: number, x: string): string {
-    return x + ' '.repeat(Math.max(0, n - x.length));
+    if (x) {
+        return x + ' '.repeat(Math.max(0, n - x.length));
+    } else {
+        return ''
+    }
 }
 
 export function shorten(maxWidth: number, p: string) {
