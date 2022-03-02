@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class Tag : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.ITag
     {
         /// <summary>Tag key.</summary>
-        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}")]
         public string Key
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         }
 
         /// <summary>Tag value.</summary>
-        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}")]
         public string Value
         {
             get;

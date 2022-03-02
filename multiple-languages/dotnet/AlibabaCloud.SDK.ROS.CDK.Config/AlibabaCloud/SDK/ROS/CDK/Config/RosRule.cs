@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -43,15 +43,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             get;
         }
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Config.RosRule))!;
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: CompliancePackId: Compliance Package ID
-        /// </remarks>
-        [JsiiProperty(name: "attrCompliancePackId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCompliancePackId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ConfigRuleArn: config rule arn
@@ -340,6 +331,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         [JsiiOptional]
         [JsiiProperty(name: "resourceGroupIdsScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? ResourceGroupIdsScope
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tagKeyLogicScope:
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tagKeyLogicScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? TagKeyLogicScope
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);

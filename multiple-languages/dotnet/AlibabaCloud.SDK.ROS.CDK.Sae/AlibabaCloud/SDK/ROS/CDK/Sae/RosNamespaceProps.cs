@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: namespaceId: Namespace ID. Format: "regionId:logicalId" or "logicalId"
         /// </remarks>
-        [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object NamespaceId
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: namespaceName: Namespace name
         /// </remarks>
-        [JsiiProperty(name: "namespaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "namespaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object NamespaceName
         {
             get;
@@ -34,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <strong>Property</strong>: namespaceDescription: Namespace description
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "namespaceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "namespaceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? NamespaceDescription
         {
             get;

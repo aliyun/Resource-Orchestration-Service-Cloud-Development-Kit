@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -249,7 +249,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             /// <strong>Property</strong>: parameterName: Parameter Name
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "parameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "parameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ParameterName
             {
                 get;
@@ -260,7 +260,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             /// <strong>Property</strong>: parameterValue: Parameter Value
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "parameterValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "parameterValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ParameterValue
             {
                 get;
@@ -271,7 +271,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             /// <strong>Property</strong>: required: Required
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "required", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "required", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Required
             {
                 get;
@@ -388,7 +388,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             /// <strong>Property</strong>: configRuleId: Config Rule Id
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "configRuleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "configRuleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ConfigRuleId
             {
                 get;
@@ -399,7 +399,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             /// <strong>Property</strong>: configRuleName: Config Rule Name
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "configRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "configRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ConfigRuleName
             {
                 get;
@@ -410,7 +410,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             /// <strong>Property</strong>: configRuleParameters: Config Rule Parameter List
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "configRuleParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "configRuleParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? ConfigRuleParameters
             {
                 get;
@@ -421,7 +421,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             /// <strong>Property</strong>: managedRuleIdentifier: Managed Rule Identifier
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "managedRuleIdentifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "managedRuleIdentifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ManagedRuleIdentifier
             {
                 get;

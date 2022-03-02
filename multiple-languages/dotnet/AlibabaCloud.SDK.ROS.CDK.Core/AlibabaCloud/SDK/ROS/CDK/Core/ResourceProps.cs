@@ -20,7 +20,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - The physical name will be allocated at deployment time
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "physicalName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "physicalName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? PhysicalName
         {
             get;

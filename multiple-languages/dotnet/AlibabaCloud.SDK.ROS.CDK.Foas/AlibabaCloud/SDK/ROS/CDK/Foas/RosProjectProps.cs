@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// Exclusive cluster: cell
         /// Shared cluster: public
         /// </remarks>
-        [JsiiProperty(name: "deployType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "deployType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DeployType
         {
             get;
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <remarks>
         /// <strong>Property</strong>: managerIds: Comma delimited account Id list of managers.
         /// </remarks>
-        [JsiiProperty(name: "managerIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "managerIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ManagerIds
         {
             get;
@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <remarks>
         /// <strong>Property</strong>: name: Project name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name
         {
             get;
@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <strong>Property</strong>: clusterId: Cluster ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ClusterId
         {
             get;
@@ -57,7 +57,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <strong>Property</strong>: description: Project description.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description
         {
             get;
@@ -68,7 +68,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <strong>Property</strong>: orderId: Order Id of Shared cluster.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "orderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "orderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? OrderId
         {
             get;

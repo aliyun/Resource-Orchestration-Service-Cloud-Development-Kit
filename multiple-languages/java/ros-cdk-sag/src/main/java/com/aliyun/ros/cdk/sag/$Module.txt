@@ -19,7 +19,15 @@
 @alicloud/ros-cdk-sag.RosCloudConnectNetworkProps=com.aliyun.ros.cdk.sag.RosCloudConnectNetworkProps
 @alicloud/ros-cdk-sag.RosGrantCcnToCen=com.aliyun.ros.cdk.sag.RosGrantCcnToCen
 @alicloud/ros-cdk-sag.RosGrantCcnToCenProps=com.aliyun.ros.cdk.sag.RosGrantCcnToCenProps
+@alicloud/ros-cdk-sag.RosSerialNumberBinding=com.aliyun.ros.cdk.sag.RosSerialNumberBinding
+@alicloud/ros-cdk-sag.RosSerialNumberBindingProps=com.aliyun.ros.cdk.sag.RosSerialNumberBindingProps
+@alicloud/ros-cdk-sag.RosSmartAccessGateway=com.aliyun.ros.cdk.sag.RosSmartAccessGateway
 @alicloud/ros-cdk-sag.RosSmartAccessGatewayBinding=com.aliyun.ros.cdk.sag.RosSmartAccessGatewayBinding
 @alicloud/ros-cdk-sag.RosSmartAccessGatewayBindingProps=com.aliyun.ros.cdk.sag.RosSmartAccessGatewayBindingProps
+@alicloud/ros-cdk-sag.RosSmartAccessGatewayProps=com.aliyun.ros.cdk.sag.RosSmartAccessGatewayProps
+@alicloud/ros-cdk-sag.SerialNumberBinding=com.aliyun.ros.cdk.sag.SerialNumberBinding
+@alicloud/ros-cdk-sag.SerialNumberBindingProps=com.aliyun.ros.cdk.sag.SerialNumberBindingProps
+@alicloud/ros-cdk-sag.SmartAccessGateway=com.aliyun.ros.cdk.sag.SmartAccessGateway
 @alicloud/ros-cdk-sag.SmartAccessGatewayBinding=com.aliyun.ros.cdk.sag.SmartAccessGatewayBinding
 @alicloud/ros-cdk-sag.SmartAccessGatewayBindingProps=com.aliyun.ros.cdk.sag.SmartAccessGatewayBindingProps
+@alicloud/ros-cdk-sag.SmartAccessGatewayProps=com.aliyun.ros.cdk.sag.SmartAccessGatewayProps

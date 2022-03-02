@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: commandId: The id of command.
         /// </remarks>
-        [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object CommandId
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: instanceIds: The instance id list. Select up to 50 instances at a time.Instances status must be running.
         /// </remarks>
-        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceIds
         {
             get;
@@ -34,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "frequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "frequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Frequency
         {
             get;
@@ -51,7 +51,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? Parameters
         {
             get;
@@ -62,7 +62,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: timed: Whether it is timed execution. Default is False.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "timed", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "timed", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Timed
         {
             get;

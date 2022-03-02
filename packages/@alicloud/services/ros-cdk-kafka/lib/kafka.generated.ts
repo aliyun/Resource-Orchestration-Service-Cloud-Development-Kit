@@ -374,9 +374,28 @@ export namespace RosInstance {
          */
         readonly username?: string | ros.IResolvable;
         /**
+         * @Property config: The initial configurations of the Message Queue for Apache Kafka instance. If you do not specify this parameter, it is left empty.The Config parameter supports the following parameters:
+     * enable.vpc_sasl_ssl: specifies whether to enable VPC transmission encryption. Valid values: 
+     * true: indicates that VPC transmission encryption is enabled. If you enable VPC transmission encryption, enable access control list (ACL).
+     * false: indicates that VPC transmission encryption is disabled. By default, VPC transmission encryption is disabled.
+     * 
+     * enable.acl: specifies whether to enable ACL. Valid values: 
+     * true: indicates that ACL is enabled.
+     * false: indicates that ACL is disabled. By default, ACL is disabled.
+     * 
+     * kafka.log.retention.hours: the maximum message retention period when the disk capacity is sufficient. Unit: hours. Valid values: 24 to 480. Default value: 72. When the disk usage reaches 85%, the disk capacity is considered insufficient, and the system deletes messages in the order in which messages are stored, from the earliest to latest.
+     * 
+     * kafka.message.max.bytes: the maximum size of messages that Message Queue for Apache Kafka can send and receive. Unit: byte. Valid values: 1048576 to 10485760. Default value: 1048576. Before you modify the maximum message size, make sure that the new value is consistent with those on the producer and consumer.
+         */
+        readonly config?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
          * @Property vSwitchId: The ID of the vSwitch associated with the VPC.
          */
         readonly vSwitchId: string | ros.IResolvable;
+        /**
+         * @Property serviceVersion: The version of the Message Queue for Apache Kafka instance. For example: 0.10.2, 2.2.0 and etc.
+         */
+        readonly serviceVersion?: string | ros.IResolvable;
         /**
          * @Property securityGroup: The security group of the instance. 
      * If you do not specify this parameter, Message Queue for Apache Kafka automatically 
@@ -434,8 +453,10 @@ function RosInstance_DeployOptionPropertyValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
+    errors.collect(ros.propertyValidator('config', ros.hashValidator(ros.validateAny))(properties.config));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('serviceVersion', ros.validateString)(properties.serviceVersion));
     errors.collect(ros.propertyValidator('securityGroup', ros.validateString)(properties.securityGroup));
     errors.collect(ros.propertyValidator('deployModule', ros.requiredValidator)(properties.deployModule));
     if(properties.deployModule && (typeof properties.deployModule) !== 'object') {
@@ -473,7 +494,9 @@ function rosInstanceDeployOptionPropertyToRosTemplate(properties: any): any {
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
       Username: ros.stringToRosTemplate(properties.username),
+      Config: ros.hashMapper(ros.objectToRosTemplate)(properties.config),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      ServiceVersion: ros.stringToRosTemplate(properties.serviceVersion),
       SecurityGroup: ros.stringToRosTemplate(properties.securityGroup),
       DeployModule: ros.stringToRosTemplate(properties.deployModule),
       IsSetUserAndPassword: ros.booleanToRosTemplate(properties.isSetUserAndPassword),
@@ -559,12 +582,50 @@ export interface RosTopicProps {
     readonly topic: string | ros.IResolvable;
 
     /**
+     * @Property compactTopic: The log cleanup policy for the topic. This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+     * false: uses the default log cleanup policy.
+     * true: uses the Apache Kafka log compaction policy.
+     */
+    readonly compactTopic?: boolean | ros.IResolvable;
+
+    /**
+     * @Property config: Supplementary configuration.
+     * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+     */
+    readonly config?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property localTopic: The storage engine of the topic. Valid values:
+     * false: the Cloud Storage mode.
+     * true: the Local Storage mode.
+     */
+    readonly localTopic?: boolean | ros.IResolvable;
+
+    /**
+     * @Property minInsyncReplicas: The minimum number of ISR sync replicas.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * The value must be less than the number of Topic copies.
+     * The number of synchronous replicas is limited to 1~3.
+     */
+    readonly minInsyncReplicas?: number | ros.IResolvable;
+
+    /**
      * @Property partitionNum: The number of partitions in the topic. Valid values:
      * 1 to 48
      * We recommend that you set the number of partitions to a multiple of 6 to reduce the
      * risk of data skew.Note:For special requirements,submit a ticket.
      */
     readonly partitionNum?: number | ros.IResolvable;
+
+    /**
+     * @Property replicationFactor: The number of copies of the topic.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * The number of copies is limited to 1~3.
+     * Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+     */
+    readonly replicationFactor?: number | ros.IResolvable;
 }
 
 /**
@@ -578,10 +639,29 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('partitionNum', ros.validateNumber)(properties.partitionNum));
+    errors.collect(ros.propertyValidator('compactTopic', ros.validateBoolean)(properties.compactTopic));
+    if(properties.replicationFactor && (typeof properties.replicationFactor) !== 'object') {
+        errors.collect(ros.propertyValidator('replicationFactor', ros.validateRange)({
+            data: properties.replicationFactor,
+            min: 1,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('replicationFactor', ros.validateNumber)(properties.replicationFactor));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('config', ros.hashValidator(ros.validateAny))(properties.config));
+    if(properties.minInsyncReplicas && (typeof properties.minInsyncReplicas) !== 'object') {
+        errors.collect(ros.propertyValidator('minInsyncReplicas', ros.validateRange)({
+            data: properties.minInsyncReplicas,
+            min: 1,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minInsyncReplicas', ros.validateNumber)(properties.minInsyncReplicas));
     errors.collect(ros.propertyValidator('topic', ros.requiredValidator)(properties.topic));
     errors.collect(ros.propertyValidator('topic', ros.validateString)(properties.topic));
+    errors.collect(ros.propertyValidator('localTopic', ros.validateBoolean)(properties.localTopic));
     errors.collect(ros.propertyValidator('remark', ros.requiredValidator)(properties.remark));
     errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosTopicProps"');
@@ -604,7 +684,12 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       Remark: ros.stringToRosTemplate(properties.remark),
       Topic: ros.stringToRosTemplate(properties.topic),
+      CompactTopic: ros.booleanToRosTemplate(properties.compactTopic),
+      Config: ros.hashMapper(ros.objectToRosTemplate)(properties.config),
+      LocalTopic: ros.booleanToRosTemplate(properties.localTopic),
+      MinInsyncReplicas: ros.numberToRosTemplate(properties.minInsyncReplicas),
       PartitionNum: ros.numberToRosTemplate(properties.partitionNum),
+      ReplicationFactor: ros.numberToRosTemplate(properties.replicationFactor),
     };
 }
 
@@ -660,12 +745,50 @@ You can call the GetInstanceList operation to query instances.
     public topic: string | ros.IResolvable;
 
     /**
+     * @Property compactTopic: The log cleanup policy for the topic. This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+     * false: uses the default log cleanup policy.
+     * true: uses the Apache Kafka log compaction policy.
+     */
+    public compactTopic: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property config: Supplementary configuration.
+     * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+     */
+    public config: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property localTopic: The storage engine of the topic. Valid values:
+     * false: the Cloud Storage mode.
+     * true: the Local Storage mode.
+     */
+    public localTopic: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property minInsyncReplicas: The minimum number of ISR sync replicas.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * The value must be less than the number of Topic copies.
+     * The number of synchronous replicas is limited to 1~3.
+     */
+    public minInsyncReplicas: number | ros.IResolvable | undefined;
+
+    /**
      * @Property partitionNum: The number of partitions in the topic. Valid values:
      * 1 to 48
      * We recommend that you set the number of partitions to a multiple of 6 to reduce the
      * risk of data skew.Note:For special requirements,submit a ticket.
      */
     public partitionNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property replicationFactor: The number of copies of the topic.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * The number of copies is limited to 1~3.
+     * Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+     */
+    public replicationFactor: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::KAFKA::Topic`.
@@ -683,7 +806,12 @@ You can call the GetInstanceList operation to query instances.
         this.instanceId = props.instanceId;
         this.remark = props.remark;
         this.topic = props.topic;
+        this.compactTopic = props.compactTopic;
+        this.config = props.config;
+        this.localTopic = props.localTopic;
+        this.minInsyncReplicas = props.minInsyncReplicas;
         this.partitionNum = props.partitionNum;
+        this.replicationFactor = props.replicationFactor;
     }
 
 
@@ -692,7 +820,12 @@ You can call the GetInstanceList operation to query instances.
             instanceId: this.instanceId,
             remark: this.remark,
             topic: this.topic,
+            compactTopic: this.compactTopic,
+            config: this.config,
+            localTopic: this.localTopic,
+            minInsyncReplicas: this.minInsyncReplicas,
             partitionNum: this.partitionNum,
+            replicationFactor: this.replicationFactor,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

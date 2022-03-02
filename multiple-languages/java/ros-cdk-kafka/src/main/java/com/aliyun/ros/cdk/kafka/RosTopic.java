@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS template type:  `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.257Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.RosTopic")
 public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -123,6 +123,78 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCompactTopic() {
+        return software.amazon.jsii.Kernel.get(this, "compactTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCompactTopic(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "compactTopic", value);
+    }
+
+    /**
+     */
+    public void setCompactTopic(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "compactTopic", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConfig() {
+        return software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "config", value);
+    }
+
+    /**
+     */
+    public void setConfig(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "config", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLocalTopic() {
+        return software.amazon.jsii.Kernel.get(this, "localTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLocalTopic(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "localTopic", value);
+    }
+
+    /**
+     */
+    public void setLocalTopic(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "localTopic", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMinInsyncReplicas() {
+        return software.amazon.jsii.Kernel.get(this, "minInsyncReplicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMinInsyncReplicas(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "minInsyncReplicas", value);
+    }
+
+    /**
+     */
+    public void setMinInsyncReplicas(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "minInsyncReplicas", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPartitionNum() {
         return software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -137,6 +209,24 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPartitionNum(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "partitionNum", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getReplicationFactor() {
+        return software.amazon.jsii.Kernel.get(this, "replicationFactor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setReplicationFactor(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "replicationFactor", value);
+    }
+
+    /**
+     */
+    public void setReplicationFactor(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "replicationFactor", value);
     }
 
     /**
@@ -218,6 +308,74 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param compactTopic This parameter is required.
+         */
+        public Builder compactTopic(final java.lang.Boolean compactTopic) {
+            this.props.compactTopic(compactTopic);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param compactTopic This parameter is required.
+         */
+        public Builder compactTopic(final com.aliyun.ros.cdk.core.IResolvable compactTopic) {
+            this.props.compactTopic(compactTopic);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param config This parameter is required.
+         */
+        public Builder config(final com.aliyun.ros.cdk.core.IResolvable config) {
+            this.props.config(config);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param config This parameter is required.
+         */
+        public Builder config(final java.util.Map<java.lang.String, ? extends java.lang.Object> config) {
+            this.props.config(config);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param localTopic This parameter is required.
+         */
+        public Builder localTopic(final java.lang.Boolean localTopic) {
+            this.props.localTopic(localTopic);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param localTopic This parameter is required.
+         */
+        public Builder localTopic(final com.aliyun.ros.cdk.core.IResolvable localTopic) {
+            this.props.localTopic(localTopic);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param minInsyncReplicas This parameter is required.
+         */
+        public Builder minInsyncReplicas(final java.lang.Number minInsyncReplicas) {
+            this.props.minInsyncReplicas(minInsyncReplicas);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param minInsyncReplicas This parameter is required.
+         */
+        public Builder minInsyncReplicas(final com.aliyun.ros.cdk.core.IResolvable minInsyncReplicas) {
+            this.props.minInsyncReplicas(minInsyncReplicas);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param partitionNum This parameter is required.
          */
         public Builder partitionNum(final java.lang.Number partitionNum) {
@@ -230,6 +388,23 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder partitionNum(final com.aliyun.ros.cdk.core.IResolvable partitionNum) {
             this.props.partitionNum(partitionNum);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param replicationFactor This parameter is required.
+         */
+        public Builder replicationFactor(final java.lang.Number replicationFactor) {
+            this.props.replicationFactor(replicationFactor);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param replicationFactor This parameter is required.
+         */
+        public Builder replicationFactor(final com.aliyun.ros.cdk.core.IResolvable replicationFactor) {
+            this.props.replicationFactor(replicationFactor);
             return this;
         }
 

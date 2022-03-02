@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public class AppProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IAppProps
     {
         /// <summary>Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
-        [JsiiProperty(name: "appName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "appName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AppName
         {
             get;
@@ -20,7 +20,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property description: Description of the App, less than 180 characters.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description
         {
             get;
@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// Max support 20 tags to add during create app. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApp.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApp.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApp.ITagsProperty[]? Tags
         {
             get;

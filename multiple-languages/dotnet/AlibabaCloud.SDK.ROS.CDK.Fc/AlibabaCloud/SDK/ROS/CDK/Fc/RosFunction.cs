@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -383,7 +383,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: destination: Set destination of asynchronous function calls
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destination", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunction.DestinationProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "destination", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunction.DestinationProperty\"}]}}", isOptional: true)]
             public object? Destination
             {
                 get;
@@ -394,7 +394,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: maxAsyncEventAgeInSeconds: Configure the maximum lifetime of messages. The duration is calculated from the time the asynchronous call is triggered, and ends when the message is dequeued for processing. If this period of time is longer than the setting value of MaxAsyncEventAgeInSeconds, the message will be discarded. The unconsumed messages will be counted in the cloud monitoring AsyncEventExpiredDropped indicator.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maxAsyncEventAgeInSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "maxAsyncEventAgeInSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MaxAsyncEventAgeInSeconds
             {
                 get;
@@ -405,7 +405,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: maxAsyncRetryAttempts: Configure the number of retries
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maxAsyncRetryAttempts", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "maxAsyncRetryAttempts", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MaxAsyncRetryAttempts
             {
                 get;
@@ -416,7 +416,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: statefulInvocation: Whether enable stateful invocation
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "statefulInvocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "statefulInvocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? StatefulInvocation
             {
                 get;
@@ -544,7 +544,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// Priority: ZipFile > SourceCode > OssBucketName&OssObjectName.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssBucketName
             {
                 get;
@@ -556,7 +556,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// Priority: ZipFile > SourceCode > OssBucketName&OssObjectName.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossObjectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossObjectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssObjectName
             {
                 get;
@@ -569,7 +569,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// Priority: ZipFile > SourceCode > OssBucketName&OssObjectName.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sourceCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sourceCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SourceCode
             {
                 get;
@@ -581,7 +581,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// Priority: ZipFile > SourceCode > OssBucketName&OssObjectName.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "zipFile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "zipFile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ZipFile
             {
                 get;
@@ -698,7 +698,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// <strong>Property</strong>: image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com/fc-demo/helloworld:v1beta1
             /// </remarks>
-            [JsiiProperty(name: "image", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "image", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Image
             {
                 get;
@@ -711,7 +711,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// None: Indicates that image acceleration is disabled.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "accelerationType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "accelerationType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AccelerationType
             {
                 get;
@@ -722,7 +722,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: args: Container startup parameters. For example: ["-arg1", "value1"]
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "args", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "args", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Args
             {
                 get;
@@ -733,7 +733,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: command: Container start command. For example: ["/code/myserver"]
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Command
             {
                 get;
@@ -804,7 +804,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: onFailure: When the function is invoked failed (system error or function internal error), FC will call the target corresponding to the configuration
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "onFailure", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "onFailure", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OnFailure
             {
                 get;
@@ -815,7 +815,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <strong>Property</strong>: onSuccess: When the function is invoked successfully, FC will call the target corresponding to the configuration
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "onSuccess", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "onSuccess", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OnSuccess
             {
                 get;

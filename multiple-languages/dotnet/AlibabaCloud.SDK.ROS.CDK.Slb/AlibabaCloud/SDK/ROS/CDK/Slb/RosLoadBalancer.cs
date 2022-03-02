@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -239,8 +239,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
         /// <remarks>
         /// <strong>Property</strong>: autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-        /// When PricingCycle = month, the value range is 1-9
-        /// When PeriodUnit = year, the value range is 1-3
+        /// When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+        /// When PeriodUnit = year, the value range is 1-3.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -493,7 +493,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: key: undefined
             /// </remarks>
-            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Key
             {
                 get;
@@ -504,7 +504,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: value: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Value
             {
                 get;

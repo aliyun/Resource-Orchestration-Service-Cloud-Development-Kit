@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
     public class K8sClusterProps : AlibabaCloud.SDK.ROS.CDK.Edas.IK8sClusterProps
     {
         /// <summary>Property csClusterId: The ID of the CS cluster.</summary>
-        [JsiiProperty(name: "csClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "csClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object CsClusterId
         {
             get;
@@ -20,7 +20,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 
         /// <summary>Property enableAsm: Whether enable ASM.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "enableAsm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "enableAsm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? EnableAsm
         {
             get;
@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 
         /// <summary>Property namespaceId: The ID of the namespace to which the cluster that you want to import belongs.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? NamespaceId
         {
             get;

@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: logStoreName: The log store name.
         /// </remarks>
-        [JsiiProperty(name: "logStoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "logStoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object LogStoreName
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: projectName: The project name.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ProjectName
         {
             get;
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: resourceId: The resource id.
         /// </remarks>
-        [JsiiProperty(name: "resourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "resourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ResourceId
         {
             get;
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: resourceType: The resource type.
         /// </remarks>
-        [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ResourceType
         {
             get;
@@ -53,7 +53,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: trafficType: The traffic type.
         /// </remarks>
-        [JsiiProperty(name: "trafficType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "trafficType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TrafficType
         {
             get;
@@ -64,7 +64,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: description: The Description of flow log.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description
         {
             get;
@@ -75,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: flowLogName: The flow log name.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "flowLogName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "flowLogName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? FlowLogName
         {
             get;

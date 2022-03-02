@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
     public class TransitRouterProps : AlibabaCloud.SDK.ROS.CDK.Cen.ITransitRouterProps
     {
         /// <summary>Property cenId: CenId.</summary>
-        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object CenId
         {
             get;
@@ -20,7 +20,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <summary>Property transitRouterDescription: TransitRouterDescription.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "transitRouterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "transitRouterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TransitRouterDescription
         {
             get;
@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <summary>Property transitRouterName: TransitRouterName.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "transitRouterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "transitRouterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TransitRouterName
         {
             get;

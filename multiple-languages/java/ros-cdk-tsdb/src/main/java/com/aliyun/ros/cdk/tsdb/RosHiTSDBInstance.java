@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * A ROS template type:  `ALIYUN::TSDB::HiTSDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.887Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.537Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.RosHiTSDBInstance")
 public class RosHiTSDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -185,6 +185,24 @@ public class RosHiTSDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDiskCategory() {
+        return software.amazon.jsii.Kernel.get(this, "diskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDiskCategory(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "diskCategory", value);
+    }
+
+    /**
+     */
+    public void setDiskCategory(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "diskCategory", value);
     }
 
     /**
@@ -385,6 +403,23 @@ public class RosHiTSDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param diskCategory This parameter is required.
+         */
+        public Builder diskCategory(final java.lang.String diskCategory) {
+            this.props.diskCategory(diskCategory);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param diskCategory This parameter is required.
+         */
+        public Builder diskCategory(final com.aliyun.ros.cdk.core.IResolvable diskCategory) {
+            this.props.diskCategory(diskCategory);
             return this;
         }
 

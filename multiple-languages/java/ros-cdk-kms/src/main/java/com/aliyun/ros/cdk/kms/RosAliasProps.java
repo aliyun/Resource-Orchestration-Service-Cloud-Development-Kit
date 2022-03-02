@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Properties for defining a `ALIYUN::KMS::Alias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.266Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.109Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosAliasProps")
 @software.amazon.jsii.Jsii.Proxy(RosAliasProps.Jsii$Proxy.class)
 public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {

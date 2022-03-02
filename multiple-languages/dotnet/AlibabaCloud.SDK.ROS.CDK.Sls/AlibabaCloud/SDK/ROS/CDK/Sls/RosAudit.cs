@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -3311,7 +3311,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: actiontrailEnabled: Notification type. Support Email, SMS, DingTalk. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "actiontrailEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "actiontrailEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ActiontrailEnabled
             {
                 get;
@@ -3322,7 +3322,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: actiontrailOpenapiCollectionPolicy: Actiontrail openapi collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "actiontrailOpenapiCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "actiontrailOpenapiCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ActiontrailOpenapiCollectionPolicy
             {
                 get;
@@ -3333,7 +3333,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: actiontrailOpenapiPolicySetting: Actiontrail openapi policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "actiontrailOpenapiPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "actiontrailOpenapiPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ActiontrailOpenapiPolicySetting
             {
                 get;
@@ -3344,7 +3344,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: actiontrailTiEnabled: Threat Intelligence of actiontrail.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "actiontrailTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "actiontrailTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ActiontrailTiEnabled
             {
                 get;
@@ -3355,7 +3355,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: actiontrailTtl: Actiontrail action log TTL.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "actiontrailTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "actiontrailTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ActiontrailTtl
             {
                 get;
@@ -3366,7 +3366,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: apigatewayAccessCollectionPolicy: Apigateway audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "apigatewayAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "apigatewayAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ApigatewayAccessCollectionPolicy
             {
                 get;
@@ -3377,7 +3377,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: apigatewayAccessPolicySetting: Apigateway audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "apigatewayAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "apigatewayAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ApigatewayAccessPolicySetting
             {
                 get;
@@ -3388,7 +3388,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: apigatewayEnabled: API Gateway Log Switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "apigatewayEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "apigatewayEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ApigatewayEnabled
             {
                 get;
@@ -3399,7 +3399,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: apigatewayTiEnabled: Threat Intelligence of Apigateway.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "apigatewayTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "apigatewayTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ApigatewayTiEnabled
             {
                 get;
@@ -3410,7 +3410,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: apigatewayTtl: API Gateway ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "apigatewayTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "apigatewayTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ApigatewayTtl
             {
                 get;
@@ -3421,7 +3421,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: appconnectEnabled: Appconnect access log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "appconnectEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "appconnectEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AppconnectEnabled
             {
                 get;
@@ -3432,7 +3432,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: appconnectOpCollectionPolicy: Appconnect audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "appconnectOpCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "appconnectOpCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AppconnectOpCollectionPolicy
             {
                 get;
@@ -3443,7 +3443,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: appconnectOpPolicySetting: Appconnect audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "appconnectOpPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "appconnectOpPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AppconnectOpPolicySetting
             {
                 get;
@@ -3454,7 +3454,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: appconnectTiEnabled: Threat Intelligence of Appconnect.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "appconnectTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "appconnectTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AppconnectTiEnabled
             {
                 get;
@@ -3465,7 +3465,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: appconnectTtl: Appconnect log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "appconnectTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "appconnectTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AppconnectTtl
             {
                 get;
@@ -3476,7 +3476,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: bastionAuditCollectionPolicy: Bastion audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "bastionAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "bastionAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BastionAuditCollectionPolicy
             {
                 get;
@@ -3487,7 +3487,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: bastionAuditPolicySetting: Bastion audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "bastionAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "bastionAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BastionAuditPolicySetting
             {
                 get;
@@ -3498,7 +3498,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: bastionEnabled: Fortress machine operation log switch.Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "bastionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "bastionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BastionEnabled
             {
                 get;
@@ -3509,7 +3509,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: bastionTiEnabled: Threat Intelligence of Bastion.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "bastionTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "bastionTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BastionTiEnabled
             {
                 get;
@@ -3520,7 +3520,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: bastionTtl: Fort machine centralized ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "bastionTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "bastionTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BastionTtl
             {
                 get;
@@ -3531,7 +3531,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cloudfirewallAccessCollectionPolicy: Cloud firewall audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cloudfirewallAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cloudfirewallAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CloudfirewallAccessCollectionPolicy
             {
                 get;
@@ -3542,7 +3542,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cloudfirewallAccessPolicySetting: Cloud firewall audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cloudfirewallAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cloudfirewallAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CloudfirewallAccessPolicySetting
             {
                 get;
@@ -3553,7 +3553,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cloudfirewallEnabled: Cloud firewall log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cloudfirewallEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cloudfirewallEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CloudfirewallEnabled
             {
                 get;
@@ -3564,7 +3564,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cloudfirewallTiEnabled: Threat Intelligence of Cloud firewall.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cloudfirewallTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cloudfirewallTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CloudfirewallTiEnabled
             {
                 get;
@@ -3575,7 +3575,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cloudfirewallTtl: Cloud firewall log centralized ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cloudfirewallTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cloudfirewallTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CloudfirewallTtl
             {
                 get;
@@ -3586,7 +3586,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cpsCallbackCollectionPolicy: Mobile push collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cpsCallbackCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cpsCallbackCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CpsCallbackCollectionPolicy
             {
                 get;
@@ -3597,7 +3597,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cpsCallbackPolicySetting: Mobile push policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cpsCallbackPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cpsCallbackPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CpsCallbackPolicySetting
             {
                 get;
@@ -3608,7 +3608,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cpsEnabled: Mobile push log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cpsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cpsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CpsEnabled
             {
                 get;
@@ -3619,7 +3619,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cpsTiEnabled: Threat Intelligence of mobile push.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cpsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cpsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CpsTiEnabled
             {
                 get;
@@ -3630,7 +3630,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cpsTtl: Mobile push ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cpsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "cpsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CpsTtl
             {
                 get;
@@ -3641,7 +3641,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ddosCooAccessCollectionPolicy: Ddos audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ddosCooAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ddosCooAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DdosCooAccessCollectionPolicy
             {
                 get;
@@ -3652,7 +3652,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ddosCooAccessEnabled: Ddos access log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ddosCooAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ddosCooAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DdosCooAccessEnabled
             {
                 get;
@@ -3663,7 +3663,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ddosCooAccessPolicySetting: Ddos audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ddosCooAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ddosCooAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DdosCooAccessPolicySetting
             {
                 get;
@@ -3674,7 +3674,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ddosCooAccessTiEnabled: Threat Intelligence of Ddos.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ddosCooAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ddosCooAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DdosCooAccessTiEnabled
             {
                 get;
@@ -3685,7 +3685,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ddosCooAccessTtl: Ddos log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ddosCooAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ddosCooAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DdosCooAccessTtl
             {
                 get;
@@ -3696,7 +3696,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: drdsAuditCollectionPolicy: DRDS audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "drdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "drdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DrdsAuditCollectionPolicy
             {
                 get;
@@ -3707,7 +3707,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: drdsAuditEnabled: DRDS audit log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "drdsAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "drdsAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DrdsAuditEnabled
             {
                 get;
@@ -3718,7 +3718,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: drdsAuditPolicySetting: DRDS audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "drdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "drdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DrdsAuditPolicySetting
             {
                 get;
@@ -3729,7 +3729,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: drdsAuditTiEnabled: Threat Intelligence of DRDS.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "drdsAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "drdsAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DrdsAuditTiEnabled
             {
                 get;
@@ -3740,7 +3740,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: drdsAuditTtl: DRDS log centralization ttl. Default 7.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "drdsAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "drdsAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DrdsAuditTtl
             {
                 get;
@@ -3751,7 +3751,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: drdsSyncEnabled: DRDS sync to center switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "drdsSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "drdsSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DrdsSyncEnabled
             {
                 get;
@@ -3762,7 +3762,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: drdsSyncTtl: DRDS sync to center ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "drdsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "drdsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DrdsSyncTtl
             {
                 get;
@@ -3773,7 +3773,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SAuditCollectionPolicy: K8s audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SAuditCollectionPolicy
             {
                 get;
@@ -3784,7 +3784,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SAuditEnabled: K8s access log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SAuditEnabled
             {
                 get;
@@ -3795,7 +3795,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SAuditPolicySetting: K8s audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SAuditPolicySetting
             {
                 get;
@@ -3806,7 +3806,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SAuditTiEnabled: Threat Intelligence of K8s.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SAuditTiEnabled
             {
                 get;
@@ -3817,7 +3817,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SAuditTtl: K8s log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SAuditTtl
             {
                 get;
@@ -3828,7 +3828,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SEventCollectionPolicy: K8s event collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SEventCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SEventCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SEventCollectionPolicy
             {
                 get;
@@ -3839,7 +3839,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SEventEnabled: K8s event log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SEventEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SEventEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SEventEnabled
             {
                 get;
@@ -3850,7 +3850,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SEventPolicySetting: K8s event policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SEventPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SEventPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SEventPolicySetting
             {
                 get;
@@ -3861,7 +3861,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SEventTiEnabled: Threat Intelligence of k8s event.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SEventTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SEventTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SEventTiEnabled
             {
                 get;
@@ -3872,7 +3872,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SEventTtl: K8s event log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SEventTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SEventTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SEventTtl
             {
                 get;
@@ -3883,7 +3883,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SIngressCollectionPolicy: K8s Ingress collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SIngressCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SIngressCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SIngressCollectionPolicy
             {
                 get;
@@ -3894,7 +3894,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SIngressEnabled: K8s Ingress log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SIngressEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SIngressEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SIngressEnabled
             {
                 get;
@@ -3905,7 +3905,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SIngressPolicySetting: K8s Ingress policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SIngressPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SIngressPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SIngressPolicySetting
             {
                 get;
@@ -3916,7 +3916,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SIngressTiEnabled: Threat Intelligence of k8s Ingress.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SIngressTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SIngressTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SIngressTiEnabled
             {
                 get;
@@ -3927,7 +3927,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: k8SIngressTtl: K8s Ingress log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "k8SIngressTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "k8SIngressTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? K8SIngressTtl
             {
                 get;
@@ -3938,7 +3938,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: nasAuditCollectionPolicy: Nas audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "nasAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "nasAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NasAuditCollectionPolicy
             {
                 get;
@@ -3949,7 +3949,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: nasAuditPolicySetting: Nas audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "nasAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "nasAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NasAuditPolicySetting
             {
                 get;
@@ -3960,7 +3960,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: nasEnabled: Nas log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "nasEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "nasEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NasEnabled
             {
                 get;
@@ -3971,7 +3971,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: nasTiEnabled: Threat Intelligence of Nas.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "nasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "nasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NasTiEnabled
             {
                 get;
@@ -3982,7 +3982,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: nasTtl: Nas centralized ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "nasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "nasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NasTtl
             {
                 get;
@@ -3993,7 +3993,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossAccessCollectionPolicy: Oss access collection policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssAccessCollectionPolicy
             {
                 get;
@@ -4004,7 +4004,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossAccessEnabled: Access log switch of OSS. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssAccessEnabled
             {
                 get;
@@ -4015,7 +4015,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossAccessPolicySetting: Oss access policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssAccessPolicySetting
             {
                 get;
@@ -4026,7 +4026,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossAccessTiEnabled: Threat Intelligence of oss.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssAccessTiEnabled
             {
                 get;
@@ -4037,7 +4037,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossAccessTtl: Access log TTL of OSS. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssAccessTtl
             {
                 get;
@@ -4048,7 +4048,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossMeteringCollectionPolicy: Oss metering collection policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossMeteringCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossMeteringCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssMeteringCollectionPolicy
             {
                 get;
@@ -4059,7 +4059,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossMeteringEnabled: OSS metering log switch.Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossMeteringEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossMeteringEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssMeteringEnabled
             {
                 get;
@@ -4070,7 +4070,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossMeteringPolicySetting: Oss metering policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossMeteringPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossMeteringPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssMeteringPolicySetting
             {
                 get;
@@ -4081,7 +4081,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossMeteringTiEnabled: Threat Intelligence of oss metering.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossMeteringTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossMeteringTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssMeteringTiEnabled
             {
                 get;
@@ -4092,7 +4092,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossMeteringTtl: OSS measurement log TTL. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossMeteringTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossMeteringTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssMeteringTtl
             {
                 get;
@@ -4103,7 +4103,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossSyncEnabled: OSS synchronization to central configuration switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssSyncEnabled
             {
                 get;
@@ -4114,7 +4114,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: ossSyncTtl: OSS synchronization to central TTL. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ossSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OssSyncTtl
             {
                 get;
@@ -4125,7 +4125,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbAuditCollectionPolicy: POLARDB audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbAuditCollectionPolicy
             {
                 get;
@@ -4136,7 +4136,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbAuditPolicySetting: POLARDB audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbAuditPolicySetting
             {
                 get;
@@ -4147,7 +4147,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbEnabled: POLARDB audit log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbEnabled
             {
                 get;
@@ -4158,7 +4158,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbPerfCollectionPolicy: POLARDB perf collection policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbPerfCollectionPolicy
             {
                 get;
@@ -4169,7 +4169,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbPerfEnabled: POLARDB perf log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbPerfEnabled
             {
                 get;
@@ -4180,7 +4180,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbPerfPolicySetting: POLARDB perf policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbPerfPolicySetting
             {
                 get;
@@ -4191,7 +4191,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbPerfTiEnabled: Threat Intelligence of POLARDB perf log.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbPerfTiEnabled
             {
                 get;
@@ -4202,7 +4202,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbPerfTtl: POLARDB perf log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbPerfTtl
             {
                 get;
@@ -4213,7 +4213,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbSlowCollectionPolicy: POLARDB slow collection policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbSlowCollectionPolicy
             {
                 get;
@@ -4224,7 +4224,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbSlowEnabled: POLARDB slow log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbSlowEnabled
             {
                 get;
@@ -4235,7 +4235,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbSlowPolicySetting: POLARDB slow policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbSlowPolicySetting
             {
                 get;
@@ -4246,7 +4246,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbSlowTiEnabled: Threat Intelligence of POLARDB slow log.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbSlowTiEnabled
             {
                 get;
@@ -4257,7 +4257,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbSlowTtl: POLARDB slow log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbSlowTtl
             {
                 get;
@@ -4268,7 +4268,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbTiEnabled: Threat Intelligence of POLARDB.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbTiEnabled
             {
                 get;
@@ -4279,7 +4279,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: polardbTtl: POLARDB log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "polardbTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "polardbTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PolardbTtl
             {
                 get;
@@ -4290,7 +4290,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsAuditCollectionPolicy: Rds audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsAuditCollectionPolicy
             {
                 get;
@@ -4301,7 +4301,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsAuditPolicySetting: Rds audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsAuditPolicySetting
             {
                 get;
@@ -4312,7 +4312,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsEnabled: RDS audit log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsEnabled
             {
                 get;
@@ -4323,7 +4323,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsPerfCollectionPolicy: Rds perf collection policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsPerfCollectionPolicy
             {
                 get;
@@ -4334,7 +4334,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsPerfEnabled: RDS perf log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsPerfEnabled
             {
                 get;
@@ -4345,7 +4345,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsPerfPolicySetting: Rds perf policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsPerfPolicySetting
             {
                 get;
@@ -4356,7 +4356,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsPerfTiEnabled: Threat Intelligence of rds perf log.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsPerfTiEnabled
             {
                 get;
@@ -4367,7 +4367,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsPerfTtl: Rds perf log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsPerfTtl
             {
                 get;
@@ -4378,7 +4378,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsSlowCollectionPolicy: Rds slow collection policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsSlowCollectionPolicy
             {
                 get;
@@ -4389,7 +4389,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsSlowEnabled: RDS slow log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsSlowEnabled
             {
                 get;
@@ -4400,7 +4400,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsSlowPolicySetting: Rds slow policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsSlowPolicySetting
             {
                 get;
@@ -4411,7 +4411,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsSlowTiEnabled: Threat Intelligence of rds slow log.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsSlowTiEnabled
             {
                 get;
@@ -4422,7 +4422,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsSlowTtl: Rds slow log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsSlowTtl
             {
                 get;
@@ -4433,7 +4433,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsTiEnabled: Threat Intelligence of rds.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsTiEnabled
             {
                 get;
@@ -4444,7 +4444,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: rdsTtl: Rds log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "rdsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RdsTtl
             {
                 get;
@@ -4455,7 +4455,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: redisAuditCollectionPolicy: Redis audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "redisAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "redisAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RedisAuditCollectionPolicy
             {
                 get;
@@ -4466,7 +4466,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: redisAuditEnabled: Redis audit log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "redisAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "redisAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RedisAuditEnabled
             {
                 get;
@@ -4477,7 +4477,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: redisAuditPolicySetting: Redis audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "redisAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "redisAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RedisAuditPolicySetting
             {
                 get;
@@ -4488,7 +4488,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: redisAuditTiEnabled: Threat Intelligence of Redis audit.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "redisAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "redisAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RedisAuditTiEnabled
             {
                 get;
@@ -4499,7 +4499,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: redisAuditTtl: Redis audit log centralization ttl. Default 7.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "redisAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "redisAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RedisAuditTtl
             {
                 get;
@@ -4510,7 +4510,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: redisSyncEnabled: Redis sync to center switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "redisSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "redisSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RedisSyncEnabled
             {
                 get;
@@ -4521,7 +4521,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: redisSyncTtl: Redis sync to center switch. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "redisSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "redisSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RedisSyncTtl
             {
                 get;
@@ -4532,7 +4532,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasCrackEnabled: Cloud Security Center Brute Force Log Switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasCrackEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasCrackEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasCrackEnabled
             {
                 get;
@@ -4543,7 +4543,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasDnsEnabled: Cloud Security Center DNS resolution log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasDnsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasDnsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasDnsEnabled
             {
                 get;
@@ -4554,7 +4554,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasHttpEnabled: Cloud Security Center WEB access log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasHttpEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasHttpEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasHttpEnabled
             {
                 get;
@@ -4565,7 +4565,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasLocalDnsEnabled: Cloud security center local DNS log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasLocalDnsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasLocalDnsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasLocalDnsEnabled
             {
                 get;
@@ -4576,7 +4576,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasLoginEnabled: Cloud security center login flow log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasLoginEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasLoginEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasLoginEnabled
             {
                 get;
@@ -4587,7 +4587,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasNetworkEnabled: Cloud security center network connection log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasNetworkEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasNetworkEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasNetworkEnabled
             {
                 get;
@@ -4598,7 +4598,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasProcessEnabled: Cloud Security Center process startup log switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasProcessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasProcessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasProcessEnabled
             {
                 get;
@@ -4609,7 +4609,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasSecurityAlertEnabled: Cloud Security Center Security Alarm Log Switch .Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasSecurityAlertEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasSecurityAlertEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasSecurityAlertEnabled
             {
                 get;
@@ -4620,7 +4620,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasSecurityHcEnabled: Cloud Security Center Baseline Log Switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasSecurityHcEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasSecurityHcEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasSecurityHcEnabled
             {
                 get;
@@ -4631,7 +4631,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasSecurityVulEnabled: Cloud Security Center Vulnerability Log Switch.Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasSecurityVulEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasSecurityVulEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasSecurityVulEnabled
             {
                 get;
@@ -4642,7 +4642,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasSessionEnabled: Cloud security center network session log switch.Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasSessionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasSessionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasSessionEnabled
             {
                 get;
@@ -4653,7 +4653,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasSnapshotAccountEnabled: Cloud Security Center account snapshot switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasSnapshotAccountEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasSnapshotAccountEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasSnapshotAccountEnabled
             {
                 get;
@@ -4664,7 +4664,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasSnapshotPortEnabled: Cloud Security Center Port Snapshot Switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasSnapshotPortEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasSnapshotPortEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasSnapshotPortEnabled
             {
                 get;
@@ -4675,7 +4675,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasSnapshotProcessEnabled: Cloud Security Center process snapshot switch. Default false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasSnapshotProcessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasSnapshotProcessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasSnapshotProcessEnabled
             {
                 get;
@@ -4686,7 +4686,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasTiEnabled: Threat Intelligence of Cloud Security Center.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasTiEnabled
             {
                 get;
@@ -4697,7 +4697,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: sasTtl: Cloud Security Center centralized ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "sasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SasTtl
             {
                 get;
@@ -4708,7 +4708,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: slbAccessCollectionPolicy: SLB audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slbAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "slbAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SlbAccessCollectionPolicy
             {
                 get;
@@ -4719,7 +4719,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: slbAccessEnabled: Slb log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slbAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "slbAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SlbAccessEnabled
             {
                 get;
@@ -4730,7 +4730,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: slbAccessPolicySetting: SLB audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slbAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "slbAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SlbAccessPolicySetting
             {
                 get;
@@ -4741,7 +4741,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: slbAccessTiEnabled: Threat Intelligence of SLB.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slbAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "slbAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SlbAccessTiEnabled
             {
                 get;
@@ -4752,7 +4752,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: slbAccessTtl: Slb centralized ttl. Default 7.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slbAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "slbAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SlbAccessTtl
             {
                 get;
@@ -4763,7 +4763,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: slbSyncEnabled: Slb sync to center switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slbSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "slbSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SlbSyncEnabled
             {
                 get;
@@ -4774,7 +4774,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: slbSyncTtl: Slb sync to center switch. Default 180.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slbSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "slbSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SlbSyncTtl
             {
                 get;
@@ -4785,7 +4785,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: wafAccessCollectionPolicy: Waf audit collection policy
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "wafAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "wafAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? WafAccessCollectionPolicy
             {
                 get;
@@ -4796,7 +4796,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: wafAccessPolicySetting: Waf audit policy setting.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "wafAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "wafAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? WafAccessPolicySetting
             {
                 get;
@@ -4807,7 +4807,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: wafEnabled: Waf log switch. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "wafEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "wafEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? WafEnabled
             {
                 get;
@@ -4818,7 +4818,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: wafTiEnabled: Threat Intelligence of Waf.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "wafTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "wafTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? WafTiEnabled
             {
                 get;
@@ -4829,7 +4829,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: wafTtl: Waf centralized ttl. Default true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "wafTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "wafTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? WafTtl
             {
                 get;

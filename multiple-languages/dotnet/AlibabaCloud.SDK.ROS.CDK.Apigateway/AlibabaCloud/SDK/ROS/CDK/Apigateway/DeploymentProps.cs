@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public class DeploymentProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IDeploymentProps
     {
         /// <summary>Property apiId: The id of the API.</summary>
-        [JsiiProperty(name: "apiId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "apiId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ApiId
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Property groupId: The id of the Group.</summary>
-        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object GroupId
         {
             get;
@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Property stageName: Bind traffic in this stage.</summary>
-        [JsiiProperty(name: "stageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "stageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object StageName
         {
             get;
@@ -36,7 +36,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property description: Description of the deployment, less than 180 characters.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description
         {
             get;
@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property historyVersion: The history version.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "historyVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "historyVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? HistoryVersion
         {
             get;

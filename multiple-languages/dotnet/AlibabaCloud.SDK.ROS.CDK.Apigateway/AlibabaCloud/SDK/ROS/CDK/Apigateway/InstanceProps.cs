@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// Valid values: HTTPS2_TLS1_0, HTTPS2_TLS1_2, HTTPS1_1_TLS1_0
         /// </remarks>
-        [JsiiProperty(name: "httpsPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "httpsPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object HttpsPolicy
         {
             get;
@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Property instanceName: Instance name.</summary>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceName
         {
             get;
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// For example: api.s1.small
         /// </remarks>
-        [JsiiProperty(name: "instanceSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "instanceSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceSpec
         {
             get;
@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// For example: cn-beijing-MAZ2(f,g).
         /// Pleas call DescribeZones to get supported zone list.
         /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ZoneId
         {
             get;
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// true: Automatic payment is enabled. The payment is automatically made.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoPay
         {
             get;
@@ -71,7 +71,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ChargeType
         {
             get;
@@ -83,7 +83,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// Default value is false.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DeletionForce
         {
             get;
@@ -95,7 +95,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Duration
         {
             get;
@@ -107,7 +107,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// It could be Month (default) or Year.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PricingCycle
         {
             get;

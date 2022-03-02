@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -227,7 +227,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: enable: Whether to enable full-text indexing. Default to true.
             /// </remarks>
-            [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Enable
             {
                 get;
@@ -238,7 +238,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: caseSensitive: Whether it is case sensitive. Default to false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "caseSensitive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "caseSensitive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CaseSensitive
             {
                 get;
@@ -251,7 +251,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: delimiter: Delimiter. Default to (( , '";=()[]{}?
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Delimiter
             {
                 get;
@@ -262,7 +262,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: includeChinese: Whether it contains Chinese. Default to false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "includeChinese", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "includeChinese", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IncludeChinese
             {
                 get;
@@ -370,7 +370,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Json key name. It can be nested by dot(.), such as k1.k2.k3.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Name
             {
                 get;
@@ -380,7 +380,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type: Json key type. Allowed types: text, long, double. Default to text.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Type
             {
                 get;
@@ -391,7 +391,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: alias: Json key alias.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Alias
             {
                 get;
@@ -402,7 +402,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: enableAnalytics: Whether this json key is enabled for statistics. Default to true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "enableAnalytics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "enableAnalytics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableAnalytics
             {
                 get;
@@ -606,7 +606,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Key name.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Name
             {
                 get;
@@ -616,7 +616,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type: Key type. Allowed types: text, long, double, json. Default to text.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Type
             {
                 get;
@@ -627,7 +627,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: alias: Key alias.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Alias
             {
                 get;
@@ -638,7 +638,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: caseSensitive: Whether it is case sensitive. It takes effect when Type is text or json. Default to false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "caseSensitive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "caseSensitive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CaseSensitive
             {
                 get;
@@ -651,7 +651,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: delimiter: Delimiter. It takes effect when Type is text or json. Default to (( , '";=()[]{}?
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Delimiter
             {
                 get;
@@ -662,7 +662,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: enableAnalytics: Whether this key is enabled for statistics. Default to false for json type, else true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "enableAnalytics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "enableAnalytics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableAnalytics
             {
                 get;
@@ -673,7 +673,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: includeChinese: Whether it contains Chinese. It takes effect when Type is text or json. Default to false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "includeChinese", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "includeChinese", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IncludeChinese
             {
                 get;
@@ -684,7 +684,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: jsonKeyIndices: Json key index configurations.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "jsonKeyIndices", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosIndex.JsonKeyIndicesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "jsonKeyIndices", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosIndex.JsonKeyIndicesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? JsonKeyIndices
             {
                 get;

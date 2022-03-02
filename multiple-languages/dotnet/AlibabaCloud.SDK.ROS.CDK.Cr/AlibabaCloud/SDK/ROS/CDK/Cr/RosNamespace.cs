@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -45,7 +45,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Cr.RosNamespace))!;
 
         /// <remarks>
-        /// <strong>Attribute</strong>: NamespaceId: The namespace id
+        /// <strong>Attribute</strong>: InstanceId: The ID of the enterprise edition instance which namespace belongs to.
+        /// </remarks>
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Namespace: The namespace.
+        /// </remarks>
+        [JsiiProperty(name: "attrNamespace", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNamespace
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: NamespaceId: The namespace ID.
         /// </remarks>
         [JsiiProperty(name: "attrNamespaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNamespaceId
@@ -67,7 +85,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: namespace: domain name
+        /// <strong>Property</strong>: namespace: The name of the namespace.
         /// </remarks>
         [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Namespace
@@ -77,7 +95,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoCreate: whether auto create repository
+        /// <strong>Property</strong>: autoCreate: Specifies whether to automatically create an image repository.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoCreate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -88,11 +106,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: defaultVisibility: repository default visibility, public or private
+        /// <strong>Property</strong>: defaultVisibility: The default type of the repository that is automatically created. Valid values: PUBLIC, PRIVATE.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "defaultVisibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? DefaultVisibility
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: instanceId: The ID of the enterprise edition instance which namespace belongs to. If not provided, will use personal edition instance as default.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstanceId
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);

@@ -102,7 +102,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property resourceGroupId: The enterprise resource group ID where the custom image is located.</summary>
+        /// <summary>Property resourceGroupId: The ID of the resource group to which to assign the custom image.</summary>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ResourceGroupId
@@ -233,7 +233,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property resourceGroupId: The enterprise resource group ID where the custom image is located.</summary>
+            /// <summary>Property resourceGroupId: The ID of the resource group to which to assign the custom image.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId

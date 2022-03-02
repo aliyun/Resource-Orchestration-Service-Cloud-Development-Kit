@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description
         {
             get;
@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         /// <summary>Property isDefault: Whether is created by system.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "isDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "isDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? IsDefault
         {
             get;
@@ -34,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Name
         {
             get;
@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-sag.RosCloudConnectNetwork.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-sag.RosCloudConnectNetwork.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Sag.RosCloudConnectNetwork.ITagsProperty[]? Tags
         {
             get;

@@ -2,3 +2,4 @@
 node_modules
 *.js
 !lib/init-templates/**/*.js
+*.tgz

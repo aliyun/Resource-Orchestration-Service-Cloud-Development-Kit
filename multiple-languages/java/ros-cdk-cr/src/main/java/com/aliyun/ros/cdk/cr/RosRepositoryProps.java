@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::Repository`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosRepositoryProps")
 @software.amazon.jsii.Jsii.Proxy(RosRepositoryProps.Jsii$Proxy.class)
 public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,7 +32,19 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRepoSource() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTagImmutability() {
         return null;
     }
 
@@ -51,7 +63,9 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object repoType;
         java.lang.Object summary;
         java.lang.Object detail;
+        java.lang.Object instanceId;
         java.lang.Object repoSource;
+        java.lang.Object tagImmutability;
 
         /**
          * Sets the value of {@link RosRepositoryProps#getRepoName}
@@ -154,6 +168,26 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRepositoryProps#getInstanceId}
+         * @param instanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceId(java.lang.String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRepositoryProps#getInstanceId}
+         * @param instanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRepositoryProps#getRepoSource}
          * @param repoSource the value to be set.
          * @return {@code this}
@@ -170,6 +204,26 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder repoSource(com.aliyun.ros.cdk.cr.RosRepository.RepoSourceProperty repoSource) {
             this.repoSource = repoSource;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRepositoryProps#getTagImmutability}
+         * @param tagImmutability the value to be set.
+         * @return {@code this}
+         */
+        public Builder tagImmutability(java.lang.Boolean tagImmutability) {
+            this.tagImmutability = tagImmutability;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRepositoryProps#getTagImmutability}
+         * @param tagImmutability the value to be set.
+         * @return {@code this}
+         */
+        public Builder tagImmutability(com.aliyun.ros.cdk.core.IResolvable tagImmutability) {
+            this.tagImmutability = tagImmutability;
             return this;
         }
 
@@ -194,7 +248,9 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object repoType;
         private final java.lang.Object summary;
         private final java.lang.Object detail;
+        private final java.lang.Object instanceId;
         private final java.lang.Object repoSource;
+        private final java.lang.Object tagImmutability;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -207,7 +263,9 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
             this.repoType = software.amazon.jsii.Kernel.get(this, "repoType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.summary = software.amazon.jsii.Kernel.get(this, "summary", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.detail = software.amazon.jsii.Kernel.get(this, "detail", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.repoSource = software.amazon.jsii.Kernel.get(this, "repoSource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tagImmutability = software.amazon.jsii.Kernel.get(this, "tagImmutability", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -220,7 +278,9 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
             this.repoType = java.util.Objects.requireNonNull(builder.repoType, "repoType is required");
             this.summary = java.util.Objects.requireNonNull(builder.summary, "summary is required");
             this.detail = builder.detail;
+            this.instanceId = builder.instanceId;
             this.repoSource = builder.repoSource;
+            this.tagImmutability = builder.tagImmutability;
         }
 
         @Override
@@ -249,8 +309,18 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getInstanceId() {
+            return this.instanceId;
+        }
+
+        @Override
         public final java.lang.Object getRepoSource() {
             return this.repoSource;
+        }
+
+        @Override
+        public final java.lang.Object getTagImmutability() {
+            return this.tagImmutability;
         }
 
         @Override
@@ -266,8 +336,14 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getDetail() != null) {
                 data.set("detail", om.valueToTree(this.getDetail()));
             }
+            if (this.getInstanceId() != null) {
+                data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            }
             if (this.getRepoSource() != null) {
                 data.set("repoSource", om.valueToTree(this.getRepoSource()));
+            }
+            if (this.getTagImmutability() != null) {
+                data.set("tagImmutability", om.valueToTree(this.getTagImmutability()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -292,7 +368,9 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
             if (!repoType.equals(that.repoType)) return false;
             if (!summary.equals(that.summary)) return false;
             if (this.detail != null ? !this.detail.equals(that.detail) : that.detail != null) return false;
-            return this.repoSource != null ? this.repoSource.equals(that.repoSource) : that.repoSource == null;
+            if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
+            if (this.repoSource != null ? !this.repoSource.equals(that.repoSource) : that.repoSource != null) return false;
+            return this.tagImmutability != null ? this.tagImmutability.equals(that.tagImmutability) : that.tagImmutability == null;
         }
 
         @Override
@@ -302,7 +380,9 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.repoType.hashCode());
             result = 31 * result + (this.summary.hashCode());
             result = 31 * result + (this.detail != null ? this.detail.hashCode() : 0);
+            result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.repoSource != null ? this.repoSource.hashCode() : 0);
+            result = 31 * result + (this.tagImmutability != null ? this.tagImmutability.hashCode() : 0);
             return result;
         }
     }

@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -394,7 +394,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: constValue: The value of the parameter.
             /// </remarks>
-            [JsiiProperty(name: "constValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "constValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ConstValue
             {
                 get;
@@ -404,7 +404,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: location: The location of the parameter. Default is HEAD.
             /// </remarks>
-            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Location
             {
                 get;
@@ -414,7 +414,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: serviceParameterName: The service parameter name.
             /// </remarks>
-            [JsiiProperty(name: "serviceParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "serviceParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServiceParameterName
             {
                 get;
@@ -425,7 +425,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: description: Description of the const parameter, less than 180 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
             {
                 get;
@@ -510,7 +510,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: code: Error code.
             /// </remarks>
-            [JsiiProperty(name: "code", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "code", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Code
             {
                 get;
@@ -520,7 +520,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: message: Error message.
             /// </remarks>
-            [JsiiProperty(name: "message", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "message", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Message
             {
                 get;
@@ -531,7 +531,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: description: Description of the ERROR, less than 180 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
             {
                 get;
@@ -834,7 +834,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: contentTypeCatagory: Specify how to determine ContentType header when using function. "DEFAULT" to use API Gateway's default value. "CUSTOM" to use self defined value. "CLIENT" to use client's ContentType header. Default is CLIENT.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "contentTypeCatagory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "contentTypeCatagory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContentTypeCatagory
             {
                 get;
@@ -845,7 +845,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: contentTypeValue: ContentTypeValue is required if ContentTypeCatagory is DEFAULT or CUSTOM.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "contentTypeValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "contentTypeValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContentTypeValue
             {
                 get;
@@ -856,7 +856,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: fcBaseUrl: Trigger path. Starts with http:// or https://
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "fcBaseUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "fcBaseUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FcBaseUrl
             {
                 get;
@@ -867,7 +867,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: fcRegionId: The region id of function compute.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "fcRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "fcRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FcRegionId
             {
                 get;
@@ -879,7 +879,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// Valid values: FCEvent, HttpTrigger.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "fcType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "fcType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FcType
             {
                 get;
@@ -890,7 +890,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: functionName: The function name of function compute.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FunctionName
             {
                 get;
@@ -901,7 +901,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: method: The HTTP method of the function. Default is GET.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "method", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "method", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Method
             {
                 get;
@@ -912,7 +912,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "onlyBusinessPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "onlyBusinessPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OnlyBusinessPath
             {
                 get;
@@ -923,7 +923,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: /getUserInfo/[userId].
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Path
             {
                 get;
@@ -934,7 +934,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: qualifier: The service alias name.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Qualifier
             {
                 get;
@@ -945,7 +945,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: roleArn: Ram authorizes the arn of the API gateway access function compute.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RoleArn
             {
                 get;
@@ -956,7 +956,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: serviceName: The service name of function compute.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceName
             {
                 get;
@@ -1018,7 +1018,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: headerName: Response header name
             /// </remarks>
-            [JsiiProperty(name: "headerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "headerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object HeaderName
             {
                 get;
@@ -1028,7 +1028,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: headerValue: Response header value
             /// </remarks>
-            [JsiiProperty(name: "headerValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "headerValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object HeaderValue
             {
                 get;
@@ -1141,7 +1141,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: openIdApiType: The type of the open id. "IDTOKEN" or "BUSINESS". If OpenIdApiType is specified as IDTOKEN, PublicKey and PublicKeyId are required. If OpenIdApiType is specified as BUSINESS, IdTokenParamName is required.
             /// </remarks>
-            [JsiiProperty(name: "openIdApiType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "openIdApiType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object OpenIdApiType
             {
                 get;
@@ -1152,7 +1152,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: idTokenParamName: The token's parameter name.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "idTokenParamName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "idTokenParamName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IdTokenParamName
             {
                 get;
@@ -1163,7 +1163,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: publicKey: The public key.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "publicKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "publicKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PublicKey
             {
                 get;
@@ -1174,7 +1174,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: publicKeyId: The public key id.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "publicKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "publicKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PublicKeyId
             {
                 get;
@@ -1318,7 +1318,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: requestHttpMethod: The HTTP method of the request. Default is GET.
             /// </remarks>
-            [JsiiProperty(name: "requestHttpMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "requestHttpMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RequestHttpMethod
             {
                 get;
@@ -1328,7 +1328,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: requestMode: API request mode. "MAPPING" or "PASSTHROUGH". Default is "MAPPING".
             /// </remarks>
-            [JsiiProperty(name: "requestMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "requestMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RequestMode
             {
                 get;
@@ -1338,7 +1338,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: requestPath: API Path.
             /// </remarks>
-            [JsiiProperty(name: "requestPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "requestPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RequestPath
             {
                 get;
@@ -1348,7 +1348,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: requestProtocol: The protocol of the request, "HTTP", "HTTPS", or "HTTP,HTTPS", Default is "HTTP".
             /// </remarks>
-            [JsiiProperty(name: "requestProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "requestProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RequestProtocol
             {
                 get;
@@ -1359,7 +1359,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST/PUT/PATCH.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "bodyFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "bodyFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BodyFormat
             {
                 get;
@@ -1370,7 +1370,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: postBodyDescription: Description of the post body.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "postBodyDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "postBodyDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PostBodyDescription
             {
                 get;
@@ -1744,7 +1744,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: apiParameterName: The name of the request parameter.
             /// </remarks>
-            [JsiiProperty(name: "apiParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "apiParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ApiParameterName
             {
                 get;
@@ -1754,7 +1754,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: location: The location of the reqest parameter.
             /// </remarks>
-            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Location
             {
                 get;
@@ -1764,7 +1764,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: parameterType: The type of the parameter
             /// </remarks>
-            [JsiiProperty(name: "parameterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "parameterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ParameterType
             {
                 get;
@@ -1774,7 +1774,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: required: If required. "REQUIRED", "OPTION"
             /// </remarks>
-            [JsiiProperty(name: "required", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "required", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Required
             {
                 get;
@@ -1785,7 +1785,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: defaultValue: The default value of the request parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "defaultValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "defaultValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DefaultValue
             {
                 get;
@@ -1796,7 +1796,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: demoValue: The demo value of the request parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "demoValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "demoValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DemoValue
             {
                 get;
@@ -1807,7 +1807,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: description: Description of the API, less than 180 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
             {
                 get;
@@ -1818,7 +1818,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: docOrder: The order of the doc.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "docOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "docOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DocOrder
             {
                 get;
@@ -1829,7 +1829,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: docShow: Visiablity of the Doc. "PUBLIC" or "PRIVATE"
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "docShow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "docShow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DocShow
             {
                 get;
@@ -1840,7 +1840,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: enumValue: Allowed parameter value, split with ',' like "1,2,3,4"
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "enumValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "enumValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnumValue
             {
                 get;
@@ -1851,7 +1851,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: jsonScheme: The json scheme of the parameter when it is String.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "jsonScheme", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "jsonScheme", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? JsonScheme
             {
                 get;
@@ -1862,7 +1862,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: maxLength: The max length of the parameter when it is String.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maxLength", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "maxLength", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MaxLength
             {
                 get;
@@ -1873,7 +1873,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: maxValue: The max value of the parameter when it is Int, Long, Float or Double.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maxValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "maxValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MaxValue
             {
                 get;
@@ -1884,7 +1884,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: minLength: The min length of the parameter when it is String.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "minLength", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "minLength", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MinLength
             {
                 get;
@@ -1895,7 +1895,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: minValue: The min value of the parameter when it is Int, Long, Float or Double.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "minValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "minValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MinValue
             {
                 get;
@@ -1906,7 +1906,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: regularExpression: The regular expression of the parameter when it is String.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "regularExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "regularExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RegularExpression
             {
                 get;
@@ -2253,7 +2253,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: contentTypeCatagory: Specify how to determine ContentType header when using service. "DEFAULT" to use API Gateway's default value. "CUSTOM" to use self defined value. "CLIENT" to use client's ContentType header. Default is CLIENT.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "contentTypeCatagory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "contentTypeCatagory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContentTypeCatagory
             {
                 get;
@@ -2264,7 +2264,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: contentTypeValue: ContentTypeValue is required if ContentTypeCatagory is DEFAULT or CUSTOM.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "contentTypeValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "contentTypeValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContentTypeValue
             {
                 get;
@@ -2275,7 +2275,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: functionComputeConfig: The configuration of the function compute. FunctionComputeConfig is required if ServiceFunctionComputeEnable is TRUE.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "functionComputeConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.FunctionComputeConfigProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "functionComputeConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.FunctionComputeConfigProperty\"}]}}", isOptional: true)]
             public object? FunctionComputeConfig
             {
                 get;
@@ -2286,7 +2286,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: mock: Whether to use Mock model. "TRUE" or "FALSE". Default is FALSE.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "mock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "mock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Mock
             {
                 get;
@@ -2297,7 +2297,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: mockHeaders: Custom Mock response header related information when Mock is enabled.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "mockHeaders", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.MockHeadersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "mockHeaders", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.MockHeadersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? MockHeaders
             {
                 get;
@@ -2308,7 +2308,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: mockResult: The returned value when using Mock model.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "mockResult", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "mockResult", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MockResult
             {
                 get;
@@ -2319,7 +2319,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: mockStatusCode: Status code, returned in the format compatible with HTTP 1.1 response status code and its status
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "mockStatusCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "mockStatusCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MockStatusCode
             {
                 get;
@@ -2330,7 +2330,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: serviceAddress: Backend service call address. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServiceAddress corresponds to http://api.a.com:8080.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "serviceAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceAddress
             {
                 get;
@@ -2341,7 +2341,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: serviceHttpMethod: The HTTP method to the service. Default is GET.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceHttpMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "serviceHttpMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceHttpMethod
             {
                 get;
@@ -2352,7 +2352,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: servicePath: Backend service call path. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServicePath corresponds to /object/add.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "servicePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "servicePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServicePath
             {
                 get;
@@ -2363,7 +2363,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: serviceProtocol: Backend service protocol type, which must be HTTP, HTTPS or FunctionCompute currently.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "serviceProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceProtocol
             {
                 get;
@@ -2374,7 +2374,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: serviceTimeOut: Time out (ms) when using service.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceTimeOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "serviceTimeOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceTimeOut
             {
                 get;
@@ -2385,7 +2385,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: serviceVpcEnable: Whether to use VPC. "TRUE" or "FALSE". Default is FALSE.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceVpcEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "serviceVpcEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceVpcEnable
             {
                 get;
@@ -2396,7 +2396,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: vpcConfig: The configuration of the VPC. VpcConfig is required if ServiceVpcEnable is TRUE.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "vpcConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.VpcConfigProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "vpcConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.VpcConfigProperty\"}]}}", isOptional: true)]
             public object? VpcConfig
             {
                 get;
@@ -2458,7 +2458,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: requestParameterName: The corresponding request parameter, system parameter or const parameter.
             /// </remarks>
-            [JsiiProperty(name: "requestParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "requestParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RequestParameterName
             {
                 get;
@@ -2468,7 +2468,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: serviceParameterName: The corresponding service parameter.
             /// </remarks>
-            [JsiiProperty(name: "serviceParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "serviceParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServiceParameterName
             {
                 get;
@@ -2548,7 +2548,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: location: The location of the parameter
             /// </remarks>
-            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Location
             {
                 get;
@@ -2558,7 +2558,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: parameterType: The type of the parameter.
             /// </remarks>
-            [JsiiProperty(name: "parameterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "parameterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ParameterType
             {
                 get;
@@ -2568,7 +2568,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: serviceParameterName: The name of the parameter
             /// </remarks>
-            [JsiiProperty(name: "serviceParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "serviceParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServiceParameterName
             {
                 get;
@@ -2694,7 +2694,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: location: The location of the system parameter. Default is HEAD.
             /// </remarks>
-            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Location
             {
                 get;
@@ -2704,7 +2704,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: parameterName: The system parameter name.
             /// </remarks>
-            [JsiiProperty(name: "parameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "parameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ParameterName
             {
                 get;
@@ -2714,7 +2714,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: serviceParameterName: The service parameter name.
             /// </remarks>
-            [JsiiProperty(name: "serviceParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "serviceParameterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServiceParameterName
             {
                 get;
@@ -2725,7 +2725,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: demoValue: The demo value of the system parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "demoValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "demoValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DemoValue
             {
                 get;
@@ -2736,7 +2736,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: description: Description of the system parameter, less than 180 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
             {
                 get;
@@ -2803,7 +2803,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: key: undefined
             /// </remarks>
-            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Key
             {
                 get;
@@ -2814,7 +2814,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: value: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Value
             {
                 get;
@@ -2894,7 +2894,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: instanceId: The id of the instance (ECS/SLB).
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceId
             {
                 get;
@@ -2904,7 +2904,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: port: The port of the VPC.
             /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Port
             {
                 get;
@@ -2914,7 +2914,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: vpcId: The id of the VPC.
             /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VpcId
             {
                 get;

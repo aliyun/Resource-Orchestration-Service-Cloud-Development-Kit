@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - No hint
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "displayHint", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "displayHint", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? DisplayHint
         {
             get;
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: false
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "omitEmptyArray", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "omitEmptyArray", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? OmitEmptyArray
         {
             get;

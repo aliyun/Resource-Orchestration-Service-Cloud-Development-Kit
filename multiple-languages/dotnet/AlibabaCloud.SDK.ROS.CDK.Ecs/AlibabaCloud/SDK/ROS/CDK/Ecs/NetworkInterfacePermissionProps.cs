@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public class NetworkInterfacePermissionProps : AlibabaCloud.SDK.ROS.CDK.Ecs.INetworkInterfacePermissionProps
     {
         /// <summary>Property accountId: the account id.</summary>
-        [JsiiProperty(name: "accountId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "accountId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AccountId
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Property networkInterfaceId: Network interface id.</summary>
-        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object NetworkInterfaceId
         {
             get;
@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Property permission: the permission.</summary>
-        [JsiiProperty(name: "permission", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "permission", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Permission
         {
             get;

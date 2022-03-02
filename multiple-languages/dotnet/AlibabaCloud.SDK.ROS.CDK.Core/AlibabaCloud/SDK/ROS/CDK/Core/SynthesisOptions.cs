@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         [System.Obsolete()]
         public string? Outdir
         {
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "skipValidation", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "skipValidation", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         [System.Obsolete()]
         public bool? SkipValidation
         {
@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - if this option is not specified, runtime info will not be included
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "runtimeInfo", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cxapi.RuntimeInfo\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "runtimeInfo", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cxapi.RuntimeInfo\"}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Cxapi.IRuntimeInfo? RuntimeInfo
         {
             get;

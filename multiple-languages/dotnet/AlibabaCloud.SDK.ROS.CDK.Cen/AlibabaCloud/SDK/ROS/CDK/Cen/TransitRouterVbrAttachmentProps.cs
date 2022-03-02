@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
     public class TransitRouterVbrAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Cen.ITransitRouterVbrAttachmentProps
     {
         /// <summary>Property vbrId: VbrId.</summary>
-        [JsiiProperty(name: "vbrId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "vbrId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object VbrId
         {
             get;
@@ -20,7 +20,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <summary>Property autoPublishRouteEnabled: AutoPublishRouteEnabled.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "autoPublishRouteEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "autoPublishRouteEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoPublishRouteEnabled
         {
             get;
@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <summary>Property cenId: CenId.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? CenId
         {
             get;
@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <summary>Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TransitRouterAttachmentDescription
         {
             get;
@@ -47,7 +47,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <summary>Property transitRouterAttachmentName: TransitRouterAttachmentName.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "transitRouterAttachmentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "transitRouterAttachmentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TransitRouterAttachmentName
         {
             get;
@@ -56,7 +56,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <summary>Property transitRouterId: TransitRouterId.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "transitRouterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "transitRouterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TransitRouterId
         {
             get;
@@ -65,7 +65,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <summary>Property vbrOwnerId: VbrOwnerId.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "vbrOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "vbrOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? VbrOwnerId
         {
             get;

@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
     public class ResourceGroupProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IResourceGroupProps
     {
         /// <summary>Property displayName: The display name of the resource group.</summary>
-        [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DisplayName
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         }
 
         /// <summary>Property name: The unique identifier of the resource group.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name
         {
             get;

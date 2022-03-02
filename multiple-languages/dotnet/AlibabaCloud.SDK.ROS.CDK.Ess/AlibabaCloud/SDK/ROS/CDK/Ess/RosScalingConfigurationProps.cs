@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// <strong>Property</strong>: scalingGroupId: Scaling group id to create the scaling configuration.
         /// </remarks>
-        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ScalingGroupId
         {
             get;
@@ -26,7 +26,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Unlimited: the unlimited mode.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "creditSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "creditSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? CreditSpecification
         {
             get;
@@ -37,7 +37,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: deploymentSetId: Deployment set ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "deploymentSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "deploymentSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DeploymentSetId
         {
             get;
@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: diskMappings: Disk mappings to attach to instance.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "diskMappings", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingConfiguration.DiskMappingsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "diskMappings", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingConfiguration.DiskMappingsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? DiskMappings
         {
             get;
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: hpcClusterId: The HPC cluster ID to which the instance belongs.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "hpcClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "hpcClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? HpcClusterId
         {
             get;
@@ -70,7 +70,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: imageFamily: The name of the image family. You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "imageFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "imageFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ImageFamily
         {
             get;
@@ -81,7 +81,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: imageId: Image ID to create ecs instance .
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ImageId
         {
             get;
@@ -92,7 +92,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InstanceId
         {
             get;
@@ -103,7 +103,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: instanceName: The name of the instance launched from the current scaling configuration.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InstanceName
         {
             get;
@@ -114,7 +114,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: instanceType: ecs supported instance type.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InstanceType
         {
             get;
@@ -125,7 +125,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceTypes", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "instanceTypes", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InstanceTypes
         {
             get;
@@ -136,7 +136,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InternetChargeType
         {
             get;
@@ -147,7 +147,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InternetMaxBandwidthIn
         {
             get;
@@ -160,7 +160,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InternetMaxBandwidthOut
         {
             get;
@@ -171,7 +171,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'none'.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? IoOptimized
         {
             get;
@@ -182,7 +182,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Ipv6AddressCount
         {
             get;
@@ -193,7 +193,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: keyPairName: SSH key pair name.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? KeyPairName
         {
             get;
@@ -205,7 +205,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Default value: 50.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "loadBalancerWeight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "loadBalancerWeight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? LoadBalancerWeight
         {
             get;
@@ -216,7 +216,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "passwordInherit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "passwordInherit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PasswordInherit
         {
             get;
@@ -227,7 +227,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ramRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "ramRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? RamRoleName
         {
             get;
@@ -238,7 +238,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: resourceGroupId: Resource group id.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ResourceGroupId
         {
             get;
@@ -249,7 +249,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: scalingConfigurationName: Name of created scaling configuration.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "scalingConfigurationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "scalingConfigurationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ScalingConfigurationName
         {
             get;
@@ -260,7 +260,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: securityGroupId: Security Group to create ecs instance.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SecurityGroupId
         {
             get;
@@ -271,7 +271,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: spotPriceLimit: Set the hourly maximum price for the instance. Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "spotPriceLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "spotPriceLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SpotPriceLimit
         {
             get;
@@ -289,7 +289,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Supports a maximum of 3 decimal places.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "spotPriceLimitForInstanceType", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "spotPriceLimitForInstanceType", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? SpotPriceLimitForInstanceType
         {
             get;
@@ -304,7 +304,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Default: NoSpot.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "spotStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "spotStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SpotStrategy
         {
             get;
@@ -315,7 +315,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "systemDiskAutoSnapshotPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "systemDiskAutoSnapshotPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SystemDiskAutoSnapshotPolicyId
         {
             get;
@@ -326,7 +326,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SystemDiskCategory
         {
             get;
@@ -337,7 +337,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of an ESSD.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SystemDiskPerformanceLevel
         {
             get;
@@ -348,7 +348,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: systemDiskSize: Size of system disk. Unit is GB.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SystemDiskSize
         {
             get;
@@ -372,7 +372,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Can be a null string.If less then 20 tags are specified, ros will add a tag(Key: "ros-aliyun-created", Value:"<resource_name>_stack_<stack_id>") if possible.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tagList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingConfiguration.TagListProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "tagList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingConfiguration.TagListProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? TagList
         {
             get;
@@ -383,7 +383,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? UserData
         {
             get;

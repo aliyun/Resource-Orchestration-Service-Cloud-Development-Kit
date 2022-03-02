@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -300,7 +300,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: sourceEndpoint: Migration source configuration.
             /// </remarks>
-            [JsiiProperty(name: "sourceEndpoint", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SourceEndpointProperty\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "sourceEndpoint", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SourceEndpointProperty\"}]}}")]
             public object SourceEndpoint
             {
                 get;
@@ -310,7 +310,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: subscriptionDataType: undefined
             /// </remarks>
-            [JsiiProperty(name: "subscriptionDataType", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionDataTypeProperty\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "subscriptionDataType", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionDataTypeProperty\"}]}}")]
             public object SubscriptionDataType
             {
                 get;
@@ -320,7 +320,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: subscriptionObject: Objects that need to be migrated.
             /// </remarks>
-            [JsiiProperty(name: "subscriptionObject", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+            [JsiiProperty(name: "subscriptionObject", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object SubscriptionObject
             {
                 get;
@@ -331,7 +331,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: subscriptionInstance: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "subscriptionInstance", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionInstanceProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "subscriptionInstance", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionInstanceProperty\"}]}}", isOptional: true)]
             public object? SubscriptionInstance
             {
                 get;
@@ -342,7 +342,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: subscriptionInstanceName: Subscription instance name.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "subscriptionInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "subscriptionInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SubscriptionInstanceName
             {
                 get;
@@ -353,7 +353,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: subscriptionInstanceNetworkType: Network type: classic or vpc.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "subscriptionInstanceNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "subscriptionInstanceNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SubscriptionInstanceNetworkType
             {
                 get;
@@ -604,7 +604,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// RDS: Alibaba Cloud RDS instance
             /// ECS: Self-built database on ECS
             /// </remarks>
-            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceType
             {
                 get;
@@ -614,7 +614,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: password: Source instance password
             /// </remarks>
-            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Password
             {
                 get;
@@ -624,7 +624,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: userName: Source instance access account
             /// </remarks>
-            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object UserName
             {
                 get;
@@ -635,7 +635,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: databaseName: The database library name used when creating the connection.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "databaseName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "databaseName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DatabaseName
             {
                 get;
@@ -648,7 +648,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// When the SourceEndpoint.InstanceType value is ECS, this parameter needs to be passed to the ECS instance ID.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceId
             {
                 get;
@@ -659,7 +659,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: ip: The connection address of the source instance. Required when the source instance is a self-built database.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Ip
             {
                 get;
@@ -670,7 +670,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: oracleSid: When the source instance database type is Oracle, this parameter is Oracle SID
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "oracleSid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "oracleSid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OracleSid
             {
                 get;
@@ -681,7 +681,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: ownerId: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the UID of the Alibaba Cloud account to which the source RDS instance belongs.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ownerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ownerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OwnerId
             {
                 get;
@@ -692,7 +692,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: port: The listening port of the source instance, which is required when the source instance is a self-built database.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Port
             {
                 get;
@@ -703,7 +703,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: role: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the authorization role of the Alibaba Cloud account to which the source instance belongs to the target instance Alibaba Cloud account.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Role
             {
                 get;
@@ -765,7 +765,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: ddl: Whether to subscribe to DDL type data.
             /// </remarks>
-            [JsiiProperty(name: "ddl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "ddl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Ddl
             {
                 get;
@@ -775,7 +775,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: dml: Whether to subscribe to DML type data.
             /// </remarks>
-            [JsiiProperty(name: "dml", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "dml", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Dml
             {
                 get;
@@ -837,7 +837,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: vpcId: undefined
             /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VpcId
             {
                 get;
@@ -847,7 +847,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// <strong>Property</strong>: vSwitchId: undefined
             /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VSwitchId
             {
                 get;
@@ -941,7 +941,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: dbName: db name to be subscribed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbName
             {
                 get;
@@ -952,7 +952,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: tableExcludes: Table excludes configuration.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tableExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? TableExcludes
             {
                 get;
@@ -963,7 +963,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: tableIncludes: Table configuration.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tableIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? TableIncludes
             {
                 get;
@@ -1011,7 +1011,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: tableName: Table name not to be subscribed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TableName
             {
                 get;
@@ -1059,7 +1059,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: tableName: Table name to be subscribed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TableName
             {
                 get;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * Properties for defining a `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.258Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.104Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -22,7 +22,37 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCompactTopic() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConfig() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLocalTopic() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinInsyncReplicas() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPartitionNum() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReplicationFactor() {
         return null;
     }
 
@@ -39,7 +69,12 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object instanceId;
         java.lang.Object remark;
         java.lang.Object topic;
+        java.lang.Object compactTopic;
+        java.lang.Object config;
+        java.lang.Object localTopic;
+        java.lang.Object minInsyncReplicas;
         java.lang.Object partitionNum;
+        java.lang.Object replicationFactor;
 
         /**
          * Sets the value of {@link RosTopicProps#getInstanceId}
@@ -102,6 +137,86 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getCompactTopic}
+         * @param compactTopic the value to be set.
+         * @return {@code this}
+         */
+        public Builder compactTopic(java.lang.Boolean compactTopic) {
+            this.compactTopic = compactTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getCompactTopic}
+         * @param compactTopic the value to be set.
+         * @return {@code this}
+         */
+        public Builder compactTopic(com.aliyun.ros.cdk.core.IResolvable compactTopic) {
+            this.compactTopic = compactTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getConfig}
+         * @param config the value to be set.
+         * @return {@code this}
+         */
+        public Builder config(com.aliyun.ros.cdk.core.IResolvable config) {
+            this.config = config;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getConfig}
+         * @param config the value to be set.
+         * @return {@code this}
+         */
+        public Builder config(java.util.Map<java.lang.String, ? extends java.lang.Object> config) {
+            this.config = config;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getLocalTopic}
+         * @param localTopic the value to be set.
+         * @return {@code this}
+         */
+        public Builder localTopic(java.lang.Boolean localTopic) {
+            this.localTopic = localTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getLocalTopic}
+         * @param localTopic the value to be set.
+         * @return {@code this}
+         */
+        public Builder localTopic(com.aliyun.ros.cdk.core.IResolvable localTopic) {
+            this.localTopic = localTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getMinInsyncReplicas}
+         * @param minInsyncReplicas the value to be set.
+         * @return {@code this}
+         */
+        public Builder minInsyncReplicas(java.lang.Number minInsyncReplicas) {
+            this.minInsyncReplicas = minInsyncReplicas;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getMinInsyncReplicas}
+         * @param minInsyncReplicas the value to be set.
+         * @return {@code this}
+         */
+        public Builder minInsyncReplicas(com.aliyun.ros.cdk.core.IResolvable minInsyncReplicas) {
+            this.minInsyncReplicas = minInsyncReplicas;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTopicProps#getPartitionNum}
          * @param partitionNum the value to be set.
          * @return {@code this}
@@ -118,6 +233,26 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder partitionNum(com.aliyun.ros.cdk.core.IResolvable partitionNum) {
             this.partitionNum = partitionNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getReplicationFactor}
+         * @param replicationFactor the value to be set.
+         * @return {@code this}
+         */
+        public Builder replicationFactor(java.lang.Number replicationFactor) {
+            this.replicationFactor = replicationFactor;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getReplicationFactor}
+         * @param replicationFactor the value to be set.
+         * @return {@code this}
+         */
+        public Builder replicationFactor(com.aliyun.ros.cdk.core.IResolvable replicationFactor) {
+            this.replicationFactor = replicationFactor;
             return this;
         }
 
@@ -140,7 +275,12 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object instanceId;
         private final java.lang.Object remark;
         private final java.lang.Object topic;
+        private final java.lang.Object compactTopic;
+        private final java.lang.Object config;
+        private final java.lang.Object localTopic;
+        private final java.lang.Object minInsyncReplicas;
         private final java.lang.Object partitionNum;
+        private final java.lang.Object replicationFactor;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -151,7 +291,12 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.compactTopic = software.amazon.jsii.Kernel.get(this, "compactTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.localTopic = software.amazon.jsii.Kernel.get(this, "localTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minInsyncReplicas = software.amazon.jsii.Kernel.get(this, "minInsyncReplicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.partitionNum = software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.replicationFactor = software.amazon.jsii.Kernel.get(this, "replicationFactor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -162,7 +307,12 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
             this.remark = java.util.Objects.requireNonNull(builder.remark, "remark is required");
             this.topic = java.util.Objects.requireNonNull(builder.topic, "topic is required");
+            this.compactTopic = builder.compactTopic;
+            this.config = builder.config;
+            this.localTopic = builder.localTopic;
+            this.minInsyncReplicas = builder.minInsyncReplicas;
             this.partitionNum = builder.partitionNum;
+            this.replicationFactor = builder.replicationFactor;
         }
 
         @Override
@@ -181,8 +331,33 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getCompactTopic() {
+            return this.compactTopic;
+        }
+
+        @Override
+        public final java.lang.Object getConfig() {
+            return this.config;
+        }
+
+        @Override
+        public final java.lang.Object getLocalTopic() {
+            return this.localTopic;
+        }
+
+        @Override
+        public final java.lang.Object getMinInsyncReplicas() {
+            return this.minInsyncReplicas;
+        }
+
+        @Override
         public final java.lang.Object getPartitionNum() {
             return this.partitionNum;
+        }
+
+        @Override
+        public final java.lang.Object getReplicationFactor() {
+            return this.replicationFactor;
         }
 
         @Override
@@ -194,8 +369,23 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             data.set("instanceId", om.valueToTree(this.getInstanceId()));
             data.set("remark", om.valueToTree(this.getRemark()));
             data.set("topic", om.valueToTree(this.getTopic()));
+            if (this.getCompactTopic() != null) {
+                data.set("compactTopic", om.valueToTree(this.getCompactTopic()));
+            }
+            if (this.getConfig() != null) {
+                data.set("config", om.valueToTree(this.getConfig()));
+            }
+            if (this.getLocalTopic() != null) {
+                data.set("localTopic", om.valueToTree(this.getLocalTopic()));
+            }
+            if (this.getMinInsyncReplicas() != null) {
+                data.set("minInsyncReplicas", om.valueToTree(this.getMinInsyncReplicas()));
+            }
             if (this.getPartitionNum() != null) {
                 data.set("partitionNum", om.valueToTree(this.getPartitionNum()));
+            }
+            if (this.getReplicationFactor() != null) {
+                data.set("replicationFactor", om.valueToTree(this.getReplicationFactor()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -218,7 +408,12 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             if (!instanceId.equals(that.instanceId)) return false;
             if (!remark.equals(that.remark)) return false;
             if (!topic.equals(that.topic)) return false;
-            return this.partitionNum != null ? this.partitionNum.equals(that.partitionNum) : that.partitionNum == null;
+            if (this.compactTopic != null ? !this.compactTopic.equals(that.compactTopic) : that.compactTopic != null) return false;
+            if (this.config != null ? !this.config.equals(that.config) : that.config != null) return false;
+            if (this.localTopic != null ? !this.localTopic.equals(that.localTopic) : that.localTopic != null) return false;
+            if (this.minInsyncReplicas != null ? !this.minInsyncReplicas.equals(that.minInsyncReplicas) : that.minInsyncReplicas != null) return false;
+            if (this.partitionNum != null ? !this.partitionNum.equals(that.partitionNum) : that.partitionNum != null) return false;
+            return this.replicationFactor != null ? this.replicationFactor.equals(that.replicationFactor) : that.replicationFactor == null;
         }
 
         @Override
@@ -226,7 +421,12 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.instanceId.hashCode();
             result = 31 * result + (this.remark.hashCode());
             result = 31 * result + (this.topic.hashCode());
+            result = 31 * result + (this.compactTopic != null ? this.compactTopic.hashCode() : 0);
+            result = 31 * result + (this.config != null ? this.config.hashCode() : 0);
+            result = 31 * result + (this.localTopic != null ? this.localTopic.hashCode() : 0);
+            result = 31 * result + (this.minInsyncReplicas != null ? this.minInsyncReplicas.hashCode() : 0);
             result = 31 * result + (this.partitionNum != null ? this.partitionNum.hashCode() : 0);
+            result = 31 * result + (this.replicationFactor != null ? this.replicationFactor.hashCode() : 0);
             return result;
         }
     }

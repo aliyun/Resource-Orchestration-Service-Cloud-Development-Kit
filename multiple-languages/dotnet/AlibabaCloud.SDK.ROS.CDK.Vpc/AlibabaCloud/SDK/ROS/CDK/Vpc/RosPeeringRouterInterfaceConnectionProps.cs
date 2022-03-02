@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
         /// </remarks>
-        [JsiiProperty(name: "oppositeInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "oppositeInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object OppositeInterfaceId
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
         /// </remarks>
-        [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RouterInterfaceId
         {
             get;

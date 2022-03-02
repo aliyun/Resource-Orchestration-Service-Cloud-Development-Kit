@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public class LayerProps : AlibabaCloud.SDK.ROS.CDK.Fc.ILayerProps
     {
         /// <summary>Property code: The code of layer.</summary>
-        [JsiiProperty(name: "code", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosLayer.CodeProperty\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "code", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosLayer.CodeProperty\"}]}}")]
         public object Code
         {
             get;
@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// For example:nodejs12, nodejs10, nodejs8, nodejs6, python3, and python2.7
         /// </remarks>
-        [JsiiProperty(name: "compatibleRuntime", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+        [JsiiProperty(name: "compatibleRuntime", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public object CompatibleRuntime
         {
             get;
@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         }
 
         /// <summary>Property layerName: The name of layer.</summary>
-        [JsiiProperty(name: "layerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "layerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object LayerName
         {
             get;
@@ -39,7 +39,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property description: The description of the layer.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description
         {
             get;

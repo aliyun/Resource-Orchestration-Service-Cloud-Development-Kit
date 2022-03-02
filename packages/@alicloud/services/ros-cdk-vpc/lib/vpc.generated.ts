@@ -3689,7 +3689,6 @@ export interface RosNatGatewayProps {
     /**
      * @Property internetChargeType: The billing method for the NAT gateway. Valid values:
      * PayBySpec: billed on a pay-by-specification basis.
-     * PayByLcu: billed on a pay-by-LCU basis.
      */
     readonly internetChargeType?: string | ros.IResolvable;
 
@@ -3715,11 +3714,6 @@ export interface RosNatGatewayProps {
      * @Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
     readonly pricingCycle?: string | ros.IResolvable;
-
-    /**
-     * @Property spec: NAT gateway specification. Now support 'Small|Middle|Large|XLarge.1'
-     */
-    readonly spec?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
@@ -3774,7 +3768,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
-          allowedValues: ["PayBySpec","PayByLcu"],
+          allowedValues: ["PayByLcu","PayBySpec"],
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
@@ -3788,7 +3782,6 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
-    errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -3827,7 +3820,6 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
       NatType: ros.stringToRosTemplate(properties.natType),
       NetworkType: ros.stringToRosTemplate(properties.networkType),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      Spec: ros.stringToRosTemplate(properties.spec),
       Tags: ros.listMapper(rosNatGatewayTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -3908,7 +3900,6 @@ export class RosNatGateway extends ros.RosResource {
     /**
      * @Property internetChargeType: The billing method for the NAT gateway. Valid values:
      * PayBySpec: billed on a pay-by-specification basis.
-     * PayByLcu: billed on a pay-by-LCU basis.
      */
     public internetChargeType: string | ros.IResolvable | undefined;
 
@@ -3934,11 +3925,6 @@ export class RosNatGateway extends ros.RosResource {
      * @Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
     public pricingCycle: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property spec: NAT gateway specification. Now support 'Small|Middle|Large|XLarge.1'
-     */
-    public spec: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
@@ -3972,7 +3958,6 @@ export class RosNatGateway extends ros.RosResource {
         this.natType = props.natType;
         this.networkType = props.networkType;
         this.pricingCycle = props.pricingCycle;
-        this.spec = props.spec;
         this.tags = props.tags;
     }
 
@@ -3992,7 +3977,6 @@ export class RosNatGateway extends ros.RosResource {
             natType: this.natType,
             networkType: this.networkType,
             pricingCycle: this.pricingCycle,
-            spec: this.spec,
             tags: this.tags,
         };
     }

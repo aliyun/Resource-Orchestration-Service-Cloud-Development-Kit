@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public class AssignPrivateIpAddressesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IAssignPrivateIpAddressesProps
     {
         /// <summary>Property networkInterfaceId: The ID of the ENI.</summary>
-        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object NetworkInterfaceId
         {
             get;
@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// You must specify either the PrivateIpAddresses parameter or the SecondaryPrivateIpAddressCount parameter to assign secondary private IP addresses.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PrivateIpAddresses
         {
             get;
@@ -36,7 +36,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SecondaryPrivateIpAddressCount
         {
             get;

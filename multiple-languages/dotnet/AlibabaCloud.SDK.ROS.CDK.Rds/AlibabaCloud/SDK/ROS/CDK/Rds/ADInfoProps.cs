@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
     public class ADInfoProps : AlibabaCloud.SDK.ROS.CDK.Rds.IADInfoProps
     {
         /// <summary>Property adAccountName: Domain account name.</summary>
-        [JsiiProperty(name: "adAccountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "adAccountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AdAccountName
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <summary>Property addns: Active directory domain name.</summary>
-        [JsiiProperty(name: "addns", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "addns", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Addns
         {
             get;
@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <summary>Property adPassword: Domain password.</summary>
-        [JsiiProperty(name: "adPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "adPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AdPassword
         {
             get;
@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <summary>Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.</summary>
-        [JsiiProperty(name: "adServerIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "adServerIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AdServerIpAddress
         {
             get;
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <summary>Property dbInstanceId: The ID of the instance.</summary>
-        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DbInstanceId
         {
             get;

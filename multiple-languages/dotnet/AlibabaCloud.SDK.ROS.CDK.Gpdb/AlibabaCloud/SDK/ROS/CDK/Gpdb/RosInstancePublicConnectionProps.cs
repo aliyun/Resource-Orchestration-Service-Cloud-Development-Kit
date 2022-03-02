@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         /// <remarks>
         /// <strong>Property</strong>: connectionStringPrefix: The endpoint that is used to connect to the specified database.
         /// </remarks>
-        [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ConnectionStringPrefix
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         /// <remarks>
         /// <strong>Property</strong>: dbInstanceId: The ID of the instance.
         /// </remarks>
-        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DbInstanceId
         {
             get;
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         /// <remarks>
         /// <strong>Property</strong>: port: The port number of the instance.
         /// </remarks>
-        [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Port
         {
             get;

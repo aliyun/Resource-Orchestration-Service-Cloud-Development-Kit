@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -251,7 +251,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: columnName: Column names are not synchronized in the table to be synchronized
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "columnName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "columnName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ColumnName
             {
                 get;
@@ -322,7 +322,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: columnName: The column name to be synchronized in the table to be synchronized
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "columnName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "columnName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ColumnName
             {
                 get;
@@ -333,7 +333,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: newColumnName: The name of the column to be synchronized to be mapped in the target instance
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "newColumnName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "newColumnName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NewColumnName
             {
                 get;
@@ -556,7 +556,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// Greenplum: Cloud-native data warehouse ADB PostgreSQL version (formerly analytical database PostgreSQL version).
             /// The default value is RDS
             /// </remarks>
-            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceType
             {
                 get;
@@ -567,7 +567,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: instanceId: Target instance ID.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceId
             {
                 get;
@@ -582,7 +582,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// If this property is not specified, it will be same with InstanceType
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceTypeForCreation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "instanceTypeForCreation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceTypeForCreation
             {
                 get;
@@ -593,7 +593,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: ip: The connection address of the target instance. Required if the target instance is a local DB accessed through a dedicated line.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Ip
             {
                 get;
@@ -604,7 +604,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: password: Target instance password
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Password
             {
                 get;
@@ -615,7 +615,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: port: Listening port of the target instance. Required when the target instance is ECS or a local DB accessed through a dedicated line.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Port
             {
                 get;
@@ -626,7 +626,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: userName: Target instance access account
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? UserName
             {
                 get;
@@ -886,7 +886,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// cen: Self-built database accessed via the cloud enterprise network CEN.
             /// The default value is RDS.
             /// </remarks>
-            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceType
             {
                 get;
@@ -897,7 +897,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: instanceId: Source instance ID.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceId
             {
                 get;
@@ -912,7 +912,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// If this property is not specified, it will be same with InstanceType.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceTypeForCreation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "instanceTypeForCreation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceTypeForCreation
             {
                 get;
@@ -923,7 +923,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: ip: The connection address of the source instance. Required if the source instance is a local DB accessed through a dedicated line.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Ip
             {
                 get;
@@ -934,7 +934,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: ownerId: When the source instance and the target instance do not belong to the same Alibaba Cloud account, this parameter is the UID of the Alibaba Cloud account to which the source instance belongs.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ownerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "ownerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OwnerId
             {
                 get;
@@ -945,7 +945,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: password: Source instance password
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Password
             {
                 get;
@@ -956,7 +956,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: port: Listening port of the source instance. Required when the source instance is ECS or a local DB accessed through a dedicated line.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Port
             {
                 get;
@@ -967,7 +967,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: role: When the synchronization source instance and the target instance do not belong to the same Alibaba Cloud account, this parameter is the authorized role of the account to which the source instance belongs to the Alibaba Cloud account to which the target instance belongs, and the relevant permissions and authorization steps of the reference.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Role
             {
                 get;
@@ -978,7 +978,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: userName: Source instance access account
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? UserName
             {
                 get;
@@ -1141,7 +1141,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: dbName: db name to be synchronized
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbName
             {
                 get;
@@ -1152,7 +1152,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: newDbName: The name of the db to be synchronized in the target instance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "newDbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "newDbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NewDbName
             {
                 get;
@@ -1163,7 +1163,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: newSchemaName: Schema name to be synchronized by Schema in the target instance
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "newSchemaName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "newSchemaName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NewSchemaName
             {
                 get;
@@ -1174,7 +1174,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: schemaName: Schema name to be synchronized
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "schemaName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "schemaName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SchemaName
             {
                 get;
@@ -1185,7 +1185,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: tableExcludes: Table excludes configuration
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSynchronizationJob.TableExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tableExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSynchronizationJob.TableExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? TableExcludes
             {
                 get;
@@ -1196,7 +1196,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: tableIncludes: Table configuration
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSynchronizationJob.TableIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tableIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSynchronizationJob.TableIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? TableIncludes
             {
                 get;
@@ -1244,7 +1244,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: tableName: The name of the table to be synchronized does not require the table name of the migration table.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TableName
             {
                 get;
@@ -1384,7 +1384,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: columnExcludes: Column excludes configuration
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "columnExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSynchronizationJob.ColumnExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "columnExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSynchronizationJob.ColumnExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? ColumnExcludes
             {
                 get;
@@ -1395,7 +1395,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: columnIncludes: Column includes configuration
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "columnIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSynchronizationJob.ColumnIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "columnIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSynchronizationJob.ColumnIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? ColumnIncludes
             {
                 get;
@@ -1406,7 +1406,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: filterCondition: Where condition
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "filterCondition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "filterCondition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FilterCondition
             {
                 get;
@@ -1417,7 +1417,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: newTableName: The name of the table to be synchronized in the target instance mapping
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "newTableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "newTableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NewTableName
             {
                 get;
@@ -1428,7 +1428,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: tableName: Table name to be synchronized
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TableName
             {
                 get;

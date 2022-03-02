@@ -16,7 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "logstoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "logstoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object LogstoreName
         {
             get;
@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ProjectName
         {
             get;
@@ -41,7 +41,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Default to false.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "appendMeta", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "appendMeta", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AppendMeta
         {
             get;
@@ -53,7 +53,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Default to false.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoSplit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "autoSplit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoSplit
         {
             get;
@@ -65,7 +65,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Default to false.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "enableTracking", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "enableTracking", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? EnableTracking
         {
             get;
@@ -74,7 +74,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
         /// <summary>Property encryptConf: Data encryption config.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "encryptConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "encryptConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty\"}]}}", isOptional: true)]
         public object? EncryptConf
         {
             get;
@@ -87,7 +87,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Allowed Values: 1-64.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "maxSplitShard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "maxSplitShard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? MaxSplitShard
         {
             get;
@@ -100,7 +100,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Default to false.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "preserveStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "preserveStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PreserveStorage
         {
             get;
@@ -112,7 +112,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Allowed Values: 1-100, default to 2.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ShardCount
         {
             get;
@@ -124,7 +124,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Allowed Values: 1-3600, default to 30.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Ttl
         {
             get;

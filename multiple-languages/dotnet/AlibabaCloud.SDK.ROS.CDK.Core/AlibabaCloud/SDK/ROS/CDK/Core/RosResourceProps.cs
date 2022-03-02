@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class RosResourceProps : AlibabaCloud.SDK.ROS.CDK.Core.IRosResourceProps
     {
         /// <summary>ROS template resource type (e.g. `ALIYUN::ECS::Instance`).</summary>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
         public string Type
         {
             get;
@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - No resource properties.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "properties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "properties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
         public System.Collections.Generic.IDictionary<string, object>? Properties
         {
             get;

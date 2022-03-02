@@ -52,7 +52,6 @@ export interface NatGatewayProps {
     /**
      * Property internetChargeType: The billing method for the NAT gateway. Valid values:
      * PayBySpec: billed on a pay-by-specification basis.
-     * PayByLcu: billed on a pay-by-LCU basis.
      */
     readonly internetChargeType?: string | ros.IResolvable;
 
@@ -78,11 +77,6 @@ export interface NatGatewayProps {
      * Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
     readonly pricingCycle?: string | ros.IResolvable;
-
-    /**
-     * Property spec: NAT gateway specification. Now support 'Small|Middle|Large|XLarge.1'
-     */
-    readonly spec?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
@@ -139,7 +133,6 @@ export class NatGateway extends ros.Resource {
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             vpcId: props.vpcId,
             networkType: props.networkType,
-            spec: props.spec,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNatGateway;

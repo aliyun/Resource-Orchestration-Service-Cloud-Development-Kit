@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// The name must be 1 to 50 characters in length.
         /// It can contain letters, digits, periods (.), underscores (_), and hyphens (-).
         /// </remarks>
-        [JsiiProperty(name: "resourceShareName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "resourceShareName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ResourceShareName
         {
             get;
@@ -26,7 +26,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <strong>Property</strong>: resources:
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resources", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-resourcemanager.RosResourceShare.ResourcesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "resources", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-resourcemanager.RosResourceShare.ResourcesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? Resources
         {
             get;
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// by its account ID. For more information about how to obtain the ID, see View the basic information of a member account.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "targets", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "targets", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? Targets
         {
             get;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.796Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,7 +46,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.
+     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+     * <p>
+     * When PeriodUnit = year, the value range is 1-3.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
@@ -314,7 +316,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+         *                        When PeriodUnit = year, the value range is 1-3.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
@@ -324,7 +327,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+         *                        When PeriodUnit = year, the value range is 1-3.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {

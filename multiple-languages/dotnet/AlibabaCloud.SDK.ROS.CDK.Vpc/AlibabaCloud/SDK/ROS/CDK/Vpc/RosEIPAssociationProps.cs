@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: allocationId: EIP instance id to bind.
         /// </remarks>
-        [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AllocationId
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceId
         {
             get;
@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// This is required only when the value of InstanceType is NetworkInterface.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Mode
         {
             get;
@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PrivateIpAddress
         {
             get;

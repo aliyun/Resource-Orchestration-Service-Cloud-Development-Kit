@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * A ROS resource type:  `ALIYUN::Config::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.190Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.148Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.Rule")
 public class Rule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -46,13 +46,6 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource {
     public Rule(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.config.RuleProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
-    }
-
-    /**
-     * Attribute CompliancePackId: Compliance Package ID.
-     */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCompliancePackId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCompliancePackId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -487,6 +480,27 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceGroupIdsScope(final com.aliyun.ros.cdk.core.IResolvable resourceGroupIdsScope) {
             this.props.resourceGroupIdsScope(resourceGroupIdsScope);
+            return this;
+        }
+
+        /**
+         * Property tagKeyLogicScope:.
+         * <p>
+         * @return {@code this}
+         * @param tagKeyLogicScope Property tagKeyLogicScope:. This parameter is required.
+         */
+        public Builder tagKeyLogicScope(final java.lang.String tagKeyLogicScope) {
+            this.props.tagKeyLogicScope(tagKeyLogicScope);
+            return this;
+        }
+        /**
+         * Property tagKeyLogicScope:.
+         * <p>
+         * @return {@code this}
+         * @param tagKeyLogicScope Property tagKeyLogicScope:. This parameter is required.
+         */
+        public Builder tagKeyLogicScope(final com.aliyun.ros.cdk.core.IResolvable tagKeyLogicScope) {
+            this.props.tagKeyLogicScope(tagKeyLogicScope);
             return this;
         }
 

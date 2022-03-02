@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::CustomImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.517Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.354Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CustomImage")
 public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
 
@@ -284,20 +284,20 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+         * Property resourceGroupId: The ID of the resource group to which to assign the custom image.
          * <p>
          * @return {@code this}
-         * @param resourceGroupId Property resourceGroupId: The enterprise resource group ID where the custom image is located. This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which to assign the custom image. This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
             this.props().resourceGroupId(resourceGroupId);
             return this;
         }
         /**
-         * Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+         * Property resourceGroupId: The ID of the resource group to which to assign the custom image.
          * <p>
          * @return {@code this}
-         * @param resourceGroupId Property resourceGroupId: The enterprise resource group ID where the custom image is located. This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which to assign the custom image. This parameter is required.
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props().resourceGroupId(resourceGroupId);

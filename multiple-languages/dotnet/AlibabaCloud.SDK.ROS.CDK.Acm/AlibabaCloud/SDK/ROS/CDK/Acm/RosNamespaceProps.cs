@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
         /// <remarks>
         /// <strong>Property</strong>: name: Namespace name
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name
         {
             get;

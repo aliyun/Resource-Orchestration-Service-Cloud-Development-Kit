@@ -586,6 +586,11 @@ export interface RosRuleProps {
     readonly resourceGroupIdsScope?: string | ros.IResolvable;
 
     /**
+     * @Property tagKeyLogicScope:
+     */
+    readonly tagKeyLogicScope?: string | ros.IResolvable;
+
+    /**
      * @Property tagKeyScope: The rule monitors the tag key, only applies to rules created based on managed rules
      */
     readonly tagKeyScope?: string | ros.IResolvable;
@@ -610,6 +615,7 @@ function RosRulePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tagValueScope', ros.validateString)(properties.tagValueScope));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('excludeResourceIdsScope', ros.validateString)(properties.excludeResourceIdsScope));
+    errors.collect(ros.propertyValidator('tagKeyLogicScope', ros.validateString)(properties.tagKeyLogicScope));
     errors.collect(ros.propertyValidator('sourceOwner', ros.requiredValidator)(properties.sourceOwner));
     errors.collect(ros.propertyValidator('sourceOwner', ros.validateString)(properties.sourceOwner));
     errors.collect(ros.propertyValidator('sourceIdentifier', ros.requiredValidator)(properties.sourceIdentifier));
@@ -655,6 +661,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
       MaximumExecutionFrequency: ros.stringToRosTemplate(properties.maximumExecutionFrequency),
       RegionIdsScope: ros.stringToRosTemplate(properties.regionIdsScope),
       ResourceGroupIdsScope: ros.stringToRosTemplate(properties.resourceGroupIdsScope),
+      TagKeyLogicScope: ros.stringToRosTemplate(properties.tagKeyLogicScope),
       TagKeyScope: ros.stringToRosTemplate(properties.tagKeyScope),
       TagValueScope: ros.stringToRosTemplate(properties.tagValueScope),
     };
@@ -673,11 +680,6 @@ export class RosRule extends ros.RosResource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource.
      */
-
-    /**
-     * @Attribute CompliancePackId: Compliance Package ID
-     */
-    public readonly attrCompliancePackId: ros.IResolvable;
 
     /**
      * @Attribute ConfigRuleArn: config rule arn
@@ -828,6 +830,11 @@ export class RosRule extends ros.RosResource {
     public resourceGroupIdsScope: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tagKeyLogicScope:
+     */
+    public tagKeyLogicScope: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tagKeyScope: The rule monitors the tag key, only applies to rules created based on managed rules
      */
     public tagKeyScope: string | ros.IResolvable | undefined;
@@ -846,7 +853,6 @@ export class RosRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCompliancePackId = this.getAtt('CompliancePackId');
         this.attrConfigRuleArn = this.getAtt('ConfigRuleArn');
         this.attrConfigRuleId = this.getAtt('ConfigRuleId');
         this.attrConfigRuleTriggerTypes = this.getAtt('ConfigRuleTriggerTypes');
@@ -878,6 +884,7 @@ export class RosRule extends ros.RosResource {
         this.maximumExecutionFrequency = props.maximumExecutionFrequency;
         this.regionIdsScope = props.regionIdsScope;
         this.resourceGroupIdsScope = props.resourceGroupIdsScope;
+        this.tagKeyLogicScope = props.tagKeyLogicScope;
         this.tagKeyScope = props.tagKeyScope;
         this.tagValueScope = props.tagValueScope;
     }
@@ -897,6 +904,7 @@ export class RosRule extends ros.RosResource {
             maximumExecutionFrequency: this.maximumExecutionFrequency,
             regionIdsScope: this.regionIdsScope,
             resourceGroupIdsScope: this.resourceGroupIdsScope,
+            tagKeyLogicScope: this.tagKeyLogicScope,
             tagKeyScope: this.tagKeyScope,
             tagValueScope: this.tagValueScope,
         };

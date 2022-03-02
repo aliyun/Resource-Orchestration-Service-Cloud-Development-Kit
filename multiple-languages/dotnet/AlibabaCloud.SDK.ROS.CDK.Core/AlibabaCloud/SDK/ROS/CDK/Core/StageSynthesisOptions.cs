@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - false
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "skipValidation", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "skipValidation", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? SkipValidation
         {
             get;

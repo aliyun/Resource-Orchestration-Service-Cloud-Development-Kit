@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: bandwidth: The bandwidth provided by the bandwidth plan.
         /// </remarks>
-        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Bandwidth
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: type: The type of the bandwidth plan
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Type
         {
             get;
@@ -34,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: autoPay: The AutoPay of the bandwidth
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoPay
         {
             get;
@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: autoUseCoupon: The AutoUseCoupon  of the bandwidth
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoUseCoupon
         {
             get;
@@ -56,7 +56,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: bandwidthType: the bandwidth BandwidthType of the bandwidth
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "bandwidthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "bandwidthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? BandwidthType
         {
             get;
@@ -67,7 +67,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: billingType: The BillingType of the bandwidth
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "billingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "billingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? BillingType
         {
             get;
@@ -78,7 +78,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "cbnGeographicRegionIdA", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "cbnGeographicRegionIdA", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? CbnGeographicRegionIdA
         {
             get;
@@ -89,7 +89,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "cbnGeographicRegionIdB", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "cbnGeographicRegionIdB", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? CbnGeographicRegionIdB
         {
             get;
@@ -100,7 +100,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: chargeType: The ChargeType of the bandwidth
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ChargeType
         {
             get;
@@ -111,7 +111,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: duration:
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Duration
         {
             get;
@@ -122,7 +122,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: pricingCycle:
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PricingCycle
         {
             get;
@@ -133,7 +133,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: ratio: The Ratio of the bandwidth
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ratio", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "ratio", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Ratio
         {
             get;

@@ -3,35 +3,46 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::Repository`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.213Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.154Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RepositoryProps")
 @software.amazon.jsii.Jsii.Proxy(RepositoryProps.Jsii$Proxy.class)
 public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property repoName: the name of the repo.
+     * Property repoName: The name of the repository.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRepoName();
 
     /**
-     * Property repoNamespace: the namespace the repo belongs to.
+     * Property repoNamespace: The name of the namespace to which the repository belongs.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRepoNamespace();
 
     /**
-     * Property repoType: repository visibility, public or private.
+     * Property repoType: The type of the repository.
+     * <p>
+     * Valid values: PUBLIC, PRIVATE.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRepoType();
 
     /**
-     * Property summary: description or something alike.
+     * Property summary: The summary of the repository.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSummary();
 
     /**
-     * Property detail: detailed configuration in markdown format.
+     * Property detail: The description of the repository.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDetail() {
+        return null;
+    }
+
+    /**
+     * Property instanceId: The ID of the enterprise edition instance which repository belongs to.
+     * <p>
+     * If not provided, will use personal edition instance as default.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
         return null;
     }
 
@@ -39,6 +50,15 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
      * Property repoSource: Code Source message.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRepoSource() {
+        return null;
+    }
+
+    /**
+     * Property tagImmutability: Specifies whether the repository is immutable.
+     * <p>
+     * Only takes effect when InstanceId is specified.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTagImmutability() {
         return null;
     }
 
@@ -57,11 +77,13 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object repoType;
         java.lang.Object summary;
         java.lang.Object detail;
+        java.lang.Object instanceId;
         java.lang.Object repoSource;
+        java.lang.Object tagImmutability;
 
         /**
          * Sets the value of {@link RepositoryProps#getRepoName}
-         * @param repoName Property repoName: the name of the repo. This parameter is required.
+         * @param repoName Property repoName: The name of the repository. This parameter is required.
          * @return {@code this}
          */
         public Builder repoName(java.lang.String repoName) {
@@ -71,7 +93,7 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getRepoName}
-         * @param repoName Property repoName: the name of the repo. This parameter is required.
+         * @param repoName Property repoName: The name of the repository. This parameter is required.
          * @return {@code this}
          */
         public Builder repoName(com.aliyun.ros.cdk.core.IResolvable repoName) {
@@ -81,7 +103,7 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getRepoNamespace}
-         * @param repoNamespace Property repoNamespace: the namespace the repo belongs to. This parameter is required.
+         * @param repoNamespace Property repoNamespace: The name of the namespace to which the repository belongs. This parameter is required.
          * @return {@code this}
          */
         public Builder repoNamespace(java.lang.String repoNamespace) {
@@ -91,7 +113,7 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getRepoNamespace}
-         * @param repoNamespace Property repoNamespace: the namespace the repo belongs to. This parameter is required.
+         * @param repoNamespace Property repoNamespace: The name of the namespace to which the repository belongs. This parameter is required.
          * @return {@code this}
          */
         public Builder repoNamespace(com.aliyun.ros.cdk.core.IResolvable repoNamespace) {
@@ -101,7 +123,8 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getRepoType}
-         * @param repoType Property repoType: repository visibility, public or private. This parameter is required.
+         * @param repoType Property repoType: The type of the repository. This parameter is required.
+         *                 Valid values: PUBLIC, PRIVATE.
          * @return {@code this}
          */
         public Builder repoType(java.lang.String repoType) {
@@ -111,7 +134,8 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getRepoType}
-         * @param repoType Property repoType: repository visibility, public or private. This parameter is required.
+         * @param repoType Property repoType: The type of the repository. This parameter is required.
+         *                 Valid values: PUBLIC, PRIVATE.
          * @return {@code this}
          */
         public Builder repoType(com.aliyun.ros.cdk.core.IResolvable repoType) {
@@ -121,7 +145,7 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getSummary}
-         * @param summary Property summary: description or something alike. This parameter is required.
+         * @param summary Property summary: The summary of the repository. This parameter is required.
          * @return {@code this}
          */
         public Builder summary(java.lang.String summary) {
@@ -131,7 +155,7 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getSummary}
-         * @param summary Property summary: description or something alike. This parameter is required.
+         * @param summary Property summary: The summary of the repository. This parameter is required.
          * @return {@code this}
          */
         public Builder summary(com.aliyun.ros.cdk.core.IResolvable summary) {
@@ -141,7 +165,7 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getDetail}
-         * @param detail Property detail: detailed configuration in markdown format.
+         * @param detail Property detail: The description of the repository.
          * @return {@code this}
          */
         public Builder detail(java.lang.String detail) {
@@ -151,11 +175,33 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RepositoryProps#getDetail}
-         * @param detail Property detail: detailed configuration in markdown format.
+         * @param detail Property detail: The description of the repository.
          * @return {@code this}
          */
         public Builder detail(com.aliyun.ros.cdk.core.IResolvable detail) {
             this.detail = detail;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RepositoryProps#getInstanceId}
+         * @param instanceId Property instanceId: The ID of the enterprise edition instance which repository belongs to.
+         *                   If not provided, will use personal edition instance as default.
+         * @return {@code this}
+         */
+        public Builder instanceId(java.lang.String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RepositoryProps#getInstanceId}
+         * @param instanceId Property instanceId: The ID of the enterprise edition instance which repository belongs to.
+         *                   If not provided, will use personal edition instance as default.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
             return this;
         }
 
@@ -180,6 +226,28 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RepositoryProps#getTagImmutability}
+         * @param tagImmutability Property tagImmutability: Specifies whether the repository is immutable.
+         *                        Only takes effect when InstanceId is specified.
+         * @return {@code this}
+         */
+        public Builder tagImmutability(java.lang.Boolean tagImmutability) {
+            this.tagImmutability = tagImmutability;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RepositoryProps#getTagImmutability}
+         * @param tagImmutability Property tagImmutability: Specifies whether the repository is immutable.
+         *                        Only takes effect when InstanceId is specified.
+         * @return {@code this}
+         */
+        public Builder tagImmutability(com.aliyun.ros.cdk.core.IResolvable tagImmutability) {
+            this.tagImmutability = tagImmutability;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RepositoryProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -200,7 +268,9 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object repoType;
         private final java.lang.Object summary;
         private final java.lang.Object detail;
+        private final java.lang.Object instanceId;
         private final java.lang.Object repoSource;
+        private final java.lang.Object tagImmutability;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -213,7 +283,9 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
             this.repoType = software.amazon.jsii.Kernel.get(this, "repoType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.summary = software.amazon.jsii.Kernel.get(this, "summary", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.detail = software.amazon.jsii.Kernel.get(this, "detail", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.repoSource = software.amazon.jsii.Kernel.get(this, "repoSource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tagImmutability = software.amazon.jsii.Kernel.get(this, "tagImmutability", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -226,7 +298,9 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
             this.repoType = java.util.Objects.requireNonNull(builder.repoType, "repoType is required");
             this.summary = java.util.Objects.requireNonNull(builder.summary, "summary is required");
             this.detail = builder.detail;
+            this.instanceId = builder.instanceId;
             this.repoSource = builder.repoSource;
+            this.tagImmutability = builder.tagImmutability;
         }
 
         @Override
@@ -255,8 +329,18 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getInstanceId() {
+            return this.instanceId;
+        }
+
+        @Override
         public final java.lang.Object getRepoSource() {
             return this.repoSource;
+        }
+
+        @Override
+        public final java.lang.Object getTagImmutability() {
+            return this.tagImmutability;
         }
 
         @Override
@@ -272,8 +356,14 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDetail() != null) {
                 data.set("detail", om.valueToTree(this.getDetail()));
             }
+            if (this.getInstanceId() != null) {
+                data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            }
             if (this.getRepoSource() != null) {
                 data.set("repoSource", om.valueToTree(this.getRepoSource()));
+            }
+            if (this.getTagImmutability() != null) {
+                data.set("tagImmutability", om.valueToTree(this.getTagImmutability()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -298,7 +388,9 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
             if (!repoType.equals(that.repoType)) return false;
             if (!summary.equals(that.summary)) return false;
             if (this.detail != null ? !this.detail.equals(that.detail) : that.detail != null) return false;
-            return this.repoSource != null ? this.repoSource.equals(that.repoSource) : that.repoSource == null;
+            if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
+            if (this.repoSource != null ? !this.repoSource.equals(that.repoSource) : that.repoSource != null) return false;
+            return this.tagImmutability != null ? this.tagImmutability.equals(that.tagImmutability) : that.tagImmutability == null;
         }
 
         @Override
@@ -308,7 +400,9 @@ public interface RepositoryProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.repoType.hashCode());
             result = 31 * result + (this.summary.hashCode());
             result = 31 * result + (this.detail != null ? this.detail.hashCode() : 0);
+            result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.repoSource != null ? this.repoSource.hashCode() : 0);
+            result = 31 * result + (this.tagImmutability != null ? this.tagImmutability.hashCode() : 0);
             return result;
         }
     }

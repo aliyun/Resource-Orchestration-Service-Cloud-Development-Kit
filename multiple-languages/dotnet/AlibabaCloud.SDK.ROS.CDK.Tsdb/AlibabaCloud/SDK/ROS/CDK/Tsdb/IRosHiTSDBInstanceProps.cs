@@ -61,6 +61,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: diskCategory: The category of disk.
+        /// </remarks>
+        [JsiiProperty(name: "diskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DiskCategory
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: duration: The validity period of the instance. This parameter is valid only when the PayType parameter is set to PREPAY. Default value: 1.
         /// </remarks>
         [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -183,6 +196,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
             public object ZoneId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: diskCategory: The category of disk.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "diskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DiskCategory
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

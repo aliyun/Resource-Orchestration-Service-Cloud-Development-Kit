@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// The value of an output can include literals, parameter references, pseudo-parameters,
         /// a mapping value, or intrinsic functions.
         /// </remarks>
-        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"any\"}", isOverride: true)]
+        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"any\"}")]
         public object Value
         {
             get;
@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - No condition is associated with the output.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "condition", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RosCondition\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "condition", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RosCondition\"}", isOptional: true)]
         public AlibabaCloud.SDK.ROS.CDK.Core.RosCondition? Condition
         {
             get;
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - No description.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? Description
         {
             get;
@@ -57,7 +57,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - the output is not exported
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "exportName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "exportName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? ExportName
         {
             get;

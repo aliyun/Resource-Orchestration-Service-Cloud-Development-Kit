@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
     public class AclRuleProps : AlibabaCloud.SDK.ROS.CDK.Waf.IAclRuleProps
     {
         /// <summary>Property domain: Domain name.</summary>
-        [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Domain
         {
             get;
@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceId
         {
             get;
@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         }
 
         /// <summary>Property rules: Detailed information of precise access control rules, expressed in JSON format strings.</summary>
-        [JsiiProperty(name: "rules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "rules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Rules
         {
             get;
@@ -44,7 +44,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// cn-hongkong: China HongKong and other overseas
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Region
         {
             get;
@@ -53,7 +53,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
 
         /// <summary>Property ruleId: Precise access control rule ID.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "ruleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "ruleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? RuleId
         {
             get;

@@ -63,8 +63,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
         /// <remarks>
         /// <strong>Property</strong>: autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-        /// When PricingCycle = month, the value range is 1-9
-        /// When PeriodUnit = year, the value range is 1-3
+        /// When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+        /// When PeriodUnit = year, the value range is 1-3.
         /// </remarks>
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -343,8 +343,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
             /// <remarks>
             /// <strong>Property</strong>: autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-            /// When PricingCycle = month, the value range is 1-9
-            /// When PeriodUnit = year, the value range is 1-3
+            /// When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+            /// When PeriodUnit = year, the value range is 1-3.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

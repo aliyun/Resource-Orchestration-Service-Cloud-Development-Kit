@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
     public class RestoreJobProps : AlibabaCloud.SDK.ROS.CDK.Hbr.IRestoreJobProps
     {
         /// <summary>Property restoreType: Restore type.</summary>
-        [JsiiProperty(name: "restoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "restoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RestoreType
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <summary>Property snapshotId: Snapshot ID.</summary>
-        [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SnapshotId
         {
             get;
@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// It should be provided when SourceType=FILE.
         /// </remarks>
-        [JsiiProperty(name: "sourceClientId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "sourceClientId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SourceClientId
         {
             get;
@@ -41,7 +41,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// It should be provided when SourceType=ECS_FILE.
         /// </remarks>
-        [JsiiProperty(name: "sourceInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "sourceInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SourceInstanceId
         {
             get;
@@ -49,7 +49,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <summary>Property sourceType: Source type.</summary>
-        [JsiiProperty(name: "sourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "sourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SourceType
         {
             get;
@@ -60,7 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// It should be provided when RestoreType=FILE.
         /// </remarks>
-        [JsiiProperty(name: "targetClientId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "targetClientId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TargetClientId
         {
             get;
@@ -71,7 +71,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// It should be provided when RestoreType=ECS_FILE.
         /// </remarks>
-        [JsiiProperty(name: "targetInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "targetInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TargetInstanceId
         {
             get;
@@ -82,7 +82,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// For instance, "/".
         /// </remarks>
-        [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TargetPath
         {
             get;
@@ -90,7 +90,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <summary>Property vaultId: Vault ID.</summary>
-        [JsiiProperty(name: "vaultId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "vaultId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object VaultId
         {
             get;

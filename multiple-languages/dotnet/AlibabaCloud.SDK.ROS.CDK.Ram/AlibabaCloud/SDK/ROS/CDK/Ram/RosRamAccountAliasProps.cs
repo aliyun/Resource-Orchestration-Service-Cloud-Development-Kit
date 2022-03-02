@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a
         /// hyphen (-) and cannot have two consecutive hyphens (-).
         /// </remarks>
-        [JsiiProperty(name: "accountAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "accountAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AccountAlias
         {
             get;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * A ROS resource type:  `ALIYUN::CR::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.153Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.Namespace")
 public class Namespace extends com.aliyun.ros.cdk.core.Resource {
 
@@ -49,7 +49,21 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute NamespaceId: The namespace id.
+     * Attribute InstanceId: The ID of the enterprise edition instance which namespace belongs to.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Namespace: The namespace.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNamespace() {
+        return software.amazon.jsii.Kernel.get(this, "attrNamespace", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute NamespaceId: The namespace ID.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNamespaceId() {
         return software.amazon.jsii.Kernel.get(this, "attrNamespaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -90,20 +104,20 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property namespace: domain name.
+         * Property namespace: The name of the namespace.
          * <p>
          * @return {@code this}
-         * @param namespace Property namespace: domain name. This parameter is required.
+         * @param namespace Property namespace: The name of the namespace. This parameter is required.
          */
         public Builder namespace(final java.lang.String namespace) {
             this.props.namespace(namespace);
             return this;
         }
         /**
-         * Property namespace: domain name.
+         * Property namespace: The name of the namespace.
          * <p>
          * @return {@code this}
-         * @param namespace Property namespace: domain name. This parameter is required.
+         * @param namespace Property namespace: The name of the namespace. This parameter is required.
          */
         public Builder namespace(final com.aliyun.ros.cdk.core.IResolvable namespace) {
             this.props.namespace(namespace);
@@ -111,20 +125,20 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property autoCreate: whether auto create repository.
+         * Property autoCreate: Specifies whether to automatically create an image repository.
          * <p>
          * @return {@code this}
-         * @param autoCreate Property autoCreate: whether auto create repository. This parameter is required.
+         * @param autoCreate Property autoCreate: Specifies whether to automatically create an image repository. This parameter is required.
          */
         public Builder autoCreate(final java.lang.Boolean autoCreate) {
             this.props.autoCreate(autoCreate);
             return this;
         }
         /**
-         * Property autoCreate: whether auto create repository.
+         * Property autoCreate: Specifies whether to automatically create an image repository.
          * <p>
          * @return {@code this}
-         * @param autoCreate Property autoCreate: whether auto create repository. This parameter is required.
+         * @param autoCreate Property autoCreate: Specifies whether to automatically create an image repository. This parameter is required.
          */
         public Builder autoCreate(final com.aliyun.ros.cdk.core.IResolvable autoCreate) {
             this.props.autoCreate(autoCreate);
@@ -132,23 +146,52 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property defaultVisibility: repository default visibility, public or private.
+         * Property defaultVisibility: The default type of the repository that is automatically created.
+         * <p>
+         * Valid values: PUBLIC, PRIVATE.
          * <p>
          * @return {@code this}
-         * @param defaultVisibility Property defaultVisibility: repository default visibility, public or private. This parameter is required.
+         * @param defaultVisibility Property defaultVisibility: The default type of the repository that is automatically created. This parameter is required.
          */
         public Builder defaultVisibility(final java.lang.String defaultVisibility) {
             this.props.defaultVisibility(defaultVisibility);
             return this;
         }
         /**
-         * Property defaultVisibility: repository default visibility, public or private.
+         * Property defaultVisibility: The default type of the repository that is automatically created.
+         * <p>
+         * Valid values: PUBLIC, PRIVATE.
          * <p>
          * @return {@code this}
-         * @param defaultVisibility Property defaultVisibility: repository default visibility, public or private. This parameter is required.
+         * @param defaultVisibility Property defaultVisibility: The default type of the repository that is automatically created. This parameter is required.
          */
         public Builder defaultVisibility(final com.aliyun.ros.cdk.core.IResolvable defaultVisibility) {
             this.props.defaultVisibility(defaultVisibility);
+            return this;
+        }
+
+        /**
+         * Property instanceId: The ID of the enterprise edition instance which namespace belongs to.
+         * <p>
+         * If not provided, will use personal edition instance as default.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The ID of the enterprise edition instance which namespace belongs to. This parameter is required.
+         */
+        public Builder instanceId(final java.lang.String instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+        /**
+         * Property instanceId: The ID of the enterprise edition instance which namespace belongs to.
+         * <p>
+         * If not provided, will use personal edition instance as default.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The ID of the enterprise edition instance which namespace belongs to. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
             return this;
         }
 

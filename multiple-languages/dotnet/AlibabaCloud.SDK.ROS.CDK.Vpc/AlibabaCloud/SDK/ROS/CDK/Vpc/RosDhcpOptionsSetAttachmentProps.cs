@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: dhcpOptionsSetId: The ID of the DHCP options set.
         /// </remarks>
-        [JsiiProperty(name: "dhcpOptionsSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "dhcpOptionsSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DhcpOptionsSetId
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: vpcId: The ID of the VPC network that is to be associated with the DHCP options set.
         /// </remarks>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object VpcId
         {
             get;

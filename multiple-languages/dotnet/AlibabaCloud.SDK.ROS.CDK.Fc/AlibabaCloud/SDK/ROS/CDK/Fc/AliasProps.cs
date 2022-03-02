@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public class AliasProps : AlibabaCloud.SDK.ROS.CDK.Fc.IAliasProps
     {
         /// <summary>Property aliasName: Alias name.</summary>
-        [JsiiProperty(name: "aliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "aliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AliasName
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         }
 
         /// <summary>Property serviceName: Service name.</summary>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ServiceName
         {
             get;
@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property additionalVersion: Additional version.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "additionalVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "additionalVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AdditionalVersion
         {
             get;
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// From 0 to 100.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "additionalWeight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "additionalWeight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AdditionalWeight
         {
             get;
@@ -49,7 +49,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property description: Version description.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Description
         {
             get;
@@ -58,7 +58,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property versionId: Version ID.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "versionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "versionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? VersionId
         {
             get;

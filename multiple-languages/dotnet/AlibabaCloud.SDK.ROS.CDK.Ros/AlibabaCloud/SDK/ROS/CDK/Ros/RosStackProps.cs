@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <strong>Property</strong>: parameters: The set of parameters passed to this nested stack.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? Parameters
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <strong>Property</strong>: resourceGroupId: Resource group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ResourceGroupId
         {
             get;
@@ -36,7 +36,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "templateBody", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "templateBody", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? TemplateBody
         {
             get;
@@ -47,7 +47,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <strong>Property</strong>: templateId: Template ID of template containing the template body.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "templateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "templateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TemplateId
         {
             get;
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "templateUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "templateUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TemplateUrl
         {
             get;
@@ -70,7 +70,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <strong>Property</strong>: templateVersion: Template version of template containing the template body.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "templateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "templateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TemplateVersion
         {
             get;
@@ -81,7 +81,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <strong>Property</strong>: timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update. Default to 60 minutes.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "timeoutMins", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "timeoutMins", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TimeoutMins
         {
             get;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * Properties for defining a `ALIYUN::TSDB::HiTSDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.886Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.535Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.HiTSDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(HiTSDBInstanceProps.Jsii$Proxy.class)
 public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,6 +43,13 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
      * Property zoneId: The zone ID of the instance.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
+
+    /**
+     * Property diskCategory: The category of disk.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskCategory() {
+        return null;
+    }
 
     /**
      * Property duration: The validity period of the instance.
@@ -100,6 +107,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
         java.lang.Object zoneId;
+        java.lang.Object diskCategory;
         java.lang.Object duration;
         java.lang.Object instanceAlias;
         java.lang.Object payType;
@@ -221,6 +229,26 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link HiTSDBInstanceProps#getDiskCategory}
+         * @param diskCategory Property diskCategory: The category of disk.
+         * @return {@code this}
+         */
+        public Builder diskCategory(java.lang.String diskCategory) {
+            this.diskCategory = diskCategory;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link HiTSDBInstanceProps#getDiskCategory}
+         * @param diskCategory Property diskCategory: The category of disk.
+         * @return {@code this}
+         */
+        public Builder diskCategory(com.aliyun.ros.cdk.core.IResolvable diskCategory) {
+            this.diskCategory = diskCategory;
             return this;
         }
 
@@ -351,6 +379,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
+        private final java.lang.Object diskCategory;
         private final java.lang.Object duration;
         private final java.lang.Object instanceAlias;
         private final java.lang.Object payType;
@@ -368,6 +397,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.diskCategory = software.amazon.jsii.Kernel.get(this, "diskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceAlias = software.amazon.jsii.Kernel.get(this, "instanceAlias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -385,6 +415,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.diskCategory = builder.diskCategory;
             this.duration = builder.duration;
             this.instanceAlias = builder.instanceAlias;
             this.payType = builder.payType;
@@ -415,6 +446,11 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
+        }
+
+        @Override
+        public final java.lang.Object getDiskCategory() {
+            return this.diskCategory;
         }
 
         @Override
@@ -453,6 +489,9 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             data.set("zoneId", om.valueToTree(this.getZoneId()));
+            if (this.getDiskCategory() != null) {
+                data.set("diskCategory", om.valueToTree(this.getDiskCategory()));
+            }
             if (this.getDuration() != null) {
                 data.set("duration", om.valueToTree(this.getDuration()));
             }
@@ -491,6 +530,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
+            if (this.diskCategory != null ? !this.diskCategory.equals(that.diskCategory) : that.diskCategory != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
             if (this.instanceAlias != null ? !this.instanceAlias.equals(that.instanceAlias) : that.instanceAlias != null) return false;
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
@@ -505,6 +545,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
+            result = 31 * result + (this.diskCategory != null ? this.diskCategory.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.instanceAlias != null ? this.instanceAlias.hashCode() : 0);
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);

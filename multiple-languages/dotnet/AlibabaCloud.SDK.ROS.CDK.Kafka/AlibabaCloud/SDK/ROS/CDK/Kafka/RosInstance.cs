@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -264,6 +264,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: config: The initial configurations of the Message Queue for Apache Kafka instance. If you do not specify this parameter, it is left empty.The Config parameter supports the following parameters:
+            /// enable.vpc_sasl_ssl: specifies whether to enable VPC transmission encryption. Valid values:
+            /// true: indicates that VPC transmission encryption is enabled. If you enable VPC transmission encryption, enable access control list (ACL).
+            /// false: indicates that VPC transmission encryption is disabled. By default, VPC transmission encryption is disabled.
+            ///
+            /// enable.acl: specifies whether to enable ACL. Valid values:
+            /// true: indicates that ACL is enabled.
+            /// false: indicates that ACL is disabled. By default, ACL is disabled.
+            ///
+            /// kafka.log.retention.hours: the maximum message retention period when the disk capacity is sufficient. Unit: hours. Valid values: 24 to 480. Default value: 72. When the disk usage reaches 85%, the disk capacity is considered insufficient, and the system deletes messages in the order in which messages are stored, from the earliest to latest.
+            ///
+            /// kafka.message.max.bytes: the maximum size of messages that Message Queue for Apache Kafka can send and receive. Unit: byte. Valid values: 1048576 to 10485760. Default value: 1048576. Before you modify the maximum message size, make sure that the new value is consistent with those on the producer and consumer.
+            /// </remarks>
+            [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Config
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: isEipInner: Specifies whether the instance supports elastic IP addresses (EIPs). Valid values:
             /// true: The instance supports EIP mode.
             /// false: The instance does not support EIP mode.
@@ -335,6 +359,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             [JsiiProperty(name: "securityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? SecurityGroup
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: serviceVersion: The version of the Message Queue for Apache Kafka instance. For example: 0.10.2, 2.2.0 and etc.
+            /// </remarks>
+            [JsiiProperty(name: "serviceVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ServiceVersion
             {
                 get
                 {
@@ -415,6 +452,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: config: The initial configurations of the Message Queue for Apache Kafka instance. If you do not specify this parameter, it is left empty.The Config parameter supports the following parameters:
+                /// enable.vpc_sasl_ssl: specifies whether to enable VPC transmission encryption. Valid values:
+                /// true: indicates that VPC transmission encryption is enabled. If you enable VPC transmission encryption, enable access control list (ACL).
+                /// false: indicates that VPC transmission encryption is disabled. By default, VPC transmission encryption is disabled.
+                ///
+                /// enable.acl: specifies whether to enable ACL. Valid values:
+                /// true: indicates that ACL is enabled.
+                /// false: indicates that ACL is disabled. By default, ACL is disabled.
+                ///
+                /// kafka.log.retention.hours: the maximum message retention period when the disk capacity is sufficient. Unit: hours. Valid values: 24 to 480. Default value: 72. When the disk usage reaches 85%, the disk capacity is considered insufficient, and the system deletes messages in the order in which messages are stored, from the earliest to latest.
+                ///
+                /// kafka.message.max.bytes: the maximum size of messages that Message Queue for Apache Kafka can send and receive. Unit: byte. Valid values: 1048576 to 10485760. Default value: 1048576. Before you modify the maximum message size, make sure that the new value is consistent with those on the producer and consumer.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+                public object? Config
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: isEipInner: Specifies whether the instance supports elastic IP addresses (EIPs). Valid values:
                 /// true: The instance supports EIP mode.
                 /// false: The instance does not support EIP mode.
@@ -479,6 +537,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: serviceVersion: The version of the Message Queue for Apache Kafka instance. For example: 0.10.2, 2.2.0 and etc.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "serviceVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ServiceVersion
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: username: The new user name for the instance.
                 /// This parameter is supported only for instances of the Internet and VPC type.
                 /// Support characters (uppercase and lowercase), numbers, length 8-40
@@ -525,7 +593,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// Set this value to vpc if your instance type is VPC.
             /// Set this value to eip if your instance type is Internet and VPC.
             /// </remarks>
-            [JsiiProperty(name: "deployModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "deployModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DeployModule
             {
                 get;
@@ -535,8 +603,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// <remarks>
             /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch associated with the VPC.
             /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VSwitchId
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: config: The initial configurations of the Message Queue for Apache Kafka instance. If you do not specify this parameter, it is left empty.The Config parameter supports the following parameters:
+            /// enable.vpc_sasl_ssl: specifies whether to enable VPC transmission encryption. Valid values:
+            /// true: indicates that VPC transmission encryption is enabled. If you enable VPC transmission encryption, enable access control list (ACL).
+            /// false: indicates that VPC transmission encryption is disabled. By default, VPC transmission encryption is disabled.
+            ///
+            /// enable.acl: specifies whether to enable ACL. Valid values:
+            /// true: indicates that ACL is enabled.
+            /// false: indicates that ACL is disabled. By default, ACL is disabled.
+            ///
+            /// kafka.log.retention.hours: the maximum message retention period when the disk capacity is sufficient. Unit: hours. Valid values: 24 to 480. Default value: 72. When the disk usage reaches 85%, the disk capacity is considered insufficient, and the system deletes messages in the order in which messages are stored, from the earliest to latest.
+            ///
+            /// kafka.message.max.bytes: the maximum size of messages that Message Queue for Apache Kafka can send and receive. Unit: byte. Valid values: 1048576 to 10485760. Default value: 1048576. Before you modify the maximum message size, make sure that the new value is consistent with those on the producer and consumer.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? Config
             {
                 get;
                 set;
@@ -550,7 +640,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// Set the parameter to true for instances of the Internet and VPC type or to false for instances of the VPC type.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "isEipInner", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "isEipInner", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IsEipInner
             {
                 get;
@@ -564,7 +654,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// This parameter is supported only for instances of the Internet and VPC type.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "isSetUserAndPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "isSetUserAndPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IsSetUserAndPassword
             {
                 get;
@@ -575,7 +665,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// <strong>Property</strong>: name: The new name of the instance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
             {
                 get;
@@ -589,7 +679,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// containing at least one lowercase letter, one uppercase letter, and one number
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Password
             {
                 get;
@@ -604,8 +694,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// For more information, see Create a security group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "securityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityGroup
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: serviceVersion: The version of the Message Queue for Apache Kafka instance. For example: 0.10.2, 2.2.0 and etc.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "serviceVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServiceVersion
             {
                 get;
                 set;
@@ -617,7 +718,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// Support characters (uppercase and lowercase), numbers, length 8-40
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "username", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "username", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Username
             {
                 get;
@@ -628,7 +729,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// <strong>Property</strong>: vpcId: The ID of the VPC on which you want to deploy the instance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VpcId
             {
                 get;
@@ -640,7 +741,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// The zone ID of the instance must be the same as that of the vSwitch.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ZoneId
             {
                 get;
@@ -707,7 +808,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// <remarks>
             /// <strong>Property</strong>: key: undefined
             /// </remarks>
-            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Key
             {
                 get;
@@ -718,7 +819,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// <strong>Property</strong>: value: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Value
             {
                 get;

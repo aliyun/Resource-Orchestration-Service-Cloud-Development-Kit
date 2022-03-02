@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
     public class WhitelistProps : AlibabaCloud.SDK.ROS.CDK.Memcache.IWhitelistProps
     {
         /// <summary>Property instanceId: Instance ID (globally unique).</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceId
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         }
 
         /// <summary>Property securityIps: IP address whitelist to be modified.</summary>
-        [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SecurityIps
         {
             get;
@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityIpGroupAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "securityIpGroupAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SecurityIpGroupAttribute
         {
             get;
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
 
         /// <summary>Property securityIpGroupName: Whitelist group.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "securityIpGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "securityIpGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SecurityIpGroupName
         {
             get;

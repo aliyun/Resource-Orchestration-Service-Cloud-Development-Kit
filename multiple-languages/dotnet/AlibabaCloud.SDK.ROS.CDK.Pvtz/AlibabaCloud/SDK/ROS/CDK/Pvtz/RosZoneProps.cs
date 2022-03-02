@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: zoneName: Zone name
         /// </remarks>
-        [JsiiProperty(name: "zoneName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "zoneName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ZoneName
         {
             get;
@@ -26,7 +26,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// Default to ZONE.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "proxyPattern", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "proxyPattern", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ProxyPattern
         {
             get;
@@ -37,7 +37,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <strong>Property</strong>: remark: 50 characters at most. It can only contain numbers, Chinese, English and special characters: "_-,.，。".
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Remark
         {
             get;
@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <strong>Property</strong>: zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "zoneTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "zoneTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ZoneTag
         {
             get;
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <strong>Property</strong>: zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "zoneType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "zoneType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ZoneType
         {
             get;

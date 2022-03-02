@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     {
         /// <summary>A hint for the Token's purpose when stringifying it.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "displayHint", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "displayHint", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? DisplayHint
         {
             get;

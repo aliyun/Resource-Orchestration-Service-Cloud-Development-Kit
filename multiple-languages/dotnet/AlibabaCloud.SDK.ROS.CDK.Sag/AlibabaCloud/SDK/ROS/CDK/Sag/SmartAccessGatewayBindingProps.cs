@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
     public class SmartAccessGatewayBindingProps : AlibabaCloud.SDK.ROS.CDK.Sag.ISmartAccessGatewayBindingProps
     {
         /// <summary>Property ccnId: The ID of the CCN instance to bind.</summary>
-        [JsiiProperty(name: "ccnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "ccnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object CcnId
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <summary>Property smartAgId: The ID of the Smart Access Gateway instance.</summary>
-        [JsiiProperty(name: "smartAgId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "smartAgId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SmartAgId
         {
             get;

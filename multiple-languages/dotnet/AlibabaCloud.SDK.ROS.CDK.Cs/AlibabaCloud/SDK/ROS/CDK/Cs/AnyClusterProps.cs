@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
     public class AnyClusterProps : AlibabaCloud.SDK.ROS.CDK.Cs.IAnyClusterProps
     {
         /// <summary>Property clusterConfig: Cluster config.</summary>
-        [JsiiProperty(name: "clusterConfig", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "clusterConfig", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ClusterConfig
         {
             get;

@@ -9,7 +9,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiByValue(fqn: "@alicloud/ros-cdk-core.RosTag")]
     public class RosTag : AlibabaCloud.SDK.ROS.CDK.Core.IRosTag
     {
-        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}")]
         public string Key
         {
             get;
@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         [JsiiOptional]
-        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? Value
         {
             get;

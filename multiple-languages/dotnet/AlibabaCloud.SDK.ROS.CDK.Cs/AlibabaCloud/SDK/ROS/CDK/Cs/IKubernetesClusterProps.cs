@@ -398,6 +398,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property resourceGroupId: The ID of resource group.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property runtime: The container runtime of the cluster.</summary>
         /// <remarks>
         /// The default runtime is Docker.
@@ -971,6 +982,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "proxyMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProxyMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of resource group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

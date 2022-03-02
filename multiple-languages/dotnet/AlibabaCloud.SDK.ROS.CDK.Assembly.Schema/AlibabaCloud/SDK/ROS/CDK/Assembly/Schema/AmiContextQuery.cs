@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class AmiContextQuery : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IAmiContextQuery
     {
         /// <summary>Account to query.</summary>
-        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}")]
         public string Account
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         }
 
         /// <summary>Filters to DescribeImages call.</summary>
-        [JsiiProperty(name: "filters", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}},\"kind\":\"map\"}}", isOverride: true)]
+        [JsiiProperty(name: "filters", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}},\"kind\":\"map\"}}")]
         public System.Collections.Generic.IDictionary<string, string[]> Filters
         {
             get;
@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         }
 
         /// <summary>Region to query.</summary>
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}")]
         public string Region
         {
             get;
@@ -39,7 +39,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: - All owners
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "owners", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "owners", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
         public string[]? Owners
         {
             get;

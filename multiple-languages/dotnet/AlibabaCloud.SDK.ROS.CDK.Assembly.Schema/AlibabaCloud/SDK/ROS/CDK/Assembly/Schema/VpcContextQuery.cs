@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class VpcContextQuery : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IVpcContextQuery
     {
         /// <summary>Query account.</summary>
-        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}")]
         public string Account
         {
             get;
@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <remarks>
         /// Filter parameters are the same as passed to DescribeVpcs.
         /// </remarks>
-        [JsiiProperty(name: "filter", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOverride: true)]
+        [JsiiProperty(name: "filter", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}")]
         public System.Collections.Generic.IDictionary<string, string> Filter
         {
             get;
@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         }
 
         /// <summary>Query region.</summary>
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}")]
         public string Region
         {
             get;
@@ -42,7 +42,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: false
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "returnAsymmetricSubnets", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "returnAsymmetricSubnets", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? ReturnAsymmetricSubnets
         {
             get;
@@ -58,7 +58,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <strong>Default</strong>: 'ros-cdk:subnet-name'
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "subnetGroupNameTag", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "subnetGroupNameTag", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? SubnetGroupNameTag
         {
             get;

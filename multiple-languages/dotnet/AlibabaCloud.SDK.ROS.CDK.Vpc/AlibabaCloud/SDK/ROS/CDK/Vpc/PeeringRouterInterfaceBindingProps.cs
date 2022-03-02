@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public class PeeringRouterInterfaceBindingProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IPeeringRouterInterfaceBindingProps
     {
         /// <summary>Property oppositeInterfaceId: The connection peer RouterInterface ID.</summary>
-        [JsiiProperty(name: "oppositeInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "oppositeInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object OppositeInterfaceId
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.</summary>
-        [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RouterInterfaceId
         {
             get;
@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "oppositeInterfaceOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "oppositeInterfaceOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? OppositeInterfaceOwnerId
         {
             get;
@@ -37,7 +37,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property oppositeRouterId: Router ID of the connection peer RouterInterface.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "oppositeRouterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "oppositeRouterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? OppositeRouterId
         {
             get;

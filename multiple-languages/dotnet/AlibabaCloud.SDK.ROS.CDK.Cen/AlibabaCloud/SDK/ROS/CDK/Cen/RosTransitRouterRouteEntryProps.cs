@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: transitRouterRouteEntryDestinationCidrBlock: TransitRouterRouteEntryDestinationCidrBlock
         /// </remarks>
-        [JsiiProperty(name: "transitRouterRouteEntryDestinationCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "transitRouterRouteEntryDestinationCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TransitRouterRouteEntryDestinationCidrBlock
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: transitRouterRouteEntryNextHopType: TransitRouterRouteEntryNextHopType
         /// </remarks>
-        [JsiiProperty(name: "transitRouterRouteEntryNextHopType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "transitRouterRouteEntryNextHopType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TransitRouterRouteEntryNextHopType
         {
             get;
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: transitRouterRouteTableId: TransitRouterRouteTableId
         /// </remarks>
-        [JsiiProperty(name: "transitRouterRouteTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "transitRouterRouteTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TransitRouterRouteTableId
         {
             get;
@@ -44,7 +44,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: transitRouterRouteEntryDescription: TransitRouterRouteEntryDescription
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "transitRouterRouteEntryDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "transitRouterRouteEntryDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TransitRouterRouteEntryDescription
         {
             get;
@@ -55,7 +55,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: transitRouterRouteEntryName: TransitRouterRouteEntryName
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "transitRouterRouteEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "transitRouterRouteEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TransitRouterRouteEntryName
         {
             get;
@@ -66,7 +66,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: transitRouterRouteEntryNextHopId: TransitRouterRouteEntryNextHopId
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "transitRouterRouteEntryNextHopId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "transitRouterRouteEntryNextHopId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TransitRouterRouteEntryNextHopId
         {
             get;

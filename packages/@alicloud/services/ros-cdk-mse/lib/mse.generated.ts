@@ -474,3 +474,257 @@ export class RosCluster extends ros.RosResource {
         return rosClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `ALIYUN::MSE::Gateway`
+ */
+export interface RosGatewayProps {
+
+    /**
+     * @Property replica: Gateway Node Number
+     */
+    readonly replica: number | ros.IResolvable;
+
+    /**
+     * @Property spec: Gateway Node Specifications
+     */
+    readonly spec: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: VpcId
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: VSwitchId
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property backupVSwitchId: VSwitchId For Backup
+     */
+    readonly backupVSwitchId?: string | ros.IResolvable;
+
+    /**
+     * @Property enterpriseSecurityGroup:
+     */
+    readonly enterpriseSecurityGroup?: string | ros.IResolvable;
+
+    /**
+     * @Property internetSlbSpec:
+     */
+    readonly internetSlbSpec?: string | ros.IResolvable;
+
+    /**
+     * @Property name:
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property slbSpec:
+     */
+    readonly slbSpec?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosGatewayProps`
+ *
+ * @param properties - the TypeScript properties of a `RosGatewayProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosGatewayPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('backupVSwitchId', ros.validateString)(properties.backupVSwitchId));
+    errors.collect(ros.propertyValidator('enterpriseSecurityGroup', ros.validateString)(properties.enterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('slbSpec', ros.validateString)(properties.slbSpec));
+    errors.collect(ros.propertyValidator('spec', ros.requiredValidator)(properties.spec));
+    if(properties.spec && (typeof properties.spec) !== 'object') {
+        errors.collect(ros.propertyValidator('spec', ros.validateAllowedValues)({
+          data: properties.spec,
+          allowedValues: ["MSE_GTW_2_4_200_c","MSE_GTW_4_8_200_c","MSE_GTW_8_16_200_c","MSE_GTW_16_32_200_c"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
+    errors.collect(ros.propertyValidator('internetSlbSpec', ros.validateString)(properties.internetSlbSpec));
+    errors.collect(ros.propertyValidator('replica', ros.requiredValidator)(properties.replica));
+    errors.collect(ros.propertyValidator('replica', ros.validateNumber)(properties.replica));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosGatewayProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::Gateway` resource
+ *
+ * @param properties - the TypeScript properties of a `RosGatewayProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::Gateway` resource.
+ */
+// @ts-ignore TS6133
+function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosGatewayPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Replica: ros.numberToRosTemplate(properties.replica),
+      Spec: ros.stringToRosTemplate(properties.spec),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      BackupVSwitchId: ros.stringToRosTemplate(properties.backupVSwitchId),
+      EnterpriseSecurityGroup: ros.stringToRosTemplate(properties.enterpriseSecurityGroup),
+      InternetSlbSpec: ros.stringToRosTemplate(properties.internetSlbSpec),
+      Name: ros.stringToRosTemplate(properties.name),
+      SlbSpec: ros.stringToRosTemplate(properties.slbSpec),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::MSE::Gateway`
+ */
+export class RosGateway extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::Gateway";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BackupVSwitchId: VSwitchId For Backup
+     */
+    public readonly attrBackupVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute GatewayUniqueId: Gateway unique identification
+     */
+    public readonly attrGatewayUniqueId: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: The payment type of the resource
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute Replica: Gateway Node Number
+     */
+    public readonly attrReplica: ros.IResolvable;
+
+    /**
+     * @Attribute Spec: Gateway Node Specifications
+     */
+    public readonly attrSpec: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: VSwitchId
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: VpcId
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property replica: Gateway Node Number
+     */
+    public replica: number | ros.IResolvable;
+
+    /**
+     * @Property spec: Gateway Node Specifications
+     */
+    public spec: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: VpcId
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: VSwitchId
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property backupVSwitchId: VSwitchId For Backup
+     */
+    public backupVSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enterpriseSecurityGroup:
+     */
+    public enterpriseSecurityGroup: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetSlbSpec:
+     */
+    public internetSlbSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name:
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property slbSpec:
+     */
+    public slbSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::MSE::Gateway`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosGatewayProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBackupVSwitchId = this.getAtt('BackupVSwitchId');
+        this.attrGatewayUniqueId = this.getAtt('GatewayUniqueId');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrReplica = this.getAtt('Replica');
+        this.attrSpec = this.getAtt('Spec');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.replica = props.replica;
+        this.spec = props.spec;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.backupVSwitchId = props.backupVSwitchId;
+        this.enterpriseSecurityGroup = props.enterpriseSecurityGroup;
+        this.internetSlbSpec = props.internetSlbSpec;
+        this.name = props.name;
+        this.slbSpec = props.slbSpec;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            replica: this.replica,
+            spec: this.spec,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            backupVSwitchId: this.backupVSwitchId,
+            enterpriseSecurityGroup: this.enterpriseSecurityGroup,
+            internetSlbSpec: this.internetSlbSpec,
+            name: this.name,
+            slbSpec: this.slbSpec,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosGatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

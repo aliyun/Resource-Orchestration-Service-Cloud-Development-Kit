@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth
         /// plan.
         /// </remarks>
-        [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AcceleratorId
         {
             get;
@@ -24,7 +24,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: bandwidthPackageId: The ID of the bandwidth package to associate.
         /// </remarks>
-        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object BandwidthPackageId
         {
             get;

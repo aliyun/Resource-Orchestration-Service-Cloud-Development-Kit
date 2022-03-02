@@ -32,13 +32,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         {
         }
 
-        /// <summary>Attribute CompliancePackId: Compliance Package ID.</summary>
-        [JsiiProperty(name: "attrCompliancePackId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCompliancePackId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
         /// <summary>Attribute ConfigRuleArn: config rule arn.</summary>
         [JsiiProperty(name: "attrConfigRuleArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConfigRuleArn

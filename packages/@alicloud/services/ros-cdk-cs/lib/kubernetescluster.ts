@@ -195,6 +195,11 @@ export interface KubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property runtime: The container runtime of the cluster. The default runtime is Docker.
      */
     readonly runtime?: RosKubernetesCluster.RuntimeProperty | ros.IResolvable;
@@ -377,6 +382,7 @@ export class KubernetesCluster extends ros.Resource {
         const rosKubernetesCluster = new RosKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
             workerPeriod: props.workerPeriod === undefined || props.workerPeriod === null ? 1 : props.workerPeriod,
+            resourceGroupId: props.resourceGroupId,
             workerPeriodUnit: props.workerPeriodUnit === undefined || props.workerPeriodUnit === null ? 'Month' : props.workerPeriodUnit,
             masterSystemDiskCategory: props.masterSystemDiskCategory === undefined || props.masterSystemDiskCategory === null ? 'cloud_ssd' : props.masterSystemDiskCategory,
             addons: props.addons,
@@ -396,8 +402,8 @@ export class KubernetesCluster extends ros.Resource {
             podVswitchIds: props.podVswitchIds,
             workerAutoRenew: props.workerAutoRenew === undefined || props.workerAutoRenew === null ? true : props.workerAutoRenew,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
-            tags: props.tags,
             disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
+            tags: props.tags,
             workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
             masterPeriod: props.masterPeriod === undefined || props.masterPeriod === null ? 1 : props.masterPeriod,

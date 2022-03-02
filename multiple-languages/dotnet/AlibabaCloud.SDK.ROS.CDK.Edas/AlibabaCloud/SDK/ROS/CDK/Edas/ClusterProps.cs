@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
     public class ClusterProps : AlibabaCloud.SDK.ROS.CDK.Edas.IClusterProps
     {
         /// <summary>Property clusterName: Cluster name.</summary>
-        [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ClusterName
         {
             get;
@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// 1-Swarm cluster, 2-ECS cluster, 3-Kubernetes Cluster
         /// </remarks>
-        [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ClusterType
         {
             get;
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// 1- classic network, 2-VPC
         /// </remarks>
-        [JsiiProperty(name: "networkMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "networkMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object NetworkMode
         {
             get;
@@ -42,7 +42,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 
         /// <summary>Property logicalRegionId: Custom namespace RegionId (format: Physical Region: custom namespace identifier).</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "logicalRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "logicalRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? LogicalRegionId
         {
             get;
@@ -54,7 +54,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "oversoldFactor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "oversoldFactor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? OversoldFactor
         {
             get;
@@ -66,7 +66,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// If network selection VPC, this parameter Required
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? VpcId
         {
             get;

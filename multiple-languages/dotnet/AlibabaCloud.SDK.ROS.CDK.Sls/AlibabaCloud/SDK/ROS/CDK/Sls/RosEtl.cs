@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -314,7 +314,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: logstore: The source logstore of the processing job.
             /// </remarks>
-            [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Logstore
             {
                 get;
@@ -324,7 +324,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: script: Processing operation grammar.
             /// </remarks>
-            [JsiiProperty(name: "script", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "script", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Script
             {
                 get;
@@ -334,7 +334,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: sinks: target logstore configuration for delivery after data processing.
             /// </remarks>
-            [JsiiProperty(name: "sinks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosEtl.SinksProperty\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+            [JsiiProperty(name: "sinks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosEtl.SinksProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Sinks
             {
                 get;
@@ -345,7 +345,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: fromTime: The start time of the processing job, the default starts from the current time.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "fromTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "fromTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FromTime
             {
                 get;
@@ -356,7 +356,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: parameters: Advanced parameter configuration of processing operations.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Parameters
             {
                 get;
@@ -367,7 +367,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: roleArn: Sts role info under delivery target logstore.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RoleArn
             {
                 get;
@@ -378,7 +378,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: toTime: Deadline of processing job, the default value is None
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "toTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "toTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ToTime
             {
                 get;
@@ -389,7 +389,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: version: The script version.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Version
             {
                 get;
@@ -433,7 +433,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type: The type of task scheduling strategies, value: Resident
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Type
             {
                 get;
@@ -582,7 +582,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: logstore: Delivery target logstore.
             /// </remarks>
-            [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Logstore
             {
                 get;
@@ -592,7 +592,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Delivery target name.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Name
             {
                 get;
@@ -602,7 +602,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: project: The project where the target logstore is delivered.
             /// </remarks>
-            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Project
             {
                 get;
@@ -613,7 +613,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: endpoint: Delivery target logstore region.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "endpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "endpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Endpoint
             {
                 get;
@@ -624,7 +624,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: roleArn: Sts role info under delivery target logstore.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RoleArn
             {
                 get;
@@ -635,7 +635,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: type: ETL sinks type, the default value is AliyunLOG.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Type
             {
                 get;

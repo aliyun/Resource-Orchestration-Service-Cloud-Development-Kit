@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// otherwise
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoSynth", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "autoSynth", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? AutoSynth
         {
             get;
@@ -34,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - no additional context
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "context", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "context", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOptional: true)]
         public System.Collections.Generic.IDictionary<string, string>? Context
         {
             get;
@@ -47,7 +47,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// If 'CDK_OUTDIR' is not defined, uses a temp directory.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? Outdir
         {
             get;
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: true runtime info is included unless related comtext is set.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "runtimeInfo", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "runtimeInfo", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? RuntimeInfo
         {
             get;
@@ -71,7 +71,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: true stack traces are included unless related context is set.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "stackTraces", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "stackTraces", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? StackTraces
         {
             get;
@@ -83,7 +83,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: true
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "treeMetadata", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "treeMetadata", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? TreeMetadata
         {
             get;

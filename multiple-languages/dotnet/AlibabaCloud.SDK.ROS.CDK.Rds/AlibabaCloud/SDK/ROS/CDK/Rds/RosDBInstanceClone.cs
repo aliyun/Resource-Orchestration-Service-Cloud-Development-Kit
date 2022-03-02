@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -682,7 +682,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <remarks>
             /// <strong>Property</strong>: characterSetName: For supported engines, specifies the character set to associate with the database instance.
             /// </remarks>
-            [JsiiProperty(name: "characterSetName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "characterSetName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object CharacterSetName
             {
                 get;
@@ -692,7 +692,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <remarks>
             /// <strong>Property</strong>: dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers
             /// </remarks>
-            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DbName
             {
                 get;
@@ -703,7 +703,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <strong>Property</strong>: dbDescription: Specifies the database description, containing up to 256 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dbDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "dbDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbDescription
             {
                 get;
@@ -820,7 +820,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <strong>Property</strong>: name: Name of database you want to restore.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
             {
                 get;
@@ -831,7 +831,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <strong>Property</strong>: newName: New database name in clone instance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "newName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "newName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NewName
             {
                 get;
@@ -842,7 +842,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <strong>Property</strong>: tables: The table information that you want to restore.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tables", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rds.RosDBInstanceClone.TablesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "tables", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rds.RosDBInstanceClone.TablesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Tables
             {
                 get;
@@ -853,7 +853,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <strong>Property</strong>: type: Restore type, db
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Type
             {
                 get;
@@ -947,7 +947,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <strong>Property</strong>: name: Name of table you want to restore
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
             {
                 get;
@@ -958,7 +958,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <strong>Property</strong>: newName: New name of the table in db
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "newName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "newName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NewName
             {
                 get;
@@ -969,7 +969,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <strong>Property</strong>: type: Restore type, table
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Type
             {
                 get;

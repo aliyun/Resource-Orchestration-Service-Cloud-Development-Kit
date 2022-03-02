@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
     public class DBInstanceSecurityIpsProps : AlibabaCloud.SDK.ROS.CDK.Rds.IDBInstanceSecurityIpsProps
     {
         /// <summary>Property dbInstanceId: Database instance id to update security ips.</summary>
-        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DbInstanceId
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <summary>Property dbInstanceIpArrayAttribute: Security ips to add or remove.</summary>
-        [JsiiProperty(name: "dbInstanceIpArrayAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "dbInstanceIpArrayAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DbInstanceIpArrayAttribute
         {
             get;
@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbInstanceIpArrayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "dbInstanceIpArrayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DbInstanceIpArrayName
         {
             get;

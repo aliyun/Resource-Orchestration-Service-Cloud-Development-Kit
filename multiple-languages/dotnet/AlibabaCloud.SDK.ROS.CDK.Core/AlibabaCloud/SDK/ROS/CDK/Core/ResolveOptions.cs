@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class ResolveOptions : AlibabaCloud.SDK.ROS.CDK.Core.IResolveOptions
     {
         /// <summary>The resolver to apply to any resolvable tokens found.</summary>
-        [JsiiProperty(name: "resolver", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ITokenResolver\"}", isOverride: true)]
+        [JsiiProperty(name: "resolver", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ITokenResolver\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Core.ITokenResolver Resolver
         {
             get;
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>The scope from which resolution is performed.</summary>
-        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}", isOverride: true)]
+        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}")]
         public AlibabaCloud.SDK.ROS.CDK.Core.IConstruct Scope
         {
             get;
@@ -37,7 +37,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: false
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "preparing", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "preparing", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? Preparing
         {
             get;

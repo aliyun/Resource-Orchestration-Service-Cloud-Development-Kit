@@ -15,8 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     /// <strong>Stability</strong>: Experimental
     /// </remarks>
     /// <example>
-    /// <code>// Example automatically generated from non-compiling source. May contain errors.
-    /// // Usage
+    /// <code>// Usage
     /// const roots = DependableTrait.get(construct).dependencyRoots;
     /// 
     /// // Definition
@@ -91,8 +90,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         /// <example>
-        /// <code>// Example automatically generated from non-compiling source. May contain errors.
-        /// // Usage
+        /// <code>// Usage
         /// const roots = DependableTrait.get(construct).dependencyRoots;
         /// 
         /// // Definition

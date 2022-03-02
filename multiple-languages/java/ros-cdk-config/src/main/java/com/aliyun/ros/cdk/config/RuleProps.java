@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * Properties for defining a `ALIYUN::Config::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.208Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.149Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -91,6 +91,13 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property tagKeyLogicScope:.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTagKeyLogicScope() {
+        return null;
+    }
+
+    /**
      * Property tagKeyScope: The rule monitors the tag key, only applies to rules created based on managed rules.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTagKeyScope() {
@@ -126,6 +133,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object maximumExecutionFrequency;
         java.lang.Object regionIdsScope;
         java.lang.Object resourceGroupIdsScope;
+        java.lang.Object tagKeyLogicScope;
         java.lang.Object tagKeyScope;
         java.lang.Object tagValueScope;
 
@@ -380,6 +388,26 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RuleProps#getTagKeyLogicScope}
+         * @param tagKeyLogicScope Property tagKeyLogicScope:.
+         * @return {@code this}
+         */
+        public Builder tagKeyLogicScope(java.lang.String tagKeyLogicScope) {
+            this.tagKeyLogicScope = tagKeyLogicScope;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RuleProps#getTagKeyLogicScope}
+         * @param tagKeyLogicScope Property tagKeyLogicScope:.
+         * @return {@code this}
+         */
+        public Builder tagKeyLogicScope(com.aliyun.ros.cdk.core.IResolvable tagKeyLogicScope) {
+            this.tagKeyLogicScope = tagKeyLogicScope;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RuleProps#getTagKeyScope}
          * @param tagKeyScope Property tagKeyScope: The rule monitors the tag key, only applies to rules created based on managed rules.
          * @return {@code this}
@@ -447,6 +475,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object maximumExecutionFrequency;
         private final java.lang.Object regionIdsScope;
         private final java.lang.Object resourceGroupIdsScope;
+        private final java.lang.Object tagKeyLogicScope;
         private final java.lang.Object tagKeyScope;
         private final java.lang.Object tagValueScope;
 
@@ -468,6 +497,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             this.maximumExecutionFrequency = software.amazon.jsii.Kernel.get(this, "maximumExecutionFrequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.regionIdsScope = software.amazon.jsii.Kernel.get(this, "regionIdsScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupIdsScope = software.amazon.jsii.Kernel.get(this, "resourceGroupIdsScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tagKeyLogicScope = software.amazon.jsii.Kernel.get(this, "tagKeyLogicScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tagKeyScope = software.amazon.jsii.Kernel.get(this, "tagKeyScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tagValueScope = software.amazon.jsii.Kernel.get(this, "tagValueScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -489,6 +519,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             this.maximumExecutionFrequency = builder.maximumExecutionFrequency;
             this.regionIdsScope = builder.regionIdsScope;
             this.resourceGroupIdsScope = builder.resourceGroupIdsScope;
+            this.tagKeyLogicScope = builder.tagKeyLogicScope;
             this.tagKeyScope = builder.tagKeyScope;
             this.tagValueScope = builder.tagValueScope;
         }
@@ -554,6 +585,11 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getTagKeyLogicScope() {
+            return this.tagKeyLogicScope;
+        }
+
+        @Override
         public final java.lang.Object getTagKeyScope() {
             return this.tagKeyScope;
         }
@@ -593,6 +629,9 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getResourceGroupIdsScope() != null) {
                 data.set("resourceGroupIdsScope", om.valueToTree(this.getResourceGroupIdsScope()));
             }
+            if (this.getTagKeyLogicScope() != null) {
+                data.set("tagKeyLogicScope", om.valueToTree(this.getTagKeyLogicScope()));
+            }
             if (this.getTagKeyScope() != null) {
                 data.set("tagKeyScope", om.valueToTree(this.getTagKeyScope()));
             }
@@ -629,6 +668,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             if (this.maximumExecutionFrequency != null ? !this.maximumExecutionFrequency.equals(that.maximumExecutionFrequency) : that.maximumExecutionFrequency != null) return false;
             if (this.regionIdsScope != null ? !this.regionIdsScope.equals(that.regionIdsScope) : that.regionIdsScope != null) return false;
             if (this.resourceGroupIdsScope != null ? !this.resourceGroupIdsScope.equals(that.resourceGroupIdsScope) : that.resourceGroupIdsScope != null) return false;
+            if (this.tagKeyLogicScope != null ? !this.tagKeyLogicScope.equals(that.tagKeyLogicScope) : that.tagKeyLogicScope != null) return false;
             if (this.tagKeyScope != null ? !this.tagKeyScope.equals(that.tagKeyScope) : that.tagKeyScope != null) return false;
             return this.tagValueScope != null ? this.tagValueScope.equals(that.tagValueScope) : that.tagValueScope == null;
         }
@@ -647,6 +687,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.maximumExecutionFrequency != null ? this.maximumExecutionFrequency.hashCode() : 0);
             result = 31 * result + (this.regionIdsScope != null ? this.regionIdsScope.hashCode() : 0);
             result = 31 * result + (this.resourceGroupIdsScope != null ? this.resourceGroupIdsScope.hashCode() : 0);
+            result = 31 * result + (this.tagKeyLogicScope != null ? this.tagKeyLogicScope.hashCode() : 0);
             result = 31 * result + (this.tagKeyScope != null ? this.tagKeyScope.hashCode() : 0);
             result = 31 * result + (this.tagValueScope != null ? this.tagValueScope.hashCode() : 0);
             return result;

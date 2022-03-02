@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Brainindustrial
         /// <remarks>
         /// <strong>Property</strong>: pidOrganizationId: PidOrganizationId
         /// </remarks>
-        [JsiiProperty(name: "pidOrganizationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "pidOrganizationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object PidOrganizationId
         {
             get;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Brainindustrial
         /// <remarks>
         /// <strong>Property</strong>: pidProjectName: PidProjectName
         /// </remarks>
-        [JsiiProperty(name: "pidProjectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "pidProjectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object PidProjectName
         {
             get;
@@ -34,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Brainindustrial
         /// <strong>Property</strong>: pidProjectDesc: PidProjectDesc
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "pidProjectDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "pidProjectDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PidProjectDesc
         {
             get;

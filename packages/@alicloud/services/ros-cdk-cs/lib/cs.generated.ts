@@ -1574,6 +1574,11 @@ export interface RosKubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
      */
     readonly runtime?: RosKubernetesCluster.RuntimeProperty | ros.IResolvable;
@@ -1706,6 +1711,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('workerPeriod', ros.validateNumber)(properties.workerPeriod));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.workerPeriodUnit && (typeof properties.workerPeriodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('workerPeriodUnit', ros.validateAllowedValues)({
           data: properties.workerPeriodUnit,
@@ -1760,8 +1766,8 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
     errors.collect(ros.propertyValidator('workerAutoRenew', ros.validateBoolean)(properties.workerAutoRenew));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('workerInstanceTypes', ros.requiredValidator)(properties.workerInstanceTypes));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('workerInstanceTypes', ros.validateLength)({
@@ -1899,6 +1905,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
       PodVswitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Runtime: rosKubernetesClusterRuntimePropertyToRosTemplate(properties.runtime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
@@ -2168,6 +2175,11 @@ export class RosKubernetesCluster extends ros.RosResource {
     public proxyMode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
      */
     public runtime: RosKubernetesCluster.RuntimeProperty | ros.IResolvable | undefined;
@@ -2330,6 +2342,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.numOfNodes = props.numOfNodes;
         this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
+        this.resourceGroupId = props.resourceGroupId;
         this.runtime = props.runtime;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
@@ -2381,6 +2394,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             numOfNodes: this.numOfNodes,
             podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
+            resourceGroupId: this.resourceGroupId,
             runtime: this.runtime,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,

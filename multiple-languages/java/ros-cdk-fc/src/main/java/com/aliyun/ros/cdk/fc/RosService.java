@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Service`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.053Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.800Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService")
 public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -293,6 +293,13 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLogBeginRule() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getLogstore() {
             return null;
         }
@@ -317,6 +324,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LogConfigProperty> {
             java.lang.Object enableRequestMetrics;
+            java.lang.Object logBeginRule;
             java.lang.Object logstore;
             java.lang.Object project;
 
@@ -339,6 +347,28 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder enableRequestMetrics(com.aliyun.ros.cdk.core.IResolvable enableRequestMetrics) {
                 this.enableRequestMetrics = enableRequestMetrics;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogConfigProperty#getLogBeginRule}
+             * @param logBeginRule the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logBeginRule(java.lang.String logBeginRule) {
+                this.logBeginRule = logBeginRule;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogConfigProperty#getLogBeginRule}
+             * @param logBeginRule the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logBeginRule(com.aliyun.ros.cdk.core.IResolvable logBeginRule) {
+                this.logBeginRule = logBeginRule;
                 return this;
             }
 
@@ -405,6 +435,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LogConfigProperty {
             private final java.lang.Object enableRequestMetrics;
+            private final java.lang.Object logBeginRule;
             private final java.lang.Object logstore;
             private final java.lang.Object project;
 
@@ -415,6 +446,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.enableRequestMetrics = software.amazon.jsii.Kernel.get(this, "enableRequestMetrics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.logBeginRule = software.amazon.jsii.Kernel.get(this, "logBeginRule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.logstore = software.amazon.jsii.Kernel.get(this, "logstore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -425,6 +457,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.enableRequestMetrics = builder.enableRequestMetrics;
+                this.logBeginRule = builder.logBeginRule;
                 this.logstore = builder.logstore;
                 this.project = builder.project;
             }
@@ -432,6 +465,11 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getEnableRequestMetrics() {
                 return this.enableRequestMetrics;
+            }
+
+            @Override
+            public final java.lang.Object getLogBeginRule() {
+                return this.logBeginRule;
             }
 
             @Override
@@ -452,6 +490,9 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (this.getEnableRequestMetrics() != null) {
                     data.set("enableRequestMetrics", om.valueToTree(this.getEnableRequestMetrics()));
+                }
+                if (this.getLogBeginRule() != null) {
+                    data.set("logBeginRule", om.valueToTree(this.getLogBeginRule()));
                 }
                 if (this.getLogstore() != null) {
                     data.set("logstore", om.valueToTree(this.getLogstore()));
@@ -478,6 +519,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
                 LogConfigProperty.Jsii$Proxy that = (LogConfigProperty.Jsii$Proxy) o;
 
                 if (this.enableRequestMetrics != null ? !this.enableRequestMetrics.equals(that.enableRequestMetrics) : that.enableRequestMetrics != null) return false;
+                if (this.logBeginRule != null ? !this.logBeginRule.equals(that.logBeginRule) : that.logBeginRule != null) return false;
                 if (this.logstore != null ? !this.logstore.equals(that.logstore) : that.logstore != null) return false;
                 return this.project != null ? this.project.equals(that.project) : that.project == null;
             }
@@ -485,6 +527,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.enableRequestMetrics != null ? this.enableRequestMetrics.hashCode() : 0;
+                result = 31 * result + (this.logBeginRule != null ? this.logBeginRule.hashCode() : 0);
                 result = 31 * result + (this.logstore != null ? this.logstore.hashCode() : 0);
                 result = 31 * result + (this.project != null ? this.project.hashCode() : 0);
                 return result;

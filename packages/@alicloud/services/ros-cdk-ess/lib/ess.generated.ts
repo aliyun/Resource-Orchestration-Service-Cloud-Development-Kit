@@ -1457,7 +1457,7 @@ function RosScalingConfiguration_DiskMappingsPropertyValidator(properties: any):
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));

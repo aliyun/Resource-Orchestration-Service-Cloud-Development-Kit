@@ -7,12 +7,16 @@
 @alicloud/ros-cdk-ros.RosCustomResource=com.aliyun.ros.cdk.ros.RosCustomResource
 @alicloud/ros-cdk-ros.RosCustomResource.HttpConfigProperty=com.aliyun.ros.cdk.ros.RosCustomResource$HttpConfigProperty
 @alicloud/ros-cdk-ros.RosCustomResourceProps=com.aliyun.ros.cdk.ros.RosCustomResourceProps
+@alicloud/ros-cdk-ros.RosSleep=com.aliyun.ros.cdk.ros.RosSleep
+@alicloud/ros-cdk-ros.RosSleepProps=com.aliyun.ros.cdk.ros.RosSleepProps
 @alicloud/ros-cdk-ros.RosStack=com.aliyun.ros.cdk.ros.RosStack
 @alicloud/ros-cdk-ros.RosStackProps=com.aliyun.ros.cdk.ros.RosStackProps
 @alicloud/ros-cdk-ros.RosWaitCondition=com.aliyun.ros.cdk.ros.RosWaitCondition
 @alicloud/ros-cdk-ros.RosWaitConditionHandle=com.aliyun.ros.cdk.ros.RosWaitConditionHandle
 @alicloud/ros-cdk-ros.RosWaitConditionHandleProps=com.aliyun.ros.cdk.ros.RosWaitConditionHandleProps
 @alicloud/ros-cdk-ros.RosWaitConditionProps=com.aliyun.ros.cdk.ros.RosWaitConditionProps
+@alicloud/ros-cdk-ros.Sleep=com.aliyun.ros.cdk.ros.Sleep
+@alicloud/ros-cdk-ros.SleepProps=com.aliyun.ros.cdk.ros.SleepProps
 @alicloud/ros-cdk-ros.Stack=com.aliyun.ros.cdk.ros.Stack
 @alicloud/ros-cdk-ros.StackProps=com.aliyun.ros.cdk.ros.StackProps
 @alicloud/ros-cdk-ros.WaitCondition=com.aliyun.ros.cdk.ros.WaitCondition

@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -175,7 +175,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: policyDocument: A policy document that describes what actions are allowed on which resources.
             /// </remarks>
-            [JsiiProperty(name: "policyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.PolicyDocumentProperty\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "policyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.PolicyDocumentProperty\"}]}}")]
             public object PolicyDocument
             {
                 get;
@@ -185,7 +185,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: policyName: Specifies the authorization policy name, containing up to 128 characters.
             /// </remarks>
-            [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PolicyName
             {
                 get;
@@ -196,7 +196,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: description: Specifies the authorization policy description, containing up to 1024 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
             {
                 get;
@@ -267,7 +267,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: statement: A policy consists of one or more statements.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.StatementProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.StatementProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Statement
             {
                 get;
@@ -278,7 +278,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Version
             {
                 get;
@@ -395,7 +395,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: action: What actions you will allow.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "action", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "action", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Action
             {
                 get;
@@ -406,7 +406,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: condition: What conditions should be satisfied.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Condition
             {
                 get;
@@ -417,7 +417,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: effect: What the effect will be when the user requests access-either allow or deny.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Effect
             {
                 get;
@@ -428,7 +428,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: resource: Which resources you allow the action on.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Resource
             {
                 get;

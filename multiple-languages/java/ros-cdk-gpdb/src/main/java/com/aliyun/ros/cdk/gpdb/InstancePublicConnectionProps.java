@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * Properties for defining a `ALIYUN::GPDB::InstancePublicConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.129Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.969Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.InstancePublicConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(InstancePublicConnectionProps.Jsii$Proxy.class)
 public interface InstancePublicConnectionProps extends software.amazon.jsii.JsiiSerializable {

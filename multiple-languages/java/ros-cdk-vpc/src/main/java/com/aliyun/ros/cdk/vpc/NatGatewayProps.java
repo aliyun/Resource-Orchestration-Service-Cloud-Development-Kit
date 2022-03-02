@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.567Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(NatGatewayProps.Jsii$Proxy.class)
 public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -77,7 +77,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
      * <p>
      * Valid values:
      * PayBySpec: billed on a pay-by-specification basis.
-     * PayByLcu: billed on a pay-by-LCU basis.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
@@ -123,15 +122,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property spec: NAT gateway specification.
-     * <p>
-     * Now support 'Small|Middle|Large|XLarge.1'
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getSpec() {
-        return null;
-    }
-
-    /**
      * Property tags: Tags to attach to natgateway.
      * <p>
      * Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
@@ -163,7 +153,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object natType;
         java.lang.Object networkType;
         java.lang.Object pricingCycle;
-        java.lang.Object spec;
         java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
         /**
@@ -343,7 +332,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
          * @param internetChargeType Property internetChargeType: The billing method for the NAT gateway.
          *                           Valid values:
          *                           PayBySpec: billed on a pay-by-specification basis.
-         *                           PayByLcu: billed on a pay-by-LCU basis.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -356,7 +344,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
          * @param internetChargeType Property internetChargeType: The billing method for the NAT gateway.
          *                           Valid values:
          *                           PayBySpec: billed on a pay-by-specification basis.
-         *                           PayByLcu: billed on a pay-by-LCU basis.
          * @return {@code this}
          */
         public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
@@ -461,28 +448,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link NatGatewayProps#getSpec}
-         * @param spec Property spec: NAT gateway specification.
-         *             Now support 'Small|Middle|Large|XLarge.1'
-         * @return {@code this}
-         */
-        public Builder spec(java.lang.String spec) {
-            this.spec = spec;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link NatGatewayProps#getSpec}
-         * @param spec Property spec: NAT gateway specification.
-         *             Now support 'Small|Middle|Large|XLarge.1'
-         * @return {@code this}
-         */
-        public Builder spec(com.aliyun.ros.cdk.core.IResolvable spec) {
-            this.spec = spec;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link NatGatewayProps#getTags}
          * @param tags Property tags: Tags to attach to natgateway.
          *             Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
@@ -523,7 +488,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object natType;
         private final java.lang.Object networkType;
         private final java.lang.Object pricingCycle;
-        private final java.lang.Object spec;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
         /**
@@ -545,7 +509,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             this.natType = software.amazon.jsii.Kernel.get(this, "natType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty.class)));
         }
 
@@ -568,7 +531,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             this.natType = builder.natType;
             this.networkType = builder.networkType;
             this.pricingCycle = builder.pricingCycle;
-            this.spec = builder.spec;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty>)builder.tags;
         }
 
@@ -638,11 +600,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getSpec() {
-            return this.spec;
-        }
-
-        @Override
         public final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> getTags() {
             return this.tags;
         }
@@ -688,9 +645,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
-            if (this.getSpec() != null) {
-                data.set("spec", om.valueToTree(this.getSpec()));
-            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -725,7 +679,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             if (this.natType != null ? !this.natType.equals(that.natType) : that.natType != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
-            if (this.spec != null ? !this.spec.equals(that.spec) : that.spec != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -744,7 +697,6 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.natType != null ? this.natType.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
-            result = 31 * result + (this.spec != null ? this.spec.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

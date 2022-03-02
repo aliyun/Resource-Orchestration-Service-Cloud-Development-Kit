@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <strong>Default</strong>: - No mapping.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "mapping", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "mapping", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"map\"}}", isOptional: true)]
         public System.Collections.Generic.IDictionary<string, System.Collections.Generic.IDictionary<string, object>>? Mapping
         {
             get;

@@ -30,14 +30,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// Must be called before any of the other methods are called.
         /// </remarks>
-        [JsiiMethod(name: "bind", parametersJson: "[{\"name\":\"stack\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Stack\"}}]", isOverride: true)]
+        [JsiiMethod(name: "bind", parametersJson: "[{\"name\":\"stack\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Stack\"}}]")]
         public virtual void Bind(AlibabaCloud.SDK.ROS.CDK.Core.Stack stack)
         {
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.Stack)}, new object[]{stack});
         }
 
         /// <summary>Synthesize all artifacts required for the stack into the session.</summary>
-        [JsiiMethod(name: "synthesizeStackArtifacts", parametersJson: "[{\"name\":\"session\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ISynthesisSession\"}}]", isOverride: true)]
+        [JsiiMethod(name: "synthesizeStackArtifacts", parametersJson: "[{\"name\":\"session\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ISynthesisSession\"}}]")]
         public virtual void SynthesizeStackArtifacts(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession session)
         {
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisSession)}, new object[]{session});

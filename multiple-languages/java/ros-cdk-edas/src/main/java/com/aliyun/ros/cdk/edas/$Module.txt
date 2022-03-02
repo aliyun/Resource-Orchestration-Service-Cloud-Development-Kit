@@ -10,6 +10,8 @@
 @alicloud/ros-cdk-edas.K8sApplicationProps=com.aliyun.ros.cdk.edas.K8sApplicationProps
 @alicloud/ros-cdk-edas.K8sCluster=com.aliyun.ros.cdk.edas.K8sCluster
 @alicloud/ros-cdk-edas.K8sClusterProps=com.aliyun.ros.cdk.edas.K8sClusterProps
+@alicloud/ros-cdk-edas.K8sSlbBinding=com.aliyun.ros.cdk.edas.K8sSlbBinding
+@alicloud/ros-cdk-edas.K8sSlbBindingProps=com.aliyun.ros.cdk.edas.K8sSlbBindingProps
 @alicloud/ros-cdk-edas.RosApplication=com.aliyun.ros.cdk.edas.RosApplication
 @alicloud/ros-cdk-edas.RosApplicationProps=com.aliyun.ros.cdk.edas.RosApplicationProps
 @alicloud/ros-cdk-edas.RosCluster=com.aliyun.ros.cdk.edas.RosCluster
@@ -72,6 +74,9 @@
 @alicloud/ros-cdk-edas.RosK8sApplicationProps=com.aliyun.ros.cdk.edas.RosK8sApplicationProps
 @alicloud/ros-cdk-edas.RosK8sCluster=com.aliyun.ros.cdk.edas.RosK8sCluster
 @alicloud/ros-cdk-edas.RosK8sClusterProps=com.aliyun.ros.cdk.edas.RosK8sClusterProps
+@alicloud/ros-cdk-edas.RosK8sSlbBinding=com.aliyun.ros.cdk.edas.RosK8sSlbBinding
+@alicloud/ros-cdk-edas.RosK8sSlbBinding.ServicePortInfosProperty=com.aliyun.ros.cdk.edas.RosK8sSlbBinding$ServicePortInfosProperty
+@alicloud/ros-cdk-edas.RosK8sSlbBindingProps=com.aliyun.ros.cdk.edas.RosK8sSlbBindingProps
 @alicloud/ros-cdk-edas.RosUserDefineRegion=com.aliyun.ros.cdk.edas.RosUserDefineRegion
 @alicloud/ros-cdk-edas.RosUserDefineRegionProps=com.aliyun.ros.cdk.edas.RosUserDefineRegionProps
 @alicloud/ros-cdk-edas.UserDefineRegion=com.aliyun.ros.cdk.edas.UserDefineRegion

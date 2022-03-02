@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -422,7 +422,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// sls: Log Service
             /// vpn: VPN Gateway
             /// </remarks>
-            [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Category
             {
                 get;
@@ -433,7 +433,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: metricName: The name of the metric.
             /// Note For more information, see DescribeMetricMetaList or Appendix 1: Metrics.
             /// </remarks>
-            [JsiiProperty(name: "metricName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "metricName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MetricName
             {
                 get;
@@ -444,7 +444,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: namespace: The namespace of the service.
             /// Note For more information, see DescribeMetricMetaList or Appendix 1: Metrics.
             /// </remarks>
-            [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Namespace
             {
                 get;
@@ -454,7 +454,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: ruleName: The name of the alert rule.
             /// </remarks>
-            [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RuleName
             {
                 get;
@@ -465,7 +465,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: escalations: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.EscalationsProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "escalations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.EscalationsProperty\"}]}}", isOptional: true)]
             public object? Escalations
             {
                 get;
@@ -478,7 +478,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// you do not need to specify the aggregation period.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period
             {
                 get;
@@ -489,7 +489,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: selector: The dimension of the alert. It is an extended field.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "selector", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "selector", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Selector
             {
                 get;
@@ -501,7 +501,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// on the alert rule.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "webhook", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "webhook", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Webhook
             {
                 get;
@@ -632,7 +632,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
             /// LessThanLastPeriod: less than the metric value in the last monitoring cycle
             /// </remarks>
-            [JsiiProperty(name: "comparisonOperator", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "comparisonOperator", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ComparisonOperator
             {
                 get;
@@ -642,7 +642,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: statistics: The statistical method for alerts.
             /// </remarks>
-            [JsiiProperty(name: "statistics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "statistics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Statistics
             {
                 get;
@@ -652,7 +652,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: threshold: The threshold for alerts.
             /// </remarks>
-            [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Threshold
             {
                 get;
@@ -662,7 +662,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: times: The consecutive number of times for which the metric value is measured before a alert is triggered.
             /// </remarks>
-            [JsiiProperty(name: "times", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "times", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Times
             {
                 get;
@@ -752,7 +752,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: critical: undefined
             /// </remarks>
-            [JsiiProperty(name: "critical", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.CriticalProperty\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "critical", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.CriticalProperty\"}]}}")]
             public object Critical
             {
                 get;
@@ -763,7 +763,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: info: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "info", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.InfoProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "info", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.InfoProperty\"}]}}", isOptional: true)]
             public object? Info
             {
                 get;
@@ -774,7 +774,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: warn: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "warn", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.WarnProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "warn", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.WarnProperty\"}]}}", isOptional: true)]
             public object? Warn
             {
                 get;
@@ -905,7 +905,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
             /// LessThanLastPeriod: less than the metric value in the last monitoring cycle
             /// </remarks>
-            [JsiiProperty(name: "comparisonOperator", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "comparisonOperator", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ComparisonOperator
             {
                 get;
@@ -915,7 +915,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: statistics: The statistical method for alerts.
             /// </remarks>
-            [JsiiProperty(name: "statistics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "statistics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Statistics
             {
                 get;
@@ -925,7 +925,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: threshold: The threshold for alerts.
             /// </remarks>
-            [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Threshold
             {
                 get;
@@ -935,7 +935,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: times: The consecutive number of times for which the metric value is measured before a alert is triggered.
             /// </remarks>
-            [JsiiProperty(name: "times", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "times", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Times
             {
                 get;
@@ -1066,7 +1066,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
             /// LessThanLastPeriod: less than the metric value in the last monitoring cycle
             /// </remarks>
-            [JsiiProperty(name: "comparisonOperator", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "comparisonOperator", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ComparisonOperator
             {
                 get;
@@ -1076,7 +1076,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: statistics: The statistical method for alerts.
             /// </remarks>
-            [JsiiProperty(name: "statistics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "statistics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Statistics
             {
                 get;
@@ -1086,7 +1086,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: threshold: The threshold for alerts.
             /// </remarks>
-            [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Threshold
             {
                 get;
@@ -1096,7 +1096,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: times: The consecutive number of times for which the metric value is measured before a alert is triggered.
             /// </remarks>
-            [JsiiProperty(name: "times", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "times", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Times
             {
                 get;

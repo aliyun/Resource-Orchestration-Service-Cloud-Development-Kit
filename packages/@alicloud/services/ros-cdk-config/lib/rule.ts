@@ -69,6 +69,11 @@ export interface RuleProps {
     readonly resourceGroupIdsScope?: string | ros.IResolvable;
 
     /**
+     * Property tagKeyLogicScope:
+     */
+    readonly tagKeyLogicScope?: string | ros.IResolvable;
+
+    /**
      * Property tagKeyScope: The rule monitors the tag key, only applies to rules created based on managed rules
      */
     readonly tagKeyScope?: string | ros.IResolvable;
@@ -88,11 +93,6 @@ export class Rule extends ros.Resource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource, which will be assigned to ROS resource.
      */
-
-    /**
-     * Attribute CompliancePackId: Compliance Package ID
-     */
-    public readonly attrCompliancePackId: ros.IResolvable;
 
     /**
      * Attribute ConfigRuleArn: config rule arn
@@ -194,6 +194,7 @@ export class Rule extends ros.Resource {
             tagValueScope: props.tagValueScope,
             description: props.description,
             excludeResourceIdsScope: props.excludeResourceIdsScope,
+            tagKeyLogicScope: props.tagKeyLogicScope,
             sourceOwner: props.sourceOwner,
             sourceIdentifier: props.sourceIdentifier,
             maximumExecutionFrequency: props.maximumExecutionFrequency,
@@ -206,7 +207,6 @@ export class Rule extends ros.Resource {
             inputParameters: props.inputParameters,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRule;
-        this.attrCompliancePackId = rosRule.attrCompliancePackId;
         this.attrConfigRuleArn = rosRule.attrConfigRuleArn;
         this.attrConfigRuleId = rosRule.attrConfigRuleId;
         this.attrConfigRuleTriggerTypes = rosRule.attrConfigRuleTriggerTypes;

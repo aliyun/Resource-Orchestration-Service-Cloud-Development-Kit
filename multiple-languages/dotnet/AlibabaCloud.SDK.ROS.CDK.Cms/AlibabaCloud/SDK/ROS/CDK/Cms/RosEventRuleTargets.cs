@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -209,7 +209,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: contactGroupName: The name of the alert contact group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "contactGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "contactGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContactGroupName
             {
                 get;
@@ -220,7 +220,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: id: The unique ID of the alert contact group notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Id
             {
                 get;
@@ -231,7 +231,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: level: The method of alert notification. Valid values: 2, 3, and 4.2: DingTalk Chatbot and email.3: DingTalk Chatbot and email.4: DingTalk Chatbot and email.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "level", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "level", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Level
             {
                 get;
@@ -348,7 +348,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: functionName: The name of the function.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FunctionName
             {
                 get;
@@ -359,7 +359,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: id: The unique ID of the Function Compute notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Id
             {
                 get;
@@ -370,7 +370,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: region: The region where Function Compute is deployed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Region
             {
                 get;
@@ -381,7 +381,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: serviceName: The name of the Function Compute service.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceName
             {
                 get;
@@ -475,7 +475,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: id: The unique ID of the Message Service (MNS) notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Id
             {
                 get;
@@ -486,7 +486,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: queue: The name of the MNS queue.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "queue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "queue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Queue
             {
                 get;
@@ -497,7 +497,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: region: The region where MNS is deployed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Region
             {
                 get;
@@ -614,7 +614,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: id: The unique ID of the Log Service notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Id
             {
                 get;
@@ -625,7 +625,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: logStore: The logstore corresponding to Log Service.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? LogStore
             {
                 get;
@@ -636,7 +636,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: project: The project corresponding to Log Service.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Project
             {
                 get;
@@ -647,7 +647,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: region: The region where Log Service is deployed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Region
             {
                 get;
@@ -764,7 +764,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: id: The unique ID of the HTTP callback notification.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Id
             {
                 get;
@@ -775,7 +775,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: method: The request method of the HTTP callback. Valid values: GET and POST.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "method", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "method", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Method
             {
                 get;
@@ -786,7 +786,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: protocol: The name of the protocol.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Protocol
             {
                 get;
@@ -797,7 +797,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: url: The callback URL.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "url", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "url", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Url
             {
                 get;

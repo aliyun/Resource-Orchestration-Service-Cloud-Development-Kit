@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// temporary directory will be created.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? Outdir
         {
             get;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.950Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:08.596Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGateway")
 public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -305,24 +305,6 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPricingCycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getSpec() {
-        return software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setSpec(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "spec", value);
-    }
-
-    /**
-     */
-    public void setSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "spec", value);
     }
 
     /**
@@ -749,23 +731,6 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.props.pricingCycle(pricingCycle);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param spec This parameter is required.
-         */
-        public Builder spec(final java.lang.String spec) {
-            this.props.spec(spec);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param spec This parameter is required.
-         */
-        public Builder spec(final com.aliyun.ros.cdk.core.IResolvable spec) {
-            this.props.spec(spec);
             return this;
         }
 

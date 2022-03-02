@@ -31,8 +31,8 @@ export interface LoadBalancerProps {
 
     /**
      * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-     * When PricingCycle = month, the value range is 1-9
-     * When PeriodUnit = year, the value range is 1-3
+     * When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
+     * When PeriodUnit = year, the value range is 1-3.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 

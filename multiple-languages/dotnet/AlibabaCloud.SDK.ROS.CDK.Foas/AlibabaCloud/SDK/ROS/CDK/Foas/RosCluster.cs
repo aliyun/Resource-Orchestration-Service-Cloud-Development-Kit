@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         {
         }
 
-        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]")]
         protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
         {
             return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
@@ -341,7 +341,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: masterSpec: Master spec, such as Ecs_4c16g.
             /// </remarks>
-            [JsiiProperty(name: "masterSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "masterSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MasterSpec
             {
                 get;
@@ -351,7 +351,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: slaveSpec: Master spec, such as Ecs_4c16g.
             /// </remarks>
-            [JsiiProperty(name: "slaveSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            [JsiiProperty(name: "slaveSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SlaveSpec
             {
                 get;
@@ -362,7 +362,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <strong>Property</strong>: masterNumber: Number of masters. Valid values: 1, 3. Default to 3.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "masterNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "masterNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MasterNumber
             {
                 get;
@@ -373,7 +373,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <strong>Property</strong>: payModel: Pay model. Valid values: pre, post. Default to post.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "payModel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "payModel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PayModel
             {
                 get;
@@ -384,7 +384,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <strong>Property</strong>: period: Pre paid time period. Unit is month. Default to 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period
             {
                 get;
@@ -395,7 +395,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <strong>Property</strong>: slaveNumber: Number of masters. Valid values: 2-1000. Default to 2.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slaveNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "slaveNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SlaveNumber
             {
                 get;

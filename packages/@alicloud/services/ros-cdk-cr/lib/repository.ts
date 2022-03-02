@@ -9,34 +9,44 @@ export { RosRepository as RepositoryProperty };
 export interface RepositoryProps {
 
     /**
-     * Property repoName: the name of the repo
+     * Property repoName: The name of the repository.
      */
     readonly repoName: string | ros.IResolvable;
 
     /**
-     * Property repoNamespace: the namespace the repo belongs to
+     * Property repoNamespace: The name of the namespace to which the repository belongs.
      */
     readonly repoNamespace: string | ros.IResolvable;
 
     /**
-     * Property repoType: repository visibility, public or private
+     * Property repoType: The type of the repository. Valid values: PUBLIC, PRIVATE.
      */
     readonly repoType: string | ros.IResolvable;
 
     /**
-     * Property summary: description or something alike
+     * Property summary: The summary of the repository.
      */
     readonly summary: string | ros.IResolvable;
 
     /**
-     * Property detail: detailed configuration in markdown format
+     * Property detail: The description of the repository.
      */
     readonly detail?: string | ros.IResolvable;
+
+    /**
+     * Property instanceId: The ID of the enterprise edition instance which repository belongs to. If not provided, will use personal edition instance as default.
+     */
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * Property repoSource: Code Source message.
      */
     readonly repoSource?: RosRepository.RepoSourceProperty | ros.IResolvable;
+
+    /**
+     * Property tagImmutability: Specifies whether the repository is immutable. Only takes effect when InstanceId is specified.
+     */
+    readonly tagImmutability?: boolean | ros.IResolvable;
 }
 
 /**
@@ -50,9 +60,29 @@ export class Repository extends ros.Resource {
      */
 
     /**
-     * Attribute RepoId: The repo id
+     * Attribute InstanceId: The ID of the enterprise edition instance which repository belongs to.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * Attribute RepoId: The repository ID.
      */
     public readonly attrRepoId: ros.IResolvable;
+
+    /**
+     * Attribute RepoName: The name of the repository.
+     */
+    public readonly attrRepoName: ros.IResolvable;
+
+    /**
+     * Attribute RepoNamespace: The name of the namespace to which the repository belongs.
+     */
+    public readonly attrRepoNamespace: ros.IResolvable;
+
+    /**
+     * Attribute RepoType: The type of the repository.
+     */
+    public readonly attrRepoType: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CR::Repository`.
@@ -65,14 +95,20 @@ export class Repository extends ros.Resource {
         super(scope, id);
 
         const rosRepository = new RosRepository(this, id,  {
+            tagImmutability: props.tagImmutability,
             repoNamespace: props.repoNamespace,
             repoType: props.repoType,
+            instanceId: props.instanceId,
             repoName: props.repoName,
             summary: props.summary,
             detail: props.detail,
             repoSource: props.repoSource,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRepository;
+        this.attrInstanceId = rosRepository.attrInstanceId;
         this.attrRepoId = rosRepository.attrRepoId;
+        this.attrRepoName = rosRepository.attrRepoName;
+        this.attrRepoNamespace = rosRepository.attrRepoNamespace;
+        this.attrRepoType = rosRepository.attrRepoType;
     }
 }

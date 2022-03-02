@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * A ROS template type:  `ALIYUN::Config::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.188Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:07.145Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -41,12 +41,6 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
      * The resource type name for this resource class.
      */
     public final static java.lang.String ROS_RESOURCE_TYPE_NAME;
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCompliancePackId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCompliancePackId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
-    }
 
     /**
      */
@@ -381,6 +375,24 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTagKeyLogicScope() {
+        return software.amazon.jsii.Kernel.get(this, "tagKeyLogicScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTagKeyLogicScope(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tagKeyLogicScope", value);
+    }
+
+    /**
+     */
+    public void setTagKeyLogicScope(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tagKeyLogicScope", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTagKeyScope() {
         return software.amazon.jsii.Kernel.get(this, "tagKeyScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -642,6 +654,23 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupIdsScope(final com.aliyun.ros.cdk.core.IResolvable resourceGroupIdsScope) {
             this.props.resourceGroupIdsScope(resourceGroupIdsScope);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tagKeyLogicScope This parameter is required.
+         */
+        public Builder tagKeyLogicScope(final java.lang.String tagKeyLogicScope) {
+            this.props.tagKeyLogicScope(tagKeyLogicScope);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tagKeyLogicScope This parameter is required.
+         */
+        public Builder tagKeyLogicScope(final com.aliyun.ros.cdk.core.IResolvable tagKeyLogicScope) {
+            this.props.tagKeyLogicScope(tagKeyLogicScope);
             return this;
         }
 

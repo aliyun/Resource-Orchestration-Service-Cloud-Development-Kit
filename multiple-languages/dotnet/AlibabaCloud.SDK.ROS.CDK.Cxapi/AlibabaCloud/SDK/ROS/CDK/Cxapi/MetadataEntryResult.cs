@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
     public class MetadataEntryResult : AlibabaCloud.SDK.ROS.CDK.Cxapi.IMetadataEntryResult
     {
         /// <summary>The path in which this entry was defined.</summary>
-        [JsiiProperty(name: "path", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "path", typeJson: "{\"primitive\":\"string\"}")]
         public string Path
         {
             get;
@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         }
 
         /// <summary>The type of the metadata entry.</summary>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
         public string Type
         {
             get;
@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         /// <strong>Default</strong>: - no data.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "data", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.Tag\"},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "data", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.Tag\"},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? Data
         {
             get;
@@ -42,7 +42,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         /// <strong>Default</strong>: - no trace.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "trace", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "trace", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
         public string[]? Trace
         {
             get;

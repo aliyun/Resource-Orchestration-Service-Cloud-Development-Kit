@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Interface for examining a construct and exposing metadata.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.499Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:06.796Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IInspectable")
 @software.amazon.jsii.Jsii.Proxy(IInspectable.Jsii$Proxy.class)
 public interface IInspectable extends software.amazon.jsii.JsiiSerializable {

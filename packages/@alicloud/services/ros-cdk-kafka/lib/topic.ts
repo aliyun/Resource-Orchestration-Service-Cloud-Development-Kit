@@ -32,12 +32,50 @@ export interface TopicProps {
     readonly topic: string | ros.IResolvable;
 
     /**
+     * Property compactTopic: The log cleanup policy for the topic. This parameter is available when the Local Storage mode is specified for the topic. Valid values:
+     * false: uses the default log cleanup policy.
+     * true: uses the Apache Kafka log compaction policy.
+     */
+    readonly compactTopic?: boolean | ros.IResolvable;
+
+    /**
+     * Property config: Supplementary configuration.
+     * Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+     */
+    readonly config?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * Property localTopic: The storage engine of the topic. Valid values:
+     * false: the Cloud Storage mode.
+     * true: the Local Storage mode.
+     */
+    readonly localTopic?: boolean | ros.IResolvable;
+
+    /**
+     * Property minInsyncReplicas: The minimum number of ISR sync replicas.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * The value must be less than the number of Topic copies.
+     * The number of synchronous replicas is limited to 1~3.
+     */
+    readonly minInsyncReplicas?: number | ros.IResolvable;
+
+    /**
      * Property partitionNum: The number of partitions in the topic. Valid values:
      * 1 to 48
      * We recommend that you set the number of partitions to a multiple of 6 to reduce the
      * risk of data skew.Note:For special requirements,submit a ticket.
      */
     readonly partitionNum?: number | ros.IResolvable;
+
+    /**
+     * Property replicationFactor: The number of copies of the topic.
+     * This parameter can only be specified if the LocalTopic value is true.
+     * The number of copies is limited to 1~3.
+     * Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
+     */
+    readonly replicationFactor?: number | ros.IResolvable;
 }
 
 /**
@@ -73,8 +111,13 @@ You can call the GetInstanceList operation to query instances.
 
         const rosTopic = new RosTopic(this, id,  {
             partitionNum: props.partitionNum,
+            compactTopic: props.compactTopic,
+            replicationFactor: props.replicationFactor,
             instanceId: props.instanceId,
+            config: props.config,
+            minInsyncReplicas: props.minInsyncReplicas,
             topic: props.topic,
+            localTopic: props.localTopic,
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTopic;

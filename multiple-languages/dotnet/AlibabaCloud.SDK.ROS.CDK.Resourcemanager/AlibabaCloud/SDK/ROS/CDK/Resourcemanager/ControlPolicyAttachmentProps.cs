@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
     public class ControlPolicyAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IControlPolicyAttachmentProps
     {
         /// <summary>Property policyId: PolicyId.</summary>
-        [JsiiProperty(name: "policyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "policyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object PolicyId
         {
             get;
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         }
 
         /// <summary>Property targetId: TargetId.</summary>
-        [JsiiProperty(name: "targetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "targetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TargetId
         {
             get;

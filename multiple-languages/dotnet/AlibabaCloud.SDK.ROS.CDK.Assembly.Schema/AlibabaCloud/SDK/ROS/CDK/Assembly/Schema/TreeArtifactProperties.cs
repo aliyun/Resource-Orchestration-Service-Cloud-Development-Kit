@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
     public class TreeArtifactProperties : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.ITreeArtifactProperties
     {
         /// <summary>Filename of the tree artifact.</summary>
-        [JsiiProperty(name: "file", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "file", typeJson: "{\"primitive\":\"string\"}")]
         public string File
         {
             get;

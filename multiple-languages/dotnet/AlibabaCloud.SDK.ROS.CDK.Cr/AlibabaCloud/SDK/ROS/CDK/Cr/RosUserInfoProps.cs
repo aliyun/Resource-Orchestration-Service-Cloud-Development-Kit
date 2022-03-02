@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <remarks>
         /// <strong>Property</strong>: user: User info. If user exists, will update user info.
         /// </remarks>
-        [JsiiProperty(name: "user", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cr.RosUserInfo.UserProperty\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "user", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cr.RosUserInfo.UserProperty\"}]}}")]
         public object User
         {
             get;

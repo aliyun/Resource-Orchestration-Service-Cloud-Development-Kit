@@ -798,6 +798,650 @@ export class RosGrantCcnToCen extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::SAG::SerialNumberBinding`
+ */
+export interface RosSerialNumberBindingProps {
+
+    /**
+     * @Property serialNumber: The serial number (SN) of the SAG device.
+     */
+    readonly serialNumber: string | ros.IResolvable;
+
+    /**
+     * @Property smartAgId: The ID of the SAG instance.
+     */
+    readonly smartAgId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSerialNumberBindingProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSerialNumberBindingProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSerialNumberBindingPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('serialNumber', ros.requiredValidator)(properties.serialNumber));
+    errors.collect(ros.propertyValidator('serialNumber', ros.validateString)(properties.serialNumber));
+    errors.collect(ros.propertyValidator('smartAgId', ros.requiredValidator)(properties.smartAgId));
+    errors.collect(ros.propertyValidator('smartAgId', ros.validateString)(properties.smartAgId));
+    return errors.wrap('supplied properties not correct for "RosSerialNumberBindingProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::SerialNumberBinding` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSerialNumberBindingProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::SerialNumberBinding` resource.
+ */
+// @ts-ignore TS6133
+function rosSerialNumberBindingPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSerialNumberBindingPropsValidator(properties).assertSuccess();
+    }
+    return {
+      SerialNumber: ros.stringToRosTemplate(properties.serialNumber),
+      SmartAGId: ros.stringToRosTemplate(properties.smartAgId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SAG::SerialNumberBinding`
+ */
+export class RosSerialNumberBinding extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::SerialNumberBinding";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute SmartAGId: The ID of the SAG instance.
+     */
+    public readonly attrSmartAgId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property serialNumber: The serial number (SN) of the SAG device.
+     */
+    public serialNumber: string | ros.IResolvable;
+
+    /**
+     * @Property smartAgId: The ID of the SAG instance.
+     */
+    public smartAgId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::SAG::SerialNumberBinding`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSerialNumberBindingProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSerialNumberBinding.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSmartAgId = this.getAtt('SmartAGId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.serialNumber = props.serialNumber;
+        this.smartAgId = props.smartAgId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            serialNumber: this.serialNumber,
+            smartAgId: this.smartAgId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSerialNumberBindingPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::SAG::SmartAccessGateway`
+ */
+export interface RosSmartAccessGatewayProps {
+
+    /**
+     * @Property buyerMessage: The remarks left by the buyer.
+     */
+    readonly buyerMessage: string | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the SAG instance. 
+     * Set the value to PREPAY, which specifies the subscription billing method.
+     */
+    readonly chargeType: string | ros.IResolvable;
+
+    /**
+     * @Property hardWareSpec: The type of the SAG instance. Valid values:
+     * sag-100wm
+     * sag-1000
+     * sag-vcpe
+     */
+    readonly hardWareSpec: string | ros.IResolvable;
+
+    /**
+     * @Property haType: The deployment mode. Valid values:
+     * no_backup: You buy only one SAG device to connect private networks to Alibaba Cloud.
+     * cold_backup: You buy two SAG devices in active-standby mode. One SAG device serves as an active
+     * device and the other serves as a standby device. Only the active device is connected
+     * to Alibaba Cloud. If the active device is not working as expected, you must manually
+     * perform a switchover.
+     * warm_backup: You buy two SAG devices in active-active mode. Both SAG devices are connected to
+     * Alibaba Cloud. If an active device is not working as expected, a failover is automatically
+     * performed.
+     * Note If you want to create an SAG vCPE instance, set the value to warm_backup.
+     */
+    readonly haType: string | ros.IResolvable;
+
+    /**
+     * @Property maxBandWidth: The bandwidth of the SAG instance.
+     * If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit/s.
+     * If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit/s.
+     * If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit/s.
+     */
+    readonly maxBandWidth: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the SAG instance. Unit: months.
+     * Valid values: 1 to 9, 12, 24, and 36.
+     */
+    readonly period: number | ros.IResolvable;
+
+    /**
+     * @Property receiverAddress: The detailed address of the recipient.
+     */
+    readonly receiverAddress: string | ros.IResolvable;
+
+    /**
+     * @Property receiverCity: The city of the recipient address.
+     */
+    readonly receiverCity: string | ros.IResolvable;
+
+    /**
+     * @Property receiverCountry: The country of the recipient address.
+     */
+    readonly receiverCountry: string | ros.IResolvable;
+
+    /**
+     * @Property receiverDistrict: The district of the recipient address.
+     */
+    readonly receiverDistrict: string | ros.IResolvable;
+
+    /**
+     * @Property receiverEmail: The email address of the recipient.
+     */
+    readonly receiverEmail: string | ros.IResolvable;
+
+    /**
+     * @Property receiverMobile: The mobile phone number of the recipient.
+     */
+    readonly receiverMobile: string | ros.IResolvable;
+
+    /**
+     * @Property receiverName: The name of the recipient.
+     */
+    readonly receiverName: string | ros.IResolvable;
+
+    /**
+     * @Property receiverState: The province of the recipient address.
+     */
+    readonly receiverState: string | ros.IResolvable;
+
+    /**
+     * @Property receiverTown: The town of the recipient address.
+     */
+    readonly receiverTown: string | ros.IResolvable;
+
+    /**
+     * @Property receiverZip: The postcode of the recipient address.
+     */
+    readonly receiverZip: string | ros.IResolvable;
+
+    /**
+     * @Property activate: Activate SAG or not. Default is False
+     */
+    readonly activate?: boolean | ros.IResolvable;
+
+    /**
+     * @Property alreadyHaveSag: Specifies whether you already have an SAG device. Valid values:
+     * true: yes
+     * false (default): no
+     */
+    readonly alreadyHaveSag?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Specifies whether to enable auto-payment for the instance. Valid values:
+     * true: yes
+     * false: no
+     * If you set the parameter to false, go to Billing Management to complete the payment
+     * after you call this operation. After you complete the payment, the instance can be
+     * created.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property cidrBlock: The CIDR blocks of terminals in the private network. Make sure that the CIDR blocks
+     * do not overlap with each other.
+     * If the LAN port of the SAG device dynamically assigns IP addresses, IP addresses within
+     * the first CIDR block are assigned to terminals that have the Dynamic Host Configuration
+     * Protocol (DHCP) enabled.
+     */
+    readonly cidrBlock?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the SAG instance.
+     * The description must be 2 to 256 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the SAG instance.
+     * The name must be 2 to 128 characters in length and can contain digits, periods (.),
+     * underscores (_), and hyphens (-). It must start with a letter.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property receiverPhone: The landline phone number of the recipient.
+     */
+    readonly receiverPhone?: string | ros.IResolvable;
+
+    /**
+     * @Property routingStrategy: The policy to advertise routes from the private network to Alibaba Cloud.
+     * static: static routing.
+     * dynamic: dynamic routing.
+     */
+    readonly routingStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property securityLockThreshold: The time that a disconnected SAG device remain locked. The time must be no shorter
+     * than zero second.
+     * Unit: second.
+     */
+    readonly securityLockThreshold?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSmartAccessGatewayProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSmartAccessGatewayProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSmartAccessGatewayPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('receiverCountry', ros.requiredValidator)(properties.receiverCountry));
+    errors.collect(ros.propertyValidator('receiverCountry', ros.validateString)(properties.receiverCountry));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('receiverZip', ros.requiredValidator)(properties.receiverZip));
+    errors.collect(ros.propertyValidator('receiverZip', ros.validateString)(properties.receiverZip));
+    errors.collect(ros.propertyValidator('buyerMessage', ros.requiredValidator)(properties.buyerMessage));
+    errors.collect(ros.propertyValidator('buyerMessage', ros.validateString)(properties.buyerMessage));
+    errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
+    errors.collect(ros.propertyValidator('receiverTown', ros.requiredValidator)(properties.receiverTown));
+    errors.collect(ros.propertyValidator('receiverTown', ros.validateString)(properties.receiverTown));
+    errors.collect(ros.propertyValidator('hardWareSpec', ros.requiredValidator)(properties.hardWareSpec));
+    errors.collect(ros.propertyValidator('hardWareSpec', ros.validateString)(properties.hardWareSpec));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('receiverPhone', ros.validateString)(properties.receiverPhone));
+    errors.collect(ros.propertyValidator('receiverCity', ros.requiredValidator)(properties.receiverCity));
+    errors.collect(ros.propertyValidator('receiverCity', ros.validateString)(properties.receiverCity));
+    errors.collect(ros.propertyValidator('routingStrategy', ros.validateString)(properties.routingStrategy));
+    errors.collect(ros.propertyValidator('securityLockThreshold', ros.validateNumber)(properties.securityLockThreshold));
+    errors.collect(ros.propertyValidator('receiverAddress', ros.requiredValidator)(properties.receiverAddress));
+    errors.collect(ros.propertyValidator('receiverAddress', ros.validateString)(properties.receiverAddress));
+    errors.collect(ros.propertyValidator('alreadyHaveSag', ros.validateBoolean)(properties.alreadyHaveSag));
+    errors.collect(ros.propertyValidator('haType', ros.requiredValidator)(properties.haType));
+    if(properties.haType && (typeof properties.haType) !== 'object') {
+        errors.collect(ros.propertyValidator('haType', ros.validateAllowedValues)({
+          data: properties.haType,
+          allowedValues: ["cold_backup","no_backup","warm_backup"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('haType', ros.validateString)(properties.haType));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('maxBandWidth', ros.requiredValidator)(properties.maxBandWidth));
+    errors.collect(ros.propertyValidator('maxBandWidth', ros.validateNumber)(properties.maxBandWidth));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('receiverMobile', ros.requiredValidator)(properties.receiverMobile));
+    errors.collect(ros.propertyValidator('receiverMobile', ros.validateString)(properties.receiverMobile));
+    errors.collect(ros.propertyValidator('receiverDistrict', ros.requiredValidator)(properties.receiverDistrict));
+    errors.collect(ros.propertyValidator('receiverDistrict', ros.validateString)(properties.receiverDistrict));
+    errors.collect(ros.propertyValidator('activate', ros.validateBoolean)(properties.activate));
+    errors.collect(ros.propertyValidator('chargeType', ros.requiredValidator)(properties.chargeType));
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('receiverState', ros.requiredValidator)(properties.receiverState));
+    errors.collect(ros.propertyValidator('receiverState', ros.validateString)(properties.receiverState));
+    errors.collect(ros.propertyValidator('receiverName', ros.requiredValidator)(properties.receiverName));
+    errors.collect(ros.propertyValidator('receiverName', ros.validateString)(properties.receiverName));
+    errors.collect(ros.propertyValidator('receiverEmail', ros.requiredValidator)(properties.receiverEmail));
+    errors.collect(ros.propertyValidator('receiverEmail', ros.validateString)(properties.receiverEmail));
+    return errors.wrap('supplied properties not correct for "RosSmartAccessGatewayProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::SmartAccessGateway` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSmartAccessGatewayProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::SmartAccessGateway` resource.
+ */
+// @ts-ignore TS6133
+function rosSmartAccessGatewayPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSmartAccessGatewayPropsValidator(properties).assertSuccess();
+    }
+    return {
+      BuyerMessage: ros.stringToRosTemplate(properties.buyerMessage),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      HardWareSpec: ros.stringToRosTemplate(properties.hardWareSpec),
+      HaType: ros.stringToRosTemplate(properties.haType),
+      MaxBandWidth: ros.numberToRosTemplate(properties.maxBandWidth),
+      Period: ros.numberToRosTemplate(properties.period),
+      ReceiverAddress: ros.stringToRosTemplate(properties.receiverAddress),
+      ReceiverCity: ros.stringToRosTemplate(properties.receiverCity),
+      ReceiverCountry: ros.stringToRosTemplate(properties.receiverCountry),
+      ReceiverDistrict: ros.stringToRosTemplate(properties.receiverDistrict),
+      ReceiverEmail: ros.stringToRosTemplate(properties.receiverEmail),
+      ReceiverMobile: ros.stringToRosTemplate(properties.receiverMobile),
+      ReceiverName: ros.stringToRosTemplate(properties.receiverName),
+      ReceiverState: ros.stringToRosTemplate(properties.receiverState),
+      ReceiverTown: ros.stringToRosTemplate(properties.receiverTown),
+      ReceiverZip: ros.stringToRosTemplate(properties.receiverZip),
+      Activate: ros.booleanToRosTemplate(properties.activate),
+      AlreadyHaveSag: ros.booleanToRosTemplate(properties.alreadyHaveSag),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      CidrBlock: ros.stringToRosTemplate(properties.cidrBlock),
+      Description: ros.stringToRosTemplate(properties.description),
+      Name: ros.stringToRosTemplate(properties.name),
+      ReceiverPhone: ros.stringToRosTemplate(properties.receiverPhone),
+      RoutingStrategy: ros.stringToRosTemplate(properties.routingStrategy),
+      SecurityLockThreshold: ros.numberToRosTemplate(properties.securityLockThreshold),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SAG::SmartAccessGateway`
+ */
+export class RosSmartAccessGateway extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::SmartAccessGateway";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute OrderId: The ID of the order.
+     */
+    public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * @Attribute SmartAGId: The ID of the SAG instance.
+     */
+    public readonly attrSmartAgId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property buyerMessage: The remarks left by the buyer.
+     */
+    public buyerMessage: string | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the SAG instance. 
+     * Set the value to PREPAY, which specifies the subscription billing method.
+     */
+    public chargeType: string | ros.IResolvable;
+
+    /**
+     * @Property hardWareSpec: The type of the SAG instance. Valid values:
+     * sag-100wm
+     * sag-1000
+     * sag-vcpe
+     */
+    public hardWareSpec: string | ros.IResolvable;
+
+    /**
+     * @Property haType: The deployment mode. Valid values:
+     * no_backup: You buy only one SAG device to connect private networks to Alibaba Cloud.
+     * cold_backup: You buy two SAG devices in active-standby mode. One SAG device serves as an active
+     * device and the other serves as a standby device. Only the active device is connected
+     * to Alibaba Cloud. If the active device is not working as expected, you must manually
+     * perform a switchover.
+     * warm_backup: You buy two SAG devices in active-active mode. Both SAG devices are connected to
+     * Alibaba Cloud. If an active device is not working as expected, a failover is automatically
+     * performed.
+     * Note If you want to create an SAG vCPE instance, set the value to warm_backup.
+     */
+    public haType: string | ros.IResolvable;
+
+    /**
+     * @Property maxBandWidth: The bandwidth of the SAG instance.
+     * If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit/s.
+     * If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit/s.
+     * If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit/s.
+     */
+    public maxBandWidth: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the SAG instance. Unit: months.
+     * Valid values: 1 to 9, 12, 24, and 36.
+     */
+    public period: number | ros.IResolvable;
+
+    /**
+     * @Property receiverAddress: The detailed address of the recipient.
+     */
+    public receiverAddress: string | ros.IResolvable;
+
+    /**
+     * @Property receiverCity: The city of the recipient address.
+     */
+    public receiverCity: string | ros.IResolvable;
+
+    /**
+     * @Property receiverCountry: The country of the recipient address.
+     */
+    public receiverCountry: string | ros.IResolvable;
+
+    /**
+     * @Property receiverDistrict: The district of the recipient address.
+     */
+    public receiverDistrict: string | ros.IResolvable;
+
+    /**
+     * @Property receiverEmail: The email address of the recipient.
+     */
+    public receiverEmail: string | ros.IResolvable;
+
+    /**
+     * @Property receiverMobile: The mobile phone number of the recipient.
+     */
+    public receiverMobile: string | ros.IResolvable;
+
+    /**
+     * @Property receiverName: The name of the recipient.
+     */
+    public receiverName: string | ros.IResolvable;
+
+    /**
+     * @Property receiverState: The province of the recipient address.
+     */
+    public receiverState: string | ros.IResolvable;
+
+    /**
+     * @Property receiverTown: The town of the recipient address.
+     */
+    public receiverTown: string | ros.IResolvable;
+
+    /**
+     * @Property receiverZip: The postcode of the recipient address.
+     */
+    public receiverZip: string | ros.IResolvable;
+
+    /**
+     * @Property activate: Activate SAG or not. Default is False
+     */
+    public activate: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property alreadyHaveSag: Specifies whether you already have an SAG device. Valid values:
+     * true: yes
+     * false (default): no
+     */
+    public alreadyHaveSag: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoPay: Specifies whether to enable auto-payment for the instance. Valid values:
+     * true: yes
+     * false: no
+     * If you set the parameter to false, go to Billing Management to complete the payment
+     * after you call this operation. After you complete the payment, the instance can be
+     * created.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property cidrBlock: The CIDR blocks of terminals in the private network. Make sure that the CIDR blocks
+     * do not overlap with each other.
+     * If the LAN port of the SAG device dynamically assigns IP addresses, IP addresses within
+     * the first CIDR block are assigned to terminals that have the Dynamic Host Configuration
+     * Protocol (DHCP) enabled.
+     */
+    public cidrBlock: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the SAG instance.
+     * The description must be 2 to 256 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the SAG instance.
+     * The name must be 2 to 128 characters in length and can contain digits, periods (.),
+     * underscores (_), and hyphens (-). It must start with a letter.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property receiverPhone: The landline phone number of the recipient.
+     */
+    public receiverPhone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routingStrategy: The policy to advertise routes from the private network to Alibaba Cloud.
+     * static: static routing.
+     * dynamic: dynamic routing.
+     */
+    public routingStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityLockThreshold: The time that a disconnected SAG device remain locked. The time must be no shorter
+     * than zero second.
+     * Unit: second.
+     */
+    public securityLockThreshold: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SAG::SmartAccessGateway`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSmartAccessGatewayProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSmartAccessGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrSmartAgId = this.getAtt('SmartAGId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.buyerMessage = props.buyerMessage;
+        this.chargeType = props.chargeType;
+        this.hardWareSpec = props.hardWareSpec;
+        this.haType = props.haType;
+        this.maxBandWidth = props.maxBandWidth;
+        this.period = props.period;
+        this.receiverAddress = props.receiverAddress;
+        this.receiverCity = props.receiverCity;
+        this.receiverCountry = props.receiverCountry;
+        this.receiverDistrict = props.receiverDistrict;
+        this.receiverEmail = props.receiverEmail;
+        this.receiverMobile = props.receiverMobile;
+        this.receiverName = props.receiverName;
+        this.receiverState = props.receiverState;
+        this.receiverTown = props.receiverTown;
+        this.receiverZip = props.receiverZip;
+        this.activate = props.activate;
+        this.alreadyHaveSag = props.alreadyHaveSag;
+        this.autoPay = props.autoPay;
+        this.cidrBlock = props.cidrBlock;
+        this.description = props.description;
+        this.name = props.name;
+        this.receiverPhone = props.receiverPhone;
+        this.routingStrategy = props.routingStrategy;
+        this.securityLockThreshold = props.securityLockThreshold;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            buyerMessage: this.buyerMessage,
+            chargeType: this.chargeType,
+            hardWareSpec: this.hardWareSpec,
+            haType: this.haType,
+            maxBandWidth: this.maxBandWidth,
+            period: this.period,
+            receiverAddress: this.receiverAddress,
+            receiverCity: this.receiverCity,
+            receiverCountry: this.receiverCountry,
+            receiverDistrict: this.receiverDistrict,
+            receiverEmail: this.receiverEmail,
+            receiverMobile: this.receiverMobile,
+            receiverName: this.receiverName,
+            receiverState: this.receiverState,
+            receiverTown: this.receiverTown,
+            receiverZip: this.receiverZip,
+            activate: this.activate,
+            alreadyHaveSag: this.alreadyHaveSag,
+            autoPay: this.autoPay,
+            cidrBlock: this.cidrBlock,
+            description: this.description,
+            name: this.name,
+            receiverPhone: this.receiverPhone,
+            routingStrategy: this.routingStrategy,
+            securityLockThreshold: this.securityLockThreshold,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSmartAccessGatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::SAG::SmartAccessGatewayBinding`
  */
 export interface RosSmartAccessGatewayBindingProps {

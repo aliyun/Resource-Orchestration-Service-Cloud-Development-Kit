@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// the bootstrap environment with standard names but only differnet qualifiers.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? Qualifier
         {
             get;

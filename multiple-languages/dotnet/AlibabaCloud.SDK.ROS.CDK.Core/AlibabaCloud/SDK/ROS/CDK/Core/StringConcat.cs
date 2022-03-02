@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>Join the fragment on the left and on the right.</summary>
-        [JsiiMethod(name: "join", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"left\",\"type\":{\"primitive\":\"any\"}},{\"name\":\"right\",\"type\":{\"primitive\":\"any\"}}]", isOverride: true)]
+        [JsiiMethod(name: "join", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"left\",\"type\":{\"primitive\":\"any\"}},{\"name\":\"right\",\"type\":{\"primitive\":\"any\"}}]")]
         public virtual object Join(object left, object right)
         {
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(object), typeof(object)}, new object[]{left, right})!;

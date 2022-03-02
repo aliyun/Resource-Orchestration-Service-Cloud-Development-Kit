@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         /// <remarks>
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
-        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}")]
         [System.Obsolete()]
         public string Key
         {
@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         ///
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
-        [JsiiProperty(name: "props", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOverride: true)]
+        [JsiiProperty(name: "props", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         [System.Obsolete()]
         public System.Collections.Generic.IDictionary<string, object> Props
         {
@@ -53,7 +53,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         ///
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
-        [JsiiProperty(name: "provider", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        [JsiiProperty(name: "provider", typeJson: "{\"primitive\":\"string\"}")]
         [System.Obsolete()]
         public string Provider
         {

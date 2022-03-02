@@ -32,7 +32,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         {
         }
 
-        /// <summary>Attribute NamespaceId: The namespace id.</summary>
+        /// <summary>Attribute InstanceId: The ID of the enterprise edition instance which namespace belongs to.</summary>
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute Namespace: The namespace.</summary>
+        [JsiiProperty(name: "attrNamespace", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNamespace
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute NamespaceId: The namespace ID.</summary>
         [JsiiProperty(name: "attrNamespaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNamespaceId
         {
