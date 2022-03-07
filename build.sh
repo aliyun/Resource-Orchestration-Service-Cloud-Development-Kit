@@ -23,13 +23,14 @@ setup_dependency() {
     esac
 
     rm -rf "$root/packages/@alicloud/test"
+    lerna link
     lerna bootstrap
     npm install
 }
 
 
 clear_dependency() {
-    lerna clean
+    lerna clean -y
 }
 
 
@@ -338,12 +339,12 @@ copy_js() {
       rm -f $f
     done
 
-    lerna clean
+    lerna clean -y
     lerna run pack
 
     for f in $(find packages -name "*.tgz" | grep -v dist); do
       echo "Merging $f" >&2
-      cp -r $f "$js_dir/"
+      cp -rf $f "$js_dir/"
     done
 }
 

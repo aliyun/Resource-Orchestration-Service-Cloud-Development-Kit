@@ -120,11 +120,6 @@ export interface InstanceGroupProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -419,7 +414,6 @@ export class InstanceGroup extends ros.Resource {
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
             eniMappings: props.eniMappings,
             systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,
-            internetMaxBandwidthIn: props.internetMaxBandwidthIn === undefined || props.internetMaxBandwidthIn === null ? 200 : props.internetMaxBandwidthIn,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceGroup;
         this.attrHostNames = rosInstanceGroup.attrHostNames;

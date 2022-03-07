@@ -54,6 +54,12 @@ export interface ServiceProps {
     readonly tracingConfig?: RosService.TracingConfigProperty | ros.IResolvable;
 
     /**
+     * Property vpcBindings: Function Invocation only by Specified VPCs. 
+     * By default, you can invoke the function by using the Internet endpoint and internal endpoint after a function is created. If you want the function to be invoked only by using specified VPCs, but not the Internet endpoint or internal endpoint, you must bind the specified VPCs to the service.
+     */
+    readonly vpcBindings?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
      */
     readonly vpcConfig?: RosService.VpcConfigProperty | ros.IResolvable;
@@ -127,6 +133,7 @@ export class Service extends ros.Resource {
             tracingConfig: props.tracingConfig,
             vpcConfig: props.vpcConfig,
             serviceName: props.serviceName,
+            vpcBindings: props.vpcBindings,
             tags: props.tags,
             nasConfig: props.nasConfig,
             logConfig: props.logConfig,

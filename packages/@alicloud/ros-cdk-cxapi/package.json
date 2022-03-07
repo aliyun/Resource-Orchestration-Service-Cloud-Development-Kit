@@ -1,6 +1,6 @@
 {
   "name": "@alicloud/ros-cdk-cxapi",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",
@@ -58,10 +58,10 @@
     "semver"
   ],
   "dependencies": {
-    "@alicloud/ros-cdk-assembly-schema": "^1.0.6",
+    "@alicloud/ros-cdk-assembly-schema": "^1.0.7",
     "semver": "^7.2.2"
   },
   "peerDependencies": {
-    "@alicloud/ros-cdk-assembly-schema": "^1.0.6"
+    "@alicloud/ros-cdk-assembly-schema": "^1.0.7"
   }
 }

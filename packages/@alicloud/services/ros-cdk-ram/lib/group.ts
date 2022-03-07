@@ -19,9 +19,19 @@ export interface GroupProps {
     readonly comments?: string | ros.IResolvable;
 
     /**
+     * Property deletionForce: Whether force detach the policies attached to the group. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosGroup.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property policyAttachments: System and custom policy names to attach.
+     */
+    readonly policyAttachments?: RosGroup.PolicyAttachmentsProperty | ros.IResolvable;
 }
 
 /**
@@ -51,7 +61,9 @@ export class Group extends ros.Resource {
 
         const rosGroup = new RosGroup(this, id,  {
             groupName: props.groupName,
+            policyAttachments: props.policyAttachments,
             policies: props.policies,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             comments: props.comments,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGroup;

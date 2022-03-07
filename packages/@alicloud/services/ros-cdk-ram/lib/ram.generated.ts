@@ -381,9 +381,19 @@ export interface RosGroupProps {
     readonly comments?: string | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Whether force detach the policies attached to the group. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * @Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosGroup.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property policyAttachments: System and custom policy names to attach.
+     */
+    readonly policyAttachments?: RosGroup.PolicyAttachmentsProperty | ros.IResolvable;
 }
 
 /**
@@ -398,7 +408,9 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('policyAttachments', RosGroup_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
     errors.collect(ros.propertyValidator('policies', ros.listValidator(RosGroup_PoliciesPropertyValidator))(properties.policies));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     if(properties.comments && (Array.isArray(properties.comments) || (typeof properties.comments) === 'string')) {
         errors.collect(ros.propertyValidator('comments', ros.validateLength)({
             data: properties.comments.length,
@@ -426,7 +438,9 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
     return {
       GroupName: ros.stringToRosTemplate(properties.groupName),
       Comments: ros.stringToRosTemplate(properties.comments),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       Policies: ros.listMapper(rosGroupPoliciesPropertyToRosTemplate)(properties.policies),
+      PolicyAttachments: rosGroupPolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
     };
 }
 
@@ -463,9 +477,19 @@ export class RosGroup extends ros.RosResource {
     public comments: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionForce: Whether force detach the policies attached to the group. Default value is false.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property policies: Describes what actions are allowed on what resources.
      */
     public policies: Array<RosGroup.PoliciesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property policyAttachments: System and custom policy names to attach.
+     */
+    public policyAttachments: RosGroup.PolicyAttachmentsProperty | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RAM::Group`.
@@ -481,7 +505,9 @@ export class RosGroup extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
         this.comments = props.comments;
+        this.deletionForce = props.deletionForce;
         this.policies = props.policies;
+        this.policyAttachments = props.policyAttachments;
     }
 
 
@@ -489,7 +515,9 @@ export class RosGroup extends ros.RosResource {
         return {
             groupName: this.groupName,
             comments: this.comments,
+            deletionForce: this.deletionForce,
             policies: this.policies,
+            policyAttachments: this.policyAttachments,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -556,6 +584,67 @@ function rosGroupPoliciesPropertyToRosTemplate(properties: any): any {
       Description: ros.stringToRosTemplate(properties.description),
       PolicyName: ros.stringToRosTemplate(properties.policyName),
       PolicyDocument: rosGroupPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
+    };
+}
+
+export namespace RosGroup {
+    /**
+     * @stability external
+     */
+    export interface PolicyAttachmentsProperty {
+        /**
+         * @Property custom: undefined
+         */
+        readonly custom?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property system: undefined
+         */
+        readonly system?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PolicyAttachmentsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PolicyAttachmentsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosGroup_PolicyAttachmentsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.custom && (Array.isArray(properties.custom) || (typeof properties.custom) === 'string')) {
+        errors.collect(ros.propertyValidator('custom', ros.validateLength)({
+            data: properties.custom.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('custom', ros.listValidator(ros.validateString))(properties.custom));
+    if(properties.system && (Array.isArray(properties.system) || (typeof properties.system) === 'string')) {
+        errors.collect(ros.propertyValidator('system', ros.validateLength)({
+            data: properties.system.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('system', ros.listValidator(ros.validateString))(properties.system));
+    return errors.wrap('supplied properties not correct for "PolicyAttachmentsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::Group.PolicyAttachments` resource
+ *
+ * @param properties - the TypeScript properties of a `PolicyAttachmentsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::Group.PolicyAttachments` resource.
+ */
+// @ts-ignore TS6133
+function rosGroupPolicyAttachmentsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosGroup_PolicyAttachmentsPropertyValidator(properties).assertSuccess();
+    return {
+      Custom: ros.listMapper(ros.stringToRosTemplate)(properties.custom),
+      System: ros.listMapper(ros.stringToRosTemplate)(properties.system),
     };
 }
 
@@ -1113,6 +1202,11 @@ export interface RosRoleProps {
      * @Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosRole.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property policyAttachments: System and custom policy names to attach.
+     */
+    readonly policyAttachments?: RosRole.PolicyAttachmentsProperty | ros.IResolvable;
 }
 
 /**
@@ -1135,6 +1229,9 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('maxSessionDuration', ros.validateNumber)(properties.maxSessionDuration));
     errors.collect(ros.propertyValidator('roleName', ros.requiredValidator)(properties.roleName));
     errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
+    errors.collect(ros.propertyValidator('policyAttachments', RosRole_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
+    errors.collect(ros.propertyValidator('policies', ros.listValidator(RosRole_PoliciesPropertyValidator))(properties.policies));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -1143,8 +1240,6 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('policies', ros.listValidator(RosRole_PoliciesPropertyValidator))(properties.policies));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('assumeRolePolicyDocument', ros.requiredValidator)(properties.assumeRolePolicyDocument));
     errors.collect(ros.propertyValidator('assumeRolePolicyDocument', RosRole_AssumeRolePolicyDocumentPropertyValidator)(properties.assumeRolePolicyDocument));
     return errors.wrap('supplied properties not correct for "RosRoleProps"');
@@ -1170,6 +1265,7 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
       Description: ros.stringToRosTemplate(properties.description),
       MaxSessionDuration: ros.numberToRosTemplate(properties.maxSessionDuration),
       Policies: ros.listMapper(rosRolePoliciesPropertyToRosTemplate)(properties.policies),
+      PolicyAttachments: rosRolePolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
     };
 }
 
@@ -1238,6 +1334,11 @@ export class RosRole extends ros.RosResource {
     public policies: Array<RosRole.PoliciesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property policyAttachments: System and custom policy names to attach.
+     */
+    public policyAttachments: RosRole.PolicyAttachmentsProperty | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::RAM::Role`.
      *
      * @param scope - scope in which this resource is defined
@@ -1257,6 +1358,7 @@ export class RosRole extends ros.RosResource {
         this.description = props.description;
         this.maxSessionDuration = props.maxSessionDuration;
         this.policies = props.policies;
+        this.policyAttachments = props.policyAttachments;
     }
 
 
@@ -1268,6 +1370,7 @@ export class RosRole extends ros.RosResource {
             description: this.description,
             maxSessionDuration: this.maxSessionDuration,
             policies: this.policies,
+            policyAttachments: this.policyAttachments,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1544,6 +1647,67 @@ function rosRolePoliciesPropertyToRosTemplate(properties: any): any {
       Description: ros.stringToRosTemplate(properties.description),
       PolicyName: ros.stringToRosTemplate(properties.policyName),
       PolicyDocument: rosRolePolicyDocumentPropertyToRosTemplate(properties.policyDocument),
+    };
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface PolicyAttachmentsProperty {
+        /**
+         * @Property custom: undefined
+         */
+        readonly custom?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property system: undefined
+         */
+        readonly system?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PolicyAttachmentsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PolicyAttachmentsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_PolicyAttachmentsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.custom && (Array.isArray(properties.custom) || (typeof properties.custom) === 'string')) {
+        errors.collect(ros.propertyValidator('custom', ros.validateLength)({
+            data: properties.custom.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('custom', ros.listValidator(ros.validateString))(properties.custom));
+    if(properties.system && (Array.isArray(properties.system) || (typeof properties.system) === 'string')) {
+        errors.collect(ros.propertyValidator('system', ros.validateLength)({
+            data: properties.system.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('system', ros.listValidator(ros.validateString))(properties.system));
+    return errors.wrap('supplied properties not correct for "PolicyAttachmentsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::Role.PolicyAttachments` resource
+ *
+ * @param properties - the TypeScript properties of a `PolicyAttachmentsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::Role.PolicyAttachments` resource.
+ */
+// @ts-ignore TS6133
+function rosRolePolicyAttachmentsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_PolicyAttachmentsPropertyValidator(properties).assertSuccess();
+    return {
+      Custom: ros.listMapper(ros.stringToRosTemplate)(properties.custom),
+      System: ros.listMapper(ros.stringToRosTemplate)(properties.system),
     };
 }
 
@@ -2220,6 +2384,11 @@ export interface RosUserProps {
     readonly comments?: string | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Whether force detach the policies and groups attached to the user. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * @Property displayName: Display name, up to 128 characters or Chinese characters.
      */
     readonly displayName?: string | ros.IResolvable;
@@ -2248,6 +2417,11 @@ export interface RosUserProps {
      * @Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosUser.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property policyAttachments: System and custom policy names to attach.
+     */
+    readonly policyAttachments?: RosUser.PolicyAttachmentsProperty | ros.IResolvable;
 }
 
 /**
@@ -2264,6 +2438,8 @@ function RosUserPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
     errors.collect(ros.propertyValidator('policies', ros.listValidator(RosUser_PoliciesPropertyValidator))(properties.policies));
     errors.collect(ros.propertyValidator('email', ros.validateString)(properties.email));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('policyAttachments', RosUser_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
     if(properties.comments && (Array.isArray(properties.comments) || (typeof properties.comments) === 'string')) {
         errors.collect(ros.propertyValidator('comments', ros.validateLength)({
             data: properties.comments.length,
@@ -2295,12 +2471,14 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
     return {
       UserName: ros.stringToRosTemplate(properties.userName),
       Comments: ros.stringToRosTemplate(properties.comments),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       DisplayName: ros.stringToRosTemplate(properties.displayName),
       Email: ros.stringToRosTemplate(properties.email),
       Groups: ros.listMapper(ros.objectToRosTemplate)(properties.groups),
       LoginProfile: rosUserLoginProfilePropertyToRosTemplate(properties.loginProfile),
       MobilePhone: ros.stringToRosTemplate(properties.mobilePhone),
       Policies: ros.listMapper(rosUserPoliciesPropertyToRosTemplate)(properties.policies),
+      PolicyAttachments: rosUserPolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
     };
 }
 
@@ -2352,6 +2530,11 @@ export class RosUser extends ros.RosResource {
     public comments: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionForce: Whether force detach the policies and groups attached to the user. Default value is false.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property displayName: Display name, up to 128 characters or Chinese characters.
      */
     public displayName: string | ros.IResolvable | undefined;
@@ -2382,6 +2565,11 @@ export class RosUser extends ros.RosResource {
     public policies: Array<RosUser.PoliciesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property policyAttachments: System and custom policy names to attach.
+     */
+    public policyAttachments: RosUser.PolicyAttachmentsProperty | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::RAM::User`.
      *
      * @param scope - scope in which this resource is defined
@@ -2398,12 +2586,14 @@ export class RosUser extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.userName = props.userName;
         this.comments = props.comments;
+        this.deletionForce = props.deletionForce;
         this.displayName = props.displayName;
         this.email = props.email;
         this.groups = props.groups;
         this.loginProfile = props.loginProfile;
         this.mobilePhone = props.mobilePhone;
         this.policies = props.policies;
+        this.policyAttachments = props.policyAttachments;
     }
 
 
@@ -2411,12 +2601,14 @@ export class RosUser extends ros.RosResource {
         return {
             userName: this.userName,
             comments: this.comments,
+            deletionForce: this.deletionForce,
             displayName: this.displayName,
             email: this.email,
             groups: this.groups,
             loginProfile: this.loginProfile,
             mobilePhone: this.mobilePhone,
             policies: this.policies,
+            policyAttachments: this.policyAttachments,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -2543,6 +2735,67 @@ function rosUserPoliciesPropertyToRosTemplate(properties: any): any {
       Description: ros.stringToRosTemplate(properties.description),
       PolicyName: ros.stringToRosTemplate(properties.policyName),
       PolicyDocument: rosUserPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
+    };
+}
+
+export namespace RosUser {
+    /**
+     * @stability external
+     */
+    export interface PolicyAttachmentsProperty {
+        /**
+         * @Property custom: undefined
+         */
+        readonly custom?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property system: undefined
+         */
+        readonly system?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PolicyAttachmentsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PolicyAttachmentsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosUser_PolicyAttachmentsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.custom && (Array.isArray(properties.custom) || (typeof properties.custom) === 'string')) {
+        errors.collect(ros.propertyValidator('custom', ros.validateLength)({
+            data: properties.custom.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('custom', ros.listValidator(ros.validateString))(properties.custom));
+    if(properties.system && (Array.isArray(properties.system) || (typeof properties.system) === 'string')) {
+        errors.collect(ros.propertyValidator('system', ros.validateLength)({
+            data: properties.system.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('system', ros.listValidator(ros.validateString))(properties.system));
+    return errors.wrap('supplied properties not correct for "PolicyAttachmentsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::User.PolicyAttachments` resource
+ *
+ * @param properties - the TypeScript properties of a `PolicyAttachmentsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::User.PolicyAttachments` resource.
+ */
+// @ts-ignore TS6133
+function rosUserPolicyAttachmentsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosUser_PolicyAttachmentsPropertyValidator(properties).assertSuccess();
+    return {
+      Custom: ros.listMapper(ros.stringToRosTemplate)(properties.custom),
+      System: ros.listMapper(ros.stringToRosTemplate)(properties.system),
     };
 }
 

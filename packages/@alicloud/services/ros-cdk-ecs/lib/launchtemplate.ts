@@ -54,11 +54,6 @@ export interface LaunchTemplateProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second). The range is [1,200].
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second). Range is [0,200].While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -227,7 +222,6 @@ export class LaunchTemplate extends ros.Resource {
             internetChargeType: props.internetChargeType,
             instanceName: props.instanceName,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
-            internetMaxBandwidthIn: props.internetMaxBandwidthIn,
             securityEnhancementStrategy: props.securityEnhancementStrategy,
             autoReleaseTime: props.autoReleaseTime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

@@ -1032,10 +1032,6 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly internetMaxBandwidthOut?: number | ros.IResolvable;
         /**
-         * @Property internetMaxBandwidthIn: The maximum inbound public bandwidth.
-         */
-        readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-        /**
          * @Property systemDiskPerformanceLevel: The performance level of the ESSD used as the system disk. Default value: PL0. Valid values:
      * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
      * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
@@ -1115,7 +1111,6 @@ function RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(propertie
     errors.collect(ros.propertyValidator('dataDisk', ros.listValidator(RosAutoProvisioningGroup_DataDiskPropertyValidator))(properties.dataDisk));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
@@ -1161,7 +1156,6 @@ function rosAutoProvisioningGroupLaunchConfigurationPropertyToRosTemplate(proper
       DataDisk: ros.listMapper(rosAutoProvisioningGroupDataDiskPropertyToRosTemplate)(properties.dataDisk),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
       ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceDescription: ros.stringToRosTemplate(properties.instanceDescription),
@@ -3939,11 +3933,6 @@ export interface RosInstanceProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -4210,14 +4199,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
-            data: properties.internetMaxBandwidthIn,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     if(properties.securityEnhancementStrategy && (typeof properties.securityEnhancementStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateAllowedValues)({
           data: properties.securityEnhancementStrategy,
@@ -4264,7 +4245,6 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
@@ -4427,11 +4407,6 @@ export class RosInstance extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
-
-    /**
      * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
@@ -4592,7 +4567,6 @@ export class RosInstance extends ros.RosResource {
         this.instanceChargeType = props.instanceChargeType;
         this.instanceName = props.instanceName;
         this.internetChargeType = props.internetChargeType;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
         this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
         this.ioOptimized = props.ioOptimized;
         this.keyPairName = props.keyPairName;
@@ -4638,7 +4612,6 @@ export class RosInstance extends ros.RosResource {
             instanceChargeType: this.instanceChargeType,
             instanceName: this.instanceName,
             internetChargeType: this.internetChargeType,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
             internetMaxBandwidthOut: this.internetMaxBandwidthOut,
             ioOptimized: this.ioOptimized,
             keyPairName: this.keyPairName,
@@ -5515,11 +5488,6 @@ export interface RosInstanceGroupProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -5895,14 +5863,6 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('eniMappings', ros.listValidator(RosInstanceGroup_EniMappingsPropertyValidator))(properties.eniMappings));
     errors.collect(ros.propertyValidator('systemDiskBurstingEnabled', ros.validateBoolean)(properties.systemDiskBurstingEnabled));
-    if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
-            data: properties.internetMaxBandwidthIn,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     return errors.wrap('supplied properties not correct for "RosInstanceGroupProps"');
 }
 
@@ -5938,7 +5898,6 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
       Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
@@ -6148,11 +6107,6 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic
      */
     public internetChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
 
     /**
      * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
@@ -6368,7 +6322,6 @@ export class RosInstanceGroup extends ros.RosResource {
         this.instanceChargeType = props.instanceChargeType;
         this.instanceName = props.instanceName;
         this.internetChargeType = props.internetChargeType;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
         this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
         this.ioOptimized = props.ioOptimized;
         this.ipv6AddressCount = props.ipv6AddressCount;
@@ -6426,7 +6379,6 @@ export class RosInstanceGroup extends ros.RosResource {
             instanceChargeType: this.instanceChargeType,
             instanceName: this.instanceName,
             internetChargeType: this.internetChargeType,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
             internetMaxBandwidthOut: this.internetMaxBandwidthOut,
             ioOptimized: this.ioOptimized,
             ipv6AddressCount: this.ipv6AddressCount,
@@ -8152,11 +8104,6 @@ export interface RosLaunchTemplateProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second). The range is [1,200].
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * @Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second). Range is [0,200].While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -8367,14 +8314,6 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
-            data: properties.internetMaxBandwidthIn,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     if(properties.securityEnhancementStrategy && (typeof properties.securityEnhancementStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateAllowedValues)({
           data: properties.securityEnhancementStrategy,
@@ -8409,7 +8348,6 @@ function rosLaunchTemplatePropsToRosTemplate(properties: any, enableResourceProp
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
@@ -8514,11 +8452,6 @@ export class RosLaunchTemplate extends ros.RosResource {
      * @Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
      */
     public internetChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second). The range is [1,200].
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
 
     /**
      * @Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second). Range is [0,200].While the property is not 0, public ip will be assigned for instance.
@@ -8644,7 +8577,6 @@ export class RosLaunchTemplate extends ros.RosResource {
         this.instanceName = props.instanceName;
         this.instanceType = props.instanceType;
         this.internetChargeType = props.internetChargeType;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
         this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
         this.ioOptimized = props.ioOptimized;
         this.keyPairName = props.keyPairName;
@@ -8679,7 +8611,6 @@ export class RosLaunchTemplate extends ros.RosResource {
             instanceName: this.instanceName,
             instanceType: this.instanceType,
             internetChargeType: this.internetChargeType,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
             internetMaxBandwidthOut: this.internetMaxBandwidthOut,
             ioOptimized: this.ioOptimized,
             keyPairName: this.keyPairName,

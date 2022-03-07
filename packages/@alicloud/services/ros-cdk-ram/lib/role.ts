@@ -39,6 +39,11 @@ export interface RoleProps {
      * Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosRole.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property policyAttachments: System and custom policy names to attach.
+     */
+    readonly policyAttachments?: RosRole.PolicyAttachmentsProperty | ros.IResolvable;
 }
 
 /**
@@ -79,9 +84,10 @@ export class Role extends ros.Resource {
         const rosRole = new RosRole(this, id,  {
             maxSessionDuration: props.maxSessionDuration,
             roleName: props.roleName,
-            description: props.description,
+            policyAttachments: props.policyAttachments,
             policies: props.policies,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
+            description: props.description,
             assumeRolePolicyDocument: props.assumeRolePolicyDocument,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRole;

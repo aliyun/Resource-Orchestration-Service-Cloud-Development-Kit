@@ -1,6 +1,6 @@
 {
   "name": "@alicloud/ros-cdk-mongodb",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",

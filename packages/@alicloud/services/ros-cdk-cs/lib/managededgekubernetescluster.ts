@@ -24,6 +24,30 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
+     * true: automatic renewal
+     * false: do not renew automatically
+     * Default to true.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
+     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
+     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
+     * Default to 1.
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
+     * Property chargeType: cluster payment type. The optional values are:
+     * PrePaid: prepaid
+     * PostPaid: Pay as you go
+     * Default to PostPaid.
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -45,6 +69,15 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly containerCidr?: string | ros.IResolvable;
 
     /**
+     * Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property disableRollback: Whether the failure was rolled back:
      * true: indicates that it fails to roll back
      * false: rollback failed
@@ -60,6 +93,16 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
+     * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+
+    /**
      * Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
     readonly keyPair?: string | ros.IResolvable;
@@ -68,6 +111,29 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     readonly loginPassword?: string | ros.IResolvable;
+
+    /**
+     * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
+     * This number is determined by the specified pod CIDR block. 
+     * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+     */
+    readonly nodeCidrMask?: string | ros.IResolvable;
+
+    /**
+     * Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * Default to 1.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Default to Month
+     */
+    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * Property profile: Edge cluster ID. The default value is Edge.
@@ -162,6 +228,11 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
      */
 
     /**
+     * Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
+
+    /**
      * Attribute ClusterId: Cluster instance ID.
      */
     public readonly attrClusterId: ros.IResolvable;
@@ -218,31 +289,40 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
 
         const rosManagedEdgeKubernetesCluster = new RosManagedEdgeKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? true : props.endpointPublicAccess,
-            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
-            keyPair: props.keyPair,
-            vSwitchIds: props.vSwitchIds,
-            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
+            autoRenew: props.autoRenew,
             addons: props.addons,
-            clusterSpec: props.clusterSpec,
-            workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
             workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
+            workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
             profile: props.profile === undefined || props.profile === null ? 'Edge' : props.profile,
             name: props.name,
-            workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
-            vpcId: props.vpcId,
+            isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
             workerDataDiskSize: props.workerDataDiskSize,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
-            numOfNodes: props.numOfNodes,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
-            workerDataDiskCategory: props.workerDataDiskCategory,
-            snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
-            disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             tags: props.tags,
+            disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
+            autoRenewPeriod: props.autoRenewPeriod,
+            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
+            keyPair: props.keyPair,
+            nodeCidrMask: props.nodeCidrMask,
+            vSwitchIds: props.vSwitchIds,
+            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
+            period: props.period,
+            clusterSpec: props.clusterSpec,
+            deletionProtection: props.deletionProtection,
+            workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
+            vpcId: props.vpcId,
+            numOfNodes: props.numOfNodes,
+            chargeType: props.chargeType,
+            workerDataDiskCategory: props.workerDataDiskCategory,
+            snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
+            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedEdgeKubernetesCluster;
+        this.attrApiServerSlbId = rosManagedEdgeKubernetesCluster.attrApiServerSlbId;
         this.attrClusterId = rosManagedEdgeKubernetesCluster.attrClusterId;
         this.attrDefaultUserKubeConfig = rosManagedEdgeKubernetesCluster.attrDefaultUserKubeConfig;
         this.attrNodes = rosManagedEdgeKubernetesCluster.attrNodes;
