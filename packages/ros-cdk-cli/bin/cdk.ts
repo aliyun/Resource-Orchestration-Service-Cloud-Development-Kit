@@ -90,7 +90,8 @@ async function parseCommandLineArguments() {
                 .option('sync', { type: 'boolean', desc: 'Sync deploy stack', default: false })
                 .option('skip-if-no-changes', { type: 'boolean', desc: 'When stack do not contains any new changes skip stack checks', default: false })
                 .option('disable-rollback', { type: 'boolean', desc: 'Disable rollback when creating resource stack fails', default: false })
-                .option('outputs-file', { type: 'boolean', desc: 'Stack outputs will be written as JSON', default: false }),
+                .option('outputs-file', { type: 'boolean', desc: 'Stack outputs will be written as JSON', default: false })
+                .option('resource-group-id', { type: 'string', desc: 'Stack resource group id', default: undefined }),
         )
         .command(
             'diff [STACKS..]',
@@ -343,7 +344,8 @@ async function initCommandLine() {
                     sync: args.sync,
                     outputsFile: args['outputs-file'],
                     skipIfNoChanges: args['skip-if-no-changes'],
-                    disableRollback: args['disable-rollback']
+                    disableRollback: args['disable-rollback'],
+                    resourceGroupId: args['resource-group-id']
                 });
                 return;
 

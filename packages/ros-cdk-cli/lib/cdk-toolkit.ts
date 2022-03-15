@@ -505,6 +505,8 @@ export class CdkToolkit {
         let outputs = options.outputsFile
         let skipIfNoChanges = options.skipIfNoChanges
 
+	if (options.resourceGroupId)
+            content["ResourceGroupId"] = options.resourceGroupId
 
         if (stacks.stackArtifacts[0].tags) {
             let count: number = 1;
@@ -1464,6 +1466,7 @@ export interface DeployOptions {
     outputsFile: boolean;
     skipIfNoChanges: boolean;
     disableRollback: boolean;
+    resourceGroupId?: string;
 }
 
 export interface DestroyOptions {
