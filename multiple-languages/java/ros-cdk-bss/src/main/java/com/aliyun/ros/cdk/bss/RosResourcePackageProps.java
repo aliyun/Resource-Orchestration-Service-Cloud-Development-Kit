@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bss;
 /**
  * Properties for defining a `ALIYUN::BSS::ResourcePackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:06.970Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.489Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.RosResourcePackageProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourcePackageProps.Jsii$Proxy.class)
 public interface RosResourcePackageProps extends software.amazon.jsii.JsiiSerializable {

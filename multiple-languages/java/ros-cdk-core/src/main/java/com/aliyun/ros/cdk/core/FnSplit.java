@@ -7,7 +7,7 @@ package com.aliyun.ros.cdk.core;
  * with a delimiter, such as , (a comma). After you split a string, use the <code>Fn::Select</code> function
  * to pick a specific element.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.53.0 (build c071d26)", date = "2022-02-11T01:44:06.794Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.211Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnSplit")
 public class FnSplit extends com.aliyun.ros.cdk.core.Intrinsic {
 

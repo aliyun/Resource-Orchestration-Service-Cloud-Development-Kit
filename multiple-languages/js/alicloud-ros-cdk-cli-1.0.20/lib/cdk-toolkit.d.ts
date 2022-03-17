@@ -104,6 +104,7 @@ export interface DeployOptions {
     outputsFile: boolean;
     skipIfNoChanges: boolean;
     disableRollback: boolean;
+    resourceGroupId: string;
 }
 export interface DestroyOptions {
     stackNames: string[];

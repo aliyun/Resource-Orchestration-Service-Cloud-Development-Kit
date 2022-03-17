@@ -87,6 +87,7 @@ async function parseCommandLineArguments() {
           desc: "Only deploy requested stacks, don't include dependencies",
         })
         .option('timeoutMinutes', { type: 'number', alias: 't', desc: 'The timeout minutes', default: 20 })
+          .option('resource-group-id', { type: 'string', desc: 'Resource group ID. If this parameter is not specified, the resource stack will be added to the default resource group'})
           .option('sync', { type: 'boolean', desc: 'Sync deploy stack', default: false })
           .option('skip-if-no-changes', { type: 'boolean', desc: 'When stack do not contains any new changes skip stack checks', default: false })
           .option('disable-rollback', { type: 'boolean', desc: 'Disable rollback when creating resource stack fails', default: false })
@@ -343,7 +344,8 @@ async function initCommandLine() {
           sync: args.sync,
           outputsFile: args['outputs-file'],
           skipIfNoChanges: args['skip-if-no-changes'],
-          disableRollback: args['disable-rollback']
+          disableRollback: args['disable-rollback'],
+          resourceGroupId: args['resource-group-id']
         });
         return;
 

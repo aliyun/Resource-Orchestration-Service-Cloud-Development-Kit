@@ -504,7 +504,11 @@ export class CdkToolkit {
         let sync = options.sync
         let outputs = options.outputsFile
         let skipIfNoChanges = options.skipIfNoChanges
+        let resourceGroupId = options.resourceGroupId
 
+        if (resourceGroupId) {
+            content['ResourceGroupId'] = resourceGroupId
+        }
 
         if (stacks.stackArtifacts[0].tags) {
             let count: number = 1;
@@ -532,6 +536,10 @@ export class CdkToolkit {
                 // update stack
                 if (localStackInfo.stackId !== stackInfo.StackId) {
                     error('fail to update stack, because stack local info dose not match the remote server.')
+                    exit(1);
+                }
+                if (resourceGroupId) {
+                    error('fail to update stack, cannot support set resource-group-id params to this operation.')
                     exit(1);
                 }
                 {
@@ -1464,6 +1472,7 @@ export interface DeployOptions {
     outputsFile: boolean;
     skipIfNoChanges: boolean;
     disableRollback: boolean;
+    resourceGroupId: string;
 }
 
 export interface DestroyOptions {
