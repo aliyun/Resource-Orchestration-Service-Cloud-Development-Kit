@@ -1,6 +1,13 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
-## [ros-cdk-cli 1.0.19] (2021-12-30)
+## [ros-cdk-cli 1.0.20] (2022-03-16)
+
+### Features
+
+-  ros-cdk-cli adding ros-cdk deploy --resource-group-id params to Create stack set ResourceGroupId. ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/36))
+
+
+## [ros-cdk-cli 1.0.19] (2022-02-28)
 
 ### Features
 

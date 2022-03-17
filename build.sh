@@ -8,6 +8,8 @@ PROG_NAME=$0
 ACTION=$1
 ARG1=$2
 
+python3 -V
+
 usage() {
     echo "Usage: $PROG_NAME {setup-dependency|clear-dependency|generate-tsconfig|build|spec2ts|jsii-pack|copy-js|convert-maven-project}"
     exit 1;
@@ -23,13 +25,14 @@ setup_dependency() {
     esac
 
     rm -rf "$root/packages/@alicloud/test"
+    lerna link
     lerna bootstrap
     npm install
 }
 
 
 clear_dependency() {
-    lerna clean
+    lerna clean -y
 }
 
 
@@ -94,9 +97,6 @@ spec2ts() {
 convert_maven_project() {
     root=$PWD
     dist_dir="$PWD/dist"
-    if [ "${ARG1}" == "--github" ];then
-      dist_dir="$PWD/multiple-languages"
-    fi
     if [ ! -d "$dist_dir" ]; then
         echo "directory $dist_dir not found"
         exit 1
@@ -122,62 +122,32 @@ convert_maven_project() {
       python3 $root/tools/convert_maven_project.py --pom_file_path=${java_packages}/${short_package_name}/pom.xml
     done
 
-    if [ "${ARG1}" == "--github" ];
-    then
-        github_java_package_path="$dist_dir/github/java"
-        if [ ! -d "$github_java_package_path" ];
-        then
-            mkdir -p $github_java_package_path
-        else
-            rm -rf $github_java_package_path
-            mkdir -p $github_java_package_path
-        fi
-        cp -rp ${java_packages}/ $github_java_package_path
-    else
-        rm -rf $root/multiple-languages/java
-        mv ${java_packages}/ $root/multiple-languages/java
-    fi
+    rm -rf $root/multiple-languages/java
+    mv ${java_packages}/ $root/multiple-languages/java
 }
 
 
 convert_csharp_project(){
     root=$PWD
-    dist_dir="$PWD/multiple-languages"
+    dist_dir="$PWD/dist"
     if [ ! -d "$dist_dir" ]; then
         echo "directory $dist_dir not found"
         exit 1
     fi
-    csharp_dir="$dist_dir/dotnet-tmp/"
+    csharp_dir="$dist_dir/dotnet/"
     for dir in $(ls $csharp_dir); do
         echo "${csharp_dir}${dir}"
         package_name=${dir#*dotnet/}
         package_csproj_path="${csharp_dir}${dir}/${package_name}.csproj"
         python3 $root/tools/convert_csharp_project.py --csproj_file_path=${package_csproj_path}
     done
-
-    if [ "${ARG1}" == "--github" ];
-    then
-        github_dotnet_package_path="$dist_dir/github/dotnet"
-        if [ ! -d "$github_dotnet_package_path" ];
-        then
-            mkdir -p $github_dotnet_package_path
-        else
-            rm -rf $github_dotnet_package_path
-            mkdir -p $github_dotnet_package_path
-        fi
-        cp -rp ${csharp_dir}/ $github_dotnet_package_path
-    else
-        rm -rf $root/multiple-languages/dotnet
-        cp -rp ${csharp_dir}/ $root/multiple-languages/dotnet
-    fi
+    rm -rf $root/multiple-languages/dotnet
+    cp -rp ${csharp_dir}/ $root/multiple-languages/dotnet
 }
 
 convert_python_project(){
     root=$PWD
     dist_dir="$PWD/dist"
-    if [ "${ARG1}" == "--github" ];then
-      dist_dir="$PWD/multiple-languages"
-    fi
     if [ ! -d "$dist_dir" ]; then
         echo "directory $dist_dir not found"
         exit 1
@@ -190,29 +160,13 @@ convert_python_project(){
         tar zxvf ${py_package} -C ${python_packages}
     done
 
-    if [ "${ARG1}" == "--github" ];
-    then
-        github_python_package_path="$dist_dir/github/python"
-        if [ ! -d "$github_python_package_path" ];
-        then
-            mkdir -p $github_python_package_path
-        else
-            rm -rf $github_python_package_path
-            mkdir -p $github_python_package_path
-        fi
-        cp -rp ${python_packages}/ $github_python_package_path
-    else
-        rm -rf $root/multiple-languages/python
-        mv ${python_packages}/ $root/multiple-languages/python
-    fi
+    rm -rf $root/multiple-languages/python
+    mv ${python_packages}/ $root/multiple-languages/python
 }
 
 convert_js_project(){
     root=$PWD
     dist_dir="$PWD/dist"
-    if [ "${ARG1}" == "--github" ];then
-      dist_dir="$PWD/multiple-languages"
-    fi
     if [ ! -d "$dist_dir" ]; then
         echo "directory $dist_dir not found"
         exit 1
@@ -227,21 +181,8 @@ convert_js_project(){
         mkdir -p ${js_packages}/${short_package_name} && tar zxvf ${js_package} -C ${js_packages}/${short_package_name}  --strip-components 1
     done
 
-    if [ "${ARG1}" == "--github" ];
-    then
-        github_js_package_path="$dist_dir/github/js"
-        if [ ! -d "$github_js_package_path" ];
-        then
-            mkdir -p $github_js_package_path
-        else
-            rm -rf $github_js_package_path
-            mkdir -p $github_js_package_path
-        fi
-        cp -rp ${js_packages}/ $github_js_package_path
-    else
-        rm -rf $root/multiple-languages/js
-        mv ${js_packages}/ $root/multiple-languages/js
-    fi
+    rm -rf $root/multiple-languages/js
+    mv ${js_packages}/ $root/multiple-languages/js
 }
 
 
@@ -296,13 +237,6 @@ jsii_pack() {
     done
 
     mv "$js_dir" "$jsii_dir"
-    if [ "${ARG1}" == "--source-code" ];
-    then
-        dotnet_dir="$PWD/multiple-languages/dotnet-tmp"
-        rm -fr ${dotnet_dir}
-        mkdir -p ${dotnet_dir}
-        cp -r "$distdir/dotnet/" ${dotnet_dir}/
-    fi
     cd $root
     rm -fr ${TMPDIR}
 
@@ -338,12 +272,12 @@ copy_js() {
       rm -f $f
     done
 
-    lerna clean
+    lerna clean -y
     lerna run pack
 
     for f in $(find packages -name "*.tgz" | grep -v dist); do
       echo "Merging $f" >&2
-      cp -r $f "$js_dir/"
+      cp -rf $f "$js_dir/"
     done
 }
 
