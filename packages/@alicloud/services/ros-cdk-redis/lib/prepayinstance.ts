@@ -80,6 +80,11 @@ export interface PrepayInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+     */
+    readonly productType?: string | ros.IResolvable;
+
+    /**
      * Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -298,15 +303,16 @@ export class PrepayInstance extends ros.Resource {
         const rosPrepayInstance = new RosPrepayInstance(this, id,  {
             connections: props.connections,
             engineVersion: props.engineVersion,
-            zoneId: props.zoneId,
             evictionPolicy: props.evictionPolicy,
+            zoneId: props.zoneId,
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
+            productType: props.productType,
             instanceMaintainTime: props.instanceMaintainTime,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             instanceClass: props.instanceClass,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             vpcPasswordFree: props.vpcPasswordFree,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             autoRenewDuration: props.autoRenewDuration,
             instanceName: props.instanceName,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS template type:  `ALIYUN::REDIS::PrepayInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.296Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.407Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstance")
 public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -473,6 +473,24 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProductType() {
+        return software.amazon.jsii.Kernel.get(this, "productType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProductType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "productType", value);
+    }
+
+    /**
+     */
+    public void setProductType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "productType", value);
     }
 
     /**
@@ -2300,6 +2318,23 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param productType This parameter is required.
+         */
+        public Builder productType(final java.lang.String productType) {
+            this.props.productType(productType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param productType This parameter is required.
+         */
+        public Builder productType(final com.aliyun.ros.cdk.core.IResolvable productType) {
+            this.props.productType(productType);
             return this;
         }
 

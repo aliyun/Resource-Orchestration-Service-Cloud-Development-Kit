@@ -54,6 +54,11 @@ export interface InstanceProps {
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
+     * Property kibanaNode: The dedicated kibana node setting.
+     */
+    readonly kibanaNode?: RosInstance.KibanaNodeProperty | ros.IResolvable;
+
+    /**
      * Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
      */
     readonly kibanaWhitelist?: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -99,6 +104,11 @@ export interface InstanceProps {
      * Property zoneCount: undefined
      */
     readonly zoneCount?: number | ros.IResolvable;
+
+    /**
+     * Property zoneId: The zone id of elasticsearch.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -174,8 +184,10 @@ export class Instance extends ros.Resource {
         const rosInstance = new RosInstance(this, id,  {
             masterNode: props.masterNode,
             description: props.description,
-            enableKibanaPrivate: props.enableKibanaPrivate,
+            kibanaNode: props.kibanaNode,
+            zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
+            enableKibanaPrivate: props.enableKibanaPrivate,
             publicWhitelist: props.publicWhitelist,
             enableKibanaPublic: props.enableKibanaPublic,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,

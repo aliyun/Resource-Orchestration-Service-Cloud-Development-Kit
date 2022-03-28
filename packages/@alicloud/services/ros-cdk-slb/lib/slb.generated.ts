@@ -1607,6 +1607,10 @@ export namespace RosListener {
          */
         readonly timeout?: number | ros.IResolvable;
         /**
+         * @Property healthCheckMethod: The health check method used in HTTP or HTTPS health checks. Valid values: head and get.
+         */
+        readonly healthCheckMethod?: string | ros.IResolvable;
+        /**
          * @Property healthyThreshold: The number of consecutive health checks successes required,before identified the backend server in Healthy status.
          */
         readonly healthyThreshold?: number | ros.IResolvable;
@@ -1659,6 +1663,7 @@ function RosListener_HealthCheckPropertyValidator(properties: any): ros.Validati
     }
     errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateNumber)(properties.unhealthyThreshold));
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('healthCheckMethod', ros.validateString)(properties.healthCheckMethod));
     if(properties.healthyThreshold && (typeof properties.healthyThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('healthyThreshold', ros.validateRange)({
             data: properties.healthyThreshold,
@@ -1711,6 +1716,7 @@ function rosListenerHealthCheckPropertyToRosTemplate(properties: any): any {
       Switch: ros.stringToRosTemplate(properties.switch),
       UnhealthyThreshold: ros.numberToRosTemplate(properties.unhealthyThreshold),
       Timeout: ros.numberToRosTemplate(properties.timeout),
+      HealthCheckMethod: ros.stringToRosTemplate(properties.healthCheckMethod),
       HealthyThreshold: ros.numberToRosTemplate(properties.healthyThreshold),
       Port: ros.numberToRosTemplate(properties.port),
       Domain: ros.stringToRosTemplate(properties.domain),

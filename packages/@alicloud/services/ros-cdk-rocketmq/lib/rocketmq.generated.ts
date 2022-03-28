@@ -430,14 +430,6 @@ export interface RosTopicProps {
     readonly topic: string | ros.IResolvable;
 
     /**
-     * @Property perm: Set the read-write mode for the topic Valid values.:
-     * 6: Both read and write operations are supported.
-     * 4: Write operation is prohibited.
-     * 2: Read operation is prohibited.
-     */
-    readonly perm?: number | ros.IResolvable;
-
-    /**
      * @Property remark: The remarks on the request. This parameter can be left blank.
      */
     readonly remark?: string | ros.IResolvable;
@@ -455,13 +447,6 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
-    if(properties.perm && (typeof properties.perm) !== 'object') {
-        errors.collect(ros.propertyValidator('perm', ros.validateAllowedValues)({
-          data: properties.perm,
-          allowedValues: [2,4,6],
-        }));
-    }
-    errors.collect(ros.propertyValidator('perm', ros.validateNumber)(properties.perm));
     errors.collect(ros.propertyValidator('topic', ros.requiredValidator)(properties.topic));
     errors.collect(ros.propertyValidator('topic', ros.validateString)(properties.topic));
     errors.collect(ros.propertyValidator('messageType', ros.requiredValidator)(properties.messageType));
@@ -493,7 +478,6 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       MessageType: ros.numberToRosTemplate(properties.messageType),
       Topic: ros.stringToRosTemplate(properties.topic),
-      Perm: ros.numberToRosTemplate(properties.perm),
       Remark: ros.stringToRosTemplate(properties.remark),
     };
 }
@@ -555,14 +539,6 @@ export class RosTopic extends ros.RosResource {
     public topic: string | ros.IResolvable;
 
     /**
-     * @Property perm: Set the read-write mode for the topic Valid values.:
-     * 6: Both read and write operations are supported.
-     * 4: Write operation is prohibited.
-     * 2: Read operation is prohibited.
-     */
-    public perm: number | ros.IResolvable | undefined;
-
-    /**
      * @Property remark: The remarks on the request. This parameter can be left blank.
      */
     public remark: string | ros.IResolvable | undefined;
@@ -584,7 +560,6 @@ export class RosTopic extends ros.RosResource {
         this.instanceId = props.instanceId;
         this.messageType = props.messageType;
         this.topic = props.topic;
-        this.perm = props.perm;
         this.remark = props.remark;
     }
 
@@ -594,7 +569,6 @@ export class RosTopic extends ros.RosResource {
             instanceId: this.instanceId,
             messageType: this.messageType,
             topic: this.topic,
-            perm: this.perm,
             remark: this.remark,
         };
     }

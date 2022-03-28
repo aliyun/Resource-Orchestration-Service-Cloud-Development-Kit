@@ -34,11 +34,6 @@ export interface ClusterProps {
     readonly ecsOrderManagerInstanceType: string | ros.IResolvable;
 
     /**
-     * Property ehpcVersion: E-HPC product version numbers, currently supports 1.0.0
-     */
-    readonly ehpcVersion: string | ros.IResolvable;
-
-    /**
      * Property name: Cluster name. 2-64 characters in length, allowing only include Chinese, letters, numbers, dashes (-) and underscore (_), must begin with a letter or Chinese.
      */
     readonly name: string | ros.IResolvable;
@@ -49,24 +44,22 @@ export interface ClusterProps {
     readonly osTag: string | ros.IResolvable;
 
     /**
-     * Property volumeId: Ali cloud NAS instance Id. Currently it does not support automatic creation Ali cloud NAS instance.
-     */
-    readonly volumeId: string | ros.IResolvable;
-
-    /**
-     * Property volumeMountpoint: NAS vpc mount point. Currently it does not support automatic creation Ali cloud NAS mount point.
-     */
-    readonly volumeMountpoint: string | ros.IResolvable;
-
-    /**
      * Property vSwitchId: VPC in switch ID. Products currently only supports VPC network.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property accountType: Domain service account types, currently supports nis.
+     * Property accountType: The service type of the domain account. Valid values:
+     * nis
+     * ldap
+     * Default value: nis
      */
     readonly accountType?: string | ros.IResolvable;
+
+    /**
+     * Property additionalVolumes:
+     */
+    readonly additionalVolumes?: Array<RosCluster.AdditionalVolumesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property application: Application software tag (SoftwareTag) list, You can call ListSoftwares API to query.
@@ -84,6 +77,20 @@ export interface ClusterProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
+     * Property clientVersion: The version of the E-HPC client. By default, the parameter is set to the latest version number.
+     * You can call the ListCurrentClientVersion operation to query the current version of the E-HPC client.
+     */
+    readonly clientVersion?: string | ros.IResolvable;
+
+    /**
+     * Property computeEnableHt: Specifies whether the compute nodes support hyper-threading. Valid values:
+     * true: Hyper-threading is supported.
+     * false: Hyper-threading is not supported.
+     * Default value: true
+     */
+    readonly computeEnableHt?: boolean | ros.IResolvable;
+
+    /**
      * Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
      */
     readonly computeSpotPriceLimit?: string | ros.IResolvable;
@@ -94,12 +101,11 @@ export interface ClusterProps {
     readonly computeSpotStrategy?: string | ros.IResolvable;
 
     /**
-     * Property deployMode: Deployment mode:
-     * Standard: account node + scheduling node + login node + computing node.
-     * Advanced: HA mode.
-     * Simple: (account + schedule) node + login node + compute node.
-     * Tiny: (account + scheduling + login) node + compute node.
-     * OneBox: (account + scheduling + login + compute) node + more compute nodes.
+     * Property deployMode: The mode in which the cluster is deployed. Valid values:
+     * Standard: An account node, a scheduling node, a logon node, and multiple compute nodes are separately deployed.
+     * Simple: A management node, a logon node, and multiple compute nodes are deployed. The management node consists of an account node and a scheduling node. The logon node and compute nodes are separately deployed.
+     * Tiny: A management node and multiple compute nodes are deployed. The management node consists of an account node, a scheduling node, and a logon node. The compute nodes are separately deployed.
+     * Default value: Standard
      */
     readonly deployMode?: string | ros.IResolvable;
 
@@ -114,12 +120,21 @@ export interface ClusterProps {
     readonly ecsChargeType?: string | ros.IResolvable;
 
     /**
-     * Property ecsOrderManagerCount: Control node number can be 1, 2, 4(HA)
+     * Property ecsOrderManagerCount: Control node number can be 1, 2
      */
     readonly ecsOrderManagerCount?: number | ros.IResolvable;
 
     /**
-     * Property haEnable: Availability is turned on, when turned on, the role of each control cluster will use two standby instances.
+     * Property ehpcVersion: The version of E-HPC. By default, the parameter is set to the latest version number.
+     */
+    readonly ehpcVersion?: string | ros.IResolvable;
+
+    /**
+     * Property haEnable: Specifies whether to enable the high availability feature. Valid values:
+     * true: enables the high availability feature
+     * false: disables the high availability feature
+     * Default value: false
+     * Note If high availability is enabled, primary management nodes and secondary management nodes are used.
      */
     readonly haEnable?: boolean | ros.IResolvable;
 
@@ -134,7 +149,20 @@ export interface ClusterProps {
     readonly imageOwnerAlias?: string | ros.IResolvable;
 
     /**
-     * Property jobQueue: Computing node added queue
+     * Property inputFileUrl: The URL of the job files that are uploaded to an Object Storage Service (OSS) bucket.
+     */
+    readonly inputFileUrl?: string | ros.IResolvable;
+
+    /**
+     * Property isComputeEss: Specifies whether to enable auto scaling. Valid values:
+     * true: enables auto scaling
+     * false: disables auto scaling
+     * Default value: false
+     */
+    readonly isComputeEss?: boolean | ros.IResolvable;
+
+    /**
+     * Property jobQueue: 	The queue to which the compute nodes are added.
      */
     readonly jobQueue?: string | ros.IResolvable;
 
@@ -169,12 +197,31 @@ export interface ClusterProps {
     readonly remoteDirectory?: string | ros.IResolvable;
 
     /**
+     * Property remoteVisEnable: Specifies whether to enable Virtual Network Computing (VNC). Valid values:
+     * true: enables VNC
+     * false: disables VNC
+     * Default value: false
+     */
+    readonly remoteVisEnable?: boolean | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     * You can call the ListResourceGroups operation to obtain the ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
      */
     readonly sccClusterId?: string | ros.IResolvable;
 
     /**
-     * Property schedulerType: The scheduler type, currently support pbs.
+     * Property schedulerType: The type of the scheduler. Valid values:
+     * pbs
+     * slurm
+     * opengridscheduler
+     * deadline
+     * Default value: pbs
      */
     readonly schedulerType?: string | ros.IResolvable;
 
@@ -189,14 +236,60 @@ export interface ClusterProps {
     readonly securityGroupName?: string | ros.IResolvable;
 
     /**
-     * Property volumeProtocol: Shared storage network protocols, currently only supports nfs.
+     * Property systemDiskLevel: The performance level of the ESSD that is created as the system disk. Valid values:
+     * PL0: A single ESSD can deliver up to 10,000 input/output operations per second (IOPS) of random read/write.
+     * PL1: A single ESSD can deliver up to 50,000 IOPS of random read/write.
+     * PL2: A single ESSD can deliver up to 100,000 IOPS of random read/write.
+     * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read/write.
+     * Default value: PL1
+     */
+    readonly systemDiskLevel?: string | ros.IResolvable;
+
+    /**
+     * Property systemDiskSize: The size of the system disk. Unit: GB
+     * Valid values: 40 to 500
+     * Default value: 40
+     */
+    readonly systemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * Property systemDiskType: The type of the system disk. Valid values:
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: SSD.
+     * cloud_essd: ESSD.
+     * Default value: cloud_ssd
+     */
+    readonly systemDiskType?: string | ros.IResolvable;
+
+    /**
+     * Property volumeId: The ID of the file system. If you leave the parameter empty, a Performance NAS file system is created by default.
+     */
+    readonly volumeId?: string | ros.IResolvable;
+
+    /**
+     * Property volumeMountpoint: The mount target of the file system. Take note of the following information:
+     * If you do not specify the VolumeId parameter, you can leave the VolumeMountpoint parameter empty. A mount target is created by default.
+     * If you specify the VolumeId parameter, the VolumeMountpoint parameter is required.
+     */
+    readonly volumeMountpoint?: string | ros.IResolvable;
+
+    /**
+     * Property volumeProtocol: The type of the protocol that is used by the file system. Valid values:
+     * nfs
+     * smb
+     * Default value: nfs
      */
     readonly volumeProtocol?: string | ros.IResolvable;
 
     /**
-     * Property volumeType: Network shared storage types, currently supports only Ali cloud NAS.
+     * Property volumeType: The type of the shared storage. Only Apsara File Storage nas file systems are supported.
      */
     readonly volumeType?: string | ros.IResolvable;
+
+    /**
+     * Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP). Default value: false
+     */
+    readonly withoutElasticIp?: boolean | ros.IResolvable;
 
     /**
      * Property zoneId: Available area ID.
@@ -246,44 +339,55 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
         super(scope, id);
 
         const rosCluster = new RosCluster(this, id,  {
-            imageOwnerAlias: props.imageOwnerAlias,
             volumeProtocol: props.volumeProtocol,
-            ecsOrderComputeCount: props.ecsOrderComputeCount,
-            description: props.description,
-            securityGroupName: props.securityGroupName,
-            autoRenew: props.autoRenew,
-            computeSpotPriceLimit: props.computeSpotPriceLimit,
+            resourceGroupId: props.resourceGroupId,
+            computeEnableHt: props.computeEnableHt,
+            withoutElasticIp: props.withoutElasticIp,
+            systemDiskType: props.systemDiskType,
+            remoteVisEnable: props.remoteVisEnable,
             name: props.name,
             volumeId: props.volumeId,
-            volumeType: props.volumeType,
             deployMode: props.deployMode,
             postInstallScript: props.postInstallScript,
             imageId: props.imageId,
-            password: props.password,
-            autoRenewPeriod: props.autoRenewPeriod,
-            keyPairName: props.keyPairName,
-            remoteDirectory: props.remoteDirectory,
-            sccClusterId: props.sccClusterId,
+            isComputeEss: props.isComputeEss,
             ecsOrderLoginInstanceType: props.ecsOrderLoginInstanceType,
-            zoneId: props.zoneId,
             jobQueue: props.jobQueue,
-            ecsOrderLoginCount: props.ecsOrderLoginCount,
             vSwitchId: props.vSwitchId,
-            securityGroupId: props.securityGroupId,
             period: props.period,
-            schedulerType: props.schedulerType,
             computeSpotStrategy: props.computeSpotStrategy,
-            accountType: props.accountType,
             ecsOrderManagerInstanceType: props.ecsOrderManagerInstanceType,
             ehpcVersion: props.ehpcVersion,
             volumeMountpoint: props.volumeMountpoint,
             ecsOrderManagerCount: props.ecsOrderManagerCount,
             ecsOrderComputeInstanceType: props.ecsOrderComputeInstanceType,
+            application: props.application,
+            periodUnit: props.periodUnit,
+            imageOwnerAlias: props.imageOwnerAlias,
+            ecsOrderComputeCount: props.ecsOrderComputeCount,
+            description: props.description,
+            securityGroupName: props.securityGroupName,
+            systemDiskSize: props.systemDiskSize,
+            additionalVolumes: props.additionalVolumes,
+            autoRenew: props.autoRenew,
+            computeSpotPriceLimit: props.computeSpotPriceLimit,
+            clientVersion: props.clientVersion,
+            volumeType: props.volumeType,
+            inputFileUrl: props.inputFileUrl,
+            password: props.password,
+            autoRenewPeriod: props.autoRenewPeriod,
+            keyPairName: props.keyPairName,
+            remoteDirectory: props.remoteDirectory,
+            sccClusterId: props.sccClusterId,
+            zoneId: props.zoneId,
+            systemDiskLevel: props.systemDiskLevel,
+            ecsOrderLoginCount: props.ecsOrderLoginCount,
+            securityGroupId: props.securityGroupId,
+            schedulerType: props.schedulerType,
+            accountType: props.accountType,
             haEnable: props.haEnable,
             osTag: props.osTag,
             ecsChargeType: props.ecsChargeType,
-            application: props.application,
-            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster;
         this.attrClusterId = rosCluster.attrClusterId;

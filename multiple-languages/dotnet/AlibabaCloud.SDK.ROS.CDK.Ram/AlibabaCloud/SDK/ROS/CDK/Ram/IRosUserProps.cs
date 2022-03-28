@@ -31,6 +31,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: deletionForce: Whether force detach the policies and groups attached to the user. Default value is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionForce
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: displayName: Display name, up to 128 characters or Chinese characters.
         /// </remarks>
         [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -108,6 +121,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: policyAttachments: System and custom policy names to attach.
+        /// </remarks>
+        [JsiiProperty(name: "policyAttachments", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosUser.PolicyAttachmentsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PolicyAttachments
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::RAM::User`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRosUserProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosUserProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.IRosUserProps
@@ -131,6 +157,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             [JsiiOptional]
             [JsiiProperty(name: "comments", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Comments
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: deletionForce: Whether force detach the policies and groups attached to the user. Default value is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionForce
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -191,6 +227,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             [JsiiOptional]
             [JsiiProperty(name: "policies", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosUser.PoliciesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Policies
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: policyAttachments: System and custom policy names to attach.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "policyAttachments", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosUser.PolicyAttachmentsProperty\"}]}}", isOptional: true)]
+            public object? PolicyAttachments
             {
                 get => GetInstanceProperty<object?>();
             }

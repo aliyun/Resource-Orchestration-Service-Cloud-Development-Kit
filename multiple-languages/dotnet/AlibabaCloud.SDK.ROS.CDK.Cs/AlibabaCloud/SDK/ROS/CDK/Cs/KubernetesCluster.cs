@@ -32,6 +32,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         {
         }
 
+        /// <summary>Attribute APIServerSLBId: The id of API server SLB.</summary>
+        [JsiiProperty(name: "attrApiServerSlbId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrApiServerSlbId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute ClusterId: Cluster instance ID.</summary>
         [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId

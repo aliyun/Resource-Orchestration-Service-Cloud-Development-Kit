@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * A ROS resource type:  `ALIYUN::ROCKETMQ::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.344Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.451Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 
@@ -187,27 +187,6 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder topic(final com.aliyun.ros.cdk.core.IResolvable topic) {
             this.props.topic(topic);
-            return this;
-        }
-
-        /**
-         * Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited.
-         * <p>
-         * @return {@code this}
-         * @param perm Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited. This parameter is required.
-         */
-        public Builder perm(final java.lang.Number perm) {
-            this.props.perm(perm);
-            return this;
-        }
-        /**
-         * Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited.
-         * <p>
-         * @return {@code this}
-         * @param perm Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited. This parameter is required.
-         */
-        public Builder perm(final com.aliyun.ros.cdk.core.IResolvable perm) {
-            this.props.perm(perm);
             return this;
         }
 

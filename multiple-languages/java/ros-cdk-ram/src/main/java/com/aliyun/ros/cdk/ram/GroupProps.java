@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.109Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.222Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,9 +21,25 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property deletionForce: Whether force detach the policies attached to the group.
+     * <p>
+     * Default value is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
+
+    /**
      * Property policies: Describes what actions are allowed on what resources.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPolicies() {
+        return null;
+    }
+
+    /**
+     * Property policyAttachments: System and custom policy names to attach.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPolicyAttachments() {
         return null;
     }
 
@@ -39,7 +55,9 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<GroupProps> {
         java.lang.Object groupName;
         java.lang.Object comments;
+        java.lang.Object deletionForce;
         java.lang.Object policies;
+        java.lang.Object policyAttachments;
 
         /**
          * Sets the value of {@link GroupProps#getGroupName}
@@ -82,6 +100,28 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link GroupProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force detach the policies attached to the group.
+         *                      Default value is false.
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force detach the policies attached to the group.
+         *                      Default value is false.
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupProps#getPolicies}
          * @param policies Property policies: Describes what actions are allowed on what resources.
          * @return {@code this}
@@ -98,6 +138,26 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder policies(java.util.List<? extends java.lang.Object> policies) {
             this.policies = policies;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupProps#getPolicyAttachments}
+         * @param policyAttachments Property policyAttachments: System and custom policy names to attach.
+         * @return {@code this}
+         */
+        public Builder policyAttachments(com.aliyun.ros.cdk.core.IResolvable policyAttachments) {
+            this.policyAttachments = policyAttachments;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupProps#getPolicyAttachments}
+         * @param policyAttachments Property policyAttachments: System and custom policy names to attach.
+         * @return {@code this}
+         */
+        public Builder policyAttachments(com.aliyun.ros.cdk.ram.RosGroup.PolicyAttachmentsProperty policyAttachments) {
+            this.policyAttachments = policyAttachments;
             return this;
         }
 
@@ -119,7 +179,9 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GroupProps {
         private final java.lang.Object groupName;
         private final java.lang.Object comments;
+        private final java.lang.Object deletionForce;
         private final java.lang.Object policies;
+        private final java.lang.Object policyAttachments;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -129,7 +191,9 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.comments = software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.policyAttachments = software.amazon.jsii.Kernel.get(this, "policyAttachments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -139,7 +203,9 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupName = java.util.Objects.requireNonNull(builder.groupName, "groupName is required");
             this.comments = builder.comments;
+            this.deletionForce = builder.deletionForce;
             this.policies = builder.policies;
+            this.policyAttachments = builder.policyAttachments;
         }
 
         @Override
@@ -153,8 +219,18 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
+        }
+
+        @Override
         public final java.lang.Object getPolicies() {
             return this.policies;
+        }
+
+        @Override
+        public final java.lang.Object getPolicyAttachments() {
+            return this.policyAttachments;
         }
 
         @Override
@@ -167,8 +243,14 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getComments() != null) {
                 data.set("comments", om.valueToTree(this.getComments()));
             }
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
+            }
             if (this.getPolicies() != null) {
                 data.set("policies", om.valueToTree(this.getPolicies()));
+            }
+            if (this.getPolicyAttachments() != null) {
+                data.set("policyAttachments", om.valueToTree(this.getPolicyAttachments()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -190,14 +272,18 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!groupName.equals(that.groupName)) return false;
             if (this.comments != null ? !this.comments.equals(that.comments) : that.comments != null) return false;
-            return this.policies != null ? this.policies.equals(that.policies) : that.policies == null;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
+            if (this.policies != null ? !this.policies.equals(that.policies) : that.policies != null) return false;
+            return this.policyAttachments != null ? this.policyAttachments.equals(that.policyAttachments) : that.policyAttachments == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.groupName.hashCode();
             result = 31 * result + (this.comments != null ? this.comments.hashCode() : 0);
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.policies != null ? this.policies.hashCode() : 0);
+            result = 31 * result + (this.policyAttachments != null ? this.policyAttachments.hashCode() : 0);
             return result;
         }
     }

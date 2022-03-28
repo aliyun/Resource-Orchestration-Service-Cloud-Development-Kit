@@ -1,6 +1,7 @@
 @alicloud/ros-cdk-ehpc.Cluster=com.aliyun.ros.cdk.ehpc.Cluster
 @alicloud/ros-cdk-ehpc.ClusterProps=com.aliyun.ros.cdk.ehpc.ClusterProps
 @alicloud/ros-cdk-ehpc.RosCluster=com.aliyun.ros.cdk.ehpc.RosCluster
+@alicloud/ros-cdk-ehpc.RosCluster.AdditionalVolumesProperty=com.aliyun.ros.cdk.ehpc.RosCluster$AdditionalVolumesProperty
 @alicloud/ros-cdk-ehpc.RosCluster.ApplicationProperty=com.aliyun.ros.cdk.ehpc.RosCluster$ApplicationProperty
 @alicloud/ros-cdk-ehpc.RosCluster.PostInstallScriptProperty=com.aliyun.ros.cdk.ehpc.RosCluster$PostInstallScriptProperty
 @alicloud/ros-cdk-ehpc.RosClusterProps=com.aliyun.ros.cdk.ehpc.RosClusterProps

@@ -245,6 +245,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: kibanaNode: The dedicated kibana node setting.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "kibanaNode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.KibanaNodeProperty\"}]}}", isOptional: true)]
+        public virtual object? KibanaNode
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
         /// </remarks>
         [JsiiOptional]
@@ -340,6 +351,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         [JsiiOptional]
         [JsiiProperty(name: "zoneCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? ZoneCount
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneId: The zone id of elasticsearch.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ZoneId
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -544,6 +566,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             [JsiiOptional]
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PerformanceLevel
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IKibanaNodeProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.KibanaNodeProperty")]
+        public interface IKibanaNodeProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: spec: The dedicated kibana node spec.
+            /// </remarks>
+            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Spec
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IKibanaNodeProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.KibanaNodeProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.IKibanaNodeProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: spec: The dedicated kibana node spec.
+                /// </remarks>
+                [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Spec
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-elasticsearch.RosInstance.KibanaNodeProperty")]
+        public class KibanaNodeProperty : AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.IKibanaNodeProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: spec: The dedicated kibana node spec.
+            /// </remarks>
+            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Spec
             {
                 get;
                 set;

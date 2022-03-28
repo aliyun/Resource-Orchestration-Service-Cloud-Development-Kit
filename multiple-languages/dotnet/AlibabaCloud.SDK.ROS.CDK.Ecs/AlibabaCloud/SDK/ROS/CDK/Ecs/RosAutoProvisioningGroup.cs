@@ -859,19 +859,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: internetMaxBandwidthIn: The maximum inbound public bandwidth.
-            /// </remarks>
-            [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? InternetMaxBandwidthIn
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit/s. Valid values: 0 to 100. Default value: 0.
             /// </remarks>
             [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1155,16 +1142,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: internetMaxBandwidthIn: The maximum inbound public bandwidth.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? InternetMaxBandwidthIn
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-
-                /// <remarks>
                 /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit/s. Valid values: 0 to 100. Default value: 0.
                 /// </remarks>
                 [JsiiOptional]
@@ -1407,17 +1384,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InternetChargeType
-            {
-                get;
-                set;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: internetMaxBandwidthIn: The maximum inbound public bandwidth.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? InternetMaxBandwidthIn
             {
                 get;
                 set;

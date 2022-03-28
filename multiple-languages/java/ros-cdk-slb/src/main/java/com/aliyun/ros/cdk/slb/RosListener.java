@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.473Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.603Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -461,6 +461,13 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckMethod() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckType() {
             return null;
         }
@@ -534,6 +541,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HealthCheckProperty> {
             java.lang.Object domain;
+            java.lang.Object healthCheckMethod;
             java.lang.Object healthCheckType;
             java.lang.Object healthyThreshold;
             java.lang.Object httpCode;
@@ -563,6 +571,28 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder domain(com.aliyun.ros.cdk.core.IResolvable domain) {
                 this.domain = domain;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HealthCheckProperty#getHealthCheckMethod}
+             * @param healthCheckMethod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder healthCheckMethod(java.lang.String healthCheckMethod) {
+                this.healthCheckMethod = healthCheckMethod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HealthCheckProperty#getHealthCheckMethod}
+             * @param healthCheckMethod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder healthCheckMethod(com.aliyun.ros.cdk.core.IResolvable healthCheckMethod) {
+                this.healthCheckMethod = healthCheckMethod;
                 return this;
             }
 
@@ -783,6 +813,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements HealthCheckProperty {
             private final java.lang.Object domain;
+            private final java.lang.Object healthCheckMethod;
             private final java.lang.Object healthCheckType;
             private final java.lang.Object healthyThreshold;
             private final java.lang.Object httpCode;
@@ -800,6 +831,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.healthCheckMethod = software.amazon.jsii.Kernel.get(this, "healthCheckMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.healthyThreshold = software.amazon.jsii.Kernel.get(this, "healthyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.httpCode = software.amazon.jsii.Kernel.get(this, "httpCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -817,6 +849,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.domain = builder.domain;
+                this.healthCheckMethod = builder.healthCheckMethod;
                 this.healthCheckType = builder.healthCheckType;
                 this.healthyThreshold = builder.healthyThreshold;
                 this.httpCode = builder.httpCode;
@@ -831,6 +864,11 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getDomain() {
                 return this.domain;
+            }
+
+            @Override
+            public final java.lang.Object getHealthCheckMethod() {
+                return this.healthCheckMethod;
             }
 
             @Override
@@ -887,6 +925,9 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getDomain() != null) {
                     data.set("domain", om.valueToTree(this.getDomain()));
                 }
+                if (this.getHealthCheckMethod() != null) {
+                    data.set("healthCheckMethod", om.valueToTree(this.getHealthCheckMethod()));
+                }
                 if (this.getHealthCheckType() != null) {
                     data.set("healthCheckType", om.valueToTree(this.getHealthCheckType()));
                 }
@@ -933,6 +974,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 HealthCheckProperty.Jsii$Proxy that = (HealthCheckProperty.Jsii$Proxy) o;
 
                 if (this.domain != null ? !this.domain.equals(that.domain) : that.domain != null) return false;
+                if (this.healthCheckMethod != null ? !this.healthCheckMethod.equals(that.healthCheckMethod) : that.healthCheckMethod != null) return false;
                 if (this.healthCheckType != null ? !this.healthCheckType.equals(that.healthCheckType) : that.healthCheckType != null) return false;
                 if (this.healthyThreshold != null ? !this.healthyThreshold.equals(that.healthyThreshold) : that.healthyThreshold != null) return false;
                 if (this.httpCode != null ? !this.httpCode.equals(that.httpCode) : that.httpCode != null) return false;
@@ -947,6 +989,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.domain != null ? this.domain.hashCode() : 0;
+                result = 31 * result + (this.healthCheckMethod != null ? this.healthCheckMethod.hashCode() : 0);
                 result = 31 * result + (this.healthCheckType != null ? this.healthCheckType.hashCode() : 0);
                 result = 31 * result + (this.healthyThreshold != null ? this.healthyThreshold.hashCode() : 0);
                 result = 31 * result + (this.httpCode != null ? this.httpCode.hashCode() : 0);

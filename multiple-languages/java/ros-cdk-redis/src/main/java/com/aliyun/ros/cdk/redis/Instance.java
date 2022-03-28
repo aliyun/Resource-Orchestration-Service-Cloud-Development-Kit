@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS resource type:  `ALIYUN::REDIS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.277Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.389Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -619,6 +619,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props().period(period);
+            return this;
+        }
+
+        /**
+         * Property productType: Product type.
+         * <p>
+         * Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+         * <p>
+         * @return {@code this}
+         * @param productType Property productType: Product type. This parameter is required.
+         */
+        public Builder productType(final java.lang.String productType) {
+            this.props().productType(productType);
+            return this;
+        }
+        /**
+         * Property productType: Product type.
+         * <p>
+         * Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+         * <p>
+         * @return {@code this}
+         * @param productType Property productType: Product type. This parameter is required.
+         */
+        public Builder productType(final com.aliyun.ros.cdk.core.IResolvable productType) {
+            this.props().productType(productType);
             return this;
         }
 

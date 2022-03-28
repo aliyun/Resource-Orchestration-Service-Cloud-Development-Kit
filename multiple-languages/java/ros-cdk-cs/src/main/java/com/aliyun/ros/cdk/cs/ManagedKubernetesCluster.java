@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.818Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.847Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -46,6 +46,13 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
     public ManagedKubernetesCluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cs.ManagedKubernetesClusterProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute APIServerSLBId: The id of API server SLB.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApiServerSlbId() {
+        return software.amazon.jsii.Kernel.get(this, "attrApiServerSlbId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -269,6 +276,122 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property autoRenew: Whether the cluster automatically renews.
+         * <p>
+         * It takes effect when the value of ChargeType is PrePaid. The optional values are:
+         * true: automatic renewal
+         * false: do not renew automatically
+         * Default to true.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Whether the cluster automatically renews. This parameter is required.
+         */
+        public Builder autoRenew(final java.lang.Boolean autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * Property autoRenew: Whether the cluster automatically renews.
+         * <p>
+         * It takes effect when the value of ChargeType is PrePaid. The optional values are:
+         * true: automatic renewal
+         * false: do not renew automatically
+         * Default to true.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Whether the cluster automatically renews. This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+        /**
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+
+        /**
+         * Property chargeType: cluster payment type.
+         * <p>
+         * The optional values are:
+         * PrePaid: prepaid
+         * PostPaid: Pay as you go
+         * Default to PostPaid.
+         * <p>
+         * @return {@code this}
+         * @param chargeType Property chargeType: cluster payment type. This parameter is required.
+         */
+        public Builder chargeType(final java.lang.String chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
+        /**
+         * Property chargeType: cluster payment type.
+         * <p>
+         * The optional values are:
+         * PrePaid: prepaid
+         * PostPaid: Pay as you go
+         * Default to PostPaid.
+         * <p>
+         * @return {@code this}
+         * @param chargeType Property chargeType: cluster payment type. This parameter is required.
+         */
+        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
+
+        /**
+         * Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.
+         * <p>
+         * For more information, see CIS reinforcement.
+         * Valid values:
+         * true: enables CIS reinforcement.
+         * false: disables CIS reinforcement.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param cisEnabled Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. This parameter is required.
+         */
+        public Builder cisEnabled(final java.lang.Boolean cisEnabled) {
+            this.props.cisEnabled(cisEnabled);
+            return this;
+        }
+        /**
+         * Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.
+         * <p>
+         * For more information, see CIS reinforcement.
+         * Valid values:
+         * true: enables CIS reinforcement.
+         * false: disables CIS reinforcement.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param cisEnabled Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. This parameter is required.
+         */
+        public Builder cisEnabled(final com.aliyun.ros.cdk.core.IResolvable cisEnabled) {
+            this.props.cisEnabled(cisEnabled);
+            return this;
+        }
+
+        /**
          * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
          * <p>
          * @return {@code this}
@@ -342,6 +465,37 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder containerCidr(final com.aliyun.ros.cdk.core.IResolvable containerCidr) {
             this.props.containerCidr(containerCidr);
+            return this;
+        }
+
+        /**
+         * Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
+         * <p>
+         * After deletion protection is enabled, the cluster cannot be deleted
+         * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+         * false: disables deletion protection for the cluster.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable deletion protection for the cluster. This parameter is required.
+         */
+        public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+        /**
+         * Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
+         * <p>
+         * After deletion protection is enabled, the cluster cannot be deleted
+         * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+         * false: disables deletion protection for the cluster.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable deletion protection for the cluster. This parameter is required.
+         */
+        public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
             return this;
         }
 
@@ -421,6 +575,115 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances.
+         * <p>
+         * Valid values:
+         * true: stores the data of containers and images on a data disk.
+         * The original data on the disk will be overwritten.
+         * Back up data before you mount the disk.
+         * false: does not store the data of containers and images on a data disk.
+         * Default value: false.
+         * How to mount a data disk:
+         * If the ECS instances have data disks mounted and the file system of the last
+         * data disk is not initialized, the system automatically formats the data disk to ext4.
+         * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+         * The system does not create or mount a new data disk if no data disk has been
+         * mounted to the ECS instances.
+         * <p>
+         * @return {@code this}
+         * @param formatDisk Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances. This parameter is required.
+         */
+        public Builder formatDisk(final java.lang.Boolean formatDisk) {
+            this.props.formatDisk(formatDisk);
+            return this;
+        }
+        /**
+         * Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances.
+         * <p>
+         * Valid values:
+         * true: stores the data of containers and images on a data disk.
+         * The original data on the disk will be overwritten.
+         * Back up data before you mount the disk.
+         * false: does not store the data of containers and images on a data disk.
+         * Default value: false.
+         * How to mount a data disk:
+         * If the ECS instances have data disks mounted and the file system of the last
+         * data disk is not initialized, the system automatically formats the data disk to ext4.
+         * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+         * The system does not create or mount a new data disk if no data disk has been
+         * mounted to the ECS instances.
+         * <p>
+         * @return {@code this}
+         * @param formatDisk Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances. This parameter is required.
+         */
+        public Builder formatDisk(final com.aliyun.ros.cdk.core.IResolvable formatDisk) {
+            this.props.formatDisk(formatDisk);
+            return this;
+        }
+
+        /**
+         * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         * <p>
+         * This parameter takes effect only if security_group_id is left empty.
+         * Note You must specify an advanced security group for a cluster that has Terway installed.
+         * true: creates an advanced security group.
+         * false: does not create an advanced security group.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. This parameter is required.
+         */
+        public Builder isEnterpriseSecurityGroup(final java.lang.Boolean isEnterpriseSecurityGroup) {
+            this.props.isEnterpriseSecurityGroup(isEnterpriseSecurityGroup);
+            return this;
+        }
+        /**
+         * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         * <p>
+         * This parameter takes effect only if security_group_id is left empty.
+         * Note You must specify an advanced security group for a cluster that has Terway installed.
+         * true: creates an advanced security group.
+         * false: does not create an advanced security group.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. This parameter is required.
+         */
+        public Builder isEnterpriseSecurityGroup(final com.aliyun.ros.cdk.core.IResolvable isEnterpriseSecurityGroup) {
+            this.props.isEnterpriseSecurityGroup(isEnterpriseSecurityGroup);
+            return this;
+        }
+
+        /**
+         * Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+         * <p>
+         * true: retains the names.
+         * false: does not retain the names. The new names are assigned by the system.
+         * Default value: true.
+         * <p>
+         * @return {@code this}
+         * @param keepInstanceName Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster. This parameter is required.
+         */
+        public Builder keepInstanceName(final java.lang.Boolean keepInstanceName) {
+            this.props.keepInstanceName(keepInstanceName);
+            return this;
+        }
+        /**
+         * Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+         * <p>
+         * true: retains the names.
+         * false: does not retain the names. The new names are assigned by the system.
+         * Default value: true.
+         * <p>
+         * @return {@code this}
+         * @param keepInstanceName Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster. This parameter is required.
+         */
+        public Builder keepInstanceName(final com.aliyun.ros.cdk.core.IResolvable keepInstanceName) {
+            this.props.keepInstanceName(keepInstanceName);
+            return this;
+        }
+
+        /**
          * Property keyPair: Key pair name.
          * <p>
          * Specify one of KeyPair or LoginPassword.
@@ -467,6 +730,31 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+         * <p>
+         * Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the Server Load Balancer instance. This parameter is required.
+         */
+        public Builder loadBalancerSpec(final java.lang.String loadBalancerSpec) {
+            this.props.loadBalancerSpec(loadBalancerSpec);
+            return this;
+        }
+        /**
+         * Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+         * <p>
+         * Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the Server Load Balancer instance. This parameter is required.
+         */
+        public Builder loadBalancerSpec(final com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {
+            this.props.loadBalancerSpec(loadBalancerSpec);
+            return this;
+        }
+
+        /**
          * Property loginPassword: SSH login password.
          * <p>
          * Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
@@ -488,6 +776,33 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder loginPassword(final com.aliyun.ros.cdk.core.IResolvable loginPassword) {
             this.props.loginPassword(loginPassword);
+            return this;
+        }
+
+        /**
+         * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
+         * <p>
+         * This number is determined by the specified pod CIDR block.
+         * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+         * <p>
+         * @return {@code this}
+         * @param nodeCidrMask Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. This parameter is required.
+         */
+        public Builder nodeCidrMask(final java.lang.String nodeCidrMask) {
+            this.props.nodeCidrMask(nodeCidrMask);
+            return this;
+        }
+        /**
+         * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
+         * <p>
+         * This number is determined by the specified pod CIDR block.
+         * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+         * <p>
+         * @return {@code this}
+         * @param nodeCidrMask Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. This parameter is required.
+         */
+        public Builder nodeCidrMask(final com.aliyun.ros.cdk.core.IResolvable nodeCidrMask) {
+            this.props.nodeCidrMask(nodeCidrMask);
             return this;
         }
 
@@ -515,6 +830,138 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder numOfNodes(final com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
             this.props.numOfNodes(numOfNodes);
+            return this;
+        }
+
+        /**
+         * Property osType: The type of operating system.
+         * <p>
+         * Valid values:
+         * Windows
+         * Linux
+         * Default value: Linux.
+         * <p>
+         * @return {@code this}
+         * @param osType Property osType: The type of operating system. This parameter is required.
+         */
+        public Builder osType(final java.lang.String osType) {
+            this.props.osType(osType);
+            return this;
+        }
+        /**
+         * Property osType: The type of operating system.
+         * <p>
+         * Valid values:
+         * Windows
+         * Linux
+         * Default value: Linux.
+         * <p>
+         * @return {@code this}
+         * @param osType Property osType: The type of operating system. This parameter is required.
+         */
+        public Builder osType(final com.aliyun.ros.cdk.core.IResolvable osType) {
+            this.props.osType(osType);
+            return this;
+        }
+
+        /**
+         * Property period: The duration of the annual subscription and monthly subscription.
+         * <p>
+         * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+         * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+         * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         * Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The duration of the annual subscription and monthly subscription. This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * Property period: The duration of the annual subscription and monthly subscription.
+         * <p>
+         * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+         * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+         * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         * Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The duration of the annual subscription and monthly subscription. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property periodUnit: When you specify PrePaid, you need to specify the period.
+         * <p>
+         * The options are:
+         * Week: Time is measured in weeks
+         * Month: time in months
+         * Default to Month
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
+         */
+        public Builder periodUnit(final java.lang.String periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+        /**
+         * Property periodUnit: When you specify PrePaid, you need to specify the period.
+         * <p>
+         * The options are:
+         * Week: Time is measured in weeks
+         * Month: time in months
+         * Default to Month
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * Property platform: The release version of the operating system.
+         * <p>
+         * Valid values:
+         * CentOS
+         * AliyunLinux
+         * QbootAliyunLinux
+         * Qboot
+         * Windows
+         * WindowsCore
+         * Default value: CentOS.
+         * <p>
+         * @return {@code this}
+         * @param platform Property platform: The release version of the operating system. This parameter is required.
+         */
+        public Builder platform(final java.lang.String platform) {
+            this.props.platform(platform);
+            return this;
+        }
+        /**
+         * Property platform: The release version of the operating system.
+         * <p>
+         * Valid values:
+         * CentOS
+         * AliyunLinux
+         * QbootAliyunLinux
+         * Qboot
+         * Windows
+         * WindowsCore
+         * Default value: CentOS.
+         * <p>
+         * @return {@code this}
+         * @param platform Property platform: The release version of the operating system. This parameter is required.
+         */
+        public Builder platform(final com.aliyun.ros.cdk.core.IResolvable platform) {
+            this.props.platform(platform);
             return this;
         }
 
@@ -685,6 +1132,33 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property socEnabled: Valid values: true: enables reinforcement based on classified protection.
+         * <p>
+         * false: disables reinforcement based on classified protection.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param socEnabled Property socEnabled: Valid values: true: enables reinforcement based on classified protection. This parameter is required.
+         */
+        public Builder socEnabled(final java.lang.Boolean socEnabled) {
+            this.props.socEnabled(socEnabled);
+            return this;
+        }
+        /**
+         * Property socEnabled: Valid values: true: enables reinforcement based on classified protection.
+         * <p>
+         * false: disables reinforcement based on classified protection.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param socEnabled Property socEnabled: Valid values: true: enables reinforcement based on classified protection. This parameter is required.
+         */
+        public Builder socEnabled(final com.aliyun.ros.cdk.core.IResolvable socEnabled) {
+            this.props.socEnabled(socEnabled);
+            return this;
+        }
+
+        /**
          * Property tags: Tag the cluster.
          * <p>
          * @return {@code this}
@@ -746,54 +1220,27 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes.
+         * Property userData: The user-defined data.
          * <p>
-         * The optional values are:
-         * true: automatic renewal
-         * false: do not renew automatically
-         * Default to true.
+         * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
          * <p>
          * @return {@code this}
-         * @param workerAutoRenew Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. This parameter is required.
+         * @param userData Property userData: The user-defined data. This parameter is required.
          */
-        public Builder workerAutoRenew(final java.lang.Boolean workerAutoRenew) {
-            this.props.workerAutoRenew(workerAutoRenew);
+        public Builder userData(final java.lang.String userData) {
+            this.props.userData(userData);
             return this;
         }
         /**
-         * Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes.
+         * Property userData: The user-defined data.
          * <p>
-         * The optional values are:
-         * true: automatic renewal
-         * false: do not renew automatically
-         * Default to true.
+         * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
          * <p>
          * @return {@code this}
-         * @param workerAutoRenew Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. This parameter is required.
+         * @param userData Property userData: The user-defined data. This parameter is required.
          */
-        public Builder workerAutoRenew(final com.aliyun.ros.cdk.core.IResolvable workerAutoRenew) {
-            this.props.workerAutoRenew(workerAutoRenew);
-            return this;
-        }
-
-        /**
-         * Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
-         * <p>
-         * @return {@code this}
-         * @param workerAutoRenewPeriod Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1. This parameter is required.
-         */
-        public Builder workerAutoRenewPeriod(final java.lang.Number workerAutoRenewPeriod) {
-            this.props.workerAutoRenewPeriod(workerAutoRenewPeriod);
-            return this;
-        }
-        /**
-         * Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
-         * <p>
-         * @return {@code this}
-         * @param workerAutoRenewPeriod Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1. This parameter is required.
-         */
-        public Builder workerAutoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable workerAutoRenewPeriod) {
-            this.props.workerAutoRenewPeriod(workerAutoRenewPeriod);
+        public Builder userData(final com.aliyun.ros.cdk.core.IResolvable userData) {
+            this.props.userData(userData);
             return this;
         }
 
@@ -850,99 +1297,6 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder workerDataDisks(final java.util.List<? extends java.lang.Object> workerDataDisks) {
             this.props.workerDataDisks(workerDataDisks);
-            return this;
-        }
-
-        /**
-         * Property workerInstanceChargeType: Worker node payment type.
-         * <p>
-         * The optional values are:
-         * PrePaid: prepaid
-         * PostPaid: Pay as you go
-         * Default to PostPaid.
-         * <p>
-         * @return {@code this}
-         * @param workerInstanceChargeType Property workerInstanceChargeType: Worker node payment type. This parameter is required.
-         */
-        public Builder workerInstanceChargeType(final java.lang.String workerInstanceChargeType) {
-            this.props.workerInstanceChargeType(workerInstanceChargeType);
-            return this;
-        }
-        /**
-         * Property workerInstanceChargeType: Worker node payment type.
-         * <p>
-         * The optional values are:
-         * PrePaid: prepaid
-         * PostPaid: Pay as you go
-         * Default to PostPaid.
-         * <p>
-         * @return {@code this}
-         * @param workerInstanceChargeType Property workerInstanceChargeType: Worker node payment type. This parameter is required.
-         */
-        public Builder workerInstanceChargeType(final com.aliyun.ros.cdk.core.IResolvable workerInstanceChargeType) {
-            this.props.workerInstanceChargeType(workerInstanceChargeType);
-            return this;
-        }
-
-        /**
-         * Property workerPeriod: The duration of the annual and monthly subscription.
-         * <p>
-         * It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-         * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-         * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-         * Default to 1.
-         * <p>
-         * @return {@code this}
-         * @param workerPeriod Property workerPeriod: The duration of the annual and monthly subscription. This parameter is required.
-         */
-        public Builder workerPeriod(final java.lang.Number workerPeriod) {
-            this.props.workerPeriod(workerPeriod);
-            return this;
-        }
-        /**
-         * Property workerPeriod: The duration of the annual and monthly subscription.
-         * <p>
-         * It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-         * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-         * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-         * Default to 1.
-         * <p>
-         * @return {@code this}
-         * @param workerPeriod Property workerPeriod: The duration of the annual and monthly subscription. This parameter is required.
-         */
-        public Builder workerPeriod(final com.aliyun.ros.cdk.core.IResolvable workerPeriod) {
-            this.props.workerPeriod(workerPeriod);
-            return this;
-        }
-
-        /**
-         * Property workerPeriodUnit: When you specify PrePaid, you need to specify the period.
-         * <p>
-         * The options are:
-         * Week: Time is measured in weeks
-         * Month: time in months
-         * Default to Month.
-         * <p>
-         * @return {@code this}
-         * @param workerPeriodUnit Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
-         */
-        public Builder workerPeriodUnit(final java.lang.String workerPeriodUnit) {
-            this.props.workerPeriodUnit(workerPeriodUnit);
-            return this;
-        }
-        /**
-         * Property workerPeriodUnit: When you specify PrePaid, you need to specify the period.
-         * <p>
-         * The options are:
-         * Week: Time is measured in weeks
-         * Month: time in months
-         * Default to Month.
-         * <p>
-         * @return {@code this}
-         * @param workerPeriodUnit Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
-         */
-        public Builder workerPeriodUnit(final com.aliyun.ros.cdk.core.IResolvable workerPeriodUnit) {
-            this.props.workerPeriodUnit(workerPeriodUnit);
             return this;
         }
 

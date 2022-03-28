@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * A ROS template type:  `ALIYUN::ROCKETMQ::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.343Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.450Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.RosTopic")
 public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -129,24 +129,6 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getPerm() {
-        return software.amazon.jsii.Kernel.get(this, "perm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPerm(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "perm", value);
-    }
-
-    /**
-     */
-    public void setPerm(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "perm", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRemark() {
         return software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -237,23 +219,6 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder topic(final com.aliyun.ros.cdk.core.IResolvable topic) {
             this.props.topic(topic);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param perm This parameter is required.
-         */
-        public Builder perm(final java.lang.Number perm) {
-            this.props.perm(perm);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param perm This parameter is required.
-         */
-        public Builder perm(final com.aliyun.ros.cdk.core.IResolvable perm) {
-            this.props.perm(perm);
             return this;
         }
 

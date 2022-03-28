@@ -1032,10 +1032,6 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly internetMaxBandwidthOut?: number | ros.IResolvable;
         /**
-         * @Property internetMaxBandwidthIn: The maximum inbound public bandwidth.
-         */
-        readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-        /**
          * @Property systemDiskPerformanceLevel: The performance level of the ESSD used as the system disk. Default value: PL0. Valid values:
      * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
      * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
@@ -1115,7 +1111,6 @@ function RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(propertie
     errors.collect(ros.propertyValidator('dataDisk', ros.listValidator(RosAutoProvisioningGroup_DataDiskPropertyValidator))(properties.dataDisk));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
@@ -1161,7 +1156,6 @@ function rosAutoProvisioningGroupLaunchConfigurationPropertyToRosTemplate(proper
       DataDisk: ros.listMapper(rosAutoProvisioningGroupDataDiskPropertyToRosTemplate)(properties.dataDisk),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
       ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceDescription: ros.stringToRosTemplate(properties.instanceDescription),
@@ -3939,11 +3933,6 @@ export interface RosInstanceProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -4210,14 +4199,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
-            data: properties.internetMaxBandwidthIn,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     if(properties.securityEnhancementStrategy && (typeof properties.securityEnhancementStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateAllowedValues)({
           data: properties.securityEnhancementStrategy,
@@ -4264,7 +4245,6 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
@@ -4427,11 +4407,6 @@ export class RosInstance extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
-
-    /**
      * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
@@ -4592,7 +4567,6 @@ export class RosInstance extends ros.RosResource {
         this.instanceChargeType = props.instanceChargeType;
         this.instanceName = props.instanceName;
         this.internetChargeType = props.internetChargeType;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
         this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
         this.ioOptimized = props.ioOptimized;
         this.keyPairName = props.keyPairName;
@@ -4638,7 +4612,6 @@ export class RosInstance extends ros.RosResource {
             instanceChargeType: this.instanceChargeType,
             instanceName: this.instanceName,
             internetChargeType: this.internetChargeType,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
             internetMaxBandwidthOut: this.internetMaxBandwidthOut,
             ioOptimized: this.ioOptimized,
             keyPairName: this.keyPairName,
@@ -5515,11 +5488,6 @@ export interface RosInstanceGroupProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -5584,7 +5552,7 @@ export interface RosInstanceGroupProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month. Default value is Month.Old instances will not be changed.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -5785,7 +5753,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
-          allowedValues: ["Week","Month"],
+          allowedValues: ["Week","Month","Year"],
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
@@ -5895,14 +5863,6 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('eniMappings', ros.listValidator(RosInstanceGroup_EniMappingsPropertyValidator))(properties.eniMappings));
     errors.collect(ros.propertyValidator('systemDiskBurstingEnabled', ros.validateBoolean)(properties.systemDiskBurstingEnabled));
-    if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
-            data: properties.internetMaxBandwidthIn,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     return errors.wrap('supplied properties not correct for "RosInstanceGroupProps"');
 }
 
@@ -5938,7 +5898,6 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
       Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
@@ -6150,11 +6109,6 @@ export class RosInstanceGroup extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
-
-    /**
      * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
@@ -6219,7 +6173,7 @@ export class RosInstanceGroup extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month. Default value is Month.Old instances will not be changed.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -6368,7 +6322,6 @@ export class RosInstanceGroup extends ros.RosResource {
         this.instanceChargeType = props.instanceChargeType;
         this.instanceName = props.instanceName;
         this.internetChargeType = props.internetChargeType;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
         this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
         this.ioOptimized = props.ioOptimized;
         this.ipv6AddressCount = props.ipv6AddressCount;
@@ -6426,7 +6379,6 @@ export class RosInstanceGroup extends ros.RosResource {
             instanceChargeType: this.instanceChargeType,
             instanceName: this.instanceName,
             internetChargeType: this.internetChargeType,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
             internetMaxBandwidthOut: this.internetMaxBandwidthOut,
             ioOptimized: this.ioOptimized,
             ipv6AddressCount: this.ipv6AddressCount,
@@ -6857,7 +6809,7 @@ export interface RosInstanceGroupCloneProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month. Default value is Month.Old instances will not be changed.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -7093,7 +7045,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
-          allowedValues: ["Week","Month"],
+          allowedValues: ["Week","Month","Year"],
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
@@ -7367,7 +7319,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month. Default value is Month.Old instances will not be changed.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -8117,6 +8069,11 @@ export interface RosLaunchTemplateProps {
     readonly autoReleaseTime?: string | ros.IResolvable;
 
     /**
+     * @Property deploymentSetId: The ID of the deployment set.
+     */
+    readonly deploymentSetId?: string | ros.IResolvable;
+
+    /**
      * @Property description: Description of the instance, [2, 256] characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -8137,6 +8094,22 @@ export interface RosLaunchTemplateProps {
     readonly imageId?: string | ros.IResolvable;
 
     /**
+     * @Property imageOwnerAlias: The source of the image. Valid values:
+     * system: public images provided by Alibaba Cloud.
+     * self: your custom images.
+     * others: shared images from other Alibaba Cloud accounts.
+     * marketplace: Alibaba Cloud Marketplace images. If Alibaba Cloud Marketplace images are found, you can use these images without prior subscription. You must pay attention to the billing details of Alibaba Cloud Marketplace images.
+     */
+    readonly imageOwnerAlias?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceChargeType: The billing method of the instance. Valid values:
+     * PrePaid: subscription. If you set this parameter to PrePaid, make sure that your account supports payment by credit. Otherwise, an InvalidPayMethod error is returned.
+     * PostPaid: pay-as-you-go.
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
      * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly instanceName?: string | ros.IResolvable;
@@ -8152,11 +8125,6 @@ export interface RosLaunchTemplateProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second). The range is [1,200].
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * @Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second). Range is [0,200].While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -8165,6 +8133,11 @@ export interface RosLaunchTemplateProps {
      * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only.
      */
     readonly ioOptimized?: string | ros.IResolvable;
+
+    /**
+     * @Property ipv6AddressCount: The number of IPv6 addresses to be randomly generated for the primary ENI. Valid values: 1 to 10.
+     */
+    readonly ipv6AddressCount?: number | ros.IResolvable;
 
     /**
      * @Property keyPairName: SSH key pair name.
@@ -8182,9 +8155,33 @@ export interface RosLaunchTemplateProps {
     readonly networkType?: string | ros.IResolvable;
 
     /**
+     * @Property passwordInherit: Specifies whether to use the password preset in the image.
+     * Note When you use this parameter, leave Password empty and make sure that the selected image has a password preset.
+     */
+    readonly passwordInherit?: boolean | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the instance. Unit: months.
+     * This parameter is valid and required only when InstanceChargeType is set to PrePaid.
+     * Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, and 60.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property privateIpAddress: The private IP address of the instance.
+     * To assign a private IP address to an instance of the VPC type, make sure that the IP address is an idle IP address within the CIDR block of the vSwitch specified by the VSwitchId parameter.
+     */
+    readonly privateIpAddress?: string | ros.IResolvable;
+
+    /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
      */
     readonly ramRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the instance, Elastic Block Storage (EBS) device, and elastic network interface (ENI).
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property securityEnhancementStrategy: Activate or deactivate security enhancement,Value range: "Active" and "Deactive"
@@ -8195,6 +8192,19 @@ export interface RosLaunchTemplateProps {
      * @Property securityGroupId: Security group to create ecs instance. For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
      */
     readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupIds: The ID of security group list to which to assign the instance.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * Default value: 1.
+     */
+    readonly spotDuration?: number | ros.IResolvable;
 
     /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
@@ -8212,6 +8222,14 @@ export interface RosLaunchTemplateProps {
     readonly systemDiskCategory?: string | ros.IResolvable;
 
     /**
+     * @Property systemDiskDeleteWithInstance: Specifies whether to release the system disk when the instance is released. Valid values:
+     * true: releases the system disk when the instance is released.
+     * false: does not release the system disk when the instance is released.
+     * Default value: true.
+     */
+    readonly systemDiskDeleteWithInstance?: boolean | ros.IResolvable;
+
+    /**
      * @Property systemDiskDescription: Description of created system disk.
      */
     readonly systemDiskDescription?: string | ros.IResolvable;
@@ -8222,6 +8240,15 @@ export interface RosLaunchTemplateProps {
     readonly systemDiskDiskName?: string | ros.IResolvable;
 
     /**
+     * @Property systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
+     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     */
+    readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
      * @Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
      */
     readonly systemDiskSize?: number | ros.IResolvable;
@@ -8230,6 +8257,11 @@ export interface RosLaunchTemplateProps {
      * @Property tags: Tags to attach to instance, security group, disk and network interface.
      */
     readonly tags?: RosLaunchTemplate.TagsProperty[];
+
+    /**
+     * @Property templateResourceGroupId: The ID of the resource group to which to assign the launch template.
+     */
+    readonly templateResourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property templateTags: Template tags to attach to launch template.
@@ -8267,7 +8299,10 @@ export interface RosLaunchTemplateProps {
 function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('imageOwnerAlias', ros.validateString)(properties.imageOwnerAlias));
+    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.diskMappings && (Array.isArray(properties.diskMappings) || (typeof properties.diskMappings) === 'string')) {
         errors.collect(ros.propertyValidator('diskMappings', ros.validateLength)({
             data: properties.diskMappings.length,
@@ -8286,6 +8321,14 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
     errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PrePaid","PostPaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('spotDuration', ros.validateNumber)(properties.spotDuration));
     if(properties.templateTags && (Array.isArray(properties.templateTags) || (typeof properties.templateTags) === 'string')) {
         errors.collect(ros.propertyValidator('templateTags', ros.validateLength)({
             data: properties.templateTags.length,
@@ -8295,6 +8338,15 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('templateTags', ros.listValidator(RosLaunchTemplate_TemplateTagsPropertyValidator))(properties.templateTags));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
+    if(properties.ipv6AddressCount && (typeof properties.ipv6AddressCount) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateRange)({
+            data: properties.ipv6AddressCount,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
     if(properties.networkType && (typeof properties.networkType) !== 'object') {
         errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
           data: properties.networkType,
@@ -8330,6 +8382,8 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
+    errors.collect(ros.propertyValidator('templateResourceGroupId', ros.validateString)(properties.templateResourceGroupId));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
     errors.collect(ros.propertyValidator('launchTemplateName', ros.requiredValidator)(properties.launchTemplateName));
     errors.collect(ros.propertyValidator('launchTemplateName', ros.validateString)(properties.launchTemplateName));
@@ -8342,8 +8396,23 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
     errors.collect(ros.propertyValidator('versionDescription', ros.validateString)(properties.versionDescription));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
@@ -8359,6 +8428,8 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
+    errors.collect(ros.propertyValidator('systemDiskDeleteWithInstance', ros.validateBoolean)(properties.systemDiskDeleteWithInstance));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
             data: properties.internetMaxBandwidthOut,
@@ -8367,14 +8438,6 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
-            data: properties.internetMaxBandwidthIn,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     if(properties.securityEnhancementStrategy && (typeof properties.securityEnhancementStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateAllowedValues)({
           data: properties.securityEnhancementStrategy,
@@ -8402,29 +8465,41 @@ function rosLaunchTemplatePropsToRosTemplate(properties: any, enableResourceProp
     return {
       LaunchTemplateName: ros.stringToRosTemplate(properties.launchTemplateName),
       AutoReleaseTime: ros.stringToRosTemplate(properties.autoReleaseTime),
+      DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
       Description: ros.stringToRosTemplate(properties.description),
       DiskMappings: ros.listMapper(rosLaunchTemplateDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
       HostName: ros.stringToRosTemplate(properties.hostName),
       ImageId: ros.stringToRosTemplate(properties.imageId),
+      ImageOwnerAlias: ros.stringToRosTemplate(properties.imageOwnerAlias),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
+      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
       NetworkInterfaces: ros.listMapper(rosLaunchTemplateNetworkInterfacesPropertyToRosTemplate)(properties.networkInterfaces),
       NetworkType: ros.stringToRosTemplate(properties.networkType),
+      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
+      Period: ros.numberToRosTemplate(properties.period),
+      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      SpotDuration: ros.numberToRosTemplate(properties.spotDuration),
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+      SystemDiskDeleteWithInstance: ros.booleanToRosTemplate(properties.systemDiskDeleteWithInstance),
       SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
       SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
+      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
       Tags: ros.listMapper(rosLaunchTemplateTagsPropertyToRosTemplate)(properties.tags),
+      TemplateResourceGroupId: ros.stringToRosTemplate(properties.templateResourceGroupId),
       TemplateTags: ros.listMapper(rosLaunchTemplateTemplateTagsPropertyToRosTemplate)(properties.templateTags),
       UserData: ros.stringToRosTemplate(properties.userData),
       VersionDescription: ros.stringToRosTemplate(properties.versionDescription),
@@ -8481,6 +8556,11 @@ export class RosLaunchTemplate extends ros.RosResource {
     public autoReleaseTime: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deploymentSetId: The ID of the deployment set.
+     */
+    public deploymentSetId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Description of the instance, [2, 256] characters.
      */
     public description: string | ros.IResolvable | undefined;
@@ -8501,6 +8581,22 @@ export class RosLaunchTemplate extends ros.RosResource {
     public imageId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property imageOwnerAlias: The source of the image. Valid values:
+     * system: public images provided by Alibaba Cloud.
+     * self: your custom images.
+     * others: shared images from other Alibaba Cloud accounts.
+     * marketplace: Alibaba Cloud Marketplace images. If Alibaba Cloud Marketplace images are found, you can use these images without prior subscription. You must pay attention to the billing details of Alibaba Cloud Marketplace images.
+     */
+    public imageOwnerAlias: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceChargeType: The billing method of the instance. Valid values:
+     * PrePaid: subscription. If you set this parameter to PrePaid, make sure that your account supports payment by credit. Otherwise, an InvalidPayMethod error is returned.
+     * PostPaid: pay-as-you-go.
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     public instanceName: string | ros.IResolvable | undefined;
@@ -8516,11 +8612,6 @@ export class RosLaunchTemplate extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second). The range is [1,200].
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
-
-    /**
      * @Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second). Range is [0,200].While the property is not 0, public ip will be assigned for instance.
      */
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
@@ -8529,6 +8620,11 @@ export class RosLaunchTemplate extends ros.RosResource {
      * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only.
      */
     public ioOptimized: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6AddressCount: The number of IPv6 addresses to be randomly generated for the primary ENI. Valid values: 1 to 10.
+     */
+    public ipv6AddressCount: number | ros.IResolvable | undefined;
 
     /**
      * @Property keyPairName: SSH key pair name.
@@ -8546,9 +8642,33 @@ export class RosLaunchTemplate extends ros.RosResource {
     public networkType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property passwordInherit: Specifies whether to use the password preset in the image.
+     * Note When you use this parameter, leave Password empty and make sure that the selected image has a password preset.
+     */
+    public passwordInherit: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The subscription period of the instance. Unit: months.
+     * This parameter is valid and required only when InstanceChargeType is set to PrePaid.
+     * Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, and 60.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property privateIpAddress: The private IP address of the instance.
+     * To assign a private IP address to an instance of the VPC type, make sure that the IP address is an idle IP address within the CIDR block of the vSwitch specified by the VSwitchId parameter.
+     */
+    public privateIpAddress: string | ros.IResolvable | undefined;
+
+    /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
      */
     public ramRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the instance, Elastic Block Storage (EBS) device, and elastic network interface (ENI).
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityEnhancementStrategy: Activate or deactivate security enhancement,Value range: "Active" and "Deactive"
@@ -8559,6 +8679,19 @@ export class RosLaunchTemplate extends ros.RosResource {
      * @Property securityGroupId: Security group to create ecs instance. For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupIds: The ID of security group list to which to assign the instance.
+     */
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * Default value: 1.
+     */
+    public spotDuration: number | ros.IResolvable | undefined;
 
     /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
@@ -8576,6 +8709,14 @@ export class RosLaunchTemplate extends ros.RosResource {
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
+     * @Property systemDiskDeleteWithInstance: Specifies whether to release the system disk when the instance is released. Valid values:
+     * true: releases the system disk when the instance is released.
+     * false: does not release the system disk when the instance is released.
+     * Default value: true.
+     */
+    public systemDiskDeleteWithInstance: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskDescription: Description of created system disk.
      */
     public systemDiskDescription: string | ros.IResolvable | undefined;
@@ -8586,6 +8727,15 @@ export class RosLaunchTemplate extends ros.RosResource {
     public systemDiskDiskName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
+     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     */
+    public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
      */
     public systemDiskSize: number | ros.IResolvable | undefined;
@@ -8594,6 +8744,11 @@ export class RosLaunchTemplate extends ros.RosResource {
      * @Property tags: Tags to attach to instance, security group, disk and network interface.
      */
     public tags: RosLaunchTemplate.TagsProperty[] | undefined;
+
+    /**
+     * @Property templateResourceGroupId: The ID of the resource group to which to assign the launch template.
+     */
+    public templateResourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property templateTags: Template tags to attach to launch template.
@@ -8637,29 +8792,41 @@ export class RosLaunchTemplate extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.launchTemplateName = props.launchTemplateName;
         this.autoReleaseTime = props.autoReleaseTime;
+        this.deploymentSetId = props.deploymentSetId;
         this.description = props.description;
         this.diskMappings = props.diskMappings;
         this.hostName = props.hostName;
         this.imageId = props.imageId;
+        this.imageOwnerAlias = props.imageOwnerAlias;
+        this.instanceChargeType = props.instanceChargeType;
         this.instanceName = props.instanceName;
         this.instanceType = props.instanceType;
         this.internetChargeType = props.internetChargeType;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
         this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
         this.ioOptimized = props.ioOptimized;
+        this.ipv6AddressCount = props.ipv6AddressCount;
         this.keyPairName = props.keyPairName;
         this.networkInterfaces = props.networkInterfaces;
         this.networkType = props.networkType;
+        this.passwordInherit = props.passwordInherit;
+        this.period = props.period;
+        this.privateIpAddress = props.privateIpAddress;
         this.ramRoleName = props.ramRoleName;
+        this.resourceGroupId = props.resourceGroupId;
         this.securityEnhancementStrategy = props.securityEnhancementStrategy;
         this.securityGroupId = props.securityGroupId;
+        this.securityGroupIds = props.securityGroupIds;
+        this.spotDuration = props.spotDuration;
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
         this.systemDiskCategory = props.systemDiskCategory;
+        this.systemDiskDeleteWithInstance = props.systemDiskDeleteWithInstance;
         this.systemDiskDescription = props.systemDiskDescription;
         this.systemDiskDiskName = props.systemDiskDiskName;
+        this.systemDiskPerformanceLevel = props.systemDiskPerformanceLevel;
         this.systemDiskSize = props.systemDiskSize;
         this.tags = props.tags;
+        this.templateResourceGroupId = props.templateResourceGroupId;
         this.templateTags = props.templateTags;
         this.userData = props.userData;
         this.versionDescription = props.versionDescription;
@@ -8672,29 +8839,41 @@ export class RosLaunchTemplate extends ros.RosResource {
         return {
             launchTemplateName: this.launchTemplateName,
             autoReleaseTime: this.autoReleaseTime,
+            deploymentSetId: this.deploymentSetId,
             description: this.description,
             diskMappings: this.diskMappings,
             hostName: this.hostName,
             imageId: this.imageId,
+            imageOwnerAlias: this.imageOwnerAlias,
+            instanceChargeType: this.instanceChargeType,
             instanceName: this.instanceName,
             instanceType: this.instanceType,
             internetChargeType: this.internetChargeType,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
             internetMaxBandwidthOut: this.internetMaxBandwidthOut,
             ioOptimized: this.ioOptimized,
+            ipv6AddressCount: this.ipv6AddressCount,
             keyPairName: this.keyPairName,
             networkInterfaces: this.networkInterfaces,
             networkType: this.networkType,
+            passwordInherit: this.passwordInherit,
+            period: this.period,
+            privateIpAddress: this.privateIpAddress,
             ramRoleName: this.ramRoleName,
+            resourceGroupId: this.resourceGroupId,
             securityEnhancementStrategy: this.securityEnhancementStrategy,
             securityGroupId: this.securityGroupId,
+            securityGroupIds: this.securityGroupIds,
+            spotDuration: this.spotDuration,
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
             systemDiskCategory: this.systemDiskCategory,
+            systemDiskDeleteWithInstance: this.systemDiskDeleteWithInstance,
             systemDiskDescription: this.systemDiskDescription,
             systemDiskDiskName: this.systemDiskDiskName,
+            systemDiskPerformanceLevel: this.systemDiskPerformanceLevel,
             systemDiskSize: this.systemDiskSize,
             tags: this.tags,
+            templateResourceGroupId: this.templateResourceGroupId,
             templateTags: this.templateTags,
             userData: this.userData,
             versionDescription: this.versionDescription,
@@ -8729,6 +8908,14 @@ export namespace RosLaunchTemplate {
          */
         readonly encrypted?: boolean | ros.IResolvable;
         /**
+         * @Property performanceLevel: The performance level of the ESSD used as data disk. The value of Valid values:
+     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+         */
+        readonly performanceLevel?: string | ros.IResolvable;
+        /**
          * @Property size: The size of the volume, unit in GB.Value range: cloud: [5,2000], cloud_efficiency: [20,32768], cloud_ssd: [20,32768], cloud_essd: [20,32768] ephemeral_ssd: [5,800].The value should be equal to or greater than the specific snapshot.
          */
         readonly size?: string | ros.IResolvable;
@@ -8762,6 +8949,7 @@ function RosLaunchTemplate_DiskMappingsPropertyValidator(properties: any): ros.V
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
     errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
     errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
@@ -8784,6 +8972,7 @@ function rosLaunchTemplateDiskMappingsPropertyToRosTemplate(properties: any): an
       Category: ros.stringToRosTemplate(properties.category),
       Description: ros.stringToRosTemplate(properties.description),
       Encrypted: ros.booleanToRosTemplate(properties.encrypted),
+      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
       Size: ros.stringToRosTemplate(properties.size),
       DeleteWithInstance: ros.booleanToRosTemplate(properties.deleteWithInstance),
       DiskName: ros.stringToRosTemplate(properties.diskName),

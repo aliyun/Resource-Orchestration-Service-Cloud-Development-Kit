@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * The intrinsic function ``Fn::Select`` returns a single object from a list of objects by index.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.241Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnSelect")
 public class FnSelect extends com.aliyun.ros.cdk.core.Intrinsic {
 

@@ -53,6 +53,11 @@ export interface RosInstanceProps {
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
+     * @Property kibanaNode: The dedicated kibana node setting.
+     */
+    readonly kibanaNode?: RosInstance.KibanaNodeProperty | ros.IResolvable;
+
+    /**
      * @Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
      */
     readonly kibanaWhitelist?: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -98,6 +103,11 @@ export interface RosInstanceProps {
      * @Property zoneCount: undefined
      */
     readonly zoneCount?: number | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The zone id of elasticsearch.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -119,8 +129,10 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('enableKibanaPrivate', ros.validateBoolean)(properties.enableKibanaPrivate));
+    errors.collect(ros.propertyValidator('kibanaNode', RosInstance_KibanaNodePropertyValidator)(properties.kibanaNode));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('enableKibanaPrivate', ros.validateBoolean)(properties.enableKibanaPrivate));
     errors.collect(ros.propertyValidator('publicWhitelist', ros.listValidator(ros.validateAny))(properties.publicWhitelist));
     errors.collect(ros.propertyValidator('enableKibanaPublic', ros.validateBoolean)(properties.enableKibanaPublic));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
@@ -190,6 +202,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       EnableKibanaPublic: ros.booleanToRosTemplate(properties.enableKibanaPublic),
       EnablePublic: ros.booleanToRosTemplate(properties.enablePublic),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      KibanaNode: rosInstanceKibanaNodePropertyToRosTemplate(properties.kibanaNode),
       KibanaWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.kibanaWhitelist),
       MasterNode: rosInstanceMasterNodePropertyToRosTemplate(properties.masterNode),
       Period: ros.numberToRosTemplate(properties.period),
@@ -199,6 +212,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
       YMLConfig: rosInstanceYMLConfigPropertyToRosTemplate(properties.ymlConfig),
       ZoneCount: ros.numberToRosTemplate(properties.zoneCount),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -315,6 +329,11 @@ export class RosInstance extends ros.RosResource {
     public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property kibanaNode: The dedicated kibana node setting.
+     */
+    public kibanaNode: RosInstance.KibanaNodeProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
      */
     public kibanaWhitelist: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
@@ -362,6 +381,11 @@ export class RosInstance extends ros.RosResource {
     public zoneCount: number | ros.IResolvable | undefined;
 
     /**
+     * @Property zoneId: The zone id of elasticsearch.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::ElasticSearch::Instance`.
      *
      * @param scope - scope in which this resource is defined
@@ -391,6 +415,7 @@ export class RosInstance extends ros.RosResource {
         this.enableKibanaPublic = props.enableKibanaPublic;
         this.enablePublic = props.enablePublic;
         this.instanceChargeType = props.instanceChargeType;
+        this.kibanaNode = props.kibanaNode;
         this.kibanaWhitelist = props.kibanaWhitelist;
         this.masterNode = props.masterNode;
         this.period = props.period;
@@ -400,6 +425,7 @@ export class RosInstance extends ros.RosResource {
         this.tags = props.tags;
         this.ymlConfig = props.ymlConfig;
         this.zoneCount = props.zoneCount;
+        this.zoneId = props.zoneId;
     }
 
 
@@ -414,6 +440,7 @@ export class RosInstance extends ros.RosResource {
             enableKibanaPublic: this.enableKibanaPublic,
             enablePublic: this.enablePublic,
             instanceChargeType: this.instanceChargeType,
+            kibanaNode: this.kibanaNode,
             kibanaWhitelist: this.kibanaWhitelist,
             masterNode: this.masterNode,
             period: this.period,
@@ -423,6 +450,7 @@ export class RosInstance extends ros.RosResource {
             tags: this.tags,
             ymlConfig: this.ymlConfig,
             zoneCount: this.zoneCount,
+            zoneId: this.zoneId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -523,6 +551,48 @@ function rosInstanceDataNodePropertyToRosTemplate(properties: any): any {
       PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
       Amount: ros.numberToRosTemplate(properties.amount),
       DiskSize: ros.numberToRosTemplate(properties.diskSize),
+      Spec: ros.stringToRosTemplate(properties.spec),
+    };
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface KibanaNodeProperty {
+        /**
+         * @Property spec: The dedicated kibana node spec.
+         */
+        readonly spec: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `KibanaNodeProperty`
+ *
+ * @param properties - the TypeScript properties of a `KibanaNodeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_KibanaNodePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('spec', ros.requiredValidator)(properties.spec));
+    errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
+    return errors.wrap('supplied properties not correct for "KibanaNodeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearch::Instance.KibanaNode` resource
+ *
+ * @param properties - the TypeScript properties of a `KibanaNodeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ElasticSearch::Instance.KibanaNode` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceKibanaNodePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_KibanaNodePropertyValidator(properties).assertSuccess();
+    return {
       Spec: ros.stringToRosTemplate(properties.spec),
     };
 }

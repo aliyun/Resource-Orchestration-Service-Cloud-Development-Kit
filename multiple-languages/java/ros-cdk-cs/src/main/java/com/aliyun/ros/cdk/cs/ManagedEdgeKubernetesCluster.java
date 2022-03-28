@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.810Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.825Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster")
 public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -46,6 +46,13 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
     public ManagedEdgeKubernetesCluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cs.ManagedEdgeKubernetesClusterProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute APIServerSLBId: The id of API server SLB.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApiServerSlbId() {
+        return software.amazon.jsii.Kernel.get(this, "attrApiServerSlbId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -219,6 +226,89 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
+         * Property autoRenew: Whether the cluster automatically renews.
+         * <p>
+         * It takes effect when the value of ChargeType is PrePaid. The optional values are:
+         * true: automatic renewal
+         * false: do not renew automatically
+         * Default to true.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Whether the cluster automatically renews. This parameter is required.
+         */
+        public Builder autoRenew(final java.lang.Boolean autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * Property autoRenew: Whether the cluster automatically renews.
+         * <p>
+         * It takes effect when the value of ChargeType is PrePaid. The optional values are:
+         * true: automatic renewal
+         * false: do not renew automatically
+         * Default to true.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Whether the cluster automatically renews. This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+        /**
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+
+        /**
+         * Property chargeType: cluster payment type.
+         * <p>
+         * The optional values are:
+         * PrePaid: prepaid
+         * PostPaid: Pay as you go
+         * Default to PostPaid.
+         * <p>
+         * @return {@code this}
+         * @param chargeType Property chargeType: cluster payment type. This parameter is required.
+         */
+        public Builder chargeType(final java.lang.String chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
+        /**
+         * Property chargeType: cluster payment type.
+         * <p>
+         * The optional values are:
+         * PrePaid: prepaid
+         * PostPaid: Pay as you go
+         * Default to PostPaid.
+         * <p>
+         * @return {@code this}
+         * @param chargeType Property chargeType: cluster payment type. This parameter is required.
+         */
+        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
+
+        /**
          * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
          * <p>
          * @return {@code this}
@@ -296,6 +386,37 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
+         * Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
+         * <p>
+         * After deletion protection is enabled, the cluster cannot be deleted
+         * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+         * false: disables deletion protection for the cluster.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable deletion protection for the cluster. This parameter is required.
+         */
+        public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+        /**
+         * Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
+         * <p>
+         * After deletion protection is enabled, the cluster cannot be deleted
+         * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+         * false: disables deletion protection for the cluster.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable deletion protection for the cluster. This parameter is required.
+         */
+        public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+
+        /**
          * Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.
          * <p>
          * If rollback fails, resources produced during the creation process will be released. False is not recommended.
@@ -346,6 +467,39 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
+         * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         * <p>
+         * This parameter takes effect only if security_group_id is left empty.
+         * Note You must specify an advanced security group for a cluster that has Terway installed.
+         * true: creates an advanced security group.
+         * false: does not create an advanced security group.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. This parameter is required.
+         */
+        public Builder isEnterpriseSecurityGroup(final java.lang.Boolean isEnterpriseSecurityGroup) {
+            this.props.isEnterpriseSecurityGroup(isEnterpriseSecurityGroup);
+            return this;
+        }
+        /**
+         * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         * <p>
+         * This parameter takes effect only if security_group_id is left empty.
+         * Note You must specify an advanced security group for a cluster that has Terway installed.
+         * true: creates an advanced security group.
+         * false: does not create an advanced security group.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. This parameter is required.
+         */
+        public Builder isEnterpriseSecurityGroup(final com.aliyun.ros.cdk.core.IResolvable isEnterpriseSecurityGroup) {
+            this.props.isEnterpriseSecurityGroup(isEnterpriseSecurityGroup);
+            return this;
+        }
+
+        /**
          * Property keyPair: Key pair name.
          * <p>
          * Specify one of KeyPair or LoginPassword.
@@ -392,6 +546,95 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          */
         public Builder loginPassword(final com.aliyun.ros.cdk.core.IResolvable loginPassword) {
             this.props.loginPassword(loginPassword);
+            return this;
+        }
+
+        /**
+         * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
+         * <p>
+         * This number is determined by the specified pod CIDR block.
+         * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+         * <p>
+         * @return {@code this}
+         * @param nodeCidrMask Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. This parameter is required.
+         */
+        public Builder nodeCidrMask(final java.lang.String nodeCidrMask) {
+            this.props.nodeCidrMask(nodeCidrMask);
+            return this;
+        }
+        /**
+         * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
+         * <p>
+         * This number is determined by the specified pod CIDR block.
+         * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+         * <p>
+         * @return {@code this}
+         * @param nodeCidrMask Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. This parameter is required.
+         */
+        public Builder nodeCidrMask(final com.aliyun.ros.cdk.core.IResolvable nodeCidrMask) {
+            this.props.nodeCidrMask(nodeCidrMask);
+            return this;
+        }
+
+        /**
+         * Property period: The duration of the annual subscription and monthly subscription.
+         * <p>
+         * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+         * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+         * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         * Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The duration of the annual subscription and monthly subscription. This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * Property period: The duration of the annual subscription and monthly subscription.
+         * <p>
+         * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+         * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+         * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         * Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The duration of the annual subscription and monthly subscription. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property periodUnit: When you specify PrePaid, you need to specify the period.
+         * <p>
+         * The options are:
+         * Week: Time is measured in weeks
+         * Month: time in months
+         * Default to Month
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
+         */
+        public Builder periodUnit(final java.lang.String periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+        /**
+         * Property periodUnit: When you specify PrePaid, you need to specify the period.
+         * <p>
+         * The options are:
+         * Week: Time is measured in weeks
+         * Month: time in months
+         * Default to Month
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props.periodUnit(periodUnit);
             return this;
         }
 

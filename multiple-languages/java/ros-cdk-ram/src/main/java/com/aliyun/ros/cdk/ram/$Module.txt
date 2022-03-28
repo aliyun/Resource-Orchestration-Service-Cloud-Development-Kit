@@ -20,6 +20,7 @@
 @alicloud/ros-cdk-ram.RosAttachPolicyToUserProps=com.aliyun.ros.cdk.ram.RosAttachPolicyToUserProps
 @alicloud/ros-cdk-ram.RosGroup=com.aliyun.ros.cdk.ram.RosGroup
 @alicloud/ros-cdk-ram.RosGroup.PoliciesProperty=com.aliyun.ros.cdk.ram.RosGroup$PoliciesProperty
+@alicloud/ros-cdk-ram.RosGroup.PolicyAttachmentsProperty=com.aliyun.ros.cdk.ram.RosGroup$PolicyAttachmentsProperty
 @alicloud/ros-cdk-ram.RosGroup.PolicyDocumentProperty=com.aliyun.ros.cdk.ram.RosGroup$PolicyDocumentProperty
 @alicloud/ros-cdk-ram.RosGroup.StatementProperty=com.aliyun.ros.cdk.ram.RosGroup$StatementProperty
 @alicloud/ros-cdk-ram.RosGroupProps=com.aliyun.ros.cdk.ram.RosGroupProps
@@ -33,6 +34,7 @@
 @alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty=com.aliyun.ros.cdk.ram.RosRole$AssumeRolePolicyDocumentProperty
 @alicloud/ros-cdk-ram.RosRole.ConditionProperty=com.aliyun.ros.cdk.ram.RosRole$ConditionProperty
 @alicloud/ros-cdk-ram.RosRole.PoliciesProperty=com.aliyun.ros.cdk.ram.RosRole$PoliciesProperty
+@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty=com.aliyun.ros.cdk.ram.RosRole$PolicyAttachmentsProperty
 @alicloud/ros-cdk-ram.RosRole.PolicyDocumentProperty=com.aliyun.ros.cdk.ram.RosRole$PolicyDocumentProperty
 @alicloud/ros-cdk-ram.RosRole.PolicyDocumentStatementProperty=com.aliyun.ros.cdk.ram.RosRole$PolicyDocumentStatementProperty
 @alicloud/ros-cdk-ram.RosRole.PrincipalProperty=com.aliyun.ros.cdk.ram.RosRole$PrincipalProperty
@@ -45,6 +47,7 @@
 @alicloud/ros-cdk-ram.RosUser=com.aliyun.ros.cdk.ram.RosUser
 @alicloud/ros-cdk-ram.RosUser.LoginProfileProperty=com.aliyun.ros.cdk.ram.RosUser$LoginProfileProperty
 @alicloud/ros-cdk-ram.RosUser.PoliciesProperty=com.aliyun.ros.cdk.ram.RosUser$PoliciesProperty
+@alicloud/ros-cdk-ram.RosUser.PolicyAttachmentsProperty=com.aliyun.ros.cdk.ram.RosUser$PolicyAttachmentsProperty
 @alicloud/ros-cdk-ram.RosUser.PolicyDocumentProperty=com.aliyun.ros.cdk.ram.RosUser$PolicyDocumentProperty
 @alicloud/ros-cdk-ram.RosUser.StatementProperty=com.aliyun.ros.cdk.ram.RosUser$StatementProperty
 @alicloud/ros-cdk-ram.RosUserProps=com.aliyun.ros.cdk.ram.RosUserProps

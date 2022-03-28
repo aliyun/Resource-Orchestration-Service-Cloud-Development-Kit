@@ -259,10 +259,38 @@ export interface RosACLRuleProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property dpiGroupIds: The ID of the application group.
+     * You can enter at most 100 application group IDs at a time.
+     * You can call the ListDpiGroups operation to query application group IDs and information about the applications.
+     */
+    readonly dpiGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property dpiSignatureIds: The ID of the application.
+     * You can enter at most 100 application IDs at a time.
+     * You can call the ListDpiSignatures operation to query application IDs and information about the applications.
+     */
+    readonly dpiSignatureIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the ACL rule.
+     * The name must be 2 to 100 characters in length, and can contain digits, underscores
+     * (_), and hyphens (-). It must start with a letter.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
      * @Property priority: Priority, ranging from 1 to 100.
      * Default: 1
      */
     readonly priority?: number | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the ACL rule: Valid values:
+     * LAN: The ACL rule controls traffic of private IP addresses. This is the default value.
+     * WAN: The ACL rule controls traffic of public IP addresses.
+     */
+    readonly type?: string | ros.IResolvable;
 }
 
 /**
@@ -291,8 +319,6 @@ function RosACLRulePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('destCidr', ros.requiredValidator)(properties.destCidr));
-    errors.collect(ros.propertyValidator('destCidr', ros.validateString)(properties.destCidr));
     errors.collect(ros.propertyValidator('sourcePortRange', ros.requiredValidator)(properties.sourcePortRange));
     errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
     errors.collect(ros.propertyValidator('sourceCidr', ros.requiredValidator)(properties.sourceCidr));
@@ -307,8 +333,6 @@ function RosACLRulePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
     errors.collect(ros.propertyValidator('aclId', ros.requiredValidator)(properties.aclId));
     errors.collect(ros.propertyValidator('aclId', ros.validateString)(properties.aclId));
-    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
-    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
     errors.collect(ros.propertyValidator('destPortRange', ros.requiredValidator)(properties.destPortRange));
     errors.collect(ros.propertyValidator('destPortRange', ros.validateString)(properties.destPortRange));
     errors.collect(ros.propertyValidator('direction', ros.requiredValidator)(properties.direction));
@@ -319,6 +343,34 @@ function RosACLRulePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('direction', ros.validateString)(properties.direction));
+    if(properties.dpiGroupIds && (Array.isArray(properties.dpiGroupIds) || (typeof properties.dpiGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('dpiGroupIds', ros.validateLength)({
+            data: properties.dpiGroupIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dpiGroupIds', ros.listValidator(ros.validateString))(properties.dpiGroupIds));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["LAN","WAN"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('destCidr', ros.requiredValidator)(properties.destCidr));
+    errors.collect(ros.propertyValidator('destCidr', ros.validateString)(properties.destCidr));
+    if(properties.dpiSignatureIds && (Array.isArray(properties.dpiSignatureIds) || (typeof properties.dpiSignatureIds) === 'string')) {
+        errors.collect(ros.propertyValidator('dpiSignatureIds', ros.validateLength)({
+            data: properties.dpiSignatureIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dpiSignatureIds', ros.listValidator(ros.validateString))(properties.dpiSignatureIds));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
     return errors.wrap('supplied properties not correct for "RosACLRuleProps"');
 }
 
@@ -345,7 +397,11 @@ function rosACLRulePropsToRosTemplate(properties: any, enableResourcePropertyCon
       SourceCidr: ros.stringToRosTemplate(properties.sourceCidr),
       SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
       Description: ros.stringToRosTemplate(properties.description),
+      DpiGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.dpiGroupIds),
+      DpiSignatureIds: ros.listMapper(ros.stringToRosTemplate)(properties.dpiSignatureIds),
+      Name: ros.stringToRosTemplate(properties.name),
       Priority: ros.numberToRosTemplate(properties.priority),
+      Type: ros.stringToRosTemplate(properties.type),
     };
 }
 
@@ -418,10 +474,38 @@ export class RosACLRule extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property dpiGroupIds: The ID of the application group.
+     * You can enter at most 100 application group IDs at a time.
+     * You can call the ListDpiGroups operation to query application group IDs and information about the applications.
+     */
+    public dpiGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property dpiSignatureIds: The ID of the application.
+     * You can enter at most 100 application IDs at a time.
+     * You can call the ListDpiSignatures operation to query application IDs and information about the applications.
+     */
+    public dpiSignatureIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the ACL rule.
+     * The name must be 2 to 100 characters in length, and can contain digits, underscores
+     * (_), and hyphens (-). It must start with a letter.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
      * @Property priority: Priority, ranging from 1 to 100.
      * Default: 1
      */
     public priority: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property type: The type of the ACL rule: Valid values:
+     * LAN: The ACL rule controls traffic of private IP addresses. This is the default value.
+     * WAN: The ACL rule controls traffic of public IP addresses.
+     */
+    public type: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SAG::ACLRule`.
@@ -444,7 +528,11 @@ export class RosACLRule extends ros.RosResource {
         this.sourceCidr = props.sourceCidr;
         this.sourcePortRange = props.sourcePortRange;
         this.description = props.description;
+        this.dpiGroupIds = props.dpiGroupIds;
+        this.dpiSignatureIds = props.dpiSignatureIds;
+        this.name = props.name;
         this.priority = props.priority;
+        this.type = props.type;
     }
 
 
@@ -459,7 +547,11 @@ export class RosACLRule extends ros.RosResource {
             sourceCidr: this.sourceCidr,
             sourcePortRange: this.sourcePortRange,
             description: this.description,
+            dpiGroupIds: this.dpiGroupIds,
+            dpiSignatureIds: this.dpiSignatureIds,
+            name: this.name,
             priority: this.priority,
+            type: this.type,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -794,6 +886,852 @@ export class RosGrantCcnToCen extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosGrantCcnToCenPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::SAG::Qos`
+ */
+export interface RosQosProps {
+
+    /**
+     * @Property qosName: The name of the QoS policy.
+     * The name must be 2 to 100 characters in length and can contain letters, digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     */
+    readonly qosName: string | ros.IResolvable;
+
+    /**
+     * @Property qosDescription: The description of the QoS policy.
+     * The description must be 1 to 512 characters in length and can contain letters, digits,
+     * underscores (_), and hyphens (-). It must start with a letter.
+     */
+    readonly qosDescription?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosQosProps`
+ *
+ * @param properties - the TypeScript properties of a `RosQosProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosQosPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('qosName', ros.requiredValidator)(properties.qosName));
+    errors.collect(ros.propertyValidator('qosName', ros.validateString)(properties.qosName));
+    errors.collect(ros.propertyValidator('qosDescription', ros.validateString)(properties.qosDescription));
+    return errors.wrap('supplied properties not correct for "RosQosProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::Qos` resource
+ *
+ * @param properties - the TypeScript properties of a `RosQosProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::Qos` resource.
+ */
+// @ts-ignore TS6133
+function rosQosPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosQosPropsValidator(properties).assertSuccess();
+    }
+    return {
+      QosName: ros.stringToRosTemplate(properties.qosName),
+      QosDescription: ros.stringToRosTemplate(properties.qosDescription),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SAG::Qos`
+ */
+export class RosQos extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::Qos";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute QosId: The ID of the QoS policy.
+     */
+    public readonly attrQosId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property qosName: The name of the QoS policy.
+     * The name must be 2 to 100 characters in length and can contain letters, digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     */
+    public qosName: string | ros.IResolvable;
+
+    /**
+     * @Property qosDescription: The description of the QoS policy.
+     * The description must be 1 to 512 characters in length and can contain letters, digits,
+     * underscores (_), and hyphens (-). It must start with a letter.
+     */
+    public qosDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SAG::Qos`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosQosProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosQos.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrQosId = this.getAtt('QosId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.qosName = props.qosName;
+        this.qosDescription = props.qosDescription;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            qosName: this.qosName,
+            qosDescription: this.qosDescription,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosQosPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::SAG::QosAssociation`
+ */
+export interface RosQosAssociationProps {
+
+    /**
+     * @Property qosId: The instance ID of the QoS policy.
+     */
+    readonly qosId: string | ros.IResolvable;
+
+    /**
+     * @Property smartAgId: The ID of the SAG instance to which the QoS policy is to be applied.
+     */
+    readonly smartAgId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosQosAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosQosAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosQosAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('qosId', ros.requiredValidator)(properties.qosId));
+    errors.collect(ros.propertyValidator('qosId', ros.validateString)(properties.qosId));
+    errors.collect(ros.propertyValidator('smartAgId', ros.requiredValidator)(properties.smartAgId));
+    errors.collect(ros.propertyValidator('smartAgId', ros.validateString)(properties.smartAgId));
+    return errors.wrap('supplied properties not correct for "RosQosAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::QosAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosQosAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::QosAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosQosAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosQosAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      QosId: ros.stringToRosTemplate(properties.qosId),
+      SmartAGId: ros.stringToRosTemplate(properties.smartAgId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SAG::QosAssociation`
+ */
+export class RosQosAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::QosAssociation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute QosId: The ID of the QoS policy.
+     */
+    public readonly attrQosId: ros.IResolvable;
+
+    /**
+     * @Attribute SmartAGId: The ID of the SAG instance to which the QoS policy is to be applied.
+     */
+    public readonly attrSmartAgId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property qosId: The instance ID of the QoS policy.
+     */
+    public qosId: string | ros.IResolvable;
+
+    /**
+     * @Property smartAgId: The ID of the SAG instance to which the QoS policy is to be applied.
+     */
+    public smartAgId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::SAG::QosAssociation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosQosAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosQosAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrQosId = this.getAtt('QosId');
+        this.attrSmartAgId = this.getAtt('SmartAGId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.qosId = props.qosId;
+        this.smartAgId = props.smartAgId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            qosId: this.qosId,
+            smartAgId: this.smartAgId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosQosAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::SAG::QosCar`
+ */
+export interface RosQosCarProps {
+
+    /**
+     * @Property limitType: The type of the traffic throttling policy. Valid values:
+     * Absolute: throttles traffic by a specific bandwidth range.
+     * Percent: throttles traffic by a specific range of bandwidth percentage.
+     */
+    readonly limitType: string | ros.IResolvable;
+
+    /**
+     * @Property priority: The priority of the traffic throttling policy. A smaller value represents a higher
+     * priority. If policies are assigned the same priority, the one applied the earliest
+     * prevails. Valid values: 1 to 7.
+     */
+    readonly priority: number | ros.IResolvable;
+
+    /**
+     * @Property qosId: The ID of the QoS policy.
+     */
+    readonly qosId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the traffic throttling policy.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property maxBandwidthAbs: The maximum bandwidth. This parameter is required when LimitType is set to Absolute.
+     */
+    readonly maxBandwidthAbs?: number | ros.IResolvable;
+
+    /**
+     * @Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG
+     * instance.
+     * This parameter is required when LimitType is set to Percent.
+     */
+    readonly maxBandwidthPercent?: number | ros.IResolvable;
+
+    /**
+     * @Property minBandwidthAbs: The minimum bandwidth. This parameter is required when LimitType is set to Absolute.
+     */
+    readonly minBandwidthAbs?: number | ros.IResolvable;
+
+    /**
+     * @Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG
+     * instance.
+     * This parameter is required when LimitType is set to Percent.
+     */
+    readonly minBandwidthPercent?: number | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the traffic throttling policy. The name must be 2 to 128 characters in
+     * length, and can contain Chinese characters, letters, digits, periods (.), underscores
+     * (_), and hyphens (-).
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property percentSourceType: If the policy throttles traffic based on a specified bandwidth percentage, the following
+     * options are available:
+     * CcnBandwidth: Cloud Enterprise Network (CCN) bandwidth.
+     * InternetUpBandwidth: Internet upstream bandwidth.
+     */
+    readonly percentSourceType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosQosCarProps`
+ *
+ * @param properties - the TypeScript properties of a `RosQosCarProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosQosCarPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('minBandwidthAbs', ros.validateNumber)(properties.minBandwidthAbs));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('maxBandwidthPercent', ros.validateNumber)(properties.maxBandwidthPercent));
+    errors.collect(ros.propertyValidator('priority', ros.requiredValidator)(properties.priority));
+    if(properties.priority && (typeof properties.priority) !== 'object') {
+        errors.collect(ros.propertyValidator('priority', ros.validateRange)({
+            data: properties.priority,
+            min: 1,
+            max: 7,
+          }));
+    }
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('maxBandwidthAbs', ros.validateNumber)(properties.maxBandwidthAbs));
+    errors.collect(ros.propertyValidator('qosId', ros.requiredValidator)(properties.qosId));
+    errors.collect(ros.propertyValidator('qosId', ros.validateString)(properties.qosId));
+    if(properties.percentSourceType && (typeof properties.percentSourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('percentSourceType', ros.validateAllowedValues)({
+          data: properties.percentSourceType,
+          allowedValues: ["CcnBandwidth","InternetUpBandwidth"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('percentSourceType', ros.validateString)(properties.percentSourceType));
+    errors.collect(ros.propertyValidator('minBandwidthPercent', ros.validateNumber)(properties.minBandwidthPercent));
+    errors.collect(ros.propertyValidator('limitType', ros.requiredValidator)(properties.limitType));
+    if(properties.limitType && (typeof properties.limitType) !== 'object') {
+        errors.collect(ros.propertyValidator('limitType', ros.validateAllowedValues)({
+          data: properties.limitType,
+          allowedValues: ["Absolute","Percent"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('limitType', ros.validateString)(properties.limitType));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosQosCarProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::QosCar` resource
+ *
+ * @param properties - the TypeScript properties of a `RosQosCarProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::QosCar` resource.
+ */
+// @ts-ignore TS6133
+function rosQosCarPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosQosCarPropsValidator(properties).assertSuccess();
+    }
+    return {
+      LimitType: ros.stringToRosTemplate(properties.limitType),
+      Priority: ros.numberToRosTemplate(properties.priority),
+      QosId: ros.stringToRosTemplate(properties.qosId),
+      Description: ros.stringToRosTemplate(properties.description),
+      MaxBandwidthAbs: ros.numberToRosTemplate(properties.maxBandwidthAbs),
+      MaxBandwidthPercent: ros.numberToRosTemplate(properties.maxBandwidthPercent),
+      MinBandwidthAbs: ros.numberToRosTemplate(properties.minBandwidthAbs),
+      MinBandwidthPercent: ros.numberToRosTemplate(properties.minBandwidthPercent),
+      Name: ros.stringToRosTemplate(properties.name),
+      PercentSourceType: ros.stringToRosTemplate(properties.percentSourceType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SAG::QosCar`
+ */
+export class RosQosCar extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::QosCar";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute QosCarId: The ID of the traffic throttling policy.
+     */
+    public readonly attrQosCarId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property limitType: The type of the traffic throttling policy. Valid values:
+     * Absolute: throttles traffic by a specific bandwidth range.
+     * Percent: throttles traffic by a specific range of bandwidth percentage.
+     */
+    public limitType: string | ros.IResolvable;
+
+    /**
+     * @Property priority: The priority of the traffic throttling policy. A smaller value represents a higher
+     * priority. If policies are assigned the same priority, the one applied the earliest
+     * prevails. Valid values: 1 to 7.
+     */
+    public priority: number | ros.IResolvable;
+
+    /**
+     * @Property qosId: The ID of the QoS policy.
+     */
+    public qosId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the traffic throttling policy.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxBandwidthAbs: The maximum bandwidth. This parameter is required when LimitType is set to Absolute.
+     */
+    public maxBandwidthAbs: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG
+     * instance.
+     * This parameter is required when LimitType is set to Percent.
+     */
+    public maxBandwidthPercent: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minBandwidthAbs: The minimum bandwidth. This parameter is required when LimitType is set to Absolute.
+     */
+    public minBandwidthAbs: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG
+     * instance.
+     * This parameter is required when LimitType is set to Percent.
+     */
+    public minBandwidthPercent: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the traffic throttling policy. The name must be 2 to 128 characters in
+     * length, and can contain Chinese characters, letters, digits, periods (.), underscores
+     * (_), and hyphens (-).
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property percentSourceType: If the policy throttles traffic based on a specified bandwidth percentage, the following
+     * options are available:
+     * CcnBandwidth: Cloud Enterprise Network (CCN) bandwidth.
+     * InternetUpBandwidth: Internet upstream bandwidth.
+     */
+    public percentSourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SAG::QosCar`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosQosCarProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosQosCar.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrQosCarId = this.getAtt('QosCarId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.limitType = props.limitType;
+        this.priority = props.priority;
+        this.qosId = props.qosId;
+        this.description = props.description;
+        this.maxBandwidthAbs = props.maxBandwidthAbs;
+        this.maxBandwidthPercent = props.maxBandwidthPercent;
+        this.minBandwidthAbs = props.minBandwidthAbs;
+        this.minBandwidthPercent = props.minBandwidthPercent;
+        this.name = props.name;
+        this.percentSourceType = props.percentSourceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            limitType: this.limitType,
+            priority: this.priority,
+            qosId: this.qosId,
+            description: this.description,
+            maxBandwidthAbs: this.maxBandwidthAbs,
+            maxBandwidthPercent: this.maxBandwidthPercent,
+            minBandwidthAbs: this.minBandwidthAbs,
+            minBandwidthPercent: this.minBandwidthPercent,
+            name: this.name,
+            percentSourceType: this.percentSourceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosQosCarPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::SAG::QosPolicy`
+ */
+export interface RosQosPolicyProps {
+
+    /**
+     * @Property destCidr: The range of the destination IP addresses.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.10.0/24.
+     */
+    readonly destCidr: string | ros.IResolvable;
+
+    /**
+     * @Property destPortRange: The range of destination ports.
+     * Valid values: 1 to 65535 and -1.
+     * Set this parameter in one of the following formats:
+     * 1/200: a port range from 1 to 200
+     * 80/80: port 80
+     * -1/-1: all ports
+     */
+    readonly destPortRange: string | ros.IResolvable;
+
+    /**
+     * @Property ipProtocol: The type of the protocol that applies to the traffic classification rule.
+     * The supported protocols provided in this topic are for reference only. The actual
+     * protocols in the console shall prevail.
+     */
+    readonly ipProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property priority: The priority of the traffic throttling policy to which the traffic classification
+     * rule belongs.
+     */
+    readonly priority: number | ros.IResolvable;
+
+    /**
+     * @Property qosId: The ID of the QoS policy.
+     */
+    readonly qosId: string | ros.IResolvable;
+
+    /**
+     * @Property sourceCidr: The range of the source IP addresses.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.1.0/24.
+     */
+    readonly sourceCidr: string | ros.IResolvable;
+
+    /**
+     * @Property sourcePortRange: The range of source ports.
+     * Valid values: 1 to 65535 and -1.
+     * Set this parameter in one of the following formats:
+     * 1/200: a port range from 1 to 200
+     * 80/80: port 80
+     * -1/-1: all ports
+     */
+    readonly sourcePortRange: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the traffic classification rule.
+     * The description must be 1 to 512 characters in length and can contain letters, digits,
+     * underscores (_), and hyphens (-). It must start with a letter.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property dpiGroupIds: The ID of the application group.
+     * You can enter at most 100 application group IDs at a time.
+     * You can call the ListDpiGroups operation to query application group IDs and information about the applications.
+     */
+    readonly dpiGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property dpiSignatureIds: The ID of the application.
+     * You can enter at most 100 application IDs at a time.
+     * You can call the ListDpiSignatures operation to query application IDs and information about the applications.
+     */
+    readonly dpiSignatureIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property endTime: The time when the traffic classification rule becomes invalid.
+     * Specify the time in the ISO 8601 standard in the YYYY-MM-DDThh:mm:ss+0800 format.
+     * The time must be in UTC+8.
+     */
+    readonly endTime?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the traffic classification rule.
+     * The name must be 2 to 100 characters in length, and can contain digits, underscores
+     * (_), and hyphens (-). It must start with a letter.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property startTime: The time when the traffic classification rule takes effect.
+     * Specify the time in the ISO 8601 standard in the YYYY-MM-DDThh:mm:ss+0800 format.
+     * The time must be in UTC+8.
+     */
+    readonly startTime?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosQosPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosQosPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosQosPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('endTime', ros.validateString)(properties.endTime));
+    errors.collect(ros.propertyValidator('sourcePortRange', ros.requiredValidator)(properties.sourcePortRange));
+    errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
+    errors.collect(ros.propertyValidator('sourceCidr', ros.requiredValidator)(properties.sourceCidr));
+    errors.collect(ros.propertyValidator('sourceCidr', ros.validateString)(properties.sourceCidr));
+    errors.collect(ros.propertyValidator('priority', ros.requiredValidator)(properties.priority));
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('startTime', ros.validateString)(properties.startTime));
+    errors.collect(ros.propertyValidator('destPortRange', ros.requiredValidator)(properties.destPortRange));
+    errors.collect(ros.propertyValidator('destPortRange', ros.validateString)(properties.destPortRange));
+    if(properties.dpiGroupIds && (Array.isArray(properties.dpiGroupIds) || (typeof properties.dpiGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('dpiGroupIds', ros.validateLength)({
+            data: properties.dpiGroupIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dpiGroupIds', ros.listValidator(ros.validateString))(properties.dpiGroupIds));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('destCidr', ros.requiredValidator)(properties.destCidr));
+    errors.collect(ros.propertyValidator('destCidr', ros.validateString)(properties.destCidr));
+    if(properties.dpiSignatureIds && (Array.isArray(properties.dpiSignatureIds) || (typeof properties.dpiSignatureIds) === 'string')) {
+        errors.collect(ros.propertyValidator('dpiSignatureIds', ros.validateLength)({
+            data: properties.dpiSignatureIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dpiSignatureIds', ros.listValidator(ros.validateString))(properties.dpiSignatureIds));
+    errors.collect(ros.propertyValidator('qosId', ros.requiredValidator)(properties.qosId));
+    errors.collect(ros.propertyValidator('qosId', ros.validateString)(properties.qosId));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    return errors.wrap('supplied properties not correct for "RosQosPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::QosPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosQosPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::QosPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosQosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosQosPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DestCidr: ros.stringToRosTemplate(properties.destCidr),
+      DestPortRange: ros.stringToRosTemplate(properties.destPortRange),
+      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
+      Priority: ros.numberToRosTemplate(properties.priority),
+      QosId: ros.stringToRosTemplate(properties.qosId),
+      SourceCidr: ros.stringToRosTemplate(properties.sourceCidr),
+      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
+      Description: ros.stringToRosTemplate(properties.description),
+      DpiGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.dpiGroupIds),
+      DpiSignatureIds: ros.listMapper(ros.stringToRosTemplate)(properties.dpiSignatureIds),
+      EndTime: ros.stringToRosTemplate(properties.endTime),
+      Name: ros.stringToRosTemplate(properties.name),
+      StartTime: ros.stringToRosTemplate(properties.startTime),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SAG::QosPolicy`
+ */
+export class RosQosPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::QosPolicy";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute QosPolicyId: The ID of the traffic classification rule.
+     */
+    public readonly attrQosPolicyId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property destCidr: The range of the destination IP addresses.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.10.0/24.
+     */
+    public destCidr: string | ros.IResolvable;
+
+    /**
+     * @Property destPortRange: The range of destination ports.
+     * Valid values: 1 to 65535 and -1.
+     * Set this parameter in one of the following formats:
+     * 1/200: a port range from 1 to 200
+     * 80/80: port 80
+     * -1/-1: all ports
+     */
+    public destPortRange: string | ros.IResolvable;
+
+    /**
+     * @Property ipProtocol: The type of the protocol that applies to the traffic classification rule.
+     * The supported protocols provided in this topic are for reference only. The actual
+     * protocols in the console shall prevail.
+     */
+    public ipProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property priority: The priority of the traffic throttling policy to which the traffic classification
+     * rule belongs.
+     */
+    public priority: number | ros.IResolvable;
+
+    /**
+     * @Property qosId: The ID of the QoS policy.
+     */
+    public qosId: string | ros.IResolvable;
+
+    /**
+     * @Property sourceCidr: The range of the source IP addresses.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.1.0/24.
+     */
+    public sourceCidr: string | ros.IResolvable;
+
+    /**
+     * @Property sourcePortRange: The range of source ports.
+     * Valid values: 1 to 65535 and -1.
+     * Set this parameter in one of the following formats:
+     * 1/200: a port range from 1 to 200
+     * 80/80: port 80
+     * -1/-1: all ports
+     */
+    public sourcePortRange: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the traffic classification rule.
+     * The description must be 1 to 512 characters in length and can contain letters, digits,
+     * underscores (_), and hyphens (-). It must start with a letter.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dpiGroupIds: The ID of the application group.
+     * You can enter at most 100 application group IDs at a time.
+     * You can call the ListDpiGroups operation to query application group IDs and information about the applications.
+     */
+    public dpiGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property dpiSignatureIds: The ID of the application.
+     * You can enter at most 100 application IDs at a time.
+     * You can call the ListDpiSignatures operation to query application IDs and information about the applications.
+     */
+    public dpiSignatureIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property endTime: The time when the traffic classification rule becomes invalid.
+     * Specify the time in the ISO 8601 standard in the YYYY-MM-DDThh:mm:ss+0800 format.
+     * The time must be in UTC+8.
+     */
+    public endTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the traffic classification rule.
+     * The name must be 2 to 100 characters in length, and can contain digits, underscores
+     * (_), and hyphens (-). It must start with a letter.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property startTime: The time when the traffic classification rule takes effect.
+     * Specify the time in the ISO 8601 standard in the YYYY-MM-DDThh:mm:ss+0800 format.
+     * The time must be in UTC+8.
+     */
+    public startTime: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SAG::QosPolicy`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosQosPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosQosPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrQosPolicyId = this.getAtt('QosPolicyId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.destCidr = props.destCidr;
+        this.destPortRange = props.destPortRange;
+        this.ipProtocol = props.ipProtocol;
+        this.priority = props.priority;
+        this.qosId = props.qosId;
+        this.sourceCidr = props.sourceCidr;
+        this.sourcePortRange = props.sourcePortRange;
+        this.description = props.description;
+        this.dpiGroupIds = props.dpiGroupIds;
+        this.dpiSignatureIds = props.dpiSignatureIds;
+        this.endTime = props.endTime;
+        this.name = props.name;
+        this.startTime = props.startTime;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            destCidr: this.destCidr,
+            destPortRange: this.destPortRange,
+            ipProtocol: this.ipProtocol,
+            priority: this.priority,
+            qosId: this.qosId,
+            sourceCidr: this.sourceCidr,
+            sourcePortRange: this.sourcePortRange,
+            description: this.description,
+            dpiGroupIds: this.dpiGroupIds,
+            dpiSignatureIds: this.dpiSignatureIds,
+            endTime: this.endTime,
+            name: this.name,
+            startTime: this.startTime,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosQosPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

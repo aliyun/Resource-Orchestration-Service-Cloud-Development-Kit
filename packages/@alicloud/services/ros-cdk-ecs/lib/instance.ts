@@ -85,11 +85,6 @@ export interface InstanceProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -316,7 +311,6 @@ export class Instance extends ros.Resource {
             deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
             vpcId: props.vpcId,
-            internetMaxBandwidthIn: props.internetMaxBandwidthIn === undefined || props.internetMaxBandwidthIn === null ? 200 : props.internetMaxBandwidthIn,
             securityEnhancementStrategy: props.securityEnhancementStrategy,
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

@@ -19,6 +19,11 @@ export interface UserProps {
     readonly comments?: string | ros.IResolvable;
 
     /**
+     * Property deletionForce: Whether force detach the policies and groups attached to the user. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property displayName: Display name, up to 128 characters or Chinese characters.
      */
     readonly displayName?: string | ros.IResolvable;
@@ -47,6 +52,11 @@ export interface UserProps {
      * Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosUser.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property policyAttachments: System and custom policy names to attach.
+     */
+    readonly policyAttachments?: RosUser.PolicyAttachmentsProperty | ros.IResolvable;
 }
 
 /**
@@ -93,6 +103,8 @@ export class User extends ros.Resource {
             userName: props.userName,
             policies: props.policies,
             email: props.email,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
+            policyAttachments: props.policyAttachments,
             comments: props.comments,
             groups: props.groups,
             displayName: props.displayName,

@@ -103,12 +103,64 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: dpiGroupIds: The ID of the application group.
+        /// You can enter at most 100 application group IDs at a time.
+        /// You can call the ListDpiGroups operation to query application group IDs and information about the applications.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "dpiGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? DpiGroupIds
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: dpiSignatureIds: The ID of the application.
+        /// You can enter at most 100 application IDs at a time.
+        /// You can call the ListDpiSignatures operation to query application IDs and information about the applications.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "dpiSignatureIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? DpiSignatureIds
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: name: The name of the ACL rule.
+        /// The name must be 2 to 100 characters in length, and can contain digits, underscores
+        /// (_), and hyphens (-). It must start with a letter.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Name
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: priority: Priority, ranging from 1 to 100.
         /// Default: 1
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Priority
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: type: The type of the ACL rule: Valid values:
+        /// LAN: The ACL rule controls traffic of private IP addresses. This is the default value.
+        /// WAN: The ACL rule controls traffic of public IP addresses.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Type
         {
             get;
             set;

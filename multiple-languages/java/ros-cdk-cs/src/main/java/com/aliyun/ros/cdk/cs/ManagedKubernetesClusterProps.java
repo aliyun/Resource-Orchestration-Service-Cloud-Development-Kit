@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.824Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.855Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,6 +44,50 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property autoRenew: Whether the cluster automatically renews.
+     * <p>
+     * It takes effect when the value of ChargeType is PrePaid. The optional values are:
+     * true: automatic renewal
+     * false: do not renew automatically
+     * Default to true.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
+        return null;
+    }
+
+    /**
+     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
+        return null;
+    }
+
+    /**
+     * Property chargeType: cluster payment type.
+     * <p>
+     * The optional values are:
+     * PrePaid: prepaid
+     * PostPaid: Pay as you go
+     * Default to PostPaid.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
+        return null;
+    }
+
+    /**
+     * Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.
+     * <p>
+     * For more information, see CIS reinforcement.
+     * Valid values:
+     * true: enables CIS reinforcement.
+     * false: disables CIS reinforcement.
+     * Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCisEnabled() {
+        return null;
+    }
+
+    /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCloudMonitorFlags() {
@@ -68,6 +112,18 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContainerCidr() {
+        return null;
+    }
+
+    /**
+     * Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
+     * <p>
+     * After deletion protection is enabled, the cluster cannot be deleted
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
@@ -99,6 +155,50 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances.
+     * <p>
+     * Valid values:
+     * true: stores the data of containers and images on a data disk.
+     * The original data on the disk will be overwritten.
+     * Back up data before you mount the disk.
+     * false: does not store the data of containers and images on a data disk.
+     * Default value: false.
+     * How to mount a data disk:
+     * If the ECS instances have data disks mounted and the file system of the last
+     * data disk is not initialized, the system automatically formats the data disk to ext4.
+     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * The system does not create or mount a new data disk if no data disk has been
+     * mounted to the ECS instances.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFormatDisk() {
+        return null;
+    }
+
+    /**
+     * Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+     * <p>
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIsEnterpriseSecurityGroup() {
+        return null;
+    }
+
+    /**
+     * Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+     * <p>
+     * true: retains the names.
+     * false: does not retain the names. The new names are assigned by the system.
+     * Default value: true.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeepInstanceName() {
+        return null;
+    }
+
+    /**
      * Property keyPair: Key pair name.
      * <p>
      * Specify one of KeyPair or LoginPassword.
@@ -115,11 +215,30 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+     * <p>
+     * Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerSpec() {
+        return null;
+    }
+
+    /**
      * Property loginPassword: SSH login password.
      * <p>
      * Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoginPassword() {
+        return null;
+    }
+
+    /**
+     * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
+     * <p>
+     * This number is determined by the specified pod CIDR block.
+     * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNodeCidrMask() {
         return null;
     }
 
@@ -130,6 +249,58 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * Default to 3.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNumOfNodes() {
+        return null;
+    }
+
+    /**
+     * Property osType: The type of operating system.
+     * <p>
+     * Valid values:
+     * Windows
+     * Linux
+     * Default value: Linux.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOsType() {
+        return null;
+    }
+
+    /**
+     * Property period: The duration of the annual subscription and monthly subscription.
+     * <p>
+     * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * Default to 1.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return null;
+    }
+
+    /**
+     * Property periodUnit: When you specify PrePaid, you need to specify the period.
+     * <p>
+     * The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Default to Month
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return null;
+    }
+
+    /**
+     * Property platform: The release version of the operating system.
+     * <p>
+     * Valid values:
+     * CentOS
+     * AliyunLinux
+     * QbootAliyunLinux
+     * Qboot
+     * Windows
+     * WindowsCore
+     * Default value: CentOS.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPlatform() {
         return null;
     }
 
@@ -196,6 +367,16 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property socEnabled: Valid values: true: enables reinforcement based on classified protection.
+     * <p>
+     * false: disables reinforcement based on classified protection.
+     * Default value: false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSocEnabled() {
+        return null;
+    }
+
+    /**
      * Property tags: Tag the cluster.
      */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> getTags() {
@@ -221,21 +402,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
-     * Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes.
+     * Property userData: The user-defined data.
      * <p>
-     * The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.
+     * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerAutoRenew() {
-        return null;
-    }
-
-    /**
-     * Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerAutoRenewPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
     }
 
@@ -257,42 +428,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * This parameter is valid only when the worker node data disk is mounted.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDisks() {
-        return null;
-    }
-
-    /**
-     * Property workerInstanceChargeType: Worker node payment type.
-     * <p>
-     * The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerInstanceChargeType() {
-        return null;
-    }
-
-    /**
-     * Property workerPeriod: The duration of the annual and monthly subscription.
-     * <p>
-     * It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * Default to 1.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerPeriod() {
-        return null;
-    }
-
-    /**
-     * Property workerPeriodUnit: When you specify PrePaid, you need to specify the period.
-     * <p>
-     * The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Default to Month.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerPeriodUnit() {
         return null;
     }
 
@@ -332,32 +467,43 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object vSwitchIds;
         java.lang.Object workerInstanceTypes;
         java.lang.Object addons;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object chargeType;
+        java.lang.Object cisEnabled;
         java.lang.Object cloudMonitorFlags;
         java.lang.Object clusterSpec;
         java.lang.Object containerCidr;
+        java.lang.Object deletionProtection;
         java.lang.Object disableRollback;
         java.lang.Object encryptionProviderKey;
         java.lang.Object endpointPublicAccess;
+        java.lang.Object formatDisk;
+        java.lang.Object isEnterpriseSecurityGroup;
+        java.lang.Object keepInstanceName;
         java.lang.Object keyPair;
         java.lang.Object kubernetesVersion;
+        java.lang.Object loadBalancerSpec;
         java.lang.Object loginPassword;
+        java.lang.Object nodeCidrMask;
         java.lang.Object numOfNodes;
+        java.lang.Object osType;
+        java.lang.Object period;
+        java.lang.Object periodUnit;
+        java.lang.Object platform;
         java.lang.Object podVswitchIds;
         java.lang.Object proxyMode;
         java.lang.Object runtime;
         java.lang.Object securityGroupId;
         java.lang.Object serviceCidr;
         java.lang.Object snatEntry;
+        java.lang.Object socEnabled;
         java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> tags;
         java.lang.Object taint;
         java.lang.Object timeoutMins;
-        java.lang.Object workerAutoRenew;
-        java.lang.Object workerAutoRenewPeriod;
+        java.lang.Object userData;
         java.lang.Object workerDataDisk;
         java.lang.Object workerDataDisks;
-        java.lang.Object workerInstanceChargeType;
-        java.lang.Object workerPeriod;
-        java.lang.Object workerPeriodUnit;
         java.lang.Object workerSystemDiskCategory;
         java.lang.Object workerSystemDiskSize;
 
@@ -472,6 +618,112 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoRenew}
+         * @param autoRenew Property autoRenew: Whether the cluster automatically renews.
+         *                  It takes effect when the value of ChargeType is PrePaid. The optional values are:
+         *                  true: automatic renewal
+         *                  false: do not renew automatically
+         *                  Default to true.
+         * @return {@code this}
+         */
+        public Builder autoRenew(java.lang.Boolean autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoRenew}
+         * @param autoRenew Property autoRenew: Whether the cluster automatically renews.
+         *                  It takes effect when the value of ChargeType is PrePaid. The optional values are:
+         *                  true: automatic renewal
+         *                  false: do not renew automatically
+         *                  Default to true.
+         * @return {@code this}
+         */
+        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getChargeType}
+         * @param chargeType Property chargeType: cluster payment type.
+         *                   The optional values are:
+         *                   PrePaid: prepaid
+         *                   PostPaid: Pay as you go
+         *                   Default to PostPaid.
+         * @return {@code this}
+         */
+        public Builder chargeType(java.lang.String chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getChargeType}
+         * @param chargeType Property chargeType: cluster payment type.
+         *                   The optional values are:
+         *                   PrePaid: prepaid
+         *                   PostPaid: Pay as you go
+         *                   Default to PostPaid.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getCisEnabled}
+         * @param cisEnabled Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.
+         *                   For more information, see CIS reinforcement.
+         *                   Valid values:
+         *                   true: enables CIS reinforcement.
+         *                   false: disables CIS reinforcement.
+         *                   Default value: false.
+         * @return {@code this}
+         */
+        public Builder cisEnabled(java.lang.Boolean cisEnabled) {
+            this.cisEnabled = cisEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getCisEnabled}
+         * @param cisEnabled Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.
+         *                   For more information, see CIS reinforcement.
+         *                   Valid values:
+         *                   true: enables CIS reinforcement.
+         *                   false: disables CIS reinforcement.
+         *                   Default value: false.
+         * @return {@code this}
+         */
+        public Builder cisEnabled(com.aliyun.ros.cdk.core.IResolvable cisEnabled) {
+            this.cisEnabled = cisEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getCloudMonitorFlags}
          * @param cloudMonitorFlags Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
          * @return {@code this}
@@ -542,6 +794,34 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
+         *                           After deletion protection is enabled, the cluster cannot be deleted
+         *                           in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+         *                           false: disables deletion protection for the cluster.
+         *                           Default value: false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
+         *                           After deletion protection is enabled, the cluster cannot be deleted
+         *                           in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+         *                           false: disables deletion protection for the cluster.
+         *                           Default value: false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getDisableRollback}
          * @param disableRollback Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.
          *                        If rollback fails, resources produced during the creation process will be released. False is not recommended.
@@ -608,6 +888,106 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getFormatDisk}
+         * @param formatDisk Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances.
+         *                   Valid values:
+         *                   true: stores the data of containers and images on a data disk.
+         *                   The original data on the disk will be overwritten.
+         *                   Back up data before you mount the disk.
+         *                   false: does not store the data of containers and images on a data disk.
+         *                   Default value: false.
+         *                   How to mount a data disk:
+         *                   If the ECS instances have data disks mounted and the file system of the last
+         *                   data disk is not initialized, the system automatically formats the data disk to ext4.
+         *                   Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+         *                   The system does not create or mount a new data disk if no data disk has been
+         *                   mounted to the ECS instances.
+         * @return {@code this}
+         */
+        public Builder formatDisk(java.lang.Boolean formatDisk) {
+            this.formatDisk = formatDisk;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getFormatDisk}
+         * @param formatDisk Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances.
+         *                   Valid values:
+         *                   true: stores the data of containers and images on a data disk.
+         *                   The original data on the disk will be overwritten.
+         *                   Back up data before you mount the disk.
+         *                   false: does not store the data of containers and images on a data disk.
+         *                   Default value: false.
+         *                   How to mount a data disk:
+         *                   If the ECS instances have data disks mounted and the file system of the last
+         *                   data disk is not initialized, the system automatically formats the data disk to ext4.
+         *                   Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+         *                   The system does not create or mount a new data disk if no data disk has been
+         *                   mounted to the ECS instances.
+         * @return {@code this}
+         */
+        public Builder formatDisk(com.aliyun.ros.cdk.core.IResolvable formatDisk) {
+            this.formatDisk = formatDisk;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getIsEnterpriseSecurityGroup}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         *                                  This parameter takes effect only if security_group_id is left empty.
+         *                                  Note You must specify an advanced security group for a cluster that has Terway installed.
+         *                                  true: creates an advanced security group.
+         *                                  false: does not create an advanced security group.
+         *                                  Default value: false.
+         * @return {@code this}
+         */
+        public Builder isEnterpriseSecurityGroup(java.lang.Boolean isEnterpriseSecurityGroup) {
+            this.isEnterpriseSecurityGroup = isEnterpriseSecurityGroup;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getIsEnterpriseSecurityGroup}
+         * @param isEnterpriseSecurityGroup Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+         *                                  This parameter takes effect only if security_group_id is left empty.
+         *                                  Note You must specify an advanced security group for a cluster that has Terway installed.
+         *                                  true: creates an advanced security group.
+         *                                  false: does not create an advanced security group.
+         *                                  Default value: false.
+         * @return {@code this}
+         */
+        public Builder isEnterpriseSecurityGroup(com.aliyun.ros.cdk.core.IResolvable isEnterpriseSecurityGroup) {
+            this.isEnterpriseSecurityGroup = isEnterpriseSecurityGroup;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getKeepInstanceName}
+         * @param keepInstanceName Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+         *                         true: retains the names.
+         *                         false: does not retain the names. The new names are assigned by the system.
+         *                         Default value: true.
+         * @return {@code this}
+         */
+        public Builder keepInstanceName(java.lang.Boolean keepInstanceName) {
+            this.keepInstanceName = keepInstanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getKeepInstanceName}
+         * @param keepInstanceName Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+         *                         true: retains the names.
+         *                         false: does not retain the names. The new names are assigned by the system.
+         *                         Default value: true.
+         * @return {@code this}
+         */
+        public Builder keepInstanceName(com.aliyun.ros.cdk.core.IResolvable keepInstanceName) {
+            this.keepInstanceName = keepInstanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getKeyPair}
          * @param keyPair Property keyPair: Key pair name.
          *                Specify one of KeyPair or LoginPassword.
@@ -650,6 +1030,28 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getLoadBalancerSpec}
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+         *                         Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+         * @return {@code this}
+         */
+        public Builder loadBalancerSpec(java.lang.String loadBalancerSpec) {
+            this.loadBalancerSpec = loadBalancerSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getLoadBalancerSpec}
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+         *                         Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+         * @return {@code this}
+         */
+        public Builder loadBalancerSpec(com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {
+            this.loadBalancerSpec = loadBalancerSpec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getLoginPassword}
          * @param loginPassword Property loginPassword: SSH login password.
          *                      Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
@@ -668,6 +1070,30 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          */
         public Builder loginPassword(com.aliyun.ros.cdk.core.IResolvable loginPassword) {
             this.loginPassword = loginPassword;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getNodeCidrMask}
+         * @param nodeCidrMask Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
+         *                     This number is determined by the specified pod CIDR block.
+         *                     This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+         * @return {@code this}
+         */
+        public Builder nodeCidrMask(java.lang.String nodeCidrMask) {
+            this.nodeCidrMask = nodeCidrMask;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getNodeCidrMask}
+         * @param nodeCidrMask Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
+         *                     This number is determined by the specified pod CIDR block.
+         *                     This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+         * @return {@code this}
+         */
+        public Builder nodeCidrMask(com.aliyun.ros.cdk.core.IResolvable nodeCidrMask) {
+            this.nodeCidrMask = nodeCidrMask;
             return this;
         }
 
@@ -692,6 +1118,126 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          */
         public Builder numOfNodes(com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
             this.numOfNodes = numOfNodes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getOsType}
+         * @param osType Property osType: The type of operating system.
+         *               Valid values:
+         *               Windows
+         *               Linux
+         *               Default value: Linux.
+         * @return {@code this}
+         */
+        public Builder osType(java.lang.String osType) {
+            this.osType = osType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getOsType}
+         * @param osType Property osType: The type of operating system.
+         *               Valid values:
+         *               Windows
+         *               Linux
+         *               Default value: Linux.
+         * @return {@code this}
+         */
+        public Builder osType(com.aliyun.ros.cdk.core.IResolvable osType) {
+            this.osType = osType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getPeriod}
+         * @param period Property period: The duration of the annual subscription and monthly subscription.
+         *               It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+         *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+         *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         *               Default to 1.
+         * @return {@code this}
+         */
+        public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getPeriod}
+         * @param period Property period: The duration of the annual subscription and monthly subscription.
+         *               It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+         *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+         *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         *               Default to 1.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period.
+         *                   The options are:
+         *                   Week: Time is measured in weeks
+         *                   Month: time in months
+         *                   Default to Month
+         * @return {@code this}
+         */
+        public Builder periodUnit(java.lang.String periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period.
+         *                   The options are:
+         *                   Week: Time is measured in weeks
+         *                   Month: time in months
+         *                   Default to Month
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getPlatform}
+         * @param platform Property platform: The release version of the operating system.
+         *                 Valid values:
+         *                 CentOS
+         *                 AliyunLinux
+         *                 QbootAliyunLinux
+         *                 Qboot
+         *                 Windows
+         *                 WindowsCore
+         *                 Default value: CentOS.
+         * @return {@code this}
+         */
+        public Builder platform(java.lang.String platform) {
+            this.platform = platform;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getPlatform}
+         * @param platform Property platform: The release version of the operating system.
+         *                 Valid values:
+         *                 CentOS
+         *                 AliyunLinux
+         *                 QbootAliyunLinux
+         *                 Qboot
+         *                 Windows
+         *                 WindowsCore
+         *                 Default value: CentOS.
+         * @return {@code this}
+         */
+        public Builder platform(com.aliyun.ros.cdk.core.IResolvable platform) {
+            this.platform = platform;
             return this;
         }
 
@@ -846,6 +1392,30 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getSocEnabled}
+         * @param socEnabled Property socEnabled: Valid values: true: enables reinforcement based on classified protection.
+         *                   false: disables reinforcement based on classified protection.
+         *                   Default value: false.
+         * @return {@code this}
+         */
+        public Builder socEnabled(java.lang.Boolean socEnabled) {
+            this.socEnabled = socEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getSocEnabled}
+         * @param socEnabled Property socEnabled: Valid values: true: enables reinforcement based on classified protection.
+         *                   false: disables reinforcement based on classified protection.
+         *                   Default value: false.
+         * @return {@code this}
+         */
+        public Builder socEnabled(com.aliyun.ros.cdk.core.IResolvable socEnabled) {
+            this.socEnabled = socEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getTags}
          * @param tags Property tags: Tag the cluster.
          * @return {@code this}
@@ -901,50 +1471,24 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerAutoRenew}
-         * @param workerAutoRenew Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes.
-         *                        The optional values are:
-         *                        true: automatic renewal
-         *                        false: do not renew automatically
-         *                        Default to true.
+         * Sets the value of {@link ManagedKubernetesClusterProps#getUserData}
+         * @param userData Property userData: The user-defined data.
+         *                 [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
          * @return {@code this}
          */
-        public Builder workerAutoRenew(java.lang.Boolean workerAutoRenew) {
-            this.workerAutoRenew = workerAutoRenew;
+        public Builder userData(java.lang.String userData) {
+            this.userData = userData;
             return this;
         }
 
         /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerAutoRenew}
-         * @param workerAutoRenew Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes.
-         *                        The optional values are:
-         *                        true: automatic renewal
-         *                        false: do not renew automatically
-         *                        Default to true.
+         * Sets the value of {@link ManagedKubernetesClusterProps#getUserData}
+         * @param userData Property userData: The user-defined data.
+         *                 [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
          * @return {@code this}
          */
-        public Builder workerAutoRenew(com.aliyun.ros.cdk.core.IResolvable workerAutoRenew) {
-            this.workerAutoRenew = workerAutoRenew;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerAutoRenewPeriod}
-         * @param workerAutoRenewPeriod Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
-         * @return {@code this}
-         */
-        public Builder workerAutoRenewPeriod(java.lang.Number workerAutoRenewPeriod) {
-            this.workerAutoRenewPeriod = workerAutoRenewPeriod;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerAutoRenewPeriod}
-         * @param workerAutoRenewPeriod Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
-         * @return {@code this}
-         */
-        public Builder workerAutoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable workerAutoRenewPeriod) {
-            this.workerAutoRenewPeriod = workerAutoRenewPeriod;
+        public Builder userData(com.aliyun.ros.cdk.core.IResolvable userData) {
+            this.userData = userData;
             return this;
         }
 
@@ -995,90 +1539,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          */
         public Builder workerDataDisks(java.util.List<? extends java.lang.Object> workerDataDisks) {
             this.workerDataDisks = workerDataDisks;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerInstanceChargeType}
-         * @param workerInstanceChargeType Property workerInstanceChargeType: Worker node payment type.
-         *                                 The optional values are:
-         *                                 PrePaid: prepaid
-         *                                 PostPaid: Pay as you go
-         *                                 Default to PostPaid.
-         * @return {@code this}
-         */
-        public Builder workerInstanceChargeType(java.lang.String workerInstanceChargeType) {
-            this.workerInstanceChargeType = workerInstanceChargeType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerInstanceChargeType}
-         * @param workerInstanceChargeType Property workerInstanceChargeType: Worker node payment type.
-         *                                 The optional values are:
-         *                                 PrePaid: prepaid
-         *                                 PostPaid: Pay as you go
-         *                                 Default to PostPaid.
-         * @return {@code this}
-         */
-        public Builder workerInstanceChargeType(com.aliyun.ros.cdk.core.IResolvable workerInstanceChargeType) {
-            this.workerInstanceChargeType = workerInstanceChargeType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerPeriod}
-         * @param workerPeriod Property workerPeriod: The duration of the annual and monthly subscription.
-         *                     It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-         *                     When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-         *                     When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-         *                     Default to 1.
-         * @return {@code this}
-         */
-        public Builder workerPeriod(java.lang.Number workerPeriod) {
-            this.workerPeriod = workerPeriod;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerPeriod}
-         * @param workerPeriod Property workerPeriod: The duration of the annual and monthly subscription.
-         *                     It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-         *                     When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-         *                     When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-         *                     Default to 1.
-         * @return {@code this}
-         */
-        public Builder workerPeriod(com.aliyun.ros.cdk.core.IResolvable workerPeriod) {
-            this.workerPeriod = workerPeriod;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerPeriodUnit}
-         * @param workerPeriodUnit Property workerPeriodUnit: When you specify PrePaid, you need to specify the period.
-         *                         The options are:
-         *                         Week: Time is measured in weeks
-         *                         Month: time in months
-         *                         Default to Month.
-         * @return {@code this}
-         */
-        public Builder workerPeriodUnit(java.lang.String workerPeriodUnit) {
-            this.workerPeriodUnit = workerPeriodUnit;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getWorkerPeriodUnit}
-         * @param workerPeriodUnit Property workerPeriodUnit: When you specify PrePaid, you need to specify the period.
-         *                         The options are:
-         *                         Week: Time is measured in weeks
-         *                         Month: time in months
-         *                         Default to Month.
-         * @return {@code this}
-         */
-        public Builder workerPeriodUnit(com.aliyun.ros.cdk.core.IResolvable workerPeriodUnit) {
-            this.workerPeriodUnit = workerPeriodUnit;
             return this;
         }
 
@@ -1153,32 +1613,43 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object vSwitchIds;
         private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object addons;
+        private final java.lang.Object autoRenew;
+        private final java.lang.Object autoRenewPeriod;
+        private final java.lang.Object chargeType;
+        private final java.lang.Object cisEnabled;
         private final java.lang.Object cloudMonitorFlags;
         private final java.lang.Object clusterSpec;
         private final java.lang.Object containerCidr;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object disableRollback;
         private final java.lang.Object encryptionProviderKey;
         private final java.lang.Object endpointPublicAccess;
+        private final java.lang.Object formatDisk;
+        private final java.lang.Object isEnterpriseSecurityGroup;
+        private final java.lang.Object keepInstanceName;
         private final java.lang.Object keyPair;
         private final java.lang.Object kubernetesVersion;
+        private final java.lang.Object loadBalancerSpec;
         private final java.lang.Object loginPassword;
+        private final java.lang.Object nodeCidrMask;
         private final java.lang.Object numOfNodes;
+        private final java.lang.Object osType;
+        private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
+        private final java.lang.Object platform;
         private final java.lang.Object podVswitchIds;
         private final java.lang.Object proxyMode;
         private final java.lang.Object runtime;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceCidr;
         private final java.lang.Object snatEntry;
+        private final java.lang.Object socEnabled;
         private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> tags;
         private final java.lang.Object taint;
         private final java.lang.Object timeoutMins;
-        private final java.lang.Object workerAutoRenew;
-        private final java.lang.Object workerAutoRenewPeriod;
+        private final java.lang.Object userData;
         private final java.lang.Object workerDataDisk;
         private final java.lang.Object workerDataDisks;
-        private final java.lang.Object workerInstanceChargeType;
-        private final java.lang.Object workerPeriod;
-        private final java.lang.Object workerPeriodUnit;
         private final java.lang.Object workerSystemDiskCategory;
         private final java.lang.Object workerSystemDiskSize;
 
@@ -1193,32 +1664,43 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cisEnabled = software.amazon.jsii.Kernel.get(this, "cisEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.disableRollback = software.amazon.jsii.Kernel.get(this, "disableRollback", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.formatDisk = software.amazon.jsii.Kernel.get(this, "formatDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.keepInstanceName = software.amazon.jsii.Kernel.get(this, "keepInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.osType = software.amazon.jsii.Kernel.get(this, "osType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.podVswitchIds = software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntry = software.amazon.jsii.Kernel.get(this, "snatEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.socEnabled = software.amazon.jsii.Kernel.get(this, "socEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty.class)));
             this.taint = software.amazon.jsii.Kernel.get(this, "taint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerAutoRenew = software.amazon.jsii.Kernel.get(this, "workerAutoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerAutoRenewPeriod = software.amazon.jsii.Kernel.get(this, "workerAutoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisk = software.amazon.jsii.Kernel.get(this, "workerDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerInstanceChargeType = software.amazon.jsii.Kernel.get(this, "workerInstanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerPeriod = software.amazon.jsii.Kernel.get(this, "workerPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerPeriodUnit = software.amazon.jsii.Kernel.get(this, "workerPeriodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -1234,32 +1716,43 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
             this.workerInstanceTypes = java.util.Objects.requireNonNull(builder.workerInstanceTypes, "workerInstanceTypes is required");
             this.addons = builder.addons;
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.chargeType = builder.chargeType;
+            this.cisEnabled = builder.cisEnabled;
             this.cloudMonitorFlags = builder.cloudMonitorFlags;
             this.clusterSpec = builder.clusterSpec;
             this.containerCidr = builder.containerCidr;
+            this.deletionProtection = builder.deletionProtection;
             this.disableRollback = builder.disableRollback;
             this.encryptionProviderKey = builder.encryptionProviderKey;
             this.endpointPublicAccess = builder.endpointPublicAccess;
+            this.formatDisk = builder.formatDisk;
+            this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
+            this.keepInstanceName = builder.keepInstanceName;
             this.keyPair = builder.keyPair;
             this.kubernetesVersion = builder.kubernetesVersion;
+            this.loadBalancerSpec = builder.loadBalancerSpec;
             this.loginPassword = builder.loginPassword;
+            this.nodeCidrMask = builder.nodeCidrMask;
             this.numOfNodes = builder.numOfNodes;
+            this.osType = builder.osType;
+            this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
+            this.platform = builder.platform;
             this.podVswitchIds = builder.podVswitchIds;
             this.proxyMode = builder.proxyMode;
             this.runtime = builder.runtime;
             this.securityGroupId = builder.securityGroupId;
             this.serviceCidr = builder.serviceCidr;
             this.snatEntry = builder.snatEntry;
+            this.socEnabled = builder.socEnabled;
             this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty>)builder.tags;
             this.taint = builder.taint;
             this.timeoutMins = builder.timeoutMins;
-            this.workerAutoRenew = builder.workerAutoRenew;
-            this.workerAutoRenewPeriod = builder.workerAutoRenewPeriod;
+            this.userData = builder.userData;
             this.workerDataDisk = builder.workerDataDisk;
             this.workerDataDisks = builder.workerDataDisks;
-            this.workerInstanceChargeType = builder.workerInstanceChargeType;
-            this.workerPeriod = builder.workerPeriod;
-            this.workerPeriodUnit = builder.workerPeriodUnit;
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
             this.workerSystemDiskSize = builder.workerSystemDiskSize;
         }
@@ -1290,6 +1783,26 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
+        public final java.lang.Object getAutoRenew() {
+            return this.autoRenew;
+        }
+
+        @Override
+        public final java.lang.Object getAutoRenewPeriod() {
+            return this.autoRenewPeriod;
+        }
+
+        @Override
+        public final java.lang.Object getChargeType() {
+            return this.chargeType;
+        }
+
+        @Override
+        public final java.lang.Object getCisEnabled() {
+            return this.cisEnabled;
+        }
+
+        @Override
         public final java.lang.Object getCloudMonitorFlags() {
             return this.cloudMonitorFlags;
         }
@@ -1302,6 +1815,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getContainerCidr() {
             return this.containerCidr;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
         }
 
         @Override
@@ -1320,6 +1838,21 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
+        public final java.lang.Object getFormatDisk() {
+            return this.formatDisk;
+        }
+
+        @Override
+        public final java.lang.Object getIsEnterpriseSecurityGroup() {
+            return this.isEnterpriseSecurityGroup;
+        }
+
+        @Override
+        public final java.lang.Object getKeepInstanceName() {
+            return this.keepInstanceName;
+        }
+
+        @Override
         public final java.lang.Object getKeyPair() {
             return this.keyPair;
         }
@@ -1330,13 +1863,43 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
+        public final java.lang.Object getLoadBalancerSpec() {
+            return this.loadBalancerSpec;
+        }
+
+        @Override
         public final java.lang.Object getLoginPassword() {
             return this.loginPassword;
         }
 
         @Override
+        public final java.lang.Object getNodeCidrMask() {
+            return this.nodeCidrMask;
+        }
+
+        @Override
         public final java.lang.Object getNumOfNodes() {
             return this.numOfNodes;
+        }
+
+        @Override
+        public final java.lang.Object getOsType() {
+            return this.osType;
+        }
+
+        @Override
+        public final java.lang.Object getPeriod() {
+            return this.period;
+        }
+
+        @Override
+        public final java.lang.Object getPeriodUnit() {
+            return this.periodUnit;
+        }
+
+        @Override
+        public final java.lang.Object getPlatform() {
+            return this.platform;
         }
 
         @Override
@@ -1370,6 +1933,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
+        public final java.lang.Object getSocEnabled() {
+            return this.socEnabled;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> getTags() {
             return this.tags;
         }
@@ -1385,13 +1953,8 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.Object getWorkerAutoRenew() {
-            return this.workerAutoRenew;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerAutoRenewPeriod() {
-            return this.workerAutoRenewPeriod;
+        public final java.lang.Object getUserData() {
+            return this.userData;
         }
 
         @Override
@@ -1402,21 +1965,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getWorkerDataDisks() {
             return this.workerDataDisks;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerInstanceChargeType() {
-            return this.workerInstanceChargeType;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerPeriod() {
-            return this.workerPeriod;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerPeriodUnit() {
-            return this.workerPeriodUnit;
         }
 
         @Override
@@ -1442,6 +1990,18 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
             }
+            if (this.getAutoRenew() != null) {
+                data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
+            }
+            if (this.getAutoRenewPeriod() != null) {
+                data.set("autoRenewPeriod", om.valueToTree(this.getAutoRenewPeriod()));
+            }
+            if (this.getChargeType() != null) {
+                data.set("chargeType", om.valueToTree(this.getChargeType()));
+            }
+            if (this.getCisEnabled() != null) {
+                data.set("cisEnabled", om.valueToTree(this.getCisEnabled()));
+            }
             if (this.getCloudMonitorFlags() != null) {
                 data.set("cloudMonitorFlags", om.valueToTree(this.getCloudMonitorFlags()));
             }
@@ -1450,6 +2010,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             }
             if (this.getContainerCidr() != null) {
                 data.set("containerCidr", om.valueToTree(this.getContainerCidr()));
+            }
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
             }
             if (this.getDisableRollback() != null) {
                 data.set("disableRollback", om.valueToTree(this.getDisableRollback()));
@@ -1460,17 +2023,44 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getEndpointPublicAccess() != null) {
                 data.set("endpointPublicAccess", om.valueToTree(this.getEndpointPublicAccess()));
             }
+            if (this.getFormatDisk() != null) {
+                data.set("formatDisk", om.valueToTree(this.getFormatDisk()));
+            }
+            if (this.getIsEnterpriseSecurityGroup() != null) {
+                data.set("isEnterpriseSecurityGroup", om.valueToTree(this.getIsEnterpriseSecurityGroup()));
+            }
+            if (this.getKeepInstanceName() != null) {
+                data.set("keepInstanceName", om.valueToTree(this.getKeepInstanceName()));
+            }
             if (this.getKeyPair() != null) {
                 data.set("keyPair", om.valueToTree(this.getKeyPair()));
             }
             if (this.getKubernetesVersion() != null) {
                 data.set("kubernetesVersion", om.valueToTree(this.getKubernetesVersion()));
             }
+            if (this.getLoadBalancerSpec() != null) {
+                data.set("loadBalancerSpec", om.valueToTree(this.getLoadBalancerSpec()));
+            }
             if (this.getLoginPassword() != null) {
                 data.set("loginPassword", om.valueToTree(this.getLoginPassword()));
             }
+            if (this.getNodeCidrMask() != null) {
+                data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
+            }
             if (this.getNumOfNodes() != null) {
                 data.set("numOfNodes", om.valueToTree(this.getNumOfNodes()));
+            }
+            if (this.getOsType() != null) {
+                data.set("osType", om.valueToTree(this.getOsType()));
+            }
+            if (this.getPeriod() != null) {
+                data.set("period", om.valueToTree(this.getPeriod()));
+            }
+            if (this.getPeriodUnit() != null) {
+                data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            }
+            if (this.getPlatform() != null) {
+                data.set("platform", om.valueToTree(this.getPlatform()));
             }
             if (this.getPodVswitchIds() != null) {
                 data.set("podVswitchIds", om.valueToTree(this.getPodVswitchIds()));
@@ -1490,6 +2080,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getSnatEntry() != null) {
                 data.set("snatEntry", om.valueToTree(this.getSnatEntry()));
             }
+            if (this.getSocEnabled() != null) {
+                data.set("socEnabled", om.valueToTree(this.getSocEnabled()));
+            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -1499,26 +2092,14 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getTimeoutMins() != null) {
                 data.set("timeoutMins", om.valueToTree(this.getTimeoutMins()));
             }
-            if (this.getWorkerAutoRenew() != null) {
-                data.set("workerAutoRenew", om.valueToTree(this.getWorkerAutoRenew()));
-            }
-            if (this.getWorkerAutoRenewPeriod() != null) {
-                data.set("workerAutoRenewPeriod", om.valueToTree(this.getWorkerAutoRenewPeriod()));
+            if (this.getUserData() != null) {
+                data.set("userData", om.valueToTree(this.getUserData()));
             }
             if (this.getWorkerDataDisk() != null) {
                 data.set("workerDataDisk", om.valueToTree(this.getWorkerDataDisk()));
             }
             if (this.getWorkerDataDisks() != null) {
                 data.set("workerDataDisks", om.valueToTree(this.getWorkerDataDisks()));
-            }
-            if (this.getWorkerInstanceChargeType() != null) {
-                data.set("workerInstanceChargeType", om.valueToTree(this.getWorkerInstanceChargeType()));
-            }
-            if (this.getWorkerPeriod() != null) {
-                data.set("workerPeriod", om.valueToTree(this.getWorkerPeriod()));
-            }
-            if (this.getWorkerPeriodUnit() != null) {
-                data.set("workerPeriodUnit", om.valueToTree(this.getWorkerPeriodUnit()));
             }
             if (this.getWorkerSystemDiskCategory() != null) {
                 data.set("workerSystemDiskCategory", om.valueToTree(this.getWorkerSystemDiskCategory()));
@@ -1549,32 +2130,43 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (!vSwitchIds.equals(that.vSwitchIds)) return false;
             if (!workerInstanceTypes.equals(that.workerInstanceTypes)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
+            if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
+            if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
+            if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
+            if (this.cisEnabled != null ? !this.cisEnabled.equals(that.cisEnabled) : that.cisEnabled != null) return false;
             if (this.cloudMonitorFlags != null ? !this.cloudMonitorFlags.equals(that.cloudMonitorFlags) : that.cloudMonitorFlags != null) return false;
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.disableRollback != null ? !this.disableRollback.equals(that.disableRollback) : that.disableRollback != null) return false;
             if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
+            if (this.formatDisk != null ? !this.formatDisk.equals(that.formatDisk) : that.formatDisk != null) return false;
+            if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
+            if (this.keepInstanceName != null ? !this.keepInstanceName.equals(that.keepInstanceName) : that.keepInstanceName != null) return false;
             if (this.keyPair != null ? !this.keyPair.equals(that.keyPair) : that.keyPair != null) return false;
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
+            if (this.loadBalancerSpec != null ? !this.loadBalancerSpec.equals(that.loadBalancerSpec) : that.loadBalancerSpec != null) return false;
             if (this.loginPassword != null ? !this.loginPassword.equals(that.loginPassword) : that.loginPassword != null) return false;
+            if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
+            if (this.osType != null ? !this.osType.equals(that.osType) : that.osType != null) return false;
+            if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
+            if (this.platform != null ? !this.platform.equals(that.platform) : that.platform != null) return false;
             if (this.podVswitchIds != null ? !this.podVswitchIds.equals(that.podVswitchIds) : that.podVswitchIds != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
             if (this.runtime != null ? !this.runtime.equals(that.runtime) : that.runtime != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
             if (this.snatEntry != null ? !this.snatEntry.equals(that.snatEntry) : that.snatEntry != null) return false;
+            if (this.socEnabled != null ? !this.socEnabled.equals(that.socEnabled) : that.socEnabled != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.taint != null ? !this.taint.equals(that.taint) : that.taint != null) return false;
             if (this.timeoutMins != null ? !this.timeoutMins.equals(that.timeoutMins) : that.timeoutMins != null) return false;
-            if (this.workerAutoRenew != null ? !this.workerAutoRenew.equals(that.workerAutoRenew) : that.workerAutoRenew != null) return false;
-            if (this.workerAutoRenewPeriod != null ? !this.workerAutoRenewPeriod.equals(that.workerAutoRenewPeriod) : that.workerAutoRenewPeriod != null) return false;
+            if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
             if (this.workerDataDisk != null ? !this.workerDataDisk.equals(that.workerDataDisk) : that.workerDataDisk != null) return false;
             if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
-            if (this.workerInstanceChargeType != null ? !this.workerInstanceChargeType.equals(that.workerInstanceChargeType) : that.workerInstanceChargeType != null) return false;
-            if (this.workerPeriod != null ? !this.workerPeriod.equals(that.workerPeriod) : that.workerPeriod != null) return false;
-            if (this.workerPeriodUnit != null ? !this.workerPeriodUnit.equals(that.workerPeriodUnit) : that.workerPeriodUnit != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
             return this.workerSystemDiskSize != null ? this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize == null;
         }
@@ -1586,32 +2178,43 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.vSwitchIds.hashCode());
             result = 31 * result + (this.workerInstanceTypes.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
+            result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
+            result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
+            result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
+            result = 31 * result + (this.cisEnabled != null ? this.cisEnabled.hashCode() : 0);
             result = 31 * result + (this.cloudMonitorFlags != null ? this.cloudMonitorFlags.hashCode() : 0);
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.disableRollback != null ? this.disableRollback.hashCode() : 0);
             result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
+            result = 31 * result + (this.formatDisk != null ? this.formatDisk.hashCode() : 0);
+            result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
+            result = 31 * result + (this.keepInstanceName != null ? this.keepInstanceName.hashCode() : 0);
             result = 31 * result + (this.keyPair != null ? this.keyPair.hashCode() : 0);
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
+            result = 31 * result + (this.loadBalancerSpec != null ? this.loadBalancerSpec.hashCode() : 0);
             result = 31 * result + (this.loginPassword != null ? this.loginPassword.hashCode() : 0);
+            result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
+            result = 31 * result + (this.osType != null ? this.osType.hashCode() : 0);
+            result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
+            result = 31 * result + (this.platform != null ? this.platform.hashCode() : 0);
             result = 31 * result + (this.podVswitchIds != null ? this.podVswitchIds.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
             result = 31 * result + (this.runtime != null ? this.runtime.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);
             result = 31 * result + (this.snatEntry != null ? this.snatEntry.hashCode() : 0);
+            result = 31 * result + (this.socEnabled != null ? this.socEnabled.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.taint != null ? this.taint.hashCode() : 0);
             result = 31 * result + (this.timeoutMins != null ? this.timeoutMins.hashCode() : 0);
-            result = 31 * result + (this.workerAutoRenew != null ? this.workerAutoRenew.hashCode() : 0);
-            result = 31 * result + (this.workerAutoRenewPeriod != null ? this.workerAutoRenewPeriod.hashCode() : 0);
+            result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);
             result = 31 * result + (this.workerDataDisk != null ? this.workerDataDisk.hashCode() : 0);
             result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
-            result = 31 * result + (this.workerInstanceChargeType != null ? this.workerInstanceChargeType.hashCode() : 0);
-            result = 31 * result + (this.workerPeriod != null ? this.workerPeriod.hashCode() : 0);
-            result = 31 * result + (this.workerPeriodUnit != null ? this.workerPeriodUnit.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
             return result;

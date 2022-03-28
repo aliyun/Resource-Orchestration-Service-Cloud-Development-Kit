@@ -42,6 +42,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
+        /// true: automatic renewal
+        /// false: do not renew automatically
+        /// Default to true.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoRenew
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
+        /// When PeriodUnit = Week, the values are: {"1", "2", "3"}
+        /// When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
+        /// Default to 1.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoRenewPeriod
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: chargeType: cluster payment type. The optional values are:
+        /// PrePaid: prepaid
+        /// PostPaid: Pay as you go
+        /// Default to PostPaid.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ChargeType
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: cloudMonitorFlags: Whether to install the cloud monitoring plugin:
         /// true: indicates installation
         /// false: Do not install
@@ -81,6 +123,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: deletionProtection: Specifies whether to enable deletion protection for the cluster.
+        /// After deletion protection is enabled, the cluster cannot be deleted
+        /// in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+        /// false: disables deletion protection for the cluster.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DeletionProtection
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: disableRollback: Whether the failure was rolled back:
         /// true: indicates that it fails to roll back
         /// false: rollback failed
@@ -108,6 +165,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+        /// This parameter takes effect only if security_group_id is left empty.
+        /// Note You must specify an advanced security group for a cluster that has Terway installed.
+        /// true: creates an advanced security group.
+        /// false: does not create an advanced security group.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "isEnterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? IsEnterpriseSecurityGroup
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
         /// </remarks>
         [JsiiOptional]
@@ -124,6 +197,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiOptional]
         [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? LoginPassword
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
+        /// This number is determined by the specified pod CIDR block.
+        /// This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "nodeCidrMask", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NodeCidrMask
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+        /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+        /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+        /// Default to 1.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Period
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: periodUnit: When you specify PrePaid, you need to specify the period. The options are:
+        /// Week: Time is measured in weeks
+        /// Month: time in months
+        /// Default to Month
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PeriodUnit
         {
             get;
             set;

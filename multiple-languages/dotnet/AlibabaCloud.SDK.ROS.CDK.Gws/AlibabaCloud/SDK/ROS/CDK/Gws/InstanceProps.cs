@@ -106,20 +106,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             set;
         }
 
-        /// <summary>Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).</summary>
-        /// <remarks>
-        /// Value range: 1-200
-        /// Default: 200
-        /// This value is only valid when AllocatePublicAddress is true.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? InternetMaxBandwidthIn
-        {
-            get;
-            set;
-        }
-
         /// <summary>Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).</summary>
         /// <remarks>
         /// Value range: 1-200

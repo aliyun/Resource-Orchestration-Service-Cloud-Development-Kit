@@ -1038,6 +1038,10 @@ export namespace RosFunction {
          */
         readonly args?: string | ros.IResolvable;
         /**
+         * @Property instanceId: The ID of the Container Registry Enterprise Edition instance. If you use an Enterprise Edition instance for the container image, you must add the instance ID. The default resolution IP address of the instance must be the IP address of the virtual private cloud (VPC) that the instance belongs. Alibaba Cloud DNS PrivateZone cannot be used for domain name resolution.
+         */
+        readonly instanceId?: string | ros.IResolvable;
+        /**
          * @Property command: Container start command. For example: ["/code/myserver"]
          */
         readonly command?: string | ros.IResolvable;
@@ -1064,6 +1068,7 @@ function RosFunction_CustomContainerConfigPropertyValidator(properties: any): ro
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('args', ros.validateString)(properties.args));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     errors.collect(ros.propertyValidator('accelerationType', ros.validateString)(properties.accelerationType));
     errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
@@ -1084,6 +1089,7 @@ function rosFunctionCustomContainerConfigPropertyToRosTemplate(properties: any):
     RosFunction_CustomContainerConfigPropertyValidator(properties).assertSuccess();
     return {
       Args: ros.stringToRosTemplate(properties.args),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
       Command: ros.stringToRosTemplate(properties.command),
       AccelerationType: ros.stringToRosTemplate(properties.accelerationType),
       Image: ros.stringToRosTemplate(properties.image),
@@ -1814,6 +1820,12 @@ export interface RosServiceProps {
     readonly tracingConfig?: RosService.TracingConfigProperty | ros.IResolvable;
 
     /**
+     * @Property vpcBindings: Function Invocation only by Specified VPCs. 
+     * By default, you can invoke the function by using the Internet endpoint and internal endpoint after a function is created. If you want the function to be invoked only by using specified VPCs, but not the Internet endpoint or internal endpoint, you must bind the specified VPCs to the service.
+     */
+    readonly vpcBindings?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
      */
     readonly vpcConfig?: RosService.VpcConfigProperty | ros.IResolvable;
@@ -1844,6 +1856,14 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    if(properties.vpcBindings && (Array.isArray(properties.vpcBindings) || (typeof properties.vpcBindings) === 'string')) {
+        errors.collect(ros.propertyValidator('vpcBindings', ros.validateLength)({
+            data: properties.vpcBindings.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vpcBindings', ros.listValidator(ros.validateString))(properties.vpcBindings));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1880,6 +1900,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
       Role: ros.stringToRosTemplate(properties.role),
       Tags: ros.listMapper(rosServiceTagsPropertyToRosTemplate)(properties.tags),
       TracingConfig: rosServiceTracingConfigPropertyToRosTemplate(properties.tracingConfig),
+      VpcBindings: ros.listMapper(ros.stringToRosTemplate)(properties.vpcBindings),
       VpcConfig: rosServiceVpcConfigPropertyToRosTemplate(properties.vpcConfig),
     };
 }
@@ -1987,6 +2008,12 @@ export class RosService extends ros.RosResource {
     public tracingConfig: RosService.TracingConfigProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property vpcBindings: Function Invocation only by Specified VPCs. 
+     * By default, you can invoke the function by using the Internet endpoint and internal endpoint after a function is created. If you want the function to be invoked only by using specified VPCs, but not the Internet endpoint or internal endpoint, you must bind the specified VPCs to the service.
+     */
+    public vpcBindings: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
      */
     public vpcConfig: RosService.VpcConfigProperty | ros.IResolvable | undefined;
@@ -2019,6 +2046,7 @@ export class RosService extends ros.RosResource {
         this.role = props.role;
         this.tags = props.tags;
         this.tracingConfig = props.tracingConfig;
+        this.vpcBindings = props.vpcBindings;
         this.vpcConfig = props.vpcConfig;
     }
 
@@ -2034,6 +2062,7 @@ export class RosService extends ros.RosResource {
             role: this.role,
             tags: this.tags,
             tracingConfig: this.tracingConfig,
+            vpcBindings: this.vpcBindings,
             vpcConfig: this.vpcConfig,
         };
     }

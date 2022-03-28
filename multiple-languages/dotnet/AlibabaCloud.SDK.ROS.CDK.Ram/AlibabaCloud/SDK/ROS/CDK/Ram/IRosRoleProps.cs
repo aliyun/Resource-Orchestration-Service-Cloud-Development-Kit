@@ -80,6 +80,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: policyAttachments: System and custom policy names to attach.
+        /// </remarks>
+        [JsiiProperty(name: "policyAttachments", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PolicyAttachments
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::RAM::Role`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRosRoleProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosRoleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.IRosRoleProps
@@ -144,6 +157,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             [JsiiOptional]
             [JsiiProperty(name: "policies", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PoliciesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Policies
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: policyAttachments: System and custom policy names to attach.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "policyAttachments", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty\"}]}}", isOptional: true)]
+            public object? PolicyAttachments
             {
                 get => GetInstanceProperty<object?>();
             }

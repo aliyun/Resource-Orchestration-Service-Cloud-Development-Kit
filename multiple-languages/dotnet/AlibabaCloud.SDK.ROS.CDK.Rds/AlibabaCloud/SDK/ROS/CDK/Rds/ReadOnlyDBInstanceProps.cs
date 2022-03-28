@@ -42,14 +42,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property engineVersion: The version of the database.</summary>
         /// <remarks>
-        /// The database and the master instance must have the same database version. Valid values:
-        ///
-        /// <list type="bullet">
-        /// <description>5.6</description>
-        /// <description>5.7</description>
-        /// <description>8.0</description>
-        /// <description>2017_ent</description>
-        /// </list>
+        /// The database and the master instance must have the same database version. Valid values: 5.6, 5.7, 8.0, 2017_ent, 2019_ent
         /// </remarks>
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object EngineVersion
@@ -83,15 +76,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             set;
         }
 
-        /// <summary>Property category: The edition of the instance.</summary>
+        /// <summary>Property category: The RDS edition of the read-only instance.</summary>
         /// <remarks>
         /// Valid values:
-        ///
-        /// <list type="bullet">
-        /// <description>Basic</description>
-        /// <description>HighAvailability</description>
-        /// <description>AlwaysOn</description>
-        /// </list>
+        /// Basic: Basic Edition.
+        /// HighAvailability: High-availability Edition. This is the default value.
+        /// AlwaysOn: Cluster Edition.
+        /// Finance: Enterprise Edition. This edition is available only on the China site (aliyun.com).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -110,15 +101,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             set;
         }
 
-        /// <summary>Property dbInstanceStorageType: The storage type of the instance.</summary>
+        /// <summary>Property dbInstanceStorageType: The type of storage media that is used by the instance.</summary>
         /// <remarks>
         /// Valid values:
-        ///
-        /// <list type="bullet">
-        /// <description>local_ssd/ephemeral_ssd: local SSDs.</description>
-        /// <description>cloud_ssd: SSDs.</description>
-        /// <description>cloud_essd: ESSDs.</description>
-        /// </list>
+        /// local_ssd: local SSDs
+        /// cloud_ssd: standard SSDs
+        /// cloud_essd: ESSDs of performance level 1 (PL1)
+        /// cloud_essd2: ESSDs of PL2
+        /// cloud_essd3: ESSDs of PL3
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dbInstanceStorageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -140,9 +130,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             set;
         }
 
-        /// <summary>Property period: Prepaid time period.</summary>
+        /// <summary>Property period: The subscription duration.</summary>
         /// <remarks>
-        /// While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+        /// Valid values:
+        /// When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+        /// When PeriodType is Year, it could be from 1 to 5.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

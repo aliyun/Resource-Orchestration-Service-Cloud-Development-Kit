@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Service`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.636Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.785Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.ServiceProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceProps.Jsii$Proxy.class)
 public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -82,6 +82,15 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property vpcBindings: Function Invocation only by Specified VPCs.
+     * <p>
+     * By default, you can invoke the function by using the Internet endpoint and internal endpoint after a function is created. If you want the function to be invoked only by using specified VPCs, but not the Internet endpoint or internal endpoint, you must bind the specified VPCs to the service.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcBindings() {
+        return null;
+    }
+
+    /**
      * Property vpcConfig: VPC configuration.
      * <p>
      * Function Compute uses the config to setup ENI in the specific VPC.
@@ -109,6 +118,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object role;
         java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags;
         java.lang.Object tracingConfig;
+        java.lang.Object vpcBindings;
         java.lang.Object vpcConfig;
 
         /**
@@ -294,6 +304,28 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ServiceProps#getVpcBindings}
+         * @param vpcBindings Property vpcBindings: Function Invocation only by Specified VPCs.
+         *                    By default, you can invoke the function by using the Internet endpoint and internal endpoint after a function is created. If you want the function to be invoked only by using specified VPCs, but not the Internet endpoint or internal endpoint, you must bind the specified VPCs to the service.
+         * @return {@code this}
+         */
+        public Builder vpcBindings(com.aliyun.ros.cdk.core.IResolvable vpcBindings) {
+            this.vpcBindings = vpcBindings;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceProps#getVpcBindings}
+         * @param vpcBindings Property vpcBindings: Function Invocation only by Specified VPCs.
+         *                    By default, you can invoke the function by using the Internet endpoint and internal endpoint after a function is created. If you want the function to be invoked only by using specified VPCs, but not the Internet endpoint or internal endpoint, you must bind the specified VPCs to the service.
+         * @return {@code this}
+         */
+        public Builder vpcBindings(java.util.List<? extends java.lang.Object> vpcBindings) {
+            this.vpcBindings = vpcBindings;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServiceProps#getVpcConfig}
          * @param vpcConfig Property vpcConfig: VPC configuration.
          *                  Function Compute uses the config to setup ENI in the specific VPC.
@@ -340,6 +372,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object role;
         private final java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags;
         private final java.lang.Object tracingConfig;
+        private final java.lang.Object vpcBindings;
         private final java.lang.Object vpcConfig;
 
         /**
@@ -357,6 +390,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.fc.RosService.TagsProperty.class)));
             this.tracingConfig = software.amazon.jsii.Kernel.get(this, "tracingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcBindings = software.amazon.jsii.Kernel.get(this, "vpcBindings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcConfig = software.amazon.jsii.Kernel.get(this, "vpcConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -375,6 +409,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             this.role = builder.role;
             this.tags = (java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty>)builder.tags;
             this.tracingConfig = builder.tracingConfig;
+            this.vpcBindings = builder.vpcBindings;
             this.vpcConfig = builder.vpcConfig;
         }
 
@@ -424,6 +459,11 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getVpcBindings() {
+            return this.vpcBindings;
+        }
+
+        @Override
         public final java.lang.Object getVpcConfig() {
             return this.vpcConfig;
         }
@@ -459,6 +499,9 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getTracingConfig() != null) {
                 data.set("tracingConfig", om.valueToTree(this.getTracingConfig()));
             }
+            if (this.getVpcBindings() != null) {
+                data.set("vpcBindings", om.valueToTree(this.getVpcBindings()));
+            }
             if (this.getVpcConfig() != null) {
                 data.set("vpcConfig", om.valueToTree(this.getVpcConfig()));
             }
@@ -489,6 +532,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.role != null ? !this.role.equals(that.role) : that.role != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tracingConfig != null ? !this.tracingConfig.equals(that.tracingConfig) : that.tracingConfig != null) return false;
+            if (this.vpcBindings != null ? !this.vpcBindings.equals(that.vpcBindings) : that.vpcBindings != null) return false;
             return this.vpcConfig != null ? this.vpcConfig.equals(that.vpcConfig) : that.vpcConfig == null;
         }
 
@@ -503,6 +547,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.role != null ? this.role.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tracingConfig != null ? this.tracingConfig.hashCode() : 0);
+            result = 31 * result + (this.vpcBindings != null ? this.vpcBindings.hashCode() : 0);
             result = 31 * result + (this.vpcConfig != null ? this.vpcConfig.hashCode() : 0);
             return result;
         }

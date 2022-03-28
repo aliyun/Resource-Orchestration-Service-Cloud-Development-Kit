@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS resource type:  `ALIYUN::SAG::ACLRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.397Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.526Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.ACLRule")
 public class ACLRule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -283,6 +283,87 @@ public class ACLRule extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dpiGroupIds: The ID of the application group.
+         * <p>
+         * You can enter at most 100 application group IDs at a time.
+         * You can call the ListDpiGroups operation to query application group IDs and information about the applications.
+         * <p>
+         * @return {@code this}
+         * @param dpiGroupIds Property dpiGroupIds: The ID of the application group. This parameter is required.
+         */
+        public Builder dpiGroupIds(final com.aliyun.ros.cdk.core.IResolvable dpiGroupIds) {
+            this.props.dpiGroupIds(dpiGroupIds);
+            return this;
+        }
+        /**
+         * Property dpiGroupIds: The ID of the application group.
+         * <p>
+         * You can enter at most 100 application group IDs at a time.
+         * You can call the ListDpiGroups operation to query application group IDs and information about the applications.
+         * <p>
+         * @return {@code this}
+         * @param dpiGroupIds Property dpiGroupIds: The ID of the application group. This parameter is required.
+         */
+        public Builder dpiGroupIds(final java.util.List<? extends java.lang.Object> dpiGroupIds) {
+            this.props.dpiGroupIds(dpiGroupIds);
+            return this;
+        }
+
+        /**
+         * Property dpiSignatureIds: The ID of the application.
+         * <p>
+         * You can enter at most 100 application IDs at a time.
+         * You can call the ListDpiSignatures operation to query application IDs and information about the applications.
+         * <p>
+         * @return {@code this}
+         * @param dpiSignatureIds Property dpiSignatureIds: The ID of the application. This parameter is required.
+         */
+        public Builder dpiSignatureIds(final com.aliyun.ros.cdk.core.IResolvable dpiSignatureIds) {
+            this.props.dpiSignatureIds(dpiSignatureIds);
+            return this;
+        }
+        /**
+         * Property dpiSignatureIds: The ID of the application.
+         * <p>
+         * You can enter at most 100 application IDs at a time.
+         * You can call the ListDpiSignatures operation to query application IDs and information about the applications.
+         * <p>
+         * @return {@code this}
+         * @param dpiSignatureIds Property dpiSignatureIds: The ID of the application. This parameter is required.
+         */
+        public Builder dpiSignatureIds(final java.util.List<? extends java.lang.Object> dpiSignatureIds) {
+            this.props.dpiSignatureIds(dpiSignatureIds);
+            return this;
+        }
+
+        /**
+         * Property name: The name of the ACL rule.
+         * <p>
+         * The name must be 2 to 100 characters in length, and can contain digits, underscores
+         * (_), and hyphens (-). It must start with a letter.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the ACL rule. This parameter is required.
+         */
+        public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * Property name: The name of the ACL rule.
+         * <p>
+         * The name must be 2 to 100 characters in length, and can contain digits, underscores
+         * (_), and hyphens (-). It must start with a letter.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the ACL rule. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
+
+        /**
          * Property priority: Priority, ranging from 1 to 100.
          * <p>
          * Default: 1
@@ -304,6 +385,33 @@ public class ACLRule extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
             this.props.priority(priority);
+            return this;
+        }
+
+        /**
+         * Property type: The type of the ACL rule: Valid values: LAN: The ACL rule controls traffic of private IP addresses.
+         * <p>
+         * This is the default value.
+         * WAN: The ACL rule controls traffic of public IP addresses.
+         * <p>
+         * @return {@code this}
+         * @param type Property type: The type of the ACL rule: Valid values: LAN: The ACL rule controls traffic of private IP addresses. This parameter is required.
+         */
+        public Builder type(final java.lang.String type) {
+            this.props.type(type);
+            return this;
+        }
+        /**
+         * Property type: The type of the ACL rule: Valid values: LAN: The ACL rule controls traffic of private IP addresses.
+         * <p>
+         * This is the default value.
+         * WAN: The ACL rule controls traffic of public IP addresses.
+         * <p>
+         * @return {@code this}
+         * @param type Property type: The type of the ACL rule: Valid values: LAN: The ACL rule controls traffic of private IP addresses. This parameter is required.
+         */
+        public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
+            this.props.type(type);
             return this;
         }
 

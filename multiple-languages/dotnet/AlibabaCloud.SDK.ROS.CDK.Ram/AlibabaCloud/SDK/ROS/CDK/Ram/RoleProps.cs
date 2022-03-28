@@ -68,5 +68,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             get;
             set;
         }
+
+        /// <summary>Property policyAttachments: System and custom policy names to attach.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "policyAttachments", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty\"}]}}", isOptional: true)]
+        public object? PolicyAttachments
+        {
+            get;
+            set;
+        }
     }
 }

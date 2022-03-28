@@ -33,14 +33,6 @@ export interface TopicProps {
     readonly topic: string | ros.IResolvable;
 
     /**
-     * Property perm: Set the read-write mode for the topic Valid values.:
-     * 6: Both read and write operations are supported.
-     * 4: Write operation is prohibited.
-     * 2: Read operation is prohibited.
-     */
-    readonly perm?: number | ros.IResolvable;
-
-    /**
      * Property remark: The remarks on the request. This parameter can be left blank.
      */
     readonly remark?: string | ros.IResolvable;
@@ -83,7 +75,6 @@ export class Topic extends ros.Resource {
 
         const rosTopic = new RosTopic(this, id,  {
             instanceId: props.instanceId,
-            perm: props.perm,
             topic: props.topic,
             messageType: props.messageType,
             remark: props.remark,

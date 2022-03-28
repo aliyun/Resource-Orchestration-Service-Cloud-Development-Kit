@@ -16,7 +16,7 @@
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		
     
-		<PackageVersion>1.0.4</PackageVersion>
+		<PackageVersion>1.0.5</PackageVersion>
 		
     
 		<!-- Additional Metadata -->
@@ -70,7 +70,7 @@
 	<ItemGroup>
 		
     
-		<EmbeddedResource Include="alicloud-ros-cdk-eci-1.0.4.tgz"/>
+		<EmbeddedResource Include="alicloud-ros-cdk-eci-1.0.5.tgz"/>
 		
   
 	</ItemGroup>

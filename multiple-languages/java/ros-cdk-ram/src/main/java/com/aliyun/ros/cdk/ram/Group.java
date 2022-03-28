@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.108Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.222Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource {
 
@@ -132,6 +132,31 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deletionForce: Whether force detach the policies attached to the group.
+         * <p>
+         * Default value is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force detach the policies attached to the group. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether force detach the policies attached to the group.
+         * <p>
+         * Default value is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force detach the policies attached to the group. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
          * Property policies: Describes what actions are allowed on what resources.
          * <p>
          * @return {@code this}
@@ -149,6 +174,27 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder policies(final java.util.List<? extends java.lang.Object> policies) {
             this.props.policies(policies);
+            return this;
+        }
+
+        /**
+         * Property policyAttachments: System and custom policy names to attach.
+         * <p>
+         * @return {@code this}
+         * @param policyAttachments Property policyAttachments: System and custom policy names to attach. This parameter is required.
+         */
+        public Builder policyAttachments(final com.aliyun.ros.cdk.core.IResolvable policyAttachments) {
+            this.props.policyAttachments(policyAttachments);
+            return this;
+        }
+        /**
+         * Property policyAttachments: System and custom policy names to attach.
+         * <p>
+         * @return {@code this}
+         * @param policyAttachments Property policyAttachments: System and custom policy names to attach. This parameter is required.
+         */
+        public Builder policyAttachments(final com.aliyun.ros.cdk.ram.RosGroup.PolicyAttachmentsProperty policyAttachments) {
+            this.props.policyAttachments(policyAttachments);
             return this;
         }
 

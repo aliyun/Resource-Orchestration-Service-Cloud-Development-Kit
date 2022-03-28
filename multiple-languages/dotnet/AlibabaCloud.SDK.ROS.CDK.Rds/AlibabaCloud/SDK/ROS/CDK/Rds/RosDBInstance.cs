@@ -623,7 +623,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+        /// <strong>Property</strong>: period: The subscription duration. Valid values:
+        /// When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+        /// When PeriodType is Year, it could be from 1 to 5.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

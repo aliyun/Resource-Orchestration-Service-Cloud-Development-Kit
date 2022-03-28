@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.093Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.198Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -484,31 +484,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.props.internetChargeType(internetChargeType);
-            return this;
-        }
-
-        /**
-         * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-         * <p>
-         * The range is [1,200], default is 200 Mbps.
-         * <p>
-         * @return {@code this}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final java.lang.Number internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
-            return this;
-        }
-        /**
-         * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-         * <p>
-         * The range is [1,200], default is 200 Mbps.
-         * <p>
-         * @return {@code this}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
             return this;
         }
 

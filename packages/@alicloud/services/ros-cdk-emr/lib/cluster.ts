@@ -66,6 +66,11 @@ export interface ClusterProps {
     readonly bootstrapAction?: Array<RosCluster.BootstrapActionProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property clickHouseConf: undefined
+     */
+    readonly clickHouseConf?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
      * Property config:
      */
     readonly config?: Array<RosCluster.ConfigProperty | ros.IResolvable> | ros.IResolvable;
@@ -262,6 +267,7 @@ export class Cluster extends ros.Resource {
             bootstrapAction: props.bootstrapAction,
             securityGroupName: props.securityGroupName,
             config: props.config,
+            clickHouseConf: props.clickHouseConf,
             autoRenew: props.autoRenew,
             hostGroup: props.hostGroup,
             userInfo: props.userInfo,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::LaunchTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.257Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.398Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosLaunchTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(RosLaunchTemplateProps.Jsii$Proxy.class)
 public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,6 +15,12 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoReleaseTime() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
         return null;
     }
 
@@ -44,6 +50,18 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageOwnerAlias() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
@@ -62,12 +80,6 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
-        return null;
-    }
-
-    /**
-     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return null;
     }
@@ -75,6 +87,12 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIoOptimized() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
         return null;
     }
 
@@ -98,7 +116,31 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPasswordInherit() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -111,6 +153,18 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotDuration() {
         return null;
     }
 
@@ -134,6 +188,12 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDeleteWithInstance() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDescription() {
         return null;
     }
@@ -146,6 +206,12 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
         return null;
     }
@@ -153,6 +219,12 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
     /**
      */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateResourceGroupId() {
         return null;
     }
 
@@ -198,29 +270,41 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
     public static final class Builder implements software.amazon.jsii.Builder<RosLaunchTemplateProps> {
         java.lang.Object launchTemplateName;
         java.lang.Object autoReleaseTime;
+        java.lang.Object deploymentSetId;
         java.lang.Object description;
         java.lang.Object diskMappings;
         java.lang.Object hostName;
         java.lang.Object imageId;
+        java.lang.Object imageOwnerAlias;
+        java.lang.Object instanceChargeType;
         java.lang.Object instanceName;
         java.lang.Object instanceType;
         java.lang.Object internetChargeType;
-        java.lang.Object internetMaxBandwidthIn;
         java.lang.Object internetMaxBandwidthOut;
         java.lang.Object ioOptimized;
+        java.lang.Object ipv6AddressCount;
         java.lang.Object keyPairName;
         java.lang.Object networkInterfaces;
         java.lang.Object networkType;
+        java.lang.Object passwordInherit;
+        java.lang.Object period;
+        java.lang.Object privateIpAddress;
         java.lang.Object ramRoleName;
+        java.lang.Object resourceGroupId;
         java.lang.Object securityEnhancementStrategy;
         java.lang.Object securityGroupId;
+        java.lang.Object securityGroupIds;
+        java.lang.Object spotDuration;
         java.lang.Object spotPriceLimit;
         java.lang.Object spotStrategy;
         java.lang.Object systemDiskCategory;
+        java.lang.Object systemDiskDeleteWithInstance;
         java.lang.Object systemDiskDescription;
         java.lang.Object systemDiskDiskName;
+        java.lang.Object systemDiskPerformanceLevel;
         java.lang.Object systemDiskSize;
         java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags;
+        java.lang.Object templateResourceGroupId;
         java.lang.Object templateTags;
         java.lang.Object userData;
         java.lang.Object versionDescription;
@@ -264,6 +348,26 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder autoReleaseTime(com.aliyun.ros.cdk.core.IResolvable autoReleaseTime) {
             this.autoReleaseTime = autoReleaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getDeploymentSetId}
+         * @param deploymentSetId the value to be set.
+         * @return {@code this}
+         */
+        public Builder deploymentSetId(java.lang.String deploymentSetId) {
+            this.deploymentSetId = deploymentSetId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getDeploymentSetId}
+         * @param deploymentSetId the value to be set.
+         * @return {@code this}
+         */
+        public Builder deploymentSetId(com.aliyun.ros.cdk.core.IResolvable deploymentSetId) {
+            this.deploymentSetId = deploymentSetId;
             return this;
         }
 
@@ -348,6 +452,46 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosLaunchTemplateProps#getImageOwnerAlias}
+         * @param imageOwnerAlias the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageOwnerAlias(java.lang.String imageOwnerAlias) {
+            this.imageOwnerAlias = imageOwnerAlias;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getImageOwnerAlias}
+         * @param imageOwnerAlias the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageOwnerAlias(com.aliyun.ros.cdk.core.IResolvable imageOwnerAlias) {
+            this.imageOwnerAlias = imageOwnerAlias;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(java.lang.String instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLaunchTemplateProps#getInstanceName}
          * @param instanceName the value to be set.
          * @return {@code this}
@@ -408,26 +552,6 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
-         * Sets the value of {@link RosLaunchTemplateProps#getInternetMaxBandwidthIn}
-         * @param internetMaxBandwidthIn the value to be set.
-         * @return {@code this}
-         */
-        public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosLaunchTemplateProps#getInternetMaxBandwidthIn}
-         * @param internetMaxBandwidthIn the value to be set.
-         * @return {@code this}
-         */
-        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosLaunchTemplateProps#getInternetMaxBandwidthOut}
          * @param internetMaxBandwidthOut the value to be set.
          * @return {@code this}
@@ -464,6 +588,26 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder ioOptimized(com.aliyun.ros.cdk.core.IResolvable ioOptimized) {
             this.ioOptimized = ioOptimized;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
             return this;
         }
 
@@ -528,6 +672,66 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosLaunchTemplateProps#getPasswordInherit}
+         * @param passwordInherit the value to be set.
+         * @return {@code this}
+         */
+        public Builder passwordInherit(java.lang.Boolean passwordInherit) {
+            this.passwordInherit = passwordInherit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getPasswordInherit}
+         * @param passwordInherit the value to be set.
+         * @return {@code this}
+         */
+        public Builder passwordInherit(com.aliyun.ros.cdk.core.IResolvable passwordInherit) {
+            this.passwordInherit = passwordInherit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(java.lang.String privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLaunchTemplateProps#getRamRoleName}
          * @param ramRoleName the value to be set.
          * @return {@code this}
@@ -544,6 +748,26 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder ramRoleName(com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
             this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
             return this;
         }
 
@@ -584,6 +808,46 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getSecurityGroupIds}
+         * @param securityGroupIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getSecurityGroupIds}
+         * @param securityGroupIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getSpotDuration}
+         * @param spotDuration the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotDuration(java.lang.Number spotDuration) {
+            this.spotDuration = spotDuration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getSpotDuration}
+         * @param spotDuration the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotDuration(com.aliyun.ros.cdk.core.IResolvable spotDuration) {
+            this.spotDuration = spotDuration;
             return this;
         }
 
@@ -648,6 +912,26 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosLaunchTemplateProps#getSystemDiskDeleteWithInstance}
+         * @param systemDiskDeleteWithInstance the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskDeleteWithInstance(java.lang.Boolean systemDiskDeleteWithInstance) {
+            this.systemDiskDeleteWithInstance = systemDiskDeleteWithInstance;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getSystemDiskDeleteWithInstance}
+         * @param systemDiskDeleteWithInstance the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskDeleteWithInstance(com.aliyun.ros.cdk.core.IResolvable systemDiskDeleteWithInstance) {
+            this.systemDiskDeleteWithInstance = systemDiskDeleteWithInstance;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLaunchTemplateProps#getSystemDiskDescription}
          * @param systemDiskDescription the value to be set.
          * @return {@code this}
@@ -688,6 +972,26 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosLaunchTemplateProps#getSystemDiskPerformanceLevel}
+         * @param systemDiskPerformanceLevel the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskPerformanceLevel(java.lang.String systemDiskPerformanceLevel) {
+            this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getSystemDiskPerformanceLevel}
+         * @param systemDiskPerformanceLevel the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
+            this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLaunchTemplateProps#getSystemDiskSize}
          * @param systemDiskSize the value to be set.
          * @return {@code this}
@@ -715,6 +1019,26 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         @SuppressWarnings("unchecked")
         public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags) {
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getTemplateResourceGroupId}
+         * @param templateResourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateResourceGroupId(java.lang.String templateResourceGroupId) {
+            this.templateResourceGroupId = templateResourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLaunchTemplateProps#getTemplateResourceGroupId}
+         * @param templateResourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateResourceGroupId(com.aliyun.ros.cdk.core.IResolvable templateResourceGroupId) {
+            this.templateResourceGroupId = templateResourceGroupId;
             return this;
         }
 
@@ -836,29 +1160,41 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosLaunchTemplateProps {
         private final java.lang.Object launchTemplateName;
         private final java.lang.Object autoReleaseTime;
+        private final java.lang.Object deploymentSetId;
         private final java.lang.Object description;
         private final java.lang.Object diskMappings;
         private final java.lang.Object hostName;
         private final java.lang.Object imageId;
+        private final java.lang.Object imageOwnerAlias;
+        private final java.lang.Object instanceChargeType;
         private final java.lang.Object instanceName;
         private final java.lang.Object instanceType;
         private final java.lang.Object internetChargeType;
-        private final java.lang.Object internetMaxBandwidthIn;
         private final java.lang.Object internetMaxBandwidthOut;
         private final java.lang.Object ioOptimized;
+        private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object keyPairName;
         private final java.lang.Object networkInterfaces;
         private final java.lang.Object networkType;
+        private final java.lang.Object passwordInherit;
+        private final java.lang.Object period;
+        private final java.lang.Object privateIpAddress;
         private final java.lang.Object ramRoleName;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityEnhancementStrategy;
         private final java.lang.Object securityGroupId;
+        private final java.lang.Object securityGroupIds;
+        private final java.lang.Object spotDuration;
         private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object systemDiskCategory;
+        private final java.lang.Object systemDiskDeleteWithInstance;
         private final java.lang.Object systemDiskDescription;
         private final java.lang.Object systemDiskDiskName;
+        private final java.lang.Object systemDiskPerformanceLevel;
         private final java.lang.Object systemDiskSize;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags;
+        private final java.lang.Object templateResourceGroupId;
         private final java.lang.Object templateTags;
         private final java.lang.Object userData;
         private final java.lang.Object versionDescription;
@@ -873,29 +1209,41 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
             super(objRef);
             this.launchTemplateName = software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageOwnerAlias = software.amazon.jsii.Kernel.get(this, "imageOwnerAlias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkInterfaces = software.amazon.jsii.Kernel.get(this, "networkInterfaces", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotDuration = software.amazon.jsii.Kernel.get(this, "spotDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskDeleteWithInstance = software.amazon.jsii.Kernel.get(this, "systemDiskDeleteWithInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty.class)));
+            this.templateResourceGroupId = software.amazon.jsii.Kernel.get(this, "templateResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.templateTags = software.amazon.jsii.Kernel.get(this, "templateTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.versionDescription = software.amazon.jsii.Kernel.get(this, "versionDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -911,29 +1259,41 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.launchTemplateName = java.util.Objects.requireNonNull(builder.launchTemplateName, "launchTemplateName is required");
             this.autoReleaseTime = builder.autoReleaseTime;
+            this.deploymentSetId = builder.deploymentSetId;
             this.description = builder.description;
             this.diskMappings = builder.diskMappings;
             this.hostName = builder.hostName;
             this.imageId = builder.imageId;
+            this.imageOwnerAlias = builder.imageOwnerAlias;
+            this.instanceChargeType = builder.instanceChargeType;
             this.instanceName = builder.instanceName;
             this.instanceType = builder.instanceType;
             this.internetChargeType = builder.internetChargeType;
-            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
             this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
             this.ioOptimized = builder.ioOptimized;
+            this.ipv6AddressCount = builder.ipv6AddressCount;
             this.keyPairName = builder.keyPairName;
             this.networkInterfaces = builder.networkInterfaces;
             this.networkType = builder.networkType;
+            this.passwordInherit = builder.passwordInherit;
+            this.period = builder.period;
+            this.privateIpAddress = builder.privateIpAddress;
             this.ramRoleName = builder.ramRoleName;
+            this.resourceGroupId = builder.resourceGroupId;
             this.securityEnhancementStrategy = builder.securityEnhancementStrategy;
             this.securityGroupId = builder.securityGroupId;
+            this.securityGroupIds = builder.securityGroupIds;
+            this.spotDuration = builder.spotDuration;
             this.spotPriceLimit = builder.spotPriceLimit;
             this.spotStrategy = builder.spotStrategy;
             this.systemDiskCategory = builder.systemDiskCategory;
+            this.systemDiskDeleteWithInstance = builder.systemDiskDeleteWithInstance;
             this.systemDiskDescription = builder.systemDiskDescription;
             this.systemDiskDiskName = builder.systemDiskDiskName;
+            this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
             this.systemDiskSize = builder.systemDiskSize;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty>)builder.tags;
+            this.templateResourceGroupId = builder.templateResourceGroupId;
             this.templateTags = builder.templateTags;
             this.userData = builder.userData;
             this.versionDescription = builder.versionDescription;
@@ -949,6 +1309,11 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getAutoReleaseTime() {
             return this.autoReleaseTime;
+        }
+
+        @Override
+        public final java.lang.Object getDeploymentSetId() {
+            return this.deploymentSetId;
         }
 
         @Override
@@ -972,6 +1337,16 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getImageOwnerAlias() {
+            return this.imageOwnerAlias;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceChargeType() {
+            return this.instanceChargeType;
+        }
+
+        @Override
         public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
@@ -987,11 +1362,6 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.Object getInternetMaxBandwidthIn() {
-            return this.internetMaxBandwidthIn;
-        }
-
-        @Override
         public final java.lang.Object getInternetMaxBandwidthOut() {
             return this.internetMaxBandwidthOut;
         }
@@ -999,6 +1369,11 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getIoOptimized() {
             return this.ioOptimized;
+        }
+
+        @Override
+        public final java.lang.Object getIpv6AddressCount() {
+            return this.ipv6AddressCount;
         }
 
         @Override
@@ -1017,8 +1392,28 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getPasswordInherit() {
+            return this.passwordInherit;
+        }
+
+        @Override
+        public final java.lang.Object getPeriod() {
+            return this.period;
+        }
+
+        @Override
+        public final java.lang.Object getPrivateIpAddress() {
+            return this.privateIpAddress;
+        }
+
+        @Override
         public final java.lang.Object getRamRoleName() {
             return this.ramRoleName;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -1029,6 +1424,16 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityGroupIds() {
+            return this.securityGroupIds;
+        }
+
+        @Override
+        public final java.lang.Object getSpotDuration() {
+            return this.spotDuration;
         }
 
         @Override
@@ -1047,6 +1452,11 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getSystemDiskDeleteWithInstance() {
+            return this.systemDiskDeleteWithInstance;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskDescription() {
             return this.systemDiskDescription;
         }
@@ -1057,6 +1467,11 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getSystemDiskPerformanceLevel() {
+            return this.systemDiskPerformanceLevel;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskSize() {
             return this.systemDiskSize;
         }
@@ -1064,6 +1479,11 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> getTags() {
             return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getTemplateResourceGroupId() {
+            return this.templateResourceGroupId;
         }
 
         @Override
@@ -1101,6 +1521,9 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
             if (this.getAutoReleaseTime() != null) {
                 data.set("autoReleaseTime", om.valueToTree(this.getAutoReleaseTime()));
             }
+            if (this.getDeploymentSetId() != null) {
+                data.set("deploymentSetId", om.valueToTree(this.getDeploymentSetId()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -1113,6 +1536,12 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
             if (this.getImageId() != null) {
                 data.set("imageId", om.valueToTree(this.getImageId()));
             }
+            if (this.getImageOwnerAlias() != null) {
+                data.set("imageOwnerAlias", om.valueToTree(this.getImageOwnerAlias()));
+            }
+            if (this.getInstanceChargeType() != null) {
+                data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
+            }
             if (this.getInstanceName() != null) {
                 data.set("instanceName", om.valueToTree(this.getInstanceName()));
             }
@@ -1122,14 +1551,14 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
             }
-            if (this.getInternetMaxBandwidthIn() != null) {
-                data.set("internetMaxBandwidthIn", om.valueToTree(this.getInternetMaxBandwidthIn()));
-            }
             if (this.getInternetMaxBandwidthOut() != null) {
                 data.set("internetMaxBandwidthOut", om.valueToTree(this.getInternetMaxBandwidthOut()));
             }
             if (this.getIoOptimized() != null) {
                 data.set("ioOptimized", om.valueToTree(this.getIoOptimized()));
+            }
+            if (this.getIpv6AddressCount() != null) {
+                data.set("ipv6AddressCount", om.valueToTree(this.getIpv6AddressCount()));
             }
             if (this.getKeyPairName() != null) {
                 data.set("keyPairName", om.valueToTree(this.getKeyPairName()));
@@ -1140,14 +1569,32 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
             if (this.getNetworkType() != null) {
                 data.set("networkType", om.valueToTree(this.getNetworkType()));
             }
+            if (this.getPasswordInherit() != null) {
+                data.set("passwordInherit", om.valueToTree(this.getPasswordInherit()));
+            }
+            if (this.getPeriod() != null) {
+                data.set("period", om.valueToTree(this.getPeriod()));
+            }
+            if (this.getPrivateIpAddress() != null) {
+                data.set("privateIpAddress", om.valueToTree(this.getPrivateIpAddress()));
+            }
             if (this.getRamRoleName() != null) {
                 data.set("ramRoleName", om.valueToTree(this.getRamRoleName()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getSecurityEnhancementStrategy() != null) {
                 data.set("securityEnhancementStrategy", om.valueToTree(this.getSecurityEnhancementStrategy()));
             }
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
+            }
+            if (this.getSecurityGroupIds() != null) {
+                data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
+            }
+            if (this.getSpotDuration() != null) {
+                data.set("spotDuration", om.valueToTree(this.getSpotDuration()));
             }
             if (this.getSpotPriceLimit() != null) {
                 data.set("spotPriceLimit", om.valueToTree(this.getSpotPriceLimit()));
@@ -1158,17 +1605,26 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
             if (this.getSystemDiskCategory() != null) {
                 data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
             }
+            if (this.getSystemDiskDeleteWithInstance() != null) {
+                data.set("systemDiskDeleteWithInstance", om.valueToTree(this.getSystemDiskDeleteWithInstance()));
+            }
             if (this.getSystemDiskDescription() != null) {
                 data.set("systemDiskDescription", om.valueToTree(this.getSystemDiskDescription()));
             }
             if (this.getSystemDiskDiskName() != null) {
                 data.set("systemDiskDiskName", om.valueToTree(this.getSystemDiskDiskName()));
             }
+            if (this.getSystemDiskPerformanceLevel() != null) {
+                data.set("systemDiskPerformanceLevel", om.valueToTree(this.getSystemDiskPerformanceLevel()));
+            }
             if (this.getSystemDiskSize() != null) {
                 data.set("systemDiskSize", om.valueToTree(this.getSystemDiskSize()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
+            }
+            if (this.getTemplateResourceGroupId() != null) {
+                data.set("templateResourceGroupId", om.valueToTree(this.getTemplateResourceGroupId()));
             }
             if (this.getTemplateTags() != null) {
                 data.set("templateTags", om.valueToTree(this.getTemplateTags()));
@@ -1205,29 +1661,41 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
 
             if (!launchTemplateName.equals(that.launchTemplateName)) return false;
             if (this.autoReleaseTime != null ? !this.autoReleaseTime.equals(that.autoReleaseTime) : that.autoReleaseTime != null) return false;
+            if (this.deploymentSetId != null ? !this.deploymentSetId.equals(that.deploymentSetId) : that.deploymentSetId != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.diskMappings != null ? !this.diskMappings.equals(that.diskMappings) : that.diskMappings != null) return false;
             if (this.hostName != null ? !this.hostName.equals(that.hostName) : that.hostName != null) return false;
             if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
+            if (this.imageOwnerAlias != null ? !this.imageOwnerAlias.equals(that.imageOwnerAlias) : that.imageOwnerAlias != null) return false;
+            if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
-            if (this.internetMaxBandwidthIn != null ? !this.internetMaxBandwidthIn.equals(that.internetMaxBandwidthIn) : that.internetMaxBandwidthIn != null) return false;
             if (this.internetMaxBandwidthOut != null ? !this.internetMaxBandwidthOut.equals(that.internetMaxBandwidthOut) : that.internetMaxBandwidthOut != null) return false;
             if (this.ioOptimized != null ? !this.ioOptimized.equals(that.ioOptimized) : that.ioOptimized != null) return false;
+            if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
             if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
             if (this.networkInterfaces != null ? !this.networkInterfaces.equals(that.networkInterfaces) : that.networkInterfaces != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
+            if (this.passwordInherit != null ? !this.passwordInherit.equals(that.passwordInherit) : that.passwordInherit != null) return false;
+            if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
             if (this.ramRoleName != null ? !this.ramRoleName.equals(that.ramRoleName) : that.ramRoleName != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityEnhancementStrategy != null ? !this.securityEnhancementStrategy.equals(that.securityEnhancementStrategy) : that.securityEnhancementStrategy != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
+            if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
+            if (this.spotDuration != null ? !this.spotDuration.equals(that.spotDuration) : that.spotDuration != null) return false;
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
+            if (this.systemDiskDeleteWithInstance != null ? !this.systemDiskDeleteWithInstance.equals(that.systemDiskDeleteWithInstance) : that.systemDiskDeleteWithInstance != null) return false;
             if (this.systemDiskDescription != null ? !this.systemDiskDescription.equals(that.systemDiskDescription) : that.systemDiskDescription != null) return false;
             if (this.systemDiskDiskName != null ? !this.systemDiskDiskName.equals(that.systemDiskDiskName) : that.systemDiskDiskName != null) return false;
+            if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
             if (this.systemDiskSize != null ? !this.systemDiskSize.equals(that.systemDiskSize) : that.systemDiskSize != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.templateResourceGroupId != null ? !this.templateResourceGroupId.equals(that.templateResourceGroupId) : that.templateResourceGroupId != null) return false;
             if (this.templateTags != null ? !this.templateTags.equals(that.templateTags) : that.templateTags != null) return false;
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
             if (this.versionDescription != null ? !this.versionDescription.equals(that.versionDescription) : that.versionDescription != null) return false;
@@ -1239,29 +1707,41 @@ public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSeriali
         public final int hashCode() {
             int result = this.launchTemplateName.hashCode();
             result = 31 * result + (this.autoReleaseTime != null ? this.autoReleaseTime.hashCode() : 0);
+            result = 31 * result + (this.deploymentSetId != null ? this.deploymentSetId.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.diskMappings != null ? this.diskMappings.hashCode() : 0);
             result = 31 * result + (this.hostName != null ? this.hostName.hashCode() : 0);
             result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
+            result = 31 * result + (this.imageOwnerAlias != null ? this.imageOwnerAlias.hashCode() : 0);
+            result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
-            result = 31 * result + (this.internetMaxBandwidthIn != null ? this.internetMaxBandwidthIn.hashCode() : 0);
             result = 31 * result + (this.internetMaxBandwidthOut != null ? this.internetMaxBandwidthOut.hashCode() : 0);
             result = 31 * result + (this.ioOptimized != null ? this.ioOptimized.hashCode() : 0);
+            result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
             result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
             result = 31 * result + (this.networkInterfaces != null ? this.networkInterfaces.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
+            result = 31 * result + (this.passwordInherit != null ? this.passwordInherit.hashCode() : 0);
+            result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             result = 31 * result + (this.ramRoleName != null ? this.ramRoleName.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityEnhancementStrategy != null ? this.securityEnhancementStrategy.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
+            result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
+            result = 31 * result + (this.spotDuration != null ? this.spotDuration.hashCode() : 0);
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
+            result = 31 * result + (this.systemDiskDeleteWithInstance != null ? this.systemDiskDeleteWithInstance.hashCode() : 0);
             result = 31 * result + (this.systemDiskDescription != null ? this.systemDiskDescription.hashCode() : 0);
             result = 31 * result + (this.systemDiskDiskName != null ? this.systemDiskDiskName.hashCode() : 0);
+            result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
             result = 31 * result + (this.systemDiskSize != null ? this.systemDiskSize.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.templateResourceGroupId != null ? this.templateResourceGroupId.hashCode() : 0);
             result = 31 * result + (this.templateTags != null ? this.templateTags.hashCode() : 0);
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);
             result = 31 * result + (this.versionDescription != null ? this.versionDescription.hashCode() : 0);

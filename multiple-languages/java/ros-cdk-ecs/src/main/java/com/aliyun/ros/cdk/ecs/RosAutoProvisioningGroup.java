@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::AutoProvisioningGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.182Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.303Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup")
 public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1040,13 +1040,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
             return null;
         }
@@ -1162,7 +1155,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             java.lang.Object instanceDescription;
             java.lang.Object instanceName;
             java.lang.Object internetChargeType;
-            java.lang.Object internetMaxBandwidthIn;
             java.lang.Object internetMaxBandwidthOut;
             java.lang.Object ioOptimized;
             java.lang.Object keyPairName;
@@ -1351,28 +1343,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
                 this.internetChargeType = internetChargeType;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link LaunchConfigurationProperty#getInternetMaxBandwidthIn}
-             * @param internetMaxBandwidthIn the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
-                this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link LaunchConfigurationProperty#getInternetMaxBandwidthIn}
-             * @param internetMaxBandwidthIn the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-                this.internetMaxBandwidthIn = internetMaxBandwidthIn;
                 return this;
             }
 
@@ -1710,7 +1680,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             private final java.lang.Object instanceDescription;
             private final java.lang.Object instanceName;
             private final java.lang.Object internetChargeType;
-            private final java.lang.Object internetMaxBandwidthIn;
             private final java.lang.Object internetMaxBandwidthOut;
             private final java.lang.Object ioOptimized;
             private final java.lang.Object keyPairName;
@@ -1740,7 +1709,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 this.instanceDescription = software.amazon.jsii.Kernel.get(this, "instanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1770,7 +1738,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 this.instanceDescription = builder.instanceDescription;
                 this.instanceName = builder.instanceName;
                 this.internetChargeType = builder.internetChargeType;
-                this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
                 this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
                 this.ioOptimized = builder.ioOptimized;
                 this.keyPairName = builder.keyPairName;
@@ -1825,11 +1792,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @Override
             public final java.lang.Object getInternetChargeType() {
                 return this.internetChargeType;
-            }
-
-            @Override
-            public final java.lang.Object getInternetMaxBandwidthIn() {
-                return this.internetMaxBandwidthIn;
             }
 
             @Override
@@ -1928,9 +1890,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 if (this.getInternetChargeType() != null) {
                     data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
                 }
-                if (this.getInternetMaxBandwidthIn() != null) {
-                    data.set("internetMaxBandwidthIn", om.valueToTree(this.getInternetMaxBandwidthIn()));
-                }
                 if (this.getInternetMaxBandwidthOut() != null) {
                     data.set("internetMaxBandwidthOut", om.valueToTree(this.getInternetMaxBandwidthOut()));
                 }
@@ -1999,7 +1958,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 if (this.instanceDescription != null ? !this.instanceDescription.equals(that.instanceDescription) : that.instanceDescription != null) return false;
                 if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
                 if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
-                if (this.internetMaxBandwidthIn != null ? !this.internetMaxBandwidthIn.equals(that.internetMaxBandwidthIn) : that.internetMaxBandwidthIn != null) return false;
                 if (this.internetMaxBandwidthOut != null ? !this.internetMaxBandwidthOut.equals(that.internetMaxBandwidthOut) : that.internetMaxBandwidthOut != null) return false;
                 if (this.ioOptimized != null ? !this.ioOptimized.equals(that.ioOptimized) : that.ioOptimized != null) return false;
                 if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
@@ -2026,7 +1984,6 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 result = 31 * result + (this.instanceDescription != null ? this.instanceDescription.hashCode() : 0);
                 result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
                 result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
-                result = 31 * result + (this.internetMaxBandwidthIn != null ? this.internetMaxBandwidthIn.hashCode() : 0);
                 result = 31 * result + (this.internetMaxBandwidthOut != null ? this.internetMaxBandwidthOut.hashCode() : 0);
                 result = 31 * result + (this.ioOptimized != null ? this.ioOptimized.hashCode() : 0);
                 result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);

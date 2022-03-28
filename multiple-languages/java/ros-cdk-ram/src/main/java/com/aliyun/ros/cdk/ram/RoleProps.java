@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::Role`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.113Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.227Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RoleProps")
 @software.amazon.jsii.Jsii.Proxy(RoleProps.Jsii$Proxy.class)
 public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,6 +52,13 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property policyAttachments: System and custom policy names to attach.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPolicyAttachments() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RoleProps}
      */
     static Builder builder() {
@@ -67,6 +74,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object description;
         java.lang.Object maxSessionDuration;
         java.lang.Object policies;
+        java.lang.Object policyAttachments;
 
         /**
          * Sets the value of {@link RoleProps#getAssumeRolePolicyDocument}
@@ -195,6 +203,26 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RoleProps#getPolicyAttachments}
+         * @param policyAttachments Property policyAttachments: System and custom policy names to attach.
+         * @return {@code this}
+         */
+        public Builder policyAttachments(com.aliyun.ros.cdk.core.IResolvable policyAttachments) {
+            this.policyAttachments = policyAttachments;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RoleProps#getPolicyAttachments}
+         * @param policyAttachments Property policyAttachments: System and custom policy names to attach.
+         * @return {@code this}
+         */
+        public Builder policyAttachments(com.aliyun.ros.cdk.ram.RosRole.PolicyAttachmentsProperty policyAttachments) {
+            this.policyAttachments = policyAttachments;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RoleProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -216,6 +244,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object description;
         private final java.lang.Object maxSessionDuration;
         private final java.lang.Object policies;
+        private final java.lang.Object policyAttachments;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -229,6 +258,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxSessionDuration = software.amazon.jsii.Kernel.get(this, "maxSessionDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.policyAttachments = software.amazon.jsii.Kernel.get(this, "policyAttachments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -242,6 +272,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
             this.description = builder.description;
             this.maxSessionDuration = builder.maxSessionDuration;
             this.policies = builder.policies;
+            this.policyAttachments = builder.policyAttachments;
         }
 
         @Override
@@ -275,6 +306,11 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getPolicyAttachments() {
+            return this.policyAttachments;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -293,6 +329,9 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getPolicies() != null) {
                 data.set("policies", om.valueToTree(this.getPolicies()));
+            }
+            if (this.getPolicyAttachments() != null) {
+                data.set("policyAttachments", om.valueToTree(this.getPolicyAttachments()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -317,7 +356,8 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.maxSessionDuration != null ? !this.maxSessionDuration.equals(that.maxSessionDuration) : that.maxSessionDuration != null) return false;
-            return this.policies != null ? this.policies.equals(that.policies) : that.policies == null;
+            if (this.policies != null ? !this.policies.equals(that.policies) : that.policies != null) return false;
+            return this.policyAttachments != null ? this.policyAttachments.equals(that.policyAttachments) : that.policyAttachments == null;
         }
 
         @Override
@@ -328,6 +368,7 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.maxSessionDuration != null ? this.maxSessionDuration.hashCode() : 0);
             result = 31 * result + (this.policies != null ? this.policies.hashCode() : 0);
+            result = 31 * result + (this.policyAttachments != null ? this.policyAttachments.hashCode() : 0);
             return result;
         }
     }

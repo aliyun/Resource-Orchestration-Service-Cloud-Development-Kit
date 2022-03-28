@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.130Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.233Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -163,15 +163,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-     * <p>
-     * The range is [1,200], default is 200 Mbps.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
-        return null;
-    }
-
-    /**
      * Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
      * <p>
      * Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
@@ -281,7 +272,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+     * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
      * <p>
      * Default value is Month.Old instances will not be changed.
      */
@@ -488,7 +479,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object instanceChargeType;
         java.lang.Object instanceName;
         java.lang.Object internetChargeType;
-        java.lang.Object internetMaxBandwidthIn;
         java.lang.Object internetMaxBandwidthOut;
         java.lang.Object ioOptimized;
         java.lang.Object ipv6AddressCount;
@@ -933,28 +923,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
-         * Sets the value of {@link InstanceGroupProps#getInternetMaxBandwidthIn}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-         *                               The range is [1,200], default is 200 Mbps.
-         * @return {@code this}
-         */
-        public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link InstanceGroupProps#getInternetMaxBandwidthIn}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-         *                               The range is [1,200], default is 200 Mbps.
-         * @return {@code this}
-         */
-        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link InstanceGroupProps#getInternetMaxBandwidthOut}
          * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
          *                                Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
@@ -1224,7 +1192,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
          *                   Default value is Month.Old instances will not be changed.
          * @return {@code this}
          */
@@ -1235,7 +1203,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
          *                   Default value is Month.Old instances will not be changed.
          * @return {@code this}
          */
@@ -1714,7 +1682,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object instanceName;
         private final java.lang.Object internetChargeType;
-        private final java.lang.Object internetMaxBandwidthIn;
         private final java.lang.Object internetMaxBandwidthOut;
         private final java.lang.Object ioOptimized;
         private final java.lang.Object ipv6AddressCount;
@@ -1774,7 +1741,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1835,7 +1801,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceChargeType = builder.instanceChargeType;
             this.instanceName = builder.instanceName;
             this.internetChargeType = builder.internetChargeType;
-            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
             this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
             this.ioOptimized = builder.ioOptimized;
             this.ipv6AddressCount = builder.ipv6AddressCount;
@@ -1960,11 +1925,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
-        }
-
-        @Override
-        public final java.lang.Object getInternetMaxBandwidthIn() {
-            return this.internetMaxBandwidthIn;
         }
 
         @Override
@@ -2191,9 +2151,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
             }
-            if (this.getInternetMaxBandwidthIn() != null) {
-                data.set("internetMaxBandwidthIn", om.valueToTree(this.getInternetMaxBandwidthIn()));
-            }
             if (this.getInternetMaxBandwidthOut() != null) {
                 data.set("internetMaxBandwidthOut", om.valueToTree(this.getInternetMaxBandwidthOut()));
             }
@@ -2332,7 +2289,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
-            if (this.internetMaxBandwidthIn != null ? !this.internetMaxBandwidthIn.equals(that.internetMaxBandwidthIn) : that.internetMaxBandwidthIn != null) return false;
             if (this.internetMaxBandwidthOut != null ? !this.internetMaxBandwidthOut.equals(that.internetMaxBandwidthOut) : that.internetMaxBandwidthOut != null) return false;
             if (this.ioOptimized != null ? !this.ioOptimized.equals(that.ioOptimized) : that.ioOptimized != null) return false;
             if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
@@ -2389,7 +2345,6 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
-            result = 31 * result + (this.internetMaxBandwidthIn != null ? this.internetMaxBandwidthIn.hashCode() : 0);
             result = 31 * result + (this.internetMaxBandwidthOut != null ? this.internetMaxBandwidthOut.hashCode() : 0);
             result = 31 * result + (this.ioOptimized != null ? this.ioOptimized.hashCode() : 0);
             result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);

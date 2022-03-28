@@ -10,6 +10,7 @@ export * from './dhcpoptionsset';
 export * from './dhcpoptionssetattachment';
 export * from './eip';
 export * from './eipassociation';
+export * from './eippro';
 export * from './eipsegment';
 export * from './flowlog';
 export * from './grantinstancetocen';

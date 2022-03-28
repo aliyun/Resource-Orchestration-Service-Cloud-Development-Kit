@@ -286,6 +286,11 @@ export interface RosInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+     */
+    readonly productType?: string | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -344,6 +349,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.evictionPolicy && (typeof properties.evictionPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('evictionPolicy', ros.validateAllowedValues)({
           data: properties.evictionPolicy,
@@ -351,9 +357,9 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('evictionPolicy', ros.validateString)(properties.evictionPolicy));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
     errors.collect(ros.propertyValidator('instanceMaintainTime', RosInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -436,6 +442,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
+      ProductType: ros.stringToRosTemplate(properties.productType),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
@@ -690,6 +697,11 @@ export class RosInstance extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
+     * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+     */
+    public productType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
@@ -784,6 +796,7 @@ export class RosInstance extends ros.RosResource {
         this.instanceName = props.instanceName;
         this.password = props.password;
         this.period = props.period;
+        this.productType = props.productType;
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
@@ -809,6 +822,7 @@ export class RosInstance extends ros.RosResource {
             instanceName: this.instanceName,
             password: this.password,
             period: this.period,
+            productType: this.productType,
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
             tags: this.tags,
@@ -1390,6 +1404,11 @@ export interface RosPrepayInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+     */
+    readonly productType?: string | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -1448,7 +1467,6 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.evictionPolicy && (typeof properties.evictionPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('evictionPolicy', ros.validateAllowedValues)({
           data: properties.evictionPolicy,
@@ -1456,8 +1474,10 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('evictionPolicy', ros.validateString)(properties.evictionPolicy));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
     errors.collect(ros.propertyValidator('instanceMaintainTime', RosPrepayInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -1467,8 +1487,8 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateRange)({
             data: properties.autoRenewDuration,
@@ -1534,6 +1554,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
+      ProductType: ros.stringToRosTemplate(properties.productType),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosPrepayInstanceTagsPropertyToRosTemplate)(properties.tags),
@@ -1788,6 +1809,11 @@ export class RosPrepayInstance extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
+     * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+     */
+    public productType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
@@ -1882,6 +1908,7 @@ export class RosPrepayInstance extends ros.RosResource {
         this.instanceName = props.instanceName;
         this.password = props.password;
         this.period = props.period;
+        this.productType = props.productType;
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
@@ -1907,6 +1934,7 @@ export class RosPrepayInstance extends ros.RosResource {
             instanceName: this.instanceName,
             password: this.password,
             period: this.period,
+            productType: this.productType,
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
             tags: this.tags,

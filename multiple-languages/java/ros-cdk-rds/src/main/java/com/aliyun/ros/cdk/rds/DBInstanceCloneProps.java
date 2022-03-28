@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.172Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.295Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceCloneProps.Jsii$Proxy.class)
 public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -199,9 +199,11 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property period: Prepaid time period.
+     * Property period: The subscription duration.
      * <p>
-     * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * Valid values:
+     * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+     * When PeriodType is Year, it could be from 1 to 5.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -924,8 +926,10 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link DBInstanceCloneProps#getPeriod}
-         * @param period Property period: Prepaid time period.
-         *               While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * @param period Property period: The subscription duration.
+         *               Valid values:
+         *               When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+         *               When PeriodType is Year, it could be from 1 to 5.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -935,8 +939,10 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link DBInstanceCloneProps#getPeriod}
-         * @param period Property period: Prepaid time period.
-         *               While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * @param period Property period: The subscription duration.
+         *               Valid values:
+         *               When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+         *               When PeriodType is Year, it could be from 1 to 5.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {

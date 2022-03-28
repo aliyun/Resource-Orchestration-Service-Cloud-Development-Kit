@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * A ROS resource type:  `ALIYUN::EHPC::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.418Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.562Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -218,27 +218,6 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property ehpcVersion: E-HPC product version numbers, currently supports 1.0.0.
-         * <p>
-         * @return {@code this}
-         * @param ehpcVersion Property ehpcVersion: E-HPC product version numbers, currently supports 1.0.0. This parameter is required.
-         */
-        public Builder ehpcVersion(final java.lang.String ehpcVersion) {
-            this.props.ehpcVersion(ehpcVersion);
-            return this;
-        }
-        /**
-         * Property ehpcVersion: E-HPC product version numbers, currently supports 1.0.0.
-         * <p>
-         * @return {@code this}
-         * @param ehpcVersion Property ehpcVersion: E-HPC product version numbers, currently supports 1.0.0. This parameter is required.
-         */
-        public Builder ehpcVersion(final com.aliyun.ros.cdk.core.IResolvable ehpcVersion) {
-            this.props.ehpcVersion(ehpcVersion);
-            return this;
-        }
-
-        /**
          * Property name: Cluster name.
          * <p>
          * 2-64 characters in length, allowing only include Chinese, letters, numbers, dashes (-) and underscore (_), must begin with a letter or Chinese.
@@ -289,56 +268,6 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property volumeId: Ali cloud NAS instance Id.
-         * <p>
-         * Currently it does not support automatic creation Ali cloud NAS instance.
-         * <p>
-         * @return {@code this}
-         * @param volumeId Property volumeId: Ali cloud NAS instance Id. This parameter is required.
-         */
-        public Builder volumeId(final java.lang.String volumeId) {
-            this.props.volumeId(volumeId);
-            return this;
-        }
-        /**
-         * Property volumeId: Ali cloud NAS instance Id.
-         * <p>
-         * Currently it does not support automatic creation Ali cloud NAS instance.
-         * <p>
-         * @return {@code this}
-         * @param volumeId Property volumeId: Ali cloud NAS instance Id. This parameter is required.
-         */
-        public Builder volumeId(final com.aliyun.ros.cdk.core.IResolvable volumeId) {
-            this.props.volumeId(volumeId);
-            return this;
-        }
-
-        /**
-         * Property volumeMountpoint: NAS vpc mount point.
-         * <p>
-         * Currently it does not support automatic creation Ali cloud NAS mount point.
-         * <p>
-         * @return {@code this}
-         * @param volumeMountpoint Property volumeMountpoint: NAS vpc mount point. This parameter is required.
-         */
-        public Builder volumeMountpoint(final java.lang.String volumeMountpoint) {
-            this.props.volumeMountpoint(volumeMountpoint);
-            return this;
-        }
-        /**
-         * Property volumeMountpoint: NAS vpc mount point.
-         * <p>
-         * Currently it does not support automatic creation Ali cloud NAS mount point.
-         * <p>
-         * @return {@code this}
-         * @param volumeMountpoint Property volumeMountpoint: NAS vpc mount point. This parameter is required.
-         */
-        public Builder volumeMountpoint(final com.aliyun.ros.cdk.core.IResolvable volumeMountpoint) {
-            this.props.volumeMountpoint(volumeMountpoint);
-            return this;
-        }
-
-        /**
          * Property vSwitchId: VPC in switch ID.
          * <p>
          * Products currently only supports VPC network.
@@ -364,23 +293,54 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property accountType: Domain service account types, currently supports nis.
+         * Property accountType: The service type of the domain account.
+         * <p>
+         * Valid values:
+         * nis
+         * ldap
+         * Default value: nis
          * <p>
          * @return {@code this}
-         * @param accountType Property accountType: Domain service account types, currently supports nis. This parameter is required.
+         * @param accountType Property accountType: The service type of the domain account. This parameter is required.
          */
         public Builder accountType(final java.lang.String accountType) {
             this.props.accountType(accountType);
             return this;
         }
         /**
-         * Property accountType: Domain service account types, currently supports nis.
+         * Property accountType: The service type of the domain account.
+         * <p>
+         * Valid values:
+         * nis
+         * ldap
+         * Default value: nis
          * <p>
          * @return {@code this}
-         * @param accountType Property accountType: Domain service account types, currently supports nis. This parameter is required.
+         * @param accountType Property accountType: The service type of the domain account. This parameter is required.
          */
         public Builder accountType(final com.aliyun.ros.cdk.core.IResolvable accountType) {
             this.props.accountType(accountType);
+            return this;
+        }
+
+        /**
+         * Property additionalVolumes:.
+         * <p>
+         * @return {@code this}
+         * @param additionalVolumes Property additionalVolumes:. This parameter is required.
+         */
+        public Builder additionalVolumes(final com.aliyun.ros.cdk.core.IResolvable additionalVolumes) {
+            this.props.additionalVolumes(additionalVolumes);
+            return this;
+        }
+        /**
+         * Property additionalVolumes:.
+         * <p>
+         * @return {@code this}
+         * @param additionalVolumes Property additionalVolumes:. This parameter is required.
+         */
+        public Builder additionalVolumes(final java.util.List<? extends java.lang.Object> additionalVolumes) {
+            this.props.additionalVolumes(additionalVolumes);
             return this;
         }
 
@@ -452,6 +412,64 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property clientVersion: The version of the E-HPC client.
+         * <p>
+         * By default, the parameter is set to the latest version number.
+         * You can call the ListCurrentClientVersion operation to query the current version of the E-HPC client.
+         * <p>
+         * @return {@code this}
+         * @param clientVersion Property clientVersion: The version of the E-HPC client. This parameter is required.
+         */
+        public Builder clientVersion(final java.lang.String clientVersion) {
+            this.props.clientVersion(clientVersion);
+            return this;
+        }
+        /**
+         * Property clientVersion: The version of the E-HPC client.
+         * <p>
+         * By default, the parameter is set to the latest version number.
+         * You can call the ListCurrentClientVersion operation to query the current version of the E-HPC client.
+         * <p>
+         * @return {@code this}
+         * @param clientVersion Property clientVersion: The version of the E-HPC client. This parameter is required.
+         */
+        public Builder clientVersion(final com.aliyun.ros.cdk.core.IResolvable clientVersion) {
+            this.props.clientVersion(clientVersion);
+            return this;
+        }
+
+        /**
+         * Property computeEnableHt: Specifies whether the compute nodes support hyper-threading.
+         * <p>
+         * Valid values:
+         * true: Hyper-threading is supported.
+         * false: Hyper-threading is not supported.
+         * Default value: true
+         * <p>
+         * @return {@code this}
+         * @param computeEnableHt Property computeEnableHt: Specifies whether the compute nodes support hyper-threading. This parameter is required.
+         */
+        public Builder computeEnableHt(final java.lang.Boolean computeEnableHt) {
+            this.props.computeEnableHt(computeEnableHt);
+            return this;
+        }
+        /**
+         * Property computeEnableHt: Specifies whether the compute nodes support hyper-threading.
+         * <p>
+         * Valid values:
+         * true: Hyper-threading is supported.
+         * false: Hyper-threading is not supported.
+         * Default value: true
+         * <p>
+         * @return {@code this}
+         * @param computeEnableHt Property computeEnableHt: Specifies whether the compute nodes support hyper-threading. This parameter is required.
+         */
+        public Builder computeEnableHt(final com.aliyun.ros.cdk.core.IResolvable computeEnableHt) {
+            this.props.computeEnableHt(computeEnableHt);
+            return this;
+        }
+
+        /**
          * Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
          * <p>
          * @return {@code this}
@@ -494,30 +512,32 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property deployMode: Deployment mode: Standard: account node + scheduling node + login node + computing node.
+         * Property deployMode: The mode in which the cluster is deployed.
          * <p>
-         * Advanced: HA mode.
-         * Simple: (account + schedule) node + login node + compute node.
-         * Tiny: (account + scheduling + login) node + compute node.
-         * OneBox: (account + scheduling + login + compute) node + more compute nodes.
+         * Valid values:
+         * Standard: An account node, a scheduling node, a logon node, and multiple compute nodes are separately deployed.
+         * Simple: A management node, a logon node, and multiple compute nodes are deployed. The management node consists of an account node and a scheduling node. The logon node and compute nodes are separately deployed.
+         * Tiny: A management node and multiple compute nodes are deployed. The management node consists of an account node, a scheduling node, and a logon node. The compute nodes are separately deployed.
+         * Default value: Standard
          * <p>
          * @return {@code this}
-         * @param deployMode Property deployMode: Deployment mode: Standard: account node + scheduling node + login node + computing node. This parameter is required.
+         * @param deployMode Property deployMode: The mode in which the cluster is deployed. This parameter is required.
          */
         public Builder deployMode(final java.lang.String deployMode) {
             this.props.deployMode(deployMode);
             return this;
         }
         /**
-         * Property deployMode: Deployment mode: Standard: account node + scheduling node + login node + computing node.
+         * Property deployMode: The mode in which the cluster is deployed.
          * <p>
-         * Advanced: HA mode.
-         * Simple: (account + schedule) node + login node + compute node.
-         * Tiny: (account + scheduling + login) node + compute node.
-         * OneBox: (account + scheduling + login + compute) node + more compute nodes.
+         * Valid values:
+         * Standard: An account node, a scheduling node, a logon node, and multiple compute nodes are separately deployed.
+         * Simple: A management node, a logon node, and multiple compute nodes are deployed. The management node consists of an account node and a scheduling node. The logon node and compute nodes are separately deployed.
+         * Tiny: A management node and multiple compute nodes are deployed. The management node consists of an account node, a scheduling node, and a logon node. The compute nodes are separately deployed.
+         * Default value: Standard
          * <p>
          * @return {@code this}
-         * @param deployMode Property deployMode: Deployment mode: Standard: account node + scheduling node + login node + computing node. This parameter is required.
+         * @param deployMode Property deployMode: The mode in which the cluster is deployed. This parameter is required.
          */
         public Builder deployMode(final com.aliyun.ros.cdk.core.IResolvable deployMode) {
             this.props.deployMode(deployMode);
@@ -567,20 +587,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property ecsOrderManagerCount: Control node number can be 1, 2, 4(HA).
+         * Property ecsOrderManagerCount: Control node number can be 1, 2.
          * <p>
          * @return {@code this}
-         * @param ecsOrderManagerCount Property ecsOrderManagerCount: Control node number can be 1, 2, 4(HA). This parameter is required.
+         * @param ecsOrderManagerCount Property ecsOrderManagerCount: Control node number can be 1, 2. This parameter is required.
          */
         public Builder ecsOrderManagerCount(final java.lang.Number ecsOrderManagerCount) {
             this.props.ecsOrderManagerCount(ecsOrderManagerCount);
             return this;
         }
         /**
-         * Property ecsOrderManagerCount: Control node number can be 1, 2, 4(HA).
+         * Property ecsOrderManagerCount: Control node number can be 1, 2.
          * <p>
          * @return {@code this}
-         * @param ecsOrderManagerCount Property ecsOrderManagerCount: Control node number can be 1, 2, 4(HA). This parameter is required.
+         * @param ecsOrderManagerCount Property ecsOrderManagerCount: Control node number can be 1, 2. This parameter is required.
          */
         public Builder ecsOrderManagerCount(final com.aliyun.ros.cdk.core.IResolvable ecsOrderManagerCount) {
             this.props.ecsOrderManagerCount(ecsOrderManagerCount);
@@ -588,20 +608,57 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property haEnable: Availability is turned on, when turned on, the role of each control cluster will use two standby instances.
+         * Property ehpcVersion: The version of E-HPC.
+         * <p>
+         * By default, the parameter is set to the latest version number.
          * <p>
          * @return {@code this}
-         * @param haEnable Property haEnable: Availability is turned on, when turned on, the role of each control cluster will use two standby instances. This parameter is required.
+         * @param ehpcVersion Property ehpcVersion: The version of E-HPC. This parameter is required.
+         */
+        public Builder ehpcVersion(final java.lang.String ehpcVersion) {
+            this.props.ehpcVersion(ehpcVersion);
+            return this;
+        }
+        /**
+         * Property ehpcVersion: The version of E-HPC.
+         * <p>
+         * By default, the parameter is set to the latest version number.
+         * <p>
+         * @return {@code this}
+         * @param ehpcVersion Property ehpcVersion: The version of E-HPC. This parameter is required.
+         */
+        public Builder ehpcVersion(final com.aliyun.ros.cdk.core.IResolvable ehpcVersion) {
+            this.props.ehpcVersion(ehpcVersion);
+            return this;
+        }
+
+        /**
+         * Property haEnable: Specifies whether to enable the high availability feature.
+         * <p>
+         * Valid values:
+         * true: enables the high availability feature
+         * false: disables the high availability feature
+         * Default value: false
+         * Note If high availability is enabled, primary management nodes and secondary management nodes are used.
+         * <p>
+         * @return {@code this}
+         * @param haEnable Property haEnable: Specifies whether to enable the high availability feature. This parameter is required.
          */
         public Builder haEnable(final java.lang.Boolean haEnable) {
             this.props.haEnable(haEnable);
             return this;
         }
         /**
-         * Property haEnable: Availability is turned on, when turned on, the role of each control cluster will use two standby instances.
+         * Property haEnable: Specifies whether to enable the high availability feature.
+         * <p>
+         * Valid values:
+         * true: enables the high availability feature
+         * false: disables the high availability feature
+         * Default value: false
+         * Note If high availability is enabled, primary management nodes and secondary management nodes are used.
          * <p>
          * @return {@code this}
-         * @param haEnable Property haEnable: Availability is turned on, when turned on, the role of each control cluster will use two standby instances. This parameter is required.
+         * @param haEnable Property haEnable: Specifies whether to enable the high availability feature. This parameter is required.
          */
         public Builder haEnable(final com.aliyun.ros.cdk.core.IResolvable haEnable) {
             this.props.haEnable(haEnable);
@@ -655,20 +712,72 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property jobQueue: Computing node added queue.
+         * Property inputFileUrl: The URL of the job files that are uploaded to an Object Storage Service (OSS) bucket.
          * <p>
          * @return {@code this}
-         * @param jobQueue Property jobQueue: Computing node added queue. This parameter is required.
+         * @param inputFileUrl Property inputFileUrl: The URL of the job files that are uploaded to an Object Storage Service (OSS) bucket. This parameter is required.
+         */
+        public Builder inputFileUrl(final java.lang.String inputFileUrl) {
+            this.props.inputFileUrl(inputFileUrl);
+            return this;
+        }
+        /**
+         * Property inputFileUrl: The URL of the job files that are uploaded to an Object Storage Service (OSS) bucket.
+         * <p>
+         * @return {@code this}
+         * @param inputFileUrl Property inputFileUrl: The URL of the job files that are uploaded to an Object Storage Service (OSS) bucket. This parameter is required.
+         */
+        public Builder inputFileUrl(final com.aliyun.ros.cdk.core.IResolvable inputFileUrl) {
+            this.props.inputFileUrl(inputFileUrl);
+            return this;
+        }
+
+        /**
+         * Property isComputeEss: Specifies whether to enable auto scaling.
+         * <p>
+         * Valid values:
+         * true: enables auto scaling
+         * false: disables auto scaling
+         * Default value: false
+         * <p>
+         * @return {@code this}
+         * @param isComputeEss Property isComputeEss: Specifies whether to enable auto scaling. This parameter is required.
+         */
+        public Builder isComputeEss(final java.lang.Boolean isComputeEss) {
+            this.props.isComputeEss(isComputeEss);
+            return this;
+        }
+        /**
+         * Property isComputeEss: Specifies whether to enable auto scaling.
+         * <p>
+         * Valid values:
+         * true: enables auto scaling
+         * false: disables auto scaling
+         * Default value: false
+         * <p>
+         * @return {@code this}
+         * @param isComputeEss Property isComputeEss: Specifies whether to enable auto scaling. This parameter is required.
+         */
+        public Builder isComputeEss(final com.aliyun.ros.cdk.core.IResolvable isComputeEss) {
+            this.props.isComputeEss(isComputeEss);
+            return this;
+        }
+
+        /**
+         * Property jobQueue: 	The queue to which the compute nodes are added.
+         * <p>
+         * @return {@code this}
+         * @param jobQueue Property jobQueue: 	The queue to which the compute nodes are added. This parameter is required.
          */
         public Builder jobQueue(final java.lang.String jobQueue) {
             this.props.jobQueue(jobQueue);
             return this;
         }
         /**
-         * Property jobQueue: Computing node added queue.
+         * Property jobQueue: 	The queue to which the compute nodes are added.
          * <p>
          * @return {@code this}
-         * @param jobQueue Property jobQueue: Computing node added queue. This parameter is required.
+         * @param jobQueue Property jobQueue: 	The queue to which the compute nodes are added. This parameter is required.
          */
         public Builder jobQueue(final com.aliyun.ros.cdk.core.IResolvable jobQueue) {
             this.props.jobQueue(jobQueue);
@@ -818,6 +927,62 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property remoteVisEnable: Specifies whether to enable Virtual Network Computing (VNC).
+         * <p>
+         * Valid values:
+         * true: enables VNC
+         * false: disables VNC
+         * Default value: false
+         * <p>
+         * @return {@code this}
+         * @param remoteVisEnable Property remoteVisEnable: Specifies whether to enable Virtual Network Computing (VNC). This parameter is required.
+         */
+        public Builder remoteVisEnable(final java.lang.Boolean remoteVisEnable) {
+            this.props.remoteVisEnable(remoteVisEnable);
+            return this;
+        }
+        /**
+         * Property remoteVisEnable: Specifies whether to enable Virtual Network Computing (VNC).
+         * <p>
+         * Valid values:
+         * true: enables VNC
+         * false: disables VNC
+         * Default value: false
+         * <p>
+         * @return {@code this}
+         * @param remoteVisEnable Property remoteVisEnable: Specifies whether to enable Virtual Network Computing (VNC). This parameter is required.
+         */
+        public Builder remoteVisEnable(final com.aliyun.ros.cdk.core.IResolvable remoteVisEnable) {
+            this.props.remoteVisEnable(remoteVisEnable);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * You can call the ListResourceGroups operation to obtain the ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * You can call the ListResourceGroups operation to obtain the ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
          * Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
          * <p>
          * @return {@code this}
@@ -839,20 +1004,34 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property schedulerType: The scheduler type, currently support pbs.
+         * Property schedulerType: The type of the scheduler.
+         * <p>
+         * Valid values:
+         * pbs
+         * slurm
+         * opengridscheduler
+         * deadline
+         * Default value: pbs
          * <p>
          * @return {@code this}
-         * @param schedulerType Property schedulerType: The scheduler type, currently support pbs. This parameter is required.
+         * @param schedulerType Property schedulerType: The type of the scheduler. This parameter is required.
          */
         public Builder schedulerType(final java.lang.String schedulerType) {
             this.props.schedulerType(schedulerType);
             return this;
         }
         /**
-         * Property schedulerType: The scheduler type, currently support pbs.
+         * Property schedulerType: The type of the scheduler.
+         * <p>
+         * Valid values:
+         * pbs
+         * slurm
+         * opengridscheduler
+         * deadline
+         * Default value: pbs
          * <p>
          * @return {@code this}
-         * @param schedulerType Property schedulerType: The scheduler type, currently support pbs. This parameter is required.
+         * @param schedulerType Property schedulerType: The type of the scheduler. This parameter is required.
          */
         public Builder schedulerType(final com.aliyun.ros.cdk.core.IResolvable schedulerType) {
             this.props.schedulerType(schedulerType);
@@ -906,20 +1085,181 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property volumeProtocol: Shared storage network protocols, currently only supports nfs.
+         * Property systemDiskLevel: The performance level of the ESSD that is created as the system disk.
+         * <p>
+         * Valid values:
+         * PL0: A single ESSD can deliver up to 10,000 input/output operations per second (IOPS) of random read/write.
+         * PL1: A single ESSD can deliver up to 50,000 IOPS of random read/write.
+         * PL2: A single ESSD can deliver up to 100,000 IOPS of random read/write.
+         * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read/write.
+         * Default value: PL1
          * <p>
          * @return {@code this}
-         * @param volumeProtocol Property volumeProtocol: Shared storage network protocols, currently only supports nfs. This parameter is required.
+         * @param systemDiskLevel Property systemDiskLevel: The performance level of the ESSD that is created as the system disk. This parameter is required.
+         */
+        public Builder systemDiskLevel(final java.lang.String systemDiskLevel) {
+            this.props.systemDiskLevel(systemDiskLevel);
+            return this;
+        }
+        /**
+         * Property systemDiskLevel: The performance level of the ESSD that is created as the system disk.
+         * <p>
+         * Valid values:
+         * PL0: A single ESSD can deliver up to 10,000 input/output operations per second (IOPS) of random read/write.
+         * PL1: A single ESSD can deliver up to 50,000 IOPS of random read/write.
+         * PL2: A single ESSD can deliver up to 100,000 IOPS of random read/write.
+         * PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read/write.
+         * Default value: PL1
+         * <p>
+         * @return {@code this}
+         * @param systemDiskLevel Property systemDiskLevel: The performance level of the ESSD that is created as the system disk. This parameter is required.
+         */
+        public Builder systemDiskLevel(final com.aliyun.ros.cdk.core.IResolvable systemDiskLevel) {
+            this.props.systemDiskLevel(systemDiskLevel);
+            return this;
+        }
+
+        /**
+         * Property systemDiskSize: The size of the system disk.
+         * <p>
+         * Unit: GB
+         * Valid values: 40 to 500
+         * Default value: 40
+         * <p>
+         * @return {@code this}
+         * @param systemDiskSize Property systemDiskSize: The size of the system disk. This parameter is required.
+         */
+        public Builder systemDiskSize(final java.lang.Number systemDiskSize) {
+            this.props.systemDiskSize(systemDiskSize);
+            return this;
+        }
+        /**
+         * Property systemDiskSize: The size of the system disk.
+         * <p>
+         * Unit: GB
+         * Valid values: 40 to 500
+         * Default value: 40
+         * <p>
+         * @return {@code this}
+         * @param systemDiskSize Property systemDiskSize: The size of the system disk. This parameter is required.
+         */
+        public Builder systemDiskSize(final com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
+            this.props.systemDiskSize(systemDiskSize);
+            return this;
+        }
+
+        /**
+         * Property systemDiskType: The type of the system disk.
+         * <p>
+         * Valid values:
+         * cloud_efficiency: ultra disk.
+         * cloud_ssd: SSD.
+         * cloud_essd: ESSD.
+         * Default value: cloud_ssd
+         * <p>
+         * @return {@code this}
+         * @param systemDiskType Property systemDiskType: The type of the system disk. This parameter is required.
+         */
+        public Builder systemDiskType(final java.lang.String systemDiskType) {
+            this.props.systemDiskType(systemDiskType);
+            return this;
+        }
+        /**
+         * Property systemDiskType: The type of the system disk.
+         * <p>
+         * Valid values:
+         * cloud_efficiency: ultra disk.
+         * cloud_ssd: SSD.
+         * cloud_essd: ESSD.
+         * Default value: cloud_ssd
+         * <p>
+         * @return {@code this}
+         * @param systemDiskType Property systemDiskType: The type of the system disk. This parameter is required.
+         */
+        public Builder systemDiskType(final com.aliyun.ros.cdk.core.IResolvable systemDiskType) {
+            this.props.systemDiskType(systemDiskType);
+            return this;
+        }
+
+        /**
+         * Property volumeId: The ID of the file system.
+         * <p>
+         * If you leave the parameter empty, a Performance NAS file system is created by default.
+         * <p>
+         * @return {@code this}
+         * @param volumeId Property volumeId: The ID of the file system. This parameter is required.
+         */
+        public Builder volumeId(final java.lang.String volumeId) {
+            this.props.volumeId(volumeId);
+            return this;
+        }
+        /**
+         * Property volumeId: The ID of the file system.
+         * <p>
+         * If you leave the parameter empty, a Performance NAS file system is created by default.
+         * <p>
+         * @return {@code this}
+         * @param volumeId Property volumeId: The ID of the file system. This parameter is required.
+         */
+        public Builder volumeId(final com.aliyun.ros.cdk.core.IResolvable volumeId) {
+            this.props.volumeId(volumeId);
+            return this;
+        }
+
+        /**
+         * Property volumeMountpoint: The mount target of the file system.
+         * <p>
+         * Take note of the following information:
+         * If you do not specify the VolumeId parameter, you can leave the VolumeMountpoint parameter empty. A mount target is created by default.
+         * If you specify the VolumeId parameter, the VolumeMountpoint parameter is required.
+         * <p>
+         * @return {@code this}
+         * @param volumeMountpoint Property volumeMountpoint: The mount target of the file system. This parameter is required.
+         */
+        public Builder volumeMountpoint(final java.lang.String volumeMountpoint) {
+            this.props.volumeMountpoint(volumeMountpoint);
+            return this;
+        }
+        /**
+         * Property volumeMountpoint: The mount target of the file system.
+         * <p>
+         * Take note of the following information:
+         * If you do not specify the VolumeId parameter, you can leave the VolumeMountpoint parameter empty. A mount target is created by default.
+         * If you specify the VolumeId parameter, the VolumeMountpoint parameter is required.
+         * <p>
+         * @return {@code this}
+         * @param volumeMountpoint Property volumeMountpoint: The mount target of the file system. This parameter is required.
+         */
+        public Builder volumeMountpoint(final com.aliyun.ros.cdk.core.IResolvable volumeMountpoint) {
+            this.props.volumeMountpoint(volumeMountpoint);
+            return this;
+        }
+
+        /**
+         * Property volumeProtocol: The type of the protocol that is used by the file system.
+         * <p>
+         * Valid values:
+         * nfs
+         * smb
+         * Default value: nfs
+         * <p>
+         * @return {@code this}
+         * @param volumeProtocol Property volumeProtocol: The type of the protocol that is used by the file system. This parameter is required.
          */
         public Builder volumeProtocol(final java.lang.String volumeProtocol) {
             this.props.volumeProtocol(volumeProtocol);
             return this;
         }
         /**
-         * Property volumeProtocol: Shared storage network protocols, currently only supports nfs.
+         * Property volumeProtocol: The type of the protocol that is used by the file system.
+         * <p>
+         * Valid values:
+         * nfs
+         * smb
+         * Default value: nfs
          * <p>
          * @return {@code this}
-         * @param volumeProtocol Property volumeProtocol: Shared storage network protocols, currently only supports nfs. This parameter is required.
+         * @param volumeProtocol Property volumeProtocol: The type of the protocol that is used by the file system. This parameter is required.
          */
         public Builder volumeProtocol(final com.aliyun.ros.cdk.core.IResolvable volumeProtocol) {
             this.props.volumeProtocol(volumeProtocol);
@@ -927,23 +1267,52 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property volumeType: Network shared storage types, currently supports only Ali cloud NAS.
+         * Property volumeType: The type of the shared storage.
+         * <p>
+         * Only Apsara File Storage nas file systems are supported.
          * <p>
          * @return {@code this}
-         * @param volumeType Property volumeType: Network shared storage types, currently supports only Ali cloud NAS. This parameter is required.
+         * @param volumeType Property volumeType: The type of the shared storage. This parameter is required.
          */
         public Builder volumeType(final java.lang.String volumeType) {
             this.props.volumeType(volumeType);
             return this;
         }
         /**
-         * Property volumeType: Network shared storage types, currently supports only Ali cloud NAS.
+         * Property volumeType: The type of the shared storage.
+         * <p>
+         * Only Apsara File Storage nas file systems are supported.
          * <p>
          * @return {@code this}
-         * @param volumeType Property volumeType: Network shared storage types, currently supports only Ali cloud NAS. This parameter is required.
+         * @param volumeType Property volumeType: The type of the shared storage. This parameter is required.
          */
         public Builder volumeType(final com.aliyun.ros.cdk.core.IResolvable volumeType) {
             this.props.volumeType(volumeType);
+            return this;
+        }
+
+        /**
+         * Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP).
+         * <p>
+         * Default value: false
+         * <p>
+         * @return {@code this}
+         * @param withoutElasticIp Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP). This parameter is required.
+         */
+        public Builder withoutElasticIp(final java.lang.Boolean withoutElasticIp) {
+            this.props.withoutElasticIp(withoutElasticIp);
+            return this;
+        }
+        /**
+         * Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP).
+         * <p>
+         * Default value: false
+         * <p>
+         * @return {@code this}
+         * @param withoutElasticIp Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP). This parameter is required.
+         */
+        public Builder withoutElasticIp(final com.aliyun.ros.cdk.core.IResolvable withoutElasticIp) {
+            this.props.withoutElasticIp(withoutElasticIp);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS resource type:  `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.465Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.606Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -354,6 +354,27 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder bootstrapAction(final java.util.List<? extends java.lang.Object> bootstrapAction) {
             this.props.bootstrapAction(bootstrapAction);
+            return this;
+        }
+
+        /**
+         * Property clickHouseConf: undefined.
+         * <p>
+         * @return {@code this}
+         * @param clickHouseConf Property clickHouseConf: undefined. This parameter is required.
+         */
+        public Builder clickHouseConf(final com.aliyun.ros.cdk.core.IResolvable clickHouseConf) {
+            this.props.clickHouseConf(clickHouseConf);
+            return this;
+        }
+        /**
+         * Property clickHouseConf: undefined.
+         * <p>
+         * @return {@code this}
+         * @param clickHouseConf Property clickHouseConf: undefined. This parameter is required.
+         */
+        public Builder clickHouseConf(final java.util.Map<java.lang.String, ? extends java.lang.Object> clickHouseConf) {
+            this.props.clickHouseConf(clickHouseConf);
             return this;
         }
 

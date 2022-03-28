@@ -149,6 +149,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
+
+        /// <remarks>
+        /// <strong>Property</strong>: policyAttachments: System and custom policy names to attach.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "policyAttachments", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty\"}]}}", isOptional: true)]
+        public virtual object? PolicyAttachments
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
         [JsiiInterface(nativeType: typeof(IAssumeRolePolicyDocumentProperty), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty")]
         public interface IAssumeRolePolicyDocumentProperty
         {
@@ -1050,6 +1061,88 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IPolicyAttachmentsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty")]
+        public interface IPolicyAttachmentsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: custom: undefined
+            /// </remarks>
+            [JsiiProperty(name: "custom", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Custom
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: system: undefined
+            /// </remarks>
+            [JsiiProperty(name: "system", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? System
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IPolicyAttachmentsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.RosRole.IPolicyAttachmentsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: custom: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "custom", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? Custom
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: system: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "system", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? System
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty")]
+        public class PolicyAttachmentsProperty : AlibabaCloud.SDK.ROS.CDK.Ram.RosRole.IPolicyAttachmentsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: custom: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "custom", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Custom
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: system: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "system", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? System
             {
                 get;
                 set;
