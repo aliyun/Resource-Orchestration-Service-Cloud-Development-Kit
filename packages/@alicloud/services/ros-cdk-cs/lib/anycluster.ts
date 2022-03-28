@@ -25,6 +25,11 @@ export class AnyCluster extends ros.Resource {
      */
 
     /**
+     * Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
+
+    /**
      * Attribute ClusterId: Cluster instance ID.
      */
     public readonly attrClusterId: ros.IResolvable;
@@ -83,6 +88,7 @@ export class AnyCluster extends ros.Resource {
             clusterConfig: props.clusterConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAnyCluster;
+        this.attrApiServerSlbId = rosAnyCluster.attrApiServerSlbId;
         this.attrClusterId = rosAnyCluster.attrClusterId;
         this.attrDefaultUserKubeConfig = rosAnyCluster.attrDefaultUserKubeConfig;
         this.attrNodes = rosAnyCluster.attrNodes;

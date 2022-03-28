@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.124Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.226Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupCloneProps.Jsii$Proxy.class)
 public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -231,7 +231,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+     * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
      * <p>
      * Default value is Month.Old instances will not be changed.
      */
@@ -977,7 +977,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link InstanceGroupCloneProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
          *                   Default value is Month.Old instances will not be changed.
          * @return {@code this}
          */
@@ -988,7 +988,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link InstanceGroupCloneProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
          *                   Default value is Month.Old instances will not be changed.
          * @return {@code this}
          */

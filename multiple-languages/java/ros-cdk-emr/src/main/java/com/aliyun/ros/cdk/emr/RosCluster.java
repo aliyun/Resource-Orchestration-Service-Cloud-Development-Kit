@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS template type:  `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.474Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.615Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -275,6 +275,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setBootstrapAction(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "bootstrapAction", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getClickHouseConf() {
+        return software.amazon.jsii.Kernel.get(this, "clickHouseConf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setClickHouseConf(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "clickHouseConf", value);
+    }
+
+    /**
+     */
+    public void setClickHouseConf(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "clickHouseConf", value);
     }
 
     /**
@@ -2657,6 +2675,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder bootstrapAction(final java.util.List<? extends java.lang.Object> bootstrapAction) {
             this.props.bootstrapAction(bootstrapAction);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param clickHouseConf This parameter is required.
+         */
+        public Builder clickHouseConf(final com.aliyun.ros.cdk.core.IResolvable clickHouseConf) {
+            this.props.clickHouseConf(clickHouseConf);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param clickHouseConf This parameter is required.
+         */
+        public Builder clickHouseConf(final java.util.Map<java.lang.String, ? extends java.lang.Object> clickHouseConf) {
+            this.props.clickHouseConf(clickHouseConf);
             return this;
         }
 

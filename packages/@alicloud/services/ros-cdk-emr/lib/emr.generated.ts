@@ -65,6 +65,11 @@ export interface RosClusterProps {
     readonly bootstrapAction?: Array<RosCluster.BootstrapActionProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property clickHouseConf: undefined
+     */
+    readonly clickHouseConf?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
      * @Property config:
      */
     readonly config?: Array<RosCluster.ConfigProperty | ros.IResolvable> | ros.IResolvable;
@@ -230,6 +235,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('bootstrapAction', ros.listValidator(RosCluster_BootstrapActionPropertyValidator))(properties.bootstrapAction));
     errors.collect(ros.propertyValidator('securityGroupName', ros.validateString)(properties.securityGroupName));
     errors.collect(ros.propertyValidator('config', ros.listValidator(RosCluster_ConfigPropertyValidator))(properties.config));
+    errors.collect(ros.propertyValidator('clickHouseConf', ros.hashValidator(ros.validateAny))(properties.clickHouseConf));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('hostGroup', ros.requiredValidator)(properties.hostGroup));
     errors.collect(ros.propertyValidator('hostGroup', ros.listValidator(RosCluster_HostGroupPropertyValidator))(properties.hostGroup));
@@ -320,6 +326,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       AuthorizeContent: ros.stringToRosTemplate(properties.authorizeContent),
       AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       BootstrapAction: ros.listMapper(rosClusterBootstrapActionPropertyToRosTemplate)(properties.bootstrapAction),
+      ClickHouseConf: ros.hashMapper(ros.objectToRosTemplate)(properties.clickHouseConf),
       Config: ros.listMapper(rosClusterConfigPropertyToRosTemplate)(properties.config),
       Configurations: ros.stringToRosTemplate(properties.configurations),
       DepositType: ros.stringToRosTemplate(properties.depositType),
@@ -443,6 +450,11 @@ export class RosCluster extends ros.RosResource {
      * @Property bootstrapAction:
      */
     public bootstrapAction: Array<RosCluster.BootstrapActionProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property clickHouseConf: undefined
+     */
+    public clickHouseConf: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
      * @Property config:
@@ -622,6 +634,7 @@ export class RosCluster extends ros.RosResource {
         this.authorizeContent = props.authorizeContent;
         this.autoRenew = props.autoRenew;
         this.bootstrapAction = props.bootstrapAction;
+        this.clickHouseConf = props.clickHouseConf;
         this.config = props.config;
         this.configurations = props.configurations;
         this.depositType = props.depositType;
@@ -665,6 +678,7 @@ export class RosCluster extends ros.RosResource {
             authorizeContent: this.authorizeContent,
             autoRenew: this.autoRenew,
             bootstrapAction: this.bootstrapAction,
+            clickHouseConf: this.clickHouseConf,
             config: this.config,
             configurations: this.configurations,
             depositType: this.depositType,

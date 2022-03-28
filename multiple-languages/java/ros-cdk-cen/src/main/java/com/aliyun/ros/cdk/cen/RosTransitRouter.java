@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::TransitRouter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.581Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.601Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouter")
 public class RosTransitRouter extends com.aliyun.ros.cdk.core.RosResource {
 

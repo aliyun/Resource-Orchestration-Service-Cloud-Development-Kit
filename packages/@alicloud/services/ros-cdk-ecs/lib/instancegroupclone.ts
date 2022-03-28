@@ -154,7 +154,7 @@ export interface InstanceGroupCloneProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Week/Month. Default value is Month.Old instances will not be changed.
+     * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
      */
     readonly periodUnit?: string | ros.IResolvable;
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS template type:  `ALIYUN::SAG::ACLRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.403Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.542Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLRule")
 public class RosACLRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -225,6 +225,60 @@ public class RosACLRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDpiGroupIds() {
+        return software.amazon.jsii.Kernel.get(this, "dpiGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDpiGroupIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dpiGroupIds", value);
+    }
+
+    /**
+     */
+    public void setDpiGroupIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "dpiGroupIds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDpiSignatureIds() {
+        return software.amazon.jsii.Kernel.get(this, "dpiSignatureIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDpiSignatureIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dpiSignatureIds", value);
+    }
+
+    /**
+     */
+    public void setDpiSignatureIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "dpiSignatureIds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -239,6 +293,24 @@ public class RosACLRule extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPriority(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "priority", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getType() {
+        return software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "type", value);
+    }
+
+    /**
+     */
+    public void setType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "type", value);
     }
 
     /**
@@ -422,6 +494,57 @@ public class RosACLRule extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param dpiGroupIds This parameter is required.
+         */
+        public Builder dpiGroupIds(final com.aliyun.ros.cdk.core.IResolvable dpiGroupIds) {
+            this.props.dpiGroupIds(dpiGroupIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dpiGroupIds This parameter is required.
+         */
+        public Builder dpiGroupIds(final java.util.List<? extends java.lang.Object> dpiGroupIds) {
+            this.props.dpiGroupIds(dpiGroupIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dpiSignatureIds This parameter is required.
+         */
+        public Builder dpiSignatureIds(final com.aliyun.ros.cdk.core.IResolvable dpiSignatureIds) {
+            this.props.dpiSignatureIds(dpiSignatureIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dpiSignatureIds This parameter is required.
+         */
+        public Builder dpiSignatureIds(final java.util.List<? extends java.lang.Object> dpiSignatureIds) {
+            this.props.dpiSignatureIds(dpiSignatureIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param priority This parameter is required.
          */
         public Builder priority(final java.lang.Number priority) {
@@ -434,6 +557,23 @@ public class RosACLRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
             this.props.priority(priority);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param type This parameter is required.
+         */
+        public Builder type(final java.lang.String type) {
+            this.props.type(type);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param type This parameter is required.
+         */
+        public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
+            this.props.type(type);
             return this;
         }
 

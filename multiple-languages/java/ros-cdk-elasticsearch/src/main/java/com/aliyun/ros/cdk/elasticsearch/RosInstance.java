@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * A ROS template type:  `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.459Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.600Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -279,6 +279,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKibanaNode() {
+        return software.amazon.jsii.Kernel.get(this, "kibanaNode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setKibanaNode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "kibanaNode", value);
+    }
+
+    /**
+     */
+    public void setKibanaNode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.elasticsearch.RosInstance.KibanaNodeProperty value) {
+        software.amazon.jsii.Kernel.set(this, "kibanaNode", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getKibanaWhitelist() {
         return software.amazon.jsii.Kernel.get(this, "kibanaWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -431,6 +449,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
     }
     /**
      */
@@ -756,6 +792,131 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.spec.hashCode());
                 result = 31 * result + (this.diskEncryption != null ? this.diskEncryption.hashCode() : 0);
                 result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstance.KibanaNodeProperty")
+    @software.amazon.jsii.Jsii.Proxy(KibanaNodeProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface KibanaNodeProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getSpec();
+
+        /**
+         * @return a {@link Builder} of {@link KibanaNodeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link KibanaNodeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<KibanaNodeProperty> {
+            java.lang.Object spec;
+
+            /**
+             * Sets the value of {@link KibanaNodeProperty#getSpec}
+             * @param spec the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder spec(java.lang.String spec) {
+                this.spec = spec;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KibanaNodeProperty#getSpec}
+             * @param spec the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder spec(com.aliyun.ros.cdk.core.IResolvable spec) {
+                this.spec = spec;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link KibanaNodeProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public KibanaNodeProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link KibanaNodeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements KibanaNodeProperty {
+            private final java.lang.Object spec;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.spec = java.util.Objects.requireNonNull(builder.spec, "spec is required");
+            }
+
+            @Override
+            public final java.lang.Object getSpec() {
+                return this.spec;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("spec", om.valueToTree(this.getSpec()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-elasticsearch.RosInstance.KibanaNodeProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                KibanaNodeProperty.Jsii$Proxy that = (KibanaNodeProperty.Jsii$Proxy) o;
+
+                return this.spec.equals(that.spec);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.spec.hashCode();
                 return result;
             }
         }
@@ -1665,6 +1826,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param kibanaNode This parameter is required.
+         */
+        public Builder kibanaNode(final com.aliyun.ros.cdk.core.IResolvable kibanaNode) {
+            this.props.kibanaNode(kibanaNode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param kibanaNode This parameter is required.
+         */
+        public Builder kibanaNode(final com.aliyun.ros.cdk.elasticsearch.RosInstance.KibanaNodeProperty kibanaNode) {
+            this.props.kibanaNode(kibanaNode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param kibanaWhitelist This parameter is required.
          */
         public Builder kibanaWhitelist(final java.util.List<? extends java.lang.Object> kibanaWhitelist) {
@@ -1805,6 +1983,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder zoneCount(final com.aliyun.ros.cdk.core.IResolvable zoneCount) {
             this.props.zoneCount(zoneCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

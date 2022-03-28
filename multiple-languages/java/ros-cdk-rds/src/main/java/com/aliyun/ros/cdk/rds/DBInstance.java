@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::DBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.272Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1184,24 +1184,28 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property period: Prepaid time period.
+         * Property period: The subscription duration.
          * <p>
-         * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * Valid values:
+         * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+         * When PeriodType is Year, it could be from 1 to 5.
          * <p>
          * @return {@code this}
-         * @param period Property period: Prepaid time period. This parameter is required.
+         * @param period Property period: The subscription duration. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: Prepaid time period.
+         * Property period: The subscription duration.
          * <p>
-         * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * Valid values:
+         * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+         * When PeriodType is Year, it could be from 1 to 5.
          * <p>
          * @return {@code this}
-         * @param period Property period: Prepaid time period. This parameter is required.
+         * @param period Property period: The subscription duration. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);

@@ -27,10 +27,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             set;
         }
 
+        /// <summary>Property deletionForce: Whether force detach the policies attached to the group.</summary>
+        /// <remarks>
+        /// Default value is false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DeletionForce
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property policies: Describes what actions are allowed on what resources.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "policies", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.PoliciesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? Policies
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property policyAttachments: System and custom policy names to attach.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "policyAttachments", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.PolicyAttachmentsProperty\"}]}}", isOptional: true)]
+        public object? PolicyAttachments
         {
             get;
             set;

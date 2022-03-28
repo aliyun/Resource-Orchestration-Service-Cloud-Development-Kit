@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS template type:  `ALIYUN::DTS::ConsumerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.971Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.041Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosConsumerGroup")
 public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
 

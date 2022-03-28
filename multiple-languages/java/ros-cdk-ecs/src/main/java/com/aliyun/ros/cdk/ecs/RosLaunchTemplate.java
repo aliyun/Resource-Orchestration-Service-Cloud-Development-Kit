@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::LaunchTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.253Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.393Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosLaunchTemplate")
 public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -117,6 +117,24 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
+        return software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeploymentSetId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "deploymentSetId", value);
+    }
+
+    /**
+     */
+    public void setDeploymentSetId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deploymentSetId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -189,6 +207,42 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageOwnerAlias() {
+        return software.amazon.jsii.Kernel.get(this, "imageOwnerAlias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImageOwnerAlias(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "imageOwnerAlias", value);
+    }
+
+    /**
+     */
+    public void setImageOwnerAlias(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageOwnerAlias", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceChargeType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceChargeType", value);
+    }
+
+    /**
+     */
+    public void setInstanceChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceChargeType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -243,24 +297,6 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
-        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setInternetMaxBandwidthIn(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "internetMaxBandwidthIn", value);
-    }
-
-    /**
-     */
-    public void setInternetMaxBandwidthIn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "internetMaxBandwidthIn", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -293,6 +329,24 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setIoOptimized(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ioOptimized", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6AddressCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6AddressCount", value);
+    }
+
+    /**
+     */
+    public void setIpv6AddressCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6AddressCount", value);
     }
 
     /**
@@ -351,6 +405,60 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPasswordInherit() {
+        return software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPasswordInherit(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "passwordInherit", value);
+    }
+
+    /**
+     */
+    public void setPasswordInherit(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "passwordInherit", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPrivateIpAddress(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "privateIpAddress", value);
+    }
+
+    /**
+     */
+    public void setPrivateIpAddress(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "privateIpAddress", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
         return software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -365,6 +473,24 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRamRoleName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ramRoleName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
     }
 
     /**
@@ -401,6 +527,42 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityGroupIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupIds", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupIds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpotDuration() {
+        return software.amazon.jsii.Kernel.get(this, "spotDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSpotDuration(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "spotDuration", value);
+    }
+
+    /**
+     */
+    public void setSpotDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "spotDuration", value);
     }
 
     /**
@@ -459,6 +621,24 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDeleteWithInstance() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskDeleteWithInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskDeleteWithInstance(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskDeleteWithInstance", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskDeleteWithInstance(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskDeleteWithInstance", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDescription() {
         return software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -495,6 +675,24 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskPerformanceLevel(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskPerformanceLevel", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskPerformanceLevel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskPerformanceLevel", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
         return software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -521,6 +719,24 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "templateResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTemplateResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "templateResourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setTemplateResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateResourceGroupId", value);
     }
 
     /**
@@ -657,6 +873,13 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPerformanceLevel() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSize() {
             return null;
         }
@@ -685,6 +908,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object description;
             java.lang.Object diskName;
             java.lang.Object encrypted;
+            java.lang.Object performanceLevel;
             java.lang.Object size;
             java.lang.Object snapshotId;
 
@@ -799,6 +1023,28 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getPerformanceLevel}
+             * @param performanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder performanceLevel(java.lang.String performanceLevel) {
+                this.performanceLevel = performanceLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getPerformanceLevel}
+             * @param performanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder performanceLevel(com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
+                this.performanceLevel = performanceLevel;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getSize}
              * @param size the value to be set.
              * @return {@code this}
@@ -865,6 +1111,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object description;
             private final java.lang.Object diskName;
             private final java.lang.Object encrypted;
+            private final java.lang.Object performanceLevel;
             private final java.lang.Object size;
             private final java.lang.Object snapshotId;
 
@@ -879,6 +1126,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -893,6 +1141,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
                 this.description = builder.description;
                 this.diskName = builder.diskName;
                 this.encrypted = builder.encrypted;
+                this.performanceLevel = builder.performanceLevel;
                 this.size = builder.size;
                 this.snapshotId = builder.snapshotId;
             }
@@ -920,6 +1169,11 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getEncrypted() {
                 return this.encrypted;
+            }
+
+            @Override
+            public final java.lang.Object getPerformanceLevel() {
+                return this.performanceLevel;
             }
 
             @Override
@@ -953,6 +1207,9 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getEncrypted() != null) {
                     data.set("encrypted", om.valueToTree(this.getEncrypted()));
                 }
+                if (this.getPerformanceLevel() != null) {
+                    data.set("performanceLevel", om.valueToTree(this.getPerformanceLevel()));
+                }
                 if (this.getSize() != null) {
                     data.set("size", om.valueToTree(this.getSize()));
                 }
@@ -982,6 +1239,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
                 if (this.diskName != null ? !this.diskName.equals(that.diskName) : that.diskName != null) return false;
                 if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
+                if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
                 if (this.size != null ? !this.size.equals(that.size) : that.size != null) return false;
                 return this.snapshotId != null ? this.snapshotId.equals(that.snapshotId) : that.snapshotId == null;
             }
@@ -993,6 +1251,7 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
                 result = 31 * result + (this.diskName != null ? this.diskName.hashCode() : 0);
                 result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
+                result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
                 result = 31 * result + (this.size != null ? this.size.hashCode() : 0);
                 result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
                 return result;
@@ -1707,6 +1966,23 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param deploymentSetId This parameter is required.
+         */
+        public Builder deploymentSetId(final java.lang.String deploymentSetId) {
+            this.props.deploymentSetId(deploymentSetId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deploymentSetId This parameter is required.
+         */
+        public Builder deploymentSetId(final com.aliyun.ros.cdk.core.IResolvable deploymentSetId) {
+            this.props.deploymentSetId(deploymentSetId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
@@ -1775,6 +2051,40 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param imageOwnerAlias This parameter is required.
+         */
+        public Builder imageOwnerAlias(final java.lang.String imageOwnerAlias) {
+            this.props.imageOwnerAlias(imageOwnerAlias);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageOwnerAlias This parameter is required.
+         */
+        public Builder imageOwnerAlias(final com.aliyun.ros.cdk.core.IResolvable imageOwnerAlias) {
+            this.props.imageOwnerAlias(imageOwnerAlias);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceChargeType This parameter is required.
+         */
+        public Builder instanceChargeType(final java.lang.String instanceChargeType) {
+            this.props.instanceChargeType(instanceChargeType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceChargeType This parameter is required.
+         */
+        public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.props.instanceChargeType(instanceChargeType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param instanceName This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
@@ -1826,23 +2136,6 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param internetMaxBandwidthIn This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final java.lang.Number internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param internetMaxBandwidthIn This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param internetMaxBandwidthOut This parameter is required.
          */
         public Builder internetMaxBandwidthOut(final java.lang.Number internetMaxBandwidthOut) {
@@ -1872,6 +2165,23 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder ioOptimized(final com.aliyun.ros.cdk.core.IResolvable ioOptimized) {
             this.props.ioOptimized(ioOptimized);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6AddressCount This parameter is required.
+         */
+        public Builder ipv6AddressCount(final java.lang.Number ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6AddressCount This parameter is required.
+         */
+        public Builder ipv6AddressCount(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
             return this;
         }
 
@@ -1928,6 +2238,57 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param passwordInherit This parameter is required.
+         */
+        public Builder passwordInherit(final java.lang.Boolean passwordInherit) {
+            this.props.passwordInherit(passwordInherit);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param passwordInherit This parameter is required.
+         */
+        public Builder passwordInherit(final com.aliyun.ros.cdk.core.IResolvable passwordInherit) {
+            this.props.passwordInherit(passwordInherit);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param privateIpAddress This parameter is required.
+         */
+        public Builder privateIpAddress(final java.lang.String privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param privateIpAddress This parameter is required.
+         */
+        public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param ramRoleName This parameter is required.
          */
         public Builder ramRoleName(final java.lang.String ramRoleName) {
@@ -1940,6 +2301,23 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder ramRoleName(final com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
             this.props.ramRoleName(ramRoleName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 
@@ -1974,6 +2352,40 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityGroupIds This parameter is required.
+         */
+        public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupIds This parameter is required.
+         */
+        public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param spotDuration This parameter is required.
+         */
+        public Builder spotDuration(final java.lang.Number spotDuration) {
+            this.props.spotDuration(spotDuration);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param spotDuration This parameter is required.
+         */
+        public Builder spotDuration(final com.aliyun.ros.cdk.core.IResolvable spotDuration) {
+            this.props.spotDuration(spotDuration);
             return this;
         }
 
@@ -2030,6 +2442,23 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param systemDiskDeleteWithInstance This parameter is required.
+         */
+        public Builder systemDiskDeleteWithInstance(final java.lang.Boolean systemDiskDeleteWithInstance) {
+            this.props.systemDiskDeleteWithInstance(systemDiskDeleteWithInstance);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskDeleteWithInstance This parameter is required.
+         */
+        public Builder systemDiskDeleteWithInstance(final com.aliyun.ros.cdk.core.IResolvable systemDiskDeleteWithInstance) {
+            this.props.systemDiskDeleteWithInstance(systemDiskDeleteWithInstance);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param systemDiskDescription This parameter is required.
          */
         public Builder systemDiskDescription(final java.lang.String systemDiskDescription) {
@@ -2064,6 +2493,23 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param systemDiskPerformanceLevel This parameter is required.
+         */
+        public Builder systemDiskPerformanceLevel(final java.lang.String systemDiskPerformanceLevel) {
+            this.props.systemDiskPerformanceLevel(systemDiskPerformanceLevel);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskPerformanceLevel This parameter is required.
+         */
+        public Builder systemDiskPerformanceLevel(final com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
+            this.props.systemDiskPerformanceLevel(systemDiskPerformanceLevel);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param systemDiskSize This parameter is required.
          */
         public Builder systemDiskSize(final java.lang.Number systemDiskSize) {
@@ -2085,6 +2531,23 @@ public class RosLaunchTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param templateResourceGroupId This parameter is required.
+         */
+        public Builder templateResourceGroupId(final java.lang.String templateResourceGroupId) {
+            this.props.templateResourceGroupId(templateResourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param templateResourceGroupId This parameter is required.
+         */
+        public Builder templateResourceGroupId(final com.aliyun.ros.cdk.core.IResolvable templateResourceGroupId) {
+            this.props.templateResourceGroupId(templateResourceGroupId);
             return this;
         }
 

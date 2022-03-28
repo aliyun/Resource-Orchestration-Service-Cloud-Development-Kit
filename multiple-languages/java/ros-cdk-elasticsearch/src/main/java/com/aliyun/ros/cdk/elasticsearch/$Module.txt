@@ -2,6 +2,7 @@
 @alicloud/ros-cdk-elasticsearch.InstanceProps=com.aliyun.ros.cdk.elasticsearch.InstanceProps
 @alicloud/ros-cdk-elasticsearch.RosInstance=com.aliyun.ros.cdk.elasticsearch.RosInstance
 @alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty=com.aliyun.ros.cdk.elasticsearch.RosInstance$DataNodeProperty
+@alicloud/ros-cdk-elasticsearch.RosInstance.KibanaNodeProperty=com.aliyun.ros.cdk.elasticsearch.RosInstance$KibanaNodeProperty
 @alicloud/ros-cdk-elasticsearch.RosInstance.MasterNodeProperty=com.aliyun.ros.cdk.elasticsearch.RosInstance$MasterNodeProperty
 @alicloud/ros-cdk-elasticsearch.RosInstance.TagsProperty=com.aliyun.ros.cdk.elasticsearch.RosInstance$TagsProperty
 @alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty=com.aliyun.ros.cdk.elasticsearch.RosInstance$YMLConfigProperty

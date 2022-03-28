@@ -71,14 +71,6 @@ export interface InstanceProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
-     * Value range: 1-200
-     * Default: 200
-     * This value is only valid when AllocatePublicAddress is true.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
      * Value range: 1-200
      * Default: 200
@@ -173,7 +165,6 @@ export class Instance extends ros.Resource {
             name: props.name,
             internetChargeType: props.internetChargeType,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
-            internetMaxBandwidthIn: props.internetMaxBandwidthIn,
             imageId: props.imageId,
             instanceType: props.instanceType,
             appList: props.appList,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.226Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.339Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstance")
 public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -177,14 +177,7 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property engineVersion: The version of the database.
          * <p>
-         * The database and the master instance must have the same database version. Valid values:
-         * <p>
-         * <ul>
-         * <li>5.6</li>
-         * <li>5.7</li>
-         * <li>8.0</li>
-         * <li>2017_ent</li>
-         * </ul>
+         * The database and the master instance must have the same database version. Valid values: 5.6, 5.7, 8.0, 2017_ent, 2019_ent
          * <p>
          * @return {@code this}
          * @param engineVersion Property engineVersion: The version of the database. This parameter is required.
@@ -196,14 +189,7 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property engineVersion: The version of the database.
          * <p>
-         * The database and the master instance must have the same database version. Valid values:
-         * <p>
-         * <ul>
-         * <li>5.6</li>
-         * <li>5.7</li>
-         * <li>8.0</li>
-         * <li>2017_ent</li>
-         * </ul>
+         * The database and the master instance must have the same database version. Valid values: 5.6, 5.7, 8.0, 2017_ent, 2019_ent
          * <p>
          * @return {@code this}
          * @param engineVersion Property engineVersion: The version of the database. This parameter is required.
@@ -268,36 +254,32 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property category: The edition of the instance.
+         * Property category: The RDS edition of the read-only instance.
          * <p>
          * Valid values:
-         * <p>
-         * <ul>
-         * <li>Basic</li>
-         * <li>HighAvailability</li>
-         * <li>AlwaysOn</li>
-         * </ul>
+         * Basic: Basic Edition.
+         * HighAvailability: High-availability Edition. This is the default value.
+         * AlwaysOn: Cluster Edition.
+         * Finance: Enterprise Edition. This edition is available only on the China site (aliyun.com).
          * <p>
          * @return {@code this}
-         * @param category Property category: The edition of the instance. This parameter is required.
+         * @param category Property category: The RDS edition of the read-only instance. This parameter is required.
          */
         public Builder category(final java.lang.String category) {
             this.props.category(category);
             return this;
         }
         /**
-         * Property category: The edition of the instance.
+         * Property category: The RDS edition of the read-only instance.
          * <p>
          * Valid values:
-         * <p>
-         * <ul>
-         * <li>Basic</li>
-         * <li>HighAvailability</li>
-         * <li>AlwaysOn</li>
-         * </ul>
+         * Basic: Basic Edition.
+         * HighAvailability: High-availability Edition. This is the default value.
+         * AlwaysOn: Cluster Edition.
+         * Finance: Enterprise Edition. This edition is available only on the China site (aliyun.com).
          * <p>
          * @return {@code this}
-         * @param category Property category: The edition of the instance. This parameter is required.
+         * @param category Property category: The RDS edition of the read-only instance. This parameter is required.
          */
         public Builder category(final com.aliyun.ros.cdk.core.IResolvable category) {
             this.props.category(category);
@@ -326,36 +308,34 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property dbInstanceStorageType: The storage type of the instance.
+         * Property dbInstanceStorageType: The type of storage media that is used by the instance.
          * <p>
          * Valid values:
-         * <p>
-         * <ul>
-         * <li>local_ssd/ephemeral_ssd: local SSDs.</li>
-         * <li>cloud_ssd: SSDs.</li>
-         * <li>cloud_essd: ESSDs.</li>
-         * </ul>
+         * local_ssd: local SSDs
+         * cloud_ssd: standard SSDs
+         * cloud_essd: ESSDs of performance level 1 (PL1)
+         * cloud_essd2: ESSDs of PL2
+         * cloud_essd3: ESSDs of PL3
          * <p>
          * @return {@code this}
-         * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance. This parameter is required.
+         * @param dbInstanceStorageType Property dbInstanceStorageType: The type of storage media that is used by the instance. This parameter is required.
          */
         public Builder dbInstanceStorageType(final java.lang.String dbInstanceStorageType) {
             this.props.dbInstanceStorageType(dbInstanceStorageType);
             return this;
         }
         /**
-         * Property dbInstanceStorageType: The storage type of the instance.
+         * Property dbInstanceStorageType: The type of storage media that is used by the instance.
          * <p>
          * Valid values:
-         * <p>
-         * <ul>
-         * <li>local_ssd/ephemeral_ssd: local SSDs.</li>
-         * <li>cloud_ssd: SSDs.</li>
-         * <li>cloud_essd: ESSDs.</li>
-         * </ul>
+         * local_ssd: local SSDs
+         * cloud_ssd: standard SSDs
+         * cloud_essd: ESSDs of performance level 1 (PL1)
+         * cloud_essd2: ESSDs of PL2
+         * cloud_essd3: ESSDs of PL3
          * <p>
          * @return {@code this}
-         * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance. This parameter is required.
+         * @param dbInstanceStorageType Property dbInstanceStorageType: The type of storage media that is used by the instance. This parameter is required.
          */
         public Builder dbInstanceStorageType(final com.aliyun.ros.cdk.core.IResolvable dbInstanceStorageType) {
             this.props.dbInstanceStorageType(dbInstanceStorageType);
@@ -388,24 +368,28 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property period: Prepaid time period.
+         * Property period: The subscription duration.
          * <p>
-         * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * Valid values:
+         * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+         * When PeriodType is Year, it could be from 1 to 5.
          * <p>
          * @return {@code this}
-         * @param period Property period: Prepaid time period. This parameter is required.
+         * @param period Property period: The subscription duration. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: Prepaid time period.
+         * Property period: The subscription duration.
          * <p>
-         * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * Valid values:
+         * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+         * When PeriodType is Year, it could be from 1 to 5.
          * <p>
          * @return {@code this}
-         * @param period Property period: Prepaid time period. This parameter is required.
+         * @param period Property period: The subscription duration. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);

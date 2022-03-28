@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.110Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.220Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -788,24 +788,24 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+         * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
          * <p>
          * Default value is Month.Old instances will not be changed.
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month. This parameter is required.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. This parameter is required.
          */
         public Builder periodUnit(final java.lang.String periodUnit) {
             this.props.periodUnit(periodUnit);
             return this;
         }
         /**
-         * Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+         * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
          * <p>
          * Default value is Month.Old instances will not be changed.
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month. This parameter is required.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. This parameter is required.
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);

@@ -58,6 +58,69 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property autoRenew: Whether the cluster automatically renews.</summary>
+        /// <remarks>
+        /// It takes effect when the value of ChargeType is PrePaid. The optional values are:
+        /// true: automatic renewal
+        /// false: do not renew automatically
+        /// Default to true.
+        /// </remarks>
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenew
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenewPeriod
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property chargeType: cluster payment type.</summary>
+        /// <remarks>
+        /// The optional values are:
+        /// PrePaid: prepaid
+        /// PostPaid: Pay as you go
+        /// Default to PostPaid.
+        /// </remarks>
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ChargeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.</summary>
+        /// <remarks>
+        /// For more information, see CIS reinforcement.
+        /// Valid values:
+        /// true: enables CIS reinforcement.
+        /// false: disables CIS reinforcement.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "cisEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CisEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.</summary>
         [JsiiProperty(name: "cloudMonitorFlags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -93,6 +156,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ContainerCidr
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property deletionProtection: Specifies whether to enable deletion protection for the cluster.</summary>
+        /// <remarks>
+        /// After deletion protection is enabled, the cluster cannot be deleted
+        /// in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+        /// false: disables deletion protection for the cluster.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
         {
             get
             {
@@ -142,6 +222,65 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// true: stores the data of containers and images on a data disk.
+        /// The original data on the disk will be overwritten.
+        /// Back up data before you mount the disk.
+        /// false: does not store the data of containers and images on a data disk.
+        /// Default value: false.
+        /// How to mount a data disk:
+        /// If the ECS instances have data disks mounted and the file system of the last
+        /// data disk is not initialized, the system automatically formats the data disk to ext4.
+        /// Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+        /// The system does not create or mount a new data disk if no data disk has been
+        /// mounted to the ECS instances.
+        /// </remarks>
+        [JsiiProperty(name: "formatDisk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? FormatDisk
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.</summary>
+        /// <remarks>
+        /// This parameter takes effect only if security_group_id is left empty.
+        /// Note You must specify an advanced security group for a cluster that has Terway installed.
+        /// true: creates an advanced security group.
+        /// false: does not create an advanced security group.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "isEnterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IsEnterpriseSecurityGroup
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.</summary>
+        /// <remarks>
+        /// true: retains the names.
+        /// false: does not retain the names. The new names are assigned by the system.
+        /// Default value: true.
+        /// </remarks>
+        [JsiiProperty(name: "keepInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? KeepInstanceName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property keyPair: Key pair name.</summary>
         /// <remarks>
         /// Specify one of KeyPair or LoginPassword.
@@ -167,6 +306,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property loadBalancerSpec: The specification of the Server Load Balancer instance.</summary>
+        /// <remarks>
+        /// Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+        /// </remarks>
+        [JsiiProperty(name: "loadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LoadBalancerSpec
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property loginPassword: SSH login password.</summary>
         /// <remarks>
         /// Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
@@ -174,6 +327,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? LoginPassword
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.</summary>
+        /// <remarks>
+        /// This number is determined by the specified pod CIDR block.
+        /// This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+        /// </remarks>
+        [JsiiProperty(name: "nodeCidrMask", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NodeCidrMask
         {
             get
             {
@@ -189,6 +357,78 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NumOfNodes
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property osType: The type of operating system.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Windows
+        /// Linux
+        /// Default value: Linux.
+        /// </remarks>
+        [JsiiProperty(name: "osType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? OsType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property period: The duration of the annual subscription and monthly subscription.</summary>
+        /// <remarks>
+        /// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+        /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+        /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+        /// Default to 1.
+        /// </remarks>
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Period
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property periodUnit: When you specify PrePaid, you need to specify the period.</summary>
+        /// <remarks>
+        /// The options are:
+        /// Week: Time is measured in weeks
+        /// Month: time in months
+        /// Default to Month
+        /// </remarks>
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PeriodUnit
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property platform: The release version of the operating system.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// CentOS
+        /// AliyunLinux
+        /// QbootAliyunLinux
+        /// Qboot
+        /// Windows
+        /// WindowsCore
+        /// Default value: CentOS.
+        /// </remarks>
+        [JsiiProperty(name: "platform", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Platform
         {
             get
             {
@@ -287,6 +527,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property socEnabled: Valid values: true: enables reinforcement based on classified protection.</summary>
+        /// <remarks>
+        /// false: disables reinforcement based on classified protection.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "socEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SocEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tags: Tag the cluster.</summary>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -326,27 +581,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes.</summary>
+        /// <summary>Property userData: The user-defined data.</summary>
         /// <remarks>
-        /// The optional values are:
-        /// true: automatic renewal
-        /// false: do not renew automatically
-        /// Default to true.
+        /// [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
         /// </remarks>
-        [JsiiProperty(name: "workerAutoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerAutoRenew
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
-        [JsiiProperty(name: "workerAutoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerAutoRenewPeriod
+        object? UserData
         {
             get
             {
@@ -378,57 +619,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "workerDataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.WorkerDataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? WorkerDataDisks
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property workerInstanceChargeType: Worker node payment type.</summary>
-        /// <remarks>
-        /// The optional values are:
-        /// PrePaid: prepaid
-        /// PostPaid: Pay as you go
-        /// Default to PostPaid.
-        /// </remarks>
-        [JsiiProperty(name: "workerInstanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerInstanceChargeType
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property workerPeriod: The duration of the annual and monthly subscription.</summary>
-        /// <remarks>
-        /// It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-        /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-        /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-        /// Default to 1.
-        /// </remarks>
-        [JsiiProperty(name: "workerPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerPeriod
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property workerPeriodUnit: When you specify PrePaid, you need to specify the period.</summary>
-        /// <remarks>
-        /// The options are:
-        /// Week: Time is measured in weeks
-        /// Month: time in months
-        /// Default to Month.
-        /// </remarks>
-        [JsiiProperty(name: "workerPeriodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerPeriodUnit
         {
             get
             {
@@ -522,6 +712,57 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property autoRenew: Whether the cluster automatically renews.</summary>
+            /// <remarks>
+            /// It takes effect when the value of ChargeType is PrePaid. The optional values are:
+            /// true: automatic renewal
+            /// false: do not renew automatically
+            /// Default to true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenew
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenewPeriod
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property chargeType: cluster payment type.</summary>
+            /// <remarks>
+            /// The optional values are:
+            /// PrePaid: prepaid
+            /// PostPaid: Pay as you go
+            /// Default to PostPaid.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ChargeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement.</summary>
+            /// <remarks>
+            /// For more information, see CIS reinforcement.
+            /// Valid values:
+            /// true: enables CIS reinforcement.
+            /// false: disables CIS reinforcement.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cisEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CisEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "cloudMonitorFlags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -551,6 +792,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContainerCidr
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionProtection: Specifies whether to enable deletion protection for the cluster.</summary>
+            /// <remarks>
+            /// After deletion protection is enabled, the cluster cannot be deleted
+            /// in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+            /// false: disables deletion protection for the cluster.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -588,6 +843,56 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property formatDisk: Specifies whether to mount a data disk to nodes that are created  on existing Elastic Compute Service (ECS) instances.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// true: stores the data of containers and images on a data disk.
+            /// The original data on the disk will be overwritten.
+            /// Back up data before you mount the disk.
+            /// false: does not store the data of containers and images on a data disk.
+            /// Default value: false.
+            /// How to mount a data disk:
+            /// If the ECS instances have data disks mounted and the file system of the last
+            /// data disk is not initialized, the system automatically formats the data disk to ext4.
+            /// Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+            /// The system does not create or mount a new data disk if no data disk has been
+            /// mounted to the ECS instances.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "formatDisk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FormatDisk
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.</summary>
+            /// <remarks>
+            /// This parameter takes effect only if security_group_id is left empty.
+            /// Note You must specify an advanced security group for a cluster that has Terway installed.
+            /// true: creates an advanced security group.
+            /// false: does not create an advanced security group.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "isEnterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IsEnterpriseSecurityGroup
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.</summary>
+            /// <remarks>
+            /// true: retains the names.
+            /// false: does not retain the names. The new names are assigned by the system.
+            /// Default value: true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "keepInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KeepInstanceName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property keyPair: Key pair name.</summary>
             /// <remarks>
             /// Specify one of KeyPair or LoginPassword.
@@ -607,6 +912,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property loadBalancerSpec: The specification of the Server Load Balancer instance.</summary>
+            /// <remarks>
+            /// Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "loadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LoadBalancerSpec
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property loginPassword: SSH login password.</summary>
             /// <remarks>
             /// Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
@@ -614,6 +930,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? LoginPassword
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.</summary>
+            /// <remarks>
+            /// This number is determined by the specified pod CIDR block.
+            /// This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "nodeCidrMask", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NodeCidrMask
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -626,6 +954,66 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NumOfNodes
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property osType: The type of operating system.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// Windows
+            /// Linux
+            /// Default value: Linux.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "osType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? OsType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property period: The duration of the annual subscription and monthly subscription.</summary>
+            /// <remarks>
+            /// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+            /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+            /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+            /// Default to 1.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property periodUnit: When you specify PrePaid, you need to specify the period.</summary>
+            /// <remarks>
+            /// The options are:
+            /// Week: Time is measured in weeks
+            /// Month: time in months
+            /// Default to Month
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PeriodUnit
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property platform: The release version of the operating system.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// CentOS
+            /// AliyunLinux
+            /// QbootAliyunLinux
+            /// Qboot
+            /// Windows
+            /// WindowsCore
+            /// Default value: CentOS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "platform", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Platform
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -703,6 +1091,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property socEnabled: Valid values: true: enables reinforcement based on classified protection.</summary>
+            /// <remarks>
+            /// false: disables reinforcement based on classified protection.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "socEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SocEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property tags: Tag the cluster.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -733,24 +1133,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes.</summary>
+            /// <summary>Property userData: The user-defined data.</summary>
             /// <remarks>
-            /// The optional values are:
-            /// true: automatic renewal
-            /// false: do not renew automatically
-            /// Default to true.
+            /// [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "workerAutoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerAutoRenew
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerAutoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerAutoRenewPeriod
+            [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UserData
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -776,48 +1165,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "workerDataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.WorkerDataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? WorkerDataDisks
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property workerInstanceChargeType: Worker node payment type.</summary>
-            /// <remarks>
-            /// The optional values are:
-            /// PrePaid: prepaid
-            /// PostPaid: Pay as you go
-            /// Default to PostPaid.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerInstanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerInstanceChargeType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property workerPeriod: The duration of the annual and monthly subscription.</summary>
-            /// <remarks>
-            /// It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-            /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-            /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-            /// Default to 1.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerPeriod
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property workerPeriodUnit: When you specify PrePaid, you need to specify the period.</summary>
-            /// <remarks>
-            /// The options are:
-            /// Week: Time is measured in weeks
-            /// Month: time in months
-            /// Default to Month.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerPeriodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerPeriodUnit
             {
                 get => GetInstanceProperty<object?>();
             }

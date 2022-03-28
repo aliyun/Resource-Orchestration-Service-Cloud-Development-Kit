@@ -227,17 +227,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? InternetMaxBandwidthIn
-        {
-            get;
-            set;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
         /// </remarks>
         [JsiiOptional]
@@ -374,7 +363,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Week/Month. Default value is Month.Old instances will not be changed.
+        /// <strong>Property</strong>: periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

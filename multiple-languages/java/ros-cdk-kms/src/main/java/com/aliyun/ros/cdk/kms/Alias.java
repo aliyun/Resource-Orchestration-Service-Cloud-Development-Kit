@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS resource type:  `ALIYUN::KMS::Alias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.819Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Alias")
 public class Alias extends com.aliyun.ros.cdk.core.Resource {
 

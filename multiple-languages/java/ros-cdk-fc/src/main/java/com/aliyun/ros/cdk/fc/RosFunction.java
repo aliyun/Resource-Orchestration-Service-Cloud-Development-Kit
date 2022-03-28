@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Function`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.617Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.757Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -922,6 +922,13 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link CustomContainerConfigProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -937,6 +944,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object accelerationType;
             java.lang.Object args;
             java.lang.Object command;
+            java.lang.Object instanceId;
 
             /**
              * Sets the value of {@link CustomContainerConfigProperty#getImage}
@@ -1027,6 +1035,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CustomContainerConfigProperty#getInstanceId}
+             * @param instanceId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceId(java.lang.String instanceId) {
+                this.instanceId = instanceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomContainerConfigProperty#getInstanceId}
+             * @param instanceId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+                this.instanceId = instanceId;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link CustomContainerConfigProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1048,6 +1078,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object accelerationType;
             private final java.lang.Object args;
             private final java.lang.Object command;
+            private final java.lang.Object instanceId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1059,6 +1090,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 this.accelerationType = software.amazon.jsii.Kernel.get(this, "accelerationType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.args = software.amazon.jsii.Kernel.get(this, "args", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1070,6 +1102,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 this.accelerationType = builder.accelerationType;
                 this.args = builder.args;
                 this.command = builder.command;
+                this.instanceId = builder.instanceId;
             }
 
             @Override
@@ -1093,6 +1126,11 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getInstanceId() {
+                return this.instanceId;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1107,6 +1145,9 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getCommand() != null) {
                     data.set("command", om.valueToTree(this.getCommand()));
+                }
+                if (this.getInstanceId() != null) {
+                    data.set("instanceId", om.valueToTree(this.getInstanceId()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -1129,7 +1170,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 if (!image.equals(that.image)) return false;
                 if (this.accelerationType != null ? !this.accelerationType.equals(that.accelerationType) : that.accelerationType != null) return false;
                 if (this.args != null ? !this.args.equals(that.args) : that.args != null) return false;
-                return this.command != null ? this.command.equals(that.command) : that.command == null;
+                if (this.command != null ? !this.command.equals(that.command) : that.command != null) return false;
+                return this.instanceId != null ? this.instanceId.equals(that.instanceId) : that.instanceId == null;
             }
 
             @Override
@@ -1138,6 +1180,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.accelerationType != null ? this.accelerationType.hashCode() : 0);
                 result = 31 * result + (this.args != null ? this.args.hashCode() : 0);
                 result = 31 * result + (this.command != null ? this.command.hashCode() : 0);
+                result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
                 return result;
             }
         }

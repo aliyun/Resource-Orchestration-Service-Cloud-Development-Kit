@@ -333,6 +333,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: healthCheckMethod: The health check method used in HTTP or HTTPS health checks. Valid values: head and get.
+            /// </remarks>
+            [JsiiProperty(name: "healthCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? HealthCheckMethod
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
             /// </remarks>
             [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -469,6 +482,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: healthCheckMethod: The health check method used in HTTP or HTTPS health checks. Valid values: head and get.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "healthCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HealthCheckMethod
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
                 /// </remarks>
                 [JsiiOptional]
@@ -570,6 +593,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Domain
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: healthCheckMethod: The health check method used in HTTP or HTTPS health checks. Valid values: head and get.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "healthCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HealthCheckMethod
             {
                 get;
                 set;

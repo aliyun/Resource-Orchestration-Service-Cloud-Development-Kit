@@ -89,6 +89,11 @@ export class ServerlessKubernetesCluster extends ros.Resource {
      */
 
     /**
+     * Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
+
+    /**
      * Attribute ClusterId: Cluster instance ID.
      */
     public readonly attrClusterId: ros.IResolvable;
@@ -159,6 +164,7 @@ export class ServerlessKubernetesCluster extends ros.Resource {
             privateZone: props.privateZone,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServerlessKubernetesCluster;
+        this.attrApiServerSlbId = rosServerlessKubernetesCluster.attrApiServerSlbId;
         this.attrClusterId = rosServerlessKubernetesCluster.attrClusterId;
         this.attrDefaultUserKubeConfig = rosServerlessKubernetesCluster.attrDefaultUserKubeConfig;
         this.attrNodes = rosServerlessKubernetesCluster.attrNodes;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * A ROS template type:  `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.915Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.030Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosShardingInstance")
 public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 

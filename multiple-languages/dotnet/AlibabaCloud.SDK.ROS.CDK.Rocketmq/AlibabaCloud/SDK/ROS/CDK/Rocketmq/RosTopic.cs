@@ -124,20 +124,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: perm: Set the read-write mode for the topic Valid values.:
-        /// 6: Both read and write operations are supported.
-        /// 4: Write operation is prohibited.
-        /// 2: Read operation is prohibited.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "perm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public virtual object? Perm
-        {
-            get => GetInstanceProperty<object?>();
-            set => SetInstanceProperty(value);
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: remark: The remarks on the request. This parameter can be left blank.
         /// </remarks>
         [JsiiOptional]

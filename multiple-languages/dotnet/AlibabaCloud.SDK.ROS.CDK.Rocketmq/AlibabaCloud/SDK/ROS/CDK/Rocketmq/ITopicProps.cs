@@ -43,17 +43,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             get;
         }
 
-        /// <summary>Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited.</summary>
-        [JsiiProperty(name: "perm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Perm
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property remark: The remarks on the request.</summary>
         /// <remarks>
         /// This parameter can be left blank.
@@ -109,14 +98,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             public object Topic
             {
                 get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited.</summary>
-            [JsiiOptional]
-            [JsiiProperty(name: "perm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Perm
-            {
-                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property remark: The remarks on the request.</summary>

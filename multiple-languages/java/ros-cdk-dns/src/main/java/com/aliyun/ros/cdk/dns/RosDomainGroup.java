@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * A ROS template type:  `ALIYUN::DNS::DomainGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.015Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomainGroup")
 public class RosDomainGroup extends com.aliyun.ros.cdk.core.RosResource {
 

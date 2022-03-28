@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.229Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.341Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ReadOnlyDBInstanceProps.Jsii$Proxy.class)
 public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,14 +30,7 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
     /**
      * Property engineVersion: The version of the database.
      * <p>
-     * The database and the master instance must have the same database version. Valid values:
-     * <p>
-     * <ul>
-     * <li>5.6</li>
-     * <li>5.7</li>
-     * <li>8.0</li>
-     * <li>2017_ent</li>
-     * </ul>
+     * The database and the master instance must have the same database version. Valid values: 5.6, 5.7, 8.0, 2017_ent, 2019_ent
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEngineVersion();
 
@@ -60,15 +53,13 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property category: The edition of the instance.
+     * Property category: The RDS edition of the read-only instance.
      * <p>
      * Valid values:
-     * <p>
-     * <ul>
-     * <li>Basic</li>
-     * <li>HighAvailability</li>
-     * <li>AlwaysOn</li>
-     * </ul>
+     * Basic: Basic Edition.
+     * HighAvailability: High-availability Edition. This is the default value.
+     * AlwaysOn: Cluster Edition.
+     * Finance: Enterprise Edition. This edition is available only on the China site (aliyun.com).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
         return null;
@@ -82,15 +73,14 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property dbInstanceStorageType: The storage type of the instance.
+     * Property dbInstanceStorageType: The type of storage media that is used by the instance.
      * <p>
      * Valid values:
-     * <p>
-     * <ul>
-     * <li>local_ssd/ephemeral_ssd: local SSDs.</li>
-     * <li>cloud_ssd: SSDs.</li>
-     * <li>cloud_essd: ESSDs.</li>
-     * </ul>
+     * local_ssd: local SSDs
+     * cloud_ssd: standard SSDs
+     * cloud_essd: ESSDs of performance level 1 (PL1)
+     * cloud_essd2: ESSDs of PL2
+     * cloud_essd3: ESSDs of PL3
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceStorageType() {
         return null;
@@ -106,9 +96,11 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property period: Prepaid time period.
+     * Property period: The subscription duration.
      * <p>
-     * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * Valid values:
+     * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+     * When PeriodType is Year, it could be from 1 to 5.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -266,14 +258,7 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getEngineVersion}
          * @param engineVersion Property engineVersion: The version of the database. This parameter is required.
-         *                      The database and the master instance must have the same database version. Valid values:
-         *                      <p>
-         *                      <ul>
-         *                      <li>5.6</li>
-         *                      <li>5.7</li>
-         *                      <li>8.0</li>
-         *                      <li>2017_ent</li>
-         *                      </ul>
+         *                      The database and the master instance must have the same database version. Valid values: 5.6, 5.7, 8.0, 2017_ent, 2019_ent
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -284,14 +269,7 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getEngineVersion}
          * @param engineVersion Property engineVersion: The version of the database. This parameter is required.
-         *                      The database and the master instance must have the same database version. Valid values:
-         *                      <p>
-         *                      <ul>
-         *                      <li>5.6</li>
-         *                      <li>5.7</li>
-         *                      <li>8.0</li>
-         *                      <li>2017_ent</li>
-         *                      </ul>
+         *                      The database and the master instance must have the same database version. Valid values: 5.6, 5.7, 8.0, 2017_ent, 2019_ent
          * @return {@code this}
          */
         public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
@@ -349,14 +327,12 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getCategory}
-         * @param category Property category: The edition of the instance.
+         * @param category Property category: The RDS edition of the read-only instance.
          *                 Valid values:
-         *                 <p>
-         *                 <ul>
-         *                 <li>Basic</li>
-         *                 <li>HighAvailability</li>
-         *                 <li>AlwaysOn</li>
-         *                 </ul>
+         *                 Basic: Basic Edition.
+         *                 HighAvailability: High-availability Edition. This is the default value.
+         *                 AlwaysOn: Cluster Edition.
+         *                 Finance: Enterprise Edition. This edition is available only on the China site (aliyun.com).
          * @return {@code this}
          */
         public Builder category(java.lang.String category) {
@@ -366,14 +342,12 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getCategory}
-         * @param category Property category: The edition of the instance.
+         * @param category Property category: The RDS edition of the read-only instance.
          *                 Valid values:
-         *                 <p>
-         *                 <ul>
-         *                 <li>Basic</li>
-         *                 <li>HighAvailability</li>
-         *                 <li>AlwaysOn</li>
-         *                 </ul>
+         *                 Basic: Basic Edition.
+         *                 HighAvailability: High-availability Edition. This is the default value.
+         *                 AlwaysOn: Cluster Edition.
+         *                 Finance: Enterprise Edition. This edition is available only on the China site (aliyun.com).
          * @return {@code this}
          */
         public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
@@ -403,14 +377,13 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceStorageType}
-         * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance.
+         * @param dbInstanceStorageType Property dbInstanceStorageType: The type of storage media that is used by the instance.
          *                              Valid values:
-         *                              <p>
-         *                              <ul>
-         *                              <li>local_ssd/ephemeral_ssd: local SSDs.</li>
-         *                              <li>cloud_ssd: SSDs.</li>
-         *                              <li>cloud_essd: ESSDs.</li>
-         *                              </ul>
+         *                              local_ssd: local SSDs
+         *                              cloud_ssd: standard SSDs
+         *                              cloud_essd: ESSDs of performance level 1 (PL1)
+         *                              cloud_essd2: ESSDs of PL2
+         *                              cloud_essd3: ESSDs of PL3
          * @return {@code this}
          */
         public Builder dbInstanceStorageType(java.lang.String dbInstanceStorageType) {
@@ -420,14 +393,13 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceStorageType}
-         * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance.
+         * @param dbInstanceStorageType Property dbInstanceStorageType: The type of storage media that is used by the instance.
          *                              Valid values:
-         *                              <p>
-         *                              <ul>
-         *                              <li>local_ssd/ephemeral_ssd: local SSDs.</li>
-         *                              <li>cloud_ssd: SSDs.</li>
-         *                              <li>cloud_essd: ESSDs.</li>
-         *                              </ul>
+         *                              local_ssd: local SSDs
+         *                              cloud_ssd: standard SSDs
+         *                              cloud_essd: ESSDs of performance level 1 (PL1)
+         *                              cloud_essd2: ESSDs of PL2
+         *                              cloud_essd3: ESSDs of PL3
          * @return {@code this}
          */
         public Builder dbInstanceStorageType(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorageType) {
@@ -459,8 +431,10 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPeriod}
-         * @param period Property period: Prepaid time period.
-         *               While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * @param period Property period: The subscription duration.
+         *               Valid values:
+         *               When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+         *               When PeriodType is Year, it could be from 1 to 5.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -470,8 +444,10 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPeriod}
-         * @param period Property period: Prepaid time period.
-         *               While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * @param period Property period: The subscription duration.
+         *               Valid values:
+         *               When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+         *               When PeriodType is Year, it could be from 1 to 5.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {

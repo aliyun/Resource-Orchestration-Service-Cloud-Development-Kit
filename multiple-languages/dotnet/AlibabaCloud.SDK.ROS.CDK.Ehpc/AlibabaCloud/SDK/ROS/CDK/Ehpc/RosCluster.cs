@@ -137,16 +137,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             set => SetInstanceProperty(value);
         }
 
-        /// <remarks>
-        /// <strong>Property</strong>: ehpcVersion: E-HPC product version numbers, currently supports 1.0.0
-        /// </remarks>
-        [JsiiProperty(name: "ehpcVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object EhpcVersion
-        {
-            get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
-        }
-
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         public virtual bool EnableResourcePropertyConstraint
         {
@@ -175,26 +165,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: volumeId: Ali cloud NAS instance Id. Currently it does not support automatic creation Ali cloud NAS instance.
-        /// </remarks>
-        [JsiiProperty(name: "volumeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object VolumeId
-        {
-            get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: volumeMountpoint: NAS vpc mount point. Currently it does not support automatic creation Ali cloud NAS mount point.
-        /// </remarks>
-        [JsiiProperty(name: "volumeMountpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object VolumeMountpoint
-        {
-            get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: vSwitchId: VPC in switch ID. Products currently only supports VPC network.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -205,11 +175,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: accountType: Domain service account types, currently supports nis.
+        /// <strong>Property</strong>: accountType: The service type of the domain account. Valid values:
+        /// nis
+        /// ldap
+        /// Default value: nis
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "accountType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? AccountType
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: additionalVolumes:
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "additionalVolumes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ehpc.RosCluster.AdditionalVolumesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? AdditionalVolumes
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -249,6 +233,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: clientVersion: The version of the E-HPC client. By default, the parameter is set to the latest version number.
+        /// You can call the ListCurrentClientVersion operation to query the current version of the E-HPC client.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "clientVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ClientVersion
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: computeEnableHt: Specifies whether the compute nodes support hyper-threading. Valid values:
+        /// true: Hyper-threading is supported.
+        /// false: Hyper-threading is not supported.
+        /// Default value: true
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "computeEnableHt", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ComputeEnableHt
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
         /// </remarks>
         [JsiiOptional]
@@ -271,12 +281,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: deployMode: Deployment mode:
-        /// Standard: account node + scheduling node + login node + computing node.
-        /// Advanced: HA mode.
-        /// Simple: (account + schedule) node + login node + compute node.
-        /// Tiny: (account + scheduling + login) node + compute node.
-        /// OneBox: (account + scheduling + login + compute) node + more compute nodes.
+        /// <strong>Property</strong>: deployMode: The mode in which the cluster is deployed. Valid values:
+        /// Standard: An account node, a scheduling node, a logon node, and multiple compute nodes are separately deployed.
+        /// Simple: A management node, a logon node, and multiple compute nodes are deployed. The management node consists of an account node and a scheduling node. The logon node and compute nodes are separately deployed.
+        /// Tiny: A management node and multiple compute nodes are deployed. The management node consists of an account node, a scheduling node, and a logon node. The compute nodes are separately deployed.
+        /// Default value: Standard
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deployMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -309,7 +318,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ecsOrderManagerCount: Control node number can be 1, 2, 4(HA)
+        /// <strong>Property</strong>: ecsOrderManagerCount: Control node number can be 1, 2
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ecsOrderManagerCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -320,7 +329,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: haEnable: Availability is turned on, when turned on, the role of each control cluster will use two standby instances.
+        /// <strong>Property</strong>: ehpcVersion: The version of E-HPC. By default, the parameter is set to the latest version number.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ehpcVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EhpcVersion
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: haEnable: Specifies whether to enable the high availability feature. Valid values:
+        /// true: enables the high availability feature
+        /// false: disables the high availability feature
+        /// Default value: false
+        /// Note If high availability is enabled, primary management nodes and secondary management nodes are used.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "haEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -353,7 +377,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: jobQueue: Computing node added queue
+        /// <strong>Property</strong>: inputFileUrl: The URL of the job files that are uploaded to an Object Storage Service (OSS) bucket.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "inputFileUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InputFileUrl
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: isComputeEss: Specifies whether to enable auto scaling. Valid values:
+        /// true: enables auto scaling
+        /// false: disables auto scaling
+        /// Default value: false
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "isComputeEss", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? IsComputeEss
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: jobQueue: 	The queue to which the compute nodes are added.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "jobQueue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -430,6 +479,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: remoteVisEnable: Specifies whether to enable Virtual Network Computing (VNC). Valid values:
+        /// true: enables VNC
+        /// false: disables VNC
+        /// Default value: false
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "remoteVisEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RemoteVisEnable
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
+        /// You can call the ListResourceGroups operation to obtain the ID of the resource group.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ResourceGroupId
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
         /// </remarks>
         [JsiiOptional]
@@ -441,7 +516,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: schedulerType: The scheduler type, currently support pbs.
+        /// <strong>Property</strong>: schedulerType: The type of the scheduler. Valid values:
+        /// pbs
+        /// slurm
+        /// opengridscheduler
+        /// deadline
+        /// Default value: pbs
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "schedulerType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -474,7 +554,78 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: volumeProtocol: Shared storage network protocols, currently only supports nfs.
+        /// <strong>Property</strong>: systemDiskLevel: The performance level of the ESSD that is created as the system disk. Valid values:
+        /// PL0: A single ESSD can deliver up to 10,000 input/output operations per second (IOPS) of random read/write.
+        /// PL1: A single ESSD can deliver up to 50,000 IOPS of random read/write.
+        /// PL2: A single ESSD can deliver up to 100,000 IOPS of random read/write.
+        /// PL3: A single ESSD can deliver up to 1,000,000 IOPS of random read/write.
+        /// Default value: PL1
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SystemDiskLevel
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: systemDiskSize: The size of the system disk. Unit: GB
+        /// Valid values: 40 to 500
+        /// Default value: 40
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SystemDiskSize
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: systemDiskType: The type of the system disk. Valid values:
+        /// cloud_efficiency: ultra disk.
+        /// cloud_ssd: SSD.
+        /// cloud_essd: ESSD.
+        /// Default value: cloud_ssd
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SystemDiskType
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: volumeId: The ID of the file system. If you leave the parameter empty, a Performance NAS file system is created by default.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "volumeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VolumeId
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: volumeMountpoint: The mount target of the file system. Take note of the following information:
+        /// If you do not specify the VolumeId parameter, you can leave the VolumeMountpoint parameter empty. A mount target is created by default.
+        /// If you specify the VolumeId parameter, the VolumeMountpoint parameter is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "volumeMountpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VolumeMountpoint
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: volumeProtocol: The type of the protocol that is used by the file system. Valid values:
+        /// nfs
+        /// smb
+        /// Default value: nfs
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "volumeProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -485,11 +636,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: volumeType: Network shared storage types, currently supports only Ali cloud NAS.
+        /// <strong>Property</strong>: volumeType: The type of the shared storage. Only Apsara File Storage nas file systems are supported.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "volumeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? VolumeType
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP). Default value: false
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "withoutElasticIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? WithoutElasticIp
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -504,6 +666,285 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
+        }
+        [JsiiInterface(nativeType: typeof(IAdditionalVolumesProperty), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.RosCluster.AdditionalVolumesProperty")]
+        public interface IAdditionalVolumesProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: localDirectory: The local directory to which the additional file system is mounted.
+            /// </remarks>
+            [JsiiProperty(name: "localDirectory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object LocalDirectory
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: volumeId: The ID of the additional file system.
+            /// </remarks>
+            [JsiiProperty(name: "volumeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object VolumeId
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: volumeMountpoint: The mount target of the additional file system.
+            /// </remarks>
+            [JsiiProperty(name: "volumeMountpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object VolumeMountpoint
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: jobQueue: The queue of the nodes to which the additional file system is attached.
+            /// </remarks>
+            [JsiiProperty(name: "jobQueue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? JobQueue
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: location: The type of the cluster. Valid value: PublicCloud.
+            /// </remarks>
+            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Location
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: remoteDirectory: The remote directory to which the additional file system is mounted.
+            /// </remarks>
+            [JsiiProperty(name: "remoteDirectory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RemoteDirectory
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: volumeProtocol: The type of the protocol that is used by the additional file system. Valid values:
+            /// nfs
+            /// smb
+            /// Default value: nfs
+            /// </remarks>
+            [JsiiProperty(name: "volumeProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VolumeProtocol
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: volumeType: The type of the additional shared storage. Only nas file systems are supported.
+            /// </remarks>
+            [JsiiProperty(name: "volumeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VolumeType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IAdditionalVolumesProperty), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.RosCluster.AdditionalVolumesProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ehpc.RosCluster.IAdditionalVolumesProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: localDirectory: The local directory to which the additional file system is mounted.
+                /// </remarks>
+                [JsiiProperty(name: "localDirectory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object LocalDirectory
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: volumeId: The ID of the additional file system.
+                /// </remarks>
+                [JsiiProperty(name: "volumeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object VolumeId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: volumeMountpoint: The mount target of the additional file system.
+                /// </remarks>
+                [JsiiProperty(name: "volumeMountpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object VolumeMountpoint
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: jobQueue: The queue of the nodes to which the additional file system is attached.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "jobQueue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? JobQueue
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: location: The type of the cluster. Valid value: PublicCloud.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Location
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: remoteDirectory: The remote directory to which the additional file system is mounted.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "remoteDirectory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RemoteDirectory
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: volumeProtocol: The type of the protocol that is used by the additional file system. Valid values:
+                /// nfs
+                /// smb
+                /// Default value: nfs
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "volumeProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VolumeProtocol
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: volumeType: The type of the additional shared storage. Only nas file systems are supported.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "volumeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VolumeType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ehpc.RosCluster.AdditionalVolumesProperty")]
+        public class AdditionalVolumesProperty : AlibabaCloud.SDK.ROS.CDK.Ehpc.RosCluster.IAdditionalVolumesProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: localDirectory: The local directory to which the additional file system is mounted.
+            /// </remarks>
+            [JsiiProperty(name: "localDirectory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LocalDirectory
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: volumeId: The ID of the additional file system.
+            /// </remarks>
+            [JsiiProperty(name: "volumeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VolumeId
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: volumeMountpoint: The mount target of the additional file system.
+            /// </remarks>
+            [JsiiProperty(name: "volumeMountpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VolumeMountpoint
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: jobQueue: The queue of the nodes to which the additional file system is attached.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "jobQueue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? JobQueue
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: location: The type of the cluster. Valid value: PublicCloud.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "location", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Location
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: remoteDirectory: The remote directory to which the additional file system is mounted.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "remoteDirectory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RemoteDirectory
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: volumeProtocol: The type of the protocol that is used by the additional file system. Valid values:
+            /// nfs
+            /// smb
+            /// Default value: nfs
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "volumeProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VolumeProtocol
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: volumeType: The type of the additional shared storage. Only nas file systems are supported.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "volumeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VolumeType
+            {
+                get;
+                set;
+            }
         }
         [JsiiInterface(nativeType: typeof(IApplicationProperty), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.RosCluster.ApplicationProperty")]
         public interface IApplicationProperty

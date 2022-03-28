@@ -61,6 +61,11 @@ export class RosAnyCluster extends ros.RosResource {
      */
 
     /**
+     * @Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
+
+    /**
      * @Attribute ClusterId: Cluster instance ID.
      */
     public readonly attrClusterId: ros.IResolvable;
@@ -122,6 +127,7 @@ export class RosAnyCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAnyClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAnyCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
         this.attrNodes = this.getAtt('Nodes');
@@ -1427,6 +1433,40 @@ export interface RosKubernetesClusterProps {
     readonly addons?: Array<RosKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
+     * true: automatic renewal
+     * false: do not renew automatically
+     * Default to true.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
+     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
+     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
+     * Default to 1.
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property chargeType: cluster payment type. The optional values are:
+     * PrePaid: prepaid
+     * PostPaid: Pay as you go
+     * Default to PostPaid.
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
+     * For more information, see CIS reinforcement.
+     * Valid values:
+     * true: enables CIS reinforcement.
+     * false: disables CIS reinforcement.
+     * Default value: false.
+     */
+    readonly cisEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -1445,6 +1485,15 @@ export interface RosKubernetesClusterProps {
     readonly cpuPolicy?: string | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property disableRollback: Whether the failure was rolled back:
      * true: indicates that it fails to roll back
      * false: rollback failed
@@ -1460,6 +1509,41 @@ export interface RosKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
+     * @Property formatDisk: Specifies whether to mount a data disk to nodes that are created 
+     * on existing Elastic Compute Service (ECS) instances. Valid values:
+     * true: stores the data of containers and images on a data disk. 
+     * The original data on the disk will be overwritten. 
+     * Back up data before you mount the disk.
+     * false: does not store the data of containers and images on a data disk.
+     * Default value: false.
+     * How to mount a data disk:
+     * If the ECS instances have data disks mounted and the file system of the last 
+     * data disk is not initialized, the system automatically formats the data disk to ext4. 
+     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * The system does not create or mount a new data disk if no data disk has been 
+     * mounted to the ECS instances.
+     */
+    readonly formatDisk?: boolean | ros.IResolvable;
+
+    /**
+     * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+
+    /**
+     * @Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+     * true: retains the names.
+     * false: does not retain the names. The new names are assigned by the system.
+     * Default value: true.
+     */
+    readonly keepInstanceName?: boolean | ros.IResolvable;
+
+    /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
     readonly keyPair?: string | ros.IResolvable;
@@ -1470,25 +1554,14 @@ export interface RosKubernetesClusterProps {
     readonly kubernetesVersion?: string | ros.IResolvable;
 
     /**
+     * @Property loadBalancerSpec: The specification of the Server Load Balancer instance. Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+     */
+    readonly loadBalancerSpec?: string | ros.IResolvable;
+
+    /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     readonly loginPassword?: string | ros.IResolvable;
-
-    /**
-     * @Property masterAutoRenew: Whether the master node automatically renews. It takes effect when the value of MasterInstanceChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.
-     */
-    readonly masterAutoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * @Property masterAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.
-     */
-    readonly masterAutoRenewPeriod?: number | ros.IResolvable;
 
     /**
      * @Property masterCount: Number of master instances. The value can be 3 or 5. The default value is 3.
@@ -1508,30 +1581,6 @@ export interface RosKubernetesClusterProps {
     readonly masterDataDisks?: Array<RosKubernetesCluster.MasterDataDisksProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property masterInstanceChargeType: Master node payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     */
-    readonly masterInstanceChargeType?: string | ros.IResolvable;
-
-    /**
-     * @Property masterPeriod: The duration of the annual subscription and monthly subscription. It takes effect when the master_instance_charge_type value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * Default to 1.
-     */
-    readonly masterPeriod?: number | ros.IResolvable;
-
-    /**
-     * @Property masterPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Default to Month
-     */
-    readonly masterPeriodUnit?: string | ros.IResolvable;
-
-    /**
      * @Property masterSystemDiskCategory: Master disk system disk type. The value includes:
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
@@ -1540,10 +1589,28 @@ export interface RosKubernetesClusterProps {
     readonly masterSystemDiskCategory?: string | ros.IResolvable;
 
     /**
+     * @Property masterSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the Master node.
+     * Valid values: PL0|PL1|PL2|PL3
+     */
+    readonly masterSystemDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
      * @Property masterSystemDiskSize: Master disk system disk size in GiB.
      * Default to 120.
      */
     readonly masterSystemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * @Property masterSystemDiskSnapshotPolicyId: The ID of the policy that is used to back up the data disk of the master node.
+     */
+    readonly masterSystemDiskSnapshotPolicyId?: string | ros.IResolvable;
+
+    /**
+     * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
+     * This number is determined by the specified pod CIDR block. 
+     * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+     */
+    readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
      * @Property nodePortRange: Node service port. The value range is [30000, 65535].
@@ -1556,6 +1623,42 @@ export interface RosKubernetesClusterProps {
      * Default to 3.
      */
     readonly numOfNodes?: number | ros.IResolvable;
+
+    /**
+     * @Property osType: The type of operating system. Valid values:
+     * Windows
+     * Linux
+     * Default value: Linux.
+     */
+    readonly osType?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * Default to 1.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Default to Month
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property platform: The release version of the operating system. Valid values:
+     * CentOS
+     * AliyunLinux
+     * QbootAliyunLinux
+     * Qboot
+     * Windows
+     * WindowsCore
+     * Default value: CentOS.
+     */
+    readonly platform?: string | ros.IResolvable;
 
     /**
      * @Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
@@ -1604,6 +1707,14 @@ export interface RosKubernetesClusterProps {
     readonly snatEntry?: boolean | ros.IResolvable;
 
     /**
+     * @Property socEnabled: Valid values:
+     * true: enables reinforcement based on classified protection.
+     * false: disables reinforcement based on classified protection.
+     * Default value: false.
+     */
+    readonly socEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property sshFlags: Whether to enable public network SSH login:
      * true: open
      * false: not open
@@ -1626,20 +1737,19 @@ export interface RosKubernetesClusterProps {
     readonly timeoutMins?: number | ros.IResolvable;
 
     /**
-     * @Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.
+     * @Property timeZone: The time zone of the cluster.
      */
-    readonly workerAutoRenew?: boolean | ros.IResolvable;
+    readonly timeZone?: string | ros.IResolvable;
 
     /**
-     * @Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.
+     * @Property userCa: The CA of cluster
      */
-    readonly workerAutoRenewPeriod?: number | ros.IResolvable;
+    readonly userCa?: string | ros.IResolvable;
+
+    /**
+     * @Property userData: The user-defined data. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+     */
+    readonly userData?: string | ros.IResolvable;
 
     /**
      * @Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -1655,30 +1765,6 @@ export interface RosKubernetesClusterProps {
     readonly workerDataDisks?: Array<RosKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property workerInstanceChargeType: Worker node payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     */
-    readonly workerInstanceChargeType?: string | ros.IResolvable;
-
-    /**
-     * @Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * Default to 1.
-     */
-    readonly workerPeriod?: number | ros.IResolvable;
-
-    /**
-     * @Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Default to Month.
-     */
-    readonly workerPeriodUnit?: string | ros.IResolvable;
-
-    /**
      * @Property workerSystemDiskCategory: Worker node system disk type. The value includes:
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
@@ -1691,6 +1777,11 @@ export interface RosKubernetesClusterProps {
      * Default to 120.
      */
     readonly workerSystemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * @Property workerSystemDiskSnapshotPolicyId: The ID of the policy that is used to back up the data disk of the worker node.
+     */
+    readonly workerSystemDiskSnapshotPolicyId?: string | ros.IResolvable;
 }
 
 /**
@@ -1704,22 +1795,64 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
-    if(properties.workerPeriod && (typeof properties.workerPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('workerPeriod', ros.validateAllowedValues)({
-          data: properties.workerPeriod,
+    errors.collect(ros.propertyValidator('socEnabled', ros.validateBoolean)(properties.socEnabled));
+    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('masterSystemDiskCategory', ros.validateString)(properties.masterSystemDiskCategory));
+    if(properties.masterCount && (typeof properties.masterCount) !== 'object') {
+        errors.collect(ros.propertyValidator('masterCount', ros.validateAllowedValues)({
+          data: properties.masterCount,
+          allowedValues: [3,5],
+        }));
+    }
+    errors.collect(ros.propertyValidator('masterCount', ros.validateNumber)(properties.masterCount));
+    errors.collect(ros.propertyValidator('sshFlags', ros.validateBoolean)(properties.sshFlags));
+    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
+    errors.collect(ros.propertyValidator('masterDataDisks', ros.listValidator(RosKubernetesCluster_MasterDataDisksPropertyValidator))(properties.masterDataDisks));
+    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('runtime', RosKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
+    if(properties.osType && (typeof properties.osType) !== 'object') {
+        errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
+          data: properties.osType,
+          allowedValues: ["Windows","Linux"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
+    errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
+    errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
+    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
+    errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
           allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
         }));
     }
-    errors.collect(ros.propertyValidator('workerPeriod', ros.validateNumber)(properties.workerPeriod));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    if(properties.workerPeriodUnit && (typeof properties.workerPeriodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('workerPeriodUnit', ros.validateAllowedValues)({
-          data: properties.workerPeriodUnit,
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('userCa', ros.validateString)(properties.userCa));
+    errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    errors.collect(ros.propertyValidator('masterDataDisk', ros.validateBoolean)(properties.masterDataDisk));
+    errors.collect(ros.propertyValidator('masterSystemDiskSnapshotPolicyId', ros.validateString)(properties.masterSystemDiskSnapshotPolicyId));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
           allowedValues: ["Week","Month"],
         }));
     }
-    errors.collect(ros.propertyValidator('workerPeriodUnit', ros.validateString)(properties.workerPeriodUnit));
-    errors.collect(ros.propertyValidator('masterSystemDiskCategory', ros.validateString)(properties.masterSystemDiskCategory));
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('formatDisk', ros.validateBoolean)(properties.formatDisk));
+    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosKubernetesCluster_AddonsPropertyValidator))(properties.addons));
     if(properties.masterSystemDiskSize && (typeof properties.masterSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('masterSystemDiskSize', ros.validateRange)({
@@ -1730,6 +1863,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('masterSystemDiskSize', ros.validateNumber)(properties.masterSystemDiskSize));
     errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
+    errors.collect(ros.propertyValidator('nodePortRange', ros.validateString)(properties.nodePortRange));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -1738,15 +1872,6 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
-    errors.collect(ros.propertyValidator('nodePortRange', ros.validateString)(properties.nodePortRange));
-    if(properties.masterCount && (typeof properties.masterCount) !== 'object') {
-        errors.collect(ros.propertyValidator('masterCount', ros.validateAllowedValues)({
-          data: properties.masterCount,
-          allowedValues: [3,5],
-        }));
-    }
-    errors.collect(ros.propertyValidator('masterCount', ros.validateNumber)(properties.masterCount));
-    errors.collect(ros.propertyValidator('sshFlags', ros.validateBoolean)(properties.sshFlags));
     errors.collect(ros.propertyValidator('masterVSwitchIds', ros.requiredValidator)(properties.masterVSwitchIds));
     if(properties.masterVSwitchIds && (Array.isArray(properties.masterVSwitchIds) || (typeof properties.masterVSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('masterVSwitchIds', ros.validateLength)({
@@ -1756,18 +1881,9 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('masterVSwitchIds', ros.listValidator(ros.validateAny))(properties.masterVSwitchIds));
-    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
-    errors.collect(ros.propertyValidator('masterDataDisks', ros.listValidator(RosKubernetesCluster_MasterDataDisksPropertyValidator))(properties.masterDataDisks));
-    errors.collect(ros.propertyValidator('runtime', RosKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
-    errors.collect(ros.propertyValidator('workerAutoRenew', ros.validateBoolean)(properties.workerAutoRenew));
-    errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('workerInstanceTypes', ros.requiredValidator)(properties.workerInstanceTypes));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('workerInstanceTypes', ros.validateLength)({
@@ -1778,31 +1894,14 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('workerInstanceTypes', ros.listValidator(ros.validateString))(properties.workerInstanceTypes));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
-    if(properties.masterPeriod && (typeof properties.masterPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('masterPeriod', ros.validateAllowedValues)({
-          data: properties.masterPeriod,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriod,
+          allowedValues: [1,2,3,6,12],
         }));
     }
-    errors.collect(ros.propertyValidator('masterPeriod', ros.validateNumber)(properties.masterPeriod));
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
-    if(properties.masterInstanceChargeType && (typeof properties.masterInstanceChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('masterInstanceChargeType', ros.validateAllowedValues)({
-          data: properties.masterInstanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('masterInstanceChargeType', ros.validateString)(properties.masterInstanceChargeType));
-    errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
-    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
-    if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
-          data: properties.workerInstanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
-    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('masterInstanceTypes', ros.requiredValidator)(properties.masterInstanceTypes));
     if(properties.masterInstanceTypes && (Array.isArray(properties.masterInstanceTypes) || (typeof properties.masterInstanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('masterInstanceTypes', ros.validateLength)({
@@ -1812,26 +1911,12 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('masterInstanceTypes', ros.listValidator(ros.validateAny))(properties.masterInstanceTypes));
+    errors.collect(ros.propertyValidator('masterSystemDiskPerformanceLevel', ros.validateString)(properties.masterSystemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('workerDataDisks', ros.listValidator(RosKubernetesCluster_WorkerDataDisksPropertyValidator))(properties.workerDataDisks));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
-    if(properties.masterPeriodUnit && (typeof properties.masterPeriodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('masterPeriodUnit', ros.validateAllowedValues)({
-          data: properties.masterPeriodUnit,
-          allowedValues: ["Week","Month"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('masterPeriodUnit', ros.validateString)(properties.masterPeriodUnit));
-    if(properties.masterAutoRenewPeriod && (typeof properties.masterAutoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('masterAutoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.masterAutoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
-        }));
-    }
-    errors.collect(ros.propertyValidator('masterAutoRenewPeriod', ros.validateNumber)(properties.masterAutoRenewPeriod));
+    errors.collect(ros.propertyValidator('cisEnabled', ros.validateBoolean)(properties.cisEnabled));
     errors.collect(ros.propertyValidator('workerDataDisk', ros.validateBoolean)(properties.workerDataDisk));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.numOfNodes && (typeof properties.numOfNodes) !== 'object') {
         errors.collect(ros.propertyValidator('numOfNodes', ros.validateRange)({
             data: properties.numOfNodes,
@@ -1840,14 +1925,15 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
-    errors.collect(ros.propertyValidator('masterAutoRenew', ros.validateBoolean)(properties.masterAutoRenew));
-    if(properties.workerAutoRenewPeriod && (typeof properties.workerAutoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('workerAutoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.workerAutoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
+    errors.collect(ros.propertyValidator('keepInstanceName', ros.validateBoolean)(properties.keepInstanceName));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
-    errors.collect(ros.propertyValidator('workerAutoRenewPeriod', ros.validateNumber)(properties.workerAutoRenewPeriod));
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('workerSystemDiskSnapshotPolicyId', ros.validateString)(properties.workerSystemDiskSnapshotPolicyId));
     errors.collect(ros.propertyValidator('workerVSwitchIds', ros.requiredValidator)(properties.workerVSwitchIds));
     if(properties.workerVSwitchIds && (Array.isArray(properties.workerVSwitchIds) || (typeof properties.workerVSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('workerVSwitchIds', ros.validateLength)({
@@ -1857,8 +1943,6 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('workerVSwitchIds', ros.listValidator(ros.validateAny))(properties.workerVSwitchIds));
-    errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
-    errors.collect(ros.propertyValidator('masterDataDisk', ros.validateBoolean)(properties.masterDataDisk));
     return errors.wrap('supplied properties not correct for "RosKubernetesClusterProps"');
 }
 
@@ -1883,26 +1967,37 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       WorkerInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.workerInstanceTypes),
       WorkerVSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.workerVSwitchIds),
       Addons: ros.listMapper(rosKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      CisEnabled: ros.booleanToRosTemplate(properties.cisEnabled),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
       CpuPolicy: ros.stringToRosTemplate(properties.cpuPolicy),
+      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
       EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
+      FormatDisk: ros.booleanToRosTemplate(properties.formatDisk),
+      IsEnterpriseSecurityGroup: ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
+      KeepInstanceName: ros.booleanToRosTemplate(properties.keepInstanceName),
       KeyPair: ros.stringToRosTemplate(properties.keyPair),
       KubernetesVersion: ros.stringToRosTemplate(properties.kubernetesVersion),
+      LoadBalancerSpec: ros.stringToRosTemplate(properties.loadBalancerSpec),
       LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
-      MasterAutoRenew: ros.booleanToRosTemplate(properties.masterAutoRenew),
-      MasterAutoRenewPeriod: ros.numberToRosTemplate(properties.masterAutoRenewPeriod),
       MasterCount: ros.numberToRosTemplate(properties.masterCount),
       MasterDataDisk: ros.booleanToRosTemplate(properties.masterDataDisk),
       MasterDataDisks: ros.listMapper(rosKubernetesClusterMasterDataDisksPropertyToRosTemplate)(properties.masterDataDisks),
-      MasterInstanceChargeType: ros.stringToRosTemplate(properties.masterInstanceChargeType),
-      MasterPeriod: ros.numberToRosTemplate(properties.masterPeriod),
-      MasterPeriodUnit: ros.stringToRosTemplate(properties.masterPeriodUnit),
       MasterSystemDiskCategory: ros.stringToRosTemplate(properties.masterSystemDiskCategory),
+      MasterSystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.masterSystemDiskPerformanceLevel),
       MasterSystemDiskSize: ros.numberToRosTemplate(properties.masterSystemDiskSize),
+      MasterSystemDiskSnapshotPolicyId: ros.stringToRosTemplate(properties.masterSystemDiskSnapshotPolicyId),
+      NodeCidrMask: ros.stringToRosTemplate(properties.nodeCidrMask),
       NodePortRange: ros.stringToRosTemplate(properties.nodePortRange),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
+      OsType: ros.stringToRosTemplate(properties.osType),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      Platform: ros.stringToRosTemplate(properties.platform),
       PodVswitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -1910,19 +2005,19 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
+      SocEnabled: ros.booleanToRosTemplate(properties.socEnabled),
       SshFlags: ros.booleanToRosTemplate(properties.sshFlags),
       Tags: ros.listMapper(rosKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
       Taint: ros.listMapper(ros.anyDictToRosTemplate)(properties.taint),
       TimeoutMins: ros.numberToRosTemplate(properties.timeoutMins),
-      WorkerAutoRenew: ros.booleanToRosTemplate(properties.workerAutoRenew),
-      WorkerAutoRenewPeriod: ros.numberToRosTemplate(properties.workerAutoRenewPeriod),
+      TimeZone: ros.stringToRosTemplate(properties.timeZone),
+      UserCa: ros.stringToRosTemplate(properties.userCa),
+      UserData: ros.stringToRosTemplate(properties.userData),
       WorkerDataDisk: ros.booleanToRosTemplate(properties.workerDataDisk),
       WorkerDataDisks: ros.listMapper(rosKubernetesClusterWorkerDataDisksPropertyToRosTemplate)(properties.workerDataDisks),
-      WorkerInstanceChargeType: ros.stringToRosTemplate(properties.workerInstanceChargeType),
-      WorkerPeriod: ros.numberToRosTemplate(properties.workerPeriod),
-      WorkerPeriodUnit: ros.stringToRosTemplate(properties.workerPeriodUnit),
       WorkerSystemDiskCategory: ros.stringToRosTemplate(properties.workerSystemDiskCategory),
       WorkerSystemDiskSize: ros.numberToRosTemplate(properties.workerSystemDiskSize),
+      WorkerSystemDiskSnapshotPolicyId: ros.stringToRosTemplate(properties.workerSystemDiskSnapshotPolicyId),
     };
 }
 
@@ -1939,6 +2034,11 @@ export class RosKubernetesCluster extends ros.RosResource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource.
      */
+
+    /**
+     * @Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
 
     /**
      * @Attribute ClusterId: Cluster instance ID.
@@ -2028,6 +2128,40 @@ export class RosKubernetesCluster extends ros.RosResource {
     public addons: Array<RosKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
+     * true: automatic renewal
+     * false: do not renew automatically
+     * Default to true.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
+     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
+     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
+     * Default to 1.
+     */
+    public autoRenewPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property chargeType: cluster payment type. The optional values are:
+     * PrePaid: prepaid
+     * PostPaid: Pay as you go
+     * Default to PostPaid.
+     */
+    public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
+     * For more information, see CIS reinforcement.
+     * Valid values:
+     * true: enables CIS reinforcement.
+     * false: disables CIS reinforcement.
+     * Default value: false.
+     */
+    public cisEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -2046,6 +2180,15 @@ export class RosKubernetesCluster extends ros.RosResource {
     public cpuPolicy: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property disableRollback: Whether the failure was rolled back:
      * true: indicates that it fails to roll back
      * false: rollback failed
@@ -2061,6 +2204,41 @@ export class RosKubernetesCluster extends ros.RosResource {
     public endpointPublicAccess: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property formatDisk: Specifies whether to mount a data disk to nodes that are created 
+     * on existing Elastic Compute Service (ECS) instances. Valid values:
+     * true: stores the data of containers and images on a data disk. 
+     * The original data on the disk will be overwritten. 
+     * Back up data before you mount the disk.
+     * false: does not store the data of containers and images on a data disk.
+     * Default value: false.
+     * How to mount a data disk:
+     * If the ECS instances have data disks mounted and the file system of the last 
+     * data disk is not initialized, the system automatically formats the data disk to ext4. 
+     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * The system does not create or mount a new data disk if no data disk has been 
+     * mounted to the ECS instances.
+     */
+    public formatDisk: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    public isEnterpriseSecurityGroup: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+     * true: retains the names.
+     * false: does not retain the names. The new names are assigned by the system.
+     * Default value: true.
+     */
+    public keepInstanceName: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
     public keyPair: string | ros.IResolvable | undefined;
@@ -2071,25 +2249,14 @@ export class RosKubernetesCluster extends ros.RosResource {
     public kubernetesVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property loadBalancerSpec: The specification of the Server Load Balancer instance. Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+     */
+    public loadBalancerSpec: string | ros.IResolvable | undefined;
+
+    /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     public loginPassword: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property masterAutoRenew: Whether the master node automatically renews. It takes effect when the value of MasterInstanceChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.
-     */
-    public masterAutoRenew: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property masterAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.
-     */
-    public masterAutoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property masterCount: Number of master instances. The value can be 3 or 5. The default value is 3.
@@ -2109,30 +2276,6 @@ export class RosKubernetesCluster extends ros.RosResource {
     public masterDataDisks: Array<RosKubernetesCluster.MasterDataDisksProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property masterInstanceChargeType: Master node payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     */
-    public masterInstanceChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property masterPeriod: The duration of the annual subscription and monthly subscription. It takes effect when the master_instance_charge_type value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * Default to 1.
-     */
-    public masterPeriod: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property masterPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Default to Month
-     */
-    public masterPeriodUnit: string | ros.IResolvable | undefined;
-
-    /**
      * @Property masterSystemDiskCategory: Master disk system disk type. The value includes:
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
@@ -2141,10 +2284,28 @@ export class RosKubernetesCluster extends ros.RosResource {
     public masterSystemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
+     * @Property masterSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the Master node.
+     * Valid values: PL0|PL1|PL2|PL3
+     */
+    public masterSystemDiskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
      * @Property masterSystemDiskSize: Master disk system disk size in GiB.
      * Default to 120.
      */
     public masterSystemDiskSize: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property masterSystemDiskSnapshotPolicyId: The ID of the policy that is used to back up the data disk of the master node.
+     */
+    public masterSystemDiskSnapshotPolicyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
+     * This number is determined by the specified pod CIDR block. 
+     * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+     */
+    public nodeCidrMask: string | ros.IResolvable | undefined;
 
     /**
      * @Property nodePortRange: Node service port. The value range is [30000, 65535].
@@ -2157,6 +2318,42 @@ export class RosKubernetesCluster extends ros.RosResource {
      * Default to 3.
      */
     public numOfNodes: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property osType: The type of operating system. Valid values:
+     * Windows
+     * Linux
+     * Default value: Linux.
+     */
+    public osType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * Default to 1.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Default to Month
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property platform: The release version of the operating system. Valid values:
+     * CentOS
+     * AliyunLinux
+     * QbootAliyunLinux
+     * Qboot
+     * Windows
+     * WindowsCore
+     * Default value: CentOS.
+     */
+    public platform: string | ros.IResolvable | undefined;
 
     /**
      * @Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
@@ -2205,6 +2402,14 @@ export class RosKubernetesCluster extends ros.RosResource {
     public snatEntry: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property socEnabled: Valid values:
+     * true: enables reinforcement based on classified protection.
+     * false: disables reinforcement based on classified protection.
+     * Default value: false.
+     */
+    public socEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property sshFlags: Whether to enable public network SSH login:
      * true: open
      * false: not open
@@ -2227,20 +2432,19 @@ export class RosKubernetesCluster extends ros.RosResource {
     public timeoutMins: number | ros.IResolvable | undefined;
 
     /**
-     * @Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.
+     * @Property timeZone: The time zone of the cluster.
      */
-    public workerAutoRenew: boolean | ros.IResolvable | undefined;
+    public timeZone: string | ros.IResolvable | undefined;
 
     /**
-     * @Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.
+     * @Property userCa: The CA of cluster
      */
-    public workerAutoRenewPeriod: number | ros.IResolvable | undefined;
+    public userCa: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property userData: The user-defined data. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+     */
+    public userData: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -2254,30 +2458,6 @@ export class RosKubernetesCluster extends ros.RosResource {
      * @Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
      */
     public workerDataDisks: Array<RosKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property workerInstanceChargeType: Worker node payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     */
-    public workerInstanceChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * Default to 1.
-     */
-    public workerPeriod: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Default to Month.
-     */
-    public workerPeriodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. The value includes:
@@ -2294,6 +2474,11 @@ export class RosKubernetesCluster extends ros.RosResource {
     public workerSystemDiskSize: number | ros.IResolvable | undefined;
 
     /**
+     * @Property workerSystemDiskSnapshotPolicyId: The ID of the policy that is used to back up the data disk of the worker node.
+     */
+    public workerSystemDiskSnapshotPolicyId: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::CS::KubernetesCluster`.
      *
      * @param scope - scope in which this resource is defined
@@ -2302,6 +2487,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
         this.attrNodes = this.getAtt('Nodes');
@@ -2320,26 +2506,37 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.workerInstanceTypes = props.workerInstanceTypes;
         this.workerVSwitchIds = props.workerVSwitchIds;
         this.addons = props.addons;
+        this.autoRenew = props.autoRenew;
+        this.autoRenewPeriod = props.autoRenewPeriod;
+        this.chargeType = props.chargeType;
+        this.cisEnabled = props.cisEnabled;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.containerCidr = props.containerCidr;
         this.cpuPolicy = props.cpuPolicy;
+        this.deletionProtection = props.deletionProtection;
         this.disableRollback = props.disableRollback;
         this.endpointPublicAccess = props.endpointPublicAccess;
+        this.formatDisk = props.formatDisk;
+        this.isEnterpriseSecurityGroup = props.isEnterpriseSecurityGroup;
+        this.keepInstanceName = props.keepInstanceName;
         this.keyPair = props.keyPair;
         this.kubernetesVersion = props.kubernetesVersion;
+        this.loadBalancerSpec = props.loadBalancerSpec;
         this.loginPassword = props.loginPassword;
-        this.masterAutoRenew = props.masterAutoRenew;
-        this.masterAutoRenewPeriod = props.masterAutoRenewPeriod;
         this.masterCount = props.masterCount;
         this.masterDataDisk = props.masterDataDisk;
         this.masterDataDisks = props.masterDataDisks;
-        this.masterInstanceChargeType = props.masterInstanceChargeType;
-        this.masterPeriod = props.masterPeriod;
-        this.masterPeriodUnit = props.masterPeriodUnit;
         this.masterSystemDiskCategory = props.masterSystemDiskCategory;
+        this.masterSystemDiskPerformanceLevel = props.masterSystemDiskPerformanceLevel;
         this.masterSystemDiskSize = props.masterSystemDiskSize;
+        this.masterSystemDiskSnapshotPolicyId = props.masterSystemDiskSnapshotPolicyId;
+        this.nodeCidrMask = props.nodeCidrMask;
         this.nodePortRange = props.nodePortRange;
         this.numOfNodes = props.numOfNodes;
+        this.osType = props.osType;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.platform = props.platform;
         this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
         this.resourceGroupId = props.resourceGroupId;
@@ -2347,19 +2544,19 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
+        this.socEnabled = props.socEnabled;
         this.sshFlags = props.sshFlags;
         this.tags = props.tags;
         this.taint = props.taint;
         this.timeoutMins = props.timeoutMins;
-        this.workerAutoRenew = props.workerAutoRenew;
-        this.workerAutoRenewPeriod = props.workerAutoRenewPeriod;
+        this.timeZone = props.timeZone;
+        this.userCa = props.userCa;
+        this.userData = props.userData;
         this.workerDataDisk = props.workerDataDisk;
         this.workerDataDisks = props.workerDataDisks;
-        this.workerInstanceChargeType = props.workerInstanceChargeType;
-        this.workerPeriod = props.workerPeriod;
-        this.workerPeriodUnit = props.workerPeriodUnit;
         this.workerSystemDiskCategory = props.workerSystemDiskCategory;
         this.workerSystemDiskSize = props.workerSystemDiskSize;
+        this.workerSystemDiskSnapshotPolicyId = props.workerSystemDiskSnapshotPolicyId;
     }
 
 
@@ -2372,26 +2569,37 @@ export class RosKubernetesCluster extends ros.RosResource {
             workerInstanceTypes: this.workerInstanceTypes,
             workerVSwitchIds: this.workerVSwitchIds,
             addons: this.addons,
+            autoRenew: this.autoRenew,
+            autoRenewPeriod: this.autoRenewPeriod,
+            chargeType: this.chargeType,
+            cisEnabled: this.cisEnabled,
             cloudMonitorFlags: this.cloudMonitorFlags,
             containerCidr: this.containerCidr,
             cpuPolicy: this.cpuPolicy,
+            deletionProtection: this.deletionProtection,
             disableRollback: this.disableRollback,
             endpointPublicAccess: this.endpointPublicAccess,
+            formatDisk: this.formatDisk,
+            isEnterpriseSecurityGroup: this.isEnterpriseSecurityGroup,
+            keepInstanceName: this.keepInstanceName,
             keyPair: this.keyPair,
             kubernetesVersion: this.kubernetesVersion,
+            loadBalancerSpec: this.loadBalancerSpec,
             loginPassword: this.loginPassword,
-            masterAutoRenew: this.masterAutoRenew,
-            masterAutoRenewPeriod: this.masterAutoRenewPeriod,
             masterCount: this.masterCount,
             masterDataDisk: this.masterDataDisk,
             masterDataDisks: this.masterDataDisks,
-            masterInstanceChargeType: this.masterInstanceChargeType,
-            masterPeriod: this.masterPeriod,
-            masterPeriodUnit: this.masterPeriodUnit,
             masterSystemDiskCategory: this.masterSystemDiskCategory,
+            masterSystemDiskPerformanceLevel: this.masterSystemDiskPerformanceLevel,
             masterSystemDiskSize: this.masterSystemDiskSize,
+            masterSystemDiskSnapshotPolicyId: this.masterSystemDiskSnapshotPolicyId,
+            nodeCidrMask: this.nodeCidrMask,
             nodePortRange: this.nodePortRange,
             numOfNodes: this.numOfNodes,
+            osType: this.osType,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            platform: this.platform,
             podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
             resourceGroupId: this.resourceGroupId,
@@ -2399,19 +2607,19 @@ export class RosKubernetesCluster extends ros.RosResource {
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
+            socEnabled: this.socEnabled,
             sshFlags: this.sshFlags,
             tags: this.tags,
             taint: this.taint,
             timeoutMins: this.timeoutMins,
-            workerAutoRenew: this.workerAutoRenew,
-            workerAutoRenewPeriod: this.workerAutoRenewPeriod,
+            timeZone: this.timeZone,
+            userCa: this.userCa,
+            userData: this.userData,
             workerDataDisk: this.workerDataDisk,
             workerDataDisks: this.workerDataDisks,
-            workerInstanceChargeType: this.workerInstanceChargeType,
-            workerPeriod: this.workerPeriod,
-            workerPeriodUnit: this.workerPeriodUnit,
             workerSystemDiskCategory: this.workerSystemDiskCategory,
             workerSystemDiskSize: this.workerSystemDiskSize,
+            workerSystemDiskSnapshotPolicyId: this.workerSystemDiskSnapshotPolicyId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -2708,6 +2916,30 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
+     * true: automatic renewal
+     * false: do not renew automatically
+     * Default to true.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
+     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
+     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
+     * Default to 1.
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property chargeType: cluster payment type. The optional values are:
+     * PrePaid: prepaid
+     * PostPaid: Pay as you go
+     * Default to PostPaid.
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -2729,6 +2961,15 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly containerCidr?: string | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property disableRollback: Whether the failure was rolled back:
      * true: indicates that it fails to roll back
      * false: rollback failed
@@ -2744,6 +2985,16 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
+     * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+
+    /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
     readonly keyPair?: string | ros.IResolvable;
@@ -2752,6 +3003,29 @@ export interface RosManagedEdgeKubernetesClusterProps {
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     readonly loginPassword?: string | ros.IResolvable;
+
+    /**
+     * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
+     * This number is determined by the specified pod CIDR block. 
+     * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+     */
+    readonly nodeCidrMask?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * Default to 1.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Default to Month
+     */
+    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * @Property profile: Edge cluster ID. The default value is Edge.
@@ -2846,20 +3120,8 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
-    errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
-    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
-    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
-        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
-            data: properties.vSwitchIds.length,
-            min: 1,
-            max: 5,
-          }));
-    }
-    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
-    errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedEdgeKubernetesCluster_AddonsPropertyValidator))(properties.addons));
-    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
-    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -2868,11 +3130,11 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
+    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     errors.collect(ros.propertyValidator('profile', ros.validateString)(properties.profile));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('workerDataDisk', ros.validateBoolean)(properties.workerDataDisk));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
     if(properties.workerDataDiskSize && (typeof properties.workerDataDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerDataDiskSize', ros.validateRange)({
             data: properties.workerDataDiskSize,
@@ -2882,21 +3144,10 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     }
     errors.collect(ros.propertyValidator('workerDataDiskSize', ros.validateNumber)(properties.workerDataDiskSize));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
-    errors.collect(ros.propertyValidator('numOfNodes', ros.requiredValidator)(properties.numOfNodes));
-    if(properties.numOfNodes && (typeof properties.numOfNodes) !== 'object') {
-        errors.collect(ros.propertyValidator('numOfNodes', ros.validateRange)({
-            data: properties.numOfNodes,
-            min: 0,
-            max: 300,
-          }));
-    }
-    errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
-    errors.collect(ros.propertyValidator('workerDataDiskCategory', ros.validateString)(properties.workerDataDiskCategory));
-    errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('workerInstanceTypes', ros.validateLength)({
             data: properties.workerInstanceTypes.length,
@@ -2906,6 +3157,61 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     }
     errors.collect(ros.propertyValidator('workerInstanceTypes', ros.listValidator(ros.validateString))(properties.workerInstanceTypes));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriod,
+          allowedValues: [1,2,3,6,12],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
+    errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('workerDataDisk', ros.validateBoolean)(properties.workerDataDisk));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('numOfNodes', ros.requiredValidator)(properties.numOfNodes));
+    if(properties.numOfNodes && (typeof properties.numOfNodes) !== 'object') {
+        errors.collect(ros.propertyValidator('numOfNodes', ros.validateRange)({
+            data: properties.numOfNodes,
+            min: 0,
+            max: 300,
+          }));
+    }
+    errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('workerDataDiskCategory', ros.validateString)(properties.workerDataDiskCategory));
+    errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Week","Month"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosManagedEdgeKubernetesClusterProps"');
 }
 
@@ -2926,13 +3232,21 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       Name: ros.stringToRosTemplate(properties.name),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
       Addons: ros.listMapper(rosManagedEdgeKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       ClusterSpec: ros.stringToRosTemplate(properties.clusterSpec),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
+      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
       EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
+      IsEnterpriseSecurityGroup: ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
       KeyPair: ros.stringToRosTemplate(properties.keyPair),
       LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
+      NodeCidrMask: ros.stringToRosTemplate(properties.nodeCidrMask),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       Profile: ros.stringToRosTemplate(properties.profile),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
@@ -2963,6 +3277,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource.
      */
+
+    /**
+     * @Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
 
     /**
      * @Attribute ClusterId: Cluster instance ID.
@@ -3028,6 +3347,30 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public addons: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
+     * true: automatic renewal
+     * false: do not renew automatically
+     * Default to true.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
+     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
+     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
+     * Default to 1.
+     */
+    public autoRenewPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property chargeType: cluster payment type. The optional values are:
+     * PrePaid: prepaid
+     * PostPaid: Pay as you go
+     * Default to PostPaid.
+     */
+    public chargeType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -3049,6 +3392,15 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public containerCidr: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property disableRollback: Whether the failure was rolled back:
      * true: indicates that it fails to roll back
      * false: rollback failed
@@ -3064,6 +3416,16 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public endpointPublicAccess: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    public isEnterpriseSecurityGroup: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
     public keyPair: string | ros.IResolvable | undefined;
@@ -3072,6 +3434,29 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     public loginPassword: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
+     * This number is determined by the specified pod CIDR block. 
+     * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+     */
+    public nodeCidrMask: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * Default to 1.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Default to Month
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property profile: Edge cluster ID. The default value is Edge.
@@ -3163,6 +3548,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosManagedEdgeKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosManagedEdgeKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
         this.attrNodes = this.getAtt('Nodes');
@@ -3177,13 +3563,21 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.name = props.name;
         this.numOfNodes = props.numOfNodes;
         this.addons = props.addons;
+        this.autoRenew = props.autoRenew;
+        this.autoRenewPeriod = props.autoRenewPeriod;
+        this.chargeType = props.chargeType;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
+        this.deletionProtection = props.deletionProtection;
         this.disableRollback = props.disableRollback;
         this.endpointPublicAccess = props.endpointPublicAccess;
+        this.isEnterpriseSecurityGroup = props.isEnterpriseSecurityGroup;
         this.keyPair = props.keyPair;
         this.loginPassword = props.loginPassword;
+        this.nodeCidrMask = props.nodeCidrMask;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
         this.profile = props.profile;
         this.proxyMode = props.proxyMode;
         this.serviceCidr = props.serviceCidr;
@@ -3206,13 +3600,21 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             name: this.name,
             numOfNodes: this.numOfNodes,
             addons: this.addons,
+            autoRenew: this.autoRenew,
+            autoRenewPeriod: this.autoRenewPeriod,
+            chargeType: this.chargeType,
             cloudMonitorFlags: this.cloudMonitorFlags,
             clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,
+            deletionProtection: this.deletionProtection,
             disableRollback: this.disableRollback,
             endpointPublicAccess: this.endpointPublicAccess,
+            isEnterpriseSecurityGroup: this.isEnterpriseSecurityGroup,
             keyPair: this.keyPair,
             loginPassword: this.loginPassword,
+            nodeCidrMask: this.nodeCidrMask,
+            period: this.period,
+            periodUnit: this.periodUnit,
             profile: this.profile,
             proxyMode: this.proxyMode,
             serviceCidr: this.serviceCidr,
@@ -3370,6 +3772,40 @@ export interface RosManagedKubernetesClusterProps {
     readonly addons?: Array<RosManagedKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
+     * true: automatic renewal
+     * false: do not renew automatically
+     * Default to true.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
+     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
+     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
+     * Default to 1.
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property chargeType: cluster payment type. The optional values are:
+     * PrePaid: prepaid
+     * PostPaid: Pay as you go
+     * Default to PostPaid.
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
+     * For more information, see CIS reinforcement.
+     * Valid values:
+     * true: enables CIS reinforcement.
+     * false: disables CIS reinforcement.
+     * Default value: false.
+     */
+    readonly cisEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -3389,6 +3825,15 @@ export interface RosManagedKubernetesClusterProps {
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
      * @Property disableRollback: Whether the failure was rolled back:
@@ -3411,6 +3856,41 @@ export interface RosManagedKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
+     * @Property formatDisk: Specifies whether to mount a data disk to nodes that are created 
+     * on existing Elastic Compute Service (ECS) instances. Valid values:
+     * true: stores the data of containers and images on a data disk. 
+     * The original data on the disk will be overwritten. 
+     * Back up data before you mount the disk.
+     * false: does not store the data of containers and images on a data disk.
+     * Default value: false.
+     * How to mount a data disk:
+     * If the ECS instances have data disks mounted and the file system of the last 
+     * data disk is not initialized, the system automatically formats the data disk to ext4. 
+     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * The system does not create or mount a new data disk if no data disk has been 
+     * mounted to the ECS instances.
+     */
+    readonly formatDisk?: boolean | ros.IResolvable;
+
+    /**
+     * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+
+    /**
+     * @Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+     * true: retains the names.
+     * false: does not retain the names. The new names are assigned by the system.
+     * Default value: true.
+     */
+    readonly keepInstanceName?: boolean | ros.IResolvable;
+
+    /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
     readonly keyPair?: string | ros.IResolvable;
@@ -3421,15 +3901,63 @@ export interface RosManagedKubernetesClusterProps {
     readonly kubernetesVersion?: string | ros.IResolvable;
 
     /**
+     * @Property loadBalancerSpec: The specification of the Server Load Balancer instance. Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+     */
+    readonly loadBalancerSpec?: string | ros.IResolvable;
+
+    /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     readonly loginPassword?: string | ros.IResolvable;
+
+    /**
+     * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
+     * This number is determined by the specified pod CIDR block. 
+     * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+     */
+    readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
     readonly numOfNodes?: number | ros.IResolvable;
+
+    /**
+     * @Property osType: The type of operating system. Valid values:
+     * Windows
+     * Linux
+     * Default value: Linux.
+     */
+    readonly osType?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * Default to 1.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Default to Month
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property platform: The release version of the operating system. Valid values:
+     * CentOS
+     * AliyunLinux
+     * QbootAliyunLinux
+     * Qboot
+     * Windows
+     * WindowsCore
+     * Default value: CentOS.
+     */
+    readonly platform?: string | ros.IResolvable;
 
     /**
      * @Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
@@ -3473,6 +4001,14 @@ export interface RosManagedKubernetesClusterProps {
     readonly snatEntry?: boolean | ros.IResolvable;
 
     /**
+     * @Property socEnabled: Valid values:
+     * true: enables reinforcement based on classified protection.
+     * false: disables reinforcement based on classified protection.
+     * Default value: false.
+     */
+    readonly socEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property tags: Tag the cluster.
      */
     readonly tags?: RosManagedKubernetesCluster.TagsProperty[];
@@ -3488,20 +4024,9 @@ export interface RosManagedKubernetesClusterProps {
     readonly timeoutMins?: number | ros.IResolvable;
 
     /**
-     * @Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.
+     * @Property userData: The user-defined data. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
-    readonly workerAutoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * @Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.
-     */
-    readonly workerAutoRenewPeriod?: number | ros.IResolvable;
+    readonly userData?: string | ros.IResolvable;
 
     /**
      * @Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -3515,30 +4040,6 @@ export interface RosManagedKubernetesClusterProps {
      * @Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
      */
     readonly workerDataDisks?: Array<RosManagedKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property workerInstanceChargeType: Worker node payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     */
-    readonly workerInstanceChargeType?: string | ros.IResolvable;
-
-    /**
-     * @Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * Default to 1.
-     */
-    readonly workerPeriod?: number | ros.IResolvable;
-
-    /**
-     * @Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Default to Month.
-     */
-    readonly workerPeriodUnit?: string | ros.IResolvable;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. The value includes:
@@ -3566,22 +4067,12 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
-    if(properties.workerPeriod && (typeof properties.workerPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('workerPeriod', ros.validateAllowedValues)({
-          data: properties.workerPeriod,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
-        }));
-    }
-    errors.collect(ros.propertyValidator('workerPeriod', ros.validateNumber)(properties.workerPeriod));
-    if(properties.workerPeriodUnit && (typeof properties.workerPeriodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('workerPeriodUnit', ros.validateAllowedValues)({
-          data: properties.workerPeriodUnit,
-          allowedValues: ["Week","Month"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('workerPeriodUnit', ros.validateString)(properties.workerPeriodUnit));
+    errors.collect(ros.propertyValidator('socEnabled', ros.validateBoolean)(properties.socEnabled));
+    errors.collect(ros.propertyValidator('formatDisk', ros.validateBoolean)(properties.formatDisk));
+    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
+    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedKubernetesCluster_AddonsPropertyValidator))(properties.addons));
-    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -3590,14 +4081,23 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
+    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
+    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
+    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
     errors.collect(ros.propertyValidator('runtime', RosManagedKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
+    if(properties.osType && (typeof properties.osType) !== 'object') {
+        errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
+          data: properties.osType,
+          allowedValues: ["Windows","Linux"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
-    errors.collect(ros.propertyValidator('workerAutoRenew', ros.validateBoolean)(properties.workerAutoRenew));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
@@ -3611,16 +4111,17 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('workerInstanceTypes', ros.listValidator(ros.validateString))(properties.workerInstanceTypes));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriod,
+          allowedValues: [1,2,3,6,12],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
     errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
-    if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
-          data: properties.workerInstanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
+    errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
@@ -3633,7 +4134,16 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('workerDataDisks', ros.listValidator(RosManagedKubernetesCluster_WorkerDataDisksPropertyValidator))(properties.workerDataDisks));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('cisEnabled', ros.validateBoolean)(properties.cisEnabled));
     errors.collect(ros.propertyValidator('workerDataDisk', ros.validateBoolean)(properties.workerDataDisk));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
@@ -3645,15 +4155,23 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
-    errors.collect(ros.propertyValidator('encryptionProviderKey', ros.validateString)(properties.encryptionProviderKey));
-    if(properties.workerAutoRenewPeriod && (typeof properties.workerAutoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('workerAutoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.workerAutoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
+    errors.collect(ros.propertyValidator('keepInstanceName', ros.validateBoolean)(properties.keepInstanceName));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
-    errors.collect(ros.propertyValidator('workerAutoRenewPeriod', ros.validateNumber)(properties.workerAutoRenewPeriod));
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('encryptionProviderKey', ros.validateString)(properties.encryptionProviderKey));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Week","Month"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosManagedKubernetesClusterProps"');
 }
 
@@ -3676,32 +4194,43 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
       WorkerInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.workerInstanceTypes),
       Addons: ros.listMapper(rosManagedKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      CisEnabled: ros.booleanToRosTemplate(properties.cisEnabled),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       ClusterSpec: ros.stringToRosTemplate(properties.clusterSpec),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
+      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
       EncryptionProviderKey: ros.stringToRosTemplate(properties.encryptionProviderKey),
       EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
+      FormatDisk: ros.booleanToRosTemplate(properties.formatDisk),
+      IsEnterpriseSecurityGroup: ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
+      KeepInstanceName: ros.booleanToRosTemplate(properties.keepInstanceName),
       KeyPair: ros.stringToRosTemplate(properties.keyPair),
       KubernetesVersion: ros.stringToRosTemplate(properties.kubernetesVersion),
+      LoadBalancerSpec: ros.stringToRosTemplate(properties.loadBalancerSpec),
       LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
+      NodeCidrMask: ros.stringToRosTemplate(properties.nodeCidrMask),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
+      OsType: ros.stringToRosTemplate(properties.osType),
+      Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      Platform: ros.stringToRosTemplate(properties.platform),
       PodVswitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
       Runtime: rosManagedKubernetesClusterRuntimePropertyToRosTemplate(properties.runtime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
+      SocEnabled: ros.booleanToRosTemplate(properties.socEnabled),
       Tags: ros.listMapper(rosManagedKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
       Taint: ros.listMapper(ros.anyDictToRosTemplate)(properties.taint),
       TimeoutMins: ros.numberToRosTemplate(properties.timeoutMins),
-      WorkerAutoRenew: ros.booleanToRosTemplate(properties.workerAutoRenew),
-      WorkerAutoRenewPeriod: ros.numberToRosTemplate(properties.workerAutoRenewPeriod),
+      UserData: ros.stringToRosTemplate(properties.userData),
       WorkerDataDisk: ros.booleanToRosTemplate(properties.workerDataDisk),
       WorkerDataDisks: ros.listMapper(rosManagedKubernetesClusterWorkerDataDisksPropertyToRosTemplate)(properties.workerDataDisks),
-      WorkerInstanceChargeType: ros.stringToRosTemplate(properties.workerInstanceChargeType),
-      WorkerPeriod: ros.numberToRosTemplate(properties.workerPeriod),
-      WorkerPeriodUnit: ros.stringToRosTemplate(properties.workerPeriodUnit),
       WorkerSystemDiskCategory: ros.stringToRosTemplate(properties.workerSystemDiskCategory),
       WorkerSystemDiskSize: ros.numberToRosTemplate(properties.workerSystemDiskSize),
     };
@@ -3720,6 +4249,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource.
      */
+
+    /**
+     * @Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
 
     /**
      * @Attribute ClusterId: Cluster instance ID.
@@ -3798,6 +4332,40 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public addons: Array<RosManagedKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
+     * true: automatic renewal
+     * false: do not renew automatically
+     * Default to true.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
+     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
+     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
+     * Default to 1.
+     */
+    public autoRenewPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property chargeType: cluster payment type. The optional values are:
+     * PrePaid: prepaid
+     * PostPaid: Pay as you go
+     * Default to PostPaid.
+     */
+    public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cisEnabled: Specifies whether to enable Center for Internet Security (CIS) reinforcement. 
+     * For more information, see CIS reinforcement.
+     * Valid values:
+     * true: enables CIS reinforcement.
+     * false: disables CIS reinforcement.
+     * Default value: false.
+     */
+    public cisEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -3817,6 +4385,15 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
     public containerCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property disableRollback: Whether the failure was rolled back:
@@ -3839,6 +4416,41 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public endpointPublicAccess: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property formatDisk: Specifies whether to mount a data disk to nodes that are created 
+     * on existing Elastic Compute Service (ECS) instances. Valid values:
+     * true: stores the data of containers and images on a data disk. 
+     * The original data on the disk will be overwritten. 
+     * Back up data before you mount the disk.
+     * false: does not store the data of containers and images on a data disk.
+     * Default value: false.
+     * How to mount a data disk:
+     * If the ECS instances have data disks mounted and the file system of the last 
+     * data disk is not initialized, the system automatically formats the data disk to ext4. 
+     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * The system does not create or mount a new data disk if no data disk has been 
+     * mounted to the ECS instances.
+     */
+    public formatDisk: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+     */
+    public isEnterpriseSecurityGroup: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property keepInstanceName: Specifies whether to retain the names of existing ECS instances that are used in the cluster.
+     * true: retains the names.
+     * false: does not retain the names. The new names are assigned by the system.
+     * Default value: true.
+     */
+    public keepInstanceName: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
     public keyPair: string | ros.IResolvable | undefined;
@@ -3849,15 +4461,63 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public kubernetesVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property loadBalancerSpec: The specification of the Server Load Balancer instance. Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large
+     */
+    public loadBalancerSpec: string | ros.IResolvable | undefined;
+
+    /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     public loginPassword: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
+     * This number is determined by the specified pod CIDR block. 
+     * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
+     */
+    public nodeCidrMask: string | ros.IResolvable | undefined;
 
     /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
     public numOfNodes: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property osType: The type of operating system. Valid values:
+     * Windows
+     * Linux
+     * Default value: Linux.
+     */
+    public osType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
+     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
+     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * Default to 1.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
+     * Week: Time is measured in weeks
+     * Month: time in months
+     * Default to Month
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property platform: The release version of the operating system. Valid values:
+     * CentOS
+     * AliyunLinux
+     * QbootAliyunLinux
+     * Qboot
+     * Windows
+     * WindowsCore
+     * Default value: CentOS.
+     */
+    public platform: string | ros.IResolvable | undefined;
 
     /**
      * @Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
@@ -3901,6 +4561,14 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public snatEntry: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property socEnabled: Valid values:
+     * true: enables reinforcement based on classified protection.
+     * false: disables reinforcement based on classified protection.
+     * Default value: false.
+     */
+    public socEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tag the cluster.
      */
     public tags: RosManagedKubernetesCluster.TagsProperty[] | undefined;
@@ -3916,20 +4584,9 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public timeoutMins: number | ros.IResolvable | undefined;
 
     /**
-     * @Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.
+     * @Property userData: The user-defined data. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
-    public workerAutoRenew: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.
-     */
-    public workerAutoRenewPeriod: number | ros.IResolvable | undefined;
+    public userData: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -3943,30 +4600,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
      */
     public workerDataDisks: Array<RosManagedKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property workerInstanceChargeType: Worker node payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     */
-    public workerInstanceChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * Default to 1.
-     */
-    public workerPeriod: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Default to Month.
-     */
-    public workerPeriodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. The value includes:
@@ -3991,6 +4624,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosManagedKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosManagedKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
         this.attrNodes = this.getAtt('Nodes');
@@ -4007,32 +4641,43 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.vSwitchIds = props.vSwitchIds;
         this.workerInstanceTypes = props.workerInstanceTypes;
         this.addons = props.addons;
+        this.autoRenew = props.autoRenew;
+        this.autoRenewPeriod = props.autoRenewPeriod;
+        this.chargeType = props.chargeType;
+        this.cisEnabled = props.cisEnabled;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
+        this.deletionProtection = props.deletionProtection;
         this.disableRollback = props.disableRollback;
         this.encryptionProviderKey = props.encryptionProviderKey;
         this.endpointPublicAccess = props.endpointPublicAccess;
+        this.formatDisk = props.formatDisk;
+        this.isEnterpriseSecurityGroup = props.isEnterpriseSecurityGroup;
+        this.keepInstanceName = props.keepInstanceName;
         this.keyPair = props.keyPair;
         this.kubernetesVersion = props.kubernetesVersion;
+        this.loadBalancerSpec = props.loadBalancerSpec;
         this.loginPassword = props.loginPassword;
+        this.nodeCidrMask = props.nodeCidrMask;
         this.numOfNodes = props.numOfNodes;
+        this.osType = props.osType;
+        this.period = props.period;
+        this.periodUnit = props.periodUnit;
+        this.platform = props.platform;
         this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
         this.runtime = props.runtime;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
+        this.socEnabled = props.socEnabled;
         this.tags = props.tags;
         this.taint = props.taint;
         this.timeoutMins = props.timeoutMins;
-        this.workerAutoRenew = props.workerAutoRenew;
-        this.workerAutoRenewPeriod = props.workerAutoRenewPeriod;
+        this.userData = props.userData;
         this.workerDataDisk = props.workerDataDisk;
         this.workerDataDisks = props.workerDataDisks;
-        this.workerInstanceChargeType = props.workerInstanceChargeType;
-        this.workerPeriod = props.workerPeriod;
-        this.workerPeriodUnit = props.workerPeriodUnit;
         this.workerSystemDiskCategory = props.workerSystemDiskCategory;
         this.workerSystemDiskSize = props.workerSystemDiskSize;
     }
@@ -4045,32 +4690,43 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             vSwitchIds: this.vSwitchIds,
             workerInstanceTypes: this.workerInstanceTypes,
             addons: this.addons,
+            autoRenew: this.autoRenew,
+            autoRenewPeriod: this.autoRenewPeriod,
+            chargeType: this.chargeType,
+            cisEnabled: this.cisEnabled,
             cloudMonitorFlags: this.cloudMonitorFlags,
             clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,
+            deletionProtection: this.deletionProtection,
             disableRollback: this.disableRollback,
             encryptionProviderKey: this.encryptionProviderKey,
             endpointPublicAccess: this.endpointPublicAccess,
+            formatDisk: this.formatDisk,
+            isEnterpriseSecurityGroup: this.isEnterpriseSecurityGroup,
+            keepInstanceName: this.keepInstanceName,
             keyPair: this.keyPair,
             kubernetesVersion: this.kubernetesVersion,
+            loadBalancerSpec: this.loadBalancerSpec,
             loginPassword: this.loginPassword,
+            nodeCidrMask: this.nodeCidrMask,
             numOfNodes: this.numOfNodes,
+            osType: this.osType,
+            period: this.period,
+            periodUnit: this.periodUnit,
+            platform: this.platform,
             podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
             runtime: this.runtime,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
+            socEnabled: this.socEnabled,
             tags: this.tags,
             taint: this.taint,
             timeoutMins: this.timeoutMins,
-            workerAutoRenew: this.workerAutoRenew,
-            workerAutoRenewPeriod: this.workerAutoRenewPeriod,
+            userData: this.userData,
             workerDataDisk: this.workerDataDisk,
             workerDataDisks: this.workerDataDisks,
-            workerInstanceChargeType: this.workerInstanceChargeType,
-            workerPeriod: this.workerPeriod,
-            workerPeriodUnit: this.workerPeriodUnit,
             workerSystemDiskCategory: this.workerSystemDiskCategory,
             workerSystemDiskSize: this.workerSystemDiskSize,
         };
@@ -4449,6 +5105,11 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
      */
 
     /**
+     * @Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
+
+    /**
      * @Attribute ClusterId: Cluster instance ID.
      */
     public readonly attrClusterId: ros.IResolvable;
@@ -4574,6 +5235,7 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosServerlessKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosServerlessKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
         this.attrNodes = this.getAtt('Nodes');

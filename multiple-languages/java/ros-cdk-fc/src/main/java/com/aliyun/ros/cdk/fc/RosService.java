@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Service`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.628Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.768Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService")
 public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -257,6 +257,24 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTracingConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.fc.RosService.TracingConfigProperty value) {
         software.amazon.jsii.Kernel.set(this, "tracingConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVpcBindings() {
+        return software.amazon.jsii.Kernel.get(this, "vpcBindings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVpcBindings(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpcBindings", value);
+    }
+
+    /**
+     */
+    public void setVpcBindings(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "vpcBindings", value);
     }
 
     /**
@@ -1613,6 +1631,23 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tracingConfig(final com.aliyun.ros.cdk.fc.RosService.TracingConfigProperty tracingConfig) {
             this.props.tracingConfig(tracingConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vpcBindings This parameter is required.
+         */
+        public Builder vpcBindings(final com.aliyun.ros.cdk.core.IResolvable vpcBindings) {
+            this.props.vpcBindings(vpcBindings);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vpcBindings This parameter is required.
+         */
+        public Builder vpcBindings(final java.util.List<? extends java.lang.Object> vpcBindings) {
+            this.props.vpcBindings(vpcBindings);
             return this;
         }
 

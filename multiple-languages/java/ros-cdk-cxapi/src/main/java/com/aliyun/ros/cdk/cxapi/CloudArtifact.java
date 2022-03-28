@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Represents an artifact within a cloud assembly.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.178Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.208Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.CloudArtifact")
 public class CloudArtifact extends software.amazon.jsii.JsiiObject {
 

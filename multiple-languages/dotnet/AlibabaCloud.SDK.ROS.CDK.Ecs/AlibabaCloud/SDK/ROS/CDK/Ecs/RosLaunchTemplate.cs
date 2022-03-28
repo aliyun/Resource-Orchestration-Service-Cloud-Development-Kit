@@ -115,6 +115,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: deploymentSetId: The ID of the deployment set.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deploymentSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DeploymentSetId
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: description: Description of the instance, [2, 256] characters.
         /// </remarks>
         [JsiiOptional]
@@ -159,6 +170,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: imageOwnerAlias: The source of the image. Valid values:
+        /// system: public images provided by Alibaba Cloud.
+        /// self: your custom images.
+        /// others: shared images from other Alibaba Cloud accounts.
+        /// marketplace: Alibaba Cloud Marketplace images. If Alibaba Cloud Marketplace images are found, you can use these images without prior subscription. You must pay attention to the billing details of Alibaba Cloud Marketplace images.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "imageOwnerAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ImageOwnerAlias
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: instanceChargeType: The billing method of the instance. Valid values:
+        /// PrePaid: subscription. If you set this parameter to PrePaid, make sure that your account supports payment by credit. Otherwise, an InvalidPayMethod error is returned.
+        /// PostPaid: pay-as-you-go.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstanceChargeType
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
         /// </remarks>
         [JsiiOptional]
@@ -192,17 +231,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second). The range is [1,200].
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public virtual object? InternetMaxBandwidthIn
-        {
-            get => GetInstanceProperty<object?>();
-            set => SetInstanceProperty(value);
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second). Range is [0,200].While the property is not 0, public ip will be assigned for instance.
         /// </remarks>
         [JsiiOptional]
@@ -219,6 +247,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiOptional]
         [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? IoOptimized
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipv6AddressCount: The number of IPv6 addresses to be randomly generated for the primary ENI. Valid values: 1 to 10.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Ipv6AddressCount
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -258,11 +297,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: passwordInherit: Specifies whether to use the password preset in the image.
+        /// Note When you use this parameter, leave Password empty and make sure that the selected image has a password preset.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "passwordInherit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PasswordInherit
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: period: The subscription period of the instance. Unit: months.
+        /// This parameter is valid and required only when InstanceChargeType is set to PrePaid.
+        /// Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, and 60.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Period
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: privateIpAddress: The private IP address of the instance.
+        /// To assign a private IP address to an instance of the VPC type, make sure that the IP address is an idle IP address within the CIDR block of the vSwitch specified by the VSwitchId parameter.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PrivateIpAddress
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ramRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? RamRoleName
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: resourceGroupId: The ID of the resource group to which to assign the instance, Elastic Block Storage (EBS) device, and elastic network interface (ENI).
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ResourceGroupId
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -285,6 +372,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiOptional]
         [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? SecurityGroupId
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: securityGroupIds: The ID of security group list to which to assign the instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? SecurityGroupIds
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+        /// Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+        /// If this parameter is set to 0, no protection period is configured for the preemptible instance.
+        /// Default value: 1.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "spotDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SpotDuration
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -324,6 +436,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: systemDiskDeleteWithInstance: Specifies whether to release the system disk when the instance is released. Valid values:
+        /// true: releases the system disk when the instance is released.
+        /// false: does not release the system disk when the instance is released.
+        /// Default value: true.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskDeleteWithInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SystemDiskDeleteWithInstance
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: systemDiskDescription: Description of created system disk.
         /// </remarks>
         [JsiiOptional]
@@ -340,6 +466,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiOptional]
         [JsiiProperty(name: "systemDiskDiskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? SystemDiskDiskName
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
+        /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+        /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+        /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+        /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SystemDiskPerformanceLevel
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -364,6 +505,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         public virtual AlibabaCloud.SDK.ROS.CDK.Ecs.RosLaunchTemplate.ITagsProperty[]? Tags
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosLaunchTemplate.ITagsProperty[]?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: templateResourceGroupId: The ID of the resource group to which to assign the launch template.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "templateResourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? TemplateResourceGroupId
+        {
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -490,6 +642,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. The value of Valid values:
+            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// </remarks>
+            [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PerformanceLevel
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: size: The size of the volume, unit in GB.Value range: cloud: [5,2000], cloud_efficiency: [20,32768], cloud_ssd: [20,32768], cloud_essd: [20,32768] ephemeral_ssd: [5,800].The value should be equal to or greater than the specific snapshot.
             /// </remarks>
             [JsiiProperty(name: "size", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -573,6 +742,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. The value of Valid values:
+                /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+                /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+                /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+                /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PerformanceLevel
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: size: The size of the volume, unit in GB.Value range: cloud: [5,2000], cloud_efficiency: [20,32768], cloud_ssd: [20,32768], cloud_essd: [20,32768] ephemeral_ssd: [5,800].The value should be equal to or greater than the specific snapshot.
                 /// </remarks>
                 [JsiiOptional]
@@ -646,6 +829,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Encrypted
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD used as data disk. The value of Valid values:
+            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PerformanceLevel
             {
                 get;
                 set;

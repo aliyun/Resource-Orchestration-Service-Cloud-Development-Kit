@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * Properties for defining a `ALIYUN::ROCKETMQ::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.344Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.451Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,12 +19,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTopic();
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPerm() {
-        return null;
-    }
 
     /**
      */
@@ -45,7 +39,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object instanceId;
         java.lang.Object messageType;
         java.lang.Object topic;
-        java.lang.Object perm;
         java.lang.Object remark;
 
         /**
@@ -109,26 +102,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosTopicProps#getPerm}
-         * @param perm the value to be set.
-         * @return {@code this}
-         */
-        public Builder perm(java.lang.Number perm) {
-            this.perm = perm;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosTopicProps#getPerm}
-         * @param perm the value to be set.
-         * @return {@code this}
-         */
-        public Builder perm(com.aliyun.ros.cdk.core.IResolvable perm) {
-            this.perm = perm;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosTopicProps#getRemark}
          * @param remark the value to be set.
          * @return {@code this}
@@ -167,7 +140,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object instanceId;
         private final java.lang.Object messageType;
         private final java.lang.Object topic;
-        private final java.lang.Object perm;
         private final java.lang.Object remark;
 
         /**
@@ -179,7 +151,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.messageType = software.amazon.jsii.Kernel.get(this, "messageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.perm = software.amazon.jsii.Kernel.get(this, "perm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -191,7 +162,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
             this.messageType = java.util.Objects.requireNonNull(builder.messageType, "messageType is required");
             this.topic = java.util.Objects.requireNonNull(builder.topic, "topic is required");
-            this.perm = builder.perm;
             this.remark = builder.remark;
         }
 
@@ -211,11 +181,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getPerm() {
-            return this.perm;
-        }
-
-        @Override
         public final java.lang.Object getRemark() {
             return this.remark;
         }
@@ -229,9 +194,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             data.set("instanceId", om.valueToTree(this.getInstanceId()));
             data.set("messageType", om.valueToTree(this.getMessageType()));
             data.set("topic", om.valueToTree(this.getTopic()));
-            if (this.getPerm() != null) {
-                data.set("perm", om.valueToTree(this.getPerm()));
-            }
             if (this.getRemark() != null) {
                 data.set("remark", om.valueToTree(this.getRemark()));
             }
@@ -256,7 +218,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             if (!instanceId.equals(that.instanceId)) return false;
             if (!messageType.equals(that.messageType)) return false;
             if (!topic.equals(that.topic)) return false;
-            if (this.perm != null ? !this.perm.equals(that.perm) : that.perm != null) return false;
             return this.remark != null ? this.remark.equals(that.remark) : that.remark == null;
         }
 
@@ -265,7 +226,6 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.instanceId.hashCode();
             result = 31 * result + (this.messageType.hashCode());
             result = 31 * result + (this.topic.hashCode());
-            result = 31 * result + (this.perm != null ? this.perm.hashCode() : 0);
             result = 31 * result + (this.remark != null ? this.remark.hashCode() : 0);
             return result;
         }

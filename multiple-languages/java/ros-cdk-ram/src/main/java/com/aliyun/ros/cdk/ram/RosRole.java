@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  `ALIYUN::RAM::Role`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.121Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.235Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole")
 public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -179,6 +179,24 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPolicies(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "policies", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPolicyAttachments() {
+        return software.amazon.jsii.Kernel.get(this, "policyAttachments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPolicyAttachments(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "policyAttachments", value);
+    }
+
+    /**
+     */
+    public void setPolicyAttachments(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ram.RosRole.PolicyAttachmentsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "policyAttachments", value);
     }
     /**
      */
@@ -1542,6 +1560,178 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty")
+    @software.amazon.jsii.Jsii.Proxy(PolicyAttachmentsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PolicyAttachmentsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCustom() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSystem() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link PolicyAttachmentsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PolicyAttachmentsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PolicyAttachmentsProperty> {
+            java.lang.Object custom;
+            java.lang.Object system;
+
+            /**
+             * Sets the value of {@link PolicyAttachmentsProperty#getCustom}
+             * @param custom the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder custom(com.aliyun.ros.cdk.core.IResolvable custom) {
+                this.custom = custom;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyAttachmentsProperty#getCustom}
+             * @param custom the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder custom(java.util.List<? extends java.lang.Object> custom) {
+                this.custom = custom;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyAttachmentsProperty#getSystem}
+             * @param system the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder system(com.aliyun.ros.cdk.core.IResolvable system) {
+                this.system = system;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyAttachmentsProperty#getSystem}
+             * @param system the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder system(java.util.List<? extends java.lang.Object> system) {
+                this.system = system;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PolicyAttachmentsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PolicyAttachmentsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PolicyAttachmentsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PolicyAttachmentsProperty {
+            private final java.lang.Object custom;
+            private final java.lang.Object system;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.custom = software.amazon.jsii.Kernel.get(this, "custom", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.system = software.amazon.jsii.Kernel.get(this, "system", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.custom = builder.custom;
+                this.system = builder.system;
+            }
+
+            @Override
+            public final java.lang.Object getCustom() {
+                return this.custom;
+            }
+
+            @Override
+            public final java.lang.Object getSystem() {
+                return this.system;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getCustom() != null) {
+                    data.set("custom", om.valueToTree(this.getCustom()));
+                }
+                if (this.getSystem() != null) {
+                    data.set("system", om.valueToTree(this.getSystem()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ram.RosRole.PolicyAttachmentsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PolicyAttachmentsProperty.Jsii$Proxy that = (PolicyAttachmentsProperty.Jsii$Proxy) o;
+
+                if (this.custom != null ? !this.custom.equals(that.custom) : that.custom != null) return false;
+                return this.system != null ? this.system.equals(that.system) : that.system == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.custom != null ? this.custom.hashCode() : 0;
+                result = 31 * result + (this.system != null ? this.system.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole.PolicyDocumentProperty")
     @software.amazon.jsii.Jsii.Proxy(PolicyDocumentProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2569,6 +2759,23 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder policies(final java.util.List<? extends java.lang.Object> policies) {
             this.props.policies(policies);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param policyAttachments This parameter is required.
+         */
+        public Builder policyAttachments(final com.aliyun.ros.cdk.core.IResolvable policyAttachments) {
+            this.props.policyAttachments(policyAttachments);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param policyAttachments This parameter is required.
+         */
+        public Builder policyAttachments(final com.aliyun.ros.cdk.ram.RosRole.PolicyAttachmentsProperty policyAttachments) {
+            this.props.policyAttachments(policyAttachments);
             return this;
         }
 

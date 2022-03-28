@@ -112,6 +112,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             set;
         }
 
+        /// <summary>Property clickHouseConf: undefined.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "clickHouseConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        public object? ClickHouseConf
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property config:.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-emr.RosCluster.ConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

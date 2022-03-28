@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * A ROS template type:  `ALIYUN::GWS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.861Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -287,24 +287,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInternetChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "internetChargeType", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
-        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setInternetMaxBandwidthIn(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "internetMaxBandwidthIn", value);
-    }
-
-    /**
-     */
-    public void setInternetMaxBandwidthIn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "internetMaxBandwidthIn", value);
     }
 
     /**
@@ -822,23 +804,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.props.internetChargeType(internetChargeType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param internetMaxBandwidthIn This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final java.lang.Number internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param internetMaxBandwidthIn This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
             return this;
         }
 

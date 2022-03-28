@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::Signature`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.440Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.458Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Signature")
 public class Signature extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.103Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.211Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -600,31 +600,6 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-         * <p>
-         * The range is [1,200], default is 200 Mbps.
-         * <p>
-         * @return {@code this}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final java.lang.Number internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
-            return this;
-        }
-        /**
-         * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-         * <p>
-         * The range is [1,200], default is 200 Mbps.
-         * <p>
-         * @return {@code this}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
-            return this;
-        }
-
-        /**
          * Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
          * <p>
          * Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
@@ -927,24 +902,24 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+         * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
          * <p>
          * Default value is Month.Old instances will not be changed.
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month. This parameter is required.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. This parameter is required.
          */
         public Builder periodUnit(final java.lang.String periodUnit) {
             this.props.periodUnit(periodUnit);
             return this;
         }
         /**
-         * Property periodUnit: Unit of prepaid time period, it could be Week/Month.
+         * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
          * <p>
          * Default value is Month.Old instances will not be changed.
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month. This parameter is required.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. This parameter is required.
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);

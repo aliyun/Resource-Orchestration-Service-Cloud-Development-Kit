@@ -2227,6 +2227,403 @@ export class RosEIPAssociation extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::VPC::EIPPro`
+ */
+export interface RosEIPProProps {
+
+    /**
+     * @Property autoPay: Automatic Payment. Default is false.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property bandwidth: Bandwidth for the output network. Default is 5MB.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: Whether to enable deletion protection.
+     * Default to False.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
+     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceChargeType: The resource charge type. Default value is Postpaid
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the requested EIP.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property internetChargeType: The network charge type. Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
+     */
+    readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property ipAddress: The IP address of the requested EIP.
+     */
+    readonly ipAddress?: string | ros.IResolvable;
+
+    /**
+     * @Property isp: The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+     * BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+     * BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
+     */
+    readonly isp?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property netmode: The network type. Valid value: public (public network).
+     */
+    readonly netmode?: string | ros.IResolvable;
+
+    /**
+     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. 
+     *   While choose pay by year, it could be from 1 to 3.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
+     */
+    readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosEIPPro.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEIPProProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEIPProProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEIPProPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["Prepaid","Postpaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
+          data: properties.pricingCycle,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    errors.collect(ros.propertyValidator('isp', ros.validateString)(properties.isp));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["PayByBandwidth","PayByTraffic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('netmode', ros.validateString)(properties.netmode));
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('ipAddress', ros.validateString)(properties.ipAddress));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosEIPPro_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosEIPProProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::EIPPro` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEIPProProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::EIPPro` resource.
+ */
+// @ts-ignore TS6133
+function rosEIPProPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEIPProPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
+      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
+      Description: ros.stringToRosTemplate(properties.description),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      IpAddress: ros.stringToRosTemplate(properties.ipAddress),
+      ISP: ros.stringToRosTemplate(properties.isp),
+      Name: ros.stringToRosTemplate(properties.name),
+      Netmode: ros.stringToRosTemplate(properties.netmode),
+      Period: ros.numberToRosTemplate(properties.period),
+      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosEIPProTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::EIPPro`
+ */
+export class RosEIPPro extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::EIPPro";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
+     */
+    public readonly attrAllocationId: ros.IResolvable;
+
+    /**
+     * @Attribute EipAddress: IP address of created EIP.
+     */
+    public readonly attrEipAddress: ros.IResolvable;
+
+    /**
+     * @Attribute ISP: The line type.
+     */
+    public readonly attrIsp: ros.IResolvable;
+
+    /**
+     * @Attribute OrderId: Order ID of prepaid EIP instance.
+     */
+    public readonly attrOrderId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property autoPay: Automatic Payment. Default is false.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property bandwidth: Bandwidth for the output network. Default is 5MB.
+     */
+    public bandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: Whether to enable deletion protection.
+     * Default to False.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceChargeType: The resource charge type. Default value is Postpaid
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The ID of the requested EIP.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetChargeType: The network charge type. Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
+     */
+    public internetChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipAddress: The IP address of the requested EIP.
+     */
+    public ipAddress: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property isp: The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+     * BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+     * BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
+     */
+    public isp: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property netmode: The network type. Valid value: public (public network).
+     */
+    public netmode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. 
+     *   While choose pay by year, it could be from 1 to 3.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
+     */
+    public pricingCycle: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosEIPPro.TagsProperty[] | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::EIPPro`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEIPProProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEIPPro.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAllocationId = this.getAtt('AllocationId');
+        this.attrEipAddress = this.getAtt('EipAddress');
+        this.attrIsp = this.getAtt('ISP');
+        this.attrOrderId = this.getAtt('OrderId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.autoPay = props.autoPay;
+        this.bandwidth = props.bandwidth;
+        this.deletionProtection = props.deletionProtection;
+        this.description = props.description;
+        this.instanceChargeType = props.instanceChargeType;
+        this.instanceId = props.instanceId;
+        this.internetChargeType = props.internetChargeType;
+        this.ipAddress = props.ipAddress;
+        this.isp = props.isp;
+        this.name = props.name;
+        this.netmode = props.netmode;
+        this.period = props.period;
+        this.pricingCycle = props.pricingCycle;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            autoPay: this.autoPay,
+            bandwidth: this.bandwidth,
+            deletionProtection: this.deletionProtection,
+            description: this.description,
+            instanceChargeType: this.instanceChargeType,
+            instanceId: this.instanceId,
+            internetChargeType: this.internetChargeType,
+            ipAddress: this.ipAddress,
+            isp: this.isp,
+            name: this.name,
+            netmode: this.netmode,
+            period: this.period,
+            pricingCycle: this.pricingCycle,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEIPProPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosEIPPro {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEIPPro_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::EIPPro.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::EIPPro.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosEIPProTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEIPPro_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::VPC::EIPSegment`
  */
 export interface RosEIPSegmentProps {

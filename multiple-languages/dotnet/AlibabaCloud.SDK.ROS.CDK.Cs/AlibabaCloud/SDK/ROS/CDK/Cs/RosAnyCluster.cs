@@ -45,6 +45,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosAnyCluster))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: APIServerSLBId: The id of API server SLB
+        /// </remarks>
+        [JsiiProperty(name: "attrApiServerSlbId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrApiServerSlbId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: ClusterId: Cluster instance ID.
         /// </remarks>
         [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

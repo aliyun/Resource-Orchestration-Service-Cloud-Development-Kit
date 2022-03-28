@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Properties for defining a `ALIYUN::REDIS::PrepayInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.285Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.397Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayInstanceProps.Jsii$Proxy.class)
 public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -116,6 +116,15 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     * Property productType: Product type.
+     * <p>
+     * Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProductType() {
+        return null;
+    }
+
+    /**
      * Property securityGroupId: The IDs of security groups.
      * <p>
      * Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -203,6 +212,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object instanceName;
         java.lang.Object password;
         java.lang.Object period;
+        java.lang.Object productType;
         java.lang.Object securityGroupId;
         java.lang.Object sslEnabled;
         java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags;
@@ -494,6 +504,28 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link PrepayInstanceProps#getProductType}
+         * @param productType Property productType: Product type.
+         *                    Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+         * @return {@code this}
+         */
+        public Builder productType(java.lang.String productType) {
+            this.productType = productType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getProductType}
+         * @param productType Property productType: Product type.
+         *                    Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
+         * @return {@code this}
+         */
+        public Builder productType(com.aliyun.ros.cdk.core.IResolvable productType) {
+            this.productType = productType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link PrepayInstanceProps#getSecurityGroupId}
          * @param securityGroupId Property securityGroupId: The IDs of security groups.
          *                        Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -676,6 +708,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object instanceName;
         private final java.lang.Object password;
         private final java.lang.Object period;
+        private final java.lang.Object productType;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object sslEnabled;
         private final java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags;
@@ -703,6 +736,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.productType = software.amazon.jsii.Kernel.get(this, "productType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslEnabled = software.amazon.jsii.Kernel.get(this, "sslEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty.class)));
@@ -731,6 +765,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.instanceName = builder.instanceName;
             this.password = builder.password;
             this.period = builder.period;
+            this.productType = builder.productType;
             this.securityGroupId = builder.securityGroupId;
             this.sslEnabled = builder.sslEnabled;
             this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty>)builder.tags;
@@ -803,6 +838,11 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getPeriod() {
             return this.period;
+        }
+
+        @Override
+        public final java.lang.Object getProductType() {
+            return this.productType;
         }
 
         @Override
@@ -885,6 +925,9 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
+            if (this.getProductType() != null) {
+                data.set("productType", om.valueToTree(this.getProductType()));
+            }
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
@@ -937,6 +980,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.productType != null ? !this.productType.equals(that.productType) : that.productType != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.sslEnabled != null ? !this.sslEnabled.equals(that.sslEnabled) : that.sslEnabled != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -961,6 +1005,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.productType != null ? this.productType.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.sslEnabled != null ? this.sslEnabled.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

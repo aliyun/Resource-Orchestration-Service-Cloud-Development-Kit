@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * Properties for defining a `ALIYUN::GWS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.718Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.854Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {

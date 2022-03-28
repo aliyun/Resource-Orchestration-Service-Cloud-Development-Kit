@@ -108,22 +108,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             }
         }
 
-        /// <summary>Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).</summary>
-        /// <remarks>
-        /// Value range: 1-200
-        /// Default: 200
-        /// This value is only valid when AllocatePublicAddress is true.
-        /// </remarks>
-        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? InternetMaxBandwidthIn
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).</summary>
         /// <remarks>
         /// Value range: 1-200
@@ -282,19 +266,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             [JsiiOptional]
             [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InternetChargeType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).</summary>
-            /// <remarks>
-            /// Value range: 1-200
-            /// Default: 200
-            /// This value is only valid when AllocatePublicAddress is true.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? InternetMaxBandwidthIn
             {
                 get => GetInstanceProperty<object?>();
             }

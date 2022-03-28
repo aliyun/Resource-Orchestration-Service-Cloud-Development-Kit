@@ -108,6 +108,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
         }
 
+        /// <summary>Property clickHouseConf: undefined.</summary>
+        [JsiiProperty(name: "clickHouseConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ClickHouseConf
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property config:.</summary>
         [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-emr.RosCluster.ConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -556,6 +567,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             [JsiiOptional]
             [JsiiProperty(name: "bootstrapAction", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-emr.RosCluster.BootstrapActionProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? BootstrapAction
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property clickHouseConf: undefined.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "clickHouseConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? ClickHouseConf
             {
                 get => GetInstanceProperty<object?>();
             }

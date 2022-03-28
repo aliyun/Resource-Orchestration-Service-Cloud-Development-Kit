@@ -19,6 +19,11 @@ export interface LaunchTemplateProps {
     readonly autoReleaseTime?: string | ros.IResolvable;
 
     /**
+     * Property deploymentSetId: The ID of the deployment set.
+     */
+    readonly deploymentSetId?: string | ros.IResolvable;
+
+    /**
      * Property description: Description of the instance, [2, 256] characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -39,6 +44,22 @@ export interface LaunchTemplateProps {
     readonly imageId?: string | ros.IResolvable;
 
     /**
+     * Property imageOwnerAlias: The source of the image. Valid values:
+     * system: public images provided by Alibaba Cloud.
+     * self: your custom images.
+     * others: shared images from other Alibaba Cloud accounts.
+     * marketplace: Alibaba Cloud Marketplace images. If Alibaba Cloud Marketplace images are found, you can use these images without prior subscription. You must pay attention to the billing details of Alibaba Cloud Marketplace images.
+     */
+    readonly imageOwnerAlias?: string | ros.IResolvable;
+
+    /**
+     * Property instanceChargeType: The billing method of the instance. Valid values:
+     * PrePaid: subscription. If you set this parameter to PrePaid, make sure that your account supports payment by credit. Otherwise, an InvalidPayMethod error is returned.
+     * PostPaid: pay-as-you-go.
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
      * Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly instanceName?: string | ros.IResolvable;
@@ -54,11 +75,6 @@ export interface LaunchTemplateProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second). The range is [1,200].
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second). Range is [0,200].While the property is not 0, public ip will be assigned for instance.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
@@ -67,6 +83,11 @@ export interface LaunchTemplateProps {
      * Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only.
      */
     readonly ioOptimized?: string | ros.IResolvable;
+
+    /**
+     * Property ipv6AddressCount: The number of IPv6 addresses to be randomly generated for the primary ENI. Valid values: 1 to 10.
+     */
+    readonly ipv6AddressCount?: number | ros.IResolvable;
 
     /**
      * Property keyPairName: SSH key pair name.
@@ -84,9 +105,33 @@ export interface LaunchTemplateProps {
     readonly networkType?: string | ros.IResolvable;
 
     /**
+     * Property passwordInherit: Specifies whether to use the password preset in the image.
+     * Note When you use this parameter, leave Password empty and make sure that the selected image has a password preset.
+     */
+    readonly passwordInherit?: boolean | ros.IResolvable;
+
+    /**
+     * Property period: The subscription period of the instance. Unit: months.
+     * This parameter is valid and required only when InstanceChargeType is set to PrePaid.
+     * Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, and 60.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * Property privateIpAddress: The private IP address of the instance.
+     * To assign a private IP address to an instance of the VPC type, make sure that the IP address is an idle IP address within the CIDR block of the vSwitch specified by the VSwitchId parameter.
+     */
+    readonly privateIpAddress?: string | ros.IResolvable;
+
+    /**
      * Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
      */
     readonly ramRoleName?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group to which to assign the instance, Elastic Block Storage (EBS) device, and elastic network interface (ENI).
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property securityEnhancementStrategy: Activate or deactivate security enhancement,Value range: "Active" and "Deactive"
@@ -97,6 +142,19 @@ export interface LaunchTemplateProps {
      * Property securityGroupId: Security group to create ecs instance. For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
      */
     readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property securityGroupIds: The ID of security group list to which to assign the instance.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * Default value: 1.
+     */
+    readonly spotDuration?: number | ros.IResolvable;
 
     /**
      * Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
@@ -114,6 +172,14 @@ export interface LaunchTemplateProps {
     readonly systemDiskCategory?: string | ros.IResolvable;
 
     /**
+     * Property systemDiskDeleteWithInstance: Specifies whether to release the system disk when the instance is released. Valid values:
+     * true: releases the system disk when the instance is released.
+     * false: does not release the system disk when the instance is released.
+     * Default value: true.
+     */
+    readonly systemDiskDeleteWithInstance?: boolean | ros.IResolvable;
+
+    /**
      * Property systemDiskDescription: Description of created system disk.
      */
     readonly systemDiskDescription?: string | ros.IResolvable;
@@ -124,6 +190,15 @@ export interface LaunchTemplateProps {
     readonly systemDiskDiskName?: string | ros.IResolvable;
 
     /**
+     * Property systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
+     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     */
+    readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
      * Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
      */
     readonly systemDiskSize?: number | ros.IResolvable;
@@ -132,6 +207,11 @@ export interface LaunchTemplateProps {
      * Property tags: Tags to attach to instance, security group, disk and network interface.
      */
     readonly tags?: RosLaunchTemplate.TagsProperty[];
+
+    /**
+     * Property templateResourceGroupId: The ID of the resource group to which to assign the launch template.
+     */
+    readonly templateResourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property templateTags: Template tags to attach to launch template.
@@ -200,13 +280,20 @@ export class LaunchTemplate extends ros.Resource {
         super(scope, id);
 
         const rosLaunchTemplate = new RosLaunchTemplate(this, id,  {
+            imageOwnerAlias: props.imageOwnerAlias,
+            privateIpAddress: props.privateIpAddress,
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
             diskMappings: props.diskMappings,
             systemDiskSize: props.systemDiskSize,
             userData: props.userData,
             systemDiskDescription: props.systemDiskDescription,
+            instanceChargeType: props.instanceChargeType,
+            spotDuration: props.spotDuration,
             templateTags: props.templateTags,
             ramRoleName: props.ramRoleName,
+            systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
+            ipv6AddressCount: props.ipv6AddressCount,
             networkType: props.networkType,
             networkInterfaces: props.networkInterfaces,
             imageId: props.imageId,
@@ -216,18 +303,23 @@ export class LaunchTemplate extends ros.Resource {
             tags: props.tags,
             hostName: props.hostName,
             spotStrategy: props.spotStrategy,
+            passwordInherit: props.passwordInherit,
+            templateResourceGroupId: props.templateResourceGroupId,
             keyPairName: props.keyPairName,
             launchTemplateName: props.launchTemplateName,
             ioOptimized: props.ioOptimized,
             versionDescription: props.versionDescription,
             zoneId: props.zoneId,
-            vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
+            vSwitchId: props.vSwitchId,
+            period: props.period,
+            securityGroupIds: props.securityGroupIds,
             systemDiskCategory: props.systemDiskCategory,
             internetChargeType: props.internetChargeType,
             instanceName: props.instanceName,
+            deploymentSetId: props.deploymentSetId,
+            systemDiskDeleteWithInstance: props.systemDiskDeleteWithInstance,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
-            internetMaxBandwidthIn: props.internetMaxBandwidthIn,
             securityEnhancementStrategy: props.securityEnhancementStrategy,
             autoReleaseTime: props.autoReleaseTime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

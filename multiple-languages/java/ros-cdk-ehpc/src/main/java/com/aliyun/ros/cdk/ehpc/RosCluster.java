@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * A ROS template type:  `ALIYUN::EHPC::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.426Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.573Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -161,24 +161,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         software.amazon.jsii.Kernel.set(this, "ecsOrderManagerInstanceType", java.util.Objects.requireNonNull(value, "ecsOrderManagerInstanceType is required"));
     }
 
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getEhpcVersion() {
-        return software.amazon.jsii.Kernel.get(this, "ehpcVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setEhpcVersion(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "ehpcVersion", java.util.Objects.requireNonNull(value, "ehpcVersion is required"));
-    }
-
-    /**
-     */
-    public void setEhpcVersion(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "ehpcVersion", java.util.Objects.requireNonNull(value, "ehpcVersion is required"));
-    }
-
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
@@ -225,42 +207,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getVolumeId() {
-        return software.amazon.jsii.Kernel.get(this, "volumeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setVolumeId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "volumeId", java.util.Objects.requireNonNull(value, "volumeId is required"));
-    }
-
-    /**
-     */
-    public void setVolumeId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "volumeId", java.util.Objects.requireNonNull(value, "volumeId is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getVolumeMountpoint() {
-        return software.amazon.jsii.Kernel.get(this, "volumeMountpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setVolumeMountpoint(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "volumeMountpoint", java.util.Objects.requireNonNull(value, "volumeMountpoint is required"));
-    }
-
-    /**
-     */
-    public void setVolumeMountpoint(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "volumeMountpoint", java.util.Objects.requireNonNull(value, "volumeMountpoint is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId() {
         return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -293,6 +239,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAccountType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "accountType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAdditionalVolumes() {
+        return software.amazon.jsii.Kernel.get(this, "additionalVolumes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAdditionalVolumes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "additionalVolumes", value);
+    }
+
+    /**
+     */
+    public void setAdditionalVolumes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "additionalVolumes", value);
     }
 
     /**
@@ -347,6 +311,42 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAutoRenewPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "autoRenewPeriod", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getClientVersion() {
+        return software.amazon.jsii.Kernel.get(this, "clientVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setClientVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "clientVersion", value);
+    }
+
+    /**
+     */
+    public void setClientVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "clientVersion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getComputeEnableHt() {
+        return software.amazon.jsii.Kernel.get(this, "computeEnableHt", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setComputeEnableHt(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "computeEnableHt", value);
+    }
+
+    /**
+     */
+    public void setComputeEnableHt(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "computeEnableHt", value);
     }
 
     /**
@@ -459,6 +459,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEhpcVersion() {
+        return software.amazon.jsii.Kernel.get(this, "ehpcVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEhpcVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ehpcVersion", value);
+    }
+
+    /**
+     */
+    public void setEhpcVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ehpcVersion", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getHaEnable() {
         return software.amazon.jsii.Kernel.get(this, "haEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -509,6 +527,42 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setImageOwnerAlias(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "imageOwnerAlias", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInputFileUrl() {
+        return software.amazon.jsii.Kernel.get(this, "inputFileUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInputFileUrl(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "inputFileUrl", value);
+    }
+
+    /**
+     */
+    public void setInputFileUrl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "inputFileUrl", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIsComputeEss() {
+        return software.amazon.jsii.Kernel.get(this, "isComputeEss", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIsComputeEss(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "isComputeEss", value);
+    }
+
+    /**
+     */
+    public void setIsComputeEss(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "isComputeEss", value);
     }
 
     /**
@@ -639,6 +693,42 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRemoteVisEnable() {
+        return software.amazon.jsii.Kernel.get(this, "remoteVisEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRemoteVisEnable(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "remoteVisEnable", value);
+    }
+
+    /**
+     */
+    public void setRemoteVisEnable(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "remoteVisEnable", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSccClusterId() {
         return software.amazon.jsii.Kernel.get(this, "sccClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -711,6 +801,96 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskLevel() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskLevel(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskLevel", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskLevel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskLevel", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskSize(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskSize", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskSize", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskType() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskType", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVolumeId() {
+        return software.amazon.jsii.Kernel.get(this, "volumeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVolumeId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "volumeId", value);
+    }
+
+    /**
+     */
+    public void setVolumeId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "volumeId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVolumeMountpoint() {
+        return software.amazon.jsii.Kernel.get(this, "volumeMountpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVolumeMountpoint(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "volumeMountpoint", value);
+    }
+
+    /**
+     */
+    public void setVolumeMountpoint(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "volumeMountpoint", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getVolumeProtocol() {
         return software.amazon.jsii.Kernel.get(this, "volumeProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -747,6 +927,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWithoutElasticIp() {
+        return software.amazon.jsii.Kernel.get(this, "withoutElasticIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setWithoutElasticIp(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "withoutElasticIp", value);
+    }
+
+    /**
+     */
+    public void setWithoutElasticIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "withoutElasticIp", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -761,6 +959,424 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosCluster.AdditionalVolumesProperty")
+    @software.amazon.jsii.Jsii.Proxy(AdditionalVolumesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AdditionalVolumesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getLocalDirectory();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getVolumeId();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getVolumeMountpoint();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getJobQueue() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLocation() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRemoteDirectory() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVolumeProtocol() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVolumeType() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link AdditionalVolumesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AdditionalVolumesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AdditionalVolumesProperty> {
+            java.lang.Object localDirectory;
+            java.lang.Object volumeId;
+            java.lang.Object volumeMountpoint;
+            java.lang.Object jobQueue;
+            java.lang.Object location;
+            java.lang.Object remoteDirectory;
+            java.lang.Object volumeProtocol;
+            java.lang.Object volumeType;
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getLocalDirectory}
+             * @param localDirectory the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder localDirectory(java.lang.String localDirectory) {
+                this.localDirectory = localDirectory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getLocalDirectory}
+             * @param localDirectory the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder localDirectory(com.aliyun.ros.cdk.core.IResolvable localDirectory) {
+                this.localDirectory = localDirectory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getVolumeId}
+             * @param volumeId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder volumeId(java.lang.String volumeId) {
+                this.volumeId = volumeId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getVolumeId}
+             * @param volumeId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder volumeId(com.aliyun.ros.cdk.core.IResolvable volumeId) {
+                this.volumeId = volumeId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getVolumeMountpoint}
+             * @param volumeMountpoint the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder volumeMountpoint(java.lang.String volumeMountpoint) {
+                this.volumeMountpoint = volumeMountpoint;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getVolumeMountpoint}
+             * @param volumeMountpoint the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder volumeMountpoint(com.aliyun.ros.cdk.core.IResolvable volumeMountpoint) {
+                this.volumeMountpoint = volumeMountpoint;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getJobQueue}
+             * @param jobQueue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder jobQueue(java.lang.String jobQueue) {
+                this.jobQueue = jobQueue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getJobQueue}
+             * @param jobQueue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder jobQueue(com.aliyun.ros.cdk.core.IResolvable jobQueue) {
+                this.jobQueue = jobQueue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getLocation}
+             * @param location the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder location(java.lang.String location) {
+                this.location = location;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getLocation}
+             * @param location the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder location(com.aliyun.ros.cdk.core.IResolvable location) {
+                this.location = location;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getRemoteDirectory}
+             * @param remoteDirectory the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder remoteDirectory(java.lang.String remoteDirectory) {
+                this.remoteDirectory = remoteDirectory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getRemoteDirectory}
+             * @param remoteDirectory the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder remoteDirectory(com.aliyun.ros.cdk.core.IResolvable remoteDirectory) {
+                this.remoteDirectory = remoteDirectory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getVolumeProtocol}
+             * @param volumeProtocol the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder volumeProtocol(java.lang.String volumeProtocol) {
+                this.volumeProtocol = volumeProtocol;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getVolumeProtocol}
+             * @param volumeProtocol the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder volumeProtocol(com.aliyun.ros.cdk.core.IResolvable volumeProtocol) {
+                this.volumeProtocol = volumeProtocol;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getVolumeType}
+             * @param volumeType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder volumeType(java.lang.String volumeType) {
+                this.volumeType = volumeType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AdditionalVolumesProperty#getVolumeType}
+             * @param volumeType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder volumeType(com.aliyun.ros.cdk.core.IResolvable volumeType) {
+                this.volumeType = volumeType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AdditionalVolumesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AdditionalVolumesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AdditionalVolumesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AdditionalVolumesProperty {
+            private final java.lang.Object localDirectory;
+            private final java.lang.Object volumeId;
+            private final java.lang.Object volumeMountpoint;
+            private final java.lang.Object jobQueue;
+            private final java.lang.Object location;
+            private final java.lang.Object remoteDirectory;
+            private final java.lang.Object volumeProtocol;
+            private final java.lang.Object volumeType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.localDirectory = software.amazon.jsii.Kernel.get(this, "localDirectory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.volumeId = software.amazon.jsii.Kernel.get(this, "volumeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.volumeMountpoint = software.amazon.jsii.Kernel.get(this, "volumeMountpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.jobQueue = software.amazon.jsii.Kernel.get(this, "jobQueue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.location = software.amazon.jsii.Kernel.get(this, "location", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.remoteDirectory = software.amazon.jsii.Kernel.get(this, "remoteDirectory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.volumeProtocol = software.amazon.jsii.Kernel.get(this, "volumeProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.volumeType = software.amazon.jsii.Kernel.get(this, "volumeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.localDirectory = java.util.Objects.requireNonNull(builder.localDirectory, "localDirectory is required");
+                this.volumeId = java.util.Objects.requireNonNull(builder.volumeId, "volumeId is required");
+                this.volumeMountpoint = java.util.Objects.requireNonNull(builder.volumeMountpoint, "volumeMountpoint is required");
+                this.jobQueue = builder.jobQueue;
+                this.location = builder.location;
+                this.remoteDirectory = builder.remoteDirectory;
+                this.volumeProtocol = builder.volumeProtocol;
+                this.volumeType = builder.volumeType;
+            }
+
+            @Override
+            public final java.lang.Object getLocalDirectory() {
+                return this.localDirectory;
+            }
+
+            @Override
+            public final java.lang.Object getVolumeId() {
+                return this.volumeId;
+            }
+
+            @Override
+            public final java.lang.Object getVolumeMountpoint() {
+                return this.volumeMountpoint;
+            }
+
+            @Override
+            public final java.lang.Object getJobQueue() {
+                return this.jobQueue;
+            }
+
+            @Override
+            public final java.lang.Object getLocation() {
+                return this.location;
+            }
+
+            @Override
+            public final java.lang.Object getRemoteDirectory() {
+                return this.remoteDirectory;
+            }
+
+            @Override
+            public final java.lang.Object getVolumeProtocol() {
+                return this.volumeProtocol;
+            }
+
+            @Override
+            public final java.lang.Object getVolumeType() {
+                return this.volumeType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("localDirectory", om.valueToTree(this.getLocalDirectory()));
+                data.set("volumeId", om.valueToTree(this.getVolumeId()));
+                data.set("volumeMountpoint", om.valueToTree(this.getVolumeMountpoint()));
+                if (this.getJobQueue() != null) {
+                    data.set("jobQueue", om.valueToTree(this.getJobQueue()));
+                }
+                if (this.getLocation() != null) {
+                    data.set("location", om.valueToTree(this.getLocation()));
+                }
+                if (this.getRemoteDirectory() != null) {
+                    data.set("remoteDirectory", om.valueToTree(this.getRemoteDirectory()));
+                }
+                if (this.getVolumeProtocol() != null) {
+                    data.set("volumeProtocol", om.valueToTree(this.getVolumeProtocol()));
+                }
+                if (this.getVolumeType() != null) {
+                    data.set("volumeType", om.valueToTree(this.getVolumeType()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ehpc.RosCluster.AdditionalVolumesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AdditionalVolumesProperty.Jsii$Proxy that = (AdditionalVolumesProperty.Jsii$Proxy) o;
+
+                if (!localDirectory.equals(that.localDirectory)) return false;
+                if (!volumeId.equals(that.volumeId)) return false;
+                if (!volumeMountpoint.equals(that.volumeMountpoint)) return false;
+                if (this.jobQueue != null ? !this.jobQueue.equals(that.jobQueue) : that.jobQueue != null) return false;
+                if (this.location != null ? !this.location.equals(that.location) : that.location != null) return false;
+                if (this.remoteDirectory != null ? !this.remoteDirectory.equals(that.remoteDirectory) : that.remoteDirectory != null) return false;
+                if (this.volumeProtocol != null ? !this.volumeProtocol.equals(that.volumeProtocol) : that.volumeProtocol != null) return false;
+                return this.volumeType != null ? this.volumeType.equals(that.volumeType) : that.volumeType == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.localDirectory.hashCode();
+                result = 31 * result + (this.volumeId.hashCode());
+                result = 31 * result + (this.volumeMountpoint.hashCode());
+                result = 31 * result + (this.jobQueue != null ? this.jobQueue.hashCode() : 0);
+                result = 31 * result + (this.location != null ? this.location.hashCode() : 0);
+                result = 31 * result + (this.remoteDirectory != null ? this.remoteDirectory.hashCode() : 0);
+                result = 31 * result + (this.volumeProtocol != null ? this.volumeProtocol.hashCode() : 0);
+                result = 31 * result + (this.volumeType != null ? this.volumeType.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -1173,23 +1789,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param ehpcVersion This parameter is required.
-         */
-        public Builder ehpcVersion(final java.lang.String ehpcVersion) {
-            this.props.ehpcVersion(ehpcVersion);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param ehpcVersion This parameter is required.
-         */
-        public Builder ehpcVersion(final com.aliyun.ros.cdk.core.IResolvable ehpcVersion) {
-            this.props.ehpcVersion(ehpcVersion);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param name This parameter is required.
          */
         public Builder name(final java.lang.String name) {
@@ -1224,40 +1823,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param volumeId This parameter is required.
-         */
-        public Builder volumeId(final java.lang.String volumeId) {
-            this.props.volumeId(volumeId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param volumeId This parameter is required.
-         */
-        public Builder volumeId(final com.aliyun.ros.cdk.core.IResolvable volumeId) {
-            this.props.volumeId(volumeId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param volumeMountpoint This parameter is required.
-         */
-        public Builder volumeMountpoint(final java.lang.String volumeMountpoint) {
-            this.props.volumeMountpoint(volumeMountpoint);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param volumeMountpoint This parameter is required.
-         */
-        public Builder volumeMountpoint(final com.aliyun.ros.cdk.core.IResolvable volumeMountpoint) {
-            this.props.volumeMountpoint(volumeMountpoint);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param vSwitchId This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
@@ -1287,6 +1852,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder accountType(final com.aliyun.ros.cdk.core.IResolvable accountType) {
             this.props.accountType(accountType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param additionalVolumes This parameter is required.
+         */
+        public Builder additionalVolumes(final com.aliyun.ros.cdk.core.IResolvable additionalVolumes) {
+            this.props.additionalVolumes(additionalVolumes);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param additionalVolumes This parameter is required.
+         */
+        public Builder additionalVolumes(final java.util.List<? extends java.lang.Object> additionalVolumes) {
+            this.props.additionalVolumes(additionalVolumes);
             return this;
         }
 
@@ -1338,6 +1920,40 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param clientVersion This parameter is required.
+         */
+        public Builder clientVersion(final java.lang.String clientVersion) {
+            this.props.clientVersion(clientVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param clientVersion This parameter is required.
+         */
+        public Builder clientVersion(final com.aliyun.ros.cdk.core.IResolvable clientVersion) {
+            this.props.clientVersion(clientVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param computeEnableHt This parameter is required.
+         */
+        public Builder computeEnableHt(final java.lang.Boolean computeEnableHt) {
+            this.props.computeEnableHt(computeEnableHt);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param computeEnableHt This parameter is required.
+         */
+        public Builder computeEnableHt(final com.aliyun.ros.cdk.core.IResolvable computeEnableHt) {
+            this.props.computeEnableHt(computeEnableHt);
             return this;
         }
 
@@ -1445,6 +2061,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param ehpcVersion This parameter is required.
+         */
+        public Builder ehpcVersion(final java.lang.String ehpcVersion) {
+            this.props.ehpcVersion(ehpcVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ehpcVersion This parameter is required.
+         */
+        public Builder ehpcVersion(final com.aliyun.ros.cdk.core.IResolvable ehpcVersion) {
+            this.props.ehpcVersion(ehpcVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param haEnable This parameter is required.
          */
         public Builder haEnable(final java.lang.Boolean haEnable) {
@@ -1491,6 +2124,40 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder imageOwnerAlias(final com.aliyun.ros.cdk.core.IResolvable imageOwnerAlias) {
             this.props.imageOwnerAlias(imageOwnerAlias);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param inputFileUrl This parameter is required.
+         */
+        public Builder inputFileUrl(final java.lang.String inputFileUrl) {
+            this.props.inputFileUrl(inputFileUrl);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param inputFileUrl This parameter is required.
+         */
+        public Builder inputFileUrl(final com.aliyun.ros.cdk.core.IResolvable inputFileUrl) {
+            this.props.inputFileUrl(inputFileUrl);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param isComputeEss This parameter is required.
+         */
+        public Builder isComputeEss(final java.lang.Boolean isComputeEss) {
+            this.props.isComputeEss(isComputeEss);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param isComputeEss This parameter is required.
+         */
+        public Builder isComputeEss(final com.aliyun.ros.cdk.core.IResolvable isComputeEss) {
+            this.props.isComputeEss(isComputeEss);
             return this;
         }
 
@@ -1615,6 +2282,40 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param remoteVisEnable This parameter is required.
+         */
+        public Builder remoteVisEnable(final java.lang.Boolean remoteVisEnable) {
+            this.props.remoteVisEnable(remoteVisEnable);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param remoteVisEnable This parameter is required.
+         */
+        public Builder remoteVisEnable(final com.aliyun.ros.cdk.core.IResolvable remoteVisEnable) {
+            this.props.remoteVisEnable(remoteVisEnable);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param sccClusterId This parameter is required.
          */
         public Builder sccClusterId(final java.lang.String sccClusterId) {
@@ -1683,6 +2384,91 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param systemDiskLevel This parameter is required.
+         */
+        public Builder systemDiskLevel(final java.lang.String systemDiskLevel) {
+            this.props.systemDiskLevel(systemDiskLevel);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskLevel This parameter is required.
+         */
+        public Builder systemDiskLevel(final com.aliyun.ros.cdk.core.IResolvable systemDiskLevel) {
+            this.props.systemDiskLevel(systemDiskLevel);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param systemDiskSize This parameter is required.
+         */
+        public Builder systemDiskSize(final java.lang.Number systemDiskSize) {
+            this.props.systemDiskSize(systemDiskSize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskSize This parameter is required.
+         */
+        public Builder systemDiskSize(final com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
+            this.props.systemDiskSize(systemDiskSize);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param systemDiskType This parameter is required.
+         */
+        public Builder systemDiskType(final java.lang.String systemDiskType) {
+            this.props.systemDiskType(systemDiskType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskType This parameter is required.
+         */
+        public Builder systemDiskType(final com.aliyun.ros.cdk.core.IResolvable systemDiskType) {
+            this.props.systemDiskType(systemDiskType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param volumeId This parameter is required.
+         */
+        public Builder volumeId(final java.lang.String volumeId) {
+            this.props.volumeId(volumeId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param volumeId This parameter is required.
+         */
+        public Builder volumeId(final com.aliyun.ros.cdk.core.IResolvable volumeId) {
+            this.props.volumeId(volumeId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param volumeMountpoint This parameter is required.
+         */
+        public Builder volumeMountpoint(final java.lang.String volumeMountpoint) {
+            this.props.volumeMountpoint(volumeMountpoint);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param volumeMountpoint This parameter is required.
+         */
+        public Builder volumeMountpoint(final com.aliyun.ros.cdk.core.IResolvable volumeMountpoint) {
+            this.props.volumeMountpoint(volumeMountpoint);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param volumeProtocol This parameter is required.
          */
         public Builder volumeProtocol(final java.lang.String volumeProtocol) {
@@ -1712,6 +2498,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder volumeType(final com.aliyun.ros.cdk.core.IResolvable volumeType) {
             this.props.volumeType(volumeType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param withoutElasticIp This parameter is required.
+         */
+        public Builder withoutElasticIp(final java.lang.Boolean withoutElasticIp) {
+            this.props.withoutElasticIp(withoutElasticIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param withoutElasticIp This parameter is required.
+         */
+        public Builder withoutElasticIp(final com.aliyun.ros.cdk.core.IResolvable withoutElasticIp) {
+            this.props.withoutElasticIp(withoutElasticIp);
             return this;
         }
 

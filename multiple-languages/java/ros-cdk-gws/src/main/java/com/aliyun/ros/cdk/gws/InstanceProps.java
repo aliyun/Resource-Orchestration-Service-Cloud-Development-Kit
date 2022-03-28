@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * Properties for defining a `ALIYUN::GWS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.721Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.856Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,17 +76,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
-     * <p>
-     * Value range: 1-200
-     * Default: 200
-     * This value is only valid when AllocatePublicAddress is true.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
-        return null;
-    }
-
-    /**
      * Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
      * <p>
      * Value range: 1-200
@@ -153,7 +142,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object autoRenew;
         java.lang.Object instanceChargeType;
         java.lang.Object internetChargeType;
-        java.lang.Object internetMaxBandwidthIn;
         java.lang.Object internetMaxBandwidthOut;
         java.lang.Object name;
         java.lang.Object period;
@@ -383,32 +371,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link InstanceProps#getInternetMaxBandwidthIn}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
-         *                               Value range: 1-200
-         *                               Default: 200
-         *                               This value is only valid when AllocatePublicAddress is true.
-         * @return {@code this}
-         */
-        public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link InstanceProps#getInternetMaxBandwidthIn}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
-         *                               Value range: 1-200
-         *                               Default: 200
-         *                               This value is only valid when AllocatePublicAddress is true.
-         * @return {@code this}
-         */
-        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link InstanceProps#getInternetMaxBandwidthOut}
          * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
          *                                Value range: 1-200
@@ -551,7 +513,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object autoRenew;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object internetChargeType;
-        private final java.lang.Object internetMaxBandwidthIn;
         private final java.lang.Object internetMaxBandwidthOut;
         private final java.lang.Object name;
         private final java.lang.Object period;
@@ -575,7 +536,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -599,7 +559,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.autoRenew = builder.autoRenew;
             this.instanceChargeType = builder.instanceChargeType;
             this.internetChargeType = builder.internetChargeType;
-            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
             this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
             this.name = builder.name;
             this.period = builder.period;
@@ -663,11 +622,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getInternetMaxBandwidthIn() {
-            return this.internetMaxBandwidthIn;
-        }
-
-        @Override
         public final java.lang.Object getInternetMaxBandwidthOut() {
             return this.internetMaxBandwidthOut;
         }
@@ -719,9 +673,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
             }
-            if (this.getInternetMaxBandwidthIn() != null) {
-                data.set("internetMaxBandwidthIn", om.valueToTree(this.getInternetMaxBandwidthIn()));
-            }
             if (this.getInternetMaxBandwidthOut() != null) {
                 data.set("internetMaxBandwidthOut", om.valueToTree(this.getInternetMaxBandwidthOut()));
             }
@@ -766,7 +717,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
-            if (this.internetMaxBandwidthIn != null ? !this.internetMaxBandwidthIn.equals(that.internetMaxBandwidthIn) : that.internetMaxBandwidthIn != null) return false;
             if (this.internetMaxBandwidthOut != null ? !this.internetMaxBandwidthOut.equals(that.internetMaxBandwidthOut) : that.internetMaxBandwidthOut != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
@@ -787,7 +737,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
-            result = 31 * result + (this.internetMaxBandwidthIn != null ? this.internetMaxBandwidthIn.hashCode() : 0);
             result = 31 * result + (this.internetMaxBandwidthOut != null ? this.internetMaxBandwidthOut.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::AnyCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.840Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.865Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosAnyCluster")
 public class RosAnyCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -41,6 +41,12 @@ public class RosAnyCluster extends com.aliyun.ros.cdk.core.RosResource {
      * The resource type name for this resource class.
      */
     public final static java.lang.String ROS_RESOURCE_TYPE_NAME;
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApiServerSlbId() {
+        return software.amazon.jsii.Kernel.get(this, "attrApiServerSlbId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
 
     /**
      */

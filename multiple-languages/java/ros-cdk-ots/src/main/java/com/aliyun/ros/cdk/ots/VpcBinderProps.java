@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::VpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.030Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.146Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.VpcBinderProps")
 @software.amazon.jsii.Jsii.Proxy(VpcBinderProps.Jsii$Proxy.class)
 public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {

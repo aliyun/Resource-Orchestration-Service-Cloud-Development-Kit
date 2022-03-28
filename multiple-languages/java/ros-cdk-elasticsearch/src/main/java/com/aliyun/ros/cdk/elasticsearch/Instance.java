@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * A ROS resource type:  `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.455Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.595Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -360,6 +360,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property kibanaNode: The dedicated kibana node setting.
+         * <p>
+         * @return {@code this}
+         * @param kibanaNode Property kibanaNode: The dedicated kibana node setting. This parameter is required.
+         */
+        public Builder kibanaNode(final com.aliyun.ros.cdk.core.IResolvable kibanaNode) {
+            this.props.kibanaNode(kibanaNode);
+            return this;
+        }
+        /**
+         * Property kibanaNode: The dedicated kibana node setting.
+         * <p>
+         * @return {@code this}
+         * @param kibanaNode Property kibanaNode: The dedicated kibana node setting. This parameter is required.
+         */
+        public Builder kibanaNode(final com.aliyun.ros.cdk.elasticsearch.RosInstance.KibanaNodeProperty kibanaNode) {
+            this.props.kibanaNode(kibanaNode);
+            return this;
+        }
+
+        /**
          * Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
          * <p>
          * @return {@code this}
@@ -549,6 +570,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder zoneCount(final com.aliyun.ros.cdk.core.IResolvable zoneCount) {
             this.props.zoneCount(zoneCount);
+            return this;
+        }
+
+        /**
+         * Property zoneId: The zone id of elasticsearch.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: The zone id of elasticsearch. This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * Property zoneId: The zone id of elasticsearch.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: The zone id of elasticsearch. This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

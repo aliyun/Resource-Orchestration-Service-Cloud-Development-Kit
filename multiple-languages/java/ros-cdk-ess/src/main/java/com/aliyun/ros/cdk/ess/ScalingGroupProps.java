@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.571Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.712Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingGroupProps.Jsii$Proxy.class)
 public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable {

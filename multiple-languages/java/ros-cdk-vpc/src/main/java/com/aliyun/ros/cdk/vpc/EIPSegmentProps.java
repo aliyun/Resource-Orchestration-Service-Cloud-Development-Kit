@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIPSegment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.594Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.743Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPSegmentProps")
 @software.amazon.jsii.Jsii.Proxy(EIPSegmentProps.Jsii$Proxy.class)
 public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {

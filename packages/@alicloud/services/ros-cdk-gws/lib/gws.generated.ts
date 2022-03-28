@@ -319,14 +319,6 @@ export interface RosInstanceProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
-     * Value range: 1-200
-     * Default: 200
-     * This value is only valid when AllocatePublicAddress is true.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
      * @Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
      * Value range: 1-200
      * Default: 200
@@ -395,7 +387,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
     errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
@@ -451,7 +442,6 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       Name: ros.stringToRosTemplate(properties.name),
       Period: ros.numberToRosTemplate(properties.period),
@@ -570,14 +560,6 @@ export class RosInstance extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
-     * Value range: 1-200
-     * Default: 200
-     * This value is only valid when AllocatePublicAddress is true.
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
-
-    /**
      * @Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
      * Value range: 1-200
      * Default: 200
@@ -637,7 +619,6 @@ export class RosInstance extends ros.RosResource {
         this.autoRenew = props.autoRenew;
         this.instanceChargeType = props.instanceChargeType;
         this.internetChargeType = props.internetChargeType;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
         this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
         this.name = props.name;
         this.period = props.period;
@@ -659,7 +640,6 @@ export class RosInstance extends ros.RosResource {
             autoRenew: this.autoRenew,
             instanceChargeType: this.instanceChargeType,
             internetChargeType: this.internetChargeType,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
             internetMaxBandwidthOut: this.internetMaxBandwidthOut,
             name: this.name,
             period: this.period,

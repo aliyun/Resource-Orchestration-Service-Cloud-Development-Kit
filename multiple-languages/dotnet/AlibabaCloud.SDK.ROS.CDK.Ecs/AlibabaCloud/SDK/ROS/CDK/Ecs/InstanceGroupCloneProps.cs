@@ -306,7 +306,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
         /// <remarks>
         /// Default value is Month.Old instances will not be changed.
         /// </remarks>

@@ -16,7 +16,7 @@
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		
     
-		<PackageVersion>1.0.6</PackageVersion>
+		<PackageVersion>1.0.7</PackageVersion>
 		
     
 		<!-- Additional Metadata -->
@@ -70,7 +70,7 @@
 	<ItemGroup>
 		
     
-		<EmbeddedResource Include="alicloud-ros-cdk-core-1.0.6.tgz"/>
+		<EmbeddedResource Include="alicloud-ros-cdk-core-1.0.7.tgz"/>
 		
   
 	</ItemGroup>
@@ -82,10 +82,10 @@
 		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.55.1,2.0.0)"/>
 		
     
-		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Assembly.Schema" Version="[1.0.6,2.0.0)"/>
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Assembly.Schema" Version="[1.0.7,2.0.0)"/>
 		
     
-		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Cxapi" Version="[1.0.6,2.0.0)"/>
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Cxapi" Version="[1.0.7,2.0.0)"/>
 		
     
 		<PackageReference Include="Constructs" Version="[3.0.4,4.0.0)"/>

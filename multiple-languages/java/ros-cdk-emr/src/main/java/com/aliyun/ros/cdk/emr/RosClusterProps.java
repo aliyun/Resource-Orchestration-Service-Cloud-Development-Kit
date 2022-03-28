@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Properties for defining a `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.480Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.621Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,6 +55,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBootstrapAction() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getClickHouseConf() {
         return null;
     }
 
@@ -241,6 +247,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object authorizeContent;
         java.lang.Object autoRenew;
         java.lang.Object bootstrapAction;
+        java.lang.Object clickHouseConf;
         java.lang.Object config;
         java.lang.Object configurations;
         java.lang.Object depositType;
@@ -486,6 +493,26 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder bootstrapAction(java.util.List<? extends java.lang.Object> bootstrapAction) {
             this.bootstrapAction = bootstrapAction;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClickHouseConf}
+         * @param clickHouseConf the value to be set.
+         * @return {@code this}
+         */
+        public Builder clickHouseConf(com.aliyun.ros.cdk.core.IResolvable clickHouseConf) {
+            this.clickHouseConf = clickHouseConf;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClickHouseConf}
+         * @param clickHouseConf the value to be set.
+         * @return {@code this}
+         */
+        public Builder clickHouseConf(java.util.Map<java.lang.String, ? extends java.lang.Object> clickHouseConf) {
+            this.clickHouseConf = clickHouseConf;
             return this;
         }
 
@@ -1056,6 +1083,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object authorizeContent;
         private final java.lang.Object autoRenew;
         private final java.lang.Object bootstrapAction;
+        private final java.lang.Object clickHouseConf;
         private final java.lang.Object config;
         private final java.lang.Object configurations;
         private final java.lang.Object depositType;
@@ -1101,6 +1129,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.authorizeContent = software.amazon.jsii.Kernel.get(this, "authorizeContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bootstrapAction = software.amazon.jsii.Kernel.get(this, "bootstrapAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clickHouseConf = software.amazon.jsii.Kernel.get(this, "clickHouseConf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.configurations = software.amazon.jsii.Kernel.get(this, "configurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.depositType = software.amazon.jsii.Kernel.get(this, "depositType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1146,6 +1175,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.authorizeContent = builder.authorizeContent;
             this.autoRenew = builder.autoRenew;
             this.bootstrapAction = builder.bootstrapAction;
+            this.clickHouseConf = builder.clickHouseConf;
             this.config = builder.config;
             this.configurations = builder.configurations;
             this.depositType = builder.depositType;
@@ -1228,6 +1258,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getBootstrapAction() {
             return this.bootstrapAction;
+        }
+
+        @Override
+        public final java.lang.Object getClickHouseConf() {
+            return this.clickHouseConf;
         }
 
         @Override
@@ -1388,6 +1423,9 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getBootstrapAction() != null) {
                 data.set("bootstrapAction", om.valueToTree(this.getBootstrapAction()));
             }
+            if (this.getClickHouseConf() != null) {
+                data.set("clickHouseConf", om.valueToTree(this.getClickHouseConf()));
+            }
             if (this.getConfig() != null) {
                 data.set("config", om.valueToTree(this.getConfig()));
             }
@@ -1498,6 +1536,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.authorizeContent != null ? !this.authorizeContent.equals(that.authorizeContent) : that.authorizeContent != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.bootstrapAction != null ? !this.bootstrapAction.equals(that.bootstrapAction) : that.bootstrapAction != null) return false;
+            if (this.clickHouseConf != null ? !this.clickHouseConf.equals(that.clickHouseConf) : that.clickHouseConf != null) return false;
             if (this.config != null ? !this.config.equals(that.config) : that.config != null) return false;
             if (this.configurations != null ? !this.configurations.equals(that.configurations) : that.configurations != null) return false;
             if (this.depositType != null ? !this.depositType.equals(that.depositType) : that.depositType != null) return false;
@@ -1540,6 +1579,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.authorizeContent != null ? this.authorizeContent.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.bootstrapAction != null ? this.bootstrapAction.hashCode() : 0);
+            result = 31 * result + (this.clickHouseConf != null ? this.clickHouseConf.hashCode() : 0);
             result = 31 * result + (this.config != null ? this.config.hashCode() : 0);
             result = 31 * result + (this.configurations != null ? this.configurations.hashCode() : 0);
             result = 31 * result + (this.depositType != null ? this.depositType.hashCode() : 0);

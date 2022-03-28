@@ -20,6 +20,8 @@
 @alicloud/ros-cdk-vpc.DhcpOptionsSetProps=com.aliyun.ros.cdk.vpc.DhcpOptionsSetProps
 @alicloud/ros-cdk-vpc.EIPAssociation=com.aliyun.ros.cdk.vpc.EIPAssociation
 @alicloud/ros-cdk-vpc.EIPAssociationProps=com.aliyun.ros.cdk.vpc.EIPAssociationProps
+@alicloud/ros-cdk-vpc.EIPPro=com.aliyun.ros.cdk.vpc.EIPPro
+@alicloud/ros-cdk-vpc.EIPProProps=com.aliyun.ros.cdk.vpc.EIPProProps
 @alicloud/ros-cdk-vpc.EIPProps=com.aliyun.ros.cdk.vpc.EIPProps
 @alicloud/ros-cdk-vpc.EIPSegment=com.aliyun.ros.cdk.vpc.EIPSegment
 @alicloud/ros-cdk-vpc.EIPSegmentProps=com.aliyun.ros.cdk.vpc.EIPSegmentProps
@@ -70,6 +72,9 @@
 @alicloud/ros-cdk-vpc.RosEIP.TagsProperty=com.aliyun.ros.cdk.vpc.RosEIP$TagsProperty
 @alicloud/ros-cdk-vpc.RosEIPAssociation=com.aliyun.ros.cdk.vpc.RosEIPAssociation
 @alicloud/ros-cdk-vpc.RosEIPAssociationProps=com.aliyun.ros.cdk.vpc.RosEIPAssociationProps
+@alicloud/ros-cdk-vpc.RosEIPPro=com.aliyun.ros.cdk.vpc.RosEIPPro
+@alicloud/ros-cdk-vpc.RosEIPPro.TagsProperty=com.aliyun.ros.cdk.vpc.RosEIPPro$TagsProperty
+@alicloud/ros-cdk-vpc.RosEIPProProps=com.aliyun.ros.cdk.vpc.RosEIPProProps
 @alicloud/ros-cdk-vpc.RosEIPProps=com.aliyun.ros.cdk.vpc.RosEIPProps
 @alicloud/ros-cdk-vpc.RosEIPSegment=com.aliyun.ros.cdk.vpc.RosEIPSegment
 @alicloud/ros-cdk-vpc.RosEIPSegmentProps=com.aliyun.ros.cdk.vpc.RosEIPSegmentProps

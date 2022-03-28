@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::ACLRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.404Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.543Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosACLRuleProps.Jsii$Proxy.class)
 public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,7 +48,31 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDpiGroupIds() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDpiSignatureIds() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
         return null;
     }
 
@@ -71,7 +95,11 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object sourceCidr;
         java.lang.Object sourcePortRange;
         java.lang.Object description;
+        java.lang.Object dpiGroupIds;
+        java.lang.Object dpiSignatureIds;
+        java.lang.Object name;
         java.lang.Object priority;
+        java.lang.Object type;
 
         /**
          * Sets the value of {@link RosACLRuleProps#getAclId}
@@ -254,6 +282,66 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosACLRuleProps#getDpiGroupIds}
+         * @param dpiGroupIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder dpiGroupIds(com.aliyun.ros.cdk.core.IResolvable dpiGroupIds) {
+            this.dpiGroupIds = dpiGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getDpiGroupIds}
+         * @param dpiGroupIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder dpiGroupIds(java.util.List<? extends java.lang.Object> dpiGroupIds) {
+            this.dpiGroupIds = dpiGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getDpiSignatureIds}
+         * @param dpiSignatureIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder dpiSignatureIds(com.aliyun.ros.cdk.core.IResolvable dpiSignatureIds) {
+            this.dpiSignatureIds = dpiSignatureIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getDpiSignatureIds}
+         * @param dpiSignatureIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder dpiSignatureIds(java.util.List<? extends java.lang.Object> dpiSignatureIds) {
+            this.dpiSignatureIds = dpiSignatureIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosACLRuleProps#getPriority}
          * @param priority the value to be set.
          * @return {@code this}
@@ -270,6 +358,26 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
             this.priority = priority;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getType}
+         * @param type the value to be set.
+         * @return {@code this}
+         */
+        public Builder type(java.lang.String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getType}
+         * @param type the value to be set.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
             return this;
         }
 
@@ -298,7 +406,11 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object sourceCidr;
         private final java.lang.Object sourcePortRange;
         private final java.lang.Object description;
+        private final java.lang.Object dpiGroupIds;
+        private final java.lang.Object dpiSignatureIds;
+        private final java.lang.Object name;
         private final java.lang.Object priority;
+        private final java.lang.Object type;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -315,7 +427,11 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
             this.sourceCidr = software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dpiGroupIds = software.amazon.jsii.Kernel.get(this, "dpiGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dpiSignatureIds = software.amazon.jsii.Kernel.get(this, "dpiSignatureIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -332,7 +448,11 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
             this.sourceCidr = java.util.Objects.requireNonNull(builder.sourceCidr, "sourceCidr is required");
             this.sourcePortRange = java.util.Objects.requireNonNull(builder.sourcePortRange, "sourcePortRange is required");
             this.description = builder.description;
+            this.dpiGroupIds = builder.dpiGroupIds;
+            this.dpiSignatureIds = builder.dpiSignatureIds;
+            this.name = builder.name;
             this.priority = builder.priority;
+            this.type = builder.type;
         }
 
         @Override
@@ -381,8 +501,28 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getDpiGroupIds() {
+            return this.dpiGroupIds;
+        }
+
+        @Override
+        public final java.lang.Object getDpiSignatureIds() {
+            return this.dpiSignatureIds;
+        }
+
+        @Override
+        public final java.lang.Object getName() {
+            return this.name;
+        }
+
+        @Override
         public final java.lang.Object getPriority() {
             return this.priority;
+        }
+
+        @Override
+        public final java.lang.Object getType() {
+            return this.type;
         }
 
         @Override
@@ -402,8 +542,20 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getDpiGroupIds() != null) {
+                data.set("dpiGroupIds", om.valueToTree(this.getDpiGroupIds()));
+            }
+            if (this.getDpiSignatureIds() != null) {
+                data.set("dpiSignatureIds", om.valueToTree(this.getDpiSignatureIds()));
+            }
+            if (this.getName() != null) {
+                data.set("name", om.valueToTree(this.getName()));
+            }
             if (this.getPriority() != null) {
                 data.set("priority", om.valueToTree(this.getPriority()));
+            }
+            if (this.getType() != null) {
+                data.set("type", om.valueToTree(this.getType()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -432,7 +584,11 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
             if (!sourceCidr.equals(that.sourceCidr)) return false;
             if (!sourcePortRange.equals(that.sourcePortRange)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.priority != null ? this.priority.equals(that.priority) : that.priority == null;
+            if (this.dpiGroupIds != null ? !this.dpiGroupIds.equals(that.dpiGroupIds) : that.dpiGroupIds != null) return false;
+            if (this.dpiSignatureIds != null ? !this.dpiSignatureIds.equals(that.dpiSignatureIds) : that.dpiSignatureIds != null) return false;
+            if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.priority != null ? !this.priority.equals(that.priority) : that.priority != null) return false;
+            return this.type != null ? this.type.equals(that.type) : that.type == null;
         }
 
         @Override
@@ -446,7 +602,11 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.sourceCidr.hashCode());
             result = 31 * result + (this.sourcePortRange.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.dpiGroupIds != null ? this.dpiGroupIds.hashCode() : 0);
+            result = 31 * result + (this.dpiSignatureIds != null ? this.dpiSignatureIds.hashCode() : 0);
+            result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.priority != null ? this.priority.hashCode() : 0);
+            result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
             return result;
         }
     }

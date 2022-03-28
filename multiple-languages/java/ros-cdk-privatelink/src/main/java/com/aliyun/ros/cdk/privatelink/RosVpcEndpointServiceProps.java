@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.085Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.199Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcEndpointServiceProps.Jsii$Proxy.class)
 public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSerializable {

@@ -55,10 +55,38 @@ export interface ACLRuleProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property dpiGroupIds: The ID of the application group.
+     * You can enter at most 100 application group IDs at a time.
+     * You can call the ListDpiGroups operation to query application group IDs and information about the applications.
+     */
+    readonly dpiGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property dpiSignatureIds: The ID of the application.
+     * You can enter at most 100 application IDs at a time.
+     * You can call the ListDpiSignatures operation to query application IDs and information about the applications.
+     */
+    readonly dpiSignatureIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property name: The name of the ACL rule.
+     * The name must be 2 to 100 characters in length, and can contain digits, underscores
+     * (_), and hyphens (-). It must start with a letter.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
      * Property priority: Priority, ranging from 1 to 100.
      * Default: 1
      */
     readonly priority?: number | ros.IResolvable;
+
+    /**
+     * Property type: The type of the ACL rule: Valid values:
+     * LAN: The ACL rule controls traffic of private IP addresses. This is the default value.
+     * WAN: The ACL rule controls traffic of public IP addresses.
+     */
+    readonly type?: string | ros.IResolvable;
 }
 
 /**
@@ -89,14 +117,18 @@ export class ACLRule extends ros.Resource {
         const rosACLRule = new RosACLRule(this, id,  {
             policy: props.policy,
             description: props.description,
-            destCidr: props.destCidr,
             sourcePortRange: props.sourcePortRange,
             sourceCidr: props.sourceCidr,
             priority: props.priority === undefined || props.priority === null ? 1 : props.priority,
             aclId: props.aclId,
-            ipProtocol: props.ipProtocol,
             destPortRange: props.destPortRange,
             direction: props.direction,
+            dpiGroupIds: props.dpiGroupIds,
+            name: props.name,
+            type: props.type,
+            destCidr: props.destCidr,
+            dpiSignatureIds: props.dpiSignatureIds,
+            ipProtocol: props.ipProtocol,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosACLRule;
         this.attrAcrId = rosACLRule.attrAcrId;

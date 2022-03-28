@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * A ROS resource type:  `ALIYUN::GWS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.719Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.854Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -356,35 +356,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.props.internetChargeType(internetChargeType);
-            return this;
-        }
-
-        /**
-         * Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
-         * <p>
-         * Value range: 1-200
-         * Default: 200
-         * This value is only valid when AllocatePublicAddress is true.
-         * <p>
-         * @return {@code this}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps). This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final java.lang.Number internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
-            return this;
-        }
-        /**
-         * Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
-         * <p>
-         * Value range: 1-200
-         * Default: 200
-         * This value is only valid when AllocatePublicAddress is true.
-         * <p>
-         * @return {@code this}
-         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps). This parameter is required.
-         */
-        public Builder internetMaxBandwidthIn(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
-            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
             return this;
         }
 

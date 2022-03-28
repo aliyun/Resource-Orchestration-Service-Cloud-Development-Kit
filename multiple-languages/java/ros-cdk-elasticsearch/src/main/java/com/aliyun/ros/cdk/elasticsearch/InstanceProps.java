@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * Properties for defining a `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.457Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.598Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -68,6 +68,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
+        return null;
+    }
+
+    /**
+     * Property kibanaNode: The dedicated kibana node setting.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKibanaNode() {
         return null;
     }
 
@@ -143,6 +150,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property zoneId: The zone id of elasticsearch.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link InstanceProps}
      */
     static Builder builder() {
@@ -161,6 +175,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object enableKibanaPublic;
         java.lang.Object enablePublic;
         java.lang.Object instanceChargeType;
+        java.lang.Object kibanaNode;
         java.lang.Object kibanaWhitelist;
         java.lang.Object masterNode;
         java.lang.Object period;
@@ -170,6 +185,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags;
         java.lang.Object ymlConfig;
         java.lang.Object zoneCount;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link InstanceProps#getDataNode}
@@ -360,6 +376,26 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getKibanaNode}
+         * @param kibanaNode Property kibanaNode: The dedicated kibana node setting.
+         * @return {@code this}
+         */
+        public Builder kibanaNode(com.aliyun.ros.cdk.core.IResolvable kibanaNode) {
+            this.kibanaNode = kibanaNode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getKibanaNode}
+         * @param kibanaNode Property kibanaNode: The dedicated kibana node setting.
+         * @return {@code this}
+         */
+        public Builder kibanaNode(com.aliyun.ros.cdk.elasticsearch.RosInstance.KibanaNodeProperty kibanaNode) {
+            this.kibanaNode = kibanaNode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getKibanaWhitelist}
          * @param kibanaWhitelist Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
          * @return {@code this}
@@ -538,6 +574,26 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getZoneId}
+         * @param zoneId Property zoneId: The zone id of elasticsearch.
+         * @return {@code this}
+         */
+        public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getZoneId}
+         * @param zoneId Property zoneId: The zone id of elasticsearch.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link InstanceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -562,6 +618,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object enableKibanaPublic;
         private final java.lang.Object enablePublic;
         private final java.lang.Object instanceChargeType;
+        private final java.lang.Object kibanaNode;
         private final java.lang.Object kibanaWhitelist;
         private final java.lang.Object masterNode;
         private final java.lang.Object period;
@@ -571,6 +628,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags;
         private final java.lang.Object ymlConfig;
         private final java.lang.Object zoneCount;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -587,6 +645,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.enableKibanaPublic = software.amazon.jsii.Kernel.get(this, "enableKibanaPublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enablePublic = software.amazon.jsii.Kernel.get(this, "enablePublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.kibanaNode = software.amazon.jsii.Kernel.get(this, "kibanaNode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kibanaWhitelist = software.amazon.jsii.Kernel.get(this, "kibanaWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterNode = software.amazon.jsii.Kernel.get(this, "masterNode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -596,6 +655,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty.class)));
             this.ymlConfig = software.amazon.jsii.Kernel.get(this, "ymlConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneCount = software.amazon.jsii.Kernel.get(this, "zoneCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -613,6 +673,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.enableKibanaPublic = builder.enableKibanaPublic;
             this.enablePublic = builder.enablePublic;
             this.instanceChargeType = builder.instanceChargeType;
+            this.kibanaNode = builder.kibanaNode;
             this.kibanaWhitelist = builder.kibanaWhitelist;
             this.masterNode = builder.masterNode;
             this.period = builder.period;
@@ -622,6 +683,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.tags = (java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty>)builder.tags;
             this.ymlConfig = builder.ymlConfig;
             this.zoneCount = builder.zoneCount;
+            this.zoneId = builder.zoneId;
         }
 
         @Override
@@ -670,6 +732,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getKibanaNode() {
+            return this.kibanaNode;
+        }
+
+        @Override
         public final java.lang.Object getKibanaWhitelist() {
             return this.kibanaWhitelist;
         }
@@ -715,6 +782,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getZoneId() {
+            return this.zoneId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -738,6 +810,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getInstanceChargeType() != null) {
                 data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
+            }
+            if (this.getKibanaNode() != null) {
+                data.set("kibanaNode", om.valueToTree(this.getKibanaNode()));
             }
             if (this.getKibanaWhitelist() != null) {
                 data.set("kibanaWhitelist", om.valueToTree(this.getKibanaWhitelist()));
@@ -766,6 +841,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getZoneCount() != null) {
                 data.set("zoneCount", om.valueToTree(this.getZoneCount()));
             }
+            if (this.getZoneId() != null) {
+                data.set("zoneId", om.valueToTree(this.getZoneId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-elasticsearch.InstanceProps"));
@@ -793,6 +871,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.enableKibanaPublic != null ? !this.enableKibanaPublic.equals(that.enableKibanaPublic) : that.enableKibanaPublic != null) return false;
             if (this.enablePublic != null ? !this.enablePublic.equals(that.enablePublic) : that.enablePublic != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
+            if (this.kibanaNode != null ? !this.kibanaNode.equals(that.kibanaNode) : that.kibanaNode != null) return false;
             if (this.kibanaWhitelist != null ? !this.kibanaWhitelist.equals(that.kibanaWhitelist) : that.kibanaWhitelist != null) return false;
             if (this.masterNode != null ? !this.masterNode.equals(that.masterNode) : that.masterNode != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
@@ -801,7 +880,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.ymlConfig != null ? !this.ymlConfig.equals(that.ymlConfig) : that.ymlConfig != null) return false;
-            return this.zoneCount != null ? this.zoneCount.equals(that.zoneCount) : that.zoneCount == null;
+            if (this.zoneCount != null ? !this.zoneCount.equals(that.zoneCount) : that.zoneCount != null) return false;
+            return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
         @Override
@@ -815,6 +895,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.enableKibanaPublic != null ? this.enableKibanaPublic.hashCode() : 0);
             result = 31 * result + (this.enablePublic != null ? this.enablePublic.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
+            result = 31 * result + (this.kibanaNode != null ? this.kibanaNode.hashCode() : 0);
             result = 31 * result + (this.kibanaWhitelist != null ? this.kibanaWhitelist.hashCode() : 0);
             result = 31 * result + (this.masterNode != null ? this.masterNode.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
@@ -824,6 +905,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.ymlConfig != null ? this.ymlConfig.hashCode() : 0);
             result = 31 * result + (this.zoneCount != null ? this.zoneCount.hashCode() : 0);
+            result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }
     }

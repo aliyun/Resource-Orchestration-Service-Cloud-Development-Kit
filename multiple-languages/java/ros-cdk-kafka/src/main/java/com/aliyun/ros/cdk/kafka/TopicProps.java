@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * Properties for defining a `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:15.817Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.948Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.TopicProps")
 @software.amazon.jsii.Jsii.Proxy(TopicProps.Jsii$Proxy.class)
 public interface TopicProps extends software.amazon.jsii.JsiiSerializable {

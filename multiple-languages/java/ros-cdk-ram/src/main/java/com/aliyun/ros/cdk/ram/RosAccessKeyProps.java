@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::AccessKey`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:16.114Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.228Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosAccessKeyProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessKeyProps.Jsii$Proxy.class)
 public interface RosAccessKeyProps extends software.amazon.jsii.JsiiSerializable {

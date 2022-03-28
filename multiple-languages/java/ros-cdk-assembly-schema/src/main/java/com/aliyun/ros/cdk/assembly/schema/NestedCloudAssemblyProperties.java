@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Artifact properties for nested cloud assemblies.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-17T08:21:14.165Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.200Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.NestedCloudAssemblyProperties")
 @software.amazon.jsii.Jsii.Proxy(NestedCloudAssemblyProperties.Jsii$Proxy.class)
 public interface NestedCloudAssemblyProperties extends software.amazon.jsii.JsiiSerializable {

@@ -772,7 +772,9 @@ export interface RosDBInstanceProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property period: The subscription duration. Valid values:
+     * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+     *  When PeriodType is Year, it could be from 1 to 5.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -989,11 +991,10 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateString)(properties.backupPolicyMode));
     if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateRange)({
-            data: properties.period,
-            min: 1,
-            max: 9,
-          }));
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60],
+        }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.localLogRetentionHours && (typeof properties.localLogRetentionHours) !== 'object') {
@@ -1531,7 +1532,9 @@ export class RosDBInstance extends ros.RosResource {
     public payType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property period: The subscription duration. Valid values:
+     * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+     *  When PeriodType is Year, it could be from 1 to 5.
      */
     public period: number | ros.IResolvable | undefined;
 
@@ -1999,7 +2002,9 @@ export interface RosDBInstanceCloneProps {
     readonly masterUserType?: string | ros.IResolvable;
 
     /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property period: The subscription duration. Valid values:
+     * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+     *  When PeriodType is Year, it could be from 1 to 5.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -2196,11 +2201,10 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateRange)({
-            data: properties.period,
-            min: 1,
-            max: 9,
-          }));
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60],
+        }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
@@ -2500,7 +2504,9 @@ export class RosDBInstanceClone extends ros.RosResource {
     public masterUserType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property period: The subscription duration. Valid values:
+     * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+     *  When PeriodType is Year, it could be from 1 to 5.
      */
     public period: number | ros.IResolvable | undefined;
 
@@ -4813,11 +4819,7 @@ export interface RosReadOnlyDBInstanceProps {
     readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * @Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values:
-     * - 5.6
-     * - 5.7
-     * - 8.0
-     * - 2017_ent
+     * @Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values: 5.6, 5.7, 8.0, 2017_ent, 2019_ent
      */
     readonly engineVersion: string | ros.IResolvable;
 
@@ -4834,10 +4836,11 @@ export interface RosReadOnlyDBInstanceProps {
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
-     * @Property category: The edition of the instance. Valid values:
-     * - Basic
-     * - HighAvailability
-     * - AlwaysOn
+     * @Property category: The RDS edition of the read-only instance. Valid values:
+     * Basic: Basic Edition.
+     * HighAvailability: High-availability Edition. This is the default value.
+     * AlwaysOn: Cluster Edition.
+     * Finance: Enterprise Edition. This edition is available only on the China site (aliyun.com).
      */
     readonly category?: string | ros.IResolvable;
 
@@ -4847,10 +4850,12 @@ export interface RosReadOnlyDBInstanceProps {
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
-     * - local_ssd/ephemeral_ssd: local SSDs.
-     * - cloud_ssd: SSDs.
-     * - cloud_essd: ESSDs.
+     * @Property dbInstanceStorageType: The type of storage media that is used by the instance. Valid values:
+     * local_ssd: local SSDs
+     * cloud_ssd: standard SSDs
+     * cloud_essd: ESSDs of performance level 1 (PL1)
+     * cloud_essd2: ESSDs of PL2
+     * cloud_essd3: ESSDs of PL3
      */
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
@@ -4860,7 +4865,9 @@ export interface RosReadOnlyDBInstanceProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property period: The subscription duration. Valid values:
+     * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+     *  When PeriodType is Year, it could be from 1 to 5.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -4927,17 +4934,11 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn"],
+          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
-    if(properties.engineVersion && (typeof properties.engineVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('engineVersion', ros.validateAllowedValues)({
-          data: properties.engineVersion,
-          allowedValues: ["5.6","5.7","8.0","2017_ent"],
-        }));
-    }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
@@ -4949,11 +4950,10 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateRange)({
-            data: properties.period,
-            min: 1,
-            max: 9,
-          }));
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,10,11,12,24,36,48,60],
+        }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.payType && (typeof properties.payType) !== 'object') {
@@ -4963,12 +4963,6 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    if(properties.dbInstanceStorageType && (typeof properties.dbInstanceStorageType) !== 'object') {
-        errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateAllowedValues)({
-          data: properties.dbInstanceStorageType,
-          allowedValues: ["local_ssd","ephemeral_ssd","cloud_ssd","cloud_essd"],
-        }));
-    }
     errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
@@ -5061,11 +5055,7 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * @Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values:
-     * - 5.6
-     * - 5.7
-     * - 8.0
-     * - 2017_ent
+     * @Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values: 5.6, 5.7, 8.0, 2017_ent, 2019_ent
      */
     public engineVersion: string | ros.IResolvable;
 
@@ -5082,10 +5072,11 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public autoRenew: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property category: The edition of the instance. Valid values:
-     * - Basic
-     * - HighAvailability
-     * - AlwaysOn
+     * @Property category: The RDS edition of the read-only instance. Valid values:
+     * Basic: Basic Edition.
+     * HighAvailability: High-availability Edition. This is the default value.
+     * AlwaysOn: Cluster Edition.
+     * Finance: Enterprise Edition. This edition is available only on the China site (aliyun.com).
      */
     public category: string | ros.IResolvable | undefined;
 
@@ -5095,10 +5086,12 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
-     * - local_ssd/ephemeral_ssd: local SSDs.
-     * - cloud_ssd: SSDs.
-     * - cloud_essd: ESSDs.
+     * @Property dbInstanceStorageType: The type of storage media that is used by the instance. Valid values:
+     * local_ssd: local SSDs
+     * cloud_ssd: standard SSDs
+     * cloud_essd: ESSDs of performance level 1 (PL1)
+     * cloud_essd2: ESSDs of PL2
+     * cloud_essd3: ESSDs of PL3
      */
     public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
@@ -5108,7 +5101,9 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public payType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property period: The subscription duration. Valid values:
+     * When PeriodType is Month, it could be from 1 to 12, 24, 36, 48, 60.
+     *  When PeriodType is Year, it could be from 1 to 5.
      */
     public period: number | ros.IResolvable | undefined;
 

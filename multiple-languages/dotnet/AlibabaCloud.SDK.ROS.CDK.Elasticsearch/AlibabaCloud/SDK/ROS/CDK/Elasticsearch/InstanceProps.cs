@@ -99,6 +99,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             set;
         }
 
+        /// <summary>Property kibanaNode: The dedicated kibana node setting.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "kibanaNode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.KibanaNodeProperty\"}]}}", isOptional: true)]
+        public object? KibanaNode
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "kibanaWhitelist", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -187,6 +196,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         [JsiiOptional]
         [JsiiProperty(name: "zoneCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ZoneCount
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property zoneId: The zone id of elasticsearch.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ZoneId
         {
             get;
             set;

@@ -197,19 +197,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-        /// </remarks>
-        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? InternetMaxBandwidthIn
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
         /// </remarks>
         [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -689,16 +676,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InternetChargeType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? InternetMaxBandwidthIn
             {
                 get => GetInstanceProperty<object?>();
             }
