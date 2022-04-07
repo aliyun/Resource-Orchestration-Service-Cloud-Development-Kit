@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * The ``Fn::GetAtt`` intrinsic function returns the value of an attribute from a resource in the template.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:40.191Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnGetAtt")
 public class FnGetAtt extends com.aliyun.ros.cdk.core.Intrinsic {
 
