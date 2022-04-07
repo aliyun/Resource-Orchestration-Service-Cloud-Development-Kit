@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * A ROS template type:  `ALIYUN::OOS::Parameter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:03.100Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:42.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosParameter")
 public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
 

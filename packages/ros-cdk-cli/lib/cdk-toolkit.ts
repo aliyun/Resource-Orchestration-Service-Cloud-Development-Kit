@@ -284,6 +284,7 @@ export class CdkToolkit {
         let file = path.join(configSavePath);
         fs.writeFileSync(file, JSON.stringify(inputConfigInfo, null, '\t'));
         success(`\n ✅ Your cdk configuration has been saved successfully!`);
+        exit(0);
     }
 
     public async configSet(options: ConfigSetOptions) {
@@ -333,6 +334,7 @@ export class CdkToolkit {
         configInfo.endpoint = options.endpoint;
         fs.writeFileSync(file, JSON.stringify(configInfo, null, '\t'));
         success(`\n ✅ Your cdk configuration has been saved successfully!`);
+        exit(0);
     }
 
 
@@ -434,6 +436,7 @@ export class CdkToolkit {
         let file = path.join(configSavePath);
         fs.writeFileSync(file, JSON.stringify(configInfo, null, '\t'));
         success(`\n ✅ Your cdk configuration has been load from Aliyun Cli configuration saved successfully %s %s!`, modeType[modeIndex], profileNames[profileIndex]);
+        exit(0);
     }
 
     public async list(selectors: string[]) {
@@ -776,7 +779,7 @@ export class CdkToolkit {
         for (let stack of stacks.stackArtifacts) {
             let stackInfo = await this.findStackInfo(stack.id);
             if (!stackInfo.stackId) {
-                stream.write(format('Stack %s has not been deployed.\n', colors.bold(stack.displayName)));
+                stream.write(format('Stack %s has not been deployed or stack doesn\'t exist in the stack.info.json file \n', colors.bold(stack.displayName)));
                 continue;
             }
             client.getTemplate({RegionId: regionInLocal, StackId: stackInfo.stackId}, requestOptions)
@@ -784,6 +787,7 @@ export class CdkToolkit {
                     const template = deserializeStructure(res.TemplateBody);
                     stream.write(format('Stack %s\n', colors.bold(stack.displayName)));
                     printStackDiff(template, stack, contextLines, stream);
+                    exit(0)
                 }, (ex: any) => {
                     if (ex.code == 'StackNotFound') {
                         warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to synth.`);
@@ -791,6 +795,7 @@ export class CdkToolkit {
                     } else {
                         error('fail to get template: %s %s', ex.code, ex.message);
                     }
+                    exit(1)
                 });
         }
     }
@@ -798,12 +803,17 @@ export class CdkToolkit {
     public async event(options: EventOptions) {
         await this.syncStackInfo();
         let stacks = await this.selectStacksForDestroy([]);
+        let stackId = (await this.findStackInfo(options.stackName[0])).stackId
         if (!options.stackName) {
             error('If want to get resource stack events, stack name must be Specified!')
             exit(1)
         }
         if (!stacks.stackIds.includes(options.stackName[0])) {
             error(`The specific stack doesn't exist, Please check the accuracy of the input stack name!`)
+            exit(1)
+        }
+        if (!stackId) {
+            error(`The specific stack doesn't exist in the stack.info.json file, Please check the accuracy of the stack: %s!`, options.stackName[0])
             exit(1)
         }
         let LogicalResourceIds: string[] = [];
@@ -815,7 +825,7 @@ export class CdkToolkit {
         region = region ? region : process.env.REGION_ID;
         client
             .listStackEvents({
-                StackId: (await this.findStackInfo(options.stackName[0])).stackId,
+                StackId: stackId,
                 RegionId: region,
                 LogicalResourceId: LogicalResourceIds,
                 PageSize: options.pageSize ? Number(options.pageSize) : 10,
@@ -823,6 +833,7 @@ export class CdkToolkit {
             }, requestOptions)
             .then((res: any) => {
                 success(`\n ✅ The Stack %s \n Events is: \n %s \n`, colors.blue(options.stackName[0]), colors.blue(JSON.stringify(res.Events, null, "\t")));
+                exit(0)
             }, (ex: any) => {
                 if (ex.code == 'StackNotFound') {
                     warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
@@ -830,12 +841,14 @@ export class CdkToolkit {
                 } else {
                     error('fail to get stack events: %s %s', ex.code, ex.message)
                 }
+                exit(1)
             });
     }
 
     public async output(options: OutPutOptions) {
         await this.syncStackInfo();
         let stacks = await this.selectStacksForDestroy([]);
+        let stackId = (await this.findStackInfo(options.stackName[0])).stackId
         if (!options.stackName) {
             error('If want to get resource stack output, stack name must be Specified!')
             exit(1)
@@ -844,23 +857,29 @@ export class CdkToolkit {
             error(`The specific stack doesn't exist, Please check the accuracy of the input stack name!`)
             exit(1)
         }
+        if (!stackId) {
+            error(`The specific stack doesn't exist in the stack.info.json file, Please check the accuracy of the stack: %s!`, options.stackName[0])
+            exit(1)
+        }
         const client = await this.getRosClient();
         let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
         region = region ? region : process.env.REGION_ID;
         client
             .getStack({
-                StackId: (await this.findStackInfo(options.stackName[0])).stackId,
+                StackId: stackId,
                 RegionId: region
             }, requestOptions)
             .then((res: any) => {
                 success(`\n ✅ The Stack %s \n Output is: \n %s \n`, colors.blue(options.stackName[0]), colors.blue(JSON.stringify(res.Outputs, null, "\t")));
+                exit(0)
             }, (ex: any) => {
                 if (ex.code == 'StackNotFound') {
                     warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
                     this.updateStackInfo(options.stackName[0], DESTROY_STACK);
                 } else {
-                    error('fail to get stack events: %s %s', ex.code, ex.message)
+                    error('fail to get stack outputs: %s %s', ex.code, ex.message)
                 }
+                exit(1)
             });
     }
 
@@ -872,6 +891,9 @@ export class CdkToolkit {
         for (let stack of stacks.stackArtifacts) {
             if ((await this.findStackInfo(stack.id)).stackId) {
                 stackNames.push(stack.id);
+            }
+            else {
+                error(`The specific stack doesn't exist in the stack.info.json file, Please check the accuracy of the stack: %s!`, stack.id)
             }
         }
         let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
@@ -885,6 +907,7 @@ export class CdkToolkit {
                 }, requestOptions)
                 .then((res: any) => {
                     success(`\n ✅ The Stack %s \n Resource is: \n %s \n`, colors.blue(stackName), colors.blue(JSON.stringify(res.Resources, null, "\t")));
+                    exit(0)
                 }, (ex: any) => {
                     if (ex.code == 'StackNotFound') {
                         warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
@@ -892,6 +915,7 @@ export class CdkToolkit {
                     } else {
                         error('fail to get stack resource: %s %s', ex.code, ex.message)
                     }
+                    exit(1)
                 });
         }
     }
@@ -969,8 +993,10 @@ export class CdkToolkit {
         client.listStacks(params, requestOptions)
             .then((res: any) => {
                 success(`\n ✅ The Stacks list is:\n %s \n`, colors.blue(JSON.stringify(res.Stacks, null, "\t")));
+                exit(0)
             }, (ex: any) => {
                 error('fail to list stacks: %s %s', ex.code, ex.message)
+                exit(1)
             });
     }
 
@@ -1015,6 +1041,7 @@ export class CdkToolkit {
                 .then((res: any) => {
                     this.updateStackInfo(stackName, DESTROY_STACK);
                     success(`\n ✅ Deleted\nRequestedId: %s`, colors.blue(res.RequestId));
+                    exit(0)
                 }, (ex: any) => {
                     if (ex.code == 'StackNotFound') {
                         warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
@@ -1022,6 +1049,7 @@ export class CdkToolkit {
                     } else {
                         error('fail to delete stack: %s %s', ex.code, ex.message)
                     }
+                    exit(1)
                 });
         }
     }

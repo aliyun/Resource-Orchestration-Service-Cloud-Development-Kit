@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A construct which represents a resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.259Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:40.216Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Resource")
 public abstract class Resource extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.IResource {
 

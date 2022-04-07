@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ServerlessKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:40.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ServerlessKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ServerlessKubernetesClusterProps.Jsii$Proxy.class)
 public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {

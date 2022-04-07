@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Encodes information how a certain Stack should be deployed.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.251Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:40.208Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IStackSynthesizer")
 @software.amazon.jsii.Jsii.Proxy(IStackSynthesizer.Jsii$Proxy.class)
 public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable {

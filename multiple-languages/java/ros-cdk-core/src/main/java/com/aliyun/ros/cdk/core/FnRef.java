@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * When you specify a parameter's logical name, it returns the value of the parameter.
  * When you specify a resource's logical name, it returns a value that you can typically use to refer to that resource, such as a physical ID.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:40.193Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnRef")
 public class FnRef extends com.aliyun.ros.cdk.core.Intrinsic {
 

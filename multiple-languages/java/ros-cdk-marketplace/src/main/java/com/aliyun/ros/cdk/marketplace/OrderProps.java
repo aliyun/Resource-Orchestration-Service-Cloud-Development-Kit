@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.marketplace;
 /**
  * Properties for defining a `ALIYUN::MarketPlace::Order`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:02.976Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:41.927Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.marketplace.$Module.class, fqn = "@alicloud/ros-cdk-marketplace.OrderProps")
 @software.amazon.jsii.Jsii.Proxy(OrderProps.Jsii$Proxy.class)
 public interface OrderProps extends software.amazon.jsii.JsiiSerializable {

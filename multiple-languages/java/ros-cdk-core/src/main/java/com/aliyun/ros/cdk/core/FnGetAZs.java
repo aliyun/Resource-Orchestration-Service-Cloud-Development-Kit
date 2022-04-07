@@ -8,7 +8,7 @@ package com.aliyun.ros.cdk.core;
  * user's access. That way you don't have to hard-code a full list of Availability Zones for a
  * specified region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-03-28T07:49:01.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:40.191Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnGetAZs")
 public class FnGetAZs extends com.aliyun.ros.cdk.core.Intrinsic {
 
