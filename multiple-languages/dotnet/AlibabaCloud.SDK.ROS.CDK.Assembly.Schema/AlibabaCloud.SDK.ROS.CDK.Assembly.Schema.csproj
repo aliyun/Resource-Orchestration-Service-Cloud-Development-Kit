@@ -82,7 +82,7 @@
 	<ItemGroup>
 		
     
-		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.55.1,2.0.0)"/>
+		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.56.0,2.0.0)"/>
 		
   
 	</ItemGroup>

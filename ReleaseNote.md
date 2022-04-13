@@ -1,5 +1,31 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.23] (2022-04-13)
+
+### Features
+
+-  ros-cdk-cli adding ros-cdk list-stacks --resource-group-id params to list stack set ResourceGroupId .
+
+-  ros-cdk-cli adding ros-cdk generate-stack-file --resource-group-id params to generate stack.info.json by ResourceGroupId.
+
+### Bug Fixes
+
+-  Fix ros-cdk-cli incomplete function of resource group ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/40)) .
+
+
+## [ros-cdk-cli 1.0.22] (2022-04-07)
+
+### Bug Fixes
+
+-  Optimization ros-cdk generate-stack-file error message. ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/40)) .
+
+
+## [ros-cdk-cli 1.0.21] (2022-03-28)
+
+### Features
+
+-  Update ROS resource sdk packages.
+
 ## [ros-cdk-cli 1.0.20] (2022-03-16)
 
 ### Features
