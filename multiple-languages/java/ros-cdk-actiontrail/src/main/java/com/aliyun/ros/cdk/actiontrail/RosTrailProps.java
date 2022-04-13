@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * Properties for defining a `ALIYUN::ACTIONTRAIL::Trail`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:40.260Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.56.0 (build 55e7d15)", date = "2022-04-13T06:46:13.579Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.RosTrailProps")
 @software.amazon.jsii.Jsii.Proxy(RosTrailProps.Jsii$Proxy.class)
 public interface RosTrailProps extends software.amazon.jsii.JsiiSerializable {

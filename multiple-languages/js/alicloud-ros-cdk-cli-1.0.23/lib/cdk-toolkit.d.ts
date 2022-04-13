@@ -59,7 +59,7 @@ export declare class CdkToolkit {
     event(options: EventOptions): Promise<void>;
     output(options: OutPutOptions): Promise<void>;
     resource(options: ResourceOptions): Promise<void>;
-    generateStackInfo(): Promise<void>;
+    generateStackInfo(options: GenerateStackInfoOptions): Promise<void>;
     private getStackByName;
     listStacks(options: ListStackOptions): Promise<void>;
     destroy(options: DestroyOptions): Promise<void>;
@@ -123,11 +123,15 @@ export interface OutPutOptions {
 export interface ResourceOptions {
     stackNames: string[];
 }
+export interface GenerateStackInfoOptions {
+    resourceGroupId: string;
+}
 export interface ListStackOptions {
     stackNames: string[];
     pageNumber: string;
     pageSize: string;
     all: string;
+    resourceGroupId: string;
 }
 export interface ConfigSetOptions {
     global: string;

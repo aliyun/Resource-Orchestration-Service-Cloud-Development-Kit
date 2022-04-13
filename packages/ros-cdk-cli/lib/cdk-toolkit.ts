@@ -533,7 +533,7 @@ export class CdkToolkit {
             }
         }
         const localStackInfo = await this.findStackInfo(stackName)
-        const stackInfo = await this.getStackByName(stackName)
+        const stackInfo = await this.getStackByName(stackName, resourceGroupId)
         if (localStackInfo.stackId) {
             if (stackInfo !== null) {
                 // update stack
@@ -599,7 +599,7 @@ export class CdkToolkit {
                                 }
                                 if (i >= 11) {
                                     let statusArray = ["UPDATE_FAILED", "UPDATE_COMPLETE", "ROLLBACK_FAILED", "ROLLBACK_COMPLETE"]
-                                    const newStackIdInfo = await this.getStackByName(stackName)
+                                    const newStackIdInfo = await this.getStackByName(stackName, resourceGroupId)
                                     let newStackIdInfoUpdateTime = newStackIdInfo.UpdateTime ? newStackIdInfo.UpdateTime : newStackIdInfo.CreateTime
                                     if (newStackIdInfo.Status == 'UPDATE_IN_PROGRESS' || newStackIdInfo.Status == 'ROLLBACK_IN_PROGRESS') {
                                         await this.updateStackInfo(stackName, newStackIdInfo.StackId);
@@ -677,7 +677,7 @@ export class CdkToolkit {
                             }
                         }
                         if (i >= 11) {
-                            const newStackIdInfo = await this.getStackByName(stackName)
+                            const newStackIdInfo = await this.getStackByName(stackName, resourceGroupId)
                             if (newStackIdInfo) {
                                 await this.updateStackInfo(stackName, newStackIdInfo.StackId);
                                 success(
@@ -747,7 +747,7 @@ export class CdkToolkit {
                             }
                         }
                         if (i >= 11) {
-                            const newStackIdInfo = await this.getStackByName(stackName)
+                            const newStackIdInfo = await this.getStackByName(stackName, resourceGroupId)
                             if (newStackIdInfo) {
                                 await this.updateStackInfo(stackName, newStackIdInfo.StackId);
                                 success(
@@ -891,8 +891,7 @@ export class CdkToolkit {
         for (let stack of stacks.stackArtifacts) {
             if ((await this.findStackInfo(stack.id)).stackId) {
                 stackNames.push(stack.id);
-            }
-            else {
+            } else {
                 error(`The specific stack doesn't exist in the stack.info.json file, Please check the accuracy of the stack: %s!`, stack.id)
             }
         }
@@ -920,14 +919,14 @@ export class CdkToolkit {
         }
     }
 
-    public async generateStackInfo() {
+    public async generateStackInfo(options: GenerateStackInfoOptions) {
         let filePath = path.join(LOCAL_PATH + STACK_INFO);
         let stacks = await this.selectStacksForList([]);
         let stackNames: string[] = [];
         let StackInfos: { [key: string]: any } = {};
         stackNames = stacks.stackIds
         for (let stackName of stackNames) {
-            const stackInfo = await this.getStackByName(stackName)
+            const stackInfo = await this.getStackByName(stackName, options.resourceGroupId)
             if (stackInfo !== null) {
                 StackInfos[stackName] = {
                     status: DEPLOY_STACK,
@@ -948,16 +947,19 @@ export class CdkToolkit {
     }
 
 
-    private async getStackByName(stackName: string) {
+    private async getStackByName(stackName: string, resourceGroupId: any) {
         const client = await this.getRosClient();
         let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
         region = region ? region : process.env.REGION_ID;
-        let params = {
+        let params: { [name: string]: any } = {
             RegionId: region,
             PageSize: 10,
             PageNumber: 1,
             StackName: [stackName]
         };
+        if (resourceGroupId) {
+            params['ResourceGroupId'] = resourceGroupId
+        }
         try {
             const result = await client.listStacks(params, requestOptions)
             if (result.Stacks[0]) {
@@ -989,6 +991,9 @@ export class CdkToolkit {
             } else {
                 params.StackName = options.stackNames
             }
+        }
+        if (options.resourceGroupId) {
+            params.ResourceGroupId = options.resourceGroupId
         }
         client.listStacks(params, requestOptions)
             .then((res: any) => {
@@ -1524,11 +1529,16 @@ export interface ResourceOptions {
     stackNames: string[];
 }
 
+export interface GenerateStackInfoOptions {
+    resourceGroupId: string;
+}
+
 export interface ListStackOptions {
     stackNames: string[];
     pageNumber: string;
     pageSize: string;
     all: string;
+    resourceGroupId: string;
 }
 
 export interface ConfigSetOptions {

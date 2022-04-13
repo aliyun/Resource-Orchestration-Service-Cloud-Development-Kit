@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Properties to string encodings.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.55.1 (build 07d2d90)", date = "2022-04-07T03:17:40.186Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.56.0 (build 55e7d15)", date = "2022-04-13T06:46:13.495Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.EncodingOptions")
 @software.amazon.jsii.Jsii.Proxy(EncodingOptions.Jsii$Proxy.class)
 public interface EncodingOptions extends software.amazon.jsii.JsiiSerializable {
