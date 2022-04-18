@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * A ROS resource type:  `ALIYUN::ADB::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.56.0 (build 55e7d15)", date = "2022-04-13T06:46:13.586Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.56.0 (build 55e7d15)", date = "2022-04-18T07:25:24.456Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 

@@ -533,16 +533,12 @@ export class CdkToolkit {
             }
         }
         const localStackInfo = await this.findStackInfo(stackName)
-        const stackInfo = await this.getStackByName(stackName, resourceGroupId)
         if (localStackInfo.stackId) {
+            const stackInfo = await this.getStackById(localStackInfo.stackId)
             if (stackInfo !== null) {
                 // update stack
                 if (localStackInfo.stackId !== stackInfo.StackId) {
                     error('fail to update stack, because stack local info dose not match the remote server.')
-                    exit(1);
-                }
-                if (resourceGroupId) {
-                    error('fail to update stack, cannot support set resource-group-id params to this operation.')
                     exit(1);
                 }
                 {
@@ -599,7 +595,7 @@ export class CdkToolkit {
                                 }
                                 if (i >= 11) {
                                     let statusArray = ["UPDATE_FAILED", "UPDATE_COMPLETE", "ROLLBACK_FAILED", "ROLLBACK_COMPLETE"]
-                                    const newStackIdInfo = await this.getStackByName(stackName, resourceGroupId)
+                                    const newStackIdInfo = await this.getStackById(localStackInfo.stackId)
                                     let newStackIdInfoUpdateTime = newStackIdInfo.UpdateTime ? newStackIdInfo.UpdateTime : newStackIdInfo.CreateTime
                                     if (newStackIdInfo.Status == 'UPDATE_IN_PROGRESS' || newStackIdInfo.Status == 'ROLLBACK_IN_PROGRESS') {
                                         await this.updateStackInfo(stackName, newStackIdInfo.StackId);
@@ -697,6 +693,7 @@ export class CdkToolkit {
                 }
             }
         } else {
+            const stackInfo = await this.getStackByName(stackName, resourceGroupId)
             if (stackInfo !== null) {
                 // stack is exist send error message
                 error('fail to create stack, because stack  %s is exist in this region.', stackName)
@@ -968,6 +965,23 @@ export class CdkToolkit {
                 return null
             }
         } catch {
+            return null
+        }
+    }
+
+
+    private async getStackById(stackId: string) {
+        const client = await this.getRosClient();
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        region = region ? region : process.env.REGION_ID;
+        let params: { [name: string]: any } = {
+            RegionId: region,
+            StackId: stackId
+        };
+        try {
+            return await client.getStack(params, requestOptions)
+        } catch (e) {
+            error('fail to get stack: %s %s', e.code, e.message)
             return null
         }
     }

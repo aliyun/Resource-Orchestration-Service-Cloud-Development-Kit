@@ -61,6 +61,7 @@ export declare class CdkToolkit {
     resource(options: ResourceOptions): Promise<void>;
     generateStackInfo(options: GenerateStackInfoOptions): Promise<void>;
     private getStackByName;
+    private getStackById;
     listStacks(options: ListStackOptions): Promise<void>;
     destroy(options: DestroyOptions): Promise<void>;
     private syncStackInfo;
