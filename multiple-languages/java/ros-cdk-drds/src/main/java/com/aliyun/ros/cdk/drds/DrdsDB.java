@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * A ROS resource type:  `ALIYUN::DRDS::DrdsDB`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.56.0 (build 55e7d15)", date = "2022-04-18T07:25:25.200Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.970Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsDB")
 public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
 

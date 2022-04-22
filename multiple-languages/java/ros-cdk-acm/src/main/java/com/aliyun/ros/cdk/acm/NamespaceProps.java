@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm;
 /**
  * Properties for defining a `ALIYUN::ACM::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.56.0 (build 55e7d15)", date = "2022-04-18T07:25:24.430Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.205Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.NamespaceProps")
 @software.amazon.jsii.Jsii.Proxy(NamespaceProps.Jsii$Proxy.class)
 public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
