@@ -43,7 +43,7 @@ const requestOptions: { [name: string]: any } = {
     headers: {
         'User-Agent': "ROS-CLI-" + JSON.parse(fs.readFileSync(PACKAGE_JSON).toString())['version'] + "::" + readLanguageInfo()
     },
-    timeout: 15000
+    timeout: 90000
 };
 
 const sleep = function (ms: number) {

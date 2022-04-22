@@ -35,7 +35,7 @@ kwargs = json.loads(
     "python_requires": ">=3.6",
     "install_requires": [
         "constructs>=3.0.4, <4.0.0",
-        "jsii>=1.56.0, <2.0.0",
+        "jsii>=1.57.0, <2.0.0",
         "publication>=0.0.3",
         "ros-cdk-core>=1.0.6, <2.0.0"
     ],
