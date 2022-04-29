@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * A ROS template type:  `ALIYUN::IOT::ProductTopic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:40.873Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosProductTopic")
 public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
 

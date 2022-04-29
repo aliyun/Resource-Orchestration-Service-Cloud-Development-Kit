@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options for creating a lazy string token.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.171Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.580Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.LazyStringValueOptions")
 @software.amazon.jsii.Jsii.Proxy(LazyStringValueOptions.Jsii$Proxy.class)
 public interface LazyStringValueOptions extends software.amazon.jsii.JsiiSerializable {

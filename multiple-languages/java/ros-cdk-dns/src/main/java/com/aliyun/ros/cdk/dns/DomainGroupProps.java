@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Properties for defining a `ALIYUN::DNS::DomainGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.DomainGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DomainGroupProps.Jsii$Proxy.class)
 public interface DomainGroupProps extends software.amazon.jsii.JsiiSerializable {

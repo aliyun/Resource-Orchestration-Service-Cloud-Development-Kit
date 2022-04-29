@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::PrepayDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.145Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosPrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosPrepayDBInstanceProps.Jsii$Proxy.class)
 public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {

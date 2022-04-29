@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * Properties for defining a `ALIYUN::DATAHUB::Project`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.906Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.387Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.ProjectProps")
 @software.amazon.jsii.Jsii.Proxy(ProjectProps.Jsii$Proxy.class)
 public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {

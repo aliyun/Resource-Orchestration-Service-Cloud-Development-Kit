@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::ResourceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.438Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.226Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosResourceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceGroupProps.Jsii$Proxy.class)
 public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializable {

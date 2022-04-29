@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::VpcAccessConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.401Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.819Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.VpcAccessConfigProps")
 @software.amazon.jsii.Jsii.Proxy(VpcAccessConfigProps.Jsii$Proxy.class)
 public interface VpcAccessConfigProps extends software.amazon.jsii.JsiiSerializable {

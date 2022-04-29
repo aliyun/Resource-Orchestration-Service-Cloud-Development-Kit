@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * A ROS template type:  `ALIYUN::OSS::Bucket`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.087Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.777Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket")
 public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 

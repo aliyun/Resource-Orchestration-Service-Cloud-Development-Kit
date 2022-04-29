@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.asm;
 /**
  * Properties for defining a `ALIYUN::ASM::ServiceMesh`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.421Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.840Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.asm.$Module.class, fqn = "@alicloud/ros-cdk-asm.ServiceMeshProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceMeshProps.Jsii$Proxy.class)
 public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.831Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.677Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosPeeringRouterInterfaceBindingProps")
 @software.amazon.jsii.Jsii.Proxy(RosPeeringRouterInterfaceBindingProps.Jsii$Proxy.class)
 public interface RosPeeringRouterInterfaceBindingProps extends software.amazon.jsii.JsiiSerializable {

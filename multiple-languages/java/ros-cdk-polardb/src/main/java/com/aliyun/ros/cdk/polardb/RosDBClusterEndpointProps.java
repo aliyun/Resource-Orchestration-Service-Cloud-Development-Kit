@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.149Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.904Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterEndpointProps.Jsii$Proxy.class)
 public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSerializable {

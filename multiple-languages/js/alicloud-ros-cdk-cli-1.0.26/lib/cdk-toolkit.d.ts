@@ -82,6 +82,8 @@ export declare class CdkToolkit {
     private static withDefaultPrinter;
     private syncUpdateStack;
     private syncDestroyStack;
+    private rosUpdateStack;
+    private rosCreateStack;
 }
 export interface DiffOptions {
     stackNames: string[];

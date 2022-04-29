@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * Properties for defining a `ALIYUN::CDN::DomainConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.485Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.905Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.RosDomainConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainConfigProps.Jsii$Proxy.class)
 public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializable {

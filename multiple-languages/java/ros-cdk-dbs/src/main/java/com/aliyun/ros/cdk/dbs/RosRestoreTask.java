@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs;
 /**
  * A ROS template type:  `ALIYUN::DBS::RestoreTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.401Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RosRestoreTask")
 public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 

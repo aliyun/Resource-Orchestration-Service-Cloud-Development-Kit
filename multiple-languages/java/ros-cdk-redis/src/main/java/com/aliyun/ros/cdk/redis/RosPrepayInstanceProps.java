@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Properties for defining a `ALIYUN::REDIS::PrepayInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.404Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.200Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosPrepayInstanceProps.Jsii$Proxy.class)
 public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSerializable {

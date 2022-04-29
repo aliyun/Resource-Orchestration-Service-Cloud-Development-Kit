@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * Properties for defining a `ALIYUN::GPDB::ElasticDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:40.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.471Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosElasticDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosElasticDBInstanceProps.Jsii$Proxy.class)
 public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSerializable {

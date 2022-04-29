@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * Properties for defining a `ALIYUN::FOAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:40.752Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.411Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {

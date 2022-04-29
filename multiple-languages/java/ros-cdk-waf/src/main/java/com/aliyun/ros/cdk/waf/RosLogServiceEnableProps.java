@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::LogServiceEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.947Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.870Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosLogServiceEnableProps")
 @software.amazon.jsii.Jsii.Proxy(RosLogServiceEnableProps.Jsii$Proxy.class)
 public interface RosLogServiceEnableProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceParameterGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.272Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.052Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceParameterGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceParameterGroupProps.Jsii$Proxy.class)
 public interface DBInstanceParameterGroupProps extends software.amazon.jsii.JsiiSerializable {

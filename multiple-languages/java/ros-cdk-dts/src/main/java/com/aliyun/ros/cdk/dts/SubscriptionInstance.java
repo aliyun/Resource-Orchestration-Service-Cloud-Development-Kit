@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS resource type:  `ALIYUN::DTS::SubscriptionInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:40.008Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.501Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SubscriptionInstance")
 public class SubscriptionInstance extends com.aliyun.ros.cdk.core.Resource {
 

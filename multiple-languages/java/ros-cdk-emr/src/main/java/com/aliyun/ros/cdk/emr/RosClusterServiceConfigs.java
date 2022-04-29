@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS template type:  `ALIYUN::EMR::ClusterServiceConfigs`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:40.562Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.137Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosClusterServiceConfigs")
 public class RosClusterServiceConfigs extends com.aliyun.ros.cdk.core.RosResource {
 

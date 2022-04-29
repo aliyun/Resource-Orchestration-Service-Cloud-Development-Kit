@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS template type:  `ALIYUN::OTS::SearchIndex`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.096Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.794Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosSearchIndex")
 public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
 

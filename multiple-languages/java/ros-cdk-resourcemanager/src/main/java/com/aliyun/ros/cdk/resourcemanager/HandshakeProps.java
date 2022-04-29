@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::Handshake`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.414Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.212Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.HandshakeProps")
 @software.amazon.jsii.Jsii.Proxy(HandshakeProps.Jsii$Proxy.class)
 public interface HandshakeProps extends software.amazon.jsii.JsiiSerializable {

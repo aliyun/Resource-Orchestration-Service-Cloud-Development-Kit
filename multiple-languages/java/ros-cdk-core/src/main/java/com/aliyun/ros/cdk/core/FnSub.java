@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * In your templates, you can use this function to construct commands or outputs
  * that include values that aren't available until you create or update a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.155Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.563Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnSub")
 public class FnSub extends com.aliyun.ros.cdk.core.Intrinsic {
 

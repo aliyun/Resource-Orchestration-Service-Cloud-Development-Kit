@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS resource type:  `ALIYUN::SAG::CloudConnectNetwork`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.526Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.329Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.CloudConnectNetwork")
 public class CloudConnectNetwork extends com.aliyun.ros.cdk.core.Resource {
 

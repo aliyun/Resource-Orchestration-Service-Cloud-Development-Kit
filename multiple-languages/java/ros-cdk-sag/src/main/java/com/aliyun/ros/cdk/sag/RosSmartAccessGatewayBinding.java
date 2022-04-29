@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS template type:  `ALIYUN::SAG::SmartAccessGatewayBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:41.564Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.373Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosSmartAccessGatewayBinding")
 public class RosSmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.RosResource {
 

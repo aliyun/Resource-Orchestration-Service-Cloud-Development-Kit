@@ -8,7 +8,7 @@ package com.aliyun.ros.cdk.cxapi;
  * @see core.ConstructNode.synth
  * @deprecated moved to package 'ros-assembly-schema'
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.120Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.527Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.RuntimeInfo")
 @software.amazon.jsii.Jsii.Proxy(RuntimeInfo.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
