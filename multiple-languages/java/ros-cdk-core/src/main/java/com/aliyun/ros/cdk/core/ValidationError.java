@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * An error returned during the validation phase.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.199Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.609Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ValidationError")
 @software.amazon.jsii.Jsii.Proxy(ValidationError.Jsii$Proxy.class)
 public interface ValidationError extends software.amazon.jsii.JsiiSerializable {

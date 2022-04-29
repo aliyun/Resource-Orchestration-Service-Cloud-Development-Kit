@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bss;
 /**
  * A ROS template type:  `ALIYUN::BSS::WaitOrder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-22T03:34:39.457Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.857Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.RosWaitOrder")
 public class RosWaitOrder extends com.aliyun.ros.cdk.core.RosResource {
 

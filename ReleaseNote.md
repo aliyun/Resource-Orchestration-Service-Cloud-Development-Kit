@@ -1,5 +1,24 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.26] (2022-04-28)
+
+### Features
+
+-  Optimization ros-cdk-cli read timeout during synchronous stack deployment.
+
+## [ros-cdk-cli 1.0.25] (2022-04-22)
+
+### Bug Fixes
+
+-  Fix ros-cdk-cli read timeout during synchronous stack deployment ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/49)) .
+
+
+## [ros-cdk-cli 1.0.24] (2022-04-18)
+
+### Bug Fixes
+
+-  Fix ros-cdk-cli cannot update stack with resource-group-id ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/44)) .
+
 ## [ros-cdk-cli 1.0.23] (2022-04-13)
 
 ### Features
