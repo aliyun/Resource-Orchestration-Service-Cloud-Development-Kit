@@ -180,6 +180,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             set;
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property restartPolicy: The policy for restarting the instance.</summary>
         /// <remarks>
         /// Default value: Always.

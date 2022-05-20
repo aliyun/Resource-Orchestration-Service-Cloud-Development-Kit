@@ -96,9 +96,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
-        /// <summary>Property sourceCidrIp: Source CIDR Ip Address range.</summary>
+        /// <summary>Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access.</summary>
         /// <remarks>
-        /// Only IPV4 supported.
+        /// CIDR blocks and IPv4 addresses are supported.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -133,6 +133,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiOptional]
         [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SourcePortRange
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.</summary>
+        /// <remarks>
+        /// You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+        /// If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+        /// If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "sourcePrefixListId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SourcePrefixListId
         {
             get;
             set;

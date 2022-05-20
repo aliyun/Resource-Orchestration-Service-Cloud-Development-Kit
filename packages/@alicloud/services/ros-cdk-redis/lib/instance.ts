@@ -22,11 +22,6 @@ export interface InstanceProps {
     readonly backupPolicy?: RosInstance.BackupPolicyProperty | ros.IResolvable;
 
     /**
-     * Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
-     */
-    readonly capacity?: number | ros.IResolvable;
-
-    /**
      * Property chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
      * PrePaid: subscription.
      * PostPaid: pay-as-you-go.
@@ -83,6 +78,16 @@ export interface InstanceProps {
      * Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     readonly productType?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property secondaryZoneId: The secondary zone ID of the instance.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
 
     /**
      * Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -303,6 +308,7 @@ export class Instance extends ros.Resource {
         const rosInstance = new RosInstance(this, id,  {
             connections: props.connections,
             engineVersion: props.engineVersion,
+            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
             evictionPolicy: props.evictionPolicy,
             vSwitchId: props.vSwitchId,
@@ -312,12 +318,12 @@ export class Instance extends ros.Resource {
             period: props.period === undefined || props.period === null ? 1 : props.period,
             instanceClass: props.instanceClass,
             vpcPasswordFree: props.vpcPasswordFree,
+            secondaryZoneId: props.secondaryZoneId,
             autoRenewDuration: props.autoRenewDuration,
             instanceName: props.instanceName,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             vpcId: props.vpcId,
             sslEnabled: props.sslEnabled,
-            capacity: props.capacity,
             chargeType: props.chargeType,
             tags: props.tags,
             backupPolicy: props.backupPolicy,

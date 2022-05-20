@@ -1,6 +1,7 @@
 @alicloud/ros-cdk-pvtz.RosUserVpcAuthorization=com.aliyun.ros.cdk.pvtz.RosUserVpcAuthorization
 @alicloud/ros-cdk-pvtz.RosUserVpcAuthorizationProps=com.aliyun.ros.cdk.pvtz.RosUserVpcAuthorizationProps
 @alicloud/ros-cdk-pvtz.RosZone=com.aliyun.ros.cdk.pvtz.RosZone
+@alicloud/ros-cdk-pvtz.RosZone.TagsProperty=com.aliyun.ros.cdk.pvtz.RosZone$TagsProperty
 @alicloud/ros-cdk-pvtz.RosZoneProps=com.aliyun.ros.cdk.pvtz.RosZoneProps
 @alicloud/ros-cdk-pvtz.RosZoneRecord=com.aliyun.ros.cdk.pvtz.RosZoneRecord
 @alicloud/ros-cdk-pvtz.RosZoneRecordProps=com.aliyun.ros.cdk.pvtz.RosZoneRecordProps

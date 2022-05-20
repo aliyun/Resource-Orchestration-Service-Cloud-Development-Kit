@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.204Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.246Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroup")
 public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -105,6 +105,42 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCompensateWithOnDemand() {
+        return software.amazon.jsii.Kernel.get(this, "compensateWithOnDemand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCompensateWithOnDemand(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "compensateWithOnDemand", value);
+    }
+
+    /**
+     */
+    public void setCompensateWithOnDemand(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "compensateWithOnDemand", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getContainerGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "containerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setContainerGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "containerGroupId", value);
+    }
+
+    /**
+     */
+    public void setContainerGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "containerGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceIds() {
         return software.amazon.jsii.Kernel.get(this, "dbInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -173,6 +209,24 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setGroupDeletionProtection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "groupDeletionProtection", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getGroupType() {
+        return software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setGroupType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "groupType", value);
+    }
+
+    /**
+     */
+    public void setGroupType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "groupType", value);
     }
 
     /**
@@ -303,6 +357,42 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOnDemandBaseCapacity() {
+        return software.amazon.jsii.Kernel.get(this, "onDemandBaseCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOnDemandBaseCapacity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "onDemandBaseCapacity", value);
+    }
+
+    /**
+     */
+    public void setOnDemandBaseCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "onDemandBaseCapacity", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOnDemandPercentageAboveBaseCapacity() {
+        return software.amazon.jsii.Kernel.get(this, "onDemandPercentageAboveBaseCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOnDemandPercentageAboveBaseCapacity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "onDemandPercentageAboveBaseCapacity", value);
+    }
+
+    /**
+     */
+    public void setOnDemandPercentageAboveBaseCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "onDemandPercentageAboveBaseCapacity", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getProtectedInstances() {
         return software.amazon.jsii.Kernel.get(this, "protectedInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -353,6 +443,60 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setScalingGroupName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "scalingGroupName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScalingPolicy() {
+        return software.amazon.jsii.Kernel.get(this, "scalingPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScalingPolicy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "scalingPolicy", value);
+    }
+
+    /**
+     */
+    public void setScalingPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scalingPolicy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpotInstancePools() {
+        return software.amazon.jsii.Kernel.get(this, "spotInstancePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSpotInstancePools(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "spotInstancePools", value);
+    }
+
+    /**
+     */
+    public void setSpotInstancePools(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "spotInstancePools", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpotInstanceRemedy() {
+        return software.amazon.jsii.Kernel.get(this, "spotInstanceRemedy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSpotInstanceRemedy(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "spotInstanceRemedy", value);
+    }
+
+    /**
+     */
+    public void setSpotInstanceRemedy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "spotInstanceRemedy", value);
     }
 
     /**
@@ -815,6 +959,40 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param compensateWithOnDemand This parameter is required.
+         */
+        public Builder compensateWithOnDemand(final java.lang.Boolean compensateWithOnDemand) {
+            this.props.compensateWithOnDemand(compensateWithOnDemand);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param compensateWithOnDemand This parameter is required.
+         */
+        public Builder compensateWithOnDemand(final com.aliyun.ros.cdk.core.IResolvable compensateWithOnDemand) {
+            this.props.compensateWithOnDemand(compensateWithOnDemand);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param containerGroupId This parameter is required.
+         */
+        public Builder containerGroupId(final java.lang.String containerGroupId) {
+            this.props.containerGroupId(containerGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param containerGroupId This parameter is required.
+         */
+        public Builder containerGroupId(final com.aliyun.ros.cdk.core.IResolvable containerGroupId) {
+            this.props.containerGroupId(containerGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param dbInstanceIds This parameter is required.
          */
         public Builder dbInstanceIds(final java.util.List<? extends java.lang.Object> dbInstanceIds) {
@@ -878,6 +1056,23 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder groupDeletionProtection(final com.aliyun.ros.cdk.core.IResolvable groupDeletionProtection) {
             this.props.groupDeletionProtection(groupDeletionProtection);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param groupType This parameter is required.
+         */
+        public Builder groupType(final java.lang.String groupType) {
+            this.props.groupType(groupType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param groupType This parameter is required.
+         */
+        public Builder groupType(final com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.props.groupType(groupType);
             return this;
         }
 
@@ -1002,6 +1197,40 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param onDemandBaseCapacity This parameter is required.
+         */
+        public Builder onDemandBaseCapacity(final java.lang.Number onDemandBaseCapacity) {
+            this.props.onDemandBaseCapacity(onDemandBaseCapacity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param onDemandBaseCapacity This parameter is required.
+         */
+        public Builder onDemandBaseCapacity(final com.aliyun.ros.cdk.core.IResolvable onDemandBaseCapacity) {
+            this.props.onDemandBaseCapacity(onDemandBaseCapacity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param onDemandPercentageAboveBaseCapacity This parameter is required.
+         */
+        public Builder onDemandPercentageAboveBaseCapacity(final java.lang.Number onDemandPercentageAboveBaseCapacity) {
+            this.props.onDemandPercentageAboveBaseCapacity(onDemandPercentageAboveBaseCapacity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param onDemandPercentageAboveBaseCapacity This parameter is required.
+         */
+        public Builder onDemandPercentageAboveBaseCapacity(final com.aliyun.ros.cdk.core.IResolvable onDemandPercentageAboveBaseCapacity) {
+            this.props.onDemandPercentageAboveBaseCapacity(onDemandPercentageAboveBaseCapacity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param protectedInstances This parameter is required.
          */
         public Builder protectedInstances(final java.util.List<? extends java.lang.Object> protectedInstances) {
@@ -1048,6 +1277,57 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder scalingGroupName(final com.aliyun.ros.cdk.core.IResolvable scalingGroupName) {
             this.props.scalingGroupName(scalingGroupName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scalingPolicy This parameter is required.
+         */
+        public Builder scalingPolicy(final java.lang.String scalingPolicy) {
+            this.props.scalingPolicy(scalingPolicy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scalingPolicy This parameter is required.
+         */
+        public Builder scalingPolicy(final com.aliyun.ros.cdk.core.IResolvable scalingPolicy) {
+            this.props.scalingPolicy(scalingPolicy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param spotInstancePools This parameter is required.
+         */
+        public Builder spotInstancePools(final java.lang.Number spotInstancePools) {
+            this.props.spotInstancePools(spotInstancePools);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param spotInstancePools This parameter is required.
+         */
+        public Builder spotInstancePools(final com.aliyun.ros.cdk.core.IResolvable spotInstancePools) {
+            this.props.spotInstancePools(spotInstancePools);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param spotInstanceRemedy This parameter is required.
+         */
+        public Builder spotInstanceRemedy(final java.lang.Boolean spotInstanceRemedy) {
+            this.props.spotInstanceRemedy(spotInstanceRemedy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param spotInstanceRemedy This parameter is required.
+         */
+        public Builder spotInstanceRemedy(final com.aliyun.ros.cdk.core.IResolvable spotInstanceRemedy) {
+            this.props.spotInstanceRemedy(spotInstanceRemedy);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::DedicatedHost`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.601Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.677Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DedicatedHostProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostProps.Jsii$Proxy.class)
 public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializable {
@@ -127,9 +127,7 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property resourceGroupId: The ID of the resource group.
-     * <p>
-     * If this is left blank, the system automatically fills in the ID of the default resource group.
+     * Property resourceGroupId: Resource group id.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
@@ -483,8 +481,7 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
-         *                        If this is left blank, the system automatically fills in the ID of the default resource group.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -494,8 +491,7 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
-         *                        If this is left blank, the system automatically fills in the ID of the default resource group.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {

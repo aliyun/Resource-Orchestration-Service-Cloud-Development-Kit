@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a `ALIYUN::ECI::ImageCache`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.540Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.609Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ImageCacheProps")
 @software.amazon.jsii.Jsii.Proxy(ImageCacheProps.Jsii$Proxy.class)
 public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
@@ -45,7 +45,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property resourceGroupId: Resource group.
+     * Property resourceGroupId: Resource group id.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
@@ -193,7 +193,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: Resource group.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -203,7 +203,7 @@ public interface ImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ImageCacheProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: Resource group.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {

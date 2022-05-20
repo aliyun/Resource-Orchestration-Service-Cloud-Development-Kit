@@ -19,6 +19,17 @@ export interface ScalingGroupProps {
     readonly minSize: number | ros.IResolvable;
 
     /**
+     * Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources. This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
+     * Default value: true.
+     */
+    readonly compensateWithOnDemand?: boolean | ros.IResolvable;
+
+    /**
+     * Property containerGroupId: The ID of the elastic container instance.
+     */
+    readonly containerGroupId?: string | ros.IResolvable;
+
+    /**
      * Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
      */
     readonly dbInstanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -39,6 +50,14 @@ export interface ScalingGroupProps {
      * Default to False.
      */
     readonly groupDeletionProtection?: boolean | ros.IResolvable;
+
+    /**
+     * Property groupType: The type of instances that are managed by the scaling group. Valid values:
+     * ECS
+     * ECI
+     * Default value: ECS.
+     */
+    readonly groupType?: string | ros.IResolvable;
 
     /**
      * Property healthCheckType: The health check type. Allow values is "ECS" and "NONE", default to "ECS".
@@ -71,7 +90,8 @@ export interface ScalingGroupProps {
     /**
      * Property multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
      * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
+     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+     * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
      */
     readonly multiAzPolicy?: string | ros.IResolvable;
 
@@ -79,6 +99,16 @@ export interface ScalingGroupProps {
      * Property notificationConfigurations: When a scaling event occurs in a scaling group, ESS will send a notification to Cloud Monitor or MNS.
      */
     readonly notificationConfigurations?: Array<RosScalingGroup.NotificationConfigurationsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+     */
+    readonly onDemandBaseCapacity?: number | ros.IResolvable;
+
+    /**
+     * Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+     */
+    readonly onDemandPercentageAboveBaseCapacity?: number | ros.IResolvable;
 
     /**
      * Property protectedInstances: ECS instances of protected mode in the scaling group.
@@ -100,6 +130,24 @@ export interface ScalingGroupProps {
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
     readonly scalingGroupName?: string | ros.IResolvable;
+
+    /**
+     * Property scalingPolicy: The reclaim mode of the scaling group. Valid values:
+     * recycle
+     * release
+     * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
+     */
+    readonly scalingPolicy?: string | ros.IResolvable;
+
+    /**
+     * Property spotInstancePools: The number of instance types that are available. The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+     */
+    readonly spotInstancePools?: number | ros.IResolvable;
+
+    /**
+     * Property spotInstanceRemedy: Specifies whether to supplement preemptible instances. If this parameter is set to true, Auto Scaling attempts to create an instance to replace a preemptible instance when Auto Scaling receives a system message which indicates that the preemptible instance is to be reclaimed.
+     */
+    readonly spotInstanceRemedy?: boolean | ros.IResolvable;
 
     /**
      * Property standbyInstances: ECS instances of standby mode in the scaling group.
@@ -156,25 +204,33 @@ export class ScalingGroup extends ros.Resource {
         super(scope, id);
 
         const rosScalingGroup = new RosScalingGroup(this, id,  {
+            spotInstanceRemedy: props.spotInstanceRemedy,
+            compensateWithOnDemand: props.compensateWithOnDemand,
+            notificationConfigurations: props.notificationConfigurations,
+            onDemandPercentageAboveBaseCapacity: props.onDemandPercentageAboveBaseCapacity,
+            desiredCapacity: props.desiredCapacity,
+            onDemandBaseCapacity: props.onDemandBaseCapacity,
+            standbyInstances: props.standbyInstances,
+            removalPolicys: props.removalPolicys,
+            tags: props.tags,
+            scalingPolicy: props.scalingPolicy,
             vSwitchIds: props.vSwitchIds,
             instanceId: props.instanceId,
-            notificationConfigurations: props.notificationConfigurations,
             vSwitchId: props.vSwitchId,
             loadBalancerIds: props.loadBalancerIds,
-            desiredCapacity: props.desiredCapacity,
             groupDeletionProtection: props.groupDeletionProtection === undefined || props.groupDeletionProtection === null ? false : props.groupDeletionProtection,
+            spotInstancePools: props.spotInstancePools,
             launchTemplateId: props.launchTemplateId,
             maxSize: props.maxSize,
             scalingGroupName: props.scalingGroupName,
             minSize: props.minSize,
             defaultCooldown: props.defaultCooldown,
-            standbyInstances: props.standbyInstances,
+            groupType: props.groupType,
             launchTemplateVersion: props.launchTemplateVersion,
             multiAzPolicy: props.multiAzPolicy,
             protectedInstances: props.protectedInstances,
-            removalPolicys: props.removalPolicys,
+            containerGroupId: props.containerGroupId,
             dbInstanceIds: props.dbInstanceIds,
-            tags: props.tags,
             healthCheckType: props.healthCheckType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingGroup;

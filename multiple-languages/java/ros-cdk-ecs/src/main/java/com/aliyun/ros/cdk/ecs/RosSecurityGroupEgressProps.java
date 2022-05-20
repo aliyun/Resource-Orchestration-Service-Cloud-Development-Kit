@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroupEgress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.865Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.973Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupEgressProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityGroupEgressProps.Jsii$Proxy.class)
 public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,12 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupOwnerId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestPrefixListId() {
         return null;
     }
 
@@ -86,6 +92,7 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
         java.lang.Object destCidrIp;
         java.lang.Object destGroupId;
         java.lang.Object destGroupOwnerId;
+        java.lang.Object destPrefixListId;
         java.lang.Object ipv6DestCidrIp;
         java.lang.Object nicType;
         java.lang.Object policy;
@@ -213,6 +220,26 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosSecurityGroupEgressProps#getDestPrefixListId}
+         * @param destPrefixListId the value to be set.
+         * @return {@code this}
+         */
+        public Builder destPrefixListId(java.lang.String destPrefixListId) {
+            this.destPrefixListId = destPrefixListId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecurityGroupEgressProps#getDestPrefixListId}
+         * @param destPrefixListId the value to be set.
+         * @return {@code this}
+         */
+        public Builder destPrefixListId(com.aliyun.ros.cdk.core.IResolvable destPrefixListId) {
+            this.destPrefixListId = destPrefixListId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecurityGroupEgressProps#getIpv6DestCidrIp}
          * @param ipv6DestCidrIp the value to be set.
          * @return {@code this}
@@ -334,6 +361,7 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object destCidrIp;
         private final java.lang.Object destGroupId;
         private final java.lang.Object destGroupOwnerId;
+        private final java.lang.Object destPrefixListId;
         private final java.lang.Object ipv6DestCidrIp;
         private final java.lang.Object nicType;
         private final java.lang.Object policy;
@@ -352,6 +380,7 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
             this.destCidrIp = software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destGroupId = software.amazon.jsii.Kernel.get(this, "destGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destGroupOwnerId = software.amazon.jsii.Kernel.get(this, "destGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destPrefixListId = software.amazon.jsii.Kernel.get(this, "destPrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6DestCidrIp = software.amazon.jsii.Kernel.get(this, "ipv6DestCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nicType = software.amazon.jsii.Kernel.get(this, "nicType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -370,6 +399,7 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
             this.destCidrIp = builder.destCidrIp;
             this.destGroupId = builder.destGroupId;
             this.destGroupOwnerId = builder.destGroupOwnerId;
+            this.destPrefixListId = builder.destPrefixListId;
             this.ipv6DestCidrIp = builder.ipv6DestCidrIp;
             this.nicType = builder.nicType;
             this.policy = builder.policy;
@@ -405,6 +435,11 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
         @Override
         public final java.lang.Object getDestGroupOwnerId() {
             return this.destGroupOwnerId;
+        }
+
+        @Override
+        public final java.lang.Object getDestPrefixListId() {
+            return this.destPrefixListId;
         }
 
         @Override
@@ -452,6 +487,9 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
             if (this.getDestGroupOwnerId() != null) {
                 data.set("destGroupOwnerId", om.valueToTree(this.getDestGroupOwnerId()));
             }
+            if (this.getDestPrefixListId() != null) {
+                data.set("destPrefixListId", om.valueToTree(this.getDestPrefixListId()));
+            }
             if (this.getIpv6DestCidrIp() != null) {
                 data.set("ipv6DestCidrIp", om.valueToTree(this.getIpv6DestCidrIp()));
             }
@@ -491,6 +529,7 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
             if (this.destCidrIp != null ? !this.destCidrIp.equals(that.destCidrIp) : that.destCidrIp != null) return false;
             if (this.destGroupId != null ? !this.destGroupId.equals(that.destGroupId) : that.destGroupId != null) return false;
             if (this.destGroupOwnerId != null ? !this.destGroupOwnerId.equals(that.destGroupOwnerId) : that.destGroupOwnerId != null) return false;
+            if (this.destPrefixListId != null ? !this.destPrefixListId.equals(that.destPrefixListId) : that.destPrefixListId != null) return false;
             if (this.ipv6DestCidrIp != null ? !this.ipv6DestCidrIp.equals(that.ipv6DestCidrIp) : that.ipv6DestCidrIp != null) return false;
             if (this.nicType != null ? !this.nicType.equals(that.nicType) : that.nicType != null) return false;
             if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
@@ -506,6 +545,7 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
             result = 31 * result + (this.destCidrIp != null ? this.destCidrIp.hashCode() : 0);
             result = 31 * result + (this.destGroupId != null ? this.destGroupId.hashCode() : 0);
             result = 31 * result + (this.destGroupOwnerId != null ? this.destGroupOwnerId.hashCode() : 0);
+            result = 31 * result + (this.destPrefixListId != null ? this.destPrefixListId.hashCode() : 0);
             result = 31 * result + (this.ipv6DestCidrIp != null ? this.ipv6DestCidrIp.hashCode() : 0);
             result = 31 * result + (this.nicType != null ? this.nicType.hashCode() : 0);
             result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  `ALIYUN::ESS::LifecycleHook`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.168Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.230Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.LifecycleHook")
 public class LifecycleHook extends com.aliyun.ros.cdk.core.Resource {
 
@@ -167,7 +167,7 @@ public class LifecycleHook extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out.
          * <p>
-         * If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 21,600 seconds. The default value is 600 seconds.
+         * If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
          * You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
          * <p>
          * @return {@code this}
@@ -180,7 +180,7 @@ public class LifecycleHook extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out.
          * <p>
-         * If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 21,600 seconds. The default value is 600 seconds.
+         * If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
          * You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
          * <p>
          * @return {@code this}

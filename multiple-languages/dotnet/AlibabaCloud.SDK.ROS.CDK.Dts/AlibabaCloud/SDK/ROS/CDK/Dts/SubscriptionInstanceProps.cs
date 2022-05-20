@@ -61,6 +61,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             set;
         }
 
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property usedTime: The subscription length.</summary>
         /// <remarks>
         /// Note: You must specify this parameter only if you set the PayType parameter to PrePaid.

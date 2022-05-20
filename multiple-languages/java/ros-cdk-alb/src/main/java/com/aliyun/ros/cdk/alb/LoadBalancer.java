@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS resource type:  `ALIYUN::ALB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.673Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.765Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -300,6 +300,31 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder addressAllocatedMode(final com.aliyun.ros.cdk.core.IResolvable addressAllocatedMode) {
             this.props.addressAllocatedMode(addressAllocatedMode);
+            return this;
+        }
+
+        /**
+         * Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+         * <p>
+         * It only takes effect when AddressType=Internet.
+         * <p>
+         * @return {@code this}
+         * @param bandwidthPackageId Property bandwidthPackageId: Attach common bandwidth package to load balancer. This parameter is required.
+         */
+        public Builder bandwidthPackageId(final java.lang.String bandwidthPackageId) {
+            this.props.bandwidthPackageId(bandwidthPackageId);
+            return this;
+        }
+        /**
+         * Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+         * <p>
+         * It only takes effect when AddressType=Internet.
+         * <p>
+         * @return {@code this}
+         * @param bandwidthPackageId Property bandwidthPackageId: Attach common bandwidth package to load balancer. This parameter is required.
+         */
+        public Builder bandwidthPackageId(final com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
+            this.props.bandwidthPackageId(bandwidthPackageId);
             return this;
         }
 

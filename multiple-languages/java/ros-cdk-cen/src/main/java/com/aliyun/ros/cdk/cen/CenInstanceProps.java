@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.917Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.025Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(CenInstanceProps.Jsii$Proxy.class)
 public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,13 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * Property tags: Tags to attach to instance.
      * <p>
      * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -58,6 +65,7 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object description;
         java.lang.Object name;
         java.lang.Object protectionLevel;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
@@ -129,6 +137,26 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CenInstanceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CenInstanceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenInstanceProps#getTags}
          * @param tags Property tags: Tags to attach to instance.
          *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -159,6 +187,7 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object description;
         private final java.lang.Object name;
         private final java.lang.Object protectionLevel;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
@@ -170,6 +199,7 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectionLevel = software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty.class)));
         }
 
@@ -182,6 +212,7 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.description = builder.description;
             this.name = builder.name;
             this.protectionLevel = builder.protectionLevel;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty>)builder.tags;
         }
 
@@ -198,6 +229,11 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getProtectionLevel() {
             return this.protectionLevel;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -219,6 +255,9 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getProtectionLevel() != null) {
                 data.set("protectionLevel", om.valueToTree(this.getProtectionLevel()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -244,6 +283,7 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.protectionLevel != null ? !this.protectionLevel.equals(that.protectionLevel) : that.protectionLevel != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -252,6 +292,7 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
             int result = this.description != null ? this.description.hashCode() : 0;
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.protectionLevel != null ? this.protectionLevel.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

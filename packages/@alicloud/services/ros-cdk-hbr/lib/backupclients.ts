@@ -12,6 +12,11 @@ export interface BackupClientsProps {
      * Property instanceIds: ID list of instances to install backup client
      */
     readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosBackupClients.TagsProperty[];
 }
 
 /**
@@ -46,6 +51,7 @@ export class BackupClients extends ros.Resource {
 
         const rosBackupClients = new RosBackupClients(this, id,  {
             instanceIds: props.instanceIds,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBackupClients;
         this.attrClientIds = rosBackupClients.attrClientIds;

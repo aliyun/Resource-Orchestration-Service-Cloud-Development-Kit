@@ -88,7 +88,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3.</summary>
+        /// <summary>Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.</summary>
         [JsiiProperty(name: "attrClusterVersion", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterVersion
         {
@@ -189,6 +189,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         /// <summary>Attribute MemoryCapacity: memory capacity.</summary>
         [JsiiProperty(name: "attrMemoryCapacity", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMemoryCapacity
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute MseVersion: This parameter is required when creating a professional version. The value is as follows:.</summary>
+        /// <remarks>
+        /// -'mse_basic': indicates the basic version (default value).
+        /// -'mse_pro': means professional version.
+        /// </remarks>
+        [JsiiProperty(name: "attrMseVersion", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMseVersion
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }

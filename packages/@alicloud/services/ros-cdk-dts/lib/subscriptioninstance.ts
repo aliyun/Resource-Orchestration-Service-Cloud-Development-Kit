@@ -38,6 +38,11 @@ export interface SubscriptionInstanceProps {
     readonly sourceEndpointInstanceType?: string | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSubscriptionInstance.TagsProperty[];
+
+    /**
      * Property usedTime: The subscription length.
      * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
      * You can set the Period parameter to specify the unit of the subscription length.
@@ -66,6 +71,11 @@ export class SubscriptionInstance extends ros.Resource {
     public readonly attrPublicHost: ros.IResolvable;
 
     /**
+     * Attribute SubscribeTopic: The topic of the change tracking instance.
+     */
+    public readonly attrSubscribeTopic: ros.IResolvable;
+
+    /**
      * Attribute SubscriptionInstanceId: The ID of Data subscription instance.
      */
     public readonly attrSubscriptionInstanceId: ros.IResolvable;
@@ -91,10 +101,12 @@ export class SubscriptionInstance extends ros.Resource {
             period: props.period,
             payType: props.payType,
             sourceEndpointInstanceType: props.sourceEndpointInstanceType,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSubscriptionInstance;
         this.attrPrivateHost = rosSubscriptionInstance.attrPrivateHost;
         this.attrPublicHost = rosSubscriptionInstance.attrPublicHost;
+        this.attrSubscribeTopic = rosSubscriptionInstance.attrSubscribeTopic;
         this.attrSubscriptionInstanceId = rosSubscriptionInstance.attrSubscriptionInstanceId;
         this.attrVpcHost = rosSubscriptionInstance.attrVpcHost;
     }

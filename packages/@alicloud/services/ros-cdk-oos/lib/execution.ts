@@ -29,6 +29,11 @@ export interface ExecutionProps {
     readonly parentExecutionId?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property resourceOptions: Resource options user by ROS.
      */
     readonly resourceOptions?: RosExecution.ResourceOptionsProperty | ros.IResolvable;
@@ -123,6 +128,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             resourceOptions: props.resourceOptions,
             parameters: props.parameters,
             safetyCheck: props.safetyCheck === undefined || props.safetyCheck === null ? 'ConfirmEveryHighRiskAction' : props.safetyCheck,
+            resourceGroupId: props.resourceGroupId,
             mode: props.mode === undefined || props.mode === null ? 'Automatic' : props.mode,
             templateName: props.templateName,
             templateVersion: props.templateVersion,

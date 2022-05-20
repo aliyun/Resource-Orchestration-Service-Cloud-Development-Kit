@@ -146,6 +146,11 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
@@ -215,6 +220,11 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Default to 120.
      */
     readonly workerSystemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * Property zoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -289,19 +299,21 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
 
         const rosManagedEdgeKubernetesCluster = new RosManagedEdgeKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? true : props.endpointPublicAccess,
+            resourceGroupId: props.resourceGroupId,
             autoRenew: props.autoRenew,
             addons: props.addons,
-            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
+            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             profile: props.profile === undefined || props.profile === null ? 'Edge' : props.profile,
             name: props.name,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
             workerDataDiskSize: props.workerDataDiskSize,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
+            zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
-            tags: props.tags,
             disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
+            tags: props.tags,
             workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
             autoRenewPeriod: props.autoRenewPeriod,

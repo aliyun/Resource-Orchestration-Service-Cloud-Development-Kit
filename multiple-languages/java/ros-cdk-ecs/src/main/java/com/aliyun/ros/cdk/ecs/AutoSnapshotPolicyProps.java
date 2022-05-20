@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.574Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(AutoSnapshotPolicyProps.Jsii$Proxy.class)
 public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -58,6 +58,13 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * Property tags: Tags to attach to instance.
      * <p>
      * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -81,6 +88,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object timePoints;
         java.lang.Object autoSnapshotPolicyName;
         java.lang.Object diskIds;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags;
 
         /**
@@ -214,6 +222,26 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link AutoSnapshotPolicyProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoSnapshotPolicyProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getTags}
          * @param tags Property tags: Tags to attach to instance.
          *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -246,6 +274,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object timePoints;
         private final java.lang.Object autoSnapshotPolicyName;
         private final java.lang.Object diskIds;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags;
 
         /**
@@ -259,6 +288,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
             this.timePoints = software.amazon.jsii.Kernel.get(this, "timePoints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoSnapshotPolicyName = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskIds = software.amazon.jsii.Kernel.get(this, "diskIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty.class)));
         }
 
@@ -273,6 +303,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
             this.timePoints = java.util.Objects.requireNonNull(builder.timePoints, "timePoints is required");
             this.autoSnapshotPolicyName = builder.autoSnapshotPolicyName;
             this.diskIds = builder.diskIds;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty>)builder.tags;
         }
 
@@ -302,6 +333,11 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> getTags() {
             return this.tags;
         }
@@ -320,6 +356,9 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getDiskIds() != null) {
                 data.set("diskIds", om.valueToTree(this.getDiskIds()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -347,6 +386,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
             if (!timePoints.equals(that.timePoints)) return false;
             if (this.autoSnapshotPolicyName != null ? !this.autoSnapshotPolicyName.equals(that.autoSnapshotPolicyName) : that.autoSnapshotPolicyName != null) return false;
             if (this.diskIds != null ? !this.diskIds.equals(that.diskIds) : that.diskIds != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -357,6 +397,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.timePoints.hashCode());
             result = 31 * result + (this.autoSnapshotPolicyName != null ? this.autoSnapshotPolicyName.hashCode() : 0);
             result = 31 * result + (this.diskIds != null ? this.diskIds.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

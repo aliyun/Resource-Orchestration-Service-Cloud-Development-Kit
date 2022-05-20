@@ -126,6 +126,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+        /// on: yes
+        /// off: no
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableHttp2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnableHttp2
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: healthCheck: The properties of health checking setting.
         /// </remarks>
         [JsiiOptional]

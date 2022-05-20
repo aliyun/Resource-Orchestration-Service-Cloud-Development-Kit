@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a `ALIYUN::ECI::ContainerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.554Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.622Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosContainerGroupProps.Jsii$Proxy.class)
 public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -110,6 +110,12 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRestartPolicy() {
         return null;
     }
@@ -190,6 +196,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object ipv6AddressCount;
         java.lang.Object memory;
         java.lang.Object ramRoleName;
+        java.lang.Object resourceGroupId;
         java.lang.Object restartPolicy;
         java.lang.Object securityContextSysctl;
         java.lang.Object slsEnable;
@@ -561,6 +568,26 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getRestartPolicy}
          * @param restartPolicy the value to be set.
          * @return {@code this}
@@ -774,6 +801,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object memory;
         private final java.lang.Object ramRoleName;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object restartPolicy;
         private final java.lang.Object securityContextSysctl;
         private final java.lang.Object slsEnable;
@@ -808,6 +836,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.memory = software.amazon.jsii.Kernel.get(this, "memory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.restartPolicy = software.amazon.jsii.Kernel.get(this, "restartPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityContextSysctl = software.amazon.jsii.Kernel.get(this, "securityContextSysctl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slsEnable = software.amazon.jsii.Kernel.get(this, "slsEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -842,6 +871,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             this.ipv6AddressCount = builder.ipv6AddressCount;
             this.memory = builder.memory;
             this.ramRoleName = builder.ramRoleName;
+            this.resourceGroupId = builder.resourceGroupId;
             this.restartPolicy = builder.restartPolicy;
             this.securityContextSysctl = builder.securityContextSysctl;
             this.slsEnable = builder.slsEnable;
@@ -944,6 +974,11 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getRestartPolicy() {
             return this.restartPolicy;
         }
@@ -1040,6 +1075,9 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             if (this.getRamRoleName() != null) {
                 data.set("ramRoleName", om.valueToTree(this.getRamRoleName()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getRestartPolicy() != null) {
                 data.set("restartPolicy", om.valueToTree(this.getRestartPolicy()));
             }
@@ -1103,6 +1141,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
             if (this.memory != null ? !this.memory.equals(that.memory) : that.memory != null) return false;
             if (this.ramRoleName != null ? !this.ramRoleName.equals(that.ramRoleName) : that.ramRoleName != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.restartPolicy != null ? !this.restartPolicy.equals(that.restartPolicy) : that.restartPolicy != null) return false;
             if (this.securityContextSysctl != null ? !this.securityContextSysctl.equals(that.securityContextSysctl) : that.securityContextSysctl != null) return false;
             if (this.slsEnable != null ? !this.slsEnable.equals(that.slsEnable) : that.slsEnable != null) return false;
@@ -1134,6 +1173,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
             result = 31 * result + (this.memory != null ? this.memory.hashCode() : 0);
             result = 31 * result + (this.ramRoleName != null ? this.ramRoleName.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.restartPolicy != null ? this.restartPolicy.hashCode() : 0);
             result = 31 * result + (this.securityContextSysctl != null ? this.securityContextSysctl.hashCode() : 0);
             result = 31 * result + (this.slsEnable != null ? this.slsEnable.hashCode() : 0);

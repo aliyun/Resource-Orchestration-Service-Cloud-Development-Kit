@@ -120,6 +120,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Gpdb.RosDBInstance.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property vpcId: The VPC ID of the instance.</summary>
         /// <remarks>
         /// If you set the InstanceNetworkType parameter to VPC, you
@@ -239,6 +253,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             public object? SecurityIpList
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Gpdb.RosDBInstance.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Gpdb.RosDBInstance.ITagsProperty[]?>();
             }
 
             /// <summary>Property vpcId: The VPC ID of the instance.</summary>

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::SecurityGroupEgress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.863Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.972Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupEgress")
 public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -167,6 +167,24 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
      */
     public void setDestGroupOwnerId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "destGroupOwnerId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestPrefixListId() {
+        return software.amazon.jsii.Kernel.get(this, "destPrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDestPrefixListId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "destPrefixListId", value);
+    }
+
+    /**
+     */
+    public void setDestPrefixListId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destPrefixListId", value);
     }
 
     /**
@@ -384,6 +402,23 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
          */
         public Builder destGroupOwnerId(final com.aliyun.ros.cdk.core.IResolvable destGroupOwnerId) {
             this.props.destGroupOwnerId(destGroupOwnerId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param destPrefixListId This parameter is required.
+         */
+        public Builder destPrefixListId(final java.lang.String destPrefixListId) {
+            this.props.destPrefixListId(destPrefixListId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destPrefixListId This parameter is required.
+         */
+        public Builder destPrefixListId(final com.aliyun.ros.cdk.core.IResolvable destPrefixListId) {
+            this.props.destPrefixListId(destPrefixListId);
             return this;
         }
 

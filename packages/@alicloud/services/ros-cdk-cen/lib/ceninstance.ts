@@ -28,6 +28,11 @@ export interface CenInstanceProps {
     readonly protectionLevel?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosCenInstance.TagsProperty[];
@@ -61,6 +66,7 @@ export class CenInstance extends ros.Resource {
         const rosCenInstance = new RosCenInstance(this, id,  {
             protectionLevel: props.protectionLevel,
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
             tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

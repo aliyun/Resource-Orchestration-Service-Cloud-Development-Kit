@@ -67,6 +67,11 @@ export interface ServerGroupProps {
      * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
      */
     readonly stickySessionConfig?: RosServerGroup.StickySessionConfigProperty | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosServerGroup.TagsProperty[];
 }
 
 /**
@@ -102,6 +107,7 @@ export class ServerGroup extends ros.Resource {
             healthCheckConfig: props.healthCheckConfig,
             protocol: props.protocol,
             serverGroupType: props.serverGroupType,
+            tags: props.tags,
             serverGroupName: props.serverGroupName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServerGroup;

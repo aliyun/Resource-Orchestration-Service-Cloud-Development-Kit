@@ -45,6 +45,11 @@ export interface AutoSnapshotPolicyProps {
     readonly diskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosAutoSnapshotPolicy.TagsProperty[];
@@ -78,6 +83,7 @@ export class AutoSnapshotPolicy extends ros.Resource {
         const rosAutoSnapshotPolicy = new RosAutoSnapshotPolicy(this, id,  {
             timePoints: props.timePoints,
             diskIds: props.diskIds,
+            resourceGroupId: props.resourceGroupId,
             retentionDays: props.retentionDays,
             repeatWeekdays: props.repeatWeekdays,
             autoSnapshotPolicyName: props.autoSnapshotPolicyName,

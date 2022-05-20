@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.236Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.343Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster")
 public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -689,6 +689,27 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
+         * Property resourceGroupId: The ID of resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
          * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
          * <p>
          * When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -975,6 +996,27 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          */
         public Builder workerSystemDiskSize(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskSize) {
             this.props.workerSystemDiskSize(workerSystemDiskSize);
+            return this;
+        }
+
+        /**
+         * Property zoneIds: Zone ids of worker node virtual switches belongs to.
+         * <p>
+         * @return {@code this}
+         * @param zoneIds Property zoneIds: Zone ids of worker node virtual switches belongs to. This parameter is required.
+         */
+        public Builder zoneIds(final com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.props.zoneIds(zoneIds);
+            return this;
+        }
+        /**
+         * Property zoneIds: Zone ids of worker node virtual switches belongs to.
+         * <p>
+         * @return {@code this}
+         * @param zoneIds Property zoneIds: Zone ids of worker node virtual switches belongs to. This parameter is required.
+         */
+        public Builder zoneIds(final java.util.List<? extends java.lang.Object> zoneIds) {
+            this.props.zoneIds(zoneIds);
             return this;
         }
 

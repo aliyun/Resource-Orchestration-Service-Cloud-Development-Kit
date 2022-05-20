@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Properties for defining a `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.208Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -174,6 +174,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
@@ -187,6 +193,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSshEnable() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.emr.RosCluster.TagsProperty> getTags() {
         return null;
     }
 
@@ -266,9 +278,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object optionSoftWareList;
         java.lang.Object period;
         java.lang.Object relatedClusterId;
+        java.lang.Object resourceGroupId;
         java.lang.Object securityGroupId;
         java.lang.Object securityGroupName;
         java.lang.Object sshEnable;
+        java.util.List<com.aliyun.ros.cdk.emr.RosCluster.TagsProperty> tags;
         java.lang.Object useCustomHiveMetaDb;
         java.lang.Object userDefinedEmrEcsRole;
         java.lang.Object userInfo;
@@ -877,6 +891,26 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getSecurityGroupId}
          * @param securityGroupId the value to be set.
          * @return {@code this}
@@ -933,6 +967,17 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder sshEnable(com.aliyun.ros.cdk.core.IResolvable sshEnable) {
             this.sshEnable = sshEnable;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.emr.RosCluster.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.emr.RosCluster.TagsProperty>)tags;
             return this;
         }
 
@@ -1102,9 +1147,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object optionSoftWareList;
         private final java.lang.Object period;
         private final java.lang.Object relatedClusterId;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object securityGroupName;
         private final java.lang.Object sshEnable;
+        private final java.util.List<com.aliyun.ros.cdk.emr.RosCluster.TagsProperty> tags;
         private final java.lang.Object useCustomHiveMetaDb;
         private final java.lang.Object userDefinedEmrEcsRole;
         private final java.lang.Object userInfo;
@@ -1148,9 +1195,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.optionSoftWareList = software.amazon.jsii.Kernel.get(this, "optionSoftWareList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.relatedClusterId = software.amazon.jsii.Kernel.get(this, "relatedClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupName = software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sshEnable = software.amazon.jsii.Kernel.get(this, "sshEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.emr.RosCluster.TagsProperty.class)));
             this.useCustomHiveMetaDb = software.amazon.jsii.Kernel.get(this, "useCustomHiveMetaDb", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userDefinedEmrEcsRole = software.amazon.jsii.Kernel.get(this, "userDefinedEmrEcsRole", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userInfo = software.amazon.jsii.Kernel.get(this, "userInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1162,6 +1211,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.chargeType = java.util.Objects.requireNonNull(builder.chargeType, "chargeType is required");
@@ -1194,9 +1244,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.optionSoftWareList = builder.optionSoftWareList;
             this.period = builder.period;
             this.relatedClusterId = builder.relatedClusterId;
+            this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupId = builder.securityGroupId;
             this.securityGroupName = builder.securityGroupName;
             this.sshEnable = builder.sshEnable;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.emr.RosCluster.TagsProperty>)builder.tags;
             this.useCustomHiveMetaDb = builder.useCustomHiveMetaDb;
             this.userDefinedEmrEcsRole = builder.userDefinedEmrEcsRole;
             this.userInfo = builder.userInfo;
@@ -1356,6 +1408,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
@@ -1368,6 +1425,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getSshEnable() {
             return this.sshEnable;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.emr.RosCluster.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -1480,6 +1542,9 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getRelatedClusterId() != null) {
                 data.set("relatedClusterId", om.valueToTree(this.getRelatedClusterId()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
@@ -1488,6 +1553,9 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getSshEnable() != null) {
                 data.set("sshEnable", om.valueToTree(this.getSshEnable()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getUseCustomHiveMetaDb() != null) {
                 data.set("useCustomHiveMetaDb", om.valueToTree(this.getUseCustomHiveMetaDb()));
@@ -1555,9 +1623,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.optionSoftWareList != null ? !this.optionSoftWareList.equals(that.optionSoftWareList) : that.optionSoftWareList != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.relatedClusterId != null ? !this.relatedClusterId.equals(that.relatedClusterId) : that.relatedClusterId != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityGroupName != null ? !this.securityGroupName.equals(that.securityGroupName) : that.securityGroupName != null) return false;
             if (this.sshEnable != null ? !this.sshEnable.equals(that.sshEnable) : that.sshEnable != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.useCustomHiveMetaDb != null ? !this.useCustomHiveMetaDb.equals(that.useCustomHiveMetaDb) : that.useCustomHiveMetaDb != null) return false;
             if (this.userDefinedEmrEcsRole != null ? !this.userDefinedEmrEcsRole.equals(that.userDefinedEmrEcsRole) : that.userDefinedEmrEcsRole != null) return false;
             if (this.userInfo != null ? !this.userInfo.equals(that.userInfo) : that.userInfo != null) return false;
@@ -1598,9 +1668,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.optionSoftWareList != null ? this.optionSoftWareList.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.relatedClusterId != null ? this.relatedClusterId.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupName != null ? this.securityGroupName.hashCode() : 0);
             result = 31 * result + (this.sshEnable != null ? this.sshEnable.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.useCustomHiveMetaDb != null ? this.useCustomHiveMetaDb.hashCode() : 0);
             result = 31 * result + (this.userDefinedEmrEcsRole != null ? this.userDefinedEmrEcsRole.hashCode() : 0);
             result = 31 * result + (this.userInfo != null ? this.userInfo.hashCode() : 0);

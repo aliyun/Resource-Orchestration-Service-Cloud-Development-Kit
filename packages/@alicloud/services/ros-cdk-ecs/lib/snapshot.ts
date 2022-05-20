@@ -38,6 +38,11 @@ export interface SnapshotProps {
     readonly instantAccessRetentionDays?: number | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
      */
     readonly snapshotName?: string | ros.IResolvable;
@@ -81,6 +86,7 @@ export class Snapshot extends ros.Resource {
         const rosSnapshot = new RosSnapshot(this, id,  {
             instantAccess: props.instantAccess,
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
             timeout: props.timeout === undefined || props.timeout === null ? 200 : props.timeout,
             snapshotName: props.snapshotName,
             instantAccessRetentionDays: props.instantAccessRetentionDays,

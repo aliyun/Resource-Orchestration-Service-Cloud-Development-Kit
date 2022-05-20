@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS template type:  `ALIYUN::DTS::SubscriptionInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.486Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.575Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionInstance")
 public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -52,6 +52,12 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicHost() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicHost", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSubscribeTopic() {
+        return software.amazon.jsii.Kernel.get(this, "attrSubscribeTopic", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -153,6 +159,18 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> getTags() {
+        return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    }
+
+    /**
+     */
+    public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> value) {
+        software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
         return software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -188,7 +206,9 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getSubscriptionObject();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDbList() {
+            return null;
+        }
 
         /**
          */
@@ -225,7 +245,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
         public static final class Builder implements software.amazon.jsii.Builder<ConfigurationProperty> {
             java.lang.Object sourceEndpoint;
             java.lang.Object subscriptionDataType;
-            java.lang.Object subscriptionObject;
+            java.lang.Object dbList;
             java.lang.Object subscriptionInstance;
             java.lang.Object subscriptionInstanceName;
             java.lang.Object subscriptionInstanceNetworkType;
@@ -275,24 +295,24 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             }
 
             /**
-             * Sets the value of {@link ConfigurationProperty#getSubscriptionObject}
-             * @param subscriptionObject the value to be set. This parameter is required.
+             * Sets the value of {@link ConfigurationProperty#getDbList}
+             * @param dbList the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder subscriptionObject(com.aliyun.ros.cdk.core.IResolvable subscriptionObject) {
-                this.subscriptionObject = subscriptionObject;
+            public Builder dbList(com.aliyun.ros.cdk.core.IResolvable dbList) {
+                this.dbList = dbList;
                 return this;
             }
 
             /**
-             * Sets the value of {@link ConfigurationProperty#getSubscriptionObject}
-             * @param subscriptionObject the value to be set. This parameter is required.
+             * Sets the value of {@link ConfigurationProperty#getDbList}
+             * @param dbList the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder subscriptionObject(java.util.List<? extends java.lang.Object> subscriptionObject) {
-                this.subscriptionObject = subscriptionObject;
+            public Builder dbList(java.util.Map<java.lang.String, ? extends java.lang.Object> dbList) {
+                this.dbList = dbList;
                 return this;
             }
 
@@ -382,7 +402,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConfigurationProperty {
             private final java.lang.Object sourceEndpoint;
             private final java.lang.Object subscriptionDataType;
-            private final java.lang.Object subscriptionObject;
+            private final java.lang.Object dbList;
             private final java.lang.Object subscriptionInstance;
             private final java.lang.Object subscriptionInstanceName;
             private final java.lang.Object subscriptionInstanceNetworkType;
@@ -395,7 +415,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
                 super(objRef);
                 this.sourceEndpoint = software.amazon.jsii.Kernel.get(this, "sourceEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.subscriptionDataType = software.amazon.jsii.Kernel.get(this, "subscriptionDataType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.subscriptionObject = software.amazon.jsii.Kernel.get(this, "subscriptionObject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dbList = software.amazon.jsii.Kernel.get(this, "dbList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.subscriptionInstance = software.amazon.jsii.Kernel.get(this, "subscriptionInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.subscriptionInstanceName = software.amazon.jsii.Kernel.get(this, "subscriptionInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.subscriptionInstanceNetworkType = software.amazon.jsii.Kernel.get(this, "subscriptionInstanceNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -408,7 +428,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.sourceEndpoint = java.util.Objects.requireNonNull(builder.sourceEndpoint, "sourceEndpoint is required");
                 this.subscriptionDataType = java.util.Objects.requireNonNull(builder.subscriptionDataType, "subscriptionDataType is required");
-                this.subscriptionObject = java.util.Objects.requireNonNull(builder.subscriptionObject, "subscriptionObject is required");
+                this.dbList = builder.dbList;
                 this.subscriptionInstance = builder.subscriptionInstance;
                 this.subscriptionInstanceName = builder.subscriptionInstanceName;
                 this.subscriptionInstanceNetworkType = builder.subscriptionInstanceNetworkType;
@@ -425,8 +445,8 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             }
 
             @Override
-            public final java.lang.Object getSubscriptionObject() {
-                return this.subscriptionObject;
+            public final java.lang.Object getDbList() {
+                return this.dbList;
             }
 
             @Override
@@ -452,7 +472,9 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
 
                 data.set("sourceEndpoint", om.valueToTree(this.getSourceEndpoint()));
                 data.set("subscriptionDataType", om.valueToTree(this.getSubscriptionDataType()));
-                data.set("subscriptionObject", om.valueToTree(this.getSubscriptionObject()));
+                if (this.getDbList() != null) {
+                    data.set("dbList", om.valueToTree(this.getDbList()));
+                }
                 if (this.getSubscriptionInstance() != null) {
                     data.set("subscriptionInstance", om.valueToTree(this.getSubscriptionInstance()));
                 }
@@ -482,7 +504,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
 
                 if (!sourceEndpoint.equals(that.sourceEndpoint)) return false;
                 if (!subscriptionDataType.equals(that.subscriptionDataType)) return false;
-                if (!subscriptionObject.equals(that.subscriptionObject)) return false;
+                if (this.dbList != null ? !this.dbList.equals(that.dbList) : that.dbList != null) return false;
                 if (this.subscriptionInstance != null ? !this.subscriptionInstance.equals(that.subscriptionInstance) : that.subscriptionInstance != null) return false;
                 if (this.subscriptionInstanceName != null ? !this.subscriptionInstanceName.equals(that.subscriptionInstanceName) : that.subscriptionInstanceName != null) return false;
                 return this.subscriptionInstanceNetworkType != null ? this.subscriptionInstanceNetworkType.equals(that.subscriptionInstanceNetworkType) : that.subscriptionInstanceNetworkType == null;
@@ -492,7 +514,7 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
             public final int hashCode() {
                 int result = this.sourceEndpoint.hashCode();
                 result = 31 * result + (this.subscriptionDataType.hashCode());
-                result = 31 * result + (this.subscriptionObject.hashCode());
+                result = 31 * result + (this.dbList != null ? this.dbList.hashCode() : 0);
                 result = 31 * result + (this.subscriptionInstance != null ? this.subscriptionInstance.hashCode() : 0);
                 result = 31 * result + (this.subscriptionInstanceName != null ? this.subscriptionInstanceName.hashCode() : 0);
                 result = 31 * result + (this.subscriptionInstanceNetworkType != null ? this.subscriptionInstanceNetworkType.hashCode() : 0);
@@ -1334,135 +1356,102 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
     }
     /**
      */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty")
-    @software.amazon.jsii.Jsii.Proxy(SubscriptionObjectProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TagsProperty")
+    @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface SubscriptionObjectProperty extends software.amazon.jsii.JsiiSerializable {
+    public static interface TagsProperty extends software.amazon.jsii.JsiiSerializable {
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getDbName() {
-            return null;
-        }
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getTableExcludes() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
             return null;
         }
 
         /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getTableIncludes() {
-            return null;
-        }
-
-        /**
-         * @return a {@link Builder} of {@link SubscriptionObjectProperty}
+         * @return a {@link Builder} of {@link TagsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         static Builder builder() {
             return new Builder();
         }
         /**
-         * A builder for {@link SubscriptionObjectProperty}
+         * A builder for {@link TagsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<SubscriptionObjectProperty> {
-            java.lang.Object dbName;
-            java.lang.Object tableExcludes;
-            java.lang.Object tableIncludes;
+        public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
-             * Sets the value of {@link SubscriptionObjectProperty#getDbName}
-             * @param dbName the value to be set.
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder dbName(java.lang.String dbName) {
-                this.dbName = dbName;
+            public Builder key(java.lang.String key) {
+                this.key = key;
                 return this;
             }
 
             /**
-             * Sets the value of {@link SubscriptionObjectProperty#getDbName}
-             * @param dbName the value to be set.
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
-                this.dbName = dbName;
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
                 return this;
             }
 
             /**
-             * Sets the value of {@link SubscriptionObjectProperty#getTableExcludes}
-             * @param tableExcludes the value to be set.
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder tableExcludes(com.aliyun.ros.cdk.core.IResolvable tableExcludes) {
-                this.tableExcludes = tableExcludes;
+            public Builder value(java.lang.String value) {
+                this.value = value;
                 return this;
             }
 
             /**
-             * Sets the value of {@link SubscriptionObjectProperty#getTableExcludes}
-             * @param tableExcludes the value to be set.
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder tableExcludes(java.util.List<? extends java.lang.Object> tableExcludes) {
-                this.tableExcludes = tableExcludes;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SubscriptionObjectProperty#getTableIncludes}
-             * @param tableIncludes the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder tableIncludes(com.aliyun.ros.cdk.core.IResolvable tableIncludes) {
-                this.tableIncludes = tableIncludes;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link SubscriptionObjectProperty#getTableIncludes}
-             * @param tableIncludes the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder tableIncludes(java.util.List<? extends java.lang.Object> tableIncludes) {
-                this.tableIncludes = tableIncludes;
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
                 return this;
             }
 
             /**
              * Builds the configured instance.
-             * @return a new instance of {@link SubscriptionObjectProperty}
+             * @return a new instance of {@link TagsProperty}
              * @throws NullPointerException if any required attribute was not provided
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
-            public SubscriptionObjectProperty build() {
+            public TagsProperty build() {
                 return new Jsii$Proxy(this);
             }
         }
 
         /**
-         * An implementation for {@link SubscriptionObjectProperty}
+         * An implementation for {@link TagsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SubscriptionObjectProperty {
-            private final java.lang.Object dbName;
-            private final java.lang.Object tableExcludes;
-            private final java.lang.Object tableIncludes;
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1470,9 +1459,8 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.tableExcludes = software.amazon.jsii.Kernel.get(this, "tableExcludes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.tableIncludes = software.amazon.jsii.Kernel.get(this, "tableIncludes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1480,24 +1468,18 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.dbName = builder.dbName;
-                this.tableExcludes = builder.tableExcludes;
-                this.tableIncludes = builder.tableIncludes;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
-            public final java.lang.Object getDbName() {
-                return this.dbName;
+            public final java.lang.Object getKey() {
+                return this.key;
             }
 
             @Override
-            public final java.lang.Object getTableExcludes() {
-                return this.tableExcludes;
-            }
-
-            @Override
-            public final java.lang.Object getTableIncludes() {
-                return this.tableIncludes;
+            public final java.lang.Object getValue() {
+                return this.value;
             }
 
             @Override
@@ -1506,18 +1488,13 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                if (this.getDbName() != null) {
-                    data.set("dbName", om.valueToTree(this.getDbName()));
-                }
-                if (this.getTableExcludes() != null) {
-                    data.set("tableExcludes", om.valueToTree(this.getTableExcludes()));
-                }
-                if (this.getTableIncludes() != null) {
-                    data.set("tableIncludes", om.valueToTree(this.getTableIncludes()));
+                data.set("key", om.valueToTree(this.getKey()));
+                if (this.getValue() != null) {
+                    data.set("value", om.valueToTree(this.getValue()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty"));
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-dts.RosSubscriptionInstance.TagsProperty"));
                 struct.set("data", data);
 
                 final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -1531,276 +1508,16 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                SubscriptionObjectProperty.Jsii$Proxy that = (SubscriptionObjectProperty.Jsii$Proxy) o;
+                TagsProperty.Jsii$Proxy that = (TagsProperty.Jsii$Proxy) o;
 
-                if (this.dbName != null ? !this.dbName.equals(that.dbName) : that.dbName != null) return false;
-                if (this.tableExcludes != null ? !this.tableExcludes.equals(that.tableExcludes) : that.tableExcludes != null) return false;
-                return this.tableIncludes != null ? this.tableIncludes.equals(that.tableIncludes) : that.tableIncludes == null;
+                if (!key.equals(that.key)) return false;
+                return this.value != null ? this.value.equals(that.value) : that.value == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.dbName != null ? this.dbName.hashCode() : 0;
-                result = 31 * result + (this.tableExcludes != null ? this.tableExcludes.hashCode() : 0);
-                result = 31 * result + (this.tableIncludes != null ? this.tableIncludes.hashCode() : 0);
-                return result;
-            }
-        }
-    }
-    /**
-     */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty")
-    @software.amazon.jsii.Jsii.Proxy(TableExcludesProperty.Jsii$Proxy.class)
-    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface TableExcludesProperty extends software.amazon.jsii.JsiiSerializable {
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getTableName() {
-            return null;
-        }
-
-        /**
-         * @return a {@link Builder} of {@link TableExcludesProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        static Builder builder() {
-            return new Builder();
-        }
-        /**
-         * A builder for {@link TableExcludesProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<TableExcludesProperty> {
-            java.lang.Object tableName;
-
-            /**
-             * Sets the value of {@link TableExcludesProperty#getTableName}
-             * @param tableName the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder tableName(java.lang.String tableName) {
-                this.tableName = tableName;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link TableExcludesProperty#getTableName}
-             * @param tableName the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder tableName(com.aliyun.ros.cdk.core.IResolvable tableName) {
-                this.tableName = tableName;
-                return this;
-            }
-
-            /**
-             * Builds the configured instance.
-             * @return a new instance of {@link TableExcludesProperty}
-             * @throws NullPointerException if any required attribute was not provided
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            @Override
-            public TableExcludesProperty build() {
-                return new Jsii$Proxy(this);
-            }
-        }
-
-        /**
-         * An implementation for {@link TableExcludesProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TableExcludesProperty {
-            private final java.lang.Object tableName;
-
-            /**
-             * Constructor that initializes the object based on values retrieved from the JsiiObject.
-             * @param objRef Reference to the JSII managed object.
-             */
-            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
-                super(objRef);
-                this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            }
-
-            /**
-             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
-             */
-            protected Jsii$Proxy(final Builder builder) {
-                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tableName = builder.tableName;
-            }
-
-            @Override
-            public final java.lang.Object getTableName() {
-                return this.tableName;
-            }
-
-            @Override
-            @software.amazon.jsii.Internal
-            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
-                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
-                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-
-                if (this.getTableName() != null) {
-                    data.set("tableName", om.valueToTree(this.getTableName()));
-                }
-
-                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty"));
-                struct.set("data", data);
-
-                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                obj.set("$jsii.struct", struct);
-
-                return obj;
-            }
-
-            @Override
-            public final boolean equals(final Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
-
-                TableExcludesProperty.Jsii$Proxy that = (TableExcludesProperty.Jsii$Proxy) o;
-
-                return this.tableName != null ? this.tableName.equals(that.tableName) : that.tableName == null;
-            }
-
-            @Override
-            public final int hashCode() {
-                int result = this.tableName != null ? this.tableName.hashCode() : 0;
-                return result;
-            }
-        }
-    }
-    /**
-     */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty")
-    @software.amazon.jsii.Jsii.Proxy(TableIncludesProperty.Jsii$Proxy.class)
-    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface TableIncludesProperty extends software.amazon.jsii.JsiiSerializable {
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getTableName() {
-            return null;
-        }
-
-        /**
-         * @return a {@link Builder} of {@link TableIncludesProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        static Builder builder() {
-            return new Builder();
-        }
-        /**
-         * A builder for {@link TableIncludesProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<TableIncludesProperty> {
-            java.lang.Object tableName;
-
-            /**
-             * Sets the value of {@link TableIncludesProperty#getTableName}
-             * @param tableName the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder tableName(java.lang.String tableName) {
-                this.tableName = tableName;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link TableIncludesProperty#getTableName}
-             * @param tableName the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder tableName(com.aliyun.ros.cdk.core.IResolvable tableName) {
-                this.tableName = tableName;
-                return this;
-            }
-
-            /**
-             * Builds the configured instance.
-             * @return a new instance of {@link TableIncludesProperty}
-             * @throws NullPointerException if any required attribute was not provided
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            @Override
-            public TableIncludesProperty build() {
-                return new Jsii$Proxy(this);
-            }
-        }
-
-        /**
-         * An implementation for {@link TableIncludesProperty}
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TableIncludesProperty {
-            private final java.lang.Object tableName;
-
-            /**
-             * Constructor that initializes the object based on values retrieved from the JsiiObject.
-             * @param objRef Reference to the JSII managed object.
-             */
-            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
-                super(objRef);
-                this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            }
-
-            /**
-             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
-             */
-            protected Jsii$Proxy(final Builder builder) {
-                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tableName = builder.tableName;
-            }
-
-            @Override
-            public final java.lang.Object getTableName() {
-                return this.tableName;
-            }
-
-            @Override
-            @software.amazon.jsii.Internal
-            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
-                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
-                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-
-                if (this.getTableName() != null) {
-                    data.set("tableName", om.valueToTree(this.getTableName()));
-                }
-
-                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty"));
-                struct.set("data", data);
-
-                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                obj.set("$jsii.struct", struct);
-
-                return obj;
-            }
-
-            @Override
-            public final boolean equals(final Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
-
-                TableIncludesProperty.Jsii$Proxy that = (TableIncludesProperty.Jsii$Proxy) o;
-
-                return this.tableName != null ? this.tableName.equals(that.tableName) : that.tableName == null;
-            }
-
-            @Override
-            public final int hashCode() {
-                int result = this.tableName != null ? this.tableName.hashCode() : 0;
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
                 return result;
             }
         }
@@ -1897,6 +1614,15 @@ public class RosSubscriptionInstance extends com.aliyun.ros.cdk.core.RosResource
          */
         public Builder sourceEndpointInstanceType(final com.aliyun.ros.cdk.core.IResolvable sourceEndpointInstanceType) {
             this.props.sourceEndpointInstanceType(sourceEndpointInstanceType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tags This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

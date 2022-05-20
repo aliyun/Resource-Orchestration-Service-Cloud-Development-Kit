@@ -100,6 +100,11 @@ export interface ContainerGroupProps {
     readonly ramRoleName?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property restartPolicy: The policy for restarting the instance. Default value: Always.
      */
     readonly restartPolicy?: string | ros.IResolvable;
@@ -223,6 +228,7 @@ export class ContainerGroup extends ros.Resource {
         super(scope, id);
 
         const rosContainerGroup = new RosContainerGroup(this, id,  {
+            resourceGroupId: props.resourceGroupId,
             securityContextSysctl: props.securityContextSysctl,
             memory: props.memory,
             initContainer: props.initContainer,

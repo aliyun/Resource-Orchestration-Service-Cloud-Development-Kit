@@ -174,6 +174,16 @@ export interface RosZoneProps {
     readonly remark?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosZone.TagsProperty[];
+
+    /**
      * @Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
      */
     readonly zoneTag?: string | ros.IResolvable;
@@ -196,6 +206,7 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('zoneName', ros.requiredValidator)(properties.zoneName));
     errors.collect(ros.propertyValidator('zoneName', ros.validateString)(properties.zoneName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.proxyPattern && (typeof properties.proxyPattern) !== 'object') {
         errors.collect(ros.propertyValidator('proxyPattern', ros.validateAllowedValues)({
           data: properties.proxyPattern,
@@ -204,7 +215,14 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('proxyPattern', ros.validateString)(properties.proxyPattern));
     errors.collect(ros.propertyValidator('zoneTag', ros.validateString)(properties.zoneTag));
-    errors.collect(ros.propertyValidator('zoneType', ros.validateString)(properties.zoneType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosZone_TagsPropertyValidator))(properties.tags));
     if(properties.remark && (Array.isArray(properties.remark) || (typeof properties.remark) === 'string')) {
         errors.collect(ros.propertyValidator('remark', ros.validateLength)({
             data: properties.remark.length,
@@ -219,6 +237,7 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
+    errors.collect(ros.propertyValidator('zoneType', ros.validateString)(properties.zoneType));
     return errors.wrap('supplied properties not correct for "RosZoneProps"');
 }
 
@@ -239,6 +258,8 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
       ZoneName: ros.stringToRosTemplate(properties.zoneName),
       ProxyPattern: ros.stringToRosTemplate(properties.proxyPattern),
       Remark: ros.stringToRosTemplate(properties.remark),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosZoneTagsPropertyToRosTemplate)(properties.tags),
       ZoneTag: ros.stringToRosTemplate(properties.zoneTag),
       ZoneType: ros.stringToRosTemplate(properties.zoneType),
     };
@@ -299,6 +320,16 @@ export class RosZone extends ros.RosResource {
     public remark: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosZone.TagsProperty[] | undefined;
+
+    /**
      * @Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
      */
     public zoneTag: string | ros.IResolvable | undefined;
@@ -326,6 +357,8 @@ export class RosZone extends ros.RosResource {
         this.zoneName = props.zoneName;
         this.proxyPattern = props.proxyPattern;
         this.remark = props.remark;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
         this.zoneTag = props.zoneTag;
         this.zoneType = props.zoneType;
     }
@@ -336,6 +369,8 @@ export class RosZone extends ros.RosResource {
             zoneName: this.zoneName,
             proxyPattern: this.proxyPattern,
             remark: this.remark,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
             zoneTag: this.zoneTag,
             zoneType: this.zoneType,
         };
@@ -343,6 +378,54 @@ export class RosZone extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosZonePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosZone {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosZone_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::Zone.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::Zone.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosZoneTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosZone_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**

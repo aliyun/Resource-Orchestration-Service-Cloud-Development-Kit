@@ -14,7 +14,7 @@ export interface SignatureProps {
     readonly signatureKey: string | ros.IResolvable;
 
     /**
-     * Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly signatureName: string | ros.IResolvable;
 

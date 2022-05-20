@@ -19,7 +19,7 @@ export interface ClusterProps {
     readonly clusterType: string | ros.IResolvable;
 
     /**
-     * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
+     * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0
      */
     readonly clusterVersion: string | ros.IResolvable;
 
@@ -32,6 +32,11 @@ export interface ClusterProps {
      * Property netType: network type, Enum: privatenet,pubnet
      */
     readonly netType: string | ros.IResolvable;
+
+    /**
+     * Property acceptLanguage:
+     */
+    readonly acceptLanguage?: string | ros.IResolvable;
 
     /**
      * Property aclEntryList: acl entry list
@@ -49,14 +54,17 @@ export interface ClusterProps {
     readonly connectionType?: string | ros.IResolvable;
 
     /**
-     * Property diskCapacity: disk capacity, unit: G
-     */
-    readonly diskCapacity?: number | ros.IResolvable;
-
-    /**
      * Property diskType: disk type
      */
     readonly diskType?: string | ros.IResolvable;
+
+    /**
+     * Property mseVersion: This parameter is required when creating a professional version. The value is as follows:
+     * 
+     * -'mse_basic': indicates the basic version (default value).
+     * -'mse_pro': means professional version.
+     */
+    readonly mseVersion?: string | ros.IResolvable;
 
     /**
      * Property privateSlbSpecification:
@@ -140,7 +148,7 @@ export class Cluster extends ros.Resource {
     public readonly attrClusterType: ros.IResolvable;
 
     /**
-     * Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
+     * Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0
      */
     public readonly attrClusterVersion: ros.IResolvable;
 
@@ -215,6 +223,14 @@ export class Cluster extends ros.Resource {
     public readonly attrMemoryCapacity: ros.IResolvable;
 
     /**
+     * Attribute MseVersion: This parameter is required when creating a professional version. The value is as follows:
+
+-'mse_basic': indicates the basic version (default value).
+-'mse_pro': means professional version.
+     */
+    public readonly attrMseVersion: ros.IResolvable;
+
+    /**
      * Attribute NetType: network type, Enum: privatenet,pubnet
      */
     public readonly attrNetType: ros.IResolvable;
@@ -250,6 +266,7 @@ export class Cluster extends ros.Resource {
         super(scope, id);
 
         const rosCluster = new RosCluster(this, id,  {
+            mseVersion: props.mseVersion,
             privateSlbSpecification: props.privateSlbSpecification,
             clusterVersion: props.clusterVersion,
             connectionType: props.connectionType,
@@ -261,10 +278,10 @@ export class Cluster extends ros.Resource {
             diskType: props.diskType,
             clusterAliasName: props.clusterAliasName,
             instanceCount: props.instanceCount,
-            diskCapacity: props.diskCapacity,
             vpcId: props.vpcId,
             requestPars: props.requestPars,
             pubNetworkFlow: props.pubNetworkFlow,
+            acceptLanguage: props.acceptLanguage,
             netType: props.netType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster;
@@ -291,6 +308,7 @@ export class Cluster extends ros.Resource {
         this.attrIntranetDomain = rosCluster.attrIntranetDomain;
         this.attrIntranetPort = rosCluster.attrIntranetPort;
         this.attrMemoryCapacity = rosCluster.attrMemoryCapacity;
+        this.attrMseVersion = rosCluster.attrMseVersion;
         this.attrNetType = rosCluster.attrNetType;
         this.attrPayInfo = rosCluster.attrPayInfo;
         this.attrPubNetworkFlow = rosCluster.attrPubNetworkFlow;

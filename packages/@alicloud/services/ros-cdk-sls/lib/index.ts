@@ -6,6 +6,7 @@ export * from './index-resource';
 export * from './logstore';
 export * from './logtailconfig';
 export * from './machinegroup';
+export * from './metricstore';
 export * from './project';
 export * from './savedsearch';
 

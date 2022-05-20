@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::DedicatedHost`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.599Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.674Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DedicatedHost")
 public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource {
 
@@ -435,24 +435,20 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property resourceGroupId: The ID of the resource group.
-         * <p>
-         * If this is left blank, the system automatically fills in the ID of the default resource group.
+         * Property resourceGroupId: Resource group id.
          * <p>
          * @return {@code this}
-         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }
         /**
-         * Property resourceGroupId: The ID of the resource group.
-         * <p>
-         * If this is left blank, the system automatically fills in the ID of the default resource group.
+         * Property resourceGroupId: Resource group id.
          * <p>
          * @return {@code this}
-         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);

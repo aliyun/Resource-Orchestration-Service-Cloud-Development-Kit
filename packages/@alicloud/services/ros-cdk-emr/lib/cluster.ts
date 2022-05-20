@@ -170,6 +170,11 @@ export interface ClusterProps {
     readonly relatedClusterId?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property securityGroupId: The ID of the security group. You can create a security group in the ECS console and
      * use it. Note: If you use an existing security group, the default security group policy
      * is applied to this security group: Only port 22 is open at the inbound and all ports
@@ -191,6 +196,11 @@ export interface ClusterProps {
      * Property sshEnable: Indicates whether SSH is enabled.
      */
     readonly sshEnable?: boolean | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCluster.TagsProperty[];
 
     /**
      * Property useCustomHiveMetaDb: A reserved parameter. Not required.
@@ -265,14 +275,15 @@ export class Cluster extends ros.Resource {
 
         const rosCluster = new RosCluster(this, id,  {
             bootstrapAction: props.bootstrapAction,
+            resourceGroupId: props.resourceGroupId,
             securityGroupName: props.securityGroupName,
             config: props.config,
             clickHouseConf: props.clickHouseConf,
             autoRenew: props.autoRenew,
             hostGroup: props.hostGroup,
             userInfo: props.userInfo,
-            name: props.name,
             highAvailabilityEnable: props.highAvailabilityEnable,
+            name: props.name,
             optionSoftWareList: props.optionSoftWareList,
             masterPwd: props.masterPwd,
             sshEnable: props.sshEnable,
@@ -280,8 +291,9 @@ export class Cluster extends ros.Resource {
             isOpenPublicIp: props.isOpenPublicIp,
             configurations: props.configurations,
             authorizeContent: props.authorizeContent,
-            userDefinedEmrEcsRole: props.userDefinedEmrEcsRole,
             netType: props.netType,
+            userDefinedEmrEcsRole: props.userDefinedEmrEcsRole,
+            tags: props.tags,
             useLocalMetaDb: props.useLocalMetaDb,
             keyPairName: props.keyPairName,
             ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? true : props.ioOptimized,
@@ -290,8 +302,8 @@ export class Cluster extends ros.Resource {
             securityGroupId: props.securityGroupId,
             machineType: props.machineType,
             depositType: props.depositType,
-            period: props.period,
             metaStoreType: props.metaStoreType,
+            period: props.period,
             emrVer: props.emrVer,
             clusterType: props.clusterType,
             easEnable: props.easEnable,

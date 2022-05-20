@@ -19,9 +19,7 @@
 @alicloud/ros-cdk-dts.RosSubscriptionInstance.SourceEndpointProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$SourceEndpointProperty
 @alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionDataTypeProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$SubscriptionDataTypeProperty
 @alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionInstanceProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$SubscriptionInstanceProperty
-@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$SubscriptionObjectProperty
-@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$TableExcludesProperty
-@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$TableIncludesProperty
+@alicloud/ros-cdk-dts.RosSubscriptionInstance.TagsProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$TagsProperty
 @alicloud/ros-cdk-dts.RosSubscriptionInstanceProps=com.aliyun.ros.cdk.dts.RosSubscriptionInstanceProps
 @alicloud/ros-cdk-dts.RosSynchronizationJob=com.aliyun.ros.cdk.dts.RosSynchronizationJob
 @alicloud/ros-cdk-dts.RosSynchronizationJob.ColumnExcludesProperty=com.aliyun.ros.cdk.dts.RosSynchronizationJob$ColumnExcludesProperty

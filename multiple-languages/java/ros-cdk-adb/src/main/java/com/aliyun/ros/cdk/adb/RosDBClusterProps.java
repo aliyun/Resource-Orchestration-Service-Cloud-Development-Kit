@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * Properties for defining a `ALIYUN::ADB::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.656Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.751Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -94,6 +94,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.adb.RosDBCluster.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
@@ -124,6 +130,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object period;
         java.lang.Object periodType;
         java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.adb.RosDBCluster.TagsProperty> tags;
         java.lang.Object zoneId;
 
         /**
@@ -447,6 +454,17 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.adb.RosDBCluster.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.adb.RosDBCluster.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
@@ -498,6 +516,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object period;
         private final java.lang.Object periodType;
         private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.adb.RosDBCluster.TagsProperty> tags;
         private final java.lang.Object zoneId;
 
         /**
@@ -522,12 +541,14 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.adb.RosDBCluster.TagsProperty.class)));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbClusterCategory = java.util.Objects.requireNonNull(builder.dbClusterCategory, "dbClusterCategory is required");
@@ -546,6 +567,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.period = builder.period;
             this.periodType = builder.periodType;
             this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.adb.RosDBCluster.TagsProperty>)builder.tags;
             this.zoneId = builder.zoneId;
         }
 
@@ -630,6 +652,11 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.adb.RosDBCluster.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -676,6 +703,9 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
             }
@@ -713,6 +743,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodType != null ? !this.periodType.equals(that.periodType) : that.periodType != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -734,6 +765,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodType != null ? this.periodType.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

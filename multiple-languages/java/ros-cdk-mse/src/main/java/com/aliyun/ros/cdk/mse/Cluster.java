@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * A ROS resource type:  `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.716Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.875Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -105,7 +105,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3.
+     * Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterVersion() {
         return software.amazon.jsii.Kernel.get(this, "attrClusterVersion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -207,6 +207,16 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMemoryCapacity() {
         return software.amazon.jsii.Kernel.get(this, "attrMemoryCapacity", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute MseVersion: This parameter is required when creating a professional version. The value is as follows:.
+     * <p>
+     * -'mse_basic': indicates the basic version (default value).
+     * -'mse_pro': means professional version.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMseVersion() {
+        return software.amazon.jsii.Kernel.get(this, "attrMseVersion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -321,20 +331,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3.
+         * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.
          * <p>
          * @return {@code this}
-         * @param clusterVersion Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3. This parameter is required.
+         * @param clusterVersion Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0. This parameter is required.
          */
         public Builder clusterVersion(final java.lang.String clusterVersion) {
             this.props.clusterVersion(clusterVersion);
             return this;
         }
         /**
-         * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3.
+         * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.
          * <p>
          * @return {@code this}
-         * @param clusterVersion Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3. This parameter is required.
+         * @param clusterVersion Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0. This parameter is required.
          */
         public Builder clusterVersion(final com.aliyun.ros.cdk.core.IResolvable clusterVersion) {
             this.props.clusterVersion(clusterVersion);
@@ -380,6 +390,27 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder netType(final com.aliyun.ros.cdk.core.IResolvable netType) {
             this.props.netType(netType);
+            return this;
+        }
+
+        /**
+         * Property acceptLanguage:.
+         * <p>
+         * @return {@code this}
+         * @param acceptLanguage Property acceptLanguage:. This parameter is required.
+         */
+        public Builder acceptLanguage(final java.lang.String acceptLanguage) {
+            this.props.acceptLanguage(acceptLanguage);
+            return this;
+        }
+        /**
+         * Property acceptLanguage:.
+         * <p>
+         * @return {@code this}
+         * @param acceptLanguage Property acceptLanguage:. This parameter is required.
+         */
+        public Builder acceptLanguage(final com.aliyun.ros.cdk.core.IResolvable acceptLanguage) {
+            this.props.acceptLanguage(acceptLanguage);
             return this;
         }
 
@@ -447,27 +478,6 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property diskCapacity: disk capacity, unit: G.
-         * <p>
-         * @return {@code this}
-         * @param diskCapacity Property diskCapacity: disk capacity, unit: G. This parameter is required.
-         */
-        public Builder diskCapacity(final java.lang.Number diskCapacity) {
-            this.props.diskCapacity(diskCapacity);
-            return this;
-        }
-        /**
-         * Property diskCapacity: disk capacity, unit: G.
-         * <p>
-         * @return {@code this}
-         * @param diskCapacity Property diskCapacity: disk capacity, unit: G. This parameter is required.
-         */
-        public Builder diskCapacity(final com.aliyun.ros.cdk.core.IResolvable diskCapacity) {
-            this.props.diskCapacity(diskCapacity);
-            return this;
-        }
-
-        /**
          * Property diskType: disk type.
          * <p>
          * @return {@code this}
@@ -485,6 +495,33 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder diskType(final com.aliyun.ros.cdk.core.IResolvable diskType) {
             this.props.diskType(diskType);
+            return this;
+        }
+
+        /**
+         * Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.
+         * <p>
+         * -'mse_basic': indicates the basic version (default value).
+         * -'mse_pro': means professional version.
+         * <p>
+         * @return {@code this}
+         * @param mseVersion Property mseVersion: This parameter is required when creating a professional version. The value is as follows:. This parameter is required.
+         */
+        public Builder mseVersion(final java.lang.String mseVersion) {
+            this.props.mseVersion(mseVersion);
+            return this;
+        }
+        /**
+         * Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.
+         * <p>
+         * -'mse_basic': indicates the basic version (default value).
+         * -'mse_pro': means professional version.
+         * <p>
+         * @return {@code this}
+         * @param mseVersion Property mseVersion: This parameter is required when creating a professional version. The value is as follows:. This parameter is required.
+         */
+        public Builder mseVersion(final com.aliyun.ros.cdk.core.IResolvable mseVersion) {
+            this.props.mseVersion(mseVersion);
             return this;
         }
 

@@ -168,10 +168,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
-        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
-        /// <remarks>
-        /// If this is left blank, the system automatically fills in the ID of the default resource group.
-        /// </remarks>
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ResourceGroupId

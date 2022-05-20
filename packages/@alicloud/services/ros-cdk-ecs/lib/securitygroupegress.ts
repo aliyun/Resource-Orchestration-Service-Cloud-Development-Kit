@@ -39,6 +39,13 @@ export interface SecurityGroupEgressProps {
     readonly destGroupOwnerId?: string | ros.IResolvable;
 
     /**
+     * Property destPrefixListId: The ID of the destination prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists.Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" in Limits.
+     * If you specify DestCidrIp, Ipv6DestCidrIp, or DestGroupId, DestPrefixListId is ignored.
+     */
+    readonly destPrefixListId?: string | ros.IResolvable;
+
+    /**
      * Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
      * Note Only VPC type IP addresses are supported.
      */
@@ -89,6 +96,7 @@ export class SecurityGroupEgress extends ros.Resource {
             policy: props.policy,
             portRange: props.portRange,
             description: props.description,
+            destPrefixListId: props.destPrefixListId,
             priority: props.priority === undefined || props.priority === null ? 1 : props.priority,
             securityGroupId: props.securityGroupId,
             destGroupOwnerId: props.destGroupOwnerId,

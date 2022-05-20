@@ -56,6 +56,11 @@ export interface ApplicationProps {
      * Property packageType: Application packet format, possible values: war or jar
      */
     readonly packageType?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -93,6 +98,7 @@ export class Application extends ros.Resource {
             logicalRegionId: props.logicalRegionId,
             applicationName: props.applicationName,
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
             ecuInfo: props.ecuInfo,
             healthCheckUrl: props.healthCheckUrl,
             clusterId: props.clusterId,

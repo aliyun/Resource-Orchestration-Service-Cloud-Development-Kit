@@ -34,6 +34,28 @@ export interface EndpointGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property endpointGroupType: The type of the endpoint group. Valid values:
+     * default: The endpoint group is a default endpoint group. This is the default value.
+     * virtual: The endpoint group is a virtual endpoint group.
+     * Note Only HTTP and HTTPS listeners support virtual endpoint groups.
+     */
+    readonly endpointGroupType?: string | ros.IResolvable;
+
+    /**
+     * Property endpointRequestProtocol: The protocol used by the backend service. Valid values:
+     * http: This is the default value.
+     * https
+     * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
+     * For an HTTP listener, the backend service protocol must be HTTP.
+     */
+    readonly endpointRequestProtocol?: string | ros.IResolvable;
+
+    /**
+     * Property healthCheckEnabled: Specifies whether to enable the health check feature.
+     */
+    readonly healthCheckEnabled?: boolean | ros.IResolvable;
+
+    /**
      * Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
      */
     readonly healthCheckIntervalSeconds?: number | ros.IResolvable;
@@ -62,7 +84,8 @@ export interface EndpointGroupProps {
     readonly name?: string | ros.IResolvable;
 
     /**
-     * Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+     * Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
+     * Valid values: 2 to 10. Default value: 3.
      */
     readonly thresholdCount?: number | ros.IResolvable;
 
@@ -100,16 +123,19 @@ export class EndpointGroup extends ros.Resource {
 
         const rosEndpointGroup = new RosEndpointGroup(this, id,  {
             healthCheckIntervalSeconds: props.healthCheckIntervalSeconds,
-            endpointGroupRegion: props.endpointGroupRegion,
             trafficPercentage: props.trafficPercentage,
             description: props.description,
             healthCheckPath: props.healthCheckPath,
-            healthCheckProtocol: props.healthCheckProtocol,
             thresholdCount: props.thresholdCount,
+            healthCheckEnabled: props.healthCheckEnabled,
+            endpointRequestProtocol: props.endpointRequestProtocol,
+            name: props.name,
+            endpointGroupRegion: props.endpointGroupRegion,
+            healthCheckProtocol: props.healthCheckProtocol,
             healthCheckPort: props.healthCheckPort,
             acceleratorId: props.acceleratorId,
             endpointConfigurations: props.endpointConfigurations,
-            name: props.name,
+            endpointGroupType: props.endpointGroupType,
             listenerId: props.listenerId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEndpointGroup;

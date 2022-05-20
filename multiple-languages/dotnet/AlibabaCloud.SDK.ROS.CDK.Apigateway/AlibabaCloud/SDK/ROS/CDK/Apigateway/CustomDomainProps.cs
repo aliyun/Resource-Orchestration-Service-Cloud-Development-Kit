@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             set;
         }
 
-        /// <summary>Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+        /// <summary>Property certificateName: SSL certificate name.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "certificateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? CertificateName

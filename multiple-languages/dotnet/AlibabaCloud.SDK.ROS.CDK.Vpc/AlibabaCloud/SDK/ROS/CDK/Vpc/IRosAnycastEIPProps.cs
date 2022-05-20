@@ -9,6 +9,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public interface IRosAnycastEIPProps
     {
         /// <remarks>
+        /// <strong>Property</strong>: bandwidth: Anycast EIP instance bandwidth
+        /// </remarks>
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Bandwidth
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: description: Anycast EIP instance description
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -79,6 +92,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: bandwidth: Anycast EIP instance bandwidth
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Bandwidth
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

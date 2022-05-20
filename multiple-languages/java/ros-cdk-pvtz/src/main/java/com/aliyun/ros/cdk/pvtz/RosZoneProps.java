@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::Zone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.936Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.042Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZoneProps")
 @software.amazon.jsii.Jsii.Proxy(RosZoneProps.Jsii$Proxy.class)
 public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,18 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRemark() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> getTags() {
         return null;
     }
 
@@ -49,6 +61,8 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object zoneName;
         java.lang.Object proxyPattern;
         java.lang.Object remark;
+        java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> tags;
         java.lang.Object zoneTag;
         java.lang.Object zoneType;
 
@@ -113,6 +127,37 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosZoneProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZoneProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZoneProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosZoneProps#getZoneTag}
          * @param zoneTag the value to be set.
          * @return {@code this}
@@ -171,6 +216,8 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object zoneName;
         private final java.lang.Object proxyPattern;
         private final java.lang.Object remark;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> tags;
         private final java.lang.Object zoneTag;
         private final java.lang.Object zoneType;
 
@@ -183,6 +230,8 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
             this.zoneName = software.amazon.jsii.Kernel.get(this, "zoneName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyPattern = software.amazon.jsii.Kernel.get(this, "proxyPattern", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty.class)));
             this.zoneTag = software.amazon.jsii.Kernel.get(this, "zoneTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneType = software.amazon.jsii.Kernel.get(this, "zoneType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -190,11 +239,14 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.zoneName = java.util.Objects.requireNonNull(builder.zoneName, "zoneName is required");
             this.proxyPattern = builder.proxyPattern;
             this.remark = builder.remark;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty>)builder.tags;
             this.zoneTag = builder.zoneTag;
             this.zoneType = builder.zoneType;
         }
@@ -212,6 +264,16 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getRemark() {
             return this.remark;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -236,6 +298,12 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getRemark() != null) {
                 data.set("remark", om.valueToTree(this.getRemark()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getZoneTag() != null) {
                 data.set("zoneTag", om.valueToTree(this.getZoneTag()));
@@ -264,6 +332,8 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
             if (!zoneName.equals(that.zoneName)) return false;
             if (this.proxyPattern != null ? !this.proxyPattern.equals(that.proxyPattern) : that.proxyPattern != null) return false;
             if (this.remark != null ? !this.remark.equals(that.remark) : that.remark != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.zoneTag != null ? !this.zoneTag.equals(that.zoneTag) : that.zoneTag != null) return false;
             return this.zoneType != null ? this.zoneType.equals(that.zoneType) : that.zoneType == null;
         }
@@ -273,6 +343,8 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.zoneName.hashCode();
             result = 31 * result + (this.proxyPattern != null ? this.proxyPattern.hashCode() : 0);
             result = 31 * result + (this.remark != null ? this.remark.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.zoneTag != null ? this.zoneTag.hashCode() : 0);
             result = 31 * result + (this.zoneType != null ? this.zoneType.hashCode() : 0);
             return result;

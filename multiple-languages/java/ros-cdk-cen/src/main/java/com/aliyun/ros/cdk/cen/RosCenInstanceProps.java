@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.964Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.052Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenInstanceProps.Jsii$Proxy.class)
 public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,6 +28,12 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> getTags() {
         return null;
     }
@@ -45,6 +51,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object description;
         java.lang.Object name;
         java.lang.Object protectionLevel;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
@@ -108,6 +115,26 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosCenInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCenInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCenInstanceProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -137,6 +164,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object description;
         private final java.lang.Object name;
         private final java.lang.Object protectionLevel;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
@@ -148,6 +176,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectionLevel = software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty.class)));
         }
 
@@ -160,6 +189,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.description = builder.description;
             this.name = builder.name;
             this.protectionLevel = builder.protectionLevel;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty>)builder.tags;
         }
 
@@ -176,6 +206,11 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getProtectionLevel() {
             return this.protectionLevel;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -197,6 +232,9 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getProtectionLevel() != null) {
                 data.set("protectionLevel", om.valueToTree(this.getProtectionLevel()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -222,6 +260,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.protectionLevel != null ? !this.protectionLevel.equals(that.protectionLevel) : that.protectionLevel != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -230,6 +269,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             int result = this.description != null ? this.description.hashCode() : 0;
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.protectionLevel != null ? this.protectionLevel.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::SecurityGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.858Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.954Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroup")
 public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -252,6 +252,13 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDestPrefixListId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6DestCidrIp() {
             return null;
         }
@@ -302,6 +309,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object destCidrIp;
             java.lang.Object destGroupId;
             java.lang.Object destGroupOwnerId;
+            java.lang.Object destPrefixListId;
             java.lang.Object ipv6DestCidrIp;
             java.lang.Object nicType;
             java.lang.Object policy;
@@ -441,6 +449,28 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SecurityGroupEgressProperty#getDestPrefixListId}
+             * @param destPrefixListId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destPrefixListId(java.lang.String destPrefixListId) {
+                this.destPrefixListId = destPrefixListId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupEgressProperty#getDestPrefixListId}
+             * @param destPrefixListId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destPrefixListId(com.aliyun.ros.cdk.core.IResolvable destPrefixListId) {
+                this.destPrefixListId = destPrefixListId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SecurityGroupEgressProperty#getIpv6DestCidrIp}
              * @param ipv6DestCidrIp the value to be set.
              * @return {@code this}
@@ -574,6 +604,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object destCidrIp;
             private final java.lang.Object destGroupId;
             private final java.lang.Object destGroupOwnerId;
+            private final java.lang.Object destPrefixListId;
             private final java.lang.Object ipv6DestCidrIp;
             private final java.lang.Object nicType;
             private final java.lang.Object policy;
@@ -592,6 +623,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.destCidrIp = software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.destGroupId = software.amazon.jsii.Kernel.get(this, "destGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.destGroupOwnerId = software.amazon.jsii.Kernel.get(this, "destGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.destPrefixListId = software.amazon.jsii.Kernel.get(this, "destPrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ipv6DestCidrIp = software.amazon.jsii.Kernel.get(this, "ipv6DestCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nicType = software.amazon.jsii.Kernel.get(this, "nicType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -610,6 +642,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.destCidrIp = builder.destCidrIp;
                 this.destGroupId = builder.destGroupId;
                 this.destGroupOwnerId = builder.destGroupOwnerId;
+                this.destPrefixListId = builder.destPrefixListId;
                 this.ipv6DestCidrIp = builder.ipv6DestCidrIp;
                 this.nicType = builder.nicType;
                 this.policy = builder.policy;
@@ -645,6 +678,11 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getDestGroupOwnerId() {
                 return this.destGroupOwnerId;
+            }
+
+            @Override
+            public final java.lang.Object getDestPrefixListId() {
+                return this.destPrefixListId;
             }
 
             @Override
@@ -692,6 +730,9 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getDestGroupOwnerId() != null) {
                     data.set("destGroupOwnerId", om.valueToTree(this.getDestGroupOwnerId()));
                 }
+                if (this.getDestPrefixListId() != null) {
+                    data.set("destPrefixListId", om.valueToTree(this.getDestPrefixListId()));
+                }
                 if (this.getIpv6DestCidrIp() != null) {
                     data.set("ipv6DestCidrIp", om.valueToTree(this.getIpv6DestCidrIp()));
                 }
@@ -731,6 +772,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.destCidrIp != null ? !this.destCidrIp.equals(that.destCidrIp) : that.destCidrIp != null) return false;
                 if (this.destGroupId != null ? !this.destGroupId.equals(that.destGroupId) : that.destGroupId != null) return false;
                 if (this.destGroupOwnerId != null ? !this.destGroupOwnerId.equals(that.destGroupOwnerId) : that.destGroupOwnerId != null) return false;
+                if (this.destPrefixListId != null ? !this.destPrefixListId.equals(that.destPrefixListId) : that.destPrefixListId != null) return false;
                 if (this.ipv6DestCidrIp != null ? !this.ipv6DestCidrIp.equals(that.ipv6DestCidrIp) : that.ipv6DestCidrIp != null) return false;
                 if (this.nicType != null ? !this.nicType.equals(that.nicType) : that.nicType != null) return false;
                 if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
@@ -746,6 +788,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.destCidrIp != null ? this.destCidrIp.hashCode() : 0);
                 result = 31 * result + (this.destGroupId != null ? this.destGroupId.hashCode() : 0);
                 result = 31 * result + (this.destGroupOwnerId != null ? this.destGroupOwnerId.hashCode() : 0);
+                result = 31 * result + (this.destPrefixListId != null ? this.destPrefixListId.hashCode() : 0);
                 result = 31 * result + (this.ipv6DestCidrIp != null ? this.ipv6DestCidrIp.hashCode() : 0);
                 result = 31 * result + (this.nicType != null ? this.nicType.hashCode() : 0);
                 result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
@@ -843,6 +886,13 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSourcePrefixListId() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link SecurityGroupIngressProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -866,6 +916,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object sourceGroupId;
             java.lang.Object sourceGroupOwnerId;
             java.lang.Object sourcePortRange;
+            java.lang.Object sourcePrefixListId;
 
             /**
              * Sets the value of {@link SecurityGroupIngressProperty#getIpProtocol}
@@ -1132,6 +1183,28 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SecurityGroupIngressProperty#getSourcePrefixListId}
+             * @param sourcePrefixListId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sourcePrefixListId(java.lang.String sourcePrefixListId) {
+                this.sourcePrefixListId = sourcePrefixListId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecurityGroupIngressProperty#getSourcePrefixListId}
+             * @param sourcePrefixListId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sourcePrefixListId(com.aliyun.ros.cdk.core.IResolvable sourcePrefixListId) {
+                this.sourcePrefixListId = sourcePrefixListId;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link SecurityGroupIngressProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1161,6 +1234,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object sourceGroupId;
             private final java.lang.Object sourceGroupOwnerId;
             private final java.lang.Object sourcePortRange;
+            private final java.lang.Object sourcePrefixListId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1180,6 +1254,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.sourceGroupId = software.amazon.jsii.Kernel.get(this, "sourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourceGroupOwnerId = software.amazon.jsii.Kernel.get(this, "sourceGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sourcePrefixListId = software.amazon.jsii.Kernel.get(this, "sourcePrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1199,6 +1274,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.sourceGroupId = builder.sourceGroupId;
                 this.sourceGroupOwnerId = builder.sourceGroupOwnerId;
                 this.sourcePortRange = builder.sourcePortRange;
+                this.sourcePrefixListId = builder.sourcePrefixListId;
             }
 
             @Override
@@ -1262,6 +1338,11 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getSourcePrefixListId() {
+                return this.sourcePrefixListId;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1299,6 +1380,9 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getSourcePortRange() != null) {
                     data.set("sourcePortRange", om.valueToTree(this.getSourcePortRange()));
                 }
+                if (this.getSourcePrefixListId() != null) {
+                    data.set("sourcePrefixListId", om.valueToTree(this.getSourcePrefixListId()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosSecurityGroup.SecurityGroupIngressProperty"));
@@ -1328,7 +1412,8 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.sourceCidrIp != null ? !this.sourceCidrIp.equals(that.sourceCidrIp) : that.sourceCidrIp != null) return false;
                 if (this.sourceGroupId != null ? !this.sourceGroupId.equals(that.sourceGroupId) : that.sourceGroupId != null) return false;
                 if (this.sourceGroupOwnerId != null ? !this.sourceGroupOwnerId.equals(that.sourceGroupOwnerId) : that.sourceGroupOwnerId != null) return false;
-                return this.sourcePortRange != null ? this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange == null;
+                if (this.sourcePortRange != null ? !this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange != null) return false;
+                return this.sourcePrefixListId != null ? this.sourcePrefixListId.equals(that.sourcePrefixListId) : that.sourcePrefixListId == null;
             }
 
             @Override
@@ -1345,6 +1430,7 @@ public class RosSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.sourceGroupId != null ? this.sourceGroupId.hashCode() : 0);
                 result = 31 * result + (this.sourceGroupOwnerId != null ? this.sourceGroupOwnerId.hashCode() : 0);
                 result = 31 * result + (this.sourcePortRange != null ? this.sourcePortRange.hashCode() : 0);
+                result = 31 * result + (this.sourcePrefixListId != null ? this.sourcePrefixListId.hashCode() : 0);
                 return result;
             }
         }

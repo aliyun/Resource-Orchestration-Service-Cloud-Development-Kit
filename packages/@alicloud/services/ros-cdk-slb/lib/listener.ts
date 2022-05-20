@@ -69,6 +69,13 @@ export interface ListenerProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+     * on: yes
+     * off: no
+     */
+    readonly enableHttp2?: string | ros.IResolvable;
+
+    /**
      * Property healthCheck: The properties of health checking setting.
      */
     readonly healthCheck?: RosListener.HealthCheckProperty | ros.IResolvable;
@@ -162,8 +169,8 @@ export class Listener extends ros.Resource {
 
         const rosListener = new RosListener(this, id,  {
             requestTimeout: props.requestTimeout,
-            listenerPort: props.listenerPort,
             vServerGroupId: props.vServerGroupId,
+            listenerPort: props.listenerPort,
             description: props.description,
             caCertificateId: props.caCertificateId,
             scheduler: props.scheduler === undefined || props.scheduler === null ? 'wrr' : props.scheduler,
@@ -176,11 +183,12 @@ export class Listener extends ros.Resource {
             portRange: props.portRange,
             aclStatus: props.aclStatus === undefined || props.aclStatus === null ? 'off' : props.aclStatus,
             bandwidth: props.bandwidth,
-            masterSlaveServerGroupId: props.masterSlaveServerGroupId,
             serverCertificateId: props.serverCertificateId,
+            masterSlaveServerGroupId: props.masterSlaveServerGroupId,
             startListener: props.startListener === undefined || props.startListener === null ? true : props.startListener,
-            httpConfig: props.httpConfig,
             aclType: props.aclType,
+            httpConfig: props.httpConfig,
+            enableHttp2: props.enableHttp2,
             protocol: props.protocol,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosListener;

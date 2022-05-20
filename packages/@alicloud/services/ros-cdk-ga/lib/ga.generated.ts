@@ -694,6 +694,28 @@ export interface RosEndpointGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property endpointGroupType: The type of the endpoint group. Valid values:
+     * default: The endpoint group is a default endpoint group. This is the default value.
+     * virtual: The endpoint group is a virtual endpoint group.
+     * Note Only HTTP and HTTPS listeners support virtual endpoint groups.
+     */
+    readonly endpointGroupType?: string | ros.IResolvable;
+
+    /**
+     * @Property endpointRequestProtocol: The protocol used by the backend service. Valid values:
+     * http: This is the default value.
+     * https
+     * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
+     * For an HTTP listener, the backend service protocol must be HTTP.
+     */
+    readonly endpointRequestProtocol?: string | ros.IResolvable;
+
+    /**
+     * @Property healthCheckEnabled: Specifies whether to enable the health check feature.
+     */
+    readonly healthCheckEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
      */
     readonly healthCheckIntervalSeconds?: number | ros.IResolvable;
@@ -722,7 +744,8 @@ export interface RosEndpointGroupProps {
     readonly name?: string | ros.IResolvable;
 
     /**
-     * @Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+     * @Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
+     * Valid values: 2 to 10. Default value: 3.
      */
     readonly thresholdCount?: number | ros.IResolvable;
 
@@ -744,11 +767,15 @@ function RosEndpointGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('healthCheckIntervalSeconds', ros.validateNumber)(properties.healthCheckIntervalSeconds));
-    errors.collect(ros.propertyValidator('endpointGroupRegion', ros.requiredValidator)(properties.endpointGroupRegion));
-    errors.collect(ros.propertyValidator('endpointGroupRegion', ros.validateString)(properties.endpointGroupRegion));
     errors.collect(ros.propertyValidator('trafficPercentage', ros.validateNumber)(properties.trafficPercentage));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('healthCheckPath', ros.validateString)(properties.healthCheckPath));
+    errors.collect(ros.propertyValidator('thresholdCount', ros.validateNumber)(properties.thresholdCount));
+    errors.collect(ros.propertyValidator('healthCheckEnabled', ros.validateBoolean)(properties.healthCheckEnabled));
+    errors.collect(ros.propertyValidator('endpointRequestProtocol', ros.validateString)(properties.endpointRequestProtocol));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('endpointGroupRegion', ros.requiredValidator)(properties.endpointGroupRegion));
+    errors.collect(ros.propertyValidator('endpointGroupRegion', ros.validateString)(properties.endpointGroupRegion));
     if(properties.healthCheckProtocol && (typeof properties.healthCheckProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateAllowedValues)({
           data: properties.healthCheckProtocol,
@@ -756,7 +783,6 @@ function RosEndpointGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateString)(properties.healthCheckProtocol));
-    errors.collect(ros.propertyValidator('thresholdCount', ros.validateNumber)(properties.thresholdCount));
     errors.collect(ros.propertyValidator('healthCheckPort', ros.validateNumber)(properties.healthCheckPort));
     errors.collect(ros.propertyValidator('acceleratorId', ros.requiredValidator)(properties.acceleratorId));
     errors.collect(ros.propertyValidator('acceleratorId', ros.validateString)(properties.acceleratorId));
@@ -769,7 +795,7 @@ function RosEndpointGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('endpointConfigurations', ros.listValidator(RosEndpointGroup_EndpointConfigurationsPropertyValidator))(properties.endpointConfigurations));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('endpointGroupType', ros.validateString)(properties.endpointGroupType));
     errors.collect(ros.propertyValidator('listenerId', ros.requiredValidator)(properties.listenerId));
     errors.collect(ros.propertyValidator('listenerId', ros.validateString)(properties.listenerId));
     return errors.wrap('supplied properties not correct for "RosEndpointGroupProps"');
@@ -794,6 +820,9 @@ function rosEndpointGroupPropsToRosTemplate(properties: any, enableResourcePrope
       EndpointGroupRegion: ros.stringToRosTemplate(properties.endpointGroupRegion),
       ListenerId: ros.stringToRosTemplate(properties.listenerId),
       Description: ros.stringToRosTemplate(properties.description),
+      EndpointGroupType: ros.stringToRosTemplate(properties.endpointGroupType),
+      EndpointRequestProtocol: ros.stringToRosTemplate(properties.endpointRequestProtocol),
+      HealthCheckEnabled: ros.booleanToRosTemplate(properties.healthCheckEnabled),
       HealthCheckIntervalSeconds: ros.numberToRosTemplate(properties.healthCheckIntervalSeconds),
       HealthCheckPath: ros.stringToRosTemplate(properties.healthCheckPath),
       HealthCheckPort: ros.numberToRosTemplate(properties.healthCheckPort),
@@ -852,6 +881,28 @@ export class RosEndpointGroup extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property endpointGroupType: The type of the endpoint group. Valid values:
+     * default: The endpoint group is a default endpoint group. This is the default value.
+     * virtual: The endpoint group is a virtual endpoint group.
+     * Note Only HTTP and HTTPS listeners support virtual endpoint groups.
+     */
+    public endpointGroupType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property endpointRequestProtocol: The protocol used by the backend service. Valid values:
+     * http: This is the default value.
+     * https
+     * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
+     * For an HTTP listener, the backend service protocol must be HTTP.
+     */
+    public endpointRequestProtocol: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property healthCheckEnabled: Specifies whether to enable the health check feature.
+     */
+    public healthCheckEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
      */
     public healthCheckIntervalSeconds: number | ros.IResolvable | undefined;
@@ -880,7 +931,8 @@ export class RosEndpointGroup extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * @Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+     * @Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
+     * Valid values: 2 to 10. Default value: 3.
      */
     public thresholdCount: number | ros.IResolvable | undefined;
 
@@ -907,6 +959,9 @@ export class RosEndpointGroup extends ros.RosResource {
         this.endpointGroupRegion = props.endpointGroupRegion;
         this.listenerId = props.listenerId;
         this.description = props.description;
+        this.endpointGroupType = props.endpointGroupType;
+        this.endpointRequestProtocol = props.endpointRequestProtocol;
+        this.healthCheckEnabled = props.healthCheckEnabled;
         this.healthCheckIntervalSeconds = props.healthCheckIntervalSeconds;
         this.healthCheckPath = props.healthCheckPath;
         this.healthCheckPort = props.healthCheckPort;
@@ -924,6 +979,9 @@ export class RosEndpointGroup extends ros.RosResource {
             endpointGroupRegion: this.endpointGroupRegion,
             listenerId: this.listenerId,
             description: this.description,
+            endpointGroupType: this.endpointGroupType,
+            endpointRequestProtocol: this.endpointRequestProtocol,
+            healthCheckEnabled: this.healthCheckEnabled,
             healthCheckIntervalSeconds: this.healthCheckIntervalSeconds,
             healthCheckPath: this.healthCheckPath,
             healthCheckPort: this.healthCheckPort,
@@ -944,18 +1002,33 @@ export namespace RosEndpointGroup {
      */
     export interface EndpointConfigurationsProperty {
         /**
+         * @Property enableProxyProtocol: Specifies whether to obtain and preserve the IP addresses of clients that access the endpoint by using the TCP Option Address (TOA) module. Valid values:
+     * true: yes
+     * false (default): no
+         */
+        readonly enableProxyProtocol?: boolean | ros.IResolvable;
+        /**
          * @Property type: The type of endpoint in the endpoint group. Valid values:
+     * Domain: a custom domain name
      * EIP: eip address
-     * PublicIp: public IP address
-     * Ip: custom IP address
-     * Domain: custom domain name
-     *
+     * Ip: a custom IP address
+     * PublicIp: a public IP address provided by Alibaba Cloud
+     * ECS: an Elastic Compute Service (ECS) instance
+     * SLB: a Server Load Balancer (SLB) instance
+     * ALB: an Application Load Balancer (ALB) instance
+     * OSS: an Object Storage Service (OSS) bucket
          */
         readonly type: string | ros.IResolvable;
         /**
          * @Property endpoint: The IP address or domain name of endpoint in the endpoint group.
          */
         readonly endpoint: string | ros.IResolvable;
+        /**
+         * @Property enableClientIpPreservation: Specifies whether to obtain and preserve the IP addresses of clients that access the endpoint by using the TCP Option Address (TOA) module. Valid values:
+     * true: yes
+     * false (default): no
+         */
+        readonly enableClientIpPreservation?: boolean | ros.IResolvable;
         /**
          * @Property weight: The weight of endpoint N in the endpoint group.
          */
@@ -972,10 +1045,12 @@ export namespace RosEndpointGroup {
 function RosEndpointGroup_EndpointConfigurationsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enableProxyProtocol', ros.validateBoolean)(properties.enableProxyProtocol));
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('endpoint', ros.requiredValidator)(properties.endpoint));
     errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
+    errors.collect(ros.propertyValidator('enableClientIpPreservation', ros.validateBoolean)(properties.enableClientIpPreservation));
     errors.collect(ros.propertyValidator('weight', ros.requiredValidator)(properties.weight));
     errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
     return errors.wrap('supplied properties not correct for "EndpointConfigurationsProperty"');
@@ -993,8 +1068,10 @@ function rosEndpointGroupEndpointConfigurationsPropertyToRosTemplate(properties:
     if (!ros.canInspect(properties)) { return properties; }
     RosEndpointGroup_EndpointConfigurationsPropertyValidator(properties).assertSuccess();
     return {
+      EnableProxyProtocol: ros.booleanToRosTemplate(properties.enableProxyProtocol),
       Type: ros.stringToRosTemplate(properties.type),
       Endpoint: ros.stringToRosTemplate(properties.endpoint),
+      EnableClientIPPreservation: ros.booleanToRosTemplate(properties.enableClientIpPreservation),
       Weight: ros.numberToRosTemplate(properties.weight),
     };
 }
@@ -1221,8 +1298,14 @@ export interface RosListenerProps {
      * @Property protocol: The network transmission protocol of the listener. Valid values:
      * tcp: TCP protocol
      * udp: UDP protocol
+     * http: HTTP protocolhttps: HTTPS protocol.
      */
     readonly protocol: string | ros.IResolvable;
+
+    /**
+     * @Property certificates:
+     */
+    readonly certificates?: Array<RosListener.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property clientAffinity: Specifies whether to enable client affinity for the listener.
@@ -1245,6 +1328,29 @@ export interface RosListenerProps {
      * (_), and hyphens (-). It must start with a letter or Chinese character.
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property proxyProtocol: Specifies whether to preserve client IP addresses. Valid values:
+     * true: preserves client IP addresses. After this feature is enabled, backend servers can retrieve client IP addresses.
+     * false (default): does not preserve client IP addresses.
+     */
+    readonly proxyProtocol?: boolean | ros.IResolvable;
+
+    /**
+     * @Property securityPolicyId: The ID of the security policy. Valid values:
+     * tls_cipher_policy_1_0
+     * tls_cipher_policy_1_1
+     * tls_cipher_policy_1_2
+     * tls_cipher_policy_1_2_strict
+     * tls_cipher_policy_1_2_strict_with_1_3
+     * Note Only HTTPS listeners support this parameter.
+     */
+    readonly securityPolicyId?: string | ros.IResolvable;
+
+    /**
+     * @Property xForwardedForConfig: The configuration of the XForward field.
+     */
+    readonly xForwardedForConfig?: RosListener.XForwardedForConfigProperty | ros.IResolvable;
 }
 
 /**
@@ -1257,7 +1363,9 @@ export interface RosListenerProps {
 function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('securityPolicyId', ros.validateString)(properties.securityPolicyId));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('proxyProtocol', ros.validateBoolean)(properties.proxyProtocol));
     errors.collect(ros.propertyValidator('portRanges', ros.requiredValidator)(properties.portRanges));
     if(properties.portRanges && (Array.isArray(properties.portRanges) || (typeof properties.portRanges) === 'string')) {
         errors.collect(ros.propertyValidator('portRanges', ros.validateLength)({
@@ -1267,11 +1375,20 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('portRanges', ros.listValidator(RosListener_PortRangesPropertyValidator))(properties.portRanges));
+    if(properties.certificates && (Array.isArray(properties.certificates) || (typeof properties.certificates) === 'string')) {
+        errors.collect(ros.propertyValidator('certificates', ros.validateLength)({
+            data: properties.certificates.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('certificates', ros.listValidator(RosListener_CertificatesPropertyValidator))(properties.certificates));
+    errors.collect(ros.propertyValidator('xForwardedForConfig', RosListener_XForwardedForConfigPropertyValidator)(properties.xForwardedForConfig));
     errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
         errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
           data: properties.protocol,
-          allowedValues: ["tcp","udp"],
+          allowedValues: ["tcp","udp","http","https"],
         }));
     }
     errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
@@ -1305,9 +1422,13 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       AcceleratorId: ros.stringToRosTemplate(properties.acceleratorId),
       PortRanges: ros.listMapper(rosListenerPortRangesPropertyToRosTemplate)(properties.portRanges),
       Protocol: ros.stringToRosTemplate(properties.protocol),
+      Certificates: ros.listMapper(rosListenerCertificatesPropertyToRosTemplate)(properties.certificates),
       ClientAffinity: ros.stringToRosTemplate(properties.clientAffinity),
       Description: ros.stringToRosTemplate(properties.description),
       Name: ros.stringToRosTemplate(properties.name),
+      ProxyProtocol: ros.booleanToRosTemplate(properties.proxyProtocol),
+      SecurityPolicyId: ros.stringToRosTemplate(properties.securityPolicyId),
+      XForwardedForConfig: rosListenerXForwardedForConfigPropertyToRosTemplate(properties.xForwardedForConfig),
     };
 }
 
@@ -1347,8 +1468,14 @@ export class RosListener extends ros.RosResource {
      * @Property protocol: The network transmission protocol of the listener. Valid values:
      * tcp: TCP protocol
      * udp: UDP protocol
+     * http: HTTP protocolhttps: HTTPS protocol.
      */
     public protocol: string | ros.IResolvable;
+
+    /**
+     * @Property certificates:
+     */
+    public certificates: Array<RosListener.CertificatesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property clientAffinity: Specifies whether to enable client affinity for the listener.
@@ -1373,6 +1500,29 @@ export class RosListener extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property proxyProtocol: Specifies whether to preserve client IP addresses. Valid values:
+     * true: preserves client IP addresses. After this feature is enabled, backend servers can retrieve client IP addresses.
+     * false (default): does not preserve client IP addresses.
+     */
+    public proxyProtocol: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityPolicyId: The ID of the security policy. Valid values:
+     * tls_cipher_policy_1_0
+     * tls_cipher_policy_1_1
+     * tls_cipher_policy_1_2
+     * tls_cipher_policy_1_2_strict
+     * tls_cipher_policy_1_2_strict_with_1_3
+     * Note Only HTTPS listeners support this parameter.
+     */
+    public securityPolicyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property xForwardedForConfig: The configuration of the XForward field.
+     */
+    public xForwardedForConfig: RosListener.XForwardedForConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::GA::Listener`.
      *
      * @param scope - scope in which this resource is defined
@@ -1387,9 +1537,13 @@ export class RosListener extends ros.RosResource {
         this.acceleratorId = props.acceleratorId;
         this.portRanges = props.portRanges;
         this.protocol = props.protocol;
+        this.certificates = props.certificates;
         this.clientAffinity = props.clientAffinity;
         this.description = props.description;
         this.name = props.name;
+        this.proxyProtocol = props.proxyProtocol;
+        this.securityPolicyId = props.securityPolicyId;
+        this.xForwardedForConfig = props.xForwardedForConfig;
     }
 
 
@@ -1398,14 +1552,60 @@ export class RosListener extends ros.RosResource {
             acceleratorId: this.acceleratorId,
             portRanges: this.portRanges,
             protocol: this.protocol,
+            certificates: this.certificates,
             clientAffinity: this.clientAffinity,
             description: this.description,
             name: this.name,
+            proxyProtocol: this.proxyProtocol,
+            securityPolicyId: this.securityPolicyId,
+            xForwardedForConfig: this.xForwardedForConfig,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosListenerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosListener {
+    /**
+     * @stability external
+     */
+    export interface CertificatesProperty {
+        /**
+         * @Property id: The ID of the SSL certificate.
+         */
+        readonly id: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CertificatesProperty`
+ *
+ * @param properties - the TypeScript properties of a `CertificatesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosListener_CertificatesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('id', ros.requiredValidator)(properties.id));
+    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    return errors.wrap('supplied properties not correct for "CertificatesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::Listener.Certificates` resource
+ *
+ * @param properties - the TypeScript properties of a `CertificatesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::Listener.Certificates` resource.
+ */
+// @ts-ignore TS6133
+function rosListenerCertificatesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosListener_CertificatesPropertyValidator(properties).assertSuccess();
+    return {
+      Id: ros.stringToRosTemplate(properties.id),
+    };
 }
 
 export namespace RosListener {
@@ -1456,5 +1656,85 @@ function rosListenerPortRangesPropertyToRosTemplate(properties: any): any {
     return {
       FromPort: ros.numberToRosTemplate(properties.fromPort),
       ToPort: ros.numberToRosTemplate(properties.toPort),
+    };
+}
+
+export namespace RosListener {
+    /**
+     * @stability external
+     */
+    export interface XForwardedForConfigProperty {
+        /**
+         * @Property xForwardedForGaApEnabled: Specifies whether to use the GA-AP header to retrieve the information about the acceleration area. Valid values:
+     * true: yes
+     * false (default): no
+     * Note Only HTTP and HTTPS listeners support this parameter.
+         */
+        readonly xForwardedForGaApEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property xForwardedForProtoEnabled: Specifies whether to use the GA-X-Forward-Proto header to retrieve the listener protocol of the GA instance. Valid values:
+     * true: yes
+     * false (default): no
+     * Note Only HTTP and HTTPS listeners support this parameter.
+         */
+        readonly xForwardedForProtoEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property xRealIpEnabled: Specifies whether to use the X-Real-IP header to retrieve client IP addresses. Valid values:
+     * true: yes
+     * false (default): no
+     * Note Only HTTP and HTTPS listeners support this parameter.
+         */
+        readonly xRealIpEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property xForwardedForPortEnabled: Specifies whether to use the GA-X-Forward-Port header to retrieve the listener ports of the GA instance. Valid values:
+     * true: yes
+     * false (default): no
+     * Note Only HTTP and HTTPS listeners support this parameter.
+         */
+        readonly xForwardedForPortEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property xForwardedForGaIdEnabled: Specifies whether to use the GA-ID header to retrieve the ID of the GA instance. Valid values:
+     * true: yes
+     * false (default): no
+     * Note Only HTTP and HTTPS listeners support this parameter.
+         */
+        readonly xForwardedForGaIdEnabled?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `XForwardedForConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `XForwardedForConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosListener_XForwardedForConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('xForwardedForGaApEnabled', ros.validateBoolean)(properties.xForwardedForGaApEnabled));
+    errors.collect(ros.propertyValidator('xForwardedForProtoEnabled', ros.validateBoolean)(properties.xForwardedForProtoEnabled));
+    errors.collect(ros.propertyValidator('xRealIpEnabled', ros.validateBoolean)(properties.xRealIpEnabled));
+    errors.collect(ros.propertyValidator('xForwardedForPortEnabled', ros.validateBoolean)(properties.xForwardedForPortEnabled));
+    errors.collect(ros.propertyValidator('xForwardedForGaIdEnabled', ros.validateBoolean)(properties.xForwardedForGaIdEnabled));
+    return errors.wrap('supplied properties not correct for "XForwardedForConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::Listener.XForwardedForConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `XForwardedForConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::Listener.XForwardedForConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosListenerXForwardedForConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosListener_XForwardedForConfigPropertyValidator(properties).assertSuccess();
+    return {
+      XForwardedForGaApEnabled: ros.booleanToRosTemplate(properties.xForwardedForGaApEnabled),
+      XForwardedForProtoEnabled: ros.booleanToRosTemplate(properties.xForwardedForProtoEnabled),
+      XRealIpEnabled: ros.booleanToRosTemplate(properties.xRealIpEnabled),
+      XForwardedForPortEnabled: ros.booleanToRosTemplate(properties.xForwardedForPortEnabled),
+      XForwardedForGaIdEnabled: ros.booleanToRosTemplate(properties.xForwardedForGaIdEnabled),
     };
 }

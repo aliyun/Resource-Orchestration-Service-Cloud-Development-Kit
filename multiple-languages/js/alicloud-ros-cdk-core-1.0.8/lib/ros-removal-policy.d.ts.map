@@ -1,0 +1,1 @@
+{"version":3,"file":"ros-removal-policy.d.ts","sourceRoot":"","sources":["ros-removal-policy.ts"],"names":[],"mappings":"AAAA,oBAAY,aAAa;IACvB,OAAO,YAAY;IACnB,MAAM,WAAW;CAClB;AAED,MAAM,WAAW,oBAAoB;IACnC,QAAQ,CAAC,aAAa,CAAC,EAAE,aAAa,CAAC;IACvC,QAAQ,CAAC,0BAA0B,CAAC,EAAE,OAAO,CAAC;CAC/C"}

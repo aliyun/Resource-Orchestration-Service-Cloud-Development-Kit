@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.742Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.830Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.CustomDomain")
 public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
 
@@ -153,20 +153,20 @@ public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property certificateName: SSL certificate name.
          * <p>
          * @return {@code this}
-         * @param certificateName Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param certificateName Property certificateName: SSL certificate name. This parameter is required.
          */
         public Builder certificateName(final java.lang.String certificateName) {
             this.props.certificateName(certificateName);
             return this;
         }
         /**
-         * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property certificateName: SSL certificate name.
          * <p>
          * @return {@code this}
-         * @param certificateName Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param certificateName Property certificateName: SSL certificate name. This parameter is required.
          */
         public Builder certificateName(final com.aliyun.ros.cdk.core.IResolvable certificateName) {
             this.props.certificateName(certificateName);

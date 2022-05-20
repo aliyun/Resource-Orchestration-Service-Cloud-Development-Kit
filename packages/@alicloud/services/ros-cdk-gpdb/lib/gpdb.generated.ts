@@ -3,6 +3,173 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::GPDB::Account`
+ */
+export interface RosAccountProps {
+
+    /**
+     * @Property accountName: The name of the privileged account.
+     * The name can contain lowercase letters, digits, and underscores (_).
+     * The name must start with a lowercase letter and end with a lowercase letter or a digit.
+     * The name cannot start with gp.
+     * The name must be 2 to 16 characters in length.
+     */
+    readonly accountName: string | ros.IResolvable;
+
+    /**
+     * @Property accountPassword: The password of the privileged account.
+     * The password must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.
+     * Special characters include ! @ # $ % ^ & * ( ) _ + - =
+     * The password must be 8 to 32 characters in length.
+     */
+    readonly accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     * Note You can call the DescribeDBInstances operation to query details of all AnalyticDB for PostgreSQL instances in a specific
+     * region, including instance IDs.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property accountDescription: The description of the privileged account.
+     */
+    readonly accountDescription?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accountDescription', ros.validateString)(properties.accountDescription));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "RosAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GPDB::Account` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GPDB::Account` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AccountName: ros.stringToRosTemplate(properties.accountName),
+      AccountPassword: ros.stringToRosTemplate(properties.accountPassword),
+      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      AccountDescription: ros.stringToRosTemplate(properties.accountDescription),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::GPDB::Account`
+ */
+export class RosAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::Account";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AccountName: The name of the account.
+     */
+    public readonly attrAccountName: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceId: The ID of the instance.
+     */
+    public readonly attrDbInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountName: The name of the privileged account.
+     * The name can contain lowercase letters, digits, and underscores (_).
+     * The name must start with a lowercase letter and end with a lowercase letter or a digit.
+     * The name cannot start with gp.
+     * The name must be 2 to 16 characters in length.
+     */
+    public accountName: string | ros.IResolvable;
+
+    /**
+     * @Property accountPassword: The password of the privileged account.
+     * The password must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.
+     * Special characters include ! @ # $ % ^ & * ( ) _ + - =
+     * The password must be 8 to 32 characters in length.
+     */
+    public accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     * Note You can call the DescribeDBInstances operation to query details of all AnalyticDB for PostgreSQL instances in a specific
+     * region, including instance IDs.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property accountDescription: The description of the privileged account.
+     */
+    public accountDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::GPDB::Account`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountName = this.getAtt('AccountName');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountName = props.accountName;
+        this.accountPassword = props.accountPassword;
+        this.dbInstanceId = props.dbInstanceId;
+        this.accountDescription = props.accountDescription;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountName: this.accountName,
+            accountPassword: this.accountPassword,
+            dbInstanceId: this.dbInstanceId,
+            accountDescription: this.accountDescription,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::GPDB::DBInstance`
  */
 export interface RosDBInstanceProps {
@@ -62,6 +229,11 @@ export interface RosDBInstanceProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDBInstance.TagsProperty[];
+
+    /**
      * @Property vpcId: The VPC ID of the instance. If you set the InstanceNetworkType parameter to VPC, you
      * must also specify the VPCId parameter. The specified region of the VPC must be the
      * same as the RegionId value.
@@ -112,6 +284,14 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDBInstance_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('dbInstanceGroupCount', ros.requiredValidator)(properties.dbInstanceGroupCount));
     if(properties.dbInstanceGroupCount && (typeof properties.dbInstanceGroupCount) !== 'object') {
         errors.collect(ros.propertyValidator('dbInstanceGroupCount', ros.validateRange)({
@@ -155,6 +335,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
+      Tags: ros.listMapper(rosDBInstanceTagsPropertyToRosTemplate)(properties.tags),
       VPCId: ros.stringToRosTemplate(properties.vpcId),
     };
 }
@@ -251,6 +432,11 @@ export class RosDBInstance extends ros.RosResource {
     public securityIpList: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosDBInstance.TagsProperty[] | undefined;
+
+    /**
      * @Property vpcId: The VPC ID of the instance. If you set the InstanceNetworkType parameter to VPC, you
      * must also specify the VPCId parameter. The specified region of the VPC must be the
      * same as the RegionId value.
@@ -282,6 +468,7 @@ export class RosDBInstance extends ros.RosResource {
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.securityIpList = props.securityIpList;
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
     }
 
@@ -298,12 +485,61 @@ export class RosDBInstance extends ros.RosResource {
             period: this.period,
             periodUnit: this.periodUnit,
             securityIpList: this.securityIpList,
+            tags: this.tags,
             vpcId: this.vpcId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDBInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GPDB::DBInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GPDB::DBInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosDBInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDBInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -399,6 +635,11 @@ export interface RosElasticDBInstanceProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosElasticDBInstance.TagsProperty[];
+
+    /**
      * @Property vpcId: The VPC ID of the instance. If you set the InstanceNetworkType parameter to VPC, you
      * must also specify the VPCId parameter. The specified region of the VPC must be the
      * same as the RegionId value.
@@ -480,6 +721,14 @@ function RosElasticDBInstancePropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosElasticDBInstance_TagsPropertyValidator))(properties.tags));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -520,6 +769,7 @@ function rosElasticDBInstancePropsToRosTemplate(properties: any, enableResourceP
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
+      Tags: ros.listMapper(rosElasticDBInstanceTagsPropertyToRosTemplate)(properties.tags),
       VPCId: ros.stringToRosTemplate(properties.vpcId),
     };
 }
@@ -649,6 +899,11 @@ export class RosElasticDBInstance extends ros.RosResource {
     public securityIpList: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosElasticDBInstance.TagsProperty[] | undefined;
+
+    /**
      * @Property vpcId: The VPC ID of the instance. If you set the InstanceNetworkType parameter to VPC, you
      * must also specify the VPCId parameter. The specified region of the VPC must be the
      * same as the RegionId value.
@@ -686,6 +941,7 @@ export class RosElasticDBInstance extends ros.RosResource {
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.securityIpList = props.securityIpList;
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
     }
 
@@ -708,12 +964,61 @@ export class RosElasticDBInstance extends ros.RosResource {
             period: this.period,
             periodUnit: this.periodUnit,
             securityIpList: this.securityIpList,
+            tags: this.tags,
             vpcId: this.vpcId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosElasticDBInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosElasticDBInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosElasticDBInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GPDB::ElasticDBInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GPDB::ElasticDBInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosElasticDBInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosElasticDBInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**

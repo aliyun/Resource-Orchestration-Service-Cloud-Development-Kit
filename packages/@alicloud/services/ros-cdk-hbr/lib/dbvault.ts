@@ -27,6 +27,11 @@ export interface DbVaultProps {
      * Property description: Description of the vault.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDbVault.TagsProperty[];
 }
 
 /**
@@ -79,6 +84,7 @@ export class DbVault extends ros.Resource {
             vaultName: props.vaultName,
             retentionDays: props.retentionDays,
             vaultRegionId: props.vaultRegionId,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDbVault;
         this.attrDescription = rosDbVault.attrDescription;

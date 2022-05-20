@@ -28,6 +28,11 @@ export interface RosExecutionProps {
     readonly parentExecutionId?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property resourceOptions: Resource options user by ROS.
      */
     readonly resourceOptions?: RosExecution.ResourceOptionsProperty | ros.IResolvable;
@@ -70,6 +75,7 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('safetyCheck', ros.validateString)(properties.safetyCheck));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.mode && (typeof properties.mode) !== 'object') {
         errors.collect(ros.propertyValidator('mode', ros.validateAllowedValues)({
           data: properties.mode,
@@ -109,6 +115,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
       Mode: ros.stringToRosTemplate(properties.mode),
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       ParentExecutionId: ros.stringToRosTemplate(properties.parentExecutionId),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       ResourceOptions: rosExecutionResourceOptionsPropertyToRosTemplate(properties.resourceOptions),
       SafetyCheck: ros.stringToRosTemplate(properties.safetyCheck),
       Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
@@ -201,6 +208,11 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     public parentExecutionId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceOptions: Resource options user by ROS.
      */
     public resourceOptions: RosExecution.ResourceOptionsProperty | ros.IResolvable | undefined;
@@ -245,6 +257,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
         this.mode = props.mode;
         this.parameters = props.parameters;
         this.parentExecutionId = props.parentExecutionId;
+        this.resourceGroupId = props.resourceGroupId;
         this.resourceOptions = props.resourceOptions;
         this.safetyCheck = props.safetyCheck;
         this.tags = props.tags;
@@ -258,6 +271,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             mode: this.mode,
             parameters: this.parameters,
             parentExecutionId: this.parentExecutionId,
+            resourceGroupId: this.resourceGroupId,
             resourceOptions: this.resourceOptions,
             safetyCheck: this.safetyCheck,
             tags: this.tags,
@@ -381,6 +395,11 @@ export interface RosParameterProps {
      * The description must be 1 to 200 characters in length.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -403,6 +422,7 @@ function RosParameterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('constraints', ros.validateString)(properties.constraints));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
     errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
@@ -429,6 +449,7 @@ function rosParameterPropsToRosTemplate(properties: any, enableResourcePropertyC
       Value: ros.stringToRosTemplate(properties.value),
       Constraints: ros.stringToRosTemplate(properties.constraints),
       Description: ros.stringToRosTemplate(properties.description),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -495,6 +516,11 @@ export class RosParameter extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::OOS::Parameter`.
      *
      * @param scope - scope in which this resource is defined
@@ -512,6 +538,7 @@ export class RosParameter extends ros.RosResource {
         this.value = props.value;
         this.constraints = props.constraints;
         this.description = props.description;
+        this.resourceGroupId = props.resourceGroupId;
     }
 
 
@@ -522,6 +549,7 @@ export class RosParameter extends ros.RosResource {
             value: this.value,
             constraints: this.constraints,
             description: this.description,
+            resourceGroupId: this.resourceGroupId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -545,6 +573,11 @@ export interface RosTemplateProps {
     readonly templateName: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
      */
     readonly tags?: { [key: string]: (any) };
@@ -560,6 +593,7 @@ export interface RosTemplateProps {
 function RosTemplatePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('content', ros.requiredValidator)(properties.content));
     if(properties.content && (Array.isArray(properties.content) || (typeof properties.content) === 'string')) {
         errors.collect(ros.propertyValidator('content', ros.validateLength)({
@@ -598,6 +632,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
     return {
       Content: ros.stringToRosTemplate(properties.content),
       TemplateName: ros.stringToRosTemplate(properties.templateName),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
     };
 }
@@ -645,6 +680,11 @@ export class RosTemplate extends ros.RosResource {
     public templateName: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
      */
     public tags: { [key: string]: (any) } | undefined;
@@ -665,6 +705,7 @@ export class RosTemplate extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.content = props.content;
         this.templateName = props.templateName;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
     }
 
@@ -673,6 +714,7 @@ export class RosTemplate extends ros.RosResource {
         return {
             content: this.content,
             templateName: this.templateName,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
         };
     }

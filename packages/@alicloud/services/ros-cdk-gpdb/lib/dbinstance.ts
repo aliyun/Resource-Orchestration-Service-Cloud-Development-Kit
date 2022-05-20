@@ -63,6 +63,11 @@ export interface DBInstanceProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDBInstance.TagsProperty[];
+
+    /**
      * Property vpcId: The VPC ID of the instance. If you set the InstanceNetworkType parameter to VPC, you
      * must also specify the VPCId parameter. The specified region of the VPC must be the
      * same as the RegionId value.
@@ -120,6 +125,7 @@ export class DBInstance extends ros.Resource {
             period: props.period,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             dbInstanceDescription: props.dbInstanceDescription,
+            tags: props.tags,
             dbInstanceGroupCount: props.dbInstanceGroupCount,
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

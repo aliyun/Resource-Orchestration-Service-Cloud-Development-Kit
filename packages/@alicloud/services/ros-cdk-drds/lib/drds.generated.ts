@@ -370,6 +370,11 @@ export interface RosDrdsInstanceProps {
     readonly pricingCycle?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosDrdsInstance.TagsProperty[];
@@ -399,6 +404,7 @@ function RosDrdsInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
         errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
           data: properties.pricingCycle,
@@ -483,6 +489,7 @@ function rosDrdsInstancePropsToRosTemplate(properties: any, enableResourceProper
       IsAutoRenew: ros.booleanToRosTemplate(properties.isAutoRenew),
       MySQLVersion: ros.stringToRosTemplate(properties.mySqlVersion),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosDrdsInstanceTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VswitchId: ros.stringToRosTemplate(properties.vswitchId),
@@ -582,6 +589,11 @@ export class RosDrdsInstance extends ros.RosResource {
     public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosDrdsInstance.TagsProperty[] | undefined;
@@ -622,6 +634,7 @@ export class RosDrdsInstance extends ros.RosResource {
         this.isAutoRenew = props.isAutoRenew;
         this.mySqlVersion = props.mySqlVersion;
         this.pricingCycle = props.pricingCycle;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vswitchId = props.vswitchId;
@@ -641,6 +654,7 @@ export class RosDrdsInstance extends ros.RosResource {
             isAutoRenew: this.isAutoRenew,
             mySqlVersion: this.mySqlVersion,
             pricingCycle: this.pricingCycle,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
             vpcId: this.vpcId,
             vswitchId: this.vswitchId,

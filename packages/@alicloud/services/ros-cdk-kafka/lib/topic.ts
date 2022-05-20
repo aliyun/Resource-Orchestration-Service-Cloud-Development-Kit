@@ -76,6 +76,11 @@ export interface TopicProps {
      * Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
      */
     readonly replicationFactor?: number | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosTopic.TagsProperty[];
 }
 
 /**
@@ -118,6 +123,7 @@ You can call the GetInstanceList operation to query instances.
             minInsyncReplicas: props.minInsyncReplicas,
             topic: props.topic,
             localTopic: props.localTopic,
+            tags: props.tags,
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTopic;

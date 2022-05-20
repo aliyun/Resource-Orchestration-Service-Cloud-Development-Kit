@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.675Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.767Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,6 +62,15 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     * Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+     * <p>
+     * It only takes effect when AddressType=Internet.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthPackageId() {
+        return null;
+    }
+
+    /**
      * Property deletionProtectionEnabled: Specifies whether to enable deletion protection.
      * <p>
      * Default value: false.
@@ -110,6 +119,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object vpcId;
         java.lang.Object zoneMappings;
         java.lang.Object addressAllocatedMode;
+        java.lang.Object bandwidthPackageId;
         java.lang.Object deletionProtectionEnabled;
         java.lang.Object modificationProtectionConfig;
         java.lang.Object resourceGroupId;
@@ -278,6 +288,28 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getBandwidthPackageId}
+         * @param bandwidthPackageId Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+         *                           It only takes effect when AddressType=Internet.
+         * @return {@code this}
+         */
+        public Builder bandwidthPackageId(java.lang.String bandwidthPackageId) {
+            this.bandwidthPackageId = bandwidthPackageId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getBandwidthPackageId}
+         * @param bandwidthPackageId Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+         *                           It only takes effect when AddressType=Internet.
+         * @return {@code this}
+         */
+        public Builder bandwidthPackageId(com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
+            this.bandwidthPackageId = bandwidthPackageId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getDeletionProtectionEnabled}
          * @param deletionProtectionEnabled Property deletionProtectionEnabled: Specifies whether to enable deletion protection.
          *                                  Default value: false.
@@ -374,6 +406,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object vpcId;
         private final java.lang.Object zoneMappings;
         private final java.lang.Object addressAllocatedMode;
+        private final java.lang.Object bandwidthPackageId;
         private final java.lang.Object deletionProtectionEnabled;
         private final java.lang.Object modificationProtectionConfig;
         private final java.lang.Object resourceGroupId;
@@ -392,6 +425,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneMappings = software.amazon.jsii.Kernel.get(this, "zoneMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressAllocatedMode = software.amazon.jsii.Kernel.get(this, "addressAllocatedMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidthPackageId = software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtectionEnabled = software.amazon.jsii.Kernel.get(this, "deletionProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.modificationProtectionConfig = software.amazon.jsii.Kernel.get(this, "modificationProtectionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -411,6 +445,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.zoneMappings = java.util.Objects.requireNonNull(builder.zoneMappings, "zoneMappings is required");
             this.addressAllocatedMode = builder.addressAllocatedMode;
+            this.bandwidthPackageId = builder.bandwidthPackageId;
             this.deletionProtectionEnabled = builder.deletionProtectionEnabled;
             this.modificationProtectionConfig = builder.modificationProtectionConfig;
             this.resourceGroupId = builder.resourceGroupId;
@@ -453,6 +488,11 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getBandwidthPackageId() {
+            return this.bandwidthPackageId;
+        }
+
+        @Override
         public final java.lang.Object getDeletionProtectionEnabled() {
             return this.deletionProtectionEnabled;
         }
@@ -486,6 +526,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             data.set("zoneMappings", om.valueToTree(this.getZoneMappings()));
             if (this.getAddressAllocatedMode() != null) {
                 data.set("addressAllocatedMode", om.valueToTree(this.getAddressAllocatedMode()));
+            }
+            if (this.getBandwidthPackageId() != null) {
+                data.set("bandwidthPackageId", om.valueToTree(this.getBandwidthPackageId()));
             }
             if (this.getDeletionProtectionEnabled() != null) {
                 data.set("deletionProtectionEnabled", om.valueToTree(this.getDeletionProtectionEnabled()));
@@ -524,6 +567,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (!vpcId.equals(that.vpcId)) return false;
             if (!zoneMappings.equals(that.zoneMappings)) return false;
             if (this.addressAllocatedMode != null ? !this.addressAllocatedMode.equals(that.addressAllocatedMode) : that.addressAllocatedMode != null) return false;
+            if (this.bandwidthPackageId != null ? !this.bandwidthPackageId.equals(that.bandwidthPackageId) : that.bandwidthPackageId != null) return false;
             if (this.deletionProtectionEnabled != null ? !this.deletionProtectionEnabled.equals(that.deletionProtectionEnabled) : that.deletionProtectionEnabled != null) return false;
             if (this.modificationProtectionConfig != null ? !this.modificationProtectionConfig.equals(that.modificationProtectionConfig) : that.modificationProtectionConfig != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -539,6 +583,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.zoneMappings.hashCode());
             result = 31 * result + (this.addressAllocatedMode != null ? this.addressAllocatedMode.hashCode() : 0);
+            result = 31 * result + (this.bandwidthPackageId != null ? this.bandwidthPackageId.hashCode() : 0);
             result = 31 * result + (this.deletionProtectionEnabled != null ? this.deletionProtectionEnabled.hashCode() : 0);
             result = 31 * result + (this.modificationProtectionConfig != null ? this.modificationProtectionConfig.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * A ROS template type:  `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.721Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.881Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -182,6 +182,12 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMseVersion() {
+        return software.amazon.jsii.Kernel.get(this, "attrMseVersion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetType() {
         return software.amazon.jsii.Kernel.get(this, "attrNetType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
@@ -315,6 +321,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAcceptLanguage() {
+        return software.amazon.jsii.Kernel.get(this, "acceptLanguage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAcceptLanguage(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "acceptLanguage", value);
+    }
+
+    /**
+     */
+    public void setAcceptLanguage(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "acceptLanguage", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getAclEntryList() {
         return software.amazon.jsii.Kernel.get(this, "aclEntryList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -369,24 +393,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getDiskCapacity() {
-        return software.amazon.jsii.Kernel.get(this, "diskCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setDiskCapacity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "diskCapacity", value);
-    }
-
-    /**
-     */
-    public void setDiskCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "diskCapacity", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDiskType() {
         return software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -401,6 +407,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDiskType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "diskType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMseVersion() {
+        return software.amazon.jsii.Kernel.get(this, "mseVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMseVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "mseVersion", value);
+    }
+
+    /**
+     */
+    public void setMseVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "mseVersion", value);
     }
 
     /**
@@ -624,6 +648,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param acceptLanguage This parameter is required.
+         */
+        public Builder acceptLanguage(final java.lang.String acceptLanguage) {
+            this.props.acceptLanguage(acceptLanguage);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param acceptLanguage This parameter is required.
+         */
+        public Builder acceptLanguage(final com.aliyun.ros.cdk.core.IResolvable acceptLanguage) {
+            this.props.acceptLanguage(acceptLanguage);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param aclEntryList This parameter is required.
          */
         public Builder aclEntryList(final com.aliyun.ros.cdk.core.IResolvable aclEntryList) {
@@ -675,23 +716,6 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param diskCapacity This parameter is required.
-         */
-        public Builder diskCapacity(final java.lang.Number diskCapacity) {
-            this.props.diskCapacity(diskCapacity);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param diskCapacity This parameter is required.
-         */
-        public Builder diskCapacity(final com.aliyun.ros.cdk.core.IResolvable diskCapacity) {
-            this.props.diskCapacity(diskCapacity);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param diskType This parameter is required.
          */
         public Builder diskType(final java.lang.String diskType) {
@@ -704,6 +728,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder diskType(final com.aliyun.ros.cdk.core.IResolvable diskType) {
             this.props.diskType(diskType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param mseVersion This parameter is required.
+         */
+        public Builder mseVersion(final java.lang.String mseVersion) {
+            this.props.mseVersion(mseVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param mseVersion This parameter is required.
+         */
+        public Builder mseVersion(final com.aliyun.ros.cdk.core.IResolvable mseVersion) {
+            this.props.mseVersion(mseVersion);
             return this;
         }
 

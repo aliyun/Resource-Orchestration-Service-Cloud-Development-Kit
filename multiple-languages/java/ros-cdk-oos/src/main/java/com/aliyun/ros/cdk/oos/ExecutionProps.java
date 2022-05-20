@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a `ALIYUN::OOS::Execution`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.743Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.919Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(ExecutionProps.Jsii$Proxy.class)
 public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,6 +33,13 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
      * Property parentExecutionId: Parent execution ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getParentExecutionId() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -87,6 +94,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object mode;
         java.lang.Object parameters;
         java.lang.Object parentExecutionId;
+        java.lang.Object resourceGroupId;
         java.lang.Object resourceOptions;
         java.lang.Object safetyCheck;
         java.util.Map<java.lang.String, java.lang.Object> tags;
@@ -171,6 +179,26 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder parentExecutionId(com.aliyun.ros.cdk.core.IResolvable parentExecutionId) {
             this.parentExecutionId = parentExecutionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ExecutionProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ExecutionProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
             return this;
         }
 
@@ -279,6 +307,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object mode;
         private final java.lang.Object parameters;
         private final java.lang.Object parentExecutionId;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object resourceOptions;
         private final java.lang.Object safetyCheck;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
@@ -294,6 +323,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
             this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parentExecutionId = software.amazon.jsii.Kernel.get(this, "parentExecutionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceOptions = software.amazon.jsii.Kernel.get(this, "resourceOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.safetyCheck = software.amazon.jsii.Kernel.get(this, "safetyCheck", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
@@ -310,6 +340,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
             this.mode = builder.mode;
             this.parameters = builder.parameters;
             this.parentExecutionId = builder.parentExecutionId;
+            this.resourceGroupId = builder.resourceGroupId;
             this.resourceOptions = builder.resourceOptions;
             this.safetyCheck = builder.safetyCheck;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
@@ -334,6 +365,11 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getParentExecutionId() {
             return this.parentExecutionId;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -372,6 +408,9 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getParentExecutionId() != null) {
                 data.set("parentExecutionId", om.valueToTree(this.getParentExecutionId()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getResourceOptions() != null) {
                 data.set("resourceOptions", om.valueToTree(this.getResourceOptions()));
             }
@@ -406,6 +445,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
             if (this.mode != null ? !this.mode.equals(that.mode) : that.mode != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
             if (this.parentExecutionId != null ? !this.parentExecutionId.equals(that.parentExecutionId) : that.parentExecutionId != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.resourceOptions != null ? !this.resourceOptions.equals(that.resourceOptions) : that.resourceOptions != null) return false;
             if (this.safetyCheck != null ? !this.safetyCheck.equals(that.safetyCheck) : that.safetyCheck != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -418,6 +458,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.mode != null ? this.mode.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             result = 31 * result + (this.parentExecutionId != null ? this.parentExecutionId.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.resourceOptions != null ? this.resourceOptions.hashCode() : 0);
             result = 31 * result + (this.safetyCheck != null ? this.safetyCheck.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

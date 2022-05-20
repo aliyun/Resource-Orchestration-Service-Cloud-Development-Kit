@@ -24,6 +24,11 @@ export interface AccessControlProps {
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosAccessControl.TagsProperty[];
@@ -56,6 +61,7 @@ export class AccessControl extends ros.Resource {
 
         const rosAccessControl = new RosAccessControl(this, id,  {
             aclEntrys: props.aclEntrys,
+            resourceGroupId: props.resourceGroupId,
             addressIpVersion: props.addressIpVersion,
             aclName: props.aclName,
             tags: props.tags,

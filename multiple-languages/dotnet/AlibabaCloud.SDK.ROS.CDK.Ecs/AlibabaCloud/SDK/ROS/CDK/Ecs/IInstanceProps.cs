@@ -360,6 +360,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property spotDuration: The protection period of the preemptible instance.</summary>
+        /// <remarks>
+        /// Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+        /// Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+        /// If this parameter is set to 0, no protection period is configured for the preemptible instance.
+        /// Default value: 1.
+        /// </remarks>
+        [JsiiProperty(name: "spotDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SpotDuration
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property spotInterruptionBehavior: The interruption mode of the preemptible instance.</summary>
+        /// <remarks>
+        /// Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+        /// </remarks>
+        [JsiiProperty(name: "spotInterruptionBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SpotInterruptionBehavior
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.</summary>
         /// <remarks>
         /// Three decimals is allowed at most.
@@ -508,6 +539,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ZoneId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property zoneIds: Zone ids for query parameters.</summary>
+        [JsiiProperty(name: "zoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneIds
         {
             get
             {
@@ -797,6 +839,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property spotDuration: The protection period of the preemptible instance.</summary>
+            /// <remarks>
+            /// Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+            /// Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+            /// If this parameter is set to 0, no protection period is configured for the preemptible instance.
+            /// Default value: 1.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "spotDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotDuration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property spotInterruptionBehavior: The interruption mode of the preemptible instance.</summary>
+            /// <remarks>
+            /// Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "spotInterruptionBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotInterruptionBehavior
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.</summary>
             /// <remarks>
             /// Three decimals is allowed at most.
@@ -912,6 +979,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ZoneId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property zoneIds: Zone ids for query parameters.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? ZoneIds
             {
                 get => GetInstanceProperty<object?>();
             }

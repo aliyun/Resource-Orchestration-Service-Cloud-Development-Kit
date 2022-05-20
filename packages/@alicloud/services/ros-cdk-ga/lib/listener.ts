@@ -22,8 +22,14 @@ export interface ListenerProps {
      * Property protocol: The network transmission protocol of the listener. Valid values:
      * tcp: TCP protocol
      * udp: UDP protocol
+     * http: HTTP protocolhttps: HTTPS protocol.
      */
     readonly protocol: string | ros.IResolvable;
+
+    /**
+     * Property certificates:
+     */
+    readonly certificates?: Array<RosListener.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property clientAffinity: Specifies whether to enable client affinity for the listener.
@@ -46,6 +52,29 @@ export interface ListenerProps {
      * (_), and hyphens (-). It must start with a letter or Chinese character.
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * Property proxyProtocol: Specifies whether to preserve client IP addresses. Valid values:
+     * true: preserves client IP addresses. After this feature is enabled, backend servers can retrieve client IP addresses.
+     * false (default): does not preserve client IP addresses.
+     */
+    readonly proxyProtocol?: boolean | ros.IResolvable;
+
+    /**
+     * Property securityPolicyId: The ID of the security policy. Valid values:
+     * tls_cipher_policy_1_0
+     * tls_cipher_policy_1_1
+     * tls_cipher_policy_1_2
+     * tls_cipher_policy_1_2_strict
+     * tls_cipher_policy_1_2_strict_with_1_3
+     * Note Only HTTPS listeners support this parameter.
+     */
+    readonly securityPolicyId?: string | ros.IResolvable;
+
+    /**
+     * Property xForwardedForConfig: The configuration of the XForward field.
+     */
+    readonly xForwardedForConfig?: RosListener.XForwardedForConfigProperty | ros.IResolvable;
 }
 
 /**
@@ -74,8 +103,12 @@ export class Listener extends ros.Resource {
         super(scope, id);
 
         const rosListener = new RosListener(this, id,  {
+            securityPolicyId: props.securityPolicyId,
             description: props.description,
+            proxyProtocol: props.proxyProtocol,
             portRanges: props.portRanges,
+            certificates: props.certificates,
+            xForwardedForConfig: props.xForwardedForConfig,
             protocol: props.protocol,
             acceleratorId: props.acceleratorId,
             name: props.name,

@@ -55,6 +55,11 @@ export interface InstanceProps {
      * Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
      */
     readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosInstance.TagsProperty[];
 }
 
 /**
@@ -127,6 +132,7 @@ export class Instance extends ros.Resource {
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             duration: props.duration,
             autoPay: props.autoPay,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrEgressIpv6Enable = rosInstance.attrEgressIpv6Enable;

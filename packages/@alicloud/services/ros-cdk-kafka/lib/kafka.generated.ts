@@ -626,6 +626,11 @@ export interface RosTopicProps {
      * Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
      */
     readonly replicationFactor?: number | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosTopic.TagsProperty[];
 }
 
 /**
@@ -662,6 +667,14 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('topic', ros.requiredValidator)(properties.topic));
     errors.collect(ros.propertyValidator('topic', ros.validateString)(properties.topic));
     errors.collect(ros.propertyValidator('localTopic', ros.validateBoolean)(properties.localTopic));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosTopic_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('remark', ros.requiredValidator)(properties.remark));
     errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosTopicProps"');
@@ -690,6 +703,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
       MinInsyncReplicas: ros.numberToRosTemplate(properties.minInsyncReplicas),
       PartitionNum: ros.numberToRosTemplate(properties.partitionNum),
       ReplicationFactor: ros.numberToRosTemplate(properties.replicationFactor),
+      Tags: ros.listMapper(rosTopicTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -791,6 +805,11 @@ You can call the GetInstanceList operation to query instances.
     public replicationFactor: number | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosTopic.TagsProperty[] | undefined;
+
+    /**
      * Create a new `ALIYUN::KAFKA::Topic`.
      *
      * @param scope - scope in which this resource is defined
@@ -812,6 +831,7 @@ You can call the GetInstanceList operation to query instances.
         this.minInsyncReplicas = props.minInsyncReplicas;
         this.partitionNum = props.partitionNum;
         this.replicationFactor = props.replicationFactor;
+        this.tags = props.tags;
     }
 
 
@@ -826,9 +846,58 @@ You can call the GetInstanceList operation to query instances.
             minInsyncReplicas: this.minInsyncReplicas,
             partitionNum: this.partitionNum,
             replicationFactor: this.replicationFactor,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosTopicPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosTopic {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTopic_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KAFKA::Topic.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KAFKA::Topic.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosTopicTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTopic_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }

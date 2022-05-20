@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::AnycastEIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.555Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.753Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.AnycastEIP")
 public class AnycastEIP extends com.aliyun.ros.cdk.core.Resource {
 
@@ -122,6 +122,27 @@ public class AnycastEIP extends com.aliyun.ros.cdk.core.Resource {
             this.scope = scope;
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        }
+
+        /**
+         * Property bandwidth: Anycast EIP instance bandwidth.
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: Anycast EIP instance bandwidth. This parameter is required.
+         */
+        public Builder bandwidth(final java.lang.Number bandwidth) {
+            this.props().bandwidth(bandwidth);
+            return this;
+        }
+        /**
+         * Property bandwidth: Anycast EIP instance bandwidth.
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: Anycast EIP instance bandwidth. This parameter is required.
+         */
+        public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.props().bandwidth(bandwidth);
+            return this;
         }
 
         /**

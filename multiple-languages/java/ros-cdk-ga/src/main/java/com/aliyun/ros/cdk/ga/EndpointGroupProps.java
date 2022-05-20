@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::EndpointGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.461Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.EndpointGroupProps")
 @software.amazon.jsii.Jsii.Proxy(EndpointGroupProps.Jsii$Proxy.class)
 public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,38 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
      * Property description: The description of the endpoint group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     * Property endpointGroupType: The type of the endpoint group.
+     * <p>
+     * Valid values:
+     * default: The endpoint group is a default endpoint group. This is the default value.
+     * virtual: The endpoint group is a virtual endpoint group.
+     * Note Only HTTP and HTTPS listeners support virtual endpoint groups.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointGroupType() {
+        return null;
+    }
+
+    /**
+     * Property endpointRequestProtocol: The protocol used by the backend service.
+     * <p>
+     * Valid values:
+     * http: This is the default value.
+     * https
+     * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
+     * For an HTTP listener, the backend service protocol must be HTTP.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointRequestProtocol() {
+        return null;
+    }
+
+    /**
+     * Property healthCheckEnabled: Specifies whether to enable the health check feature.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckEnabled() {
         return null;
     }
 
@@ -77,7 +109,9 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+     * Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
+     * <p>
+     * Valid values: 2 to 10. Default value: 3.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getThresholdCount() {
         return null;
@@ -105,6 +139,9 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object endpointGroupRegion;
         java.lang.Object listenerId;
         java.lang.Object description;
+        java.lang.Object endpointGroupType;
+        java.lang.Object endpointRequestProtocol;
+        java.lang.Object healthCheckEnabled;
         java.lang.Object healthCheckIntervalSeconds;
         java.lang.Object healthCheckPath;
         java.lang.Object healthCheckPort;
@@ -210,6 +247,84 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointGroupType}
+         * @param endpointGroupType Property endpointGroupType: The type of the endpoint group.
+         *                          Valid values:
+         *                          default: The endpoint group is a default endpoint group. This is the default value.
+         *                          virtual: The endpoint group is a virtual endpoint group.
+         *                          Note Only HTTP and HTTPS listeners support virtual endpoint groups.
+         * @return {@code this}
+         */
+        public Builder endpointGroupType(java.lang.String endpointGroupType) {
+            this.endpointGroupType = endpointGroupType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointGroupType}
+         * @param endpointGroupType Property endpointGroupType: The type of the endpoint group.
+         *                          Valid values:
+         *                          default: The endpoint group is a default endpoint group. This is the default value.
+         *                          virtual: The endpoint group is a virtual endpoint group.
+         *                          Note Only HTTP and HTTPS listeners support virtual endpoint groups.
+         * @return {@code this}
+         */
+        public Builder endpointGroupType(com.aliyun.ros.cdk.core.IResolvable endpointGroupType) {
+            this.endpointGroupType = endpointGroupType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointRequestProtocol}
+         * @param endpointRequestProtocol Property endpointRequestProtocol: The protocol used by the backend service.
+         *                                Valid values:
+         *                                http: This is the default value.
+         *                                https
+         *                                Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
+         *                                For an HTTP listener, the backend service protocol must be HTTP.
+         * @return {@code this}
+         */
+        public Builder endpointRequestProtocol(java.lang.String endpointRequestProtocol) {
+            this.endpointRequestProtocol = endpointRequestProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointRequestProtocol}
+         * @param endpointRequestProtocol Property endpointRequestProtocol: The protocol used by the backend service.
+         *                                Valid values:
+         *                                http: This is the default value.
+         *                                https
+         *                                Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
+         *                                For an HTTP listener, the backend service protocol must be HTTP.
+         * @return {@code this}
+         */
+        public Builder endpointRequestProtocol(com.aliyun.ros.cdk.core.IResolvable endpointRequestProtocol) {
+            this.endpointRequestProtocol = endpointRequestProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getHealthCheckEnabled}
+         * @param healthCheckEnabled Property healthCheckEnabled: Specifies whether to enable the health check feature.
+         * @return {@code this}
+         */
+        public Builder healthCheckEnabled(java.lang.Boolean healthCheckEnabled) {
+            this.healthCheckEnabled = healthCheckEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getHealthCheckEnabled}
+         * @param healthCheckEnabled Property healthCheckEnabled: Specifies whether to enable the health check feature.
+         * @return {@code this}
+         */
+        public Builder healthCheckEnabled(com.aliyun.ros.cdk.core.IResolvable healthCheckEnabled) {
+            this.healthCheckEnabled = healthCheckEnabled;
             return this;
         }
 
@@ -323,7 +438,8 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link EndpointGroupProps#getThresholdCount}
-         * @param thresholdCount Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+         * @param thresholdCount Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
+         *                       Valid values: 2 to 10. Default value: 3.
          * @return {@code this}
          */
         public Builder thresholdCount(java.lang.Number thresholdCount) {
@@ -333,7 +449,8 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link EndpointGroupProps#getThresholdCount}
-         * @param thresholdCount Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+         * @param thresholdCount Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
+         *                       Valid values: 2 to 10. Default value: 3.
          * @return {@code this}
          */
         public Builder thresholdCount(com.aliyun.ros.cdk.core.IResolvable thresholdCount) {
@@ -382,6 +499,9 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object endpointGroupRegion;
         private final java.lang.Object listenerId;
         private final java.lang.Object description;
+        private final java.lang.Object endpointGroupType;
+        private final java.lang.Object endpointRequestProtocol;
+        private final java.lang.Object healthCheckEnabled;
         private final java.lang.Object healthCheckIntervalSeconds;
         private final java.lang.Object healthCheckPath;
         private final java.lang.Object healthCheckPort;
@@ -401,6 +521,9 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.endpointGroupRegion = software.amazon.jsii.Kernel.get(this, "endpointGroupRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerId = software.amazon.jsii.Kernel.get(this, "listenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.endpointGroupType = software.amazon.jsii.Kernel.get(this, "endpointGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.endpointRequestProtocol = software.amazon.jsii.Kernel.get(this, "endpointRequestProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckEnabled = software.amazon.jsii.Kernel.get(this, "healthCheckEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckIntervalSeconds = software.amazon.jsii.Kernel.get(this, "healthCheckIntervalSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckPath = software.amazon.jsii.Kernel.get(this, "healthCheckPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckPort = software.amazon.jsii.Kernel.get(this, "healthCheckPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -420,6 +543,9 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.endpointGroupRegion = java.util.Objects.requireNonNull(builder.endpointGroupRegion, "endpointGroupRegion is required");
             this.listenerId = java.util.Objects.requireNonNull(builder.listenerId, "listenerId is required");
             this.description = builder.description;
+            this.endpointGroupType = builder.endpointGroupType;
+            this.endpointRequestProtocol = builder.endpointRequestProtocol;
+            this.healthCheckEnabled = builder.healthCheckEnabled;
             this.healthCheckIntervalSeconds = builder.healthCheckIntervalSeconds;
             this.healthCheckPath = builder.healthCheckPath;
             this.healthCheckPort = builder.healthCheckPort;
@@ -452,6 +578,21 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getEndpointGroupType() {
+            return this.endpointGroupType;
+        }
+
+        @Override
+        public final java.lang.Object getEndpointRequestProtocol() {
+            return this.endpointRequestProtocol;
+        }
+
+        @Override
+        public final java.lang.Object getHealthCheckEnabled() {
+            return this.healthCheckEnabled;
         }
 
         @Override
@@ -502,6 +643,15 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getEndpointGroupType() != null) {
+                data.set("endpointGroupType", om.valueToTree(this.getEndpointGroupType()));
+            }
+            if (this.getEndpointRequestProtocol() != null) {
+                data.set("endpointRequestProtocol", om.valueToTree(this.getEndpointRequestProtocol()));
+            }
+            if (this.getHealthCheckEnabled() != null) {
+                data.set("healthCheckEnabled", om.valueToTree(this.getHealthCheckEnabled()));
+            }
             if (this.getHealthCheckIntervalSeconds() != null) {
                 data.set("healthCheckIntervalSeconds", om.valueToTree(this.getHealthCheckIntervalSeconds()));
             }
@@ -546,6 +696,9 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (!endpointGroupRegion.equals(that.endpointGroupRegion)) return false;
             if (!listenerId.equals(that.listenerId)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.endpointGroupType != null ? !this.endpointGroupType.equals(that.endpointGroupType) : that.endpointGroupType != null) return false;
+            if (this.endpointRequestProtocol != null ? !this.endpointRequestProtocol.equals(that.endpointRequestProtocol) : that.endpointRequestProtocol != null) return false;
+            if (this.healthCheckEnabled != null ? !this.healthCheckEnabled.equals(that.healthCheckEnabled) : that.healthCheckEnabled != null) return false;
             if (this.healthCheckIntervalSeconds != null ? !this.healthCheckIntervalSeconds.equals(that.healthCheckIntervalSeconds) : that.healthCheckIntervalSeconds != null) return false;
             if (this.healthCheckPath != null ? !this.healthCheckPath.equals(that.healthCheckPath) : that.healthCheckPath != null) return false;
             if (this.healthCheckPort != null ? !this.healthCheckPort.equals(that.healthCheckPort) : that.healthCheckPort != null) return false;
@@ -562,6 +715,9 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.endpointGroupRegion.hashCode());
             result = 31 * result + (this.listenerId.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.endpointGroupType != null ? this.endpointGroupType.hashCode() : 0);
+            result = 31 * result + (this.endpointRequestProtocol != null ? this.endpointRequestProtocol.hashCode() : 0);
+            result = 31 * result + (this.healthCheckEnabled != null ? this.healthCheckEnabled.hashCode() : 0);
             result = 31 * result + (this.healthCheckIntervalSeconds != null ? this.healthCheckIntervalSeconds.hashCode() : 0);
             result = 31 * result + (this.healthCheckPath != null ? this.healthCheckPath.hashCode() : 0);
             result = 31 * result + (this.healthCheckPort != null ? this.healthCheckPort.hashCode() : 0);

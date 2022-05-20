@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * Properties for defining a `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.597Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.748Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
@@ -57,6 +57,12 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosTopicProps}
      */
     static Builder builder() {
@@ -75,6 +81,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object minInsyncReplicas;
         java.lang.Object partitionNum;
         java.lang.Object replicationFactor;
+        java.util.List<com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosTopicProps#getInstanceId}
@@ -257,6 +264,17 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosTopicProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -281,6 +299,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object minInsyncReplicas;
         private final java.lang.Object partitionNum;
         private final java.lang.Object replicationFactor;
+        private final java.util.List<com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -297,11 +316,13 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             this.minInsyncReplicas = software.amazon.jsii.Kernel.get(this, "minInsyncReplicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.partitionNum = software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.replicationFactor = software.amazon.jsii.Kernel.get(this, "replicationFactor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
@@ -313,6 +334,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             this.minInsyncReplicas = builder.minInsyncReplicas;
             this.partitionNum = builder.partitionNum;
             this.replicationFactor = builder.replicationFactor;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -361,6 +383,11 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -386,6 +413,9 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getReplicationFactor() != null) {
                 data.set("replicationFactor", om.valueToTree(this.getReplicationFactor()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -413,7 +443,8 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             if (this.localTopic != null ? !this.localTopic.equals(that.localTopic) : that.localTopic != null) return false;
             if (this.minInsyncReplicas != null ? !this.minInsyncReplicas.equals(that.minInsyncReplicas) : that.minInsyncReplicas != null) return false;
             if (this.partitionNum != null ? !this.partitionNum.equals(that.partitionNum) : that.partitionNum != null) return false;
-            return this.replicationFactor != null ? this.replicationFactor.equals(that.replicationFactor) : that.replicationFactor == null;
+            if (this.replicationFactor != null ? !this.replicationFactor.equals(that.replicationFactor) : that.replicationFactor != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -427,6 +458,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.minInsyncReplicas != null ? this.minInsyncReplicas.hashCode() : 0);
             result = 31 * result + (this.partitionNum != null ? this.partitionNum.hashCode() : 0);
             result = 31 * result + (this.replicationFactor != null ? this.replicationFactor.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

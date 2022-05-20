@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * Properties for defining a `ALIYUN::GPDB::ElasticDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.464Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ElasticDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ElasticDBInstanceProps.Jsii$Proxy.class)
 public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -140,6 +140,15 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * Property vpcId: The VPC ID of the instance.
      * <p>
      * If you set the InstanceNetworkType parameter to VPC, you
@@ -176,6 +185,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object period;
         java.lang.Object periodUnit;
         java.lang.Object securityIpList;
+        java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> tags;
         java.lang.Object vpcId;
 
         /**
@@ -539,6 +549,18 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link ElasticDBInstanceProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ElasticDBInstanceProps#getVpcId}
          * @param vpcId Property vpcId: The VPC ID of the instance.
          *              If you set the InstanceNetworkType parameter to VPC, you
@@ -596,6 +618,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
         private final java.lang.Object securityIpList;
+        private final java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> tags;
         private final java.lang.Object vpcId;
 
         /**
@@ -620,12 +643,14 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.engineVersion = java.util.Objects.requireNonNull(builder.engineVersion, "engineVersion is required");
@@ -644,6 +669,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
             this.securityIpList = builder.securityIpList;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
         }
 
@@ -728,6 +754,11 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
@@ -772,6 +803,9 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
@@ -809,6 +843,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
 
@@ -830,6 +865,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;
         }

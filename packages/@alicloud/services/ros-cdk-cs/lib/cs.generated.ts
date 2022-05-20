@@ -1606,6 +1606,11 @@ export interface RosKubernetesClusterProps {
     readonly masterSystemDiskSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
+     * @Property masterZoneIds: Zone ids of master node virtual switches belongs to.
+     */
+    readonly masterZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
      * This number is determined by the specified pod CIDR block. 
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -1782,6 +1787,11 @@ export interface RosKubernetesClusterProps {
      * @Property workerSystemDiskSnapshotPolicyId: The ID of the policy that is used to back up the data disk of the worker node.
      */
     readonly workerSystemDiskSnapshotPolicyId?: string | ros.IResolvable;
+
+    /**
+     * @Property workerZoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    readonly workerZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -1814,6 +1824,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('masterDataDisks', ros.listValidator(RosKubernetesCluster_MasterDataDisksPropertyValidator))(properties.masterDataDisks));
     errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
     errors.collect(ros.propertyValidator('runtime', RosKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
+    errors.collect(ros.propertyValidator('masterZoneIds', ros.listValidator(ros.validateString))(properties.masterZoneIds));
     if(properties.osType && (typeof properties.osType) !== 'object') {
         errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
           data: properties.osType,
@@ -1821,6 +1832,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
+    errors.collect(ros.propertyValidator('workerZoneIds', ros.listValidator(ros.validateString))(properties.workerZoneIds));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_TagsPropertyValidator))(properties.tags));
@@ -1991,6 +2003,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       MasterSystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.masterSystemDiskPerformanceLevel),
       MasterSystemDiskSize: ros.numberToRosTemplate(properties.masterSystemDiskSize),
       MasterSystemDiskSnapshotPolicyId: ros.stringToRosTemplate(properties.masterSystemDiskSnapshotPolicyId),
+      MasterZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.masterZoneIds),
       NodeCidrMask: ros.stringToRosTemplate(properties.nodeCidrMask),
       NodePortRange: ros.stringToRosTemplate(properties.nodePortRange),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
@@ -2018,6 +2031,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       WorkerSystemDiskCategory: ros.stringToRosTemplate(properties.workerSystemDiskCategory),
       WorkerSystemDiskSize: ros.numberToRosTemplate(properties.workerSystemDiskSize),
       WorkerSystemDiskSnapshotPolicyId: ros.stringToRosTemplate(properties.workerSystemDiskSnapshotPolicyId),
+      WorkerZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.workerZoneIds),
     };
 }
 
@@ -2301,6 +2315,11 @@ export class RosKubernetesCluster extends ros.RosResource {
     public masterSystemDiskSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property masterZoneIds: Zone ids of master node virtual switches belongs to.
+     */
+    public masterZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
      * This number is determined by the specified pod CIDR block. 
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -2479,6 +2498,11 @@ export class RosKubernetesCluster extends ros.RosResource {
     public workerSystemDiskSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property workerZoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    public workerZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::CS::KubernetesCluster`.
      *
      * @param scope - scope in which this resource is defined
@@ -2530,6 +2554,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.masterSystemDiskPerformanceLevel = props.masterSystemDiskPerformanceLevel;
         this.masterSystemDiskSize = props.masterSystemDiskSize;
         this.masterSystemDiskSnapshotPolicyId = props.masterSystemDiskSnapshotPolicyId;
+        this.masterZoneIds = props.masterZoneIds;
         this.nodeCidrMask = props.nodeCidrMask;
         this.nodePortRange = props.nodePortRange;
         this.numOfNodes = props.numOfNodes;
@@ -2557,6 +2582,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.workerSystemDiskCategory = props.workerSystemDiskCategory;
         this.workerSystemDiskSize = props.workerSystemDiskSize;
         this.workerSystemDiskSnapshotPolicyId = props.workerSystemDiskSnapshotPolicyId;
+        this.workerZoneIds = props.workerZoneIds;
     }
 
 
@@ -2593,6 +2619,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             masterSystemDiskPerformanceLevel: this.masterSystemDiskPerformanceLevel,
             masterSystemDiskSize: this.masterSystemDiskSize,
             masterSystemDiskSnapshotPolicyId: this.masterSystemDiskSnapshotPolicyId,
+            masterZoneIds: this.masterZoneIds,
             nodeCidrMask: this.nodeCidrMask,
             nodePortRange: this.nodePortRange,
             numOfNodes: this.numOfNodes,
@@ -2620,6 +2647,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             workerSystemDiskCategory: this.workerSystemDiskCategory,
             workerSystemDiskSize: this.workerSystemDiskSize,
             workerSystemDiskSnapshotPolicyId: this.workerSystemDiskSnapshotPolicyId,
+            workerZoneIds: this.workerZoneIds,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -3038,6 +3066,11 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
@@ -3107,6 +3140,11 @@ export interface RosManagedEdgeKubernetesClusterProps {
      * Default to 120.
      */
     readonly workerSystemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * @Property zoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -3120,8 +3158,10 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedEdgeKubernetesCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -3130,7 +3170,6 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
-    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     errors.collect(ros.propertyValidator('profile', ros.validateString)(properties.profile));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -3145,9 +3184,10 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('workerDataDiskSize', ros.validateNumber)(properties.workerDataDiskSize));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('workerInstanceTypes', ros.validateLength)({
             data: properties.workerInstanceTypes.length,
@@ -3249,6 +3289,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       Profile: ros.stringToRosTemplate(properties.profile),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
       Tags: ros.listMapper(rosManagedEdgeKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
@@ -3261,6 +3302,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       WorkerInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.workerInstanceTypes),
       WorkerSystemDiskCategory: ros.stringToRosTemplate(properties.workerSystemDiskCategory),
       WorkerSystemDiskSize: ros.numberToRosTemplate(properties.workerSystemDiskSize),
+      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
@@ -3469,6 +3511,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public proxyMode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
     public serviceCidr: string | ros.IResolvable | undefined;
@@ -3540,6 +3587,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public workerSystemDiskSize: number | ros.IResolvable | undefined;
 
     /**
+     * @Property zoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
      *
      * @param scope - scope in which this resource is defined
@@ -3580,6 +3632,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.periodUnit = props.periodUnit;
         this.profile = props.profile;
         this.proxyMode = props.proxyMode;
+        this.resourceGroupId = props.resourceGroupId;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
         this.tags = props.tags;
@@ -3592,6 +3645,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.workerInstanceTypes = props.workerInstanceTypes;
         this.workerSystemDiskCategory = props.workerSystemDiskCategory;
         this.workerSystemDiskSize = props.workerSystemDiskSize;
+        this.zoneIds = props.zoneIds;
     }
 
 
@@ -3617,6 +3671,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             periodUnit: this.periodUnit,
             profile: this.profile,
             proxyMode: this.proxyMode,
+            resourceGroupId: this.resourceGroupId,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
             tags: this.tags,
@@ -3629,6 +3684,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             workerInstanceTypes: this.workerInstanceTypes,
             workerSystemDiskCategory: this.workerSystemDiskCategory,
             workerSystemDiskSize: this.workerSystemDiskSize,
+            zoneIds: this.zoneIds,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -3976,6 +4032,11 @@ export interface RosManagedKubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
      */
     readonly runtime?: RosManagedKubernetesCluster.RuntimeProperty | ros.IResolvable;
@@ -4054,6 +4115,11 @@ export interface RosManagedKubernetesClusterProps {
      * Default to 120.
      */
     readonly workerSystemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * @Property zoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -4070,9 +4136,11 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('socEnabled', ros.validateBoolean)(properties.socEnabled));
     errors.collect(ros.propertyValidator('formatDisk', ros.validateBoolean)(properties.formatDisk));
     errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedKubernetesCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -4081,7 +4149,6 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
-    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -4098,6 +4165,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
@@ -4132,8 +4200,8 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('workerDataDisks', ros.listValidator(RosManagedKubernetesCluster_WorkerDataDisksPropertyValidator))(properties.workerDataDisks));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -4220,6 +4288,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       Platform: ros.stringToRosTemplate(properties.platform),
       PodVswitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Runtime: rosManagedKubernetesClusterRuntimePropertyToRosTemplate(properties.runtime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
@@ -4233,6 +4302,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       WorkerDataDisks: ros.listMapper(rosManagedKubernetesClusterWorkerDataDisksPropertyToRosTemplate)(properties.workerDataDisks),
       WorkerSystemDiskCategory: ros.stringToRosTemplate(properties.workerSystemDiskCategory),
       WorkerSystemDiskSize: ros.numberToRosTemplate(properties.workerSystemDiskSize),
+      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
@@ -4536,6 +4606,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public proxyMode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property runtime: The container runtime of the cluster. The default runtime is Docker.
      */
     public runtime: RosManagedKubernetesCluster.RuntimeProperty | ros.IResolvable | undefined;
@@ -4616,6 +4691,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public workerSystemDiskSize: number | ros.IResolvable | undefined;
 
     /**
+     * @Property zoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::CS::ManagedKubernetesCluster`.
      *
      * @param scope - scope in which this resource is defined
@@ -4667,6 +4747,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.platform = props.platform;
         this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
+        this.resourceGroupId = props.resourceGroupId;
         this.runtime = props.runtime;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
@@ -4680,6 +4761,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.workerDataDisks = props.workerDataDisks;
         this.workerSystemDiskCategory = props.workerSystemDiskCategory;
         this.workerSystemDiskSize = props.workerSystemDiskSize;
+        this.zoneIds = props.zoneIds;
     }
 
 
@@ -4716,6 +4798,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             platform: this.platform,
             podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
+            resourceGroupId: this.resourceGroupId,
             runtime: this.runtime,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
@@ -4729,6 +4812,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             workerDataDisks: this.workerDataDisks,
             workerSystemDiskCategory: this.workerSystemDiskCategory,
             workerSystemDiskSize: this.workerSystemDiskSize,
+            zoneIds: this.zoneIds,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -4989,6 +5073,11 @@ export interface RosServerlessKubernetesClusterProps {
     readonly privateZone?: boolean | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -5039,6 +5128,7 @@ function RosServerlessKubernetesClusterPropsValidator(properties: any): ros.Vali
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
             data: properties.vSwitchIds.length,
@@ -5080,6 +5170,7 @@ function rosServerlessKubernetesClusterPropsToRosTemplate(properties: any, enabl
       KubernetesVersion: ros.stringToRosTemplate(properties.kubernetesVersion),
       NatGateway: ros.booleanToRosTemplate(properties.natGateway),
       PrivateZone: ros.booleanToRosTemplate(properties.privateZone),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       Tags: ros.listMapper(rosServerlessKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
@@ -5190,6 +5281,11 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     public privateZone: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
@@ -5253,6 +5349,7 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
         this.kubernetesVersion = props.kubernetesVersion;
         this.natGateway = props.natGateway;
         this.privateZone = props.privateZone;
+        this.resourceGroupId = props.resourceGroupId;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
         this.tags = props.tags;
@@ -5271,6 +5368,7 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
             kubernetesVersion: this.kubernetesVersion,
             natGateway: this.natGateway,
             privateZone: this.privateZone,
+            resourceGroupId: this.resourceGroupId,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
             tags: this.tags,

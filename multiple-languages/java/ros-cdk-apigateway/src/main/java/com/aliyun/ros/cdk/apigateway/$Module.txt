@@ -46,10 +46,12 @@
 @alicloud/ros-cdk-apigateway.RosGroup.TagsProperty=com.aliyun.ros.cdk.apigateway.RosGroup$TagsProperty
 @alicloud/ros-cdk-apigateway.RosGroupProps=com.aliyun.ros.cdk.apigateway.RosGroupProps
 @alicloud/ros-cdk-apigateway.RosInstance=com.aliyun.ros.cdk.apigateway.RosInstance
+@alicloud/ros-cdk-apigateway.RosInstance.TagsProperty=com.aliyun.ros.cdk.apigateway.RosInstance$TagsProperty
 @alicloud/ros-cdk-apigateway.RosInstanceProps=com.aliyun.ros.cdk.apigateway.RosInstanceProps
 @alicloud/ros-cdk-apigateway.RosLogConfig=com.aliyun.ros.cdk.apigateway.RosLogConfig
 @alicloud/ros-cdk-apigateway.RosLogConfigProps=com.aliyun.ros.cdk.apigateway.RosLogConfigProps
 @alicloud/ros-cdk-apigateway.RosPlugin=com.aliyun.ros.cdk.apigateway.RosPlugin
+@alicloud/ros-cdk-apigateway.RosPlugin.TagsProperty=com.aliyun.ros.cdk.apigateway.RosPlugin$TagsProperty
 @alicloud/ros-cdk-apigateway.RosPluginAttachment=com.aliyun.ros.cdk.apigateway.RosPluginAttachment
 @alicloud/ros-cdk-apigateway.RosPluginAttachmentProps=com.aliyun.ros.cdk.apigateway.RosPluginAttachmentProps
 @alicloud/ros-cdk-apigateway.RosPluginProps=com.aliyun.ros.cdk.apigateway.RosPluginProps

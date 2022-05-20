@@ -27,6 +27,11 @@ export interface PluginProps {
      * Property description: The description of the plug-in, which cannot exceed 200 characters.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosPlugin.TagsProperty[];
 }
 
 /**
@@ -79,6 +84,7 @@ export class Plugin extends ros.Resource {
             description: props.description,
             pluginData: props.pluginData,
             pluginType: props.pluginType,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPlugin;
         this.attrDescription = rosPlugin.attrDescription;

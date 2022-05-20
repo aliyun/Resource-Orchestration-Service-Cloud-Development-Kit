@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoSnapshotPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosAutoSnapshotPolicyProps.Jsii$Proxy.class)
 public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,12 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> getTags() {
         return null;
     }
@@ -53,6 +59,7 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
         java.lang.Object timePoints;
         java.lang.Object autoSnapshotPolicyName;
         java.lang.Object diskIds;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags;
 
         /**
@@ -156,6 +163,26 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosAutoSnapshotPolicyProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoSnapshotPolicyProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoSnapshotPolicyProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -187,6 +214,7 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object timePoints;
         private final java.lang.Object autoSnapshotPolicyName;
         private final java.lang.Object diskIds;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags;
 
         /**
@@ -200,6 +228,7 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
             this.timePoints = software.amazon.jsii.Kernel.get(this, "timePoints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoSnapshotPolicyName = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskIds = software.amazon.jsii.Kernel.get(this, "diskIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty.class)));
         }
 
@@ -214,6 +243,7 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
             this.timePoints = java.util.Objects.requireNonNull(builder.timePoints, "timePoints is required");
             this.autoSnapshotPolicyName = builder.autoSnapshotPolicyName;
             this.diskIds = builder.diskIds;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty>)builder.tags;
         }
 
@@ -243,6 +273,11 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> getTags() {
             return this.tags;
         }
@@ -261,6 +296,9 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
             }
             if (this.getDiskIds() != null) {
                 data.set("diskIds", om.valueToTree(this.getDiskIds()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -288,6 +326,7 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
             if (!timePoints.equals(that.timePoints)) return false;
             if (this.autoSnapshotPolicyName != null ? !this.autoSnapshotPolicyName.equals(that.autoSnapshotPolicyName) : that.autoSnapshotPolicyName != null) return false;
             if (this.diskIds != null ? !this.diskIds.equals(that.diskIds) : that.diskIds != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -298,6 +337,7 @@ public interface RosAutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSer
             result = 31 * result + (this.timePoints.hashCode());
             result = 31 * result + (this.autoSnapshotPolicyName != null ? this.autoSnapshotPolicyName.hashCode() : 0);
             result = 31 * result + (this.diskIds != null ? this.diskIds.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

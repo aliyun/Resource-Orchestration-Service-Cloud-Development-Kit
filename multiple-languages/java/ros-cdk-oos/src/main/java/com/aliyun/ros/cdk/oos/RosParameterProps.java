@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a `ALIYUN::OOS::Parameter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.749Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.925Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosParameterProps")
 @software.amazon.jsii.Jsii.Proxy(RosParameterProps.Jsii$Proxy.class)
 public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,6 +33,12 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosParameterProps}
      */
     static Builder builder() {
@@ -47,6 +53,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object value;
         java.lang.Object constraints;
         java.lang.Object description;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosParameterProps#getName}
@@ -149,6 +156,26 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosParameterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosParameterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosParameterProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -169,6 +196,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object value;
         private final java.lang.Object constraints;
         private final java.lang.Object description;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -181,6 +209,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.constraints = software.amazon.jsii.Kernel.get(this, "constraints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -193,6 +222,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
             this.constraints = builder.constraints;
             this.description = builder.description;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -221,6 +251,11 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -234,6 +269,9 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -257,7 +295,8 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             if (!type.equals(that.type)) return false;
             if (!value.equals(that.value)) return false;
             if (this.constraints != null ? !this.constraints.equals(that.constraints) : that.constraints != null) return false;
-            return this.description != null ? this.description.equals(that.description) : that.description == null;
+            if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -267,6 +306,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.value.hashCode());
             result = 31 * result + (this.constraints != null ? this.constraints.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.308Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.408Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesCluster")
 public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -675,6 +675,24 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMasterZoneIds() {
+        return software.amazon.jsii.Kernel.get(this, "masterZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMasterZoneIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "masterZoneIds", value);
+    }
+
+    /**
+     */
+    public void setMasterZoneIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "masterZoneIds", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNodeCidrMask() {
         return software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -1151,6 +1169,24 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setWorkerSystemDiskSnapshotPolicyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "workerSystemDiskSnapshotPolicyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWorkerZoneIds() {
+        return software.amazon.jsii.Kernel.get(this, "workerZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setWorkerZoneIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "workerZoneIds", value);
+    }
+
+    /**
+     */
+    public void setWorkerZoneIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "workerZoneIds", value);
     }
     /**
      */
@@ -2583,6 +2619,23 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param masterZoneIds This parameter is required.
+         */
+        public Builder masterZoneIds(final com.aliyun.ros.cdk.core.IResolvable masterZoneIds) {
+            this.props.masterZoneIds(masterZoneIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param masterZoneIds This parameter is required.
+         */
+        public Builder masterZoneIds(final java.util.List<? extends java.lang.Object> masterZoneIds) {
+            this.props.masterZoneIds(masterZoneIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param nodeCidrMask This parameter is required.
          */
         public Builder nodeCidrMask(final java.lang.String nodeCidrMask) {
@@ -3029,6 +3082,23 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder workerSystemDiskSnapshotPolicyId(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskSnapshotPolicyId) {
             this.props.workerSystemDiskSnapshotPolicyId(workerSystemDiskSnapshotPolicyId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param workerZoneIds This parameter is required.
+         */
+        public Builder workerZoneIds(final com.aliyun.ros.cdk.core.IResolvable workerZoneIds) {
+            this.props.workerZoneIds(workerZoneIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param workerZoneIds This parameter is required.
+         */
+        public Builder workerZoneIds(final java.util.List<? extends java.lang.Object> workerZoneIds) {
+            this.props.workerZoneIds(workerZoneIds);
             return this;
         }
 

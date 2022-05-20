@@ -23,6 +23,11 @@ export interface RosAccessControlProps {
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosAccessControl.TagsProperty[];
@@ -46,6 +51,7 @@ function RosAccessControlPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('aclEntrys', ros.listValidator(RosAccessControl_AclEntrysPropertyValidator))(properties.aclEntrys));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
         errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
           data: properties.addressIpVersion,
@@ -83,6 +89,7 @@ function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePrope
       AclName: ros.stringToRosTemplate(properties.aclName),
       AclEntrys: ros.listMapper(rosAccessControlAclEntrysPropertyToRosTemplate)(properties.aclEntrys),
       AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosAccessControlTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -125,6 +132,11 @@ export class RosAccessControl extends ros.RosResource {
     public addressIpVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosAccessControl.TagsProperty[] | undefined;
@@ -144,6 +156,7 @@ export class RosAccessControl extends ros.RosResource {
         this.aclName = props.aclName;
         this.aclEntrys = props.aclEntrys;
         this.addressIpVersion = props.addressIpVersion;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
     }
 
@@ -153,6 +166,7 @@ export class RosAccessControl extends ros.RosResource {
             aclName: this.aclName,
             aclEntrys: this.aclEntrys,
             addressIpVersion: this.addressIpVersion,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
         };
     }
@@ -1157,6 +1171,13 @@ export interface RosListenerProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+     * on: yes
+     * off: no
+     */
+    readonly enableHttp2?: string | ros.IResolvable;
+
+    /**
      * @Property healthCheck: The properties of health checking setting.
      */
     readonly healthCheck?: RosListener.HealthCheckProperty | ros.IResolvable;
@@ -1236,6 +1257,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('requestTimeout', ros.validateNumber)(properties.requestTimeout));
+    errors.collect(ros.propertyValidator('vServerGroupId', ros.validateString)(properties.vServerGroupId));
     errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
     if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
         errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
@@ -1245,7 +1267,6 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('listenerPort', ros.validateNumber)(properties.listenerPort));
-    errors.collect(ros.propertyValidator('vServerGroupId', ros.validateString)(properties.vServerGroupId));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -1308,10 +1329,9 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
-    errors.collect(ros.propertyValidator('masterSlaveServerGroupId', ros.validateString)(properties.masterSlaveServerGroupId));
     errors.collect(ros.propertyValidator('serverCertificateId', ros.validateString)(properties.serverCertificateId));
+    errors.collect(ros.propertyValidator('masterSlaveServerGroupId', ros.validateString)(properties.masterSlaveServerGroupId));
     errors.collect(ros.propertyValidator('startListener', ros.validateBoolean)(properties.startListener));
-    errors.collect(ros.propertyValidator('httpConfig', RosListener_HttpConfigPropertyValidator)(properties.httpConfig));
     if(properties.aclType && (typeof properties.aclType) !== 'object') {
         errors.collect(ros.propertyValidator('aclType', ros.validateAllowedValues)({
           data: properties.aclType,
@@ -1319,6 +1339,8 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('aclType', ros.validateString)(properties.aclType));
+    errors.collect(ros.propertyValidator('httpConfig', RosListener_HttpConfigPropertyValidator)(properties.httpConfig));
+    errors.collect(ros.propertyValidator('enableHttp2', ros.validateString)(properties.enableHttp2));
     errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
         errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
@@ -1354,6 +1376,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       AclType: ros.stringToRosTemplate(properties.aclType),
       CACertificateId: ros.stringToRosTemplate(properties.caCertificateId),
       Description: ros.stringToRosTemplate(properties.description),
+      EnableHttp2: ros.stringToRosTemplate(properties.enableHttp2),
       HealthCheck: rosListenerHealthCheckPropertyToRosTemplate(properties.healthCheck),
       HttpConfig: rosListenerHttpConfigPropertyToRosTemplate(properties.httpConfig),
       IdleTimeout: ros.numberToRosTemplate(properties.idleTimeout),
@@ -1456,6 +1479,13 @@ export class RosListener extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+     * on: yes
+     * off: no
+     */
+    public enableHttp2: string | ros.IResolvable | undefined;
+
+    /**
      * @Property healthCheck: The properties of health checking setting.
      */
     public healthCheck: RosListener.HealthCheckProperty | ros.IResolvable | undefined;
@@ -1539,6 +1569,7 @@ export class RosListener extends ros.RosResource {
         this.aclType = props.aclType;
         this.caCertificateId = props.caCertificateId;
         this.description = props.description;
+        this.enableHttp2 = props.enableHttp2;
         this.healthCheck = props.healthCheck;
         this.httpConfig = props.httpConfig;
         this.idleTimeout = props.idleTimeout;
@@ -1565,6 +1596,7 @@ export class RosListener extends ros.RosResource {
             aclType: this.aclType,
             caCertificateId: this.caCertificateId,
             description: this.description,
+            enableHttp2: this.enableHttp2,
             healthCheck: this.healthCheck,
             httpConfig: this.httpConfig,
             idleTimeout: this.idleTimeout,

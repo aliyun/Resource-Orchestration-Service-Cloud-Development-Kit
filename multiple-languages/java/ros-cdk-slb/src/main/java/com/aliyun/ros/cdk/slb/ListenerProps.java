@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.396Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.527Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -85,6 +85,17 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      * Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     * Property enableHttp2: Specifies whether to use HTTP/2.
+     * <p>
+     * It takes effect when Protocol=https. Valid values:
+     * on: yes
+     * off: no
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableHttp2() {
         return null;
     }
 
@@ -201,6 +212,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object aclType;
         java.lang.Object caCertificateId;
         java.lang.Object description;
+        java.lang.Object enableHttp2;
         java.lang.Object healthCheck;
         java.lang.Object httpConfig;
         java.lang.Object idleTimeout;
@@ -440,6 +452,32 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getEnableHttp2}
+         * @param enableHttp2 Property enableHttp2: Specifies whether to use HTTP/2.
+         *                    It takes effect when Protocol=https. Valid values:
+         *                    on: yes
+         *                    off: no
+         * @return {@code this}
+         */
+        public Builder enableHttp2(java.lang.String enableHttp2) {
+            this.enableHttp2 = enableHttp2;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getEnableHttp2}
+         * @param enableHttp2 Property enableHttp2: Specifies whether to use HTTP/2.
+         *                    It takes effect when Protocol=https. Valid values:
+         *                    on: yes
+         *                    off: no
+         * @return {@code this}
+         */
+        public Builder enableHttp2(com.aliyun.ros.cdk.core.IResolvable enableHttp2) {
+            this.enableHttp2 = enableHttp2;
             return this;
         }
 
@@ -711,6 +749,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object aclType;
         private final java.lang.Object caCertificateId;
         private final java.lang.Object description;
+        private final java.lang.Object enableHttp2;
         private final java.lang.Object healthCheck;
         private final java.lang.Object httpConfig;
         private final java.lang.Object idleTimeout;
@@ -739,6 +778,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.aclType = software.amazon.jsii.Kernel.get(this, "aclType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.caCertificateId = software.amazon.jsii.Kernel.get(this, "caCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableHttp2 = software.amazon.jsii.Kernel.get(this, "enableHttp2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheck = software.amazon.jsii.Kernel.get(this, "healthCheck", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.httpConfig = software.amazon.jsii.Kernel.get(this, "httpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -767,6 +807,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.aclType = builder.aclType;
             this.caCertificateId = builder.caCertificateId;
             this.description = builder.description;
+            this.enableHttp2 = builder.enableHttp2;
             this.healthCheck = builder.healthCheck;
             this.httpConfig = builder.httpConfig;
             this.idleTimeout = builder.idleTimeout;
@@ -828,6 +869,11 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getEnableHttp2() {
+            return this.enableHttp2;
         }
 
         @Override
@@ -911,6 +957,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getEnableHttp2() != null) {
+                data.set("enableHttp2", om.valueToTree(this.getEnableHttp2()));
+            }
             if (this.getHealthCheck() != null) {
                 data.set("healthCheck", om.valueToTree(this.getHealthCheck()));
             }
@@ -972,6 +1021,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.aclType != null ? !this.aclType.equals(that.aclType) : that.aclType != null) return false;
             if (this.caCertificateId != null ? !this.caCertificateId.equals(that.caCertificateId) : that.caCertificateId != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.enableHttp2 != null ? !this.enableHttp2.equals(that.enableHttp2) : that.enableHttp2 != null) return false;
             if (this.healthCheck != null ? !this.healthCheck.equals(that.healthCheck) : that.healthCheck != null) return false;
             if (this.httpConfig != null ? !this.httpConfig.equals(that.httpConfig) : that.httpConfig != null) return false;
             if (this.idleTimeout != null ? !this.idleTimeout.equals(that.idleTimeout) : that.idleTimeout != null) return false;
@@ -997,6 +1047,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.aclType != null ? this.aclType.hashCode() : 0);
             result = 31 * result + (this.caCertificateId != null ? this.caCertificateId.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.enableHttp2 != null ? this.enableHttp2.hashCode() : 0);
             result = 31 * result + (this.healthCheck != null ? this.healthCheck.hashCode() : 0);
             result = 31 * result + (this.httpConfig != null ? this.httpConfig.hashCode() : 0);
             result = 31 * result + (this.idleTimeout != null ? this.idleTimeout.hashCode() : 0);
