@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::AnycastEIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.609Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.813Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosAnycastEIP")
 public class RosAnycastEIP extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -77,6 +77,24 @@ public class RosAnycastEIP extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
+        return software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBandwidth(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidth", value);
+    }
+
+    /**
+     */
+    public void setBandwidth(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidth", value);
     }
 
     /**
@@ -193,6 +211,23 @@ public class RosAnycastEIP extends com.aliyun.ros.cdk.core.RosResource {
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
             this.props = new com.aliyun.ros.cdk.vpc.RosAnycastEIPProps.Builder();
+        }
+
+        /**
+         * @return {@code this}
+         * @param bandwidth This parameter is required.
+         */
+        public Builder bandwidth(final java.lang.Number bandwidth) {
+            this.props.bandwidth(bandwidth);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bandwidth This parameter is required.
+         */
+        public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.props.bandwidth(bandwidth);
+            return this;
         }
 
         /**

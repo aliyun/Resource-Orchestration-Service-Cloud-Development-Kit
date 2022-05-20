@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS template type:  `ALIYUN::REDIS::PrepayInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.195Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.269Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstance")
 public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -297,24 +297,6 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getCapacity() {
-        return software.amazon.jsii.Kernel.get(this, "capacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setCapacity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "capacity", value);
-    }
-
-    /**
-     */
-    public void setCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "capacity", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getConnections() {
         return software.amazon.jsii.Kernel.get(this, "connections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -491,6 +473,42 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setProductType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "productType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecondaryZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryZoneId", value);
+    }
+
+    /**
+     */
+    public void setSecondaryZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryZoneId", value);
     }
 
     /**
@@ -2153,23 +2171,6 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param capacity This parameter is required.
-         */
-        public Builder capacity(final java.lang.Number capacity) {
-            this.props.capacity(capacity);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param capacity This parameter is required.
-         */
-        public Builder capacity(final com.aliyun.ros.cdk.core.IResolvable capacity) {
-            this.props.capacity(capacity);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param connections This parameter is required.
          */
         public Builder connections(final com.aliyun.ros.cdk.core.IResolvable connections) {
@@ -2335,6 +2336,40 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder productType(final com.aliyun.ros.cdk.core.IResolvable productType) {
             this.props.productType(productType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param secondaryZoneId This parameter is required.
+         */
+        public Builder secondaryZoneId(final java.lang.String secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param secondaryZoneId This parameter is required.
+         */
+        public Builder secondaryZoneId(final com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
             return this;
         }
 

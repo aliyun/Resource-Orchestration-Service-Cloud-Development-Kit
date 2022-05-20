@@ -391,6 +391,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             set;
         }
 
+        /// <summary>Property masterZoneIds: Zone ids of master node virtual switches belongs to.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "masterZoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? MasterZoneIds
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.</summary>
         /// <remarks>
         /// This number is determined by the specified pod CIDR block.
@@ -725,6 +734,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiOptional]
         [JsiiProperty(name: "workerSystemDiskSnapshotPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? WorkerSystemDiskSnapshotPolicyId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property workerZoneIds: Zone ids of worker node virtual switches belongs to.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "workerZoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? WorkerZoneIds
         {
             get;
             set;

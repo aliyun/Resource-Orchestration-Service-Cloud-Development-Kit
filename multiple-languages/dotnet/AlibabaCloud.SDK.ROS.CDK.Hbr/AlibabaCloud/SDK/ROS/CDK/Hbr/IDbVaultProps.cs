@@ -43,6 +43,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-hbr.RosDbVault.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Hbr.RosDbVault.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::HBR::DbVault`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IDbVaultProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.DbVaultProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hbr.IDbVaultProps
@@ -81,6 +95,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             public object? Description
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-hbr.RosDbVault.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Hbr.RosDbVault.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Hbr.RosDbVault.ITagsProperty[]?>();
             }
         }
     }

@@ -36,6 +36,12 @@ export interface CenRouteServiceProps {
     readonly hostVpcId: string | ros.IResolvable;
 
     /**
+     * Property conflictIgnore: Whether to ignore conflict when creating. If true, when the CloudRoute.Conflict error code is encountered during creation, it will be ignored as the creation is successful, and the deletion phase will be skipped.
+     * Default false.
+     */
+    readonly conflictIgnore?: boolean | ros.IResolvable;
+
+    /**
      * Property description: The description of the cloud service.
      */
     readonly description?: string | ros.IResolvable;
@@ -67,6 +73,7 @@ export class CenRouteService extends ros.Resource {
         super(scope, id);
 
         const rosCenRouteService = new RosCenRouteService(this, id,  {
+            conflictIgnore: props.conflictIgnore === undefined || props.conflictIgnore === null ? false : props.conflictIgnore,
             description: props.description,
             hostRegionId: props.hostRegionId,
             cenId: props.cenId,

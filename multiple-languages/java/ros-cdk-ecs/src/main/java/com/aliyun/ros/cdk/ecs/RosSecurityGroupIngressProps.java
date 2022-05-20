@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroupIngress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.867Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.976Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupIngressProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityGroupIngressProps.Jsii$Proxy.class)
 public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiSerializable {
@@ -77,6 +77,12 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourcePrefixListId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosSecurityGroupIngressProps}
      */
     static Builder builder() {
@@ -98,6 +104,7 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
         java.lang.Object sourceGroupId;
         java.lang.Object sourceGroupOwnerId;
         java.lang.Object sourcePortRange;
+        java.lang.Object sourcePrefixListId;
 
         /**
          * Sets the value of {@link RosSecurityGroupIngressProps#getIpProtocol}
@@ -340,6 +347,26 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
         }
 
         /**
+         * Sets the value of {@link RosSecurityGroupIngressProps#getSourcePrefixListId}
+         * @param sourcePrefixListId the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourcePrefixListId(java.lang.String sourcePrefixListId) {
+            this.sourcePrefixListId = sourcePrefixListId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecurityGroupIngressProps#getSourcePrefixListId}
+         * @param sourcePrefixListId the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourcePrefixListId(com.aliyun.ros.cdk.core.IResolvable sourcePrefixListId) {
+            this.sourcePrefixListId = sourcePrefixListId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosSecurityGroupIngressProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -367,6 +394,7 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
         private final java.lang.Object sourceGroupId;
         private final java.lang.Object sourceGroupOwnerId;
         private final java.lang.Object sourcePortRange;
+        private final java.lang.Object sourcePrefixListId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -386,6 +414,7 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
             this.sourceGroupId = software.amazon.jsii.Kernel.get(this, "sourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceGroupOwnerId = software.amazon.jsii.Kernel.get(this, "sourceGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourcePrefixListId = software.amazon.jsii.Kernel.get(this, "sourcePrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -405,6 +434,7 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
             this.sourceGroupId = builder.sourceGroupId;
             this.sourceGroupOwnerId = builder.sourceGroupOwnerId;
             this.sourcePortRange = builder.sourcePortRange;
+            this.sourcePrefixListId = builder.sourcePrefixListId;
         }
 
         @Override
@@ -468,6 +498,11 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
         }
 
         @Override
+        public final java.lang.Object getSourcePrefixListId() {
+            return this.sourcePrefixListId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -505,6 +540,9 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
             if (this.getSourcePortRange() != null) {
                 data.set("sourcePortRange", om.valueToTree(this.getSourcePortRange()));
             }
+            if (this.getSourcePrefixListId() != null) {
+                data.set("sourcePrefixListId", om.valueToTree(this.getSourcePrefixListId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosSecurityGroupIngressProps"));
@@ -534,7 +572,8 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
             if (this.sourceCidrIp != null ? !this.sourceCidrIp.equals(that.sourceCidrIp) : that.sourceCidrIp != null) return false;
             if (this.sourceGroupId != null ? !this.sourceGroupId.equals(that.sourceGroupId) : that.sourceGroupId != null) return false;
             if (this.sourceGroupOwnerId != null ? !this.sourceGroupOwnerId.equals(that.sourceGroupOwnerId) : that.sourceGroupOwnerId != null) return false;
-            return this.sourcePortRange != null ? this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange == null;
+            if (this.sourcePortRange != null ? !this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange != null) return false;
+            return this.sourcePrefixListId != null ? this.sourcePrefixListId.equals(that.sourcePrefixListId) : that.sourcePrefixListId == null;
         }
 
         @Override
@@ -551,6 +590,7 @@ public interface RosSecurityGroupIngressProps extends software.amazon.jsii.JsiiS
             result = 31 * result + (this.sourceGroupId != null ? this.sourceGroupId.hashCode() : 0);
             result = 31 * result + (this.sourceGroupOwnerId != null ? this.sourceGroupOwnerId.hashCode() : 0);
             result = 31 * result + (this.sourcePortRange != null ? this.sourcePortRange.hashCode() : 0);
+            result = 31 * result + (this.sourcePrefixListId != null ? this.sourcePrefixListId.hashCode() : 0);
             return result;
         }
     }

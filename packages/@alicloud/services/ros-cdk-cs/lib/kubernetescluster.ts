@@ -221,6 +221,11 @@ export interface KubernetesClusterProps {
     readonly masterSystemDiskSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
+     * Property masterZoneIds: Zone ids of master node virtual switches belongs to.
+     */
+    readonly masterZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
      * This number is determined by the specified pod CIDR block. 
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -397,6 +402,11 @@ export interface KubernetesClusterProps {
      * Property workerSystemDiskSnapshotPolicyId: The ID of the policy that is used to back up the data disk of the worker node.
      */
     readonly workerSystemDiskSnapshotPolicyId?: string | ros.IResolvable;
+
+    /**
+     * Property workerZoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    readonly workerZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -483,7 +493,9 @@ export class KubernetesCluster extends ros.Resource {
             masterDataDisks: props.masterDataDisks,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
             runtime: props.runtime,
+            masterZoneIds: props.masterZoneIds,
             osType: props.osType,
+            workerZoneIds: props.workerZoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             tags: props.tags,

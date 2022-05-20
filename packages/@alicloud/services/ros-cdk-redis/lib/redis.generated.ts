@@ -228,11 +228,6 @@ export interface RosInstanceProps {
     readonly backupPolicy?: RosInstance.BackupPolicyProperty | ros.IResolvable;
 
     /**
-     * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
-     */
-    readonly capacity?: number | ros.IResolvable;
-
-    /**
      * @Property chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
      * PrePaid: subscription.
      * PostPaid: pay-as-you-go.
@@ -289,6 +284,16 @@ export interface RosInstanceProps {
      * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     readonly productType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property secondaryZoneId: The secondary zone ID of the instance.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -349,6 +354,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.evictionPolicy && (typeof properties.evictionPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('evictionPolicy', ros.validateAllowedValues)({
@@ -370,6 +376,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
+    errors.collect(ros.propertyValidator('secondaryZoneId', ros.validateString)(properties.secondaryZoneId));
     if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateRange)({
             data: properties.autoRenewDuration,
@@ -388,13 +395,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
-    if(properties.capacity && (typeof properties.capacity) !== 'object') {
-        errors.collect(ros.propertyValidator('capacity', ros.validateAllowedValues)({
-          data: properties.capacity,
-          allowedValues: [1,2,4,8,16,32,64,128,256,512],
-        }));
-    }
-    errors.collect(ros.propertyValidator('capacity', ros.validateNumber)(properties.capacity));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
@@ -431,7 +431,6 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
     return {
       AutoRenewDuration: ros.numberToRosTemplate(properties.autoRenewDuration),
       BackupPolicy: rosInstanceBackupPolicyPropertyToRosTemplate(properties.backupPolicy),
-      Capacity: ros.numberToRosTemplate(properties.capacity),
       ChargeType: ros.stringToRosTemplate(properties.chargeType),
       Connections: rosInstanceConnectionsPropertyToRosTemplate(properties.connections),
       DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
@@ -443,6 +442,8 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
       ProductType: ros.stringToRosTemplate(properties.productType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecondaryZoneId: ros.stringToRosTemplate(properties.secondaryZoneId),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
@@ -639,11 +640,6 @@ export class RosInstance extends ros.RosResource {
     public backupPolicy: RosInstance.BackupPolicyProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
-     */
-    public capacity: number | ros.IResolvable | undefined;
-
-    /**
      * @Property chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
      * PrePaid: subscription.
      * PostPaid: pay-as-you-go.
@@ -700,6 +696,16 @@ export class RosInstance extends ros.RosResource {
      * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     public productType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property secondaryZoneId: The secondary zone ID of the instance.
+     */
+    public secondaryZoneId: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -785,7 +791,6 @@ export class RosInstance extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.autoRenewDuration = props.autoRenewDuration;
         this.backupPolicy = props.backupPolicy;
-        this.capacity = props.capacity;
         this.chargeType = props.chargeType;
         this.connections = props.connections;
         this.deletionForce = props.deletionForce;
@@ -797,6 +802,8 @@ export class RosInstance extends ros.RosResource {
         this.password = props.password;
         this.period = props.period;
         this.productType = props.productType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.secondaryZoneId = props.secondaryZoneId;
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
@@ -811,7 +818,6 @@ export class RosInstance extends ros.RosResource {
         return {
             autoRenewDuration: this.autoRenewDuration,
             backupPolicy: this.backupPolicy,
-            capacity: this.capacity,
             chargeType: this.chargeType,
             connections: this.connections,
             deletionForce: this.deletionForce,
@@ -823,6 +829,8 @@ export class RosInstance extends ros.RosResource {
             password: this.password,
             period: this.period,
             productType: this.productType,
+            resourceGroupId: this.resourceGroupId,
+            secondaryZoneId: this.secondaryZoneId,
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
             tags: this.tags,
@@ -1354,11 +1362,6 @@ export interface RosPrepayInstanceProps {
     readonly backupPolicy?: RosPrepayInstance.BackupPolicyProperty | ros.IResolvable;
 
     /**
-     * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
-     */
-    readonly capacity?: number | ros.IResolvable;
-
-    /**
      * @Property connections: Connection address
      */
     readonly connections?: RosPrepayInstance.ConnectionsProperty | ros.IResolvable;
@@ -1407,6 +1410,16 @@ export interface RosPrepayInstanceProps {
      * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     readonly productType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property secondaryZoneId: The secondary zone ID of the instance.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -1467,6 +1480,8 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.evictionPolicy && (typeof properties.evictionPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('evictionPolicy', ros.validateAllowedValues)({
           data: properties.evictionPolicy,
@@ -1474,9 +1489,8 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('evictionPolicy', ros.validateString)(properties.evictionPolicy));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
     errors.collect(ros.propertyValidator('instanceMaintainTime', RosPrepayInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     if(properties.period && (typeof properties.period) !== 'object') {
@@ -1489,6 +1503,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('secondaryZoneId', ros.validateString)(properties.secondaryZoneId));
     if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateRange)({
             data: properties.autoRenewDuration,
@@ -1499,6 +1514,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
         errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
           data: properties.sslEnabled,
@@ -1506,14 +1522,6 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    if(properties.capacity && (typeof properties.capacity) !== 'object') {
-        errors.collect(ros.propertyValidator('capacity', ros.validateAllowedValues)({
-          data: properties.capacity,
-          allowedValues: [1,2,4,8,16,32,64,128,256,512],
-        }));
-    }
-    errors.collect(ros.propertyValidator('capacity', ros.validateNumber)(properties.capacity));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1544,7 +1552,6 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       AutoRenewDuration: ros.numberToRosTemplate(properties.autoRenewDuration),
       BackupPolicy: rosPrepayInstanceBackupPolicyPropertyToRosTemplate(properties.backupPolicy),
-      Capacity: ros.numberToRosTemplate(properties.capacity),
       Connections: rosPrepayInstanceConnectionsPropertyToRosTemplate(properties.connections),
       DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
@@ -1555,6 +1562,8 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
       ProductType: ros.stringToRosTemplate(properties.productType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecondaryZoneId: ros.stringToRosTemplate(properties.secondaryZoneId),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosPrepayInstanceTagsPropertyToRosTemplate)(properties.tags),
@@ -1759,11 +1768,6 @@ export class RosPrepayInstance extends ros.RosResource {
     public backupPolicy: RosPrepayInstance.BackupPolicyProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
-     */
-    public capacity: number | ros.IResolvable | undefined;
-
-    /**
      * @Property connections: Connection address
      */
     public connections: RosPrepayInstance.ConnectionsProperty | ros.IResolvable | undefined;
@@ -1812,6 +1816,16 @@ export class RosPrepayInstance extends ros.RosResource {
      * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     public productType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property secondaryZoneId: The secondary zone ID of the instance.
+     */
+    public secondaryZoneId: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -1898,7 +1912,6 @@ export class RosPrepayInstance extends ros.RosResource {
         this.autoPay = props.autoPay;
         this.autoRenewDuration = props.autoRenewDuration;
         this.backupPolicy = props.backupPolicy;
-        this.capacity = props.capacity;
         this.connections = props.connections;
         this.deletionForce = props.deletionForce;
         this.engineVersion = props.engineVersion;
@@ -1909,6 +1922,8 @@ export class RosPrepayInstance extends ros.RosResource {
         this.password = props.password;
         this.period = props.period;
         this.productType = props.productType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.secondaryZoneId = props.secondaryZoneId;
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
@@ -1924,7 +1939,6 @@ export class RosPrepayInstance extends ros.RosResource {
             autoPay: this.autoPay,
             autoRenewDuration: this.autoRenewDuration,
             backupPolicy: this.backupPolicy,
-            capacity: this.capacity,
             connections: this.connections,
             deletionForce: this.deletionForce,
             engineVersion: this.engineVersion,
@@ -1935,6 +1949,8 @@ export class RosPrepayInstance extends ros.RosResource {
             password: this.password,
             period: this.period,
             productType: this.productType,
+            resourceGroupId: this.resourceGroupId,
+            secondaryZoneId: this.secondaryZoneId,
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
             tags: this.tags,

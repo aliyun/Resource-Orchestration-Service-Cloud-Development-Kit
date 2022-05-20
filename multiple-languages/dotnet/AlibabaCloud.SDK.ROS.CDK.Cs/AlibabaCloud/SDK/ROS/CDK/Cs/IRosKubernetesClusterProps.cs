@@ -445,6 +445,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: masterZoneIds: Zone ids of master node virtual switches belongs to.
+        /// </remarks>
+        [JsiiProperty(name: "masterZoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MasterZoneIds
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
         /// This number is determined by the specified pod CIDR block.
         /// This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -838,6 +851,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: workerZoneIds: Zone ids of worker node virtual switches belongs to.
+        /// </remarks>
+        [JsiiProperty(name: "workerZoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? WorkerZoneIds
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::CS::KubernetesCluster`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRosKubernetesClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IRosKubernetesClusterProps
@@ -1208,6 +1234,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: masterZoneIds: Zone ids of master node virtual switches belongs to.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "masterZoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? MasterZoneIds
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
             /// This number is determined by the specified pod CIDR block.
             /// This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -1516,6 +1552,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "workerSystemDiskSnapshotPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? WorkerSystemDiskSnapshotPolicyId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: workerZoneIds: Zone ids of worker node virtual switches belongs to.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "workerZoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? WorkerZoneIds
             {
                 get => GetInstanceProperty<object?>();
             }

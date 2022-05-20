@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::CenRouteService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.971Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.059Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenRouteService")
 public class RosCenRouteService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -153,6 +153,24 @@ public class RosCenRouteService extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConflictIgnore() {
+        return software.amazon.jsii.Kernel.get(this, "conflictIgnore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setConflictIgnore(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "conflictIgnore", value);
+    }
+
+    /**
+     */
+    public void setConflictIgnore(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "conflictIgnore", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -277,6 +295,23 @@ public class RosCenRouteService extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder hostVpcId(final com.aliyun.ros.cdk.core.IResolvable hostVpcId) {
             this.props.hostVpcId(hostVpcId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param conflictIgnore This parameter is required.
+         */
+        public Builder conflictIgnore(final java.lang.Boolean conflictIgnore) {
+            this.props.conflictIgnore(conflictIgnore);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param conflictIgnore This parameter is required.
+         */
+        public Builder conflictIgnore(final com.aliyun.ros.cdk.core.IResolvable conflictIgnore) {
+            this.props.conflictIgnore(conflictIgnore);
             return this;
         }
 

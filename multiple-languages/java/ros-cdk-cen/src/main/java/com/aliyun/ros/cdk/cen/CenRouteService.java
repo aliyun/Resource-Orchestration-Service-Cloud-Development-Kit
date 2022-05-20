@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS resource type:  `ALIYUN::CEN::CenRouteService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.038Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenRouteService")
 public class CenRouteService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -199,6 +199,33 @@ public class CenRouteService extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder hostVpcId(final com.aliyun.ros.cdk.core.IResolvable hostVpcId) {
             this.props.hostVpcId(hostVpcId);
+            return this;
+        }
+
+        /**
+         * Property conflictIgnore: Whether to ignore conflict when creating.
+         * <p>
+         * If true, when the CloudRoute.Conflict error code is encountered during creation, it will be ignored as the creation is successful, and the deletion phase will be skipped.
+         * Default false.
+         * <p>
+         * @return {@code this}
+         * @param conflictIgnore Property conflictIgnore: Whether to ignore conflict when creating. This parameter is required.
+         */
+        public Builder conflictIgnore(final java.lang.Boolean conflictIgnore) {
+            this.props.conflictIgnore(conflictIgnore);
+            return this;
+        }
+        /**
+         * Property conflictIgnore: Whether to ignore conflict when creating.
+         * <p>
+         * If true, when the CloudRoute.Conflict error code is encountered during creation, it will be ignored as the creation is successful, and the deletion phase will be skipped.
+         * Default false.
+         * <p>
+         * @return {@code this}
+         * @param conflictIgnore Property conflictIgnore: Whether to ignore conflict when creating. This parameter is required.
+         */
+        public Builder conflictIgnore(final com.aliyun.ros.cdk.core.IResolvable conflictIgnore) {
+            this.props.conflictIgnore(conflictIgnore);
             return this;
         }
 

@@ -99,6 +99,11 @@ export interface RosContainerGroupProps {
     readonly ramRoleName?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property restartPolicy: The policy for restarting the instance. Default value: Always.
      */
     readonly restartPolicy?: string | ros.IResolvable;
@@ -161,6 +166,7 @@ export interface RosContainerGroupProps {
 function RosContainerGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('securityContextSysctl', ros.listValidator(RosContainerGroup_SecurityContextSysctlPropertyValidator))(properties.securityContextSysctl));
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('initContainer', ros.listValidator(RosContainerGroup_InitContainerPropertyValidator))(properties.initContainer));
@@ -267,6 +273,7 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
       Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
       Memory: ros.numberToRosTemplate(properties.memory),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RestartPolicy: ros.stringToRosTemplate(properties.restartPolicy),
       SecurityContextSysctl: ros.listMapper(rosContainerGroupSecurityContextSysctlPropertyToRosTemplate)(properties.securityContextSysctl),
       SlsEnable: ros.booleanToRosTemplate(properties.slsEnable),
@@ -438,6 +445,11 @@ export class RosContainerGroup extends ros.RosResource {
     public ramRoleName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property restartPolicy: The policy for restarting the instance. Default value: Always.
      */
     public restartPolicy: string | ros.IResolvable | undefined;
@@ -528,6 +540,7 @@ export class RosContainerGroup extends ros.RosResource {
         this.ipv6AddressCount = props.ipv6AddressCount;
         this.memory = props.memory;
         this.ramRoleName = props.ramRoleName;
+        this.resourceGroupId = props.resourceGroupId;
         this.restartPolicy = props.restartPolicy;
         this.securityContextSysctl = props.securityContextSysctl;
         this.slsEnable = props.slsEnable;
@@ -560,6 +573,7 @@ export class RosContainerGroup extends ros.RosResource {
             ipv6AddressCount: this.ipv6AddressCount,
             memory: this.memory,
             ramRoleName: this.ramRoleName,
+            resourceGroupId: this.resourceGroupId,
             restartPolicy: this.restartPolicy,
             securityContextSysctl: this.securityContextSysctl,
             slsEnable: this.slsEnable,
@@ -2157,7 +2171,7 @@ export interface RosImageCacheProps {
     readonly imageRegistryCredential?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property resourceGroupId: Resource group.
+     * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 }
@@ -2277,7 +2291,7 @@ export class RosImageCache extends ros.RosResource {
     public imageRegistryCredential: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceGroupId: Resource group.
+     * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
 

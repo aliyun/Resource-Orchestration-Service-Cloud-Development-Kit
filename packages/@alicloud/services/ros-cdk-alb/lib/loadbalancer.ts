@@ -51,6 +51,11 @@ export interface LoadBalancerProps {
     readonly addressAllocatedMode?: string | ros.IResolvable;
 
     /**
+     * Property bandwidthPackageId: Attach common bandwidth package to load balancer. It only takes effect when AddressType=Internet.
+     */
+    readonly bandwidthPackageId?: string | ros.IResolvable;
+
+    /**
      * Property deletionProtectionEnabled: Specifies whether to enable deletion protection. Default value: false.
      */
     readonly deletionProtectionEnabled?: boolean | ros.IResolvable;
@@ -124,14 +129,15 @@ export class LoadBalancer extends ros.Resource {
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
             loadBalancerName: props.loadBalancerName,
             loadBalancerEdition: props.loadBalancerEdition,
-            vpcId: props.vpcId,
             resourceGroupId: props.resourceGroupId,
+            vpcId: props.vpcId,
             loadBalancerBillingConfig: props.loadBalancerBillingConfig,
+            bandwidthPackageId: props.bandwidthPackageId,
             addressType: props.addressType,
             addressAllocatedMode: props.addressAllocatedMode,
             zoneMappings: props.zoneMappings,
-            deletionProtectionEnabled: props.deletionProtectionEnabled,
             modificationProtectionConfig: props.modificationProtectionConfig,
+            deletionProtectionEnabled: props.deletionProtectionEnabled,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLoadBalancer;

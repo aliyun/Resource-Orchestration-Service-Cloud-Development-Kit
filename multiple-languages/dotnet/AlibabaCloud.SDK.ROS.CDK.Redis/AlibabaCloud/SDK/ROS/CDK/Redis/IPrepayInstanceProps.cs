@@ -53,17 +53,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
-        /// <summary>Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.</summary>
-        [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Capacity
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property connections: Connection address.</summary>
         [JsiiProperty(name: "connections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -179,6 +168,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         [JsiiProperty(name: "productType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ProductType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property secondaryZoneId: The secondary zone ID of the instance.</summary>
+        [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecondaryZoneId
         {
             get
             {
@@ -327,14 +338,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.</summary>
-            [JsiiOptional]
-            [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Capacity
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
             /// <summary>Property connections: Connection address.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "connections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty\"}]}}", isOptional: true)]
@@ -423,6 +426,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "productType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProductType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: Resource group id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property secondaryZoneId: The secondary zone ID of the instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecondaryZoneId
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -39,7 +39,7 @@ export interface ImageCacheProps {
     readonly imageRegistryCredential?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property resourceGroupId: Resource group.
+     * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 }

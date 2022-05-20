@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Plugin`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.757Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.844Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.PluginProps")
 @software.amazon.jsii.Jsii.Proxy(PluginProps.Jsii$Proxy.class)
 public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,15 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link PluginProps}
      */
     static Builder builder() {
@@ -50,6 +59,7 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object pluginName;
         java.lang.Object pluginType;
         java.lang.Object description;
+        java.util.List<com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty> tags;
 
         /**
          * Sets the value of {@link PluginProps#getPluginData}
@@ -138,6 +148,18 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link PluginProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link PluginProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -157,6 +179,7 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object pluginName;
         private final java.lang.Object pluginType;
         private final java.lang.Object description;
+        private final java.util.List<com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -168,17 +191,20 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
             this.pluginName = software.amazon.jsii.Kernel.get(this, "pluginName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pluginType = software.amazon.jsii.Kernel.get(this, "pluginType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.pluginData = java.util.Objects.requireNonNull(builder.pluginData, "pluginData is required");
             this.pluginName = java.util.Objects.requireNonNull(builder.pluginName, "pluginName is required");
             this.pluginType = java.util.Objects.requireNonNull(builder.pluginType, "pluginType is required");
             this.description = builder.description;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -202,6 +228,11 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -212,6 +243,9 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
             data.set("pluginType", om.valueToTree(this.getPluginType()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -234,7 +268,8 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
             if (!pluginData.equals(that.pluginData)) return false;
             if (!pluginName.equals(that.pluginName)) return false;
             if (!pluginType.equals(that.pluginType)) return false;
-            return this.description != null ? this.description.equals(that.description) : that.description == null;
+            if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -243,6 +278,7 @@ public interface PluginProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.pluginName.hashCode());
             result = 31 * result + (this.pluginType.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

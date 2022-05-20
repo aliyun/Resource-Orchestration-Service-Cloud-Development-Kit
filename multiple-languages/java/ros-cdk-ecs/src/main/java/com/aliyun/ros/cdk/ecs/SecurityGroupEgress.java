@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::SecurityGroupEgress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.000Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupEgress")
 public class SecurityGroupEgress extends com.aliyun.ros.cdk.core.Resource {
 
@@ -217,6 +217,35 @@ public class SecurityGroupEgress extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder destGroupOwnerId(final com.aliyun.ros.cdk.core.IResolvable destGroupOwnerId) {
             this.props.destGroupOwnerId(destGroupOwnerId);
+            return this;
+        }
+
+        /**
+         * Property destPrefixListId: The ID of the destination prefix list to which you want to control access.
+         * <p>
+         * You can call the DescribePrefixLists operation to query the IDs of available prefix lists.Take note of the following items:
+         * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" in Limits.
+         * If you specify DestCidrIp, Ipv6DestCidrIp, or DestGroupId, DestPrefixListId is ignored.
+         * <p>
+         * @return {@code this}
+         * @param destPrefixListId Property destPrefixListId: The ID of the destination prefix list to which you want to control access. This parameter is required.
+         */
+        public Builder destPrefixListId(final java.lang.String destPrefixListId) {
+            this.props.destPrefixListId(destPrefixListId);
+            return this;
+        }
+        /**
+         * Property destPrefixListId: The ID of the destination prefix list to which you want to control access.
+         * <p>
+         * You can call the DescribePrefixLists operation to query the IDs of available prefix lists.Take note of the following items:
+         * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" in Limits.
+         * If you specify DestCidrIp, Ipv6DestCidrIp, or DestGroupId, DestPrefixListId is ignored.
+         * <p>
+         * @return {@code this}
+         * @param destPrefixListId Property destPrefixListId: The ID of the destination prefix list to which you want to control access. This parameter is required.
+         */
+        public Builder destPrefixListId(final com.aliyun.ros.cdk.core.IResolvable destPrefixListId) {
+            this.props.destPrefixListId(destPrefixListId);
             return this;
         }
 

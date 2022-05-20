@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::App`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.739Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.827Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.App")
 public class App extends com.aliyun.ros.cdk.core.Resource {
 
@@ -111,20 +111,20 @@ public class App extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.
          * <p>
          * @return {@code this}
-         * @param appName Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param appName Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          */
         public Builder appName(final java.lang.String appName) {
             this.props.appName(appName);
             return this;
         }
         /**
-         * Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.
          * <p>
          * @return {@code this}
-         * @param appName Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param appName Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          */
         public Builder appName(final com.aliyun.ros.cdk.core.IResolvable appName) {
             this.props.appName(appName);

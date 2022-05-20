@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Properties for defining a `ALIYUN::DNS::Domain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.432Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.525Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,13 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
      * Property groupId: Domain name grouping, the default is the "default grouping" GroupId.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroupId() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -41,6 +48,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<DomainProps> {
         java.lang.Object domainName;
         java.lang.Object groupId;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags;
 
         /**
@@ -84,6 +92,26 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DomainProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DomainProps#getTags}
          * @param tags Property tags: Tags to attach to instance.
          *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -113,6 +141,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DomainProps {
         private final java.lang.Object domainName;
         private final java.lang.Object groupId;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags;
 
         /**
@@ -123,6 +152,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dns.RosDomain.TagsProperty.class)));
         }
 
@@ -134,6 +164,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
             this.groupId = builder.groupId;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty>)builder.tags;
         }
 
@@ -145,6 +176,11 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getGroupId() {
             return this.groupId;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -161,6 +197,9 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             data.set("domainName", om.valueToTree(this.getDomainName()));
             if (this.getGroupId() != null) {
                 data.set("groupId", om.valueToTree(this.getGroupId()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -185,6 +224,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!domainName.equals(that.domainName)) return false;
             if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -192,6 +232,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.domainName.hashCode();
             result = 31 * result + (this.groupId != null ? this.groupId.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

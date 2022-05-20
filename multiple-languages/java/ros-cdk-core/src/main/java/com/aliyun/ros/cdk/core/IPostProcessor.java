@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A Token that can post-process the complete resolved value, after resolve() has recursed over it.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.568Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.661Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IPostProcessor")
 @software.amazon.jsii.Jsii.Proxy(IPostProcessor.Jsii$Proxy.class)
 public interface IPostProcessor extends software.amazon.jsii.JsiiSerializable {

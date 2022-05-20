@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * A ROS resource type:  `ALIYUN::GPDB::InstancePublicConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.466Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.569Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.InstancePublicConnection")
 public class InstancePublicConnection extends com.aliyun.ros.cdk.core.Resource {
 

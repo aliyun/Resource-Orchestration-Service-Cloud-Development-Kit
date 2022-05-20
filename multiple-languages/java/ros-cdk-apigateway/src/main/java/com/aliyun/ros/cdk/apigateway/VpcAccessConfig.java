@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::VpcAccessConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.818Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.907Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.VpcAccessConfig")
 public class VpcAccessConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -104,20 +104,20 @@ public class VpcAccessConfig extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
+         * Property name: The name of one VPC access configuration.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character. This parameter is required.
+         * @param name Property name: The name of one VPC access configuration. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
+         * Property name: The name of one VPC access configuration.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character. This parameter is required.
+         * @param name Property name: The name of one VPC access configuration. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);

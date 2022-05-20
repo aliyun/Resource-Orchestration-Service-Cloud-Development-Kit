@@ -8,6 +8,11 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosAnycastEIPProps {
 
     /**
+     * @Property bandwidth: Anycast EIP instance bandwidth
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
      * @Property description: Anycast EIP instance description
      */
     readonly description?: string | ros.IResolvable;
@@ -58,6 +63,8 @@ function RosAnycastEIPPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
@@ -65,7 +72,6 @@ function RosAnycastEIPPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosAnycastEIPProps"');
 }
 
@@ -83,6 +89,7 @@ function rosAnycastEIPPropsToRosTemplate(properties: any, enableResourceProperty
         RosAnycastEIPPropsValidator(properties).assertSuccess();
     }
     return {
+      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
       Description: ros.stringToRosTemplate(properties.description),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
@@ -129,6 +136,11 @@ export class RosAnycastEIP extends ros.RosResource {
 
 
     /**
+     * @Property bandwidth: Anycast EIP instance bandwidth
+     */
+    public bandwidth: number | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Anycast EIP instance description
      */
     public description: string | ros.IResolvable | undefined;
@@ -168,6 +180,7 @@ export class RosAnycastEIP extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bandwidth = props.bandwidth;
         this.description = props.description;
         this.instanceChargeType = props.instanceChargeType;
         this.internetChargeType = props.internetChargeType;
@@ -178,6 +191,7 @@ export class RosAnycastEIP extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            bandwidth: this.bandwidth,
             description: this.description,
             instanceChargeType: this.instanceChargeType,
             internetChargeType: this.internetChargeType,

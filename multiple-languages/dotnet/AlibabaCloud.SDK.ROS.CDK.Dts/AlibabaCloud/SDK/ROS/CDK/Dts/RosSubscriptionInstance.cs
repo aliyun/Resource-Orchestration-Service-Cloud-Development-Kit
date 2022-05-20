@@ -63,6 +63,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: SubscribeTopic: The topic of the change tracking instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrSubscribeTopic", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscribeTopic
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: SubscriptionInstanceId: The ID of Data subscription instance.
         /// </remarks>
         [JsiiProperty(name: "attrSubscriptionInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -147,6 +156,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITagsProperty[]? Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITagsProperty[]?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: usedTime: The subscription length.
         /// Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
         /// You can set the Period parameter to specify the unit of the subscription length.
@@ -180,12 +200,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: subscriptionObject: Objects that need to be migrated.
+            /// <strong>Property</strong>: dbList: Subscription object, formatted as a JSON string. For detailed definitions, see the description of the migration, synchronization or subscription objects.
             /// </remarks>
-            [JsiiProperty(name: "subscriptionObject", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty\"}]}},\"kind\":\"array\"}}]}}")]
-            object SubscriptionObject
+            [JsiiProperty(name: "dbList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DbList
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             /// <remarks>
@@ -253,12 +277,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: subscriptionObject: Objects that need to be migrated.
+                /// <strong>Property</strong>: dbList: Subscription object, formatted as a JSON string. For detailed definitions, see the description of the migration, synchronization or subscription objects.
                 /// </remarks>
-                [JsiiProperty(name: "subscriptionObject", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty\"}]}},\"kind\":\"array\"}}]}}")]
-                public object SubscriptionObject
+                [JsiiOptional]
+                [JsiiProperty(name: "dbList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+                public object? DbList
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -318,10 +343,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: subscriptionObject: Objects that need to be migrated.
+            /// <strong>Property</strong>: dbList: Subscription object, formatted as a JSON string. For detailed definitions, see the description of the migration, synchronization or subscription objects.
             /// </remarks>
-            [JsiiProperty(name: "subscriptionObject", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty\"}]}},\"kind\":\"array\"}}]}}")]
-            public object SubscriptionObject
+            [JsiiOptional]
+            [JsiiProperty(name: "dbList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? DbList
             {
                 get;
                 set;
@@ -367,6 +393,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: instanceType: The instance type of the subscription source instance, including:
             /// RDS: Alibaba Cloud RDS instance
             /// ECS: Self-built database on ECS
+            /// PolarDB: PolarDB for MySQL cluster
+            /// LocalInstance: self-managed database with a public IP address
+            /// Express: self-managed database that is connected over Express Connect
+            /// CEN: self-managed database that is connected over Cloud Enterprise Network (CEN)
+            /// dg: self-managed database that is connected over Database Gateway
             /// </remarks>
             [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object InstanceType
@@ -496,6 +527,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
                 /// <strong>Property</strong>: instanceType: The instance type of the subscription source instance, including:
                 /// RDS: Alibaba Cloud RDS instance
                 /// ECS: Self-built database on ECS
+                /// PolarDB: PolarDB for MySQL cluster
+                /// LocalInstance: self-managed database with a public IP address
+                /// Express: self-managed database that is connected over Express Connect
+                /// CEN: self-managed database that is connected over Cloud Enterprise Network (CEN)
+                /// dg: self-managed database that is connected over Database Gateway
                 /// </remarks>
                 [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object InstanceType
@@ -603,6 +639,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <strong>Property</strong>: instanceType: The instance type of the subscription source instance, including:
             /// RDS: Alibaba Cloud RDS instance
             /// ECS: Self-built database on ECS
+            /// PolarDB: PolarDB for MySQL cluster
+            /// LocalInstance: self-managed database with a public IP address
+            /// Express: self-managed database that is connected over Express Connect
+            /// CEN: self-managed database that is connected over Cloud Enterprise Network (CEN)
+            /// dg: self-managed database that is connected over Database Gateway
             /// </remarks>
             [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceType
@@ -854,28 +895,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
                 set;
             }
         }
-        [JsiiInterface(nativeType: typeof(ISubscriptionObjectProperty), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty")]
-        public interface ISubscriptionObjectProperty
+        [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TagsProperty")]
+        public interface ITagsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: dbName: db name to be subscribed.
+            /// <strong>Property</strong>: key: undefined
             /// </remarks>
-            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? DbName
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
             {
-                get
-                {
-                    return null;
-                }
+                get;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: tableExcludes: Table excludes configuration.
+            /// <strong>Property</strong>: value: undefined
             /// </remarks>
-            [JsiiProperty(name: "tableExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? TableExcludes
+            object? Value
             {
                 get
                 {
@@ -883,184 +920,54 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
                 }
             }
 
-            /// <remarks>
-            /// <strong>Property</strong>: tableIncludes: Table configuration.
-            /// </remarks>
-            [JsiiProperty(name: "tableIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? TableIncludes
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            [JsiiTypeProxy(nativeType: typeof(ISubscriptionObjectProperty), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty")]
-            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ISubscriptionObjectProperty
+            [JsiiTypeProxy(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITagsProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: dbName: db name to be subscribed.
+                /// <strong>Property</strong>: key: undefined
                 /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? DbName
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
                 {
-                    get => GetInstanceProperty<object?>();
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: tableExcludes: Table excludes configuration.
+                /// <strong>Property</strong>: value: undefined
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "tableExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-                public object? TableExcludes
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: tableIncludes: Table configuration.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "tableIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-                public object? TableIncludes
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
                 {
                     get => GetInstanceProperty<object?>();
                 }
             }
         }
-        [JsiiByValue(fqn: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty")]
-        public class SubscriptionObjectProperty : AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ISubscriptionObjectProperty
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TagsProperty")]
+        public class TagsProperty : AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITagsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: dbName: db name to be subscribed.
+            /// <strong>Property</strong>: key: undefined
             /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? DbName
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: tableExcludes: Table excludes configuration.
+            /// <strong>Property</strong>: value: undefined
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tableExcludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? TableExcludes
-            {
-                get;
-                set;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: tableIncludes: Table configuration.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "tableIncludes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? TableIncludes
-            {
-                get;
-                set;
-            }
-        }
-        [JsiiInterface(nativeType: typeof(ITableExcludesProperty), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty")]
-        public interface ITableExcludesProperty
-        {
-            /// <remarks>
-            /// <strong>Property</strong>: tableName: Table name not to be subscribed.
-            /// </remarks>
-            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? TableName
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            [JsiiTypeProxy(nativeType: typeof(ITableExcludesProperty), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty")]
-            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITableExcludesProperty
-            {
-                private _Proxy(ByRefValue reference): base(reference)
-                {
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: tableName: Table name not to be subscribed.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? TableName
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-            }
-        }
-        [JsiiByValue(fqn: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty")]
-        public class TableExcludesProperty : AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITableExcludesProperty
-        {
-            /// <remarks>
-            /// <strong>Property</strong>: tableName: Table name not to be subscribed.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? TableName
-            {
-                get;
-                set;
-            }
-        }
-        [JsiiInterface(nativeType: typeof(ITableIncludesProperty), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty")]
-        public interface ITableIncludesProperty
-        {
-            /// <remarks>
-            /// <strong>Property</strong>: tableName: Table name to be subscribed.
-            /// </remarks>
-            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? TableName
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            [JsiiTypeProxy(nativeType: typeof(ITableIncludesProperty), fullyQualifiedName: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty")]
-            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITableIncludesProperty
-            {
-                private _Proxy(ByRefValue reference): base(reference)
-                {
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: tableName: Table name to be subscribed.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? TableName
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-            }
-        }
-        [JsiiByValue(fqn: "@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty")]
-        public class TableIncludesProperty : AlibabaCloud.SDK.ROS.CDK.Dts.RosSubscriptionInstance.ITableIncludesProperty
-        {
-            /// <remarks>
-            /// <strong>Property</strong>: tableName: Table name to be subscribed.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? TableName
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Value
             {
                 get;
                 set;

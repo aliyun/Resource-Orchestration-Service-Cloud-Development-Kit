@@ -28,6 +28,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             get;
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tags: Tag value and the key mapping, the label of the key number can be up to 20.</summary>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -65,6 +76,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             public object TemplateName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property resourceGroupId: Resource group id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tag value and the key mapping, the label of the key number can be up to 20.</summary>

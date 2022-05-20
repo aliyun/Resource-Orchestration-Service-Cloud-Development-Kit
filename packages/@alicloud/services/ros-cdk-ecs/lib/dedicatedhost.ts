@@ -79,7 +79,7 @@ export interface DedicatedHostProps {
     readonly quantity?: number | ros.IResolvable;
 
     /**
-     * Property resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
+     * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 

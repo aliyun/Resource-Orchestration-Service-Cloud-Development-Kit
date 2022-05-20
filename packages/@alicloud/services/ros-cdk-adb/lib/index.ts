@@ -1,3 +1,4 @@
+export * from './account';
 export * from './dbcluster';
 
 // ALIYUN::ADB Resources:

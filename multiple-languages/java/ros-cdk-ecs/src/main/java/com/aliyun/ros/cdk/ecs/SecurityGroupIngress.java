@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::SecurityGroupIngress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.935Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.003Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupIngress")
 public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
 
@@ -273,24 +273,24 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property sourceCidrIp: Source CIDR Ip Address range.
+         * Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access.
          * <p>
-         * Only IPV4 supported.
+         * CIDR blocks and IPv4 addresses are supported.
          * <p>
          * @return {@code this}
-         * @param sourceCidrIp Property sourceCidrIp: Source CIDR Ip Address range. This parameter is required.
+         * @param sourceCidrIp Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access. This parameter is required.
          */
         public Builder sourceCidrIp(final java.lang.String sourceCidrIp) {
             this.props.sourceCidrIp(sourceCidrIp);
             return this;
         }
         /**
-         * Property sourceCidrIp: Source CIDR Ip Address range.
+         * Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access.
          * <p>
-         * Only IPV4 supported.
+         * CIDR blocks and IPv4 addresses are supported.
          * <p>
          * @return {@code this}
-         * @param sourceCidrIp Property sourceCidrIp: Source CIDR Ip Address range. This parameter is required.
+         * @param sourceCidrIp Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access. This parameter is required.
          */
         public Builder sourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
             this.props.sourceCidrIp(sourceCidrIp);
@@ -361,6 +361,35 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder sourcePortRange(final com.aliyun.ros.cdk.core.IResolvable sourcePortRange) {
             this.props.sourcePortRange(sourcePortRange);
+            return this;
+        }
+
+        /**
+         * Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
+         * <p>
+         * You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+         * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+         * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         * <p>
+         * @return {@code this}
+         * @param sourcePrefixListId Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. This parameter is required.
+         */
+        public Builder sourcePrefixListId(final java.lang.String sourcePrefixListId) {
+            this.props.sourcePrefixListId(sourcePrefixListId);
+            return this;
+        }
+        /**
+         * Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
+         * <p>
+         * You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+         * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+         * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         * <p>
+         * @return {@code this}
+         * @param sourcePrefixListId Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. This parameter is required.
+         */
+        public Builder sourcePrefixListId(final com.aliyun.ros.cdk.core.IResolvable sourcePrefixListId) {
+            this.props.sourcePrefixListId(sourcePrefixListId);
             return this;
         }
 

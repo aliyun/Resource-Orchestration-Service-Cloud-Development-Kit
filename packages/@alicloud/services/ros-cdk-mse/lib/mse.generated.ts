@@ -18,7 +18,7 @@ export interface RosClusterProps {
     readonly clusterType: string | ros.IResolvable;
 
     /**
-     * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
+     * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0
      */
     readonly clusterVersion: string | ros.IResolvable;
 
@@ -31,6 +31,11 @@ export interface RosClusterProps {
      * @Property netType: network type, Enum: privatenet,pubnet
      */
     readonly netType: string | ros.IResolvable;
+
+    /**
+     * @Property acceptLanguage:
+     */
+    readonly acceptLanguage?: string | ros.IResolvable;
 
     /**
      * @Property aclEntryList: acl entry list
@@ -48,14 +53,17 @@ export interface RosClusterProps {
     readonly connectionType?: string | ros.IResolvable;
 
     /**
-     * @Property diskCapacity: disk capacity, unit: G
-     */
-    readonly diskCapacity?: number | ros.IResolvable;
-
-    /**
      * @Property diskType: disk type
      */
     readonly diskType?: string | ros.IResolvable;
+
+    /**
+     * @Property mseVersion: This parameter is required when creating a professional version. The value is as follows:
+     * 
+     * -'mse_basic': indicates the basic version (default value).
+     * -'mse_pro': means professional version.
+     */
+    readonly mseVersion?: string | ros.IResolvable;
 
     /**
      * @Property privateSlbSpecification:
@@ -98,26 +106,129 @@ export interface RosClusterProps {
 function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.mseVersion && (typeof properties.mseVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('mseVersion', ros.validateAllowedValues)({
+          data: properties.mseVersion,
+          allowedValues: ["mse_pro","mse_basic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('mseVersion', ros.validateString)(properties.mseVersion));
     errors.collect(ros.propertyValidator('privateSlbSpecification', ros.validateString)(properties.privateSlbSpecification));
     errors.collect(ros.propertyValidator('clusterVersion', ros.requiredValidator)(properties.clusterVersion));
+    if(properties.clusterVersion && (typeof properties.clusterVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterVersion', ros.validateAllowedValues)({
+          data: properties.clusterVersion,
+          allowedValues: ["ZooKeeper_3_5_5","ZooKeeper_3_4_14","NACOS_2_0_0","NACOS_ANS_1_2_1"],
+        }));
+    }
+    if(properties.clusterVersion && (typeof properties.clusterVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterVersion', ros.validateAllowedPattern)({
+          data: properties.clusterVersion,
+          reg: /^[A-Za-z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('clusterVersion', ros.validateString)(properties.clusterVersion));
+    if(properties.connectionType && (typeof properties.connectionType) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionType', ros.validateAllowedValues)({
+          data: properties.connectionType,
+          allowedValues: ["eni","slb"],
+        }));
+    }
+    if(properties.connectionType && (typeof properties.connectionType) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionType', ros.validateAllowedPattern)({
+          data: properties.connectionType,
+          reg: /^[A-Za-z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('connectionType', ros.validateString)(properties.connectionType));
     errors.collect(ros.propertyValidator('aclEntryList', ros.listValidator(ros.validateString))(properties.aclEntryList));
     errors.collect(ros.propertyValidator('clusterSpecification', ros.requiredValidator)(properties.clusterSpecification));
+    if(properties.clusterSpecification && (typeof properties.clusterSpecification) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterSpecification', ros.validateAllowedValues)({
+          data: properties.clusterSpecification,
+          allowedValues: ["MSE_SC_1_2_200_c","MSE_SC_2_4_200_c","MSE_SC_4_8_200_c","MSE_SC_8_16_200_c","MSE_SC_16_32_200_c"],
+        }));
+    }
+    if(properties.clusterSpecification && (typeof properties.clusterSpecification) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterSpecification', ros.validateAllowedPattern)({
+          data: properties.clusterSpecification,
+          reg: /^[A-Za-z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('clusterSpecification', ros.validateString)(properties.clusterSpecification));
+    if(properties.vSwitchId && (typeof properties.vSwitchId) !== 'object') {
+        errors.collect(ros.propertyValidator('vSwitchId', ros.validateAllowedPattern)({
+          data: properties.vSwitchId,
+          reg: /(.*)/
+        }));
+    }
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('pubSlbSpecification', ros.validateString)(properties.pubSlbSpecification));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
+    if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
+          data: properties.clusterType,
+          allowedValues: ["Nacos-Ans","ZooKeeper"],
+        }));
+    }
+    if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedPattern)({
+          data: properties.clusterType,
+          reg: /^[A-Za-z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
+    if(properties.diskType && (typeof properties.diskType) !== 'object') {
+        errors.collect(ros.propertyValidator('diskType', ros.validateAllowedPattern)({
+          data: properties.diskType,
+          reg: /^[A-Za-z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('diskType', ros.validateString)(properties.diskType));
+    if(properties.clusterAliasName && (typeof properties.clusterAliasName) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterAliasName', ros.validateAllowedPattern)({
+          data: properties.clusterAliasName,
+          reg: /(.*)/
+        }));
+    }
     errors.collect(ros.propertyValidator('clusterAliasName', ros.validateString)(properties.clusterAliasName));
     errors.collect(ros.propertyValidator('instanceCount', ros.requiredValidator)(properties.instanceCount));
+    if(properties.instanceCount && (typeof properties.instanceCount) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceCount', ros.validateAllowedValues)({
+          data: properties.instanceCount,
+          allowedValues: [1,3,5,7,9],
+        }));
+    }
     errors.collect(ros.propertyValidator('instanceCount', ros.validateNumber)(properties.instanceCount));
-    errors.collect(ros.propertyValidator('diskCapacity', ros.validateNumber)(properties.diskCapacity));
+    if(properties.vpcId && (typeof properties.vpcId) !== 'object') {
+        errors.collect(ros.propertyValidator('vpcId', ros.validateAllowedPattern)({
+          data: properties.vpcId,
+          reg: /(.*)/
+        }));
+    }
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('requestPars', ros.validateString)(properties.requestPars));
+    if(properties.pubNetworkFlow && (typeof properties.pubNetworkFlow) !== 'object') {
+        errors.collect(ros.propertyValidator('pubNetworkFlow', ros.validateAllowedPattern)({
+          data: properties.pubNetworkFlow,
+          reg: /^[0-9]*$/
+        }));
+    }
     errors.collect(ros.propertyValidator('pubNetworkFlow', ros.validateString)(properties.pubNetworkFlow));
+    errors.collect(ros.propertyValidator('acceptLanguage', ros.validateString)(properties.acceptLanguage));
     errors.collect(ros.propertyValidator('netType', ros.requiredValidator)(properties.netType));
+    if(properties.netType && (typeof properties.netType) !== 'object') {
+        errors.collect(ros.propertyValidator('netType', ros.validateAllowedValues)({
+          data: properties.netType,
+          allowedValues: ["pubnet","both","privatenet"],
+        }));
+    }
+    if(properties.netType && (typeof properties.netType) !== 'object') {
+        errors.collect(ros.propertyValidator('netType', ros.validateAllowedPattern)({
+          data: properties.netType,
+          reg: /^[\u4E00-\u9FA5A-Za-z0-9_]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('netType', ros.validateString)(properties.netType));
     return errors.wrap('supplied properties not correct for "RosClusterProps"');
 }
@@ -141,11 +252,12 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       ClusterVersion: ros.stringToRosTemplate(properties.clusterVersion),
       InstanceCount: ros.numberToRosTemplate(properties.instanceCount),
       NetType: ros.stringToRosTemplate(properties.netType),
+      AcceptLanguage: ros.stringToRosTemplate(properties.acceptLanguage),
       AclEntryList: ros.listMapper(ros.stringToRosTemplate)(properties.aclEntryList),
       ClusterAliasName: ros.stringToRosTemplate(properties.clusterAliasName),
       ConnectionType: ros.stringToRosTemplate(properties.connectionType),
-      DiskCapacity: ros.numberToRosTemplate(properties.diskCapacity),
       DiskType: ros.stringToRosTemplate(properties.diskType),
+      MseVersion: ros.stringToRosTemplate(properties.mseVersion),
       PrivateSlbSpecification: ros.stringToRosTemplate(properties.privateSlbSpecification),
       PubNetworkFlow: ros.stringToRosTemplate(properties.pubNetworkFlow),
       PubSlbSpecification: ros.stringToRosTemplate(properties.pubSlbSpecification),
@@ -210,7 +322,7 @@ export class RosCluster extends ros.RosResource {
     public readonly attrClusterType: ros.IResolvable;
 
     /**
-     * @Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
+     * @Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0
      */
     public readonly attrClusterVersion: ros.IResolvable;
 
@@ -285,6 +397,14 @@ export class RosCluster extends ros.RosResource {
     public readonly attrMemoryCapacity: ros.IResolvable;
 
     /**
+     * @Attribute MseVersion: This parameter is required when creating a professional version. The value is as follows:
+
+-'mse_basic': indicates the basic version (default value).
+-'mse_pro': means professional version.
+     */
+    public readonly attrMseVersion: ros.IResolvable;
+
+    /**
      * @Attribute NetType: network type, Enum: privatenet,pubnet
      */
     public readonly attrNetType: ros.IResolvable;
@@ -323,7 +443,7 @@ export class RosCluster extends ros.RosResource {
     public clusterType: string | ros.IResolvable;
 
     /**
-     * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
+     * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0
      */
     public clusterVersion: string | ros.IResolvable;
 
@@ -336,6 +456,11 @@ export class RosCluster extends ros.RosResource {
      * @Property netType: network type, Enum: privatenet,pubnet
      */
     public netType: string | ros.IResolvable;
+
+    /**
+     * @Property acceptLanguage:
+     */
+    public acceptLanguage: string | ros.IResolvable | undefined;
 
     /**
      * @Property aclEntryList: acl entry list
@@ -353,14 +478,17 @@ export class RosCluster extends ros.RosResource {
     public connectionType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property diskCapacity: disk capacity, unit: G
-     */
-    public diskCapacity: number | ros.IResolvable | undefined;
-
-    /**
      * @Property diskType: disk type
      */
     public diskType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property mseVersion: This parameter is required when creating a professional version. The value is as follows:
+     * 
+     * -'mse_basic': indicates the basic version (default value).
+     * -'mse_pro': means professional version.
+     */
+    public mseVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateSlbSpecification:
@@ -424,6 +552,7 @@ export class RosCluster extends ros.RosResource {
         this.attrIntranetDomain = this.getAtt('IntranetDomain');
         this.attrIntranetPort = this.getAtt('IntranetPort');
         this.attrMemoryCapacity = this.getAtt('MemoryCapacity');
+        this.attrMseVersion = this.getAtt('MseVersion');
         this.attrNetType = this.getAtt('NetType');
         this.attrPayInfo = this.getAtt('PayInfo');
         this.attrPubNetworkFlow = this.getAtt('PubNetworkFlow');
@@ -436,11 +565,12 @@ export class RosCluster extends ros.RosResource {
         this.clusterVersion = props.clusterVersion;
         this.instanceCount = props.instanceCount;
         this.netType = props.netType;
+        this.acceptLanguage = props.acceptLanguage;
         this.aclEntryList = props.aclEntryList;
         this.clusterAliasName = props.clusterAliasName;
         this.connectionType = props.connectionType;
-        this.diskCapacity = props.diskCapacity;
         this.diskType = props.diskType;
+        this.mseVersion = props.mseVersion;
         this.privateSlbSpecification = props.privateSlbSpecification;
         this.pubNetworkFlow = props.pubNetworkFlow;
         this.pubSlbSpecification = props.pubSlbSpecification;
@@ -457,11 +587,12 @@ export class RosCluster extends ros.RosResource {
             clusterVersion: this.clusterVersion,
             instanceCount: this.instanceCount,
             netType: this.netType,
+            acceptLanguage: this.acceptLanguage,
             aclEntryList: this.aclEntryList,
             clusterAliasName: this.clusterAliasName,
             connectionType: this.connectionType,
-            diskCapacity: this.diskCapacity,
             diskType: this.diskType,
+            mseVersion: this.mseVersion,
             privateSlbSpecification: this.privateSlbSpecification,
             pubNetworkFlow: this.pubNetworkFlow,
             pubSlbSpecification: this.pubSlbSpecification,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS resource type:  `ALIYUN::EDAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.964Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.046Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -224,6 +224,27 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder oversoldFactor(final com.aliyun.ros.cdk.core.IResolvable oversoldFactor) {
             this.props.oversoldFactor(oversoldFactor);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

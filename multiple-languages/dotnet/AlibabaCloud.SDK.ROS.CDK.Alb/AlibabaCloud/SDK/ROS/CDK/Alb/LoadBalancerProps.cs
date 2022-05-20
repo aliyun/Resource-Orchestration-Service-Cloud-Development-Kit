@@ -88,6 +88,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             set;
         }
 
+        /// <summary>Property bandwidthPackageId: Attach common bandwidth package to load balancer.</summary>
+        /// <remarks>
+        /// It only takes effect when AddressType=Internet.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? BandwidthPackageId
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property deletionProtectionEnabled: Specifies whether to enable deletion protection.</summary>
         /// <remarks>
         /// Default value: false.

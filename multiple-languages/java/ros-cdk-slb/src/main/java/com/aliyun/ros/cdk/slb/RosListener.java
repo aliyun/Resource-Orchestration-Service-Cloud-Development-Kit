@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.431Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.567Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -245,6 +245,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableHttp2() {
+        return software.amazon.jsii.Kernel.get(this, "enableHttp2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableHttp2(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "enableHttp2", value);
+    }
+
+    /**
+     */
+    public void setEnableHttp2(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableHttp2", value);
     }
 
     /**
@@ -2092,6 +2110,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableHttp2 This parameter is required.
+         */
+        public Builder enableHttp2(final java.lang.String enableHttp2) {
+            this.props.enableHttp2(enableHttp2);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableHttp2 This parameter is required.
+         */
+        public Builder enableHttp2(final com.aliyun.ros.cdk.core.IResolvable enableHttp2) {
+            this.props.enableHttp2(enableHttp2);
             return this;
         }
 

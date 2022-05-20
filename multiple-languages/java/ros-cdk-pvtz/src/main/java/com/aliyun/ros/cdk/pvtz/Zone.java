@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS resource type:  `ALIYUN::PVTZ::Zone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.961Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.047Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.Zone")
 public class Zone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -180,6 +180,40 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder remark(final com.aliyun.ros.cdk.core.IResolvable remark) {
             this.props.remark(remark);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

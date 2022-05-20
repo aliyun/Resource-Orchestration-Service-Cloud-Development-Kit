@@ -14,7 +14,7 @@ export interface VpcAccessConfigProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
-     * Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
+     * Property name: The name of one VPC access configuration.
      */
     readonly name: string | ros.IResolvable;
 

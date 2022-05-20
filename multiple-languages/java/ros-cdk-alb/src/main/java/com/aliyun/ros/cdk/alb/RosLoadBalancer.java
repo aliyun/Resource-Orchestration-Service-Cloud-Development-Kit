@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS template type:  `ALIYUN::ALB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.686Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.778Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -215,6 +215,24 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAddressAllocatedMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "addressAllocatedMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthPackageId() {
+        return software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBandwidthPackageId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidthPackageId", value);
+    }
+
+    /**
+     */
+    public void setBandwidthPackageId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidthPackageId", value);
     }
 
     /**
@@ -1050,6 +1068,23 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder addressAllocatedMode(final com.aliyun.ros.cdk.core.IResolvable addressAllocatedMode) {
             this.props.addressAllocatedMode(addressAllocatedMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param bandwidthPackageId This parameter is required.
+         */
+        public Builder bandwidthPackageId(final java.lang.String bandwidthPackageId) {
+            this.props.bandwidthPackageId(bandwidthPackageId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bandwidthPackageId This parameter is required.
+         */
+        public Builder bandwidthPackageId(final com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
+            this.props.bandwidthPackageId(bandwidthPackageId);
             return this;
         }
 

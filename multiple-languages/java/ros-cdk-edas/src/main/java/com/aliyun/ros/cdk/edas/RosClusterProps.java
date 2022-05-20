@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.016Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.072Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
@@ -53,6 +59,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object networkMode;
         java.lang.Object logicalRegionId;
         java.lang.Object oversoldFactor;
+        java.lang.Object resourceGroupId;
         java.lang.Object vpcId;
 
         /**
@@ -156,6 +163,26 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
@@ -196,6 +223,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object networkMode;
         private final java.lang.Object logicalRegionId;
         private final java.lang.Object oversoldFactor;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object vpcId;
 
         /**
@@ -209,6 +237,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.networkMode = software.amazon.jsii.Kernel.get(this, "networkMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.oversoldFactor = software.amazon.jsii.Kernel.get(this, "oversoldFactor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -222,6 +251,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.networkMode = java.util.Objects.requireNonNull(builder.networkMode, "networkMode is required");
             this.logicalRegionId = builder.logicalRegionId;
             this.oversoldFactor = builder.oversoldFactor;
+            this.resourceGroupId = builder.resourceGroupId;
             this.vpcId = builder.vpcId;
         }
 
@@ -251,6 +281,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
@@ -269,6 +304,9 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getOversoldFactor() != null) {
                 data.set("oversoldFactor", om.valueToTree(this.getOversoldFactor()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
@@ -296,6 +334,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (!networkMode.equals(that.networkMode)) return false;
             if (this.logicalRegionId != null ? !this.logicalRegionId.equals(that.logicalRegionId) : that.logicalRegionId != null) return false;
             if (this.oversoldFactor != null ? !this.oversoldFactor.equals(that.oversoldFactor) : that.oversoldFactor != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
 
@@ -306,6 +345,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.networkMode.hashCode());
             result = 31 * result + (this.logicalRegionId != null ? this.logicalRegionId.hashCode() : 0);
             result = 31 * result + (this.oversoldFactor != null ? this.oversoldFactor.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;
         }

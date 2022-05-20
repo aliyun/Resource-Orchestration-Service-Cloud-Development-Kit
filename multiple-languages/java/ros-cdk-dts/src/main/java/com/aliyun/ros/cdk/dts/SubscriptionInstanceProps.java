@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::SubscriptionInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.502Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.592Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SubscriptionInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(SubscriptionInstanceProps.Jsii$Proxy.class)
 public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -51,6 +51,15 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * Property usedTime: The subscription length.
      * <p>
      * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
@@ -74,6 +83,7 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object payType;
         java.lang.Object period;
         java.lang.Object sourceEndpointInstanceType;
+        java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> tags;
         java.lang.Object usedTime;
 
         /**
@@ -179,6 +189,18 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link SubscriptionInstanceProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SubscriptionInstanceProps#getUsedTime}
          * @param usedTime Property usedTime: The subscription length.
          *                 Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
@@ -222,6 +244,7 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object payType;
         private final java.lang.Object period;
         private final java.lang.Object sourceEndpointInstanceType;
+        private final java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> tags;
         private final java.lang.Object usedTime;
 
         /**
@@ -234,18 +257,21 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceEndpointInstanceType = software.amazon.jsii.Kernel.get(this, "sourceEndpointInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty.class)));
             this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.configuration = builder.configuration;
             this.payType = builder.payType;
             this.period = builder.period;
             this.sourceEndpointInstanceType = builder.sourceEndpointInstanceType;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty>)builder.tags;
             this.usedTime = builder.usedTime;
         }
 
@@ -270,6 +296,11 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getUsedTime() {
             return this.usedTime;
         }
@@ -291,6 +322,9 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
             }
             if (this.getSourceEndpointInstanceType() != null) {
                 data.set("sourceEndpointInstanceType", om.valueToTree(this.getSourceEndpointInstanceType()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getUsedTime() != null) {
                 data.set("usedTime", om.valueToTree(this.getUsedTime()));
@@ -317,6 +351,7 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.sourceEndpointInstanceType != null ? !this.sourceEndpointInstanceType.equals(that.sourceEndpointInstanceType) : that.sourceEndpointInstanceType != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.usedTime != null ? this.usedTime.equals(that.usedTime) : that.usedTime == null;
         }
 
@@ -326,6 +361,7 @@ public interface SubscriptionInstanceProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.sourceEndpointInstanceType != null ? this.sourceEndpointInstanceType.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.usedTime != null ? this.usedTime.hashCode() : 0);
             return result;
         }

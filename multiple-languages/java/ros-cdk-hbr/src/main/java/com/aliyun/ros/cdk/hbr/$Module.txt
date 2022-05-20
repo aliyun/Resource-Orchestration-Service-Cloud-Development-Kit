@@ -9,6 +9,7 @@
 @alicloud/ros-cdk-hbr.RestoreJob=com.aliyun.ros.cdk.hbr.RestoreJob
 @alicloud/ros-cdk-hbr.RestoreJobProps=com.aliyun.ros.cdk.hbr.RestoreJobProps
 @alicloud/ros-cdk-hbr.RosBackupClients=com.aliyun.ros.cdk.hbr.RosBackupClients
+@alicloud/ros-cdk-hbr.RosBackupClients.TagsProperty=com.aliyun.ros.cdk.hbr.RosBackupClients$TagsProperty
 @alicloud/ros-cdk-hbr.RosBackupClientsProps=com.aliyun.ros.cdk.hbr.RosBackupClientsProps
 @alicloud/ros-cdk-hbr.RosDbAgent=com.aliyun.ros.cdk.hbr.RosDbAgent
 @alicloud/ros-cdk-hbr.RosDbAgent.InstanceInfoProperty=com.aliyun.ros.cdk.hbr.RosDbAgent$InstanceInfoProperty
@@ -17,6 +18,7 @@
 @alicloud/ros-cdk-hbr.RosDbPlan.SourceProperty=com.aliyun.ros.cdk.hbr.RosDbPlan$SourceProperty
 @alicloud/ros-cdk-hbr.RosDbPlanProps=com.aliyun.ros.cdk.hbr.RosDbPlanProps
 @alicloud/ros-cdk-hbr.RosDbVault=com.aliyun.ros.cdk.hbr.RosDbVault
+@alicloud/ros-cdk-hbr.RosDbVault.TagsProperty=com.aliyun.ros.cdk.hbr.RosDbVault$TagsProperty
 @alicloud/ros-cdk-hbr.RosDbVaultProps=com.aliyun.ros.cdk.hbr.RosDbVaultProps
 @alicloud/ros-cdk-hbr.RosRestoreJob=com.aliyun.ros.cdk.hbr.RosRestoreJob
 @alicloud/ros-cdk-hbr.RosRestoreJobProps=com.aliyun.ros.cdk.hbr.RosRestoreJobProps

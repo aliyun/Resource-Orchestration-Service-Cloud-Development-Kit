@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::LifecycleHook`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.LifecycleHookProps")
 @software.amazon.jsii.Jsii.Proxy(LifecycleHookProps.Jsii$Proxy.class)
 public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,7 +34,7 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out.
      * <p>
-     * If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 21,600 seconds. The default value is 600 seconds.
+     * If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
      * You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHeartbeatTimeout() {
@@ -166,7 +166,7 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link LifecycleHookProps#getHeartbeatTimeout}
          * @param heartbeatTimeout Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out.
-         *                         If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 21,600 seconds. The default value is 600 seconds.
+         *                         If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
          *                         You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
          * @return {@code this}
          */
@@ -178,7 +178,7 @@ public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link LifecycleHookProps#getHeartbeatTimeout}
          * @param heartbeatTimeout Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out.
-         *                         If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 21,600 seconds. The default value is 600 seconds.
+         *                         If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
          *                         You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
          * @return {@code this}
          */

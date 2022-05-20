@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::SubscriptionInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.490Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.583Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosSubscriptionInstanceProps.Jsii$Proxy.class)
 public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,12 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
         return null;
     }
@@ -52,6 +58,7 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
         java.lang.Object payType;
         java.lang.Object period;
         java.lang.Object sourceEndpointInstanceType;
+        java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> tags;
         java.lang.Object usedTime;
 
         /**
@@ -135,6 +142,17 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
         }
 
         /**
+         * Sets the value of {@link RosSubscriptionInstanceProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSubscriptionInstanceProps#getUsedTime}
          * @param usedTime the value to be set.
          * @return {@code this}
@@ -174,6 +192,7 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
         private final java.lang.Object payType;
         private final java.lang.Object period;
         private final java.lang.Object sourceEndpointInstanceType;
+        private final java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> tags;
         private final java.lang.Object usedTime;
 
         /**
@@ -186,18 +205,21 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceEndpointInstanceType = software.amazon.jsii.Kernel.get(this, "sourceEndpointInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty.class)));
             this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.configuration = builder.configuration;
             this.payType = builder.payType;
             this.period = builder.period;
             this.sourceEndpointInstanceType = builder.sourceEndpointInstanceType;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty>)builder.tags;
             this.usedTime = builder.usedTime;
         }
 
@@ -222,6 +244,11 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.dts.RosSubscriptionInstance.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getUsedTime() {
             return this.usedTime;
         }
@@ -243,6 +270,9 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
             }
             if (this.getSourceEndpointInstanceType() != null) {
                 data.set("sourceEndpointInstanceType", om.valueToTree(this.getSourceEndpointInstanceType()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getUsedTime() != null) {
                 data.set("usedTime", om.valueToTree(this.getUsedTime()));
@@ -269,6 +299,7 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.sourceEndpointInstanceType != null ? !this.sourceEndpointInstanceType.equals(that.sourceEndpointInstanceType) : that.sourceEndpointInstanceType != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.usedTime != null ? this.usedTime.equals(that.usedTime) : that.usedTime == null;
         }
 
@@ -278,6 +309,7 @@ public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiS
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.sourceEndpointInstanceType != null ? this.sourceEndpointInstanceType.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.usedTime != null ? this.usedTime.hashCode() : 0);
             return result;
         }

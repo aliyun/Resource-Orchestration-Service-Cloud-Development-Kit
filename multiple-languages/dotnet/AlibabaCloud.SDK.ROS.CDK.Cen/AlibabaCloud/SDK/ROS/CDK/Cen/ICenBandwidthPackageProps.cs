@@ -149,6 +149,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`.</summary>
         [JsiiTypeProxy(nativeType: typeof(ICenBandwidthPackageProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.CenBandwidthPackageProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.ICenBandwidthPackageProps
@@ -270,6 +281,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             [JsiiOptional]
             [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PricingCycle
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: Resource group id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

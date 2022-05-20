@@ -41,6 +41,11 @@ export interface ServerlessKubernetesClusterProps {
     readonly privateZone?: boolean | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -152,6 +157,7 @@ export class ServerlessKubernetesCluster extends ros.Resource {
             kubernetesVersion: props.kubernetesVersion,
             endpointPublicAccess: props.endpointPublicAccess,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             vSwitchIds: props.vSwitchIds,
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS resource type:  `ALIYUN::NAS::AccessRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessRule")
 public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
 

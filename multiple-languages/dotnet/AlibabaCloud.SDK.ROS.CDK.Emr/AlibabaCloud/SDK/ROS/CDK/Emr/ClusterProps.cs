@@ -316,6 +316,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             set;
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property securityGroupId: The ID of the security group.</summary>
         /// <remarks>
         /// You can create a security group in the ECS console and
@@ -352,6 +361,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         [JsiiOptional]
         [JsiiProperty(name: "sshEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SshEnable
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-emr.RosCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Emr.RosCluster.ITagsProperty[]? Tags
         {
             get;
             set;

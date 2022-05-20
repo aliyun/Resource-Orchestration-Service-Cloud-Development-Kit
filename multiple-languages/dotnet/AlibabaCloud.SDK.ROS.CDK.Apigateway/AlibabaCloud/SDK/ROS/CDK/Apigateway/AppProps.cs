@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.AppProps")]
     public class AppProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IAppProps
     {
-        /// <summary>Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+        /// <summary>Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
         [JsiiProperty(name: "appName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AppName
         {

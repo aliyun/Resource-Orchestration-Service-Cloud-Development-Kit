@@ -241,6 +241,11 @@ export interface ManagedKubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property runtime: The container runtime of the cluster. The default runtime is Docker.
      */
     readonly runtime?: RosManagedKubernetesCluster.RuntimeProperty | ros.IResolvable;
@@ -319,6 +324,11 @@ export interface ManagedKubernetesClusterProps {
      * Default to 120.
      */
     readonly workerSystemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * Property zoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -396,11 +406,12 @@ export class ManagedKubernetesCluster extends ros.Resource {
             socEnabled: props.socEnabled,
             formatDisk: props.formatDisk,
             platform: props.platform,
+            resourceGroupId: props.resourceGroupId,
             userData: props.userData,
             autoRenew: props.autoRenew,
             addons: props.addons,
-            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
+            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             loadBalancerSpec: props.loadBalancerSpec,
             name: props.name,
             taint: props.taint,
@@ -410,6 +421,7 @@ export class ManagedKubernetesCluster extends ros.Resource {
             osType: props.osType,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             podVswitchIds: props.podVswitchIds,
+            zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             tags: props.tags,
@@ -422,8 +434,8 @@ export class ManagedKubernetesCluster extends ros.Resource {
             nodeCidrMask: props.nodeCidrMask,
             vSwitchIds: props.vSwitchIds,
             workerDataDisks: props.workerDataDisks,
-            securityGroupId: props.securityGroupId,
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
+            securityGroupId: props.securityGroupId,
             period: props.period,
             clusterSpec: props.clusterSpec,
             deletionProtection: props.deletionProtection,

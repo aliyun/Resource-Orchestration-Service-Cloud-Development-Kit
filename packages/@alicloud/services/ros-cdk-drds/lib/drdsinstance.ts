@@ -64,6 +64,11 @@ export interface DrdsInstanceProps {
     readonly pricingCycle?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosDrdsInstance.TagsProperty[];
@@ -122,6 +127,7 @@ export class DrdsInstance extends ros.Resource {
         const rosDrdsInstance = new RosDrdsInstance(this, id,  {
             description: props.description,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             pricingCycle: props.pricingCycle,
             instanceSeries: props.instanceSeries,
             quantity: props.quantity,

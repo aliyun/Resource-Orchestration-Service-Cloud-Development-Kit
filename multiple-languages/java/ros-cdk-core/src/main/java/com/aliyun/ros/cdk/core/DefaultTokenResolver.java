@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * (experimental) Default resolver implementation.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.544Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.647Z")
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DefaultTokenResolver")
 public class DefaultTokenResolver extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.ITokenResolver {

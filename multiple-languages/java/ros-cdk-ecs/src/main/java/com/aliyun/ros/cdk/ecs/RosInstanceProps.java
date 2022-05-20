@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.912Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -174,6 +174,18 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotDuration() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotInterruptionBehavior() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
         return null;
     }
@@ -245,6 +257,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosInstanceProps}
      */
     static Builder builder() {
@@ -282,6 +300,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object securityEnhancementStrategy;
         java.lang.Object securityGroupId;
         java.lang.Object securityGroupIds;
+        java.lang.Object spotDuration;
+        java.lang.Object spotInterruptionBehavior;
         java.lang.Object spotPriceLimit;
         java.lang.Object spotStrategy;
         java.lang.Object systemDiskCategory;
@@ -294,6 +314,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
         java.lang.Object zoneId;
+        java.lang.Object zoneIds;
 
         /**
          * Sets the value of {@link RosInstanceProps#getImageId}
@@ -856,6 +877,46 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getSpotDuration}
+         * @param spotDuration the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotDuration(java.lang.Number spotDuration) {
+            this.spotDuration = spotDuration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSpotDuration}
+         * @param spotDuration the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotDuration(com.aliyun.ros.cdk.core.IResolvable spotDuration) {
+            this.spotDuration = spotDuration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSpotInterruptionBehavior}
+         * @param spotInterruptionBehavior the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotInterruptionBehavior(java.lang.String spotInterruptionBehavior) {
+            this.spotInterruptionBehavior = spotInterruptionBehavior;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSpotInterruptionBehavior}
+         * @param spotInterruptionBehavior the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotInterruptionBehavior(com.aliyun.ros.cdk.core.IResolvable spotInterruptionBehavior) {
+            this.spotInterruptionBehavior = spotInterruptionBehavior;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getSpotPriceLimit}
          * @param spotPriceLimit the value to be set.
          * @return {@code this}
@@ -1087,6 +1148,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getZoneIds}
+         * @param zoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneIds(com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.zoneIds = zoneIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getZoneIds}
+         * @param zoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneIds(java.util.List<? extends java.lang.Object> zoneIds) {
+            this.zoneIds = zoneIds;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -1130,6 +1211,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object securityEnhancementStrategy;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object securityGroupIds;
+        private final java.lang.Object spotDuration;
+        private final java.lang.Object spotInterruptionBehavior;
         private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object systemDiskCategory;
@@ -1142,6 +1225,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
+        private final java.lang.Object zoneIds;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1177,6 +1261,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotDuration = software.amazon.jsii.Kernel.get(this, "spotDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotInterruptionBehavior = software.amazon.jsii.Kernel.get(this, "spotInterruptionBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1189,6 +1275,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -1225,6 +1312,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.securityEnhancementStrategy = builder.securityEnhancementStrategy;
             this.securityGroupId = builder.securityGroupId;
             this.securityGroupIds = builder.securityGroupIds;
+            this.spotDuration = builder.spotDuration;
+            this.spotInterruptionBehavior = builder.spotInterruptionBehavior;
             this.spotPriceLimit = builder.spotPriceLimit;
             this.spotStrategy = builder.spotStrategy;
             this.systemDiskCategory = builder.systemDiskCategory;
@@ -1237,6 +1326,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.vpcId = builder.vpcId;
             this.vSwitchId = builder.vSwitchId;
             this.zoneId = builder.zoneId;
+            this.zoneIds = builder.zoneIds;
         }
 
         @Override
@@ -1380,6 +1470,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getSpotDuration() {
+            return this.spotDuration;
+        }
+
+        @Override
+        public final java.lang.Object getSpotInterruptionBehavior() {
+            return this.spotInterruptionBehavior;
+        }
+
+        @Override
         public final java.lang.Object getSpotPriceLimit() {
             return this.spotPriceLimit;
         }
@@ -1437,6 +1537,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
+        }
+
+        @Override
+        public final java.lang.Object getZoneIds() {
+            return this.zoneIds;
         }
 
         @Override
@@ -1525,6 +1630,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getSecurityGroupIds() != null) {
                 data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
             }
+            if (this.getSpotDuration() != null) {
+                data.set("spotDuration", om.valueToTree(this.getSpotDuration()));
+            }
+            if (this.getSpotInterruptionBehavior() != null) {
+                data.set("spotInterruptionBehavior", om.valueToTree(this.getSpotInterruptionBehavior()));
+            }
             if (this.getSpotPriceLimit() != null) {
                 data.set("spotPriceLimit", om.valueToTree(this.getSpotPriceLimit()));
             }
@@ -1560,6 +1671,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
+            }
+            if (this.getZoneIds() != null) {
+                data.set("zoneIds", om.valueToTree(this.getZoneIds()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -1607,6 +1721,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.securityEnhancementStrategy != null ? !this.securityEnhancementStrategy.equals(that.securityEnhancementStrategy) : that.securityEnhancementStrategy != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
+            if (this.spotDuration != null ? !this.spotDuration.equals(that.spotDuration) : that.spotDuration != null) return false;
+            if (this.spotInterruptionBehavior != null ? !this.spotInterruptionBehavior.equals(that.spotInterruptionBehavior) : that.spotInterruptionBehavior != null) return false;
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
@@ -1618,7 +1734,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
-            return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
+            if (this.zoneId != null ? !this.zoneId.equals(that.zoneId) : that.zoneId != null) return false;
+            return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
 
         @Override
@@ -1651,6 +1768,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.securityEnhancementStrategy != null ? this.securityEnhancementStrategy.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
+            result = 31 * result + (this.spotDuration != null ? this.spotDuration.hashCode() : 0);
+            result = 31 * result + (this.spotInterruptionBehavior != null ? this.spotInterruptionBehavior.hashCode() : 0);
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
@@ -1663,6 +1782,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
+            result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;
         }
     }

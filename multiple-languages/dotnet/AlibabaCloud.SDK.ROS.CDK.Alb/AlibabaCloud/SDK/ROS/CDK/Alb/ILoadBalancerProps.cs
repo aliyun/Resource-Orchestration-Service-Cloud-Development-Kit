@@ -82,6 +82,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        /// <summary>Property bandwidthPackageId: Attach common bandwidth package to load balancer.</summary>
+        /// <remarks>
+        /// It only takes effect when AddressType=Internet.
+        /// </remarks>
+        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BandwidthPackageId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property deletionProtectionEnabled: Specifies whether to enable deletion protection.</summary>
         /// <remarks>
         /// Default value: false.
@@ -207,6 +221,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiOptional]
             [JsiiProperty(name: "addressAllocatedMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AddressAllocatedMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property bandwidthPackageId: Attach common bandwidth package to load balancer.</summary>
+            /// <remarks>
+            /// It only takes effect when AddressType=Internet.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BandwidthPackageId
             {
                 get => GetInstanceProperty<object?>();
             }

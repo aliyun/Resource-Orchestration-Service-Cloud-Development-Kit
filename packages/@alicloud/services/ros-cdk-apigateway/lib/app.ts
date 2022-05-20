@@ -9,7 +9,7 @@ export { RosApp as AppProperty };
 export interface AppProps {
 
     /**
-     * Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly appName: string | ros.IResolvable;
 

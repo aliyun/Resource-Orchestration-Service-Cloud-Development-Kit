@@ -68,6 +68,11 @@ export interface CenBandwidthPackageProps {
      * Property pricingCycle: The pricing cycle.
      */
     readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -96,8 +101,9 @@ export class CenBandwidthPackage extends ros.Resource {
         super(scope, id);
 
         const rosCenBandwidthPackage = new RosCenBandwidthPackage(this, id,  {
-            description: props.description,
             bandwidthPackageChargeType: props.bandwidthPackageChargeType,
+            description: props.description,
+            resourceGroupId: props.resourceGroupId,
             geographicRegionBId: props.geographicRegionBId,
             geographicRegionAId: props.geographicRegionAId,
             pricingCycle: props.pricingCycle === undefined || props.pricingCycle === null ? 'Month' : props.pricingCycle,
@@ -105,8 +111,8 @@ export class CenBandwidthPackage extends ros.Resource {
             bandwidth: props.bandwidth,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
-            autoRenewDuration: props.autoRenewDuration,
             name: props.name,
+            autoRenewDuration: props.autoRenewDuration,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenBandwidthPackage;
         this.attrCenBandwidthPackageId = rosCenBandwidthPackage.attrCenBandwidthPackageId;

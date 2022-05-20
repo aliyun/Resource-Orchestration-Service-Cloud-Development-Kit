@@ -34,6 +34,11 @@ export interface ClusterProps {
     readonly oversoldFactor?: number | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property vpcId: VPC network ID. If network selection VPC, this parameter Required
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -83,6 +88,7 @@ export class Cluster extends ros.Resource {
             logicalRegionId: props.logicalRegionId,
             oversoldFactor: props.oversoldFactor,
             vpcId: props.vpcId,
+            resourceGroupId: props.resourceGroupId,
             clusterName: props.clusterName,
             networkMode: props.networkMode,
             clusterType: props.clusterType,

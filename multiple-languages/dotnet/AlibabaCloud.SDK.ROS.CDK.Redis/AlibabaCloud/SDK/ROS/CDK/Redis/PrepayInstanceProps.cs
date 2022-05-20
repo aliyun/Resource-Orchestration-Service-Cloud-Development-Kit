@@ -47,15 +47,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             set;
         }
 
-        /// <summary>Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.</summary>
-        [JsiiOptional]
-        [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? Capacity
-        {
-            get;
-            set;
-        }
-
         /// <summary>Property connections: Connection address.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "connections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.ConnectionsProperty\"}]}}", isOptional: true)]
@@ -153,6 +144,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         [JsiiOptional]
         [JsiiProperty(name: "productType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ProductType
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property secondaryZoneId: The secondary zone ID of the instance.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SecondaryZoneId
         {
             get;
             set;

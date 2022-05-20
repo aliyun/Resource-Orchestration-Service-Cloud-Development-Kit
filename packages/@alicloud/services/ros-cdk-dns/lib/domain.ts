@@ -19,6 +19,11 @@ export interface DomainProps {
     readonly groupId?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosDomain.TagsProperty[];
@@ -75,6 +80,7 @@ export class Domain extends ros.Resource {
         super(scope, id);
 
         const rosDomain = new RosDomain(this, id,  {
+            resourceGroupId: props.resourceGroupId,
             domainName: props.domainName,
             tags: props.tags,
             groupId: props.groupId,

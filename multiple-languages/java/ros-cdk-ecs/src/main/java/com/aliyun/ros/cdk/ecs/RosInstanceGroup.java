@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.778Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.866Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroup")
 public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -777,6 +777,42 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpotDuration() {
+        return software.amazon.jsii.Kernel.get(this, "spotDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSpotDuration(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "spotDuration", value);
+    }
+
+    /**
+     */
+    public void setSpotDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "spotDuration", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpotInterruptionBehavior() {
+        return software.amazon.jsii.Kernel.get(this, "spotInterruptionBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSpotInterruptionBehavior(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "spotInterruptionBehavior", value);
+    }
+
+    /**
+     */
+    public void setSpotInterruptionBehavior(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "spotInterruptionBehavior", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
         return software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -1037,6 +1073,24 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
+        return software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneIds", value);
+    }
+
+    /**
+     */
+    public void setZoneIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "zoneIds", value);
     }
     /**
      */
@@ -2755,6 +2809,40 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param spotDuration This parameter is required.
+         */
+        public Builder spotDuration(final java.lang.Number spotDuration) {
+            this.props.spotDuration(spotDuration);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param spotDuration This parameter is required.
+         */
+        public Builder spotDuration(final com.aliyun.ros.cdk.core.IResolvable spotDuration) {
+            this.props.spotDuration(spotDuration);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param spotInterruptionBehavior This parameter is required.
+         */
+        public Builder spotInterruptionBehavior(final java.lang.String spotInterruptionBehavior) {
+            this.props.spotInterruptionBehavior(spotInterruptionBehavior);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param spotInterruptionBehavior This parameter is required.
+         */
+        public Builder spotInterruptionBehavior(final com.aliyun.ros.cdk.core.IResolvable spotInterruptionBehavior) {
+            this.props.spotInterruptionBehavior(spotInterruptionBehavior);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param spotPriceLimit This parameter is required.
          */
         public Builder spotPriceLimit(final java.lang.String spotPriceLimit) {
@@ -2997,6 +3085,23 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneIds This parameter is required.
+         */
+        public Builder zoneIds(final com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.props.zoneIds(zoneIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneIds This parameter is required.
+         */
+        public Builder zoneIds(final java.util.List<? extends java.lang.Object> zoneIds) {
+            this.props.zoneIds(zoneIds);
             return this;
         }
 

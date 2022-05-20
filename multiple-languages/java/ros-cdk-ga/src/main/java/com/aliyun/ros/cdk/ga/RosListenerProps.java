@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.435Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.501Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getProtocol();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCertificates() {
+        return null;
+    }
 
     /**
      */
@@ -39,6 +45,24 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyProtocol() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityPolicyId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForConfig() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosListenerProps}
      */
     static Builder builder() {
@@ -51,9 +75,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object acceleratorId;
         java.lang.Object portRanges;
         java.lang.Object protocol;
+        java.lang.Object certificates;
         java.lang.Object clientAffinity;
         java.lang.Object description;
         java.lang.Object name;
+        java.lang.Object proxyProtocol;
+        java.lang.Object securityPolicyId;
+        java.lang.Object xForwardedForConfig;
 
         /**
          * Sets the value of {@link RosListenerProps#getAcceleratorId}
@@ -112,6 +140,26 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder protocol(com.aliyun.ros.cdk.core.IResolvable protocol) {
             this.protocol = protocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getCertificates}
+         * @param certificates the value to be set.
+         * @return {@code this}
+         */
+        public Builder certificates(com.aliyun.ros.cdk.core.IResolvable certificates) {
+            this.certificates = certificates;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getCertificates}
+         * @param certificates the value to be set.
+         * @return {@code this}
+         */
+        public Builder certificates(java.util.List<? extends java.lang.Object> certificates) {
+            this.certificates = certificates;
             return this;
         }
 
@@ -176,6 +224,66 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getProxyProtocol}
+         * @param proxyProtocol the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyProtocol(java.lang.Boolean proxyProtocol) {
+            this.proxyProtocol = proxyProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getProxyProtocol}
+         * @param proxyProtocol the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyProtocol(com.aliyun.ros.cdk.core.IResolvable proxyProtocol) {
+            this.proxyProtocol = proxyProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getSecurityPolicyId}
+         * @param securityPolicyId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityPolicyId(java.lang.String securityPolicyId) {
+            this.securityPolicyId = securityPolicyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getSecurityPolicyId}
+         * @param securityPolicyId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityPolicyId(com.aliyun.ros.cdk.core.IResolvable securityPolicyId) {
+            this.securityPolicyId = securityPolicyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getXForwardedForConfig}
+         * @param xForwardedForConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder xForwardedForConfig(com.aliyun.ros.cdk.core.IResolvable xForwardedForConfig) {
+            this.xForwardedForConfig = xForwardedForConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getXForwardedForConfig}
+         * @param xForwardedForConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder xForwardedForConfig(com.aliyun.ros.cdk.ga.RosListener.XForwardedForConfigProperty xForwardedForConfig) {
+            this.xForwardedForConfig = xForwardedForConfig;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosListenerProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -194,9 +302,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object acceleratorId;
         private final java.lang.Object portRanges;
         private final java.lang.Object protocol;
+        private final java.lang.Object certificates;
         private final java.lang.Object clientAffinity;
         private final java.lang.Object description;
         private final java.lang.Object name;
+        private final java.lang.Object proxyProtocol;
+        private final java.lang.Object securityPolicyId;
+        private final java.lang.Object xForwardedForConfig;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -207,9 +319,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.portRanges = software.amazon.jsii.Kernel.get(this, "portRanges", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.certificates = software.amazon.jsii.Kernel.get(this, "certificates", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clientAffinity = software.amazon.jsii.Kernel.get(this, "clientAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proxyProtocol = software.amazon.jsii.Kernel.get(this, "proxyProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityPolicyId = software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.xForwardedForConfig = software.amazon.jsii.Kernel.get(this, "xForwardedForConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -220,9 +336,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.acceleratorId = java.util.Objects.requireNonNull(builder.acceleratorId, "acceleratorId is required");
             this.portRanges = java.util.Objects.requireNonNull(builder.portRanges, "portRanges is required");
             this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
+            this.certificates = builder.certificates;
             this.clientAffinity = builder.clientAffinity;
             this.description = builder.description;
             this.name = builder.name;
+            this.proxyProtocol = builder.proxyProtocol;
+            this.securityPolicyId = builder.securityPolicyId;
+            this.xForwardedForConfig = builder.xForwardedForConfig;
         }
 
         @Override
@@ -241,6 +361,11 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getCertificates() {
+            return this.certificates;
+        }
+
+        @Override
         public final java.lang.Object getClientAffinity() {
             return this.clientAffinity;
         }
@@ -256,6 +381,21 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getProxyProtocol() {
+            return this.proxyProtocol;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityPolicyId() {
+            return this.securityPolicyId;
+        }
+
+        @Override
+        public final java.lang.Object getXForwardedForConfig() {
+            return this.xForwardedForConfig;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -264,6 +404,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             data.set("acceleratorId", om.valueToTree(this.getAcceleratorId()));
             data.set("portRanges", om.valueToTree(this.getPortRanges()));
             data.set("protocol", om.valueToTree(this.getProtocol()));
+            if (this.getCertificates() != null) {
+                data.set("certificates", om.valueToTree(this.getCertificates()));
+            }
             if (this.getClientAffinity() != null) {
                 data.set("clientAffinity", om.valueToTree(this.getClientAffinity()));
             }
@@ -272,6 +415,15 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getProxyProtocol() != null) {
+                data.set("proxyProtocol", om.valueToTree(this.getProxyProtocol()));
+            }
+            if (this.getSecurityPolicyId() != null) {
+                data.set("securityPolicyId", om.valueToTree(this.getSecurityPolicyId()));
+            }
+            if (this.getXForwardedForConfig() != null) {
+                data.set("xForwardedForConfig", om.valueToTree(this.getXForwardedForConfig()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -294,9 +446,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (!acceleratorId.equals(that.acceleratorId)) return false;
             if (!portRanges.equals(that.portRanges)) return false;
             if (!protocol.equals(that.protocol)) return false;
+            if (this.certificates != null ? !this.certificates.equals(that.certificates) : that.certificates != null) return false;
             if (this.clientAffinity != null ? !this.clientAffinity.equals(that.clientAffinity) : that.clientAffinity != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.name != null ? this.name.equals(that.name) : that.name == null;
+            if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.proxyProtocol != null ? !this.proxyProtocol.equals(that.proxyProtocol) : that.proxyProtocol != null) return false;
+            if (this.securityPolicyId != null ? !this.securityPolicyId.equals(that.securityPolicyId) : that.securityPolicyId != null) return false;
+            return this.xForwardedForConfig != null ? this.xForwardedForConfig.equals(that.xForwardedForConfig) : that.xForwardedForConfig == null;
         }
 
         @Override
@@ -304,9 +460,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             int result = this.acceleratorId.hashCode();
             result = 31 * result + (this.portRanges.hashCode());
             result = 31 * result + (this.protocol.hashCode());
+            result = 31 * result + (this.certificates != null ? this.certificates.hashCode() : 0);
             result = 31 * result + (this.clientAffinity != null ? this.clientAffinity.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.proxyProtocol != null ? this.proxyProtocol.hashCode() : 0);
+            result = 31 * result + (this.securityPolicyId != null ? this.securityPolicyId.hashCode() : 0);
+            result = 31 * result + (this.xForwardedForConfig != null ? this.xForwardedForConfig.hashCode() : 0);
             return result;
         }
     }

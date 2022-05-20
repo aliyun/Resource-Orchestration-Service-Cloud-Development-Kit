@@ -19,6 +19,11 @@ export interface TemplateProps {
     readonly templateName: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
      */
     readonly tags?: { [key: string]: (any) };
@@ -60,6 +65,7 @@ export class Template extends ros.Resource {
         super(scope, id);
 
         const rosTemplate = new RosTemplate(this, id,  {
+            resourceGroupId: props.resourceGroupId,
             content: props.content,
             templateName: props.templateName,
             tags: props.tags,

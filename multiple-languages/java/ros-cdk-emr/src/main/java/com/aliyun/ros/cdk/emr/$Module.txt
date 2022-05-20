@@ -6,6 +6,7 @@
 @alicloud/ros-cdk-emr.RosCluster.BootstrapActionProperty=com.aliyun.ros.cdk.emr.RosCluster$BootstrapActionProperty
 @alicloud/ros-cdk-emr.RosCluster.ConfigProperty=com.aliyun.ros.cdk.emr.RosCluster$ConfigProperty
 @alicloud/ros-cdk-emr.RosCluster.HostGroupProperty=com.aliyun.ros.cdk.emr.RosCluster$HostGroupProperty
+@alicloud/ros-cdk-emr.RosCluster.TagsProperty=com.aliyun.ros.cdk.emr.RosCluster$TagsProperty
 @alicloud/ros-cdk-emr.RosCluster.UserInfoProperty=com.aliyun.ros.cdk.emr.RosCluster$UserInfoProperty
 @alicloud/ros-cdk-emr.RosClusterProps=com.aliyun.ros.cdk.emr.RosClusterProps
 @alicloud/ros-cdk-emr.RosClusterServiceConfigs=com.aliyun.ros.cdk.emr.RosClusterServiceConfigs

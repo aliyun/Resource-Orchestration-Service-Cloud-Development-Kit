@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * Properties for defining a `ALIYUN::DRDS::DrdsInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.473Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.545Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.RosDrdsInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDrdsInstanceProps.Jsii$Proxy.class)
 public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,6 +62,12 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> getTags() {
         return null;
     }
@@ -99,6 +105,7 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object isAutoRenew;
         java.lang.Object mySqlVersion;
         java.lang.Object pricingCycle;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags;
         java.lang.Object vpcId;
         java.lang.Object vswitchId;
@@ -324,6 +331,26 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDrdsInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsInstanceProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -401,6 +428,7 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object isAutoRenew;
         private final java.lang.Object mySqlVersion;
         private final java.lang.Object pricingCycle;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags;
         private final java.lang.Object vpcId;
         private final java.lang.Object vswitchId;
@@ -422,6 +450,7 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             this.isAutoRenew = software.amazon.jsii.Kernel.get(this, "isAutoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mySqlVersion = software.amazon.jsii.Kernel.get(this, "mySqlVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vswitchId = software.amazon.jsii.Kernel.get(this, "vswitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -444,6 +473,7 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             this.isAutoRenew = builder.isAutoRenew;
             this.mySqlVersion = builder.mySqlVersion;
             this.pricingCycle = builder.pricingCycle;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
             this.vswitchId = builder.vswitchId;
@@ -505,6 +535,11 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> getTags() {
             return this.tags;
         }
@@ -544,6 +579,9 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -582,6 +620,7 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             if (this.isAutoRenew != null ? !this.isAutoRenew.equals(that.isAutoRenew) : that.isAutoRenew != null) return false;
             if (this.mySqlVersion != null ? !this.mySqlVersion.equals(that.mySqlVersion) : that.mySqlVersion != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             return this.vswitchId != null ? this.vswitchId.equals(that.vswitchId) : that.vswitchId == null;
@@ -600,6 +639,7 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.isAutoRenew != null ? this.isAutoRenew.hashCode() : 0);
             result = 31 * result + (this.mySqlVersion != null ? this.mySqlVersion.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vswitchId != null ? this.vswitchId.hashCode() : 0);

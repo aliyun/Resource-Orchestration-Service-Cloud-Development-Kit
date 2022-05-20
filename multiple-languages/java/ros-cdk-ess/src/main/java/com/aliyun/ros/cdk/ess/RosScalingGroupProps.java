@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.212Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.251Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupProps.Jsii$Proxy.class)
 public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,6 +15,18 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMinSize();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCompensateWithOnDemand() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getContainerGroupId() {
+        return null;
+    }
 
     /**
      */
@@ -37,6 +49,12 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroupDeletionProtection() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupType() {
         return null;
     }
 
@@ -84,6 +102,18 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOnDemandBaseCapacity() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOnDemandPercentageAboveBaseCapacity() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProtectedInstances() {
         return null;
     }
@@ -97,6 +127,24 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getScalingGroupName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingPolicy() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotInstancePools() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotInstanceRemedy() {
         return null;
     }
 
@@ -136,10 +184,13 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
     public static final class Builder implements software.amazon.jsii.Builder<RosScalingGroupProps> {
         java.lang.Object maxSize;
         java.lang.Object minSize;
+        java.lang.Object compensateWithOnDemand;
+        java.lang.Object containerGroupId;
         java.lang.Object dbInstanceIds;
         java.lang.Object defaultCooldown;
         java.lang.Object desiredCapacity;
         java.lang.Object groupDeletionProtection;
+        java.lang.Object groupType;
         java.lang.Object healthCheckType;
         java.lang.Object instanceId;
         java.lang.Object launchTemplateId;
@@ -147,9 +198,14 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object loadBalancerIds;
         java.lang.Object multiAzPolicy;
         java.lang.Object notificationConfigurations;
+        java.lang.Object onDemandBaseCapacity;
+        java.lang.Object onDemandPercentageAboveBaseCapacity;
         java.lang.Object protectedInstances;
         java.lang.Object removalPolicys;
         java.lang.Object scalingGroupName;
+        java.lang.Object scalingPolicy;
+        java.lang.Object spotInstancePools;
+        java.lang.Object spotInstanceRemedy;
         java.lang.Object standbyInstances;
         java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags;
         java.lang.Object vSwitchId;
@@ -192,6 +248,46 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder minSize(com.aliyun.ros.cdk.core.IResolvable minSize) {
             this.minSize = minSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getCompensateWithOnDemand}
+         * @param compensateWithOnDemand the value to be set.
+         * @return {@code this}
+         */
+        public Builder compensateWithOnDemand(java.lang.Boolean compensateWithOnDemand) {
+            this.compensateWithOnDemand = compensateWithOnDemand;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getCompensateWithOnDemand}
+         * @param compensateWithOnDemand the value to be set.
+         * @return {@code this}
+         */
+        public Builder compensateWithOnDemand(com.aliyun.ros.cdk.core.IResolvable compensateWithOnDemand) {
+            this.compensateWithOnDemand = compensateWithOnDemand;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getContainerGroupId}
+         * @param containerGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder containerGroupId(java.lang.String containerGroupId) {
+            this.containerGroupId = containerGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getContainerGroupId}
+         * @param containerGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder containerGroupId(com.aliyun.ros.cdk.core.IResolvable containerGroupId) {
+            this.containerGroupId = containerGroupId;
             return this;
         }
 
@@ -272,6 +368,26 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder groupDeletionProtection(com.aliyun.ros.cdk.core.IResolvable groupDeletionProtection) {
             this.groupDeletionProtection = groupDeletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getGroupType}
+         * @param groupType the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupType(java.lang.String groupType) {
+            this.groupType = groupType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getGroupType}
+         * @param groupType the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupType(com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.groupType = groupType;
             return this;
         }
 
@@ -416,6 +532,46 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosScalingGroupProps#getOnDemandBaseCapacity}
+         * @param onDemandBaseCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder onDemandBaseCapacity(java.lang.Number onDemandBaseCapacity) {
+            this.onDemandBaseCapacity = onDemandBaseCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getOnDemandBaseCapacity}
+         * @param onDemandBaseCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder onDemandBaseCapacity(com.aliyun.ros.cdk.core.IResolvable onDemandBaseCapacity) {
+            this.onDemandBaseCapacity = onDemandBaseCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getOnDemandPercentageAboveBaseCapacity}
+         * @param onDemandPercentageAboveBaseCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder onDemandPercentageAboveBaseCapacity(java.lang.Number onDemandPercentageAboveBaseCapacity) {
+            this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getOnDemandPercentageAboveBaseCapacity}
+         * @param onDemandPercentageAboveBaseCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder onDemandPercentageAboveBaseCapacity(com.aliyun.ros.cdk.core.IResolvable onDemandPercentageAboveBaseCapacity) {
+            this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingGroupProps#getProtectedInstances}
          * @param protectedInstances the value to be set.
          * @return {@code this}
@@ -472,6 +628,66 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder scalingGroupName(com.aliyun.ros.cdk.core.IResolvable scalingGroupName) {
             this.scalingGroupName = scalingGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getScalingPolicy}
+         * @param scalingPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder scalingPolicy(java.lang.String scalingPolicy) {
+            this.scalingPolicy = scalingPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getScalingPolicy}
+         * @param scalingPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder scalingPolicy(com.aliyun.ros.cdk.core.IResolvable scalingPolicy) {
+            this.scalingPolicy = scalingPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getSpotInstancePools}
+         * @param spotInstancePools the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotInstancePools(java.lang.Number spotInstancePools) {
+            this.spotInstancePools = spotInstancePools;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getSpotInstancePools}
+         * @param spotInstancePools the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotInstancePools(com.aliyun.ros.cdk.core.IResolvable spotInstancePools) {
+            this.spotInstancePools = spotInstancePools;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getSpotInstanceRemedy}
+         * @param spotInstanceRemedy the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotInstanceRemedy(java.lang.Boolean spotInstanceRemedy) {
+            this.spotInstanceRemedy = spotInstanceRemedy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getSpotInstanceRemedy}
+         * @param spotInstanceRemedy the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotInstanceRemedy(com.aliyun.ros.cdk.core.IResolvable spotInstanceRemedy) {
+            this.spotInstanceRemedy = spotInstanceRemedy;
             return this;
         }
 
@@ -564,10 +780,13 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosScalingGroupProps {
         private final java.lang.Object maxSize;
         private final java.lang.Object minSize;
+        private final java.lang.Object compensateWithOnDemand;
+        private final java.lang.Object containerGroupId;
         private final java.lang.Object dbInstanceIds;
         private final java.lang.Object defaultCooldown;
         private final java.lang.Object desiredCapacity;
         private final java.lang.Object groupDeletionProtection;
+        private final java.lang.Object groupType;
         private final java.lang.Object healthCheckType;
         private final java.lang.Object instanceId;
         private final java.lang.Object launchTemplateId;
@@ -575,9 +794,14 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object loadBalancerIds;
         private final java.lang.Object multiAzPolicy;
         private final java.lang.Object notificationConfigurations;
+        private final java.lang.Object onDemandBaseCapacity;
+        private final java.lang.Object onDemandPercentageAboveBaseCapacity;
         private final java.lang.Object protectedInstances;
         private final java.lang.Object removalPolicys;
         private final java.lang.Object scalingGroupName;
+        private final java.lang.Object scalingPolicy;
+        private final java.lang.Object spotInstancePools;
+        private final java.lang.Object spotInstanceRemedy;
         private final java.lang.Object standbyInstances;
         private final java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags;
         private final java.lang.Object vSwitchId;
@@ -591,10 +815,13 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             super(objRef);
             this.maxSize = software.amazon.jsii.Kernel.get(this, "maxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.minSize = software.amazon.jsii.Kernel.get(this, "minSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.compensateWithOnDemand = software.amazon.jsii.Kernel.get(this, "compensateWithOnDemand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.containerGroupId = software.amazon.jsii.Kernel.get(this, "containerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceIds = software.amazon.jsii.Kernel.get(this, "dbInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultCooldown = software.amazon.jsii.Kernel.get(this, "defaultCooldown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.desiredCapacity = software.amazon.jsii.Kernel.get(this, "desiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupDeletionProtection = software.amazon.jsii.Kernel.get(this, "groupDeletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -602,9 +829,14 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             this.loadBalancerIds = software.amazon.jsii.Kernel.get(this, "loadBalancerIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.multiAzPolicy = software.amazon.jsii.Kernel.get(this, "multiAzPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.notificationConfigurations = software.amazon.jsii.Kernel.get(this, "notificationConfigurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.onDemandBaseCapacity = software.amazon.jsii.Kernel.get(this, "onDemandBaseCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.onDemandPercentageAboveBaseCapacity = software.amazon.jsii.Kernel.get(this, "onDemandPercentageAboveBaseCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectedInstances = software.amazon.jsii.Kernel.get(this, "protectedInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.removalPolicys = software.amazon.jsii.Kernel.get(this, "removalPolicys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingGroupName = software.amazon.jsii.Kernel.get(this, "scalingGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scalingPolicy = software.amazon.jsii.Kernel.get(this, "scalingPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotInstancePools = software.amazon.jsii.Kernel.get(this, "spotInstancePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotInstanceRemedy = software.amazon.jsii.Kernel.get(this, "spotInstanceRemedy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyInstances = software.amazon.jsii.Kernel.get(this, "standbyInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty.class)));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -619,10 +851,13 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.maxSize = java.util.Objects.requireNonNull(builder.maxSize, "maxSize is required");
             this.minSize = java.util.Objects.requireNonNull(builder.minSize, "minSize is required");
+            this.compensateWithOnDemand = builder.compensateWithOnDemand;
+            this.containerGroupId = builder.containerGroupId;
             this.dbInstanceIds = builder.dbInstanceIds;
             this.defaultCooldown = builder.defaultCooldown;
             this.desiredCapacity = builder.desiredCapacity;
             this.groupDeletionProtection = builder.groupDeletionProtection;
+            this.groupType = builder.groupType;
             this.healthCheckType = builder.healthCheckType;
             this.instanceId = builder.instanceId;
             this.launchTemplateId = builder.launchTemplateId;
@@ -630,9 +865,14 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             this.loadBalancerIds = builder.loadBalancerIds;
             this.multiAzPolicy = builder.multiAzPolicy;
             this.notificationConfigurations = builder.notificationConfigurations;
+            this.onDemandBaseCapacity = builder.onDemandBaseCapacity;
+            this.onDemandPercentageAboveBaseCapacity = builder.onDemandPercentageAboveBaseCapacity;
             this.protectedInstances = builder.protectedInstances;
             this.removalPolicys = builder.removalPolicys;
             this.scalingGroupName = builder.scalingGroupName;
+            this.scalingPolicy = builder.scalingPolicy;
+            this.spotInstancePools = builder.spotInstancePools;
+            this.spotInstanceRemedy = builder.spotInstanceRemedy;
             this.standbyInstances = builder.standbyInstances;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty>)builder.tags;
             this.vSwitchId = builder.vSwitchId;
@@ -647,6 +887,16 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getMinSize() {
             return this.minSize;
+        }
+
+        @Override
+        public final java.lang.Object getCompensateWithOnDemand() {
+            return this.compensateWithOnDemand;
+        }
+
+        @Override
+        public final java.lang.Object getContainerGroupId() {
+            return this.containerGroupId;
         }
 
         @Override
@@ -667,6 +917,11 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getGroupDeletionProtection() {
             return this.groupDeletionProtection;
+        }
+
+        @Override
+        public final java.lang.Object getGroupType() {
+            return this.groupType;
         }
 
         @Override
@@ -705,6 +960,16 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getOnDemandBaseCapacity() {
+            return this.onDemandBaseCapacity;
+        }
+
+        @Override
+        public final java.lang.Object getOnDemandPercentageAboveBaseCapacity() {
+            return this.onDemandPercentageAboveBaseCapacity;
+        }
+
+        @Override
         public final java.lang.Object getProtectedInstances() {
             return this.protectedInstances;
         }
@@ -717,6 +982,21 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         @Override
         public final java.lang.Object getScalingGroupName() {
             return this.scalingGroupName;
+        }
+
+        @Override
+        public final java.lang.Object getScalingPolicy() {
+            return this.scalingPolicy;
+        }
+
+        @Override
+        public final java.lang.Object getSpotInstancePools() {
+            return this.spotInstancePools;
+        }
+
+        @Override
+        public final java.lang.Object getSpotInstanceRemedy() {
+            return this.spotInstanceRemedy;
         }
 
         @Override
@@ -747,6 +1027,12 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
             data.set("maxSize", om.valueToTree(this.getMaxSize()));
             data.set("minSize", om.valueToTree(this.getMinSize()));
+            if (this.getCompensateWithOnDemand() != null) {
+                data.set("compensateWithOnDemand", om.valueToTree(this.getCompensateWithOnDemand()));
+            }
+            if (this.getContainerGroupId() != null) {
+                data.set("containerGroupId", om.valueToTree(this.getContainerGroupId()));
+            }
             if (this.getDbInstanceIds() != null) {
                 data.set("dbInstanceIds", om.valueToTree(this.getDbInstanceIds()));
             }
@@ -758,6 +1044,9 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             }
             if (this.getGroupDeletionProtection() != null) {
                 data.set("groupDeletionProtection", om.valueToTree(this.getGroupDeletionProtection()));
+            }
+            if (this.getGroupType() != null) {
+                data.set("groupType", om.valueToTree(this.getGroupType()));
             }
             if (this.getHealthCheckType() != null) {
                 data.set("healthCheckType", om.valueToTree(this.getHealthCheckType()));
@@ -780,6 +1069,12 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             if (this.getNotificationConfigurations() != null) {
                 data.set("notificationConfigurations", om.valueToTree(this.getNotificationConfigurations()));
             }
+            if (this.getOnDemandBaseCapacity() != null) {
+                data.set("onDemandBaseCapacity", om.valueToTree(this.getOnDemandBaseCapacity()));
+            }
+            if (this.getOnDemandPercentageAboveBaseCapacity() != null) {
+                data.set("onDemandPercentageAboveBaseCapacity", om.valueToTree(this.getOnDemandPercentageAboveBaseCapacity()));
+            }
             if (this.getProtectedInstances() != null) {
                 data.set("protectedInstances", om.valueToTree(this.getProtectedInstances()));
             }
@@ -788,6 +1083,15 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             }
             if (this.getScalingGroupName() != null) {
                 data.set("scalingGroupName", om.valueToTree(this.getScalingGroupName()));
+            }
+            if (this.getScalingPolicy() != null) {
+                data.set("scalingPolicy", om.valueToTree(this.getScalingPolicy()));
+            }
+            if (this.getSpotInstancePools() != null) {
+                data.set("spotInstancePools", om.valueToTree(this.getSpotInstancePools()));
+            }
+            if (this.getSpotInstanceRemedy() != null) {
+                data.set("spotInstanceRemedy", om.valueToTree(this.getSpotInstanceRemedy()));
             }
             if (this.getStandbyInstances() != null) {
                 data.set("standbyInstances", om.valueToTree(this.getStandbyInstances()));
@@ -821,10 +1125,13 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
             if (!maxSize.equals(that.maxSize)) return false;
             if (!minSize.equals(that.minSize)) return false;
+            if (this.compensateWithOnDemand != null ? !this.compensateWithOnDemand.equals(that.compensateWithOnDemand) : that.compensateWithOnDemand != null) return false;
+            if (this.containerGroupId != null ? !this.containerGroupId.equals(that.containerGroupId) : that.containerGroupId != null) return false;
             if (this.dbInstanceIds != null ? !this.dbInstanceIds.equals(that.dbInstanceIds) : that.dbInstanceIds != null) return false;
             if (this.defaultCooldown != null ? !this.defaultCooldown.equals(that.defaultCooldown) : that.defaultCooldown != null) return false;
             if (this.desiredCapacity != null ? !this.desiredCapacity.equals(that.desiredCapacity) : that.desiredCapacity != null) return false;
             if (this.groupDeletionProtection != null ? !this.groupDeletionProtection.equals(that.groupDeletionProtection) : that.groupDeletionProtection != null) return false;
+            if (this.groupType != null ? !this.groupType.equals(that.groupType) : that.groupType != null) return false;
             if (this.healthCheckType != null ? !this.healthCheckType.equals(that.healthCheckType) : that.healthCheckType != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.launchTemplateId != null ? !this.launchTemplateId.equals(that.launchTemplateId) : that.launchTemplateId != null) return false;
@@ -832,9 +1139,14 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             if (this.loadBalancerIds != null ? !this.loadBalancerIds.equals(that.loadBalancerIds) : that.loadBalancerIds != null) return false;
             if (this.multiAzPolicy != null ? !this.multiAzPolicy.equals(that.multiAzPolicy) : that.multiAzPolicy != null) return false;
             if (this.notificationConfigurations != null ? !this.notificationConfigurations.equals(that.notificationConfigurations) : that.notificationConfigurations != null) return false;
+            if (this.onDemandBaseCapacity != null ? !this.onDemandBaseCapacity.equals(that.onDemandBaseCapacity) : that.onDemandBaseCapacity != null) return false;
+            if (this.onDemandPercentageAboveBaseCapacity != null ? !this.onDemandPercentageAboveBaseCapacity.equals(that.onDemandPercentageAboveBaseCapacity) : that.onDemandPercentageAboveBaseCapacity != null) return false;
             if (this.protectedInstances != null ? !this.protectedInstances.equals(that.protectedInstances) : that.protectedInstances != null) return false;
             if (this.removalPolicys != null ? !this.removalPolicys.equals(that.removalPolicys) : that.removalPolicys != null) return false;
             if (this.scalingGroupName != null ? !this.scalingGroupName.equals(that.scalingGroupName) : that.scalingGroupName != null) return false;
+            if (this.scalingPolicy != null ? !this.scalingPolicy.equals(that.scalingPolicy) : that.scalingPolicy != null) return false;
+            if (this.spotInstancePools != null ? !this.spotInstancePools.equals(that.spotInstancePools) : that.spotInstancePools != null) return false;
+            if (this.spotInstanceRemedy != null ? !this.spotInstanceRemedy.equals(that.spotInstanceRemedy) : that.spotInstanceRemedy != null) return false;
             if (this.standbyInstances != null ? !this.standbyInstances.equals(that.standbyInstances) : that.standbyInstances != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
@@ -845,10 +1157,13 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         public final int hashCode() {
             int result = this.maxSize.hashCode();
             result = 31 * result + (this.minSize.hashCode());
+            result = 31 * result + (this.compensateWithOnDemand != null ? this.compensateWithOnDemand.hashCode() : 0);
+            result = 31 * result + (this.containerGroupId != null ? this.containerGroupId.hashCode() : 0);
             result = 31 * result + (this.dbInstanceIds != null ? this.dbInstanceIds.hashCode() : 0);
             result = 31 * result + (this.defaultCooldown != null ? this.defaultCooldown.hashCode() : 0);
             result = 31 * result + (this.desiredCapacity != null ? this.desiredCapacity.hashCode() : 0);
             result = 31 * result + (this.groupDeletionProtection != null ? this.groupDeletionProtection.hashCode() : 0);
+            result = 31 * result + (this.groupType != null ? this.groupType.hashCode() : 0);
             result = 31 * result + (this.healthCheckType != null ? this.healthCheckType.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.launchTemplateId != null ? this.launchTemplateId.hashCode() : 0);
@@ -856,9 +1171,14 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.loadBalancerIds != null ? this.loadBalancerIds.hashCode() : 0);
             result = 31 * result + (this.multiAzPolicy != null ? this.multiAzPolicy.hashCode() : 0);
             result = 31 * result + (this.notificationConfigurations != null ? this.notificationConfigurations.hashCode() : 0);
+            result = 31 * result + (this.onDemandBaseCapacity != null ? this.onDemandBaseCapacity.hashCode() : 0);
+            result = 31 * result + (this.onDemandPercentageAboveBaseCapacity != null ? this.onDemandPercentageAboveBaseCapacity.hashCode() : 0);
             result = 31 * result + (this.protectedInstances != null ? this.protectedInstances.hashCode() : 0);
             result = 31 * result + (this.removalPolicys != null ? this.removalPolicys.hashCode() : 0);
             result = 31 * result + (this.scalingGroupName != null ? this.scalingGroupName.hashCode() : 0);
+            result = 31 * result + (this.scalingPolicy != null ? this.scalingPolicy.hashCode() : 0);
+            result = 31 * result + (this.spotInstancePools != null ? this.spotInstancePools.hashCode() : 0);
+            result = 31 * result + (this.spotInstanceRemedy != null ? this.spotInstanceRemedy.hashCode() : 0);
             result = 31 * result + (this.standbyInstances != null ? this.standbyInstances.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

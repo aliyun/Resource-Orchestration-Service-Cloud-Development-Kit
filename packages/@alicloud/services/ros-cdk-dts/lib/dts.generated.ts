@@ -951,6 +951,11 @@ export interface RosSubscriptionInstanceProps {
     readonly sourceEndpointInstanceType?: string | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSubscriptionInstance.TagsProperty[];
+
+    /**
      * @Property usedTime: The subscription length.
      * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
      * You can set the Period parameter to specify the unit of the subscription length.
@@ -985,6 +990,14 @@ function RosSubscriptionInstancePropsValidator(properties: any): ros.ValidationR
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('sourceEndpointInstanceType', ros.validateString)(properties.sourceEndpointInstanceType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSubscriptionInstance_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosSubscriptionInstanceProps"');
 }
 
@@ -1006,6 +1019,7 @@ function rosSubscriptionInstancePropsToRosTemplate(properties: any, enableResour
       PayType: ros.stringToRosTemplate(properties.payType),
       Period: ros.stringToRosTemplate(properties.period),
       SourceEndpointInstanceType: ros.stringToRosTemplate(properties.sourceEndpointInstanceType),
+      Tags: ros.listMapper(rosSubscriptionInstanceTagsPropertyToRosTemplate)(properties.tags),
       UsedTime: ros.numberToRosTemplate(properties.usedTime),
     };
 }
@@ -1033,6 +1047,11 @@ export class RosSubscriptionInstance extends ros.RosResource {
      * @Attribute PublicHost: Public host.
      */
     public readonly attrPublicHost: ros.IResolvable;
+
+    /**
+     * @Attribute SubscribeTopic: The topic of the change tracking instance.
+     */
+    public readonly attrSubscribeTopic: ros.IResolvable;
 
     /**
      * @Attribute SubscriptionInstanceId: The ID of Data subscription instance.
@@ -1077,6 +1096,11 @@ export class RosSubscriptionInstance extends ros.RosResource {
     public sourceEndpointInstanceType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosSubscriptionInstance.TagsProperty[] | undefined;
+
+    /**
      * @Property usedTime: The subscription length.
      * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
      * You can set the Period parameter to specify the unit of the subscription length.
@@ -1094,6 +1118,7 @@ export class RosSubscriptionInstance extends ros.RosResource {
         super(scope, id, { type: RosSubscriptionInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrPrivateHost = this.getAtt('PrivateHost');
         this.attrPublicHost = this.getAtt('PublicHost');
+        this.attrSubscribeTopic = this.getAtt('SubscribeTopic');
         this.attrSubscriptionInstanceId = this.getAtt('SubscriptionInstanceId');
         this.attrVpcHost = this.getAtt('VPCHost');
 
@@ -1102,6 +1127,7 @@ export class RosSubscriptionInstance extends ros.RosResource {
         this.payType = props.payType;
         this.period = props.period;
         this.sourceEndpointInstanceType = props.sourceEndpointInstanceType;
+        this.tags = props.tags;
         this.usedTime = props.usedTime;
     }
 
@@ -1112,6 +1138,7 @@ export class RosSubscriptionInstance extends ros.RosResource {
             payType: this.payType,
             period: this.period,
             sourceEndpointInstanceType: this.sourceEndpointInstanceType,
+            tags: this.tags,
             usedTime: this.usedTime,
         };
     }
@@ -1125,10 +1152,6 @@ export namespace RosSubscriptionInstance {
      * @stability external
      */
     export interface ConfigurationProperty {
-        /**
-         * @Property subscriptionObject: Objects that need to be migrated.
-         */
-        readonly subscriptionObject: Array<RosSubscriptionInstance.SubscriptionObjectProperty | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property subscriptionDataType: undefined
          */
@@ -1146,6 +1169,10 @@ export namespace RosSubscriptionInstance {
          */
         readonly sourceEndpoint: RosSubscriptionInstance.SourceEndpointProperty | ros.IResolvable;
         /**
+         * @Property dbList: Subscription object, formatted as a JSON string. For detailed definitions, see the description of the migration, synchronization or subscription objects.
+         */
+        readonly dbList?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
          * @Property subscriptionInstanceNetworkType: Network type: classic or vpc.
          */
         readonly subscriptionInstanceNetworkType?: string | ros.IResolvable;
@@ -1161,14 +1188,13 @@ export namespace RosSubscriptionInstance {
 function RosSubscriptionInstance_ConfigurationPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('subscriptionObject', ros.requiredValidator)(properties.subscriptionObject));
-    errors.collect(ros.propertyValidator('subscriptionObject', ros.listValidator(RosSubscriptionInstance_SubscriptionObjectPropertyValidator))(properties.subscriptionObject));
     errors.collect(ros.propertyValidator('subscriptionDataType', ros.requiredValidator)(properties.subscriptionDataType));
     errors.collect(ros.propertyValidator('subscriptionDataType', RosSubscriptionInstance_SubscriptionDataTypePropertyValidator)(properties.subscriptionDataType));
     errors.collect(ros.propertyValidator('subscriptionInstanceName', ros.validateString)(properties.subscriptionInstanceName));
     errors.collect(ros.propertyValidator('subscriptionInstance', RosSubscriptionInstance_SubscriptionInstancePropertyValidator)(properties.subscriptionInstance));
     errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', RosSubscriptionInstance_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
+    errors.collect(ros.propertyValidator('dbList', ros.hashValidator(ros.validateAny))(properties.dbList));
     errors.collect(ros.propertyValidator('subscriptionInstanceNetworkType', ros.validateString)(properties.subscriptionInstanceNetworkType));
     return errors.wrap('supplied properties not correct for "ConfigurationProperty"');
 }
@@ -1185,11 +1211,11 @@ function rosSubscriptionInstanceConfigurationPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosSubscriptionInstance_ConfigurationPropertyValidator(properties).assertSuccess();
     return {
-      SubscriptionObject: ros.listMapper(rosSubscriptionInstanceSubscriptionObjectPropertyToRosTemplate)(properties.subscriptionObject),
       SubscriptionDataType: rosSubscriptionInstanceSubscriptionDataTypePropertyToRosTemplate(properties.subscriptionDataType),
       SubscriptionInstanceName: ros.stringToRosTemplate(properties.subscriptionInstanceName),
       SubscriptionInstance: rosSubscriptionInstanceSubscriptionInstancePropertyToRosTemplate(properties.subscriptionInstance),
       SourceEndpoint: rosSubscriptionInstanceSourceEndpointPropertyToRosTemplate(properties.sourceEndpoint),
+      DbList: ros.hashMapper(ros.objectToRosTemplate)(properties.dbList),
       SubscriptionInstanceNetworkType: ros.stringToRosTemplate(properties.subscriptionInstanceNetworkType),
     };
 }
@@ -1237,6 +1263,11 @@ export namespace RosSubscriptionInstance {
          * @Property instanceType: The instance type of the subscription source instance, including:
      * RDS: Alibaba Cloud RDS instance
      * ECS: Self-built database on ECS
+     * PolarDB: PolarDB for MySQL cluster
+     * LocalInstance: self-managed database with a public IP address
+     * Express: self-managed database that is connected over Express Connect
+     * CEN: self-managed database that is connected over Cloud Enterprise Network (CEN)
+     * dg: self-managed database that is connected over Database Gateway
          */
         readonly instanceType: string | ros.IResolvable;
         /**
@@ -1398,134 +1429,47 @@ export namespace RosSubscriptionInstance {
     /**
      * @stability external
      */
-    export interface SubscriptionObjectProperty {
+    export interface TagsProperty {
         /**
-         * @Property tableIncludes: Table configuration.
+         * @Property value: undefined
          */
-        readonly tableIncludes?: Array<RosSubscriptionInstance.TableIncludesProperty | ros.IResolvable> | ros.IResolvable;
+        readonly value?: string | ros.IResolvable;
         /**
-         * @Property dbName: db name to be subscribed.
+         * @Property key: undefined
          */
-        readonly dbName?: string | ros.IResolvable;
-        /**
-         * @Property tableExcludes: Table excludes configuration.
-         */
-        readonly tableExcludes?: Array<RosSubscriptionInstance.TableExcludesProperty | ros.IResolvable> | ros.IResolvable;
+        readonly key: string | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `SubscriptionObjectProperty`
+ * Determine whether the given properties match those of a `TagsProperty`
  *
- * @param properties - the TypeScript properties of a `SubscriptionObjectProperty`
- *
- * @returns the result of the validation.
- */
-function RosSubscriptionInstance_SubscriptionObjectPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableIncludes', ros.listValidator(RosSubscriptionInstance_TableIncludesPropertyValidator))(properties.tableIncludes));
-    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
-    errors.collect(ros.propertyValidator('tableExcludes', ros.listValidator(RosSubscriptionInstance_TableExcludesPropertyValidator))(properties.tableExcludes));
-    return errors.wrap('supplied properties not correct for "SubscriptionObjectProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionObject` resource
- *
- * @param properties - the TypeScript properties of a `SubscriptionObjectProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionObject` resource.
- */
-// @ts-ignore TS6133
-function rosSubscriptionInstanceSubscriptionObjectPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSubscriptionInstance_SubscriptionObjectPropertyValidator(properties).assertSuccess();
-    return {
-      TableIncludes: ros.listMapper(rosSubscriptionInstanceTableIncludesPropertyToRosTemplate)(properties.tableIncludes),
-      DBName: ros.stringToRosTemplate(properties.dbName),
-      TableExcludes: ros.listMapper(rosSubscriptionInstanceTableExcludesPropertyToRosTemplate)(properties.tableExcludes),
-    };
-}
-
-export namespace RosSubscriptionInstance {
-    /**
-     * @stability external
-     */
-    export interface TableExcludesProperty {
-        /**
-         * @Property tableName: Table name not to be subscribed.
-         */
-        readonly tableName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `TableExcludesProperty`
- *
- * @param properties - the TypeScript properties of a `TableExcludesProperty`
+ * @param properties - the TypeScript properties of a `TagsProperty`
  *
  * @returns the result of the validation.
  */
-function RosSubscriptionInstance_TableExcludesPropertyValidator(properties: any): ros.ValidationResult {
+function RosSubscriptionInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
-    return errors.wrap('supplied properties not correct for "TableExcludesProperty"');
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.TableExcludes` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.Tags` resource
  *
- * @param properties - the TypeScript properties of a `TableExcludesProperty`
+ * @param properties - the TypeScript properties of a `TagsProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.TableExcludes` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.Tags` resource.
  */
 // @ts-ignore TS6133
-function rosSubscriptionInstanceTableExcludesPropertyToRosTemplate(properties: any): any {
+function rosSubscriptionInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosSubscriptionInstance_TableExcludesPropertyValidator(properties).assertSuccess();
+    RosSubscriptionInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      TableName: ros.stringToRosTemplate(properties.tableName),
-    };
-}
-
-export namespace RosSubscriptionInstance {
-    /**
-     * @stability external
-     */
-    export interface TableIncludesProperty {
-        /**
-         * @Property tableName: Table name to be subscribed.
-         */
-        readonly tableName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `TableIncludesProperty`
- *
- * @param properties - the TypeScript properties of a `TableIncludesProperty`
- *
- * @returns the result of the validation.
- */
-function RosSubscriptionInstance_TableIncludesPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
-    return errors.wrap('supplied properties not correct for "TableIncludesProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.TableIncludes` resource
- *
- * @param properties - the TypeScript properties of a `TableIncludesProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.TableIncludes` resource.
- */
-// @ts-ignore TS6133
-function rosSubscriptionInstanceTableIncludesPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosSubscriptionInstance_TableIncludesPropertyValidator(properties).assertSuccess();
-    return {
-      TableName: ros.stringToRosTemplate(properties.tableName),
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }
 

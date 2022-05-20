@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::AccessControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.386Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.511Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.AccessControlProps")
 @software.amazon.jsii.Jsii.Proxy(AccessControlProps.Jsii$Proxy.class)
 public interface AccessControlProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,13 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * Property tags: Tags to attach to instance.
      * <p>
      * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -53,6 +60,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object aclName;
         java.lang.Object aclEntrys;
         java.lang.Object addressIpVersion;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
 
         /**
@@ -120,6 +128,26 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link AccessControlProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AccessControlProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccessControlProps#getTags}
          * @param tags Property tags: Tags to attach to instance.
          *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -150,6 +178,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object aclName;
         private final java.lang.Object aclEntrys;
         private final java.lang.Object addressIpVersion;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
 
         /**
@@ -161,6 +190,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
             this.aclName = software.amazon.jsii.Kernel.get(this, "aclName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclEntrys = software.amazon.jsii.Kernel.get(this, "aclEntrys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty.class)));
         }
 
@@ -173,6 +203,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
             this.aclName = java.util.Objects.requireNonNull(builder.aclName, "aclName is required");
             this.aclEntrys = builder.aclEntrys;
             this.addressIpVersion = builder.addressIpVersion;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty>)builder.tags;
         }
 
@@ -192,6 +223,11 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> getTags() {
             return this.tags;
         }
@@ -208,6 +244,9 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getAddressIpVersion() != null) {
                 data.set("addressIpVersion", om.valueToTree(this.getAddressIpVersion()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -233,6 +272,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
             if (!aclName.equals(that.aclName)) return false;
             if (this.aclEntrys != null ? !this.aclEntrys.equals(that.aclEntrys) : that.aclEntrys != null) return false;
             if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -241,6 +281,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
             int result = this.aclName.hashCode();
             result = 31 * result + (this.aclEntrys != null ? this.aclEntrys.hashCode() : 0);
             result = 31 * result + (this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

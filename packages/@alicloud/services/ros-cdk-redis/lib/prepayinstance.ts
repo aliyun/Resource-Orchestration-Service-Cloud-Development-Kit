@@ -30,11 +30,6 @@ export interface PrepayInstanceProps {
     readonly backupPolicy?: RosPrepayInstance.BackupPolicyProperty | ros.IResolvable;
 
     /**
-     * Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
-     */
-    readonly capacity?: number | ros.IResolvable;
-
-    /**
      * Property connections: Connection address
      */
     readonly connections?: RosPrepayInstance.ConnectionsProperty | ros.IResolvable;
@@ -83,6 +78,16 @@ export interface PrepayInstanceProps {
      * Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     readonly productType?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property secondaryZoneId: The secondary zone ID of the instance.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
 
     /**
      * Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -303,22 +308,23 @@ export class PrepayInstance extends ros.Resource {
         const rosPrepayInstance = new RosPrepayInstance(this, id,  {
             connections: props.connections,
             engineVersion: props.engineVersion,
-            evictionPolicy: props.evictionPolicy,
+            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
-            securityGroupId: props.securityGroupId,
+            evictionPolicy: props.evictionPolicy,
             vSwitchId: props.vSwitchId,
+            securityGroupId: props.securityGroupId,
             productType: props.productType,
             instanceMaintainTime: props.instanceMaintainTime,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             instanceClass: props.instanceClass,
             vpcPasswordFree: props.vpcPasswordFree,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
+            secondaryZoneId: props.secondaryZoneId,
             autoRenewDuration: props.autoRenewDuration,
             instanceName: props.instanceName,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            sslEnabled: props.sslEnabled,
             vpcId: props.vpcId,
-            capacity: props.capacity,
+            sslEnabled: props.sslEnabled,
             tags: props.tags,
             backupPolicy: props.backupPolicy,
             password: props.password,

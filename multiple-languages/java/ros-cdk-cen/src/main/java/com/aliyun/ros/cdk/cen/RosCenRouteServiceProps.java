@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenRouteService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.972Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.061Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenRouteServiceProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenRouteServiceProps.Jsii$Proxy.class)
 public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,6 +30,12 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConflictIgnore() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
@@ -49,6 +55,7 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object host;
         java.lang.Object hostRegionId;
         java.lang.Object hostVpcId;
+        java.lang.Object conflictIgnore;
         java.lang.Object description;
 
         /**
@@ -152,6 +159,26 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosCenRouteServiceProps#getConflictIgnore}
+         * @param conflictIgnore the value to be set.
+         * @return {@code this}
+         */
+        public Builder conflictIgnore(java.lang.Boolean conflictIgnore) {
+            this.conflictIgnore = conflictIgnore;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCenRouteServiceProps#getConflictIgnore}
+         * @param conflictIgnore the value to be set.
+         * @return {@code this}
+         */
+        public Builder conflictIgnore(com.aliyun.ros.cdk.core.IResolvable conflictIgnore) {
+            this.conflictIgnore = conflictIgnore;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCenRouteServiceProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -192,6 +219,7 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object host;
         private final java.lang.Object hostRegionId;
         private final java.lang.Object hostVpcId;
+        private final java.lang.Object conflictIgnore;
         private final java.lang.Object description;
 
         /**
@@ -205,6 +233,7 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
             this.host = software.amazon.jsii.Kernel.get(this, "host", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hostRegionId = software.amazon.jsii.Kernel.get(this, "hostRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hostVpcId = software.amazon.jsii.Kernel.get(this, "hostVpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.conflictIgnore = software.amazon.jsii.Kernel.get(this, "conflictIgnore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -218,6 +247,7 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
             this.host = java.util.Objects.requireNonNull(builder.host, "host is required");
             this.hostRegionId = java.util.Objects.requireNonNull(builder.hostRegionId, "hostRegionId is required");
             this.hostVpcId = java.util.Objects.requireNonNull(builder.hostVpcId, "hostVpcId is required");
+            this.conflictIgnore = builder.conflictIgnore;
             this.description = builder.description;
         }
 
@@ -247,6 +277,11 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getConflictIgnore() {
+            return this.conflictIgnore;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
         }
@@ -262,6 +297,9 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
             data.set("host", om.valueToTree(this.getHost()));
             data.set("hostRegionId", om.valueToTree(this.getHostRegionId()));
             data.set("hostVpcId", om.valueToTree(this.getHostVpcId()));
+            if (this.getConflictIgnore() != null) {
+                data.set("conflictIgnore", om.valueToTree(this.getConflictIgnore()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -288,6 +326,7 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
             if (!host.equals(that.host)) return false;
             if (!hostRegionId.equals(that.hostRegionId)) return false;
             if (!hostVpcId.equals(that.hostVpcId)) return false;
+            if (this.conflictIgnore != null ? !this.conflictIgnore.equals(that.conflictIgnore) : that.conflictIgnore != null) return false;
             return this.description != null ? this.description.equals(that.description) : that.description == null;
         }
 
@@ -298,6 +337,7 @@ public interface RosCenRouteServiceProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.host.hashCode());
             result = 31 * result + (this.hostRegionId.hashCode());
             result = 31 * result + (this.hostVpcId.hashCode());
+            result = 31 * result + (this.conflictIgnore != null ? this.conflictIgnore.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             return result;
         }

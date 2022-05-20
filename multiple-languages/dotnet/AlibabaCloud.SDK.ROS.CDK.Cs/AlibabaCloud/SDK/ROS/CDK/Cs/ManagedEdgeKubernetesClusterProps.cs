@@ -262,6 +262,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             set;
         }
 
+        /// <summary>Property resourceGroupId: The ID of resource group.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.</summary>
         /// <remarks>
         /// When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
@@ -397,6 +406,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiOptional]
         [JsiiProperty(name: "workerSystemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? WorkerSystemDiskSize
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property zoneIds: Zone ids of worker node virtual switches belongs to.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? ZoneIds
         {
             get;
             set;

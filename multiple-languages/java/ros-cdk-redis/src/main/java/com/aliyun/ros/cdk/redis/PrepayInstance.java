@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS resource type:  `ALIYUN::REDIS::PrepayInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.164Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.255Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstance")
 public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -401,27 +401,6 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
-         * <p>
-         * @return {@code this}
-         * @param capacity Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB. This parameter is required.
-         */
-        public Builder capacity(final java.lang.Number capacity) {
-            this.props().capacity(capacity);
-            return this;
-        }
-        /**
-         * Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
-         * <p>
-         * @return {@code this}
-         * @param capacity Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB. This parameter is required.
-         */
-        public Builder capacity(final com.aliyun.ros.cdk.core.IResolvable capacity) {
-            this.props().capacity(capacity);
-            return this;
-        }
-
-        /**
          * Property connections: Connection address.
          * <p>
          * @return {@code this}
@@ -644,6 +623,48 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder productType(final com.aliyun.ros.cdk.core.IResolvable productType) {
             this.props().productType(productType);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property secondaryZoneId: The secondary zone ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param secondaryZoneId Property secondaryZoneId: The secondary zone ID of the instance. This parameter is required.
+         */
+        public Builder secondaryZoneId(final java.lang.String secondaryZoneId) {
+            this.props().secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+        /**
+         * Property secondaryZoneId: The secondary zone ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param secondaryZoneId Property secondaryZoneId: The secondary zone ID of the instance. This parameter is required.
+         */
+        public Builder secondaryZoneId(final com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {
+            this.props().secondaryZoneId(secondaryZoneId);
             return this;
         }
 

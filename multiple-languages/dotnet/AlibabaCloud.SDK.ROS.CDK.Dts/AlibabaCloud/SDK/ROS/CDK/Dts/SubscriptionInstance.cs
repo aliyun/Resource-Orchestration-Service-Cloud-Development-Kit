@@ -46,6 +46,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <summary>Attribute SubscribeTopic: The topic of the change tracking instance.</summary>
+        [JsiiProperty(name: "attrSubscribeTopic", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscribeTopic
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute SubscriptionInstanceId: The ID of Data subscription instance.</summary>
         [JsiiProperty(name: "attrSubscriptionInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionInstanceId

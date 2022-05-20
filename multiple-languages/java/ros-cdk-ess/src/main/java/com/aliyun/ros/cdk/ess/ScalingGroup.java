@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  `ALIYUN::ESS::ScalingGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroup")
 public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -147,6 +147,54 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources.
+         * <p>
+         * This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
+         * Default value: true.
+         * <p>
+         * @return {@code this}
+         * @param compensateWithOnDemand Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources. This parameter is required.
+         */
+        public Builder compensateWithOnDemand(final java.lang.Boolean compensateWithOnDemand) {
+            this.props.compensateWithOnDemand(compensateWithOnDemand);
+            return this;
+        }
+        /**
+         * Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources.
+         * <p>
+         * This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
+         * Default value: true.
+         * <p>
+         * @return {@code this}
+         * @param compensateWithOnDemand Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources. This parameter is required.
+         */
+        public Builder compensateWithOnDemand(final com.aliyun.ros.cdk.core.IResolvable compensateWithOnDemand) {
+            this.props.compensateWithOnDemand(compensateWithOnDemand);
+            return this;
+        }
+
+        /**
+         * Property containerGroupId: The ID of the elastic container instance.
+         * <p>
+         * @return {@code this}
+         * @param containerGroupId Property containerGroupId: The ID of the elastic container instance. This parameter is required.
+         */
+        public Builder containerGroupId(final java.lang.String containerGroupId) {
+            this.props.containerGroupId(containerGroupId);
+            return this;
+        }
+        /**
+         * Property containerGroupId: The ID of the elastic container instance.
+         * <p>
+         * @return {@code this}
+         * @param containerGroupId Property containerGroupId: The ID of the elastic container instance. This parameter is required.
+         */
+        public Builder containerGroupId(final com.aliyun.ros.cdk.core.IResolvable containerGroupId) {
+            this.props.containerGroupId(containerGroupId);
+            return this;
+        }
+
+        /**
          * Property dbInstanceIds: ID list of an RDS instance.
          * <p>
          * A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
@@ -245,6 +293,37 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder groupDeletionProtection(final com.aliyun.ros.cdk.core.IResolvable groupDeletionProtection) {
             this.props.groupDeletionProtection(groupDeletionProtection);
+            return this;
+        }
+
+        /**
+         * Property groupType: The type of instances that are managed by the scaling group.
+         * <p>
+         * Valid values:
+         * ECS
+         * ECI
+         * Default value: ECS.
+         * <p>
+         * @return {@code this}
+         * @param groupType Property groupType: The type of instances that are managed by the scaling group. This parameter is required.
+         */
+        public Builder groupType(final java.lang.String groupType) {
+            this.props.groupType(groupType);
+            return this;
+        }
+        /**
+         * Property groupType: The type of instances that are managed by the scaling group.
+         * <p>
+         * Valid values:
+         * ECS
+         * ECI
+         * Default value: ECS.
+         * <p>
+         * @return {@code this}
+         * @param groupType Property groupType: The type of instances that are managed by the scaling group. This parameter is required.
+         */
+        public Builder groupType(final com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.props.groupType(groupType);
             return this;
         }
 
@@ -378,7 +457,8 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * <ol>
          * <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+         * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
          * </ol>
          * <p>
          * @return {@code this}
@@ -395,7 +475,8 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * <ol>
          * <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+         * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
          * </ol>
          * <p>
          * @return {@code this}
@@ -424,6 +505,56 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder notificationConfigurations(final java.util.List<? extends java.lang.Object> notificationConfigurations) {
             this.props.notificationConfigurations(notificationConfigurations);
+            return this;
+        }
+
+        /**
+         * Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group.
+         * <p>
+         * Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+         * <p>
+         * @return {@code this}
+         * @param onDemandBaseCapacity Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. This parameter is required.
+         */
+        public Builder onDemandBaseCapacity(final java.lang.Number onDemandBaseCapacity) {
+            this.props.onDemandBaseCapacity(onDemandBaseCapacity);
+            return this;
+        }
+        /**
+         * Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group.
+         * <p>
+         * Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+         * <p>
+         * @return {@code this}
+         * @param onDemandBaseCapacity Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. This parameter is required.
+         */
+        public Builder onDemandBaseCapacity(final com.aliyun.ros.cdk.core.IResolvable onDemandBaseCapacity) {
+            this.props.onDemandBaseCapacity(onDemandBaseCapacity);
+            return this;
+        }
+
+        /**
+         * Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group.
+         * <p>
+         * This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+         * <p>
+         * @return {@code this}
+         * @param onDemandPercentageAboveBaseCapacity Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter is required.
+         */
+        public Builder onDemandPercentageAboveBaseCapacity(final java.lang.Number onDemandPercentageAboveBaseCapacity) {
+            this.props.onDemandPercentageAboveBaseCapacity(onDemandPercentageAboveBaseCapacity);
+            return this;
+        }
+        /**
+         * Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group.
+         * <p>
+         * This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+         * <p>
+         * @return {@code this}
+         * @param onDemandPercentageAboveBaseCapacity Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter is required.
+         */
+        public Builder onDemandPercentageAboveBaseCapacity(final com.aliyun.ros.cdk.core.IResolvable onDemandPercentageAboveBaseCapacity) {
+            this.props.onDemandPercentageAboveBaseCapacity(onDemandPercentageAboveBaseCapacity);
             return this;
         }
 
@@ -505,6 +636,87 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder scalingGroupName(final com.aliyun.ros.cdk.core.IResolvable scalingGroupName) {
             this.props.scalingGroupName(scalingGroupName);
+            return this;
+        }
+
+        /**
+         * Property scalingPolicy: The reclaim mode of the scaling group.
+         * <p>
+         * Valid values:
+         * recycle
+         * release
+         * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
+         * <p>
+         * @return {@code this}
+         * @param scalingPolicy Property scalingPolicy: The reclaim mode of the scaling group. This parameter is required.
+         */
+        public Builder scalingPolicy(final java.lang.String scalingPolicy) {
+            this.props.scalingPolicy(scalingPolicy);
+            return this;
+        }
+        /**
+         * Property scalingPolicy: The reclaim mode of the scaling group.
+         * <p>
+         * Valid values:
+         * recycle
+         * release
+         * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
+         * <p>
+         * @return {@code this}
+         * @param scalingPolicy Property scalingPolicy: The reclaim mode of the scaling group. This parameter is required.
+         */
+        public Builder scalingPolicy(final com.aliyun.ros.cdk.core.IResolvable scalingPolicy) {
+            this.props.scalingPolicy(scalingPolicy);
+            return this;
+        }
+
+        /**
+         * Property spotInstancePools: The number of instance types that are available.
+         * <p>
+         * The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+         * <p>
+         * @return {@code this}
+         * @param spotInstancePools Property spotInstancePools: The number of instance types that are available. This parameter is required.
+         */
+        public Builder spotInstancePools(final java.lang.Number spotInstancePools) {
+            this.props.spotInstancePools(spotInstancePools);
+            return this;
+        }
+        /**
+         * Property spotInstancePools: The number of instance types that are available.
+         * <p>
+         * The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+         * <p>
+         * @return {@code this}
+         * @param spotInstancePools Property spotInstancePools: The number of instance types that are available. This parameter is required.
+         */
+        public Builder spotInstancePools(final com.aliyun.ros.cdk.core.IResolvable spotInstancePools) {
+            this.props.spotInstancePools(spotInstancePools);
+            return this;
+        }
+
+        /**
+         * Property spotInstanceRemedy: Specifies whether to supplement preemptible instances.
+         * <p>
+         * If this parameter is set to true, Auto Scaling attempts to create an instance to replace a preemptible instance when Auto Scaling receives a system message which indicates that the preemptible instance is to be reclaimed.
+         * <p>
+         * @return {@code this}
+         * @param spotInstanceRemedy Property spotInstanceRemedy: Specifies whether to supplement preemptible instances. This parameter is required.
+         */
+        public Builder spotInstanceRemedy(final java.lang.Boolean spotInstanceRemedy) {
+            this.props.spotInstanceRemedy(spotInstanceRemedy);
+            return this;
+        }
+        /**
+         * Property spotInstanceRemedy: Specifies whether to supplement preemptible instances.
+         * <p>
+         * If this parameter is set to true, Auto Scaling attempts to create an instance to replace a preemptible instance when Auto Scaling receives a system message which indicates that the preemptible instance is to be reclaimed.
+         * <p>
+         * @return {@code this}
+         * @param spotInstanceRemedy Property spotInstanceRemedy: Specifies whether to supplement preemptible instances. This parameter is required.
+         */
+        public Builder spotInstanceRemedy(final com.aliyun.ros.cdk.core.IResolvable spotInstanceRemedy) {
+            this.props.spotInstanceRemedy(spotInstanceRemedy);
             return this;
         }
 

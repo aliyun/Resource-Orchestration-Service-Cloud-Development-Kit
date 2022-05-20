@@ -23,5 +23,7 @@
 @alicloud/ros-cdk-ga.RosIpSets.AccelerateRegionProperty=com.aliyun.ros.cdk.ga.RosIpSets$AccelerateRegionProperty
 @alicloud/ros-cdk-ga.RosIpSetsProps=com.aliyun.ros.cdk.ga.RosIpSetsProps
 @alicloud/ros-cdk-ga.RosListener=com.aliyun.ros.cdk.ga.RosListener
+@alicloud/ros-cdk-ga.RosListener.CertificatesProperty=com.aliyun.ros.cdk.ga.RosListener$CertificatesProperty
 @alicloud/ros-cdk-ga.RosListener.PortRangesProperty=com.aliyun.ros.cdk.ga.RosListener$PortRangesProperty
+@alicloud/ros-cdk-ga.RosListener.XForwardedForConfigProperty=com.aliyun.ros.cdk.ga.RosListener$XForwardedForConfigProperty
 @alicloud/ros-cdk-ga.RosListenerProps=com.aliyun.ros.cdk.ga.RosListenerProps

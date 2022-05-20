@@ -2035,6 +2035,12 @@ function RosSmartAccessGatewayPropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('receiverTown', ros.requiredValidator)(properties.receiverTown));
     errors.collect(ros.propertyValidator('receiverTown', ros.validateString)(properties.receiverTown));
     errors.collect(ros.propertyValidator('hardWareSpec', ros.requiredValidator)(properties.hardWareSpec));
+    if(properties.hardWareSpec && (typeof properties.hardWareSpec) !== 'object') {
+        errors.collect(ros.propertyValidator('hardWareSpec', ros.validateAllowedValues)({
+          data: properties.hardWareSpec,
+          allowedValues: ["sag-100wm","sag-1000","sag-vcpe"],
+        }));
+    }
     errors.collect(ros.propertyValidator('hardWareSpec', ros.validateString)(properties.hardWareSpec));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('receiverPhone', ros.validateString)(properties.receiverPhone));

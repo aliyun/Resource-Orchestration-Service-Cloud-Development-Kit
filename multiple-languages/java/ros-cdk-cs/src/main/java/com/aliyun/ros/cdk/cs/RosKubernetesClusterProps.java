@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.320Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.415Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -184,6 +184,12 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterZoneIds() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNodeCidrMask() {
         return null;
     }
@@ -345,6 +351,12 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerZoneIds() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosKubernetesClusterProps}
      */
     static Builder builder() {
@@ -385,6 +397,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object masterSystemDiskPerformanceLevel;
         java.lang.Object masterSystemDiskSize;
         java.lang.Object masterSystemDiskSnapshotPolicyId;
+        java.lang.Object masterZoneIds;
         java.lang.Object nodeCidrMask;
         java.lang.Object nodePortRange;
         java.lang.Object numOfNodes;
@@ -412,6 +425,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object workerSystemDiskCategory;
         java.lang.Object workerSystemDiskSize;
         java.lang.Object workerSystemDiskSnapshotPolicyId;
+        java.lang.Object workerZoneIds;
 
         /**
          * Sets the value of {@link RosKubernetesClusterProps#getMasterInstanceTypes}
@@ -1034,6 +1048,26 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterZoneIds}
+         * @param masterZoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterZoneIds(com.aliyun.ros.cdk.core.IResolvable masterZoneIds) {
+            this.masterZoneIds = masterZoneIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterZoneIds}
+         * @param masterZoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterZoneIds(java.util.List<? extends java.lang.Object> masterZoneIds) {
+            this.masterZoneIds = masterZoneIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getNodeCidrMask}
          * @param nodeCidrMask the value to be set.
          * @return {@code this}
@@ -1565,6 +1599,26 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerZoneIds}
+         * @param workerZoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerZoneIds(com.aliyun.ros.cdk.core.IResolvable workerZoneIds) {
+            this.workerZoneIds = workerZoneIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerZoneIds}
+         * @param workerZoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerZoneIds(java.util.List<? extends java.lang.Object> workerZoneIds) {
+            this.workerZoneIds = workerZoneIds;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosKubernetesClusterProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -1611,6 +1665,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object masterSystemDiskPerformanceLevel;
         private final java.lang.Object masterSystemDiskSize;
         private final java.lang.Object masterSystemDiskSnapshotPolicyId;
+        private final java.lang.Object masterZoneIds;
         private final java.lang.Object nodeCidrMask;
         private final java.lang.Object nodePortRange;
         private final java.lang.Object numOfNodes;
@@ -1638,6 +1693,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object workerSystemDiskCategory;
         private final java.lang.Object workerSystemDiskSize;
         private final java.lang.Object workerSystemDiskSnapshotPolicyId;
+        private final java.lang.Object workerZoneIds;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1676,6 +1732,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.masterSystemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "masterSystemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterSystemDiskSize = software.amazon.jsii.Kernel.get(this, "masterSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterSystemDiskSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "masterSystemDiskSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterZoneIds = software.amazon.jsii.Kernel.get(this, "masterZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodePortRange = software.amazon.jsii.Kernel.get(this, "nodePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1703,6 +1760,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerZoneIds = software.amazon.jsii.Kernel.get(this, "workerZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -1742,6 +1800,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.masterSystemDiskPerformanceLevel = builder.masterSystemDiskPerformanceLevel;
             this.masterSystemDiskSize = builder.masterSystemDiskSize;
             this.masterSystemDiskSnapshotPolicyId = builder.masterSystemDiskSnapshotPolicyId;
+            this.masterZoneIds = builder.masterZoneIds;
             this.nodeCidrMask = builder.nodeCidrMask;
             this.nodePortRange = builder.nodePortRange;
             this.numOfNodes = builder.numOfNodes;
@@ -1769,6 +1828,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
             this.workerSystemDiskSize = builder.workerSystemDiskSize;
             this.workerSystemDiskSnapshotPolicyId = builder.workerSystemDiskSnapshotPolicyId;
+            this.workerZoneIds = builder.workerZoneIds;
         }
 
         @Override
@@ -1927,6 +1987,11 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.lang.Object getMasterZoneIds() {
+            return this.masterZoneIds;
+        }
+
+        @Override
         public final java.lang.Object getNodeCidrMask() {
             return this.nodeCidrMask;
         }
@@ -2062,6 +2127,11 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.lang.Object getWorkerZoneIds() {
+            return this.workerZoneIds;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -2148,6 +2218,9 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             if (this.getMasterSystemDiskSnapshotPolicyId() != null) {
                 data.set("masterSystemDiskSnapshotPolicyId", om.valueToTree(this.getMasterSystemDiskSnapshotPolicyId()));
             }
+            if (this.getMasterZoneIds() != null) {
+                data.set("masterZoneIds", om.valueToTree(this.getMasterZoneIds()));
+            }
             if (this.getNodeCidrMask() != null) {
                 data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
             }
@@ -2229,6 +2302,9 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             if (this.getWorkerSystemDiskSnapshotPolicyId() != null) {
                 data.set("workerSystemDiskSnapshotPolicyId", om.valueToTree(this.getWorkerSystemDiskSnapshotPolicyId()));
             }
+            if (this.getWorkerZoneIds() != null) {
+                data.set("workerZoneIds", om.valueToTree(this.getWorkerZoneIds()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosKubernetesClusterProps"));
@@ -2278,6 +2354,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             if (this.masterSystemDiskPerformanceLevel != null ? !this.masterSystemDiskPerformanceLevel.equals(that.masterSystemDiskPerformanceLevel) : that.masterSystemDiskPerformanceLevel != null) return false;
             if (this.masterSystemDiskSize != null ? !this.masterSystemDiskSize.equals(that.masterSystemDiskSize) : that.masterSystemDiskSize != null) return false;
             if (this.masterSystemDiskSnapshotPolicyId != null ? !this.masterSystemDiskSnapshotPolicyId.equals(that.masterSystemDiskSnapshotPolicyId) : that.masterSystemDiskSnapshotPolicyId != null) return false;
+            if (this.masterZoneIds != null ? !this.masterZoneIds.equals(that.masterZoneIds) : that.masterZoneIds != null) return false;
             if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
             if (this.nodePortRange != null ? !this.nodePortRange.equals(that.nodePortRange) : that.nodePortRange != null) return false;
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
@@ -2304,7 +2381,8 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
             if (this.workerSystemDiskSize != null ? !this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize != null) return false;
-            return this.workerSystemDiskSnapshotPolicyId != null ? this.workerSystemDiskSnapshotPolicyId.equals(that.workerSystemDiskSnapshotPolicyId) : that.workerSystemDiskSnapshotPolicyId == null;
+            if (this.workerSystemDiskSnapshotPolicyId != null ? !this.workerSystemDiskSnapshotPolicyId.equals(that.workerSystemDiskSnapshotPolicyId) : that.workerSystemDiskSnapshotPolicyId != null) return false;
+            return this.workerZoneIds != null ? this.workerZoneIds.equals(that.workerZoneIds) : that.workerZoneIds == null;
         }
 
         @Override
@@ -2340,6 +2418,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.masterSystemDiskPerformanceLevel != null ? this.masterSystemDiskPerformanceLevel.hashCode() : 0);
             result = 31 * result + (this.masterSystemDiskSize != null ? this.masterSystemDiskSize.hashCode() : 0);
             result = 31 * result + (this.masterSystemDiskSnapshotPolicyId != null ? this.masterSystemDiskSnapshotPolicyId.hashCode() : 0);
+            result = 31 * result + (this.masterZoneIds != null ? this.masterZoneIds.hashCode() : 0);
             result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
             result = 31 * result + (this.nodePortRange != null ? this.nodePortRange.hashCode() : 0);
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
@@ -2367,6 +2446,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSnapshotPolicyId != null ? this.workerSystemDiskSnapshotPolicyId.hashCode() : 0);
+            result = 31 * result + (this.workerZoneIds != null ? this.workerZoneIds.hashCode() : 0);
             return result;
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS resource type:  `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.600Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.749Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 
@@ -360,6 +360,19 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder replicationFactor(final com.aliyun.ros.cdk.core.IResolvable replicationFactor) {
             this.props.replicationFactor(replicationFactor);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.kafka.RosTopic.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

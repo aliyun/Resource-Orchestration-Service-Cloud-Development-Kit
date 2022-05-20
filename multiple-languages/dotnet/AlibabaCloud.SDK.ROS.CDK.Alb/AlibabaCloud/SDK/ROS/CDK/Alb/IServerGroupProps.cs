@@ -121,6 +121,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::ALB::ServerGroup`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IServerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.ServerGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.IServerGroupProps
@@ -225,6 +239,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             public object? StickySessionConfig
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.ITagsProperty[]?>();
             }
         }
     }

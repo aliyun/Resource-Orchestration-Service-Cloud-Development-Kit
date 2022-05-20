@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Properties for defining a `ALIYUN::KMS::Secret`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.617Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.777Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.SecretProps")
 @software.amazon.jsii.Jsii.Proxy(SecretProps.Jsii$Proxy.class)
 public interface SecretProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroupIngress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.938Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.015Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupIngressProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupIngressProps.Jsii$Proxy.class)
 public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSerializable {
@@ -72,9 +72,9 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
-     * Property sourceCidrIp: Source CIDR Ip Address range.
+     * Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access.
      * <p>
-     * Only IPV4 supported.
+     * CIDR blocks and IPv4 addresses are supported.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourceCidrIp() {
         return null;
@@ -104,6 +104,17 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
+     * Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
+     * <p>
+     * You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+     * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourcePrefixListId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link SecurityGroupIngressProps}
      */
     static Builder builder() {
@@ -125,6 +136,7 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object sourceGroupId;
         java.lang.Object sourceGroupOwnerId;
         java.lang.Object sourcePortRange;
+        java.lang.Object sourcePrefixListId;
 
         /**
          * Sets the value of {@link SecurityGroupIngressProps#getIpProtocol}
@@ -300,8 +312,8 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link SecurityGroupIngressProps#getSourceCidrIp}
-         * @param sourceCidrIp Property sourceCidrIp: Source CIDR Ip Address range.
-         *                     Only IPV4 supported.
+         * @param sourceCidrIp Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access.
+         *                     CIDR blocks and IPv4 addresses are supported.
          * @return {@code this}
          */
         public Builder sourceCidrIp(java.lang.String sourceCidrIp) {
@@ -311,8 +323,8 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link SecurityGroupIngressProps#getSourceCidrIp}
-         * @param sourceCidrIp Property sourceCidrIp: Source CIDR Ip Address range.
-         *                     Only IPV4 supported.
+         * @param sourceCidrIp Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access.
+         *                     CIDR blocks and IPv4 addresses are supported.
          * @return {@code this}
          */
         public Builder sourceCidrIp(com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
@@ -383,6 +395,32 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link SecurityGroupIngressProps#getSourcePrefixListId}
+         * @param sourcePrefixListId Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
+         *                           You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+         *                           If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+         *                           If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         * @return {@code this}
+         */
+        public Builder sourcePrefixListId(java.lang.String sourcePrefixListId) {
+            this.sourcePrefixListId = sourcePrefixListId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SecurityGroupIngressProps#getSourcePrefixListId}
+         * @param sourcePrefixListId Property sourcePrefixListId: The ID of the source prefix list to which you want to control access.
+         *                           You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+         *                           If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+         *                           If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         * @return {@code this}
+         */
+        public Builder sourcePrefixListId(com.aliyun.ros.cdk.core.IResolvable sourcePrefixListId) {
+            this.sourcePrefixListId = sourcePrefixListId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link SecurityGroupIngressProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -410,6 +448,7 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object sourceGroupId;
         private final java.lang.Object sourceGroupOwnerId;
         private final java.lang.Object sourcePortRange;
+        private final java.lang.Object sourcePrefixListId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -429,6 +468,7 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
             this.sourceGroupId = software.amazon.jsii.Kernel.get(this, "sourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceGroupOwnerId = software.amazon.jsii.Kernel.get(this, "sourceGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourcePrefixListId = software.amazon.jsii.Kernel.get(this, "sourcePrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -448,6 +488,7 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
             this.sourceGroupId = builder.sourceGroupId;
             this.sourceGroupOwnerId = builder.sourceGroupOwnerId;
             this.sourcePortRange = builder.sourcePortRange;
+            this.sourcePrefixListId = builder.sourcePrefixListId;
         }
 
         @Override
@@ -511,6 +552,11 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.lang.Object getSourcePrefixListId() {
+            return this.sourcePrefixListId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -548,6 +594,9 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
             if (this.getSourcePortRange() != null) {
                 data.set("sourcePortRange", om.valueToTree(this.getSourcePortRange()));
             }
+            if (this.getSourcePrefixListId() != null) {
+                data.set("sourcePrefixListId", om.valueToTree(this.getSourcePrefixListId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.SecurityGroupIngressProps"));
@@ -577,7 +626,8 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
             if (this.sourceCidrIp != null ? !this.sourceCidrIp.equals(that.sourceCidrIp) : that.sourceCidrIp != null) return false;
             if (this.sourceGroupId != null ? !this.sourceGroupId.equals(that.sourceGroupId) : that.sourceGroupId != null) return false;
             if (this.sourceGroupOwnerId != null ? !this.sourceGroupOwnerId.equals(that.sourceGroupOwnerId) : that.sourceGroupOwnerId != null) return false;
-            return this.sourcePortRange != null ? this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange == null;
+            if (this.sourcePortRange != null ? !this.sourcePortRange.equals(that.sourcePortRange) : that.sourcePortRange != null) return false;
+            return this.sourcePrefixListId != null ? this.sourcePrefixListId.equals(that.sourcePrefixListId) : that.sourcePrefixListId == null;
         }
 
         @Override
@@ -594,6 +644,7 @@ public interface SecurityGroupIngressProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.sourceGroupId != null ? this.sourceGroupId.hashCode() : 0);
             result = 31 * result + (this.sourceGroupOwnerId != null ? this.sourceGroupOwnerId.hashCode() : 0);
             result = 31 * result + (this.sourcePortRange != null ? this.sourcePortRange.hashCode() : 0);
+            result = 31 * result + (this.sourcePrefixListId != null ? this.sourcePrefixListId.hashCode() : 0);
             return result;
         }
     }

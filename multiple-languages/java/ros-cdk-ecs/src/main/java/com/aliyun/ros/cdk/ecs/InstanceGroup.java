@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.635Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.732Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1069,6 +1069,62 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property spotDuration: The protection period of the preemptible instance.
+         * <p>
+         * Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+         * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+         * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+         * Default value: 1.
+         * <p>
+         * @return {@code this}
+         * @param spotDuration Property spotDuration: The protection period of the preemptible instance. This parameter is required.
+         */
+        public Builder spotDuration(final java.lang.Number spotDuration) {
+            this.props.spotDuration(spotDuration);
+            return this;
+        }
+        /**
+         * Property spotDuration: The protection period of the preemptible instance.
+         * <p>
+         * Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+         * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+         * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+         * Default value: 1.
+         * <p>
+         * @return {@code this}
+         * @param spotDuration Property spotDuration: The protection period of the preemptible instance. This parameter is required.
+         */
+        public Builder spotDuration(final com.aliyun.ros.cdk.core.IResolvable spotDuration) {
+            this.props.spotDuration(spotDuration);
+            return this;
+        }
+
+        /**
+         * Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
+         * <p>
+         * Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+         * <p>
+         * @return {@code this}
+         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the preemptible instance. This parameter is required.
+         */
+        public Builder spotInterruptionBehavior(final java.lang.String spotInterruptionBehavior) {
+            this.props.spotInterruptionBehavior(spotInterruptionBehavior);
+            return this;
+        }
+        /**
+         * Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
+         * <p>
+         * Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+         * <p>
+         * @return {@code this}
+         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the preemptible instance. This parameter is required.
+         */
+        public Builder spotInterruptionBehavior(final com.aliyun.ros.cdk.core.IResolvable spotInterruptionBehavior) {
+            this.props.spotInterruptionBehavior(spotInterruptionBehavior);
+            return this;
+        }
+
+        /**
          * Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
          * <p>
          * Three decimals is allowed at most.
@@ -1400,6 +1456,27 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * Property zoneIds: Zone ids for query parameters.
+         * <p>
+         * @return {@code this}
+         * @param zoneIds Property zoneIds: Zone ids for query parameters. This parameter is required.
+         */
+        public Builder zoneIds(final com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.props.zoneIds(zoneIds);
+            return this;
+        }
+        /**
+         * Property zoneIds: Zone ids for query parameters.
+         * <p>
+         * @return {@code this}
+         * @param zoneIds Property zoneIds: Zone ids for query parameters. This parameter is required.
+         */
+        public Builder zoneIds(final java.util.List<? extends java.lang.Object> zoneIds) {
+            this.props.zoneIds(zoneIds);
             return this;
         }
 

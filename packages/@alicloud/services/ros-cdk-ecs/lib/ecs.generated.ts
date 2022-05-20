@@ -1333,6 +1333,11 @@ export interface RosAutoSnapshotPolicyProps {
     readonly diskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosAutoSnapshotPolicy.TagsProperty[];
@@ -1351,6 +1356,7 @@ function RosAutoSnapshotPolicyPropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('timePoints', ros.requiredValidator)(properties.timePoints));
     errors.collect(ros.propertyValidator('timePoints', ros.listValidator(ros.validateAny))(properties.timePoints));
     errors.collect(ros.propertyValidator('diskIds', ros.listValidator(ros.validateString))(properties.diskIds));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('retentionDays', ros.requiredValidator)(properties.retentionDays));
     if(properties.retentionDays && (typeof properties.retentionDays) !== 'object') {
         errors.collect(ros.propertyValidator('retentionDays', ros.validateRange)({
@@ -1393,6 +1399,7 @@ function rosAutoSnapshotPolicyPropsToRosTemplate(properties: any, enableResource
       TimePoints: ros.listMapper(ros.objectToRosTemplate)(properties.timePoints),
       AutoSnapshotPolicyName: ros.stringToRosTemplate(properties.autoSnapshotPolicyName),
       DiskIds: ros.listMapper(ros.stringToRosTemplate)(properties.diskIds),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosAutoSnapshotPolicyTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -1456,6 +1463,11 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
     public diskIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosAutoSnapshotPolicy.TagsProperty[] | undefined;
@@ -1477,6 +1489,7 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
         this.timePoints = props.timePoints;
         this.autoSnapshotPolicyName = props.autoSnapshotPolicyName;
         this.diskIds = props.diskIds;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
     }
 
@@ -1488,6 +1501,7 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
             timePoints: this.timePoints,
             autoSnapshotPolicyName: this.autoSnapshotPolicyName,
             diskIds: this.diskIds,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
         };
     }
@@ -2448,7 +2462,7 @@ export interface RosDedicatedHostProps {
     readonly quantity?: number | ros.IResolvable;
 
     /**
-     * @Property resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
+     * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 
@@ -2696,7 +2710,7 @@ export class RosDedicatedHost extends ros.RosResource {
     public quantity: number | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
+     * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
 
@@ -3998,6 +4012,19 @@ export interface RosInstanceProps {
     readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * Default value: 1.
+     */
+    readonly spotDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     */
+    readonly spotInterruptionBehavior?: string | ros.IResolvable;
+
+    /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
      */
     readonly spotPriceLimit?: string | ros.IResolvable;
@@ -4058,6 +4085,11 @@ export interface RosInstanceProps {
      * Default value is empty, which means random selection.
      */
     readonly zoneId?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneIds: Zone ids for query parameters
+     */
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -4106,12 +4138,14 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('spotDuration', ros.validateNumber)(properties.spotDuration));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     errors.collect(ros.propertyValidator('systemDiskDiskName', ros.validateString)(properties.systemDiskDiskName));
     errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateString)(properties.spotPriceLimit));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     errors.collect(ros.propertyValidator('allocatePublicIp', ros.validateBoolean)(properties.allocatePublicIp));
@@ -4188,6 +4222,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
@@ -4258,6 +4293,8 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      SpotDuration: ros.numberToRosTemplate(properties.spotDuration),
+      SpotInterruptionBehavior: ros.stringToRosTemplate(properties.spotInterruptionBehavior),
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
@@ -4270,6 +4307,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
@@ -4472,6 +4510,19 @@ export class RosInstance extends ros.RosResource {
     public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * Default value: 1.
+     */
+    public spotDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     */
+    public spotInterruptionBehavior: string | ros.IResolvable | undefined;
+
+    /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
      */
     public spotPriceLimit: string | ros.IResolvable | undefined;
@@ -4534,6 +4585,11 @@ export class RosInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property zoneIds: Zone ids for query parameters
+     */
+    public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::ECS::Instance`.
      *
      * @param scope - scope in which this resource is defined
@@ -4580,6 +4636,8 @@ export class RosInstance extends ros.RosResource {
         this.securityEnhancementStrategy = props.securityEnhancementStrategy;
         this.securityGroupId = props.securityGroupId;
         this.securityGroupIds = props.securityGroupIds;
+        this.spotDuration = props.spotDuration;
+        this.spotInterruptionBehavior = props.spotInterruptionBehavior;
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
         this.systemDiskCategory = props.systemDiskCategory;
@@ -4592,6 +4650,7 @@ export class RosInstance extends ros.RosResource {
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
+        this.zoneIds = props.zoneIds;
     }
 
 
@@ -4625,6 +4684,8 @@ export class RosInstance extends ros.RosResource {
             securityEnhancementStrategy: this.securityEnhancementStrategy,
             securityGroupId: this.securityGroupId,
             securityGroupIds: this.securityGroupIds,
+            spotDuration: this.spotDuration,
+            spotInterruptionBehavior: this.spotInterruptionBehavior,
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
             systemDiskCategory: this.systemDiskCategory,
@@ -4637,6 +4698,7 @@ export class RosInstance extends ros.RosResource {
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
+            zoneIds: this.zoneIds,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -5587,6 +5649,19 @@ export interface RosInstanceGroupProps {
     readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * Default value: 1.
+     */
+    readonly spotDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     */
+    readonly spotInterruptionBehavior?: string | ros.IResolvable;
+
+    /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
      */
     readonly spotPriceLimit?: string | ros.IResolvable;
@@ -5662,6 +5737,11 @@ export interface RosInstanceGroupProps {
      * Default value is empty, which means random selection.
      */
     readonly zoneId?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneIds: Zone ids for query parameters
+     */
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -5725,6 +5805,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
     errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
@@ -5783,6 +5864,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('spotDuration', ros.validateNumber)(properties.spotDuration));
     if(properties.ipv6Addresses && (Array.isArray(properties.ipv6Addresses) || (typeof properties.ipv6Addresses) === 'string')) {
         errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
             data: properties.ipv6Addresses.length,
@@ -5817,6 +5899,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
     errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateString)(properties.spotPriceLimit));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     errors.collect(ros.propertyValidator('allocatePublicIp', ros.validateBoolean)(properties.allocatePublicIp));
@@ -5917,6 +6000,8 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
+      SpotDuration: ros.numberToRosTemplate(properties.spotDuration),
+      SpotInterruptionBehavior: ros.stringToRosTemplate(properties.spotInterruptionBehavior),
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
@@ -5932,6 +6017,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
@@ -6208,6 +6294,19 @@ export class RosInstanceGroup extends ros.RosResource {
     public securityGroupIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * Default value: 1.
+     */
+    public spotDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     */
+    public spotInterruptionBehavior: string | ros.IResolvable | undefined;
+
+    /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
      */
     public spotPriceLimit: string | ros.IResolvable | undefined;
@@ -6285,6 +6384,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property zoneIds: Zone ids for query parameters
+     */
+    public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::ECS::InstanceGroup`.
      *
      * @param scope - scope in which this resource is defined
@@ -6341,6 +6445,8 @@ export class RosInstanceGroup extends ros.RosResource {
         this.securityEnhancementStrategy = props.securityEnhancementStrategy;
         this.securityGroupId = props.securityGroupId;
         this.securityGroupIds = props.securityGroupIds;
+        this.spotDuration = props.spotDuration;
+        this.spotInterruptionBehavior = props.spotInterruptionBehavior;
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
         this.systemDiskAutoSnapshotPolicyId = props.systemDiskAutoSnapshotPolicyId;
@@ -6356,6 +6462,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
+        this.zoneIds = props.zoneIds;
     }
 
 
@@ -6398,6 +6505,8 @@ export class RosInstanceGroup extends ros.RosResource {
             securityEnhancementStrategy: this.securityEnhancementStrategy,
             securityGroupId: this.securityGroupId,
             securityGroupIds: this.securityGroupIds,
+            spotDuration: this.spotDuration,
+            spotInterruptionBehavior: this.spotInterruptionBehavior,
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
             systemDiskAutoSnapshotPolicyId: this.systemDiskAutoSnapshotPolicyId,
@@ -6413,6 +6522,7 @@ export class RosInstanceGroup extends ros.RosResource {
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
+            zoneIds: this.zoneIds,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -9714,6 +9824,235 @@ export class RosNetworkInterfacePermission extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::ECS::PrefixList`
+ */
+export interface RosPrefixListProps {
+
+    /**
+     * @Property addressFamily: The IP address family. Valid values: IPv4 IPv6
+     */
+    readonly addressFamily: string | ros.IResolvable;
+
+    /**
+     * @Property maxEntries: The maximum number of entries that the prefix list can contain. Valid values: 1 to 200.
+     */
+    readonly maxEntries: number | ros.IResolvable;
+
+    /**
+     * @Property prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http://, https://, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
+     */
+    readonly prefixListName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property entries:
+     */
+    readonly entries?: Array<RosPrefixList.EntriesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPrefixListProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPrefixListProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrefixListPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('maxEntries', ros.requiredValidator)(properties.maxEntries));
+    if(properties.maxEntries && (typeof properties.maxEntries) !== 'object') {
+        errors.collect(ros.propertyValidator('maxEntries', ros.validateRange)({
+            data: properties.maxEntries,
+            min: 1,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxEntries', ros.validateNumber)(properties.maxEntries));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('prefixListName', ros.requiredValidator)(properties.prefixListName));
+    errors.collect(ros.propertyValidator('prefixListName', ros.validateString)(properties.prefixListName));
+    if(properties.entries && (Array.isArray(properties.entries) || (typeof properties.entries) === 'string')) {
+        errors.collect(ros.propertyValidator('entries', ros.validateLength)({
+            data: properties.entries.length,
+            min: undefined,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('entries', ros.listValidator(RosPrefixList_EntriesPropertyValidator))(properties.entries));
+    errors.collect(ros.propertyValidator('addressFamily', ros.requiredValidator)(properties.addressFamily));
+    if(properties.addressFamily && (typeof properties.addressFamily) !== 'object') {
+        errors.collect(ros.propertyValidator('addressFamily', ros.validateAllowedValues)({
+          data: properties.addressFamily,
+          allowedValues: ["Ipv4","Ipv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('addressFamily', ros.validateString)(properties.addressFamily));
+    return errors.wrap('supplied properties not correct for "RosPrefixListProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrefixList` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPrefixListProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrefixList` resource.
+ */
+// @ts-ignore TS6133
+function rosPrefixListPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPrefixListPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AddressFamily: ros.stringToRosTemplate(properties.addressFamily),
+      MaxEntries: ros.numberToRosTemplate(properties.maxEntries),
+      PrefixListName: ros.stringToRosTemplate(properties.prefixListName),
+      Description: ros.stringToRosTemplate(properties.description),
+      Entries: ros.listMapper(rosPrefixListEntriesPropertyToRosTemplate)(properties.entries),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ECS::PrefixList`
+ */
+export class RosPrefixList extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::PrefixList";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute PrefixListId: The ID of the prefix list.
+     */
+    public readonly attrPrefixListId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property addressFamily: The IP address family. Valid values: IPv4 IPv6
+     */
+    public addressFamily: string | ros.IResolvable;
+
+    /**
+     * @Property maxEntries: The maximum number of entries that the prefix list can contain. Valid values: 1 to 200.
+     */
+    public maxEntries: number | ros.IResolvable;
+
+    /**
+     * @Property prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http://, https://, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
+     */
+    public prefixListName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property entries:
+     */
+    public entries: Array<RosPrefixList.EntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ECS::PrefixList`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPrefixListProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPrefixList.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPrefixListId = this.getAtt('PrefixListId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.addressFamily = props.addressFamily;
+        this.maxEntries = props.maxEntries;
+        this.prefixListName = props.prefixListName;
+        this.description = props.description;
+        this.entries = props.entries;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            addressFamily: this.addressFamily,
+            maxEntries: this.maxEntries,
+            prefixListName: this.prefixListName,
+            description: this.description,
+            entries: this.entries,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPrefixListPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosPrefixList {
+    /**
+     * @stability external
+     */
+    export interface EntriesProperty {
+        /**
+         * @Property description: The description in entry. The description must be 2 to 32 characters in length and cannot start with http:// or https://.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property cidr: The CIDR block in entry. Take note of the following items: 
+     * The total number of entries must not exceed the MaxEntries value.
+     * CIDR block types are determined by the IP address family. You cannot combine IPv4 and IPv6 CIDR blocks in a single prefix list.
+     * CIDR blocks must be unique across all entries in a prefix list. For example, you cannot specify 192.168.1.0/24 twice in the entries of the prefix list.
+     * IP addresses are supported. 
+     * The system converts IP addresses into CIDR blocks. For example, if you specify 192.168.1.100, the system converts it into the 192.168.1.100/32 CIDR block.
+     * If an IPv6 CIDR block is used, the system converts it to the zero compression format and changes uppercase letters into lowercase ones. For example, if you specify 2001:0DB8:0000:0000:0000:0000:0000:0000/32,the system converts it into 2001:db8::/32.
+         */
+        readonly cidr: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EntriesProperty`
+ *
+ * @param properties - the TypeScript properties of a `EntriesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrefixList_EntriesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('cidr', ros.requiredValidator)(properties.cidr));
+    errors.collect(ros.propertyValidator('cidr', ros.validateString)(properties.cidr));
+    return errors.wrap('supplied properties not correct for "EntriesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrefixList.Entries` resource
+ *
+ * @param properties - the TypeScript properties of a `EntriesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrefixList.Entries` resource.
+ */
+// @ts-ignore TS6133
+function rosPrefixListEntriesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrefixList_EntriesPropertyValidator(properties).assertSuccess();
+    return {
+      Description: ros.stringToRosTemplate(properties.description),
+      Cidr: ros.stringToRosTemplate(properties.cidr),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::ECS::Route`
  */
 export interface RosRouteProps {
@@ -10948,6 +11287,12 @@ export namespace RosSecurityGroup {
          */
         readonly description?: string | ros.IResolvable;
         /**
+         * @Property destPrefixListId: The ID of the destination prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists.Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" in Limits.
+     * If you specify DestCidrIp, Ipv6DestCidrIp, or DestGroupId, DestPrefixListId is ignored.
+         */
+        readonly destPrefixListId?: string | ros.IResolvable;
+        /**
          * @Property priority: Authorization policies priority range[1, 100]
          */
         readonly priority?: number | ros.IResolvable;
@@ -11009,6 +11354,7 @@ function RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties: any):
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('destPrefixListId', ros.validateString)(properties.destPrefixListId));
     if(properties.priority && (typeof properties.priority) !== 'object') {
         errors.collect(ros.propertyValidator('priority', ros.validateRange)({
             data: properties.priority,
@@ -11055,6 +11401,7 @@ function rosSecurityGroupSecurityGroupEgressPropertyToRosTemplate(properties: an
       Policy: ros.stringToRosTemplate(properties.policy),
       PortRange: ros.stringToRosTemplate(properties.portRange),
       Description: ros.stringToRosTemplate(properties.description),
+      DestPrefixListId: ros.stringToRosTemplate(properties.destPrefixListId),
       Priority: ros.numberToRosTemplate(properties.priority),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       DestGroupOwnerId: ros.stringToRosTemplate(properties.destGroupOwnerId),
@@ -11080,10 +11427,6 @@ export namespace RosSecurityGroup {
          */
         readonly policy?: string | ros.IResolvable;
         /**
-         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
-         */
-        readonly portRange: string | ros.IResolvable;
-        /**
          * @Property description: Description of the security group rule, [1, 512] characters. The default is empty.
          */
         readonly description?: string | ros.IResolvable;
@@ -11100,17 +11443,9 @@ export namespace RosSecurityGroup {
          */
         readonly securityGroupId?: string | ros.IResolvable;
         /**
-         * @Property sourceCidrIp: Source CIDR Ip Address range. Only IPV4 supported.
-         */
-        readonly sourceCidrIp?: string | ros.IResolvable;
-        /**
          * @Property sourceGroupOwnerId: Source Group Owner Account ID
          */
         readonly sourceGroupOwnerId?: string | ros.IResolvable;
-        /**
-         * @Property ipProtocol: Ip protocol for in rule.
-         */
-        readonly ipProtocol: string | ros.IResolvable;
         /**
          * @Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
      * Note Only VPC type IP addresses are supported.
@@ -11120,6 +11455,24 @@ export namespace RosSecurityGroup {
          * @Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
          */
         readonly nicType?: string | ros.IResolvable;
+        /**
+         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+         */
+        readonly portRange: string | ros.IResolvable;
+        /**
+         * @Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
+         */
+        readonly sourceCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property ipProtocol: Ip protocol for in rule.
+         */
+        readonly ipProtocol: string | ros.IResolvable;
+        /**
+         * @Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+     * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+         */
+        readonly sourcePrefixListId?: string | ros.IResolvable;
     }
 }
 /**
@@ -11140,8 +11493,6 @@ function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any)
         }));
     }
     errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
-    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
-    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -11160,16 +11511,7 @@ function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any)
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
     errors.collect(ros.propertyValidator('sourceGroupOwnerId', ros.validateString)(properties.sourceGroupOwnerId));
-    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
-    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
-        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
-          data: properties.ipProtocol,
-          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
     errors.collect(ros.propertyValidator('ipv6SourceCidrIp', ros.validateString)(properties.ipv6SourceCidrIp));
     if(properties.nicType && (typeof properties.nicType) !== 'object') {
         errors.collect(ros.propertyValidator('nicType', ros.validateAllowedValues)({
@@ -11178,6 +11520,18 @@ function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any)
         }));
     }
     errors.collect(ros.propertyValidator('nicType', ros.validateString)(properties.nicType));
+    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
+    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
+    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
+    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
+          data: properties.ipProtocol,
+          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('sourcePrefixListId', ros.validateString)(properties.sourcePrefixListId));
     return errors.wrap('supplied properties not correct for "SecurityGroupIngressProperty"');
 }
 
@@ -11195,16 +11549,17 @@ function rosSecurityGroupSecurityGroupIngressPropertyToRosTemplate(properties: a
     return {
       SourceGroupId: ros.stringToRosTemplate(properties.sourceGroupId),
       Policy: ros.stringToRosTemplate(properties.policy),
-      PortRange: ros.stringToRosTemplate(properties.portRange),
       Description: ros.stringToRosTemplate(properties.description),
       SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
       Priority: ros.numberToRosTemplate(properties.priority),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
       SourceGroupOwnerId: ros.stringToRosTemplate(properties.sourceGroupOwnerId),
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
       Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
       NicType: ros.stringToRosTemplate(properties.nicType),
+      PortRange: ros.stringToRosTemplate(properties.portRange),
+      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
+      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
+      SourcePrefixListId: ros.stringToRosTemplate(properties.sourcePrefixListId),
     };
 }
 
@@ -11503,6 +11858,13 @@ export interface RosSecurityGroupEgressProps {
     readonly destGroupOwnerId?: string | ros.IResolvable;
 
     /**
+     * @Property destPrefixListId: The ID of the destination prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists.Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" in Limits.
+     * If you specify DestCidrIp, Ipv6DestCidrIp, or DestGroupId, DestPrefixListId is ignored.
+     */
+    readonly destPrefixListId?: string | ros.IResolvable;
+
+    /**
      * @Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
      * Note Only VPC type IP addresses are supported.
      */
@@ -11556,6 +11918,7 @@ function RosSecurityGroupEgressPropsValidator(properties: any): ros.ValidationRe
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('destPrefixListId', ros.validateString)(properties.destPrefixListId));
     if(properties.priority && (typeof properties.priority) !== 'object') {
         errors.collect(ros.propertyValidator('priority', ros.validateRange)({
             data: properties.priority,
@@ -11607,6 +11970,7 @@ function rosSecurityGroupEgressPropsToRosTemplate(properties: any, enableResourc
       DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
       DestGroupId: ros.stringToRosTemplate(properties.destGroupId),
       DestGroupOwnerId: ros.stringToRosTemplate(properties.destGroupOwnerId),
+      DestPrefixListId: ros.stringToRosTemplate(properties.destPrefixListId),
       Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
       NicType: ros.stringToRosTemplate(properties.nicType),
       Policy: ros.stringToRosTemplate(properties.policy),
@@ -11663,6 +12027,13 @@ export class RosSecurityGroupEgress extends ros.RosResource {
     public destGroupOwnerId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property destPrefixListId: The ID of the destination prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists.Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" in Limits.
+     * If you specify DestCidrIp, Ipv6DestCidrIp, or DestGroupId, DestPrefixListId is ignored.
+     */
+    public destPrefixListId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
      * Note Only VPC type IP addresses are supported.
      */
@@ -11705,6 +12076,7 @@ export class RosSecurityGroupEgress extends ros.RosResource {
         this.destCidrIp = props.destCidrIp;
         this.destGroupId = props.destGroupId;
         this.destGroupOwnerId = props.destGroupOwnerId;
+        this.destPrefixListId = props.destPrefixListId;
         this.ipv6DestCidrIp = props.ipv6DestCidrIp;
         this.nicType = props.nicType;
         this.policy = props.policy;
@@ -11721,6 +12093,7 @@ export class RosSecurityGroupEgress extends ros.RosResource {
             destCidrIp: this.destCidrIp,
             destGroupId: this.destGroupId,
             destGroupOwnerId: this.destGroupOwnerId,
+            destPrefixListId: this.destPrefixListId,
             ipv6DestCidrIp: this.ipv6DestCidrIp,
             nicType: this.nicType,
             policy: this.policy,
@@ -11780,7 +12153,7 @@ export interface RosSecurityGroupIngressProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property sourceCidrIp: Source CIDR Ip Address range. Only IPV4 supported.
+     * @Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
      */
     readonly sourceCidrIp?: string | ros.IResolvable;
 
@@ -11798,6 +12171,13 @@ export interface RosSecurityGroupIngressProps {
      * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
      */
     readonly sourcePortRange?: string | ros.IResolvable;
+
+    /**
+     * @Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+     * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+     */
+    readonly sourcePrefixListId?: string | ros.IResolvable;
 }
 
 /**
@@ -11818,8 +12198,6 @@ function RosSecurityGroupIngressPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
-    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
-    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -11838,16 +12216,7 @@ function RosSecurityGroupIngressPropsValidator(properties: any): ros.ValidationR
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
     errors.collect(ros.propertyValidator('sourceGroupOwnerId', ros.validateString)(properties.sourceGroupOwnerId));
-    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
-    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
-        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
-          data: properties.ipProtocol,
-          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
     errors.collect(ros.propertyValidator('ipv6SourceCidrIp', ros.validateString)(properties.ipv6SourceCidrIp));
     if(properties.nicType && (typeof properties.nicType) !== 'object') {
         errors.collect(ros.propertyValidator('nicType', ros.validateAllowedValues)({
@@ -11856,6 +12225,18 @@ function RosSecurityGroupIngressPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('nicType', ros.validateString)(properties.nicType));
+    errors.collect(ros.propertyValidator('portRange', ros.requiredValidator)(properties.portRange));
+    errors.collect(ros.propertyValidator('portRange', ros.validateString)(properties.portRange));
+    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
+    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
+          data: properties.ipProtocol,
+          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('sourcePrefixListId', ros.validateString)(properties.sourcePrefixListId));
     return errors.wrap('supplied properties not correct for "RosSecurityGroupIngressProps"');
 }
 
@@ -11885,6 +12266,7 @@ function rosSecurityGroupIngressPropsToRosTemplate(properties: any, enableResour
       SourceGroupId: ros.stringToRosTemplate(properties.sourceGroupId),
       SourceGroupOwnerId: ros.stringToRosTemplate(properties.sourceGroupOwnerId),
       SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
+      SourcePrefixListId: ros.stringToRosTemplate(properties.sourcePrefixListId),
     };
 }
 
@@ -11947,7 +12329,7 @@ export class RosSecurityGroupIngress extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceCidrIp: Source CIDR Ip Address range. Only IPV4 supported.
+     * @Property sourceCidrIp: The source IPv4 CIDR block to which you want to control access. CIDR blocks and IPv4 addresses are supported.
      */
     public sourceCidrIp: string | ros.IResolvable | undefined;
 
@@ -11965,6 +12347,13 @@ export class RosSecurityGroupIngress extends ros.RosResource {
      * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
      */
     public sourcePortRange: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourcePrefixListId: The ID of the source prefix list to which you want to control access. You can call the DescribePrefixLists operation to query the IDs of available prefix lists. Take note of the following items:
+     * If a security group is in the classic network, you cannot configure prefix lists in the security group rules. For information about the limits on security groups and prefix lists, see the "Security group limits" section in Limits.
+     * If you specify the SourceCidrIp, Ipv6SourceCidrIp, or SourceGroupId parameter, this parameter is ignored.
+     */
+    public sourcePrefixListId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ECS::SecurityGroupIngress`.
@@ -11989,6 +12378,7 @@ export class RosSecurityGroupIngress extends ros.RosResource {
         this.sourceGroupId = props.sourceGroupId;
         this.sourceGroupOwnerId = props.sourceGroupOwnerId;
         this.sourcePortRange = props.sourcePortRange;
+        this.sourcePrefixListId = props.sourcePrefixListId;
     }
 
 
@@ -12006,6 +12396,7 @@ export class RosSecurityGroupIngress extends ros.RosResource {
             sourceGroupId: this.sourceGroupId,
             sourceGroupOwnerId: this.sourceGroupOwnerId,
             sourcePortRange: this.sourcePortRange,
+            sourcePrefixListId: this.sourcePrefixListId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -12048,6 +12439,11 @@ export interface RosSnapshotProps {
     readonly instantAccessRetentionDays?: number | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
      */
     readonly snapshotName?: string | ros.IResolvable;
@@ -12075,6 +12471,7 @@ function RosSnapshotPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instantAccess', ros.validateBoolean)(properties.instantAccess));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.timeout && (typeof properties.timeout) !== 'object') {
         errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
             data: properties.timeout,
@@ -12116,6 +12513,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
       Description: ros.stringToRosTemplate(properties.description),
       InstantAccess: ros.booleanToRosTemplate(properties.instantAccess),
       InstantAccessRetentionDays: ros.numberToRosTemplate(properties.instantAccessRetentionDays),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SnapshotName: ros.stringToRosTemplate(properties.snapshotName),
       Tags: ros.listMapper(rosSnapshotTagsPropertyToRosTemplate)(properties.tags),
       Timeout: ros.numberToRosTemplate(properties.timeout),
@@ -12174,6 +12572,11 @@ export class RosSnapshot extends ros.RosResource {
     public instantAccessRetentionDays: number | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
      */
     public snapshotName: string | ros.IResolvable | undefined;
@@ -12204,6 +12607,7 @@ export class RosSnapshot extends ros.RosResource {
         this.description = props.description;
         this.instantAccess = props.instantAccess;
         this.instantAccessRetentionDays = props.instantAccessRetentionDays;
+        this.resourceGroupId = props.resourceGroupId;
         this.snapshotName = props.snapshotName;
         this.tags = props.tags;
         this.timeout = props.timeout;
@@ -12216,6 +12620,7 @@ export class RosSnapshot extends ros.RosResource {
             description: this.description,
             instantAccess: this.instantAccess,
             instantAccessRetentionDays: this.instantAccessRetentionDays,
+            resourceGroupId: this.resourceGroupId,
             snapshotName: this.snapshotName,
             tags: this.tags,
             timeout: this.timeout,

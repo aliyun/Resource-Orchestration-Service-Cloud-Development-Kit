@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::SecurityGroupIngress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.866Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.974Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupIngress")
 public class RosSecurityGroupIngress extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -278,6 +278,24 @@ public class RosSecurityGroupIngress extends com.aliyun.ros.cdk.core.RosResource
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSourcePrefixListId() {
+        return software.amazon.jsii.Kernel.get(this, "sourcePrefixListId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSourcePrefixListId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "sourcePrefixListId", value);
+    }
+
+    /**
+     */
+    public void setSourcePrefixListId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sourcePrefixListId", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ecs.RosSecurityGroupIngress}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.RosSecurityGroupIngress> {
@@ -504,6 +522,23 @@ public class RosSecurityGroupIngress extends com.aliyun.ros.cdk.core.RosResource
          */
         public Builder sourcePortRange(final com.aliyun.ros.cdk.core.IResolvable sourcePortRange) {
             this.props.sourcePortRange(sourcePortRange);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param sourcePrefixListId This parameter is required.
+         */
+        public Builder sourcePrefixListId(final java.lang.String sourcePrefixListId) {
+            this.props.sourcePrefixListId(sourcePrefixListId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sourcePrefixListId This parameter is required.
+         */
+        public Builder sourcePrefixListId(final com.aliyun.ros.cdk.core.IResolvable sourcePrefixListId) {
+            this.props.sourcePrefixListId(sourcePrefixListId);
             return this;
         }
 

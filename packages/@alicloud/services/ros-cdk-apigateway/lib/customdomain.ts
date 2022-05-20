@@ -24,7 +24,7 @@ export interface CustomDomainProps {
     readonly certificateBody?: string | ros.IResolvable;
 
     /**
-     * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property certificateName: SSL certificate name.
      */
     readonly certificateName?: string | ros.IResolvable;
 

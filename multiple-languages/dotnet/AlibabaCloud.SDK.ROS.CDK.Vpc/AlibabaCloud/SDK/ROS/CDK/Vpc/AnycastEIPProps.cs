@@ -8,6 +8,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.AnycastEIPProps")]
     public class AnycastEIPProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IAnycastEIPProps
     {
+        /// <summary>Property bandwidth: Anycast EIP instance bandwidth.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Bandwidth
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property description: Anycast EIP instance description.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

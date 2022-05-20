@@ -18,6 +18,11 @@ export interface RosDomainProps {
     readonly groupId?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosDomain.TagsProperty[];
@@ -33,6 +38,7 @@ export interface RosDomainProps {
 function RosDomainPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('domainName', ros.requiredValidator)(properties.domainName));
     errors.collect(ros.propertyValidator('domainName', ros.validateString)(properties.domainName));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -63,6 +69,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
     return {
       DomainName: ros.stringToRosTemplate(properties.domainName),
       GroupId: ros.stringToRosTemplate(properties.groupId),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosDomainTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -125,6 +132,11 @@ export class RosDomain extends ros.RosResource {
     public groupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosDomain.TagsProperty[] | undefined;
@@ -148,6 +160,7 @@ export class RosDomain extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainName = props.domainName;
         this.groupId = props.groupId;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
     }
 
@@ -156,6 +169,7 @@ export class RosDomain extends ros.RosResource {
         return {
             domainName: this.domainName,
             groupId: this.groupId,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
         };
     }

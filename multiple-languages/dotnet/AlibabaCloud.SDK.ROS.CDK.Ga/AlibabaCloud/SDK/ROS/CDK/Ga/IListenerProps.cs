@@ -27,11 +27,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// Valid values:
         /// tcp: TCP protocol
         /// udp: UDP protocol
+        /// http: HTTP protocolhttps: HTTPS protocol.
         /// </remarks>
         [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Protocol
         {
             get;
+        }
+
+        /// <summary>Property certificates:.</summary>
+        [JsiiProperty(name: "certificates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosListener.CertificatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Certificates
+        {
+            get
+            {
+                return null;
+            }
         }
 
         /// <summary>Property clientAffinity: Specifies whether to enable client affinity for the listener.</summary>
@@ -78,6 +90,53 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
+        /// <summary>Property proxyProtocol: Specifies whether to preserve client IP addresses.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// true: preserves client IP addresses. After this feature is enabled, backend servers can retrieve client IP addresses.
+        /// false (default): does not preserve client IP addresses.
+        /// </remarks>
+        [JsiiProperty(name: "proxyProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProxyProtocol
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property securityPolicyId: The ID of the security policy.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// tls_cipher_policy_1_0
+        /// tls_cipher_policy_1_1
+        /// tls_cipher_policy_1_2
+        /// tls_cipher_policy_1_2_strict
+        /// tls_cipher_policy_1_2_strict_with_1_3
+        /// Note Only HTTPS listeners support this parameter.
+        /// </remarks>
+        [JsiiProperty(name: "securityPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityPolicyId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property xForwardedForConfig: The configuration of the XForward field.</summary>
+        [JsiiProperty(name: "xForwardedForConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosListener.XForwardedForConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? XForwardedForConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::GA::Listener`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.ListenerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ga.IListenerProps
@@ -105,11 +164,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// Valid values:
             /// tcp: TCP protocol
             /// udp: UDP protocol
+            /// http: HTTP protocolhttps: HTTPS protocol.
             /// </remarks>
             [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Protocol
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property certificates:.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "certificates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosListener.CertificatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Certificates
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property clientAffinity: Specifies whether to enable client affinity for the listener.</summary>
@@ -143,6 +211,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property proxyProtocol: Specifies whether to preserve client IP addresses.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// true: preserves client IP addresses. After this feature is enabled, backend servers can retrieve client IP addresses.
+            /// false (default): does not preserve client IP addresses.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "proxyProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProxyProtocol
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property securityPolicyId: The ID of the security policy.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// tls_cipher_policy_1_0
+            /// tls_cipher_policy_1_1
+            /// tls_cipher_policy_1_2
+            /// tls_cipher_policy_1_2_strict
+            /// tls_cipher_policy_1_2_strict_with_1_3
+            /// Note Only HTTPS listeners support this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityPolicyId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property xForwardedForConfig: The configuration of the XForward field.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "xForwardedForConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosListener.XForwardedForConfigProperty\"}]}}", isOptional: true)]
+            public object? XForwardedForConfig
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -123,6 +123,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        /// <summary>Property enableHttp2: Specifies whether to use HTTP/2.</summary>
+        /// <remarks>
+        /// It takes effect when Protocol=https. Valid values:
+        /// on: yes
+        /// off: no
+        /// </remarks>
+        [JsiiProperty(name: "enableHttp2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableHttp2
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property healthCheck: The properties of health checking setting.</summary>
         [JsiiProperty(name: "healthCheck", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosListener.HealthCheckProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -369,6 +385,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property enableHttp2: Specifies whether to use HTTP/2.</summary>
+            /// <remarks>
+            /// It takes effect when Protocol=https. Valid values:
+            /// on: yes
+            /// off: no
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableHttp2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableHttp2
             {
                 get => GetInstanceProperty<object?>();
             }

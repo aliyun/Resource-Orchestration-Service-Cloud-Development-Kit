@@ -48,6 +48,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             set;
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property resourceOptions: Resource options user by ROS.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "resourceOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oos.RosExecution.ResourceOptionsProperty\"}]}}", isOptional: true)]

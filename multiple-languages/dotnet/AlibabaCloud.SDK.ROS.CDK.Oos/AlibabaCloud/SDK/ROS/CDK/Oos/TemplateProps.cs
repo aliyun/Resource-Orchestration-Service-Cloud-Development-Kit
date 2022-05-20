@@ -32,6 +32,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             set;
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property tags: Tag value and the key mapping, the label of the key number can be up to 20.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]

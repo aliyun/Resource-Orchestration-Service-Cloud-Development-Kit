@@ -9,6 +9,11 @@ export { RosAnycastEIP as AnycastEIPProperty };
 export interface AnycastEIPProps {
 
     /**
+     * Property bandwidth: Anycast EIP instance bandwidth
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
      * Property description: Anycast EIP instance description
      */
     readonly description?: string | ros.IResolvable;
@@ -78,8 +83,9 @@ export class AnycastEIP extends ros.Resource {
             description: props.description,
             serviceLocation: props.serviceLocation === undefined || props.serviceLocation === null ? 'international' : props.serviceLocation,
             instanceChargeType: props.instanceChargeType,
-            internetChargeType: props.internetChargeType,
+            bandwidth: props.bandwidth,
             name: props.name,
+            internetChargeType: props.internetChargeType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAnycastEIP;
         this.attrAnycastId = rosAnycastEIP.attrAnycastId;

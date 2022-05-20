@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::ServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.707Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.809Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ServerGroupProps.Jsii$Proxy.class)
 public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -90,6 +90,15 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link ServerGroupProps}
      */
     static Builder builder() {
@@ -107,6 +116,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object scheduler;
         java.lang.Object serverGroupType;
         java.lang.Object stickySessionConfig;
+        java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags;
 
         /**
          * Sets the value of {@link ServerGroupProps#getHealthCheckConfig}
@@ -319,6 +329,18 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ServerGroupProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link ServerGroupProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -342,6 +364,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object scheduler;
         private final java.lang.Object serverGroupType;
         private final java.lang.Object stickySessionConfig;
+        private final java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -357,11 +380,13 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverGroupType = software.amazon.jsii.Kernel.get(this, "serverGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stickySessionConfig = software.amazon.jsii.Kernel.get(this, "stickySessionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.healthCheckConfig = java.util.Objects.requireNonNull(builder.healthCheckConfig, "healthCheckConfig is required");
@@ -372,6 +397,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             this.scheduler = builder.scheduler;
             this.serverGroupType = builder.serverGroupType;
             this.stickySessionConfig = builder.stickySessionConfig;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -415,6 +441,11 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -437,6 +468,9 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getStickySessionConfig() != null) {
                 data.set("stickySessionConfig", om.valueToTree(this.getStickySessionConfig()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -463,7 +497,8 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
             if (this.serverGroupType != null ? !this.serverGroupType.equals(that.serverGroupType) : that.serverGroupType != null) return false;
-            return this.stickySessionConfig != null ? this.stickySessionConfig.equals(that.stickySessionConfig) : that.stickySessionConfig == null;
+            if (this.stickySessionConfig != null ? !this.stickySessionConfig.equals(that.stickySessionConfig) : that.stickySessionConfig != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -476,6 +511,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
             result = 31 * result + (this.serverGroupType != null ? this.serverGroupType.hashCode() : 0);
             result = 31 * result + (this.stickySessionConfig != null ? this.stickySessionConfig.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

@@ -129,6 +129,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+        /// on: yes
+        /// off: no
+        /// </remarks>
+        [JsiiProperty(name: "enableHttp2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableHttp2
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: healthCheck: The properties of health checking setting.
         /// </remarks>
         [JsiiProperty(name: "healthCheck", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosListener.HealthCheckProperty\"}]}}", isOptional: true)]
@@ -386,6 +401,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableHttp2: Specifies whether to use HTTP/2. It takes effect when Protocol=https. Valid values:
+            /// on: yes
+            /// off: no
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableHttp2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableHttp2
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -1,4 +1,9 @@
+@alicloud/ros-cdk-adb.Account=com.aliyun.ros.cdk.adb.Account
+@alicloud/ros-cdk-adb.AccountProps=com.aliyun.ros.cdk.adb.AccountProps
 @alicloud/ros-cdk-adb.DBCluster=com.aliyun.ros.cdk.adb.DBCluster
 @alicloud/ros-cdk-adb.DBClusterProps=com.aliyun.ros.cdk.adb.DBClusterProps
+@alicloud/ros-cdk-adb.RosAccount=com.aliyun.ros.cdk.adb.RosAccount
+@alicloud/ros-cdk-adb.RosAccountProps=com.aliyun.ros.cdk.adb.RosAccountProps
 @alicloud/ros-cdk-adb.RosDBCluster=com.aliyun.ros.cdk.adb.RosDBCluster
+@alicloud/ros-cdk-adb.RosDBCluster.TagsProperty=com.aliyun.ros.cdk.adb.RosDBCluster$TagsProperty
 @alicloud/ros-cdk-adb.RosDBClusterProps=com.aliyun.ros.cdk.adb.RosDBClusterProps

@@ -776,7 +776,7 @@ function RosResourceCleaner_ExcludedResourcesPropertyValidator(properties: any):
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ECS:Disk","ECS:Instance","ECS:SecurityGroup","RDS:DBInstance","VPC:EIP","VPC:VPC","VPC:VSwitch"],
+          allowedValues: ["ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","RDS:DBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EipSegment","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:RouteTable","VPC:VPC","VPC:VSwitch"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));

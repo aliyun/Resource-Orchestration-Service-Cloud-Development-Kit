@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::AccessControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:30.425Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosAccessControlProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessControlProps.Jsii$Proxy.class)
 public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,12 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> getTags() {
         return null;
     }
@@ -43,6 +49,7 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object aclName;
         java.lang.Object aclEntrys;
         java.lang.Object addressIpVersion;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
 
         /**
@@ -106,6 +113,26 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosAccessControlProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccessControlProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccessControlProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -135,6 +162,7 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object aclName;
         private final java.lang.Object aclEntrys;
         private final java.lang.Object addressIpVersion;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
 
         /**
@@ -146,6 +174,7 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
             this.aclName = software.amazon.jsii.Kernel.get(this, "aclName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclEntrys = software.amazon.jsii.Kernel.get(this, "aclEntrys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty.class)));
         }
 
@@ -158,6 +187,7 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
             this.aclName = java.util.Objects.requireNonNull(builder.aclName, "aclName is required");
             this.aclEntrys = builder.aclEntrys;
             this.addressIpVersion = builder.addressIpVersion;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty>)builder.tags;
         }
 
@@ -177,6 +207,11 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> getTags() {
             return this.tags;
         }
@@ -193,6 +228,9 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
             }
             if (this.getAddressIpVersion() != null) {
                 data.set("addressIpVersion", om.valueToTree(this.getAddressIpVersion()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -218,6 +256,7 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
             if (!aclName.equals(that.aclName)) return false;
             if (this.aclEntrys != null ? !this.aclEntrys.equals(that.aclEntrys) : that.aclEntrys != null) return false;
             if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -226,6 +265,7 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
             int result = this.aclName.hashCode();
             result = 31 * result + (this.aclEntrys != null ? this.aclEntrys.hashCode() : 0);
             result = 31 * result + (this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

@@ -210,6 +210,11 @@ export interface RosCenBandwidthPackageProps {
      * @Property pricingCycle: The pricing cycle.
      */
     readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -222,7 +227,6 @@ export interface RosCenBandwidthPackageProps {
 function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     if(properties.bandwidthPackageChargeType && (typeof properties.bandwidthPackageChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateAllowedValues)({
           data: properties.bandwidthPackageChargeType,
@@ -230,6 +234,8 @@ function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationRe
         }));
     }
     errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateString)(properties.bandwidthPackageChargeType));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('geographicRegionBId', ros.requiredValidator)(properties.geographicRegionBId));
     if(properties.geographicRegionBId && (typeof properties.geographicRegionBId) !== 'object') {
         errors.collect(ros.propertyValidator('geographicRegionBId', ros.validateAllowedValues)({
@@ -265,6 +271,7 @@ function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationRe
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateAllowedValues)({
           data: properties.autoRenewDuration,
@@ -272,7 +279,6 @@ function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationRe
         }));
     }
     errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosCenBandwidthPackageProps"');
 }
 
@@ -301,6 +307,7 @@ function rosCenBandwidthPackagePropsToRosTemplate(properties: any, enableResourc
       Name: ros.stringToRosTemplate(properties.name),
       Period: ros.numberToRosTemplate(properties.period),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -388,6 +395,11 @@ export class RosCenBandwidthPackage extends ros.RosResource {
     public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::CEN::CenBandwidthPackage`.
      *
      * @param scope - scope in which this resource is defined
@@ -410,6 +422,7 @@ export class RosCenBandwidthPackage extends ros.RosResource {
         this.name = props.name;
         this.period = props.period;
         this.pricingCycle = props.pricingCycle;
+        this.resourceGroupId = props.resourceGroupId;
     }
 
 
@@ -426,6 +439,7 @@ export class RosCenBandwidthPackage extends ros.RosResource {
             name: this.name,
             period: this.period,
             pricingCycle: this.pricingCycle,
+            resourceGroupId: this.resourceGroupId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -564,6 +578,11 @@ export interface RosCenInstanceProps {
     readonly protectionLevel?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosCenInstance.TagsProperty[];
@@ -581,6 +600,7 @@ function RosCenInstancePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('protectionLevel', ros.validateString)(properties.protectionLevel));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -610,6 +630,7 @@ function rosCenInstancePropsToRosTemplate(properties: any, enableResourcePropert
       Description: ros.stringToRosTemplate(properties.description),
       Name: ros.stringToRosTemplate(properties.name),
       ProtectionLevel: ros.stringToRosTemplate(properties.protectionLevel),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosCenInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -656,6 +677,11 @@ export class RosCenInstance extends ros.RosResource {
     public protectionLevel: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosCenInstance.TagsProperty[] | undefined;
@@ -675,6 +701,7 @@ export class RosCenInstance extends ros.RosResource {
         this.description = props.description;
         this.name = props.name;
         this.protectionLevel = props.protectionLevel;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
     }
 
@@ -684,6 +711,7 @@ export class RosCenInstance extends ros.RosResource {
             description: this.description,
             name: this.name,
             protectionLevel: this.protectionLevel,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
         };
     }
@@ -1486,6 +1514,12 @@ export interface RosCenRouteServiceProps {
     readonly hostVpcId: string | ros.IResolvable;
 
     /**
+     * @Property conflictIgnore: Whether to ignore conflict when creating. If true, when the CloudRoute.Conflict error code is encountered during creation, it will be ignored as the creation is successful, and the deletion phase will be skipped.
+     * Default false.
+     */
+    readonly conflictIgnore?: boolean | ros.IResolvable;
+
+    /**
      * @Property description: The description of the cloud service.
      */
     readonly description?: string | ros.IResolvable;
@@ -1501,6 +1535,7 @@ export interface RosCenRouteServiceProps {
 function RosCenRouteServicePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('conflictIgnore', ros.validateBoolean)(properties.conflictIgnore));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('hostRegionId', ros.requiredValidator)(properties.hostRegionId));
     errors.collect(ros.propertyValidator('hostRegionId', ros.validateString)(properties.hostRegionId));
@@ -1534,6 +1569,7 @@ function rosCenRouteServicePropsToRosTemplate(properties: any, enableResourcePro
       Host: ros.stringToRosTemplate(properties.host),
       HostRegionId: ros.stringToRosTemplate(properties.hostRegionId),
       HostVpcId: ros.stringToRosTemplate(properties.hostVpcId),
+      ConflictIgnore: ros.booleanToRosTemplate(properties.conflictIgnore),
       Description: ros.stringToRosTemplate(properties.description),
     };
 }
@@ -1588,6 +1624,12 @@ export class RosCenRouteService extends ros.RosResource {
     public hostVpcId: string | ros.IResolvable;
 
     /**
+     * @Property conflictIgnore: Whether to ignore conflict when creating. If true, when the CloudRoute.Conflict error code is encountered during creation, it will be ignored as the creation is successful, and the deletion phase will be skipped.
+     * Default false.
+     */
+    public conflictIgnore: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property description: The description of the cloud service.
      */
     public description: string | ros.IResolvable | undefined;
@@ -1609,6 +1651,7 @@ export class RosCenRouteService extends ros.RosResource {
         this.host = props.host;
         this.hostRegionId = props.hostRegionId;
         this.hostVpcId = props.hostVpcId;
+        this.conflictIgnore = props.conflictIgnore;
         this.description = props.description;
     }
 
@@ -1620,6 +1663,7 @@ export class RosCenRouteService extends ros.RosResource {
             host: this.host,
             hostRegionId: this.hostRegionId,
             hostVpcId: this.hostVpcId,
+            conflictIgnore: this.conflictIgnore,
             description: this.description,
         };
     }

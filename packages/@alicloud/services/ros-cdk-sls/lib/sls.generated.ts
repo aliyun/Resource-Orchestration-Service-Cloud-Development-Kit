@@ -3439,6 +3439,214 @@ export class RosMachineGroup extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::SLS::MetricStore`
+ */
+export interface RosMetricStoreProps {
+
+    /**
+     * @Property logstoreName: Metric store name:
+     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
+     */
+    readonly logstoreName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: Project name:
+     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
+     */
+    readonly projectName: string | ros.IResolvable;
+
+    /**
+     * @Property preserveStorage: Whether to keep the log permanently.
+     * If set to true, TTL will be ignored.
+     * Default to false.
+     */
+    readonly preserveStorage?: boolean | ros.IResolvable;
+
+    /**
+     * @Property shardCount: The number of Shards.
+     * Allowed Values: 1-10, default to 2.
+     */
+    readonly shardCount?: number | ros.IResolvable;
+
+    /**
+     * @Property ttl: The lifecycle of log in the metrice store in days.
+     * Allowed Values: 1-3000, default to 30.
+     */
+    readonly ttl?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMetricStoreProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMetricStoreProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMetricStorePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('logstoreName', ros.requiredValidator)(properties.logstoreName));
+    if(properties.logstoreName && (Array.isArray(properties.logstoreName) || (typeof properties.logstoreName) === 'string')) {
+        errors.collect(ros.propertyValidator('logstoreName', ros.validateLength)({
+            data: properties.logstoreName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logstoreName', ros.validateString)(properties.logstoreName));
+    errors.collect(ros.propertyValidator('preserveStorage', ros.validateBoolean)(properties.preserveStorage));
+    errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    if(properties.projectName && (Array.isArray(properties.projectName) || (typeof properties.projectName) === 'string')) {
+        errors.collect(ros.propertyValidator('projectName', ros.validateLength)({
+            data: properties.projectName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    if(properties.projectName && (typeof properties.projectName) !== 'object') {
+        errors.collect(ros.propertyValidator('projectName', ros.validateAllowedPattern)({
+          data: properties.projectName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    if(properties.ttl && (typeof properties.ttl) !== 'object') {
+        errors.collect(ros.propertyValidator('ttl', ros.validateRange)({
+            data: properties.ttl,
+            min: 1,
+            max: 3000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ttl', ros.validateNumber)(properties.ttl));
+    if(properties.shardCount && (typeof properties.shardCount) !== 'object') {
+        errors.collect(ros.propertyValidator('shardCount', ros.validateRange)({
+            data: properties.shardCount,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('shardCount', ros.validateNumber)(properties.shardCount));
+    return errors.wrap('supplied properties not correct for "RosMetricStoreProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::MetricStore` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMetricStoreProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::MetricStore` resource.
+ */
+// @ts-ignore TS6133
+function rosMetricStorePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMetricStorePropsValidator(properties).assertSuccess();
+    }
+    return {
+      LogstoreName: ros.stringToRosTemplate(properties.logstoreName),
+      ProjectName: ros.stringToRosTemplate(properties.projectName),
+      PreserveStorage: ros.booleanToRosTemplate(properties.preserveStorage),
+      ShardCount: ros.numberToRosTemplate(properties.shardCount),
+      TTL: ros.numberToRosTemplate(properties.ttl),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SLS::MetricStore`
+ */
+export class RosMetricStore extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::MetricStore";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute LogstoreName: Metric store name.
+     */
+    public readonly attrLogstoreName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property logstoreName: Metric store name:
+     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
+     */
+    public logstoreName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: Project name:
+     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
+     */
+    public projectName: string | ros.IResolvable;
+
+    /**
+     * @Property preserveStorage: Whether to keep the log permanently.
+     * If set to true, TTL will be ignored.
+     * Default to false.
+     */
+    public preserveStorage: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property shardCount: The number of Shards.
+     * Allowed Values: 1-10, default to 2.
+     */
+    public shardCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ttl: The lifecycle of log in the metrice store in days.
+     * Allowed Values: 1-3000, default to 30.
+     */
+    public ttl: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SLS::MetricStore`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMetricStoreProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMetricStore.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrLogstoreName = this.getAtt('LogstoreName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.logstoreName = props.logstoreName;
+        this.projectName = props.projectName;
+        this.preserveStorage = props.preserveStorage;
+        this.shardCount = props.shardCount;
+        this.ttl = props.ttl;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            logstoreName: this.logstoreName,
+            projectName: this.projectName,
+            preserveStorage: this.preserveStorage,
+            shardCount: this.shardCount,
+            ttl: this.ttl,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMetricStorePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::SLS::Project`
  */
 export interface RosProjectProps {

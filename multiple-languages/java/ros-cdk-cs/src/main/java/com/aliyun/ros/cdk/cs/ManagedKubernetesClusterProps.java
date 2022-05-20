@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.384Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -329,6 +329,13 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property resourceGroupId: The ID of resource group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * Property runtime: The container runtime of the cluster.
      * <p>
      * The default runtime is Docker.
@@ -453,6 +460,13 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
+     * Property zoneIds: Zone ids of worker node virtual switches belongs to.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link ManagedKubernetesClusterProps}
      */
     static Builder builder() {
@@ -493,6 +507,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object platform;
         java.lang.Object podVswitchIds;
         java.lang.Object proxyMode;
+        java.lang.Object resourceGroupId;
         java.lang.Object runtime;
         java.lang.Object securityGroupId;
         java.lang.Object serviceCidr;
@@ -506,6 +521,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object workerDataDisks;
         java.lang.Object workerSystemDiskCategory;
         java.lang.Object workerSystemDiskSize;
+        java.lang.Object zoneIds;
 
         /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getName}
@@ -1298,6 +1314,26 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getRuntime}
          * @param runtime Property runtime: The container runtime of the cluster.
          *                The default runtime is Docker.
@@ -1593,6 +1629,26 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getZoneIds}
+         * @param zoneIds Property zoneIds: Zone ids of worker node virtual switches belongs to.
+         * @return {@code this}
+         */
+        public Builder zoneIds(com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.zoneIds = zoneIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getZoneIds}
+         * @param zoneIds Property zoneIds: Zone ids of worker node virtual switches belongs to.
+         * @return {@code this}
+         */
+        public Builder zoneIds(java.util.List<? extends java.lang.Object> zoneIds) {
+            this.zoneIds = zoneIds;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link ManagedKubernetesClusterProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -1639,6 +1695,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object platform;
         private final java.lang.Object podVswitchIds;
         private final java.lang.Object proxyMode;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object runtime;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceCidr;
@@ -1652,6 +1709,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object workerDataDisks;
         private final java.lang.Object workerSystemDiskCategory;
         private final java.lang.Object workerSystemDiskSize;
+        private final java.lang.Object zoneIds;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1690,6 +1748,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.podVswitchIds = software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1703,6 +1762,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -1742,6 +1802,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.platform = builder.platform;
             this.podVswitchIds = builder.podVswitchIds;
             this.proxyMode = builder.proxyMode;
+            this.resourceGroupId = builder.resourceGroupId;
             this.runtime = builder.runtime;
             this.securityGroupId = builder.securityGroupId;
             this.serviceCidr = builder.serviceCidr;
@@ -1755,6 +1816,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.workerDataDisks = builder.workerDataDisks;
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
             this.workerSystemDiskSize = builder.workerSystemDiskSize;
+            this.zoneIds = builder.zoneIds;
         }
 
         @Override
@@ -1913,6 +1975,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getRuntime() {
             return this.runtime;
         }
@@ -1975,6 +2042,11 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getWorkerSystemDiskSize() {
             return this.workerSystemDiskSize;
+        }
+
+        @Override
+        public final java.lang.Object getZoneIds() {
+            return this.zoneIds;
         }
 
         @Override
@@ -2068,6 +2140,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getProxyMode() != null) {
                 data.set("proxyMode", om.valueToTree(this.getProxyMode()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getRuntime() != null) {
                 data.set("runtime", om.valueToTree(this.getRuntime()));
             }
@@ -2106,6 +2181,9 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             }
             if (this.getWorkerSystemDiskSize() != null) {
                 data.set("workerSystemDiskSize", om.valueToTree(this.getWorkerSystemDiskSize()));
+            }
+            if (this.getZoneIds() != null) {
+                data.set("zoneIds", om.valueToTree(this.getZoneIds()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -2156,6 +2234,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.platform != null ? !this.platform.equals(that.platform) : that.platform != null) return false;
             if (this.podVswitchIds != null ? !this.podVswitchIds.equals(that.podVswitchIds) : that.podVswitchIds != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.runtime != null ? !this.runtime.equals(that.runtime) : that.runtime != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
@@ -2168,7 +2247,8 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.workerDataDisk != null ? !this.workerDataDisk.equals(that.workerDataDisk) : that.workerDataDisk != null) return false;
             if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
-            return this.workerSystemDiskSize != null ? this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize == null;
+            if (this.workerSystemDiskSize != null ? !this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize != null) return false;
+            return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
 
         @Override
@@ -2204,6 +2284,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.platform != null ? this.platform.hashCode() : 0);
             result = 31 * result + (this.podVswitchIds != null ? this.podVswitchIds.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.runtime != null ? this.runtime.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);
@@ -2217,6 +2298,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
+            result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;
         }
     }

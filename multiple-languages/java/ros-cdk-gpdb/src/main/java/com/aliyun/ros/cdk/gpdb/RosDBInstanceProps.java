@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * Properties for defining a `ALIYUN::GPDB::DBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.469Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.585Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceProps.Jsii$Proxy.class)
 public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -60,6 +60,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
@@ -84,6 +90,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object period;
         java.lang.Object periodUnit;
         java.lang.Object securityIpList;
+        java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> tags;
         java.lang.Object vpcId;
 
         /**
@@ -287,6 +294,17 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
@@ -332,6 +350,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
         private final java.lang.Object securityIpList;
+        private final java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> tags;
         private final java.lang.Object vpcId;
 
         /**
@@ -350,12 +369,14 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbInstanceClass = java.util.Objects.requireNonNull(builder.dbInstanceClass, "dbInstanceClass is required");
@@ -368,6 +389,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
             this.securityIpList = builder.securityIpList;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
         }
 
@@ -422,6 +444,11 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
@@ -451,6 +478,9 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
@@ -483,6 +513,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
 
@@ -498,6 +529,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;
         }

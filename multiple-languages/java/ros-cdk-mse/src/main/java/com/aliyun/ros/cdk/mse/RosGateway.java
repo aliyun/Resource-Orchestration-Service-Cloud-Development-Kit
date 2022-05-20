@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * A ROS template type:  `ALIYUN::MSE::Gateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.725Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.885Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosGateway")
 public class RosGateway extends com.aliyun.ros.cdk.core.RosResource {
 

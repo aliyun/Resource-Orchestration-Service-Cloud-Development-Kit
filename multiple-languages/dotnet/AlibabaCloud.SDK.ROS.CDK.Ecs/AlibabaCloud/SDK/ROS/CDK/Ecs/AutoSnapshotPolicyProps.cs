@@ -77,6 +77,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property tags: Tags to attach to instance.</summary>
         /// <remarks>
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.

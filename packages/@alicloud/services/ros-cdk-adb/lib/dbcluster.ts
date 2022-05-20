@@ -112,6 +112,11 @@ export interface DBClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDBCluster.TagsProperty[];
+
+    /**
      * Property zoneId: The zone ID of the cluster. You can call the DescribeRegions operation to query the most recent zone list.
      */
     readonly zoneId?: string | ros.IResolvable;
@@ -170,6 +175,7 @@ export class DBCluster extends ros.Resource {
             dbNodeGroupCount: props.dbNodeGroupCount,
             executorCount: props.executorCount,
             dbClusterClass: props.dbClusterClass,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
         this.attrConnectionString = rosDBCluster.attrConnectionString;

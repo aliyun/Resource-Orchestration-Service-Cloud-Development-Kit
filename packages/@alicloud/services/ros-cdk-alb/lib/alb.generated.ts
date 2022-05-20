@@ -999,6 +999,11 @@ export interface RosLoadBalancerProps {
     readonly addressAllocatedMode?: string | ros.IResolvable;
 
     /**
+     * @Property bandwidthPackageId: Attach common bandwidth package to load balancer. It only takes effect when AddressType=Internet.
+     */
+    readonly bandwidthPackageId?: string | ros.IResolvable;
+
+    /**
      * @Property deletionProtectionEnabled: Specifies whether to enable deletion protection. Default value: false.
      */
     readonly deletionProtectionEnabled?: boolean | ros.IResolvable;
@@ -1032,12 +1037,19 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('loadBalancerName', ros.requiredValidator)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('loadBalancerEdition', ros.requiredValidator)(properties.loadBalancerEdition));
+    if(properties.loadBalancerEdition && (typeof properties.loadBalancerEdition) !== 'object') {
+        errors.collect(ros.propertyValidator('loadBalancerEdition', ros.validateAllowedValues)({
+          data: properties.loadBalancerEdition,
+          allowedValues: ["Basic","Standard"],
+        }));
+    }
     errors.collect(ros.propertyValidator('loadBalancerEdition', ros.validateString)(properties.loadBalancerEdition));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('loadBalancerBillingConfig', ros.requiredValidator)(properties.loadBalancerBillingConfig));
     errors.collect(ros.propertyValidator('loadBalancerBillingConfig', RosLoadBalancer_LoadBalancerBillingConfigPropertyValidator)(properties.loadBalancerBillingConfig));
+    errors.collect(ros.propertyValidator('bandwidthPackageId', ros.validateString)(properties.bandwidthPackageId));
     errors.collect(ros.propertyValidator('addressType', ros.requiredValidator)(properties.addressType));
     if(properties.addressType && (typeof properties.addressType) !== 'object') {
         errors.collect(ros.propertyValidator('addressType', ros.validateAllowedValues)({
@@ -1055,8 +1067,8 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('addressAllocatedMode', ros.validateString)(properties.addressAllocatedMode));
     errors.collect(ros.propertyValidator('zoneMappings', ros.requiredValidator)(properties.zoneMappings));
     errors.collect(ros.propertyValidator('zoneMappings', ros.listValidator(RosLoadBalancer_ZoneMappingsPropertyValidator))(properties.zoneMappings));
-    errors.collect(ros.propertyValidator('deletionProtectionEnabled', ros.validateBoolean)(properties.deletionProtectionEnabled));
     errors.collect(ros.propertyValidator('modificationProtectionConfig', RosLoadBalancer_ModificationProtectionConfigPropertyValidator)(properties.modificationProtectionConfig));
+    errors.collect(ros.propertyValidator('deletionProtectionEnabled', ros.validateBoolean)(properties.deletionProtectionEnabled));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1089,6 +1101,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       ZoneMappings: ros.listMapper(rosLoadBalancerZoneMappingsPropertyToRosTemplate)(properties.zoneMappings),
       AddressAllocatedMode: ros.stringToRosTemplate(properties.addressAllocatedMode),
+      BandwidthPackageId: ros.stringToRosTemplate(properties.bandwidthPackageId),
       DeletionProtectionEnabled: ros.booleanToRosTemplate(properties.deletionProtectionEnabled),
       ModificationProtectionConfig: rosLoadBalancerModificationProtectionConfigPropertyToRosTemplate(properties.modificationProtectionConfig),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -1186,6 +1199,11 @@ export class RosLoadBalancer extends ros.RosResource {
     public addressAllocatedMode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property bandwidthPackageId: Attach common bandwidth package to load balancer. It only takes effect when AddressType=Internet.
+     */
+    public bandwidthPackageId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property deletionProtectionEnabled: Specifies whether to enable deletion protection. Default value: false.
      */
     public deletionProtectionEnabled: boolean | ros.IResolvable | undefined;
@@ -1229,6 +1247,7 @@ export class RosLoadBalancer extends ros.RosResource {
         this.vpcId = props.vpcId;
         this.zoneMappings = props.zoneMappings;
         this.addressAllocatedMode = props.addressAllocatedMode;
+        this.bandwidthPackageId = props.bandwidthPackageId;
         this.deletionProtectionEnabled = props.deletionProtectionEnabled;
         this.modificationProtectionConfig = props.modificationProtectionConfig;
         this.resourceGroupId = props.resourceGroupId;
@@ -1245,6 +1264,7 @@ export class RosLoadBalancer extends ros.RosResource {
             vpcId: this.vpcId,
             zoneMappings: this.zoneMappings,
             addressAllocatedMode: this.addressAllocatedMode,
+            bandwidthPackageId: this.bandwidthPackageId,
             deletionProtectionEnabled: this.deletionProtectionEnabled,
             modificationProtectionConfig: this.modificationProtectionConfig,
             resourceGroupId: this.resourceGroupId,
@@ -2751,6 +2771,11 @@ export interface RosServerGroupProps {
      * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
      */
     readonly stickySessionConfig?: RosServerGroup.StickySessionConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosServerGroup.TagsProperty[];
 }
 
 /**
@@ -2790,6 +2815,14 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('serverGroupType', ros.validateString)(properties.serverGroupType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosServerGroup_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('serverGroupName', ros.requiredValidator)(properties.serverGroupName));
     errors.collect(ros.propertyValidator('serverGroupName', ros.validateString)(properties.serverGroupName));
     return errors.wrap('supplied properties not correct for "RosServerGroupProps"');
@@ -2817,6 +2850,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
       Scheduler: ros.stringToRosTemplate(properties.scheduler),
       ServerGroupType: ros.stringToRosTemplate(properties.serverGroupType),
       StickySessionConfig: rosServerGroupStickySessionConfigPropertyToRosTemplate(properties.stickySessionConfig),
+      Tags: ros.listMapper(rosServerGroupTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -2903,6 +2937,11 @@ export class RosServerGroup extends ros.RosResource {
     public stickySessionConfig: RosServerGroup.StickySessionConfigProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosServerGroup.TagsProperty[] | undefined;
+
+    /**
      * Create a new `ALIYUN::ALB::ServerGroup`.
      *
      * @param scope - scope in which this resource is defined
@@ -2922,6 +2961,7 @@ export class RosServerGroup extends ros.RosResource {
         this.scheduler = props.scheduler;
         this.serverGroupType = props.serverGroupType;
         this.stickySessionConfig = props.stickySessionConfig;
+        this.tags = props.tags;
     }
 
 
@@ -2935,6 +2975,7 @@ export class RosServerGroup extends ros.RosResource {
             scheduler: this.scheduler,
             serverGroupType: this.serverGroupType,
             stickySessionConfig: this.stickySessionConfig,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -3178,5 +3219,53 @@ function rosServerGroupStickySessionConfigPropertyToRosTemplate(properties: any)
       CookieTimeout: ros.numberToRosTemplate(properties.cookieTimeout),
       StickySessionType: ros.stringToRosTemplate(properties.stickySessionType),
       StickySessionEnabled: ros.booleanToRosTemplate(properties.stickySessionEnabled),
+    };
+}
+
+export namespace RosServerGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::ServerGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::ServerGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosServerGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServerGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }

@@ -14,6 +14,8 @@
 @alicloud/ros-cdk-sls.LogtailConfigProps=com.aliyun.ros.cdk.sls.LogtailConfigProps
 @alicloud/ros-cdk-sls.MachineGroup=com.aliyun.ros.cdk.sls.MachineGroup
 @alicloud/ros-cdk-sls.MachineGroupProps=com.aliyun.ros.cdk.sls.MachineGroupProps
+@alicloud/ros-cdk-sls.MetricStore=com.aliyun.ros.cdk.sls.MetricStore
+@alicloud/ros-cdk-sls.MetricStoreProps=com.aliyun.ros.cdk.sls.MetricStoreProps
 @alicloud/ros-cdk-sls.Project=com.aliyun.ros.cdk.sls.Project
 @alicloud/ros-cdk-sls.ProjectProps=com.aliyun.ros.cdk.sls.ProjectProps
 @alicloud/ros-cdk-sls.RosAlert=com.aliyun.ros.cdk.sls.RosAlert
@@ -47,6 +49,8 @@
 @alicloud/ros-cdk-sls.RosLogtailConfigProps=com.aliyun.ros.cdk.sls.RosLogtailConfigProps
 @alicloud/ros-cdk-sls.RosMachineGroup=com.aliyun.ros.cdk.sls.RosMachineGroup
 @alicloud/ros-cdk-sls.RosMachineGroupProps=com.aliyun.ros.cdk.sls.RosMachineGroupProps
+@alicloud/ros-cdk-sls.RosMetricStore=com.aliyun.ros.cdk.sls.RosMetricStore
+@alicloud/ros-cdk-sls.RosMetricStoreProps=com.aliyun.ros.cdk.sls.RosMetricStoreProps
 @alicloud/ros-cdk-sls.RosProject=com.aliyun.ros.cdk.sls.RosProject
 @alicloud/ros-cdk-sls.RosProject.TagsProperty=com.aliyun.ros.cdk.sls.RosProject$TagsProperty
 @alicloud/ros-cdk-sls.RosProjectProps=com.aliyun.ros.cdk.sls.RosProjectProps

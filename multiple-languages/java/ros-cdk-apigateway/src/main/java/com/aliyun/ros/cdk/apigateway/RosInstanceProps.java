@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.796Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.888Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,6 +55,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.apigateway.RosInstance.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosInstanceProps}
      */
     static Builder builder() {
@@ -73,6 +79,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object deletionForce;
         java.lang.Object duration;
         java.lang.Object pricingCycle;
+        java.util.List<com.aliyun.ros.cdk.apigateway.RosInstance.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosInstanceProps#getHttpsPolicy}
@@ -255,6 +262,17 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -279,6 +297,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object deletionForce;
         private final java.lang.Object duration;
         private final java.lang.Object pricingCycle;
+        private final java.util.List<com.aliyun.ros.cdk.apigateway.RosInstance.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -295,11 +314,13 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.apigateway.RosInstance.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.httpsPolicy = java.util.Objects.requireNonNull(builder.httpsPolicy, "httpsPolicy is required");
@@ -311,6 +332,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.deletionForce = builder.deletionForce;
             this.duration = builder.duration;
             this.pricingCycle = builder.pricingCycle;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosInstance.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -359,6 +381,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.apigateway.RosInstance.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -382,6 +409,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -409,7 +439,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
-            return this.pricingCycle != null ? this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle == null;
+            if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -423,6 +454,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

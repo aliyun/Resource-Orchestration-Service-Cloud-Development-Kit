@@ -169,6 +169,11 @@ export interface RosClusterProps {
     readonly relatedClusterId?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: The ID of the security group. You can create a security group in the ECS console and
      * use it. Note: If you use an existing security group, the default security group policy
      * is applied to this security group: Only port 22 is open at the inbound and all ports
@@ -190,6 +195,11 @@ export interface RosClusterProps {
      * @Property sshEnable: Indicates whether SSH is enabled.
      */
     readonly sshEnable?: boolean | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCluster.TagsProperty[];
 
     /**
      * @Property useCustomHiveMetaDb: A reserved parameter. Not required.
@@ -233,6 +243,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('bootstrapAction', ros.listValidator(RosCluster_BootstrapActionPropertyValidator))(properties.bootstrapAction));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('securityGroupName', ros.validateString)(properties.securityGroupName));
     errors.collect(ros.propertyValidator('config', ros.listValidator(RosCluster_ConfigPropertyValidator))(properties.config));
     errors.collect(ros.propertyValidator('clickHouseConf', ros.hashValidator(ros.validateAny))(properties.clickHouseConf));
@@ -240,9 +251,9 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('hostGroup', ros.requiredValidator)(properties.hostGroup));
     errors.collect(ros.propertyValidator('hostGroup', ros.listValidator(RosCluster_HostGroupPropertyValidator))(properties.hostGroup));
     errors.collect(ros.propertyValidator('userInfo', ros.listValidator(RosCluster_UserInfoPropertyValidator))(properties.userInfo));
+    errors.collect(ros.propertyValidator('highAvailabilityEnable', ros.validateBoolean)(properties.highAvailabilityEnable));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('highAvailabilityEnable', ros.validateBoolean)(properties.highAvailabilityEnable));
     errors.collect(ros.propertyValidator('optionSoftWareList', ros.listValidator(ros.validateString))(properties.optionSoftWareList));
     if(properties.masterPwd && (Array.isArray(properties.masterPwd) || (typeof properties.masterPwd) === 'string')) {
         errors.collect(ros.propertyValidator('masterPwd', ros.validateLength)({
@@ -257,9 +268,17 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('isOpenPublicIp', ros.validateBoolean)(properties.isOpenPublicIp));
     errors.collect(ros.propertyValidator('configurations', ros.validateString)(properties.configurations));
     errors.collect(ros.propertyValidator('authorizeContent', ros.validateString)(properties.authorizeContent));
-    errors.collect(ros.propertyValidator('userDefinedEmrEcsRole', ros.validateString)(properties.userDefinedEmrEcsRole));
     errors.collect(ros.propertyValidator('netType', ros.requiredValidator)(properties.netType));
     errors.collect(ros.propertyValidator('netType', ros.validateString)(properties.netType));
+    errors.collect(ros.propertyValidator('userDefinedEmrEcsRole', ros.validateString)(properties.userDefinedEmrEcsRole));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('useLocalMetaDb', ros.requiredValidator)(properties.useLocalMetaDb));
     errors.collect(ros.propertyValidator('useLocalMetaDb', ros.validateBoolean)(properties.useLocalMetaDb));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
@@ -270,6 +289,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('machineType', ros.validateString)(properties.machineType));
     errors.collect(ros.propertyValidator('depositType', ros.validateString)(properties.depositType));
+    errors.collect(ros.propertyValidator('metaStoreType', ros.validateString)(properties.metaStoreType));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -277,7 +297,6 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('metaStoreType', ros.validateString)(properties.metaStoreType));
     errors.collect(ros.propertyValidator('emrVer', ros.requiredValidator)(properties.emrVer));
     errors.collect(ros.propertyValidator('emrVer', ros.validateString)(properties.emrVer));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
@@ -345,9 +364,11 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       OptionSoftWareList: ros.listMapper(ros.stringToRosTemplate)(properties.optionSoftWareList),
       Period: ros.numberToRosTemplate(properties.period),
       RelatedClusterId: ros.stringToRosTemplate(properties.relatedClusterId),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityGroupName: ros.stringToRosTemplate(properties.securityGroupName),
       SshEnable: ros.booleanToRosTemplate(properties.sshEnable),
+      Tags: ros.listMapper(rosClusterTagsPropertyToRosTemplate)(properties.tags),
       UseCustomHiveMetaDB: ros.booleanToRosTemplate(properties.useCustomHiveMetaDb),
       UserDefinedEmrEcsRole: ros.stringToRosTemplate(properties.userDefinedEmrEcsRole),
       UserInfo: ros.listMapper(rosClusterUserInfoPropertyToRosTemplate)(properties.userInfo),
@@ -556,6 +577,11 @@ export class RosCluster extends ros.RosResource {
     public relatedClusterId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: The ID of the security group. You can create a security group in the ECS console and
      * use it. Note: If you use an existing security group, the default security group policy
      * is applied to this security group: Only port 22 is open at the inbound and all ports
@@ -577,6 +603,11 @@ export class RosCluster extends ros.RosResource {
      * @Property sshEnable: Indicates whether SSH is enabled.
      */
     public sshEnable: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosCluster.TagsProperty[] | undefined;
 
     /**
      * @Property useCustomHiveMetaDb: A reserved parameter. Not required.
@@ -653,9 +684,11 @@ export class RosCluster extends ros.RosResource {
         this.optionSoftWareList = props.optionSoftWareList;
         this.period = props.period;
         this.relatedClusterId = props.relatedClusterId;
+        this.resourceGroupId = props.resourceGroupId;
         this.securityGroupId = props.securityGroupId;
         this.securityGroupName = props.securityGroupName;
         this.sshEnable = props.sshEnable;
+        this.tags = props.tags;
         this.useCustomHiveMetaDb = props.useCustomHiveMetaDb;
         this.userDefinedEmrEcsRole = props.userDefinedEmrEcsRole;
         this.userInfo = props.userInfo;
@@ -697,9 +730,11 @@ export class RosCluster extends ros.RosResource {
             optionSoftWareList: this.optionSoftWareList,
             period: this.period,
             relatedClusterId: this.relatedClusterId,
+            resourceGroupId: this.resourceGroupId,
             securityGroupId: this.securityGroupId,
             securityGroupName: this.securityGroupName,
             sshEnable: this.sshEnable,
+            tags: this.tags,
             useCustomHiveMetaDb: this.useCustomHiveMetaDb,
             userDefinedEmrEcsRole: this.userDefinedEmrEcsRole,
             userInfo: this.userInfo,
@@ -1026,6 +1061,54 @@ function rosClusterHostGroupPropertyToRosTemplate(properties: any): any {
       HostKeyPairName: ros.stringToRosTemplate(properties.hostKeyPairName),
       SysDiskCapacity: ros.numberToRosTemplate(properties.sysDiskCapacity),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
+    };
+}
+
+export namespace RosCluster {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::Cluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::Cluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }
 

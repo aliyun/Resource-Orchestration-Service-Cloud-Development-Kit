@@ -26,6 +26,16 @@ export interface ZoneProps {
     readonly remark?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosZone.TagsProperty[];
+
+    /**
      * Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
      */
     readonly zoneTag?: string | ros.IResolvable;
@@ -78,10 +88,12 @@ export class Zone extends ros.Resource {
 
         const rosZone = new RosZone(this, id,  {
             zoneName: props.zoneName,
+            resourceGroupId: props.resourceGroupId,
             proxyPattern: props.proxyPattern === undefined || props.proxyPattern === null ? 'ZONE' : props.proxyPattern,
             zoneTag: props.zoneTag,
-            zoneType: props.zoneType,
+            tags: props.tags,
             remark: props.remark,
+            zoneType: props.zoneType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZone;
         this.attrZoneId = rosZone.attrZoneId;

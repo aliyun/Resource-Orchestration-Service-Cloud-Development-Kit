@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ServerlessKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.363Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.456Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosServerlessKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosServerlessKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosServerlessKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -39,6 +39,12 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateZone() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -100,6 +106,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         java.lang.Object kubernetesVersion;
         java.lang.Object natGateway;
         java.lang.Object privateZone;
+        java.lang.Object resourceGroupId;
         java.lang.Object securityGroupId;
         java.lang.Object serviceCidr;
         java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags;
@@ -225,6 +232,26 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
          */
         public Builder privateZone(com.aliyun.ros.cdk.core.IResolvable privateZone) {
             this.privateZone = privateZone;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
             return this;
         }
 
@@ -381,6 +408,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         private final java.lang.Object kubernetesVersion;
         private final java.lang.Object natGateway;
         private final java.lang.Object privateZone;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceCidr;
         private final java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags;
@@ -401,6 +429,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natGateway = software.amazon.jsii.Kernel.get(this, "natGateway", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateZone = software.amazon.jsii.Kernel.get(this, "privateZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty.class)));
@@ -422,6 +451,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
             this.kubernetesVersion = builder.kubernetesVersion;
             this.natGateway = builder.natGateway;
             this.privateZone = builder.privateZone;
+            this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupId = builder.securityGroupId;
             this.serviceCidr = builder.serviceCidr;
             this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty>)builder.tags;
@@ -459,6 +489,11 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         @Override
         public final java.lang.Object getPrivateZone() {
             return this.privateZone;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -518,6 +553,9 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
             if (this.getPrivateZone() != null) {
                 data.set("privateZone", om.valueToTree(this.getPrivateZone()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
@@ -563,6 +601,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
             if (this.natGateway != null ? !this.natGateway.equals(that.natGateway) : that.natGateway != null) return false;
             if (this.privateZone != null ? !this.privateZone.equals(that.privateZone) : that.privateZone != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -580,6 +619,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
             result = 31 * result + (this.natGateway != null ? this.natGateway.hashCode() : 0);
             result = 31 * result + (this.privateZone != null ? this.privateZone.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

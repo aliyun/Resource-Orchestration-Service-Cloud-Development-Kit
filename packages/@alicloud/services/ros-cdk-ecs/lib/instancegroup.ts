@@ -219,6 +219,19 @@ export interface InstanceGroupProps {
     readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
+     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
+     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
+     * Default value: 1.
+     */
+    readonly spotDuration?: number | ros.IResolvable;
+
+    /**
+     * Property spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     */
+    readonly spotInterruptionBehavior?: string | ros.IResolvable;
+
+    /**
      * Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
      */
     readonly spotPriceLimit?: string | ros.IResolvable;
@@ -294,6 +307,11 @@ export interface InstanceGroupProps {
      * Default value is empty, which means random selection.
      */
     readonly zoneId?: string | ros.IResolvable;
+
+    /**
+     * Property zoneIds: Zone ids for query parameters
+     */
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -381,6 +399,7 @@ export class InstanceGroup extends ros.Resource {
             securityGroupIds: props.securityGroupIds,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
             instanceName: props.instanceName,
+            spotInterruptionBehavior: props.spotInterruptionBehavior,
             deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
             vpcId: props.vpcId,
@@ -394,12 +413,14 @@ export class InstanceGroup extends ros.Resource {
             userData: props.userData,
             systemDiskSize: props.systemDiskSize,
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
+            spotDuration: props.spotDuration,
             ipv6Addresses: props.ipv6Addresses,
             maxAmount: props.maxAmount,
             systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
             networkType: props.networkType,
             ipv6AddressCount: props.ipv6AddressCount,
             spotPriceLimit: props.spotPriceLimit,
+            zoneIds: props.zoneIds,
             instanceType: props.instanceType,
             allocatePublicIp: props.allocatePublicIp === undefined || props.allocatePublicIp === null ? true : props.allocatePublicIp,
             spotStrategy: props.spotStrategy,

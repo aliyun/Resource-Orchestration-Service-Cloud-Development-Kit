@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.912Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.008Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackageProps.Jsii$Proxy.class)
 public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -102,6 +102,13 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link CenBandwidthPackageProps}
      */
     static Builder builder() {
@@ -122,6 +129,7 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         java.lang.Object name;
         java.lang.Object period;
         java.lang.Object pricingCycle;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getBandwidth}
@@ -368,6 +376,26 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CenBandwidthPackageProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link CenBandwidthPackageProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -394,6 +422,7 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object name;
         private final java.lang.Object period;
         private final java.lang.Object pricingCycle;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -412,6 +441,7 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -430,6 +460,7 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
             this.name = builder.name;
             this.period = builder.period;
             this.pricingCycle = builder.pricingCycle;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -488,6 +519,11 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -520,6 +556,9 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cen.CenBandwidthPackageProps"));
@@ -548,7 +587,8 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
-            return this.pricingCycle != null ? this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle == null;
+            if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -564,6 +604,7 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::VpcAccessConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.819Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.VpcAccessConfigProps")
 @software.amazon.jsii.Jsii.Proxy(VpcAccessConfigProps.Jsii$Proxy.class)
 public interface VpcAccessConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface VpcAccessConfigProps extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
-     * Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
+     * Property name: The name of one VPC access configuration.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -65,7 +65,7 @@ public interface VpcAccessConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link VpcAccessConfigProps#getName}
-         * @param name Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character. This parameter is required.
+         * @param name Property name: The name of one VPC access configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -75,7 +75,7 @@ public interface VpcAccessConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link VpcAccessConfigProps#getName}
-         * @param name Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character. This parameter is required.
+         * @param name Property name: The name of one VPC access configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

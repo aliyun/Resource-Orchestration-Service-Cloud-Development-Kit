@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * A ROS resource type:  `ALIYUN::DRDS::DrdsInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.463Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.537Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsInstance")
 public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -354,6 +354,27 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.props.pricingCycle(pricingCycle);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

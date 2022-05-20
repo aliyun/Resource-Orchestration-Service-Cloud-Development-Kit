@@ -58,6 +58,52 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: endpointGroupType: The type of the endpoint group. Valid values:
+        /// default: The endpoint group is a default endpoint group. This is the default value.
+        /// virtual: The endpoint group is a virtual endpoint group.
+        /// Note Only HTTP and HTTPS listeners support virtual endpoint groups.
+        /// </remarks>
+        [JsiiProperty(name: "endpointGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EndpointGroupType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: endpointRequestProtocol: The protocol used by the backend service. Valid values:
+        /// http: This is the default value.
+        /// https
+        /// Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
+        /// For an HTTP listener, the backend service protocol must be HTTP.
+        /// </remarks>
+        [JsiiProperty(name: "endpointRequestProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EndpointRequestProtocol
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: healthCheckEnabled: Specifies whether to enable the health check feature.
+        /// </remarks>
+        [JsiiProperty(name: "healthCheckEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HealthCheckEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
         /// </remarks>
         [JsiiProperty(name: "healthCheckIntervalSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -126,7 +172,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+        /// <strong>Property</strong>: thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
+        /// Valid values: 2 to 10. Default value: 3.
         /// </remarks>
         [JsiiProperty(name: "thresholdCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -207,6 +254,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: endpointGroupType: The type of the endpoint group. Valid values:
+            /// default: The endpoint group is a default endpoint group. This is the default value.
+            /// virtual: The endpoint group is a virtual endpoint group.
+            /// Note Only HTTP and HTTPS listeners support virtual endpoint groups.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "endpointGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EndpointGroupType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: endpointRequestProtocol: The protocol used by the backend service. Valid values:
+            /// http: This is the default value.
+            /// https
+            /// Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
+            /// For an HTTP listener, the backend service protocol must be HTTP.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "endpointRequestProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EndpointRequestProtocol
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: healthCheckEnabled: Specifies whether to enable the health check feature.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "healthCheckEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HealthCheckEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
             /// </remarks>
             [JsiiOptional]
@@ -260,7 +344,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+            /// <strong>Property</strong>: thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
+            /// Valid values: 2 to 10. Default value: 3.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "thresholdCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

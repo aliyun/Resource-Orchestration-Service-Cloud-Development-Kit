@@ -36,17 +36,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
-        /// <summary>Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.</summary>
-        [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Capacity
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property chargeType: The billing method of the ApsaraDB for Redis instance.</summary>
         /// <remarks>
         /// Valid values:
@@ -186,6 +175,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property secondaryZoneId: The secondary zone ID of the instance.</summary>
+        [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecondaryZoneId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property securityGroupId: The IDs of security groups.</summary>
         /// <remarks>
         /// Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -313,14 +324,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.</summary>
-            [JsiiOptional]
-            [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Capacity
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
             /// <summary>Property chargeType: The billing method of the ApsaraDB for Redis instance.</summary>
             /// <remarks>
             /// Valid values:
@@ -423,6 +426,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "productType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProductType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: Resource group id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property secondaryZoneId: The secondary zone ID of the instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecondaryZoneId
             {
                 get => GetInstanceProperty<object?>();
             }

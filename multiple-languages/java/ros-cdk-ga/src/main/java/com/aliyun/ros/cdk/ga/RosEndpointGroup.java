@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  `ALIYUN::GA::EndpointGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.430Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.487Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosEndpointGroup")
 public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -149,6 +149,60 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEndpointGroupType() {
+        return software.amazon.jsii.Kernel.get(this, "endpointGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEndpointGroupType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "endpointGroupType", value);
+    }
+
+    /**
+     */
+    public void setEndpointGroupType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "endpointGroupType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEndpointRequestProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "endpointRequestProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEndpointRequestProtocol(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "endpointRequestProtocol", value);
+    }
+
+    /**
+     */
+    public void setEndpointRequestProtocol(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "endpointRequestProtocol", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHealthCheckEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckEnabled", value);
+    }
+
+    /**
+     */
+    public void setHealthCheckEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckEnabled", value);
     }
 
     /**
@@ -299,6 +353,20 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
         @org.jetbrains.annotations.NotNull java.lang.Object getWeight();
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableClientIpPreservation() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableProxyProtocol() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link EndpointConfigurationsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -313,6 +381,8 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object endpoint;
             java.lang.Object type;
             java.lang.Object weight;
+            java.lang.Object enableClientIpPreservation;
+            java.lang.Object enableProxyProtocol;
 
             /**
              * Sets the value of {@link EndpointConfigurationsProperty#getEndpoint}
@@ -381,6 +451,50 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link EndpointConfigurationsProperty#getEnableClientIpPreservation}
+             * @param enableClientIpPreservation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableClientIpPreservation(java.lang.Boolean enableClientIpPreservation) {
+                this.enableClientIpPreservation = enableClientIpPreservation;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigurationsProperty#getEnableClientIpPreservation}
+             * @param enableClientIpPreservation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableClientIpPreservation(com.aliyun.ros.cdk.core.IResolvable enableClientIpPreservation) {
+                this.enableClientIpPreservation = enableClientIpPreservation;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigurationsProperty#getEnableProxyProtocol}
+             * @param enableProxyProtocol the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableProxyProtocol(java.lang.Boolean enableProxyProtocol) {
+                this.enableProxyProtocol = enableProxyProtocol;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigurationsProperty#getEnableProxyProtocol}
+             * @param enableProxyProtocol the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableProxyProtocol(com.aliyun.ros.cdk.core.IResolvable enableProxyProtocol) {
+                this.enableProxyProtocol = enableProxyProtocol;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link EndpointConfigurationsProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -401,6 +515,8 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object endpoint;
             private final java.lang.Object type;
             private final java.lang.Object weight;
+            private final java.lang.Object enableClientIpPreservation;
+            private final java.lang.Object enableProxyProtocol;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -411,6 +527,8 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.endpoint = software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enableClientIpPreservation = software.amazon.jsii.Kernel.get(this, "enableClientIpPreservation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enableProxyProtocol = software.amazon.jsii.Kernel.get(this, "enableProxyProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -421,6 +539,8 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
                 this.endpoint = java.util.Objects.requireNonNull(builder.endpoint, "endpoint is required");
                 this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
                 this.weight = java.util.Objects.requireNonNull(builder.weight, "weight is required");
+                this.enableClientIpPreservation = builder.enableClientIpPreservation;
+                this.enableProxyProtocol = builder.enableProxyProtocol;
             }
 
             @Override
@@ -439,6 +559,16 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getEnableClientIpPreservation() {
+                return this.enableClientIpPreservation;
+            }
+
+            @Override
+            public final java.lang.Object getEnableProxyProtocol() {
+                return this.enableProxyProtocol;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -447,6 +577,12 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("endpoint", om.valueToTree(this.getEndpoint()));
                 data.set("type", om.valueToTree(this.getType()));
                 data.set("weight", om.valueToTree(this.getWeight()));
+                if (this.getEnableClientIpPreservation() != null) {
+                    data.set("enableClientIpPreservation", om.valueToTree(this.getEnableClientIpPreservation()));
+                }
+                if (this.getEnableProxyProtocol() != null) {
+                    data.set("enableProxyProtocol", om.valueToTree(this.getEnableProxyProtocol()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ga.RosEndpointGroup.EndpointConfigurationsProperty"));
@@ -467,7 +603,9 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!endpoint.equals(that.endpoint)) return false;
                 if (!type.equals(that.type)) return false;
-                return this.weight.equals(that.weight);
+                if (!weight.equals(that.weight)) return false;
+                if (this.enableClientIpPreservation != null ? !this.enableClientIpPreservation.equals(that.enableClientIpPreservation) : that.enableClientIpPreservation != null) return false;
+                return this.enableProxyProtocol != null ? this.enableProxyProtocol.equals(that.enableProxyProtocol) : that.enableProxyProtocol == null;
             }
 
             @Override
@@ -475,6 +613,8 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.endpoint.hashCode();
                 result = 31 * result + (this.type.hashCode());
                 result = 31 * result + (this.weight.hashCode());
+                result = 31 * result + (this.enableClientIpPreservation != null ? this.enableClientIpPreservation.hashCode() : 0);
+                result = 31 * result + (this.enableProxyProtocol != null ? this.enableProxyProtocol.hashCode() : 0);
                 return result;
             }
         }
@@ -588,6 +728,57 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param endpointGroupType This parameter is required.
+         */
+        public Builder endpointGroupType(final java.lang.String endpointGroupType) {
+            this.props.endpointGroupType(endpointGroupType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param endpointGroupType This parameter is required.
+         */
+        public Builder endpointGroupType(final com.aliyun.ros.cdk.core.IResolvable endpointGroupType) {
+            this.props.endpointGroupType(endpointGroupType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param endpointRequestProtocol This parameter is required.
+         */
+        public Builder endpointRequestProtocol(final java.lang.String endpointRequestProtocol) {
+            this.props.endpointRequestProtocol(endpointRequestProtocol);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param endpointRequestProtocol This parameter is required.
+         */
+        public Builder endpointRequestProtocol(final com.aliyun.ros.cdk.core.IResolvable endpointRequestProtocol) {
+            this.props.endpointRequestProtocol(endpointRequestProtocol);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param healthCheckEnabled This parameter is required.
+         */
+        public Builder healthCheckEnabled(final java.lang.Boolean healthCheckEnabled) {
+            this.props.healthCheckEnabled(healthCheckEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param healthCheckEnabled This parameter is required.
+         */
+        public Builder healthCheckEnabled(final com.aliyun.ros.cdk.core.IResolvable healthCheckEnabled) {
+            this.props.healthCheckEnabled(healthCheckEnabled);
             return this;
         }
 

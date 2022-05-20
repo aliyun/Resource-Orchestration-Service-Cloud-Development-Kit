@@ -1514,7 +1514,7 @@ function rosApiVpcConfigPropertyToRosTemplate(properties: any): any {
 export interface RosAppProps {
 
     /**
-     * @Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly appName: string | ros.IResolvable;
 
@@ -1611,7 +1611,7 @@ export class RosApp extends ros.RosResource {
 
 
     /**
-     * @Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     public appName: string | ros.IResolvable;
 
@@ -1897,7 +1897,7 @@ export interface RosCustomDomainProps {
     readonly certificateBody?: string | ros.IResolvable;
 
     /**
-     * @Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property certificateName: SSL certificate name.
      */
     readonly certificateName?: string | ros.IResolvable;
 
@@ -1987,7 +1987,7 @@ export class RosCustomDomain extends ros.RosResource {
     public certificateBody: string | ros.IResolvable | undefined;
 
     /**
-     * @Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property certificateName: SSL certificate name.
      */
     public certificateName: string | ros.IResolvable | undefined;
 
@@ -2487,6 +2487,11 @@ export interface RosInstanceProps {
      * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
      */
     readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosInstance.TagsProperty[];
 }
 
 /**
@@ -2530,6 +2535,14 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -2556,6 +2569,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       Duration: ros.numberToRosTemplate(properties.duration),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -2665,6 +2679,11 @@ export class RosInstance extends ros.RosResource {
     public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosInstance.TagsProperty[] | undefined;
+
+    /**
      * Create a new `ALIYUN::ApiGateway::Instance`.
      *
      * @param scope - scope in which this resource is defined
@@ -2692,6 +2711,7 @@ export class RosInstance extends ros.RosResource {
         this.deletionForce = props.deletionForce;
         this.duration = props.duration;
         this.pricingCycle = props.pricingCycle;
+        this.tags = props.tags;
     }
 
 
@@ -2706,11 +2726,60 @@ export class RosInstance extends ros.RosResource {
             deletionForce: this.deletionForce,
             duration: this.duration,
             pricingCycle: this.pricingCycle,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Instance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Instance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -2869,6 +2938,11 @@ export interface RosPluginProps {
      * @Property description: The description of the plug-in, which cannot exceed 200 characters.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosPlugin.TagsProperty[];
 }
 
 /**
@@ -2888,6 +2962,14 @@ function RosPluginPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('pluginData', ros.validateString)(properties.pluginData));
     errors.collect(ros.propertyValidator('pluginType', ros.requiredValidator)(properties.pluginType));
     errors.collect(ros.propertyValidator('pluginType', ros.validateString)(properties.pluginType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPlugin_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosPluginProps"');
 }
 
@@ -2909,6 +2991,7 @@ function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyCons
       PluginName: ros.stringToRosTemplate(properties.pluginName),
       PluginType: ros.stringToRosTemplate(properties.pluginType),
       Description: ros.stringToRosTemplate(properties.description),
+      Tags: ros.listMapper(rosPluginTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -2975,6 +3058,11 @@ export class RosPlugin extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosPlugin.TagsProperty[] | undefined;
+
+    /**
      * Create a new `ALIYUN::ApiGateway::Plugin`.
      *
      * @param scope - scope in which this resource is defined
@@ -2994,6 +3082,7 @@ export class RosPlugin extends ros.RosResource {
         this.pluginName = props.pluginName;
         this.pluginType = props.pluginType;
         this.description = props.description;
+        this.tags = props.tags;
     }
 
 
@@ -3003,11 +3092,60 @@ export class RosPlugin extends ros.RosResource {
             pluginName: this.pluginName,
             pluginType: this.pluginType,
             description: this.description,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosPluginPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosPlugin {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPlugin_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Plugin.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Plugin.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosPluginTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPlugin_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -3166,7 +3304,7 @@ export interface RosSignatureProps {
     readonly signatureKey: string | ros.IResolvable;
 
     /**
-     * @Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly signatureName: string | ros.IResolvable;
 
@@ -3243,7 +3381,7 @@ export class RosSignature extends ros.RosResource {
     public signatureKey: string | ros.IResolvable;
 
     /**
-     * @Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     public signatureName: string | ros.IResolvable;
 
@@ -3969,7 +4107,7 @@ export interface RosVpcAccessConfigProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
+     * @Property name: The name of one VPC access configuration.
      */
     readonly name: string | ros.IResolvable;
 
@@ -4056,7 +4194,7 @@ export class RosVpcAccessConfig extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
+     * @Property name: The name of one VPC access configuration.
      */
     public name: string | ros.IResolvable;
 

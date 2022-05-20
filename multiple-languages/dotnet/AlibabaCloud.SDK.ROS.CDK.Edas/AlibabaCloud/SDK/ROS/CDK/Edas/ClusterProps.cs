@@ -61,6 +61,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             set;
         }
 
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property vpcId: VPC network ID.</summary>
         /// <remarks>
         /// If network selection VPC, this parameter Required

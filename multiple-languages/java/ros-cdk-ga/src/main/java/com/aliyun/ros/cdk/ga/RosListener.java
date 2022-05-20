@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  `ALIYUN::GA::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.434Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -117,6 +117,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCertificates() {
+        return software.amazon.jsii.Kernel.get(this, "certificates", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCertificates(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "certificates", value);
+    }
+
+    /**
+     */
+    public void setCertificates(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "certificates", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getClientAffinity() {
         return software.amazon.jsii.Kernel.get(this, "clientAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -167,6 +185,185 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProxyProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "proxyProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProxyProtocol(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "proxyProtocol", value);
+    }
+
+    /**
+     */
+    public void setProxyProtocol(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "proxyProtocol", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityPolicyId() {
+        return software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityPolicyId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "securityPolicyId", value);
+    }
+
+    /**
+     */
+    public void setSecurityPolicyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityPolicyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForConfig() {
+        return software.amazon.jsii.Kernel.get(this, "xForwardedForConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setXForwardedForConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "xForwardedForConfig", value);
+    }
+
+    /**
+     */
+    public void setXForwardedForConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ga.RosListener.XForwardedForConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "xForwardedForConfig", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListener.CertificatesProperty")
+    @software.amazon.jsii.Jsii.Proxy(CertificatesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CertificatesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getId();
+
+        /**
+         * @return a {@link Builder} of {@link CertificatesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CertificatesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CertificatesProperty> {
+            java.lang.Object id;
+
+            /**
+             * Sets the value of {@link CertificatesProperty#getId}
+             * @param id the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(java.lang.String id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CertificatesProperty#getId}
+             * @param id the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CertificatesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CertificatesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CertificatesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CertificatesProperty {
+            private final java.lang.Object id;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.id = java.util.Objects.requireNonNull(builder.id, "id is required");
+            }
+
+            @Override
+            public final java.lang.Object getId() {
+                return this.id;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("id", om.valueToTree(this.getId()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ga.RosListener.CertificatesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CertificatesProperty.Jsii$Proxy that = (CertificatesProperty.Jsii$Proxy) o;
+
+                return this.id.equals(that.id);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.id.hashCode();
+                return result;
+            }
+        }
     }
     /**
      */
@@ -332,6 +529,307 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListener.XForwardedForConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(XForwardedForConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface XForwardedForConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForGaApEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForGaIdEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForPortEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForProtoEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXRealIpEnabled() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link XForwardedForConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link XForwardedForConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<XForwardedForConfigProperty> {
+            java.lang.Object xForwardedForGaApEnabled;
+            java.lang.Object xForwardedForGaIdEnabled;
+            java.lang.Object xForwardedForPortEnabled;
+            java.lang.Object xForwardedForProtoEnabled;
+            java.lang.Object xRealIpEnabled;
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForGaApEnabled}
+             * @param xForwardedForGaApEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForGaApEnabled(java.lang.Boolean xForwardedForGaApEnabled) {
+                this.xForwardedForGaApEnabled = xForwardedForGaApEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForGaApEnabled}
+             * @param xForwardedForGaApEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForGaApEnabled(com.aliyun.ros.cdk.core.IResolvable xForwardedForGaApEnabled) {
+                this.xForwardedForGaApEnabled = xForwardedForGaApEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForGaIdEnabled}
+             * @param xForwardedForGaIdEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForGaIdEnabled(java.lang.Boolean xForwardedForGaIdEnabled) {
+                this.xForwardedForGaIdEnabled = xForwardedForGaIdEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForGaIdEnabled}
+             * @param xForwardedForGaIdEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForGaIdEnabled(com.aliyun.ros.cdk.core.IResolvable xForwardedForGaIdEnabled) {
+                this.xForwardedForGaIdEnabled = xForwardedForGaIdEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForPortEnabled}
+             * @param xForwardedForPortEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForPortEnabled(java.lang.Boolean xForwardedForPortEnabled) {
+                this.xForwardedForPortEnabled = xForwardedForPortEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForPortEnabled}
+             * @param xForwardedForPortEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForPortEnabled(com.aliyun.ros.cdk.core.IResolvable xForwardedForPortEnabled) {
+                this.xForwardedForPortEnabled = xForwardedForPortEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForProtoEnabled}
+             * @param xForwardedForProtoEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForProtoEnabled(java.lang.Boolean xForwardedForProtoEnabled) {
+                this.xForwardedForProtoEnabled = xForwardedForProtoEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForProtoEnabled}
+             * @param xForwardedForProtoEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForProtoEnabled(com.aliyun.ros.cdk.core.IResolvable xForwardedForProtoEnabled) {
+                this.xForwardedForProtoEnabled = xForwardedForProtoEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXRealIpEnabled}
+             * @param xRealIpEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xRealIpEnabled(java.lang.Boolean xRealIpEnabled) {
+                this.xRealIpEnabled = xRealIpEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXRealIpEnabled}
+             * @param xRealIpEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xRealIpEnabled(com.aliyun.ros.cdk.core.IResolvable xRealIpEnabled) {
+                this.xRealIpEnabled = xRealIpEnabled;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link XForwardedForConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public XForwardedForConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link XForwardedForConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements XForwardedForConfigProperty {
+            private final java.lang.Object xForwardedForGaApEnabled;
+            private final java.lang.Object xForwardedForGaIdEnabled;
+            private final java.lang.Object xForwardedForPortEnabled;
+            private final java.lang.Object xForwardedForProtoEnabled;
+            private final java.lang.Object xRealIpEnabled;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.xForwardedForGaApEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForGaApEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForGaIdEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForGaIdEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForPortEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForPortEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForProtoEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForProtoEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xRealIpEnabled = software.amazon.jsii.Kernel.get(this, "xRealIpEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.xForwardedForGaApEnabled = builder.xForwardedForGaApEnabled;
+                this.xForwardedForGaIdEnabled = builder.xForwardedForGaIdEnabled;
+                this.xForwardedForPortEnabled = builder.xForwardedForPortEnabled;
+                this.xForwardedForProtoEnabled = builder.xForwardedForProtoEnabled;
+                this.xRealIpEnabled = builder.xRealIpEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getXForwardedForGaApEnabled() {
+                return this.xForwardedForGaApEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getXForwardedForGaIdEnabled() {
+                return this.xForwardedForGaIdEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getXForwardedForPortEnabled() {
+                return this.xForwardedForPortEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getXForwardedForProtoEnabled() {
+                return this.xForwardedForProtoEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getXRealIpEnabled() {
+                return this.xRealIpEnabled;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getXForwardedForGaApEnabled() != null) {
+                    data.set("xForwardedForGaApEnabled", om.valueToTree(this.getXForwardedForGaApEnabled()));
+                }
+                if (this.getXForwardedForGaIdEnabled() != null) {
+                    data.set("xForwardedForGaIdEnabled", om.valueToTree(this.getXForwardedForGaIdEnabled()));
+                }
+                if (this.getXForwardedForPortEnabled() != null) {
+                    data.set("xForwardedForPortEnabled", om.valueToTree(this.getXForwardedForPortEnabled()));
+                }
+                if (this.getXForwardedForProtoEnabled() != null) {
+                    data.set("xForwardedForProtoEnabled", om.valueToTree(this.getXForwardedForProtoEnabled()));
+                }
+                if (this.getXRealIpEnabled() != null) {
+                    data.set("xRealIpEnabled", om.valueToTree(this.getXRealIpEnabled()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ga.RosListener.XForwardedForConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                XForwardedForConfigProperty.Jsii$Proxy that = (XForwardedForConfigProperty.Jsii$Proxy) o;
+
+                if (this.xForwardedForGaApEnabled != null ? !this.xForwardedForGaApEnabled.equals(that.xForwardedForGaApEnabled) : that.xForwardedForGaApEnabled != null) return false;
+                if (this.xForwardedForGaIdEnabled != null ? !this.xForwardedForGaIdEnabled.equals(that.xForwardedForGaIdEnabled) : that.xForwardedForGaIdEnabled != null) return false;
+                if (this.xForwardedForPortEnabled != null ? !this.xForwardedForPortEnabled.equals(that.xForwardedForPortEnabled) : that.xForwardedForPortEnabled != null) return false;
+                if (this.xForwardedForProtoEnabled != null ? !this.xForwardedForProtoEnabled.equals(that.xForwardedForProtoEnabled) : that.xForwardedForProtoEnabled != null) return false;
+                return this.xRealIpEnabled != null ? this.xRealIpEnabled.equals(that.xRealIpEnabled) : that.xRealIpEnabled == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.xForwardedForGaApEnabled != null ? this.xForwardedForGaApEnabled.hashCode() : 0;
+                result = 31 * result + (this.xForwardedForGaIdEnabled != null ? this.xForwardedForGaIdEnabled.hashCode() : 0);
+                result = 31 * result + (this.xForwardedForPortEnabled != null ? this.xForwardedForPortEnabled.hashCode() : 0);
+                result = 31 * result + (this.xForwardedForProtoEnabled != null ? this.xForwardedForProtoEnabled.hashCode() : 0);
+                result = 31 * result + (this.xRealIpEnabled != null ? this.xRealIpEnabled.hashCode() : 0);
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ga.RosListener}.
@@ -412,6 +910,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param certificates This parameter is required.
+         */
+        public Builder certificates(final com.aliyun.ros.cdk.core.IResolvable certificates) {
+            this.props.certificates(certificates);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param certificates This parameter is required.
+         */
+        public Builder certificates(final java.util.List<? extends java.lang.Object> certificates) {
+            this.props.certificates(certificates);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param clientAffinity This parameter is required.
          */
         public Builder clientAffinity(final java.lang.String clientAffinity) {
@@ -458,6 +973,57 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param proxyProtocol This parameter is required.
+         */
+        public Builder proxyProtocol(final java.lang.Boolean proxyProtocol) {
+            this.props.proxyProtocol(proxyProtocol);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param proxyProtocol This parameter is required.
+         */
+        public Builder proxyProtocol(final com.aliyun.ros.cdk.core.IResolvable proxyProtocol) {
+            this.props.proxyProtocol(proxyProtocol);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityPolicyId This parameter is required.
+         */
+        public Builder securityPolicyId(final java.lang.String securityPolicyId) {
+            this.props.securityPolicyId(securityPolicyId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityPolicyId This parameter is required.
+         */
+        public Builder securityPolicyId(final com.aliyun.ros.cdk.core.IResolvable securityPolicyId) {
+            this.props.securityPolicyId(securityPolicyId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param xForwardedForConfig This parameter is required.
+         */
+        public Builder xForwardedForConfig(final com.aliyun.ros.cdk.core.IResolvable xForwardedForConfig) {
+            this.props.xForwardedForConfig(xForwardedForConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param xForwardedForConfig This parameter is required.
+         */
+        public Builder xForwardedForConfig(final com.aliyun.ros.cdk.ga.RosListener.XForwardedForConfigProperty xForwardedForConfig) {
+            this.props.xForwardedForConfig(xForwardedForConfig);
             return this;
         }
 

@@ -50,5 +50,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
             set;
         }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosPlugin.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Apigateway.RosPlugin.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
     }
 }

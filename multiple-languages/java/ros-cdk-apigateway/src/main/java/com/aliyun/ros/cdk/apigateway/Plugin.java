@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::Plugin`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.753Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.842Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Plugin")
 public class Plugin extends com.aliyun.ros.cdk.core.Resource {
 
@@ -216,6 +216,19 @@ public class Plugin extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosPlugin.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

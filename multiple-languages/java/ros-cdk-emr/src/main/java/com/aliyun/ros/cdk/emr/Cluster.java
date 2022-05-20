@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS resource type:  `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.098Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.170Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -807,6 +807,27 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
          * Property securityGroupId: The ID of the security group.
          * <p>
          * You can create a security group in the ECS console and
@@ -890,6 +911,19 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder sshEnable(final com.aliyun.ros.cdk.core.IResolvable sshEnable) {
             this.props.sshEnable(sshEnable);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.emr.RosCluster.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

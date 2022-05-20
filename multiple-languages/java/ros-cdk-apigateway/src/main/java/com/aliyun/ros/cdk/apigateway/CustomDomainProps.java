@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.743Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.830Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.CustomDomainProps")
 @software.amazon.jsii.Jsii.Proxy(CustomDomainProps.Jsii$Proxy.class)
 public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,7 +26,7 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property certificateName: SSL certificate name.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCertificateName() {
         return null;
@@ -117,7 +117,7 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link CustomDomainProps#getCertificateName}
-         * @param certificateName Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * @param certificateName Property certificateName: SSL certificate name.
          * @return {@code this}
          */
         public Builder certificateName(java.lang.String certificateName) {
@@ -127,7 +127,7 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link CustomDomainProps#getCertificateName}
-         * @param certificateName Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * @param certificateName Property certificateName: SSL certificate name.
          * @return {@code this}
          */
         public Builder certificateName(com.aliyun.ros.cdk.core.IResolvable certificateName) {

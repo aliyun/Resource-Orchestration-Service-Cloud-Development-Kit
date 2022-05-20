@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.337Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.439Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -126,6 +126,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getServiceCidr() {
         return null;
     }
@@ -197,6 +203,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosManagedEdgeKubernetesClusterProps}
      */
     static Builder builder() {
@@ -226,6 +238,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         java.lang.Object periodUnit;
         java.lang.Object profile;
         java.lang.Object proxyMode;
+        java.lang.Object resourceGroupId;
         java.lang.Object serviceCidr;
         java.lang.Object snatEntry;
         java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
@@ -238,6 +251,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         java.lang.Object workerInstanceTypes;
         java.lang.Object workerSystemDiskCategory;
         java.lang.Object workerSystemDiskSize;
+        java.lang.Object zoneIds;
 
         /**
          * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getName}
@@ -640,6 +654,26 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getServiceCidr}
          * @param serviceCidr the value to be set.
          * @return {@code this}
@@ -871,6 +905,26 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getZoneIds}
+         * @param zoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneIds(com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.zoneIds = zoneIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getZoneIds}
+         * @param zoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneIds(java.util.List<? extends java.lang.Object> zoneIds) {
+            this.zoneIds = zoneIds;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosManagedEdgeKubernetesClusterProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -906,6 +960,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         private final java.lang.Object periodUnit;
         private final java.lang.Object profile;
         private final java.lang.Object proxyMode;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object serviceCidr;
         private final java.lang.Object snatEntry;
         private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
@@ -918,6 +973,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object workerSystemDiskCategory;
         private final java.lang.Object workerSystemDiskSize;
+        private final java.lang.Object zoneIds;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -945,6 +1001,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.profile = software.amazon.jsii.Kernel.get(this, "profile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntry = software.amazon.jsii.Kernel.get(this, "snatEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty.class)));
@@ -957,6 +1014,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -985,6 +1043,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.periodUnit = builder.periodUnit;
             this.profile = builder.profile;
             this.proxyMode = builder.proxyMode;
+            this.resourceGroupId = builder.resourceGroupId;
             this.serviceCidr = builder.serviceCidr;
             this.snatEntry = builder.snatEntry;
             this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty>)builder.tags;
@@ -997,6 +1056,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.workerInstanceTypes = builder.workerInstanceTypes;
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
             this.workerSystemDiskSize = builder.workerSystemDiskSize;
+            this.zoneIds = builder.zoneIds;
         }
 
         @Override
@@ -1100,6 +1160,11 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getServiceCidr() {
             return this.serviceCidr;
         }
@@ -1157,6 +1222,11 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         @Override
         public final java.lang.Object getWorkerSystemDiskSize() {
             return this.workerSystemDiskSize;
+        }
+
+        @Override
+        public final java.lang.Object getZoneIds() {
+            return this.zoneIds;
         }
 
         @Override
@@ -1221,6 +1291,9 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.getProxyMode() != null) {
                 data.set("proxyMode", om.valueToTree(this.getProxyMode()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getServiceCidr() != null) {
                 data.set("serviceCidr", om.valueToTree(this.getServiceCidr()));
             }
@@ -1256,6 +1329,9 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             }
             if (this.getWorkerSystemDiskSize() != null) {
                 data.set("workerSystemDiskSize", om.valueToTree(this.getWorkerSystemDiskSize()));
+            }
+            if (this.getZoneIds() != null) {
+                data.set("zoneIds", om.valueToTree(this.getZoneIds()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -1295,6 +1371,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.profile != null ? !this.profile.equals(that.profile) : that.profile != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
             if (this.snatEntry != null ? !this.snatEntry.equals(that.snatEntry) : that.snatEntry != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -1306,7 +1383,8 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.workerDataDiskSize != null ? !this.workerDataDiskSize.equals(that.workerDataDiskSize) : that.workerDataDiskSize != null) return false;
             if (this.workerInstanceTypes != null ? !this.workerInstanceTypes.equals(that.workerInstanceTypes) : that.workerInstanceTypes != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
-            return this.workerSystemDiskSize != null ? this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize == null;
+            if (this.workerSystemDiskSize != null ? !this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize != null) return false;
+            return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
 
         @Override
@@ -1331,6 +1409,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.profile != null ? this.profile.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);
             result = 31 * result + (this.snatEntry != null ? this.snatEntry.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
@@ -1343,6 +1422,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             result = 31 * result + (this.workerInstanceTypes != null ? this.workerInstanceTypes.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
+            result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;
         }
     }

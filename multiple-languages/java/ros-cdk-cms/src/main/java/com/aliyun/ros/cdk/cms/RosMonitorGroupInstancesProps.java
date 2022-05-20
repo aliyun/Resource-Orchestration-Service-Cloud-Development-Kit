@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MonitorGroupInstances`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.128Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.248Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMonitorGroupInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosMonitorGroupInstancesProps.Jsii$Proxy.class)
 public interface RosMonitorGroupInstancesProps extends software.amazon.jsii.JsiiSerializable {

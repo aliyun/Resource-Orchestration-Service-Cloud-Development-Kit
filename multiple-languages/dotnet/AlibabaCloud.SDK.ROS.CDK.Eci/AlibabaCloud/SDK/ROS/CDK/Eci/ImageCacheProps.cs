@@ -63,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             set;
         }
 
-        /// <summary>Property resourceGroupId: Resource group.</summary>
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ResourceGroupId

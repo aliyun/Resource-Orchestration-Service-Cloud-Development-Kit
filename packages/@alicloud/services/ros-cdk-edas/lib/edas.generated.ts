@@ -55,6 +55,11 @@ export interface RosApplicationProps {
      * @Property packageType: Application packet format, possible values: war or jar
      */
     readonly packageType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -79,6 +84,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('ecuInfo', ros.validateString)(properties.ecuInfo));
     errors.collect(ros.propertyValidator('healthCheckUrl', ros.validateString)(properties.healthCheckUrl));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
@@ -117,6 +123,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
       HealthCheckURL: ros.stringToRosTemplate(properties.healthCheckUrl),
       LogicalRegionId: ros.stringToRosTemplate(properties.logicalRegionId),
       PackageType: ros.stringToRosTemplate(properties.packageType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -197,6 +204,11 @@ export class RosApplication extends ros.RosResource {
     public packageType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::EDAS::Application`.
      *
      * @param scope - scope in which this resource is defined
@@ -218,6 +230,7 @@ export class RosApplication extends ros.RosResource {
         this.healthCheckUrl = props.healthCheckUrl;
         this.logicalRegionId = props.logicalRegionId;
         this.packageType = props.packageType;
+        this.resourceGroupId = props.resourceGroupId;
     }
 
 
@@ -232,6 +245,7 @@ export class RosApplication extends ros.RosResource {
             healthCheckUrl: this.healthCheckUrl,
             logicalRegionId: this.logicalRegionId,
             packageType: this.packageType,
+            resourceGroupId: this.resourceGroupId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -270,6 +284,11 @@ export interface RosClusterProps {
     readonly oversoldFactor?: number | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property vpcId: VPC network ID. If network selection VPC, this parameter Required
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -294,6 +313,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('oversoldFactor', ros.validateNumber)(properties.oversoldFactor));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('clusterName', ros.requiredValidator)(properties.clusterName));
     errors.collect(ros.propertyValidator('clusterName', ros.validateString)(properties.clusterName));
     errors.collect(ros.propertyValidator('networkMode', ros.requiredValidator)(properties.networkMode));
@@ -322,6 +342,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       NetworkMode: ros.numberToRosTemplate(properties.networkMode),
       LogicalRegionId: ros.stringToRosTemplate(properties.logicalRegionId),
       OversoldFactor: ros.numberToRosTemplate(properties.oversoldFactor),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
     };
 }
@@ -389,6 +410,11 @@ export class RosCluster extends ros.RosResource {
     public oversoldFactor: number | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcId: VPC network ID. If network selection VPC, this parameter Required
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -413,6 +439,7 @@ export class RosCluster extends ros.RosResource {
         this.networkMode = props.networkMode;
         this.logicalRegionId = props.logicalRegionId;
         this.oversoldFactor = props.oversoldFactor;
+        this.resourceGroupId = props.resourceGroupId;
         this.vpcId = props.vpcId;
     }
 
@@ -424,6 +451,7 @@ export class RosCluster extends ros.RosResource {
             networkMode: this.networkMode,
             logicalRegionId: this.logicalRegionId,
             oversoldFactor: this.oversoldFactor,
+            resourceGroupId: this.resourceGroupId,
             vpcId: this.vpcId,
         };
     }

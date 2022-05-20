@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.341Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.442Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -675,6 +675,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRuntime() {
         return software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -899,6 +917,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setWorkerSystemDiskSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "workerSystemDiskSize", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
+        return software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneIds", value);
+    }
+
+    /**
+     */
+    public void setZoneIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "zoneIds", value);
     }
     /**
      */
@@ -2210,6 +2246,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
         /**
          * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param runtime This parameter is required.
          */
         public Builder runtime(final com.aliyun.ros.cdk.core.IResolvable runtime) {
@@ -2418,6 +2471,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder workerSystemDiskSize(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskSize) {
             this.props.workerSystemDiskSize(workerSystemDiskSize);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneIds This parameter is required.
+         */
+        public Builder zoneIds(final com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.props.zoneIds(zoneIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneIds This parameter is required.
+         */
+        public Builder zoneIds(final java.util.List<? extends java.lang.Object> zoneIds) {
+            this.props.zoneIds(zoneIds);
             return this;
         }
 

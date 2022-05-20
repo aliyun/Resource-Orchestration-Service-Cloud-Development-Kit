@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.195Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.320Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesCluster")
 public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -974,6 +974,27 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property masterZoneIds: Zone ids of master node virtual switches belongs to.
+         * <p>
+         * @return {@code this}
+         * @param masterZoneIds Property masterZoneIds: Zone ids of master node virtual switches belongs to. This parameter is required.
+         */
+        public Builder masterZoneIds(final com.aliyun.ros.cdk.core.IResolvable masterZoneIds) {
+            this.props.masterZoneIds(masterZoneIds);
+            return this;
+        }
+        /**
+         * Property masterZoneIds: Zone ids of master node virtual switches belongs to.
+         * <p>
+         * @return {@code this}
+         * @param masterZoneIds Property masterZoneIds: Zone ids of master node virtual switches belongs to. This parameter is required.
+         */
+        public Builder masterZoneIds(final java.util.List<? extends java.lang.Object> masterZoneIds) {
+            this.props.masterZoneIds(masterZoneIds);
+            return this;
+        }
+
+        /**
          * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
          * <p>
          * This number is determined by the specified pod CIDR block.
@@ -1679,6 +1700,27 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder workerSystemDiskSnapshotPolicyId(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskSnapshotPolicyId) {
             this.props.workerSystemDiskSnapshotPolicyId(workerSystemDiskSnapshotPolicyId);
+            return this;
+        }
+
+        /**
+         * Property workerZoneIds: Zone ids of worker node virtual switches belongs to.
+         * <p>
+         * @return {@code this}
+         * @param workerZoneIds Property workerZoneIds: Zone ids of worker node virtual switches belongs to. This parameter is required.
+         */
+        public Builder workerZoneIds(final com.aliyun.ros.cdk.core.IResolvable workerZoneIds) {
+            this.props.workerZoneIds(workerZoneIds);
+            return this;
+        }
+        /**
+         * Property workerZoneIds: Zone ids of worker node virtual switches belongs to.
+         * <p>
+         * @return {@code this}
+         * @param workerZoneIds Property workerZoneIds: Zone ids of worker node virtual switches belongs to. This parameter is required.
+         */
+        public Builder workerZoneIds(final java.util.List<? extends java.lang.Object> workerZoneIds) {
+            this.props.workerZoneIds(workerZoneIds);
             return this;
         }
 

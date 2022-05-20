@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Signature`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:27.814Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.SignatureProps")
 @software.amazon.jsii.Jsii.Proxy(SignatureProps.Jsii$Proxy.class)
 public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getSignatureKey();
 
     /**
-     * Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSignatureName();
 
@@ -59,7 +59,7 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureName}
-         * @param signatureName Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param signatureName Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          * @return {@code this}
          */
         public Builder signatureName(java.lang.String signatureName) {
@@ -69,7 +69,7 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureName}
-         * @param signatureName Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param signatureName Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          * @return {@code this}
          */
         public Builder signatureName(com.aliyun.ros.cdk.core.IResolvable signatureName) {

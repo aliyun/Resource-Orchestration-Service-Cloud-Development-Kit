@@ -42,6 +42,11 @@ export interface ParameterProps {
      * The description must be 1 to 200 characters in length.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -78,6 +83,7 @@ export class Parameter extends ros.Resource {
             type: props.type,
             description: props.description,
             constraints: props.constraints,
+            resourceGroupId: props.resourceGroupId,
             value: props.value,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

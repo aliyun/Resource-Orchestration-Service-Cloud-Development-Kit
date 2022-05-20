@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ServerlessKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:28.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.457Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ServerlessKubernetesCluster")
 public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -289,6 +289,27 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
          */
         public Builder privateZone(final com.aliyun.ros.cdk.core.IResolvable privateZone) {
             this.props.privateZone(privateZone);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

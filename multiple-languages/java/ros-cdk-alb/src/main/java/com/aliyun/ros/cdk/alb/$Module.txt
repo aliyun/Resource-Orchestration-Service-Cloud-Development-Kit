@@ -43,6 +43,7 @@
 @alicloud/ros-cdk-alb.RosServerGroup=com.aliyun.ros.cdk.alb.RosServerGroup
 @alicloud/ros-cdk-alb.RosServerGroup.HealthCheckConfigProperty=com.aliyun.ros.cdk.alb.RosServerGroup$HealthCheckConfigProperty
 @alicloud/ros-cdk-alb.RosServerGroup.StickySessionConfigProperty=com.aliyun.ros.cdk.alb.RosServerGroup$StickySessionConfigProperty
+@alicloud/ros-cdk-alb.RosServerGroup.TagsProperty=com.aliyun.ros.cdk.alb.RosServerGroup$TagsProperty
 @alicloud/ros-cdk-alb.RosServerGroupProps=com.aliyun.ros.cdk.alb.RosServerGroupProps
 @alicloud/ros-cdk-alb.Rule=com.aliyun.ros.cdk.alb.Rule
 @alicloud/ros-cdk-alb.RuleProps=com.aliyun.ros.cdk.alb.RuleProps

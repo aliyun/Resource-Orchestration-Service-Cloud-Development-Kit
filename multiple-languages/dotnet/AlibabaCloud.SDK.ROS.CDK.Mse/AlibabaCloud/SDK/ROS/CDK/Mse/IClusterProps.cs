@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             get;
         }
 
-        /// <summary>Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3.</summary>
+        /// <summary>Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.</summary>
         [JsiiProperty(name: "clusterVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ClusterVersion
         {
@@ -41,6 +41,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         object NetType
         {
             get;
+        }
+
+        /// <summary>Property acceptLanguage:.</summary>
+        [JsiiProperty(name: "acceptLanguage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AcceptLanguage
+        {
+            get
+            {
+                return null;
+            }
         }
 
         /// <summary>Property aclEntryList: acl entry list.</summary>
@@ -76,10 +87,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property diskCapacity: disk capacity, unit: G.</summary>
-        [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        /// <summary>Property diskType: disk type.</summary>
+        [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? DiskCapacity
+        object? DiskType
         {
             get
             {
@@ -87,10 +98,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property diskType: disk type.</summary>
-        [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        /// <summary>Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.</summary>
+        /// <remarks>
+        /// -'mse_basic': indicates the basic version (default value).
+        /// -'mse_pro': means professional version.
+        /// </remarks>
+        [JsiiProperty(name: "mseVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? DiskType
+        object? MseVersion
         {
             get
             {
@@ -186,7 +201,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3.</summary>
+            /// <summary>Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.</summary>
             [JsiiProperty(name: "clusterVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ClusterVersion
             {
@@ -205,6 +220,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             public object NetType
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property acceptLanguage:.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "acceptLanguage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AcceptLanguage
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property aclEntryList: acl entry list.</summary>
@@ -231,18 +254,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property diskCapacity: disk capacity, unit: G.</summary>
-            [JsiiOptional]
-            [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? DiskCapacity
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
             /// <summary>Property diskType: disk type.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DiskType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.</summary>
+            /// <remarks>
+            /// -'mse_basic': indicates the basic version (default value).
+            /// -'mse_pro': means professional version.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "mseVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MseVersion
             {
                 get => GetInstanceProperty<object?>();
             }

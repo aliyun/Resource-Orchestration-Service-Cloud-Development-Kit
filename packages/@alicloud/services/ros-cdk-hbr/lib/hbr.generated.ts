@@ -11,6 +11,11 @@ export interface RosBackupClientsProps {
      * @Property instanceIds: ID list of instances to install backup client
      */
     readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosBackupClients.TagsProperty[];
 }
 
 /**
@@ -32,6 +37,14 @@ function RosBackupClientsPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosBackupClients_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosBackupClientsProps"');
 }
 
@@ -50,6 +63,7 @@ function rosBackupClientsPropsToRosTemplate(properties: any, enableResourcePrope
     }
     return {
       InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      Tags: ros.listMapper(rosBackupClientsTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -86,6 +100,11 @@ export class RosBackupClients extends ros.RosResource {
     public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosBackupClients.TagsProperty[] | undefined;
+
+    /**
      * Create a new `ALIYUN::HBR::BackupClients`.
      *
      * @param scope - scope in which this resource is defined
@@ -99,17 +118,67 @@ export class RosBackupClients extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceIds = props.instanceIds;
+        this.tags = props.tags;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             instanceIds: this.instanceIds,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosBackupClientsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosBackupClients {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBackupClients_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::BackupClients.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::BackupClients.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosBackupClientsTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBackupClients_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -774,6 +843,11 @@ export interface RosDbVaultProps {
      * @Property description: Description of the vault.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDbVault.TagsProperty[];
 }
 
 /**
@@ -793,6 +867,14 @@ function RosDbVaultPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('retentionDays', ros.validateNumber)(properties.retentionDays));
     errors.collect(ros.propertyValidator('vaultRegionId', ros.requiredValidator)(properties.vaultRegionId));
     errors.collect(ros.propertyValidator('vaultRegionId', ros.validateString)(properties.vaultRegionId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDbVault_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosDbVaultProps"');
 }
 
@@ -814,6 +896,7 @@ function rosDbVaultPropsToRosTemplate(properties: any, enableResourcePropertyCon
       VaultName: ros.stringToRosTemplate(properties.vaultName),
       VaultRegionId: ros.stringToRosTemplate(properties.vaultRegionId),
       Description: ros.stringToRosTemplate(properties.description),
+      Tags: ros.listMapper(rosDbVaultTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -880,6 +963,11 @@ export class RosDbVault extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosDbVault.TagsProperty[] | undefined;
+
+    /**
      * Create a new `ALIYUN::HBR::DbVault`.
      *
      * @param scope - scope in which this resource is defined
@@ -899,6 +987,7 @@ export class RosDbVault extends ros.RosResource {
         this.vaultName = props.vaultName;
         this.vaultRegionId = props.vaultRegionId;
         this.description = props.description;
+        this.tags = props.tags;
     }
 
 
@@ -908,11 +997,60 @@ export class RosDbVault extends ros.RosResource {
             vaultName: this.vaultName,
             vaultRegionId: this.vaultRegionId,
             description: this.description,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDbVaultPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDbVault {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDbVault_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::DbVault.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::DbVault.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosDbVaultTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDbVault_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**

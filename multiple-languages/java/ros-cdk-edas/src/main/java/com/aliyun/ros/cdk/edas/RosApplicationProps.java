@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::Application`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.013Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.069Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationProps.Jsii$Proxy.class)
 public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -59,6 +59,12 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosApplicationProps}
      */
     static Builder builder() {
@@ -77,6 +83,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object healthCheckUrl;
         java.lang.Object logicalRegionId;
         java.lang.Object packageType;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosApplicationProps#getApplicationName}
@@ -259,6 +266,26 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosApplicationProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -283,6 +310,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object healthCheckUrl;
         private final java.lang.Object logicalRegionId;
         private final java.lang.Object packageType;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -299,6 +327,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.healthCheckUrl = software.amazon.jsii.Kernel.get(this, "healthCheckUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.packageType = software.amazon.jsii.Kernel.get(this, "packageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -315,6 +344,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.healthCheckUrl = builder.healthCheckUrl;
             this.logicalRegionId = builder.logicalRegionId;
             this.packageType = builder.packageType;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -363,6 +393,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -391,6 +426,9 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.getPackageType() != null) {
                 data.set("packageType", om.valueToTree(this.getPackageType()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-edas.RosApplicationProps"));
@@ -417,7 +455,8 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.ecuInfo != null ? !this.ecuInfo.equals(that.ecuInfo) : that.ecuInfo != null) return false;
             if (this.healthCheckUrl != null ? !this.healthCheckUrl.equals(that.healthCheckUrl) : that.healthCheckUrl != null) return false;
             if (this.logicalRegionId != null ? !this.logicalRegionId.equals(that.logicalRegionId) : that.logicalRegionId != null) return false;
-            return this.packageType != null ? this.packageType.equals(that.packageType) : that.packageType == null;
+            if (this.packageType != null ? !this.packageType.equals(that.packageType) : that.packageType != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -431,6 +470,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.healthCheckUrl != null ? this.healthCheckUrl.hashCode() : 0);
             result = 31 * result + (this.logicalRegionId != null ? this.logicalRegionId.hashCode() : 0);
             result = 31 * result + (this.packageType != null ? this.packageType.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS resource type:  `ALIYUN::GA::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.57.0 (build f614666)", date = "2022-04-29T01:47:29.422Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -137,6 +137,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * tcp: TCP protocol
          * udp: UDP protocol
+         * http: HTTP protocolhttps: HTTPS protocol.
          * <p>
          * @return {@code this}
          * @param protocol Property protocol: The network transmission protocol of the listener. This parameter is required.
@@ -151,12 +152,34 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * tcp: TCP protocol
          * udp: UDP protocol
+         * http: HTTP protocolhttps: HTTPS protocol.
          * <p>
          * @return {@code this}
          * @param protocol Property protocol: The network transmission protocol of the listener. This parameter is required.
          */
         public Builder protocol(final com.aliyun.ros.cdk.core.IResolvable protocol) {
             this.props.protocol(protocol);
+            return this;
+        }
+
+        /**
+         * Property certificates:.
+         * <p>
+         * @return {@code this}
+         * @param certificates Property certificates:. This parameter is required.
+         */
+        public Builder certificates(final com.aliyun.ros.cdk.core.IResolvable certificates) {
+            this.props.certificates(certificates);
+            return this;
+        }
+        /**
+         * Property certificates:.
+         * <p>
+         * @return {@code this}
+         * @param certificates Property certificates:. This parameter is required.
+         */
+        public Builder certificates(final java.util.List<? extends java.lang.Object> certificates) {
+            this.props.certificates(certificates);
             return this;
         }
 
@@ -238,6 +261,93 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property proxyProtocol: Specifies whether to preserve client IP addresses.
+         * <p>
+         * Valid values:
+         * true: preserves client IP addresses. After this feature is enabled, backend servers can retrieve client IP addresses.
+         * false (default): does not preserve client IP addresses.
+         * <p>
+         * @return {@code this}
+         * @param proxyProtocol Property proxyProtocol: Specifies whether to preserve client IP addresses. This parameter is required.
+         */
+        public Builder proxyProtocol(final java.lang.Boolean proxyProtocol) {
+            this.props.proxyProtocol(proxyProtocol);
+            return this;
+        }
+        /**
+         * Property proxyProtocol: Specifies whether to preserve client IP addresses.
+         * <p>
+         * Valid values:
+         * true: preserves client IP addresses. After this feature is enabled, backend servers can retrieve client IP addresses.
+         * false (default): does not preserve client IP addresses.
+         * <p>
+         * @return {@code this}
+         * @param proxyProtocol Property proxyProtocol: Specifies whether to preserve client IP addresses. This parameter is required.
+         */
+        public Builder proxyProtocol(final com.aliyun.ros.cdk.core.IResolvable proxyProtocol) {
+            this.props.proxyProtocol(proxyProtocol);
+            return this;
+        }
+
+        /**
+         * Property securityPolicyId: The ID of the security policy.
+         * <p>
+         * Valid values:
+         * tls_cipher_policy_1_0
+         * tls_cipher_policy_1_1
+         * tls_cipher_policy_1_2
+         * tls_cipher_policy_1_2_strict
+         * tls_cipher_policy_1_2_strict_with_1_3
+         * Note Only HTTPS listeners support this parameter.
+         * <p>
+         * @return {@code this}
+         * @param securityPolicyId Property securityPolicyId: The ID of the security policy. This parameter is required.
+         */
+        public Builder securityPolicyId(final java.lang.String securityPolicyId) {
+            this.props.securityPolicyId(securityPolicyId);
+            return this;
+        }
+        /**
+         * Property securityPolicyId: The ID of the security policy.
+         * <p>
+         * Valid values:
+         * tls_cipher_policy_1_0
+         * tls_cipher_policy_1_1
+         * tls_cipher_policy_1_2
+         * tls_cipher_policy_1_2_strict
+         * tls_cipher_policy_1_2_strict_with_1_3
+         * Note Only HTTPS listeners support this parameter.
+         * <p>
+         * @return {@code this}
+         * @param securityPolicyId Property securityPolicyId: The ID of the security policy. This parameter is required.
+         */
+        public Builder securityPolicyId(final com.aliyun.ros.cdk.core.IResolvable securityPolicyId) {
+            this.props.securityPolicyId(securityPolicyId);
+            return this;
+        }
+
+        /**
+         * Property xForwardedForConfig: The configuration of the XForward field.
+         * <p>
+         * @return {@code this}
+         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of the XForward field. This parameter is required.
+         */
+        public Builder xForwardedForConfig(final com.aliyun.ros.cdk.core.IResolvable xForwardedForConfig) {
+            this.props.xForwardedForConfig(xForwardedForConfig);
+            return this;
+        }
+        /**
+         * Property xForwardedForConfig: The configuration of the XForward field.
+         * <p>
+         * @return {@code this}
+         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of the XForward field. This parameter is required.
+         */
+        public Builder xForwardedForConfig(final com.aliyun.ros.cdk.ga.RosListener.XForwardedForConfigProperty xForwardedForConfig) {
+            this.props.xForwardedForConfig(xForwardedForConfig);
             return this;
         }
 
