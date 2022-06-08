@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * conditions, you can associate them with resources or resource properties in
  * the Resources and Outputs sections of a template.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.664Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.501Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IRosConditionExpression")
 @software.amazon.jsii.Jsii.Proxy(IRosConditionExpression.Jsii$Proxy.class)
 public interface IRosConditionExpression extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResolvable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.331Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.163Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(KubernetesClusterProps.Jsii$Proxy.class)
 public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -315,6 +315,13 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property nodePools: The configurations of Node pools.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNodePools() {
+        return null;
+    }
+
+    /**
      * Property nodePortRange: Node service port.
      * <p>
      * The value range is [30000, 65535].
@@ -619,6 +626,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object masterSystemDiskSnapshotPolicyId;
         java.lang.Object masterZoneIds;
         java.lang.Object nodeCidrMask;
+        java.lang.Object nodePools;
         java.lang.Object nodePortRange;
         java.lang.Object numOfNodes;
         java.lang.Object osType;
@@ -1432,6 +1440,26 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link KubernetesClusterProps#getNodePools}
+         * @param nodePools Property nodePools: The configurations of Node pools.
+         * @return {@code this}
+         */
+        public Builder nodePools(com.aliyun.ros.cdk.core.IResolvable nodePools) {
+            this.nodePools = nodePools;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KubernetesClusterProps#getNodePools}
+         * @param nodePools Property nodePools: The configurations of Node pools.
+         * @return {@code this}
+         */
+        public Builder nodePools(java.util.List<? extends java.lang.Object> nodePools) {
+            this.nodePools = nodePools;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link KubernetesClusterProps#getNodePortRange}
          * @param nodePortRange Property nodePortRange: Node service port.
          *                      The value range is [30000, 65535].
@@ -2119,6 +2147,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object masterSystemDiskSnapshotPolicyId;
         private final java.lang.Object masterZoneIds;
         private final java.lang.Object nodeCidrMask;
+        private final java.lang.Object nodePools;
         private final java.lang.Object nodePortRange;
         private final java.lang.Object numOfNodes;
         private final java.lang.Object osType;
@@ -2186,6 +2215,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.masterSystemDiskSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "masterSystemDiskSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterZoneIds = software.amazon.jsii.Kernel.get(this, "masterZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nodePools = software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodePortRange = software.amazon.jsii.Kernel.get(this, "nodePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.osType = software.amazon.jsii.Kernel.get(this, "osType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2254,6 +2284,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.masterSystemDiskSnapshotPolicyId = builder.masterSystemDiskSnapshotPolicyId;
             this.masterZoneIds = builder.masterZoneIds;
             this.nodeCidrMask = builder.nodeCidrMask;
+            this.nodePools = builder.nodePools;
             this.nodePortRange = builder.nodePortRange;
             this.numOfNodes = builder.numOfNodes;
             this.osType = builder.osType;
@@ -2446,6 +2477,11 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getNodeCidrMask() {
             return this.nodeCidrMask;
+        }
+
+        @Override
+        public final java.lang.Object getNodePools() {
+            return this.nodePools;
         }
 
         @Override
@@ -2676,6 +2712,9 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.getNodeCidrMask() != null) {
                 data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
             }
+            if (this.getNodePools() != null) {
+                data.set("nodePools", om.valueToTree(this.getNodePools()));
+            }
             if (this.getNodePortRange() != null) {
                 data.set("nodePortRange", om.valueToTree(this.getNodePortRange()));
             }
@@ -2808,6 +2847,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.masterSystemDiskSnapshotPolicyId != null ? !this.masterSystemDiskSnapshotPolicyId.equals(that.masterSystemDiskSnapshotPolicyId) : that.masterSystemDiskSnapshotPolicyId != null) return false;
             if (this.masterZoneIds != null ? !this.masterZoneIds.equals(that.masterZoneIds) : that.masterZoneIds != null) return false;
             if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
+            if (this.nodePools != null ? !this.nodePools.equals(that.nodePools) : that.nodePools != null) return false;
             if (this.nodePortRange != null ? !this.nodePortRange.equals(that.nodePortRange) : that.nodePortRange != null) return false;
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
             if (this.osType != null ? !this.osType.equals(that.osType) : that.osType != null) return false;
@@ -2872,6 +2912,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.masterSystemDiskSnapshotPolicyId != null ? this.masterSystemDiskSnapshotPolicyId.hashCode() : 0);
             result = 31 * result + (this.masterZoneIds != null ? this.masterZoneIds.hashCode() : 0);
             result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
+            result = 31 * result + (this.nodePools != null ? this.nodePools.hashCode() : 0);
             result = 31 * result + (this.nodePortRange != null ? this.nodePortRange.hashCode() : 0);
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
             result = 31 * result + (this.osType != null ? this.osType.hashCode() : 0);

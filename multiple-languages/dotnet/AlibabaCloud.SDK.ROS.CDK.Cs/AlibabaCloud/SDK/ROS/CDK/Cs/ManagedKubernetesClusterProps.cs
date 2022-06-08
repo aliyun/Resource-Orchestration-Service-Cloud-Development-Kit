@@ -315,6 +315,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             set;
         }
 
+        /// <summary>Property nodePools: The configurations of Node pools.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "nodePools", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? NodePools
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property numOfNodes: Number of worker nodes.</summary>
         /// <remarks>
         /// The range is [0,300].

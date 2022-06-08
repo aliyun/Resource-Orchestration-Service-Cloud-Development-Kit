@@ -156,6 +156,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property sync: Whether to invoke synchronously.</summary>
+        [JsiiProperty(name: "sync", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Sync
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property timed: Specifies whether to periodically run the script.</summary>
         /// <remarks>
         /// Valid values:
@@ -335,6 +346,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Parameters
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property sync: Whether to invoke synchronously.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "sync", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Sync
             {
                 get => GetInstanceProperty<object?>();
             }

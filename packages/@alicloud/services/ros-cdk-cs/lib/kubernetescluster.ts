@@ -233,6 +233,11 @@ export interface KubernetesClusterProps {
     readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
+     * Property nodePools: The configurations of Node pools.
+     */
+    readonly nodePools?: Array<RosKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property nodePortRange: Node service port. The value range is [30000, 65535].
      * Default to 30000-65535.
      */
@@ -507,6 +512,7 @@ export class KubernetesCluster extends ros.Resource {
             deletionProtection: props.deletionProtection,
             timeZone: props.timeZone,
             vpcId: props.vpcId,
+            nodePools: props.nodePools,
             userCa: props.userCa,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
             masterDataDisk: props.masterDataDisk === undefined || props.masterDataDisk === null ? false : props.masterDataDisk,

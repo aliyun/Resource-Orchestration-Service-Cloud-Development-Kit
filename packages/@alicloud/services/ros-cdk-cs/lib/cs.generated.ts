@@ -1618,6 +1618,11 @@ export interface RosKubernetesClusterProps {
     readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
+     * @Property nodePools: The configurations of Node pools.
+     */
+    readonly nodePools?: Array<RosKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property nodePortRange: Node service port. The value range is [30000, 65535].
      * Default to 30000-65535.
      */
@@ -1851,6 +1856,14 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.nodePools && (Array.isArray(properties.nodePools) || (typeof properties.nodePools) === 'string')) {
+        errors.collect(ros.propertyValidator('nodePools', ros.validateLength)({
+            data: properties.nodePools.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('nodePools', ros.listValidator(RosKubernetesCluster_NodePoolsPropertyValidator))(properties.nodePools));
     errors.collect(ros.propertyValidator('userCa', ros.validateString)(properties.userCa));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
     errors.collect(ros.propertyValidator('masterDataDisk', ros.validateBoolean)(properties.masterDataDisk));
@@ -2005,6 +2018,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       MasterSystemDiskSnapshotPolicyId: ros.stringToRosTemplate(properties.masterSystemDiskSnapshotPolicyId),
       MasterZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.masterZoneIds),
       NodeCidrMask: ros.stringToRosTemplate(properties.nodeCidrMask),
+      NodePools: ros.listMapper(rosKubernetesClusterNodePoolsPropertyToRosTemplate)(properties.nodePools),
       NodePortRange: ros.stringToRosTemplate(properties.nodePortRange),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
       OsType: ros.stringToRosTemplate(properties.osType),
@@ -2327,6 +2341,11 @@ export class RosKubernetesCluster extends ros.RosResource {
     public nodeCidrMask: string | ros.IResolvable | undefined;
 
     /**
+     * @Property nodePools: The configurations of Node pools.
+     */
+    public nodePools: Array<RosKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property nodePortRange: Node service port. The value range is [30000, 65535].
      * Default to 30000-65535.
      */
@@ -2556,6 +2575,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.masterSystemDiskSnapshotPolicyId = props.masterSystemDiskSnapshotPolicyId;
         this.masterZoneIds = props.masterZoneIds;
         this.nodeCidrMask = props.nodeCidrMask;
+        this.nodePools = props.nodePools;
         this.nodePortRange = props.nodePortRange;
         this.numOfNodes = props.numOfNodes;
         this.osType = props.osType;
@@ -2621,6 +2641,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             masterSystemDiskSnapshotPolicyId: this.masterSystemDiskSnapshotPolicyId,
             masterZoneIds: this.masterZoneIds,
             nodeCidrMask: this.nodeCidrMask,
+            nodePools: this.nodePools,
             nodePortRange: this.nodePortRange,
             numOfNodes: this.numOfNodes,
             osType: this.osType,
@@ -2713,6 +2734,205 @@ export namespace RosKubernetesCluster {
     /**
      * @stability external
      */
+    export interface DataDisksProperty {
+        /**
+         * @Property category: The type of data disk. Valid values:
+     * cloud: basic disk.
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+     * Default value: cloud_efficiency.
+         */
+        readonly category?: string | ros.IResolvable;
+        /**
+         * @Property encrypted: Specifies whether to encrypt a data disk. Valid values:
+     * true: encrypts a data disk.
+     * false: does not encrypt a data disk.
+     * Default value: false.
+         */
+        readonly encrypted?: boolean | ros.IResolvable;
+        /**
+         * @Property performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         */
+        readonly performanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property size: The size of a data disk. The size is measured in GiB.
+     * Valid values: 40 to 32768.
+         */
+        readonly size?: number | ros.IResolvable;
+        /**
+         * @Property autoSnapshotPolicyId: The ID of an automatic snapshot policy. Automatic backup is performed for a disk based on the specified automatic snapshot policy.
+     * By default, this parameter is empty. This indicates that automatic backup is disabled.
+         */
+        readonly autoSnapshotPolicyId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DataDisksProperty`
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_DataDisksPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
+    return errors.wrap('supplied properties not correct for "DataDisksProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.DataDisks` resource
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.DataDisks` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterDataDisksPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_DataDisksPropertyValidator(properties).assertSuccess();
+    return {
+      Category: ros.stringToRosTemplate(properties.category),
+      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
+      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
+      Size: ros.numberToRosTemplate(properties.size),
+      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface KubernetesConfigProperty {
+        /**
+         * @Property runtime: The name of the container runtime.
+         */
+        readonly runtime: string | ros.IResolvable;
+        /**
+         * @Property cpuPolicy: The CPU policy. The following policies are supported if the Kubernetes version of the cluster is 1.12.6 or later. Valid values:
+     * static: This policy allows pods with specific resource characteristics on the node to be granted with enhanced CPU affinity and exclusivity.
+     * none: This policy indicates that the default CPU affinity is used.
+     * Default value: none.
+         */
+        readonly cpuPolicy?: string | ros.IResolvable;
+        /**
+         * @Property runtimeVersion: The version of the container runtime.
+         */
+        readonly runtimeVersion: string | ros.IResolvable;
+        /**
+         * @Property labels: You can add labels to nodes that are added to the cluster.
+         */
+        readonly labels?: Array<RosKubernetesCluster.LabelsProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `KubernetesConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `KubernetesConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_KubernetesConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
+    errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
+    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
+    errors.collect(ros.propertyValidator('runtimeVersion', ros.requiredValidator)(properties.runtimeVersion));
+    errors.collect(ros.propertyValidator('runtimeVersion', ros.validateString)(properties.runtimeVersion));
+    if(properties.labels && (Array.isArray(properties.labels) || (typeof properties.labels) === 'string')) {
+        errors.collect(ros.propertyValidator('labels', ros.validateLength)({
+            data: properties.labels.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('labels', ros.listValidator(RosKubernetesCluster_LabelsPropertyValidator))(properties.labels));
+    return errors.wrap('supplied properties not correct for "KubernetesConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.KubernetesConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `KubernetesConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.KubernetesConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterKubernetesConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_KubernetesConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Runtime: ros.stringToRosTemplate(properties.runtime),
+      CpuPolicy: ros.stringToRosTemplate(properties.cpuPolicy),
+      RuntimeVersion: ros.stringToRosTemplate(properties.runtimeVersion),
+      Labels: ros.listMapper(rosKubernetesClusterLabelsPropertyToRosTemplate)(properties.labels),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface LabelsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_LabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "LabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.Labels` resource
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.Labels` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_LabelsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
     export interface MasterDataDisksProperty {
         /**
          * @Property category: Data disk type. Value includes:
@@ -2772,6 +2992,108 @@ export namespace RosKubernetesCluster {
     /**
      * @stability external
      */
+    export interface NodePoolInfoProperty {
+        /**
+         * @Property name: The name of the node pool.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `NodePoolInfoProperty`
+ *
+ * @param properties - the TypeScript properties of a `NodePoolInfoProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_NodePoolInfoPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "NodePoolInfoProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.NodePoolInfo` resource
+ *
+ * @param properties - the TypeScript properties of a `NodePoolInfoProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.NodePoolInfo` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterNodePoolInfoPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_NodePoolInfoPropertyValidator(properties).assertSuccess();
+    return {
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface NodePoolsProperty {
+        /**
+         * @Property nodePoolInfo: The configurations of the node pool.
+         */
+        readonly nodePoolInfo?: RosKubernetesCluster.NodePoolInfoProperty | ros.IResolvable;
+        /**
+         * @Property kubernetesConfig: The configurations of the ACK cluster.
+         */
+        readonly kubernetesConfig?: RosKubernetesCluster.KubernetesConfigProperty | ros.IResolvable;
+        /**
+         * @Property count: The number of nodes in the node pool.
+         */
+        readonly count?: number | ros.IResolvable;
+        /**
+         * @Property scalingGroup: The configurations of the scaling group used by the node pool.
+         */
+        readonly scalingGroup: RosKubernetesCluster.ScalingGroupProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `NodePoolsProperty`
+ *
+ * @param properties - the TypeScript properties of a `NodePoolsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_NodePoolsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('nodePoolInfo', RosKubernetesCluster_NodePoolInfoPropertyValidator)(properties.nodePoolInfo));
+    errors.collect(ros.propertyValidator('kubernetesConfig', RosKubernetesCluster_KubernetesConfigPropertyValidator)(properties.kubernetesConfig));
+    errors.collect(ros.propertyValidator('count', ros.validateNumber)(properties.count));
+    errors.collect(ros.propertyValidator('scalingGroup', ros.requiredValidator)(properties.scalingGroup));
+    errors.collect(ros.propertyValidator('scalingGroup', RosKubernetesCluster_ScalingGroupPropertyValidator)(properties.scalingGroup));
+    return errors.wrap('supplied properties not correct for "NodePoolsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.NodePools` resource
+ *
+ * @param properties - the TypeScript properties of a `NodePoolsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.NodePools` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterNodePoolsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_NodePoolsPropertyValidator(properties).assertSuccess();
+    return {
+      NodePoolInfo: rosKubernetesClusterNodePoolInfoPropertyToRosTemplate(properties.nodePoolInfo),
+      KubernetesConfig: rosKubernetesClusterKubernetesConfigPropertyToRosTemplate(properties.kubernetesConfig),
+      Count: ros.numberToRosTemplate(properties.count),
+      ScalingGroup: rosKubernetesClusterScalingGroupPropertyToRosTemplate(properties.scalingGroup),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
     export interface RuntimeProperty {
         /**
          * @Property version: The version of the container runtime.
@@ -2813,6 +3135,265 @@ function rosKubernetesClusterRuntimePropertyToRosTemplate(properties: any): any 
     return {
       Version: ros.stringToRosTemplate(properties.version),
       Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface ScalingGroupProperty {
+        /**
+         * @Property keyPair: The name of the key pair used to log on to the nodes. You must set KeyPair or LoginPassword.
+         */
+        readonly keyPair?: string | ros.IResolvable;
+        /**
+         * @Property platform: The release version of the operating system. Valid values:
+     * CentOS, AliyunLinux, Windows, WindowsCore.
+     * Default value: AliyunLinux.
+         */
+        readonly platform?: string | ros.IResolvable;
+        /**
+         * @Property dataDisks: The configurations of data disks.
+         */
+        readonly dataDisks?: Array<RosKubernetesCluster.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property vSwitchIds: The IDs of vSwitches.
+         */
+        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property systemDiskSize: The system disk size of a node. Unit: GiB. Valid values: 40 to 500.
+         */
+        readonly systemDiskSize: number | ros.IResolvable;
+        /**
+         * @Property instanceChargeType: The billing method of nodes in the node pool. Valid values:
+     * PrePaid: subscription.
+     * PostPaid: pay-as-you-go.
+     * Default value: PostPaid.
+         */
+        readonly instanceChargeType?: string | ros.IResolvable;
+        /**
+         * @Property period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12. 
+     * Default value: 1.
+         */
+        readonly period?: number | ros.IResolvable;
+        /**
+         * @Property systemDiskCategory: The type of system disk. Valid values:
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+     * Default value: cloud_efficiency.
+         */
+        readonly systemDiskCategory?: string | ros.IResolvable;
+        /**
+         * @Property internetChargeType: Bandwidth billing method. Valid values: PayByTraffic or PayByBandwidth.
+         */
+        readonly internetChargeType?: string | ros.IResolvable;
+        /**
+         * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+         */
+        readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+        /**
+         * @Property internetMaxBandwidthOut: The release version of the operating system. Valid values:
+     * CentOS, AliyunLinux, Windows, WindowsCore.
+     * Default value: AliyunLinux.
+         */
+        readonly internetMaxBandwidthOut?: number | ros.IResolvable;
+        /**
+         * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         */
+        readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property rdsInstances: The IDs of the ApsaraDB RDS instances.
+         */
+        readonly rdsInstances?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property imageId: The ID of a custom image. By default, the image provided by ACK is used.
+         */
+        readonly imageId?: string | ros.IResolvable;
+        /**
+         * @Property instanceTypes: The ECS instance types of the nodes.
+         */
+        readonly instanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property tags: Adds labels only to ECS instances.
+     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+         */
+        readonly tags?: RosKubernetesCluster.ScalingGroupTagsProperty[];
+        /**
+         * @Property periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+         */
+        readonly periodUnit?: string | ros.IResolvable;
+        /**
+         * @Property loginPassword: The password used to log on to the nodes by using SSH. You must set KeyPair or LoginPassword. The password must be 8 to 30 characters in length, and must contain at least three of the following character types: uppercase letters, lowercase letters, digits, and special characters.
+         */
+        readonly loginPassword?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScalingGroupProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_ScalingGroupPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
+    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
+    if(properties.dataDisks && (Array.isArray(properties.dataDisks) || (typeof properties.dataDisks) === 'string')) {
+        errors.collect(ros.propertyValidator('dataDisks', ros.validateLength)({
+            data: properties.dataDisks.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosKubernetesCluster_DataDisksPropertyValidator))(properties.dataDisks));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateRange)({
+            data: properties.period,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
+    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
+    if(properties.rdsInstances && (Array.isArray(properties.rdsInstances) || (typeof properties.rdsInstances) === 'string')) {
+        errors.collect(ros.propertyValidator('rdsInstances', ros.validateLength)({
+            data: properties.rdsInstances.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rdsInstances', ros.listValidator(ros.validateString))(properties.rdsInstances));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    errors.collect(ros.propertyValidator('instanceTypes', ros.requiredValidator)(properties.instanceTypes));
+    if(properties.instanceTypes && (Array.isArray(properties.instanceTypes) || (typeof properties.instanceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceTypes', ros.validateLength)({
+            data: properties.instanceTypes.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_ScalingGroupTagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
+    return errors.wrap('supplied properties not correct for "ScalingGroupProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.ScalingGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.ScalingGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterScalingGroupPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_ScalingGroupPropertyValidator(properties).assertSuccess();
+    return {
+      KeyPair: ros.stringToRosTemplate(properties.keyPair),
+      Platform: ros.stringToRosTemplate(properties.platform),
+      DataDisks: ros.listMapper(rosKubernetesClusterDataDisksPropertyToRosTemplate)(properties.dataDisks),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      Period: ros.numberToRosTemplate(properties.period),
+      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      IsEnterpriseSecurityGroup: ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
+      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      RdsInstances: ros.listMapper(ros.stringToRosTemplate)(properties.rdsInstances),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
+      Tags: ros.listMapper(rosKubernetesClusterScalingGroupTagsPropertyToRosTemplate)(properties.tags),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface ScalingGroupTagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScalingGroupTagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupTagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_ScalingGroupTagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "ScalingGroupTagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.ScalingGroupTags` resource
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupTagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.ScalingGroupTags` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterScalingGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_ScalingGroupTagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -3974,6 +4555,11 @@ export interface RosManagedKubernetesClusterProps {
     readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
+     * @Property nodePools: The configurations of Node pools.
+     */
+    readonly nodePools?: Array<RosManagedKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
@@ -4224,6 +4810,14 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
     errors.collect(ros.propertyValidator('keepInstanceName', ros.validateBoolean)(properties.keepInstanceName));
+    if(properties.nodePools && (Array.isArray(properties.nodePools) || (typeof properties.nodePools) === 'string')) {
+        errors.collect(ros.propertyValidator('nodePools', ros.validateLength)({
+            data: properties.nodePools.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('nodePools', ros.listValidator(RosManagedKubernetesCluster_NodePoolsPropertyValidator))(properties.nodePools));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
@@ -4281,6 +4875,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       LoadBalancerSpec: ros.stringToRosTemplate(properties.loadBalancerSpec),
       LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
       NodeCidrMask: ros.stringToRosTemplate(properties.nodeCidrMask),
+      NodePools: ros.listMapper(rosManagedKubernetesClusterNodePoolsPropertyToRosTemplate)(properties.nodePools),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
       OsType: ros.stringToRosTemplate(properties.osType),
       Period: ros.numberToRosTemplate(properties.period),
@@ -4548,6 +5143,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public nodeCidrMask: string | ros.IResolvable | undefined;
 
     /**
+     * @Property nodePools: The configurations of Node pools.
+     */
+    public nodePools: Array<RosManagedKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
@@ -4740,6 +5340,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.loadBalancerSpec = props.loadBalancerSpec;
         this.loginPassword = props.loginPassword;
         this.nodeCidrMask = props.nodeCidrMask;
+        this.nodePools = props.nodePools;
         this.numOfNodes = props.numOfNodes;
         this.osType = props.osType;
         this.period = props.period;
@@ -4791,6 +5392,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             loadBalancerSpec: this.loadBalancerSpec,
             loginPassword: this.loginPassword,
             nodeCidrMask: this.nodeCidrMask,
+            nodePools: this.nodePools,
             numOfNodes: this.numOfNodes,
             osType: this.osType,
             period: this.period,
@@ -4884,6 +5486,307 @@ export namespace RosManagedKubernetesCluster {
     /**
      * @stability external
      */
+    export interface DataDisksProperty {
+        /**
+         * @Property category: The type of data disk. Valid values:
+     * cloud: basic disk.
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+     * Default value: cloud_efficiency.
+         */
+        readonly category?: string | ros.IResolvable;
+        /**
+         * @Property encrypted: Specifies whether to encrypt a data disk. Valid values:
+     * true: encrypts a data disk.
+     * false: does not encrypt a data disk.
+     * Default value: false.
+         */
+        readonly encrypted?: boolean | ros.IResolvable;
+        /**
+         * @Property performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         */
+        readonly performanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property size: The size of a data disk. The size is measured in GiB.
+     * Valid values: 40 to 32768.
+         */
+        readonly size?: number | ros.IResolvable;
+        /**
+         * @Property autoSnapshotPolicyId: The ID of an automatic snapshot policy. Automatic backup is performed for a disk based on the specified automatic snapshot policy.
+     * By default, this parameter is empty. This indicates that automatic backup is disabled.
+         */
+        readonly autoSnapshotPolicyId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DataDisksProperty`
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_DataDisksPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
+    return errors.wrap('supplied properties not correct for "DataDisksProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.DataDisks` resource
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.DataDisks` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterDataDisksPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_DataDisksPropertyValidator(properties).assertSuccess();
+    return {
+      Category: ros.stringToRosTemplate(properties.category),
+      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
+      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
+      Size: ros.numberToRosTemplate(properties.size),
+      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface KubernetesConfigProperty {
+        /**
+         * @Property runtime: The name of the container runtime.
+         */
+        readonly runtime: string | ros.IResolvable;
+        /**
+         * @Property cpuPolicy: The CPU policy. The following policies are supported if the Kubernetes version of the cluster is 1.12.6 or later. Valid values:
+     * static: This policy allows pods with specific resource characteristics on the node to be granted with enhanced CPU affinity and exclusivity.
+     * none: This policy indicates that the default CPU affinity is used.
+     * Default value: none.
+         */
+        readonly cpuPolicy?: string | ros.IResolvable;
+        /**
+         * @Property runtimeVersion: The version of the container runtime.
+         */
+        readonly runtimeVersion: string | ros.IResolvable;
+        /**
+         * @Property labels: You can add labels to nodes that are added to the cluster.
+         */
+        readonly labels?: Array<RosManagedKubernetesCluster.LabelsProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `KubernetesConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `KubernetesConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_KubernetesConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
+    errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
+    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
+    errors.collect(ros.propertyValidator('runtimeVersion', ros.requiredValidator)(properties.runtimeVersion));
+    errors.collect(ros.propertyValidator('runtimeVersion', ros.validateString)(properties.runtimeVersion));
+    if(properties.labels && (Array.isArray(properties.labels) || (typeof properties.labels) === 'string')) {
+        errors.collect(ros.propertyValidator('labels', ros.validateLength)({
+            data: properties.labels.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('labels', ros.listValidator(RosManagedKubernetesCluster_LabelsPropertyValidator))(properties.labels));
+    return errors.wrap('supplied properties not correct for "KubernetesConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.KubernetesConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `KubernetesConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.KubernetesConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterKubernetesConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_KubernetesConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Runtime: ros.stringToRosTemplate(properties.runtime),
+      CpuPolicy: ros.stringToRosTemplate(properties.cpuPolicy),
+      RuntimeVersion: ros.stringToRosTemplate(properties.runtimeVersion),
+      Labels: ros.listMapper(rosManagedKubernetesClusterLabelsPropertyToRosTemplate)(properties.labels),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface LabelsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_LabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "LabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.Labels` resource
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.Labels` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_LabelsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface NodePoolInfoProperty {
+        /**
+         * @Property name: The name of the node pool.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `NodePoolInfoProperty`
+ *
+ * @param properties - the TypeScript properties of a `NodePoolInfoProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_NodePoolInfoPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "NodePoolInfoProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.NodePoolInfo` resource
+ *
+ * @param properties - the TypeScript properties of a `NodePoolInfoProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.NodePoolInfo` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterNodePoolInfoPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_NodePoolInfoPropertyValidator(properties).assertSuccess();
+    return {
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface NodePoolsProperty {
+        /**
+         * @Property nodePoolInfo: The configurations of the node pool.
+         */
+        readonly nodePoolInfo?: RosManagedKubernetesCluster.NodePoolInfoProperty | ros.IResolvable;
+        /**
+         * @Property kubernetesConfig: The configurations of the ACK cluster.
+         */
+        readonly kubernetesConfig?: RosManagedKubernetesCluster.KubernetesConfigProperty | ros.IResolvable;
+        /**
+         * @Property count: The number of nodes in the node pool.
+         */
+        readonly count?: number | ros.IResolvable;
+        /**
+         * @Property scalingGroup: The configurations of the scaling group used by the node pool.
+         */
+        readonly scalingGroup: RosManagedKubernetesCluster.ScalingGroupProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `NodePoolsProperty`
+ *
+ * @param properties - the TypeScript properties of a `NodePoolsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_NodePoolsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('nodePoolInfo', RosManagedKubernetesCluster_NodePoolInfoPropertyValidator)(properties.nodePoolInfo));
+    errors.collect(ros.propertyValidator('kubernetesConfig', RosManagedKubernetesCluster_KubernetesConfigPropertyValidator)(properties.kubernetesConfig));
+    errors.collect(ros.propertyValidator('count', ros.validateNumber)(properties.count));
+    errors.collect(ros.propertyValidator('scalingGroup', ros.requiredValidator)(properties.scalingGroup));
+    errors.collect(ros.propertyValidator('scalingGroup', RosManagedKubernetesCluster_ScalingGroupPropertyValidator)(properties.scalingGroup));
+    return errors.wrap('supplied properties not correct for "NodePoolsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.NodePools` resource
+ *
+ * @param properties - the TypeScript properties of a `NodePoolsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.NodePools` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterNodePoolsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_NodePoolsPropertyValidator(properties).assertSuccess();
+    return {
+      NodePoolInfo: rosManagedKubernetesClusterNodePoolInfoPropertyToRosTemplate(properties.nodePoolInfo),
+      KubernetesConfig: rosManagedKubernetesClusterKubernetesConfigPropertyToRosTemplate(properties.kubernetesConfig),
+      Count: ros.numberToRosTemplate(properties.count),
+      ScalingGroup: rosManagedKubernetesClusterScalingGroupPropertyToRosTemplate(properties.scalingGroup),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
     export interface RuntimeProperty {
         /**
          * @Property version: The version of the container runtime.
@@ -4925,6 +5828,265 @@ function rosManagedKubernetesClusterRuntimePropertyToRosTemplate(properties: any
     return {
       Version: ros.stringToRosTemplate(properties.version),
       Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface ScalingGroupProperty {
+        /**
+         * @Property keyPair: The name of the key pair used to log on to the nodes. You must set KeyPair or LoginPassword.
+         */
+        readonly keyPair?: string | ros.IResolvable;
+        /**
+         * @Property platform: The release version of the operating system. Valid values:
+     * CentOS, AliyunLinux, Windows, WindowsCore.
+     * Default value: AliyunLinux.
+         */
+        readonly platform?: string | ros.IResolvable;
+        /**
+         * @Property dataDisks: The configurations of data disks.
+         */
+        readonly dataDisks?: Array<RosManagedKubernetesCluster.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property vSwitchIds: The IDs of vSwitches.
+         */
+        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property systemDiskSize: The system disk size of a node. Unit: GiB. Valid values: 40 to 500.
+         */
+        readonly systemDiskSize: number | ros.IResolvable;
+        /**
+         * @Property instanceChargeType: The billing method of nodes in the node pool. Valid values:
+     * PrePaid: subscription.
+     * PostPaid: pay-as-you-go.
+     * Default value: PostPaid.
+         */
+        readonly instanceChargeType?: string | ros.IResolvable;
+        /**
+         * @Property period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12. 
+     * Default value: 1.
+         */
+        readonly period?: number | ros.IResolvable;
+        /**
+         * @Property systemDiskCategory: The type of system disk. Valid values:
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+     * Default value: cloud_efficiency.
+         */
+        readonly systemDiskCategory?: string | ros.IResolvable;
+        /**
+         * @Property internetChargeType: Bandwidth billing method. Valid values: PayByTraffic or PayByBandwidth.
+         */
+        readonly internetChargeType?: string | ros.IResolvable;
+        /**
+         * @Property isEnterpriseSecurityGroup: Specifies whether to create an advanced security group. 
+     * This parameter takes effect only if security_group_id is left empty.
+     * Note You must specify an advanced security group for a cluster that has Terway installed.
+     * true: creates an advanced security group.
+     * false: does not create an advanced security group.
+     * Default value: false.
+         */
+        readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+        /**
+         * @Property internetMaxBandwidthOut: The release version of the operating system. Valid values:
+     * CentOS, AliyunLinux, Windows, WindowsCore.
+     * Default value: AliyunLinux.
+         */
+        readonly internetMaxBandwidthOut?: number | ros.IResolvable;
+        /**
+         * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         */
+        readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property rdsInstances: The IDs of the ApsaraDB RDS instances.
+         */
+        readonly rdsInstances?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property imageId: The ID of a custom image. By default, the image provided by ACK is used.
+         */
+        readonly imageId?: string | ros.IResolvable;
+        /**
+         * @Property instanceTypes: The ECS instance types of the nodes.
+         */
+        readonly instanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property tags: Adds labels only to ECS instances.
+     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+         */
+        readonly tags?: RosManagedKubernetesCluster.ScalingGroupTagsProperty[];
+        /**
+         * @Property periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+         */
+        readonly periodUnit?: string | ros.IResolvable;
+        /**
+         * @Property loginPassword: The password used to log on to the nodes by using SSH. You must set KeyPair or LoginPassword. The password must be 8 to 30 characters in length, and must contain at least three of the following character types: uppercase letters, lowercase letters, digits, and special characters.
+         */
+        readonly loginPassword?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScalingGroupProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_ScalingGroupPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
+    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
+    if(properties.dataDisks && (Array.isArray(properties.dataDisks) || (typeof properties.dataDisks) === 'string')) {
+        errors.collect(ros.propertyValidator('dataDisks', ros.validateLength)({
+            data: properties.dataDisks.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosManagedKubernetesCluster_DataDisksPropertyValidator))(properties.dataDisks));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateRange)({
+            data: properties.period,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
+    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
+    if(properties.rdsInstances && (Array.isArray(properties.rdsInstances) || (typeof properties.rdsInstances) === 'string')) {
+        errors.collect(ros.propertyValidator('rdsInstances', ros.validateLength)({
+            data: properties.rdsInstances.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rdsInstances', ros.listValidator(ros.validateString))(properties.rdsInstances));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    errors.collect(ros.propertyValidator('instanceTypes', ros.requiredValidator)(properties.instanceTypes));
+    if(properties.instanceTypes && (Array.isArray(properties.instanceTypes) || (typeof properties.instanceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceTypes', ros.validateLength)({
+            data: properties.instanceTypes.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_ScalingGroupTagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
+    return errors.wrap('supplied properties not correct for "ScalingGroupProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.ScalingGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.ScalingGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterScalingGroupPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_ScalingGroupPropertyValidator(properties).assertSuccess();
+    return {
+      KeyPair: ros.stringToRosTemplate(properties.keyPair),
+      Platform: ros.stringToRosTemplate(properties.platform),
+      DataDisks: ros.listMapper(rosManagedKubernetesClusterDataDisksPropertyToRosTemplate)(properties.dataDisks),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      Period: ros.numberToRosTemplate(properties.period),
+      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      IsEnterpriseSecurityGroup: ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
+      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      RdsInstances: ros.listMapper(ros.stringToRosTemplate)(properties.rdsInstances),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
+      Tags: ros.listMapper(rosManagedKubernetesClusterScalingGroupTagsPropertyToRosTemplate)(properties.tags),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface ScalingGroupTagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScalingGroupTagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupTagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_ScalingGroupTagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "ScalingGroupTagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.ScalingGroupTags` resource
+ *
+ * @param properties - the TypeScript properties of a `ScalingGroupTagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.ScalingGroupTags` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterScalingGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_ScalingGroupTagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }
 

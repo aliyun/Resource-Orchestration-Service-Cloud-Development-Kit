@@ -4,6 +4,10 @@
 @alicloud/ros-cdk-sag.ACLRule=com.aliyun.ros.cdk.sag.ACLRule
 @alicloud/ros-cdk-sag.ACLRuleProps=com.aliyun.ros.cdk.sag.ACLRuleProps
 @alicloud/ros-cdk-sag.Acl=com.aliyun.ros.cdk.sag.Acl
+@alicloud/ros-cdk-sag.App=com.aliyun.ros.cdk.sag.App
+@alicloud/ros-cdk-sag.AppProps=com.aliyun.ros.cdk.sag.AppProps
+@alicloud/ros-cdk-sag.AppUser=com.aliyun.ros.cdk.sag.AppUser
+@alicloud/ros-cdk-sag.AppUserProps=com.aliyun.ros.cdk.sag.AppUserProps
 @alicloud/ros-cdk-sag.CloudConnectNetwork=com.aliyun.ros.cdk.sag.CloudConnectNetwork
 @alicloud/ros-cdk-sag.CloudConnectNetworkProps=com.aliyun.ros.cdk.sag.CloudConnectNetworkProps
 @alicloud/ros-cdk-sag.GrantCcnToCen=com.aliyun.ros.cdk.sag.GrantCcnToCen
@@ -22,6 +26,10 @@
 @alicloud/ros-cdk-sag.RosACLProps=com.aliyun.ros.cdk.sag.RosACLProps
 @alicloud/ros-cdk-sag.RosACLRule=com.aliyun.ros.cdk.sag.RosACLRule
 @alicloud/ros-cdk-sag.RosACLRuleProps=com.aliyun.ros.cdk.sag.RosACLRuleProps
+@alicloud/ros-cdk-sag.RosApp=com.aliyun.ros.cdk.sag.RosApp
+@alicloud/ros-cdk-sag.RosAppProps=com.aliyun.ros.cdk.sag.RosAppProps
+@alicloud/ros-cdk-sag.RosAppUser=com.aliyun.ros.cdk.sag.RosAppUser
+@alicloud/ros-cdk-sag.RosAppUserProps=com.aliyun.ros.cdk.sag.RosAppUserProps
 @alicloud/ros-cdk-sag.RosCloudConnectNetwork=com.aliyun.ros.cdk.sag.RosCloudConnectNetwork
 @alicloud/ros-cdk-sag.RosCloudConnectNetwork.TagsProperty=com.aliyun.ros.cdk.sag.RosCloudConnectNetwork$TagsProperty
 @alicloud/ros-cdk-sag.RosCloudConnectNetworkProps=com.aliyun.ros.cdk.sag.RosCloudConnectNetworkProps

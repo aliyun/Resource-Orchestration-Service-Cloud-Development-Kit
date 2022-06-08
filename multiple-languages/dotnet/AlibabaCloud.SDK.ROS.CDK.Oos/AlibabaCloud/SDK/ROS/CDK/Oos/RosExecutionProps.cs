@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
     public class RosExecutionProps : AlibabaCloud.SDK.ROS.CDK.Oos.IRosExecutionProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+        /// <strong>Property</strong>: templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
         /// </remarks>
         [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TemplateName

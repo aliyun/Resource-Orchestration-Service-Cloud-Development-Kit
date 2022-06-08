@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-mps.Pipeline=com.aliyun.ros.cdk.mps.Pipeline
+@alicloud/ros-cdk-mps.PipelineProps=com.aliyun.ros.cdk.mps.PipelineProps
+@alicloud/ros-cdk-mps.RosPipeline=com.aliyun.ros.cdk.mps.RosPipeline
+@alicloud/ros-cdk-mps.RosPipeline.NotifyConfigProperty=com.aliyun.ros.cdk.mps.RosPipeline$NotifyConfigProperty
+@alicloud/ros-cdk-mps.RosPipelineProps=com.aliyun.ros.cdk.mps.RosPipelineProps

@@ -35,6 +35,11 @@ export interface InvocationProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * Property sync: Whether to invoke synchronously.
+     */
+    readonly sync?: boolean | ros.IResolvable;
+
+    /**
      * Property timed: Whether it is timed execution. Default is False.
      */
     readonly timed?: boolean | ros.IResolvable;
@@ -56,6 +61,11 @@ export class Invocation extends ros.Resource {
     public readonly attrInvokeId: ros.IResolvable;
 
     /**
+     * Attribute InvokeInstances: The InvokeInstances of command.
+     */
+    public readonly attrInvokeInstances: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::ECS::Invocation`.
      *
      * Param scope - scope in which this resource is defined
@@ -70,9 +80,11 @@ export class Invocation extends ros.Resource {
             timed: props.timed,
             frequency: props.frequency,
             commandId: props.commandId,
+            sync: props.sync === undefined || props.sync === null ? false : props.sync,
             instanceIds: props.instanceIds,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInvocation;
         this.attrInvokeId = rosInvocation.attrInvokeId;
+        this.attrInvokeInstances = rosInvocation.attrInvokeInstances;
     }
 }

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
     {
         /// <summary>Property templateName: Template name.</summary>
         /// <remarks>
-        /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+        /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
         /// </remarks>
         [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object TemplateName
@@ -127,7 +127,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 
             /// <summary>Property templateName: Template name.</summary>
             /// <remarks>
-            /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+            /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
             /// </remarks>
             [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object TemplateName

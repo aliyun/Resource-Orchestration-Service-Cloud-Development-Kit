@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-imm.Project=com.aliyun.ros.cdk.imm.Project
+@alicloud/ros-cdk-imm.ProjectProps=com.aliyun.ros.cdk.imm.ProjectProps
+@alicloud/ros-cdk-imm.RosProject=com.aliyun.ros.cdk.imm.RosProject
+@alicloud/ros-cdk-imm.RosProjectProps=com.aliyun.ros.cdk.imm.RosProjectProps

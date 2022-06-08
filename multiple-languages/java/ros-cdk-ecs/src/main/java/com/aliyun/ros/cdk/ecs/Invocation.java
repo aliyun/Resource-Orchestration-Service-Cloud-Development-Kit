@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.783Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.685Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Invocation")
 public class Invocation extends com.aliyun.ros.cdk.core.Resource {
 
@@ -53,6 +53,13 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInvokeId() {
         return software.amazon.jsii.Kernel.get(this, "attrInvokeId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute InvokeInstances: The InvokeInstances of command.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInvokeInstances() {
+        return software.amazon.jsii.Kernel.get(this, "attrInvokeInstances", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -192,6 +199,27 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
             this.props.parameters(parameters);
+            return this;
+        }
+
+        /**
+         * Property sync: Whether to invoke synchronously.
+         * <p>
+         * @return {@code this}
+         * @param sync Property sync: Whether to invoke synchronously. This parameter is required.
+         */
+        public Builder sync(final java.lang.Boolean sync) {
+            this.props.sync(sync);
+            return this;
+        }
+        /**
+         * Property sync: Whether to invoke synchronously.
+         * <p>
+         * @return {@code this}
+         * @param sync Property sync: Whether to invoke synchronously. This parameter is required.
+         */
+        public Builder sync(final com.aliyun.ros.cdk.core.IResolvable sync) {
+            this.props.sync(sync);
             return this;
         }
 

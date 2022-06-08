@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.805Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocation")
 public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -46,6 +46,12 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInvokeId() {
         return software.amazon.jsii.Kernel.get(this, "attrInvokeId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInvokeInstances() {
+        return software.amazon.jsii.Kernel.get(this, "attrInvokeInstances", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -131,6 +137,24 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setParameters(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "parameters", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSync() {
+        return software.amazon.jsii.Kernel.get(this, "sync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSync(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "sync", value);
+    }
+
+    /**
+     */
+    public void setSync(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sync", value);
     }
 
     /**
@@ -242,6 +266,23 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
             this.props.parameters(parameters);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param sync This parameter is required.
+         */
+        public Builder sync(final java.lang.Boolean sync) {
+            this.props.sync(sync);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sync This parameter is required.
+         */
+        public Builder sync(final com.aliyun.ros.cdk.core.IResolvable sync) {
+            this.props.sync(sync);
             return this;
         }
 
