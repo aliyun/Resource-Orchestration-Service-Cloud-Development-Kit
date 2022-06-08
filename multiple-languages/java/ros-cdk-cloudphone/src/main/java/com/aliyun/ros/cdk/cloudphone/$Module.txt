@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-cloudphone.InstanceGroup=com.aliyun.ros.cdk.cloudphone.InstanceGroup
+@alicloud/ros-cdk-cloudphone.InstanceGroupProps=com.aliyun.ros.cdk.cloudphone.InstanceGroupProps
+@alicloud/ros-cdk-cloudphone.RosInstanceGroup=com.aliyun.ros.cdk.cloudphone.RosInstanceGroup
+@alicloud/ros-cdk-cloudphone.RosInstanceGroup.TagProperty=com.aliyun.ros.cdk.cloudphone.RosInstanceGroup$TagProperty
+@alicloud/ros-cdk-cloudphone.RosInstanceGroupProps=com.aliyun.ros.cdk.cloudphone.RosInstanceGroupProps

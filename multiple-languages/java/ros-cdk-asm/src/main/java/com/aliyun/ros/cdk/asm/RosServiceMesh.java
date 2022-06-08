@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.asm;
 /**
  * A ROS template type:  `ALIYUN::ASM::ServiceMesh`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.766Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.asm.$Module.class, fqn = "@alicloud/ros-cdk-asm.RosServiceMesh")
 public class RosServiceMesh extends com.aliyun.ros.cdk.core.RosResource {
 

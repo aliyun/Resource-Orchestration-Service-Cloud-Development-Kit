@@ -183,6 +183,11 @@ export interface ManagedKubernetesClusterProps {
     readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
+     * Property nodePools: The configurations of Node pools.
+     */
+    readonly nodePools?: Array<RosManagedKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
@@ -444,6 +449,7 @@ export class ManagedKubernetesCluster extends ros.Resource {
             vpcId: props.vpcId,
             numOfNodes: props.numOfNodes === undefined || props.numOfNodes === null ? 3 : props.numOfNodes,
             keepInstanceName: props.keepInstanceName,
+            nodePools: props.nodePools,
             chargeType: props.chargeType,
             encryptionProviderKey: props.encryptionProviderKey,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,

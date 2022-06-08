@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::Alert`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.680Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.460Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert")
 public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -98,15 +98,174 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.ConfigurationProperty")
-    @software.amazon.jsii.Jsii.Proxy(ConfigurationProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty")
+    @software.amazon.jsii.Jsii.Proxy(AnnotationsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface ConfigurationProperty extends software.amazon.jsii.JsiiSerializable {
+    public static interface AnnotationsProperty extends software.amazon.jsii.JsiiSerializable {
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getCondition();
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getValue();
+
+        /**
+         * @return a {@link Builder} of {@link AnnotationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AnnotationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AnnotationsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link AnnotationsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AnnotationsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AnnotationsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AnnotationsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AnnotationsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AnnotationsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AnnotationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AnnotationsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                data.set("value", om.valueToTree(this.getValue()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AnnotationsProperty.Jsii$Proxy that = (AnnotationsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value.equals(that.value);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.ConfigurationProperty")
+    @software.amazon.jsii.Jsii.Proxy(ConfigurationProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ConfigurationProperty extends software.amazon.jsii.JsiiSerializable {
 
         /**
          */
@@ -121,7 +280,65 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getThrottling();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAnnotations() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAutoAnnotation() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCondition() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getGroupConfiguration() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getJoinConfigurations() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLabels() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMuteUntil() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNoDataFire() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNoDataSeverity() {
+            return null;
+        }
 
         /**
          */
@@ -138,6 +355,55 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPolicyConfiguration() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSendResolved() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSeverityConfigurations() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getThreshold() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getThrottling() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link ConfigurationProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -149,34 +415,26 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigurationProperty> {
-            java.lang.Object condition;
             java.lang.Object dashboard;
             java.lang.Object queryList;
-            java.lang.Object throttling;
+            java.lang.Object annotations;
+            java.lang.Object autoAnnotation;
+            java.lang.Object condition;
+            java.lang.Object groupConfiguration;
+            java.lang.Object joinConfigurations;
+            java.lang.Object labels;
+            java.lang.Object muteUntil;
+            java.lang.Object noDataFire;
+            java.lang.Object noDataSeverity;
             java.lang.Object notificationList;
             java.lang.Object notifyThreshold;
-
-            /**
-             * Sets the value of {@link ConfigurationProperty#getCondition}
-             * @param condition the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder condition(java.lang.String condition) {
-                this.condition = condition;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ConfigurationProperty#getCondition}
-             * @param condition the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder condition(com.aliyun.ros.cdk.core.IResolvable condition) {
-                this.condition = condition;
-                return this;
-            }
+            java.lang.Object policyConfiguration;
+            java.lang.Object sendResolved;
+            java.lang.Object severityConfigurations;
+            java.lang.Object threshold;
+            java.lang.Object throttling;
+            java.lang.Object type;
+            java.lang.Object version;
 
             /**
              * Sets the value of {@link ConfigurationProperty#getDashboard}
@@ -223,24 +481,200 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link ConfigurationProperty#getThrottling}
-             * @param throttling the value to be set. This parameter is required.
+             * Sets the value of {@link ConfigurationProperty#getAnnotations}
+             * @param annotations the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder throttling(java.lang.String throttling) {
-                this.throttling = throttling;
+            public Builder annotations(com.aliyun.ros.cdk.core.IResolvable annotations) {
+                this.annotations = annotations;
                 return this;
             }
 
             /**
-             * Sets the value of {@link ConfigurationProperty#getThrottling}
-             * @param throttling the value to be set. This parameter is required.
+             * Sets the value of {@link ConfigurationProperty#getAnnotations}
+             * @param annotations the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder throttling(com.aliyun.ros.cdk.core.IResolvable throttling) {
-                this.throttling = throttling;
+            public Builder annotations(java.util.List<? extends java.lang.Object> annotations) {
+                this.annotations = annotations;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getAutoAnnotation}
+             * @param autoAnnotation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoAnnotation(java.lang.Boolean autoAnnotation) {
+                this.autoAnnotation = autoAnnotation;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getAutoAnnotation}
+             * @param autoAnnotation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoAnnotation(com.aliyun.ros.cdk.core.IResolvable autoAnnotation) {
+                this.autoAnnotation = autoAnnotation;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getCondition}
+             * @param condition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder condition(java.lang.String condition) {
+                this.condition = condition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getCondition}
+             * @param condition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder condition(com.aliyun.ros.cdk.core.IResolvable condition) {
+                this.condition = condition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getGroupConfiguration}
+             * @param groupConfiguration the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder groupConfiguration(com.aliyun.ros.cdk.core.IResolvable groupConfiguration) {
+                this.groupConfiguration = groupConfiguration;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getGroupConfiguration}
+             * @param groupConfiguration the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder groupConfiguration(com.aliyun.ros.cdk.sls.RosAlert.GroupConfigurationProperty groupConfiguration) {
+                this.groupConfiguration = groupConfiguration;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getJoinConfigurations}
+             * @param joinConfigurations the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder joinConfigurations(com.aliyun.ros.cdk.core.IResolvable joinConfigurations) {
+                this.joinConfigurations = joinConfigurations;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getJoinConfigurations}
+             * @param joinConfigurations the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder joinConfigurations(java.util.List<? extends java.lang.Object> joinConfigurations) {
+                this.joinConfigurations = joinConfigurations;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getLabels}
+             * @param labels the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder labels(com.aliyun.ros.cdk.core.IResolvable labels) {
+                this.labels = labels;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getLabels}
+             * @param labels the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder labels(java.util.List<? extends java.lang.Object> labels) {
+                this.labels = labels;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getMuteUntil}
+             * @param muteUntil the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder muteUntil(java.lang.Number muteUntil) {
+                this.muteUntil = muteUntil;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getMuteUntil}
+             * @param muteUntil the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder muteUntil(com.aliyun.ros.cdk.core.IResolvable muteUntil) {
+                this.muteUntil = muteUntil;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getNoDataFire}
+             * @param noDataFire the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder noDataFire(java.lang.Boolean noDataFire) {
+                this.noDataFire = noDataFire;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getNoDataFire}
+             * @param noDataFire the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder noDataFire(com.aliyun.ros.cdk.core.IResolvable noDataFire) {
+                this.noDataFire = noDataFire;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getNoDataSeverity}
+             * @param noDataSeverity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder noDataSeverity(java.lang.Number noDataSeverity) {
+                this.noDataSeverity = noDataSeverity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getNoDataSeverity}
+             * @param noDataSeverity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder noDataSeverity(com.aliyun.ros.cdk.core.IResolvable noDataSeverity) {
+                this.noDataSeverity = noDataSeverity;
                 return this;
             }
 
@@ -289,6 +723,160 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ConfigurationProperty#getPolicyConfiguration}
+             * @param policyConfiguration the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder policyConfiguration(com.aliyun.ros.cdk.core.IResolvable policyConfiguration) {
+                this.policyConfiguration = policyConfiguration;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getPolicyConfiguration}
+             * @param policyConfiguration the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder policyConfiguration(com.aliyun.ros.cdk.sls.RosAlert.PolicyConfigurationProperty policyConfiguration) {
+                this.policyConfiguration = policyConfiguration;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getSendResolved}
+             * @param sendResolved the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sendResolved(java.lang.Boolean sendResolved) {
+                this.sendResolved = sendResolved;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getSendResolved}
+             * @param sendResolved the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sendResolved(com.aliyun.ros.cdk.core.IResolvable sendResolved) {
+                this.sendResolved = sendResolved;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getSeverityConfigurations}
+             * @param severityConfigurations the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder severityConfigurations(com.aliyun.ros.cdk.core.IResolvable severityConfigurations) {
+                this.severityConfigurations = severityConfigurations;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getSeverityConfigurations}
+             * @param severityConfigurations the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder severityConfigurations(java.util.List<? extends java.lang.Object> severityConfigurations) {
+                this.severityConfigurations = severityConfigurations;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getThreshold}
+             * @param threshold the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threshold(java.lang.Number threshold) {
+                this.threshold = threshold;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getThreshold}
+             * @param threshold the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threshold(com.aliyun.ros.cdk.core.IResolvable threshold) {
+                this.threshold = threshold;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getThrottling}
+             * @param throttling the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder throttling(java.lang.String throttling) {
+                this.throttling = throttling;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getThrottling}
+             * @param throttling the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder throttling(com.aliyun.ros.cdk.core.IResolvable throttling) {
+                this.throttling = throttling;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(java.lang.String version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigurationProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(com.aliyun.ros.cdk.core.IResolvable version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link ConfigurationProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -306,12 +894,26 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConfigurationProperty {
-            private final java.lang.Object condition;
             private final java.lang.Object dashboard;
             private final java.lang.Object queryList;
-            private final java.lang.Object throttling;
+            private final java.lang.Object annotations;
+            private final java.lang.Object autoAnnotation;
+            private final java.lang.Object condition;
+            private final java.lang.Object groupConfiguration;
+            private final java.lang.Object joinConfigurations;
+            private final java.lang.Object labels;
+            private final java.lang.Object muteUntil;
+            private final java.lang.Object noDataFire;
+            private final java.lang.Object noDataSeverity;
             private final java.lang.Object notificationList;
             private final java.lang.Object notifyThreshold;
+            private final java.lang.Object policyConfiguration;
+            private final java.lang.Object sendResolved;
+            private final java.lang.Object severityConfigurations;
+            private final java.lang.Object threshold;
+            private final java.lang.Object throttling;
+            private final java.lang.Object type;
+            private final java.lang.Object version;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -319,12 +921,26 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.dashboard = software.amazon.jsii.Kernel.get(this, "dashboard", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.queryList = software.amazon.jsii.Kernel.get(this, "queryList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.throttling = software.amazon.jsii.Kernel.get(this, "throttling", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.annotations = software.amazon.jsii.Kernel.get(this, "annotations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.autoAnnotation = software.amazon.jsii.Kernel.get(this, "autoAnnotation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.groupConfiguration = software.amazon.jsii.Kernel.get(this, "groupConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.joinConfigurations = software.amazon.jsii.Kernel.get(this, "joinConfigurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.labels = software.amazon.jsii.Kernel.get(this, "labels", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.muteUntil = software.amazon.jsii.Kernel.get(this, "muteUntil", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.noDataFire = software.amazon.jsii.Kernel.get(this, "noDataFire", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.noDataSeverity = software.amazon.jsii.Kernel.get(this, "noDataSeverity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.notificationList = software.amazon.jsii.Kernel.get(this, "notificationList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.notifyThreshold = software.amazon.jsii.Kernel.get(this, "notifyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.policyConfiguration = software.amazon.jsii.Kernel.get(this, "policyConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sendResolved = software.amazon.jsii.Kernel.get(this, "sendResolved", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.severityConfigurations = software.amazon.jsii.Kernel.get(this, "severityConfigurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.throttling = software.amazon.jsii.Kernel.get(this, "throttling", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -332,17 +948,26 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.condition = java.util.Objects.requireNonNull(builder.condition, "condition is required");
                 this.dashboard = java.util.Objects.requireNonNull(builder.dashboard, "dashboard is required");
                 this.queryList = java.util.Objects.requireNonNull(builder.queryList, "queryList is required");
-                this.throttling = java.util.Objects.requireNonNull(builder.throttling, "throttling is required");
+                this.annotations = builder.annotations;
+                this.autoAnnotation = builder.autoAnnotation;
+                this.condition = builder.condition;
+                this.groupConfiguration = builder.groupConfiguration;
+                this.joinConfigurations = builder.joinConfigurations;
+                this.labels = builder.labels;
+                this.muteUntil = builder.muteUntil;
+                this.noDataFire = builder.noDataFire;
+                this.noDataSeverity = builder.noDataSeverity;
                 this.notificationList = builder.notificationList;
                 this.notifyThreshold = builder.notifyThreshold;
-            }
-
-            @Override
-            public final java.lang.Object getCondition() {
-                return this.condition;
+                this.policyConfiguration = builder.policyConfiguration;
+                this.sendResolved = builder.sendResolved;
+                this.severityConfigurations = builder.severityConfigurations;
+                this.threshold = builder.threshold;
+                this.throttling = builder.throttling;
+                this.type = builder.type;
+                this.version = builder.version;
             }
 
             @Override
@@ -356,8 +981,48 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getThrottling() {
-                return this.throttling;
+            public final java.lang.Object getAnnotations() {
+                return this.annotations;
+            }
+
+            @Override
+            public final java.lang.Object getAutoAnnotation() {
+                return this.autoAnnotation;
+            }
+
+            @Override
+            public final java.lang.Object getCondition() {
+                return this.condition;
+            }
+
+            @Override
+            public final java.lang.Object getGroupConfiguration() {
+                return this.groupConfiguration;
+            }
+
+            @Override
+            public final java.lang.Object getJoinConfigurations() {
+                return this.joinConfigurations;
+            }
+
+            @Override
+            public final java.lang.Object getLabels() {
+                return this.labels;
+            }
+
+            @Override
+            public final java.lang.Object getMuteUntil() {
+                return this.muteUntil;
+            }
+
+            @Override
+            public final java.lang.Object getNoDataFire() {
+                return this.noDataFire;
+            }
+
+            @Override
+            public final java.lang.Object getNoDataSeverity() {
+                return this.noDataSeverity;
             }
 
             @Override
@@ -371,20 +1036,101 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getPolicyConfiguration() {
+                return this.policyConfiguration;
+            }
+
+            @Override
+            public final java.lang.Object getSendResolved() {
+                return this.sendResolved;
+            }
+
+            @Override
+            public final java.lang.Object getSeverityConfigurations() {
+                return this.severityConfigurations;
+            }
+
+            @Override
+            public final java.lang.Object getThreshold() {
+                return this.threshold;
+            }
+
+            @Override
+            public final java.lang.Object getThrottling() {
+                return this.throttling;
+            }
+
+            @Override
+            public final java.lang.Object getType() {
+                return this.type;
+            }
+
+            @Override
+            public final java.lang.Object getVersion() {
+                return this.version;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("condition", om.valueToTree(this.getCondition()));
                 data.set("dashboard", om.valueToTree(this.getDashboard()));
                 data.set("queryList", om.valueToTree(this.getQueryList()));
-                data.set("throttling", om.valueToTree(this.getThrottling()));
+                if (this.getAnnotations() != null) {
+                    data.set("annotations", om.valueToTree(this.getAnnotations()));
+                }
+                if (this.getAutoAnnotation() != null) {
+                    data.set("autoAnnotation", om.valueToTree(this.getAutoAnnotation()));
+                }
+                if (this.getCondition() != null) {
+                    data.set("condition", om.valueToTree(this.getCondition()));
+                }
+                if (this.getGroupConfiguration() != null) {
+                    data.set("groupConfiguration", om.valueToTree(this.getGroupConfiguration()));
+                }
+                if (this.getJoinConfigurations() != null) {
+                    data.set("joinConfigurations", om.valueToTree(this.getJoinConfigurations()));
+                }
+                if (this.getLabels() != null) {
+                    data.set("labels", om.valueToTree(this.getLabels()));
+                }
+                if (this.getMuteUntil() != null) {
+                    data.set("muteUntil", om.valueToTree(this.getMuteUntil()));
+                }
+                if (this.getNoDataFire() != null) {
+                    data.set("noDataFire", om.valueToTree(this.getNoDataFire()));
+                }
+                if (this.getNoDataSeverity() != null) {
+                    data.set("noDataSeverity", om.valueToTree(this.getNoDataSeverity()));
+                }
                 if (this.getNotificationList() != null) {
                     data.set("notificationList", om.valueToTree(this.getNotificationList()));
                 }
                 if (this.getNotifyThreshold() != null) {
                     data.set("notifyThreshold", om.valueToTree(this.getNotifyThreshold()));
+                }
+                if (this.getPolicyConfiguration() != null) {
+                    data.set("policyConfiguration", om.valueToTree(this.getPolicyConfiguration()));
+                }
+                if (this.getSendResolved() != null) {
+                    data.set("sendResolved", om.valueToTree(this.getSendResolved()));
+                }
+                if (this.getSeverityConfigurations() != null) {
+                    data.set("severityConfigurations", om.valueToTree(this.getSeverityConfigurations()));
+                }
+                if (this.getThreshold() != null) {
+                    data.set("threshold", om.valueToTree(this.getThreshold()));
+                }
+                if (this.getThrottling() != null) {
+                    data.set("throttling", om.valueToTree(this.getThrottling()));
+                }
+                if (this.getType() != null) {
+                    data.set("type", om.valueToTree(this.getType()));
+                }
+                if (this.getVersion() != null) {
+                    data.set("version", om.valueToTree(this.getVersion()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -404,22 +1150,50 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
 
                 ConfigurationProperty.Jsii$Proxy that = (ConfigurationProperty.Jsii$Proxy) o;
 
-                if (!condition.equals(that.condition)) return false;
                 if (!dashboard.equals(that.dashboard)) return false;
                 if (!queryList.equals(that.queryList)) return false;
-                if (!throttling.equals(that.throttling)) return false;
+                if (this.annotations != null ? !this.annotations.equals(that.annotations) : that.annotations != null) return false;
+                if (this.autoAnnotation != null ? !this.autoAnnotation.equals(that.autoAnnotation) : that.autoAnnotation != null) return false;
+                if (this.condition != null ? !this.condition.equals(that.condition) : that.condition != null) return false;
+                if (this.groupConfiguration != null ? !this.groupConfiguration.equals(that.groupConfiguration) : that.groupConfiguration != null) return false;
+                if (this.joinConfigurations != null ? !this.joinConfigurations.equals(that.joinConfigurations) : that.joinConfigurations != null) return false;
+                if (this.labels != null ? !this.labels.equals(that.labels) : that.labels != null) return false;
+                if (this.muteUntil != null ? !this.muteUntil.equals(that.muteUntil) : that.muteUntil != null) return false;
+                if (this.noDataFire != null ? !this.noDataFire.equals(that.noDataFire) : that.noDataFire != null) return false;
+                if (this.noDataSeverity != null ? !this.noDataSeverity.equals(that.noDataSeverity) : that.noDataSeverity != null) return false;
                 if (this.notificationList != null ? !this.notificationList.equals(that.notificationList) : that.notificationList != null) return false;
-                return this.notifyThreshold != null ? this.notifyThreshold.equals(that.notifyThreshold) : that.notifyThreshold == null;
+                if (this.notifyThreshold != null ? !this.notifyThreshold.equals(that.notifyThreshold) : that.notifyThreshold != null) return false;
+                if (this.policyConfiguration != null ? !this.policyConfiguration.equals(that.policyConfiguration) : that.policyConfiguration != null) return false;
+                if (this.sendResolved != null ? !this.sendResolved.equals(that.sendResolved) : that.sendResolved != null) return false;
+                if (this.severityConfigurations != null ? !this.severityConfigurations.equals(that.severityConfigurations) : that.severityConfigurations != null) return false;
+                if (this.threshold != null ? !this.threshold.equals(that.threshold) : that.threshold != null) return false;
+                if (this.throttling != null ? !this.throttling.equals(that.throttling) : that.throttling != null) return false;
+                if (this.type != null ? !this.type.equals(that.type) : that.type != null) return false;
+                return this.version != null ? this.version.equals(that.version) : that.version == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.condition.hashCode();
-                result = 31 * result + (this.dashboard.hashCode());
+                int result = this.dashboard.hashCode();
                 result = 31 * result + (this.queryList.hashCode());
-                result = 31 * result + (this.throttling.hashCode());
+                result = 31 * result + (this.annotations != null ? this.annotations.hashCode() : 0);
+                result = 31 * result + (this.autoAnnotation != null ? this.autoAnnotation.hashCode() : 0);
+                result = 31 * result + (this.condition != null ? this.condition.hashCode() : 0);
+                result = 31 * result + (this.groupConfiguration != null ? this.groupConfiguration.hashCode() : 0);
+                result = 31 * result + (this.joinConfigurations != null ? this.joinConfigurations.hashCode() : 0);
+                result = 31 * result + (this.labels != null ? this.labels.hashCode() : 0);
+                result = 31 * result + (this.muteUntil != null ? this.muteUntil.hashCode() : 0);
+                result = 31 * result + (this.noDataFire != null ? this.noDataFire.hashCode() : 0);
+                result = 31 * result + (this.noDataSeverity != null ? this.noDataSeverity.hashCode() : 0);
                 result = 31 * result + (this.notificationList != null ? this.notificationList.hashCode() : 0);
                 result = 31 * result + (this.notifyThreshold != null ? this.notifyThreshold.hashCode() : 0);
+                result = 31 * result + (this.policyConfiguration != null ? this.policyConfiguration.hashCode() : 0);
+                result = 31 * result + (this.sendResolved != null ? this.sendResolved.hashCode() : 0);
+                result = 31 * result + (this.severityConfigurations != null ? this.severityConfigurations.hashCode() : 0);
+                result = 31 * result + (this.threshold != null ? this.threshold.hashCode() : 0);
+                result = 31 * result + (this.throttling != null ? this.throttling.hashCode() : 0);
+                result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
+                result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
                 return result;
             }
         }
@@ -797,6 +1571,678 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.EvalConditionProperty")
+    @software.amazon.jsii.Jsii.Proxy(EvalConditionProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface EvalConditionProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCondition() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCountCondition() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link EvalConditionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link EvalConditionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<EvalConditionProperty> {
+            java.lang.Object condition;
+            java.lang.Object countCondition;
+
+            /**
+             * Sets the value of {@link EvalConditionProperty#getCondition}
+             * @param condition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder condition(java.lang.String condition) {
+                this.condition = condition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EvalConditionProperty#getCondition}
+             * @param condition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder condition(com.aliyun.ros.cdk.core.IResolvable condition) {
+                this.condition = condition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EvalConditionProperty#getCountCondition}
+             * @param countCondition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder countCondition(java.lang.String countCondition) {
+                this.countCondition = countCondition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EvalConditionProperty#getCountCondition}
+             * @param countCondition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder countCondition(com.aliyun.ros.cdk.core.IResolvable countCondition) {
+                this.countCondition = countCondition;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link EvalConditionProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public EvalConditionProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link EvalConditionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EvalConditionProperty {
+            private final java.lang.Object condition;
+            private final java.lang.Object countCondition;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.countCondition = software.amazon.jsii.Kernel.get(this, "countCondition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.condition = builder.condition;
+                this.countCondition = builder.countCondition;
+            }
+
+            @Override
+            public final java.lang.Object getCondition() {
+                return this.condition;
+            }
+
+            @Override
+            public final java.lang.Object getCountCondition() {
+                return this.countCondition;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getCondition() != null) {
+                    data.set("condition", om.valueToTree(this.getCondition()));
+                }
+                if (this.getCountCondition() != null) {
+                    data.set("countCondition", om.valueToTree(this.getCountCondition()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosAlert.EvalConditionProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                EvalConditionProperty.Jsii$Proxy that = (EvalConditionProperty.Jsii$Proxy) o;
+
+                if (this.condition != null ? !this.condition.equals(that.condition) : that.condition != null) return false;
+                return this.countCondition != null ? this.countCondition.equals(that.countCondition) : that.countCondition == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.condition != null ? this.condition.hashCode() : 0;
+                result = 31 * result + (this.countCondition != null ? this.countCondition.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.GroupConfigurationProperty")
+    @software.amazon.jsii.Jsii.Proxy(GroupConfigurationProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface GroupConfigurationProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getType();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFields() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link GroupConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link GroupConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<GroupConfigurationProperty> {
+            java.lang.Object type;
+            java.lang.Object fields;
+
+            /**
+             * Sets the value of {@link GroupConfigurationProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GroupConfigurationProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GroupConfigurationProperty#getFields}
+             * @param fields the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fields(com.aliyun.ros.cdk.core.IResolvable fields) {
+                this.fields = fields;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GroupConfigurationProperty#getFields}
+             * @param fields the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fields(java.util.List<? extends java.lang.Object> fields) {
+                this.fields = fields;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link GroupConfigurationProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public GroupConfigurationProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link GroupConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GroupConfigurationProperty {
+            private final java.lang.Object type;
+            private final java.lang.Object fields;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.fields = software.amazon.jsii.Kernel.get(this, "fields", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.fields = builder.fields;
+            }
+
+            @Override
+            public final java.lang.Object getType() {
+                return this.type;
+            }
+
+            @Override
+            public final java.lang.Object getFields() {
+                return this.fields;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("type", om.valueToTree(this.getType()));
+                if (this.getFields() != null) {
+                    data.set("fields", om.valueToTree(this.getFields()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosAlert.GroupConfigurationProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                GroupConfigurationProperty.Jsii$Proxy that = (GroupConfigurationProperty.Jsii$Proxy) o;
+
+                if (!type.equals(that.type)) return false;
+                return this.fields != null ? this.fields.equals(that.fields) : that.fields == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.type.hashCode();
+                result = 31 * result + (this.fields != null ? this.fields.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.JoinConfigurationsProperty")
+    @software.amazon.jsii.Jsii.Proxy(JoinConfigurationsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface JoinConfigurationsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getType();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCondition() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link JoinConfigurationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link JoinConfigurationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<JoinConfigurationsProperty> {
+            java.lang.Object type;
+            java.lang.Object condition;
+
+            /**
+             * Sets the value of {@link JoinConfigurationsProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link JoinConfigurationsProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link JoinConfigurationsProperty#getCondition}
+             * @param condition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder condition(java.lang.String condition) {
+                this.condition = condition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link JoinConfigurationsProperty#getCondition}
+             * @param condition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder condition(com.aliyun.ros.cdk.core.IResolvable condition) {
+                this.condition = condition;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link JoinConfigurationsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public JoinConfigurationsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link JoinConfigurationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements JoinConfigurationsProperty {
+            private final java.lang.Object type;
+            private final java.lang.Object condition;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.condition = builder.condition;
+            }
+
+            @Override
+            public final java.lang.Object getType() {
+                return this.type;
+            }
+
+            @Override
+            public final java.lang.Object getCondition() {
+                return this.condition;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("type", om.valueToTree(this.getType()));
+                if (this.getCondition() != null) {
+                    data.set("condition", om.valueToTree(this.getCondition()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosAlert.JoinConfigurationsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                JoinConfigurationsProperty.Jsii$Proxy that = (JoinConfigurationsProperty.Jsii$Proxy) o;
+
+                if (!type.equals(that.type)) return false;
+                return this.condition != null ? this.condition.equals(that.condition) : that.condition == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.type.hashCode();
+                result = 31 * result + (this.condition != null ? this.condition.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.LabelsProperty")
+    @software.amazon.jsii.Jsii.Proxy(LabelsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface LabelsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getValue();
+
+        /**
+         * @return a {@link Builder} of {@link LabelsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link LabelsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<LabelsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link LabelsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LabelsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LabelsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LabelsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link LabelsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public LabelsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link LabelsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LabelsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                data.set("value", om.valueToTree(this.getValue()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosAlert.LabelsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                LabelsProperty.Jsii$Proxy that = (LabelsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value.equals(that.value);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.NotificationListProperty")
     @software.amazon.jsii.Jsii.Proxy(NotificationListProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -818,6 +2264,20 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getEmailList() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHeaders() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMethod() {
             return null;
         }
 
@@ -850,6 +2310,8 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object type;
             java.lang.Object content;
             java.lang.Object emailList;
+            java.lang.Object headers;
+            java.lang.Object method;
             java.lang.Object mobileList;
             java.lang.Object serviceUri;
 
@@ -920,6 +2382,50 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link NotificationListProperty#getHeaders}
+             * @param headers the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder headers(com.aliyun.ros.cdk.core.IResolvable headers) {
+                this.headers = headers;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NotificationListProperty#getHeaders}
+             * @param headers the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder headers(java.util.Map<java.lang.String, ? extends java.lang.Object> headers) {
+                this.headers = headers;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NotificationListProperty#getMethod}
+             * @param method the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder method(java.lang.String method) {
+                this.method = method;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NotificationListProperty#getMethod}
+             * @param method the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder method(com.aliyun.ros.cdk.core.IResolvable method) {
+                this.method = method;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link NotificationListProperty#getMobileList}
              * @param mobileList the value to be set.
              * @return {@code this}
@@ -984,6 +2490,8 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object type;
             private final java.lang.Object content;
             private final java.lang.Object emailList;
+            private final java.lang.Object headers;
+            private final java.lang.Object method;
             private final java.lang.Object mobileList;
             private final java.lang.Object serviceUri;
 
@@ -996,6 +2504,8 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
                 this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.content = software.amazon.jsii.Kernel.get(this, "content", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.emailList = software.amazon.jsii.Kernel.get(this, "emailList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.headers = software.amazon.jsii.Kernel.get(this, "headers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.method = software.amazon.jsii.Kernel.get(this, "method", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.mobileList = software.amazon.jsii.Kernel.get(this, "mobileList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.serviceUri = software.amazon.jsii.Kernel.get(this, "serviceUri", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -1008,6 +2518,8 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
                 this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
                 this.content = builder.content;
                 this.emailList = builder.emailList;
+                this.headers = builder.headers;
+                this.method = builder.method;
                 this.mobileList = builder.mobileList;
                 this.serviceUri = builder.serviceUri;
             }
@@ -1025,6 +2537,16 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getEmailList() {
                 return this.emailList;
+            }
+
+            @Override
+            public final java.lang.Object getHeaders() {
+                return this.headers;
+            }
+
+            @Override
+            public final java.lang.Object getMethod() {
+                return this.method;
             }
 
             @Override
@@ -1049,6 +2571,12 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getEmailList() != null) {
                     data.set("emailList", om.valueToTree(this.getEmailList()));
+                }
+                if (this.getHeaders() != null) {
+                    data.set("headers", om.valueToTree(this.getHeaders()));
+                }
+                if (this.getMethod() != null) {
+                    data.set("method", om.valueToTree(this.getMethod()));
                 }
                 if (this.getMobileList() != null) {
                     data.set("mobileList", om.valueToTree(this.getMobileList()));
@@ -1077,6 +2605,8 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
                 if (!type.equals(that.type)) return false;
                 if (this.content != null ? !this.content.equals(that.content) : that.content != null) return false;
                 if (this.emailList != null ? !this.emailList.equals(that.emailList) : that.emailList != null) return false;
+                if (this.headers != null ? !this.headers.equals(that.headers) : that.headers != null) return false;
+                if (this.method != null ? !this.method.equals(that.method) : that.method != null) return false;
                 if (this.mobileList != null ? !this.mobileList.equals(that.mobileList) : that.mobileList != null) return false;
                 return this.serviceUri != null ? this.serviceUri.equals(that.serviceUri) : that.serviceUri == null;
             }
@@ -1086,8 +2616,268 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.type.hashCode();
                 result = 31 * result + (this.content != null ? this.content.hashCode() : 0);
                 result = 31 * result + (this.emailList != null ? this.emailList.hashCode() : 0);
+                result = 31 * result + (this.headers != null ? this.headers.hashCode() : 0);
+                result = 31 * result + (this.method != null ? this.method.hashCode() : 0);
                 result = 31 * result + (this.mobileList != null ? this.mobileList.hashCode() : 0);
                 result = 31 * result + (this.serviceUri != null ? this.serviceUri.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.PolicyConfigurationProperty")
+    @software.amazon.jsii.Jsii.Proxy(PolicyConfigurationProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PolicyConfigurationProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getActionPolicyId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAlertPolicyId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRepeatInterval() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getUseDefault() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link PolicyConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PolicyConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PolicyConfigurationProperty> {
+            java.lang.Object actionPolicyId;
+            java.lang.Object alertPolicyId;
+            java.lang.Object repeatInterval;
+            java.lang.Object useDefault;
+
+            /**
+             * Sets the value of {@link PolicyConfigurationProperty#getActionPolicyId}
+             * @param actionPolicyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder actionPolicyId(java.lang.String actionPolicyId) {
+                this.actionPolicyId = actionPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyConfigurationProperty#getActionPolicyId}
+             * @param actionPolicyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder actionPolicyId(com.aliyun.ros.cdk.core.IResolvable actionPolicyId) {
+                this.actionPolicyId = actionPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyConfigurationProperty#getAlertPolicyId}
+             * @param alertPolicyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder alertPolicyId(java.lang.String alertPolicyId) {
+                this.alertPolicyId = alertPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyConfigurationProperty#getAlertPolicyId}
+             * @param alertPolicyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder alertPolicyId(com.aliyun.ros.cdk.core.IResolvable alertPolicyId) {
+                this.alertPolicyId = alertPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyConfigurationProperty#getRepeatInterval}
+             * @param repeatInterval the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder repeatInterval(java.lang.String repeatInterval) {
+                this.repeatInterval = repeatInterval;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyConfigurationProperty#getRepeatInterval}
+             * @param repeatInterval the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder repeatInterval(com.aliyun.ros.cdk.core.IResolvable repeatInterval) {
+                this.repeatInterval = repeatInterval;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyConfigurationProperty#getUseDefault}
+             * @param useDefault the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder useDefault(java.lang.Boolean useDefault) {
+                this.useDefault = useDefault;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyConfigurationProperty#getUseDefault}
+             * @param useDefault the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder useDefault(com.aliyun.ros.cdk.core.IResolvable useDefault) {
+                this.useDefault = useDefault;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PolicyConfigurationProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PolicyConfigurationProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PolicyConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PolicyConfigurationProperty {
+            private final java.lang.Object actionPolicyId;
+            private final java.lang.Object alertPolicyId;
+            private final java.lang.Object repeatInterval;
+            private final java.lang.Object useDefault;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.actionPolicyId = software.amazon.jsii.Kernel.get(this, "actionPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.alertPolicyId = software.amazon.jsii.Kernel.get(this, "alertPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.repeatInterval = software.amazon.jsii.Kernel.get(this, "repeatInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.useDefault = software.amazon.jsii.Kernel.get(this, "useDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.actionPolicyId = builder.actionPolicyId;
+                this.alertPolicyId = builder.alertPolicyId;
+                this.repeatInterval = builder.repeatInterval;
+                this.useDefault = builder.useDefault;
+            }
+
+            @Override
+            public final java.lang.Object getActionPolicyId() {
+                return this.actionPolicyId;
+            }
+
+            @Override
+            public final java.lang.Object getAlertPolicyId() {
+                return this.alertPolicyId;
+            }
+
+            @Override
+            public final java.lang.Object getRepeatInterval() {
+                return this.repeatInterval;
+            }
+
+            @Override
+            public final java.lang.Object getUseDefault() {
+                return this.useDefault;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getActionPolicyId() != null) {
+                    data.set("actionPolicyId", om.valueToTree(this.getActionPolicyId()));
+                }
+                if (this.getAlertPolicyId() != null) {
+                    data.set("alertPolicyId", om.valueToTree(this.getAlertPolicyId()));
+                }
+                if (this.getRepeatInterval() != null) {
+                    data.set("repeatInterval", om.valueToTree(this.getRepeatInterval()));
+                }
+                if (this.getUseDefault() != null) {
+                    data.set("useDefault", om.valueToTree(this.getUseDefault()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosAlert.PolicyConfigurationProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PolicyConfigurationProperty.Jsii$Proxy that = (PolicyConfigurationProperty.Jsii$Proxy) o;
+
+                if (this.actionPolicyId != null ? !this.actionPolicyId.equals(that.actionPolicyId) : that.actionPolicyId != null) return false;
+                if (this.alertPolicyId != null ? !this.alertPolicyId.equals(that.alertPolicyId) : that.alertPolicyId != null) return false;
+                if (this.repeatInterval != null ? !this.repeatInterval.equals(that.repeatInterval) : that.repeatInterval != null) return false;
+                return this.useDefault != null ? this.useDefault.equals(that.useDefault) : that.useDefault == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.actionPolicyId != null ? this.actionPolicyId.hashCode() : 0;
+                result = 31 * result + (this.alertPolicyId != null ? this.alertPolicyId.hashCode() : 0);
+                result = 31 * result + (this.repeatInterval != null ? this.repeatInterval.hashCode() : 0);
+                result = 31 * result + (this.useDefault != null ? this.useDefault.hashCode() : 0);
                 return result;
             }
         }
@@ -1102,17 +2892,7 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getChartTitle();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @org.jetbrains.annotations.NotNull java.lang.Object getEnd();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getLogStore();
 
         /**
          */
@@ -1130,6 +2910,69 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
         @org.jetbrains.annotations.NotNull java.lang.Object getTimeSpanType();
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getChartTitle() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDashboardId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLogStore() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPowerSqlMode() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProject() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRegion() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRoleArn() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStore() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStoreType() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link QueryListProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1141,34 +2984,19 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<QueryListProperty> {
-            java.lang.Object chartTitle;
             java.lang.Object end;
-            java.lang.Object logStore;
             java.lang.Object query;
             java.lang.Object start;
             java.lang.Object timeSpanType;
-
-            /**
-             * Sets the value of {@link QueryListProperty#getChartTitle}
-             * @param chartTitle the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder chartTitle(java.lang.String chartTitle) {
-                this.chartTitle = chartTitle;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link QueryListProperty#getChartTitle}
-             * @param chartTitle the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder chartTitle(com.aliyun.ros.cdk.core.IResolvable chartTitle) {
-                this.chartTitle = chartTitle;
-                return this;
-            }
+            java.lang.Object chartTitle;
+            java.lang.Object dashboardId;
+            java.lang.Object logStore;
+            java.lang.Object powerSqlMode;
+            java.lang.Object project;
+            java.lang.Object region;
+            java.lang.Object roleArn;
+            java.lang.Object store;
+            java.lang.Object storeType;
 
             /**
              * Sets the value of {@link QueryListProperty#getEnd}
@@ -1189,28 +3017,6 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder end(com.aliyun.ros.cdk.core.IResolvable end) {
                 this.end = end;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link QueryListProperty#getLogStore}
-             * @param logStore the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder logStore(java.lang.String logStore) {
-                this.logStore = logStore;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link QueryListProperty#getLogStore}
-             * @param logStore the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder logStore(com.aliyun.ros.cdk.core.IResolvable logStore) {
-                this.logStore = logStore;
                 return this;
             }
 
@@ -1281,6 +3087,204 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link QueryListProperty#getChartTitle}
+             * @param chartTitle the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder chartTitle(java.lang.String chartTitle) {
+                this.chartTitle = chartTitle;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getChartTitle}
+             * @param chartTitle the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder chartTitle(com.aliyun.ros.cdk.core.IResolvable chartTitle) {
+                this.chartTitle = chartTitle;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getDashboardId}
+             * @param dashboardId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dashboardId(java.lang.String dashboardId) {
+                this.dashboardId = dashboardId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getDashboardId}
+             * @param dashboardId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dashboardId(com.aliyun.ros.cdk.core.IResolvable dashboardId) {
+                this.dashboardId = dashboardId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getLogStore}
+             * @param logStore the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logStore(java.lang.String logStore) {
+                this.logStore = logStore;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getLogStore}
+             * @param logStore the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logStore(com.aliyun.ros.cdk.core.IResolvable logStore) {
+                this.logStore = logStore;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getPowerSqlMode}
+             * @param powerSqlMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder powerSqlMode(java.lang.String powerSqlMode) {
+                this.powerSqlMode = powerSqlMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getPowerSqlMode}
+             * @param powerSqlMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder powerSqlMode(com.aliyun.ros.cdk.core.IResolvable powerSqlMode) {
+                this.powerSqlMode = powerSqlMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getProject}
+             * @param project the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder project(java.lang.String project) {
+                this.project = project;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getProject}
+             * @param project the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder project(com.aliyun.ros.cdk.core.IResolvable project) {
+                this.project = project;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getRegion}
+             * @param region the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(java.lang.String region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getRegion}
+             * @param region the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getRoleArn}
+             * @param roleArn the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder roleArn(java.lang.String roleArn) {
+                this.roleArn = roleArn;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getRoleArn}
+             * @param roleArn the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder roleArn(com.aliyun.ros.cdk.core.IResolvable roleArn) {
+                this.roleArn = roleArn;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getStore}
+             * @param store the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder store(java.lang.String store) {
+                this.store = store;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getStore}
+             * @param store the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder store(com.aliyun.ros.cdk.core.IResolvable store) {
+                this.store = store;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getStoreType}
+             * @param storeType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storeType(java.lang.String storeType) {
+                this.storeType = storeType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link QueryListProperty#getStoreType}
+             * @param storeType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storeType(com.aliyun.ros.cdk.core.IResolvable storeType) {
+                this.storeType = storeType;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link QueryListProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1298,12 +3302,19 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements QueryListProperty {
-            private final java.lang.Object chartTitle;
             private final java.lang.Object end;
-            private final java.lang.Object logStore;
             private final java.lang.Object query;
             private final java.lang.Object start;
             private final java.lang.Object timeSpanType;
+            private final java.lang.Object chartTitle;
+            private final java.lang.Object dashboardId;
+            private final java.lang.Object logStore;
+            private final java.lang.Object powerSqlMode;
+            private final java.lang.Object project;
+            private final java.lang.Object region;
+            private final java.lang.Object roleArn;
+            private final java.lang.Object store;
+            private final java.lang.Object storeType;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1311,12 +3322,19 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.chartTitle = software.amazon.jsii.Kernel.get(this, "chartTitle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.end = software.amazon.jsii.Kernel.get(this, "end", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.logStore = software.amazon.jsii.Kernel.get(this, "logStore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.query = software.amazon.jsii.Kernel.get(this, "query", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.start = software.amazon.jsii.Kernel.get(this, "start", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.timeSpanType = software.amazon.jsii.Kernel.get(this, "timeSpanType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.chartTitle = software.amazon.jsii.Kernel.get(this, "chartTitle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dashboardId = software.amazon.jsii.Kernel.get(this, "dashboardId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.logStore = software.amazon.jsii.Kernel.get(this, "logStore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.powerSqlMode = software.amazon.jsii.Kernel.get(this, "powerSqlMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.roleArn = software.amazon.jsii.Kernel.get(this, "roleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.store = software.amazon.jsii.Kernel.get(this, "store", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.storeType = software.amazon.jsii.Kernel.get(this, "storeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1324,27 +3342,24 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.chartTitle = java.util.Objects.requireNonNull(builder.chartTitle, "chartTitle is required");
                 this.end = java.util.Objects.requireNonNull(builder.end, "end is required");
-                this.logStore = java.util.Objects.requireNonNull(builder.logStore, "logStore is required");
                 this.query = java.util.Objects.requireNonNull(builder.query, "query is required");
                 this.start = java.util.Objects.requireNonNull(builder.start, "start is required");
                 this.timeSpanType = java.util.Objects.requireNonNull(builder.timeSpanType, "timeSpanType is required");
-            }
-
-            @Override
-            public final java.lang.Object getChartTitle() {
-                return this.chartTitle;
+                this.chartTitle = builder.chartTitle;
+                this.dashboardId = builder.dashboardId;
+                this.logStore = builder.logStore;
+                this.powerSqlMode = builder.powerSqlMode;
+                this.project = builder.project;
+                this.region = builder.region;
+                this.roleArn = builder.roleArn;
+                this.store = builder.store;
+                this.storeType = builder.storeType;
             }
 
             @Override
             public final java.lang.Object getEnd() {
                 return this.end;
-            }
-
-            @Override
-            public final java.lang.Object getLogStore() {
-                return this.logStore;
             }
 
             @Override
@@ -1363,17 +3378,87 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getChartTitle() {
+                return this.chartTitle;
+            }
+
+            @Override
+            public final java.lang.Object getDashboardId() {
+                return this.dashboardId;
+            }
+
+            @Override
+            public final java.lang.Object getLogStore() {
+                return this.logStore;
+            }
+
+            @Override
+            public final java.lang.Object getPowerSqlMode() {
+                return this.powerSqlMode;
+            }
+
+            @Override
+            public final java.lang.Object getProject() {
+                return this.project;
+            }
+
+            @Override
+            public final java.lang.Object getRegion() {
+                return this.region;
+            }
+
+            @Override
+            public final java.lang.Object getRoleArn() {
+                return this.roleArn;
+            }
+
+            @Override
+            public final java.lang.Object getStore() {
+                return this.store;
+            }
+
+            @Override
+            public final java.lang.Object getStoreType() {
+                return this.storeType;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("chartTitle", om.valueToTree(this.getChartTitle()));
                 data.set("end", om.valueToTree(this.getEnd()));
-                data.set("logStore", om.valueToTree(this.getLogStore()));
                 data.set("query", om.valueToTree(this.getQuery()));
                 data.set("start", om.valueToTree(this.getStart()));
                 data.set("timeSpanType", om.valueToTree(this.getTimeSpanType()));
+                if (this.getChartTitle() != null) {
+                    data.set("chartTitle", om.valueToTree(this.getChartTitle()));
+                }
+                if (this.getDashboardId() != null) {
+                    data.set("dashboardId", om.valueToTree(this.getDashboardId()));
+                }
+                if (this.getLogStore() != null) {
+                    data.set("logStore", om.valueToTree(this.getLogStore()));
+                }
+                if (this.getPowerSqlMode() != null) {
+                    data.set("powerSqlMode", om.valueToTree(this.getPowerSqlMode()));
+                }
+                if (this.getProject() != null) {
+                    data.set("project", om.valueToTree(this.getProject()));
+                }
+                if (this.getRegion() != null) {
+                    data.set("region", om.valueToTree(this.getRegion()));
+                }
+                if (this.getRoleArn() != null) {
+                    data.set("roleArn", om.valueToTree(this.getRoleArn()));
+                }
+                if (this.getStore() != null) {
+                    data.set("store", om.valueToTree(this.getStore()));
+                }
+                if (this.getStoreType() != null) {
+                    data.set("storeType", om.valueToTree(this.getStoreType()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosAlert.QueryListProperty"));
@@ -1392,22 +3477,36 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
 
                 QueryListProperty.Jsii$Proxy that = (QueryListProperty.Jsii$Proxy) o;
 
-                if (!chartTitle.equals(that.chartTitle)) return false;
                 if (!end.equals(that.end)) return false;
-                if (!logStore.equals(that.logStore)) return false;
                 if (!query.equals(that.query)) return false;
                 if (!start.equals(that.start)) return false;
-                return this.timeSpanType.equals(that.timeSpanType);
+                if (!timeSpanType.equals(that.timeSpanType)) return false;
+                if (this.chartTitle != null ? !this.chartTitle.equals(that.chartTitle) : that.chartTitle != null) return false;
+                if (this.dashboardId != null ? !this.dashboardId.equals(that.dashboardId) : that.dashboardId != null) return false;
+                if (this.logStore != null ? !this.logStore.equals(that.logStore) : that.logStore != null) return false;
+                if (this.powerSqlMode != null ? !this.powerSqlMode.equals(that.powerSqlMode) : that.powerSqlMode != null) return false;
+                if (this.project != null ? !this.project.equals(that.project) : that.project != null) return false;
+                if (this.region != null ? !this.region.equals(that.region) : that.region != null) return false;
+                if (this.roleArn != null ? !this.roleArn.equals(that.roleArn) : that.roleArn != null) return false;
+                if (this.store != null ? !this.store.equals(that.store) : that.store != null) return false;
+                return this.storeType != null ? this.storeType.equals(that.storeType) : that.storeType == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.chartTitle.hashCode();
-                result = 31 * result + (this.end.hashCode());
-                result = 31 * result + (this.logStore.hashCode());
+                int result = this.end.hashCode();
                 result = 31 * result + (this.query.hashCode());
                 result = 31 * result + (this.start.hashCode());
                 result = 31 * result + (this.timeSpanType.hashCode());
+                result = 31 * result + (this.chartTitle != null ? this.chartTitle.hashCode() : 0);
+                result = 31 * result + (this.dashboardId != null ? this.dashboardId.hashCode() : 0);
+                result = 31 * result + (this.logStore != null ? this.logStore.hashCode() : 0);
+                result = 31 * result + (this.powerSqlMode != null ? this.powerSqlMode.hashCode() : 0);
+                result = 31 * result + (this.project != null ? this.project.hashCode() : 0);
+                result = 31 * result + (this.region != null ? this.region.hashCode() : 0);
+                result = 31 * result + (this.roleArn != null ? this.roleArn.hashCode() : 0);
+                result = 31 * result + (this.store != null ? this.store.hashCode() : 0);
+                result = 31 * result + (this.storeType != null ? this.storeType.hashCode() : 0);
                 return result;
             }
         }
@@ -1791,6 +3890,174 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.hour != null ? this.hour.hashCode() : 0);
                 result = 31 * result + (this.interval != null ? this.interval.hashCode() : 0);
                 result = 31 * result + (this.runImmediately != null ? this.runImmediately.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert.SeverityConfigurationsProperty")
+    @software.amazon.jsii.Jsii.Proxy(SeverityConfigurationsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface SeverityConfigurationsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getSeverity();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEvalCondition() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link SeverityConfigurationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link SeverityConfigurationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<SeverityConfigurationsProperty> {
+            java.lang.Object severity;
+            java.lang.Object evalCondition;
+
+            /**
+             * Sets the value of {@link SeverityConfigurationsProperty#getSeverity}
+             * @param severity the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder severity(java.lang.Number severity) {
+                this.severity = severity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SeverityConfigurationsProperty#getSeverity}
+             * @param severity the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder severity(com.aliyun.ros.cdk.core.IResolvable severity) {
+                this.severity = severity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SeverityConfigurationsProperty#getEvalCondition}
+             * @param evalCondition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder evalCondition(com.aliyun.ros.cdk.core.IResolvable evalCondition) {
+                this.evalCondition = evalCondition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SeverityConfigurationsProperty#getEvalCondition}
+             * @param evalCondition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder evalCondition(com.aliyun.ros.cdk.sls.RosAlert.EvalConditionProperty evalCondition) {
+                this.evalCondition = evalCondition;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link SeverityConfigurationsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public SeverityConfigurationsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link SeverityConfigurationsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SeverityConfigurationsProperty {
+            private final java.lang.Object severity;
+            private final java.lang.Object evalCondition;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.severity = software.amazon.jsii.Kernel.get(this, "severity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.evalCondition = software.amazon.jsii.Kernel.get(this, "evalCondition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.severity = java.util.Objects.requireNonNull(builder.severity, "severity is required");
+                this.evalCondition = builder.evalCondition;
+            }
+
+            @Override
+            public final java.lang.Object getSeverity() {
+                return this.severity;
+            }
+
+            @Override
+            public final java.lang.Object getEvalCondition() {
+                return this.evalCondition;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("severity", om.valueToTree(this.getSeverity()));
+                if (this.getEvalCondition() != null) {
+                    data.set("evalCondition", om.valueToTree(this.getEvalCondition()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosAlert.SeverityConfigurationsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                SeverityConfigurationsProperty.Jsii$Proxy that = (SeverityConfigurationsProperty.Jsii$Proxy) o;
+
+                if (!severity.equals(that.severity)) return false;
+                return this.evalCondition != null ? this.evalCondition.equals(that.evalCondition) : that.evalCondition == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.severity.hashCode();
+                result = 31 * result + (this.evalCondition != null ? this.evalCondition.hashCode() : 0);
                 return result;
             }
         }

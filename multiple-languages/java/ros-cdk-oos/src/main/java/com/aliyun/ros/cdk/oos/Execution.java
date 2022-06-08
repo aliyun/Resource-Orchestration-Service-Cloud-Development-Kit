@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * A ROS resource type:  `ALIYUN::OOS::Execution`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.917Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.799Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.Execution")
 public class Execution extends com.aliyun.ros.cdk.core.Resource {
 
@@ -151,7 +151,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property templateName: Template name.
          * <p>
-         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
          * <p>
          * @return {@code this}
          * @param templateName Property templateName: Template name. This parameter is required.
@@ -163,7 +163,7 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property templateName: Template name.
          * <p>
-         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
          * <p>
          * @return {@code this}
          * @param templateName Property templateName: Template name. This parameter is required.

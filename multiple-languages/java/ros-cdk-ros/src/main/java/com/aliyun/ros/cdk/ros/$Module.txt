@@ -17,6 +17,13 @@
 @alicloud/ros-cdk-ros.RosSleep=com.aliyun.ros.cdk.ros.RosSleep
 @alicloud/ros-cdk-ros.RosSleepProps=com.aliyun.ros.cdk.ros.RosSleepProps
 @alicloud/ros-cdk-ros.RosStack=com.aliyun.ros.cdk.ros.RosStack
+@alicloud/ros-cdk-ros.RosStackGroup=com.aliyun.ros.cdk.ros.RosStackGroup
+@alicloud/ros-cdk-ros.RosStackGroup.AutoDeploymentProperty=com.aliyun.ros.cdk.ros.RosStackGroup$AutoDeploymentProperty
+@alicloud/ros-cdk-ros.RosStackGroupProps=com.aliyun.ros.cdk.ros.RosStackGroupProps
+@alicloud/ros-cdk-ros.RosStackInstances=com.aliyun.ros.cdk.ros.RosStackInstances
+@alicloud/ros-cdk-ros.RosStackInstances.DeploymentTargetsProperty=com.aliyun.ros.cdk.ros.RosStackInstances$DeploymentTargetsProperty
+@alicloud/ros-cdk-ros.RosStackInstances.OperationPreferencesProperty=com.aliyun.ros.cdk.ros.RosStackInstances$OperationPreferencesProperty
+@alicloud/ros-cdk-ros.RosStackInstancesProps=com.aliyun.ros.cdk.ros.RosStackInstancesProps
 @alicloud/ros-cdk-ros.RosStackProps=com.aliyun.ros.cdk.ros.RosStackProps
 @alicloud/ros-cdk-ros.RosWaitCondition=com.aliyun.ros.cdk.ros.RosWaitCondition
 @alicloud/ros-cdk-ros.RosWaitConditionHandle=com.aliyun.ros.cdk.ros.RosWaitConditionHandle
@@ -25,6 +32,10 @@
 @alicloud/ros-cdk-ros.Sleep=com.aliyun.ros.cdk.ros.Sleep
 @alicloud/ros-cdk-ros.SleepProps=com.aliyun.ros.cdk.ros.SleepProps
 @alicloud/ros-cdk-ros.Stack=com.aliyun.ros.cdk.ros.Stack
+@alicloud/ros-cdk-ros.StackGroup=com.aliyun.ros.cdk.ros.StackGroup
+@alicloud/ros-cdk-ros.StackGroupProps=com.aliyun.ros.cdk.ros.StackGroupProps
+@alicloud/ros-cdk-ros.StackInstances=com.aliyun.ros.cdk.ros.StackInstances
+@alicloud/ros-cdk-ros.StackInstancesProps=com.aliyun.ros.cdk.ros.StackInstancesProps
 @alicloud/ros-cdk-ros.StackProps=com.aliyun.ros.cdk.ros.StackProps
 @alicloud/ros-cdk-ros.WaitCondition=com.aliyun.ros.cdk.ros.WaitCondition
 @alicloud/ros-cdk-ros.WaitConditionHandle=com.aliyun.ros.cdk.ros.WaitConditionHandle

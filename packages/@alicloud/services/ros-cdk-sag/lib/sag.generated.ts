@@ -560,6 +560,395 @@ export class RosACLRule extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::SAG::App`
+ */
+export interface RosAppProps {
+
+    /**
+     * @Property autoPay: Specifies whether to automatically pay the bills of SAG APP instances. Default value:
+     * false. Valid values:
+     * true: automatically pays the bills of SAG APP instances.
+     * false: does not automatically pay the bills of SAG APP instances.
+     * If you set the parameter to false, after you call this operation, go to Billing Management
+     * of the SAG console to complete the payment, the instance can be created.
+     */
+    readonly autoPay: boolean | ros.IResolvable;
+
+    /**
+     * @Property dataPlan: The quota of the traffic plan that the system allows each client account to use for
+     * free each month. Unit: GB. Set the value to 5.
+     * Note The system allows each client account to use 5 GB traffic plan for free.
+     */
+    readonly dataPlan: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the SAG APP instance. Unit: months.
+     * Valid values: 1~9, 12, 24, and 36.
+     */
+    readonly period: number | ros.IResolvable;
+
+    /**
+     * @Property userCount: The quota of client accounts for the SAG APP instance.
+     * Note The quota must be a positive multiple of 5, for example, 5, 10, and 15.
+     */
+    readonly userCount: number | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the SAG APP instance. Set the value to PREPAY.
+     * This value indicates that the SAG APP instance is a subscription resource.
+     */
+    readonly chargeType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAppProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAppProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAppPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('userCount', ros.requiredValidator)(properties.userCount));
+    errors.collect(ros.propertyValidator('userCount', ros.validateNumber)(properties.userCount));
+    errors.collect(ros.propertyValidator('dataPlan', ros.requiredValidator)(properties.dataPlan));
+    errors.collect(ros.propertyValidator('dataPlan', ros.validateNumber)(properties.dataPlan));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('autoPay', ros.requiredValidator)(properties.autoPay));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    return errors.wrap('supplied properties not correct for "RosAppProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::App` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAppProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::App` resource.
+ */
+// @ts-ignore TS6133
+function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAppPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      DataPlan: ros.numberToRosTemplate(properties.dataPlan),
+      Period: ros.numberToRosTemplate(properties.period),
+      UserCount: ros.numberToRosTemplate(properties.userCount),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SAG::App`
+ */
+export class RosApp extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::App";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute OrderId: The ID of the order that you placed to subscribe to the SAG APP instance.
+     */
+    public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * @Attribute SmartAGId: The ID of the SAG APP instance.
+     */
+    public readonly attrSmartAgId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property autoPay: Specifies whether to automatically pay the bills of SAG APP instances. Default value:
+     * false. Valid values:
+     * true: automatically pays the bills of SAG APP instances.
+     * false: does not automatically pay the bills of SAG APP instances.
+     * If you set the parameter to false, after you call this operation, go to Billing Management
+     * of the SAG console to complete the payment, the instance can be created.
+     */
+    public autoPay: boolean | ros.IResolvable;
+
+    /**
+     * @Property dataPlan: The quota of the traffic plan that the system allows each client account to use for
+     * free each month. Unit: GB. Set the value to 5.
+     * Note The system allows each client account to use 5 GB traffic plan for free.
+     */
+    public dataPlan: number | ros.IResolvable;
+
+    /**
+     * @Property period: The subscription period of the SAG APP instance. Unit: months.
+     * Valid values: 1~9, 12, 24, and 36.
+     */
+    public period: number | ros.IResolvable;
+
+    /**
+     * @Property userCount: The quota of client accounts for the SAG APP instance.
+     * Note The quota must be a positive multiple of 5, for example, 5, 10, and 15.
+     */
+    public userCount: number | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the SAG APP instance. Set the value to PREPAY.
+     * This value indicates that the SAG APP instance is a subscription resource.
+     */
+    public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SAG::App`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAppProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApp.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrSmartAgId = this.getAtt('SmartAGId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.autoPay = props.autoPay;
+        this.dataPlan = props.dataPlan;
+        this.period = props.period;
+        this.userCount = props.userCount;
+        this.chargeType = props.chargeType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            autoPay: this.autoPay,
+            dataPlan: this.dataPlan,
+            period: this.period,
+            userCount: this.userCount,
+            chargeType: this.chargeType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAppPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::SAG::AppUser`
+ */
+export interface RosAppUserProps {
+
+    /**
+     * @Property bandwidth: The bandwidth. Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+     */
+    readonly bandwidth: number | ros.IResolvable;
+
+    /**
+     * @Property smartAgId: The ID of the SAG APP instance.
+     */
+    readonly smartAgId: string | ros.IResolvable;
+
+    /**
+     * @Property userMail: The email address of the user. The username and password are sent to the specified
+     * email address.
+     */
+    readonly userMail: string | ros.IResolvable;
+
+    /**
+     * @Property clientIp: After this feature is enabled, you must specify the IP address of SAG APP. In this
+     * case, SAG APP connects to Alibaba Cloud through the specified IP address.
+     * Note The IP address must fall into the CIDR block of the private network.
+     * After this feature is disabled, an IP address within the CIDR block of the private
+     * network is assigned to SAG APP. Each connection to Alibaba Cloud uses a different
+     * IP address.
+     */
+    readonly clientIp?: string | ros.IResolvable;
+
+    /**
+     * @Property disable: Disable user or not.
+     */
+    readonly disable?: boolean | ros.IResolvable;
+
+    /**
+     * @Property password: The password used to log on to SAG APP.
+     * For a client account, if you specify the username, you must also specify the password.
+     */
+    readonly password?: string | ros.IResolvable;
+
+    /**
+     * @Property userName: The username of the client account. Usernames of client accounts added to the same
+     * SAG APP instance must be unique.
+     * For a client account, if you specify the username, you must also specify the password.
+     */
+    readonly userName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAppUserProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAppUserProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAppUserPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('userMail', ros.requiredValidator)(properties.userMail));
+    errors.collect(ros.propertyValidator('userMail', ros.validateString)(properties.userMail));
+    errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('smartAgId', ros.requiredValidator)(properties.smartAgId));
+    errors.collect(ros.propertyValidator('smartAgId', ros.validateString)(properties.smartAgId));
+    errors.collect(ros.propertyValidator('clientIp', ros.validateString)(properties.clientIp));
+    errors.collect(ros.propertyValidator('disable', ros.validateBoolean)(properties.disable));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosAppUserProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::AppUser` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAppUserProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::AppUser` resource.
+ */
+// @ts-ignore TS6133
+function rosAppUserPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAppUserPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
+      SmartAGId: ros.stringToRosTemplate(properties.smartAgId),
+      UserMail: ros.stringToRosTemplate(properties.userMail),
+      ClientIp: ros.stringToRosTemplate(properties.clientIp),
+      Disable: ros.booleanToRosTemplate(properties.disable),
+      Password: ros.stringToRosTemplate(properties.password),
+      UserName: ros.stringToRosTemplate(properties.userName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SAG::AppUser`
+ */
+export class RosAppUser extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAG::AppUser";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute SmartAGId: The ID of the SAG APP instance.
+     */
+    public readonly attrSmartAgId: ros.IResolvable;
+
+    /**
+     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7ffa438778d0>
+     */
+    public readonly attrUserName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bandwidth: The bandwidth. Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+     */
+    public bandwidth: number | ros.IResolvable;
+
+    /**
+     * @Property smartAgId: The ID of the SAG APP instance.
+     */
+    public smartAgId: string | ros.IResolvable;
+
+    /**
+     * @Property userMail: The email address of the user. The username and password are sent to the specified
+     * email address.
+     */
+    public userMail: string | ros.IResolvable;
+
+    /**
+     * @Property clientIp: After this feature is enabled, you must specify the IP address of SAG APP. In this
+     * case, SAG APP connects to Alibaba Cloud through the specified IP address.
+     * Note The IP address must fall into the CIDR block of the private network.
+     * After this feature is disabled, an IP address within the CIDR block of the private
+     * network is assigned to SAG APP. Each connection to Alibaba Cloud uses a different
+     * IP address.
+     */
+    public clientIp: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property disable: Disable user or not.
+     */
+    public disable: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property password: The password used to log on to SAG APP.
+     * For a client account, if you specify the username, you must also specify the password.
+     */
+    public password: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property userName: The username of the client account. Usernames of client accounts added to the same
+     * SAG APP instance must be unique.
+     * For a client account, if you specify the username, you must also specify the password.
+     */
+    public userName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SAG::AppUser`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAppUserProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAppUser.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSmartAgId = this.getAtt('SmartAGId');
+        this.attrUserName = this.getAtt('UserName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bandwidth = props.bandwidth;
+        this.smartAgId = props.smartAgId;
+        this.userMail = props.userMail;
+        this.clientIp = props.clientIp;
+        this.disable = props.disable;
+        this.password = props.password;
+        this.userName = props.userName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bandwidth: this.bandwidth,
+            smartAgId: this.smartAgId,
+            userMail: this.userMail,
+            clientIp: this.clientIp,
+            disable: this.disable,
+            password: this.password,
+            userName: this.userName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAppUserPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::SAG::CloudConnectNetwork`
  */
 export interface RosCloudConnectNetworkProps {

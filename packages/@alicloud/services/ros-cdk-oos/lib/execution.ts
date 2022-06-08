@@ -9,7 +9,7 @@ export { RosExecution as ExecutionProperty };
 export interface ExecutionProps {
 
     /**
-     * Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+     * Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
      */
     readonly templateName: string | ros.IResolvable;
 

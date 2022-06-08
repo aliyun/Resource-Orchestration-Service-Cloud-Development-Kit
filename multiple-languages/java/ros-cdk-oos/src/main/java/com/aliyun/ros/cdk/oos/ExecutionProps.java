@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a `ALIYUN::OOS::Execution`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:02.919Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.801Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(ExecutionProps.Jsii$Proxy.class)
 public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,7 +11,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property templateName: Template name.
      * <p>
-     * Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+     * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTemplateName();
 
@@ -103,7 +103,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ExecutionProps#getTemplateName}
          * @param templateName Property templateName: Template name. This parameter is required.
-         *                     Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+         *                     Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
          * @return {@code this}
          */
         public Builder templateName(java.lang.String templateName) {
@@ -114,7 +114,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ExecutionProps#getTemplateName}
          * @param templateName Property templateName: Template name. This parameter is required.
-         *                     Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+         *                     Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
          * @return {@code this}
          */
         public Builder templateName(com.aliyun.ros.cdk.core.IResolvable templateName) {

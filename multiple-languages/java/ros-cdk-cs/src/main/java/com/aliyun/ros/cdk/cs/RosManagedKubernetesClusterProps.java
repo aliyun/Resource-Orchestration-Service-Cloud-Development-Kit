@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.448Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.287Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -141,6 +141,12 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNodeCidrMask() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNodePools() {
         return null;
     }
 
@@ -310,6 +316,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         java.lang.Object loadBalancerSpec;
         java.lang.Object loginPassword;
         java.lang.Object nodeCidrMask;
+        java.lang.Object nodePools;
         java.lang.Object numOfNodes;
         java.lang.Object osType;
         java.lang.Object period;
@@ -814,6 +821,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getNodePools}
+         * @param nodePools the value to be set.
+         * @return {@code this}
+         */
+        public Builder nodePools(com.aliyun.ros.cdk.core.IResolvable nodePools) {
+            this.nodePools = nodePools;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getNodePools}
+         * @param nodePools the value to be set.
+         * @return {@code this}
+         */
+        public Builder nodePools(java.util.List<? extends java.lang.Object> nodePools) {
+            this.nodePools = nodePools;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedKubernetesClusterProps#getNumOfNodes}
          * @param numOfNodes the value to be set.
          * @return {@code this}
@@ -1284,6 +1311,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.lang.Object loadBalancerSpec;
         private final java.lang.Object loginPassword;
         private final java.lang.Object nodeCidrMask;
+        private final java.lang.Object nodePools;
         private final java.lang.Object numOfNodes;
         private final java.lang.Object osType;
         private final java.lang.Object period;
@@ -1337,6 +1365,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nodePools = software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.osType = software.amazon.jsii.Kernel.get(this, "osType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1391,6 +1420,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.loadBalancerSpec = builder.loadBalancerSpec;
             this.loginPassword = builder.loginPassword;
             this.nodeCidrMask = builder.nodeCidrMask;
+            this.nodePools = builder.nodePools;
             this.numOfNodes = builder.numOfNodes;
             this.osType = builder.osType;
             this.period = builder.period;
@@ -1533,6 +1563,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         @Override
         public final java.lang.Object getNodeCidrMask() {
             return this.nodeCidrMask;
+        }
+
+        @Override
+        public final java.lang.Object getNodePools() {
+            return this.nodePools;
         }
 
         @Override
@@ -1715,6 +1750,9 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.getNodeCidrMask() != null) {
                 data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
             }
+            if (this.getNodePools() != null) {
+                data.set("nodePools", om.valueToTree(this.getNodePools()));
+            }
             if (this.getNumOfNodes() != null) {
                 data.set("numOfNodes", om.valueToTree(this.getNumOfNodes()));
             }
@@ -1823,6 +1861,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.loadBalancerSpec != null ? !this.loadBalancerSpec.equals(that.loadBalancerSpec) : that.loadBalancerSpec != null) return false;
             if (this.loginPassword != null ? !this.loginPassword.equals(that.loginPassword) : that.loginPassword != null) return false;
             if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
+            if (this.nodePools != null ? !this.nodePools.equals(that.nodePools) : that.nodePools != null) return false;
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
             if (this.osType != null ? !this.osType.equals(that.osType) : that.osType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
@@ -1873,6 +1912,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             result = 31 * result + (this.loadBalancerSpec != null ? this.loadBalancerSpec.hashCode() : 0);
             result = 31 * result + (this.loginPassword != null ? this.loginPassword.hashCode() : 0);
             result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
+            result = 31 * result + (this.nodePools != null ? this.nodePools.hashCode() : 0);
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
             result = 31 * result + (this.osType != null ? this.osType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);

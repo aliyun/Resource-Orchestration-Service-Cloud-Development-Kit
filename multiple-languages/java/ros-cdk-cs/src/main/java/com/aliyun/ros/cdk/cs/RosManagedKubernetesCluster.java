@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.442Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.262Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -545,6 +545,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setNodeCidrMask(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "nodeCidrMask", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNodePools() {
+        return software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNodePools(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "nodePools", value);
+    }
+
+    /**
+     */
+    public void setNodePools(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "nodePools", value);
     }
 
     /**
@@ -1192,6 +1210,1100 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.DataDisksProperty")
+    @software.amazon.jsii.Jsii.Proxy(DataDisksProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DataDisksProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAutoSnapshotPolicyId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPerformanceLevel() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSize() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link DataDisksProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DataDisksProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DataDisksProperty> {
+            java.lang.Object autoSnapshotPolicyId;
+            java.lang.Object category;
+            java.lang.Object encrypted;
+            java.lang.Object performanceLevel;
+            java.lang.Object size;
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getAutoSnapshotPolicyId}
+             * @param autoSnapshotPolicyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoSnapshotPolicyId(java.lang.String autoSnapshotPolicyId) {
+                this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getAutoSnapshotPolicyId}
+             * @param autoSnapshotPolicyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyId) {
+                this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getCategory}
+             * @param category the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder category(java.lang.String category) {
+                this.category = category;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getCategory}
+             * @param category the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
+                this.category = category;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getEncrypted}
+             * @param encrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encrypted(java.lang.Boolean encrypted) {
+                this.encrypted = encrypted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getEncrypted}
+             * @param encrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encrypted(com.aliyun.ros.cdk.core.IResolvable encrypted) {
+                this.encrypted = encrypted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getPerformanceLevel}
+             * @param performanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder performanceLevel(java.lang.String performanceLevel) {
+                this.performanceLevel = performanceLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getPerformanceLevel}
+             * @param performanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder performanceLevel(com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
+                this.performanceLevel = performanceLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getSize}
+             * @param size the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder size(java.lang.Number size) {
+                this.size = size;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDisksProperty#getSize}
+             * @param size the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder size(com.aliyun.ros.cdk.core.IResolvable size) {
+                this.size = size;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DataDisksProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DataDisksProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DataDisksProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DataDisksProperty {
+            private final java.lang.Object autoSnapshotPolicyId;
+            private final java.lang.Object category;
+            private final java.lang.Object encrypted;
+            private final java.lang.Object performanceLevel;
+            private final java.lang.Object size;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.autoSnapshotPolicyId = builder.autoSnapshotPolicyId;
+                this.category = builder.category;
+                this.encrypted = builder.encrypted;
+                this.performanceLevel = builder.performanceLevel;
+                this.size = builder.size;
+            }
+
+            @Override
+            public final java.lang.Object getAutoSnapshotPolicyId() {
+                return this.autoSnapshotPolicyId;
+            }
+
+            @Override
+            public final java.lang.Object getCategory() {
+                return this.category;
+            }
+
+            @Override
+            public final java.lang.Object getEncrypted() {
+                return this.encrypted;
+            }
+
+            @Override
+            public final java.lang.Object getPerformanceLevel() {
+                return this.performanceLevel;
+            }
+
+            @Override
+            public final java.lang.Object getSize() {
+                return this.size;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getAutoSnapshotPolicyId() != null) {
+                    data.set("autoSnapshotPolicyId", om.valueToTree(this.getAutoSnapshotPolicyId()));
+                }
+                if (this.getCategory() != null) {
+                    data.set("category", om.valueToTree(this.getCategory()));
+                }
+                if (this.getEncrypted() != null) {
+                    data.set("encrypted", om.valueToTree(this.getEncrypted()));
+                }
+                if (this.getPerformanceLevel() != null) {
+                    data.set("performanceLevel", om.valueToTree(this.getPerformanceLevel()));
+                }
+                if (this.getSize() != null) {
+                    data.set("size", om.valueToTree(this.getSize()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.DataDisksProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DataDisksProperty.Jsii$Proxy that = (DataDisksProperty.Jsii$Proxy) o;
+
+                if (this.autoSnapshotPolicyId != null ? !this.autoSnapshotPolicyId.equals(that.autoSnapshotPolicyId) : that.autoSnapshotPolicyId != null) return false;
+                if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
+                if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
+                if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
+                return this.size != null ? this.size.equals(that.size) : that.size == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.autoSnapshotPolicyId != null ? this.autoSnapshotPolicyId.hashCode() : 0;
+                result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
+                result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
+                result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
+                result = 31 * result + (this.size != null ? this.size.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.KubernetesConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(KubernetesConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface KubernetesConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getRuntime();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getRuntimeVersion();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCpuPolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLabels() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link KubernetesConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link KubernetesConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<KubernetesConfigProperty> {
+            java.lang.Object runtime;
+            java.lang.Object runtimeVersion;
+            java.lang.Object cpuPolicy;
+            java.lang.Object labels;
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getRuntime}
+             * @param runtime the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder runtime(java.lang.String runtime) {
+                this.runtime = runtime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getRuntime}
+             * @param runtime the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder runtime(com.aliyun.ros.cdk.core.IResolvable runtime) {
+                this.runtime = runtime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getRuntimeVersion}
+             * @param runtimeVersion the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder runtimeVersion(java.lang.String runtimeVersion) {
+                this.runtimeVersion = runtimeVersion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getRuntimeVersion}
+             * @param runtimeVersion the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder runtimeVersion(com.aliyun.ros.cdk.core.IResolvable runtimeVersion) {
+                this.runtimeVersion = runtimeVersion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getCpuPolicy}
+             * @param cpuPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpuPolicy(java.lang.String cpuPolicy) {
+                this.cpuPolicy = cpuPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getCpuPolicy}
+             * @param cpuPolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpuPolicy(com.aliyun.ros.cdk.core.IResolvable cpuPolicy) {
+                this.cpuPolicy = cpuPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getLabels}
+             * @param labels the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder labels(com.aliyun.ros.cdk.core.IResolvable labels) {
+                this.labels = labels;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getLabels}
+             * @param labels the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder labels(java.util.List<? extends java.lang.Object> labels) {
+                this.labels = labels;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link KubernetesConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public KubernetesConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link KubernetesConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements KubernetesConfigProperty {
+            private final java.lang.Object runtime;
+            private final java.lang.Object runtimeVersion;
+            private final java.lang.Object cpuPolicy;
+            private final java.lang.Object labels;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.runtimeVersion = software.amazon.jsii.Kernel.get(this, "runtimeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cpuPolicy = software.amazon.jsii.Kernel.get(this, "cpuPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.labels = software.amazon.jsii.Kernel.get(this, "labels", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.runtime = java.util.Objects.requireNonNull(builder.runtime, "runtime is required");
+                this.runtimeVersion = java.util.Objects.requireNonNull(builder.runtimeVersion, "runtimeVersion is required");
+                this.cpuPolicy = builder.cpuPolicy;
+                this.labels = builder.labels;
+            }
+
+            @Override
+            public final java.lang.Object getRuntime() {
+                return this.runtime;
+            }
+
+            @Override
+            public final java.lang.Object getRuntimeVersion() {
+                return this.runtimeVersion;
+            }
+
+            @Override
+            public final java.lang.Object getCpuPolicy() {
+                return this.cpuPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getLabels() {
+                return this.labels;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("runtime", om.valueToTree(this.getRuntime()));
+                data.set("runtimeVersion", om.valueToTree(this.getRuntimeVersion()));
+                if (this.getCpuPolicy() != null) {
+                    data.set("cpuPolicy", om.valueToTree(this.getCpuPolicy()));
+                }
+                if (this.getLabels() != null) {
+                    data.set("labels", om.valueToTree(this.getLabels()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.KubernetesConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                KubernetesConfigProperty.Jsii$Proxy that = (KubernetesConfigProperty.Jsii$Proxy) o;
+
+                if (!runtime.equals(that.runtime)) return false;
+                if (!runtimeVersion.equals(that.runtimeVersion)) return false;
+                if (this.cpuPolicy != null ? !this.cpuPolicy.equals(that.cpuPolicy) : that.cpuPolicy != null) return false;
+                return this.labels != null ? this.labels.equals(that.labels) : that.labels == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.runtime.hashCode();
+                result = 31 * result + (this.runtimeVersion.hashCode());
+                result = 31 * result + (this.cpuPolicy != null ? this.cpuPolicy.hashCode() : 0);
+                result = 31 * result + (this.labels != null ? this.labels.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.LabelsProperty")
+    @software.amazon.jsii.Jsii.Proxy(LabelsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface LabelsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getValue();
+
+        /**
+         * @return a {@link Builder} of {@link LabelsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link LabelsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<LabelsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link LabelsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LabelsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LabelsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LabelsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link LabelsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public LabelsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link LabelsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LabelsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                data.set("value", om.valueToTree(this.getValue()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.LabelsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                LabelsProperty.Jsii$Proxy that = (LabelsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value.equals(that.value);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolInfoProperty")
+    @software.amazon.jsii.Jsii.Proxy(NodePoolInfoProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface NodePoolInfoProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
+
+        /**
+         * @return a {@link Builder} of {@link NodePoolInfoProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link NodePoolInfoProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<NodePoolInfoProperty> {
+            java.lang.Object name;
+
+            /**
+             * Sets the value of {@link NodePoolInfoProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(java.lang.String name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolInfoProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link NodePoolInfoProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public NodePoolInfoProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link NodePoolInfoProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NodePoolInfoProperty {
+            private final java.lang.Object name;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            }
+
+            @Override
+            public final java.lang.Object getName() {
+                return this.name;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("name", om.valueToTree(this.getName()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolInfoProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                NodePoolInfoProperty.Jsii$Proxy that = (NodePoolInfoProperty.Jsii$Proxy) o;
+
+                return this.name.equals(that.name);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.name.hashCode();
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolsProperty")
+    @software.amazon.jsii.Jsii.Proxy(NodePoolsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface NodePoolsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroup();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKubernetesConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNodePoolInfo() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link NodePoolsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link NodePoolsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<NodePoolsProperty> {
+            java.lang.Object scalingGroup;
+            java.lang.Object count;
+            java.lang.Object kubernetesConfig;
+            java.lang.Object nodePoolInfo;
+
+            /**
+             * Sets the value of {@link NodePoolsProperty#getScalingGroup}
+             * @param scalingGroup the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder scalingGroup(com.aliyun.ros.cdk.core.IResolvable scalingGroup) {
+                this.scalingGroup = scalingGroup;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolsProperty#getScalingGroup}
+             * @param scalingGroup the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder scalingGroup(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupProperty scalingGroup) {
+                this.scalingGroup = scalingGroup;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolsProperty#getCount}
+             * @param count the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder count(java.lang.Number count) {
+                this.count = count;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolsProperty#getCount}
+             * @param count the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder count(com.aliyun.ros.cdk.core.IResolvable count) {
+                this.count = count;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolsProperty#getKubernetesConfig}
+             * @param kubernetesConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder kubernetesConfig(com.aliyun.ros.cdk.core.IResolvable kubernetesConfig) {
+                this.kubernetesConfig = kubernetesConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolsProperty#getKubernetesConfig}
+             * @param kubernetesConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder kubernetesConfig(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.KubernetesConfigProperty kubernetesConfig) {
+                this.kubernetesConfig = kubernetesConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolsProperty#getNodePoolInfo}
+             * @param nodePoolInfo the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nodePoolInfo(com.aliyun.ros.cdk.core.IResolvable nodePoolInfo) {
+                this.nodePoolInfo = nodePoolInfo;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodePoolsProperty#getNodePoolInfo}
+             * @param nodePoolInfo the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nodePoolInfo(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.NodePoolInfoProperty nodePoolInfo) {
+                this.nodePoolInfo = nodePoolInfo;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link NodePoolsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public NodePoolsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link NodePoolsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NodePoolsProperty {
+            private final java.lang.Object scalingGroup;
+            private final java.lang.Object count;
+            private final java.lang.Object kubernetesConfig;
+            private final java.lang.Object nodePoolInfo;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.scalingGroup = software.amazon.jsii.Kernel.get(this, "scalingGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.kubernetesConfig = software.amazon.jsii.Kernel.get(this, "kubernetesConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.nodePoolInfo = software.amazon.jsii.Kernel.get(this, "nodePoolInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.scalingGroup = java.util.Objects.requireNonNull(builder.scalingGroup, "scalingGroup is required");
+                this.count = builder.count;
+                this.kubernetesConfig = builder.kubernetesConfig;
+                this.nodePoolInfo = builder.nodePoolInfo;
+            }
+
+            @Override
+            public final java.lang.Object getScalingGroup() {
+                return this.scalingGroup;
+            }
+
+            @Override
+            public final java.lang.Object getCount() {
+                return this.count;
+            }
+
+            @Override
+            public final java.lang.Object getKubernetesConfig() {
+                return this.kubernetesConfig;
+            }
+
+            @Override
+            public final java.lang.Object getNodePoolInfo() {
+                return this.nodePoolInfo;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("scalingGroup", om.valueToTree(this.getScalingGroup()));
+                if (this.getCount() != null) {
+                    data.set("count", om.valueToTree(this.getCount()));
+                }
+                if (this.getKubernetesConfig() != null) {
+                    data.set("kubernetesConfig", om.valueToTree(this.getKubernetesConfig()));
+                }
+                if (this.getNodePoolInfo() != null) {
+                    data.set("nodePoolInfo", om.valueToTree(this.getNodePoolInfo()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                NodePoolsProperty.Jsii$Proxy that = (NodePoolsProperty.Jsii$Proxy) o;
+
+                if (!scalingGroup.equals(that.scalingGroup)) return false;
+                if (this.count != null ? !this.count.equals(that.count) : that.count != null) return false;
+                if (this.kubernetesConfig != null ? !this.kubernetesConfig.equals(that.kubernetesConfig) : that.kubernetesConfig != null) return false;
+                return this.nodePoolInfo != null ? this.nodePoolInfo.equals(that.nodePoolInfo) : that.nodePoolInfo == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.scalingGroup.hashCode();
+                result = 31 * result + (this.count != null ? this.count.hashCode() : 0);
+                result = 31 * result + (this.kubernetesConfig != null ? this.kubernetesConfig.hashCode() : 0);
+                result = 31 * result + (this.nodePoolInfo != null ? this.nodePoolInfo.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty")
     @software.amazon.jsii.Jsii.Proxy(RuntimeProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1354,6 +2466,1009 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             public final int hashCode() {
                 int result = this.name.hashCode();
                 result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupProperty")
+    @software.amazon.jsii.Jsii.Proxy(ScalingGroupProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ScalingGroupProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getInstanceTypes();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getSystemDiskSize();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchIds();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDataDisks() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIsEnterpriseSecurityGroup() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPair() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLoginPassword() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPlatform() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRdsInstances() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty> getTags() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ScalingGroupProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ScalingGroupProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ScalingGroupProperty> {
+            java.lang.Object instanceTypes;
+            java.lang.Object systemDiskSize;
+            java.lang.Object vSwitchIds;
+            java.lang.Object dataDisks;
+            java.lang.Object imageId;
+            java.lang.Object instanceChargeType;
+            java.lang.Object internetChargeType;
+            java.lang.Object internetMaxBandwidthOut;
+            java.lang.Object isEnterpriseSecurityGroup;
+            java.lang.Object keyPair;
+            java.lang.Object loginPassword;
+            java.lang.Object period;
+            java.lang.Object periodUnit;
+            java.lang.Object platform;
+            java.lang.Object rdsInstances;
+            java.lang.Object systemDiskCategory;
+            java.lang.Object systemDiskPerformanceLevel;
+            java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty> tags;
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInstanceTypes}
+             * @param instanceTypes the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceTypes(com.aliyun.ros.cdk.core.IResolvable instanceTypes) {
+                this.instanceTypes = instanceTypes;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInstanceTypes}
+             * @param instanceTypes the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceTypes(java.util.List<? extends java.lang.Object> instanceTypes) {
+                this.instanceTypes = instanceTypes;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSystemDiskSize}
+             * @param systemDiskSize the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskSize(java.lang.Number systemDiskSize) {
+                this.systemDiskSize = systemDiskSize;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSystemDiskSize}
+             * @param systemDiskSize the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskSize(com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
+                this.systemDiskSize = systemDiskSize;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getVSwitchIds}
+             * @param vSwitchIds the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
+                this.vSwitchIds = vSwitchIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getVSwitchIds}
+             * @param vSwitchIds the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
+                this.vSwitchIds = vSwitchIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getDataDisks}
+             * @param dataDisks the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dataDisks(com.aliyun.ros.cdk.core.IResolvable dataDisks) {
+                this.dataDisks = dataDisks;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getDataDisks}
+             * @param dataDisks the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dataDisks(java.util.List<? extends java.lang.Object> dataDisks) {
+                this.dataDisks = dataDisks;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getImageId}
+             * @param imageId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageId(java.lang.String imageId) {
+                this.imageId = imageId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getImageId}
+             * @param imageId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
+                this.imageId = imageId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInstanceChargeType}
+             * @param instanceChargeType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceChargeType(java.lang.String instanceChargeType) {
+                this.instanceChargeType = instanceChargeType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInstanceChargeType}
+             * @param instanceChargeType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+                this.instanceChargeType = instanceChargeType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInternetChargeType}
+             * @param internetChargeType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder internetChargeType(java.lang.String internetChargeType) {
+                this.internetChargeType = internetChargeType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInternetChargeType}
+             * @param internetChargeType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+                this.internetChargeType = internetChargeType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInternetMaxBandwidthOut}
+             * @param internetMaxBandwidthOut the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder internetMaxBandwidthOut(java.lang.Number internetMaxBandwidthOut) {
+                this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getInternetMaxBandwidthOut}
+             * @param internetMaxBandwidthOut the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder internetMaxBandwidthOut(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
+                this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getIsEnterpriseSecurityGroup}
+             * @param isEnterpriseSecurityGroup the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder isEnterpriseSecurityGroup(java.lang.Boolean isEnterpriseSecurityGroup) {
+                this.isEnterpriseSecurityGroup = isEnterpriseSecurityGroup;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getIsEnterpriseSecurityGroup}
+             * @param isEnterpriseSecurityGroup the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder isEnterpriseSecurityGroup(com.aliyun.ros.cdk.core.IResolvable isEnterpriseSecurityGroup) {
+                this.isEnterpriseSecurityGroup = isEnterpriseSecurityGroup;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getKeyPair}
+             * @param keyPair the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder keyPair(java.lang.String keyPair) {
+                this.keyPair = keyPair;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getKeyPair}
+             * @param keyPair the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder keyPair(com.aliyun.ros.cdk.core.IResolvable keyPair) {
+                this.keyPair = keyPair;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getLoginPassword}
+             * @param loginPassword the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loginPassword(java.lang.String loginPassword) {
+                this.loginPassword = loginPassword;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getLoginPassword}
+             * @param loginPassword the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loginPassword(com.aliyun.ros.cdk.core.IResolvable loginPassword) {
+                this.loginPassword = loginPassword;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getPeriod}
+             * @param period the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder period(java.lang.Number period) {
+                this.period = period;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getPeriod}
+             * @param period the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+                this.period = period;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getPeriodUnit}
+             * @param periodUnit the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder periodUnit(java.lang.String periodUnit) {
+                this.periodUnit = periodUnit;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getPeriodUnit}
+             * @param periodUnit the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+                this.periodUnit = periodUnit;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getPlatform}
+             * @param platform the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder platform(java.lang.String platform) {
+                this.platform = platform;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getPlatform}
+             * @param platform the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder platform(com.aliyun.ros.cdk.core.IResolvable platform) {
+                this.platform = platform;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getRdsInstances}
+             * @param rdsInstances the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rdsInstances(com.aliyun.ros.cdk.core.IResolvable rdsInstances) {
+                this.rdsInstances = rdsInstances;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getRdsInstances}
+             * @param rdsInstances the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rdsInstances(java.util.List<? extends java.lang.Object> rdsInstances) {
+                this.rdsInstances = rdsInstances;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSystemDiskCategory}
+             * @param systemDiskCategory the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
+                this.systemDiskCategory = systemDiskCategory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSystemDiskCategory}
+             * @param systemDiskCategory the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
+                this.systemDiskCategory = systemDiskCategory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSystemDiskPerformanceLevel}
+             * @param systemDiskPerformanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskPerformanceLevel(java.lang.String systemDiskPerformanceLevel) {
+                this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getSystemDiskPerformanceLevel}
+             * @param systemDiskPerformanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
+                this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getTags}
+             * @param tags the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @SuppressWarnings("unchecked")
+            public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty> tags) {
+                this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty>)tags;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ScalingGroupProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ScalingGroupProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ScalingGroupProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingGroupProperty {
+            private final java.lang.Object instanceTypes;
+            private final java.lang.Object systemDiskSize;
+            private final java.lang.Object vSwitchIds;
+            private final java.lang.Object dataDisks;
+            private final java.lang.Object imageId;
+            private final java.lang.Object instanceChargeType;
+            private final java.lang.Object internetChargeType;
+            private final java.lang.Object internetMaxBandwidthOut;
+            private final java.lang.Object isEnterpriseSecurityGroup;
+            private final java.lang.Object keyPair;
+            private final java.lang.Object loginPassword;
+            private final java.lang.Object period;
+            private final java.lang.Object periodUnit;
+            private final java.lang.Object platform;
+            private final java.lang.Object rdsInstances;
+            private final java.lang.Object systemDiskCategory;
+            private final java.lang.Object systemDiskPerformanceLevel;
+            private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty> tags;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.instanceTypes = software.amazon.jsii.Kernel.get(this, "instanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dataDisks = software.amazon.jsii.Kernel.get(this, "dataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.rdsInstances = software.amazon.jsii.Kernel.get(this, "rdsInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty.class)));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            @SuppressWarnings("unchecked")
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.instanceTypes = java.util.Objects.requireNonNull(builder.instanceTypes, "instanceTypes is required");
+                this.systemDiskSize = java.util.Objects.requireNonNull(builder.systemDiskSize, "systemDiskSize is required");
+                this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
+                this.dataDisks = builder.dataDisks;
+                this.imageId = builder.imageId;
+                this.instanceChargeType = builder.instanceChargeType;
+                this.internetChargeType = builder.internetChargeType;
+                this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
+                this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
+                this.keyPair = builder.keyPair;
+                this.loginPassword = builder.loginPassword;
+                this.period = builder.period;
+                this.periodUnit = builder.periodUnit;
+                this.platform = builder.platform;
+                this.rdsInstances = builder.rdsInstances;
+                this.systemDiskCategory = builder.systemDiskCategory;
+                this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
+                this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty>)builder.tags;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceTypes() {
+                return this.instanceTypes;
+            }
+
+            @Override
+            public final java.lang.Object getSystemDiskSize() {
+                return this.systemDiskSize;
+            }
+
+            @Override
+            public final java.lang.Object getVSwitchIds() {
+                return this.vSwitchIds;
+            }
+
+            @Override
+            public final java.lang.Object getDataDisks() {
+                return this.dataDisks;
+            }
+
+            @Override
+            public final java.lang.Object getImageId() {
+                return this.imageId;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceChargeType() {
+                return this.instanceChargeType;
+            }
+
+            @Override
+            public final java.lang.Object getInternetChargeType() {
+                return this.internetChargeType;
+            }
+
+            @Override
+            public final java.lang.Object getInternetMaxBandwidthOut() {
+                return this.internetMaxBandwidthOut;
+            }
+
+            @Override
+            public final java.lang.Object getIsEnterpriseSecurityGroup() {
+                return this.isEnterpriseSecurityGroup;
+            }
+
+            @Override
+            public final java.lang.Object getKeyPair() {
+                return this.keyPair;
+            }
+
+            @Override
+            public final java.lang.Object getLoginPassword() {
+                return this.loginPassword;
+            }
+
+            @Override
+            public final java.lang.Object getPeriod() {
+                return this.period;
+            }
+
+            @Override
+            public final java.lang.Object getPeriodUnit() {
+                return this.periodUnit;
+            }
+
+            @Override
+            public final java.lang.Object getPlatform() {
+                return this.platform;
+            }
+
+            @Override
+            public final java.lang.Object getRdsInstances() {
+                return this.rdsInstances;
+            }
+
+            @Override
+            public final java.lang.Object getSystemDiskCategory() {
+                return this.systemDiskCategory;
+            }
+
+            @Override
+            public final java.lang.Object getSystemDiskPerformanceLevel() {
+                return this.systemDiskPerformanceLevel;
+            }
+
+            @Override
+            public final java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty> getTags() {
+                return this.tags;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("instanceTypes", om.valueToTree(this.getInstanceTypes()));
+                data.set("systemDiskSize", om.valueToTree(this.getSystemDiskSize()));
+                data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
+                if (this.getDataDisks() != null) {
+                    data.set("dataDisks", om.valueToTree(this.getDataDisks()));
+                }
+                if (this.getImageId() != null) {
+                    data.set("imageId", om.valueToTree(this.getImageId()));
+                }
+                if (this.getInstanceChargeType() != null) {
+                    data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
+                }
+                if (this.getInternetChargeType() != null) {
+                    data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
+                }
+                if (this.getInternetMaxBandwidthOut() != null) {
+                    data.set("internetMaxBandwidthOut", om.valueToTree(this.getInternetMaxBandwidthOut()));
+                }
+                if (this.getIsEnterpriseSecurityGroup() != null) {
+                    data.set("isEnterpriseSecurityGroup", om.valueToTree(this.getIsEnterpriseSecurityGroup()));
+                }
+                if (this.getKeyPair() != null) {
+                    data.set("keyPair", om.valueToTree(this.getKeyPair()));
+                }
+                if (this.getLoginPassword() != null) {
+                    data.set("loginPassword", om.valueToTree(this.getLoginPassword()));
+                }
+                if (this.getPeriod() != null) {
+                    data.set("period", om.valueToTree(this.getPeriod()));
+                }
+                if (this.getPeriodUnit() != null) {
+                    data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+                }
+                if (this.getPlatform() != null) {
+                    data.set("platform", om.valueToTree(this.getPlatform()));
+                }
+                if (this.getRdsInstances() != null) {
+                    data.set("rdsInstances", om.valueToTree(this.getRdsInstances()));
+                }
+                if (this.getSystemDiskCategory() != null) {
+                    data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
+                }
+                if (this.getSystemDiskPerformanceLevel() != null) {
+                    data.set("systemDiskPerformanceLevel", om.valueToTree(this.getSystemDiskPerformanceLevel()));
+                }
+                if (this.getTags() != null) {
+                    data.set("tags", om.valueToTree(this.getTags()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ScalingGroupProperty.Jsii$Proxy that = (ScalingGroupProperty.Jsii$Proxy) o;
+
+                if (!instanceTypes.equals(that.instanceTypes)) return false;
+                if (!systemDiskSize.equals(that.systemDiskSize)) return false;
+                if (!vSwitchIds.equals(that.vSwitchIds)) return false;
+                if (this.dataDisks != null ? !this.dataDisks.equals(that.dataDisks) : that.dataDisks != null) return false;
+                if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
+                if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
+                if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
+                if (this.internetMaxBandwidthOut != null ? !this.internetMaxBandwidthOut.equals(that.internetMaxBandwidthOut) : that.internetMaxBandwidthOut != null) return false;
+                if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
+                if (this.keyPair != null ? !this.keyPair.equals(that.keyPair) : that.keyPair != null) return false;
+                if (this.loginPassword != null ? !this.loginPassword.equals(that.loginPassword) : that.loginPassword != null) return false;
+                if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+                if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
+                if (this.platform != null ? !this.platform.equals(that.platform) : that.platform != null) return false;
+                if (this.rdsInstances != null ? !this.rdsInstances.equals(that.rdsInstances) : that.rdsInstances != null) return false;
+                if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
+                if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
+                return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.instanceTypes.hashCode();
+                result = 31 * result + (this.systemDiskSize.hashCode());
+                result = 31 * result + (this.vSwitchIds.hashCode());
+                result = 31 * result + (this.dataDisks != null ? this.dataDisks.hashCode() : 0);
+                result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
+                result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
+                result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
+                result = 31 * result + (this.internetMaxBandwidthOut != null ? this.internetMaxBandwidthOut.hashCode() : 0);
+                result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
+                result = 31 * result + (this.keyPair != null ? this.keyPair.hashCode() : 0);
+                result = 31 * result + (this.loginPassword != null ? this.loginPassword.hashCode() : 0);
+                result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+                result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
+                result = 31 * result + (this.platform != null ? this.platform.hashCode() : 0);
+                result = 31 * result + (this.rdsInstances != null ? this.rdsInstances.hashCode() : 0);
+                result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
+                result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
+                result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty")
+    @software.amazon.jsii.Jsii.Proxy(ScalingGroupTagsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ScalingGroupTagsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getValue();
+
+        /**
+         * @return a {@link Builder} of {@link ScalingGroupTagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ScalingGroupTagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ScalingGroupTagsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link ScalingGroupTagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupTagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupTagsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupTagsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ScalingGroupTagsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ScalingGroupTagsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ScalingGroupTagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingGroupTagsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                data.set("value", om.valueToTree(this.getValue()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ScalingGroupTagsProperty.Jsii$Proxy that = (ScalingGroupTagsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value.equals(that.value);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value.hashCode());
                 return result;
             }
         }
@@ -2122,6 +4237,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder nodeCidrMask(final com.aliyun.ros.cdk.core.IResolvable nodeCidrMask) {
             this.props.nodeCidrMask(nodeCidrMask);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param nodePools This parameter is required.
+         */
+        public Builder nodePools(final com.aliyun.ros.cdk.core.IResolvable nodePools) {
+            this.props.nodePools(nodePools);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param nodePools This parameter is required.
+         */
+        public Builder nodePools(final java.util.List<? extends java.lang.Object> nodePools) {
+            this.props.nodePools(nodePools);
             return this;
         }
 

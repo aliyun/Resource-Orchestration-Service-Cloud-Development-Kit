@@ -564,6 +564,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: nodePools: The configurations of Node pools.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "nodePools", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? NodePools
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: nodePortRange: Node service port. The value range is [30000, 65535].
         /// Default to 30000-65535.
         /// </remarks>
@@ -1012,6 +1023,453 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 set;
             }
         }
+        [JsiiInterface(nativeType: typeof(IDataDisksProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.DataDisksProperty")]
+        public interface IDataDisksProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: autoSnapshotPolicyId: The ID of an automatic snapshot policy. Automatic backup is performed for a disk based on the specified automatic snapshot policy.
+            /// By default, this parameter is empty. This indicates that automatic backup is disabled.
+            /// </remarks>
+            [JsiiProperty(name: "autoSnapshotPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AutoSnapshotPolicyId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: category: The type of data disk. Valid values:
+            /// cloud: basic disk.
+            /// cloud_efficiency: ultra disk.
+            /// cloud_ssd: standard SSD.
+            /// cloud_essd: enhanced SSD.
+            /// Default value: cloud_efficiency.
+            /// </remarks>
+            [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Category
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: encrypted: Specifies whether to encrypt a data disk. Valid values:
+            /// true: encrypts a data disk.
+            /// false: does not encrypt a data disk.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Encrypted
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// </remarks>
+            [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PerformanceLevel
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: size: The size of a data disk. The size is measured in GiB.
+            /// Valid values: 40 to 32768.
+            /// </remarks>
+            [JsiiProperty(name: "size", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Size
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IDataDisksProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.DataDisksProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IDataDisksProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: autoSnapshotPolicyId: The ID of an automatic snapshot policy. Automatic backup is performed for a disk based on the specified automatic snapshot policy.
+                /// By default, this parameter is empty. This indicates that automatic backup is disabled.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "autoSnapshotPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AutoSnapshotPolicyId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: category: The type of data disk. Valid values:
+                /// cloud: basic disk.
+                /// cloud_efficiency: ultra disk.
+                /// cloud_ssd: standard SSD.
+                /// cloud_essd: enhanced SSD.
+                /// Default value: cloud_efficiency.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Category
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: encrypted: Specifies whether to encrypt a data disk. Valid values:
+                /// true: encrypts a data disk.
+                /// false: does not encrypt a data disk.
+                /// Default value: false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Encrypted
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+                /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+                /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+                /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PerformanceLevel
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: size: The size of a data disk. The size is measured in GiB.
+                /// Valid values: 40 to 32768.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "size", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Size
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosKubernetesCluster.DataDisksProperty")]
+        public class DataDisksProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IDataDisksProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: autoSnapshotPolicyId: The ID of an automatic snapshot policy. Automatic backup is performed for a disk based on the specified automatic snapshot policy.
+            /// By default, this parameter is empty. This indicates that automatic backup is disabled.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoSnapshotPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoSnapshotPolicyId
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: category: The type of data disk. Valid values:
+            /// cloud: basic disk.
+            /// cloud_efficiency: ultra disk.
+            /// cloud_ssd: standard SSD.
+            /// cloud_essd: enhanced SSD.
+            /// Default value: cloud_efficiency.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Category
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: encrypted: Specifies whether to encrypt a data disk. Valid values:
+            /// true: encrypts a data disk.
+            /// false: does not encrypt a data disk.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Encrypted
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PerformanceLevel
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: size: The size of a data disk. The size is measured in GiB.
+            /// Valid values: 40 to 32768.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "size", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Size
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IKubernetesConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.KubernetesConfigProperty")]
+        public interface IKubernetesConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: runtime: The name of the container runtime.
+            /// </remarks>
+            [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Runtime
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: runtimeVersion: The version of the container runtime.
+            /// </remarks>
+            [JsiiProperty(name: "runtimeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object RuntimeVersion
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cpuPolicy: The CPU policy. The following policies are supported if the Kubernetes version of the cluster is 1.12.6 or later. Valid values:
+            /// static: This policy allows pods with specific resource characteristics on the node to be granted with enhanced CPU affinity and exclusivity.
+            /// none: This policy indicates that the default CPU affinity is used.
+            /// Default value: none.
+            /// </remarks>
+            [JsiiProperty(name: "cpuPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CpuPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: labels: You can add labels to nodes that are added to the cluster.
+            /// </remarks>
+            [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.LabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Labels
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IKubernetesConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.KubernetesConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IKubernetesConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: runtime: The name of the container runtime.
+                /// </remarks>
+                [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Runtime
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: runtimeVersion: The version of the container runtime.
+                /// </remarks>
+                [JsiiProperty(name: "runtimeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object RuntimeVersion
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cpuPolicy: The CPU policy. The following policies are supported if the Kubernetes version of the cluster is 1.12.6 or later. Valid values:
+                /// static: This policy allows pods with specific resource characteristics on the node to be granted with enhanced CPU affinity and exclusivity.
+                /// none: This policy indicates that the default CPU affinity is used.
+                /// Default value: none.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cpuPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CpuPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: labels: You can add labels to nodes that are added to the cluster.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.LabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? Labels
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosKubernetesCluster.KubernetesConfigProperty")]
+        public class KubernetesConfigProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IKubernetesConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: runtime: The name of the container runtime.
+            /// </remarks>
+            [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Runtime
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: runtimeVersion: The version of the container runtime.
+            /// </remarks>
+            [JsiiProperty(name: "runtimeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RuntimeVersion
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cpuPolicy: The CPU policy. The following policies are supported if the Kubernetes version of the cluster is 1.12.6 or later. Valid values:
+            /// static: This policy allows pods with specific resource characteristics on the node to be granted with enhanced CPU affinity and exclusivity.
+            /// none: This policy indicates that the default CPU affinity is used.
+            /// Default value: none.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cpuPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CpuPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: labels: You can add labels to nodes that are added to the cluster.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.LabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Labels
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ILabelsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.LabelsProperty")]
+        public interface ILabelsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Value
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ILabelsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.LabelsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.ILabelsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: undefined
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: undefined
+                /// </remarks>
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Value
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosKubernetesCluster.LabelsProperty")]
+        public class LabelsProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.ILabelsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Value
+            {
+                get;
+                set;
+            }
+        }
         [JsiiInterface(nativeType: typeof(IMasterDataDisksProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.MasterDataDisksProperty")]
         public interface IMasterDataDisksProperty
         {
@@ -1093,6 +1551,196 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 set;
             }
         }
+        [JsiiInterface(nativeType: typeof(INodePoolInfoProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolInfoProperty")]
+        public interface INodePoolInfoProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: name: The name of the node pool.
+            /// </remarks>
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Name
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(INodePoolInfoProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolInfoProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.INodePoolInfoProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: name: The name of the node pool.
+                /// </remarks>
+                [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Name
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolInfoProperty")]
+        public class NodePoolInfoProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.INodePoolInfoProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: name: The name of the node pool.
+            /// </remarks>
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(INodePoolsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolsProperty")]
+        public interface INodePoolsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: scalingGroup: The configurations of the scaling group used by the node pool.
+            /// </remarks>
+            [JsiiProperty(name: "scalingGroup", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty\"}]}}")]
+            object ScalingGroup
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: count: The number of nodes in the node pool.
+            /// </remarks>
+            [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Count
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: kubernetesConfig: The configurations of the ACK cluster.
+            /// </remarks>
+            [JsiiProperty(name: "kubernetesConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.KubernetesConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? KubernetesConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: nodePoolInfo: The configurations of the node pool.
+            /// </remarks>
+            [JsiiProperty(name: "nodePoolInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolInfoProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NodePoolInfo
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(INodePoolsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.INodePoolsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: scalingGroup: The configurations of the scaling group used by the node pool.
+                /// </remarks>
+                [JsiiProperty(name: "scalingGroup", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty\"}]}}")]
+                public object ScalingGroup
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: count: The number of nodes in the node pool.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Count
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: kubernetesConfig: The configurations of the ACK cluster.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "kubernetesConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.KubernetesConfigProperty\"}]}}", isOptional: true)]
+                public object? KubernetesConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: nodePoolInfo: The configurations of the node pool.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "nodePoolInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolInfoProperty\"}]}}", isOptional: true)]
+                public object? NodePoolInfo
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolsProperty")]
+        public class NodePoolsProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.INodePoolsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: scalingGroup: The configurations of the scaling group used by the node pool.
+            /// </remarks>
+            [JsiiProperty(name: "scalingGroup", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty\"}]}}")]
+            public object ScalingGroup
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: count: The number of nodes in the node pool.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Count
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: kubernetesConfig: The configurations of the ACK cluster.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "kubernetesConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.KubernetesConfigProperty\"}]}}", isOptional: true)]
+            public object? KubernetesConfig
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: nodePoolInfo: The configurations of the node pool.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "nodePoolInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolInfoProperty\"}]}}", isOptional: true)]
+            public object? NodePoolInfo
+            {
+                get;
+                set;
+            }
+        }
         [JsiiInterface(nativeType: typeof(IRuntimeProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.RuntimeProperty")]
         public interface IRuntimeProperty
         {
@@ -1166,6 +1814,754 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Version
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IScalingGroupProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty")]
+        public interface IScalingGroupProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: instanceTypes: The ECS instance types of the nodes.
+            /// </remarks>
+            [JsiiProperty(name: "instanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            object InstanceTypes
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: systemDiskSize: The system disk size of a node. Unit: GiB. Valid values: 40 to 500.
+            /// </remarks>
+            [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object SystemDiskSize
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchIds: The IDs of vSwitches.
+            /// </remarks>
+            [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            object VSwitchIds
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dataDisks: The configurations of data disks.
+            /// </remarks>
+            [JsiiProperty(name: "dataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.DataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DataDisks
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: imageId: The ID of a custom image. By default, the image provided by ACK is used.
+            /// </remarks>
+            [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ImageId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: instanceChargeType: The billing method of nodes in the node pool. Valid values:
+            /// PrePaid: subscription.
+            /// PostPaid: pay-as-you-go.
+            /// Default value: PostPaid.
+            /// </remarks>
+            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? InstanceChargeType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: internetChargeType: Bandwidth billing method. Valid values: PayByTraffic or PayByBandwidth.
+            /// </remarks>
+            [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? InternetChargeType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: internetMaxBandwidthOut: The release version of the operating system. Valid values:
+            /// CentOS, AliyunLinux, Windows, WindowsCore.
+            /// Default value: AliyunLinux.
+            /// </remarks>
+            [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? InternetMaxBandwidthOut
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+            /// This parameter takes effect only if security_group_id is left empty.
+            /// Note You must specify an advanced security group for a cluster that has Terway installed.
+            /// true: creates an advanced security group.
+            /// false: does not create an advanced security group.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiProperty(name: "isEnterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IsEnterpriseSecurityGroup
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: keyPair: The name of the key pair used to log on to the nodes. You must set KeyPair or LoginPassword.
+            /// </remarks>
+            [JsiiProperty(name: "keyPair", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? KeyPair
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: loginPassword: The password used to log on to the nodes by using SSH. You must set KeyPair or LoginPassword. The password must be 8 to 30 characters in length, and must contain at least three of the following character types: uppercase letters, lowercase letters, digits, and special characters.
+            /// </remarks>
+            [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LoginPassword
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12.
+            /// Default value: 1.
+            /// </remarks>
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Period
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+            /// </remarks>
+            [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PeriodUnit
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: platform: The release version of the operating system. Valid values:
+            /// CentOS, AliyunLinux, Windows, WindowsCore.
+            /// Default value: AliyunLinux.
+            /// </remarks>
+            [JsiiProperty(name: "platform", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Platform
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsInstances: The IDs of the ApsaraDB RDS instances.
+            /// </remarks>
+            [JsiiProperty(name: "rdsInstances", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsInstances
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: systemDiskCategory: The type of system disk. Valid values:
+            /// cloud_efficiency: ultra disk.
+            /// cloud_ssd: standard SSD.
+            /// cloud_essd: enhanced SSD.
+            /// Default value: cloud_efficiency.
+            /// </remarks>
+            [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SystemDiskCategory
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// </remarks>
+            [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SystemDiskPerformanceLevel
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tags: Adds labels only to ECS instances.
+            /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+            /// </remarks>
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupTagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IScalingGroupTagsProperty[]? Tags
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IScalingGroupProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IScalingGroupProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: instanceTypes: The ECS instance types of the nodes.
+                /// </remarks>
+                [JsiiProperty(name: "instanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+                public object InstanceTypes
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: systemDiskSize: The system disk size of a node. Unit: GiB. Valid values: 40 to 500.
+                /// </remarks>
+                [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object SystemDiskSize
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vSwitchIds: The IDs of vSwitches.
+                /// </remarks>
+                [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+                public object VSwitchIds
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: dataDisks: The configurations of data disks.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "dataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.DataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? DataDisks
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: imageId: The ID of a custom image. By default, the image provided by ACK is used.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ImageId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: instanceChargeType: The billing method of nodes in the node pool. Valid values:
+                /// PrePaid: subscription.
+                /// PostPaid: pay-as-you-go.
+                /// Default value: PostPaid.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? InstanceChargeType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: internetChargeType: Bandwidth billing method. Valid values: PayByTraffic or PayByBandwidth.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? InternetChargeType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: internetMaxBandwidthOut: The release version of the operating system. Valid values:
+                /// CentOS, AliyunLinux, Windows, WindowsCore.
+                /// Default value: AliyunLinux.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? InternetMaxBandwidthOut
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+                /// This parameter takes effect only if security_group_id is left empty.
+                /// Note You must specify an advanced security group for a cluster that has Terway installed.
+                /// true: creates an advanced security group.
+                /// false: does not create an advanced security group.
+                /// Default value: false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "isEnterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IsEnterpriseSecurityGroup
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: keyPair: The name of the key pair used to log on to the nodes. You must set KeyPair or LoginPassword.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "keyPair", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? KeyPair
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: loginPassword: The password used to log on to the nodes by using SSH. You must set KeyPair or LoginPassword. The password must be 8 to 30 characters in length, and must contain at least three of the following character types: uppercase letters, lowercase letters, digits, and special characters.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? LoginPassword
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12.
+                /// Default value: 1.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Period
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PeriodUnit
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: platform: The release version of the operating system. Valid values:
+                /// CentOS, AliyunLinux, Windows, WindowsCore.
+                /// Default value: AliyunLinux.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "platform", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Platform
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsInstances: The IDs of the ApsaraDB RDS instances.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsInstances", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? RdsInstances
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: systemDiskCategory: The type of system disk. Valid values:
+                /// cloud_efficiency: ultra disk.
+                /// cloud_ssd: standard SSD.
+                /// cloud_essd: enhanced SSD.
+                /// Default value: cloud_efficiency.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SystemDiskCategory
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+                /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+                /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+                /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SystemDiskPerformanceLevel
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tags: Adds labels only to ECS instances.
+                /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupTagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+                public AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IScalingGroupTagsProperty[]? Tags
+                {
+                    get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IScalingGroupTagsProperty[]?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty")]
+        public class ScalingGroupProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IScalingGroupProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: instanceTypes: The ECS instance types of the nodes.
+            /// </remarks>
+            [JsiiProperty(name: "instanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            public object InstanceTypes
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: systemDiskSize: The system disk size of a node. Unit: GiB. Valid values: 40 to 500.
+            /// </remarks>
+            [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SystemDiskSize
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchIds: The IDs of vSwitches.
+            /// </remarks>
+            [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            public object VSwitchIds
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dataDisks: The configurations of data disks.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.DataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? DataDisks
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: imageId: The ID of a custom image. By default, the image provided by ACK is used.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImageId
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: instanceChargeType: The billing method of nodes in the node pool. Valid values:
+            /// PrePaid: subscription.
+            /// PostPaid: pay-as-you-go.
+            /// Default value: PostPaid.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceChargeType
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: internetChargeType: Bandwidth billing method. Valid values: PayByTraffic or PayByBandwidth.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InternetChargeType
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: internetMaxBandwidthOut: The release version of the operating system. Valid values:
+            /// CentOS, AliyunLinux, Windows, WindowsCore.
+            /// Default value: AliyunLinux.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InternetMaxBandwidthOut
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: isEnterpriseSecurityGroup: Specifies whether to create an advanced security group.
+            /// This parameter takes effect only if security_group_id is left empty.
+            /// Note You must specify an advanced security group for a cluster that has Terway installed.
+            /// true: creates an advanced security group.
+            /// false: does not create an advanced security group.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "isEnterpriseSecurityGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IsEnterpriseSecurityGroup
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: keyPair: The name of the key pair used to log on to the nodes. You must set KeyPair or LoginPassword.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "keyPair", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KeyPair
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: loginPassword: The password used to log on to the nodes by using SSH. You must set KeyPair or LoginPassword. The password must be 8 to 30 characters in length, and must contain at least three of the following character types: uppercase letters, lowercase letters, digits, and special characters.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LoginPassword
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: period: The subscription period of nodes in the node pool. This parameter takes effect and is required only when InstanceChargeType is set to PrePaid. If PeriodUnit=Month is configured, the valid values are: 1, 2, 3, 6, and 12.
+            /// Default value: 1.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: periodUnit: The unit of the subscription period of nodes in the node pool. This parameter is required if you set InstanceChargeType to PrePaid. A value of Month specifies that the subscription period is measured in months.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PeriodUnit
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: platform: The release version of the operating system. Valid values:
+            /// CentOS, AliyunLinux, Windows, WindowsCore.
+            /// Default value: AliyunLinux.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "platform", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Platform
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsInstances: The IDs of the ApsaraDB RDS instances.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsInstances", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? RdsInstances
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: systemDiskCategory: The type of system disk. Valid values:
+            /// cloud_efficiency: ultra disk.
+            /// cloud_ssd: standard SSD.
+            /// cloud_essd: enhanced SSD.
+            /// Default value: cloud_efficiency.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SystemDiskCategory
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SystemDiskPerformanceLevel
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tags: Adds labels only to ECS instances.
+            /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupTagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IScalingGroupTagsProperty[]? Tags
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IScalingGroupTagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupTagsProperty")]
+        public interface IScalingGroupTagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Value
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IScalingGroupTagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupTagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IScalingGroupTagsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: undefined
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: undefined
+                /// </remarks>
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Value
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupTagsProperty")]
+        public class ScalingGroupTagsProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.IScalingGroupTagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Value
             {
                 get;
                 set;

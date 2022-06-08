@@ -776,7 +776,7 @@ function RosResourceCleaner_ExcludedResourcesPropertyValidator(properties: any):
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","RDS:DBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EipSegment","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:RouteTable","VPC:VPC","VPC:VSwitch"],
+          allowedValues: ["ALB:LoadBalancer","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","RDS:DBInstance","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EipSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -1384,6 +1384,649 @@ export class RosStack extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosStackPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::ROS::StackGroup`
+ */
+export interface RosStackGroupProps {
+
+    /**
+     * @Property stackGroupName: undefined
+     */
+    readonly stackGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property administrationRoleName: undefined
+     */
+    readonly administrationRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property autoDeployment: undefined
+     */
+    readonly autoDeployment?: RosStackGroup.AutoDeploymentProperty | ros.IResolvable;
+
+    /**
+     * @Property description: undefined
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property dynamicTemplateBody: undefined
+     */
+    readonly dynamicTemplateBody?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property executionRoleName: undefined
+     */
+    readonly executionRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property parameters: undefined
+     */
+    readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property permissionModel: undefined
+     */
+    readonly permissionModel?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: undefined
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property templateBody: undefined
+     */
+    readonly templateBody?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property templateId: undefined
+     */
+    readonly templateId?: string | ros.IResolvable;
+
+    /**
+     * @Property templateUrl: undefined
+     */
+    readonly templateUrl?: string | ros.IResolvable;
+
+    /**
+     * @Property templateVersion: undefined
+     */
+    readonly templateVersion?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosStackGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosStackGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosStackGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('dynamicTemplateBody', ros.hashValidator(ros.validateAny))(properties.dynamicTemplateBody));
+    errors.collect(ros.propertyValidator('stackGroupName', ros.requiredValidator)(properties.stackGroupName));
+    errors.collect(ros.propertyValidator('stackGroupName', ros.validateString)(properties.stackGroupName));
+    errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
+    errors.collect(ros.propertyValidator('administrationRoleName', ros.validateString)(properties.administrationRoleName));
+    errors.collect(ros.propertyValidator('templateBody', ros.hashValidator(ros.validateAny))(properties.templateBody));
+    errors.collect(ros.propertyValidator('templateUrl', ros.validateString)(properties.templateUrl));
+    errors.collect(ros.propertyValidator('autoDeployment', RosStackGroup_AutoDeploymentPropertyValidator)(properties.autoDeployment));
+    errors.collect(ros.propertyValidator('permissionModel', ros.validateString)(properties.permissionModel));
+    errors.collect(ros.propertyValidator('executionRoleName', ros.validateString)(properties.executionRoleName));
+    errors.collect(ros.propertyValidator('templateId', ros.validateString)(properties.templateId));
+    return errors.wrap('supplied properties not correct for "RosStackGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosStackGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosStackGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosStackGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      StackGroupName: ros.stringToRosTemplate(properties.stackGroupName),
+      AdministrationRoleName: ros.stringToRosTemplate(properties.administrationRoleName),
+      AutoDeployment: rosStackGroupAutoDeploymentPropertyToRosTemplate(properties.autoDeployment),
+      Description: ros.stringToRosTemplate(properties.description),
+      DynamicTemplateBody: ros.hashMapper(ros.objectToRosTemplate)(properties.dynamicTemplateBody),
+      ExecutionRoleName: ros.stringToRosTemplate(properties.executionRoleName),
+      Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      PermissionModel: ros.stringToRosTemplate(properties.permissionModel),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      TemplateBody: ros.hashMapper(ros.objectToRosTemplate)(properties.templateBody),
+      TemplateId: ros.stringToRosTemplate(properties.templateId),
+      TemplateURL: ros.stringToRosTemplate(properties.templateUrl),
+      TemplateVersion: ros.stringToRosTemplate(properties.templateVersion),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ROS::StackGroup`
+ */
+export class RosStackGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::StackGroup";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute StackGroupId: undefined
+     */
+    public readonly attrStackGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property stackGroupName: undefined
+     */
+    public stackGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property administrationRoleName: undefined
+     */
+    public administrationRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoDeployment: undefined
+     */
+    public autoDeployment: RosStackGroup.AutoDeploymentProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: undefined
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dynamicTemplateBody: undefined
+     */
+    public dynamicTemplateBody: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property executionRoleName: undefined
+     */
+    public executionRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property parameters: undefined
+     */
+    public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property permissionModel: undefined
+     */
+    public permissionModel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: undefined
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateBody: undefined
+     */
+    public templateBody: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateId: undefined
+     */
+    public templateId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateUrl: undefined
+     */
+    public templateUrl: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateVersion: undefined
+     */
+    public templateVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ROS::StackGroup`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosStackGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosStackGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrStackGroupId = this.getAtt('StackGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.stackGroupName = props.stackGroupName;
+        this.administrationRoleName = props.administrationRoleName;
+        this.autoDeployment = props.autoDeployment;
+        this.description = props.description;
+        this.dynamicTemplateBody = props.dynamicTemplateBody;
+        this.executionRoleName = props.executionRoleName;
+        this.parameters = props.parameters;
+        this.permissionModel = props.permissionModel;
+        this.resourceGroupId = props.resourceGroupId;
+        this.templateBody = props.templateBody;
+        this.templateId = props.templateId;
+        this.templateUrl = props.templateUrl;
+        this.templateVersion = props.templateVersion;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            stackGroupName: this.stackGroupName,
+            administrationRoleName: this.administrationRoleName,
+            autoDeployment: this.autoDeployment,
+            description: this.description,
+            dynamicTemplateBody: this.dynamicTemplateBody,
+            executionRoleName: this.executionRoleName,
+            parameters: this.parameters,
+            permissionModel: this.permissionModel,
+            resourceGroupId: this.resourceGroupId,
+            templateBody: this.templateBody,
+            templateId: this.templateId,
+            templateUrl: this.templateUrl,
+            templateVersion: this.templateVersion,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosStackGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosStackGroup {
+    /**
+     * @stability external
+     */
+    export interface AutoDeploymentProperty {
+        /**
+         * @Property enabled: undefined
+         */
+        readonly enabled: boolean | ros.IResolvable;
+        /**
+         * @Property retainStacksOnAccountRemoval: undefined
+         */
+        readonly retainStacksOnAccountRemoval?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AutoDeploymentProperty`
+ *
+ * @param properties - the TypeScript properties of a `AutoDeploymentProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStackGroup_AutoDeploymentPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    errors.collect(ros.propertyValidator('retainStacksOnAccountRemoval', ros.validateBoolean)(properties.retainStacksOnAccountRemoval));
+    return errors.wrap('supplied properties not correct for "AutoDeploymentProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackGroup.AutoDeployment` resource
+ *
+ * @param properties - the TypeScript properties of a `AutoDeploymentProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackGroup.AutoDeployment` resource.
+ */
+// @ts-ignore TS6133
+function rosStackGroupAutoDeploymentPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStackGroup_AutoDeploymentPropertyValidator(properties).assertSuccess();
+    return {
+      Enabled: ros.booleanToRosTemplate(properties.enabled),
+      RetainStacksOnAccountRemoval: ros.booleanToRosTemplate(properties.retainStacksOnAccountRemoval),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::ROS::StackInstances`
+ */
+export interface RosStackInstancesProps {
+
+    /**
+     * @Property regionIds: undefined
+     */
+    readonly regionIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property stackGroupName: undefined
+     */
+    readonly stackGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property accountIds: undefined
+     */
+    readonly accountIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property deploymentTargets: undefined
+     */
+    readonly deploymentTargets?: RosStackInstances.DeploymentTargetsProperty | ros.IResolvable;
+
+    /**
+     * @Property disableRollback: undefined
+     */
+    readonly disableRollback?: boolean | ros.IResolvable;
+
+    /**
+     * @Property operationDescription: undefined
+     */
+    readonly operationDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property operationPreferences: undefined
+     */
+    readonly operationPreferences?: RosStackInstances.OperationPreferencesProperty | ros.IResolvable;
+
+    /**
+     * @Property parameterOverrides: undefined
+     */
+    readonly parameterOverrides?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property retainStacks: undefined
+     */
+    readonly retainStacks?: boolean | ros.IResolvable;
+
+    /**
+     * @Property timeoutInMinutes: undefined
+     */
+    readonly timeoutInMinutes?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosStackInstancesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosStackInstancesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosStackInstancesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('operationPreferences', RosStackInstances_OperationPreferencesPropertyValidator)(properties.operationPreferences));
+    errors.collect(ros.propertyValidator('retainStacks', ros.validateBoolean)(properties.retainStacks));
+    errors.collect(ros.propertyValidator('regionIds', ros.requiredValidator)(properties.regionIds));
+    errors.collect(ros.propertyValidator('regionIds', ros.listValidator(ros.validateString))(properties.regionIds));
+    errors.collect(ros.propertyValidator('accountIds', ros.listValidator(ros.validateString))(properties.accountIds));
+    errors.collect(ros.propertyValidator('parameterOverrides', ros.hashValidator(ros.validateAny))(properties.parameterOverrides));
+    errors.collect(ros.propertyValidator('stackGroupName', ros.requiredValidator)(properties.stackGroupName));
+    errors.collect(ros.propertyValidator('stackGroupName', ros.validateString)(properties.stackGroupName));
+    errors.collect(ros.propertyValidator('deploymentTargets', RosStackInstances_DeploymentTargetsPropertyValidator)(properties.deploymentTargets));
+    errors.collect(ros.propertyValidator('operationDescription', ros.validateString)(properties.operationDescription));
+    errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
+    errors.collect(ros.propertyValidator('timeoutInMinutes', ros.validateNumber)(properties.timeoutInMinutes));
+    return errors.wrap('supplied properties not correct for "RosStackInstancesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackInstances` resource
+ *
+ * @param properties - the TypeScript properties of a `RosStackInstancesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackInstances` resource.
+ */
+// @ts-ignore TS6133
+function rosStackInstancesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosStackInstancesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      RegionIds: ros.listMapper(ros.stringToRosTemplate)(properties.regionIds),
+      StackGroupName: ros.stringToRosTemplate(properties.stackGroupName),
+      AccountIds: ros.listMapper(ros.stringToRosTemplate)(properties.accountIds),
+      DeploymentTargets: rosStackInstancesDeploymentTargetsPropertyToRosTemplate(properties.deploymentTargets),
+      DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
+      OperationDescription: ros.stringToRosTemplate(properties.operationDescription),
+      OperationPreferences: rosStackInstancesOperationPreferencesPropertyToRosTemplate(properties.operationPreferences),
+      ParameterOverrides: ros.hashMapper(ros.objectToRosTemplate)(properties.parameterOverrides),
+      RetainStacks: ros.booleanToRosTemplate(properties.retainStacks),
+      TimeoutInMinutes: ros.numberToRosTemplate(properties.timeoutInMinutes),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ROS::StackInstances`
+ */
+export class RosStackInstances extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::StackInstances";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute LastOperationId: undefined
+     */
+    public readonly attrLastOperationId: ros.IResolvable;
+
+    /**
+     * @Attribute Stacks: undefined
+     */
+    public readonly attrStacks: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property regionIds: undefined
+     */
+    public regionIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property stackGroupName: undefined
+     */
+    public stackGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property accountIds: undefined
+     */
+    public accountIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property deploymentTargets: undefined
+     */
+    public deploymentTargets: RosStackInstances.DeploymentTargetsProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property disableRollback: undefined
+     */
+    public disableRollback: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property operationDescription: undefined
+     */
+    public operationDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property operationPreferences: undefined
+     */
+    public operationPreferences: RosStackInstances.OperationPreferencesProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property parameterOverrides: undefined
+     */
+    public parameterOverrides: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property retainStacks: undefined
+     */
+    public retainStacks: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property timeoutInMinutes: undefined
+     */
+    public timeoutInMinutes: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ROS::StackInstances`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosStackInstancesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosStackInstances.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrLastOperationId = this.getAtt('LastOperationId');
+        this.attrStacks = this.getAtt('Stacks');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.regionIds = props.regionIds;
+        this.stackGroupName = props.stackGroupName;
+        this.accountIds = props.accountIds;
+        this.deploymentTargets = props.deploymentTargets;
+        this.disableRollback = props.disableRollback;
+        this.operationDescription = props.operationDescription;
+        this.operationPreferences = props.operationPreferences;
+        this.parameterOverrides = props.parameterOverrides;
+        this.retainStacks = props.retainStacks;
+        this.timeoutInMinutes = props.timeoutInMinutes;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            regionIds: this.regionIds,
+            stackGroupName: this.stackGroupName,
+            accountIds: this.accountIds,
+            deploymentTargets: this.deploymentTargets,
+            disableRollback: this.disableRollback,
+            operationDescription: this.operationDescription,
+            operationPreferences: this.operationPreferences,
+            parameterOverrides: this.parameterOverrides,
+            retainStacks: this.retainStacks,
+            timeoutInMinutes: this.timeoutInMinutes,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosStackInstancesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosStackInstances {
+    /**
+     * @stability external
+     */
+    export interface DeploymentTargetsProperty {
+        /**
+         * @Property rdFolderIds: undefined
+         */
+        readonly rdFolderIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeploymentTargetsProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeploymentTargetsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStackInstances_DeploymentTargetsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('rdFolderIds', ros.listValidator(ros.validateString))(properties.rdFolderIds));
+    return errors.wrap('supplied properties not correct for "DeploymentTargetsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackInstances.DeploymentTargets` resource
+ *
+ * @param properties - the TypeScript properties of a `DeploymentTargetsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackInstances.DeploymentTargets` resource.
+ */
+// @ts-ignore TS6133
+function rosStackInstancesDeploymentTargetsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStackInstances_DeploymentTargetsPropertyValidator(properties).assertSuccess();
+    return {
+      RdFolderIds: ros.listMapper(ros.stringToRosTemplate)(properties.rdFolderIds),
+    };
+}
+
+export namespace RosStackInstances {
+    /**
+     * @stability external
+     */
+    export interface OperationPreferencesProperty {
+        /**
+         * @Property maxConcurrentPercentage: undefined
+         */
+        readonly maxConcurrentPercentage?: number | ros.IResolvable;
+        /**
+         * @Property maxConcurrentCount: undefined
+         */
+        readonly maxConcurrentCount?: number | ros.IResolvable;
+        /**
+         * @Property failureTolerancePercentage: undefined
+         */
+        readonly failureTolerancePercentage?: number | ros.IResolvable;
+        /**
+         * @Property failureToleranceCount: undefined
+         */
+        readonly failureToleranceCount?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OperationPreferencesProperty`
+ *
+ * @param properties - the TypeScript properties of a `OperationPreferencesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStackInstances_OperationPreferencesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('maxConcurrentPercentage', ros.validateNumber)(properties.maxConcurrentPercentage));
+    errors.collect(ros.propertyValidator('maxConcurrentCount', ros.validateNumber)(properties.maxConcurrentCount));
+    errors.collect(ros.propertyValidator('failureTolerancePercentage', ros.validateNumber)(properties.failureTolerancePercentage));
+    errors.collect(ros.propertyValidator('failureToleranceCount', ros.validateNumber)(properties.failureToleranceCount));
+    return errors.wrap('supplied properties not correct for "OperationPreferencesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackInstances.OperationPreferences` resource
+ *
+ * @param properties - the TypeScript properties of a `OperationPreferencesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::StackInstances.OperationPreferences` resource.
+ */
+// @ts-ignore TS6133
+function rosStackInstancesOperationPreferencesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStackInstances_OperationPreferencesPropertyValidator(properties).assertSuccess();
+    return {
+      MaxConcurrentPercentage: ros.numberToRosTemplate(properties.maxConcurrentPercentage),
+      MaxConcurrentCount: ros.numberToRosTemplate(properties.maxConcurrentCount),
+      FailureTolerancePercentage: ros.numberToRosTemplate(properties.failureTolerancePercentage),
+      FailureToleranceCount: ros.numberToRosTemplate(properties.failureToleranceCount),
+    };
 }
 
 /**

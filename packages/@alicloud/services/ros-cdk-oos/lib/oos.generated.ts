@@ -8,7 +8,7 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosExecutionProps {
 
     /**
-     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
      */
     readonly templateName: string | ros.IResolvable;
 
@@ -188,7 +188,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
 
 
     /**
-     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
+     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
      */
     public templateName: string | ros.IResolvable;
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::ApplyConfigToMachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:03.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.441Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ApplyConfigToMachineGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ApplyConfigToMachineGroupProps.Jsii$Proxy.class)
 public interface ApplyConfigToMachineGroupProps extends software.amazon.jsii.JsiiSerializable {

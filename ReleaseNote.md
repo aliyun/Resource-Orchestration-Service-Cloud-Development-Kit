@@ -1,5 +1,11 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.28] (2022-06-08)
+
+### Features
+
+-  Update ROS resource sdk packages.
+
 ## [ros-cdk-cli 1.0.27] (2022-05-20)
 
 ### Features

@@ -137,17 +137,78 @@ export namespace RosAlert {
     /**
      * @stability external
      */
+    export interface AnnotationsProperty {
+        /**
+         * @Property value:
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key:
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AnnotationsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AnnotationsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAlert_AnnotationsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "AnnotationsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.Annotations` resource
+ *
+ * @param properties - the TypeScript properties of a `AnnotationsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.Annotations` resource.
+ */
+// @ts-ignore TS6133
+function rosAlertAnnotationsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAlert_AnnotationsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosAlert {
+    /**
+     * @stability external
+     */
     export interface ConfigurationProperty {
         /**
          * @Property throttling: Notification interval, default is no interval.
          */
-        readonly throttling: string | ros.IResolvable;
+        readonly throttling?: string | ros.IResolvable;
         /**
-         * @Property condition: he condition that is required to trigger an alert. 
+         * @Property condition: The condition that is required to trigger an alert. 
      * Log Service triggers an alert if the trigger condition is met. 
      * For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
          */
-        readonly condition: string | ros.IResolvable;
+        readonly condition?: string | ros.IResolvable;
+        /**
+         * @Property autoAnnotation:
+         */
+        readonly autoAnnotation?: boolean | ros.IResolvable;
+        /**
+         * @Property severityConfigurations: The list of severity configurations.
+         */
+        readonly severityConfigurations?: Array<RosAlert.SeverityConfigurationsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property noDataFire: Whether to trigger an alarm if there is no data, the default is false.
+         */
+        readonly noDataFire?: boolean | ros.IResolvable;
         /**
          * @Property notificationList:
          */
@@ -158,13 +219,62 @@ export namespace RosAlert {
          */
         readonly notifyThreshold?: number | ros.IResolvable;
         /**
+         * @Property muteUntil:
+         */
+        readonly muteUntil?: number | ros.IResolvable;
+        /**
          * @Property dashboard: Alarm associated dashboard.
          */
         readonly dashboard: string | ros.IResolvable;
         /**
+         * @Property labels: The list of tags.
+         */
+        readonly labels?: Array<RosAlert.LabelsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property groupConfiguration:
+         */
+        readonly groupConfiguration?: RosAlert.GroupConfigurationProperty | ros.IResolvable;
+        /**
+         * @Property noDataSeverity: The alarm level when there is no data to trigger the alarm. Valid values:
+     * 2: Report
+     * 4: Low
+     * 6: Medium
+     * 8: High
+     * 10: Critical.
+         */
+        readonly noDataSeverity?: number | ros.IResolvable;
+        /**
+         * @Property type: Configuration type.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property annotations: The list of annotations.
+         */
+        readonly annotations?: Array<RosAlert.AnnotationsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property version: Configuration version.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
+         * @Property joinConfigurations: The list of Join conditions when multiple tables are joined. For example, 3 tables join, and 2 joinConfigurations are passed in.
+         */
+        readonly joinConfigurations?: Array<RosAlert.JoinConfigurationsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property policyConfiguration:
+         */
+        readonly policyConfiguration?: RosAlert.PolicyConfigurationProperty | ros.IResolvable;
+        /**
          * @Property queryList:
          */
         readonly queryList: Array<RosAlert.QueryListProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property sendResolved: Whether to notify when the alarm is restored, the default is false.
+         */
+        readonly sendResolved?: boolean | ros.IResolvable;
+        /**
+         * @Property threshold: Trigger threshold.
+         */
+        readonly threshold?: number | ros.IResolvable;
     }
 }
 /**
@@ -177,16 +287,34 @@ export namespace RosAlert {
 function RosAlert_ConfigurationPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('throttling', ros.requiredValidator)(properties.throttling));
     errors.collect(ros.propertyValidator('throttling', ros.validateString)(properties.throttling));
-    errors.collect(ros.propertyValidator('condition', ros.requiredValidator)(properties.condition));
     errors.collect(ros.propertyValidator('condition', ros.validateString)(properties.condition));
+    errors.collect(ros.propertyValidator('autoAnnotation', ros.validateBoolean)(properties.autoAnnotation));
+    errors.collect(ros.propertyValidator('severityConfigurations', ros.listValidator(RosAlert_SeverityConfigurationsPropertyValidator))(properties.severityConfigurations));
+    errors.collect(ros.propertyValidator('noDataFire', ros.validateBoolean)(properties.noDataFire));
     errors.collect(ros.propertyValidator('notificationList', ros.listValidator(RosAlert_NotificationListPropertyValidator))(properties.notificationList));
     errors.collect(ros.propertyValidator('notifyThreshold', ros.validateNumber)(properties.notifyThreshold));
+    errors.collect(ros.propertyValidator('muteUntil', ros.validateNumber)(properties.muteUntil));
     errors.collect(ros.propertyValidator('dashboard', ros.requiredValidator)(properties.dashboard));
     errors.collect(ros.propertyValidator('dashboard', ros.validateString)(properties.dashboard));
+    errors.collect(ros.propertyValidator('labels', ros.listValidator(RosAlert_LabelsPropertyValidator))(properties.labels));
+    errors.collect(ros.propertyValidator('groupConfiguration', RosAlert_GroupConfigurationPropertyValidator)(properties.groupConfiguration));
+    if(properties.noDataSeverity && (typeof properties.noDataSeverity) !== 'object') {
+        errors.collect(ros.propertyValidator('noDataSeverity', ros.validateAllowedValues)({
+          data: properties.noDataSeverity,
+          allowedValues: [2,4,6,8,10],
+        }));
+    }
+    errors.collect(ros.propertyValidator('noDataSeverity', ros.validateNumber)(properties.noDataSeverity));
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('annotations', ros.listValidator(RosAlert_AnnotationsPropertyValidator))(properties.annotations));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('joinConfigurations', ros.listValidator(RosAlert_JoinConfigurationsPropertyValidator))(properties.joinConfigurations));
+    errors.collect(ros.propertyValidator('policyConfiguration', RosAlert_PolicyConfigurationPropertyValidator)(properties.policyConfiguration));
     errors.collect(ros.propertyValidator('queryList', ros.requiredValidator)(properties.queryList));
     errors.collect(ros.propertyValidator('queryList', ros.listValidator(RosAlert_QueryListPropertyValidator))(properties.queryList));
+    errors.collect(ros.propertyValidator('sendResolved', ros.validateBoolean)(properties.sendResolved));
+    errors.collect(ros.propertyValidator('threshold', ros.validateNumber)(properties.threshold));
     return errors.wrap('supplied properties not correct for "ConfigurationProperty"');
 }
 
@@ -204,10 +332,24 @@ function rosAlertConfigurationPropertyToRosTemplate(properties: any): any {
     return {
       Throttling: ros.stringToRosTemplate(properties.throttling),
       Condition: ros.stringToRosTemplate(properties.condition),
+      AutoAnnotation: ros.booleanToRosTemplate(properties.autoAnnotation),
+      SeverityConfigurations: ros.listMapper(rosAlertSeverityConfigurationsPropertyToRosTemplate)(properties.severityConfigurations),
+      NoDataFire: ros.booleanToRosTemplate(properties.noDataFire),
       NotificationList: ros.listMapper(rosAlertNotificationListPropertyToRosTemplate)(properties.notificationList),
       NotifyThreshold: ros.numberToRosTemplate(properties.notifyThreshold),
+      MuteUntil: ros.numberToRosTemplate(properties.muteUntil),
       Dashboard: ros.stringToRosTemplate(properties.dashboard),
+      Labels: ros.listMapper(rosAlertLabelsPropertyToRosTemplate)(properties.labels),
+      GroupConfiguration: rosAlertGroupConfigurationPropertyToRosTemplate(properties.groupConfiguration),
+      NoDataSeverity: ros.numberToRosTemplate(properties.noDataSeverity),
+      Type: ros.stringToRosTemplate(properties.type),
+      Annotations: ros.listMapper(rosAlertAnnotationsPropertyToRosTemplate)(properties.annotations),
+      Version: ros.stringToRosTemplate(properties.version),
+      JoinConfigurations: ros.listMapper(rosAlertJoinConfigurationsPropertyToRosTemplate)(properties.joinConfigurations),
+      PolicyConfiguration: rosAlertPolicyConfigurationPropertyToRosTemplate(properties.policyConfiguration),
       QueryList: ros.listMapper(rosAlertQueryListPropertyToRosTemplate)(properties.queryList),
+      SendResolved: ros.booleanToRosTemplate(properties.sendResolved),
+      Threshold: ros.numberToRosTemplate(properties.threshold),
     };
 }
 
@@ -305,6 +447,212 @@ export namespace RosAlert {
     /**
      * @stability external
      */
+    export interface EvalConditionProperty {
+        /**
+         * @Property condition: It is triggered when any piece of data in the result of judging the Cartesian product satisfies the Condition. After grouping, it indicates the data trigger condition for each group, and an empty string indicates that any data row is satisfied.
+         */
+        readonly condition?: string | ros.IResolvable;
+        /**
+         * @Property countCondition: Alarm expression, indicating how much data meets the alarm condition.
+         */
+        readonly countCondition?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EvalConditionProperty`
+ *
+ * @param properties - the TypeScript properties of a `EvalConditionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAlert_EvalConditionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('condition', ros.validateString)(properties.condition));
+    errors.collect(ros.propertyValidator('countCondition', ros.validateString)(properties.countCondition));
+    return errors.wrap('supplied properties not correct for "EvalConditionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.EvalCondition` resource
+ *
+ * @param properties - the TypeScript properties of a `EvalConditionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.EvalCondition` resource.
+ */
+// @ts-ignore TS6133
+function rosAlertEvalConditionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAlert_EvalConditionPropertyValidator(properties).assertSuccess();
+    return {
+      Condition: ros.stringToRosTemplate(properties.condition),
+      CountCondition: ros.stringToRosTemplate(properties.countCondition),
+    };
+}
+
+export namespace RosAlert {
+    /**
+     * @stability external
+     */
+    export interface GroupConfigurationProperty {
+        /**
+         * @Property type: Grouping type.
+     * no_group: no grouping
+     * labels_auto: autocustom: custom.
+         */
+        readonly type: string | ros.IResolvable;
+        /**
+         * @Property fields: The fields of group. Fill in the empty list when not group. No fill when group automatically. Fill required when group in custom.
+         */
+        readonly fields?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `GroupConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `GroupConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAlert_GroupConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["no_group","labels_auto","custom"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('fields', ros.listValidator(ros.validateString))(properties.fields));
+    return errors.wrap('supplied properties not correct for "GroupConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.GroupConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `GroupConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.GroupConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosAlertGroupConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAlert_GroupConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      Type: ros.stringToRosTemplate(properties.type),
+      Fields: ros.listMapper(ros.stringToRosTemplate)(properties.fields),
+    };
+}
+
+export namespace RosAlert {
+    /**
+     * @stability external
+     */
+    export interface JoinConfigurationsProperty {
+        /**
+         * @Property condition: Condition for a set operation. Not required when using Cartesian product.
+         */
+        readonly condition?: string | ros.IResolvable;
+        /**
+         * @Property type: The type of set operation join.
+         */
+        readonly type: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `JoinConfigurationsProperty`
+ *
+ * @param properties - the TypeScript properties of a `JoinConfigurationsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAlert_JoinConfigurationsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('condition', ros.validateString)(properties.condition));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["cross_join","inner_join","left_join","right_join","full_join","left_exclude","right_exclude","concat","no_join"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    return errors.wrap('supplied properties not correct for "JoinConfigurationsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.JoinConfigurations` resource
+ *
+ * @param properties - the TypeScript properties of a `JoinConfigurationsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.JoinConfigurations` resource.
+ */
+// @ts-ignore TS6133
+function rosAlertJoinConfigurationsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAlert_JoinConfigurationsPropertyValidator(properties).assertSuccess();
+    return {
+      Condition: ros.stringToRosTemplate(properties.condition),
+      Type: ros.stringToRosTemplate(properties.type),
+    };
+}
+
+export namespace RosAlert {
+    /**
+     * @stability external
+     */
+    export interface LabelsProperty {
+        /**
+         * @Property value:
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key:
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAlert_LabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "LabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.Labels` resource
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.Labels` resource.
+ */
+// @ts-ignore TS6133
+function rosAlertLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAlert_LabelsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosAlert {
+    /**
+     * @stability external
+     */
     export interface NotificationListProperty {
         /**
          * @Property type: This topic describes how to configure a notification method. 
@@ -326,9 +674,17 @@ export namespace RosAlert {
          */
         readonly content?: string | ros.IResolvable;
         /**
+         * @Property headers:
+         */
+        readonly headers?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
          * @Property emailList:
          */
         readonly emailList?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property method:
+         */
+        readonly method?: string | ros.IResolvable;
     }
 }
 /**
@@ -346,7 +702,9 @@ function RosAlert_NotificationListPropertyValidator(properties: any): ros.Valida
     errors.collect(ros.propertyValidator('mobileList', ros.listValidator(ros.validateAny))(properties.mobileList));
     errors.collect(ros.propertyValidator('serviceUri', ros.validateString)(properties.serviceUri));
     errors.collect(ros.propertyValidator('content', ros.validateString)(properties.content));
+    errors.collect(ros.propertyValidator('headers', ros.hashValidator(ros.validateAny))(properties.headers));
     errors.collect(ros.propertyValidator('emailList', ros.listValidator(ros.validateAny))(properties.emailList));
+    errors.collect(ros.propertyValidator('method', ros.validateString)(properties.method));
     return errors.wrap('supplied properties not correct for "NotificationListProperty"');
 }
 
@@ -366,7 +724,68 @@ function rosAlertNotificationListPropertyToRosTemplate(properties: any): any {
       MobileList: ros.listMapper(ros.objectToRosTemplate)(properties.mobileList),
       ServiceUri: ros.stringToRosTemplate(properties.serviceUri),
       Content: ros.stringToRosTemplate(properties.content),
+      Headers: ros.hashMapper(ros.objectToRosTemplate)(properties.headers),
       EmailList: ros.listMapper(ros.objectToRosTemplate)(properties.emailList),
+      Method: ros.stringToRosTemplate(properties.method),
+    };
+}
+
+export namespace RosAlert {
+    /**
+     * @stability external
+     */
+    export interface PolicyConfigurationProperty {
+        /**
+         * @Property alertPolicyId: The ID of alert policy.
+         */
+        readonly alertPolicyId?: string | ros.IResolvable;
+        /**
+         * @Property actionPolicyId: The ID of action policy. It is useful when an alert policy references a dynamic action policy.
+         */
+        readonly actionPolicyId?: string | ros.IResolvable;
+        /**
+         * @Property useDefault:
+         */
+        readonly useDefault?: boolean | ros.IResolvable;
+        /**
+         * @Property repeatInterval: Repeat interval. The format is number with suffix s/m/h.
+         */
+        readonly repeatInterval?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PolicyConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `PolicyConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAlert_PolicyConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('alertPolicyId', ros.validateString)(properties.alertPolicyId));
+    errors.collect(ros.propertyValidator('actionPolicyId', ros.validateString)(properties.actionPolicyId));
+    errors.collect(ros.propertyValidator('useDefault', ros.validateBoolean)(properties.useDefault));
+    errors.collect(ros.propertyValidator('repeatInterval', ros.validateString)(properties.repeatInterval));
+    return errors.wrap('supplied properties not correct for "PolicyConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.PolicyConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `PolicyConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.PolicyConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosAlertPolicyConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAlert_PolicyConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      AlertPolicyId: ros.stringToRosTemplate(properties.alertPolicyId),
+      ActionPolicyId: ros.stringToRosTemplate(properties.actionPolicyId),
+      UseDefault: ros.booleanToRosTemplate(properties.useDefault),
+      RepeatInterval: ros.stringToRosTemplate(properties.repeatInterval),
     };
 }
 
@@ -382,7 +801,7 @@ export namespace RosAlert {
         /**
          * @Property logStore:
          */
-        readonly logStore: string | ros.IResolvable;
+        readonly logStore?: string | ros.IResolvable;
         /**
          * @Property start:
          */
@@ -392,13 +811,45 @@ export namespace RosAlert {
          */
         readonly timeSpanType: string | ros.IResolvable;
         /**
+         * @Property powerSqlMode:
+         */
+        readonly powerSqlMode?: string | ros.IResolvable;
+        /**
+         * @Property store: When StoreType is log or metric, it indicates the LogStore to be queried.
+     * When StoreType is meta, it indicates the ResourceName to be queried.
+         */
+        readonly store?: string | ros.IResolvable;
+        /**
+         * @Property dashboardId: The ID of associated dashboard.
+         */
+        readonly dashboardId?: string | ros.IResolvable;
+        /**
+         * @Property roleArn: ARN used by role access.
+         */
+        readonly roleArn?: string | ros.IResolvable;
+        /**
+         * @Property storeType: Log store type. Valid values:
+     * log: sls query analysis statement
+     * metric: sls time series data
+     * meta: query metastore.
+         */
+        readonly storeType?: string | ros.IResolvable;
+        /**
+         * @Property project:
+         */
+        readonly project?: string | ros.IResolvable;
+        /**
+         * @Property region:
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
          * @Property end:
          */
         readonly end: string | ros.IResolvable;
         /**
          * @Property chartTitle:
          */
-        readonly chartTitle: string | ros.IResolvable;
+        readonly chartTitle?: string | ros.IResolvable;
     }
 }
 /**
@@ -413,15 +864,26 @@ function RosAlert_QueryListPropertyValidator(properties: any): ros.ValidationRes
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('query', ros.requiredValidator)(properties.query));
     errors.collect(ros.propertyValidator('query', ros.validateString)(properties.query));
-    errors.collect(ros.propertyValidator('logStore', ros.requiredValidator)(properties.logStore));
     errors.collect(ros.propertyValidator('logStore', ros.validateString)(properties.logStore));
     errors.collect(ros.propertyValidator('start', ros.requiredValidator)(properties.start));
     errors.collect(ros.propertyValidator('start', ros.validateString)(properties.start));
     errors.collect(ros.propertyValidator('timeSpanType', ros.requiredValidator)(properties.timeSpanType));
     errors.collect(ros.propertyValidator('timeSpanType', ros.validateString)(properties.timeSpanType));
+    errors.collect(ros.propertyValidator('powerSqlMode', ros.validateString)(properties.powerSqlMode));
+    errors.collect(ros.propertyValidator('store', ros.validateString)(properties.store));
+    errors.collect(ros.propertyValidator('dashboardId', ros.validateString)(properties.dashboardId));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    if(properties.storeType && (typeof properties.storeType) !== 'object') {
+        errors.collect(ros.propertyValidator('storeType', ros.validateAllowedValues)({
+          data: properties.storeType,
+          allowedValues: ["log","metric","meta"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storeType', ros.validateString)(properties.storeType));
+    errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
     errors.collect(ros.propertyValidator('end', ros.requiredValidator)(properties.end));
     errors.collect(ros.propertyValidator('end', ros.validateString)(properties.end));
-    errors.collect(ros.propertyValidator('chartTitle', ros.requiredValidator)(properties.chartTitle));
     errors.collect(ros.propertyValidator('chartTitle', ros.validateString)(properties.chartTitle));
     return errors.wrap('supplied properties not correct for "QueryListProperty"');
 }
@@ -442,6 +904,13 @@ function rosAlertQueryListPropertyToRosTemplate(properties: any): any {
       LogStore: ros.stringToRosTemplate(properties.logStore),
       Start: ros.stringToRosTemplate(properties.start),
       TimeSpanType: ros.stringToRosTemplate(properties.timeSpanType),
+      PowerSqlMode: ros.stringToRosTemplate(properties.powerSqlMode),
+      Store: ros.stringToRosTemplate(properties.store),
+      DashboardId: ros.stringToRosTemplate(properties.dashboardId),
+      RoleArn: ros.stringToRosTemplate(properties.roleArn),
+      StoreType: ros.stringToRosTemplate(properties.storeType),
+      Project: ros.stringToRosTemplate(properties.project),
+      Region: ros.stringToRosTemplate(properties.region),
       End: ros.stringToRosTemplate(properties.end),
       ChartTitle: ros.stringToRosTemplate(properties.chartTitle),
     };
@@ -522,6 +991,59 @@ function rosAlertSchedulePropertyToRosTemplate(properties: any): any {
       CronExpression: ros.stringToRosTemplate(properties.cronExpression),
       Delay: ros.numberToRosTemplate(properties.delay),
       Interval: ros.stringToRosTemplate(properties.interval),
+    };
+}
+
+export namespace RosAlert {
+    /**
+     * @stability external
+     */
+    export interface SeverityConfigurationsProperty {
+        /**
+         * @Property severity: The alarm level when there is no data to trigger the alarm. Valid values:
+     * 2: Report
+     * 4: Low
+     * 6: Medium
+     * 8: High
+     * 10: Critical.
+         */
+        readonly severity: number | ros.IResolvable;
+        /**
+         * @Property evalCondition:
+         */
+        readonly evalCondition?: RosAlert.EvalConditionProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SeverityConfigurationsProperty`
+ *
+ * @param properties - the TypeScript properties of a `SeverityConfigurationsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAlert_SeverityConfigurationsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('severity', ros.requiredValidator)(properties.severity));
+    errors.collect(ros.propertyValidator('severity', ros.validateNumber)(properties.severity));
+    errors.collect(ros.propertyValidator('evalCondition', RosAlert_EvalConditionPropertyValidator)(properties.evalCondition));
+    return errors.wrap('supplied properties not correct for "SeverityConfigurationsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.SeverityConfigurations` resource
+ *
+ * @param properties - the TypeScript properties of a `SeverityConfigurationsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Alert.SeverityConfigurations` resource.
+ */
+// @ts-ignore TS6133
+function rosAlertSeverityConfigurationsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAlert_SeverityConfigurationsPropertyValidator(properties).assertSuccess();
+    return {
+      Severity: ros.numberToRosTemplate(properties.severity),
+      EvalCondition: rosAlertEvalConditionPropertyToRosTemplate(properties.evalCondition),
     };
 }
 

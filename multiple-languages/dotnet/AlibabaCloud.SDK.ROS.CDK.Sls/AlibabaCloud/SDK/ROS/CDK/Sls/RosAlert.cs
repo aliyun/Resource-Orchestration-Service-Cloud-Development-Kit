@@ -88,20 +88,81 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
-        [JsiiInterface(nativeType: typeof(IConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.ConfigurationProperty")]
-        public interface IConfigurationProperty
+        [JsiiInterface(nativeType: typeof(IAnnotationsProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty")]
+        public interface IAnnotationsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: condition: he condition that is required to trigger an alert.
-            /// Log Service triggers an alert if the trigger condition is met.
-            /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
+            /// <strong>Property</strong>: key:
             /// </remarks>
-            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Condition
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
             {
                 get;
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: value:
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Value
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IAnnotationsProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IAnnotationsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key:
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value:
+                /// </remarks>
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Value
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty")]
+        public class AnnotationsProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IAnnotationsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key:
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value:
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Value
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.ConfigurationProperty")]
+        public interface IConfigurationProperty
+        {
             /// <remarks>
             /// <strong>Property</strong>: dashboard: Alarm associated dashboard.
             /// </remarks>
@@ -121,12 +182,127 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
+            /// <strong>Property</strong>: annotations: The list of annotations.
             /// </remarks>
-            [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Throttling
+            [JsiiProperty(name: "annotations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Annotations
             {
-                get;
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: autoAnnotation:
+            /// </remarks>
+            [JsiiProperty(name: "autoAnnotation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AutoAnnotation
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: condition: The condition that is required to trigger an alert.
+            /// Log Service triggers an alert if the trigger condition is met.
+            /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
+            /// </remarks>
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Condition
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: groupConfiguration:
+            /// </remarks>
+            [JsiiProperty(name: "groupConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.GroupConfigurationProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? GroupConfiguration
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: joinConfigurations: The list of Join conditions when multiple tables are joined. For example, 3 tables join, and 2 joinConfigurations are passed in.
+            /// </remarks>
+            [JsiiProperty(name: "joinConfigurations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.JoinConfigurationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? JoinConfigurations
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: labels: The list of tags.
+            /// </remarks>
+            [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.LabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Labels
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: muteUntil:
+            /// </remarks>
+            [JsiiProperty(name: "muteUntil", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MuteUntil
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: noDataFire: Whether to trigger an alarm if there is no data, the default is false.
+            /// </remarks>
+            [JsiiProperty(name: "noDataFire", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NoDataFire
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: noDataSeverity: The alarm level when there is no data to trigger the alarm. Valid values:
+            /// 2: Report
+            /// 4: Low
+            /// 6: Medium
+            /// 8: High
+            /// 10: Critical.
+            /// </remarks>
+            [JsiiProperty(name: "noDataSeverity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NoDataSeverity
+            {
+                get
+                {
+                    return null;
+                }
             }
 
             /// <remarks>
@@ -156,22 +332,102 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: policyConfiguration:
+            /// </remarks>
+            [JsiiProperty(name: "policyConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.PolicyConfigurationProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolicyConfiguration
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: sendResolved: Whether to notify when the alarm is restored, the default is false.
+            /// </remarks>
+            [JsiiProperty(name: "sendResolved", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SendResolved
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: severityConfigurations: The list of severity configurations.
+            /// </remarks>
+            [JsiiProperty(name: "severityConfigurations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.SeverityConfigurationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SeverityConfigurations
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: threshold: Trigger threshold.
+            /// </remarks>
+            [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Threshold
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
+            /// </remarks>
+            [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Throttling
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: type: Configuration type.
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Type
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: version: Configuration version.
+            /// </remarks>
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Version
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.ConfigurationProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IConfigurationProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: condition: he condition that is required to trigger an alert.
-                /// Log Service triggers an alert if the trigger condition is met.
-                /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
-                /// </remarks>
-                [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Condition
-                {
-                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -193,12 +449,100 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
+                /// <strong>Property</strong>: annotations: The list of annotations.
                 /// </remarks>
-                [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Throttling
+                [JsiiOptional]
+                [JsiiProperty(name: "annotations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? Annotations
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: autoAnnotation:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "autoAnnotation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AutoAnnotation
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: condition: The condition that is required to trigger an alert.
+                /// Log Service triggers an alert if the trigger condition is met.
+                /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Condition
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: groupConfiguration:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "groupConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.GroupConfigurationProperty\"}]}}", isOptional: true)]
+                public object? GroupConfiguration
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: joinConfigurations: The list of Join conditions when multiple tables are joined. For example, 3 tables join, and 2 joinConfigurations are passed in.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "joinConfigurations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.JoinConfigurationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? JoinConfigurations
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: labels: The list of tags.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.LabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? Labels
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: muteUntil:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "muteUntil", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MuteUntil
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: noDataFire: Whether to trigger an alarm if there is no data, the default is false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "noDataFire", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NoDataFire
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: noDataSeverity: The alarm level when there is no data to trigger the alarm. Valid values:
+                /// 2: Report
+                /// 4: Low
+                /// 6: Medium
+                /// 8: High
+                /// 10: Critical.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "noDataSeverity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NoDataSeverity
+                {
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -221,6 +565,76 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 {
                     get => GetInstanceProperty<object?>();
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: policyConfiguration:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "policyConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.PolicyConfigurationProperty\"}]}}", isOptional: true)]
+                public object? PolicyConfiguration
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: sendResolved: Whether to notify when the alarm is restored, the default is false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "sendResolved", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SendResolved
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: severityConfigurations: The list of severity configurations.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "severityConfigurations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.SeverityConfigurationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? SeverityConfigurations
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: threshold: Trigger threshold.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Threshold
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Throttling
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: type: Configuration type.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Type
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: version: Configuration version.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Version
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
         #pragma warning disable CS8618
@@ -228,18 +642,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosAlert.ConfigurationProperty")]
         public class ConfigurationProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IConfigurationProperty
         {
-            /// <remarks>
-            /// <strong>Property</strong>: condition: he condition that is required to trigger an alert.
-            /// Log Service triggers an alert if the trigger condition is met.
-            /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
-            /// </remarks>
-            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Condition
-            {
-                get;
-                set;
-            }
-
             /// <remarks>
             /// <strong>Property</strong>: dashboard: Alarm associated dashboard.
             /// </remarks>
@@ -261,10 +663,106 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
+            /// <strong>Property</strong>: annotations: The list of annotations.
             /// </remarks>
-            [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Throttling
+            [JsiiOptional]
+            [JsiiProperty(name: "annotations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Annotations
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: autoAnnotation:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoAnnotation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoAnnotation
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: condition: The condition that is required to trigger an alert.
+            /// Log Service triggers an alert if the trigger condition is met.
+            /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Condition
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: groupConfiguration:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "groupConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.GroupConfigurationProperty\"}]}}", isOptional: true)]
+            public object? GroupConfiguration
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: joinConfigurations: The list of Join conditions when multiple tables are joined. For example, 3 tables join, and 2 joinConfigurations are passed in.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "joinConfigurations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.JoinConfigurationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? JoinConfigurations
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: labels: The list of tags.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.LabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Labels
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: muteUntil:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "muteUntil", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MuteUntil
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: noDataFire: Whether to trigger an alarm if there is no data, the default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "noDataFire", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NoDataFire
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: noDataSeverity: The alarm level when there is no data to trigger the alarm. Valid values:
+            /// 2: Report
+            /// 4: Low
+            /// 6: Medium
+            /// 8: High
+            /// 10: Critical.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "noDataSeverity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NoDataSeverity
             {
                 get;
                 set;
@@ -288,6 +786,83 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiOptional]
             [JsiiProperty(name: "notifyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NotifyThreshold
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: policyConfiguration:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "policyConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.PolicyConfigurationProperty\"}]}}", isOptional: true)]
+            public object? PolicyConfiguration
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: sendResolved: Whether to notify when the alarm is restored, the default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sendResolved", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SendResolved
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: severityConfigurations: The list of severity configurations.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "severityConfigurations", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.SeverityConfigurationsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SeverityConfigurations
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: threshold: Trigger threshold.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Threshold
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Throttling
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: type: Configuration type.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Type
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: version: Configuration version.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Version
             {
                 get;
                 set;
@@ -529,6 +1104,322 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 set;
             }
         }
+        [JsiiInterface(nativeType: typeof(IEvalConditionProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.EvalConditionProperty")]
+        public interface IEvalConditionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: condition: It is triggered when any piece of data in the result of judging the Cartesian product satisfies the Condition. After grouping, it indicates the data trigger condition for each group, and an empty string indicates that any data row is satisfied.
+            /// </remarks>
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Condition
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: countCondition: Alarm expression, indicating how much data meets the alarm condition.
+            /// </remarks>
+            [JsiiProperty(name: "countCondition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CountCondition
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IEvalConditionProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.EvalConditionProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IEvalConditionProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: condition: It is triggered when any piece of data in the result of judging the Cartesian product satisfies the Condition. After grouping, it indicates the data trigger condition for each group, and an empty string indicates that any data row is satisfied.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Condition
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: countCondition: Alarm expression, indicating how much data meets the alarm condition.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "countCondition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CountCondition
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosAlert.EvalConditionProperty")]
+        public class EvalConditionProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IEvalConditionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: condition: It is triggered when any piece of data in the result of judging the Cartesian product satisfies the Condition. After grouping, it indicates the data trigger condition for each group, and an empty string indicates that any data row is satisfied.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Condition
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: countCondition: Alarm expression, indicating how much data meets the alarm condition.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "countCondition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CountCondition
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IGroupConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.GroupConfigurationProperty")]
+        public interface IGroupConfigurationProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: type: Grouping type.
+            /// no_group: no grouping
+            /// labels_auto: autocustom: custom.
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Type
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: fields: The fields of group. Fill in the empty list when not group. No fill when group automatically. Fill required when group in custom.
+            /// </remarks>
+            [JsiiProperty(name: "fields", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Fields
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IGroupConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.GroupConfigurationProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IGroupConfigurationProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: type: Grouping type.
+                /// no_group: no grouping
+                /// labels_auto: autocustom: custom.
+                /// </remarks>
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Type
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: fields: The fields of group. Fill in the empty list when not group. No fill when group automatically. Fill required when group in custom.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "fields", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? Fields
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosAlert.GroupConfigurationProperty")]
+        public class GroupConfigurationProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IGroupConfigurationProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: type: Grouping type.
+            /// no_group: no grouping
+            /// labels_auto: autocustom: custom.
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Type
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: fields: The fields of group. Fill in the empty list when not group. No fill when group automatically. Fill required when group in custom.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "fields", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Fields
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IJoinConfigurationsProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.JoinConfigurationsProperty")]
+        public interface IJoinConfigurationsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: type: The type of set operation join.
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Type
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: condition: Condition for a set operation. Not required when using Cartesian product.
+            /// </remarks>
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Condition
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IJoinConfigurationsProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.JoinConfigurationsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IJoinConfigurationsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: type: The type of set operation join.
+                /// </remarks>
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Type
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: condition: Condition for a set operation. Not required when using Cartesian product.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Condition
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosAlert.JoinConfigurationsProperty")]
+        public class JoinConfigurationsProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IJoinConfigurationsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: type: The type of set operation join.
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Type
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: condition: Condition for a set operation. Not required when using Cartesian product.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Condition
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ILabelsProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.LabelsProperty")]
+        public interface ILabelsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key:
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value:
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Value
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ILabelsProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.LabelsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.ILabelsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key:
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value:
+                /// </remarks>
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Value
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosAlert.LabelsProperty")]
+        public class LabelsProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.ILabelsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key:
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value:
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Value
+            {
+                get;
+                set;
+            }
+        }
         [JsiiInterface(nativeType: typeof(INotificationListProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.NotificationListProperty")]
         public interface INotificationListProperty
         {
@@ -563,6 +1454,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiProperty(name: "emailList", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? EmailList
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: headers:
+            /// </remarks>
+            [JsiiProperty(name: "headers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Headers
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: method:
+            /// </remarks>
+            [JsiiProperty(name: "method", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Method
             {
                 get
                 {
@@ -636,6 +1553,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: headers:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "headers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+                public object? Headers
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: method:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "method", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Method
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: mobileList:
                 /// </remarks>
                 [JsiiOptional]
@@ -697,6 +1634,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: headers:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "headers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? Headers
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: method:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "method", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Method
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: mobileList:
             /// </remarks>
             [JsiiOptional]
@@ -718,32 +1677,164 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 set;
             }
         }
+        [JsiiInterface(nativeType: typeof(IPolicyConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.PolicyConfigurationProperty")]
+        public interface IPolicyConfigurationProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: actionPolicyId: The ID of action policy. It is useful when an alert policy references a dynamic action policy.
+            /// </remarks>
+            [JsiiProperty(name: "actionPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ActionPolicyId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: alertPolicyId: The ID of alert policy.
+            /// </remarks>
+            [JsiiProperty(name: "alertPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AlertPolicyId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: repeatInterval: Repeat interval. The format is number with suffix s/m/h.
+            /// </remarks>
+            [JsiiProperty(name: "repeatInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RepeatInterval
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: useDefault:
+            /// </remarks>
+            [JsiiProperty(name: "useDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? UseDefault
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IPolicyConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.PolicyConfigurationProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IPolicyConfigurationProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: actionPolicyId: The ID of action policy. It is useful when an alert policy references a dynamic action policy.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "actionPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ActionPolicyId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: alertPolicyId: The ID of alert policy.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "alertPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AlertPolicyId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: repeatInterval: Repeat interval. The format is number with suffix s/m/h.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "repeatInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RepeatInterval
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: useDefault:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "useDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? UseDefault
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosAlert.PolicyConfigurationProperty")]
+        public class PolicyConfigurationProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IPolicyConfigurationProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: actionPolicyId: The ID of action policy. It is useful when an alert policy references a dynamic action policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "actionPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ActionPolicyId
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: alertPolicyId: The ID of alert policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "alertPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AlertPolicyId
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: repeatInterval: Repeat interval. The format is number with suffix s/m/h.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "repeatInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RepeatInterval
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: useDefault:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "useDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UseDefault
+            {
+                get;
+                set;
+            }
+        }
         [JsiiInterface(nativeType: typeof(IQueryListProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.QueryListProperty")]
         public interface IQueryListProperty
         {
-            /// <remarks>
-            /// <strong>Property</strong>: chartTitle:
-            /// </remarks>
-            [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object ChartTitle
-            {
-                get;
-            }
-
             /// <remarks>
             /// <strong>Property</strong>: end:
             /// </remarks>
             [JsiiProperty(name: "end", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object End
-            {
-                get;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: logStore:
-            /// </remarks>
-            [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object LogStore
             {
                 get;
             }
@@ -775,6 +1866,127 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 get;
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: chartTitle:
+            /// </remarks>
+            [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ChartTitle
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dashboardId: The ID of associated dashboard.
+            /// </remarks>
+            [JsiiProperty(name: "dashboardId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DashboardId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: logStore:
+            /// </remarks>
+            [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LogStore
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: powerSqlMode:
+            /// </remarks>
+            [JsiiProperty(name: "powerSqlMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PowerSqlMode
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: project:
+            /// </remarks>
+            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Project
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: region:
+            /// </remarks>
+            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Region
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: roleArn: ARN used by role access.
+            /// </remarks>
+            [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RoleArn
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: store: When StoreType is log or metric, it indicates the LogStore to be queried.
+            /// When StoreType is meta, it indicates the ResourceName to be queried.
+            /// </remarks>
+            [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Store
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storeType: Log store type. Valid values:
+            /// log: sls query analysis statement
+            /// metric: sls time series data
+            /// meta: query metastore.
+            /// </remarks>
+            [JsiiProperty(name: "storeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? StoreType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IQueryListProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.QueryListProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IQueryListProperty
             {
@@ -783,28 +1995,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: chartTitle:
-                /// </remarks>
-                [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object ChartTitle
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
                 /// <strong>Property</strong>: end:
                 /// </remarks>
                 [JsiiProperty(name: "end", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object End
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: logStore:
-                /// </remarks>
-                [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object LogStore
                 {
                     get => GetInstanceProperty<object>()!;
                 }
@@ -835,6 +2029,100 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 {
                     get => GetInstanceProperty<object>()!;
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: chartTitle:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ChartTitle
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: dashboardId: The ID of associated dashboard.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "dashboardId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DashboardId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: logStore:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? LogStore
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: powerSqlMode:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "powerSqlMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PowerSqlMode
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: project:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Project
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: region:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Region
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: roleArn: ARN used by role access.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RoleArn
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: store: When StoreType is log or metric, it indicates the LogStore to be queried.
+                /// When StoreType is meta, it indicates the ResourceName to be queried.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Store
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: storeType: Log store type. Valid values:
+                /// log: sls query analysis statement
+                /// metric: sls time series data
+                /// meta: query metastore.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "storeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? StoreType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
         #pragma warning disable CS8618
@@ -843,30 +2131,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         public class QueryListProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IQueryListProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: chartTitle:
-            /// </remarks>
-            [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ChartTitle
-            {
-                get;
-                set;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: end:
             /// </remarks>
             [JsiiProperty(name: "end", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object End
-            {
-                get;
-                set;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: logStore:
-            /// </remarks>
-            [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object LogStore
             {
                 get;
                 set;
@@ -897,6 +2165,109 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// </remarks>
             [JsiiProperty(name: "timeSpanType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object TimeSpanType
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: chartTitle:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ChartTitle
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dashboardId: The ID of associated dashboard.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dashboardId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DashboardId
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: logStore:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LogStore
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: powerSqlMode:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "powerSqlMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PowerSqlMode
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: project:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Project
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: region:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Region
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: roleArn: ARN used by role access.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RoleArn
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: store: When StoreType is log or metric, it indicates the LogStore to be queried.
+            /// When StoreType is meta, it indicates the ResourceName to be queried.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Store
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storeType: Log store type. Valid values:
+            /// log: sls query analysis statement
+            /// metric: sls time series data
+            /// meta: query metastore.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StoreType
             {
                 get;
                 set;
@@ -1145,6 +2516,99 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiOptional]
             [JsiiProperty(name: "runImmediately", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RunImmediately
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ISeverityConfigurationsProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.SeverityConfigurationsProperty")]
+        public interface ISeverityConfigurationsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: severity: The alarm level when there is no data to trigger the alarm. Valid values:
+            /// 2: Report
+            /// 4: Low
+            /// 6: Medium
+            /// 8: High
+            /// 10: Critical.
+            /// </remarks>
+            [JsiiProperty(name: "severity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Severity
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: evalCondition:
+            /// </remarks>
+            [JsiiProperty(name: "evalCondition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.EvalConditionProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? EvalCondition
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ISeverityConfigurationsProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.SeverityConfigurationsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.ISeverityConfigurationsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: severity: The alarm level when there is no data to trigger the alarm. Valid values:
+                /// 2: Report
+                /// 4: Low
+                /// 6: Medium
+                /// 8: High
+                /// 10: Critical.
+                /// </remarks>
+                [JsiiProperty(name: "severity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Severity
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: evalCondition:
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "evalCondition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.EvalConditionProperty\"}]}}", isOptional: true)]
+                public object? EvalCondition
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosAlert.SeverityConfigurationsProperty")]
+        public class SeverityConfigurationsProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.ISeverityConfigurationsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: severity: The alarm level when there is no data to trigger the alarm. Valid values:
+            /// 2: Report
+            /// 4: Low
+            /// 6: Medium
+            /// 8: High
+            /// 10: Critical.
+            /// </remarks>
+            [JsiiProperty(name: "severity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Severity
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: evalCondition:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "evalCondition", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.EvalConditionProperty\"}]}}", isOptional: true)]
+            public object? EvalCondition
             {
                 get;
                 set;

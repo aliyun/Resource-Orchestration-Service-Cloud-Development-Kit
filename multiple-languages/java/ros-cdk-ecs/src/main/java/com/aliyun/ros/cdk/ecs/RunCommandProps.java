@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::RunCommand`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.990Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.892Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RunCommandProps.Jsii$Proxy.class)
 public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
@@ -113,6 +113,13 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property sync: Whether to invoke synchronously.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSync() {
+        return null;
+    }
+
+    /**
      * Property timed: Specifies whether to periodically run the script.
      * <p>
      * Valid values:
@@ -165,6 +172,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object keepCommand;
         java.lang.Object name;
         java.lang.Object parameters;
+        java.lang.Object sync;
         java.lang.Object timed;
         java.lang.Object timeout;
         java.lang.Object workingDir;
@@ -430,6 +438,26 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RunCommandProps#getSync}
+         * @param sync Property sync: Whether to invoke synchronously.
+         * @return {@code this}
+         */
+        public Builder sync(java.lang.Boolean sync) {
+            this.sync = sync;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RunCommandProps#getSync}
+         * @param sync Property sync: Whether to invoke synchronously.
+         * @return {@code this}
+         */
+        public Builder sync(com.aliyun.ros.cdk.core.IResolvable sync) {
+            this.sync = sync;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RunCommandProps#getTimed}
          * @param timed Property timed: Specifies whether to periodically run the script.
          *              Valid values:
@@ -533,6 +561,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object keepCommand;
         private final java.lang.Object name;
         private final java.lang.Object parameters;
+        private final java.lang.Object sync;
         private final java.lang.Object timed;
         private final java.lang.Object timeout;
         private final java.lang.Object workingDir;
@@ -553,6 +582,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
             this.keepCommand = software.amazon.jsii.Kernel.get(this, "keepCommand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sync = software.amazon.jsii.Kernel.get(this, "sync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timed = software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -573,6 +603,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
             this.keepCommand = builder.keepCommand;
             this.name = builder.name;
             this.parameters = builder.parameters;
+            this.sync = builder.sync;
             this.timed = builder.timed;
             this.timeout = builder.timeout;
             this.workingDir = builder.workingDir;
@@ -629,6 +660,11 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getSync() {
+            return this.sync;
+        }
+
+        @Override
         public final java.lang.Object getTimed() {
             return this.timed;
         }
@@ -673,6 +709,9 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getParameters() != null) {
                 data.set("parameters", om.valueToTree(this.getParameters()));
             }
+            if (this.getSync() != null) {
+                data.set("sync", om.valueToTree(this.getSync()));
+            }
             if (this.getTimed() != null) {
                 data.set("timed", om.valueToTree(this.getTimed()));
             }
@@ -710,6 +749,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
             if (this.keepCommand != null ? !this.keepCommand.equals(that.keepCommand) : that.keepCommand != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
+            if (this.sync != null ? !this.sync.equals(that.sync) : that.sync != null) return false;
             if (this.timed != null ? !this.timed.equals(that.timed) : that.timed != null) return false;
             if (this.timeout != null ? !this.timeout.equals(that.timeout) : that.timeout != null) return false;
             return this.workingDir != null ? this.workingDir.equals(that.workingDir) : that.workingDir == null;
@@ -727,6 +767,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.keepCommand != null ? this.keepCommand.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
+            result = 31 * result + (this.sync != null ? this.sync.hashCode() : 0);
             result = 31 * result + (this.timed != null ? this.timed.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
             result = 31 * result + (this.workingDir != null ? this.workingDir.hashCode() : 0);

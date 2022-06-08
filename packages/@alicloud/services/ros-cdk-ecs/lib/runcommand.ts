@@ -81,6 +81,11 @@ export interface RunCommandProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * Property sync: Whether to invoke synchronously.
+     */
+    readonly sync?: boolean | ros.IResolvable;
+
+    /**
      * Property timed: Specifies whether to periodically run the script. Valid values:
      * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
      * false: runs once only.
@@ -124,6 +129,11 @@ export class RunCommand extends ros.Resource {
     public readonly attrInvokeId: ros.IResolvable;
 
     /**
+     * Attribute InvokeInstances: The InvokeInstances of command.
+     */
+    public readonly attrInvokeInstances: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::ECS::RunCommand`.
      *
      * Param scope - scope in which this resource is defined
@@ -145,11 +155,13 @@ export class RunCommand extends ros.Resource {
             type: props.type,
             frequency: props.frequency,
             enableParameter: props.enableParameter,
+            sync: props.sync === undefined || props.sync === null ? false : props.sync,
             instanceIds: props.instanceIds,
             keepCommand: props.keepCommand,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRunCommand;
         this.attrCommandId = rosRunCommand.attrCommandId;
         this.attrInvokeId = rosRunCommand.attrInvokeId;
+        this.attrInvokeInstances = rosRunCommand.attrInvokeInstances;
     }
 }

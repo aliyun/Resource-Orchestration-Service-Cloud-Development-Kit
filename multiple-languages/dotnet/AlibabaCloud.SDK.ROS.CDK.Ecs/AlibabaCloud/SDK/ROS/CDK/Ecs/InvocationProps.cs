@@ -58,6 +58,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
+        /// <summary>Property sync: Whether to invoke synchronously.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "sync", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Sync
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property timed: Whether it is timed execution.</summary>
         /// <remarks>
         /// Default is False.

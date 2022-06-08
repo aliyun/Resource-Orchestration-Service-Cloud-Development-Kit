@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.cxapi;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.462Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.MetadataEntryResult")
 @software.amazon.jsii.Jsii.Proxy(MetadataEntryResult.Jsii$Proxy.class)
 public interface MetadataEntryResult extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.assembly.schema.MetadataEntry {

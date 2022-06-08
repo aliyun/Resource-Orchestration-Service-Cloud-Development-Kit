@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * Parameters enable you to input custom values to your template each time you create or
  * update a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:00.684Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.527Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosParameter")
 public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 

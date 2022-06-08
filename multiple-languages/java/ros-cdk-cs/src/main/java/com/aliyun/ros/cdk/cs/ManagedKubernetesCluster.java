@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.376Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.191Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -803,6 +803,27 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder nodeCidrMask(final com.aliyun.ros.cdk.core.IResolvable nodeCidrMask) {
             this.props.nodeCidrMask(nodeCidrMask);
+            return this;
+        }
+
+        /**
+         * Property nodePools: The configurations of Node pools.
+         * <p>
+         * @return {@code this}
+         * @param nodePools Property nodePools: The configurations of Node pools. This parameter is required.
+         */
+        public Builder nodePools(final com.aliyun.ros.cdk.core.IResolvable nodePools) {
+            this.props.nodePools(nodePools);
+            return this;
+        }
+        /**
+         * Property nodePools: The configurations of Node pools.
+         * <p>
+         * @return {@code this}
+         * @param nodePools Property nodePools: The configurations of Node pools. This parameter is required.
+         */
+        public Builder nodePools(final java.util.List<? extends java.lang.Object> nodePools) {
+            this.props.nodePools(nodePools);
             return this;
         }
 

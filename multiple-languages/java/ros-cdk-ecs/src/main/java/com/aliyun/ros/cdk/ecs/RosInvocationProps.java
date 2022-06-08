@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-05-20T02:42:01.922Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.807Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocationProps")
 @software.amazon.jsii.Jsii.Proxy(RosInvocationProps.Jsii$Proxy.class)
 public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,6 +30,12 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSync() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimed() {
         return null;
     }
@@ -48,6 +54,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object instanceIds;
         java.lang.Object frequency;
         java.lang.Object parameters;
+        java.lang.Object sync;
         java.lang.Object timed;
 
         /**
@@ -131,6 +138,26 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosInvocationProps#getSync}
+         * @param sync the value to be set.
+         * @return {@code this}
+         */
+        public Builder sync(java.lang.Boolean sync) {
+            this.sync = sync;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getSync}
+         * @param sync the value to be set.
+         * @return {@code this}
+         */
+        public Builder sync(com.aliyun.ros.cdk.core.IResolvable sync) {
+            this.sync = sync;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInvocationProps#getTimed}
          * @param timed the value to be set.
          * @return {@code this}
@@ -170,6 +197,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object instanceIds;
         private final java.lang.Object frequency;
         private final java.lang.Object parameters;
+        private final java.lang.Object sync;
         private final java.lang.Object timed;
 
         /**
@@ -182,6 +210,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sync = software.amazon.jsii.Kernel.get(this, "sync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timed = software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -194,6 +223,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
             this.frequency = builder.frequency;
             this.parameters = builder.parameters;
+            this.sync = builder.sync;
             this.timed = builder.timed;
         }
 
@@ -218,6 +248,11 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getSync() {
+            return this.sync;
+        }
+
+        @Override
         public final java.lang.Object getTimed() {
             return this.timed;
         }
@@ -235,6 +270,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getParameters() != null) {
                 data.set("parameters", om.valueToTree(this.getParameters()));
+            }
+            if (this.getSync() != null) {
+                data.set("sync", om.valueToTree(this.getSync()));
             }
             if (this.getTimed() != null) {
                 data.set("timed", om.valueToTree(this.getTimed()));
@@ -261,6 +299,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             if (!instanceIds.equals(that.instanceIds)) return false;
             if (this.frequency != null ? !this.frequency.equals(that.frequency) : that.frequency != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
+            if (this.sync != null ? !this.sync.equals(that.sync) : that.sync != null) return false;
             return this.timed != null ? this.timed.equals(that.timed) : that.timed == null;
         }
 
@@ -270,6 +309,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.instanceIds.hashCode());
             result = 31 * result + (this.frequency != null ? this.frequency.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
+            result = 31 * result + (this.sync != null ? this.sync.hashCode() : 0);
             result = 31 * result + (this.timed != null ? this.timed.hashCode() : 0);
             return result;
         }

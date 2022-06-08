@@ -7889,6 +7889,11 @@ export interface RosInvocationProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * @Property sync: Whether to invoke synchronously.
+     */
+    readonly sync?: boolean | ros.IResolvable;
+
+    /**
      * @Property timed: Whether it is timed execution. Default is False.
      */
     readonly timed?: boolean | ros.IResolvable;
@@ -7909,6 +7914,7 @@ function RosInvocationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('frequency', ros.validateString)(properties.frequency));
     errors.collect(ros.propertyValidator('commandId', ros.requiredValidator)(properties.commandId));
     errors.collect(ros.propertyValidator('commandId', ros.validateString)(properties.commandId));
+    errors.collect(ros.propertyValidator('sync', ros.validateBoolean)(properties.sync));
     errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
@@ -7939,6 +7945,7 @@ function rosInvocationPropsToRosTemplate(properties: any, enableResourceProperty
       InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
       Frequency: ros.stringToRosTemplate(properties.frequency),
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      Sync: ros.booleanToRosTemplate(properties.sync),
       Timed: ros.booleanToRosTemplate(properties.timed),
     };
 }
@@ -7961,6 +7968,11 @@ export class RosInvocation extends ros.RosResource {
      * @Attribute InvokeId: The id of command execution.
      */
     public readonly attrInvokeId: ros.IResolvable;
+
+    /**
+     * @Attribute InvokeInstances: The InvokeInstances of command.
+     */
+    public readonly attrInvokeInstances: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -7992,6 +8004,11 @@ export class RosInvocation extends ros.RosResource {
     public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
+     * @Property sync: Whether to invoke synchronously.
+     */
+    public sync: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property timed: Whether it is timed execution. Default is False.
      */
     public timed: boolean | ros.IResolvable | undefined;
@@ -8006,12 +8023,14 @@ export class RosInvocation extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosInvocationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInvocation.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrInvokeId = this.getAtt('InvokeId');
+        this.attrInvokeInstances = this.getAtt('InvokeInstances');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.commandId = props.commandId;
         this.instanceIds = props.instanceIds;
         this.frequency = props.frequency;
         this.parameters = props.parameters;
+        this.sync = props.sync;
         this.timed = props.timed;
     }
 
@@ -8022,6 +8041,7 @@ export class RosInvocation extends ros.RosResource {
             instanceIds: this.instanceIds,
             frequency: this.frequency,
             parameters: this.parameters,
+            sync: this.sync,
             timed: this.timed,
         };
     }
@@ -10326,6 +10346,11 @@ export interface RosRunCommandProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * @Property sync: Whether to invoke synchronously.
+     */
+    readonly sync?: boolean | ros.IResolvable;
+
+    /**
      * @Property timed: Specifies whether to periodically run the script. Valid values:
      * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
      * false: runs once only.
@@ -10371,6 +10396,7 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('frequency', ros.validateString)(properties.frequency));
     errors.collect(ros.propertyValidator('enableParameter', ros.validateBoolean)(properties.enableParameter));
+    errors.collect(ros.propertyValidator('sync', ros.validateBoolean)(properties.sync));
     errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
@@ -10408,6 +10434,7 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
       KeepCommand: ros.booleanToRosTemplate(properties.keepCommand),
       Name: ros.stringToRosTemplate(properties.name),
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      Sync: ros.booleanToRosTemplate(properties.sync),
       Timed: ros.booleanToRosTemplate(properties.timed),
       Timeout: ros.numberToRosTemplate(properties.timeout),
       WorkingDir: ros.stringToRosTemplate(properties.workingDir),
@@ -10437,6 +10464,11 @@ export class RosRunCommand extends ros.RosResource {
      * @Attribute InvokeId: The invoke id of command.
      */
     public readonly attrInvokeId: ros.IResolvable;
+
+    /**
+     * @Attribute InvokeInstances: The InvokeInstances of command.
+     */
+    public readonly attrInvokeInstances: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -10514,6 +10546,11 @@ export class RosRunCommand extends ros.RosResource {
     public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
+     * @Property sync: Whether to invoke synchronously.
+     */
+    public sync: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property timed: Specifies whether to periodically run the script. Valid values:
      * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
      * false: runs once only.
@@ -10546,6 +10583,7 @@ export class RosRunCommand extends ros.RosResource {
         super(scope, id, { type: RosRunCommand.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrCommandId = this.getAtt('CommandId');
         this.attrInvokeId = this.getAtt('InvokeId');
+        this.attrInvokeInstances = this.getAtt('InvokeInstances');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.commandContent = props.commandContent;
@@ -10558,6 +10596,7 @@ export class RosRunCommand extends ros.RosResource {
         this.keepCommand = props.keepCommand;
         this.name = props.name;
         this.parameters = props.parameters;
+        this.sync = props.sync;
         this.timed = props.timed;
         this.timeout = props.timeout;
         this.workingDir = props.workingDir;
@@ -10576,6 +10615,7 @@ export class RosRunCommand extends ros.RosResource {
             keepCommand: this.keepCommand,
             name: this.name,
             parameters: this.parameters,
+            sync: this.sync,
             timed: this.timed,
             timeout: this.timeout,
             workingDir: this.workingDir,
