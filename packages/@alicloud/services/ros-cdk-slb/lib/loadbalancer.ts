@@ -55,6 +55,13 @@ export interface LoadBalancerProps {
     readonly duration?: number | ros.IResolvable;
 
     /**
+     * Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
+     * PayByCLCU: billed by usage.
+     * Default: PayBySpec
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
      * Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
      */
     readonly internetChargeType?: string | ros.IResolvable;
@@ -223,14 +230,15 @@ export class LoadBalancer extends ros.Resource {
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
             autoRenewPeriod: props.autoRenewPeriod,
             resourceGroupId: props.resourceGroupId,
+            instanceChargeType: props.instanceChargeType,
             pricingCycle: props.pricingCycle,
-            addressIpVersion: props.addressIpVersion,
-            vSwitchId: props.vSwitchId,
             autoRenew: props.autoRenew,
+            vSwitchId: props.vSwitchId,
+            addressIpVersion: props.addressIpVersion,
             duration: props.duration,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             payType: props.payType,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
             slaveZoneId: props.slaveZoneId,
             modificationProtectionStatus: props.modificationProtectionStatus,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'paybytraffic' : props.internetChargeType,

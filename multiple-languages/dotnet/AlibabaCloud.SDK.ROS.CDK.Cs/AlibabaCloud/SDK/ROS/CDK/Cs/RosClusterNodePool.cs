@@ -2512,19 +2512,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         public interface ITaintsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: effect: The scheduling policy. Valid values:
-            /// NoSchedule: Pods that do not tolerate this taint are not scheduled to nodes with this taint. This policy affects only the scheduling process and takes effect only for pods to be scheduled. Scheduled pods are not subject to this policy.
-            /// NoExecute: Pods that do not tolerate this taint are evicted after this taint is added to the node.
-            /// PreferNoSchedule: a preference policy on pods. Scheduled pods are not subject to this policy. If this taint is added to a node, the system tries to not schedule pods that do not tolerate this taint to the node.
-            /// Default value: NoSchedule.
-            /// </remarks>
-            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Effect
-            {
-                get;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: key: undefined
             /// </remarks>
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -2542,24 +2529,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get;
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: effect: The scheduling policy. Valid values:
+            /// NoSchedule: Pods that do not tolerate this taint are not scheduled to nodes with this taint. This policy affects only the scheduling process and takes effect only for pods to be scheduled. Scheduled pods are not subject to this policy.
+            /// NoExecute: Pods that do not tolerate this taint are evicted after this taint is added to the node.
+            /// PreferNoSchedule: a preference policy on pods. Scheduled pods are not subject to this policy. If this taint is added to a node, the system tries to not schedule pods that do not tolerate this taint to the node.
+            /// Default value: NoSchedule.
+            /// </remarks>
+            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Effect
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(ITaintsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosClusterNodePool.TaintsProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterNodePool.ITaintsProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: effect: The scheduling policy. Valid values:
-                /// NoSchedule: Pods that do not tolerate this taint are not scheduled to nodes with this taint. This policy affects only the scheduling process and takes effect only for pods to be scheduled. Scheduled pods are not subject to this policy.
-                /// NoExecute: Pods that do not tolerate this taint are evicted after this taint is added to the node.
-                /// PreferNoSchedule: a preference policy on pods. Scheduled pods are not subject to this policy. If this taint is added to a node, the system tries to not schedule pods that do not tolerate this taint to the node.
-                /// Default value: NoSchedule.
-                /// </remarks>
-                [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Effect
-                {
-                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -2579,6 +2570,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 {
                     get => GetInstanceProperty<object>()!;
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: effect: The scheduling policy. Valid values:
+                /// NoSchedule: Pods that do not tolerate this taint are not scheduled to nodes with this taint. This policy affects only the scheduling process and takes effect only for pods to be scheduled. Scheduled pods are not subject to this policy.
+                /// NoExecute: Pods that do not tolerate this taint are evicted after this taint is added to the node.
+                /// PreferNoSchedule: a preference policy on pods. Scheduled pods are not subject to this policy. If this taint is added to a node, the system tries to not schedule pods that do not tolerate this taint to the node.
+                /// Default value: NoSchedule.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Effect
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
         #pragma warning disable CS8618
@@ -2586,20 +2591,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosClusterNodePool.TaintsProperty")]
         public class TaintsProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterNodePool.ITaintsProperty
         {
-            /// <remarks>
-            /// <strong>Property</strong>: effect: The scheduling policy. Valid values:
-            /// NoSchedule: Pods that do not tolerate this taint are not scheduled to nodes with this taint. This policy affects only the scheduling process and takes effect only for pods to be scheduled. Scheduled pods are not subject to this policy.
-            /// NoExecute: Pods that do not tolerate this taint are evicted after this taint is added to the node.
-            /// PreferNoSchedule: a preference policy on pods. Scheduled pods are not subject to this policy. If this taint is added to a node, the system tries to not schedule pods that do not tolerate this taint to the node.
-            /// Default value: NoSchedule.
-            /// </remarks>
-            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Effect
-            {
-                get;
-                set;
-            }
-
             /// <remarks>
             /// <strong>Property</strong>: key: undefined
             /// </remarks>
@@ -2615,6 +2606,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// </remarks>
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Value
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: effect: The scheduling policy. Valid values:
+            /// NoSchedule: Pods that do not tolerate this taint are not scheduled to nodes with this taint. This policy affects only the scheduling process and takes effect only for pods to be scheduled. Scheduled pods are not subject to this policy.
+            /// NoExecute: Pods that do not tolerate this taint are evicted after this taint is added to the node.
+            /// PreferNoSchedule: a preference policy on pods. Scheduled pods are not subject to this policy. If this taint is added to a node, the system tries to not schedule pods that do not tolerate this taint to the node.
+            /// Default value: NoSchedule.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Effect
             {
                 get;
                 set;

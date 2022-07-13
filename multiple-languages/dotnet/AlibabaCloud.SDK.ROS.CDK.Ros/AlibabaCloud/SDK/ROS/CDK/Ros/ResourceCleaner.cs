@@ -32,6 +32,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         {
         }
 
+        /// <summary>Attribute CleanResult: The cleanup result.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Success: All resources are cleaned up successfully.</description>
+        /// <description>ResourceFailure: Partial resources fail to clean up.</description>
+        /// <description>Timeout: Timeout to clean up.</description>
+        /// <description>CheckFailure: Pre check of cleanup fails.</description>
+        /// <description>UnknownFailure: Unexpected failure.</description>
+        /// <description>UserCancelled: Cleanup is cancelled by user.</description>
+        /// <description>None: Cleanup is not triggered.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "attrCleanResult", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCleanResult
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute NoCleanupResourceDetails: The details of the resources that are scanned but filtered.</summary>
         /// <remarks>
         /// Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
@@ -39,6 +59,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// </remarks>
         [JsiiProperty(name: "attrNoCleanupResourceDetails", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNoCleanupResourceDetails
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute NoCleanupResourcePartialDetails: The partial details of the resources that are scanned but filtered.</summary>
+        /// <remarks>
+        /// Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
+        /// The format is the same as ResourcePartialDetails.
+        /// </remarks>
+        [JsiiProperty(name: "attrNoCleanupResourcePartialDetails", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNoCleanupResourcePartialDetails
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -76,6 +107,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <summary>Attribute ResourcePartialDetails: The partial details of resources to be cleaned up.</summary>
+        /// <remarks>
+        /// The value is a list of dict. The dict contains the fields below:
+        ///
+        /// <list type="bullet">
+        /// <description>ResourceType: Resource type of the resource.</description>
+        /// <description>RegionId: Region ID of the resource.</description>
+        /// <description>ResourceId: ID of the resource.</description>
+        /// <description>ResourceName: Name of the resource.</description>
+        /// <description>ResourceStatus: Status of the resource. Valid values:</description>
+        /// <description>Deleting: The resource is deleting.</description>
+        /// <description>Failure: The deletion of the resource failed.</description>
+        /// <description>Success: The resource is deleted.</description>
+        /// <description>Skipped: The deletion of the resource is skipped.</description>
+        /// <description>Pending: The deletion of the resource is not started.</description>
+        /// <description>ResourceStatusReason: The information of the related ResourceStatus.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "attrResourcePartialDetails", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourcePartialDetails
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute ResourceSummary: The details of resources to be cleaned up.</summary>
         /// <remarks>
         /// The value is a list of dict. The dict contains the fields below:
@@ -93,6 +148,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// </remarks>
         [JsiiProperty(name: "attrResourceSummary", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceSummary
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute ScanErrors: The scan errors.</summary>
+        /// <remarks>
+        /// It takes effect only when property Mode is Loose.
+        /// The value is a list of dict. The dict contains the fields below:
+        ///
+        /// <list type="bullet">
+        /// <description>ResourceType: Resource type for scanning.</description>
+        /// <description>RegionId: Region ID for scanning.</description>
+        /// <description>ErrorMessage: Error message of scanning with specified resource type and region ID.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "attrScanErrors", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScanErrors
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }

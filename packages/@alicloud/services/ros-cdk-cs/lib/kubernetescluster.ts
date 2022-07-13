@@ -30,11 +30,6 @@ export interface KubernetesClusterProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
-     */
-    readonly workerInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * Property workerVSwitchIds: The virtual switch ID of the worker node.
      */
     readonly workerVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -233,6 +228,13 @@ export interface KubernetesClusterProps {
     readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
+     * Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix. The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+     * - The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.
+     * - The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.
+     */
+    readonly nodeNameMode?: string | ros.IResolvable;
+
+    /**
      * Property nodePools: The configurations of Node pools.
      */
     readonly nodePools?: Array<RosKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable;
@@ -390,6 +392,11 @@ export interface KubernetesClusterProps {
     readonly workerDataDisks?: Array<RosKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
+     */
+    readonly workerInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property workerSystemDiskCategory: Worker node system disk type. The value includes:
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
@@ -500,6 +507,7 @@ export class KubernetesCluster extends ros.Resource {
             runtime: props.runtime,
             masterZoneIds: props.masterZoneIds,
             osType: props.osType,
+            nodeNameMode: props.nodeNameMode,
             workerZoneIds: props.workerZoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBNodes`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.899Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.538Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBNodesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBNodesProps.Jsii$Proxy.class)
 public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,12 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImciSwitch() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosDBNodesProps}
      */
     static Builder builder() {
@@ -28,6 +34,7 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<RosDBNodesProps> {
         java.lang.Object amount;
         java.lang.Object dbClusterId;
+        java.lang.Object imciSwitch;
 
         /**
          * Sets the value of {@link RosDBNodesProps#getAmount}
@@ -70,6 +77,26 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDBNodesProps#getImciSwitch}
+         * @param imciSwitch the value to be set.
+         * @return {@code this}
+         */
+        public Builder imciSwitch(java.lang.String imciSwitch) {
+            this.imciSwitch = imciSwitch;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getImciSwitch}
+         * @param imciSwitch the value to be set.
+         * @return {@code this}
+         */
+        public Builder imciSwitch(com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
+            this.imciSwitch = imciSwitch;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosDBNodesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -87,6 +114,7 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDBNodesProps {
         private final java.lang.Object amount;
         private final java.lang.Object dbClusterId;
+        private final java.lang.Object imciSwitch;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -96,6 +124,7 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.amount = software.amazon.jsii.Kernel.get(this, "amount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imciSwitch = software.amazon.jsii.Kernel.get(this, "imciSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -105,6 +134,7 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.amount = java.util.Objects.requireNonNull(builder.amount, "amount is required");
             this.dbClusterId = java.util.Objects.requireNonNull(builder.dbClusterId, "dbClusterId is required");
+            this.imciSwitch = builder.imciSwitch;
         }
 
         @Override
@@ -118,6 +148,11 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getImciSwitch() {
+            return this.imciSwitch;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -125,6 +160,9 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
 
             data.set("amount", om.valueToTree(this.getAmount()));
             data.set("dbClusterId", om.valueToTree(this.getDbClusterId()));
+            if (this.getImciSwitch() != null) {
+                data.set("imciSwitch", om.valueToTree(this.getImciSwitch()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-polardb.RosDBNodesProps"));
@@ -144,13 +182,15 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             RosDBNodesProps.Jsii$Proxy that = (RosDBNodesProps.Jsii$Proxy) o;
 
             if (!amount.equals(that.amount)) return false;
-            return this.dbClusterId.equals(that.dbClusterId);
+            if (!dbClusterId.equals(that.dbClusterId)) return false;
+            return this.imciSwitch != null ? this.imciSwitch.equals(that.imciSwitch) : that.imciSwitch == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.amount.hashCode();
             result = 31 * result + (this.dbClusterId.hashCode());
+            result = 31 * result + (this.imciSwitch != null ? this.imciSwitch.hashCode() : 0);
             return result;
         }
     }

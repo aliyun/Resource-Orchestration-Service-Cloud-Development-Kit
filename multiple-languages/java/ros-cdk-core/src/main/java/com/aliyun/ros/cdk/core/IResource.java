@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Interface for the Resource construct.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.500Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IResource")
 @software.amazon.jsii.Jsii.Proxy(IResource.Jsii$Proxy.class)
 public interface IResource extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IConstruct {

@@ -5,10 +5,10 @@ package com.aliyun.ros.cdk.cxapi;
  * <p>
  * This is necessary because its used as an input in the stable
  * <p>
- * @see core.ConstructNode.metadata
+ * @see <a href="core.ConstructNode.metadata">core.ConstructNode.metadata</a>
  * @deprecated moved to package 'ros-assembly-schema'
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.461Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.MetadataEntry")
 @software.amazon.jsii.Jsii.Proxy(MetadataEntry.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)

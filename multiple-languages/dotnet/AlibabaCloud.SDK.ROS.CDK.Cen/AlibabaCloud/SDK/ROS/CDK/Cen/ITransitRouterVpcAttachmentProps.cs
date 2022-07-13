@@ -22,6 +22,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
+        /// <summary>Property autoCreateVpcRoute: undefined.</summary>
+        [JsiiProperty(name: "autoCreateVpcRoute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoCreateVpcRoute
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property cenId: CenId.</summary>
         [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -37,6 +48,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ChargeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.</summary>
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionForce
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property routeTableAssociationEnabled: undefined.</summary>
+        [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RouteTableAssociationEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property routeTablePropagationEnabled: undefined.</summary>
+        [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RouteTablePropagationEnabled
         {
             get
             {
@@ -110,6 +154,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property autoCreateVpcRoute: undefined.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoCreateVpcRoute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoCreateVpcRoute
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property cenId: CenId.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -122,6 +174,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             [JsiiOptional]
             [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ChargeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionForce
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property routeTableAssociationEnabled: undefined.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RouteTableAssociationEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property routeTablePropagationEnabled: undefined.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RouteTablePropagationEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

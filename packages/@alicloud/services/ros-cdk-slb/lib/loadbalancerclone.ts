@@ -24,9 +24,22 @@ export interface LoadBalancerCloneProps {
     readonly backendServersPolicy?: string | ros.IResolvable;
 
     /**
+     * Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
+     * PayByCLCU: billed by usage.
+     * If not specified, it is same with the source load balancer.
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
      * Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
+
+    /**
+     * Property loadBalancerSpec: The specification of the load balancer. If not specified, it is same with the source load balancer.
+     * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+     */
+    readonly loadBalancerSpec?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
@@ -39,7 +52,7 @@ export interface LoadBalancerCloneProps {
     readonly tags?: RosLoadBalancerClone.TagsProperty[];
 
     /**
-     * Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+     * Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not copy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
      * Default is 'empty'.
      */
     readonly tagsPolicy?: string | ros.IResolvable;
@@ -78,11 +91,13 @@ export class LoadBalancerClone extends ros.Resource {
         const rosLoadBalancerClone = new RosLoadBalancerClone(this, id,  {
             loadBalancerName: props.loadBalancerName,
             sourceLoadBalancerId: props.sourceLoadBalancerId,
-            resourceGroupId: props.resourceGroupId,
             tagsPolicy: props.tagsPolicy === undefined || props.tagsPolicy === null ? 'empty' : props.tagsPolicy,
+            resourceGroupId: props.resourceGroupId,
+            instanceChargeType: props.instanceChargeType,
             vSwitchId: props.vSwitchId,
             backendServers: props.backendServers,
             tags: props.tags,
+            loadBalancerSpec: props.loadBalancerSpec,
             backendServersPolicy: props.backendServersPolicy === undefined || props.backendServersPolicy === null ? 'clone' : props.backendServersPolicy,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLoadBalancerClone;

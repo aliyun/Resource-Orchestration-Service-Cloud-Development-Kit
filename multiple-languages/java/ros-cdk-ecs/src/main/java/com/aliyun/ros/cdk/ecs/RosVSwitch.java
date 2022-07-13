@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::VSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:20.479Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosVSwitch")
 public class RosVSwitch extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -209,6 +209,24 @@ public class RosVSwitch extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setVSwitchName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vSwitchName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneType() {
+        return software.amazon.jsii.Kernel.get(this, "zoneType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneType", value);
+    }
+
+    /**
+     */
+    public void setZoneType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneType", value);
     }
     /**
      */
@@ -530,6 +548,23 @@ public class RosVSwitch extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder vSwitchName(final com.aliyun.ros.cdk.core.IResolvable vSwitchName) {
             this.props.vSwitchName(vSwitchName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneType This parameter is required.
+         */
+        public Builder zoneType(final java.lang.String zoneType) {
+            this.props.zoneType(zoneType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneType This parameter is required.
+         */
+        public Builder zoneType(final com.aliyun.ros.cdk.core.IResolvable zoneType) {
+            this.props.zoneType(zoneType);
             return this;
         }
 

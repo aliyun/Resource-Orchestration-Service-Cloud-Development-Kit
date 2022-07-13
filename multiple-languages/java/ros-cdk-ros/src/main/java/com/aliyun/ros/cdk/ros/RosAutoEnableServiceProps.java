@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::AutoEnableService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.219Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.881Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosAutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(RosAutoEnableServiceProps.Jsii$Proxy.class)
 public interface RosAutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {

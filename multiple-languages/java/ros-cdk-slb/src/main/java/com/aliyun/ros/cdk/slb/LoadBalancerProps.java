@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.389Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:22.057Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -79,6 +79,17 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * If PricingCycle is year, the value range is 1 to 5.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
+        return null;
+    }
+
+    /**
+     * Property instanceChargeType: Instance billing method.
+     * <p>
+     * Value:PayBySpec: Pay by spec.
+     * PayByCLCU: billed by usage.
+     * Default: PayBySpec
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
@@ -210,6 +221,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object bandwidth;
         java.lang.Object deletionProtection;
         java.lang.Object duration;
+        java.lang.Object instanceChargeType;
         java.lang.Object internetChargeType;
         java.lang.Object loadBalancerName;
         java.lang.Object loadBalancerSpec;
@@ -403,6 +415,32 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
             this.duration = duration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getInstanceChargeType}
+         * @param instanceChargeType Property instanceChargeType: Instance billing method.
+         *                           Value:PayBySpec: Pay by spec.
+         *                           PayByCLCU: billed by usage.
+         *                           Default: PayBySpec
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(java.lang.String instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getInstanceChargeType}
+         * @param instanceChargeType Property instanceChargeType: Instance billing method.
+         *                           Value:PayBySpec: Pay by spec.
+         *                           PayByCLCU: billed by usage.
+         *                           Default: PayBySpec
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
             return this;
         }
 
@@ -702,6 +740,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object bandwidth;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object duration;
+        private final java.lang.Object instanceChargeType;
         private final java.lang.Object internetChargeType;
         private final java.lang.Object loadBalancerName;
         private final java.lang.Object loadBalancerSpec;
@@ -730,6 +769,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -759,6 +799,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.bandwidth = builder.bandwidth;
             this.deletionProtection = builder.deletionProtection;
             this.duration = builder.duration;
+            this.instanceChargeType = builder.instanceChargeType;
             this.internetChargeType = builder.internetChargeType;
             this.loadBalancerName = builder.loadBalancerName;
             this.loadBalancerSpec = builder.loadBalancerSpec;
@@ -812,6 +853,11 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getDuration() {
             return this.duration;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceChargeType() {
+            return this.instanceChargeType;
         }
 
         @Override
@@ -909,6 +955,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (this.getDuration() != null) {
                 data.set("duration", om.valueToTree(this.getDuration()));
             }
+            if (this.getInstanceChargeType() != null) {
+                data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
+            }
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
             }
@@ -974,6 +1023,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
+            if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
             if (this.loadBalancerName != null ? !this.loadBalancerName.equals(that.loadBalancerName) : that.loadBalancerName != null) return false;
             if (this.loadBalancerSpec != null ? !this.loadBalancerSpec.equals(that.loadBalancerSpec) : that.loadBalancerSpec != null) return false;
@@ -999,6 +1049,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
+            result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
             result = 31 * result + (this.loadBalancerName != null ? this.loadBalancerName.hashCode() : 0);
             result = 31 * result + (this.loadBalancerSpec != null ? this.loadBalancerSpec.hashCode() : 0);

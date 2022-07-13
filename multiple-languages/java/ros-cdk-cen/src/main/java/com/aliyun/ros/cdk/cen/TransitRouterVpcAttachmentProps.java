@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::TransitRouterVpcAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.541Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterVpcAttachmentProps.Jsii$Proxy.class)
 public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,13 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneMappings();
 
     /**
+     * Property autoCreateVpcRoute: undefined.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoCreateVpcRoute() {
+        return null;
+    }
+
+    /**
      * Property cenId: CenId.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCenId() {
@@ -29,6 +36,27 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
      * Property chargeType:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
+        return null;
+    }
+
+    /**
+     * Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
+
+    /**
+     * Property routeTableAssociationEnabled: undefined.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTableAssociationEnabled() {
+        return null;
+    }
+
+    /**
+     * Property routeTablePropagationEnabled: undefined.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTablePropagationEnabled() {
         return null;
     }
 
@@ -72,8 +100,12 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
     public static final class Builder implements software.amazon.jsii.Builder<TransitRouterVpcAttachmentProps> {
         java.lang.Object vpcId;
         java.lang.Object zoneMappings;
+        java.lang.Object autoCreateVpcRoute;
         java.lang.Object cenId;
         java.lang.Object chargeType;
+        java.lang.Object deletionForce;
+        java.lang.Object routeTableAssociationEnabled;
+        java.lang.Object routeTablePropagationEnabled;
         java.lang.Object transitRouterAttachmentDescription;
         java.lang.Object transitRouterAttachmentName;
         java.lang.Object transitRouterId;
@@ -120,6 +152,26 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
         }
 
         /**
+         * Sets the value of {@link TransitRouterVpcAttachmentProps#getAutoCreateVpcRoute}
+         * @param autoCreateVpcRoute Property autoCreateVpcRoute: undefined.
+         * @return {@code this}
+         */
+        public Builder autoCreateVpcRoute(java.lang.Boolean autoCreateVpcRoute) {
+            this.autoCreateVpcRoute = autoCreateVpcRoute;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterVpcAttachmentProps#getAutoCreateVpcRoute}
+         * @param autoCreateVpcRoute Property autoCreateVpcRoute: undefined.
+         * @return {@code this}
+         */
+        public Builder autoCreateVpcRoute(com.aliyun.ros.cdk.core.IResolvable autoCreateVpcRoute) {
+            this.autoCreateVpcRoute = autoCreateVpcRoute;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getCenId}
          * @param cenId Property cenId: CenId.
          * @return {@code this}
@@ -156,6 +208,66 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
          */
         public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterVpcAttachmentProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterVpcAttachmentProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterVpcAttachmentProps#getRouteTableAssociationEnabled}
+         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled: undefined.
+         * @return {@code this}
+         */
+        public Builder routeTableAssociationEnabled(java.lang.Boolean routeTableAssociationEnabled) {
+            this.routeTableAssociationEnabled = routeTableAssociationEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterVpcAttachmentProps#getRouteTableAssociationEnabled}
+         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled: undefined.
+         * @return {@code this}
+         */
+        public Builder routeTableAssociationEnabled(com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
+            this.routeTableAssociationEnabled = routeTableAssociationEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterVpcAttachmentProps#getRouteTablePropagationEnabled}
+         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled: undefined.
+         * @return {@code this}
+         */
+        public Builder routeTablePropagationEnabled(java.lang.Boolean routeTablePropagationEnabled) {
+            this.routeTablePropagationEnabled = routeTablePropagationEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterVpcAttachmentProps#getRouteTablePropagationEnabled}
+         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled: undefined.
+         * @return {@code this}
+         */
+        public Builder routeTablePropagationEnabled(com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
+            this.routeTablePropagationEnabled = routeTablePropagationEnabled;
             return this;
         }
 
@@ -257,8 +369,12 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TransitRouterVpcAttachmentProps {
         private final java.lang.Object vpcId;
         private final java.lang.Object zoneMappings;
+        private final java.lang.Object autoCreateVpcRoute;
         private final java.lang.Object cenId;
         private final java.lang.Object chargeType;
+        private final java.lang.Object deletionForce;
+        private final java.lang.Object routeTableAssociationEnabled;
+        private final java.lang.Object routeTablePropagationEnabled;
         private final java.lang.Object transitRouterAttachmentDescription;
         private final java.lang.Object transitRouterAttachmentName;
         private final java.lang.Object transitRouterId;
@@ -272,8 +388,12 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
             super(objRef);
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneMappings = software.amazon.jsii.Kernel.get(this, "zoneMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoCreateVpcRoute = software.amazon.jsii.Kernel.get(this, "autoCreateVpcRoute", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routeTableAssociationEnabled = software.amazon.jsii.Kernel.get(this, "routeTableAssociationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routeTablePropagationEnabled = software.amazon.jsii.Kernel.get(this, "routeTablePropagationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterAttachmentDescription = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterAttachmentName = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterId = software.amazon.jsii.Kernel.get(this, "transitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -287,8 +407,12 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.zoneMappings = java.util.Objects.requireNonNull(builder.zoneMappings, "zoneMappings is required");
+            this.autoCreateVpcRoute = builder.autoCreateVpcRoute;
             this.cenId = builder.cenId;
             this.chargeType = builder.chargeType;
+            this.deletionForce = builder.deletionForce;
+            this.routeTableAssociationEnabled = builder.routeTableAssociationEnabled;
+            this.routeTablePropagationEnabled = builder.routeTablePropagationEnabled;
             this.transitRouterAttachmentDescription = builder.transitRouterAttachmentDescription;
             this.transitRouterAttachmentName = builder.transitRouterAttachmentName;
             this.transitRouterId = builder.transitRouterId;
@@ -306,6 +430,11 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
         }
 
         @Override
+        public final java.lang.Object getAutoCreateVpcRoute() {
+            return this.autoCreateVpcRoute;
+        }
+
+        @Override
         public final java.lang.Object getCenId() {
             return this.cenId;
         }
@@ -313,6 +442,21 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
         @Override
         public final java.lang.Object getChargeType() {
             return this.chargeType;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
+        }
+
+        @Override
+        public final java.lang.Object getRouteTableAssociationEnabled() {
+            return this.routeTableAssociationEnabled;
+        }
+
+        @Override
+        public final java.lang.Object getRouteTablePropagationEnabled() {
+            return this.routeTablePropagationEnabled;
         }
 
         @Override
@@ -343,11 +487,23 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("zoneMappings", om.valueToTree(this.getZoneMappings()));
+            if (this.getAutoCreateVpcRoute() != null) {
+                data.set("autoCreateVpcRoute", om.valueToTree(this.getAutoCreateVpcRoute()));
+            }
             if (this.getCenId() != null) {
                 data.set("cenId", om.valueToTree(this.getCenId()));
             }
             if (this.getChargeType() != null) {
                 data.set("chargeType", om.valueToTree(this.getChargeType()));
+            }
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
+            }
+            if (this.getRouteTableAssociationEnabled() != null) {
+                data.set("routeTableAssociationEnabled", om.valueToTree(this.getRouteTableAssociationEnabled()));
+            }
+            if (this.getRouteTablePropagationEnabled() != null) {
+                data.set("routeTablePropagationEnabled", om.valueToTree(this.getRouteTablePropagationEnabled()));
             }
             if (this.getTransitRouterAttachmentDescription() != null) {
                 data.set("transitRouterAttachmentDescription", om.valueToTree(this.getTransitRouterAttachmentDescription()));
@@ -381,8 +537,12 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
             if (!vpcId.equals(that.vpcId)) return false;
             if (!zoneMappings.equals(that.zoneMappings)) return false;
+            if (this.autoCreateVpcRoute != null ? !this.autoCreateVpcRoute.equals(that.autoCreateVpcRoute) : that.autoCreateVpcRoute != null) return false;
             if (this.cenId != null ? !this.cenId.equals(that.cenId) : that.cenId != null) return false;
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
+            if (this.routeTableAssociationEnabled != null ? !this.routeTableAssociationEnabled.equals(that.routeTableAssociationEnabled) : that.routeTableAssociationEnabled != null) return false;
+            if (this.routeTablePropagationEnabled != null ? !this.routeTablePropagationEnabled.equals(that.routeTablePropagationEnabled) : that.routeTablePropagationEnabled != null) return false;
             if (this.transitRouterAttachmentDescription != null ? !this.transitRouterAttachmentDescription.equals(that.transitRouterAttachmentDescription) : that.transitRouterAttachmentDescription != null) return false;
             if (this.transitRouterAttachmentName != null ? !this.transitRouterAttachmentName.equals(that.transitRouterAttachmentName) : that.transitRouterAttachmentName != null) return false;
             if (this.transitRouterId != null ? !this.transitRouterId.equals(that.transitRouterId) : that.transitRouterId != null) return false;
@@ -393,8 +553,12 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
         public final int hashCode() {
             int result = this.vpcId.hashCode();
             result = 31 * result + (this.zoneMappings.hashCode());
+            result = 31 * result + (this.autoCreateVpcRoute != null ? this.autoCreateVpcRoute.hashCode() : 0);
             result = 31 * result + (this.cenId != null ? this.cenId.hashCode() : 0);
             result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
+            result = 31 * result + (this.routeTableAssociationEnabled != null ? this.routeTableAssociationEnabled.hashCode() : 0);
+            result = 31 * result + (this.routeTablePropagationEnabled != null ? this.routeTablePropagationEnabled.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentDescription != null ? this.transitRouterAttachmentDescription.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentName != null ? this.transitRouterAttachmentName.hashCode() : 0);
             result = 31 * result + (this.transitRouterId != null ? this.transitRouterId.hashCode() : 0);

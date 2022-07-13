@@ -287,6 +287,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
+        /// PayByCLCU: billed by usage.
+        /// Default: PayBySpec
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstanceChargeType
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
         /// </remarks>
         [JsiiOptional]

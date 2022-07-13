@@ -14,6 +14,11 @@ export interface ZoneProps {
     readonly zoneName: string | ros.IResolvable;
 
     /**
+     * Property ignoredStackTagKeys: Stack tag keys to ignore
+     */
+    readonly ignoredStackTagKeys?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property proxyPattern: ZONE: completely hijack the entire zone.
      * RECORD: Incomplete hijacking, recursive resolution agent.
      * Default to ZONE.
@@ -88,6 +93,7 @@ export class Zone extends ros.Resource {
 
         const rosZone = new RosZone(this, id,  {
             zoneName: props.zoneName,
+            ignoredStackTagKeys: props.ignoredStackTagKeys,
             resourceGroupId: props.resourceGroupId,
             proxyPattern: props.proxyPattern === undefined || props.proxyPattern === null ? 'ZONE' : props.proxyPattern,
             zoneTag: props.zoneTag,

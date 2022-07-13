@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.287Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,10 +19,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchIds();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getWorkerInstanceTypes();
 
     /**
      */
@@ -141,6 +137,12 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNodeCidrMask() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNodeNameMode() {
         return null;
     }
 
@@ -266,6 +268,12 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerInstanceTypes() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerSystemDiskCategory() {
         return null;
     }
@@ -295,7 +303,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         java.lang.Object name;
         java.lang.Object vpcId;
         java.lang.Object vSwitchIds;
-        java.lang.Object workerInstanceTypes;
         java.lang.Object addons;
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
@@ -316,6 +323,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         java.lang.Object loadBalancerSpec;
         java.lang.Object loginPassword;
         java.lang.Object nodeCidrMask;
+        java.lang.Object nodeNameMode;
         java.lang.Object nodePools;
         java.lang.Object numOfNodes;
         java.lang.Object osType;
@@ -336,6 +344,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         java.lang.Object userData;
         java.lang.Object workerDataDisk;
         java.lang.Object workerDataDisks;
+        java.lang.Object workerInstanceTypes;
         java.lang.Object workerSystemDiskCategory;
         java.lang.Object workerSystemDiskSize;
         java.lang.Object zoneIds;
@@ -397,26 +406,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
          */
         public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.vSwitchIds = vSwitchIds;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedKubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder workerInstanceTypes(com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedKubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder workerInstanceTypes(java.util.List<? extends java.lang.Object> workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
             return this;
         }
 
@@ -821,6 +810,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getNodeNameMode}
+         * @param nodeNameMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder nodeNameMode(java.lang.String nodeNameMode) {
+            this.nodeNameMode = nodeNameMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getNodeNameMode}
+         * @param nodeNameMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder nodeNameMode(com.aliyun.ros.cdk.core.IResolvable nodeNameMode) {
+            this.nodeNameMode = nodeNameMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedKubernetesClusterProps#getNodePools}
          * @param nodePools the value to be set.
          * @return {@code this}
@@ -1212,6 +1221,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getWorkerInstanceTypes}
+         * @param workerInstanceTypes the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerInstanceTypes(com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
+            this.workerInstanceTypes = workerInstanceTypes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getWorkerInstanceTypes}
+         * @param workerInstanceTypes the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerInstanceTypes(java.util.List<? extends java.lang.Object> workerInstanceTypes) {
+            this.workerInstanceTypes = workerInstanceTypes;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedKubernetesClusterProps#getWorkerSystemDiskCategory}
          * @param workerSystemDiskCategory the value to be set.
          * @return {@code this}
@@ -1290,7 +1319,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.lang.Object name;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchIds;
-        private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object addons;
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
@@ -1311,6 +1339,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.lang.Object loadBalancerSpec;
         private final java.lang.Object loginPassword;
         private final java.lang.Object nodeCidrMask;
+        private final java.lang.Object nodeNameMode;
         private final java.lang.Object nodePools;
         private final java.lang.Object numOfNodes;
         private final java.lang.Object osType;
@@ -1331,6 +1360,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.lang.Object userData;
         private final java.lang.Object workerDataDisk;
         private final java.lang.Object workerDataDisks;
+        private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object workerSystemDiskCategory;
         private final java.lang.Object workerSystemDiskSize;
         private final java.lang.Object zoneIds;
@@ -1344,7 +1374,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1365,6 +1394,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nodeNameMode = software.amazon.jsii.Kernel.get(this, "nodeNameMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodePools = software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.osType = software.amazon.jsii.Kernel.get(this, "osType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1385,6 +1415,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisk = software.amazon.jsii.Kernel.get(this, "workerDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1399,7 +1430,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
-            this.workerInstanceTypes = java.util.Objects.requireNonNull(builder.workerInstanceTypes, "workerInstanceTypes is required");
             this.addons = builder.addons;
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
@@ -1420,6 +1450,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.loadBalancerSpec = builder.loadBalancerSpec;
             this.loginPassword = builder.loginPassword;
             this.nodeCidrMask = builder.nodeCidrMask;
+            this.nodeNameMode = builder.nodeNameMode;
             this.nodePools = builder.nodePools;
             this.numOfNodes = builder.numOfNodes;
             this.osType = builder.osType;
@@ -1440,6 +1471,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.userData = builder.userData;
             this.workerDataDisk = builder.workerDataDisk;
             this.workerDataDisks = builder.workerDataDisks;
+            this.workerInstanceTypes = builder.workerInstanceTypes;
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
             this.workerSystemDiskSize = builder.workerSystemDiskSize;
             this.zoneIds = builder.zoneIds;
@@ -1458,11 +1490,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         @Override
         public final java.lang.Object getVSwitchIds() {
             return this.vSwitchIds;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerInstanceTypes() {
-            return this.workerInstanceTypes;
         }
 
         @Override
@@ -1566,6 +1593,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         @Override
+        public final java.lang.Object getNodeNameMode() {
+            return this.nodeNameMode;
+        }
+
+        @Override
         public final java.lang.Object getNodePools() {
             return this.nodePools;
         }
@@ -1666,6 +1698,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         @Override
+        public final java.lang.Object getWorkerInstanceTypes() {
+            return this.workerInstanceTypes;
+        }
+
+        @Override
         public final java.lang.Object getWorkerSystemDiskCategory() {
             return this.workerSystemDiskCategory;
         }
@@ -1689,7 +1726,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             data.set("name", om.valueToTree(this.getName()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
-            data.set("workerInstanceTypes", om.valueToTree(this.getWorkerInstanceTypes()));
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
             }
@@ -1749,6 +1785,9 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             }
             if (this.getNodeCidrMask() != null) {
                 data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
+            }
+            if (this.getNodeNameMode() != null) {
+                data.set("nodeNameMode", om.valueToTree(this.getNodeNameMode()));
             }
             if (this.getNodePools() != null) {
                 data.set("nodePools", om.valueToTree(this.getNodePools()));
@@ -1810,6 +1849,9 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.getWorkerDataDisks() != null) {
                 data.set("workerDataDisks", om.valueToTree(this.getWorkerDataDisks()));
             }
+            if (this.getWorkerInstanceTypes() != null) {
+                data.set("workerInstanceTypes", om.valueToTree(this.getWorkerInstanceTypes()));
+            }
             if (this.getWorkerSystemDiskCategory() != null) {
                 data.set("workerSystemDiskCategory", om.valueToTree(this.getWorkerSystemDiskCategory()));
             }
@@ -1840,7 +1882,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (!name.equals(that.name)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchIds.equals(that.vSwitchIds)) return false;
-            if (!workerInstanceTypes.equals(that.workerInstanceTypes)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
@@ -1861,6 +1902,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.loadBalancerSpec != null ? !this.loadBalancerSpec.equals(that.loadBalancerSpec) : that.loadBalancerSpec != null) return false;
             if (this.loginPassword != null ? !this.loginPassword.equals(that.loginPassword) : that.loginPassword != null) return false;
             if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
+            if (this.nodeNameMode != null ? !this.nodeNameMode.equals(that.nodeNameMode) : that.nodeNameMode != null) return false;
             if (this.nodePools != null ? !this.nodePools.equals(that.nodePools) : that.nodePools != null) return false;
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
             if (this.osType != null ? !this.osType.equals(that.osType) : that.osType != null) return false;
@@ -1881,6 +1923,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
             if (this.workerDataDisk != null ? !this.workerDataDisk.equals(that.workerDataDisk) : that.workerDataDisk != null) return false;
             if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
+            if (this.workerInstanceTypes != null ? !this.workerInstanceTypes.equals(that.workerInstanceTypes) : that.workerInstanceTypes != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
             if (this.workerSystemDiskSize != null ? !this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize != null) return false;
             return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
@@ -1891,7 +1934,6 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             int result = this.name.hashCode();
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.vSwitchIds.hashCode());
-            result = 31 * result + (this.workerInstanceTypes.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
@@ -1912,6 +1954,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             result = 31 * result + (this.loadBalancerSpec != null ? this.loadBalancerSpec.hashCode() : 0);
             result = 31 * result + (this.loginPassword != null ? this.loginPassword.hashCode() : 0);
             result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
+            result = 31 * result + (this.nodeNameMode != null ? this.nodeNameMode.hashCode() : 0);
             result = 31 * result + (this.nodePools != null ? this.nodePools.hashCode() : 0);
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
             result = 31 * result + (this.osType != null ? this.osType.hashCode() : 0);
@@ -1932,6 +1975,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);
             result = 31 * result + (this.workerDataDisk != null ? this.workerDataDisk.hashCode() : 0);
             result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
+            result = 31 * result + (this.workerInstanceTypes != null ? this.workerInstanceTypes.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
             result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);

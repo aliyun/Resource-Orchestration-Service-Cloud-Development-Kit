@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.191Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.855Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -218,31 +218,6 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
-            return this;
-        }
-
-        /**
-         * Property workerInstanceTypes: Worker node ECS specification type code.
-         * <p>
-         * For more details, see Instance Specification Family.
-         * <p>
-         * @return {@code this}
-         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code. This parameter is required.
-         */
-        public Builder workerInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
-            this.props.workerInstanceTypes(workerInstanceTypes);
-            return this;
-        }
-        /**
-         * Property workerInstanceTypes: Worker node ECS specification type code.
-         * <p>
-         * For more details, see Instance Specification Family.
-         * <p>
-         * @return {@code this}
-         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code. This parameter is required.
-         */
-        public Builder workerInstanceTypes(final java.util.List<? extends java.lang.Object> workerInstanceTypes) {
-            this.props.workerInstanceTypes(workerInstanceTypes);
             return this;
         }
 
@@ -807,6 +782,41 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix.
+         * <p>
+         * The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+         * <p>
+         * <ul>
+         * <li>The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.</li>
+         * <li>The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param nodeNameMode Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix. This parameter is required.
+         */
+        public Builder nodeNameMode(final java.lang.String nodeNameMode) {
+            this.props.nodeNameMode(nodeNameMode);
+            return this;
+        }
+        /**
+         * Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix.
+         * <p>
+         * The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+         * <p>
+         * <ul>
+         * <li>The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.</li>
+         * <li>The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param nodeNameMode Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix. This parameter is required.
+         */
+        public Builder nodeNameMode(final com.aliyun.ros.cdk.core.IResolvable nodeNameMode) {
+            this.props.nodeNameMode(nodeNameMode);
+            return this;
+        }
+
+        /**
          * Property nodePools: The configurations of Node pools.
          * <p>
          * @return {@code this}
@@ -1339,6 +1349,31 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder workerDataDisks(final java.util.List<? extends java.lang.Object> workerDataDisks) {
             this.props.workerDataDisks(workerDataDisks);
+            return this;
+        }
+
+        /**
+         * Property workerInstanceTypes: Worker node ECS specification type code.
+         * <p>
+         * For more details, see Instance Specification Family.
+         * <p>
+         * @return {@code this}
+         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code. This parameter is required.
+         */
+        public Builder workerInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
+            this.props.workerInstanceTypes(workerInstanceTypes);
+            return this;
+        }
+        /**
+         * Property workerInstanceTypes: Worker node ECS specification type code.
+         * <p>
+         * For more details, see Instance Specification Family.
+         * <p>
+         * @return {@code this}
+         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code. This parameter is required.
+         */
+        public Builder workerInstanceTypes(final java.util.List<? extends java.lang.Object> workerInstanceTypes) {
+            this.props.workerInstanceTypes(workerInstanceTypes);
             return this;
         }
 

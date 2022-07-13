@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::UserVpcAuthorization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.919Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.575Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.UserVpcAuthorizationProps")
 @software.amazon.jsii.Jsii.Proxy(UserVpcAuthorizationProps.Jsii$Proxy.class)
 public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSerializable {
@@ -39,6 +39,13 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
+     * Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreDeletionForbidden() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link UserVpcAuthorizationProps}
      */
     static Builder builder() {
@@ -52,6 +59,7 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object authChannel;
         java.lang.Object authCode;
         java.lang.Object authType;
+        java.lang.Object ignoreDeletionForbidden;
 
         /**
          * Sets the value of {@link UserVpcAuthorizationProps#getAuthorizedUserId}
@@ -140,6 +148,26 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link UserVpcAuthorizationProps#getIgnoreDeletionForbidden}
+         * @param ignoreDeletionForbidden Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists.
+         * @return {@code this}
+         */
+        public Builder ignoreDeletionForbidden(java.lang.Boolean ignoreDeletionForbidden) {
+            this.ignoreDeletionForbidden = ignoreDeletionForbidden;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link UserVpcAuthorizationProps#getIgnoreDeletionForbidden}
+         * @param ignoreDeletionForbidden Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists.
+         * @return {@code this}
+         */
+        public Builder ignoreDeletionForbidden(com.aliyun.ros.cdk.core.IResolvable ignoreDeletionForbidden) {
+            this.ignoreDeletionForbidden = ignoreDeletionForbidden;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link UserVpcAuthorizationProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -159,6 +187,7 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object authChannel;
         private final java.lang.Object authCode;
         private final java.lang.Object authType;
+        private final java.lang.Object ignoreDeletionForbidden;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -170,6 +199,7 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
             this.authChannel = software.amazon.jsii.Kernel.get(this, "authChannel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.authCode = software.amazon.jsii.Kernel.get(this, "authCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.authType = software.amazon.jsii.Kernel.get(this, "authType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ignoreDeletionForbidden = software.amazon.jsii.Kernel.get(this, "ignoreDeletionForbidden", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -181,6 +211,7 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
             this.authChannel = builder.authChannel;
             this.authCode = builder.authCode;
             this.authType = builder.authType;
+            this.ignoreDeletionForbidden = builder.ignoreDeletionForbidden;
         }
 
         @Override
@@ -204,6 +235,11 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.lang.Object getIgnoreDeletionForbidden() {
+            return this.ignoreDeletionForbidden;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -218,6 +254,9 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
             }
             if (this.getAuthType() != null) {
                 data.set("authType", om.valueToTree(this.getAuthType()));
+            }
+            if (this.getIgnoreDeletionForbidden() != null) {
+                data.set("ignoreDeletionForbidden", om.valueToTree(this.getIgnoreDeletionForbidden()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -240,7 +279,8 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
             if (!authorizedUserId.equals(that.authorizedUserId)) return false;
             if (this.authChannel != null ? !this.authChannel.equals(that.authChannel) : that.authChannel != null) return false;
             if (this.authCode != null ? !this.authCode.equals(that.authCode) : that.authCode != null) return false;
-            return this.authType != null ? this.authType.equals(that.authType) : that.authType == null;
+            if (this.authType != null ? !this.authType.equals(that.authType) : that.authType != null) return false;
+            return this.ignoreDeletionForbidden != null ? this.ignoreDeletionForbidden.equals(that.ignoreDeletionForbidden) : that.ignoreDeletionForbidden == null;
         }
 
         @Override
@@ -249,6 +289,7 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.authChannel != null ? this.authChannel.hashCode() : 0);
             result = 31 * result + (this.authCode != null ? this.authCode.hashCode() : 0);
             result = 31 * result + (this.authType != null ? this.authType.hashCode() : 0);
+            result = 31 * result + (this.ignoreDeletionForbidden != null ? this.ignoreDeletionForbidden.hashCode() : 0);
             return result;
         }
     }

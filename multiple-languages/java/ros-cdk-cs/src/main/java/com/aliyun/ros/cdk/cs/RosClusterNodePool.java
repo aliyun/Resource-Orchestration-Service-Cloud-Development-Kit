@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ClusterNodePool`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.230Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.877Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterNodePool")
 public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -3546,17 +3546,19 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getEffect();
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @org.jetbrains.annotations.NotNull java.lang.Object getKey();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @org.jetbrains.annotations.NotNull java.lang.Object getValue();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEffect() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link TaintsProperty}
@@ -3570,31 +3572,9 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TaintsProperty> {
-            java.lang.Object effect;
             java.lang.Object key;
             java.lang.Object value;
-
-            /**
-             * Sets the value of {@link TaintsProperty#getEffect}
-             * @param effect the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder effect(java.lang.String effect) {
-                this.effect = effect;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link TaintsProperty#getEffect}
-             * @param effect the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder effect(com.aliyun.ros.cdk.core.IResolvable effect) {
-                this.effect = effect;
-                return this;
-            }
+            java.lang.Object effect;
 
             /**
              * Sets the value of {@link TaintsProperty#getKey}
@@ -3641,6 +3621,28 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TaintsProperty#getEffect}
+             * @param effect the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder effect(java.lang.String effect) {
+                this.effect = effect;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TaintsProperty#getEffect}
+             * @param effect the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder effect(com.aliyun.ros.cdk.core.IResolvable effect) {
+                this.effect = effect;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link TaintsProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -3658,9 +3660,9 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TaintsProperty {
-            private final java.lang.Object effect;
             private final java.lang.Object key;
             private final java.lang.Object value;
+            private final java.lang.Object effect;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -3668,9 +3670,9 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -3678,14 +3680,9 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.effect = java.util.Objects.requireNonNull(builder.effect, "effect is required");
                 this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
                 this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
-            }
-
-            @Override
-            public final java.lang.Object getEffect() {
-                return this.effect;
+                this.effect = builder.effect;
             }
 
             @Override
@@ -3699,14 +3696,21 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getEffect() {
+                return this.effect;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("effect", om.valueToTree(this.getEffect()));
                 data.set("key", om.valueToTree(this.getKey()));
                 data.set("value", om.valueToTree(this.getValue()));
+                if (this.getEffect() != null) {
+                    data.set("effect", om.valueToTree(this.getEffect()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosClusterNodePool.TaintsProperty"));
@@ -3725,16 +3729,16 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
 
                 TaintsProperty.Jsii$Proxy that = (TaintsProperty.Jsii$Proxy) o;
 
-                if (!effect.equals(that.effect)) return false;
                 if (!key.equals(that.key)) return false;
-                return this.value.equals(that.value);
+                if (!value.equals(that.value)) return false;
+                return this.effect != null ? this.effect.equals(that.effect) : that.effect == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.effect.hashCode();
-                result = 31 * result + (this.key.hashCode());
+                int result = this.key.hashCode();
                 result = 31 * result + (this.value.hashCode());
+                result = 31 * result + (this.effect != null ? this.effect.hashCode() : 0);
                 return result;
             }
         }

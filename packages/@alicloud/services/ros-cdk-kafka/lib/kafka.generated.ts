@@ -195,6 +195,16 @@ export class RosInstance extends ros.RosResource {
      */
 
     /**
+     * @Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
+     */
+    public readonly attrDomainEndpoint: ros.IResolvable;
+
+    /**
+     * @Attribute Endpoint: The SSL endpoints of the instance in IP address mode.
+     */
+    public readonly attrEndpoint: ros.IResolvable;
+
+    /**
      * @Attribute InstanceId: Id of the instance.
      */
     public readonly attrInstanceId: ros.IResolvable;
@@ -208,6 +218,21 @@ export class RosInstance extends ros.RosResource {
      * @Attribute OrderId: Id of the order.
      */
     public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * @Attribute SaslDomainEndpoint: The Simple Authentication and Security Layer (SASL) endpoints of the instance in domain name mode.
+     */
+    public readonly attrSaslDomainEndpoint: ros.IResolvable;
+
+    /**
+     * @Attribute SslDomainEndpoint: The SSL endpoints of the instance in domain name mode.
+     */
+    public readonly attrSslDomainEndpoint: ros.IResolvable;
+
+    /**
+     * @Attribute SslEndpoint: The SSL endpoints of the instance in IP address mode.
+     */
+    public readonly attrSslEndpoint: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -302,9 +327,14 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDomainEndpoint = this.getAtt('DomainEndpoint');
+        this.attrEndpoint = this.getAtt('Endpoint');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrName = this.getAtt('Name');
         this.attrOrderId = this.getAtt('OrderId');
+        this.attrSaslDomainEndpoint = this.getAtt('SaslDomainEndpoint');
+        this.attrSslDomainEndpoint = this.getAtt('SslDomainEndpoint');
+        this.attrSslEndpoint = this.getAtt('SslEndpoint');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.deployType = props.deployType;

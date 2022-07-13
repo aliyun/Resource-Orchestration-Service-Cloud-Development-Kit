@@ -29,6 +29,11 @@ export interface UserVpcAuthorizationProps {
      * Property authType: Authorization type.
      */
     readonly authType?: string | ros.IResolvable;
+
+    /**
+     * Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists
+     */
+    readonly ignoreDeletionForbidden?: boolean | ros.IResolvable;
 }
 
 /**
@@ -66,6 +71,7 @@ export class UserVpcAuthorization extends ros.Resource {
             authChannel: props.authChannel,
             authorizedUserId: props.authorizedUserId,
             authType: props.authType,
+            ignoreDeletionForbidden: props.ignoreDeletionForbidden === undefined || props.ignoreDeletionForbidden === null ? false : props.ignoreDeletionForbidden,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosUserVpcAuthorization;
         this.attrAuthType = rosUserVpcAuthorization.attrAuthType;

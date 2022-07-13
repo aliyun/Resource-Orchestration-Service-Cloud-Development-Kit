@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.262Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.930Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -167,24 +167,6 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setVSwitchIds(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vSwitchIds", java.util.Objects.requireNonNull(value, "vSwitchIds is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getWorkerInstanceTypes() {
-        return software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setWorkerInstanceTypes(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "workerInstanceTypes", java.util.Objects.requireNonNull(value, "workerInstanceTypes is required"));
-    }
-
-    /**
-     */
-    public void setWorkerInstanceTypes(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
-        software.amazon.jsii.Kernel.set(this, "workerInstanceTypes", java.util.Objects.requireNonNull(value, "workerInstanceTypes is required"));
     }
 
     /**
@@ -549,6 +531,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNodeNameMode() {
+        return software.amazon.jsii.Kernel.get(this, "nodeNameMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNodeNameMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "nodeNameMode", value);
+    }
+
+    /**
+     */
+    public void setNodeNameMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "nodeNameMode", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNodePools() {
         return software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -899,6 +899,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setWorkerDataDisks(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "workerDataDisks", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWorkerInstanceTypes() {
+        return software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setWorkerInstanceTypes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "workerInstanceTypes", value);
+    }
+
+    /**
+     */
+    public void setWorkerInstanceTypes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "workerInstanceTypes", value);
     }
 
     /**
@@ -1541,6 +1559,20 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNodeNameMode() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTaints() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link KubernetesConfigProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1556,6 +1588,8 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             java.lang.Object runtimeVersion;
             java.lang.Object cpuPolicy;
             java.lang.Object labels;
+            java.lang.Object nodeNameMode;
+            java.lang.Object taints;
 
             /**
              * Sets the value of {@link KubernetesConfigProperty#getRuntime}
@@ -1646,6 +1680,50 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link KubernetesConfigProperty#getNodeNameMode}
+             * @param nodeNameMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nodeNameMode(java.lang.String nodeNameMode) {
+                this.nodeNameMode = nodeNameMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getNodeNameMode}
+             * @param nodeNameMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nodeNameMode(com.aliyun.ros.cdk.core.IResolvable nodeNameMode) {
+                this.nodeNameMode = nodeNameMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getTaints}
+             * @param taints the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder taints(com.aliyun.ros.cdk.core.IResolvable taints) {
+                this.taints = taints;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KubernetesConfigProperty#getTaints}
+             * @param taints the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder taints(java.util.List<? extends java.lang.Object> taints) {
+                this.taints = taints;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link KubernetesConfigProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1667,6 +1745,8 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             private final java.lang.Object runtimeVersion;
             private final java.lang.Object cpuPolicy;
             private final java.lang.Object labels;
+            private final java.lang.Object nodeNameMode;
+            private final java.lang.Object taints;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1678,6 +1758,8 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 this.runtimeVersion = software.amazon.jsii.Kernel.get(this, "runtimeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.cpuPolicy = software.amazon.jsii.Kernel.get(this, "cpuPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.labels = software.amazon.jsii.Kernel.get(this, "labels", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.nodeNameMode = software.amazon.jsii.Kernel.get(this, "nodeNameMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.taints = software.amazon.jsii.Kernel.get(this, "taints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1689,6 +1771,8 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 this.runtimeVersion = java.util.Objects.requireNonNull(builder.runtimeVersion, "runtimeVersion is required");
                 this.cpuPolicy = builder.cpuPolicy;
                 this.labels = builder.labels;
+                this.nodeNameMode = builder.nodeNameMode;
+                this.taints = builder.taints;
             }
 
             @Override
@@ -1712,6 +1796,16 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             @Override
+            public final java.lang.Object getNodeNameMode() {
+                return this.nodeNameMode;
+            }
+
+            @Override
+            public final java.lang.Object getTaints() {
+                return this.taints;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1724,6 +1818,12 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 }
                 if (this.getLabels() != null) {
                     data.set("labels", om.valueToTree(this.getLabels()));
+                }
+                if (this.getNodeNameMode() != null) {
+                    data.set("nodeNameMode", om.valueToTree(this.getNodeNameMode()));
+                }
+                if (this.getTaints() != null) {
+                    data.set("taints", om.valueToTree(this.getTaints()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -1746,7 +1846,9 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 if (!runtime.equals(that.runtime)) return false;
                 if (!runtimeVersion.equals(that.runtimeVersion)) return false;
                 if (this.cpuPolicy != null ? !this.cpuPolicy.equals(that.cpuPolicy) : that.cpuPolicy != null) return false;
-                return this.labels != null ? this.labels.equals(that.labels) : that.labels == null;
+                if (this.labels != null ? !this.labels.equals(that.labels) : that.labels != null) return false;
+                if (this.nodeNameMode != null ? !this.nodeNameMode.equals(that.nodeNameMode) : that.nodeNameMode != null) return false;
+                return this.taints != null ? this.taints.equals(that.taints) : that.taints == null;
             }
 
             @Override
@@ -1755,6 +1857,8 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 result = 31 * result + (this.runtimeVersion.hashCode());
                 result = 31 * result + (this.cpuPolicy != null ? this.cpuPolicy.hashCode() : 0);
                 result = 31 * result + (this.labels != null ? this.labels.hashCode() : 0);
+                result = 31 * result + (this.nodeNameMode != null ? this.nodeNameMode.hashCode() : 0);
+                result = 31 * result + (this.taints != null ? this.taints.hashCode() : 0);
                 return result;
             }
         }
@@ -3643,6 +3747,213 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TaintsProperty")
+    @software.amazon.jsii.Jsii.Proxy(TaintsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TaintsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getValue();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEffect() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TaintsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TaintsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TaintsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
+            java.lang.Object effect;
+
+            /**
+             * Sets the value of {@link TaintsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TaintsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TaintsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TaintsProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TaintsProperty#getEffect}
+             * @param effect the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder effect(java.lang.String effect) {
+                this.effect = effect;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TaintsProperty#getEffect}
+             * @param effect the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder effect(com.aliyun.ros.cdk.core.IResolvable effect) {
+                this.effect = effect;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TaintsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TaintsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link TaintsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TaintsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+            private final java.lang.Object effect;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+                this.effect = builder.effect;
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            public final java.lang.Object getEffect() {
+                return this.effect;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                data.set("value", om.valueToTree(this.getValue()));
+                if (this.getEffect() != null) {
+                    data.set("effect", om.valueToTree(this.getEffect()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TaintsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TaintsProperty.Jsii$Proxy that = (TaintsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                if (!value.equals(that.value)) return false;
+                return this.effect != null ? this.effect.equals(that.effect) : that.effect == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value.hashCode());
+                result = 31 * result + (this.effect != null ? this.effect.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.WorkerDataDisksProperty")
     @software.amazon.jsii.Jsii.Proxy(WorkerDataDisksProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -3880,23 +4191,6 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param workerInstanceTypes This parameter is required.
-         */
-        public Builder workerInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
-            this.props.workerInstanceTypes(workerInstanceTypes);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param workerInstanceTypes This parameter is required.
-         */
-        public Builder workerInstanceTypes(final java.util.List<? extends java.lang.Object> workerInstanceTypes) {
-            this.props.workerInstanceTypes(workerInstanceTypes);
             return this;
         }
 
@@ -4242,6 +4536,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
         /**
          * @return {@code this}
+         * @param nodeNameMode This parameter is required.
+         */
+        public Builder nodeNameMode(final java.lang.String nodeNameMode) {
+            this.props.nodeNameMode(nodeNameMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param nodeNameMode This parameter is required.
+         */
+        public Builder nodeNameMode(final com.aliyun.ros.cdk.core.IResolvable nodeNameMode) {
+            this.props.nodeNameMode(nodeNameMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param nodePools This parameter is required.
          */
         public Builder nodePools(final com.aliyun.ros.cdk.core.IResolvable nodePools) {
@@ -4569,6 +4880,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder workerDataDisks(final java.util.List<? extends java.lang.Object> workerDataDisks) {
             this.props.workerDataDisks(workerDataDisks);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param workerInstanceTypes This parameter is required.
+         */
+        public Builder workerInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
+            this.props.workerInstanceTypes(workerInstanceTypes);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param workerInstanceTypes This parameter is required.
+         */
+        public Builder workerInstanceTypes(final java.util.List<? extends java.lang.Object> workerInstanceTypes) {
+            this.props.workerInstanceTypes(workerInstanceTypes);
             return this;
         }
 

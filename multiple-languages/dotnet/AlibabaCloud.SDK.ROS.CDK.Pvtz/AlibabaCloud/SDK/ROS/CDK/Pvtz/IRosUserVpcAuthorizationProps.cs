@@ -58,6 +58,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists
+        /// </remarks>
+        [JsiiProperty(name: "ignoreDeletionForbidden", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IgnoreDeletionForbidden
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::PVTZ::UserVpcAuthorization`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRosUserVpcAuthorizationProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.RosUserVpcAuthorizationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pvtz.IRosUserVpcAuthorizationProps
@@ -103,6 +116,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             [JsiiOptional]
             [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AuthType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ignoreDeletionForbidden", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IgnoreDeletionForbidden
             {
                 get => GetInstanceProperty<object?>();
             }

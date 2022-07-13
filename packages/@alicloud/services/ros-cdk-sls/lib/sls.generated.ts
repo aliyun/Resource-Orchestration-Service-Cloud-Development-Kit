@@ -2175,6 +2175,200 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `ALIYUN::SLS::Dashboard`
+ */
+export interface RosDashboardProps {
+
+    /**
+     * @Property charts: Chart list.
+     */
+    readonly charts: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property dashboardName: Dashboard name.
+     */
+    readonly dashboardName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: Project name:
+     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
+     */
+    readonly projectName: string | ros.IResolvable;
+
+    /**
+     * @Property description: Dashboard description.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property displayName: Dashboard display name.
+     */
+    readonly displayName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDashboardProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDashboardProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDashboardPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dashboardName', ros.requiredValidator)(properties.dashboardName));
+    errors.collect(ros.propertyValidator('dashboardName', ros.validateString)(properties.dashboardName));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    if(properties.projectName && (Array.isArray(properties.projectName) || (typeof properties.projectName) === 'string')) {
+        errors.collect(ros.propertyValidator('projectName', ros.validateLength)({
+            data: properties.projectName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    if(properties.projectName && (typeof properties.projectName) !== 'object') {
+        errors.collect(ros.propertyValidator('projectName', ros.validateAllowedPattern)({
+          data: properties.projectName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    if(properties.displayName && (Array.isArray(properties.displayName) || (typeof properties.displayName) === 'string')) {
+        errors.collect(ros.propertyValidator('displayName', ros.validateLength)({
+            data: properties.displayName.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
+    errors.collect(ros.propertyValidator('charts', ros.requiredValidator)(properties.charts));
+    if(properties.charts && (Array.isArray(properties.charts) || (typeof properties.charts) === 'string')) {
+        errors.collect(ros.propertyValidator('charts', ros.validateLength)({
+            data: properties.charts.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('charts', ros.listValidator(ros.validateAnyDict))(properties.charts));
+    return errors.wrap('supplied properties not correct for "RosDashboardProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Dashboard` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDashboardProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Dashboard` resource.
+ */
+// @ts-ignore TS6133
+function rosDashboardPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDashboardPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Charts: ros.listMapper(ros.anyDictToRosTemplate)(properties.charts),
+      DashboardName: ros.stringToRosTemplate(properties.dashboardName),
+      ProjectName: ros.stringToRosTemplate(properties.projectName),
+      Description: ros.stringToRosTemplate(properties.description),
+      DisplayName: ros.stringToRosTemplate(properties.displayName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SLS::Dashboard`
+ */
+export class RosDashboard extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Dashboard";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DashboardName: Dashboard name.
+     */
+    public readonly attrDashboardName: ros.IResolvable;
+
+    /**
+     * @Attribute DisplayName: Display name.
+     */
+    public readonly attrDisplayName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property charts: Chart list.
+     */
+    public charts: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property dashboardName: Dashboard name.
+     */
+    public dashboardName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: Project name:
+     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
+     */
+    public projectName: string | ros.IResolvable;
+
+    /**
+     * @Property description: Dashboard description.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property displayName: Dashboard display name.
+     */
+    public displayName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SLS::Dashboard`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDashboardProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDashboard.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDashboardName = this.getAtt('DashboardName');
+        this.attrDisplayName = this.getAtt('DisplayName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.charts = props.charts;
+        this.dashboardName = props.dashboardName;
+        this.projectName = props.projectName;
+        this.description = props.description;
+        this.displayName = props.displayName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            charts: this.charts,
+            dashboardName: this.dashboardName,
+            projectName: this.projectName,
+            description: this.description,
+            displayName: this.displayName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDashboardPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::SLS::Etl`
  */
 export interface RosEtlProps {

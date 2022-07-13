@@ -656,11 +656,11 @@ export namespace RosGroup {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version?: string | ros.IResolvable;
+        readonly version: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
-        readonly statement?: Array<RosGroup.StatementProperty | ros.IResolvable> | ros.IResolvable;
+        readonly statement: Array<RosGroup.StatementProperty | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -673,7 +673,9 @@ export namespace RosGroup {
 function RosGroup_PolicyDocumentPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('statement', ros.requiredValidator)(properties.statement));
     errors.collect(ros.propertyValidator('statement', ros.listValidator(RosGroup_StatementPropertyValidator))(properties.statement));
     return errors.wrap('supplied properties not correct for "PolicyDocumentProperty"');
 }
@@ -950,11 +952,11 @@ export namespace RosManagedPolicy {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version?: string | ros.IResolvable;
+        readonly version: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
-        readonly statement?: Array<RosManagedPolicy.StatementProperty | ros.IResolvable> | ros.IResolvable;
+        readonly statement: Array<RosManagedPolicy.StatementProperty | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -967,7 +969,9 @@ export namespace RosManagedPolicy {
 function RosManagedPolicy_PolicyDocumentPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('statement', ros.requiredValidator)(properties.statement));
     errors.collect(ros.propertyValidator('statement', ros.listValidator(RosManagedPolicy_StatementPropertyValidator))(properties.statement));
     return errors.wrap('supplied properties not correct for "PolicyDocumentProperty"');
 }
@@ -1719,11 +1723,11 @@ export namespace RosRole {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version?: string | ros.IResolvable;
+        readonly version: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
-        readonly statement?: Array<RosRole.PolicyDocumentStatementProperty | ros.IResolvable> | ros.IResolvable;
+        readonly statement: Array<RosRole.PolicyDocumentStatementProperty | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -1736,7 +1740,9 @@ export namespace RosRole {
 function RosRole_PolicyDocumentPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('statement', ros.requiredValidator)(properties.statement));
     errors.collect(ros.propertyValidator('statement', ros.listValidator(RosRole_PolicyDocumentStatementPropertyValidator))(properties.statement));
     return errors.wrap('supplied properties not correct for "PolicyDocumentProperty"');
 }
@@ -2807,11 +2813,11 @@ export namespace RosUser {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version?: string | ros.IResolvable;
+        readonly version: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
-        readonly statement?: Array<RosUser.StatementProperty | ros.IResolvable> | ros.IResolvable;
+        readonly statement: Array<RosUser.StatementProperty | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -2824,7 +2830,9 @@ export namespace RosUser {
 function RosUser_PolicyDocumentPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('statement', ros.requiredValidator)(properties.statement));
     errors.collect(ros.propertyValidator('statement', ros.listValidator(RosUser_StatementPropertyValidator))(properties.statement));
     return errors.wrap('supplied properties not correct for "PolicyDocumentProperty"');
 }

@@ -13094,6 +13094,13 @@ export interface RosVSwitchProps {
      * @Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly vSwitchName?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneType: The type of the zones to be queried. 
+     * Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+     *
+     */
+    readonly zoneType?: string | ros.IResolvable;
 }
 
 /**
@@ -13131,6 +13138,7 @@ function RosVSwitchPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVSwitch_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('zoneType', ros.validateString)(properties.zoneType));
     return errors.wrap('supplied properties not correct for "RosVSwitchProps"');
 }
 
@@ -13156,6 +13164,7 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
       Tags: ros.listMapper(rosVSwitchTagsPropertyToRosTemplate)(properties.tags),
       VpcIpv6CidrBlock: ros.stringToRosTemplate(properties.vpcIpv6CidrBlock),
       VSwitchName: ros.stringToRosTemplate(properties.vSwitchName),
+      ZoneType: ros.stringToRosTemplate(properties.zoneType),
     };
 }
 
@@ -13233,6 +13242,13 @@ export class RosVSwitch extends ros.RosResource {
     public vSwitchName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property zoneType: The type of the zones to be queried. 
+     * Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+     *
+     */
+    public zoneType: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::ECS::VSwitch`.
      *
      * @param scope - scope in which this resource is defined
@@ -13254,6 +13270,7 @@ export class RosVSwitch extends ros.RosResource {
         this.tags = props.tags;
         this.vpcIpv6CidrBlock = props.vpcIpv6CidrBlock;
         this.vSwitchName = props.vSwitchName;
+        this.zoneType = props.zoneType;
     }
 
 
@@ -13267,6 +13284,7 @@ export class RosVSwitch extends ros.RosResource {
             tags: this.tags,
             vpcIpv6CidrBlock: this.vpcIpv6CidrBlock,
             vSwitchName: this.vSwitchName,
+            zoneType: this.zoneType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

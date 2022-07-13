@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.163Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.811Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(KubernetesClusterProps.Jsii$Proxy.class)
 public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,13 +34,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
      * Property vpcId: VPC ID.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
-
-    /**
-     * Property workerInstanceTypes: Worker node ECS specification type code.
-     * <p>
-     * For more details, see Instance Specification Family.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getWorkerInstanceTypes();
 
     /**
      * Property workerVSwitchIds: The virtual switch ID of the worker node.
@@ -315,6 +308,20 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix.
+     * <p>
+     * The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+     * <p>
+     * <ul>
+     * <li>The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.</li>
+     * <li>The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNodeNameMode() {
+        return null;
+    }
+
+    /**
      * Property nodePools: The configurations of Node pools.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNodePools() {
@@ -549,6 +556,15 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property workerInstanceTypes: Worker node ECS specification type code.
+     * <p>
+     * For more details, see Instance Specification Family.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerInstanceTypes() {
+        return null;
+    }
+
+    /**
      * Property workerSystemDiskCategory: Worker node system disk type.
      * <p>
      * The value includes:
@@ -597,7 +613,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object masterVSwitchIds;
         java.lang.Object name;
         java.lang.Object vpcId;
-        java.lang.Object workerInstanceTypes;
         java.lang.Object workerVSwitchIds;
         java.lang.Object addons;
         java.lang.Object autoRenew;
@@ -626,6 +641,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object masterSystemDiskSnapshotPolicyId;
         java.lang.Object masterZoneIds;
         java.lang.Object nodeCidrMask;
+        java.lang.Object nodeNameMode;
         java.lang.Object nodePools;
         java.lang.Object nodePortRange;
         java.lang.Object numOfNodes;
@@ -650,6 +666,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object userData;
         java.lang.Object workerDataDisk;
         java.lang.Object workerDataDisks;
+        java.lang.Object workerInstanceTypes;
         java.lang.Object workerSystemDiskCategory;
         java.lang.Object workerSystemDiskSize;
         java.lang.Object workerSystemDiskSnapshotPolicyId;
@@ -740,28 +757,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link KubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code. This parameter is required.
-         *                            For more details, see Instance Specification Family.
-         * @return {@code this}
-         */
-        public Builder workerInstanceTypes(com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link KubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code. This parameter is required.
-         *                            For more details, see Instance Specification Family.
-         * @return {@code this}
-         */
-        public Builder workerInstanceTypes(java.util.List<? extends java.lang.Object> workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
             return this;
         }
 
@@ -1440,6 +1435,38 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link KubernetesClusterProps#getNodeNameMode}
+         * @param nodeNameMode Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix.
+         *                     The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+         *                     <p>
+         *                     <ul>
+         *                     <li>The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.</li>
+         *                     <li>The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder nodeNameMode(java.lang.String nodeNameMode) {
+            this.nodeNameMode = nodeNameMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KubernetesClusterProps#getNodeNameMode}
+         * @param nodeNameMode Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix.
+         *                     The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+         *                     <p>
+         *                     <ul>
+         *                     <li>The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.</li>
+         *                     <li>The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.</li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder nodeNameMode(com.aliyun.ros.cdk.core.IResolvable nodeNameMode) {
+            this.nodeNameMode = nodeNameMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link KubernetesClusterProps#getNodePools}
          * @param nodePools Property nodePools: The configurations of Node pools.
          * @return {@code this}
@@ -2009,6 +2036,28 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link KubernetesClusterProps#getWorkerInstanceTypes}
+         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code.
+         *                            For more details, see Instance Specification Family.
+         * @return {@code this}
+         */
+        public Builder workerInstanceTypes(com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
+            this.workerInstanceTypes = workerInstanceTypes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KubernetesClusterProps#getWorkerInstanceTypes}
+         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code.
+         *                            For more details, see Instance Specification Family.
+         * @return {@code this}
+         */
+        public Builder workerInstanceTypes(java.util.List<? extends java.lang.Object> workerInstanceTypes) {
+            this.workerInstanceTypes = workerInstanceTypes;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link KubernetesClusterProps#getWorkerSystemDiskCategory}
          * @param workerSystemDiskCategory Property workerSystemDiskCategory: Worker node system disk type.
          *                                 The value includes:
@@ -2118,7 +2167,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object masterVSwitchIds;
         private final java.lang.Object name;
         private final java.lang.Object vpcId;
-        private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object workerVSwitchIds;
         private final java.lang.Object addons;
         private final java.lang.Object autoRenew;
@@ -2147,6 +2195,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object masterSystemDiskSnapshotPolicyId;
         private final java.lang.Object masterZoneIds;
         private final java.lang.Object nodeCidrMask;
+        private final java.lang.Object nodeNameMode;
         private final java.lang.Object nodePools;
         private final java.lang.Object nodePortRange;
         private final java.lang.Object numOfNodes;
@@ -2171,6 +2220,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object userData;
         private final java.lang.Object workerDataDisk;
         private final java.lang.Object workerDataDisks;
+        private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object workerSystemDiskCategory;
         private final java.lang.Object workerSystemDiskSize;
         private final java.lang.Object workerSystemDiskSnapshotPolicyId;
@@ -2186,7 +2236,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.masterVSwitchIds = software.amazon.jsii.Kernel.get(this, "masterVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerVSwitchIds = software.amazon.jsii.Kernel.get(this, "workerVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2215,6 +2264,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.masterSystemDiskSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "masterSystemDiskSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterZoneIds = software.amazon.jsii.Kernel.get(this, "masterZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nodeNameMode = software.amazon.jsii.Kernel.get(this, "nodeNameMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodePools = software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodePortRange = software.amazon.jsii.Kernel.get(this, "nodePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2239,6 +2289,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisk = software.amazon.jsii.Kernel.get(this, "workerDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2255,7 +2306,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.masterVSwitchIds = java.util.Objects.requireNonNull(builder.masterVSwitchIds, "masterVSwitchIds is required");
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
-            this.workerInstanceTypes = java.util.Objects.requireNonNull(builder.workerInstanceTypes, "workerInstanceTypes is required");
             this.workerVSwitchIds = java.util.Objects.requireNonNull(builder.workerVSwitchIds, "workerVSwitchIds is required");
             this.addons = builder.addons;
             this.autoRenew = builder.autoRenew;
@@ -2284,6 +2334,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.masterSystemDiskSnapshotPolicyId = builder.masterSystemDiskSnapshotPolicyId;
             this.masterZoneIds = builder.masterZoneIds;
             this.nodeCidrMask = builder.nodeCidrMask;
+            this.nodeNameMode = builder.nodeNameMode;
             this.nodePools = builder.nodePools;
             this.nodePortRange = builder.nodePortRange;
             this.numOfNodes = builder.numOfNodes;
@@ -2308,6 +2359,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             this.userData = builder.userData;
             this.workerDataDisk = builder.workerDataDisk;
             this.workerDataDisks = builder.workerDataDisks;
+            this.workerInstanceTypes = builder.workerInstanceTypes;
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
             this.workerSystemDiskSize = builder.workerSystemDiskSize;
             this.workerSystemDiskSnapshotPolicyId = builder.workerSystemDiskSnapshotPolicyId;
@@ -2332,11 +2384,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerInstanceTypes() {
-            return this.workerInstanceTypes;
         }
 
         @Override
@@ -2480,6 +2527,11 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getNodeNameMode() {
+            return this.nodeNameMode;
+        }
+
+        @Override
         public final java.lang.Object getNodePools() {
             return this.nodePools;
         }
@@ -2600,6 +2652,11 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getWorkerInstanceTypes() {
+            return this.workerInstanceTypes;
+        }
+
+        @Override
         public final java.lang.Object getWorkerSystemDiskCategory() {
             return this.workerSystemDiskCategory;
         }
@@ -2629,7 +2686,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             data.set("masterVSwitchIds", om.valueToTree(this.getMasterVSwitchIds()));
             data.set("name", om.valueToTree(this.getName()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
-            data.set("workerInstanceTypes", om.valueToTree(this.getWorkerInstanceTypes()));
             data.set("workerVSwitchIds", om.valueToTree(this.getWorkerVSwitchIds()));
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
@@ -2712,6 +2768,9 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.getNodeCidrMask() != null) {
                 data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
             }
+            if (this.getNodeNameMode() != null) {
+                data.set("nodeNameMode", om.valueToTree(this.getNodeNameMode()));
+            }
             if (this.getNodePools() != null) {
                 data.set("nodePools", om.valueToTree(this.getNodePools()));
             }
@@ -2784,6 +2843,9 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.getWorkerDataDisks() != null) {
                 data.set("workerDataDisks", om.valueToTree(this.getWorkerDataDisks()));
             }
+            if (this.getWorkerInstanceTypes() != null) {
+                data.set("workerInstanceTypes", om.valueToTree(this.getWorkerInstanceTypes()));
+            }
             if (this.getWorkerSystemDiskCategory() != null) {
                 data.set("workerSystemDiskCategory", om.valueToTree(this.getWorkerSystemDiskCategory()));
             }
@@ -2818,7 +2880,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (!masterVSwitchIds.equals(that.masterVSwitchIds)) return false;
             if (!name.equals(that.name)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
-            if (!workerInstanceTypes.equals(that.workerInstanceTypes)) return false;
             if (!workerVSwitchIds.equals(that.workerVSwitchIds)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
@@ -2847,6 +2908,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.masterSystemDiskSnapshotPolicyId != null ? !this.masterSystemDiskSnapshotPolicyId.equals(that.masterSystemDiskSnapshotPolicyId) : that.masterSystemDiskSnapshotPolicyId != null) return false;
             if (this.masterZoneIds != null ? !this.masterZoneIds.equals(that.masterZoneIds) : that.masterZoneIds != null) return false;
             if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
+            if (this.nodeNameMode != null ? !this.nodeNameMode.equals(that.nodeNameMode) : that.nodeNameMode != null) return false;
             if (this.nodePools != null ? !this.nodePools.equals(that.nodePools) : that.nodePools != null) return false;
             if (this.nodePortRange != null ? !this.nodePortRange.equals(that.nodePortRange) : that.nodePortRange != null) return false;
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
@@ -2871,6 +2933,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
             if (this.workerDataDisk != null ? !this.workerDataDisk.equals(that.workerDataDisk) : that.workerDataDisk != null) return false;
             if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
+            if (this.workerInstanceTypes != null ? !this.workerInstanceTypes.equals(that.workerInstanceTypes) : that.workerInstanceTypes != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
             if (this.workerSystemDiskSize != null ? !this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize != null) return false;
             if (this.workerSystemDiskSnapshotPolicyId != null ? !this.workerSystemDiskSnapshotPolicyId.equals(that.workerSystemDiskSnapshotPolicyId) : that.workerSystemDiskSnapshotPolicyId != null) return false;
@@ -2883,7 +2946,6 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.masterVSwitchIds.hashCode());
             result = 31 * result + (this.name.hashCode());
             result = 31 * result + (this.vpcId.hashCode());
-            result = 31 * result + (this.workerInstanceTypes.hashCode());
             result = 31 * result + (this.workerVSwitchIds.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
@@ -2912,6 +2974,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.masterSystemDiskSnapshotPolicyId != null ? this.masterSystemDiskSnapshotPolicyId.hashCode() : 0);
             result = 31 * result + (this.masterZoneIds != null ? this.masterZoneIds.hashCode() : 0);
             result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
+            result = 31 * result + (this.nodeNameMode != null ? this.nodeNameMode.hashCode() : 0);
             result = 31 * result + (this.nodePools != null ? this.nodePools.hashCode() : 0);
             result = 31 * result + (this.nodePortRange != null ? this.nodePortRange.hashCode() : 0);
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
@@ -2936,6 +2999,7 @@ public interface KubernetesClusterProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);
             result = 31 * result + (this.workerDataDisk != null ? this.workerDataDisk.hashCode() : 0);
             result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
+            result = 31 * result + (this.workerInstanceTypes != null ? this.workerInstanceTypes.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskSnapshotPolicyId != null ? this.workerSystemDiskSnapshotPolicyId.hashCode() : 0);

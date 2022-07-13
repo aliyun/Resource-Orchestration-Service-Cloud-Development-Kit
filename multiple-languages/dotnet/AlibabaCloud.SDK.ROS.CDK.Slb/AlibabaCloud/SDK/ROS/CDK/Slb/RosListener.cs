@@ -425,7 +425,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
             /// <remarks>
             /// <strong>Property</strong>: switch: Whether to enable health check. Valid value: on, off.
-            /// Currently only valid for http or https protocol.
             /// If value is on, turn on the health check. If value is off, turn off the health checkIf value is not set, the health check is disabled by default, unless any health check items are configured.
             /// </remarks>
             [JsiiProperty(name: "switch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -556,7 +555,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
                 /// <remarks>
                 /// <strong>Property</strong>: switch: Whether to enable health check. Valid value: on, off.
-                /// Currently only valid for http or https protocol.
                 /// If value is on, turn on the health check. If value is off, turn off the health checkIf value is not set, the health check is disabled by default, unless any health check items are configured.
                 /// </remarks>
                 [JsiiOptional]
@@ -679,7 +677,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
             /// <remarks>
             /// <strong>Property</strong>: switch: Whether to enable health check. Valid value: on, off.
-            /// Currently only valid for http or https protocol.
             /// If value is on, turn on the health check. If value is off, turn off the health checkIf value is not set, the health check is disabled by default, unless any health check items are configured.
             /// </remarks>
             [JsiiOptional]

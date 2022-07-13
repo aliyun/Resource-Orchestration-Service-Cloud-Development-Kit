@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  `ALIYUN::POLARDB::DBNodes`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.873Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.524Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBNodes")
 public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
 
@@ -135,6 +135,27 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
             this.props.dbClusterId(dbClusterId);
+            return this;
+        }
+
+        /**
+         * Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
+         * <p>
+         * @return {@code this}
+         * @param imciSwitch Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature. This parameter is required.
+         */
+        public Builder imciSwitch(final java.lang.String imciSwitch) {
+            this.props.imciSwitch(imciSwitch);
+            return this;
+        }
+        /**
+         * Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
+         * <p>
+         * @return {@code this}
+         * @param imciSwitch Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature. This parameter is required.
+         */
+        public Builder imciSwitch(final com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
+            this.props.imciSwitch(imciSwitch);
             return this;
         }
 

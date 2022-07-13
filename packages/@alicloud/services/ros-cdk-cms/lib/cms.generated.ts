@@ -3232,6 +3232,1104 @@ export class RosMonitoringAgentProcess extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::CMS::ResourceMetricRule`
+ */
+export interface RosResourceMetricRuleProps {
+
+    /**
+     * @Property contactGroups: The alert contact group.
+     * The alert notifications are sent to the contacts that belong to the alert contact group.
+     * Note: An alert contact group can contain one or more alert contacts. For information about how to create alert contacts and alert contact groups, see PutContact and PutContactGroup.
+     */
+    readonly contactGroups: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+     */
+    readonly escalations: RosResourceMetricRule.EscalationsProperty | ros.IResolvable;
+
+    /**
+     * @Property metricName: The name of the metric.
+     * For information about how to query the name of a metric, see Appendix 1: Metrics.
+     * Note: If you create a Prometheus alert rule for Hybrid Cloud Monitoring, you must set this parameter to the name of the namespace. For information about how to obtain the name of a namespace, see DescribeHybridMonitorNamespaceList.
+     */
+    readonly metricName: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The namespace of the cloud service.
+     * For information about how to query the namespace of a cloud service, Appendix 1: Metrics.
+     * Note: If you create a Prometheus alert rule for Hybrid Cloud Monitoring, you must set this parameter to acs_prometheus.
+     */
+    readonly namespace: string | ros.IResolvable;
+
+    /**
+     * @Property resources: The information about the resource.
+     * Examples: [{"instanceId":"i-uf6j91r34rnwawoo****"}] and [{"userId":"100931896542****"}].
+     * For information about the supported dimensions that are used to query resources, see Appendix 1: Metrics.
+     */
+    readonly resources: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property compositeExpression: The trigger conditions for multiple metrics.
+     * Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+     */
+    readonly compositeExpression?: RosResourceMetricRule.CompositeExpressionProperty | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether to delete rule even if it is not created by ROS. Default is false
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
+     * @Property effectiveInterval: The time period during which the alert rule is effective.
+     */
+    readonly effectiveInterval?: string | ros.IResolvable;
+
+    /**
+     * @Property emailSubject: The subject of the alert notification email.
+     */
+    readonly emailSubject?: string | ros.IResolvable;
+
+    /**
+     * @Property interval: The interval at which the alert is triggered. Unit: seconds.
+     * Note: For information about how to query the statistical period of a metric, see Appendix 1: Metrics.
+     */
+    readonly interval?: number | ros.IResolvable;
+
+    /**
+     * @Property labels:
+     */
+    readonly labels?: Array<RosResourceMetricRule.LabelsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property noDataPolicy: The processing method of alerts when no monitoring data is found. Valid values:
+     * - KEEP_LAST_STATE (default value): No operation is performed.
+     * - INSUFFICIENT_DATA: An alert whose content is "Insufficient data" is triggered.
+     * - OK: The status is considered normal.
+     */
+    readonly noDataPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property noEffectiveInterval: The time period during which the alert rule is ineffective.
+     */
+    readonly noEffectiveInterval?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The statistical period of the metric. Unit: seconds. The default value is the interval at which the monitoring data of the metric is collected.
+     * Note: For information about how to query the statistical period of a metric, see Appendix 1: Metrics.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property prometheus: The Prometheus alert rule.
+     * Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+     */
+    readonly prometheus?: RosResourceMetricRule.PrometheusProperty | ros.IResolvable;
+
+    /**
+     * @Property ruleId: The ID of the alert rule. If not specified, ROS will generate one.
+     * You can specify a new ID or the ID of an existing alert rule. For information about how to query the ID of an alert rule, see DescribeMetricRuleList.
+     * Note: If you specify a new ID, a threshold-triggered alert rule is created.
+     */
+    readonly ruleId?: string | ros.IResolvable;
+
+    /**
+     * @Property ruleName: The name of the alert rule. If not specified and the rule is created by ROS, default to RuleId.
+     * You can specify a new name or the name of an existing alert rule. For information about how to query the name of an alert rule, see DescribeMetricRuleList.
+     * Note: If you specify a new name, a threshold-triggered alert rule is created.
+     */
+    readonly ruleName?: string | ros.IResolvable;
+
+    /**
+     * @Property silenceTime: The mute period during which new alerts are not sent even if the trigger conditions are met. Unit: seconds. Default value: 86400.
+     * Note: If an alert is not cleared within the mute period, a new alert notification is sent when the mute period ends.
+     */
+    readonly silenceTime?: number | ros.IResolvable;
+
+    /**
+     * @Property webhook: The callback URL to which a POST request is sent when an alert is triggered based on the alert rule.
+     */
+    readonly webhook?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosResourceMetricRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosResourceMetricRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('noEffectiveInterval', ros.validateString)(properties.noEffectiveInterval));
+    errors.collect(ros.propertyValidator('contactGroups', ros.requiredValidator)(properties.contactGroups));
+    if(properties.contactGroups && (Array.isArray(properties.contactGroups) || (typeof properties.contactGroups) === 'string')) {
+        errors.collect(ros.propertyValidator('contactGroups', ros.validateLength)({
+            data: properties.contactGroups.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('contactGroups', ros.listValidator(ros.validateString))(properties.contactGroups));
+    errors.collect(ros.propertyValidator('silenceTime', ros.validateNumber)(properties.silenceTime));
+    errors.collect(ros.propertyValidator('ruleId', ros.validateString)(properties.ruleId));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('prometheus', RosResourceMetricRule_PrometheusPropertyValidator)(properties.prometheus));
+    errors.collect(ros.propertyValidator('labels', ros.listValidator(RosResourceMetricRule_LabelsPropertyValidator))(properties.labels));
+    errors.collect(ros.propertyValidator('effectiveInterval', ros.validateString)(properties.effectiveInterval));
+    if(properties.noDataPolicy && (typeof properties.noDataPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('noDataPolicy', ros.validateAllowedValues)({
+          data: properties.noDataPolicy,
+          allowedValues: ["KEEP_LAST_STATE","INSUFFICIENT_DATA","OK"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('noDataPolicy', ros.validateString)(properties.noDataPolicy));
+    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('metricName', ros.requiredValidator)(properties.metricName));
+    errors.collect(ros.propertyValidator('metricName', ros.validateString)(properties.metricName));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('escalations', ros.requiredValidator)(properties.escalations));
+    errors.collect(ros.propertyValidator('escalations', RosResourceMetricRule_EscalationsPropertyValidator)(properties.escalations));
+    errors.collect(ros.propertyValidator('emailSubject', ros.validateString)(properties.emailSubject));
+    errors.collect(ros.propertyValidator('compositeExpression', RosResourceMetricRule_CompositeExpressionPropertyValidator)(properties.compositeExpression));
+    errors.collect(ros.propertyValidator('webhook', ros.validateString)(properties.webhook));
+    errors.collect(ros.propertyValidator('resources', ros.requiredValidator)(properties.resources));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(ros.validateAnyDict))(properties.resources));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    errors.collect(ros.propertyValidator('interval', ros.validateNumber)(properties.interval));
+    return errors.wrap('supplied properties not correct for "RosResourceMetricRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosResourceMetricRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosResourceMetricRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      ContactGroups: ros.listMapper(ros.stringToRosTemplate)(properties.contactGroups),
+      Escalations: rosResourceMetricRuleEscalationsPropertyToRosTemplate(properties.escalations),
+      MetricName: ros.stringToRosTemplate(properties.metricName),
+      Namespace: ros.stringToRosTemplate(properties.namespace),
+      Resources: ros.listMapper(ros.anyDictToRosTemplate)(properties.resources),
+      CompositeExpression: rosResourceMetricRuleCompositeExpressionPropertyToRosTemplate(properties.compositeExpression),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
+      EffectiveInterval: ros.stringToRosTemplate(properties.effectiveInterval),
+      EmailSubject: ros.stringToRosTemplate(properties.emailSubject),
+      Interval: ros.numberToRosTemplate(properties.interval),
+      Labels: ros.listMapper(rosResourceMetricRuleLabelsPropertyToRosTemplate)(properties.labels),
+      NoDataPolicy: ros.stringToRosTemplate(properties.noDataPolicy),
+      NoEffectiveInterval: ros.stringToRosTemplate(properties.noEffectiveInterval),
+      Period: ros.numberToRosTemplate(properties.period),
+      Prometheus: rosResourceMetricRulePrometheusPropertyToRosTemplate(properties.prometheus),
+      RuleId: ros.stringToRosTemplate(properties.ruleId),
+      RuleName: ros.stringToRosTemplate(properties.ruleName),
+      SilenceTime: ros.numberToRosTemplate(properties.silenceTime),
+      Webhook: ros.stringToRosTemplate(properties.webhook),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CMS::ResourceMetricRule`
+ */
+export class RosResourceMetricRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::ResourceMetricRule";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute RuleId: The ID of the alert rule.
+     */
+    public readonly attrRuleId: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: The name of the alert rule.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property contactGroups: The alert contact group.
+     * The alert notifications are sent to the contacts that belong to the alert contact group.
+     * Note: An alert contact group can contain one or more alert contacts. For information about how to create alert contacts and alert contact groups, see PutContact and PutContactGroup.
+     */
+    public contactGroups: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+     */
+    public escalations: RosResourceMetricRule.EscalationsProperty | ros.IResolvable;
+
+    /**
+     * @Property metricName: The name of the metric.
+     * For information about how to query the name of a metric, see Appendix 1: Metrics.
+     * Note: If you create a Prometheus alert rule for Hybrid Cloud Monitoring, you must set this parameter to the name of the namespace. For information about how to obtain the name of a namespace, see DescribeHybridMonitorNamespaceList.
+     */
+    public metricName: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The namespace of the cloud service.
+     * For information about how to query the namespace of a cloud service, Appendix 1: Metrics.
+     * Note: If you create a Prometheus alert rule for Hybrid Cloud Monitoring, you must set this parameter to acs_prometheus.
+     */
+    public namespace: string | ros.IResolvable;
+
+    /**
+     * @Property resources: The information about the resource.
+     * Examples: [{"instanceId":"i-uf6j91r34rnwawoo****"}] and [{"userId":"100931896542****"}].
+     * For information about the supported dimensions that are used to query resources, see Appendix 1: Metrics.
+     */
+    public resources: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property compositeExpression: The trigger conditions for multiple metrics.
+     * Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+     */
+    public compositeExpression: RosResourceMetricRule.CompositeExpressionProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionForce: Whether to delete rule even if it is not created by ROS. Default is false
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property effectiveInterval: The time period during which the alert rule is effective.
+     */
+    public effectiveInterval: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property emailSubject: The subject of the alert notification email.
+     */
+    public emailSubject: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property interval: The interval at which the alert is triggered. Unit: seconds.
+     * Note: For information about how to query the statistical period of a metric, see Appendix 1: Metrics.
+     */
+    public interval: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property labels:
+     */
+    public labels: Array<RosResourceMetricRule.LabelsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property noDataPolicy: The processing method of alerts when no monitoring data is found. Valid values:
+     * - KEEP_LAST_STATE (default value): No operation is performed.
+     * - INSUFFICIENT_DATA: An alert whose content is "Insufficient data" is triggered.
+     * - OK: The status is considered normal.
+     */
+    public noDataPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property noEffectiveInterval: The time period during which the alert rule is ineffective.
+     */
+    public noEffectiveInterval: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The statistical period of the metric. Unit: seconds. The default value is the interval at which the monitoring data of the metric is collected.
+     * Note: For information about how to query the statistical period of a metric, see Appendix 1: Metrics.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property prometheus: The Prometheus alert rule.
+     * Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+     */
+    public prometheus: RosResourceMetricRule.PrometheusProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleId: The ID of the alert rule. If not specified, ROS will generate one.
+     * You can specify a new ID or the ID of an existing alert rule. For information about how to query the ID of an alert rule, see DescribeMetricRuleList.
+     * Note: If you specify a new ID, a threshold-triggered alert rule is created.
+     */
+    public ruleId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleName: The name of the alert rule. If not specified and the rule is created by ROS, default to RuleId.
+     * You can specify a new name or the name of an existing alert rule. For information about how to query the name of an alert rule, see DescribeMetricRuleList.
+     * Note: If you specify a new name, a threshold-triggered alert rule is created.
+     */
+    public ruleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property silenceTime: The mute period during which new alerts are not sent even if the trigger conditions are met. Unit: seconds. Default value: 86400.
+     * Note: If an alert is not cleared within the mute period, a new alert notification is sent when the mute period ends.
+     */
+    public silenceTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property webhook: The callback URL to which a POST request is sent when an alert is triggered based on the alert rule.
+     */
+    public webhook: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CMS::ResourceMetricRule`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosResourceMetricRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosResourceMetricRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrRuleId = this.getAtt('RuleId');
+        this.attrRuleName = this.getAtt('RuleName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.contactGroups = props.contactGroups;
+        this.escalations = props.escalations;
+        this.metricName = props.metricName;
+        this.namespace = props.namespace;
+        this.resources = props.resources;
+        this.compositeExpression = props.compositeExpression;
+        this.deletionForce = props.deletionForce;
+        this.effectiveInterval = props.effectiveInterval;
+        this.emailSubject = props.emailSubject;
+        this.interval = props.interval;
+        this.labels = props.labels;
+        this.noDataPolicy = props.noDataPolicy;
+        this.noEffectiveInterval = props.noEffectiveInterval;
+        this.period = props.period;
+        this.prometheus = props.prometheus;
+        this.ruleId = props.ruleId;
+        this.ruleName = props.ruleName;
+        this.silenceTime = props.silenceTime;
+        this.webhook = props.webhook;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            contactGroups: this.contactGroups,
+            escalations: this.escalations,
+            metricName: this.metricName,
+            namespace: this.namespace,
+            resources: this.resources,
+            compositeExpression: this.compositeExpression,
+            deletionForce: this.deletionForce,
+            effectiveInterval: this.effectiveInterval,
+            emailSubject: this.emailSubject,
+            interval: this.interval,
+            labels: this.labels,
+            noDataPolicy: this.noDataPolicy,
+            noEffectiveInterval: this.noEffectiveInterval,
+            period: this.period,
+            prometheus: this.prometheus,
+            ruleId: this.ruleId,
+            ruleName: this.ruleName,
+            silenceTime: this.silenceTime,
+            webhook: this.webhook,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosResourceMetricRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface AnnotationsProperty {
+        /**
+         * @Property value: The value of the annotation.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The key of the annotation.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AnnotationsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AnnotationsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_AnnotationsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "AnnotationsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Annotations` resource
+ *
+ * @param properties - the TypeScript properties of a `AnnotationsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Annotations` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRuleAnnotationsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_AnnotationsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface CompositeExpressionProperty {
+        /**
+         * @Property times: The number of consecutive triggers. If the number of times that the metric values meet the trigger conditions reaches the value of this parameter, CloudMonitor sends alert notifications.
+         */
+        readonly times: number | ros.IResolvable;
+        /**
+         * @Property expressionRaw: The trigger conditions that are created by using expressions. You can use expressions to create trigger conditions in the following scenarios:
+     * - Set an alert blacklist for specific resources. For example, if you specify $instanceId != 'i-io8kfvcpp7x5****' && $Average > 50, no alert is generated even when the average metric value of the i-io8kfvcpp7x5**** instance exceeds 50.
+     * - Set a special alert threshold for a specified instance in the rule. For example, if you specify $Average > ($instanceId == 'i-io8kfvcpp7x5****'? 80: 50), an alert is triggered when the average metric value of the i-io8kfvcpp7x5**** instance exceeds 80 or the average metric value of other instances exceeds 50.
+     * - Limits the number of instances whose metric values exceed the threshold. For example, if you specify count($Average > 20) > 3, an alert is triggered only when the number of instances whose average metric value exceeds 20 exceeds three.
+         */
+        readonly expressionRaw?: string | ros.IResolvable;
+        /**
+         * @Property expressionListJoin: The relationship between the trigger conditions for multiple metrics. Valid values:
+     * - &&: An alert is triggered only if all metrics meet the trigger conditions. An alert is triggered only if the results of all expressions specified in the ExpressionList parameter are true.
+     * - ||: If one of the metrics meets the trigger conditions, an alert is triggered.
+         */
+        readonly expressionListJoin?: string | ros.IResolvable;
+        /**
+         * @Property level: The level of the alert. Valid values:
+     * - Critical
+     * - Warn
+     * - Info
+         */
+        readonly level: string | ros.IResolvable;
+        /**
+         * @Property expressionList: The trigger conditions that are created in standard mode.
+         */
+        readonly expressionList?: Array<RosResourceMetricRule.ExpressionListProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CompositeExpressionProperty`
+ *
+ * @param properties - the TypeScript properties of a `CompositeExpressionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_CompositeExpressionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('times', ros.requiredValidator)(properties.times));
+    errors.collect(ros.propertyValidator('times', ros.validateNumber)(properties.times));
+    errors.collect(ros.propertyValidator('expressionRaw', ros.validateString)(properties.expressionRaw));
+    errors.collect(ros.propertyValidator('expressionListJoin', ros.validateString)(properties.expressionListJoin));
+    errors.collect(ros.propertyValidator('level', ros.requiredValidator)(properties.level));
+    if(properties.level && (typeof properties.level) !== 'object') {
+        errors.collect(ros.propertyValidator('level', ros.validateAllowedValues)({
+          data: properties.level,
+          allowedValues: ["Critical","Info","Warn"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
+    if(properties.expressionList && (Array.isArray(properties.expressionList) || (typeof properties.expressionList) === 'string')) {
+        errors.collect(ros.propertyValidator('expressionList', ros.validateLength)({
+            data: properties.expressionList.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('expressionList', ros.listValidator(RosResourceMetricRule_ExpressionListPropertyValidator))(properties.expressionList));
+    return errors.wrap('supplied properties not correct for "CompositeExpressionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.CompositeExpression` resource
+ *
+ * @param properties - the TypeScript properties of a `CompositeExpressionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.CompositeExpression` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRuleCompositeExpressionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_CompositeExpressionPropertyValidator(properties).assertSuccess();
+    return {
+      Times: ros.numberToRosTemplate(properties.times),
+      ExpressionRaw: ros.stringToRosTemplate(properties.expressionRaw),
+      ExpressionListJoin: ros.stringToRosTemplate(properties.expressionListJoin),
+      Level: ros.stringToRosTemplate(properties.level),
+      ExpressionList: ros.listMapper(rosResourceMetricRuleExpressionListPropertyToRosTemplate)(properties.expressionList),
+    };
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface CriticalProperty {
+        /**
+         * @Property comparisonOperator: The operator that is used to compare the metric value with the threshold. Valid values:
+     * - GreaterThanOrEqualToThreshold: greater than or equal to the threshold
+     * - GreaterThanThreshold: greater than the threshold
+     * - LessThanOrEqualToThreshold: less than or equal to the threshold
+     * - LessThanThreshold: less than the threshold
+     * - NotEqualToThreshold: not equal to the threshold
+     * - GreaterThanYesterday: greater than the metric value at the same time yesterday
+     * - LessThanYesterday: less than the metric value at the same time yesterday
+     * - GreaterThanLastWeek: greater than the metric value at the same time last week
+     * - LessThanLastWeek: less than the metric value at the same time last week
+     * - GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
+     * - LessThanLastPeriod: less than the metric value in the last monitoring cycle
+         */
+        readonly comparisonOperator: string | ros.IResolvable;
+        /**
+         * @Property times: The consecutive number of times for which the metric value meets the trigger condition before a Critical-level alert is triggered.
+         */
+        readonly times: number | ros.IResolvable;
+        /**
+         * @Property statistics: The statistical methods for Critical-level alerts. Valid values:
+     * - Maximum: the maximum value
+     * - Minimum: the minimum value
+     * - Average: the average value
+     * - Availability: the availability rate
+         */
+        readonly statistics: string | ros.IResolvable;
+        /**
+         * @Property threshold: The threshold for Critical-level alerts.
+         */
+        readonly threshold: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CriticalProperty`
+ *
+ * @param properties - the TypeScript properties of a `CriticalProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_CriticalPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('comparisonOperator', ros.requiredValidator)(properties.comparisonOperator));
+    if(properties.comparisonOperator && (typeof properties.comparisonOperator) !== 'object') {
+        errors.collect(ros.propertyValidator('comparisonOperator', ros.validateAllowedValues)({
+          data: properties.comparisonOperator,
+          allowedValues: ["GreaterThanLastPeriod","GreaterThanLastWeek","GreaterThanOrEqualToThreshold","GreaterThanThreshold","GreaterThanYesterday","LessThanLastPeriod","LessThanLastWeek","LessThanOrEqualToThreshold","LessThanThreshold","LessThanYesterday","NotEqualToThreshold"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('comparisonOperator', ros.validateString)(properties.comparisonOperator));
+    errors.collect(ros.propertyValidator('times', ros.requiredValidator)(properties.times));
+    errors.collect(ros.propertyValidator('times', ros.validateNumber)(properties.times));
+    errors.collect(ros.propertyValidator('statistics', ros.requiredValidator)(properties.statistics));
+    if(properties.statistics && (typeof properties.statistics) !== 'object') {
+        errors.collect(ros.propertyValidator('statistics', ros.validateAllowedValues)({
+          data: properties.statistics,
+          allowedValues: ["Availability","Average","Maximum","Minimum"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('statistics', ros.validateString)(properties.statistics));
+    errors.collect(ros.propertyValidator('threshold', ros.requiredValidator)(properties.threshold));
+    errors.collect(ros.propertyValidator('threshold', ros.validateString)(properties.threshold));
+    return errors.wrap('supplied properties not correct for "CriticalProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Critical` resource
+ *
+ * @param properties - the TypeScript properties of a `CriticalProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Critical` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRuleCriticalPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_CriticalPropertyValidator(properties).assertSuccess();
+    return {
+      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
+      Times: ros.numberToRosTemplate(properties.times),
+      Statistics: ros.stringToRosTemplate(properties.statistics),
+      Threshold: ros.stringToRosTemplate(properties.threshold),
+    };
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface EscalationsProperty {
+        /**
+         * @Property critical: You must specify the Statistics, ComparisonOperator, Threshold, and Times parameters for the selected alert level.
+         */
+        readonly critical?: RosResourceMetricRule.CriticalProperty | ros.IResolvable;
+        /**
+         * @Property info: You must specify the Statistics, ComparisonOperator, Threshold, and Times parameters for the selected alert level.
+         */
+        readonly info?: RosResourceMetricRule.InfoProperty | ros.IResolvable;
+        /**
+         * @Property warn: You must specify the Statistics, ComparisonOperator, Threshold, and Times parameters for the selected alert level.
+         */
+        readonly warn?: RosResourceMetricRule.WarnProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EscalationsProperty`
+ *
+ * @param properties - the TypeScript properties of a `EscalationsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_EscalationsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('critical', RosResourceMetricRule_CriticalPropertyValidator)(properties.critical));
+    errors.collect(ros.propertyValidator('info', RosResourceMetricRule_InfoPropertyValidator)(properties.info));
+    errors.collect(ros.propertyValidator('warn', RosResourceMetricRule_WarnPropertyValidator)(properties.warn));
+    return errors.wrap('supplied properties not correct for "EscalationsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Escalations` resource
+ *
+ * @param properties - the TypeScript properties of a `EscalationsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Escalations` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRuleEscalationsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_EscalationsPropertyValidator(properties).assertSuccess();
+    return {
+      Critical: rosResourceMetricRuleCriticalPropertyToRosTemplate(properties.critical),
+      Info: rosResourceMetricRuleInfoPropertyToRosTemplate(properties.info),
+      Warn: rosResourceMetricRuleWarnPropertyToRosTemplate(properties.warn),
+    };
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface ExpressionListProperty {
+        /**
+         * @Property metricName: The metric that is used to monitor the cloud service.
+         */
+        readonly metricName: string | ros.IResolvable;
+        /**
+         * @Property comparisonOperator: The operator that is used to compare the metric value with the threshold. Valid values:
+     * - GreaterThanOrEqualToThreshold: greater than or equal to the threshold
+     * - GreaterThanThreshold: greater than the threshold
+     * - LessThanOrEqualToThreshold: less than or equal to the threshold
+     * - LessThanThreshold: less than the threshold
+     * - NotEqualToThreshold: not equal to the threshold
+     * - GreaterThanYesterday: greater than the metric value at the same time yesterday
+     * - LessThanYesterday: less than the metric value at the same time yesterday
+     * - GreaterThanLastWeek: greater than the metric value at the same time last week
+     * - LessThanLastWeek: less than the metric value at the same time last week
+     * - GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
+     * - LessThanLastPeriod: less than the metric value in the last monitoring cycle
+         */
+        readonly comparisonOperator: string | ros.IResolvable;
+        /**
+         * @Property period: The aggregation period of the metric.
+     * Unit: seconds.
+         */
+        readonly period: number | ros.IResolvable;
+        /**
+         * @Property statistics: The statistical method of the metric. Valid values:
+     * $Maximum: the maximum value
+     * $Minimum: the minimum value
+     * $Average: the average value
+     * $Availability: the availability rate (usually used for site monitoring)
+     * Note: $ is the prefix of the metric. For information about the Alibaba Cloud services that are supported by CloudMonitor, see Appendix 1: Metrics.
+         */
+        readonly statistics: string | ros.IResolvable;
+        /**
+         * @Property threshold: The alert threshold.
+         */
+        readonly threshold: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ExpressionListProperty`
+ *
+ * @param properties - the TypeScript properties of a `ExpressionListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_ExpressionListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('metricName', ros.requiredValidator)(properties.metricName));
+    errors.collect(ros.propertyValidator('metricName', ros.validateString)(properties.metricName));
+    errors.collect(ros.propertyValidator('comparisonOperator', ros.requiredValidator)(properties.comparisonOperator));
+    if(properties.comparisonOperator && (typeof properties.comparisonOperator) !== 'object') {
+        errors.collect(ros.propertyValidator('comparisonOperator', ros.validateAllowedValues)({
+          data: properties.comparisonOperator,
+          allowedValues: ["GreaterThanLastPeriod","GreaterThanLastWeek","GreaterThanOrEqualToThreshold","GreaterThanThreshold","GreaterThanYesterday","LessThanLastPeriod","LessThanLastWeek","LessThanOrEqualToThreshold","LessThanThreshold","LessThanYesterday","NotEqualToThreshold"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('comparisonOperator', ros.validateString)(properties.comparisonOperator));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('statistics', ros.requiredValidator)(properties.statistics));
+    if(properties.statistics && (typeof properties.statistics) !== 'object') {
+        errors.collect(ros.propertyValidator('statistics', ros.validateAllowedValues)({
+          data: properties.statistics,
+          allowedValues: ["$Availability","$Average","$Maximum","$Minimum"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('statistics', ros.validateString)(properties.statistics));
+    errors.collect(ros.propertyValidator('threshold', ros.requiredValidator)(properties.threshold));
+    errors.collect(ros.propertyValidator('threshold', ros.validateString)(properties.threshold));
+    return errors.wrap('supplied properties not correct for "ExpressionListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.ExpressionList` resource
+ *
+ * @param properties - the TypeScript properties of a `ExpressionListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.ExpressionList` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRuleExpressionListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_ExpressionListPropertyValidator(properties).assertSuccess();
+    return {
+      MetricName: ros.stringToRosTemplate(properties.metricName),
+      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
+      Period: ros.numberToRosTemplate(properties.period),
+      Statistics: ros.stringToRosTemplate(properties.statistics),
+      Threshold: ros.stringToRosTemplate(properties.threshold),
+    };
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface InfoProperty {
+        /**
+         * @Property comparisonOperator: The operator that is used to compare the metric value with the threshold. Valid values:
+     * - GreaterThanOrEqualToThreshold: greater than or equal to the threshold
+     * - GreaterThanThreshold: greater than the threshold
+     * - LessThanOrEqualToThreshold: less than or equal to the threshold
+     * - LessThanThreshold: less than the threshold
+     * - NotEqualToThreshold: not equal to the threshold
+     * - GreaterThanYesterday: greater than the metric value at the same time yesterday
+     * - LessThanYesterday: less than the metric value at the same time yesterday
+     * - GreaterThanLastWeek: greater than the metric value at the same time last week
+     * - LessThanLastWeek: less than the metric value at the same time last week
+     * - GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
+     * - LessThanLastPeriod: less than the metric value in the last monitoring cycle
+         */
+        readonly comparisonOperator: string | ros.IResolvable;
+        /**
+         * @Property times: The consecutive number of times for which the metric value meets the trigger condition before an Info-level alert is triggered.
+         */
+        readonly times: number | ros.IResolvable;
+        /**
+         * @Property statistics: The statistical methods for Info-level alerts. Valid values:
+     * - Maximum: the maximum value
+     * - Minimum: the minimum value
+     * - Average: the average value
+     * - Availability: the availability rate
+         */
+        readonly statistics: string | ros.IResolvable;
+        /**
+         * @Property threshold: The threshold for Info-level alerts.
+         */
+        readonly threshold: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InfoProperty`
+ *
+ * @param properties - the TypeScript properties of a `InfoProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_InfoPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('comparisonOperator', ros.requiredValidator)(properties.comparisonOperator));
+    if(properties.comparisonOperator && (typeof properties.comparisonOperator) !== 'object') {
+        errors.collect(ros.propertyValidator('comparisonOperator', ros.validateAllowedValues)({
+          data: properties.comparisonOperator,
+          allowedValues: ["GreaterThanLastPeriod","GreaterThanLastWeek","GreaterThanOrEqualToThreshold","GreaterThanThreshold","GreaterThanYesterday","LessThanLastPeriod","LessThanLastWeek","LessThanOrEqualToThreshold","LessThanThreshold","LessThanYesterday","NotEqualToThreshold"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('comparisonOperator', ros.validateString)(properties.comparisonOperator));
+    errors.collect(ros.propertyValidator('times', ros.requiredValidator)(properties.times));
+    errors.collect(ros.propertyValidator('times', ros.validateNumber)(properties.times));
+    errors.collect(ros.propertyValidator('statistics', ros.requiredValidator)(properties.statistics));
+    if(properties.statistics && (typeof properties.statistics) !== 'object') {
+        errors.collect(ros.propertyValidator('statistics', ros.validateAllowedValues)({
+          data: properties.statistics,
+          allowedValues: ["Availability","Average","Maximum","Minimum"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('statistics', ros.validateString)(properties.statistics));
+    errors.collect(ros.propertyValidator('threshold', ros.requiredValidator)(properties.threshold));
+    errors.collect(ros.propertyValidator('threshold', ros.validateString)(properties.threshold));
+    return errors.wrap('supplied properties not correct for "InfoProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Info` resource
+ *
+ * @param properties - the TypeScript properties of a `InfoProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Info` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRuleInfoPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_InfoPropertyValidator(properties).assertSuccess();
+    return {
+      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
+      Times: ros.numberToRosTemplate(properties.times),
+      Statistics: ros.stringToRosTemplate(properties.statistics),
+      Threshold: ros.stringToRosTemplate(properties.threshold),
+    };
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface LabelsProperty {
+        /**
+         * @Property value: The value of the tag.
+     * Note: You can use a template parameter to specify a tag value. CloudMonitor replaces the value of the template parameter with an actual tag value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The key of the tag.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_LabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "LabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Labels` resource
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Labels` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRuleLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_LabelsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface PrometheusProperty {
+        /**
+         * @Property annotations: The annotations of the Prometheus alert rule. When a Prometheus alert is triggered, the system renders the annotated keys and values to help you understand the metrics and alert rule.
+     * Note: This parameter is equivalent to the annotations parameter of open source Prometheus.
+         */
+        readonly annotations?: Array<RosResourceMetricRule.AnnotationsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property promQl: The PromQL query statement.
+     * Note: The data obtained by using the PromQL query statement is the monitoring data. You must include the alert threshold in this statement.
+         */
+        readonly promQl: string | ros.IResolvable;
+        /**
+         * @Property times: The number of consecutive triggers. If the number of times that the metric values meet the trigger conditions reaches the value of this parameter, CloudMonitor sends alert notifications.
+         */
+        readonly times: number | ros.IResolvable;
+        /**
+         * @Property level: The level of the alert. Valid values:
+     * - Critical
+     * - Warn
+     * - Info
+         */
+        readonly level: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PrometheusProperty`
+ *
+ * @param properties - the TypeScript properties of a `PrometheusProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_PrometheusPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('annotations', ros.listValidator(RosResourceMetricRule_AnnotationsPropertyValidator))(properties.annotations));
+    errors.collect(ros.propertyValidator('promQl', ros.requiredValidator)(properties.promQl));
+    errors.collect(ros.propertyValidator('promQl', ros.validateString)(properties.promQl));
+    errors.collect(ros.propertyValidator('times', ros.requiredValidator)(properties.times));
+    errors.collect(ros.propertyValidator('times', ros.validateNumber)(properties.times));
+    errors.collect(ros.propertyValidator('level', ros.requiredValidator)(properties.level));
+    if(properties.level && (typeof properties.level) !== 'object') {
+        errors.collect(ros.propertyValidator('level', ros.validateAllowedValues)({
+          data: properties.level,
+          allowedValues: ["Critical","Info","Warn"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
+    return errors.wrap('supplied properties not correct for "PrometheusProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Prometheus` resource
+ *
+ * @param properties - the TypeScript properties of a `PrometheusProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Prometheus` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRulePrometheusPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_PrometheusPropertyValidator(properties).assertSuccess();
+    return {
+      Annotations: ros.listMapper(rosResourceMetricRuleAnnotationsPropertyToRosTemplate)(properties.annotations),
+      PromQL: ros.stringToRosTemplate(properties.promQl),
+      Times: ros.numberToRosTemplate(properties.times),
+      Level: ros.stringToRosTemplate(properties.level),
+    };
+}
+
+export namespace RosResourceMetricRule {
+    /**
+     * @stability external
+     */
+    export interface WarnProperty {
+        /**
+         * @Property comparisonOperator: The operator that is used to compare the metric value with the threshold. Valid values:
+     * - GreaterThanOrEqualToThreshold: greater than or equal to the threshold
+     * - GreaterThanThreshold: greater than the threshold
+     * - LessThanOrEqualToThreshold: less than or equal to the threshold
+     * - LessThanThreshold: less than the threshold
+     * - NotEqualToThreshold: not equal to the threshold
+     * - GreaterThanYesterday: greater than the metric value at the same time yesterday
+     * - LessThanYesterday: less than the metric value at the same time yesterday
+     * - GreaterThanLastWeek: greater than the metric value at the same time last week
+     * - LessThanLastWeek: less than the metric value at the same time last week
+     * - GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
+     * - LessThanLastPeriod: less than the metric value in the last monitoring cycle
+         */
+        readonly comparisonOperator: string | ros.IResolvable;
+        /**
+         * @Property times: The consecutive number of times for which the metric value meets the trigger condition before a Warn-level alert is triggered.
+         */
+        readonly times: number | ros.IResolvable;
+        /**
+         * @Property statistics: The statistical methods for Warn-level alerts. Valid values:
+     * - Maximum: the maximum value
+     * - Minimum: the minimum value
+     * - Average: the average value
+     * - Availability: the availability rate
+         */
+        readonly statistics: string | ros.IResolvable;
+        /**
+         * @Property threshold: The threshold for Warn-level alerts.
+         */
+        readonly threshold: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `WarnProperty`
+ *
+ * @param properties - the TypeScript properties of a `WarnProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceMetricRule_WarnPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('comparisonOperator', ros.requiredValidator)(properties.comparisonOperator));
+    if(properties.comparisonOperator && (typeof properties.comparisonOperator) !== 'object') {
+        errors.collect(ros.propertyValidator('comparisonOperator', ros.validateAllowedValues)({
+          data: properties.comparisonOperator,
+          allowedValues: ["GreaterThanLastPeriod","GreaterThanLastWeek","GreaterThanOrEqualToThreshold","GreaterThanThreshold","GreaterThanYesterday","LessThanLastPeriod","LessThanLastWeek","LessThanOrEqualToThreshold","LessThanThreshold","LessThanYesterday","NotEqualToThreshold"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('comparisonOperator', ros.validateString)(properties.comparisonOperator));
+    errors.collect(ros.propertyValidator('times', ros.requiredValidator)(properties.times));
+    errors.collect(ros.propertyValidator('times', ros.validateNumber)(properties.times));
+    errors.collect(ros.propertyValidator('statistics', ros.requiredValidator)(properties.statistics));
+    if(properties.statistics && (typeof properties.statistics) !== 'object') {
+        errors.collect(ros.propertyValidator('statistics', ros.validateAllowedValues)({
+          data: properties.statistics,
+          allowedValues: ["Availability","Average","Maximum","Minimum"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('statistics', ros.validateString)(properties.statistics));
+    errors.collect(ros.propertyValidator('threshold', ros.requiredValidator)(properties.threshold));
+    errors.collect(ros.propertyValidator('threshold', ros.validateString)(properties.threshold));
+    return errors.wrap('supplied properties not correct for "WarnProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Warn` resource
+ *
+ * @param properties - the TypeScript properties of a `WarnProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::ResourceMetricRule.Warn` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceMetricRuleWarnPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceMetricRule_WarnPropertyValidator(properties).assertSuccess();
+    return {
+      ComparisonOperator: ros.stringToRosTemplate(properties.comparisonOperator),
+      Times: ros.numberToRosTemplate(properties.times),
+      Statistics: ros.stringToRosTemplate(properties.statistics),
+      Threshold: ros.stringToRosTemplate(properties.threshold),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::CMS::SiteMonitor`
  */
 export interface RosSiteMonitorProps {

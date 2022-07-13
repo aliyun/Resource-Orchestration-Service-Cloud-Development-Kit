@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::LoadBalancerClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.386Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:22.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerClone")
 public class LoadBalancerClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -157,6 +157,35 @@ public class LoadBalancerClone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceChargeType: Instance billing method.
+         * <p>
+         * Value:PayBySpec: Pay by spec.
+         * PayByCLCU: billed by usage.
+         * If not specified, it is same with the source load balancer.
+         * <p>
+         * @return {@code this}
+         * @param instanceChargeType Property instanceChargeType: Instance billing method. This parameter is required.
+         */
+        public Builder instanceChargeType(final java.lang.String instanceChargeType) {
+            this.props.instanceChargeType(instanceChargeType);
+            return this;
+        }
+        /**
+         * Property instanceChargeType: Instance billing method.
+         * <p>
+         * Value:PayBySpec: Pay by spec.
+         * PayByCLCU: billed by usage.
+         * If not specified, it is same with the source load balancer.
+         * <p>
+         * @return {@code this}
+         * @param instanceChargeType Property instanceChargeType: Instance billing method. This parameter is required.
+         */
+        public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.props.instanceChargeType(instanceChargeType);
+            return this;
+        }
+
+        /**
          * Property loadBalancerName: Name of created load balancer.
          * <p>
          * Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
@@ -178,6 +207,33 @@ public class LoadBalancerClone extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
             this.props.loadBalancerName(loadBalancerName);
+            return this;
+        }
+
+        /**
+         * Property loadBalancerSpec: The specification of the load balancer.
+         * <p>
+         * If not specified, it is same with the source load balancer.
+         * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the load balancer. This parameter is required.
+         */
+        public Builder loadBalancerSpec(final java.lang.String loadBalancerSpec) {
+            this.props.loadBalancerSpec(loadBalancerSpec);
+            return this;
+        }
+        /**
+         * Property loadBalancerSpec: The specification of the load balancer.
+         * <p>
+         * If not specified, it is same with the source load balancer.
+         * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the load balancer. This parameter is required.
+         */
+        public Builder loadBalancerSpec(final com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {
+            this.props.loadBalancerSpec(loadBalancerSpec);
             return this;
         }
 
@@ -218,7 +274,7 @@ public class LoadBalancerClone extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property tagsPolicy: Solution for handle the tags.
          * <p>
-         * If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+         * If select 'clone', it will clone from source load balancer. If select 'empty' it will not copy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
          * Default is 'empty'.
          * <p>
          * @return {@code this}
@@ -231,7 +287,7 @@ public class LoadBalancerClone extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property tagsPolicy: Solution for handle the tags.
          * <p>
-         * If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+         * If select 'clone', it will clone from source load balancer. If select 'empty' it will not copy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
          * Default is 'empty'.
          * <p>
          * @return {@code this}

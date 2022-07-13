@@ -40,6 +40,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        /// <summary>Property instanceChargeType: Instance billing method.</summary>
+        /// <remarks>
+        /// Value:PayBySpec: Pay by spec.
+        /// PayByCLCU: billed by usage.
+        /// If not specified, it is same with the source load balancer.
+        /// </remarks>
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceChargeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property loadBalancerName: Name of created load balancer.</summary>
         /// <remarks>
         /// Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
@@ -47,6 +63,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? LoadBalancerName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property loadBalancerSpec: The specification of the load balancer.</summary>
+        /// <remarks>
+        /// If not specified, it is same with the source load balancer.
+        /// Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+        /// </remarks>
+        [JsiiProperty(name: "loadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LoadBalancerSpec
         {
             get
             {
@@ -81,7 +112,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
         /// <summary>Property tagsPolicy: Solution for handle the tags.</summary>
         /// <remarks>
-        /// If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+        /// If select 'clone', it will clone from source load balancer. If select 'empty' it will not copy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
         /// Default is 'empty'.
         /// </remarks>
         [JsiiProperty(name: "tagsPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -142,6 +173,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property instanceChargeType: Instance billing method.</summary>
+            /// <remarks>
+            /// Value:PayBySpec: Pay by spec.
+            /// PayByCLCU: billed by usage.
+            /// If not specified, it is same with the source load balancer.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceChargeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property loadBalancerName: Name of created load balancer.</summary>
             /// <remarks>
             /// Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
@@ -149,6 +193,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? LoadBalancerName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property loadBalancerSpec: The specification of the load balancer.</summary>
+            /// <remarks>
+            /// If not specified, it is same with the source load balancer.
+            /// Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "loadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LoadBalancerSpec
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -174,7 +230,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
             /// <summary>Property tagsPolicy: Solution for handle the tags.</summary>
             /// <remarks>
-            /// If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+            /// If select 'clone', it will clone from source load balancer. If select 'empty' it will not copy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
             /// Default is 'empty'.
             /// </remarks>
             [JsiiOptional]

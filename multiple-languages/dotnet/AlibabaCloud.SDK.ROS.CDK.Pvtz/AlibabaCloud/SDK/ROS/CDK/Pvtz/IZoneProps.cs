@@ -15,6 +15,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             get;
         }
 
+        /// <summary>Property ignoredStackTagKeys: Stack tag keys to ignore.</summary>
+        [JsiiProperty(name: "ignoredStackTagKeys", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IgnoredStackTagKeys
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property proxyPattern: ZONE: completely hijack the entire zone.</summary>
         /// <remarks>
         /// RECORD: Incomplete hijacking, recursive resolution agent.
@@ -110,6 +121,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             public object ZoneName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property ignoredStackTagKeys: Stack tag keys to ignore.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ignoredStackTagKeys", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? IgnoredStackTagKeys
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property proxyPattern: ZONE: completely hijack the entire zone.</summary>

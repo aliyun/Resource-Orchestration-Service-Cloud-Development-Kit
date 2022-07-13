@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS template type:  `ALIYUN::PVTZ::UserVpcAuthorization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.912Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.551Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosUserVpcAuthorization")
 public class RosUserVpcAuthorization extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -140,6 +140,24 @@ public class RosUserVpcAuthorization extends com.aliyun.ros.cdk.core.RosResource
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreDeletionForbidden() {
+        return software.amazon.jsii.Kernel.get(this, "ignoreDeletionForbidden", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIgnoreDeletionForbidden(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "ignoreDeletionForbidden", value);
+    }
+
+    /**
+     */
+    public void setIgnoreDeletionForbidden(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ignoreDeletionForbidden", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.pvtz.RosUserVpcAuthorization}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.pvtz.RosUserVpcAuthorization> {
@@ -230,6 +248,23 @@ public class RosUserVpcAuthorization extends com.aliyun.ros.cdk.core.RosResource
          */
         public Builder authType(final com.aliyun.ros.cdk.core.IResolvable authType) {
             this.props.authType(authType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ignoreDeletionForbidden This parameter is required.
+         */
+        public Builder ignoreDeletionForbidden(final java.lang.Boolean ignoreDeletionForbidden) {
+            this.props.ignoreDeletionForbidden(ignoreDeletionForbidden);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ignoreDeletionForbidden This parameter is required.
+         */
+        public Builder ignoreDeletionForbidden(final com.aliyun.ros.cdk.core.IResolvable ignoreDeletionForbidden) {
+            this.props.ignoreDeletionForbidden(ignoreDeletionForbidden);
             return this;
         }
 

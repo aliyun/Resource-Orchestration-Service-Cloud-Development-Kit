@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  `ALIYUN::RAM::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.950Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.592Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosGroup")
 public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -539,16 +539,12 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getStatement() {
-            return null;
-        }
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatement();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
-            return null;
-        }
+        @org.jetbrains.annotations.NotNull java.lang.Object getVersion();
 
         /**
          * @return a {@link Builder} of {@link PolicyDocumentProperty}
@@ -567,7 +563,7 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link PolicyDocumentProperty#getStatement}
-             * @param statement the value to be set.
+             * @param statement the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -578,7 +574,7 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link PolicyDocumentProperty#getStatement}
-             * @param statement the value to be set.
+             * @param statement the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -589,7 +585,7 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link PolicyDocumentProperty#getVersion}
-             * @param version the value to be set.
+             * @param version the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -600,7 +596,7 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link PolicyDocumentProperty#getVersion}
-             * @param version the value to be set.
+             * @param version the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -645,8 +641,8 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.statement = builder.statement;
-                this.version = builder.version;
+                this.statement = java.util.Objects.requireNonNull(builder.statement, "statement is required");
+                this.version = java.util.Objects.requireNonNull(builder.version, "version is required");
             }
 
             @Override
@@ -665,12 +661,8 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                if (this.getStatement() != null) {
-                    data.set("statement", om.valueToTree(this.getStatement()));
-                }
-                if (this.getVersion() != null) {
-                    data.set("version", om.valueToTree(this.getVersion()));
-                }
+                data.set("statement", om.valueToTree(this.getStatement()));
+                data.set("version", om.valueToTree(this.getVersion()));
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ram.RosGroup.PolicyDocumentProperty"));
@@ -689,14 +681,14 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 
                 PolicyDocumentProperty.Jsii$Proxy that = (PolicyDocumentProperty.Jsii$Proxy) o;
 
-                if (this.statement != null ? !this.statement.equals(that.statement) : that.statement != null) return false;
-                return this.version != null ? this.version.equals(that.version) : that.version == null;
+                if (!statement.equals(that.statement)) return false;
+                return this.version.equals(that.version);
             }
 
             @Override
             public final int hashCode() {
-                int result = this.statement != null ? this.statement.hashCode() : 0;
-                result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
+                int result = this.statement.hashCode();
+                result = 31 * result + (this.version.hashCode());
                 return result;
             }
         }

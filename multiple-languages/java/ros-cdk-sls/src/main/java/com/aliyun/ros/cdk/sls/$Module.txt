@@ -4,6 +4,8 @@
 @alicloud/ros-cdk-sls.ApplyConfigToMachineGroupProps=com.aliyun.ros.cdk.sls.ApplyConfigToMachineGroupProps
 @alicloud/ros-cdk-sls.Audit=com.aliyun.ros.cdk.sls.Audit
 @alicloud/ros-cdk-sls.AuditProps=com.aliyun.ros.cdk.sls.AuditProps
+@alicloud/ros-cdk-sls.Dashboard=com.aliyun.ros.cdk.sls.Dashboard
+@alicloud/ros-cdk-sls.DashboardProps=com.aliyun.ros.cdk.sls.DashboardProps
 @alicloud/ros-cdk-sls.Etl=com.aliyun.ros.cdk.sls.Etl
 @alicloud/ros-cdk-sls.EtlProps=com.aliyun.ros.cdk.sls.EtlProps
 @alicloud/ros-cdk-sls.Index=com.aliyun.ros.cdk.sls.Index
@@ -37,6 +39,8 @@
 @alicloud/ros-cdk-sls.RosAudit=com.aliyun.ros.cdk.sls.RosAudit
 @alicloud/ros-cdk-sls.RosAudit.VariableMapProperty=com.aliyun.ros.cdk.sls.RosAudit$VariableMapProperty
 @alicloud/ros-cdk-sls.RosAuditProps=com.aliyun.ros.cdk.sls.RosAuditProps
+@alicloud/ros-cdk-sls.RosDashboard=com.aliyun.ros.cdk.sls.RosDashboard
+@alicloud/ros-cdk-sls.RosDashboardProps=com.aliyun.ros.cdk.sls.RosDashboardProps
 @alicloud/ros-cdk-sls.RosEtl=com.aliyun.ros.cdk.sls.RosEtl
 @alicloud/ros-cdk-sls.RosEtl.ConfigurationProperty=com.aliyun.ros.cdk.sls.RosEtl$ConfigurationProperty
 @alicloud/ros-cdk-sls.RosEtl.ScheduleProperty=com.aliyun.ros.cdk.sls.RosEtl$ScheduleProperty

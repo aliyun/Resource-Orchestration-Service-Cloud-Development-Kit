@@ -18,6 +18,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             set;
         }
 
+        /// <summary>Property ignoredStackTagKeys: Stack tag keys to ignore.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "ignoredStackTagKeys", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? IgnoredStackTagKeys
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property proxyPattern: ZONE: completely hijack the entire zone.</summary>
         /// <remarks>
         /// RECORD: Incomplete hijacking, recursive resolution agent.

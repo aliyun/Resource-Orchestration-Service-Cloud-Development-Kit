@@ -101,6 +101,16 @@ export class Instance extends ros.Resource {
      */
 
     /**
+     * Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
+     */
+    public readonly attrDomainEndpoint: ros.IResolvable;
+
+    /**
+     * Attribute Endpoint: The SSL endpoints of the instance in IP address mode.
+     */
+    public readonly attrEndpoint: ros.IResolvable;
+
+    /**
      * Attribute InstanceId: Id of the instance.
      */
     public readonly attrInstanceId: ros.IResolvable;
@@ -114,6 +124,21 @@ export class Instance extends ros.Resource {
      * Attribute OrderId: Id of the order.
      */
     public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * Attribute SaslDomainEndpoint: The Simple Authentication and Security Layer (SASL) endpoints of the instance in domain name mode.
+     */
+    public readonly attrSaslDomainEndpoint: ros.IResolvable;
+
+    /**
+     * Attribute SslDomainEndpoint: The SSL endpoints of the instance in domain name mode.
+     */
+    public readonly attrSslDomainEndpoint: ros.IResolvable;
+
+    /**
+     * Attribute SslEndpoint: The SSL endpoints of the instance in IP address mode.
+     */
+    public readonly attrSslEndpoint: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::KAFKA::Instance`.
@@ -141,8 +166,13 @@ export class Instance extends ros.Resource {
             openConnector: props.openConnector === undefined || props.openConnector === null ? false : props.openConnector,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
+        this.attrDomainEndpoint = rosInstance.attrDomainEndpoint;
+        this.attrEndpoint = rosInstance.attrEndpoint;
         this.attrInstanceId = rosInstance.attrInstanceId;
         this.attrName = rosInstance.attrName;
         this.attrOrderId = rosInstance.attrOrderId;
+        this.attrSaslDomainEndpoint = rosInstance.attrSaslDomainEndpoint;
+        this.attrSslDomainEndpoint = rosInstance.attrSslDomainEndpoint;
+        this.attrSslEndpoint = rosInstance.attrSslEndpoint;
     }
 }

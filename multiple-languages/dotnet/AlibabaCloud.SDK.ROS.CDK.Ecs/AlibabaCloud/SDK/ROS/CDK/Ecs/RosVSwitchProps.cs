@@ -95,5 +95,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
             set;
         }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneType: The type of the zones to be queried.
+        /// Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ZoneType
+        {
+            get;
+            set;
+        }
     }
 }
