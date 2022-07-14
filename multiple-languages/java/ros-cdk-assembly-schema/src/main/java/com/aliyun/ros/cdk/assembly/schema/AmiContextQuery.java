@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to AMI context provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.437Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.007Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.AmiContextQuery")
 @software.amazon.jsii.Jsii.Proxy(AmiContextQuery.Jsii$Proxy.class)
 public interface AmiContextQuery extends software.amazon.jsii.JsiiSerializable {

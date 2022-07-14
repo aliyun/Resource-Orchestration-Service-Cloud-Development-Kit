@@ -22,6 +22,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get;
         }
 
+        /// <summary>Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.</summary>
+        [JsiiProperty(name: "imciSwitch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ImciSwitch
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::POLARDB::DBNodes`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IDBNodesProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.DBNodesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.IDBNodesProps
@@ -42,6 +53,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             public object DbClusterId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "imciSwitch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImciSwitch
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

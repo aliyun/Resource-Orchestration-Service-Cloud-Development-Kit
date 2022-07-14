@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.057Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.699Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ReadOnlyDBInstanceProps.Jsii$Proxy.class)
 public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -88,8 +88,6 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
 
     /**
      * Property payType: The billing method.
-     * <p>
-     * Valid value: Postpaid, Prepaid.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return null;
@@ -410,7 +408,6 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPayType}
          * @param payType Property payType: The billing method.
-         *                Valid value: Postpaid, Prepaid.
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -421,7 +418,6 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPayType}
          * @param payType Property payType: The billing method.
-         *                Valid value: Postpaid, Prepaid.
          * @return {@code this}
          */
         public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {

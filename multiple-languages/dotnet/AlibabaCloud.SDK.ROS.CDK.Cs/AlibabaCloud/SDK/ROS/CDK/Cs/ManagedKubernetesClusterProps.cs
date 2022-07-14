@@ -37,17 +37,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             set;
         }
 
-        /// <summary>Property workerInstanceTypes: Worker node ECS specification type code.</summary>
-        /// <remarks>
-        /// For more details, see Instance Specification Family.
-        /// </remarks>
-        [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
-        public object WorkerInstanceTypes
-        {
-            get;
-            set;
-        }
-
         /// <summary>Property addons: A combination of addon plugins for Kubernetes clusters.</summary>
         /// <remarks>
         /// Network plug-in: including Flannel and Terway network plug-ins
@@ -315,6 +304,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             set;
         }
 
+        /// <summary>Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix.</summary>
+        /// <remarks>
+        /// The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+        ///
+        /// <list type="bullet">
+        /// <description>The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.</description>
+        /// <description>The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "nodeNameMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NodeNameMode
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property nodePools: The configurations of Node pools.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "nodePools", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -569,6 +575,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiOptional]
         [JsiiProperty(name: "workerDataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.WorkerDataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? WorkerDataDisks
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property workerInstanceTypes: Worker node ECS specification type code.</summary>
+        /// <remarks>
+        /// For more details, see Instance Specification Family.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? WorkerInstanceTypes
         {
             get;
             set;

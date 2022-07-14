@@ -459,9 +459,17 @@ export interface RosResourceCleanerProps {
      * - Scan: Scanning phase. Scan out the resources to be cleaned up.
      * - CleanUp: Cleanup phase. Clean up the scanned resources. It it not allowed for resource creation.
      * - Scan+CleanUp: Scan first, then CleanUp.
-     * - ScanWhenCreatingAndUpdating+CleanUpWhenDeleting: Scan when creating or updating resource, and CleanUp when deleting resource.
+     * - ScanWhenCreatingAndUpdating+CleanUpWhenDeleting: Scan when creating or updating resource, and CleanUp when deleting stack.
      */
     readonly action: string | ros.IResolvable;
+
+    /**
+     * @Property cleanUpAlgorithm: The cleanup algorithm of cleanup phase:
+     * - ResourceDependency: Clean up by resource dependency tree.
+     * - ResourceTypeOrder: Clean up by resource type order. Property ResourceTypeOrder can be used to specify resource type order. If it is not specified, a default order will be used.
+     * Default to ResourceDependency.
+     */
+    readonly cleanUpAlgorithm?: string | ros.IResolvable;
 
     /**
      * @Property cleanUpRetryCount: The maximum number of executions of cleanup phase.
@@ -479,6 +487,13 @@ export interface RosResourceCleanerProps {
     readonly cleanUpTimeout?: number | ros.IResolvable;
 
     /**
+     * @Property disabledSideEffects: Side effects to be disabled.
+     * Cleaning up some resources will cause some side effects. If is not expected, use the property to disable them.
+     * The side effects can be found in response(ResourceCleaner) of API GetFeatureDetails.
+     */
+    readonly disabledSideEffects?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property excludedResources: Exclude parts from resources to be cleaned up.
      */
     readonly excludedResources?: Array<RosResourceCleaner.ExcludedResourcesProperty | ros.IResolvable> | ros.IResolvable;
@@ -492,14 +507,36 @@ export interface RosResourceCleanerProps {
     readonly failureOption?: string | ros.IResolvable;
 
     /**
+     * @Property mode: The result mode of resource cleaner:
+     * - Strict: Any scanning or cleanup failure leads to the failure of the cleaner.
+     * - Loose: Only a little scanning and cleanup failures lead to the failure of the cleaner. Most scanning failures will be ignored, failure messages can be found in ScanErrors or ResourceDetails. Most cleanup failures will be ignored, failure messages can be found in ResourceDetails.
+     * Default to Loose.
+     */
+    readonly mode?: string | ros.IResolvable;
+
+    /**
      * @Property resourceFilters: Resource filters that ResourceCleaner uses to filter out the resources to be cleaned up during scanning.
+     * Only one of ResourceFilters and Resources can be specified.
      * There are two filtering behaviors(Effect): Allow and Deny. The filters work as below:
      * 1.Any resource denied by any Deny filter will not be cleaned up.
-     * 2.If there is not any Allow filter, all resources not denied by any Deny filter will be cleaned up.
-     * 3.If there are some Allow filters, only resources allowed by some Allow filter and not denied by any Deny filter will be cleaned up.
+     * 2.Only resources allowed by some Allow filter and not denied by any Deny filter will be cleaned up.
      * If filters are changed during resource update, ResourceCleaner requires to rescan. And if Action equals CleanUp, an error occurs.
      */
     readonly resourceFilters?: Array<RosResourceCleaner.ResourceFiltersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resources: Resources to be cleaned up.
+     * Only one of Resources and ResourceFilters can be specified.
+     */
+    readonly resources?: Array<RosResourceCleaner.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceTypeOrder: This property takes effect only when property CleanUpAlgorithm is ResourceTypeOrder.
+     * If it takes effect:
+     * - Resources will be cleaned up in order from front to back.
+     * - Resource with resource type not specified in this property will not be cleaned up.
+     */
+    readonly resourceTypeOrder?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -535,14 +572,44 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('action', ros.validateString)(properties.action));
+    if(properties.cleanUpAlgorithm && (typeof properties.cleanUpAlgorithm) !== 'object') {
+        errors.collect(ros.propertyValidator('cleanUpAlgorithm', ros.validateAllowedValues)({
+          data: properties.cleanUpAlgorithm,
+          allowedValues: ["ResourceDependency","ResourceTypeOrder"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('cleanUpAlgorithm', ros.validateString)(properties.cleanUpAlgorithm));
+    if(properties.mode && (typeof properties.mode) !== 'object') {
+        errors.collect(ros.propertyValidator('mode', ros.validateAllowedValues)({
+          data: properties.mode,
+          allowedValues: ["Strict","Loose"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('mode', ros.validateString)(properties.mode));
     if(properties.cleanUpRetryCount && (typeof properties.cleanUpRetryCount) !== 'object') {
         errors.collect(ros.propertyValidator('cleanUpRetryCount', ros.validateRange)({
             data: properties.cleanUpRetryCount,
             min: 1,
-            max: 5,
+            max: 6,
           }));
     }
     errors.collect(ros.propertyValidator('cleanUpRetryCount', ros.validateNumber)(properties.cleanUpRetryCount));
+    if(properties.resourceTypeOrder && (Array.isArray(properties.resourceTypeOrder) || (typeof properties.resourceTypeOrder) === 'string')) {
+        errors.collect(ros.propertyValidator('resourceTypeOrder', ros.validateLength)({
+            data: properties.resourceTypeOrder.length,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resourceTypeOrder', ros.listValidator(ros.validateString))(properties.resourceTypeOrder));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(RosResourceCleaner_ResourcesPropertyValidator))(properties.resources));
     if(properties.cleanUpTimeout && (typeof properties.cleanUpTimeout) !== 'object') {
         errors.collect(ros.propertyValidator('cleanUpTimeout', ros.validateRange)({
             data: properties.cleanUpTimeout,
@@ -551,6 +618,14 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('cleanUpTimeout', ros.validateNumber)(properties.cleanUpTimeout));
+    if(properties.disabledSideEffects && (Array.isArray(properties.disabledSideEffects) || (typeof properties.disabledSideEffects) === 'string')) {
+        errors.collect(ros.propertyValidator('disabledSideEffects', ros.validateLength)({
+            data: properties.disabledSideEffects.length,
+            min: 1,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('disabledSideEffects', ros.listValidator(ros.validateString))(properties.disabledSideEffects));
     if(properties.excludedResources && (Array.isArray(properties.excludedResources) || (typeof properties.excludedResources) === 'string')) {
         errors.collect(ros.propertyValidator('excludedResources', ros.validateLength)({
             data: properties.excludedResources.length,
@@ -577,11 +652,16 @@ function rosResourceCleanerPropsToRosTemplate(properties: any, enableResourcePro
     }
     return {
       Action: ros.stringToRosTemplate(properties.action),
+      CleanUpAlgorithm: ros.stringToRosTemplate(properties.cleanUpAlgorithm),
       CleanUpRetryCount: ros.numberToRosTemplate(properties.cleanUpRetryCount),
       CleanUpTimeout: ros.numberToRosTemplate(properties.cleanUpTimeout),
+      DisabledSideEffects: ros.listMapper(ros.stringToRosTemplate)(properties.disabledSideEffects),
       ExcludedResources: ros.listMapper(rosResourceCleanerExcludedResourcesPropertyToRosTemplate)(properties.excludedResources),
       FailureOption: ros.stringToRosTemplate(properties.failureOption),
+      Mode: ros.stringToRosTemplate(properties.mode),
       ResourceFilters: ros.listMapper(rosResourceCleanerResourceFiltersPropertyToRosTemplate)(properties.resourceFilters),
+      Resources: ros.listMapper(rosResourceCleanerResourcesPropertyToRosTemplate)(properties.resources),
+      ResourceTypeOrder: ros.listMapper(ros.stringToRosTemplate)(properties.resourceTypeOrder),
     };
 }
 
@@ -600,11 +680,30 @@ export class RosResourceCleaner extends ros.RosResource {
      */
 
     /**
+     * @Attribute CleanResult: The cleanup result. Valid values:
+- Success: All resources are cleaned up successfully.
+- ResourceFailure: Partial resources fail to clean up.
+- Timeout: Timeout to clean up.
+- CheckFailure: Pre check of cleanup fails.
+- UnknownFailure: Unexpected failure.
+- UserCancelled: Cleanup is cancelled by user.
+- None: Cleanup is not triggered.
+     */
+    public readonly attrCleanResult: ros.IResolvable;
+
+    /**
      * @Attribute NoCleanupResourceDetails: The details of the resources that are scanned but filtered.
 Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
 The format is the same as ResourceDetails.
      */
     public readonly attrNoCleanupResourceDetails: ros.IResolvable;
+
+    /**
+     * @Attribute NoCleanupResourcePartialDetails: The partial details of the resources that are scanned but filtered.
+Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
+The format is the same as ResourcePartialDetails.
+     */
+    public readonly attrNoCleanupResourcePartialDetails: ros.IResolvable;
 
     /**
      * @Attribute ResourceDetails: The details of resources to be cleaned up.
@@ -633,6 +732,23 @@ The value is a list of dict. The dict contains the fields below:
     public readonly attrResourceDetails: ros.IResolvable;
 
     /**
+     * @Attribute ResourcePartialDetails: The partial details of resources to be cleaned up.
+The value is a list of dict. The dict contains the fields below:
+- ResourceType: Resource type of the resource.
+- RegionId: Region ID of the resource.
+- ResourceId: ID of the resource.
+- ResourceName: Name of the resource.
+- ResourceStatus: Status of the resource. Valid values:
+  - Deleting: The resource is deleting.
+  - Failure: The deletion of the resource failed.
+  - Success: The resource is deleted.
+  - Skipped: The deletion of the resource is skipped.
+  - Pending: The deletion of the resource is not started.
+- ResourceStatusReason: The information of the related ResourceStatus.
+     */
+    public readonly attrResourcePartialDetails: ros.IResolvable;
+
+    /**
      * @Attribute ResourceSummary: The details of resources to be cleaned up.
 The value is a list of dict. The dict contains the fields below:
 - ResourceType: Resource type of the resources.
@@ -646,6 +762,15 @@ The value is a list of dict. The dict contains the fields below:
      */
     public readonly attrResourceSummary: ros.IResolvable;
 
+    /**
+     * @Attribute ScanErrors: The scan errors. It takes effect only when property Mode is Loose.
+The value is a list of dict. The dict contains the fields below:
+- ResourceType: Resource type for scanning.
+- RegionId: Region ID for scanning.
+- ErrorMessage: Error message of scanning with specified resource type and region ID.
+     */
+    public readonly attrScanErrors: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -654,9 +779,17 @@ The value is a list of dict. The dict contains the fields below:
      * - Scan: Scanning phase. Scan out the resources to be cleaned up.
      * - CleanUp: Cleanup phase. Clean up the scanned resources. It it not allowed for resource creation.
      * - Scan+CleanUp: Scan first, then CleanUp.
-     * - ScanWhenCreatingAndUpdating+CleanUpWhenDeleting: Scan when creating or updating resource, and CleanUp when deleting resource.
+     * - ScanWhenCreatingAndUpdating+CleanUpWhenDeleting: Scan when creating or updating resource, and CleanUp when deleting stack.
      */
     public action: string | ros.IResolvable;
+
+    /**
+     * @Property cleanUpAlgorithm: The cleanup algorithm of cleanup phase:
+     * - ResourceDependency: Clean up by resource dependency tree.
+     * - ResourceTypeOrder: Clean up by resource type order. Property ResourceTypeOrder can be used to specify resource type order. If it is not specified, a default order will be used.
+     * Default to ResourceDependency.
+     */
+    public cleanUpAlgorithm: string | ros.IResolvable | undefined;
 
     /**
      * @Property cleanUpRetryCount: The maximum number of executions of cleanup phase.
@@ -674,6 +807,13 @@ The value is a list of dict. The dict contains the fields below:
     public cleanUpTimeout: number | ros.IResolvable | undefined;
 
     /**
+     * @Property disabledSideEffects: Side effects to be disabled.
+     * Cleaning up some resources will cause some side effects. If is not expected, use the property to disable them.
+     * The side effects can be found in response(ResourceCleaner) of API GetFeatureDetails.
+     */
+    public disabledSideEffects: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property excludedResources: Exclude parts from resources to be cleaned up.
      */
     public excludedResources: Array<RosResourceCleaner.ExcludedResourcesProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -687,14 +827,36 @@ The value is a list of dict. The dict contains the fields below:
     public failureOption: string | ros.IResolvable | undefined;
 
     /**
+     * @Property mode: The result mode of resource cleaner:
+     * - Strict: Any scanning or cleanup failure leads to the failure of the cleaner.
+     * - Loose: Only a little scanning and cleanup failures lead to the failure of the cleaner. Most scanning failures will be ignored, failure messages can be found in ScanErrors or ResourceDetails. Most cleanup failures will be ignored, failure messages can be found in ResourceDetails.
+     * Default to Loose.
+     */
+    public mode: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceFilters: Resource filters that ResourceCleaner uses to filter out the resources to be cleaned up during scanning.
+     * Only one of ResourceFilters and Resources can be specified.
      * There are two filtering behaviors(Effect): Allow and Deny. The filters work as below:
      * 1.Any resource denied by any Deny filter will not be cleaned up.
-     * 2.If there is not any Allow filter, all resources not denied by any Deny filter will be cleaned up.
-     * 3.If there are some Allow filters, only resources allowed by some Allow filter and not denied by any Deny filter will be cleaned up.
+     * 2.Only resources allowed by some Allow filter and not denied by any Deny filter will be cleaned up.
      * If filters are changed during resource update, ResourceCleaner requires to rescan. And if Action equals CleanUp, an error occurs.
      */
     public resourceFilters: Array<RosResourceCleaner.ResourceFiltersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resources: Resources to be cleaned up.
+     * Only one of Resources and ResourceFilters can be specified.
+     */
+    public resources: Array<RosResourceCleaner.ResourcesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceTypeOrder: This property takes effect only when property CleanUpAlgorithm is ResourceTypeOrder.
+     * If it takes effect:
+     * - Resources will be cleaned up in order from front to back.
+     * - Resource with resource type not specified in this property will not be cleaned up.
+     */
+    public resourceTypeOrder: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ROS::ResourceCleaner`.
@@ -705,28 +867,42 @@ The value is a list of dict. The dict contains the fields below:
      */
     constructor(scope: ros.Construct, id: string, props: RosResourceCleanerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosResourceCleaner.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCleanResult = this.getAtt('CleanResult');
         this.attrNoCleanupResourceDetails = this.getAtt('NoCleanupResourceDetails');
+        this.attrNoCleanupResourcePartialDetails = this.getAtt('NoCleanupResourcePartialDetails');
         this.attrResourceDetails = this.getAtt('ResourceDetails');
+        this.attrResourcePartialDetails = this.getAtt('ResourcePartialDetails');
         this.attrResourceSummary = this.getAtt('ResourceSummary');
+        this.attrScanErrors = this.getAtt('ScanErrors');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.action = props.action;
+        this.cleanUpAlgorithm = props.cleanUpAlgorithm;
         this.cleanUpRetryCount = props.cleanUpRetryCount;
         this.cleanUpTimeout = props.cleanUpTimeout;
+        this.disabledSideEffects = props.disabledSideEffects;
         this.excludedResources = props.excludedResources;
         this.failureOption = props.failureOption;
+        this.mode = props.mode;
         this.resourceFilters = props.resourceFilters;
+        this.resources = props.resources;
+        this.resourceTypeOrder = props.resourceTypeOrder;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             action: this.action,
+            cleanUpAlgorithm: this.cleanUpAlgorithm,
             cleanUpRetryCount: this.cleanUpRetryCount,
             cleanUpTimeout: this.cleanUpTimeout,
+            disabledSideEffects: this.disabledSideEffects,
             excludedResources: this.excludedResources,
             failureOption: this.failureOption,
+            mode: this.mode,
             resourceFilters: this.resourceFilters,
+            resources: this.resources,
+            resourceTypeOrder: this.resourceTypeOrder,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -769,14 +945,14 @@ function RosResourceCleaner_ExcludedResourcesPropertyValidator(properties: any):
         errors.collect(ros.propertyValidator('resourceId', ros.validateLength)({
             data: properties.resourceId.length,
             min: 1,
-            max: undefined,
+            max: 256,
           }));
     }
     errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ALB:LoadBalancer","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","RDS:DBInstance","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EipSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch"],
+          allowedValues: ["ADB:DBCluster","ALB:LoadBalancer","ALB:ServerGroup","CDN:Domain","DCDN:Domain","DNS:Domain","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","NAS:AccessGroup","NAS:FileSystem","OOS:Template","POLARDB:DBCluster","RDS:DBInstance","ROCKETMQ:Instance","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EipSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -784,7 +960,7 @@ function RosResourceCleaner_ExcludedResourcesPropertyValidator(properties: any):
         errors.collect(ros.propertyValidator('regionId', ros.validateLength)({
             data: properties.regionId.length,
             min: 1,
-            max: undefined,
+            max: 64,
           }));
     }
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
@@ -946,6 +1122,83 @@ function rosResourceCleanerResourceFiltersPropertyToRosTemplate(properties: any)
       Effect: ros.stringToRosTemplate(properties.effect),
       ResourceNamePatterns: ros.listMapper(ros.stringToRosTemplate)(properties.resourceNamePatterns),
       Tags: ros.listMapper(rosResourceCleanerTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+export namespace RosResourceCleaner {
+    /**
+     * @stability external
+     */
+    export interface ResourcesProperty {
+        /**
+         * @Property resourceId: The ID of the resource to be cleaned up.
+         */
+        readonly resourceId: string | ros.IResolvable;
+        /**
+         * @Property resourceType: The resource type of the resource to be cleaned up.
+     * The allowed values are the resource types that ResourceCleaner supports to clean up.
+         */
+        readonly resourceType: string | ros.IResolvable;
+        /**
+         * @Property regionId: The region ID of the resource to be cleaned up.
+         */
+        readonly regionId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourcesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceCleaner_ResourcesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
+    if(properties.resourceId && (Array.isArray(properties.resourceId) || (typeof properties.resourceId) === 'string')) {
+        errors.collect(ros.propertyValidator('resourceId', ros.validateLength)({
+            data: properties.resourceId.length,
+            min: 1,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["ADB:DBCluster","ALB:LoadBalancer","ALB:ServerGroup","CDN:Domain","DCDN:Domain","DNS:Domain","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","NAS:AccessGroup","NAS:FileSystem","OOS:Template","POLARDB:DBCluster","RDS:DBInstance","ROCKETMQ:Instance","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EipSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('regionId', ros.requiredValidator)(properties.regionId));
+    if(properties.regionId && (Array.isArray(properties.regionId) || (typeof properties.regionId) === 'string')) {
+        errors.collect(ros.propertyValidator('regionId', ros.validateLength)({
+            data: properties.regionId.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    return errors.wrap('supplied properties not correct for "ResourcesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::ResourceCleaner.Resources` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::ResourceCleaner.Resources` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceCleanerResourcesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceCleaner_ResourcesPropertyValidator(properties).assertSuccess();
+    return {
+      ResourceId: ros.stringToRosTemplate(properties.resourceId),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      RegionId: ros.stringToRosTemplate(properties.regionId),
     };
 }
 

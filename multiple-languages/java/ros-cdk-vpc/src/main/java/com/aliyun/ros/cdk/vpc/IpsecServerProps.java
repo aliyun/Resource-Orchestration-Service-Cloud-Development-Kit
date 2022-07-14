@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::IpsecServer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.559Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:22.256Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IpsecServerProps")
 @software.amazon.jsii.Jsii.Proxy(IpsecServerProps.Jsii$Proxy.class)
 public interface IpsecServerProps extends software.amazon.jsii.JsiiSerializable {

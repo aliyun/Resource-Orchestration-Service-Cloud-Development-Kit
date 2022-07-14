@@ -22,10 +22,7 @@ export interface InstanceProps {
     readonly backupPolicy?: RosInstance.BackupPolicyProperty | ros.IResolvable;
 
     /**
-     * Property chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
-     * PrePaid: subscription.
-     * PostPaid: pay-as-you-go.
-     * Default: PostPaid.
+     * Property chargeType: The billing method of the ApsaraDB for Redis instance.
      */
     readonly chargeType?: string | ros.IResolvable;
 

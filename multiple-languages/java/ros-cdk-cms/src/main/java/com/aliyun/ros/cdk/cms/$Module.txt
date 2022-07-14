@@ -20,6 +20,8 @@
 @alicloud/ros-cdk-cms.MonitorGroupProps=com.aliyun.ros.cdk.cms.MonitorGroupProps
 @alicloud/ros-cdk-cms.MonitoringAgentProcess=com.aliyun.ros.cdk.cms.MonitoringAgentProcess
 @alicloud/ros-cdk-cms.MonitoringAgentProcessProps=com.aliyun.ros.cdk.cms.MonitoringAgentProcessProps
+@alicloud/ros-cdk-cms.ResourceMetricRule=com.aliyun.ros.cdk.cms.ResourceMetricRule
+@alicloud/ros-cdk-cms.ResourceMetricRuleProps=com.aliyun.ros.cdk.cms.ResourceMetricRuleProps
 @alicloud/ros-cdk-cms.RosContact=com.aliyun.ros.cdk.cms.RosContact
 @alicloud/ros-cdk-cms.RosContact.ChannelsProperty=com.aliyun.ros.cdk.cms.RosContact$ChannelsProperty
 @alicloud/ros-cdk-cms.RosContactGroup=com.aliyun.ros.cdk.cms.RosContactGroup
@@ -61,6 +63,17 @@
 @alicloud/ros-cdk-cms.RosMonitorGroupProps=com.aliyun.ros.cdk.cms.RosMonitorGroupProps
 @alicloud/ros-cdk-cms.RosMonitoringAgentProcess=com.aliyun.ros.cdk.cms.RosMonitoringAgentProcess
 @alicloud/ros-cdk-cms.RosMonitoringAgentProcessProps=com.aliyun.ros.cdk.cms.RosMonitoringAgentProcessProps
+@alicloud/ros-cdk-cms.RosResourceMetricRule=com.aliyun.ros.cdk.cms.RosResourceMetricRule
+@alicloud/ros-cdk-cms.RosResourceMetricRule.AnnotationsProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$AnnotationsProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRule.CompositeExpressionProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$CompositeExpressionProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRule.CriticalProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$CriticalProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRule.EscalationsProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$EscalationsProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRule.ExpressionListProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$ExpressionListProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRule.InfoProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$InfoProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRule.LabelsProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$LabelsProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRule.PrometheusProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$PrometheusProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRule.WarnProperty=com.aliyun.ros.cdk.cms.RosResourceMetricRule$WarnProperty
+@alicloud/ros-cdk-cms.RosResourceMetricRuleProps=com.aliyun.ros.cdk.cms.RosResourceMetricRuleProps
 @alicloud/ros-cdk-cms.RosSiteMonitor=com.aliyun.ros.cdk.cms.RosSiteMonitor
 @alicloud/ros-cdk-cms.RosSiteMonitor.IspCitiesProperty=com.aliyun.ros.cdk.cms.RosSiteMonitor$IspCitiesProperty
 @alicloud/ros-cdk-cms.RosSiteMonitorProps=com.aliyun.ros.cdk.cms.RosSiteMonitorProps

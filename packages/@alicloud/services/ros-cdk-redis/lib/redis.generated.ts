@@ -228,10 +228,7 @@ export interface RosInstanceProps {
     readonly backupPolicy?: RosInstance.BackupPolicyProperty | ros.IResolvable;
 
     /**
-     * @Property chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
-     * PrePaid: subscription.
-     * PostPaid: pay-as-you-go.
-     * Default: PostPaid.
+     * @Property chargeType: The billing method of the ApsaraDB for Redis instance.
      */
     readonly chargeType?: string | ros.IResolvable;
 
@@ -398,7 +395,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PostPaid","PrePaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -640,10 +637,7 @@ export class RosInstance extends ros.RosResource {
     public backupPolicy: RosInstance.BackupPolicyProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
-     * PrePaid: subscription.
-     * PostPaid: pay-as-you-go.
-     * Default: PostPaid.
+     * @Property chargeType: The billing method of the ApsaraDB for Redis instance.
      */
     public chargeType: string | ros.IResolvable | undefined;
 

@@ -63,6 +63,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: SystemTransitRouterRouteTableId: The system route table ID of transit router.
+        /// </remarks>
+        [JsiiProperty(name: "attrSystemTransitRouterRouteTableId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSystemTransitRouterRouteTableId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: TransitRouterDescription: TransitRouterDescription
         /// </remarks>
         [JsiiProperty(name: "attrTransitRouterDescription", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

@@ -4860,7 +4860,7 @@ export interface RosReadOnlyDBInstanceProps {
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
-     * @Property payType: The billing method. Valid value: Postpaid, Prepaid.
+     * @Property payType: The billing method.
      */
     readonly payType?: string | ros.IResolvable;
 
@@ -4959,7 +4959,7 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Prepaid","Postpaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -5096,7 +5096,7 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property payType: The billing method. Valid value: Postpaid, Prepaid.
+     * @Property payType: The billing method.
      */
     public payType: string | ros.IResolvable | undefined;
 

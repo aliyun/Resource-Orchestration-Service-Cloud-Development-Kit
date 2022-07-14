@@ -12,6 +12,7 @@
 @alicloud/ros-cdk-ros.RosResourceCleaner=com.aliyun.ros.cdk.ros.RosResourceCleaner
 @alicloud/ros-cdk-ros.RosResourceCleaner.ExcludedResourcesProperty=com.aliyun.ros.cdk.ros.RosResourceCleaner$ExcludedResourcesProperty
 @alicloud/ros-cdk-ros.RosResourceCleaner.ResourceFiltersProperty=com.aliyun.ros.cdk.ros.RosResourceCleaner$ResourceFiltersProperty
+@alicloud/ros-cdk-ros.RosResourceCleaner.ResourcesProperty=com.aliyun.ros.cdk.ros.RosResourceCleaner$ResourcesProperty
 @alicloud/ros-cdk-ros.RosResourceCleaner.TagsProperty=com.aliyun.ros.cdk.ros.RosResourceCleaner$TagsProperty
 @alicloud/ros-cdk-ros.RosResourceCleanerProps=com.aliyun.ros.cdk.ros.RosResourceCleanerProps
 @alicloud/ros-cdk-ros.RosSleep=com.aliyun.ros.cdk.ros.RosSleep

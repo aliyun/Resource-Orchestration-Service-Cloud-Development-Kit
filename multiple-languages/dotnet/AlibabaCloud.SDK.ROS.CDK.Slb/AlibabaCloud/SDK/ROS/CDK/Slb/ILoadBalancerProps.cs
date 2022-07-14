@@ -121,6 +121,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        /// <summary>Property instanceChargeType: Instance billing method.</summary>
+        /// <remarks>
+        /// Value:PayBySpec: Pay by spec.
+        /// PayByCLCU: billed by usage.
+        /// Default: PayBySpec
+        /// </remarks>
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceChargeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.</summary>
         [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -384,6 +400,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Duration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property instanceChargeType: Instance billing method.</summary>
+            /// <remarks>
+            /// Value:PayBySpec: Pay by spec.
+            /// PayByCLCU: billed by usage.
+            /// Default: PayBySpec
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceChargeType
             {
                 get => GetInstanceProperty<object?>();
             }

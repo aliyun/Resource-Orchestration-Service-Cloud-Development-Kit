@@ -29,5 +29,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get;
             set;
         }
+
+        /// <remarks>
+        /// <strong>Property</strong>: imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "imciSwitch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ImciSwitch
+        {
+            get;
+            set;
+        }
     }
 }

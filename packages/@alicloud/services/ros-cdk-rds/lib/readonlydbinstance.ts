@@ -65,7 +65,7 @@ export interface ReadOnlyDBInstanceProps {
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
-     * Property payType: The billing method. Valid value: Postpaid, Prepaid.
+     * Property payType: The billing method.
      */
     readonly payType?: string | ros.IResolvable;
 

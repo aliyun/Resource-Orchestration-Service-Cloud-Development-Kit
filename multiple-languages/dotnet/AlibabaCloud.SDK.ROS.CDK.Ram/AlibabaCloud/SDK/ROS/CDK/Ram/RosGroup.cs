@@ -313,27 +313,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: statement: A policy consists of one or more statements.
             /// </remarks>
-            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.StatementProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Statement
+            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.StatementProperty\"}]}},\"kind\":\"array\"}}]}}")]
+            object Statement
             {
-                get
-                {
-                    return null;
-                }
+                get;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
-            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Version
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Version
             {
-                get
-                {
-                    return null;
-                }
+                get;
             }
 
             [JsiiTypeProxy(nativeType: typeof(IPolicyDocumentProperty), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosGroup.PolicyDocumentProperty")]
@@ -346,33 +338,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
                 /// <remarks>
                 /// <strong>Property</strong>: statement: A policy consists of one or more statements.
                 /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.StatementProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-                public object? Statement
+                [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.StatementProperty\"}]}},\"kind\":\"array\"}}]}}")]
+                public object Statement
                 {
-                    get => GetInstanceProperty<object?>();
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
                 /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Version
+                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Version
                 {
-                    get => GetInstanceProperty<object?>();
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
+        #pragma warning disable CS8618
+
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RosGroup.PolicyDocumentProperty")]
         public class PolicyDocumentProperty : AlibabaCloud.SDK.ROS.CDK.Ram.RosGroup.IPolicyDocumentProperty
         {
             /// <remarks>
             /// <strong>Property</strong>: statement: A policy consists of one or more statements.
             /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.StatementProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? Statement
+            [JsiiProperty(name: "statement", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosGroup.StatementProperty\"}]}},\"kind\":\"array\"}}]}}")]
+            public object Statement
             {
                 get;
                 set;
@@ -381,9 +372,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Version
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Version
             {
                 get;
                 set;

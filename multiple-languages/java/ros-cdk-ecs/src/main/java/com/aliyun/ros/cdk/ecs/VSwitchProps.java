@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::VSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.938Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:20.539Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VSwitchProps")
 @software.amazon.jsii.Jsii.Proxy(VSwitchProps.Jsii$Proxy.class)
 public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
@@ -66,6 +66,15 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property zoneType: The type of the zones to be queried.
+     * <p>
+     * Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneType() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link VSwitchProps}
      */
     static Builder builder() {
@@ -83,6 +92,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags;
         java.lang.Object vpcIpv6CidrBlock;
         java.lang.Object vSwitchName;
+        java.lang.Object zoneType;
 
         /**
          * Sets the value of {@link VSwitchProps#getCidrBlock}
@@ -243,6 +253,28 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VSwitchProps#getZoneType}
+         * @param zoneType Property zoneType: The type of the zones to be queried.
+         *                 Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+         * @return {@code this}
+         */
+        public Builder zoneType(java.lang.String zoneType) {
+            this.zoneType = zoneType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VSwitchProps#getZoneType}
+         * @param zoneType Property zoneType: The type of the zones to be queried.
+         *                 Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+         * @return {@code this}
+         */
+        public Builder zoneType(com.aliyun.ros.cdk.core.IResolvable zoneType) {
+            this.zoneType = zoneType;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link VSwitchProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -266,6 +298,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags;
         private final java.lang.Object vpcIpv6CidrBlock;
         private final java.lang.Object vSwitchName;
+        private final java.lang.Object zoneType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -281,6 +314,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty.class)));
             this.vpcIpv6CidrBlock = software.amazon.jsii.Kernel.get(this, "vpcIpv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchName = software.amazon.jsii.Kernel.get(this, "vSwitchName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneType = software.amazon.jsii.Kernel.get(this, "zoneType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -297,6 +331,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty>)builder.tags;
             this.vpcIpv6CidrBlock = builder.vpcIpv6CidrBlock;
             this.vSwitchName = builder.vSwitchName;
+            this.zoneType = builder.zoneType;
         }
 
         @Override
@@ -340,6 +375,11 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getZoneType() {
+            return this.zoneType;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -362,6 +402,9 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getVSwitchName() != null) {
                 data.set("vSwitchName", om.valueToTree(this.getVSwitchName()));
+            }
+            if (this.getZoneType() != null) {
+                data.set("zoneType", om.valueToTree(this.getZoneType()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -388,7 +431,8 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             if (this.ipv6CidrBlock != null ? !this.ipv6CidrBlock.equals(that.ipv6CidrBlock) : that.ipv6CidrBlock != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcIpv6CidrBlock != null ? !this.vpcIpv6CidrBlock.equals(that.vpcIpv6CidrBlock) : that.vpcIpv6CidrBlock != null) return false;
-            return this.vSwitchName != null ? this.vSwitchName.equals(that.vSwitchName) : that.vSwitchName == null;
+            if (this.vSwitchName != null ? !this.vSwitchName.equals(that.vSwitchName) : that.vSwitchName != null) return false;
+            return this.zoneType != null ? this.zoneType.equals(that.zoneType) : that.zoneType == null;
         }
 
         @Override
@@ -401,6 +445,7 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcIpv6CidrBlock != null ? this.vpcIpv6CidrBlock.hashCode() : 0);
             result = 31 * result + (this.vSwitchName != null ? this.vSwitchName.hashCode() : 0);
+            result = 31 * result + (this.zoneType != null ? this.zoneType.hashCode() : 0);
             return result;
         }
     }

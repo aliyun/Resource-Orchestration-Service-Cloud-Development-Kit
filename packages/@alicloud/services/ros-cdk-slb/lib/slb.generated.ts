@@ -1626,7 +1626,6 @@ export namespace RosListener {
         readonly httpCode?: string | ros.IResolvable;
         /**
          * @Property switch: Whether to enable health check. Valid value: on, off.
-     * Currently only valid for http or https protocol.
      * If value is on, turn on the health check. If value is off, turn off the health checkIf value is not set, the health check is disabled by default, unless any health check items are configured.
          */
         readonly switch?: string | ros.IResolvable;
@@ -2098,6 +2097,13 @@ export interface RosLoadBalancerProps {
     readonly duration?: number | ros.IResolvable;
 
     /**
+     * @Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
+     * PayByCLCU: billed by usage.
+     * Default: PayBySpec
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
      * @Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
      */
     readonly internetChargeType?: string | ros.IResolvable;
@@ -2186,6 +2192,13 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PayBySpec","PayByCLCU"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
         errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
           data: properties.pricingCycle,
@@ -2193,6 +2206,8 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
         errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
           data: properties.addressIpVersion,
@@ -2200,8 +2215,6 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.duration && (typeof properties.duration) !== 'object') {
         errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
           data: properties.duration,
@@ -2209,6 +2222,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -2217,7 +2231,6 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('slaveZoneId', ros.validateString)(properties.slaveZoneId));
     if(properties.modificationProtectionStatus && (typeof properties.modificationProtectionStatus) !== 'object') {
         errors.collect(ros.propertyValidator('modificationProtectionStatus', ros.validateAllowedValues)({
@@ -2286,6 +2299,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
       DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       Duration: ros.numberToRosTemplate(properties.duration),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
       LoadBalancerName: ros.stringToRosTemplate(properties.loadBalancerName),
       LoadBalancerSpec: ros.stringToRosTemplate(properties.loadBalancerSpec),
@@ -2441,6 +2455,13 @@ export class RosLoadBalancer extends ros.RosResource {
     public duration: number | ros.IResolvable | undefined;
 
     /**
+     * @Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
+     * PayByCLCU: billed by usage.
+     * Default: PayBySpec
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
      */
     public internetChargeType: string | ros.IResolvable | undefined;
@@ -2544,6 +2565,7 @@ export class RosLoadBalancer extends ros.RosResource {
         this.bandwidth = props.bandwidth;
         this.deletionProtection = props.deletionProtection;
         this.duration = props.duration;
+        this.instanceChargeType = props.instanceChargeType;
         this.internetChargeType = props.internetChargeType;
         this.loadBalancerName = props.loadBalancerName;
         this.loadBalancerSpec = props.loadBalancerSpec;
@@ -2570,6 +2592,7 @@ export class RosLoadBalancer extends ros.RosResource {
             bandwidth: this.bandwidth,
             deletionProtection: this.deletionProtection,
             duration: this.duration,
+            instanceChargeType: this.instanceChargeType,
             internetChargeType: this.internetChargeType,
             loadBalancerName: this.loadBalancerName,
             loadBalancerSpec: this.loadBalancerSpec,
@@ -2659,9 +2682,22 @@ export interface RosLoadBalancerCloneProps {
     readonly backendServersPolicy?: string | ros.IResolvable;
 
     /**
+     * @Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
+     * PayByCLCU: billed by usage.
+     * If not specified, it is same with the source load balancer.
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
      * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
+
+    /**
+     * @Property loadBalancerSpec: The specification of the load balancer. If not specified, it is same with the source load balancer.
+     * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+     */
+    readonly loadBalancerSpec?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -2674,7 +2710,7 @@ export interface RosLoadBalancerCloneProps {
     readonly tags?: RosLoadBalancerClone.TagsProperty[];
 
     /**
-     * @Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+     * @Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not copy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
      * Default is 'empty'.
      */
     readonly tagsPolicy?: string | ros.IResolvable;
@@ -2698,7 +2734,6 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('sourceLoadBalancerId', ros.requiredValidator)(properties.sourceLoadBalancerId));
     errors.collect(ros.propertyValidator('sourceLoadBalancerId', ros.validateString)(properties.sourceLoadBalancerId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.tagsPolicy && (typeof properties.tagsPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('tagsPolicy', ros.validateAllowedValues)({
           data: properties.tagsPolicy,
@@ -2706,6 +2741,14 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('tagsPolicy', ros.validateString)(properties.tagsPolicy));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PayBySpec","PayByCLCU"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('backendServers', ros.listValidator(RosLoadBalancerClone_BackendServersPropertyValidator))(properties.backendServers));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -2716,6 +2759,7 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosLoadBalancerClone_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     if(properties.backendServersPolicy && (typeof properties.backendServersPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('backendServersPolicy', ros.validateAllowedValues)({
           data: properties.backendServersPolicy,
@@ -2743,7 +2787,9 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
       SourceLoadBalancerId: ros.stringToRosTemplate(properties.sourceLoadBalancerId),
       BackendServers: ros.listMapper(rosLoadBalancerCloneBackendServersPropertyToRosTemplate)(properties.backendServers),
       BackendServersPolicy: ros.stringToRosTemplate(properties.backendServersPolicy),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       LoadBalancerName: ros.stringToRosTemplate(properties.loadBalancerName),
+      LoadBalancerSpec: ros.stringToRosTemplate(properties.loadBalancerSpec),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosLoadBalancerCloneTagsPropertyToRosTemplate)(properties.tags),
       TagsPolicy: ros.stringToRosTemplate(properties.tagsPolicy),
@@ -2789,9 +2835,22 @@ export class RosLoadBalancerClone extends ros.RosResource {
     public backendServersPolicy: string | ros.IResolvable | undefined;
 
     /**
+     * @Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
+     * PayByCLCU: billed by usage.
+     * If not specified, it is same with the source load balancer.
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
     public loadBalancerName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property loadBalancerSpec: The specification of the load balancer. If not specified, it is same with the source load balancer.
+     * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+     */
+    public loadBalancerSpec: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -2804,7 +2863,7 @@ export class RosLoadBalancerClone extends ros.RosResource {
     public tags: RosLoadBalancerClone.TagsProperty[] | undefined;
 
     /**
-     * @Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+     * @Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not copy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
      * Default is 'empty'.
      */
     public tagsPolicy: string | ros.IResolvable | undefined;
@@ -2829,7 +2888,9 @@ export class RosLoadBalancerClone extends ros.RosResource {
         this.sourceLoadBalancerId = props.sourceLoadBalancerId;
         this.backendServers = props.backendServers;
         this.backendServersPolicy = props.backendServersPolicy;
+        this.instanceChargeType = props.instanceChargeType;
         this.loadBalancerName = props.loadBalancerName;
+        this.loadBalancerSpec = props.loadBalancerSpec;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
         this.tagsPolicy = props.tagsPolicy;
@@ -2842,7 +2903,9 @@ export class RosLoadBalancerClone extends ros.RosResource {
             sourceLoadBalancerId: this.sourceLoadBalancerId,
             backendServers: this.backendServers,
             backendServersPolicy: this.backendServersPolicy,
+            instanceChargeType: this.instanceChargeType,
             loadBalancerName: this.loadBalancerName,
+            loadBalancerSpec: this.loadBalancerSpec,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
             tagsPolicy: this.tagsPolicy,

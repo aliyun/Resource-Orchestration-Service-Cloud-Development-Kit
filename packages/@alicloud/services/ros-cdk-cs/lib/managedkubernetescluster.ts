@@ -24,11 +24,6 @@ export interface ManagedKubernetesClusterProps {
     readonly vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
-     */
-    readonly workerInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * Property addons: A combination of addon plugins for Kubernetes clusters.
      * Network plug-in: including Flannel and Terway network plug-ins
      * Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
@@ -183,6 +178,13 @@ export interface ManagedKubernetesClusterProps {
     readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
+     * Property nodeNameMode: A custom node name consists of a prefix, an IP substring, and a suffix. The format iscustomized,{prefix},{ip_substring},{suffix}, for example: customized,aliyun.com,5,test.
+     * - The prefix and suffix can contain one or more parts that are separated by periods (.). Each part can contain lowercase letters, digits, and hyphens (-). The node name must start and end with a lowercase letter or digit.
+     * - The IP substring length specifies the number of digits to be truncated from the end of the node IP address. Valid values: 5 to 12. For example, if the node IP address is 192.168.0.55, the prefix is aliyun.com, the IP substring length is 5, and the suffix is test, the node name will be aliyun.com00055test.
+     */
+    readonly nodeNameMode?: string | ros.IResolvable;
+
+    /**
      * Property nodePools: The configurations of Node pools.
      */
     readonly nodePools?: Array<RosManagedKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable;
@@ -317,6 +319,11 @@ export interface ManagedKubernetesClusterProps {
     readonly workerDataDisks?: Array<RosManagedKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
+     */
+    readonly workerInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property workerSystemDiskCategory: Worker node system disk type. The value includes:
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
@@ -424,6 +431,7 @@ export class ManagedKubernetesCluster extends ros.Resource {
             runtime: props.runtime,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             osType: props.osType,
+            nodeNameMode: props.nodeNameMode,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             podVswitchIds: props.podVswitchIds,
             zoneIds: props.zoneIds,

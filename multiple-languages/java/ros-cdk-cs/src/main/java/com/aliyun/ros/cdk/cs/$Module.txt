@@ -36,6 +36,7 @@
 @alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty=com.aliyun.ros.cdk.cs.RosKubernetesCluster$ScalingGroupProperty
 @alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupTagsProperty=com.aliyun.ros.cdk.cs.RosKubernetesCluster$ScalingGroupTagsProperty
 @alicloud/ros-cdk-cs.RosKubernetesCluster.TagsProperty=com.aliyun.ros.cdk.cs.RosKubernetesCluster$TagsProperty
+@alicloud/ros-cdk-cs.RosKubernetesCluster.TaintsProperty=com.aliyun.ros.cdk.cs.RosKubernetesCluster$TaintsProperty
 @alicloud/ros-cdk-cs.RosKubernetesCluster.WorkerDataDisksProperty=com.aliyun.ros.cdk.cs.RosKubernetesCluster$WorkerDataDisksProperty
 @alicloud/ros-cdk-cs.RosKubernetesClusterProps=com.aliyun.ros.cdk.cs.RosKubernetesClusterProps
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster
@@ -53,6 +54,7 @@
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$ScalingGroupProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$ScalingGroupTagsProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TagsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$TagsProperty
+@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TaintsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$TaintsProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.WorkerDataDisksProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$WorkerDataDisksProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps=com.aliyun.ros.cdk.cs.RosManagedKubernetesClusterProps
 @alicloud/ros-cdk-cs.RosServerlessKubernetesCluster=com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * A ROS template type:  `ALIYUN::GPDB::ElasticDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.419Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.145Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosElasticDBInstance")
 public class RosElasticDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 

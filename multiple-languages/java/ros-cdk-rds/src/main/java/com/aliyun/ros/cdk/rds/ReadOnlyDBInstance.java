@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.055Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.697Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstance")
 public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -345,8 +345,6 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property payType: The billing method.
          * <p>
-         * Valid value: Postpaid, Prepaid.
-         * <p>
          * @return {@code this}
          * @param payType Property payType: The billing method. This parameter is required.
          */
@@ -356,8 +354,6 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property payType: The billing method.
-         * <p>
-         * Valid value: Postpaid, Prepaid.
          * <p>
          * @return {@code this}
          * @param payType Property payType: The billing method. This parameter is required.

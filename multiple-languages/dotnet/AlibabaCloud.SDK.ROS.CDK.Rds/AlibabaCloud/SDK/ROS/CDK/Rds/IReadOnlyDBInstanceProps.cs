@@ -120,9 +120,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <summary>Property payType: The billing method.</summary>
-        /// <remarks>
-        /// Valid value: Postpaid, Prepaid.
-        /// </remarks>
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PayType
@@ -340,9 +337,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <summary>Property payType: The billing method.</summary>
-            /// <remarks>
-            /// Valid value: Postpaid, Prepaid.
-            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PayType

@@ -48,6 +48,13 @@ export interface VSwitchProps {
      * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly vSwitchName?: string | ros.IResolvable;
+
+    /**
+     * Property zoneType: The type of the zones to be queried. 
+     * Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+     *
+     */
+    readonly zoneType?: string | ros.IResolvable;
 }
 
 /**
@@ -94,6 +101,7 @@ export class VSwitch extends ros.Resource {
             vpcIpv6CidrBlock: props.vpcIpv6CidrBlock,
             ipv6CidrBlock: props.ipv6CidrBlock,
             tags: props.tags,
+            zoneType: props.zoneType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVSwitch;
         this.attrCidrBlock = rosVSwitch.attrCidrBlock;

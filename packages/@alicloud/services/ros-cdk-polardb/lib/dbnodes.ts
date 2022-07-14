@@ -17,6 +17,11 @@ export interface DBNodesProps {
      * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
      */
     readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
+     */
+    readonly imciSwitch?: string | ros.IResolvable;
 }
 
 /**
@@ -52,6 +57,7 @@ export class DBNodes extends ros.Resource {
         const rosDBNodes = new RosDBNodes(this, id,  {
             amount: props.amount,
             dbClusterId: props.dbClusterId,
+            imciSwitch: props.imciSwitch,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBNodes;
         this.attrDbNodeIds = rosDBNodes.attrDbNodeIds;

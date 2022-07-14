@@ -45,6 +45,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Kafka.RosInstance))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: DomainEndpoint: The default endpoints of the instance in domain name mode.
+        /// </remarks>
+        [JsiiProperty(name: "attrDomainEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainEndpoint
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Endpoint: The SSL endpoints of the instance in IP address mode.
+        /// </remarks>
+        [JsiiProperty(name: "attrEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEndpoint
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: InstanceId: Id of the instance.
         /// </remarks>
         [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -67,6 +85,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// </remarks>
         [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: SaslDomainEndpoint: The Simple Authentication and Security Layer (SASL) endpoints of the instance in domain name mode.
+        /// </remarks>
+        [JsiiProperty(name: "attrSaslDomainEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSaslDomainEndpoint
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: SslDomainEndpoint: The SSL endpoints of the instance in domain name mode.
+        /// </remarks>
+        [JsiiProperty(name: "attrSslDomainEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSslDomainEndpoint
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: SslEndpoint: The SSL endpoints of the instance in IP address mode.
+        /// </remarks>
+        [JsiiProperty(name: "attrSslEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSslEndpoint
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }

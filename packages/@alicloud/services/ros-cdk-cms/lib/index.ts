@@ -9,6 +9,7 @@ export * from './metricruletemplate';
 export * from './monitorgroup';
 export * from './monitorgroupinstances';
 export * from './monitoringagentprocess';
+export * from './resourcemetricrule';
 export * from './sitemonitor';
 
 // ALIYUN::CMS Resources:

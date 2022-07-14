@@ -34,10 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
-        /// PrePaid: subscription.
-        /// PostPaid: pay-as-you-go.
-        /// Default: PostPaid.
+        /// <strong>Property</strong>: chargeType: The billing method of the ApsaraDB for Redis instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

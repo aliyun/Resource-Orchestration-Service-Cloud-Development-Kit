@@ -2024,6 +2024,11 @@ export interface RosDBNodesProps {
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
      */
     readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
+     */
+    readonly imciSwitch?: string | ros.IResolvable;
 }
 
 /**
@@ -2047,6 +2052,13 @@ function RosDBNodesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('amount', ros.validateNumber)(properties.amount));
     errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
     errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    if(properties.imciSwitch && (typeof properties.imciSwitch) !== 'object') {
+        errors.collect(ros.propertyValidator('imciSwitch', ros.validateAllowedValues)({
+          data: properties.imciSwitch,
+          allowedValues: ["ON","OFF"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('imciSwitch', ros.validateString)(properties.imciSwitch));
     return errors.wrap('supplied properties not correct for "RosDBNodesProps"');
 }
 
@@ -2066,6 +2078,7 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
     return {
       Amount: ros.numberToRosTemplate(properties.amount),
       DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
+      ImciSwitch: ros.stringToRosTemplate(properties.imciSwitch),
     };
 }
 
@@ -2107,6 +2120,11 @@ export class RosDBNodes extends ros.RosResource {
     public dbClusterId: string | ros.IResolvable;
 
     /**
+     * @Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
+     */
+    public imciSwitch: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::POLARDB::DBNodes`.
      *
      * @param scope - scope in which this resource is defined
@@ -2121,6 +2139,7 @@ export class RosDBNodes extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.amount = props.amount;
         this.dbClusterId = props.dbClusterId;
+        this.imciSwitch = props.imciSwitch;
     }
 
 
@@ -2128,6 +2147,7 @@ export class RosDBNodes extends ros.RosResource {
         return {
             amount: this.amount,
             dbClusterId: this.dbClusterId,
+            imciSwitch: this.imciSwitch,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

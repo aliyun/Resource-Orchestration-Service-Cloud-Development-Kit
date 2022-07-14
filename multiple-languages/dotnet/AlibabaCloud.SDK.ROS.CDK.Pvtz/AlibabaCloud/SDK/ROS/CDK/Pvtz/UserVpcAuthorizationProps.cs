@@ -49,5 +49,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             get;
             set;
         }
+
+        /// <summary>Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "ignoreDeletionForbidden", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? IgnoreDeletionForbidden
+        {
+            get;
+            set;
+        }
     }
 }

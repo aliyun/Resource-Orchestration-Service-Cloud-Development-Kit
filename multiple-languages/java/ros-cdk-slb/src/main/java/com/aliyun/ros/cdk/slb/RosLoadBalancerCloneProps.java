@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancerClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.410Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:22.089Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancerCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosLoadBalancerCloneProps.Jsii$Proxy.class)
 public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,7 +26,19 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerSpec() {
         return null;
     }
 
@@ -67,7 +79,9 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object sourceLoadBalancerId;
         java.lang.Object backendServers;
         java.lang.Object backendServersPolicy;
+        java.lang.Object instanceChargeType;
         java.lang.Object loadBalancerName;
+        java.lang.Object loadBalancerSpec;
         java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags;
         java.lang.Object tagsPolicy;
@@ -134,6 +148,26 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(java.lang.String instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLoadBalancerCloneProps#getLoadBalancerName}
          * @param loadBalancerName the value to be set.
          * @return {@code this}
@@ -150,6 +184,26 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
          */
         public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
             this.loadBalancerName = loadBalancerName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getLoadBalancerSpec}
+         * @param loadBalancerSpec the value to be set.
+         * @return {@code this}
+         */
+        public Builder loadBalancerSpec(java.lang.String loadBalancerSpec) {
+            this.loadBalancerSpec = loadBalancerSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getLoadBalancerSpec}
+         * @param loadBalancerSpec the value to be set.
+         * @return {@code this}
+         */
+        public Builder loadBalancerSpec(com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {
+            this.loadBalancerSpec = loadBalancerSpec;
             return this;
         }
 
@@ -243,7 +297,9 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object sourceLoadBalancerId;
         private final java.lang.Object backendServers;
         private final java.lang.Object backendServersPolicy;
+        private final java.lang.Object instanceChargeType;
         private final java.lang.Object loadBalancerName;
+        private final java.lang.Object loadBalancerSpec;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags;
         private final java.lang.Object tagsPolicy;
@@ -258,7 +314,9 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
             this.sourceLoadBalancerId = software.amazon.jsii.Kernel.get(this, "sourceLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServers = software.amazon.jsii.Kernel.get(this, "backendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServersPolicy = software.amazon.jsii.Kernel.get(this, "backendServersPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty.class)));
             this.tagsPolicy = software.amazon.jsii.Kernel.get(this, "tagsPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -274,7 +332,9 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
             this.sourceLoadBalancerId = java.util.Objects.requireNonNull(builder.sourceLoadBalancerId, "sourceLoadBalancerId is required");
             this.backendServers = builder.backendServers;
             this.backendServersPolicy = builder.backendServersPolicy;
+            this.instanceChargeType = builder.instanceChargeType;
             this.loadBalancerName = builder.loadBalancerName;
+            this.loadBalancerSpec = builder.loadBalancerSpec;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty>)builder.tags;
             this.tagsPolicy = builder.tagsPolicy;
@@ -297,8 +357,18 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.lang.Object getInstanceChargeType() {
+            return this.instanceChargeType;
+        }
+
+        @Override
         public final java.lang.Object getLoadBalancerName() {
             return this.loadBalancerName;
+        }
+
+        @Override
+        public final java.lang.Object getLoadBalancerSpec() {
+            return this.loadBalancerSpec;
         }
 
         @Override
@@ -334,8 +404,14 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
             if (this.getBackendServersPolicy() != null) {
                 data.set("backendServersPolicy", om.valueToTree(this.getBackendServersPolicy()));
             }
+            if (this.getInstanceChargeType() != null) {
+                data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
+            }
             if (this.getLoadBalancerName() != null) {
                 data.set("loadBalancerName", om.valueToTree(this.getLoadBalancerName()));
+            }
+            if (this.getLoadBalancerSpec() != null) {
+                data.set("loadBalancerSpec", om.valueToTree(this.getLoadBalancerSpec()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -370,7 +446,9 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
             if (!sourceLoadBalancerId.equals(that.sourceLoadBalancerId)) return false;
             if (this.backendServers != null ? !this.backendServers.equals(that.backendServers) : that.backendServers != null) return false;
             if (this.backendServersPolicy != null ? !this.backendServersPolicy.equals(that.backendServersPolicy) : that.backendServersPolicy != null) return false;
+            if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.loadBalancerName != null ? !this.loadBalancerName.equals(that.loadBalancerName) : that.loadBalancerName != null) return false;
+            if (this.loadBalancerSpec != null ? !this.loadBalancerSpec.equals(that.loadBalancerSpec) : that.loadBalancerSpec != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tagsPolicy != null ? !this.tagsPolicy.equals(that.tagsPolicy) : that.tagsPolicy != null) return false;
@@ -382,7 +460,9 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
             int result = this.sourceLoadBalancerId.hashCode();
             result = 31 * result + (this.backendServers != null ? this.backendServers.hashCode() : 0);
             result = 31 * result + (this.backendServersPolicy != null ? this.backendServersPolicy.hashCode() : 0);
+            result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.loadBalancerName != null ? this.loadBalancerName.hashCode() : 0);
+            result = 31 * result + (this.loadBalancerSpec != null ? this.loadBalancerSpec.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tagsPolicy != null ? this.tagsPolicy.hashCode() : 0);

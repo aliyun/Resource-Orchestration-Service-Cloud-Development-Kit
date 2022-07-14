@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS template type:  `ALIYUN::ROS::ResourceCleaner`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.221Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.883Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosResourceCleaner")
 public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,20 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCleanResult() {
+        return software.amazon.jsii.Kernel.get(this, "attrCleanResult", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNoCleanupResourceDetails() {
         return software.amazon.jsii.Kernel.get(this, "attrNoCleanupResourceDetails", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNoCleanupResourcePartialDetails() {
+        return software.amazon.jsii.Kernel.get(this, "attrNoCleanupResourcePartialDetails", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -56,8 +68,20 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourcePartialDetails() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourcePartialDetails", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourceSummary() {
         return software.amazon.jsii.Kernel.get(this, "attrResourceSummary", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScanErrors() {
+        return software.amazon.jsii.Kernel.get(this, "attrScanErrors", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -89,6 +113,24 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCleanUpAlgorithm() {
+        return software.amazon.jsii.Kernel.get(this, "cleanUpAlgorithm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCleanUpAlgorithm(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "cleanUpAlgorithm", value);
+    }
+
+    /**
+     */
+    public void setCleanUpAlgorithm(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cleanUpAlgorithm", value);
     }
 
     /**
@@ -129,6 +171,24 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDisabledSideEffects() {
+        return software.amazon.jsii.Kernel.get(this, "disabledSideEffects", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDisabledSideEffects(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "disabledSideEffects", value);
+    }
+
+    /**
+     */
+    public void setDisabledSideEffects(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "disabledSideEffects", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getExcludedResources() {
         return software.amazon.jsii.Kernel.get(this, "excludedResources", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -165,6 +225,24 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
+        return software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "mode", value);
+    }
+
+    /**
+     */
+    public void setMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "mode", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceFilters() {
         return software.amazon.jsii.Kernel.get(this, "resourceFilters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -179,6 +257,42 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setResourceFilters(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "resourceFilters", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResources() {
+        return software.amazon.jsii.Kernel.get(this, "resources", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResources(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resources", value);
+    }
+
+    /**
+     */
+    public void setResources(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "resources", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceTypeOrder() {
+        return software.amazon.jsii.Kernel.get(this, "resourceTypeOrder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceTypeOrder(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceTypeOrder", value);
+    }
+
+    /**
+     */
+    public void setResourceTypeOrder(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "resourceTypeOrder", value);
     }
     /**
      */
@@ -814,6 +928,209 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosResourceCleaner.ResourcesProperty")
+    @software.amazon.jsii.Jsii.Proxy(ResourcesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ResourcesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getRegionId();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getResourceId();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getResourceType();
+
+        /**
+         * @return a {@link Builder} of {@link ResourcesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ResourcesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ResourcesProperty> {
+            java.lang.Object regionId;
+            java.lang.Object resourceId;
+            java.lang.Object resourceType;
+
+            /**
+             * Sets the value of {@link ResourcesProperty#getRegionId}
+             * @param regionId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder regionId(java.lang.String regionId) {
+                this.regionId = regionId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResourcesProperty#getRegionId}
+             * @param regionId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
+                this.regionId = regionId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResourcesProperty#getResourceId}
+             * @param resourceId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceId(java.lang.String resourceId) {
+                this.resourceId = resourceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResourcesProperty#getResourceId}
+             * @param resourceId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceId(com.aliyun.ros.cdk.core.IResolvable resourceId) {
+                this.resourceId = resourceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResourcesProperty#getResourceType}
+             * @param resourceType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceType(java.lang.String resourceType) {
+                this.resourceType = resourceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResourcesProperty#getResourceType}
+             * @param resourceType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceType(com.aliyun.ros.cdk.core.IResolvable resourceType) {
+                this.resourceType = resourceType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ResourcesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ResourcesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ResourcesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ResourcesProperty {
+            private final java.lang.Object regionId;
+            private final java.lang.Object resourceId;
+            private final java.lang.Object resourceType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.resourceId = software.amazon.jsii.Kernel.get(this, "resourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.regionId = java.util.Objects.requireNonNull(builder.regionId, "regionId is required");
+                this.resourceId = java.util.Objects.requireNonNull(builder.resourceId, "resourceId is required");
+                this.resourceType = java.util.Objects.requireNonNull(builder.resourceType, "resourceType is required");
+            }
+
+            @Override
+            public final java.lang.Object getRegionId() {
+                return this.regionId;
+            }
+
+            @Override
+            public final java.lang.Object getResourceId() {
+                return this.resourceId;
+            }
+
+            @Override
+            public final java.lang.Object getResourceType() {
+                return this.resourceType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("regionId", om.valueToTree(this.getRegionId()));
+                data.set("resourceId", om.valueToTree(this.getResourceId()));
+                data.set("resourceType", om.valueToTree(this.getResourceType()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ros.RosResourceCleaner.ResourcesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ResourcesProperty.Jsii$Proxy that = (ResourcesProperty.Jsii$Proxy) o;
+
+                if (!regionId.equals(that.regionId)) return false;
+                if (!resourceId.equals(that.resourceId)) return false;
+                return this.resourceType.equals(that.resourceType);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.regionId.hashCode();
+                result = 31 * result + (this.resourceId.hashCode());
+                result = 31 * result + (this.resourceType.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosResourceCleaner.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1026,6 +1343,23 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param cleanUpAlgorithm This parameter is required.
+         */
+        public Builder cleanUpAlgorithm(final java.lang.String cleanUpAlgorithm) {
+            this.props.cleanUpAlgorithm(cleanUpAlgorithm);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cleanUpAlgorithm This parameter is required.
+         */
+        public Builder cleanUpAlgorithm(final com.aliyun.ros.cdk.core.IResolvable cleanUpAlgorithm) {
+            this.props.cleanUpAlgorithm(cleanUpAlgorithm);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param cleanUpRetryCount This parameter is required.
          */
         public Builder cleanUpRetryCount(final java.lang.Number cleanUpRetryCount) {
@@ -1055,6 +1389,23 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder cleanUpTimeout(final com.aliyun.ros.cdk.core.IResolvable cleanUpTimeout) {
             this.props.cleanUpTimeout(cleanUpTimeout);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param disabledSideEffects This parameter is required.
+         */
+        public Builder disabledSideEffects(final com.aliyun.ros.cdk.core.IResolvable disabledSideEffects) {
+            this.props.disabledSideEffects(disabledSideEffects);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param disabledSideEffects This parameter is required.
+         */
+        public Builder disabledSideEffects(final java.util.List<? extends java.lang.Object> disabledSideEffects) {
+            this.props.disabledSideEffects(disabledSideEffects);
             return this;
         }
 
@@ -1094,6 +1445,23 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param mode This parameter is required.
+         */
+        public Builder mode(final java.lang.String mode) {
+            this.props.mode(mode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param mode This parameter is required.
+         */
+        public Builder mode(final com.aliyun.ros.cdk.core.IResolvable mode) {
+            this.props.mode(mode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param resourceFilters This parameter is required.
          */
         public Builder resourceFilters(final com.aliyun.ros.cdk.core.IResolvable resourceFilters) {
@@ -1106,6 +1474,40 @@ public class RosResourceCleaner extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceFilters(final java.util.List<? extends java.lang.Object> resourceFilters) {
             this.props.resourceFilters(resourceFilters);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resources This parameter is required.
+         */
+        public Builder resources(final com.aliyun.ros.cdk.core.IResolvable resources) {
+            this.props.resources(resources);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resources This parameter is required.
+         */
+        public Builder resources(final java.util.List<? extends java.lang.Object> resources) {
+            this.props.resources(resources);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceTypeOrder This parameter is required.
+         */
+        public Builder resourceTypeOrder(final com.aliyun.ros.cdk.core.IResolvable resourceTypeOrder) {
+            this.props.resourceTypeOrder(resourceTypeOrder);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceTypeOrder This parameter is required.
+         */
+        public Builder resourceTypeOrder(final java.util.List<? extends java.lang.Object> resourceTypeOrder) {
+            this.props.resourceTypeOrder(resourceTypeOrder);
             return this;
         }
 

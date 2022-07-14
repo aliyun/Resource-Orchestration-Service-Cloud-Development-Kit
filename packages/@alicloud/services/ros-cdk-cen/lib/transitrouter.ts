@@ -45,6 +45,11 @@ export class TransitRouter extends ros.Resource {
     public readonly attrCenId: ros.IResolvable;
 
     /**
+     * Attribute SystemTransitRouterRouteTableId: The system route table ID of transit router.
+     */
+    public readonly attrSystemTransitRouterRouteTableId: ros.IResolvable;
+
+    /**
      * Attribute TransitRouterDescription: TransitRouterDescription
      */
     public readonly attrTransitRouterDescription: ros.IResolvable;
@@ -82,6 +87,7 @@ export class TransitRouter extends ros.Resource {
         this.resource = rosTransitRouter;
         this.attrAliUid = rosTransitRouter.attrAliUid;
         this.attrCenId = rosTransitRouter.attrCenId;
+        this.attrSystemTransitRouterRouteTableId = rosTransitRouter.attrSystemTransitRouterRouteTableId;
         this.attrTransitRouterDescription = rosTransitRouter.attrTransitRouterDescription;
         this.attrTransitRouterId = rosTransitRouter.attrTransitRouterId;
         this.attrTransitRouterName = rosTransitRouter.attrTransitRouterName;

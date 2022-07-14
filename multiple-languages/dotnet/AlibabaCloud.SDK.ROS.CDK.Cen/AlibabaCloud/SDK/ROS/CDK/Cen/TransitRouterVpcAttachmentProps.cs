@@ -26,6 +26,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             set;
         }
 
+        /// <summary>Property autoCreateVpcRoute: undefined.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoCreateVpcRoute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoCreateVpcRoute
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property cenId: CenId.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -39,6 +48,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         [JsiiOptional]
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ChargeType
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DeletionForce
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property routeTableAssociationEnabled: undefined.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RouteTableAssociationEnabled
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property routeTablePropagationEnabled: undefined.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RouteTablePropagationEnabled
         {
             get;
             set;

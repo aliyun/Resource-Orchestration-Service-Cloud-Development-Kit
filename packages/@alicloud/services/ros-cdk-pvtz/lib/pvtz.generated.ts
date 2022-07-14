@@ -28,6 +28,11 @@ export interface RosUserVpcAuthorizationProps {
      * @Property authType: Authorization type.
      */
     readonly authType?: string | ros.IResolvable;
+
+    /**
+     * @Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists
+     */
+    readonly ignoreDeletionForbidden?: boolean | ros.IResolvable;
 }
 
 /**
@@ -45,6 +50,7 @@ function RosUserVpcAuthorizationPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('authorizedUserId', ros.requiredValidator)(properties.authorizedUserId));
     errors.collect(ros.propertyValidator('authorizedUserId', ros.validateString)(properties.authorizedUserId));
     errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    errors.collect(ros.propertyValidator('ignoreDeletionForbidden', ros.validateBoolean)(properties.ignoreDeletionForbidden));
     return errors.wrap('supplied properties not correct for "RosUserVpcAuthorizationProps"');
 }
 
@@ -66,6 +72,7 @@ function rosUserVpcAuthorizationPropsToRosTemplate(properties: any, enableResour
       AuthChannel: ros.stringToRosTemplate(properties.authChannel),
       AuthCode: ros.stringToRosTemplate(properties.authCode),
       AuthType: ros.stringToRosTemplate(properties.authType),
+      IgnoreDeletionForbidden: ros.booleanToRosTemplate(properties.ignoreDeletionForbidden),
     };
 }
 
@@ -119,6 +126,11 @@ export class RosUserVpcAuthorization extends ros.RosResource {
     public authType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists
+     */
+    public ignoreDeletionForbidden: boolean | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::PVTZ::UserVpcAuthorization`.
      *
      * @param scope - scope in which this resource is defined
@@ -135,6 +147,7 @@ export class RosUserVpcAuthorization extends ros.RosResource {
         this.authChannel = props.authChannel;
         this.authCode = props.authCode;
         this.authType = props.authType;
+        this.ignoreDeletionForbidden = props.ignoreDeletionForbidden;
     }
 
 
@@ -144,6 +157,7 @@ export class RosUserVpcAuthorization extends ros.RosResource {
             authChannel: this.authChannel,
             authCode: this.authCode,
             authType: this.authType,
+            ignoreDeletionForbidden: this.ignoreDeletionForbidden,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -160,6 +174,11 @@ export interface RosZoneProps {
      * @Property zoneName: Zone name
      */
     readonly zoneName: string | ros.IResolvable;
+
+    /**
+     * @Property ignoredStackTagKeys: Stack tag keys to ignore
+     */
+    readonly ignoredStackTagKeys?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property proxyPattern: ZONE: completely hijack the entire zone.
@@ -206,6 +225,14 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('zoneName', ros.requiredValidator)(properties.zoneName));
     errors.collect(ros.propertyValidator('zoneName', ros.validateString)(properties.zoneName));
+    if(properties.ignoredStackTagKeys && (Array.isArray(properties.ignoredStackTagKeys) || (typeof properties.ignoredStackTagKeys) === 'string')) {
+        errors.collect(ros.propertyValidator('ignoredStackTagKeys', ros.validateLength)({
+            data: properties.ignoredStackTagKeys.length,
+            min: 0,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ignoredStackTagKeys', ros.listValidator(ros.validateString))(properties.ignoredStackTagKeys));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.proxyPattern && (typeof properties.proxyPattern) !== 'object') {
         errors.collect(ros.propertyValidator('proxyPattern', ros.validateAllowedValues)({
@@ -256,6 +283,7 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
     }
     return {
       ZoneName: ros.stringToRosTemplate(properties.zoneName),
+      IgnoredStackTagKeys: ros.listMapper(ros.stringToRosTemplate)(properties.ignoredStackTagKeys),
       ProxyPattern: ros.stringToRosTemplate(properties.proxyPattern),
       Remark: ros.stringToRosTemplate(properties.remark),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -308,6 +336,11 @@ export class RosZone extends ros.RosResource {
     public zoneName: string | ros.IResolvable;
 
     /**
+     * @Property ignoredStackTagKeys: Stack tag keys to ignore
+     */
+    public ignoredStackTagKeys: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property proxyPattern: ZONE: completely hijack the entire zone.
      * RECORD: Incomplete hijacking, recursive resolution agent.
      * Default to ZONE.
@@ -355,6 +388,7 @@ export class RosZone extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.zoneName = props.zoneName;
+        this.ignoredStackTagKeys = props.ignoredStackTagKeys;
         this.proxyPattern = props.proxyPattern;
         this.remark = props.remark;
         this.resourceGroupId = props.resourceGroupId;
@@ -367,6 +401,7 @@ export class RosZone extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             zoneName: this.zoneName,
+            ignoredStackTagKeys: this.ignoredStackTagKeys,
             proxyPattern: this.proxyPattern,
             remark: this.remark,
             resourceGroupId: this.resourceGroupId,

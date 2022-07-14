@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS resource type:  `ALIYUN::CEN::TransitRouterVpcAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:33.939Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.540Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachment")
 public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -188,6 +188,27 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
+         * Property autoCreateVpcRoute: undefined.
+         * <p>
+         * @return {@code this}
+         * @param autoCreateVpcRoute Property autoCreateVpcRoute: undefined. This parameter is required.
+         */
+        public Builder autoCreateVpcRoute(final java.lang.Boolean autoCreateVpcRoute) {
+            this.props.autoCreateVpcRoute(autoCreateVpcRoute);
+            return this;
+        }
+        /**
+         * Property autoCreateVpcRoute: undefined.
+         * <p>
+         * @return {@code this}
+         * @param autoCreateVpcRoute Property autoCreateVpcRoute: undefined. This parameter is required.
+         */
+        public Builder autoCreateVpcRoute(final com.aliyun.ros.cdk.core.IResolvable autoCreateVpcRoute) {
+            this.props.autoCreateVpcRoute(autoCreateVpcRoute);
+            return this;
+        }
+
+        /**
          * Property cenId: CenId.
          * <p>
          * @return {@code this}
@@ -226,6 +247,69 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
          */
         public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.props.chargeType(chargeType);
+            return this;
+        }
+
+        /**
+         * Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
+         * Property routeTableAssociationEnabled: undefined.
+         * <p>
+         * @return {@code this}
+         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled: undefined. This parameter is required.
+         */
+        public Builder routeTableAssociationEnabled(final java.lang.Boolean routeTableAssociationEnabled) {
+            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
+            return this;
+        }
+        /**
+         * Property routeTableAssociationEnabled: undefined.
+         * <p>
+         * @return {@code this}
+         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled: undefined. This parameter is required.
+         */
+        public Builder routeTableAssociationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
+            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
+            return this;
+        }
+
+        /**
+         * Property routeTablePropagationEnabled: undefined.
+         * <p>
+         * @return {@code this}
+         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled: undefined. This parameter is required.
+         */
+        public Builder routeTablePropagationEnabled(final java.lang.Boolean routeTablePropagationEnabled) {
+            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
+            return this;
+        }
+        /**
+         * Property routeTablePropagationEnabled: undefined.
+         * <p>
+         * @return {@code this}
+         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled: undefined. This parameter is required.
+         */
+        public Builder routeTablePropagationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
+            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
             return this;
         }
 

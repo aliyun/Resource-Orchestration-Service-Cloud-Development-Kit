@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS resource type:  `ALIYUN::PVTZ::UserVpcAuthorization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.918Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.573Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.UserVpcAuthorization")
 public class UserVpcAuthorization extends com.aliyun.ros.cdk.core.Resource {
 
@@ -185,6 +185,27 @@ public class UserVpcAuthorization extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder authType(final com.aliyun.ros.cdk.core.IResolvable authType) {
             this.props.authType(authType);
+            return this;
+        }
+
+        /**
+         * Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists.
+         * <p>
+         * @return {@code this}
+         * @param ignoreDeletionForbidden Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists. This parameter is required.
+         */
+        public Builder ignoreDeletionForbidden(final java.lang.Boolean ignoreDeletionForbidden) {
+            this.props.ignoreDeletionForbidden(ignoreDeletionForbidden);
+            return this;
+        }
+        /**
+         * Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists.
+         * <p>
+         * @return {@code this}
+         * @param ignoreDeletionForbidden Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists. This parameter is required.
+         */
+        public Builder ignoreDeletionForbidden(final com.aliyun.ros.cdk.core.IResolvable ignoreDeletionForbidden) {
+            this.props.ignoreDeletionForbidden(ignoreDeletionForbidden);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::LoadBalancerClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:22.087Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancerClone")
 public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -117,6 +117,24 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceChargeType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceChargeType", value);
+    }
+
+    /**
+     */
+    public void setInstanceChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceChargeType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
         return software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -131,6 +149,24 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setLoadBalancerName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loadBalancerName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerSpec() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLoadBalancerSpec(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerSpec", value);
+    }
+
+    /**
+     */
+    public void setLoadBalancerSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerSpec", value);
     }
 
     /**
@@ -739,6 +775,23 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param instanceChargeType This parameter is required.
+         */
+        public Builder instanceChargeType(final java.lang.String instanceChargeType) {
+            this.props.instanceChargeType(instanceChargeType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceChargeType This parameter is required.
+         */
+        public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.props.instanceChargeType(instanceChargeType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param loadBalancerName This parameter is required.
          */
         public Builder loadBalancerName(final java.lang.String loadBalancerName) {
@@ -751,6 +804,23 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
             this.props.loadBalancerName(loadBalancerName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param loadBalancerSpec This parameter is required.
+         */
+        public Builder loadBalancerSpec(final java.lang.String loadBalancerSpec) {
+            this.props.loadBalancerSpec(loadBalancerSpec);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param loadBalancerSpec This parameter is required.
+         */
+        public Builder loadBalancerSpec(final com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {
+            this.props.loadBalancerSpec(loadBalancerSpec);
             return this;
         }
 

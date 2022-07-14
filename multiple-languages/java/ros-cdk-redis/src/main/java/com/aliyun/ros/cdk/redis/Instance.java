@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS resource type:  `ALIYUN::REDIS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:36.111Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.751Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -372,11 +372,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property chargeType: The billing method of the ApsaraDB for Redis instance.
          * <p>
-         * Valid values:
-         * PrePaid: subscription.
-         * PostPaid: pay-as-you-go.
-         * Default: PostPaid.
-         * <p>
          * @return {@code this}
          * @param chargeType Property chargeType: The billing method of the ApsaraDB for Redis instance. This parameter is required.
          */
@@ -386,11 +381,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property chargeType: The billing method of the ApsaraDB for Redis instance.
-         * <p>
-         * Valid values:
-         * PrePaid: subscription.
-         * PostPaid: pay-as-you-go.
-         * Default: PostPaid.
          * <p>
          * @return {@code this}
          * @param chargeType Property chargeType: The billing method of the ApsaraDB for Redis instance. This parameter is required.

@@ -2167,6 +2167,11 @@ export class RosTransitRouter extends ros.RosResource {
     public readonly attrCenId: ros.IResolvable;
 
     /**
+     * @Attribute SystemTransitRouterRouteTableId: The system route table ID of transit router.
+     */
+    public readonly attrSystemTransitRouterRouteTableId: ros.IResolvable;
+
+    /**
      * @Attribute TransitRouterDescription: TransitRouterDescription
      */
     public readonly attrTransitRouterDescription: ros.IResolvable;
@@ -2215,6 +2220,7 @@ export class RosTransitRouter extends ros.RosResource {
         super(scope, id, { type: RosTransitRouter.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrAliUid = this.getAtt('AliUid');
         this.attrCenId = this.getAtt('CenId');
+        this.attrSystemTransitRouterRouteTableId = this.getAtt('SystemTransitRouterRouteTableId');
         this.attrTransitRouterDescription = this.getAtt('TransitRouterDescription');
         this.attrTransitRouterId = this.getAtt('TransitRouterId');
         this.attrTransitRouterName = this.getAtt('TransitRouterName');
@@ -3403,6 +3409,11 @@ export interface RosTransitRouterVpcAttachmentProps {
     readonly zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property autoCreateVpcRoute: undefined
+     */
+    readonly autoCreateVpcRoute?: boolean | ros.IResolvable;
+
+    /**
      * @Property cenId: CenId
      */
     readonly cenId?: string | ros.IResolvable;
@@ -3411,6 +3422,21 @@ export interface RosTransitRouterVpcAttachmentProps {
      * @Property chargeType:
      */
     readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeTableAssociationEnabled: undefined
+     */
+    readonly routeTableAssociationEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeTablePropagationEnabled: undefined
+     */
+    readonly routeTablePropagationEnabled?: boolean | ros.IResolvable;
 
     /**
      * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
@@ -3443,9 +3469,13 @@ export interface RosTransitRouterVpcAttachmentProps {
 function RosTransitRouterVpcAttachmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateBoolean)(properties.routeTableAssociationEnabled));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('autoCreateVpcRoute', ros.validateBoolean)(properties.autoCreateVpcRoute));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateBoolean)(properties.routeTablePropagationEnabled));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
     errors.collect(ros.propertyValidator('zoneMappings', ros.requiredValidator)(properties.zoneMappings));
@@ -3479,8 +3509,12 @@ function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enable
     return {
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       ZoneMappings: ros.listMapper(rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate)(properties.zoneMappings),
+      AutoCreateVpcRoute: ros.booleanToRosTemplate(properties.autoCreateVpcRoute),
       CenId: ros.stringToRosTemplate(properties.cenId),
       ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
+      RouteTableAssociationEnabled: ros.booleanToRosTemplate(properties.routeTableAssociationEnabled),
+      RouteTablePropagationEnabled: ros.booleanToRosTemplate(properties.routeTablePropagationEnabled),
       TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
       TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
       TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
@@ -3561,6 +3595,11 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property autoCreateVpcRoute: undefined
+     */
+    public autoCreateVpcRoute: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property cenId: CenId
      */
     public cenId: string | ros.IResolvable | undefined;
@@ -3569,6 +3608,21 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
      * @Property chargeType:
      */
     public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionForce: Whether force delete related resources, like vpc route entry, route table association, route propagation.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTableAssociationEnabled: undefined
+     */
+    public routeTableAssociationEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTablePropagationEnabled: undefined
+     */
+    public routeTablePropagationEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
@@ -3612,8 +3666,12 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpcId = props.vpcId;
         this.zoneMappings = props.zoneMappings;
+        this.autoCreateVpcRoute = props.autoCreateVpcRoute;
         this.cenId = props.cenId;
         this.chargeType = props.chargeType;
+        this.deletionForce = props.deletionForce;
+        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
+        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
         this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
         this.transitRouterAttachmentName = props.transitRouterAttachmentName;
         this.transitRouterId = props.transitRouterId;
@@ -3625,8 +3683,12 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
         return {
             vpcId: this.vpcId,
             zoneMappings: this.zoneMappings,
+            autoCreateVpcRoute: this.autoCreateVpcRoute,
             cenId: this.cenId,
             chargeType: this.chargeType,
+            deletionForce: this.deletionForce,
+            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
+            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
             transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
             transitRouterAttachmentName: this.transitRouterAttachmentName,
             transitRouterId: this.transitRouterId,

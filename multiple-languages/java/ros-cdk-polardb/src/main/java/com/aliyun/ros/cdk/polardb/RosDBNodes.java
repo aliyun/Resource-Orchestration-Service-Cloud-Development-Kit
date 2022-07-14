@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  `ALIYUN::POLARDB::DBNodes`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.898Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.538Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBNodes")
 public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -104,6 +104,24 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImciSwitch() {
+        return software.amazon.jsii.Kernel.get(this, "imciSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImciSwitch(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "imciSwitch", value);
+    }
+
+    /**
+     */
+    public void setImciSwitch(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imciSwitch", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.polardb.RosDBNodes}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.polardb.RosDBNodes> {
@@ -160,6 +178,23 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
             this.props.dbClusterId(dbClusterId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param imciSwitch This parameter is required.
+         */
+        public Builder imciSwitch(final java.lang.String imciSwitch) {
+            this.props.imciSwitch(imciSwitch);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imciSwitch This parameter is required.
+         */
+        public Builder imciSwitch(final com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
+            this.props.imciSwitch(imciSwitch);
             return this;
         }
 

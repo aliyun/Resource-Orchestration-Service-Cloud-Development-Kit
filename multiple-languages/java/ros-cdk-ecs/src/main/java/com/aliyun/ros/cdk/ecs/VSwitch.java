@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::VSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:34.918Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:20.538Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VSwitch")
 public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
 
@@ -270,6 +270,31 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder vSwitchName(final com.aliyun.ros.cdk.core.IResolvable vSwitchName) {
             this.props.vSwitchName(vSwitchName);
+            return this;
+        }
+
+        /**
+         * Property zoneType: The type of the zones to be queried.
+         * <p>
+         * Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+         * <p>
+         * @return {@code this}
+         * @param zoneType Property zoneType: The type of the zones to be queried. This parameter is required.
+         */
+        public Builder zoneType(final java.lang.String zoneType) {
+            this.props.zoneType(zoneType);
+            return this;
+        }
+        /**
+         * Property zoneType: The type of the zones to be queried.
+         * <p>
+         * Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+         * <p>
+         * @return {@code this}
+         * @param zoneType Property zoneType: The type of the zones to be queried. This parameter is required.
+         */
+        public Builder zoneType(final com.aliyun.ros.cdk.core.IResolvable zoneType) {
+            this.props.zoneType(zoneType);
             return this;
         }
 

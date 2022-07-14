@@ -169,6 +169,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneType: The type of the zones to be queried.
+        /// Default value: AvailabilityZone. This value indicates Alibaba Cloud zones.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ZoneType
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
         [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosVSwitch.TagsProperty")]
         public interface ITagsProperty
         {

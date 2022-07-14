@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::Zone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.59.0 (build eb02c92)", date = "2022-06-08T09:23:35.915Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZoneProps")
 @software.amazon.jsii.Jsii.Proxy(RosZoneProps.Jsii$Proxy.class)
 public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,6 +11,12 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneName();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoredStackTagKeys() {
+        return null;
+    }
 
     /**
      */
@@ -59,6 +65,7 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosZoneProps> {
         java.lang.Object zoneName;
+        java.lang.Object ignoredStackTagKeys;
         java.lang.Object proxyPattern;
         java.lang.Object remark;
         java.lang.Object resourceGroupId;
@@ -83,6 +90,26 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder zoneName(com.aliyun.ros.cdk.core.IResolvable zoneName) {
             this.zoneName = zoneName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZoneProps#getIgnoredStackTagKeys}
+         * @param ignoredStackTagKeys the value to be set.
+         * @return {@code this}
+         */
+        public Builder ignoredStackTagKeys(com.aliyun.ros.cdk.core.IResolvable ignoredStackTagKeys) {
+            this.ignoredStackTagKeys = ignoredStackTagKeys;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZoneProps#getIgnoredStackTagKeys}
+         * @param ignoredStackTagKeys the value to be set.
+         * @return {@code this}
+         */
+        public Builder ignoredStackTagKeys(java.util.List<? extends java.lang.Object> ignoredStackTagKeys) {
+            this.ignoredStackTagKeys = ignoredStackTagKeys;
             return this;
         }
 
@@ -214,6 +241,7 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosZoneProps {
         private final java.lang.Object zoneName;
+        private final java.lang.Object ignoredStackTagKeys;
         private final java.lang.Object proxyPattern;
         private final java.lang.Object remark;
         private final java.lang.Object resourceGroupId;
@@ -228,6 +256,7 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.zoneName = software.amazon.jsii.Kernel.get(this, "zoneName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ignoredStackTagKeys = software.amazon.jsii.Kernel.get(this, "ignoredStackTagKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyPattern = software.amazon.jsii.Kernel.get(this, "proxyPattern", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -243,6 +272,7 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.zoneName = java.util.Objects.requireNonNull(builder.zoneName, "zoneName is required");
+            this.ignoredStackTagKeys = builder.ignoredStackTagKeys;
             this.proxyPattern = builder.proxyPattern;
             this.remark = builder.remark;
             this.resourceGroupId = builder.resourceGroupId;
@@ -254,6 +284,11 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getZoneName() {
             return this.zoneName;
+        }
+
+        @Override
+        public final java.lang.Object getIgnoredStackTagKeys() {
+            return this.ignoredStackTagKeys;
         }
 
         @Override
@@ -293,6 +328,9 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("zoneName", om.valueToTree(this.getZoneName()));
+            if (this.getIgnoredStackTagKeys() != null) {
+                data.set("ignoredStackTagKeys", om.valueToTree(this.getIgnoredStackTagKeys()));
+            }
             if (this.getProxyPattern() != null) {
                 data.set("proxyPattern", om.valueToTree(this.getProxyPattern()));
             }
@@ -330,6 +368,7 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
             RosZoneProps.Jsii$Proxy that = (RosZoneProps.Jsii$Proxy) o;
 
             if (!zoneName.equals(that.zoneName)) return false;
+            if (this.ignoredStackTagKeys != null ? !this.ignoredStackTagKeys.equals(that.ignoredStackTagKeys) : that.ignoredStackTagKeys != null) return false;
             if (this.proxyPattern != null ? !this.proxyPattern.equals(that.proxyPattern) : that.proxyPattern != null) return false;
             if (this.remark != null ? !this.remark.equals(that.remark) : that.remark != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -341,6 +380,7 @@ public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.zoneName.hashCode();
+            result = 31 * result + (this.ignoredStackTagKeys != null ? this.ignoredStackTagKeys.hashCode() : 0);
             result = 31 * result + (this.proxyPattern != null ? this.proxyPattern.hashCode() : 0);
             result = 31 * result + (this.remark != null ? this.remark.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
