@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Accessor for pseudo parameters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.110Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:23.448Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosPseudo")
 public class RosPseudo extends software.amazon.jsii.JsiiObject {
 
