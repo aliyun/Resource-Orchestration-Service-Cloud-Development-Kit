@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy
  * attribute, ROS deletes the resource by default.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:19.101Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:23.441Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosDeletionPolicy")
 public enum RosDeletionPolicy {
     /**

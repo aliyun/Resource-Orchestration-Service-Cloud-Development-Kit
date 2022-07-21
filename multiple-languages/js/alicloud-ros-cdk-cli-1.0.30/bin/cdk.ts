@@ -90,6 +90,7 @@ async function parseCommandLineArguments() {
                 .option('resource-group-id', { type: 'string', desc: 'Resource group ID. If this parameter is not specified, the resource stack will be added to the default resource group'})
                 .option('sync', { type: 'boolean', desc: 'Sync deploy stack', default: false })
                 .option('skip-if-no-changes', { type: 'boolean', desc: 'When stack do not contains any new changes skip stack checks', default: false })
+                .option('detail-log', { type: 'boolean', desc: 'When stack deploy error, set this params to show more error information', default: false })
                 .option('disable-rollback', { type: 'boolean', desc: 'Disable rollback when creating resource stack fails', default: false })
                 .option('outputs-file', { type: 'boolean', desc: 'Stack outputs will be written as JSON', default: false }),
         )
@@ -357,7 +358,8 @@ async function initCommandLine() {
                     outputsFile: args['outputs-file'],
                     skipIfNoChanges: args['skip-if-no-changes'],
                     disableRollback: args['disable-rollback'],
-                    resourceGroupId: args['resource-group-id']
+                    resourceGroupId: args['resource-group-id'],
+                    detailLog :args['detail-log']
                 });
                 return;
 

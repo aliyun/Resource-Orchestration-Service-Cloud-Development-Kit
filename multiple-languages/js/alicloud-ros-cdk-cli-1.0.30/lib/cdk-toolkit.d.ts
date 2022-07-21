@@ -108,6 +108,7 @@ export interface DeployOptions {
     skipIfNoChanges: boolean;
     disableRollback: boolean;
     resourceGroupId: string;
+    detailLog: boolean;
 }
 export interface DestroyOptions {
     stackNames: string[];

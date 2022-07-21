@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mps;
 /**
  * Properties for defining a `ALIYUN::MPS::Pipeline`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-13T09:24:21.406Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:25.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.PipelineProps")
 @software.amazon.jsii.Jsii.Proxy(PipelineProps.Jsii$Proxy.class)
 public interface PipelineProps extends software.amazon.jsii.JsiiSerializable {
