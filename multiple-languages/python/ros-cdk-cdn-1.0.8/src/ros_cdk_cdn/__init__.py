@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Domain(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DomainProps",
+        props: typing.Union["DomainProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CDN::Domain``.
@@ -47,6 +49,12 @@ class Domain(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Domain.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -76,7 +84,7 @@ class DomainConfig(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DomainConfigProps",
+        props: typing.Union["DomainConfigProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CDN::DomainConfig``.
@@ -90,6 +98,12 @@ class DomainConfig(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DomainConfig.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -110,6 +124,10 @@ class DomainConfigProps:
         :param domain_names: Property domainNames: Your accelerated domain name, separated by commas in English.
         :param functions: Property functions: function list, please refer to the CDN documentation for details.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DomainConfigProps.__init__)
+            check_type(argname="argument domain_names", value=domain_names, expected_type=type_hints["domain_names"])
+            check_type(argname="argument functions", value=functions, expected_type=type_hints["functions"])
         self._values: typing.Dict[str, typing.Any] = {
             "domain_names": domain_names,
             "functions": functions,
@@ -165,7 +183,7 @@ class DomainProps:
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         scope: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         sources: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosDomain.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosDomain.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
         top_level_domain: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CDN::Domain``.
@@ -179,6 +197,16 @@ class DomainProps:
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         :param top_level_domain: Property topLevelDomain: The top-level domain, which can only be configured by users on the whitelist.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DomainProps.__init__)
+            check_type(argname="argument cdn_type", value=cdn_type, expected_type=type_hints["cdn_type"])
+            check_type(argname="argument domain_name", value=domain_name, expected_type=type_hints["domain_name"])
+            check_type(argname="argument check_url", value=check_url, expected_type=type_hints["check_url"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument sources", value=sources, expected_type=type_hints["sources"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument top_level_domain", value=top_level_domain, expected_type=type_hints["top_level_domain"])
         self._values: typing.Dict[str, typing.Any] = {
             "cdn_type": cdn_type,
             "domain_name": domain_name,
@@ -294,7 +322,7 @@ class RosDomain(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDomainProps",
+        props: typing.Union["RosDomainProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CDN::Domain``.
@@ -304,6 +332,12 @@ class RosDomain(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDomain.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -314,6 +348,9 @@ class RosDomain(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDomain._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -356,6 +393,9 @@ class RosDomain(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "cdn_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cdnType", value)
 
     @builtins.property # type: ignore[misc]
@@ -371,6 +411,9 @@ class RosDomain(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "domain_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "domainName", value)
 
     @builtins.property # type: ignore[misc]
@@ -380,6 +423,9 @@ class RosDomain(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -397,6 +443,9 @@ class RosDomain(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "check_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "checkUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -414,6 +463,9 @@ class RosDomain(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -431,6 +483,9 @@ class RosDomain(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "scope").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scope", value)
 
     @builtins.property # type: ignore[misc]
@@ -448,6 +503,9 @@ class RosDomain(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "sources").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sources", value)
 
     @builtins.property # type: ignore[misc]
@@ -463,6 +521,9 @@ class RosDomain(
         self,
         value: typing.Optional[typing.List["RosDomain.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -480,6 +541,9 @@ class RosDomain(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomain, "top_level_domain").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topLevelDomain", value)
 
     @jsii.data_type(
@@ -498,6 +562,10 @@ class RosDomain(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDomain.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -546,7 +614,7 @@ class RosDomainConfig(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDomainConfigProps",
+        props: typing.Union["RosDomainConfigProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CDN::DomainConfig``.
@@ -556,6 +624,12 @@ class RosDomainConfig(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDomainConfig.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -566,6 +640,9 @@ class RosDomainConfig(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDomainConfig._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -592,6 +669,9 @@ class RosDomainConfig(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomainConfig, "domain_names").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "domainNames", value)
 
     @builtins.property # type: ignore[misc]
@@ -602,6 +682,9 @@ class RosDomainConfig(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomainConfig, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -617,6 +700,9 @@ class RosDomainConfig(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDomainConfig, "functions").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "functions", value)
 
 
@@ -637,6 +723,10 @@ class RosDomainConfigProps:
         :param domain_names: 
         :param functions: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDomainConfigProps.__init__)
+            check_type(argname="argument domain_names", value=domain_names, expected_type=type_hints["domain_names"])
+            check_type(argname="argument functions", value=functions, expected_type=type_hints["functions"])
         self._values: typing.Dict[str, typing.Any] = {
             "domain_names": domain_names,
             "functions": functions,
@@ -696,7 +786,7 @@ class RosDomainProps:
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         scope: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         sources: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosDomain.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosDomain.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         top_level_domain: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CDN::Domain``.
@@ -710,6 +800,16 @@ class RosDomainProps:
         :param tags: 
         :param top_level_domain: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDomainProps.__init__)
+            check_type(argname="argument cdn_type", value=cdn_type, expected_type=type_hints["cdn_type"])
+            check_type(argname="argument domain_name", value=domain_name, expected_type=type_hints["domain_name"])
+            check_type(argname="argument check_url", value=check_url, expected_type=type_hints["check_url"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument sources", value=sources, expected_type=type_hints["sources"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument top_level_domain", value=top_level_domain, expected_type=type_hints["top_level_domain"])
         self._values: typing.Dict[str, typing.Any] = {
             "cdn_type": cdn_type,
             "domain_name": domain_name,

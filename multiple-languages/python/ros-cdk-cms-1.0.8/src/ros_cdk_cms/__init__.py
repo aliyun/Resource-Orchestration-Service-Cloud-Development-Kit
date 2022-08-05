@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Contact(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ContactProps",
+        props: typing.Union["ContactProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::Contact``.
@@ -47,6 +49,12 @@ class Contact(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Contact.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -67,7 +75,7 @@ class ContactGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ContactGroupProps",
+        props: typing.Union["ContactGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::ContactGroup``.
@@ -81,6 +89,12 @@ class ContactGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ContactGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -113,6 +127,11 @@ class ContactGroupProps:
         :param contact_names: Property contactNames: The name of the alert contact.
         :param describe: Property describe: The description of the alert contact group.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ContactGroupProps.__init__)
+            check_type(argname="argument contact_group_name", value=contact_group_name, expected_type=type_hints["contact_group_name"])
+            check_type(argname="argument contact_names", value=contact_names, expected_type=type_hints["contact_names"])
+            check_type(argname="argument describe", value=describe, expected_type=type_hints["describe"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_group_name": contact_group_name,
             "contact_names": contact_names,
@@ -169,7 +188,7 @@ class ContactProps:
     def __init__(
         self,
         *,
-        channels: typing.Union["RosContact.ChannelsProperty", ros_cdk_core.IResolvable],
+        channels: typing.Union[typing.Union["RosContact.ChannelsProperty", typing.Dict[str, typing.Any]], ros_cdk_core.IResolvable],
         contact_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         describe: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
@@ -179,6 +198,11 @@ class ContactProps:
         :param contact_name: Property contactName: The name of the alarm contact.
         :param describe: Property describe: The description of the alert contact.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ContactProps.__init__)
+            check_type(argname="argument channels", value=channels, expected_type=type_hints["channels"])
+            check_type(argname="argument contact_name", value=contact_name, expected_type=type_hints["contact_name"])
+            check_type(argname="argument describe", value=describe, expected_type=type_hints["describe"])
         self._values: typing.Dict[str, typing.Any] = {
             "channels": channels,
             "contact_name": contact_name,
@@ -231,7 +255,7 @@ class DynamicTagGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DynamicTagGroupProps",
+        props: typing.Union["DynamicTagGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::DynamicTagGroup``.
@@ -245,6 +269,12 @@ class DynamicTagGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DynamicTagGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -281,7 +311,7 @@ class DynamicTagGroupProps:
         tag_key: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         enable_install_agent: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         enable_subscribe_event: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        match_express: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosDynamicTagGroup.MatchExpressProperty"]]]] = None,
+        match_express: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDynamicTagGroup.MatchExpressProperty", typing.Dict[str, typing.Any]]]]]] = None,
         match_express_filter_relation: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         template_id_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
     ) -> None:
@@ -295,6 +325,15 @@ class DynamicTagGroupProps:
         :param match_express_filter_relation: Property matchExpressFilterRelation: The relationship between the conditional expressions. Values are: and: the relationship between or: the relationship or the Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
         :param template_id_list: Property templateIdList: Alarm template ID list. When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DynamicTagGroupProps.__init__)
+            check_type(argname="argument contact_group_list", value=contact_group_list, expected_type=type_hints["contact_group_list"])
+            check_type(argname="argument tag_key", value=tag_key, expected_type=type_hints["tag_key"])
+            check_type(argname="argument enable_install_agent", value=enable_install_agent, expected_type=type_hints["enable_install_agent"])
+            check_type(argname="argument enable_subscribe_event", value=enable_subscribe_event, expected_type=type_hints["enable_subscribe_event"])
+            check_type(argname="argument match_express", value=match_express, expected_type=type_hints["match_express"])
+            check_type(argname="argument match_express_filter_relation", value=match_express_filter_relation, expected_type=type_hints["match_express_filter_relation"])
+            check_type(argname="argument template_id_list", value=template_id_list, expected_type=type_hints["template_id_list"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_group_list": contact_group_list,
             "tag_key": tag_key,
@@ -412,7 +451,7 @@ class EventRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "EventRuleProps",
+        props: typing.Union["EventRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::EventRule``.
@@ -426,6 +465,12 @@ class EventRule(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EventRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -451,7 +496,7 @@ class EventRuleProps:
     def __init__(
         self,
         *,
-        event_pattern: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosEventRule.EventPatternProperty"]]],
+        event_pattern: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosEventRule.EventPatternProperty", typing.Dict[str, typing.Any]]]]],
         rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         event_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -467,6 +512,14 @@ class EventRuleProps:
         :param group_id: Property groupId: The ID of the application group.
         :param state: Property state: The status of the alert rule. Valid values: ENABLED DISABLED
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EventRuleProps.__init__)
+            check_type(argname="argument event_pattern", value=event_pattern, expected_type=type_hints["event_pattern"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument event_type", value=event_type, expected_type=type_hints["event_type"])
+            check_type(argname="argument group_id", value=group_id, expected_type=type_hints["group_id"])
+            check_type(argname="argument state", value=state, expected_type=type_hints["state"])
         self._values: typing.Dict[str, typing.Any] = {
             "event_pattern": event_pattern,
             "rule_name": rule_name,
@@ -561,7 +614,7 @@ class EventRuleTargets(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "EventRuleTargetsProps",
+        props: typing.Union["EventRuleTargetsProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::EventRuleTargets``.
@@ -575,6 +628,12 @@ class EventRuleTargets(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EventRuleTargets.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -595,11 +654,11 @@ class EventRuleTargetsProps:
         self,
         *,
         rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        contact_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.ContactParametersProperty"]]]] = None,
-        fc_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.FcParametersProperty"]]]] = None,
-        mns_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.MnsParametersProperty"]]]] = None,
-        sls_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.SlsParametersProperty"]]]] = None,
-        webhook_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.WebhookParametersProperty"]]]] = None,
+        contact_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosEventRuleTargets.ContactParametersProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        fc_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosEventRuleTargets.FcParametersProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        mns_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosEventRuleTargets.MnsParametersProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        sls_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosEventRuleTargets.SlsParametersProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        webhook_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosEventRuleTargets.WebhookParametersProperty", typing.Dict[str, typing.Any]]]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CMS::EventRuleTargets``.
 
@@ -610,6 +669,14 @@ class EventRuleTargetsProps:
         :param sls_parameters: Property slsParameters: SLS configuration.A maximum of 5 parameters.
         :param webhook_parameters: Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EventRuleTargetsProps.__init__)
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument contact_parameters", value=contact_parameters, expected_type=type_hints["contact_parameters"])
+            check_type(argname="argument fc_parameters", value=fc_parameters, expected_type=type_hints["fc_parameters"])
+            check_type(argname="argument mns_parameters", value=mns_parameters, expected_type=type_hints["mns_parameters"])
+            check_type(argname="argument sls_parameters", value=sls_parameters, expected_type=type_hints["sls_parameters"])
+            check_type(argname="argument webhook_parameters", value=webhook_parameters, expected_type=type_hints["webhook_parameters"])
         self._values: typing.Dict[str, typing.Any] = {
             "rule_name": rule_name,
         }
@@ -694,7 +761,7 @@ class GroupMetricRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "GroupMetricRuleProps",
+        props: typing.Union["GroupMetricRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::GroupMetricRule``.
@@ -708,6 +775,12 @@ class GroupMetricRule(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(GroupMetricRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -743,7 +816,7 @@ class GroupMetricRuleProps:
         self,
         *,
         category: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        escalations: typing.Union[ros_cdk_core.IResolvable, "RosGroupMetricRule.EscalationsProperty"],
+        escalations: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosGroupMetricRule.EscalationsProperty", typing.Dict[str, typing.Any]]],
         group_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         metric_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         namespace: typing.Union[builtins.str, ros_cdk_core.IResolvable],
@@ -776,6 +849,23 @@ class GroupMetricRuleProps:
         :param silence_time: Property silenceTime: The duration of the mute period during which new alerts are not sent even if the trigger conditions are met. Unit: second. Default value: 86400. Minimum value: 60.
         :param webhook: Property webhook: The URL of the callback triggered when an alert occurs.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(GroupMetricRuleProps.__init__)
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument escalations", value=escalations, expected_type=type_hints["escalations"])
+            check_type(argname="argument group_id", value=group_id, expected_type=type_hints["group_id"])
+            check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+            check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+            check_type(argname="argument rule_id", value=rule_id, expected_type=type_hints["rule_id"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument dimensions", value=dimensions, expected_type=type_hints["dimensions"])
+            check_type(argname="argument effective_interval", value=effective_interval, expected_type=type_hints["effective_interval"])
+            check_type(argname="argument email_subject", value=email_subject, expected_type=type_hints["email_subject"])
+            check_type(argname="argument interval", value=interval, expected_type=type_hints["interval"])
+            check_type(argname="argument no_effective_interval", value=no_effective_interval, expected_type=type_hints["no_effective_interval"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument silence_time", value=silence_time, expected_type=type_hints["silence_time"])
+            check_type(argname="argument webhook", value=webhook, expected_type=type_hints["webhook"])
         self._values: typing.Dict[str, typing.Any] = {
             "category": category,
             "escalations": escalations,
@@ -995,7 +1085,7 @@ class MetricRuleTargets(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "MetricRuleTargetsProps",
+        props: typing.Union["MetricRuleTargetsProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MetricRuleTargets``.
@@ -1009,6 +1099,12 @@ class MetricRuleTargets(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MetricRuleTargets.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1034,13 +1130,17 @@ class MetricRuleTargetsProps:
         self,
         *,
         rule_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        targets: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosMetricRuleTargets.TargetsProperty"]]],
+        targets: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMetricRuleTargets.TargetsProperty", typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::CMS::MetricRuleTargets``.
 
         :param rule_id: Property ruleId: The ID of the alert rule.
         :param targets: Property targets: undefined.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MetricRuleTargetsProps.__init__)
+            check_type(argname="argument rule_id", value=rule_id, expected_type=type_hints["rule_id"])
+            check_type(argname="argument targets", value=targets, expected_type=type_hints["targets"])
         self._values: typing.Dict[str, typing.Any] = {
             "rule_id": rule_id,
             "targets": targets,
@@ -1085,7 +1185,7 @@ class MetricRuleTemplate(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "MetricRuleTemplateProps",
+        props: typing.Union["MetricRuleTemplateProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MetricRuleTemplate``.
@@ -1099,6 +1199,12 @@ class MetricRuleTemplate(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MetricRuleTemplate.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1124,7 +1230,7 @@ class MetricRuleTemplateProps:
         self,
         *,
         name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        alert_templates: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosMetricRuleTemplate.AlertTemplatesProperty"]]]] = None,
+        alert_templates: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMetricRuleTemplate.AlertTemplatesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         rest_version: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         template_id: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -1137,6 +1243,13 @@ class MetricRuleTemplateProps:
         :param rest_version: Property restVersion: The version of the alert template. Call DescribeMetricRuleTemplateList or DescribeMetricRuleTemplateAttribute to obtain information about the alert templates. The combination of version and ID uniquely identifies an alert template.
         :param template_id: Property templateId: The ID of the alert template.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MetricRuleTemplateProps.__init__)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument alert_templates", value=alert_templates, expected_type=type_hints["alert_templates"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument rest_version", value=rest_version, expected_type=type_hints["rest_version"])
+            check_type(argname="argument template_id", value=template_id, expected_type=type_hints["template_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "name": name,
         }
@@ -1216,7 +1329,7 @@ class MonitorGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "MonitorGroupProps",
+        props: typing.Union["MonitorGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MonitorGroup``.
@@ -1230,6 +1343,12 @@ class MonitorGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MonitorGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1250,7 +1369,7 @@ class MonitorGroupInstances(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "MonitorGroupInstancesProps",
+        props: typing.Union["MonitorGroupInstancesProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MonitorGroupInstances``.
@@ -1264,6 +1383,12 @@ class MonitorGroupInstances(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MonitorGroupInstances.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1283,13 +1408,17 @@ class MonitorGroupInstancesProps:
         self,
         *,
         group_id: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
-        instances: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosMonitorGroupInstances.InstancesProperty"]]],
+        instances: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMonitorGroupInstances.InstancesProperty", typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::CMS::MonitorGroupInstances``.
 
         :param group_id: Property groupId: The ID of the application group.
         :param instances: Property instances:.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MonitorGroupInstancesProps.__init__)
+            check_type(argname="argument group_id", value=group_id, expected_type=type_hints["group_id"])
+            check_type(argname="argument instances", value=instances, expected_type=type_hints["instances"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_id": group_id,
             "instances": instances,
@@ -1340,6 +1469,10 @@ class MonitorGroupProps:
         :param group_name: Property groupName: The name of the application group.
         :param contact_groups: Property contactGroups: The alert contact group. Alert notifications for the application group are sent to the specified alert contact group.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MonitorGroupProps.__init__)
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument contact_groups", value=contact_groups, expected_type=type_hints["contact_groups"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_name": group_name,
         }
@@ -1388,7 +1521,7 @@ class MonitoringAgentProcess(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "MonitoringAgentProcessProps",
+        props: typing.Union["MonitoringAgentProcessProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MonitoringAgentProcess``.
@@ -1402,6 +1535,12 @@ class MonitoringAgentProcess(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MonitoringAgentProcess.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1434,6 +1573,11 @@ class MonitoringAgentProcessProps:
         :param process_name: Property processName: The name of the process.
         :param process_user: Property processUser: The user who launched the process.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MonitoringAgentProcessProps.__init__)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument process_name", value=process_name, expected_type=type_hints["process_name"])
+            check_type(argname="argument process_user", value=process_user, expected_type=type_hints["process_user"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_id": instance_id,
         }
@@ -1488,7 +1632,7 @@ class ResourceMetricRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ResourceMetricRuleProps",
+        props: typing.Union["ResourceMetricRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::ResourceMetricRule``.
@@ -1502,6 +1646,12 @@ class ResourceMetricRule(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceMetricRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1547,20 +1697,20 @@ class ResourceMetricRuleProps:
         self,
         *,
         contact_groups: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
-        escalations: typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.EscalationsProperty"],
+        escalations: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.EscalationsProperty", typing.Dict[str, typing.Any]]],
         metric_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         namespace: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         resources: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Mapping[builtins.str, typing.Any]]],
-        composite_expression: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.CompositeExpressionProperty"]] = None,
+        composite_expression: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.CompositeExpressionProperty", typing.Dict[str, typing.Any]]]] = None,
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         effective_interval: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         email_subject: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         interval: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        labels: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.LabelsProperty"]]]] = None,
+        labels: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.LabelsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         no_data_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         no_effective_interval: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        prometheus: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.PrometheusProperty"]] = None,
+        prometheus: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.PrometheusProperty", typing.Dict[str, typing.Any]]]] = None,
         rule_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         rule_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         silence_time: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -1588,6 +1738,27 @@ class ResourceMetricRuleProps:
         :param silence_time: Property silenceTime: The mute period during which new alerts are not sent even if the trigger conditions are met. Unit: seconds. Default value: 86400. Note: If an alert is not cleared within the mute period, a new alert notification is sent when the mute period ends.
         :param webhook: Property webhook: The callback URL to which a POST request is sent when an alert is triggered based on the alert rule.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceMetricRuleProps.__init__)
+            check_type(argname="argument contact_groups", value=contact_groups, expected_type=type_hints["contact_groups"])
+            check_type(argname="argument escalations", value=escalations, expected_type=type_hints["escalations"])
+            check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+            check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+            check_type(argname="argument resources", value=resources, expected_type=type_hints["resources"])
+            check_type(argname="argument composite_expression", value=composite_expression, expected_type=type_hints["composite_expression"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument effective_interval", value=effective_interval, expected_type=type_hints["effective_interval"])
+            check_type(argname="argument email_subject", value=email_subject, expected_type=type_hints["email_subject"])
+            check_type(argname="argument interval", value=interval, expected_type=type_hints["interval"])
+            check_type(argname="argument labels", value=labels, expected_type=type_hints["labels"])
+            check_type(argname="argument no_data_policy", value=no_data_policy, expected_type=type_hints["no_data_policy"])
+            check_type(argname="argument no_effective_interval", value=no_effective_interval, expected_type=type_hints["no_effective_interval"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument prometheus", value=prometheus, expected_type=type_hints["prometheus"])
+            check_type(argname="argument rule_id", value=rule_id, expected_type=type_hints["rule_id"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument silence_time", value=silence_time, expected_type=type_hints["silence_time"])
+            check_type(argname="argument webhook", value=webhook, expected_type=type_hints["webhook"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_groups": contact_groups,
             "escalations": escalations,
@@ -1854,7 +2025,7 @@ class RosContact(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosContactProps",
+        props: typing.Union["RosContactProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::Contact``.
@@ -1864,6 +2035,12 @@ class RosContact(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContact.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1874,6 +2051,9 @@ class RosContact(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContact._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1910,6 +2090,9 @@ class RosContact(
         self,
         value: typing.Union["RosContact.ChannelsProperty", ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContact, "channels").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "channels", value)
 
     @builtins.property # type: ignore[misc]
@@ -1925,6 +2108,9 @@ class RosContact(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContact, "contact_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1940,6 +2126,9 @@ class RosContact(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContact, "describe").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "describe", value)
 
     @builtins.property # type: ignore[misc]
@@ -1949,6 +2138,9 @@ class RosContact(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContact, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @jsii.data_type(
@@ -1976,6 +2168,12 @@ class RosContact(
             :param mail: 
             :param sms: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContact.ChannelsProperty.__init__)
+                check_type(argname="argument ali_im", value=ali_im, expected_type=type_hints["ali_im"])
+                check_type(argname="argument ding_web_hook", value=ding_web_hook, expected_type=type_hints["ding_web_hook"])
+                check_type(argname="argument mail", value=mail, expected_type=type_hints["mail"])
+                check_type(argname="argument sms", value=sms, expected_type=type_hints["sms"])
             self._values: typing.Dict[str, typing.Any] = {}
             if ali_im is not None:
                 self._values["ali_im"] = ali_im
@@ -2049,7 +2247,7 @@ class RosContactGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosContactGroupProps",
+        props: typing.Union["RosContactGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::ContactGroup``.
@@ -2059,6 +2257,12 @@ class RosContactGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContactGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2069,6 +2273,9 @@ class RosContactGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContactGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2105,6 +2312,9 @@ class RosContactGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContactGroup, "contact_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactGroupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2122,6 +2332,9 @@ class RosContactGroup(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContactGroup, "contact_names").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactNames", value)
 
     @builtins.property # type: ignore[misc]
@@ -2137,6 +2350,9 @@ class RosContactGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContactGroup, "describe").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "describe", value)
 
     @builtins.property # type: ignore[misc]
@@ -2146,6 +2362,9 @@ class RosContactGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContactGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -2172,6 +2391,11 @@ class RosContactGroupProps:
         :param contact_names: 
         :param describe: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContactGroupProps.__init__)
+            check_type(argname="argument contact_group_name", value=contact_group_name, expected_type=type_hints["contact_group_name"])
+            check_type(argname="argument contact_names", value=contact_names, expected_type=type_hints["contact_names"])
+            check_type(argname="argument describe", value=describe, expected_type=type_hints["describe"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_group_name": contact_group_name,
             "contact_names": contact_names,
@@ -2234,7 +2458,7 @@ class RosContactProps:
     def __init__(
         self,
         *,
-        channels: typing.Union[RosContact.ChannelsProperty, ros_cdk_core.IResolvable],
+        channels: typing.Union[typing.Union[RosContact.ChannelsProperty, typing.Dict[str, typing.Any]], ros_cdk_core.IResolvable],
         contact_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         describe: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
@@ -2244,6 +2468,11 @@ class RosContactProps:
         :param contact_name: 
         :param describe: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContactProps.__init__)
+            check_type(argname="argument channels", value=channels, expected_type=type_hints["channels"])
+            check_type(argname="argument contact_name", value=contact_name, expected_type=type_hints["contact_name"])
+            check_type(argname="argument describe", value=describe, expected_type=type_hints["describe"])
         self._values: typing.Dict[str, typing.Any] = {
             "channels": channels,
             "contact_name": contact_name,
@@ -2302,7 +2531,7 @@ class RosDynamicTagGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDynamicTagGroupProps",
+        props: typing.Union["RosDynamicTagGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::DynamicTagGroup``.
@@ -2312,6 +2541,12 @@ class RosDynamicTagGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDynamicTagGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2322,6 +2557,9 @@ class RosDynamicTagGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDynamicTagGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2366,6 +2604,9 @@ class RosDynamicTagGroup(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDynamicTagGroup, "contact_group_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactGroupList", value)
 
     @builtins.property # type: ignore[misc]
@@ -2375,6 +2616,9 @@ class RosDynamicTagGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDynamicTagGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2390,6 +2634,9 @@ class RosDynamicTagGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDynamicTagGroup, "tag_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tagKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -2412,6 +2659,9 @@ class RosDynamicTagGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDynamicTagGroup, "enable_install_agent").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableInstallAgent", value)
 
     @builtins.property # type: ignore[misc]
@@ -2433,6 +2683,9 @@ class RosDynamicTagGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDynamicTagGroup, "enable_subscribe_event").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableSubscribeEvent", value)
 
     @builtins.property # type: ignore[misc]
@@ -2450,6 +2703,9 @@ class RosDynamicTagGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosDynamicTagGroup.MatchExpressProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDynamicTagGroup, "match_express").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "matchExpress", value)
 
     @builtins.property # type: ignore[misc]
@@ -2472,6 +2728,9 @@ class RosDynamicTagGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDynamicTagGroup, "match_express_filter_relation").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "matchExpressFilterRelation", value)
 
     @builtins.property # type: ignore[misc]
@@ -2492,6 +2751,9 @@ class RosDynamicTagGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDynamicTagGroup, "template_id_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateIdList", value)
 
     @jsii.data_type(
@@ -2513,6 +2775,10 @@ class RosDynamicTagGroup(
             :param tag_value: 
             :param tag_value_match_function: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDynamicTagGroup.MatchExpressProperty.__init__)
+                check_type(argname="argument tag_value", value=tag_value, expected_type=type_hints["tag_value"])
+                check_type(argname="argument tag_value_match_function", value=tag_value_match_function, expected_type=type_hints["tag_value_match_function"])
             self._values: typing.Dict[str, typing.Any] = {
                 "tag_value": tag_value,
                 "tag_value_match_function": tag_value_match_function,
@@ -2579,7 +2845,7 @@ class RosDynamicTagGroupProps:
         tag_key: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         enable_install_agent: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         enable_subscribe_event: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        match_express: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosDynamicTagGroup.MatchExpressProperty]]]] = None,
+        match_express: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosDynamicTagGroup.MatchExpressProperty, typing.Dict[str, typing.Any]]]]]] = None,
         match_express_filter_relation: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         template_id_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
     ) -> None:
@@ -2593,6 +2859,15 @@ class RosDynamicTagGroupProps:
         :param match_express_filter_relation: 
         :param template_id_list: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDynamicTagGroupProps.__init__)
+            check_type(argname="argument contact_group_list", value=contact_group_list, expected_type=type_hints["contact_group_list"])
+            check_type(argname="argument tag_key", value=tag_key, expected_type=type_hints["tag_key"])
+            check_type(argname="argument enable_install_agent", value=enable_install_agent, expected_type=type_hints["enable_install_agent"])
+            check_type(argname="argument enable_subscribe_event", value=enable_subscribe_event, expected_type=type_hints["enable_subscribe_event"])
+            check_type(argname="argument match_express", value=match_express, expected_type=type_hints["match_express"])
+            check_type(argname="argument match_express_filter_relation", value=match_express_filter_relation, expected_type=type_hints["match_express_filter_relation"])
+            check_type(argname="argument template_id_list", value=template_id_list, expected_type=type_hints["template_id_list"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_group_list": contact_group_list,
             "tag_key": tag_key,
@@ -2718,7 +2993,7 @@ class RosEventRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosEventRuleProps",
+        props: typing.Union["RosEventRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::EventRule``.
@@ -2728,6 +3003,12 @@ class RosEventRule(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEventRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2738,6 +3019,9 @@ class RosEventRule(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEventRule._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2766,6 +3050,9 @@ class RosEventRule(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRule, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2783,6 +3070,9 @@ class RosEventRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosEventRule.EventPatternProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRule, "event_pattern").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eventPattern", value)
 
     @builtins.property # type: ignore[misc]
@@ -2798,6 +3088,9 @@ class RosEventRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRule, "rule_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2815,6 +3108,9 @@ class RosEventRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRule, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -2836,6 +3132,9 @@ class RosEventRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRule, "event_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eventType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2853,6 +3152,9 @@ class RosEventRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRule, "group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2874,6 +3176,9 @@ class RosEventRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRule, "state").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "state", value)
 
     @jsii.data_type(
@@ -2904,6 +3209,13 @@ class RosEventRule(
             :param product: 
             :param status_list: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosEventRule.EventPatternProperty.__init__)
+                check_type(argname="argument event_type_list", value=event_type_list, expected_type=type_hints["event_type_list"])
+                check_type(argname="argument level_list", value=level_list, expected_type=type_hints["level_list"])
+                check_type(argname="argument name_list", value=name_list, expected_type=type_hints["name_list"])
+                check_type(argname="argument product", value=product, expected_type=type_hints["product"])
+                check_type(argname="argument status_list", value=status_list, expected_type=type_hints["status_list"])
             self._values: typing.Dict[str, typing.Any] = {}
             if event_type_list is not None:
                 self._values["event_type_list"] = event_type_list
@@ -2997,7 +3309,7 @@ class RosEventRuleProps:
     def __init__(
         self,
         *,
-        event_pattern: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosEventRule.EventPatternProperty]]],
+        event_pattern: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosEventRule.EventPatternProperty, typing.Dict[str, typing.Any]]]]],
         rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         event_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -3013,6 +3325,14 @@ class RosEventRuleProps:
         :param group_id: 
         :param state: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEventRuleProps.__init__)
+            check_type(argname="argument event_pattern", value=event_pattern, expected_type=type_hints["event_pattern"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument event_type", value=event_type, expected_type=type_hints["event_type"])
+            check_type(argname="argument group_id", value=group_id, expected_type=type_hints["group_id"])
+            check_type(argname="argument state", value=state, expected_type=type_hints["state"])
         self._values: typing.Dict[str, typing.Any] = {
             "event_pattern": event_pattern,
             "rule_name": rule_name,
@@ -3117,7 +3437,7 @@ class RosEventRuleTargets(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosEventRuleTargetsProps",
+        props: typing.Union["RosEventRuleTargetsProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::EventRuleTargets``.
@@ -3127,6 +3447,12 @@ class RosEventRuleTargets(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEventRuleTargets.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3137,6 +3463,9 @@ class RosEventRuleTargets(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEventRuleTargets._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3158,6 +3487,9 @@ class RosEventRuleTargets(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRuleTargets, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3173,6 +3505,9 @@ class RosEventRuleTargets(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRuleTargets, "rule_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -3190,6 +3525,9 @@ class RosEventRuleTargets(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.ContactParametersProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRuleTargets, "contact_parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactParameters", value)
 
     @builtins.property # type: ignore[misc]
@@ -3207,6 +3545,9 @@ class RosEventRuleTargets(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.FcParametersProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRuleTargets, "fc_parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "fcParameters", value)
 
     @builtins.property # type: ignore[misc]
@@ -3224,6 +3565,9 @@ class RosEventRuleTargets(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.MnsParametersProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRuleTargets, "mns_parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mnsParameters", value)
 
     @builtins.property # type: ignore[misc]
@@ -3241,6 +3585,9 @@ class RosEventRuleTargets(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.SlsParametersProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRuleTargets, "sls_parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slsParameters", value)
 
     @builtins.property # type: ignore[misc]
@@ -3258,6 +3605,9 @@ class RosEventRuleTargets(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosEventRuleTargets.WebhookParametersProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEventRuleTargets, "webhook_parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "webhookParameters", value)
 
     @jsii.data_type(
@@ -3282,6 +3632,11 @@ class RosEventRuleTargets(
             :param id: 
             :param level: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosEventRuleTargets.ContactParametersProperty.__init__)
+                check_type(argname="argument contact_group_name", value=contact_group_name, expected_type=type_hints["contact_group_name"])
+                check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+                check_type(argname="argument level", value=level, expected_type=type_hints["level"])
             self._values: typing.Dict[str, typing.Any] = {}
             if contact_group_name is not None:
                 self._values["contact_group_name"] = contact_group_name
@@ -3356,6 +3711,12 @@ class RosEventRuleTargets(
             :param region: 
             :param service_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosEventRuleTargets.FcParametersProperty.__init__)
+                check_type(argname="argument function_name", value=function_name, expected_type=type_hints["function_name"])
+                check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+                check_type(argname="argument region", value=region, expected_type=type_hints["region"])
+                check_type(argname="argument service_name", value=service_name, expected_type=type_hints["service_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if function_name is not None:
                 self._values["function_name"] = function_name
@@ -3435,6 +3796,11 @@ class RosEventRuleTargets(
             :param queue: 
             :param region: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosEventRuleTargets.MnsParametersProperty.__init__)
+                check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+                check_type(argname="argument queue", value=queue, expected_type=type_hints["queue"])
+                check_type(argname="argument region", value=region, expected_type=type_hints["region"])
             self._values: typing.Dict[str, typing.Any] = {}
             if id is not None:
                 self._values["id"] = id
@@ -3509,6 +3875,12 @@ class RosEventRuleTargets(
             :param project: 
             :param region: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosEventRuleTargets.SlsParametersProperty.__init__)
+                check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+                check_type(argname="argument log_store", value=log_store, expected_type=type_hints["log_store"])
+                check_type(argname="argument project", value=project, expected_type=type_hints["project"])
+                check_type(argname="argument region", value=region, expected_type=type_hints["region"])
             self._values: typing.Dict[str, typing.Any] = {}
             if id is not None:
                 self._values["id"] = id
@@ -3595,6 +3967,12 @@ class RosEventRuleTargets(
             :param protocol: 
             :param url: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosEventRuleTargets.WebhookParametersProperty.__init__)
+                check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+                check_type(argname="argument method", value=method, expected_type=type_hints["method"])
+                check_type(argname="argument protocol", value=protocol, expected_type=type_hints["protocol"])
+                check_type(argname="argument url", value=url, expected_type=type_hints["url"])
             self._values: typing.Dict[str, typing.Any] = {}
             if id is not None:
                 self._values["id"] = id
@@ -3674,11 +4052,11 @@ class RosEventRuleTargetsProps:
         self,
         *,
         rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        contact_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosEventRuleTargets.ContactParametersProperty]]]] = None,
-        fc_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosEventRuleTargets.FcParametersProperty]]]] = None,
-        mns_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosEventRuleTargets.MnsParametersProperty]]]] = None,
-        sls_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosEventRuleTargets.SlsParametersProperty]]]] = None,
-        webhook_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosEventRuleTargets.WebhookParametersProperty]]]] = None,
+        contact_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosEventRuleTargets.ContactParametersProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        fc_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosEventRuleTargets.FcParametersProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        mns_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosEventRuleTargets.MnsParametersProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        sls_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosEventRuleTargets.SlsParametersProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        webhook_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosEventRuleTargets.WebhookParametersProperty, typing.Dict[str, typing.Any]]]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CMS::EventRuleTargets``.
 
@@ -3689,6 +4067,14 @@ class RosEventRuleTargetsProps:
         :param sls_parameters: 
         :param webhook_parameters: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEventRuleTargetsProps.__init__)
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument contact_parameters", value=contact_parameters, expected_type=type_hints["contact_parameters"])
+            check_type(argname="argument fc_parameters", value=fc_parameters, expected_type=type_hints["fc_parameters"])
+            check_type(argname="argument mns_parameters", value=mns_parameters, expected_type=type_hints["mns_parameters"])
+            check_type(argname="argument sls_parameters", value=sls_parameters, expected_type=type_hints["sls_parameters"])
+            check_type(argname="argument webhook_parameters", value=webhook_parameters, expected_type=type_hints["webhook_parameters"])
         self._values: typing.Dict[str, typing.Any] = {
             "rule_name": rule_name,
         }
@@ -3785,7 +4171,7 @@ class RosGroupMetricRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosGroupMetricRuleProps",
+        props: typing.Union["RosGroupMetricRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::GroupMetricRule``.
@@ -3795,6 +4181,12 @@ class RosGroupMetricRule(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGroupMetricRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3805,6 +4197,9 @@ class RosGroupMetricRule(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGroupMetricRule._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3876,6 +4271,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "category", value)
 
     @builtins.property # type: ignore[misc]
@@ -3885,6 +4283,9 @@ class RosGroupMetricRule(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3902,6 +4303,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, "RosGroupMetricRule.EscalationsProperty"],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "escalations").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "escalations", value)
 
     @builtins.property # type: ignore[misc]
@@ -3917,6 +4321,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3932,6 +4339,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "metric_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "metricName", value)
 
     @builtins.property # type: ignore[misc]
@@ -3950,6 +4360,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "namespace").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespace", value)
 
     @builtins.property # type: ignore[misc]
@@ -3968,6 +4381,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "rule_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3983,6 +4399,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "rule_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4000,6 +4419,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "dimensions").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dimensions", value)
 
     @builtins.property # type: ignore[misc]
@@ -4017,6 +4439,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "effective_interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "effectiveInterval", value)
 
     @builtins.property # type: ignore[misc]
@@ -4034,6 +4459,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "email_subject").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "emailSubject", value)
 
     @builtins.property # type: ignore[misc]
@@ -4051,6 +4479,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "interval", value)
 
     @builtins.property # type: ignore[misc]
@@ -4068,6 +4499,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "no_effective_interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "noEffectiveInterval", value)
 
     @builtins.property # type: ignore[misc]
@@ -4085,6 +4519,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -4105,6 +4542,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "silence_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "silenceTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -4122,6 +4562,9 @@ class RosGroupMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroupMetricRule, "webhook").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "webhook", value)
 
     @jsii.data_type(
@@ -4149,6 +4592,12 @@ class RosGroupMetricRule(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosGroupMetricRule.CriticalProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -4233,15 +4682,20 @@ class RosGroupMetricRule(
         def __init__(
             self,
             *,
-            critical: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosGroupMetricRule.CriticalProperty"]] = None,
-            info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosGroupMetricRule.InfoProperty"]] = None,
-            warn: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosGroupMetricRule.WarnProperty"]] = None,
+            critical: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosGroupMetricRule.CriticalProperty", typing.Dict[str, typing.Any]]]] = None,
+            info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosGroupMetricRule.InfoProperty", typing.Dict[str, typing.Any]]]] = None,
+            warn: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosGroupMetricRule.WarnProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param critical: 
             :param info: 
             :param warn: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosGroupMetricRule.EscalationsProperty.__init__)
+                check_type(argname="argument critical", value=critical, expected_type=type_hints["critical"])
+                check_type(argname="argument info", value=info, expected_type=type_hints["info"])
+                check_type(argname="argument warn", value=warn, expected_type=type_hints["warn"])
             self._values: typing.Dict[str, typing.Any] = {}
             if critical is not None:
                 self._values["critical"] = critical
@@ -4316,6 +4770,12 @@ class RosGroupMetricRule(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosGroupMetricRule.InfoProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -4413,6 +4873,12 @@ class RosGroupMetricRule(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosGroupMetricRule.WarnProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -4512,7 +4978,7 @@ class RosGroupMetricRuleProps:
         self,
         *,
         category: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        escalations: typing.Union[ros_cdk_core.IResolvable, RosGroupMetricRule.EscalationsProperty],
+        escalations: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosGroupMetricRule.EscalationsProperty, typing.Dict[str, typing.Any]]],
         group_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         metric_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         namespace: typing.Union[builtins.str, ros_cdk_core.IResolvable],
@@ -4545,6 +5011,23 @@ class RosGroupMetricRuleProps:
         :param silence_time: 
         :param webhook: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGroupMetricRuleProps.__init__)
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument escalations", value=escalations, expected_type=type_hints["escalations"])
+            check_type(argname="argument group_id", value=group_id, expected_type=type_hints["group_id"])
+            check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+            check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+            check_type(argname="argument rule_id", value=rule_id, expected_type=type_hints["rule_id"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument dimensions", value=dimensions, expected_type=type_hints["dimensions"])
+            check_type(argname="argument effective_interval", value=effective_interval, expected_type=type_hints["effective_interval"])
+            check_type(argname="argument email_subject", value=email_subject, expected_type=type_hints["email_subject"])
+            check_type(argname="argument interval", value=interval, expected_type=type_hints["interval"])
+            check_type(argname="argument no_effective_interval", value=no_effective_interval, expected_type=type_hints["no_effective_interval"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument silence_time", value=silence_time, expected_type=type_hints["silence_time"])
+            check_type(argname="argument webhook", value=webhook, expected_type=type_hints["webhook"])
         self._values: typing.Dict[str, typing.Any] = {
             "category": category,
             "escalations": escalations,
@@ -4785,7 +5268,7 @@ class RosMetricRuleTargets(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosMetricRuleTargetsProps",
+        props: typing.Union["RosMetricRuleTargetsProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MetricRuleTargets``.
@@ -4795,6 +5278,12 @@ class RosMetricRuleTargets(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMetricRuleTargets.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4805,6 +5294,9 @@ class RosMetricRuleTargets(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMetricRuleTargets._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4841,6 +5333,9 @@ class RosMetricRuleTargets(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTargets, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4856,6 +5351,9 @@ class RosMetricRuleTargets(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTargets, "rule_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4873,6 +5371,9 @@ class RosMetricRuleTargets(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosMetricRuleTargets.TargetsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTargets, "targets").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targets", value)
 
     @jsii.data_type(
@@ -4893,6 +5394,11 @@ class RosMetricRuleTargets(
             :param id: 
             :param level: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMetricRuleTargets.TargetsProperty.__init__)
+                check_type(argname="argument arn", value=arn, expected_type=type_hints["arn"])
+                check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+                check_type(argname="argument level", value=level, expected_type=type_hints["level"])
             self._values: typing.Dict[str, typing.Any] = {
                 "arn": arn,
                 "id": id,
@@ -4966,13 +5472,17 @@ class RosMetricRuleTargetsProps:
         self,
         *,
         rule_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        targets: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosMetricRuleTargets.TargetsProperty]]],
+        targets: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosMetricRuleTargets.TargetsProperty, typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::CMS::MetricRuleTargets``.
 
         :param rule_id: 
         :param targets: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMetricRuleTargetsProps.__init__)
+            check_type(argname="argument rule_id", value=rule_id, expected_type=type_hints["rule_id"])
+            check_type(argname="argument targets", value=targets, expected_type=type_hints["targets"])
         self._values: typing.Dict[str, typing.Any] = {
             "rule_id": rule_id,
             "targets": targets,
@@ -5021,7 +5531,7 @@ class RosMetricRuleTemplate(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosMetricRuleTemplateProps",
+        props: typing.Union["RosMetricRuleTemplateProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MetricRuleTemplate``.
@@ -5031,6 +5541,12 @@ class RosMetricRuleTemplate(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMetricRuleTemplate.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5041,6 +5557,9 @@ class RosMetricRuleTemplate(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMetricRuleTemplate._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5069,6 +5588,9 @@ class RosMetricRuleTemplate(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTemplate, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5081,6 +5603,9 @@ class RosMetricRuleTemplate(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTemplate, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -5098,6 +5623,9 @@ class RosMetricRuleTemplate(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosMetricRuleTemplate.AlertTemplatesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTemplate, "alert_templates").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "alertTemplates", value)
 
     @builtins.property # type: ignore[misc]
@@ -5115,6 +5643,9 @@ class RosMetricRuleTemplate(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTemplate, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -5136,6 +5667,9 @@ class RosMetricRuleTemplate(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTemplate, "rest_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -5153,6 +5687,9 @@ class RosMetricRuleTemplate(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMetricRuleTemplate, "template_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateId", value)
 
     @jsii.data_type(
@@ -5177,7 +5714,7 @@ class RosMetricRuleTemplate(
             metric_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             namespace: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-            escalations: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMetricRuleTemplate.EscalationsProperty"]] = None,
+            escalations: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMetricRuleTemplate.EscalationsProperty", typing.Dict[str, typing.Any]]]] = None,
             period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
             selector: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             webhook: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -5192,6 +5729,16 @@ class RosMetricRuleTemplate(
             :param selector: 
             :param webhook: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMetricRuleTemplate.AlertTemplatesProperty.__init__)
+                check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+                check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+                check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+                check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+                check_type(argname="argument escalations", value=escalations, expected_type=type_hints["escalations"])
+                check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+                check_type(argname="argument selector", value=selector, expected_type=type_hints["selector"])
+                check_type(argname="argument webhook", value=webhook, expected_type=type_hints["webhook"])
             self._values: typing.Dict[str, typing.Any] = {
                 "category": category,
                 "metric_name": metric_name,
@@ -5370,6 +5917,12 @@ class RosMetricRuleTemplate(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMetricRuleTemplate.CriticalProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -5448,15 +6001,20 @@ class RosMetricRuleTemplate(
         def __init__(
             self,
             *,
-            critical: typing.Union[ros_cdk_core.IResolvable, "RosMetricRuleTemplate.CriticalProperty"],
-            info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMetricRuleTemplate.InfoProperty"]] = None,
-            warn: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMetricRuleTemplate.WarnProperty"]] = None,
+            critical: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMetricRuleTemplate.CriticalProperty", typing.Dict[str, typing.Any]]],
+            info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMetricRuleTemplate.InfoProperty", typing.Dict[str, typing.Any]]]] = None,
+            warn: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMetricRuleTemplate.WarnProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param critical: 
             :param info: 
             :param warn: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMetricRuleTemplate.EscalationsProperty.__init__)
+                check_type(argname="argument critical", value=critical, expected_type=type_hints["critical"])
+                check_type(argname="argument info", value=info, expected_type=type_hints["info"])
+                check_type(argname="argument warn", value=warn, expected_type=type_hints["warn"])
             self._values: typing.Dict[str, typing.Any] = {
                 "critical": critical,
             }
@@ -5532,6 +6090,12 @@ class RosMetricRuleTemplate(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMetricRuleTemplate.InfoProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -5626,6 +6190,12 @@ class RosMetricRuleTemplate(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMetricRuleTemplate.WarnProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -5712,7 +6282,7 @@ class RosMetricRuleTemplateProps:
         self,
         *,
         name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        alert_templates: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosMetricRuleTemplate.AlertTemplatesProperty]]]] = None,
+        alert_templates: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosMetricRuleTemplate.AlertTemplatesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         rest_version: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         template_id: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -5725,6 +6295,13 @@ class RosMetricRuleTemplateProps:
         :param rest_version: 
         :param template_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMetricRuleTemplateProps.__init__)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument alert_templates", value=alert_templates, expected_type=type_hints["alert_templates"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument rest_version", value=rest_version, expected_type=type_hints["rest_version"])
+            check_type(argname="argument template_id", value=template_id, expected_type=type_hints["template_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "name": name,
         }
@@ -5813,7 +6390,7 @@ class RosMonitorGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosMonitorGroupProps",
+        props: typing.Union["RosMonitorGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MonitorGroup``.
@@ -5823,6 +6400,12 @@ class RosMonitorGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitorGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5833,6 +6416,9 @@ class RosMonitorGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitorGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5861,6 +6447,9 @@ class RosMonitorGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitorGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5876,6 +6465,9 @@ class RosMonitorGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitorGroup, "group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -5896,6 +6488,9 @@ class RosMonitorGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitorGroup, "contact_groups").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactGroups", value)
 
 
@@ -5910,7 +6505,7 @@ class RosMonitorGroupInstances(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosMonitorGroupInstancesProps",
+        props: typing.Union["RosMonitorGroupInstancesProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MonitorGroupInstances``.
@@ -5920,6 +6515,12 @@ class RosMonitorGroupInstances(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitorGroupInstances.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5930,6 +6531,9 @@ class RosMonitorGroupInstances(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitorGroupInstances._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5958,6 +6562,9 @@ class RosMonitorGroupInstances(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitorGroupInstances, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5973,6 +6580,9 @@ class RosMonitorGroupInstances(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitorGroupInstances, "group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5990,6 +6600,9 @@ class RosMonitorGroupInstances(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosMonitorGroupInstances.InstancesProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitorGroupInstances, "instances").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instances", value)
 
     @jsii.data_type(
@@ -6017,6 +6630,12 @@ class RosMonitorGroupInstances(
             :param instance_name: 
             :param region_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMonitorGroupInstances.InstancesProperty.__init__)
+                check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+                check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+                check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+                check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "category": category,
                 "instance_id": instance_id,
@@ -6119,13 +6738,17 @@ class RosMonitorGroupInstancesProps:
         self,
         *,
         group_id: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
-        instances: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosMonitorGroupInstances.InstancesProperty]]],
+        instances: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosMonitorGroupInstances.InstancesProperty, typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::CMS::MonitorGroupInstances``.
 
         :param group_id: 
         :param instances: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitorGroupInstancesProps.__init__)
+            check_type(argname="argument group_id", value=group_id, expected_type=type_hints["group_id"])
+            check_type(argname="argument instances", value=instances, expected_type=type_hints["instances"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_id": group_id,
             "instances": instances,
@@ -6180,6 +6803,10 @@ class RosMonitorGroupProps:
         :param group_name: 
         :param contact_groups: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitorGroupProps.__init__)
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument contact_groups", value=contact_groups, expected_type=type_hints["contact_groups"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_name": group_name,
         }
@@ -6231,7 +6858,7 @@ class RosMonitoringAgentProcess(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosMonitoringAgentProcessProps",
+        props: typing.Union["RosMonitoringAgentProcessProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::MonitoringAgentProcess``.
@@ -6241,6 +6868,12 @@ class RosMonitoringAgentProcess(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitoringAgentProcess.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6251,6 +6884,9 @@ class RosMonitoringAgentProcess(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitoringAgentProcess._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6279,6 +6915,9 @@ class RosMonitoringAgentProcess(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitoringAgentProcess, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6294,6 +6933,9 @@ class RosMonitoringAgentProcess(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitoringAgentProcess, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6311,6 +6953,9 @@ class RosMonitoringAgentProcess(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitoringAgentProcess, "process_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "processName", value)
 
     @builtins.property # type: ignore[misc]
@@ -6328,6 +6973,9 @@ class RosMonitoringAgentProcess(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMonitoringAgentProcess, "process_user").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "processUser", value)
 
 
@@ -6354,6 +7002,11 @@ class RosMonitoringAgentProcessProps:
         :param process_name: 
         :param process_user: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMonitoringAgentProcessProps.__init__)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument process_name", value=process_name, expected_type=type_hints["process_name"])
+            check_type(argname="argument process_user", value=process_user, expected_type=type_hints["process_user"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_id": instance_id,
         }
@@ -6414,7 +7067,7 @@ class RosResourceMetricRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosResourceMetricRuleProps",
+        props: typing.Union["RosResourceMetricRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::ResourceMetricRule``.
@@ -6424,6 +7077,12 @@ class RosResourceMetricRule(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceMetricRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6434,6 +7093,9 @@ class RosResourceMetricRule(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceMetricRule._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6482,6 +7144,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "contact_groups").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactGroups", value)
 
     @builtins.property # type: ignore[misc]
@@ -6491,6 +7156,9 @@ class RosResourceMetricRule(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6508,6 +7176,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.EscalationsProperty"],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "escalations").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "escalations", value)
 
     @builtins.property # type: ignore[misc]
@@ -6527,6 +7198,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "metric_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "metricName", value)
 
     @builtins.property # type: ignore[misc]
@@ -6546,6 +7220,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "namespace").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespace", value)
 
     @builtins.property # type: ignore[misc]
@@ -6567,6 +7244,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "resources").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resources", value)
 
     @builtins.property # type: ignore[misc]
@@ -6587,6 +7267,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.CompositeExpressionProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "composite_expression").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "compositeExpression", value)
 
     @builtins.property # type: ignore[misc]
@@ -6604,6 +7287,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "deletion_force").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionForce", value)
 
     @builtins.property # type: ignore[misc]
@@ -6621,6 +7307,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "effective_interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "effectiveInterval", value)
 
     @builtins.property # type: ignore[misc]
@@ -6638,6 +7327,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "email_subject").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "emailSubject", value)
 
     @builtins.property # type: ignore[misc]
@@ -6658,6 +7350,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "interval", value)
 
     @builtins.property # type: ignore[misc]
@@ -6675,6 +7370,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.LabelsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "labels").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "labels", value)
 
     @builtins.property # type: ignore[misc]
@@ -6698,6 +7396,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "no_data_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "noDataPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -6715,6 +7416,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "no_effective_interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "noEffectiveInterval", value)
 
     @builtins.property # type: ignore[misc]
@@ -6735,6 +7439,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -6755,6 +7462,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.PrometheusProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "prometheus").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "prometheus", value)
 
     @builtins.property # type: ignore[misc]
@@ -6776,6 +7486,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "rule_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6797,6 +7510,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "rule_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -6817,6 +7533,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "silence_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "silenceTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -6834,6 +7553,9 @@ class RosResourceMetricRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceMetricRule, "webhook").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "webhook", value)
 
     @jsii.data_type(
@@ -6852,6 +7574,10 @@ class RosResourceMetricRule(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.AnnotationsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if key is not None:
                 self._values["key"] = key
@@ -6906,7 +7632,7 @@ class RosResourceMetricRule(
             *,
             level: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             times: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
-            expression_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.ExpressionListProperty"]]]] = None,
+            expression_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.ExpressionListProperty", typing.Dict[str, typing.Any]]]]]] = None,
             expression_list_join: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             expression_raw: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
@@ -6917,6 +7643,13 @@ class RosResourceMetricRule(
             :param expression_list_join: 
             :param expression_raw: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.CompositeExpressionProperty.__init__)
+                check_type(argname="argument level", value=level, expected_type=type_hints["level"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
+                check_type(argname="argument expression_list", value=expression_list, expected_type=type_hints["expression_list"])
+                check_type(argname="argument expression_list_join", value=expression_list_join, expected_type=type_hints["expression_list_join"])
+                check_type(argname="argument expression_raw", value=expression_raw, expected_type=type_hints["expression_raw"])
             self._values: typing.Dict[str, typing.Any] = {
                 "level": level,
                 "times": times,
@@ -7029,6 +7762,12 @@ class RosResourceMetricRule(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.CriticalProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -7115,15 +7854,20 @@ class RosResourceMetricRule(
         def __init__(
             self,
             *,
-            critical: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.CriticalProperty"]] = None,
-            info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.InfoProperty"]] = None,
-            warn: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.WarnProperty"]] = None,
+            critical: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.CriticalProperty", typing.Dict[str, typing.Any]]]] = None,
+            info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.InfoProperty", typing.Dict[str, typing.Any]]]] = None,
+            warn: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.WarnProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param critical: 
             :param info: 
             :param warn: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.EscalationsProperty.__init__)
+                check_type(argname="argument critical", value=critical, expected_type=type_hints["critical"])
+                check_type(argname="argument info", value=info, expected_type=type_hints["info"])
+                check_type(argname="argument warn", value=warn, expected_type=type_hints["warn"])
             self._values: typing.Dict[str, typing.Any] = {}
             if critical is not None:
                 self._values["critical"] = critical
@@ -7201,6 +7945,13 @@ class RosResourceMetricRule(
             :param statistics: 
             :param threshold: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.ExpressionListProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+                check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "metric_name": metric_name,
@@ -7316,6 +8067,12 @@ class RosResourceMetricRule(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.InfoProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -7409,6 +8166,10 @@ class RosResourceMetricRule(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.LabelsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -7465,7 +8226,7 @@ class RosResourceMetricRule(
             level: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             prom_ql: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             times: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
-            annotations: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosResourceMetricRule.AnnotationsProperty"]]]] = None,
+            annotations: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceMetricRule.AnnotationsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param level: 
@@ -7473,6 +8234,12 @@ class RosResourceMetricRule(
             :param times: 
             :param annotations: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.PrometheusProperty.__init__)
+                check_type(argname="argument level", value=level, expected_type=type_hints["level"])
+                check_type(argname="argument prom_ql", value=prom_ql, expected_type=type_hints["prom_ql"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
+                check_type(argname="argument annotations", value=annotations, expected_type=type_hints["annotations"])
             self._values: typing.Dict[str, typing.Any] = {
                 "level": level,
                 "prom_ql": prom_ql,
@@ -7566,6 +8333,12 @@ class RosResourceMetricRule(
             :param threshold: 
             :param times: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceMetricRule.WarnProperty.__init__)
+                check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+                check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
+                check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+                check_type(argname="argument times", value=times, expected_type=type_hints["times"])
             self._values: typing.Dict[str, typing.Any] = {
                 "comparison_operator": comparison_operator,
                 "statistics": statistics,
@@ -7674,20 +8447,20 @@ class RosResourceMetricRuleProps:
         self,
         *,
         contact_groups: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
-        escalations: typing.Union[ros_cdk_core.IResolvable, RosResourceMetricRule.EscalationsProperty],
+        escalations: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosResourceMetricRule.EscalationsProperty, typing.Dict[str, typing.Any]]],
         metric_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         namespace: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         resources: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Mapping[builtins.str, typing.Any]]],
-        composite_expression: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosResourceMetricRule.CompositeExpressionProperty]] = None,
+        composite_expression: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosResourceMetricRule.CompositeExpressionProperty, typing.Dict[str, typing.Any]]]] = None,
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         effective_interval: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         email_subject: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         interval: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        labels: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosResourceMetricRule.LabelsProperty]]]] = None,
+        labels: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosResourceMetricRule.LabelsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         no_data_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         no_effective_interval: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        prometheus: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosResourceMetricRule.PrometheusProperty]] = None,
+        prometheus: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosResourceMetricRule.PrometheusProperty, typing.Dict[str, typing.Any]]]] = None,
         rule_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         rule_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         silence_time: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -7715,6 +8488,27 @@ class RosResourceMetricRuleProps:
         :param silence_time: 
         :param webhook: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceMetricRuleProps.__init__)
+            check_type(argname="argument contact_groups", value=contact_groups, expected_type=type_hints["contact_groups"])
+            check_type(argname="argument escalations", value=escalations, expected_type=type_hints["escalations"])
+            check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+            check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+            check_type(argname="argument resources", value=resources, expected_type=type_hints["resources"])
+            check_type(argname="argument composite_expression", value=composite_expression, expected_type=type_hints["composite_expression"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument effective_interval", value=effective_interval, expected_type=type_hints["effective_interval"])
+            check_type(argname="argument email_subject", value=email_subject, expected_type=type_hints["email_subject"])
+            check_type(argname="argument interval", value=interval, expected_type=type_hints["interval"])
+            check_type(argname="argument labels", value=labels, expected_type=type_hints["labels"])
+            check_type(argname="argument no_data_policy", value=no_data_policy, expected_type=type_hints["no_data_policy"])
+            check_type(argname="argument no_effective_interval", value=no_effective_interval, expected_type=type_hints["no_effective_interval"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument prometheus", value=prometheus, expected_type=type_hints["prometheus"])
+            check_type(argname="argument rule_id", value=rule_id, expected_type=type_hints["rule_id"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument silence_time", value=silence_time, expected_type=type_hints["silence_time"])
+            check_type(argname="argument webhook", value=webhook, expected_type=type_hints["webhook"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_groups": contact_groups,
             "escalations": escalations,
@@ -8010,7 +8804,7 @@ class RosSiteMonitor(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSiteMonitorProps",
+        props: typing.Union["RosSiteMonitorProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::SiteMonitor``.
@@ -8020,6 +8814,12 @@ class RosSiteMonitor(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSiteMonitor.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -8030,6 +8830,9 @@ class RosSiteMonitor(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSiteMonitor._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -8064,6 +8867,9 @@ class RosSiteMonitor(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSiteMonitor, "address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "address", value)
 
     @builtins.property # type: ignore[misc]
@@ -8073,6 +8879,9 @@ class RosSiteMonitor(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSiteMonitor, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -8091,6 +8900,9 @@ class RosSiteMonitor(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSiteMonitor, "task_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "taskName", value)
 
     @builtins.property # type: ignore[misc]
@@ -8109,6 +8921,9 @@ class RosSiteMonitor(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSiteMonitor, "task_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "taskType", value)
 
     @builtins.property # type: ignore[misc]
@@ -8126,6 +8941,9 @@ class RosSiteMonitor(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSiteMonitor, "alert_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "alertIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -8146,6 +8964,9 @@ class RosSiteMonitor(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSiteMonitor, "interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "interval", value)
 
     @builtins.property # type: ignore[misc]
@@ -8170,6 +8991,9 @@ class RosSiteMonitor(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosSiteMonitor.IspCitiesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSiteMonitor, "isp_cities").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ispCities", value)
 
     @builtins.property # type: ignore[misc]
@@ -8190,6 +9014,9 @@ class RosSiteMonitor(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSiteMonitor, "options_json").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "optionsJson", value)
 
     @jsii.data_type(
@@ -8208,6 +9035,10 @@ class RosSiteMonitor(
             :param city: 
             :param isp: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSiteMonitor.IspCitiesProperty.__init__)
+                check_type(argname="argument city", value=city, expected_type=type_hints["city"])
+                check_type(argname="argument isp", value=isp, expected_type=type_hints["isp"])
             self._values: typing.Dict[str, typing.Any] = {
                 "city": city,
                 "isp": isp,
@@ -8265,7 +9096,7 @@ class RosSiteMonitorProps:
         task_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         alert_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         interval: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        isp_cities: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosSiteMonitor.IspCitiesProperty]]]] = None,
+        isp_cities: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSiteMonitor.IspCitiesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         options_json: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CMS::SiteMonitor``.
@@ -8278,6 +9109,15 @@ class RosSiteMonitorProps:
         :param isp_cities: 
         :param options_json: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSiteMonitorProps.__init__)
+            check_type(argname="argument address", value=address, expected_type=type_hints["address"])
+            check_type(argname="argument task_name", value=task_name, expected_type=type_hints["task_name"])
+            check_type(argname="argument task_type", value=task_type, expected_type=type_hints["task_type"])
+            check_type(argname="argument alert_ids", value=alert_ids, expected_type=type_hints["alert_ids"])
+            check_type(argname="argument interval", value=interval, expected_type=type_hints["interval"])
+            check_type(argname="argument isp_cities", value=isp_cities, expected_type=type_hints["isp_cities"])
+            check_type(argname="argument options_json", value=options_json, expected_type=type_hints["options_json"])
         self._values: typing.Dict[str, typing.Any] = {
             "address": address,
             "task_name": task_name,
@@ -8401,7 +9241,7 @@ class SiteMonitor(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SiteMonitorProps",
+        props: typing.Union["SiteMonitorProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CMS::SiteMonitor``.
@@ -8415,6 +9255,12 @@ class SiteMonitor(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SiteMonitor.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -8446,7 +9292,7 @@ class SiteMonitorProps:
         task_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         alert_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         interval: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        isp_cities: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosSiteMonitor.IspCitiesProperty]]]] = None,
+        isp_cities: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSiteMonitor.IspCitiesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         options_json: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CMS::SiteMonitor``.
@@ -8459,6 +9305,15 @@ class SiteMonitorProps:
         :param isp_cities: Property ispCities: The information about detection points, which is specified in a JSON array. Example: [{"city":"546","isp":"465"},{"city":"572","isp":"465"},{"city":"738","isp":"465"}]. The three city codes represent Beijing, Hangzhou, and Qingdao. Note You can call the DescribeSiteMonitorISPCityList API operation to query the detection points that can be used to create site monitoring tasks. For more information, see DescribeSiteMonitorISPCityList . If this parameter is not specified, the system randomly selects three detection points for site monitoring.
         :param options_json: Property optionsJson: The extended options of the protocol that is used by the site monitoring task. The options vary based on the protocol.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SiteMonitorProps.__init__)
+            check_type(argname="argument address", value=address, expected_type=type_hints["address"])
+            check_type(argname="argument task_name", value=task_name, expected_type=type_hints["task_name"])
+            check_type(argname="argument task_type", value=task_type, expected_type=type_hints["task_type"])
+            check_type(argname="argument alert_ids", value=alert_ids, expected_type=type_hints["alert_ids"])
+            check_type(argname="argument interval", value=interval, expected_type=type_hints["interval"])
+            check_type(argname="argument isp_cities", value=isp_cities, expected_type=type_hints["isp_cities"])
+            check_type(argname="argument options_json", value=options_json, expected_type=type_hints["options_json"])
         self._values: typing.Dict[str, typing.Any] = {
             "address": address,
             "task_name": task_name,

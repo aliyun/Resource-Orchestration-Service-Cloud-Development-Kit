@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Instance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "InstanceProps",
+        props: typing.Union["InstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::OTS::Instance``.
@@ -47,6 +49,12 @@ class Instance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Instance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -93,7 +101,7 @@ class InstanceProps:
         cluster_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         network: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosInstance.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosInstance.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::OTS::Instance``.
 
@@ -103,6 +111,13 @@ class InstanceProps:
         :param network: Property network: Instance network type, default is NORMAL.
         :param tags: Property tags: Tags to attach to instance. Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InstanceProps.__init__)
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument cluster_type", value=cluster_type, expected_type=type_hints["cluster_type"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument network", value=network, expected_type=type_hints["network"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_name": instance_name,
         }
@@ -178,7 +193,7 @@ class RosInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInstanceProps",
+        props: typing.Union["RosInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::OTS::Instance``.
@@ -188,6 +203,12 @@ class RosInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -198,6 +219,9 @@ class RosInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -250,6 +274,9 @@ class RosInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -265,6 +292,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -282,6 +312,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "cluster_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterType", value)
 
     @builtins.property # type: ignore[misc]
@@ -299,6 +332,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -316,6 +352,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "network").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "network", value)
 
     @builtins.property # type: ignore[misc]
@@ -331,6 +370,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.List["RosInstance.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -349,6 +391,10 @@ class RosInstance(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -405,7 +451,7 @@ class RosInstanceProps:
         cluster_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         network: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosInstance.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosInstance.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::OTS::Instance``.
 
@@ -415,6 +461,13 @@ class RosInstanceProps:
         :param network: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceProps.__init__)
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument cluster_type", value=cluster_type, expected_type=type_hints["cluster_type"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument network", value=network, expected_type=type_hints["network"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_name": instance_name,
         }
@@ -497,7 +550,7 @@ class RosSearchIndex(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSearchIndexProps",
+        props: typing.Union["RosSearchIndexProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::OTS::SearchIndex``.
@@ -507,6 +560,12 @@ class RosSearchIndex(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSearchIndex.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -517,6 +576,9 @@ class RosSearchIndex(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSearchIndex._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -545,6 +607,9 @@ class RosSearchIndex(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSearchIndex, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -562,6 +627,9 @@ class RosSearchIndex(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.FieldSchemasProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSearchIndex, "field_schemas").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "fieldSchemas", value)
 
     @builtins.property # type: ignore[misc]
@@ -577,6 +645,9 @@ class RosSearchIndex(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSearchIndex, "index_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "indexName", value)
 
     @builtins.property # type: ignore[misc]
@@ -592,6 +663,9 @@ class RosSearchIndex(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSearchIndex, "instance_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -607,6 +681,9 @@ class RosSearchIndex(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSearchIndex, "table_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tableName", value)
 
     @builtins.property # type: ignore[misc]
@@ -624,6 +701,9 @@ class RosSearchIndex(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.IndexSettingProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSearchIndex, "index_setting").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "indexSetting", value)
 
     @builtins.property # type: ignore[misc]
@@ -645,6 +725,9 @@ class RosSearchIndex(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.IndexSortProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSearchIndex, "index_sort").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "indexSort", value)
 
     @jsii.data_type(
@@ -672,7 +755,7 @@ class RosSearchIndex(
             index: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
             is_array: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
             store: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-            sub_field_schemas: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.SubFieldSchemasProperty"]]]] = None,
+            sub_field_schemas: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSearchIndex.SubFieldSchemasProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param field_name: 
@@ -684,6 +767,16 @@ class RosSearchIndex(
             :param store: 
             :param sub_field_schemas: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.FieldSchemasProperty.__init__)
+                check_type(argname="argument field_name", value=field_name, expected_type=type_hints["field_name"])
+                check_type(argname="argument field_type", value=field_type, expected_type=type_hints["field_type"])
+                check_type(argname="argument analyzer", value=analyzer, expected_type=type_hints["analyzer"])
+                check_type(argname="argument enable_sort_and_agg", value=enable_sort_and_agg, expected_type=type_hints["enable_sort_and_agg"])
+                check_type(argname="argument index", value=index, expected_type=type_hints["index"])
+                check_type(argname="argument is_array", value=is_array, expected_type=type_hints["is_array"])
+                check_type(argname="argument store", value=store, expected_type=type_hints["store"])
+                check_type(argname="argument sub_field_schemas", value=sub_field_schemas, expected_type=type_hints["sub_field_schemas"])
             self._values: typing.Dict[str, typing.Any] = {
                 "field_name": field_name,
                 "field_type": field_type,
@@ -835,6 +928,11 @@ class RosSearchIndex(
             :param sort_mode: 
             :param sort_order: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.FieldSortProperty.__init__)
+                check_type(argname="argument field_name", value=field_name, expected_type=type_hints["field_name"])
+                check_type(argname="argument sort_mode", value=sort_mode, expected_type=type_hints["sort_mode"])
+                check_type(argname="argument sort_order", value=sort_order, expected_type=type_hints["sort_order"])
             self._values: typing.Dict[str, typing.Any] = {
                 "field_name": field_name,
             }
@@ -908,6 +1006,12 @@ class RosSearchIndex(
             :param sort_mode: 
             :param sort_order: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.GeoDistanceSortProperty.__init__)
+                check_type(argname="argument field_name", value=field_name, expected_type=type_hints["field_name"])
+                check_type(argname="argument points", value=points, expected_type=type_hints["points"])
+                check_type(argname="argument sort_mode", value=sort_mode, expected_type=type_hints["sort_mode"])
+                check_type(argname="argument sort_order", value=sort_order, expected_type=type_hints["sort_order"])
             self._values: typing.Dict[str, typing.Any] = {
                 "field_name": field_name,
                 "points": points,
@@ -982,6 +1086,9 @@ class RosSearchIndex(
             '''
             :param routing_fields: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.IndexSettingProperty.__init__)
+                check_type(argname="argument routing_fields", value=routing_fields, expected_type=type_hints["routing_fields"])
             self._values: typing.Dict[str, typing.Any] = {}
             if routing_fields is not None:
                 self._values["routing_fields"] = routing_fields
@@ -1021,11 +1128,14 @@ class RosSearchIndex(
         def __init__(
             self,
             *,
-            sorters: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.SortersProperty"]]],
+            sorters: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSearchIndex.SortersProperty", typing.Dict[str, typing.Any]]]]],
         ) -> None:
             '''
             :param sorters: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.IndexSortProperty.__init__)
+                check_type(argname="argument sorters", value=sorters, expected_type=type_hints["sorters"])
             self._values: typing.Dict[str, typing.Any] = {
                 "sorters": sorters,
             }
@@ -1071,6 +1181,9 @@ class RosSearchIndex(
             '''
             :param sort_order: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.PrimaryKeySortProperty.__init__)
+                check_type(argname="argument sort_order", value=sort_order, expected_type=type_hints["sort_order"])
             self._values: typing.Dict[str, typing.Any] = {}
             if sort_order is not None:
                 self._values["sort_order"] = sort_order
@@ -1110,6 +1223,9 @@ class RosSearchIndex(
             '''
             :param sort_order: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.ScoreSortProperty.__init__)
+                check_type(argname="argument sort_order", value=sort_order, expected_type=type_hints["sort_order"])
             self._values: typing.Dict[str, typing.Any] = {}
             if sort_order is not None:
                 self._values["sort_order"] = sort_order
@@ -1149,10 +1265,10 @@ class RosSearchIndex(
         def __init__(
             self,
             *,
-            field_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.FieldSortProperty"]] = None,
-            geo_distance_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.GeoDistanceSortProperty"]] = None,
-            primary_key_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.PrimaryKeySortProperty"]] = None,
-            score_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosSearchIndex.ScoreSortProperty"]] = None,
+            field_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSearchIndex.FieldSortProperty", typing.Dict[str, typing.Any]]]] = None,
+            geo_distance_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSearchIndex.GeoDistanceSortProperty", typing.Dict[str, typing.Any]]]] = None,
+            primary_key_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSearchIndex.PrimaryKeySortProperty", typing.Dict[str, typing.Any]]]] = None,
+            score_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSearchIndex.ScoreSortProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param field_sort: 
@@ -1160,6 +1276,12 @@ class RosSearchIndex(
             :param primary_key_sort: 
             :param score_sort: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.SortersProperty.__init__)
+                check_type(argname="argument field_sort", value=field_sort, expected_type=type_hints["field_sort"])
+                check_type(argname="argument geo_distance_sort", value=geo_distance_sort, expected_type=type_hints["geo_distance_sort"])
+                check_type(argname="argument primary_key_sort", value=primary_key_sort, expected_type=type_hints["primary_key_sort"])
+                check_type(argname="argument score_sort", value=score_sort, expected_type=type_hints["score_sort"])
             self._values: typing.Dict[str, typing.Any] = {}
             if field_sort is not None:
                 self._values["field_sort"] = field_sort
@@ -1262,6 +1384,15 @@ class RosSearchIndex(
             :param is_array: 
             :param store: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSearchIndex.SubFieldSchemasProperty.__init__)
+                check_type(argname="argument field_name", value=field_name, expected_type=type_hints["field_name"])
+                check_type(argname="argument field_type", value=field_type, expected_type=type_hints["field_type"])
+                check_type(argname="argument analyzer", value=analyzer, expected_type=type_hints["analyzer"])
+                check_type(argname="argument enable_sort_and_agg", value=enable_sort_and_agg, expected_type=type_hints["enable_sort_and_agg"])
+                check_type(argname="argument index", value=index, expected_type=type_hints["index"])
+                check_type(argname="argument is_array", value=is_array, expected_type=type_hints["is_array"])
+                check_type(argname="argument store", value=store, expected_type=type_hints["store"])
             self._values: typing.Dict[str, typing.Any] = {
                 "field_name": field_name,
                 "field_type": field_type,
@@ -1393,12 +1524,12 @@ class RosSearchIndexProps:
     def __init__(
         self,
         *,
-        field_schemas: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosSearchIndex.FieldSchemasProperty]]],
+        field_schemas: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSearchIndex.FieldSchemasProperty, typing.Dict[str, typing.Any]]]]],
         index_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         instance_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         table_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        index_setting: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosSearchIndex.IndexSettingProperty]] = None,
-        index_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosSearchIndex.IndexSortProperty]] = None,
+        index_setting: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSearchIndex.IndexSettingProperty, typing.Dict[str, typing.Any]]]] = None,
+        index_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSearchIndex.IndexSortProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::OTS::SearchIndex``.
 
@@ -1409,6 +1540,14 @@ class RosSearchIndexProps:
         :param index_setting: 
         :param index_sort: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSearchIndexProps.__init__)
+            check_type(argname="argument field_schemas", value=field_schemas, expected_type=type_hints["field_schemas"])
+            check_type(argname="argument index_name", value=index_name, expected_type=type_hints["index_name"])
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument table_name", value=table_name, expected_type=type_hints["table_name"])
+            check_type(argname="argument index_setting", value=index_setting, expected_type=type_hints["index_setting"])
+            check_type(argname="argument index_sort", value=index_sort, expected_type=type_hints["index_sort"])
         self._values: typing.Dict[str, typing.Any] = {
             "field_schemas": field_schemas,
             "index_name": index_name,
@@ -1505,7 +1644,7 @@ class RosTable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTableProps",
+        props: typing.Union["RosTableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::OTS::Table``.
@@ -1515,6 +1654,12 @@ class RosTable(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1525,6 +1670,9 @@ class RosTable(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTable._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1553,6 +1701,9 @@ class RosTable(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1568,6 +1719,9 @@ class RosTable(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "instance_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1585,6 +1739,9 @@ class RosTable(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosTable.PrimaryKeyProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "primary_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "primaryKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -1600,6 +1757,9 @@ class RosTable(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "table_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tableName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1617,6 +1777,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosTable.ColumnsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "columns").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "columns", value)
 
     @builtins.property # type: ignore[misc]
@@ -1634,6 +1797,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "deviation_cell_version_in_sec").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deviationCellVersionInSec", value)
 
     @builtins.property # type: ignore[misc]
@@ -1651,6 +1817,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "max_versions").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maxVersions", value)
 
     @builtins.property # type: ignore[misc]
@@ -1668,6 +1837,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosTable.ReservedThroughputProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "reserved_throughput").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "reservedThroughput", value)
 
     @builtins.property # type: ignore[misc]
@@ -1685,6 +1857,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosTable.SecondaryIndicesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "secondary_indices").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "secondaryIndices", value)
 
     @builtins.property # type: ignore[misc]
@@ -1702,6 +1877,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "time_to_live").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "timeToLive", value)
 
     @jsii.data_type(
@@ -1720,6 +1898,10 @@ class RosTable(
             :param name: 
             :param type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTable.ColumnsProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "name": name,
                 "type": type,
@@ -1770,6 +1952,10 @@ class RosTable(
             :param name: 
             :param type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTable.PrimaryKeyProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "name": name,
                 "type": type,
@@ -1820,6 +2006,10 @@ class RosTable(
             :param read: 
             :param write: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTable.ReservedThroughputProperty.__init__)
+                check_type(argname="argument read", value=read, expected_type=type_hints["read"])
+                check_type(argname="argument write", value=write, expected_type=type_hints["write"])
             self._values: typing.Dict[str, typing.Any] = {
                 "read": read,
                 "write": write,
@@ -1879,6 +2069,12 @@ class RosTable(
             :param primary_keys: 
             :param index_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTable.SecondaryIndicesProperty.__init__)
+                check_type(argname="argument columns", value=columns, expected_type=type_hints["columns"])
+                check_type(argname="argument index_name", value=index_name, expected_type=type_hints["index_name"])
+                check_type(argname="argument primary_keys", value=primary_keys, expected_type=type_hints["primary_keys"])
+                check_type(argname="argument index_type", value=index_type, expected_type=type_hints["index_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "columns": columns,
                 "index_name": index_name,
@@ -1960,13 +2156,13 @@ class RosTableProps:
         self,
         *,
         instance_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        primary_key: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosTable.PrimaryKeyProperty]]],
+        primary_key: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.PrimaryKeyProperty, typing.Dict[str, typing.Any]]]]],
         table_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        columns: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosTable.ColumnsProperty]]]] = None,
+        columns: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.ColumnsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         deviation_cell_version_in_sec: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         max_versions: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        reserved_throughput: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosTable.ReservedThroughputProperty]] = None,
-        secondary_indices: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosTable.SecondaryIndicesProperty]]]] = None,
+        reserved_throughput: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.ReservedThroughputProperty, typing.Dict[str, typing.Any]]]] = None,
+        secondary_indices: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.SecondaryIndicesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         time_to_live: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::OTS::Table``.
@@ -1981,6 +2177,17 @@ class RosTableProps:
         :param secondary_indices: 
         :param time_to_live: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTableProps.__init__)
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument primary_key", value=primary_key, expected_type=type_hints["primary_key"])
+            check_type(argname="argument table_name", value=table_name, expected_type=type_hints["table_name"])
+            check_type(argname="argument columns", value=columns, expected_type=type_hints["columns"])
+            check_type(argname="argument deviation_cell_version_in_sec", value=deviation_cell_version_in_sec, expected_type=type_hints["deviation_cell_version_in_sec"])
+            check_type(argname="argument max_versions", value=max_versions, expected_type=type_hints["max_versions"])
+            check_type(argname="argument reserved_throughput", value=reserved_throughput, expected_type=type_hints["reserved_throughput"])
+            check_type(argname="argument secondary_indices", value=secondary_indices, expected_type=type_hints["secondary_indices"])
+            check_type(argname="argument time_to_live", value=time_to_live, expected_type=type_hints["time_to_live"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_name": instance_name,
             "primary_key": primary_key,
@@ -2111,7 +2318,7 @@ class RosVpcBinder(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpcBinderProps",
+        props: typing.Union["RosVpcBinderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::OTS::VpcBinder``.
@@ -2121,6 +2328,12 @@ class RosVpcBinder(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcBinder.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2131,6 +2344,9 @@ class RosVpcBinder(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcBinder._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2167,6 +2383,9 @@ class RosVpcBinder(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcBinder, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2182,6 +2401,9 @@ class RosVpcBinder(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcBinder, "instance_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2199,6 +2421,9 @@ class RosVpcBinder(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosVpcBinder.VpcsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcBinder, "vpcs").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcs", value)
 
     @jsii.data_type(
@@ -2226,6 +2451,12 @@ class RosVpcBinder(
             :param virtual_switch_id: 
             :param vpc_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosVpcBinder.VpcsProperty.__init__)
+                check_type(argname="argument instance_vpc_name", value=instance_vpc_name, expected_type=type_hints["instance_vpc_name"])
+                check_type(argname="argument network", value=network, expected_type=type_hints["network"])
+                check_type(argname="argument virtual_switch_id", value=virtual_switch_id, expected_type=type_hints["virtual_switch_id"])
+                check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "instance_vpc_name": instance_vpc_name,
                 "network": network,
@@ -2300,13 +2531,17 @@ class RosVpcBinderProps:
         self,
         *,
         instance_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        vpcs: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosVpcBinder.VpcsProperty]]],
+        vpcs: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpcBinder.VpcsProperty, typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::OTS::VpcBinder``.
 
         :param instance_name: 
         :param vpcs: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcBinderProps.__init__)
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument vpcs", value=vpcs, expected_type=type_hints["vpcs"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_name": instance_name,
             "vpcs": vpcs,
@@ -2355,7 +2590,7 @@ class SearchIndex(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SearchIndexProps",
+        props: typing.Union["SearchIndexProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::OTS::SearchIndex``.
@@ -2369,6 +2604,12 @@ class SearchIndex(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SearchIndex.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2394,12 +2635,12 @@ class SearchIndexProps:
     def __init__(
         self,
         *,
-        field_schemas: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosSearchIndex.FieldSchemasProperty]]],
+        field_schemas: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSearchIndex.FieldSchemasProperty, typing.Dict[str, typing.Any]]]]],
         index_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         instance_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         table_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        index_setting: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosSearchIndex.IndexSettingProperty]] = None,
-        index_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosSearchIndex.IndexSortProperty]] = None,
+        index_setting: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSearchIndex.IndexSettingProperty, typing.Dict[str, typing.Any]]]] = None,
+        index_sort: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSearchIndex.IndexSortProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::OTS::SearchIndex``.
 
@@ -2410,6 +2651,14 @@ class SearchIndexProps:
         :param index_setting: Property indexSetting: Index settings.
         :param index_sort: Property indexSort: This parameter specifies how data is sorted. By default, the data is sorted in the same way as the primary key of the table. If the search index contains NESTED fields, data is not sorted by default.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SearchIndexProps.__init__)
+            check_type(argname="argument field_schemas", value=field_schemas, expected_type=type_hints["field_schemas"])
+            check_type(argname="argument index_name", value=index_name, expected_type=type_hints["index_name"])
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument table_name", value=table_name, expected_type=type_hints["table_name"])
+            check_type(argname="argument index_setting", value=index_setting, expected_type=type_hints["index_setting"])
+            check_type(argname="argument index_sort", value=index_sort, expected_type=type_hints["index_sort"])
         self._values: typing.Dict[str, typing.Any] = {
             "field_schemas": field_schemas,
             "index_name": index_name,
@@ -2494,7 +2743,7 @@ class Table(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TableProps",
+        props: typing.Union["TableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::OTS::Table``.
@@ -2508,6 +2757,12 @@ class Table(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Table.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2537,13 +2792,13 @@ class TableProps:
         self,
         *,
         instance_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        primary_key: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosTable.PrimaryKeyProperty]]],
+        primary_key: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.PrimaryKeyProperty, typing.Dict[str, typing.Any]]]]],
         table_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        columns: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosTable.ColumnsProperty]]]] = None,
+        columns: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.ColumnsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         deviation_cell_version_in_sec: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         max_versions: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        reserved_throughput: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosTable.ReservedThroughputProperty]] = None,
-        secondary_indices: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosTable.SecondaryIndicesProperty]]]] = None,
+        reserved_throughput: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.ReservedThroughputProperty, typing.Dict[str, typing.Any]]]] = None,
+        secondary_indices: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.SecondaryIndicesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         time_to_live: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::OTS::Table``.
@@ -2558,6 +2813,17 @@ class TableProps:
         :param secondary_indices: Property secondaryIndices: The secondary indices of the table.
         :param time_to_live: Property timeToLive: The retention time of data stored in this table (unit: second). The value maximum is 2147483647 and -1 means never expired. Default to -1.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TableProps.__init__)
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument primary_key", value=primary_key, expected_type=type_hints["primary_key"])
+            check_type(argname="argument table_name", value=table_name, expected_type=type_hints["table_name"])
+            check_type(argname="argument columns", value=columns, expected_type=type_hints["columns"])
+            check_type(argname="argument deviation_cell_version_in_sec", value=deviation_cell_version_in_sec, expected_type=type_hints["deviation_cell_version_in_sec"])
+            check_type(argname="argument max_versions", value=max_versions, expected_type=type_hints["max_versions"])
+            check_type(argname="argument reserved_throughput", value=reserved_throughput, expected_type=type_hints["reserved_throughput"])
+            check_type(argname="argument secondary_indices", value=secondary_indices, expected_type=type_hints["secondary_indices"])
+            check_type(argname="argument time_to_live", value=time_to_live, expected_type=type_hints["time_to_live"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_name": instance_name,
             "primary_key": primary_key,
@@ -2682,7 +2948,7 @@ class VpcBinder(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VpcBinderProps",
+        props: typing.Union["VpcBinderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::OTS::VpcBinder``.
@@ -2696,6 +2962,12 @@ class VpcBinder(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcBinder.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2721,13 +2993,17 @@ class VpcBinderProps:
         self,
         *,
         instance_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        vpcs: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosVpcBinder.VpcsProperty]]],
+        vpcs: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpcBinder.VpcsProperty, typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::OTS::VpcBinder``.
 
         :param instance_name: Property instanceName: Instance name.
         :param vpcs: Property vpcs: Vpc binding configuration.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcBinderProps.__init__)
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument vpcs", value=vpcs, expected_type=type_hints["vpcs"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_name": instance_name,
             "vpcs": vpcs,

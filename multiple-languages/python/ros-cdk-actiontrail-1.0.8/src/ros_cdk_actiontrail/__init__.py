@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class RosTrail(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTrailProps",
+        props: typing.Union["RosTrailProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ACTIONTRAIL::Trail``.
@@ -43,6 +45,12 @@ class RosTrail(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTrail.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -53,6 +61,9 @@ class RosTrail(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTrail._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -81,6 +92,9 @@ class RosTrail(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrail, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -93,6 +107,9 @@ class RosTrail(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrail, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -108,6 +125,9 @@ class RosTrail(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrail, "oss_bucket_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ossBucketName", value)
 
     @builtins.property # type: ignore[misc]
@@ -123,6 +143,9 @@ class RosTrail(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrail, "role_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "roleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -140,6 +163,9 @@ class RosTrail(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrail, "event_rw").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eventRw", value)
 
     @builtins.property # type: ignore[misc]
@@ -157,6 +183,9 @@ class RosTrail(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrail, "oss_key_prefix").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ossKeyPrefix", value)
 
     @builtins.property # type: ignore[misc]
@@ -174,6 +203,9 @@ class RosTrail(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrail, "sls_project_arn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slsProjectArn", value)
 
     @builtins.property # type: ignore[misc]
@@ -191,6 +223,9 @@ class RosTrail(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrail, "sls_write_role_arn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slsWriteRoleArn", value)
 
 
@@ -205,7 +240,7 @@ class RosTrailLogging(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTrailLoggingProps",
+        props: typing.Union["RosTrailLoggingProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ACTIONTRAIL::TrailLogging``.
@@ -215,6 +250,12 @@ class RosTrailLogging(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTrailLogging.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -225,6 +266,9 @@ class RosTrailLogging(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTrailLogging._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -291,6 +335,9 @@ class RosTrailLogging(
         self,
         value: typing.Union[builtins.bool, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrailLogging, "enable").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enable", value)
 
     @builtins.property # type: ignore[misc]
@@ -300,6 +347,9 @@ class RosTrailLogging(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrailLogging, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -312,6 +362,9 @@ class RosTrailLogging(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTrailLogging, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
 
@@ -332,6 +385,10 @@ class RosTrailLoggingProps:
         :param enable: 
         :param name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTrailLoggingProps.__init__)
+            check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "enable": enable,
             "name": name,
@@ -402,6 +459,15 @@ class RosTrailProps:
         :param sls_project_arn: 
         :param sls_write_role_arn: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTrailProps.__init__)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument oss_bucket_name", value=oss_bucket_name, expected_type=type_hints["oss_bucket_name"])
+            check_type(argname="argument role_name", value=role_name, expected_type=type_hints["role_name"])
+            check_type(argname="argument event_rw", value=event_rw, expected_type=type_hints["event_rw"])
+            check_type(argname="argument oss_key_prefix", value=oss_key_prefix, expected_type=type_hints["oss_key_prefix"])
+            check_type(argname="argument sls_project_arn", value=sls_project_arn, expected_type=type_hints["sls_project_arn"])
+            check_type(argname="argument sls_write_role_arn", value=sls_write_role_arn, expected_type=type_hints["sls_write_role_arn"])
         self._values: typing.Dict[str, typing.Any] = {
             "name": name,
             "oss_bucket_name": oss_bucket_name,
@@ -506,7 +572,7 @@ class Trail(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TrailProps",
+        props: typing.Union["TrailProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ACTIONTRAIL::Trail``.
@@ -520,6 +586,12 @@ class Trail(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Trail.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -540,7 +612,7 @@ class TrailLogging(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TrailLoggingProps",
+        props: typing.Union["TrailLoggingProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ACTIONTRAIL::TrailLogging``.
@@ -554,6 +626,12 @@ class TrailLogging(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TrailLogging.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -604,6 +682,10 @@ class TrailLoggingProps:
         :param enable: Property enable: Whether to enable the trail logging.
         :param name: Property name: The name of the trail to be enabled.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TrailLoggingProps.__init__)
+            check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "enable": enable,
             "name": name,
@@ -670,6 +752,15 @@ class TrailProps:
         :param sls_project_arn: Property slsProjectArn: The unique ARN of the Log Service project.
         :param sls_write_role_arn: Property slsWriteRoleArn: The unique ARN of the Log Service role.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TrailProps.__init__)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument oss_bucket_name", value=oss_bucket_name, expected_type=type_hints["oss_bucket_name"])
+            check_type(argname="argument role_name", value=role_name, expected_type=type_hints["role_name"])
+            check_type(argname="argument event_rw", value=event_rw, expected_type=type_hints["event_rw"])
+            check_type(argname="argument oss_key_prefix", value=oss_key_prefix, expected_type=type_hints["oss_key_prefix"])
+            check_type(argname="argument sls_project_arn", value=sls_project_arn, expected_type=type_hints["sls_project_arn"])
+            check_type(argname="argument sls_write_role_arn", value=sls_write_role_arn, expected_type=type_hints["sls_write_role_arn"])
         self._values: typing.Dict[str, typing.Any] = {
             "name": name,
             "oss_bucket_name": oss_bucket_name,

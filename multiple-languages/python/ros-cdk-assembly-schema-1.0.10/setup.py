@@ -34,8 +34,9 @@ kwargs = json.loads(
     },
     "python_requires": "~=3.7",
     "install_requires": [
-        "jsii>=1.62.0, <2.0.0",
-        "publication>=0.0.3"
+        "jsii>=1.63.2, <2.0.0",
+        "publication>=0.0.3",
+        "typeguard~=2.13.3"
     ],
     "classifiers": [
         "Intended Audience :: Developers",

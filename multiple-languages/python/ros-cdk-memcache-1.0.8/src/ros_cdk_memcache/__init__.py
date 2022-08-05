@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Instance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["InstanceProps"] = None,
+        props: typing.Optional[typing.Union["InstanceProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::Memcache::Instance``.
@@ -47,6 +49,12 @@ class Instance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Instance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -112,7 +120,7 @@ class InstanceProps:
         auto_renew: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         auto_renew_period: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         auto_use_coupon: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        backup_policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.BackupPolicyProperty"]] = None,
+        backup_policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosInstance.BackupPolicyProperty", typing.Dict[str, typing.Any]]]] = None,
         capacity: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         config: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -151,6 +159,27 @@ class InstanceProps:
         :param v_switch_id: Property vSwitchId: The ID of the VSwitch.
         :param zone_id: Property zoneId: The ID of the zone in which the instance is created. You can call the DescribeRegions operation to query the latest region list.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InstanceProps.__init__)
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument auto_renew_period", value=auto_renew_period, expected_type=type_hints["auto_renew_period"])
+            check_type(argname="argument auto_use_coupon", value=auto_use_coupon, expected_type=type_hints["auto_use_coupon"])
+            check_type(argname="argument backup_policy", value=backup_policy, expected_type=type_hints["backup_policy"])
+            check_type(argname="argument capacity", value=capacity, expected_type=type_hints["capacity"])
+            check_type(argname="argument charge_type", value=charge_type, expected_type=type_hints["charge_type"])
+            check_type(argname="argument config", value=config, expected_type=type_hints["config"])
+            check_type(argname="argument coupon_no", value=coupon_no, expected_type=type_hints["coupon_no"])
+            check_type(argname="argument instance_class", value=instance_class, expected_type=type_hints["instance_class"])
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument network_type", value=network_type, expected_type=type_hints["network_type"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument vpc_password_free", value=vpc_password_free, expected_type=type_hints["vpc_password_free"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_renew is not None:
             self._values["auto_renew"] = auto_renew
@@ -447,7 +476,7 @@ class RosInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInstanceProps",
+        props: typing.Union["RosInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::Memcache::Instance``.
@@ -457,6 +486,12 @@ class RosInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -467,6 +502,9 @@ class RosInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -527,6 +565,9 @@ class RosInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -549,6 +590,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "auto_renew").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenew", value)
 
     @builtins.property # type: ignore[misc]
@@ -574,6 +618,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "auto_renew_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenewPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -596,6 +643,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "auto_use_coupon").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoUseCoupon", value)
 
     @builtins.property # type: ignore[misc]
@@ -613,6 +663,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.BackupPolicyProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "backup_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -634,6 +687,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "capacity").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "capacity", value)
 
     @builtins.property # type: ignore[misc]
@@ -656,6 +712,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "chargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -676,6 +735,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "config", value)
 
     @builtins.property # type: ignore[misc]
@@ -693,6 +755,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "coupon_no").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "couponNo", value)
 
     @builtins.property # type: ignore[misc]
@@ -714,6 +779,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -738,6 +806,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -760,6 +831,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "network_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "networkType", value)
 
     @builtins.property # type: ignore[misc]
@@ -786,6 +860,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "password", value)
 
     @builtins.property # type: ignore[misc]
@@ -808,6 +885,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -829,6 +909,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "private_ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "privateIpAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -846,6 +929,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -863,6 +949,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -885,6 +974,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "vpc_password_free").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcPasswordFree", value)
 
     @builtins.property # type: ignore[misc]
@@ -902,6 +994,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -919,6 +1014,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @jsii.data_type(
@@ -943,6 +1041,11 @@ class RosInstance(
             :param preferred_backup_time: 
             :param enable_backup_log: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.BackupPolicyProperty.__init__)
+                check_type(argname="argument preferred_backup_period", value=preferred_backup_period, expected_type=type_hints["preferred_backup_period"])
+                check_type(argname="argument preferred_backup_time", value=preferred_backup_time, expected_type=type_hints["preferred_backup_time"])
+                check_type(argname="argument enable_backup_log", value=enable_backup_log, expected_type=type_hints["enable_backup_log"])
             self._values: typing.Dict[str, typing.Any] = {
                 "preferred_backup_period": preferred_backup_period,
                 "preferred_backup_time": preferred_backup_time,
@@ -1030,7 +1133,7 @@ class RosInstanceProps:
         auto_renew: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         auto_renew_period: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         auto_use_coupon: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        backup_policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosInstance.BackupPolicyProperty]] = None,
+        backup_policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosInstance.BackupPolicyProperty, typing.Dict[str, typing.Any]]]] = None,
         capacity: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         config: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -1069,6 +1172,27 @@ class RosInstanceProps:
         :param v_switch_id: 
         :param zone_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceProps.__init__)
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument auto_renew_period", value=auto_renew_period, expected_type=type_hints["auto_renew_period"])
+            check_type(argname="argument auto_use_coupon", value=auto_use_coupon, expected_type=type_hints["auto_use_coupon"])
+            check_type(argname="argument backup_policy", value=backup_policy, expected_type=type_hints["backup_policy"])
+            check_type(argname="argument capacity", value=capacity, expected_type=type_hints["capacity"])
+            check_type(argname="argument charge_type", value=charge_type, expected_type=type_hints["charge_type"])
+            check_type(argname="argument config", value=config, expected_type=type_hints["config"])
+            check_type(argname="argument coupon_no", value=coupon_no, expected_type=type_hints["coupon_no"])
+            check_type(argname="argument instance_class", value=instance_class, expected_type=type_hints["instance_class"])
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument network_type", value=network_type, expected_type=type_hints["network_type"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument vpc_password_free", value=vpc_password_free, expected_type=type_hints["vpc_password_free"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_renew is not None:
             self._values["auto_renew"] = auto_renew
@@ -1391,7 +1515,7 @@ class RosWhitelist(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosWhitelistProps",
+        props: typing.Union["RosWhitelistProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::Memcache::Whitelist``.
@@ -1401,6 +1525,12 @@ class RosWhitelist(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWhitelist.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1411,6 +1541,9 @@ class RosWhitelist(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWhitelist._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1455,6 +1588,9 @@ class RosWhitelist(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWhitelist, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1470,6 +1606,9 @@ class RosWhitelist(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWhitelist, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1485,6 +1624,9 @@ class RosWhitelist(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWhitelist, "security_ips").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityIps", value)
 
     @builtins.property # type: ignore[misc]
@@ -1502,6 +1644,9 @@ class RosWhitelist(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWhitelist, "security_ip_group_attribute").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityIpGroupAttribute", value)
 
     @builtins.property # type: ignore[misc]
@@ -1519,6 +1664,9 @@ class RosWhitelist(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWhitelist, "security_ip_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityIpGroupName", value)
 
 
@@ -1548,6 +1696,12 @@ class RosWhitelistProps:
         :param security_ip_group_attribute: 
         :param security_ip_group_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWhitelistProps.__init__)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument security_ips", value=security_ips, expected_type=type_hints["security_ips"])
+            check_type(argname="argument security_ip_group_attribute", value=security_ip_group_attribute, expected_type=type_hints["security_ip_group_attribute"])
+            check_type(argname="argument security_ip_group_name", value=security_ip_group_name, expected_type=type_hints["security_ip_group_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_id": instance_id,
             "security_ips": security_ips,
@@ -1618,7 +1772,7 @@ class Whitelist(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "WhitelistProps",
+        props: typing.Union["WhitelistProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::Memcache::Whitelist``.
@@ -1632,6 +1786,12 @@ class Whitelist(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Whitelist.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1682,6 +1842,12 @@ class WhitelistProps:
         :param security_ip_group_attribute: Property securityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
         :param security_ip_group_name: Property securityIpGroupName: Whitelist group.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(WhitelistProps.__init__)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument security_ips", value=security_ips, expected_type=type_hints["security_ips"])
+            check_type(argname="argument security_ip_group_attribute", value=security_ip_group_attribute, expected_type=type_hints["security_ip_group_attribute"])
+            check_type(argname="argument security_ip_group_name", value=security_ip_group_name, expected_type=type_hints["security_ip_group_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_id": instance_id,
             "security_ips": security_ips,

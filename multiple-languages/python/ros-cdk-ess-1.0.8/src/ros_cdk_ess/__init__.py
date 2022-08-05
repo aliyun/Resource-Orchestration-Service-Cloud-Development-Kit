@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class AlarmTask(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AlarmTaskProps",
+        props: typing.Union["AlarmTaskProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::AlarmTask``.
@@ -47,6 +49,12 @@ class AlarmTask(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AlarmTask.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -67,7 +75,7 @@ class AlarmTaskEnable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AlarmTaskEnableProps",
+        props: typing.Union["AlarmTaskEnableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::AlarmTaskEnable``.
@@ -81,6 +89,12 @@ class AlarmTaskEnable(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AlarmTaskEnable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -101,6 +115,10 @@ class AlarmTaskEnableProps:
         :param alarm_task_id: Property alarmTaskId: The id of alarm task.
         :param enable: Property enable: Enable alarm task or not.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AlarmTaskEnableProps.__init__)
+            check_type(argname="argument alarm_task_id", value=alarm_task_id, expected_type=type_hints["alarm_task_id"])
+            check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
         self._values: typing.Dict[str, typing.Any] = {
             "alarm_task_id": alarm_task_id,
             "enable": enable,
@@ -161,7 +179,7 @@ class AlarmTaskProps:
         threshold: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
         comparison_operator: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        dimensions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosAlarmTask.DimensionsProperty"]]]] = None,
+        dimensions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosAlarmTask.DimensionsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         evaluation_count: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         group_id: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         metric_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -185,6 +203,21 @@ class AlarmTaskProps:
         :param period: Property period: Period.
         :param statistics: Property statistics: Statistics.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AlarmTaskProps.__init__)
+            check_type(argname="argument alarm_action", value=alarm_action, expected_type=type_hints["alarm_action"])
+            check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+            check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument dimensions", value=dimensions, expected_type=type_hints["dimensions"])
+            check_type(argname="argument evaluation_count", value=evaluation_count, expected_type=type_hints["evaluation_count"])
+            check_type(argname="argument group_id", value=group_id, expected_type=type_hints["group_id"])
+            check_type(argname="argument metric_type", value=metric_type, expected_type=type_hints["metric_type"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
         self._values: typing.Dict[str, typing.Any] = {
             "alarm_action": alarm_action,
             "metric_name": metric_name,
@@ -335,7 +368,7 @@ class LifecycleHook(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "LifecycleHookProps",
+        props: typing.Union["LifecycleHookProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::LifecycleHook``.
@@ -349,6 +382,12 @@ class LifecycleHook(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(LifecycleHook.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -393,6 +432,15 @@ class LifecycleHookProps:
         :param notification_arn: Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an MNS queue or an MNS topic. The format of the parameter value is acs:ess:{region}:{account-id}:{resource-relative-id}. region: the region to which the scaling group locates account-id: Alibaba Cloud ID For example: MNS queue: acs:ess:{region}:{account-id}:queue/{queuename} MNS topic: acs:ess:{region}:{account-id}:topic/{topicname} OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
         :param notification_metadata: Property notificationMetadata: The fixed string that you want to include when Auto Scaling sends a message about the wait state of the scaling activity to the notification target. The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(LifecycleHookProps.__init__)
+            check_type(argname="argument lifecycle_transition", value=lifecycle_transition, expected_type=type_hints["lifecycle_transition"])
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument default_result", value=default_result, expected_type=type_hints["default_result"])
+            check_type(argname="argument heartbeat_timeout", value=heartbeat_timeout, expected_type=type_hints["heartbeat_timeout"])
+            check_type(argname="argument lifecycle_hook_name", value=lifecycle_hook_name, expected_type=type_hints["lifecycle_hook_name"])
+            check_type(argname="argument notification_arn", value=notification_arn, expected_type=type_hints["notification_arn"])
+            check_type(argname="argument notification_metadata", value=notification_metadata, expected_type=type_hints["notification_metadata"])
         self._values: typing.Dict[str, typing.Any] = {
             "lifecycle_transition": lifecycle_transition,
             "scaling_group_id": scaling_group_id,
@@ -514,7 +562,7 @@ class RosAlarmTask(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAlarmTaskProps",
+        props: typing.Union["RosAlarmTaskProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::AlarmTask``.
@@ -524,6 +572,12 @@ class RosAlarmTask(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlarmTask.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -534,6 +588,9 @@ class RosAlarmTask(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlarmTask._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -570,6 +627,9 @@ class RosAlarmTask(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "alarm_action").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "alarmAction", value)
 
     @builtins.property # type: ignore[misc]
@@ -579,6 +639,9 @@ class RosAlarmTask(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -594,6 +657,9 @@ class RosAlarmTask(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "metric_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "metricName", value)
 
     @builtins.property # type: ignore[misc]
@@ -609,6 +675,9 @@ class RosAlarmTask(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "scaling_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -624,6 +693,9 @@ class RosAlarmTask(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "threshold").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "threshold", value)
 
     @builtins.property # type: ignore[misc]
@@ -641,6 +713,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "comparison_operator").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "comparisonOperator", value)
 
     @builtins.property # type: ignore[misc]
@@ -658,6 +733,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -675,6 +753,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosAlarmTask.DimensionsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "dimensions").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dimensions", value)
 
     @builtins.property # type: ignore[misc]
@@ -692,6 +773,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "evaluation_count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "evaluationCount", value)
 
     @builtins.property # type: ignore[misc]
@@ -709,6 +793,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -726,6 +813,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "metric_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "metricType", value)
 
     @builtins.property # type: ignore[misc]
@@ -743,6 +833,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -760,6 +853,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -777,6 +873,9 @@ class RosAlarmTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTask, "statistics").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "statistics", value)
 
     @jsii.data_type(
@@ -798,6 +897,10 @@ class RosAlarmTask(
             :param dimension_key: 
             :param dimension_value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosAlarmTask.DimensionsProperty.__init__)
+                check_type(argname="argument dimension_key", value=dimension_key, expected_type=type_hints["dimension_key"])
+                check_type(argname="argument dimension_value", value=dimension_value, expected_type=type_hints["dimension_value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "dimension_key": dimension_key,
                 "dimension_value": dimension_value,
@@ -846,7 +949,7 @@ class RosAlarmTaskEnable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAlarmTaskEnableProps",
+        props: typing.Union["RosAlarmTaskEnableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::AlarmTaskEnable``.
@@ -856,6 +959,12 @@ class RosAlarmTaskEnable(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlarmTaskEnable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -866,6 +975,9 @@ class RosAlarmTaskEnable(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlarmTaskEnable._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -892,6 +1004,9 @@ class RosAlarmTaskEnable(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTaskEnable, "alarm_task_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "alarmTaskId", value)
 
     @builtins.property # type: ignore[misc]
@@ -907,6 +1022,9 @@ class RosAlarmTaskEnable(
         self,
         value: typing.Union[builtins.bool, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTaskEnable, "enable").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enable", value)
 
     @builtins.property # type: ignore[misc]
@@ -917,6 +1035,9 @@ class RosAlarmTaskEnable(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlarmTaskEnable, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -937,6 +1058,10 @@ class RosAlarmTaskEnableProps:
         :param alarm_task_id: 
         :param enable: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlarmTaskEnableProps.__init__)
+            check_type(argname="argument alarm_task_id", value=alarm_task_id, expected_type=type_hints["alarm_task_id"])
+            check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
         self._values: typing.Dict[str, typing.Any] = {
             "alarm_task_id": alarm_task_id,
             "enable": enable,
@@ -1001,7 +1126,7 @@ class RosAlarmTaskProps:
         threshold: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
         comparison_operator: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        dimensions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosAlarmTask.DimensionsProperty]]]] = None,
+        dimensions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosAlarmTask.DimensionsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         evaluation_count: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         group_id: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         metric_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -1025,6 +1150,21 @@ class RosAlarmTaskProps:
         :param period: 
         :param statistics: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlarmTaskProps.__init__)
+            check_type(argname="argument alarm_action", value=alarm_action, expected_type=type_hints["alarm_action"])
+            check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument threshold", value=threshold, expected_type=type_hints["threshold"])
+            check_type(argname="argument comparison_operator", value=comparison_operator, expected_type=type_hints["comparison_operator"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument dimensions", value=dimensions, expected_type=type_hints["dimensions"])
+            check_type(argname="argument evaluation_count", value=evaluation_count, expected_type=type_hints["evaluation_count"])
+            check_type(argname="argument group_id", value=group_id, expected_type=type_hints["group_id"])
+            check_type(argname="argument metric_type", value=metric_type, expected_type=type_hints["metric_type"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument statistics", value=statistics, expected_type=type_hints["statistics"])
         self._values: typing.Dict[str, typing.Any] = {
             "alarm_action": alarm_action,
             "metric_name": metric_name,
@@ -1201,7 +1341,7 @@ class RosLifecycleHook(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosLifecycleHookProps",
+        props: typing.Union["RosLifecycleHookProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::LifecycleHook``.
@@ -1211,6 +1351,12 @@ class RosLifecycleHook(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosLifecycleHook.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1221,6 +1367,9 @@ class RosLifecycleHook(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosLifecycleHook._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1249,6 +1398,9 @@ class RosLifecycleHook(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLifecycleHook, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1270,6 +1422,9 @@ class RosLifecycleHook(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLifecycleHook, "lifecycle_transition").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "lifecycleTransition", value)
 
     @builtins.property # type: ignore[misc]
@@ -1285,6 +1440,9 @@ class RosLifecycleHook(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLifecycleHook, "scaling_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1308,6 +1466,9 @@ class RosLifecycleHook(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLifecycleHook, "default_result").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "defaultResult", value)
 
     @builtins.property # type: ignore[misc]
@@ -1328,6 +1489,9 @@ class RosLifecycleHook(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLifecycleHook, "heartbeat_timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "heartbeatTimeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -1348,6 +1512,9 @@ class RosLifecycleHook(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLifecycleHook, "lifecycle_hook_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "lifecycleHookName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1373,6 +1540,9 @@ class RosLifecycleHook(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLifecycleHook, "notification_arn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "notificationArn", value)
 
     @builtins.property # type: ignore[misc]
@@ -1390,6 +1560,9 @@ class RosLifecycleHook(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLifecycleHook, "notification_metadata").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "notificationMetadata", value)
 
 
@@ -1428,6 +1601,15 @@ class RosLifecycleHookProps:
         :param notification_arn: 
         :param notification_metadata: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosLifecycleHookProps.__init__)
+            check_type(argname="argument lifecycle_transition", value=lifecycle_transition, expected_type=type_hints["lifecycle_transition"])
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument default_result", value=default_result, expected_type=type_hints["default_result"])
+            check_type(argname="argument heartbeat_timeout", value=heartbeat_timeout, expected_type=type_hints["heartbeat_timeout"])
+            check_type(argname="argument lifecycle_hook_name", value=lifecycle_hook_name, expected_type=type_hints["lifecycle_hook_name"])
+            check_type(argname="argument notification_arn", value=notification_arn, expected_type=type_hints["notification_arn"])
+            check_type(argname="argument notification_metadata", value=notification_metadata, expected_type=type_hints["notification_metadata"])
         self._values: typing.Dict[str, typing.Any] = {
             "lifecycle_transition": lifecycle_transition,
             "scaling_group_id": scaling_group_id,
@@ -1560,7 +1742,7 @@ class RosScalingConfiguration(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosScalingConfigurationProps",
+        props: typing.Union["RosScalingConfigurationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScalingConfiguration``.
@@ -1570,6 +1752,12 @@ class RosScalingConfiguration(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingConfiguration.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1580,6 +1768,9 @@ class RosScalingConfiguration(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingConfiguration._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1608,6 +1799,9 @@ class RosScalingConfiguration(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1623,6 +1817,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "scaling_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1644,6 +1841,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "credit_specification").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "creditSpecification", value)
 
     @builtins.property # type: ignore[misc]
@@ -1661,6 +1861,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "deployment_set_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deploymentSetId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1678,6 +1881,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosScalingConfiguration.DiskMappingsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "disk_mappings").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "diskMappings", value)
 
     @builtins.property # type: ignore[misc]
@@ -1695,6 +1901,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "hpc_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "hpcClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1712,6 +1921,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "image_family").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageFamily", value)
 
     @builtins.property # type: ignore[misc]
@@ -1729,6 +1941,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "image_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1746,6 +1961,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1763,6 +1981,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "instance_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1780,6 +2001,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1797,6 +2021,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "instance_types").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceTypes", value)
 
     @builtins.property # type: ignore[misc]
@@ -1814,6 +2041,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1831,6 +2061,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "internet_max_bandwidth_in").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetMaxBandwidthIn", value)
 
     @builtins.property # type: ignore[misc]
@@ -1852,6 +2085,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "internet_max_bandwidth_out").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetMaxBandwidthOut", value)
 
     @builtins.property # type: ignore[misc]
@@ -1869,6 +2105,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "io_optimized").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ioOptimized", value)
 
     @builtins.property # type: ignore[misc]
@@ -1886,6 +2125,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "ipv6_address_count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipv6AddressCount", value)
 
     @builtins.property # type: ignore[misc]
@@ -1903,6 +2145,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "key_pair_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "keyPairName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1923,6 +2168,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "load_balancer_weight").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loadBalancerWeight", value)
 
     @builtins.property # type: ignore[misc]
@@ -1940,6 +2188,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "password_inherit").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "passwordInherit", value)
 
     @builtins.property # type: ignore[misc]
@@ -1957,6 +2208,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "ram_role_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ramRoleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1974,6 +2228,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1991,6 +2248,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "scaling_configuration_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingConfigurationName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2008,6 +2268,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "security_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2025,6 +2288,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "spot_price_limit").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spotPriceLimit", value)
 
     @builtins.property # type: ignore[misc]
@@ -2051,6 +2317,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "spot_price_limit_for_instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spotPriceLimitForInstanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2074,6 +2343,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "spot_strategy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spotStrategy", value)
 
     @builtins.property # type: ignore[misc]
@@ -2091,6 +2363,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "system_disk_auto_snapshot_policy_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "systemDiskAutoSnapshotPolicyId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2108,6 +2383,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "system_disk_category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "systemDiskCategory", value)
 
     @builtins.property # type: ignore[misc]
@@ -2125,6 +2403,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "system_disk_performance_level").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "systemDiskPerformanceLevel", value)
 
     @builtins.property # type: ignore[misc]
@@ -2142,6 +2423,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "system_disk_size").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "systemDiskSize", value)
 
     @builtins.property # type: ignore[misc]
@@ -2174,6 +2458,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosScalingConfiguration.TagListProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "tag_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tagList", value)
 
     @builtins.property # type: ignore[misc]
@@ -2191,6 +2478,9 @@ class RosScalingConfiguration(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingConfiguration, "user_data").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "userData", value)
 
     @jsii.data_type(
@@ -2236,6 +2526,18 @@ class RosScalingConfiguration(
             :param size: 
             :param snapshot_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosScalingConfiguration.DiskMappingsProperty.__init__)
+                check_type(argname="argument auto_snapshot_policy_id", value=auto_snapshot_policy_id, expected_type=type_hints["auto_snapshot_policy_id"])
+                check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+                check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+                check_type(argname="argument device", value=device, expected_type=type_hints["device"])
+                check_type(argname="argument disk_name", value=disk_name, expected_type=type_hints["disk_name"])
+                check_type(argname="argument encrypted", value=encrypted, expected_type=type_hints["encrypted"])
+                check_type(argname="argument kms_key_id", value=kms_key_id, expected_type=type_hints["kms_key_id"])
+                check_type(argname="argument performance_level", value=performance_level, expected_type=type_hints["performance_level"])
+                check_type(argname="argument size", value=size, expected_type=type_hints["size"])
+                check_type(argname="argument snapshot_id", value=snapshot_id, expected_type=type_hints["snapshot_id"])
             self._values: typing.Dict[str, typing.Any] = {}
             if auto_snapshot_policy_id is not None:
                 self._values["auto_snapshot_policy_id"] = auto_snapshot_policy_id
@@ -2390,6 +2692,10 @@ class RosScalingConfiguration(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosScalingConfiguration.TagListProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -2472,7 +2778,7 @@ class RosScalingConfigurationProps:
         scaling_group_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         credit_specification: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         deployment_set_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        disk_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosScalingConfiguration.DiskMappingsProperty]]]] = None,
+        disk_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosScalingConfiguration.DiskMappingsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         hpc_cluster_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         image_family: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         image_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -2499,7 +2805,7 @@ class RosScalingConfigurationProps:
         system_disk_category: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         system_disk_performance_level: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         system_disk_size: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        tag_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosScalingConfiguration.TagListProperty]]]] = None,
+        tag_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosScalingConfiguration.TagListProperty, typing.Dict[str, typing.Any]]]]]] = None,
         user_data: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ESS::ScalingConfiguration``.
@@ -2537,6 +2843,40 @@ class RosScalingConfigurationProps:
         :param tag_list: 
         :param user_data: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingConfigurationProps.__init__)
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument credit_specification", value=credit_specification, expected_type=type_hints["credit_specification"])
+            check_type(argname="argument deployment_set_id", value=deployment_set_id, expected_type=type_hints["deployment_set_id"])
+            check_type(argname="argument disk_mappings", value=disk_mappings, expected_type=type_hints["disk_mappings"])
+            check_type(argname="argument hpc_cluster_id", value=hpc_cluster_id, expected_type=type_hints["hpc_cluster_id"])
+            check_type(argname="argument image_family", value=image_family, expected_type=type_hints["image_family"])
+            check_type(argname="argument image_id", value=image_id, expected_type=type_hints["image_id"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+            check_type(argname="argument instance_types", value=instance_types, expected_type=type_hints["instance_types"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument internet_max_bandwidth_in", value=internet_max_bandwidth_in, expected_type=type_hints["internet_max_bandwidth_in"])
+            check_type(argname="argument internet_max_bandwidth_out", value=internet_max_bandwidth_out, expected_type=type_hints["internet_max_bandwidth_out"])
+            check_type(argname="argument io_optimized", value=io_optimized, expected_type=type_hints["io_optimized"])
+            check_type(argname="argument ipv6_address_count", value=ipv6_address_count, expected_type=type_hints["ipv6_address_count"])
+            check_type(argname="argument key_pair_name", value=key_pair_name, expected_type=type_hints["key_pair_name"])
+            check_type(argname="argument load_balancer_weight", value=load_balancer_weight, expected_type=type_hints["load_balancer_weight"])
+            check_type(argname="argument password_inherit", value=password_inherit, expected_type=type_hints["password_inherit"])
+            check_type(argname="argument ram_role_name", value=ram_role_name, expected_type=type_hints["ram_role_name"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument scaling_configuration_name", value=scaling_configuration_name, expected_type=type_hints["scaling_configuration_name"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument spot_price_limit", value=spot_price_limit, expected_type=type_hints["spot_price_limit"])
+            check_type(argname="argument spot_price_limit_for_instance_type", value=spot_price_limit_for_instance_type, expected_type=type_hints["spot_price_limit_for_instance_type"])
+            check_type(argname="argument spot_strategy", value=spot_strategy, expected_type=type_hints["spot_strategy"])
+            check_type(argname="argument system_disk_auto_snapshot_policy_id", value=system_disk_auto_snapshot_policy_id, expected_type=type_hints["system_disk_auto_snapshot_policy_id"])
+            check_type(argname="argument system_disk_category", value=system_disk_category, expected_type=type_hints["system_disk_category"])
+            check_type(argname="argument system_disk_performance_level", value=system_disk_performance_level, expected_type=type_hints["system_disk_performance_level"])
+            check_type(argname="argument system_disk_size", value=system_disk_size, expected_type=type_hints["system_disk_size"])
+            check_type(argname="argument tag_list", value=tag_list, expected_type=type_hints["tag_list"])
+            check_type(argname="argument user_data", value=user_data, expected_type=type_hints["user_data"])
         self._values: typing.Dict[str, typing.Any] = {
             "scaling_group_id": scaling_group_id,
         }
@@ -2986,7 +3326,7 @@ class RosScalingGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosScalingGroupProps",
+        props: typing.Union["RosScalingGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScalingGroup``.
@@ -2996,6 +3336,12 @@ class RosScalingGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3006,6 +3352,9 @@ class RosScalingGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3042,6 +3391,9 @@ class RosScalingGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3057,6 +3409,9 @@ class RosScalingGroup(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "max_size").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maxSize", value)
 
     @builtins.property # type: ignore[misc]
@@ -3072,6 +3427,9 @@ class RosScalingGroup(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "min_size").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "minSize", value)
 
     @builtins.property # type: ignore[misc]
@@ -3092,6 +3450,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "compensate_with_on_demand").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "compensateWithOnDemand", value)
 
     @builtins.property # type: ignore[misc]
@@ -3109,6 +3470,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "container_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "containerGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3126,6 +3490,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "db_instance_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3146,6 +3513,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "default_cooldown").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "defaultCooldown", value)
 
     @builtins.property # type: ignore[misc]
@@ -3163,6 +3533,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "desired_capacity").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "desiredCapacity", value)
 
     @builtins.property # type: ignore[misc]
@@ -3183,6 +3556,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "group_deletion_protection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupDeletionProtection", value)
 
     @builtins.property # type: ignore[misc]
@@ -3205,6 +3581,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "group_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupType", value)
 
     @builtins.property # type: ignore[misc]
@@ -3222,6 +3601,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "health_check_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckType", value)
 
     @builtins.property # type: ignore[misc]
@@ -3239,6 +3621,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3256,6 +3641,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "launch_template_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "launchTemplateId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3278,6 +3666,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "launch_template_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "launchTemplateVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -3295,6 +3686,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "load_balancer_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loadBalancerIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3318,6 +3712,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "multi_az_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "multiAzPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -3335,6 +3732,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosScalingGroup.NotificationConfigurationsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "notification_configurations").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "notificationConfigurations", value)
 
     @builtins.property # type: ignore[misc]
@@ -3352,6 +3752,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "on_demand_base_capacity").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "onDemandBaseCapacity", value)
 
     @builtins.property # type: ignore[misc]
@@ -3369,6 +3772,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "on_demand_percentage_above_base_capacity").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "onDemandPercentageAboveBaseCapacity", value)
 
     @builtins.property # type: ignore[misc]
@@ -3386,6 +3792,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "protected_instances").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "protectedInstances", value)
 
     @builtins.property # type: ignore[misc]
@@ -3410,6 +3819,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "removal_policys").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "removalPolicys", value)
 
     @builtins.property # type: ignore[misc]
@@ -3430,6 +3842,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "scaling_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingGroupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -3452,6 +3867,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "scaling_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -3469,6 +3887,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "spot_instance_pools").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spotInstancePools", value)
 
     @builtins.property # type: ignore[misc]
@@ -3486,6 +3907,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "spot_instance_remedy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spotInstanceRemedy", value)
 
     @builtins.property # type: ignore[misc]
@@ -3503,6 +3927,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "standby_instances").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "standbyInstances", value)
 
     @builtins.property # type: ignore[misc]
@@ -3518,6 +3945,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.List["RosScalingGroup.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -3535,6 +3965,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3557,6 +3990,9 @@ class RosScalingGroup(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroup, "v_switch_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchIds", value)
 
     @jsii.data_type(
@@ -3578,6 +4014,10 @@ class RosScalingGroup(
             :param notification_arn: 
             :param notification_types: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosScalingGroup.NotificationConfigurationsProperty.__init__)
+                check_type(argname="argument notification_arn", value=notification_arn, expected_type=type_hints["notification_arn"])
+                check_type(argname="argument notification_types", value=notification_types, expected_type=type_hints["notification_types"])
             self._values: typing.Dict[str, typing.Any] = {
                 "notification_arn": notification_arn,
                 "notification_types": notification_types,
@@ -3650,6 +4090,10 @@ class RosScalingGroup(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosScalingGroup.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -3698,7 +4142,7 @@ class RosScalingGroupEnable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosScalingGroupEnableProps",
+        props: typing.Union["RosScalingGroupEnableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScalingGroupEnable``.
@@ -3708,6 +4152,12 @@ class RosScalingGroupEnable(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingGroupEnable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3718,6 +4168,9 @@ class RosScalingGroupEnable(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingGroupEnable._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3808,6 +4261,9 @@ class RosScalingGroupEnable(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroupEnable, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3823,6 +4279,9 @@ class RosScalingGroupEnable(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroupEnable, "scaling_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3840,6 +4299,9 @@ class RosScalingGroupEnable(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroupEnable, "instance_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3857,6 +4319,9 @@ class RosScalingGroupEnable(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroupEnable, "remove_instance_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "removeInstanceIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3874,6 +4339,9 @@ class RosScalingGroupEnable(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroupEnable, "scaling_configuration_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingConfigurationId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3895,6 +4363,9 @@ class RosScalingGroupEnable(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroupEnable, "scaling_rule_aris").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingRuleAris", value)
 
     @builtins.property # type: ignore[misc]
@@ -3912,6 +4383,9 @@ class RosScalingGroupEnable(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingGroupEnable, "scaling_rule_aris_execute_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingRuleArisExecuteVersion", value)
 
 
@@ -3947,6 +4421,14 @@ class RosScalingGroupEnableProps:
         :param scaling_rule_aris: 
         :param scaling_rule_aris_execute_version: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingGroupEnableProps.__init__)
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument instance_ids", value=instance_ids, expected_type=type_hints["instance_ids"])
+            check_type(argname="argument remove_instance_ids", value=remove_instance_ids, expected_type=type_hints["remove_instance_ids"])
+            check_type(argname="argument scaling_configuration_id", value=scaling_configuration_id, expected_type=type_hints["scaling_configuration_id"])
+            check_type(argname="argument scaling_rule_aris", value=scaling_rule_aris, expected_type=type_hints["scaling_rule_aris"])
+            check_type(argname="argument scaling_rule_aris_execute_version", value=scaling_rule_aris_execute_version, expected_type=type_hints["scaling_rule_aris_execute_version"])
         self._values: typing.Dict[str, typing.Any] = {
             "scaling_group_id": scaling_group_id,
         }
@@ -4089,7 +4571,7 @@ class RosScalingGroupProps:
         launch_template_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         load_balancer_ids: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         multi_az_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        notification_configurations: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosScalingGroup.NotificationConfigurationsProperty]]]] = None,
+        notification_configurations: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosScalingGroup.NotificationConfigurationsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         on_demand_base_capacity: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         on_demand_percentage_above_base_capacity: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         protected_instances: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
@@ -4099,7 +4581,7 @@ class RosScalingGroupProps:
         spot_instance_pools: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         spot_instance_remedy: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         standby_instances: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosScalingGroup.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosScalingGroup.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         v_switch_ids: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -4134,6 +4616,36 @@ class RosScalingGroupProps:
         :param v_switch_id: 
         :param v_switch_ids: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingGroupProps.__init__)
+            check_type(argname="argument max_size", value=max_size, expected_type=type_hints["max_size"])
+            check_type(argname="argument min_size", value=min_size, expected_type=type_hints["min_size"])
+            check_type(argname="argument compensate_with_on_demand", value=compensate_with_on_demand, expected_type=type_hints["compensate_with_on_demand"])
+            check_type(argname="argument container_group_id", value=container_group_id, expected_type=type_hints["container_group_id"])
+            check_type(argname="argument db_instance_ids", value=db_instance_ids, expected_type=type_hints["db_instance_ids"])
+            check_type(argname="argument default_cooldown", value=default_cooldown, expected_type=type_hints["default_cooldown"])
+            check_type(argname="argument desired_capacity", value=desired_capacity, expected_type=type_hints["desired_capacity"])
+            check_type(argname="argument group_deletion_protection", value=group_deletion_protection, expected_type=type_hints["group_deletion_protection"])
+            check_type(argname="argument group_type", value=group_type, expected_type=type_hints["group_type"])
+            check_type(argname="argument health_check_type", value=health_check_type, expected_type=type_hints["health_check_type"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument launch_template_id", value=launch_template_id, expected_type=type_hints["launch_template_id"])
+            check_type(argname="argument launch_template_version", value=launch_template_version, expected_type=type_hints["launch_template_version"])
+            check_type(argname="argument load_balancer_ids", value=load_balancer_ids, expected_type=type_hints["load_balancer_ids"])
+            check_type(argname="argument multi_az_policy", value=multi_az_policy, expected_type=type_hints["multi_az_policy"])
+            check_type(argname="argument notification_configurations", value=notification_configurations, expected_type=type_hints["notification_configurations"])
+            check_type(argname="argument on_demand_base_capacity", value=on_demand_base_capacity, expected_type=type_hints["on_demand_base_capacity"])
+            check_type(argname="argument on_demand_percentage_above_base_capacity", value=on_demand_percentage_above_base_capacity, expected_type=type_hints["on_demand_percentage_above_base_capacity"])
+            check_type(argname="argument protected_instances", value=protected_instances, expected_type=type_hints["protected_instances"])
+            check_type(argname="argument removal_policys", value=removal_policys, expected_type=type_hints["removal_policys"])
+            check_type(argname="argument scaling_group_name", value=scaling_group_name, expected_type=type_hints["scaling_group_name"])
+            check_type(argname="argument scaling_policy", value=scaling_policy, expected_type=type_hints["scaling_policy"])
+            check_type(argname="argument spot_instance_pools", value=spot_instance_pools, expected_type=type_hints["spot_instance_pools"])
+            check_type(argname="argument spot_instance_remedy", value=spot_instance_remedy, expected_type=type_hints["spot_instance_remedy"])
+            check_type(argname="argument standby_instances", value=standby_instances, expected_type=type_hints["standby_instances"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument v_switch_ids", value=v_switch_ids, expected_type=type_hints["v_switch_ids"])
         self._values: typing.Dict[str, typing.Any] = {
             "max_size": max_size,
             "min_size": min_size,
@@ -4535,7 +5047,7 @@ class RosScalingRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosScalingRuleProps",
+        props: typing.Union["RosScalingRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScalingRule``.
@@ -4545,6 +5057,12 @@ class RosScalingRule(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4555,6 +5073,9 @@ class RosScalingRule(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingRule._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4591,6 +5112,9 @@ class RosScalingRule(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4606,6 +5130,9 @@ class RosScalingRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "scaling_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4629,6 +5156,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "adjustment_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "adjustmentType", value)
 
     @builtins.property # type: ignore[misc]
@@ -4652,6 +5182,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "adjustment_value").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "adjustmentValue", value)
 
     @builtins.property # type: ignore[misc]
@@ -4669,6 +5202,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "cooldown").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cooldown", value)
 
     @builtins.property # type: ignore[misc]
@@ -4689,6 +5225,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "disable_scale_in").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "disableScaleIn", value)
 
     @builtins.property # type: ignore[misc]
@@ -4710,6 +5249,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "estimated_instance_warmup").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "estimatedInstanceWarmup", value)
 
     @builtins.property # type: ignore[misc]
@@ -4730,6 +5272,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "initial_max_size").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "initialMaxSize", value)
 
     @builtins.property # type: ignore[misc]
@@ -4761,6 +5306,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "metric_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "metricName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4778,6 +5326,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "min_adjustment_magnitude").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "minAdjustmentMagnitude", value)
 
     @builtins.property # type: ignore[misc]
@@ -4801,6 +5352,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "predictive_scaling_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "predictiveScalingMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -4821,6 +5375,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "predictive_task_buffer_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "predictiveTaskBufferTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -4845,6 +5402,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "predictive_value_behavior").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "predictiveValueBehavior", value)
 
     @builtins.property # type: ignore[misc]
@@ -4865,6 +5425,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "predictive_value_buffer").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "predictiveValueBuffer", value)
 
     @builtins.property # type: ignore[misc]
@@ -4882,6 +5445,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "scaling_rule_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingRuleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4907,6 +5473,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "scaling_rule_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scalingRuleType", value)
 
     @builtins.property # type: ignore[misc]
@@ -4924,6 +5493,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosScalingRule.StepAdjustmentProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "step_adjustment").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "stepAdjustment", value)
 
     @builtins.property # type: ignore[misc]
@@ -4941,6 +5513,9 @@ class RosScalingRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScalingRule, "target_value").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetValue", value)
 
     @jsii.data_type(
@@ -4965,6 +5540,11 @@ class RosScalingRule(
             :param metric_interval_upper_bound: 
             :param scaling_adjustment: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosScalingRule.StepAdjustmentProperty.__init__)
+                check_type(argname="argument metric_interval_lower_bound", value=metric_interval_lower_bound, expected_type=type_hints["metric_interval_lower_bound"])
+                check_type(argname="argument metric_interval_upper_bound", value=metric_interval_upper_bound, expected_type=type_hints["metric_interval_upper_bound"])
+                check_type(argname="argument scaling_adjustment", value=scaling_adjustment, expected_type=type_hints["scaling_adjustment"])
             self._values: typing.Dict[str, typing.Any] = {}
             if metric_interval_lower_bound is not None:
                 self._values["metric_interval_lower_bound"] = metric_interval_lower_bound
@@ -5063,7 +5643,7 @@ class RosScalingRuleProps:
         predictive_value_buffer: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         scaling_rule_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         scaling_rule_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        step_adjustment: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosScalingRule.StepAdjustmentProperty]]]] = None,
+        step_adjustment: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosScalingRule.StepAdjustmentProperty, typing.Dict[str, typing.Any]]]]]] = None,
         target_value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ESS::ScalingRule``.
@@ -5086,6 +5666,25 @@ class RosScalingRuleProps:
         :param step_adjustment: 
         :param target_value: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScalingRuleProps.__init__)
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument adjustment_type", value=adjustment_type, expected_type=type_hints["adjustment_type"])
+            check_type(argname="argument adjustment_value", value=adjustment_value, expected_type=type_hints["adjustment_value"])
+            check_type(argname="argument cooldown", value=cooldown, expected_type=type_hints["cooldown"])
+            check_type(argname="argument disable_scale_in", value=disable_scale_in, expected_type=type_hints["disable_scale_in"])
+            check_type(argname="argument estimated_instance_warmup", value=estimated_instance_warmup, expected_type=type_hints["estimated_instance_warmup"])
+            check_type(argname="argument initial_max_size", value=initial_max_size, expected_type=type_hints["initial_max_size"])
+            check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+            check_type(argname="argument min_adjustment_magnitude", value=min_adjustment_magnitude, expected_type=type_hints["min_adjustment_magnitude"])
+            check_type(argname="argument predictive_scaling_mode", value=predictive_scaling_mode, expected_type=type_hints["predictive_scaling_mode"])
+            check_type(argname="argument predictive_task_buffer_time", value=predictive_task_buffer_time, expected_type=type_hints["predictive_task_buffer_time"])
+            check_type(argname="argument predictive_value_behavior", value=predictive_value_behavior, expected_type=type_hints["predictive_value_behavior"])
+            check_type(argname="argument predictive_value_buffer", value=predictive_value_buffer, expected_type=type_hints["predictive_value_buffer"])
+            check_type(argname="argument scaling_rule_name", value=scaling_rule_name, expected_type=type_hints["scaling_rule_name"])
+            check_type(argname="argument scaling_rule_type", value=scaling_rule_type, expected_type=type_hints["scaling_rule_type"])
+            check_type(argname="argument step_adjustment", value=step_adjustment, expected_type=type_hints["step_adjustment"])
+            check_type(argname="argument target_value", value=target_value, expected_type=type_hints["target_value"])
         self._values: typing.Dict[str, typing.Any] = {
             "scaling_group_id": scaling_group_id,
         }
@@ -5377,7 +5976,7 @@ class RosScheduledTask(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosScheduledTaskProps",
+        props: typing.Union["RosScheduledTaskProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScheduledTask``.
@@ -5387,6 +5986,12 @@ class RosScheduledTask(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScheduledTask.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5397,6 +6002,9 @@ class RosScheduledTask(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScheduledTask._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5425,6 +6033,9 @@ class RosScheduledTask(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5445,6 +6056,9 @@ class RosScheduledTask(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "launch_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "launchTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -5460,6 +6074,9 @@ class RosScheduledTask(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "scheduled_action").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scheduledAction", value)
 
     @builtins.property # type: ignore[misc]
@@ -5477,6 +6094,9 @@ class RosScheduledTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -5498,6 +6118,9 @@ class RosScheduledTask(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "launch_expiration_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "launchExpirationTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -5520,6 +6143,9 @@ class RosScheduledTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "recurrence_end_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "recurrenceEndTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -5544,6 +6170,9 @@ class RosScheduledTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "recurrence_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "recurrenceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5568,6 +6197,9 @@ class RosScheduledTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "recurrence_value").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "recurrenceValue", value)
 
     @builtins.property # type: ignore[misc]
@@ -5589,6 +6221,9 @@ class RosScheduledTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "scheduled_task_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scheduledTaskName", value)
 
     @builtins.property # type: ignore[misc]
@@ -5612,6 +6247,9 @@ class RosScheduledTask(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosScheduledTask, "task_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "taskEnabled", value)
 
 
@@ -5656,6 +6294,17 @@ class RosScheduledTaskProps:
         :param scheduled_task_name: 
         :param task_enabled: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScheduledTaskProps.__init__)
+            check_type(argname="argument launch_time", value=launch_time, expected_type=type_hints["launch_time"])
+            check_type(argname="argument scheduled_action", value=scheduled_action, expected_type=type_hints["scheduled_action"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument launch_expiration_time", value=launch_expiration_time, expected_type=type_hints["launch_expiration_time"])
+            check_type(argname="argument recurrence_end_time", value=recurrence_end_time, expected_type=type_hints["recurrence_end_time"])
+            check_type(argname="argument recurrence_type", value=recurrence_type, expected_type=type_hints["recurrence_type"])
+            check_type(argname="argument recurrence_value", value=recurrence_value, expected_type=type_hints["recurrence_value"])
+            check_type(argname="argument scheduled_task_name", value=scheduled_task_name, expected_type=type_hints["scheduled_task_name"])
+            check_type(argname="argument task_enabled", value=task_enabled, expected_type=type_hints["task_enabled"])
         self._values: typing.Dict[str, typing.Any] = {
             "launch_time": launch_time,
             "scheduled_action": scheduled_action,
@@ -5824,7 +6473,7 @@ class ScalingConfiguration(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ScalingConfigurationProps",
+        props: typing.Union["ScalingConfigurationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScalingConfiguration``.
@@ -5838,6 +6487,12 @@ class ScalingConfiguration(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScalingConfiguration.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -5892,7 +6547,7 @@ class ScalingConfigurationProps:
         scaling_group_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         credit_specification: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         deployment_set_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        disk_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosScalingConfiguration.DiskMappingsProperty]]]] = None,
+        disk_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosScalingConfiguration.DiskMappingsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         hpc_cluster_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         image_family: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         image_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -5919,7 +6574,7 @@ class ScalingConfigurationProps:
         system_disk_category: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         system_disk_performance_level: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         system_disk_size: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        tag_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosScalingConfiguration.TagListProperty]]]] = None,
+        tag_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosScalingConfiguration.TagListProperty, typing.Dict[str, typing.Any]]]]]] = None,
         user_data: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ESS::ScalingConfiguration``.
@@ -5957,6 +6612,40 @@ class ScalingConfigurationProps:
         :param tag_list: Property tagList: The tags of an instance in list format. Do not use with Tags at the same time. You should input the information of the tag with the format of Key-Value list, such as [{"Key":"key1","Value":"value1"}, ...]. At most 20 tags can be specified. Key It can be up to 64 characters in length. Cannot begin with aliyun. Cannot begin with http:// or https://. Cannot be a null string. Value It can be up to 128 characters in length. Cannot begin with aliyun. Cannot begin with http:// or https://. Can be a null string.If less then 20 tags are specified, ros will add a tag(Key: "ros-aliyun-created", Value:"<resource_name>*stack*<stack_id>") if possible.
         :param user_data: Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScalingConfigurationProps.__init__)
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument credit_specification", value=credit_specification, expected_type=type_hints["credit_specification"])
+            check_type(argname="argument deployment_set_id", value=deployment_set_id, expected_type=type_hints["deployment_set_id"])
+            check_type(argname="argument disk_mappings", value=disk_mappings, expected_type=type_hints["disk_mappings"])
+            check_type(argname="argument hpc_cluster_id", value=hpc_cluster_id, expected_type=type_hints["hpc_cluster_id"])
+            check_type(argname="argument image_family", value=image_family, expected_type=type_hints["image_family"])
+            check_type(argname="argument image_id", value=image_id, expected_type=type_hints["image_id"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+            check_type(argname="argument instance_types", value=instance_types, expected_type=type_hints["instance_types"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument internet_max_bandwidth_in", value=internet_max_bandwidth_in, expected_type=type_hints["internet_max_bandwidth_in"])
+            check_type(argname="argument internet_max_bandwidth_out", value=internet_max_bandwidth_out, expected_type=type_hints["internet_max_bandwidth_out"])
+            check_type(argname="argument io_optimized", value=io_optimized, expected_type=type_hints["io_optimized"])
+            check_type(argname="argument ipv6_address_count", value=ipv6_address_count, expected_type=type_hints["ipv6_address_count"])
+            check_type(argname="argument key_pair_name", value=key_pair_name, expected_type=type_hints["key_pair_name"])
+            check_type(argname="argument load_balancer_weight", value=load_balancer_weight, expected_type=type_hints["load_balancer_weight"])
+            check_type(argname="argument password_inherit", value=password_inherit, expected_type=type_hints["password_inherit"])
+            check_type(argname="argument ram_role_name", value=ram_role_name, expected_type=type_hints["ram_role_name"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument scaling_configuration_name", value=scaling_configuration_name, expected_type=type_hints["scaling_configuration_name"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument spot_price_limit", value=spot_price_limit, expected_type=type_hints["spot_price_limit"])
+            check_type(argname="argument spot_price_limit_for_instance_type", value=spot_price_limit_for_instance_type, expected_type=type_hints["spot_price_limit_for_instance_type"])
+            check_type(argname="argument spot_strategy", value=spot_strategy, expected_type=type_hints["spot_strategy"])
+            check_type(argname="argument system_disk_auto_snapshot_policy_id", value=system_disk_auto_snapshot_policy_id, expected_type=type_hints["system_disk_auto_snapshot_policy_id"])
+            check_type(argname="argument system_disk_category", value=system_disk_category, expected_type=type_hints["system_disk_category"])
+            check_type(argname="argument system_disk_performance_level", value=system_disk_performance_level, expected_type=type_hints["system_disk_performance_level"])
+            check_type(argname="argument system_disk_size", value=system_disk_size, expected_type=type_hints["system_disk_size"])
+            check_type(argname="argument tag_list", value=tag_list, expected_type=type_hints["tag_list"])
+            check_type(argname="argument user_data", value=user_data, expected_type=type_hints["user_data"])
         self._values: typing.Dict[str, typing.Any] = {
             "scaling_group_id": scaling_group_id,
         }
@@ -6375,7 +7064,7 @@ class ScalingGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ScalingGroupProps",
+        props: typing.Union["ScalingGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScalingGroup``.
@@ -6389,6 +7078,12 @@ class ScalingGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScalingGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -6415,7 +7110,7 @@ class ScalingGroupEnable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ScalingGroupEnableProps",
+        props: typing.Union["ScalingGroupEnableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScalingGroupEnable``.
@@ -6429,6 +7124,12 @@ class ScalingGroupEnable(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScalingGroupEnable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -6518,6 +7219,14 @@ class ScalingGroupEnableProps:
         :param scaling_rule_aris: Property scalingRuleAris: A list of scaling rule aris which will be executed. Max support 10 scaling rule aris. When creating the resource, all the scaling rule aris in the list will be executed. When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
         :param scaling_rule_aris_execute_version: Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScalingGroupEnableProps.__init__)
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument instance_ids", value=instance_ids, expected_type=type_hints["instance_ids"])
+            check_type(argname="argument remove_instance_ids", value=remove_instance_ids, expected_type=type_hints["remove_instance_ids"])
+            check_type(argname="argument scaling_configuration_id", value=scaling_configuration_id, expected_type=type_hints["scaling_configuration_id"])
+            check_type(argname="argument scaling_rule_aris", value=scaling_rule_aris, expected_type=type_hints["scaling_rule_aris"])
+            check_type(argname="argument scaling_rule_aris_execute_version", value=scaling_rule_aris_execute_version, expected_type=type_hints["scaling_rule_aris_execute_version"])
         self._values: typing.Dict[str, typing.Any] = {
             "scaling_group_id": scaling_group_id,
         }
@@ -6655,7 +7364,7 @@ class ScalingGroupProps:
         launch_template_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         load_balancer_ids: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         multi_az_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        notification_configurations: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosScalingGroup.NotificationConfigurationsProperty]]]] = None,
+        notification_configurations: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosScalingGroup.NotificationConfigurationsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         on_demand_base_capacity: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         on_demand_percentage_above_base_capacity: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         protected_instances: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
@@ -6665,7 +7374,7 @@ class ScalingGroupProps:
         spot_instance_pools: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         spot_instance_remedy: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         standby_instances: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosScalingGroup.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosScalingGroup.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         v_switch_ids: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -6700,6 +7409,36 @@ class ScalingGroupProps:
         :param v_switch_id: Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
         :param v_switch_ids: Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScalingGroupProps.__init__)
+            check_type(argname="argument max_size", value=max_size, expected_type=type_hints["max_size"])
+            check_type(argname="argument min_size", value=min_size, expected_type=type_hints["min_size"])
+            check_type(argname="argument compensate_with_on_demand", value=compensate_with_on_demand, expected_type=type_hints["compensate_with_on_demand"])
+            check_type(argname="argument container_group_id", value=container_group_id, expected_type=type_hints["container_group_id"])
+            check_type(argname="argument db_instance_ids", value=db_instance_ids, expected_type=type_hints["db_instance_ids"])
+            check_type(argname="argument default_cooldown", value=default_cooldown, expected_type=type_hints["default_cooldown"])
+            check_type(argname="argument desired_capacity", value=desired_capacity, expected_type=type_hints["desired_capacity"])
+            check_type(argname="argument group_deletion_protection", value=group_deletion_protection, expected_type=type_hints["group_deletion_protection"])
+            check_type(argname="argument group_type", value=group_type, expected_type=type_hints["group_type"])
+            check_type(argname="argument health_check_type", value=health_check_type, expected_type=type_hints["health_check_type"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument launch_template_id", value=launch_template_id, expected_type=type_hints["launch_template_id"])
+            check_type(argname="argument launch_template_version", value=launch_template_version, expected_type=type_hints["launch_template_version"])
+            check_type(argname="argument load_balancer_ids", value=load_balancer_ids, expected_type=type_hints["load_balancer_ids"])
+            check_type(argname="argument multi_az_policy", value=multi_az_policy, expected_type=type_hints["multi_az_policy"])
+            check_type(argname="argument notification_configurations", value=notification_configurations, expected_type=type_hints["notification_configurations"])
+            check_type(argname="argument on_demand_base_capacity", value=on_demand_base_capacity, expected_type=type_hints["on_demand_base_capacity"])
+            check_type(argname="argument on_demand_percentage_above_base_capacity", value=on_demand_percentage_above_base_capacity, expected_type=type_hints["on_demand_percentage_above_base_capacity"])
+            check_type(argname="argument protected_instances", value=protected_instances, expected_type=type_hints["protected_instances"])
+            check_type(argname="argument removal_policys", value=removal_policys, expected_type=type_hints["removal_policys"])
+            check_type(argname="argument scaling_group_name", value=scaling_group_name, expected_type=type_hints["scaling_group_name"])
+            check_type(argname="argument scaling_policy", value=scaling_policy, expected_type=type_hints["scaling_policy"])
+            check_type(argname="argument spot_instance_pools", value=spot_instance_pools, expected_type=type_hints["spot_instance_pools"])
+            check_type(argname="argument spot_instance_remedy", value=spot_instance_remedy, expected_type=type_hints["spot_instance_remedy"])
+            check_type(argname="argument standby_instances", value=standby_instances, expected_type=type_hints["standby_instances"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument v_switch_ids", value=v_switch_ids, expected_type=type_hints["v_switch_ids"])
         self._values: typing.Dict[str, typing.Any] = {
             "max_size": max_size,
             "min_size": min_size,
@@ -7080,7 +7819,7 @@ class ScalingRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ScalingRuleProps",
+        props: typing.Union["ScalingRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScalingRule``.
@@ -7094,6 +7833,12 @@ class ScalingRule(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScalingRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -7151,7 +7896,7 @@ class ScalingRuleProps:
         predictive_value_buffer: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         scaling_rule_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         scaling_rule_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        step_adjustment: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosScalingRule.StepAdjustmentProperty]]]] = None,
+        step_adjustment: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosScalingRule.StepAdjustmentProperty, typing.Dict[str, typing.Any]]]]]] = None,
         target_value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ESS::ScalingRule``.
@@ -7174,6 +7919,25 @@ class ScalingRuleProps:
         :param step_adjustment: Property stepAdjustment:.
         :param target_value: Property targetValue: The target value of a metric. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScalingRuleProps.__init__)
+            check_type(argname="argument scaling_group_id", value=scaling_group_id, expected_type=type_hints["scaling_group_id"])
+            check_type(argname="argument adjustment_type", value=adjustment_type, expected_type=type_hints["adjustment_type"])
+            check_type(argname="argument adjustment_value", value=adjustment_value, expected_type=type_hints["adjustment_value"])
+            check_type(argname="argument cooldown", value=cooldown, expected_type=type_hints["cooldown"])
+            check_type(argname="argument disable_scale_in", value=disable_scale_in, expected_type=type_hints["disable_scale_in"])
+            check_type(argname="argument estimated_instance_warmup", value=estimated_instance_warmup, expected_type=type_hints["estimated_instance_warmup"])
+            check_type(argname="argument initial_max_size", value=initial_max_size, expected_type=type_hints["initial_max_size"])
+            check_type(argname="argument metric_name", value=metric_name, expected_type=type_hints["metric_name"])
+            check_type(argname="argument min_adjustment_magnitude", value=min_adjustment_magnitude, expected_type=type_hints["min_adjustment_magnitude"])
+            check_type(argname="argument predictive_scaling_mode", value=predictive_scaling_mode, expected_type=type_hints["predictive_scaling_mode"])
+            check_type(argname="argument predictive_task_buffer_time", value=predictive_task_buffer_time, expected_type=type_hints["predictive_task_buffer_time"])
+            check_type(argname="argument predictive_value_behavior", value=predictive_value_behavior, expected_type=type_hints["predictive_value_behavior"])
+            check_type(argname="argument predictive_value_buffer", value=predictive_value_buffer, expected_type=type_hints["predictive_value_buffer"])
+            check_type(argname="argument scaling_rule_name", value=scaling_rule_name, expected_type=type_hints["scaling_rule_name"])
+            check_type(argname="argument scaling_rule_type", value=scaling_rule_type, expected_type=type_hints["scaling_rule_type"])
+            check_type(argname="argument step_adjustment", value=step_adjustment, expected_type=type_hints["step_adjustment"])
+            check_type(argname="argument target_value", value=target_value, expected_type=type_hints["target_value"])
         self._values: typing.Dict[str, typing.Any] = {
             "scaling_group_id": scaling_group_id,
         }
@@ -7454,7 +8218,7 @@ class ScheduledTask(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ScheduledTaskProps",
+        props: typing.Union["ScheduledTaskProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ESS::ScheduledTask``.
@@ -7468,6 +8232,12 @@ class ScheduledTask(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScheduledTask.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -7518,6 +8288,17 @@ class ScheduledTaskProps:
         :param scheduled_task_name: Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region. If this parameter is not specified, the default value ScheduledScalingTaskId is used.
         :param task_enabled: Property taskEnabled: Whether to enable the scheduled task. - When the parameter is set to true, the task is enabled. - When the parameter is set to false, the task is disabled. The default value is true.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScheduledTaskProps.__init__)
+            check_type(argname="argument launch_time", value=launch_time, expected_type=type_hints["launch_time"])
+            check_type(argname="argument scheduled_action", value=scheduled_action, expected_type=type_hints["scheduled_action"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument launch_expiration_time", value=launch_expiration_time, expected_type=type_hints["launch_expiration_time"])
+            check_type(argname="argument recurrence_end_time", value=recurrence_end_time, expected_type=type_hints["recurrence_end_time"])
+            check_type(argname="argument recurrence_type", value=recurrence_type, expected_type=type_hints["recurrence_type"])
+            check_type(argname="argument recurrence_value", value=recurrence_value, expected_type=type_hints["recurrence_value"])
+            check_type(argname="argument scheduled_task_name", value=scheduled_task_name, expected_type=type_hints["scheduled_task_name"])
+            check_type(argname="argument task_enabled", value=task_enabled, expected_type=type_hints["task_enabled"])
         self._values: typing.Dict[str, typing.Any] = {
             "launch_time": launch_time,
             "scheduled_action": scheduled_action,

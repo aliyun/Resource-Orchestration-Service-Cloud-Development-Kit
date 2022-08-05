@@ -8,6 +8,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 __jsii_assembly__ = jsii.JSIIAssembly.load(
     "@alicloud/ros-cdk-assembly-schema",
     "1.0.10",

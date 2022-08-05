@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Project(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ProjectProps",
+        props: typing.Union["ProjectProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DATAHUB::Project``.
@@ -47,6 +49,12 @@ class Project(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Project.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -73,6 +81,10 @@ class ProjectProps:
         :param comment: Property comment: The comment of project.
         :param project_name: Property projectName: The name of the project. Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ProjectProps.__init__)
+            check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
+            check_type(argname="argument project_name", value=project_name, expected_type=type_hints["project_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "comment": comment,
             "project_name": project_name,
@@ -118,7 +130,7 @@ class RosProject(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosProjectProps",
+        props: typing.Union["RosProjectProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DATAHUB::Project``.
@@ -128,6 +140,12 @@ class RosProject(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProject.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -138,6 +156,9 @@ class RosProject(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProject._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -172,6 +193,9 @@ class RosProject(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "comment").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "comment", value)
 
     @builtins.property # type: ignore[misc]
@@ -181,6 +205,9 @@ class RosProject(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -196,6 +223,9 @@ class RosProject(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "project_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "projectName", value)
 
 
@@ -216,6 +246,10 @@ class RosProjectProps:
         :param comment: 
         :param project_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProjectProps.__init__)
+            check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
+            check_type(argname="argument project_name", value=project_name, expected_type=type_hints["project_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "comment": comment,
             "project_name": project_name,
@@ -262,7 +296,7 @@ class RosTopic(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTopicProps",
+        props: typing.Union["RosTopicProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DATAHUB::Topic``.
@@ -272,6 +306,12 @@ class RosTopic(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopic.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -282,6 +322,9 @@ class RosTopic(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopic._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -324,6 +367,9 @@ class RosTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "comment").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "comment", value)
 
     @builtins.property # type: ignore[misc]
@@ -333,6 +379,9 @@ class RosTopic(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -348,6 +397,9 @@ class RosTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "project_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "projectName", value)
 
     @builtins.property # type: ignore[misc]
@@ -363,6 +415,9 @@ class RosTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "record_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "recordType", value)
 
     @builtins.property # type: ignore[misc]
@@ -378,6 +433,9 @@ class RosTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "topic_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topicName", value)
 
     @builtins.property # type: ignore[misc]
@@ -395,6 +453,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "lifecycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "lifecycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -412,6 +473,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "record_schema").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "recordSchema", value)
 
     @builtins.property # type: ignore[misc]
@@ -429,6 +493,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "shard_count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "shardCount", value)
 
 
@@ -467,6 +534,15 @@ class RosTopicProps:
         :param record_schema: 
         :param shard_count: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopicProps.__init__)
+            check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
+            check_type(argname="argument project_name", value=project_name, expected_type=type_hints["project_name"])
+            check_type(argname="argument record_type", value=record_type, expected_type=type_hints["record_type"])
+            check_type(argname="argument topic_name", value=topic_name, expected_type=type_hints["topic_name"])
+            check_type(argname="argument lifecycle", value=lifecycle, expected_type=type_hints["lifecycle"])
+            check_type(argname="argument record_schema", value=record_schema, expected_type=type_hints["record_schema"])
+            check_type(argname="argument shard_count", value=shard_count, expected_type=type_hints["shard_count"])
         self._values: typing.Dict[str, typing.Any] = {
             "comment": comment,
             "project_name": project_name,
@@ -569,7 +645,7 @@ class Topic(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TopicProps",
+        props: typing.Union["TopicProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DATAHUB::Topic``.
@@ -583,6 +659,12 @@ class Topic(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Topic.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -633,6 +715,15 @@ class TopicProps:
         :param record_schema: Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.
         :param shard_count: Property shardCount: Initial shard number.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TopicProps.__init__)
+            check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
+            check_type(argname="argument project_name", value=project_name, expected_type=type_hints["project_name"])
+            check_type(argname="argument record_type", value=record_type, expected_type=type_hints["record_type"])
+            check_type(argname="argument topic_name", value=topic_name, expected_type=type_hints["topic_name"])
+            check_type(argname="argument lifecycle", value=lifecycle, expected_type=type_hints["lifecycle"])
+            check_type(argname="argument record_schema", value=record_schema, expected_type=type_hints["record_schema"])
+            check_type(argname="argument shard_count", value=shard_count, expected_type=type_hints["shard_count"])
         self._values: typing.Dict[str, typing.Any] = {
             "comment": comment,
             "project_name": project_name,

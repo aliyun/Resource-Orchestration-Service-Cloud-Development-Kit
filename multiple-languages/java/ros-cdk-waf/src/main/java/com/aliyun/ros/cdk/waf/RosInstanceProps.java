@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:26.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:06.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {

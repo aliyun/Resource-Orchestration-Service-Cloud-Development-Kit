@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::NetworkAcl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:26.742Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.833Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NetworkAcl")
 public class NetworkAcl extends com.aliyun.ros.cdk.core.Resource {
 

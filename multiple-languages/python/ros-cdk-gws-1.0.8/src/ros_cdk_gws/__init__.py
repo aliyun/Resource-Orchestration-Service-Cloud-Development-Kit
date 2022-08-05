@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Cluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ClusterProps",
+        props: typing.Union["ClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::GWS::Cluster``.
@@ -47,6 +49,12 @@ class Cluster(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Cluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -80,7 +88,7 @@ class ClusterProps:
         cluster_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosCluster.PolicyProperty"]] = None,
+        policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosCluster.PolicyProperty", typing.Dict[str, typing.Any]]]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::GWS::Cluster``.
@@ -91,6 +99,13 @@ class ClusterProps:
         :param policy: Property policy: Cluster policy.
         :param v_switch_id: Property vSwitchId: VSwitch id.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ClusterProps.__init__)
+            check_type(argname="argument cluster_type", value=cluster_type, expected_type=type_hints["cluster_type"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument policy", value=policy, expected_type=type_hints["policy"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_type": cluster_type,
             "vpc_id": vpc_id,
@@ -163,7 +178,7 @@ class Instance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "InstanceProps",
+        props: typing.Union["InstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::GWS::Instance``.
@@ -177,6 +192,12 @@ class Instance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Instance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -249,7 +270,7 @@ class InstanceProps:
         system_disk_size: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
         work_mode: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         allocate_public_address: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        app_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosInstance.AppListProperty"]]]] = None,
+        app_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosInstance.AppListProperty", typing.Dict[str, typing.Any]]]]]] = None,
         auto_renew: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         instance_charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         internet_charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -278,6 +299,24 @@ class InstanceProps:
         :param period_unit: Property periodUnit: Unit of period. Week or Month. This value is only valid when InstanceChargeType is PrePaid.
         :param v_switch_id: Property vSwitchId: VSwitch id.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InstanceProps.__init__)
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument image_id", value=image_id, expected_type=type_hints["image_id"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+            check_type(argname="argument system_disk_category", value=system_disk_category, expected_type=type_hints["system_disk_category"])
+            check_type(argname="argument system_disk_size", value=system_disk_size, expected_type=type_hints["system_disk_size"])
+            check_type(argname="argument work_mode", value=work_mode, expected_type=type_hints["work_mode"])
+            check_type(argname="argument allocate_public_address", value=allocate_public_address, expected_type=type_hints["allocate_public_address"])
+            check_type(argname="argument app_list", value=app_list, expected_type=type_hints["app_list"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument internet_max_bandwidth_out", value=internet_max_bandwidth_out, expected_type=type_hints["internet_max_bandwidth_out"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_unit", value=period_unit, expected_type=type_hints["period_unit"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_id": cluster_id,
             "image_id": image_id,
@@ -471,7 +510,7 @@ class RosCluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosClusterProps",
+        props: typing.Union["RosClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::GWS::Cluster``.
@@ -481,6 +520,12 @@ class RosCluster(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -491,6 +536,9 @@ class RosCluster(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCluster._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -536,6 +584,9 @@ class RosCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "cluster_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterType", value)
 
     @builtins.property # type: ignore[misc]
@@ -545,6 +596,9 @@ class RosCluster(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -560,6 +614,9 @@ class RosCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -577,6 +634,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -594,6 +654,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosCluster.PolicyProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policy", value)
 
     @builtins.property # type: ignore[misc]
@@ -611,6 +674,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @jsii.data_type(
@@ -638,6 +704,12 @@ class RosCluster(
             :param usb_redirect: 
             :param watermark: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosCluster.PolicyProperty.__init__)
+                check_type(argname="argument clipboard", value=clipboard, expected_type=type_hints["clipboard"])
+                check_type(argname="argument local_drive", value=local_drive, expected_type=type_hints["local_drive"])
+                check_type(argname="argument usb_redirect", value=usb_redirect, expected_type=type_hints["usb_redirect"])
+                check_type(argname="argument watermark", value=watermark, expected_type=type_hints["watermark"])
             self._values: typing.Dict[str, typing.Any] = {
                 "clipboard": clipboard,
                 "local_drive": local_drive,
@@ -711,7 +783,7 @@ class RosClusterProps:
         cluster_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosCluster.PolicyProperty]] = None,
+        policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosCluster.PolicyProperty, typing.Dict[str, typing.Any]]]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::GWS::Cluster``.
@@ -722,6 +794,13 @@ class RosClusterProps:
         :param policy: 
         :param v_switch_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosClusterProps.__init__)
+            check_type(argname="argument cluster_type", value=cluster_type, expected_type=type_hints["cluster_type"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument policy", value=policy, expected_type=type_hints["policy"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_type": cluster_type,
             "vpc_id": vpc_id,
@@ -807,7 +886,7 @@ class RosInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInstanceProps",
+        props: typing.Union["RosInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::GWS::Instance``.
@@ -817,6 +896,12 @@ class RosInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -827,6 +912,9 @@ class RosInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -901,6 +989,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -910,6 +1001,9 @@ class RosInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -925,6 +1019,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "image_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageId", value)
 
     @builtins.property # type: ignore[misc]
@@ -940,6 +1037,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -957,6 +1057,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "system_disk_category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "systemDiskCategory", value)
 
     @builtins.property # type: ignore[misc]
@@ -972,6 +1075,9 @@ class RosInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "system_disk_size").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "systemDiskSize", value)
 
     @builtins.property # type: ignore[misc]
@@ -991,6 +1097,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "work_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "workMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -1008,6 +1117,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "allocate_public_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allocatePublicAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -1025,6 +1137,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosInstance.AppListProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "app_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "appList", value)
 
     @builtins.property # type: ignore[misc]
@@ -1042,6 +1157,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "auto_renew").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenew", value)
 
     @builtins.property # type: ignore[misc]
@@ -1063,6 +1181,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1085,6 +1206,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1107,6 +1231,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "internet_max_bandwidth_out").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetMaxBandwidthOut", value)
 
     @builtins.property # type: ignore[misc]
@@ -1124,6 +1251,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -1146,6 +1276,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -1166,6 +1299,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "period_unit").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "periodUnit", value)
 
     @builtins.property # type: ignore[misc]
@@ -1183,6 +1319,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @jsii.data_type(
@@ -1207,6 +1346,11 @@ class RosInstance(
             :param app_name: 
             :param app_path: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.AppListProperty.__init__)
+                check_type(argname="argument app_args", value=app_args, expected_type=type_hints["app_args"])
+                check_type(argname="argument app_name", value=app_name, expected_type=type_hints["app_name"])
+                check_type(argname="argument app_path", value=app_path, expected_type=type_hints["app_path"])
             self._values: typing.Dict[str, typing.Any] = {}
             if app_args is not None:
                 self._values["app_args"] = app_args
@@ -1290,7 +1434,7 @@ class RosInstanceProps:
         system_disk_size: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
         work_mode: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         allocate_public_address: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        app_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosInstance.AppListProperty]]]] = None,
+        app_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosInstance.AppListProperty, typing.Dict[str, typing.Any]]]]]] = None,
         auto_renew: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         instance_charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         internet_charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -1319,6 +1463,24 @@ class RosInstanceProps:
         :param period_unit: 
         :param v_switch_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceProps.__init__)
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument image_id", value=image_id, expected_type=type_hints["image_id"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+            check_type(argname="argument system_disk_category", value=system_disk_category, expected_type=type_hints["system_disk_category"])
+            check_type(argname="argument system_disk_size", value=system_disk_size, expected_type=type_hints["system_disk_size"])
+            check_type(argname="argument work_mode", value=work_mode, expected_type=type_hints["work_mode"])
+            check_type(argname="argument allocate_public_address", value=allocate_public_address, expected_type=type_hints["allocate_public_address"])
+            check_type(argname="argument app_list", value=app_list, expected_type=type_hints["app_list"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument internet_max_bandwidth_out", value=internet_max_bandwidth_out, expected_type=type_hints["internet_max_bandwidth_out"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_unit", value=period_unit, expected_type=type_hints["period_unit"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_id": cluster_id,
             "image_id": image_id,

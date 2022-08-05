@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class RosServiceMesh(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosServiceMeshProps",
+        props: typing.Union["RosServiceMeshProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ASM::ServiceMesh``.
@@ -43,6 +45,12 @@ class RosServiceMesh(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosServiceMesh.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -53,6 +61,9 @@ class RosServiceMesh(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosServiceMesh._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -81,6 +92,9 @@ class RosServiceMesh(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -96,6 +110,9 @@ class RosServiceMesh(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -113,6 +130,9 @@ class RosServiceMesh(
         self,
         value: typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "v_switches").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitches", value)
 
     @builtins.property # type: ignore[misc]
@@ -135,6 +155,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "api_server_public_eip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "apiServerPublicEip", value)
 
     @builtins.property # type: ignore[misc]
@@ -155,6 +178,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "audit_project").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "auditProject", value)
 
     @builtins.property # type: ignore[misc]
@@ -172,6 +198,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "customized_zipkin").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "customizedZipkin", value)
 
     @builtins.property # type: ignore[misc]
@@ -193,6 +222,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "enable_audit").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableAudit", value)
 
     @builtins.property # type: ignore[misc]
@@ -213,6 +245,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "include_ip_ranges").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "includeIpRanges", value)
 
     @builtins.property # type: ignore[misc]
@@ -230,6 +265,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "istio_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "istioVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -250,6 +288,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "locality_load_balancing").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localityLoadBalancing", value)
 
     @builtins.property # type: ignore[misc]
@@ -267,6 +308,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -284,6 +328,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosServiceMesh.OPAProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "opa").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "opa", value)
 
     @builtins.property # type: ignore[misc]
@@ -301,6 +348,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "outbound_traffic_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "outboundTrafficPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -323,6 +373,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "pilot_public_eip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pilotPublicEip", value)
 
     @builtins.property # type: ignore[misc]
@@ -340,6 +393,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosServiceMesh.ProxyProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "proxy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "proxy", value)
 
     @builtins.property # type: ignore[misc]
@@ -357,6 +413,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "telemetry").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "telemetry", value)
 
     @builtins.property # type: ignore[misc]
@@ -374,6 +433,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "trace_sampling").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "traceSampling", value)
 
     @builtins.property # type: ignore[misc]
@@ -395,6 +457,9 @@ class RosServiceMesh(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServiceMesh, "tracing").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tracing", value)
 
     @jsii.data_type(
@@ -428,6 +493,14 @@ class RosServiceMesh(
             :param opa_request_memory: 
             :param open_agent_policy: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosServiceMesh.OPAProperty.__init__)
+                check_type(argname="argument opa_limit_cpu", value=opa_limit_cpu, expected_type=type_hints["opa_limit_cpu"])
+                check_type(argname="argument opa_limit_memory", value=opa_limit_memory, expected_type=type_hints["opa_limit_memory"])
+                check_type(argname="argument opa_log_level", value=opa_log_level, expected_type=type_hints["opa_log_level"])
+                check_type(argname="argument opa_request_cpu", value=opa_request_cpu, expected_type=type_hints["opa_request_cpu"])
+                check_type(argname="argument opa_request_memory", value=opa_request_memory, expected_type=type_hints["opa_request_memory"])
+                check_type(argname="argument open_agent_policy", value=open_agent_policy, expected_type=type_hints["open_agent_policy"])
             self._values: typing.Dict[str, typing.Any] = {}
             if opa_limit_cpu is not None:
                 self._values["opa_limit_cpu"] = opa_limit_cpu
@@ -544,6 +617,13 @@ class RosServiceMesh(
             :param proxy_request_cpu: 
             :param proxy_request_memory: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosServiceMesh.ProxyProperty.__init__)
+                check_type(argname="argument cluster_domain", value=cluster_domain, expected_type=type_hints["cluster_domain"])
+                check_type(argname="argument proxy_limit_cpu", value=proxy_limit_cpu, expected_type=type_hints["proxy_limit_cpu"])
+                check_type(argname="argument proxy_limit_memory", value=proxy_limit_memory, expected_type=type_hints["proxy_limit_memory"])
+                check_type(argname="argument proxy_request_cpu", value=proxy_request_cpu, expected_type=type_hints["proxy_request_cpu"])
+                check_type(argname="argument proxy_request_memory", value=proxy_request_memory, expected_type=type_hints["proxy_request_memory"])
             self._values: typing.Dict[str, typing.Any] = {}
             if cluster_domain is not None:
                 self._values["cluster_domain"] = cluster_domain
@@ -655,10 +735,10 @@ class RosServiceMeshProps:
         istio_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         locality_load_balancing: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        opa: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosServiceMesh.OPAProperty]] = None,
+        opa: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosServiceMesh.OPAProperty, typing.Dict[str, typing.Any]]]] = None,
         outbound_traffic_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         pilot_public_eip: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        proxy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosServiceMesh.ProxyProperty]] = None,
+        proxy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosServiceMesh.ProxyProperty, typing.Dict[str, typing.Any]]]] = None,
         telemetry: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         trace_sampling: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         tracing: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -683,6 +763,25 @@ class RosServiceMeshProps:
         :param trace_sampling: 
         :param tracing: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosServiceMeshProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switches", value=v_switches, expected_type=type_hints["v_switches"])
+            check_type(argname="argument api_server_public_eip", value=api_server_public_eip, expected_type=type_hints["api_server_public_eip"])
+            check_type(argname="argument audit_project", value=audit_project, expected_type=type_hints["audit_project"])
+            check_type(argname="argument customized_zipkin", value=customized_zipkin, expected_type=type_hints["customized_zipkin"])
+            check_type(argname="argument enable_audit", value=enable_audit, expected_type=type_hints["enable_audit"])
+            check_type(argname="argument include_ip_ranges", value=include_ip_ranges, expected_type=type_hints["include_ip_ranges"])
+            check_type(argname="argument istio_version", value=istio_version, expected_type=type_hints["istio_version"])
+            check_type(argname="argument locality_load_balancing", value=locality_load_balancing, expected_type=type_hints["locality_load_balancing"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument opa", value=opa, expected_type=type_hints["opa"])
+            check_type(argname="argument outbound_traffic_policy", value=outbound_traffic_policy, expected_type=type_hints["outbound_traffic_policy"])
+            check_type(argname="argument pilot_public_eip", value=pilot_public_eip, expected_type=type_hints["pilot_public_eip"])
+            check_type(argname="argument proxy", value=proxy, expected_type=type_hints["proxy"])
+            check_type(argname="argument telemetry", value=telemetry, expected_type=type_hints["telemetry"])
+            check_type(argname="argument trace_sampling", value=trace_sampling, expected_type=type_hints["trace_sampling"])
+            check_type(argname="argument tracing", value=tracing, expected_type=type_hints["tracing"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
             "v_switches": v_switches,
@@ -938,7 +1037,7 @@ class ServiceMesh(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ServiceMeshProps",
+        props: typing.Union["ServiceMeshProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ASM::ServiceMesh``.
@@ -952,6 +1051,12 @@ class ServiceMesh(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ServiceMesh.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -998,10 +1103,10 @@ class ServiceMeshProps:
         istio_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         locality_load_balancing: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        opa: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosServiceMesh.OPAProperty]] = None,
+        opa: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosServiceMesh.OPAProperty, typing.Dict[str, typing.Any]]]] = None,
         outbound_traffic_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         pilot_public_eip: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        proxy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosServiceMesh.ProxyProperty]] = None,
+        proxy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosServiceMesh.ProxyProperty, typing.Dict[str, typing.Any]]]] = None,
         telemetry: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         trace_sampling: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         tracing: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -1026,6 +1131,25 @@ class ServiceMeshProps:
         :param trace_sampling: Property traceSampling: The sampling percentage of tracing.
         :param tracing: Property tracing: Specifies whether to enable the tracing feature. To enable this feature, make sure that you have activated Alibaba Cloud Tracing Analysis. Valid values: true and false. Default value: false.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ServiceMeshProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switches", value=v_switches, expected_type=type_hints["v_switches"])
+            check_type(argname="argument api_server_public_eip", value=api_server_public_eip, expected_type=type_hints["api_server_public_eip"])
+            check_type(argname="argument audit_project", value=audit_project, expected_type=type_hints["audit_project"])
+            check_type(argname="argument customized_zipkin", value=customized_zipkin, expected_type=type_hints["customized_zipkin"])
+            check_type(argname="argument enable_audit", value=enable_audit, expected_type=type_hints["enable_audit"])
+            check_type(argname="argument include_ip_ranges", value=include_ip_ranges, expected_type=type_hints["include_ip_ranges"])
+            check_type(argname="argument istio_version", value=istio_version, expected_type=type_hints["istio_version"])
+            check_type(argname="argument locality_load_balancing", value=locality_load_balancing, expected_type=type_hints["locality_load_balancing"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument opa", value=opa, expected_type=type_hints["opa"])
+            check_type(argname="argument outbound_traffic_policy", value=outbound_traffic_policy, expected_type=type_hints["outbound_traffic_policy"])
+            check_type(argname="argument pilot_public_eip", value=pilot_public_eip, expected_type=type_hints["pilot_public_eip"])
+            check_type(argname="argument proxy", value=proxy, expected_type=type_hints["proxy"])
+            check_type(argname="argument telemetry", value=telemetry, expected_type=type_hints["telemetry"])
+            check_type(argname="argument trace_sampling", value=trace_sampling, expected_type=type_hints["trace_sampling"])
+            check_type(argname="argument tracing", value=tracing, expected_type=type_hints["tracing"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
             "v_switches": v_switches,

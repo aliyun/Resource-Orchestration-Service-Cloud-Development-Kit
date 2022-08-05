@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class RosUserVpcAuthorization(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosUserVpcAuthorizationProps",
+        props: typing.Union["RosUserVpcAuthorizationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::PVTZ::UserVpcAuthorization``.
@@ -43,6 +45,12 @@ class RosUserVpcAuthorization(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserVpcAuthorization.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -53,6 +61,9 @@ class RosUserVpcAuthorization(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserVpcAuthorization._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -97,6 +108,9 @@ class RosUserVpcAuthorization(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserVpcAuthorization, "authorized_user_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "authorizedUserId", value)
 
     @builtins.property # type: ignore[misc]
@@ -106,6 +120,9 @@ class RosUserVpcAuthorization(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserVpcAuthorization, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -127,6 +144,9 @@ class RosUserVpcAuthorization(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserVpcAuthorization, "auth_channel").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "authChannel", value)
 
     @builtins.property # type: ignore[misc]
@@ -144,6 +164,9 @@ class RosUserVpcAuthorization(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserVpcAuthorization, "auth_code").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "authCode", value)
 
     @builtins.property # type: ignore[misc]
@@ -161,6 +184,9 @@ class RosUserVpcAuthorization(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserVpcAuthorization, "auth_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "authType", value)
 
     @builtins.property # type: ignore[misc]
@@ -178,6 +204,9 @@ class RosUserVpcAuthorization(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserVpcAuthorization, "ignore_deletion_forbidden").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ignoreDeletionForbidden", value)
 
 
@@ -210,6 +239,13 @@ class RosUserVpcAuthorizationProps:
         :param auth_type: 
         :param ignore_deletion_forbidden: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserVpcAuthorizationProps.__init__)
+            check_type(argname="argument authorized_user_id", value=authorized_user_id, expected_type=type_hints["authorized_user_id"])
+            check_type(argname="argument auth_channel", value=auth_channel, expected_type=type_hints["auth_channel"])
+            check_type(argname="argument auth_code", value=auth_code, expected_type=type_hints["auth_code"])
+            check_type(argname="argument auth_type", value=auth_type, expected_type=type_hints["auth_type"])
+            check_type(argname="argument ignore_deletion_forbidden", value=ignore_deletion_forbidden, expected_type=type_hints["ignore_deletion_forbidden"])
         self._values: typing.Dict[str, typing.Any] = {
             "authorized_user_id": authorized_user_id,
         }
@@ -300,7 +336,7 @@ class RosZone(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosZoneProps",
+        props: typing.Union["RosZoneProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::PVTZ::Zone``.
@@ -310,6 +346,12 @@ class RosZone(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZone.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -320,6 +362,9 @@ class RosZone(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZone._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -372,6 +417,9 @@ class RosZone(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -387,6 +435,9 @@ class RosZone(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "zone_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneName", value)
 
     @builtins.property # type: ignore[misc]
@@ -404,6 +455,9 @@ class RosZone(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "ignored_stack_tag_keys").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ignoredStackTagKeys", value)
 
     @builtins.property # type: ignore[misc]
@@ -425,6 +479,9 @@ class RosZone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "proxy_pattern").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "proxyPattern", value)
 
     @builtins.property # type: ignore[misc]
@@ -442,6 +499,9 @@ class RosZone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "remark").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "remark", value)
 
     @builtins.property # type: ignore[misc]
@@ -459,6 +519,9 @@ class RosZone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -471,6 +534,9 @@ class RosZone(
 
     @tags.setter
     def tags(self, value: typing.Optional[typing.List["RosZone.TagsProperty"]]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -488,6 +554,9 @@ class RosZone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "zone_tag").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneTag", value)
 
     @builtins.property # type: ignore[misc]
@@ -505,6 +574,9 @@ class RosZone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZone, "zone_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneType", value)
 
     @jsii.data_type(
@@ -523,6 +595,10 @@ class RosZone(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosZone.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -583,7 +659,7 @@ class RosZoneProps:
         proxy_pattern: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         remark: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosZone.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosZone.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         zone_tag: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         zone_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -598,6 +674,16 @@ class RosZoneProps:
         :param zone_tag: 
         :param zone_type: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZoneProps.__init__)
+            check_type(argname="argument zone_name", value=zone_name, expected_type=type_hints["zone_name"])
+            check_type(argname="argument ignored_stack_tag_keys", value=ignored_stack_tag_keys, expected_type=type_hints["ignored_stack_tag_keys"])
+            check_type(argname="argument proxy_pattern", value=proxy_pattern, expected_type=type_hints["proxy_pattern"])
+            check_type(argname="argument remark", value=remark, expected_type=type_hints["remark"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument zone_tag", value=zone_tag, expected_type=type_hints["zone_tag"])
+            check_type(argname="argument zone_type", value=zone_type, expected_type=type_hints["zone_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "zone_name": zone_name,
         }
@@ -720,7 +806,7 @@ class RosZoneRecord(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosZoneRecordProps",
+        props: typing.Union["RosZoneRecordProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::PVTZ::ZoneRecord``.
@@ -730,6 +816,12 @@ class RosZoneRecord(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZoneRecord.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -740,6 +832,9 @@ class RosZoneRecord(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZoneRecord._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -784,6 +879,9 @@ class RosZoneRecord(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneRecord, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -797,6 +895,9 @@ class RosZoneRecord(
 
     @rr.setter
     def rr(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneRecord, "rr").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "rr", value)
 
     @builtins.property # type: ignore[misc]
@@ -812,6 +913,9 @@ class RosZoneRecord(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneRecord, "status").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "status", value)
 
     @builtins.property # type: ignore[misc]
@@ -824,6 +928,9 @@ class RosZoneRecord(
 
     @type.setter
     def type(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneRecord, "type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "type", value)
 
     @builtins.property # type: ignore[misc]
@@ -839,6 +946,9 @@ class RosZoneRecord(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneRecord, "value").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "value", value)
 
     @builtins.property # type: ignore[misc]
@@ -854,6 +964,9 @@ class RosZoneRecord(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneRecord, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @builtins.property # type: ignore[misc]
@@ -871,6 +984,9 @@ class RosZoneRecord(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneRecord, "priority").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "priority", value)
 
     @builtins.property # type: ignore[misc]
@@ -888,6 +1004,9 @@ class RosZoneRecord(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneRecord, "ttl").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ttl", value)
 
 
@@ -926,6 +1045,15 @@ class RosZoneRecordProps:
         :param priority: 
         :param ttl: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZoneRecordProps.__init__)
+            check_type(argname="argument rr", value=rr, expected_type=type_hints["rr"])
+            check_type(argname="argument status", value=status, expected_type=type_hints["status"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument priority", value=priority, expected_type=type_hints["priority"])
+            check_type(argname="argument ttl", value=ttl, expected_type=type_hints["ttl"])
         self._values: typing.Dict[str, typing.Any] = {
             "rr": rr,
             "status": status,
@@ -1027,7 +1155,7 @@ class RosZoneVpcBinder(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosZoneVpcBinderProps",
+        props: typing.Union["RosZoneVpcBinderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::PVTZ::ZoneVpcBinder``.
@@ -1037,6 +1165,12 @@ class RosZoneVpcBinder(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZoneVpcBinder.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1047,6 +1181,9 @@ class RosZoneVpcBinder(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZoneVpcBinder._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1083,6 +1220,9 @@ class RosZoneVpcBinder(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneVpcBinder, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1100,6 +1240,9 @@ class RosZoneVpcBinder(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosZoneVpcBinder.VpcsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneVpcBinder, "vpcs").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcs", value)
 
     @builtins.property # type: ignore[misc]
@@ -1115,6 +1258,9 @@ class RosZoneVpcBinder(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosZoneVpcBinder, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @jsii.data_type(
@@ -1133,6 +1279,10 @@ class RosZoneVpcBinder(
             :param region_id: 
             :param vpc_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosZoneVpcBinder.VpcsProperty.__init__)
+                check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+                check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "region_id": region_id,
                 "vpc_id": vpc_id,
@@ -1177,7 +1327,7 @@ class RosZoneVpcBinderProps:
     def __init__(
         self,
         *,
-        vpcs: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosZoneVpcBinder.VpcsProperty]]],
+        vpcs: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosZoneVpcBinder.VpcsProperty, typing.Dict[str, typing.Any]]]]],
         zone_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
         '''Properties for defining a ``ALIYUN::PVTZ::ZoneVpcBinder``.
@@ -1185,6 +1335,10 @@ class RosZoneVpcBinderProps:
         :param vpcs: 
         :param zone_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosZoneVpcBinderProps.__init__)
+            check_type(argname="argument vpcs", value=vpcs, expected_type=type_hints["vpcs"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpcs": vpcs,
             "zone_id": zone_id,
@@ -1233,7 +1387,7 @@ class UserVpcAuthorization(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "UserVpcAuthorizationProps",
+        props: typing.Union["UserVpcAuthorizationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::PVTZ::UserVpcAuthorization``.
@@ -1247,6 +1401,12 @@ class UserVpcAuthorization(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserVpcAuthorization.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1291,6 +1451,13 @@ class UserVpcAuthorizationProps:
         :param auth_type: Property authType: Authorization type.
         :param ignore_deletion_forbidden: Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserVpcAuthorizationProps.__init__)
+            check_type(argname="argument authorized_user_id", value=authorized_user_id, expected_type=type_hints["authorized_user_id"])
+            check_type(argname="argument auth_channel", value=auth_channel, expected_type=type_hints["auth_channel"])
+            check_type(argname="argument auth_code", value=auth_code, expected_type=type_hints["auth_code"])
+            check_type(argname="argument auth_type", value=auth_type, expected_type=type_hints["auth_type"])
+            check_type(argname="argument ignore_deletion_forbidden", value=ignore_deletion_forbidden, expected_type=type_hints["ignore_deletion_forbidden"])
         self._values: typing.Dict[str, typing.Any] = {
             "authorized_user_id": authorized_user_id,
         }
@@ -1372,7 +1539,7 @@ class Zone(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ZoneProps",
+        props: typing.Union["ZoneProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::PVTZ::Zone``.
@@ -1386,6 +1553,12 @@ class Zone(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Zone.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1436,7 +1609,7 @@ class ZoneProps:
         proxy_pattern: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         remark: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosZone.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosZone.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         zone_tag: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         zone_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -1451,6 +1624,16 @@ class ZoneProps:
         :param zone_tag: Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
         :param zone_type: Property zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ZoneProps.__init__)
+            check_type(argname="argument zone_name", value=zone_name, expected_type=type_hints["zone_name"])
+            check_type(argname="argument ignored_stack_tag_keys", value=ignored_stack_tag_keys, expected_type=type_hints["ignored_stack_tag_keys"])
+            check_type(argname="argument proxy_pattern", value=proxy_pattern, expected_type=type_hints["proxy_pattern"])
+            check_type(argname="argument remark", value=remark, expected_type=type_hints["remark"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument zone_tag", value=zone_tag, expected_type=type_hints["zone_tag"])
+            check_type(argname="argument zone_type", value=zone_type, expected_type=type_hints["zone_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "zone_name": zone_name,
         }
@@ -1569,7 +1752,7 @@ class ZoneRecord(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ZoneRecordProps",
+        props: typing.Union["ZoneRecordProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::PVTZ::ZoneRecord``.
@@ -1583,6 +1766,12 @@ class ZoneRecord(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ZoneRecord.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1639,6 +1828,15 @@ class ZoneRecordProps:
         :param priority: Property priority: MX record priority, value range [1,99]. Default to 10.
         :param ttl: Property ttl: Survival time, default is 60.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ZoneRecordProps.__init__)
+            check_type(argname="argument rr", value=rr, expected_type=type_hints["rr"])
+            check_type(argname="argument status", value=status, expected_type=type_hints["status"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument priority", value=priority, expected_type=type_hints["priority"])
+            check_type(argname="argument ttl", value=ttl, expected_type=type_hints["ttl"])
         self._values: typing.Dict[str, typing.Any] = {
             "rr": rr,
             "status": status,
@@ -1728,7 +1926,7 @@ class ZoneVpcBinder(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ZoneVpcBinderProps",
+        props: typing.Union["ZoneVpcBinderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::PVTZ::ZoneVpcBinder``.
@@ -1742,6 +1940,12 @@ class ZoneVpcBinder(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ZoneVpcBinder.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1766,7 +1970,7 @@ class ZoneVpcBinderProps:
     def __init__(
         self,
         *,
-        vpcs: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosZoneVpcBinder.VpcsProperty]]],
+        vpcs: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosZoneVpcBinder.VpcsProperty, typing.Dict[str, typing.Any]]]]],
         zone_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
         '''Properties for defining a ``ALIYUN::PVTZ::ZoneVpcBinder``.
@@ -1774,6 +1978,10 @@ class ZoneVpcBinderProps:
         :param vpcs: Property vpcs:.
         :param zone_id: Property zoneId: Zone Id.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ZoneVpcBinderProps.__init__)
+            check_type(argname="argument vpcs", value=vpcs, expected_type=type_hints["vpcs"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpcs": vpcs,
             "zone_id": zone_id,

@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class ConsumerGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ConsumerGroupProps",
+        props: typing.Union["ConsumerGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DTS::ConsumerGroup``.
@@ -47,6 +49,12 @@ class ConsumerGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConsumerGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -94,6 +102,12 @@ class ConsumerGroupProps:
         :param consumer_group_user_name: Property consumerGroupUserName: User name of consumer group.
         :param subscription_instance_id: Property subscriptionInstanceId: Subscription instance ID.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConsumerGroupProps.__init__)
+            check_type(argname="argument consumer_group_name", value=consumer_group_name, expected_type=type_hints["consumer_group_name"])
+            check_type(argname="argument consumer_group_password", value=consumer_group_password, expected_type=type_hints["consumer_group_password"])
+            check_type(argname="argument consumer_group_user_name", value=consumer_group_user_name, expected_type=type_hints["consumer_group_user_name"])
+            check_type(argname="argument subscription_instance_id", value=subscription_instance_id, expected_type=type_hints["subscription_instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "consumer_group_name": consumer_group_name,
             "consumer_group_password": consumer_group_password,
@@ -160,7 +174,7 @@ class MigrationJob(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "MigrationJobProps",
+        props: typing.Union["MigrationJobProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DTS::MigrationJob``.
@@ -174,6 +188,12 @@ class MigrationJob(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MigrationJob.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -200,11 +220,11 @@ class MigrationJobProps:
         self,
         *,
         migration_job_class: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        destination_endpoint: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.DestinationEndpointProperty"]] = None,
+        destination_endpoint: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMigrationJob.DestinationEndpointProperty", typing.Dict[str, typing.Any]]]] = None,
         migration_job_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        migration_mode: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.MigrationModeProperty"]] = None,
-        migration_object: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.MigrationObjectProperty"]]]] = None,
-        source_endpoint: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.SourceEndpointProperty"]] = None,
+        migration_mode: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMigrationJob.MigrationModeProperty", typing.Dict[str, typing.Any]]]] = None,
+        migration_object: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMigrationJob.MigrationObjectProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        source_endpoint: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMigrationJob.SourceEndpointProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::DTS::MigrationJob``.
 
@@ -215,6 +235,14 @@ class MigrationJobProps:
         :param migration_object: Property migrationObject: Objects that need to be migrated.
         :param source_endpoint: Property sourceEndpoint: Migration source configuration.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MigrationJobProps.__init__)
+            check_type(argname="argument migration_job_class", value=migration_job_class, expected_type=type_hints["migration_job_class"])
+            check_type(argname="argument destination_endpoint", value=destination_endpoint, expected_type=type_hints["destination_endpoint"])
+            check_type(argname="argument migration_job_name", value=migration_job_name, expected_type=type_hints["migration_job_name"])
+            check_type(argname="argument migration_mode", value=migration_mode, expected_type=type_hints["migration_mode"])
+            check_type(argname="argument migration_object", value=migration_object, expected_type=type_hints["migration_object"])
+            check_type(argname="argument source_endpoint", value=source_endpoint, expected_type=type_hints["source_endpoint"])
         self._values: typing.Dict[str, typing.Any] = {
             "migration_job_class": migration_job_class,
         }
@@ -304,7 +332,7 @@ class RosConsumerGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosConsumerGroupProps",
+        props: typing.Union["RosConsumerGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DTS::ConsumerGroup``.
@@ -314,6 +342,12 @@ class RosConsumerGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosConsumerGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -324,6 +358,9 @@ class RosConsumerGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosConsumerGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -376,6 +413,9 @@ class RosConsumerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosConsumerGroup, "consumer_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "consumerGroupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -393,6 +433,9 @@ class RosConsumerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosConsumerGroup, "consumer_group_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "consumerGroupPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -410,6 +453,9 @@ class RosConsumerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosConsumerGroup, "consumer_group_user_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "consumerGroupUserName", value)
 
     @builtins.property # type: ignore[misc]
@@ -419,6 +465,9 @@ class RosConsumerGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosConsumerGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -436,6 +485,9 @@ class RosConsumerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosConsumerGroup, "subscription_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "subscriptionInstanceId", value)
 
 
@@ -465,6 +517,12 @@ class RosConsumerGroupProps:
         :param consumer_group_user_name: 
         :param subscription_instance_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosConsumerGroupProps.__init__)
+            check_type(argname="argument consumer_group_name", value=consumer_group_name, expected_type=type_hints["consumer_group_name"])
+            check_type(argname="argument consumer_group_password", value=consumer_group_password, expected_type=type_hints["consumer_group_password"])
+            check_type(argname="argument consumer_group_user_name", value=consumer_group_user_name, expected_type=type_hints["consumer_group_user_name"])
+            check_type(argname="argument subscription_instance_id", value=subscription_instance_id, expected_type=type_hints["subscription_instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "consumer_group_name": consumer_group_name,
             "consumer_group_password": consumer_group_password,
@@ -539,7 +597,7 @@ class RosMigrationJob(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosMigrationJobProps",
+        props: typing.Union["RosMigrationJobProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DTS::MigrationJob``.
@@ -549,6 +607,12 @@ class RosMigrationJob(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMigrationJob.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -559,6 +623,9 @@ class RosMigrationJob(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMigrationJob._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -587,6 +654,9 @@ class RosMigrationJob(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMigrationJob, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -608,6 +678,9 @@ class RosMigrationJob(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMigrationJob, "migration_job_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "migrationJobClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -625,6 +698,9 @@ class RosMigrationJob(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.DestinationEndpointProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMigrationJob, "destination_endpoint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpoint", value)
 
     @builtins.property # type: ignore[misc]
@@ -642,6 +718,9 @@ class RosMigrationJob(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMigrationJob, "migration_job_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "migrationJobName", value)
 
     @builtins.property # type: ignore[misc]
@@ -659,6 +738,9 @@ class RosMigrationJob(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.MigrationModeProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMigrationJob, "migration_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "migrationMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -676,6 +758,9 @@ class RosMigrationJob(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.MigrationObjectProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMigrationJob, "migration_object").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "migrationObject", value)
 
     @builtins.property # type: ignore[misc]
@@ -693,6 +778,9 @@ class RosMigrationJob(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.SourceEndpointProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosMigrationJob, "source_endpoint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceEndpoint", value)
 
     @jsii.data_type(
@@ -709,6 +797,9 @@ class RosMigrationJob(
             '''
             :param column_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMigrationJob.ColumnExcludesProperty.__init__)
+                check_type(argname="argument column_name", value=column_name, expected_type=type_hints["column_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if column_name is not None:
                 self._values["column_name"] = column_name
@@ -750,6 +841,10 @@ class RosMigrationJob(
             :param column_name: 
             :param new_column_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMigrationJob.ColumnIncludesProperty.__init__)
+                check_type(argname="argument column_name", value=column_name, expected_type=type_hints["column_name"])
+                check_type(argname="argument new_column_name", value=new_column_name, expected_type=type_hints["new_column_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if column_name is not None:
                 self._values["column_name"] = column_name
@@ -830,6 +925,18 @@ class RosMigrationJob(
             :param port: 
             :param role: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMigrationJob.DestinationEndpointProperty.__init__)
+                check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+                check_type(argname="argument region", value=region, expected_type=type_hints["region"])
+                check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
+                check_type(argname="argument database_name", value=database_name, expected_type=type_hints["database_name"])
+                check_type(argname="argument engine_name", value=engine_name, expected_type=type_hints["engine_name"])
+                check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+                check_type(argname="argument ip", value=ip, expected_type=type_hints["ip"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument role", value=role, expected_type=type_hints["role"])
             self._values: typing.Dict[str, typing.Any] = {
                 "instance_type": instance_type,
                 "password": password,
@@ -1002,6 +1109,11 @@ class RosMigrationJob(
             :param data_synchronization: 
             :param structure_intialization: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMigrationJob.MigrationModeProperty.__init__)
+                check_type(argname="argument data_intialization", value=data_intialization, expected_type=type_hints["data_intialization"])
+                check_type(argname="argument data_synchronization", value=data_synchronization, expected_type=type_hints["data_synchronization"])
+                check_type(argname="argument structure_intialization", value=structure_intialization, expected_type=type_hints["structure_intialization"])
             self._values: typing.Dict[str, typing.Any] = {}
             if data_intialization is not None:
                 self._values["data_intialization"] = data_intialization
@@ -1083,8 +1195,8 @@ class RosMigrationJob(
             new_db_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             new_schema_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             schema_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            table_excludes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.TableExcludesProperty"]]]] = None,
-            table_includes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.TableIncludesProperty"]]]] = None,
+            table_excludes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMigrationJob.TableExcludesProperty", typing.Dict[str, typing.Any]]]]]] = None,
+            table_includes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMigrationJob.TableIncludesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param db_name: 
@@ -1094,6 +1206,14 @@ class RosMigrationJob(
             :param table_excludes: 
             :param table_includes: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMigrationJob.MigrationObjectProperty.__init__)
+                check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+                check_type(argname="argument new_db_name", value=new_db_name, expected_type=type_hints["new_db_name"])
+                check_type(argname="argument new_schema_name", value=new_schema_name, expected_type=type_hints["new_schema_name"])
+                check_type(argname="argument schema_name", value=schema_name, expected_type=type_hints["schema_name"])
+                check_type(argname="argument table_excludes", value=table_excludes, expected_type=type_hints["table_excludes"])
+                check_type(argname="argument table_includes", value=table_includes, expected_type=type_hints["table_includes"])
             self._values: typing.Dict[str, typing.Any] = {}
             if db_name is not None:
                 self._values["db_name"] = db_name
@@ -1228,6 +1348,20 @@ class RosMigrationJob(
             :param port: 
             :param role: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMigrationJob.SourceEndpointProperty.__init__)
+                check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+                check_type(argname="argument region", value=region, expected_type=type_hints["region"])
+                check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
+                check_type(argname="argument database_name", value=database_name, expected_type=type_hints["database_name"])
+                check_type(argname="argument engine_name", value=engine_name, expected_type=type_hints["engine_name"])
+                check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+                check_type(argname="argument ip", value=ip, expected_type=type_hints["ip"])
+                check_type(argname="argument oracle_sid", value=oracle_sid, expected_type=type_hints["oracle_sid"])
+                check_type(argname="argument owner_id", value=owner_id, expected_type=type_hints["owner_id"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument role", value=role, expected_type=type_hints["role"])
             self._values: typing.Dict[str, typing.Any] = {
                 "instance_type": instance_type,
                 "password": password,
@@ -1410,6 +1544,9 @@ class RosMigrationJob(
             '''
             :param table_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMigrationJob.TableExcludesProperty.__init__)
+                check_type(argname="argument table_name", value=table_name, expected_type=type_hints["table_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if table_name is not None:
                 self._values["table_name"] = table_name
@@ -1450,8 +1587,8 @@ class RosMigrationJob(
         def __init__(
             self,
             *,
-            column_excludes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.ColumnExcludesProperty"]]]] = None,
-            column_includes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosMigrationJob.ColumnIncludesProperty"]]]] = None,
+            column_excludes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMigrationJob.ColumnExcludesProperty", typing.Dict[str, typing.Any]]]]]] = None,
+            column_includes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosMigrationJob.ColumnIncludesProperty", typing.Dict[str, typing.Any]]]]]] = None,
             filter_condition: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             new_table_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             table_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -1463,6 +1600,13 @@ class RosMigrationJob(
             :param new_table_name: 
             :param table_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosMigrationJob.TableIncludesProperty.__init__)
+                check_type(argname="argument column_excludes", value=column_excludes, expected_type=type_hints["column_excludes"])
+                check_type(argname="argument column_includes", value=column_includes, expected_type=type_hints["column_includes"])
+                check_type(argname="argument filter_condition", value=filter_condition, expected_type=type_hints["filter_condition"])
+                check_type(argname="argument new_table_name", value=new_table_name, expected_type=type_hints["new_table_name"])
+                check_type(argname="argument table_name", value=table_name, expected_type=type_hints["table_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if column_excludes is not None:
                 self._values["column_excludes"] = column_excludes
@@ -1554,11 +1698,11 @@ class RosMigrationJobProps:
         self,
         *,
         migration_job_class: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        destination_endpoint: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosMigrationJob.DestinationEndpointProperty]] = None,
+        destination_endpoint: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosMigrationJob.DestinationEndpointProperty, typing.Dict[str, typing.Any]]]] = None,
         migration_job_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        migration_mode: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosMigrationJob.MigrationModeProperty]] = None,
-        migration_object: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosMigrationJob.MigrationObjectProperty]]]] = None,
-        source_endpoint: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosMigrationJob.SourceEndpointProperty]] = None,
+        migration_mode: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosMigrationJob.MigrationModeProperty, typing.Dict[str, typing.Any]]]] = None,
+        migration_object: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosMigrationJob.MigrationObjectProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        source_endpoint: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosMigrationJob.SourceEndpointProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::DTS::MigrationJob``.
 
@@ -1569,6 +1713,14 @@ class RosMigrationJobProps:
         :param migration_object: 
         :param source_endpoint: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMigrationJobProps.__init__)
+            check_type(argname="argument migration_job_class", value=migration_job_class, expected_type=type_hints["migration_job_class"])
+            check_type(argname="argument destination_endpoint", value=destination_endpoint, expected_type=type_hints["destination_endpoint"])
+            check_type(argname="argument migration_job_name", value=migration_job_name, expected_type=type_hints["migration_job_name"])
+            check_type(argname="argument migration_mode", value=migration_mode, expected_type=type_hints["migration_mode"])
+            check_type(argname="argument migration_object", value=migration_object, expected_type=type_hints["migration_object"])
+            check_type(argname="argument source_endpoint", value=source_endpoint, expected_type=type_hints["source_endpoint"])
         self._values: typing.Dict[str, typing.Any] = {
             "migration_job_class": migration_job_class,
         }
@@ -1671,7 +1823,7 @@ class RosSubscriptionInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSubscriptionInstanceProps",
+        props: typing.Union["RosSubscriptionInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DTS::SubscriptionInstance``.
@@ -1681,6 +1833,12 @@ class RosSubscriptionInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSubscriptionInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1691,6 +1849,9 @@ class RosSubscriptionInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSubscriptionInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1751,6 +1912,9 @@ class RosSubscriptionInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscriptionInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1768,6 +1932,9 @@ class RosSubscriptionInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosSubscriptionInstance.ConfigurationProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscriptionInstance, "configuration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "configuration", value)
 
     @builtins.property # type: ignore[misc]
@@ -1789,6 +1956,9 @@ class RosSubscriptionInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscriptionInstance, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1809,6 +1979,9 @@ class RosSubscriptionInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscriptionInstance, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -1834,6 +2007,9 @@ class RosSubscriptionInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscriptionInstance, "source_endpoint_instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceEndpointInstanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1851,6 +2027,9 @@ class RosSubscriptionInstance(
         self,
         value: typing.Optional[typing.List["RosSubscriptionInstance.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscriptionInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -1872,6 +2051,9 @@ class RosSubscriptionInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscriptionInstance, "used_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "usedTime", value)
 
     @jsii.data_type(
@@ -1890,10 +2072,10 @@ class RosSubscriptionInstance(
         def __init__(
             self,
             *,
-            source_endpoint: typing.Union[ros_cdk_core.IResolvable, "RosSubscriptionInstance.SourceEndpointProperty"],
-            subscription_data_type: typing.Union[ros_cdk_core.IResolvable, "RosSubscriptionInstance.SubscriptionDataTypeProperty"],
+            source_endpoint: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSubscriptionInstance.SourceEndpointProperty", typing.Dict[str, typing.Any]]],
+            subscription_data_type: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSubscriptionInstance.SubscriptionDataTypeProperty", typing.Dict[str, typing.Any]]],
             db_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
-            subscription_instance: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosSubscriptionInstance.SubscriptionInstanceProperty"]] = None,
+            subscription_instance: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSubscriptionInstance.SubscriptionInstanceProperty", typing.Dict[str, typing.Any]]]] = None,
             subscription_instance_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             subscription_instance_network_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
@@ -1905,6 +2087,14 @@ class RosSubscriptionInstance(
             :param subscription_instance_name: 
             :param subscription_instance_network_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSubscriptionInstance.ConfigurationProperty.__init__)
+                check_type(argname="argument source_endpoint", value=source_endpoint, expected_type=type_hints["source_endpoint"])
+                check_type(argname="argument subscription_data_type", value=subscription_data_type, expected_type=type_hints["subscription_data_type"])
+                check_type(argname="argument db_list", value=db_list, expected_type=type_hints["db_list"])
+                check_type(argname="argument subscription_instance", value=subscription_instance, expected_type=type_hints["subscription_instance"])
+                check_type(argname="argument subscription_instance_name", value=subscription_instance_name, expected_type=type_hints["subscription_instance_name"])
+                check_type(argname="argument subscription_instance_network_type", value=subscription_instance_network_type, expected_type=type_hints["subscription_instance_network_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "source_endpoint": source_endpoint,
                 "subscription_data_type": subscription_data_type,
@@ -2034,6 +2224,18 @@ class RosSubscriptionInstance(
             :param port: 
             :param role: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSubscriptionInstance.SourceEndpointProperty.__init__)
+                check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+                check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
+                check_type(argname="argument database_name", value=database_name, expected_type=type_hints["database_name"])
+                check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+                check_type(argname="argument ip", value=ip, expected_type=type_hints["ip"])
+                check_type(argname="argument oracle_sid", value=oracle_sid, expected_type=type_hints["oracle_sid"])
+                check_type(argname="argument owner_id", value=owner_id, expected_type=type_hints["owner_id"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument role", value=role, expected_type=type_hints["role"])
             self._values: typing.Dict[str, typing.Any] = {
                 "instance_type": instance_type,
                 "password": password,
@@ -2191,6 +2393,10 @@ class RosSubscriptionInstance(
             :param ddl: 
             :param dml: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSubscriptionInstance.SubscriptionDataTypeProperty.__init__)
+                check_type(argname="argument ddl", value=ddl, expected_type=type_hints["ddl"])
+                check_type(argname="argument dml", value=dml, expected_type=type_hints["dml"])
             self._values: typing.Dict[str, typing.Any] = {
                 "ddl": ddl,
                 "dml": dml,
@@ -2241,6 +2447,10 @@ class RosSubscriptionInstance(
             :param vpc_id: 
             :param v_switch_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSubscriptionInstance.SubscriptionInstanceProperty.__init__)
+                check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+                check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "vpc_id": vpc_id,
                 "v_switch_id": v_switch_id,
@@ -2291,6 +2501,10 @@ class RosSubscriptionInstance(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSubscriptionInstance.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -2344,11 +2558,11 @@ class RosSubscriptionInstanceProps:
     def __init__(
         self,
         *,
-        configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosSubscriptionInstance.ConfigurationProperty]] = None,
+        configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSubscriptionInstance.ConfigurationProperty, typing.Dict[str, typing.Any]]]] = None,
         pay_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         source_endpoint_instance_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosSubscriptionInstance.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosSubscriptionInstance.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         used_time: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::DTS::SubscriptionInstance``.
@@ -2360,6 +2574,14 @@ class RosSubscriptionInstanceProps:
         :param tags: 
         :param used_time: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSubscriptionInstanceProps.__init__)
+            check_type(argname="argument configuration", value=configuration, expected_type=type_hints["configuration"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument source_endpoint_instance_type", value=source_endpoint_instance_type, expected_type=type_hints["source_endpoint_instance_type"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument used_time", value=used_time, expected_type=type_hints["used_time"])
         self._values: typing.Dict[str, typing.Any] = {}
         if configuration is not None:
             self._values["configuration"] = configuration
@@ -2476,7 +2698,7 @@ class RosSynchronizationJob(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSynchronizationJobProps",
+        props: typing.Union["RosSynchronizationJobProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DTS::SynchronizationJob``.
@@ -2486,6 +2708,12 @@ class RosSynchronizationJob(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSynchronizationJob.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2496,6 +2724,9 @@ class RosSynchronizationJob(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSynchronizationJob._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2532,6 +2763,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, "RosSynchronizationJob.DestinationEndpointProperty"],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "destination_endpoint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpoint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2547,6 +2781,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "dest_region").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destRegion", value)
 
     @builtins.property # type: ignore[misc]
@@ -2556,6 +2793,9 @@ class RosSynchronizationJob(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2573,6 +2813,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, "RosSynchronizationJob.SourceEndpointProperty"],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "source_endpoint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceEndpoint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2588,6 +2831,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "source_region").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceRegion", value)
 
     @builtins.property # type: ignore[misc]
@@ -2608,6 +2854,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "synchronization_job_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "synchronizationJobClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -2629,6 +2878,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "data_initialization").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dataInitialization", value)
 
     @builtins.property # type: ignore[misc]
@@ -2646,6 +2898,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "network_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "networkType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2666,6 +2921,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2686,6 +2944,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -2707,6 +2968,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "structure_initialization").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "structureInitialization", value)
 
     @builtins.property # type: ignore[misc]
@@ -2724,6 +2988,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosSynchronizationJob.SynchronizationObjectsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "synchronization_objects").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "synchronizationObjects", value)
 
     @builtins.property # type: ignore[misc]
@@ -2741,6 +3008,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "topology").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topology", value)
 
     @builtins.property # type: ignore[misc]
@@ -2758,6 +3028,9 @@ class RosSynchronizationJob(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSynchronizationJob, "used_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "usedTime", value)
 
     @jsii.data_type(
@@ -2774,6 +3047,9 @@ class RosSynchronizationJob(
             '''
             :param column_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSynchronizationJob.ColumnExcludesProperty.__init__)
+                check_type(argname="argument column_name", value=column_name, expected_type=type_hints["column_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if column_name is not None:
                 self._values["column_name"] = column_name
@@ -2815,6 +3091,10 @@ class RosSynchronizationJob(
             :param column_name: 
             :param new_column_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSynchronizationJob.ColumnIncludesProperty.__init__)
+                check_type(argname="argument column_name", value=column_name, expected_type=type_hints["column_name"])
+                check_type(argname="argument new_column_name", value=new_column_name, expected_type=type_hints["new_column_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if column_name is not None:
                 self._values["column_name"] = column_name
@@ -2886,6 +3166,15 @@ class RosSynchronizationJob(
             :param port: 
             :param user_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSynchronizationJob.DestinationEndpointProperty.__init__)
+                check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+                check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+                check_type(argname="argument instance_type_for_creation", value=instance_type_for_creation, expected_type=type_hints["instance_type_for_creation"])
+                check_type(argname="argument ip", value=ip, expected_type=type_hints["ip"])
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
             self._values: typing.Dict[str, typing.Any] = {
                 "instance_type": instance_type,
             }
@@ -3041,6 +3330,17 @@ class RosSynchronizationJob(
             :param role: 
             :param user_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSynchronizationJob.SourceEndpointProperty.__init__)
+                check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+                check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+                check_type(argname="argument instance_type_for_creation", value=instance_type_for_creation, expected_type=type_hints["instance_type_for_creation"])
+                check_type(argname="argument ip", value=ip, expected_type=type_hints["ip"])
+                check_type(argname="argument owner_id", value=owner_id, expected_type=type_hints["owner_id"])
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument role", value=role, expected_type=type_hints["role"])
+                check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
             self._values: typing.Dict[str, typing.Any] = {
                 "instance_type": instance_type,
             }
@@ -3197,8 +3497,8 @@ class RosSynchronizationJob(
             new_db_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             new_schema_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             schema_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            table_excludes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosSynchronizationJob.TableExcludesProperty"]]]] = None,
-            table_includes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosSynchronizationJob.TableIncludesProperty"]]]] = None,
+            table_excludes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSynchronizationJob.TableExcludesProperty", typing.Dict[str, typing.Any]]]]]] = None,
+            table_includes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSynchronizationJob.TableIncludesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param db_name: 
@@ -3208,6 +3508,14 @@ class RosSynchronizationJob(
             :param table_excludes: 
             :param table_includes: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSynchronizationJob.SynchronizationObjectsProperty.__init__)
+                check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+                check_type(argname="argument new_db_name", value=new_db_name, expected_type=type_hints["new_db_name"])
+                check_type(argname="argument new_schema_name", value=new_schema_name, expected_type=type_hints["new_schema_name"])
+                check_type(argname="argument schema_name", value=schema_name, expected_type=type_hints["schema_name"])
+                check_type(argname="argument table_excludes", value=table_excludes, expected_type=type_hints["table_excludes"])
+                check_type(argname="argument table_includes", value=table_includes, expected_type=type_hints["table_includes"])
             self._values: typing.Dict[str, typing.Any] = {}
             if db_name is not None:
                 self._values["db_name"] = db_name
@@ -3307,6 +3615,9 @@ class RosSynchronizationJob(
             '''
             :param table_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSynchronizationJob.TableExcludesProperty.__init__)
+                check_type(argname="argument table_name", value=table_name, expected_type=type_hints["table_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if table_name is not None:
                 self._values["table_name"] = table_name
@@ -3347,8 +3658,8 @@ class RosSynchronizationJob(
         def __init__(
             self,
             *,
-            column_excludes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosSynchronizationJob.ColumnExcludesProperty"]]]] = None,
-            column_includes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosSynchronizationJob.ColumnIncludesProperty"]]]] = None,
+            column_excludes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSynchronizationJob.ColumnExcludesProperty", typing.Dict[str, typing.Any]]]]]] = None,
+            column_includes: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosSynchronizationJob.ColumnIncludesProperty", typing.Dict[str, typing.Any]]]]]] = None,
             filter_condition: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             new_table_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             table_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -3360,6 +3671,13 @@ class RosSynchronizationJob(
             :param new_table_name: 
             :param table_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosSynchronizationJob.TableIncludesProperty.__init__)
+                check_type(argname="argument column_excludes", value=column_excludes, expected_type=type_hints["column_excludes"])
+                check_type(argname="argument column_includes", value=column_includes, expected_type=type_hints["column_includes"])
+                check_type(argname="argument filter_condition", value=filter_condition, expected_type=type_hints["filter_condition"])
+                check_type(argname="argument new_table_name", value=new_table_name, expected_type=type_hints["new_table_name"])
+                check_type(argname="argument table_name", value=table_name, expected_type=type_hints["table_name"])
             self._values: typing.Dict[str, typing.Any] = {}
             if column_excludes is not None:
                 self._values["column_excludes"] = column_excludes
@@ -3457,9 +3775,9 @@ class RosSynchronizationJobProps:
     def __init__(
         self,
         *,
-        destination_endpoint: typing.Union[ros_cdk_core.IResolvable, RosSynchronizationJob.DestinationEndpointProperty],
+        destination_endpoint: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSynchronizationJob.DestinationEndpointProperty, typing.Dict[str, typing.Any]]],
         dest_region: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        source_endpoint: typing.Union[ros_cdk_core.IResolvable, RosSynchronizationJob.SourceEndpointProperty],
+        source_endpoint: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSynchronizationJob.SourceEndpointProperty, typing.Dict[str, typing.Any]]],
         source_region: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         synchronization_job_class: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         data_initialization: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -3467,7 +3785,7 @@ class RosSynchronizationJobProps:
         pay_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         structure_initialization: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        synchronization_objects: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosSynchronizationJob.SynchronizationObjectsProperty]]]] = None,
+        synchronization_objects: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSynchronizationJob.SynchronizationObjectsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         topology: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         used_time: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -3487,6 +3805,21 @@ class RosSynchronizationJobProps:
         :param topology: 
         :param used_time: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSynchronizationJobProps.__init__)
+            check_type(argname="argument destination_endpoint", value=destination_endpoint, expected_type=type_hints["destination_endpoint"])
+            check_type(argname="argument dest_region", value=dest_region, expected_type=type_hints["dest_region"])
+            check_type(argname="argument source_endpoint", value=source_endpoint, expected_type=type_hints["source_endpoint"])
+            check_type(argname="argument source_region", value=source_region, expected_type=type_hints["source_region"])
+            check_type(argname="argument synchronization_job_class", value=synchronization_job_class, expected_type=type_hints["synchronization_job_class"])
+            check_type(argname="argument data_initialization", value=data_initialization, expected_type=type_hints["data_initialization"])
+            check_type(argname="argument network_type", value=network_type, expected_type=type_hints["network_type"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument structure_initialization", value=structure_initialization, expected_type=type_hints["structure_initialization"])
+            check_type(argname="argument synchronization_objects", value=synchronization_objects, expected_type=type_hints["synchronization_objects"])
+            check_type(argname="argument topology", value=topology, expected_type=type_hints["topology"])
+            check_type(argname="argument used_time", value=used_time, expected_type=type_hints["used_time"])
         self._values: typing.Dict[str, typing.Any] = {
             "destination_endpoint": destination_endpoint,
             "dest_region": dest_region,
@@ -3682,7 +4015,7 @@ class SubscriptionInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["SubscriptionInstanceProps"] = None,
+        props: typing.Optional[typing.Union["SubscriptionInstanceProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DTS::SubscriptionInstance``.
@@ -3696,6 +4029,12 @@ class SubscriptionInstance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SubscriptionInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3745,11 +4084,11 @@ class SubscriptionInstanceProps:
     def __init__(
         self,
         *,
-        configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosSubscriptionInstance.ConfigurationProperty]] = None,
+        configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSubscriptionInstance.ConfigurationProperty, typing.Dict[str, typing.Any]]]] = None,
         pay_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         source_endpoint_instance_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosSubscriptionInstance.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosSubscriptionInstance.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         used_time: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::DTS::SubscriptionInstance``.
@@ -3761,6 +4100,14 @@ class SubscriptionInstanceProps:
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         :param used_time: Property usedTime: The subscription length. Note: You must specify this parameter only if you set the PayType parameter to PrePaid. You can set the Period parameter to specify the unit of the subscription length.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SubscriptionInstanceProps.__init__)
+            check_type(argname="argument configuration", value=configuration, expected_type=type_hints["configuration"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument source_endpoint_instance_type", value=source_endpoint_instance_type, expected_type=type_hints["source_endpoint_instance_type"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument used_time", value=used_time, expected_type=type_hints["used_time"])
         self._values: typing.Dict[str, typing.Any] = {}
         if configuration is not None:
             self._values["configuration"] = configuration
@@ -3870,7 +4217,7 @@ class SynchronizationJob(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SynchronizationJobProps",
+        props: typing.Union["SynchronizationJobProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DTS::SynchronizationJob``.
@@ -3884,6 +4231,12 @@ class SynchronizationJob(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SynchronizationJob.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3916,9 +4269,9 @@ class SynchronizationJobProps:
     def __init__(
         self,
         *,
-        destination_endpoint: typing.Union[ros_cdk_core.IResolvable, RosSynchronizationJob.DestinationEndpointProperty],
+        destination_endpoint: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSynchronizationJob.DestinationEndpointProperty, typing.Dict[str, typing.Any]]],
         dest_region: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        source_endpoint: typing.Union[ros_cdk_core.IResolvable, RosSynchronizationJob.SourceEndpointProperty],
+        source_endpoint: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSynchronizationJob.SourceEndpointProperty, typing.Dict[str, typing.Any]]],
         source_region: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         synchronization_job_class: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         data_initialization: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -3926,7 +4279,7 @@ class SynchronizationJobProps:
         pay_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         structure_initialization: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        synchronization_objects: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosSynchronizationJob.SynchronizationObjectsProperty]]]] = None,
+        synchronization_objects: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosSynchronizationJob.SynchronizationObjectsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         topology: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         used_time: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -3946,6 +4299,21 @@ class SynchronizationJobProps:
         :param topology: Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
         :param used_time: Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SynchronizationJobProps.__init__)
+            check_type(argname="argument destination_endpoint", value=destination_endpoint, expected_type=type_hints["destination_endpoint"])
+            check_type(argname="argument dest_region", value=dest_region, expected_type=type_hints["dest_region"])
+            check_type(argname="argument source_endpoint", value=source_endpoint, expected_type=type_hints["source_endpoint"])
+            check_type(argname="argument source_region", value=source_region, expected_type=type_hints["source_region"])
+            check_type(argname="argument synchronization_job_class", value=synchronization_job_class, expected_type=type_hints["synchronization_job_class"])
+            check_type(argname="argument data_initialization", value=data_initialization, expected_type=type_hints["data_initialization"])
+            check_type(argname="argument network_type", value=network_type, expected_type=type_hints["network_type"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument structure_initialization", value=structure_initialization, expected_type=type_hints["structure_initialization"])
+            check_type(argname="argument synchronization_objects", value=synchronization_objects, expected_type=type_hints["synchronization_objects"])
+            check_type(argname="argument topology", value=topology, expected_type=type_hints["topology"])
+            check_type(argname="argument used_time", value=used_time, expected_type=type_hints["used_time"])
         self._values: typing.Dict[str, typing.Any] = {
             "destination_endpoint": destination_endpoint,
             "dest_region": dest_region,

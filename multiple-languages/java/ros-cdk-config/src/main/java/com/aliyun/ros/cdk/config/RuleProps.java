@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * Properties for defining a `ALIYUN::Config::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:24.217Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {

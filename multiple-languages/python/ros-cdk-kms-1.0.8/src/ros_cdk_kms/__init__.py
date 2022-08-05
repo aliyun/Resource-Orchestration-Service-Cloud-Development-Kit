@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Alias(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AliasProps",
+        props: typing.Union["AliasProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::KMS::Alias``.
@@ -47,6 +49,12 @@ class Alias(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Alias.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -67,6 +75,10 @@ class AliasProps:
         :param alias_name: Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
         :param key_id: Property keyId: Globally unique identifier of the CMK.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AliasProps.__init__)
+            check_type(argname="argument alias_name", value=alias_name, expected_type=type_hints["alias_name"])
+            check_type(argname="argument key_id", value=key_id, expected_type=type_hints["key_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "alias_name": alias_name,
             "key_id": key_id,
@@ -112,7 +124,7 @@ class Key(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["KeyProps"] = None,
+        props: typing.Optional[typing.Union["KeyProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::KMS::Key``.
@@ -126,6 +138,12 @@ class Key(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Key.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -173,6 +191,16 @@ class KeyProps:
         :param protection_level: Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM: If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM. If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
         :param rotation_interval: Property rotationInterval: The time period for automatic rotation. The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(KeyProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
+            check_type(argname="argument enable_automatic_rotation", value=enable_automatic_rotation, expected_type=type_hints["enable_automatic_rotation"])
+            check_type(argname="argument key_spec", value=key_spec, expected_type=type_hints["key_spec"])
+            check_type(argname="argument key_usage", value=key_usage, expected_type=type_hints["key_usage"])
+            check_type(argname="argument pending_window_in_days", value=pending_window_in_days, expected_type=type_hints["pending_window_in_days"])
+            check_type(argname="argument protection_level", value=protection_level, expected_type=type_hints["protection_level"])
+            check_type(argname="argument rotation_interval", value=rotation_interval, expected_type=type_hints["rotation_interval"])
         self._values: typing.Dict[str, typing.Any] = {}
         if description is not None:
             self._values["description"] = description
@@ -304,7 +332,7 @@ class RosAlias(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAliasProps",
+        props: typing.Union["RosAliasProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::KMS::Alias``.
@@ -314,6 +342,12 @@ class RosAlias(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlias.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -324,6 +358,9 @@ class RosAlias(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlias._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -350,6 +387,9 @@ class RosAlias(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlias, "alias_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "aliasName", value)
 
     @builtins.property # type: ignore[misc]
@@ -360,6 +400,9 @@ class RosAlias(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlias, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -375,6 +418,9 @@ class RosAlias(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlias, "key_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "keyId", value)
 
 
@@ -395,6 +441,10 @@ class RosAliasProps:
         :param alias_name: 
         :param key_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAliasProps.__init__)
+            check_type(argname="argument alias_name", value=alias_name, expected_type=type_hints["alias_name"])
+            check_type(argname="argument key_id", value=key_id, expected_type=type_hints["key_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "alias_name": alias_name,
             "key_id": key_id,
@@ -441,7 +491,7 @@ class RosKey(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosKeyProps",
+        props: typing.Union["RosKeyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::KMS::Key``.
@@ -451,6 +501,12 @@ class RosKey(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosKey.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -461,6 +517,9 @@ class RosKey(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosKey._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -489,6 +548,9 @@ class RosKey(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -506,6 +568,9 @@ class RosKey(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -523,6 +588,9 @@ class RosKey(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "enable").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enable", value)
 
     @builtins.property # type: ignore[misc]
@@ -540,6 +608,9 @@ class RosKey(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "enable_automatic_rotation").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableAutomaticRotation", value)
 
     @builtins.property # type: ignore[misc]
@@ -557,6 +628,9 @@ class RosKey(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "key_spec").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "keySpec", value)
 
     @builtins.property # type: ignore[misc]
@@ -574,6 +648,9 @@ class RosKey(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "key_usage").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "keyUsage", value)
 
     @builtins.property # type: ignore[misc]
@@ -591,6 +668,9 @@ class RosKey(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "pending_window_in_days").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pendingWindowInDays", value)
 
     @builtins.property # type: ignore[misc]
@@ -612,6 +692,9 @@ class RosKey(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "protection_level").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "protectionLevel", value)
 
     @builtins.property # type: ignore[misc]
@@ -629,6 +712,9 @@ class RosKey(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosKey, "rotation_interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "rotationInterval", value)
 
 
@@ -670,6 +756,16 @@ class RosKeyProps:
         :param protection_level: 
         :param rotation_interval: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosKeyProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
+            check_type(argname="argument enable_automatic_rotation", value=enable_automatic_rotation, expected_type=type_hints["enable_automatic_rotation"])
+            check_type(argname="argument key_spec", value=key_spec, expected_type=type_hints["key_spec"])
+            check_type(argname="argument key_usage", value=key_usage, expected_type=type_hints["key_usage"])
+            check_type(argname="argument pending_window_in_days", value=pending_window_in_days, expected_type=type_hints["pending_window_in_days"])
+            check_type(argname="argument protection_level", value=protection_level, expected_type=type_hints["protection_level"])
+            check_type(argname="argument rotation_interval", value=rotation_interval, expected_type=type_hints["rotation_interval"])
         self._values: typing.Dict[str, typing.Any] = {}
         if description is not None:
             self._values["description"] = description
@@ -795,7 +891,7 @@ class RosSecret(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSecretProps",
+        props: typing.Union["RosSecretProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::KMS::Secret``.
@@ -805,6 +901,12 @@ class RosSecret(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSecret.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -815,6 +917,9 @@ class RosSecret(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSecret._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -851,6 +956,9 @@ class RosSecret(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -869,6 +977,9 @@ class RosSecret(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "secret_data").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "secretData", value)
 
     @builtins.property # type: ignore[misc]
@@ -884,6 +995,9 @@ class RosSecret(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "secret_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "secretName", value)
 
     @builtins.property # type: ignore[misc]
@@ -902,6 +1016,9 @@ class RosSecret(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "version_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "versionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -919,6 +1036,9 @@ class RosSecret(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -941,6 +1061,9 @@ class RosSecret(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "encryption_key_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "encryptionKeyId", value)
 
     @builtins.property # type: ignore[misc]
@@ -962,6 +1085,9 @@ class RosSecret(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "force_delete_without_recovery").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "forceDeleteWithoutRecovery", value)
 
     @builtins.property # type: ignore[misc]
@@ -979,6 +1105,9 @@ class RosSecret(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "recovery_window_in_days").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "recoveryWindowInDays", value)
 
     @builtins.property # type: ignore[misc]
@@ -1000,6 +1129,9 @@ class RosSecret(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "secret_data_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "secretDataType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1017,6 +1149,9 @@ class RosSecret(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecret, "version_stages").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "versionStages", value)
 
 
@@ -1061,6 +1196,17 @@ class RosSecretProps:
         :param secret_data_type: 
         :param version_stages: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSecretProps.__init__)
+            check_type(argname="argument secret_data", value=secret_data, expected_type=type_hints["secret_data"])
+            check_type(argname="argument secret_name", value=secret_name, expected_type=type_hints["secret_name"])
+            check_type(argname="argument version_id", value=version_id, expected_type=type_hints["version_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument encryption_key_id", value=encryption_key_id, expected_type=type_hints["encryption_key_id"])
+            check_type(argname="argument force_delete_without_recovery", value=force_delete_without_recovery, expected_type=type_hints["force_delete_without_recovery"])
+            check_type(argname="argument recovery_window_in_days", value=recovery_window_in_days, expected_type=type_hints["recovery_window_in_days"])
+            check_type(argname="argument secret_data_type", value=secret_data_type, expected_type=type_hints["secret_data_type"])
+            check_type(argname="argument version_stages", value=version_stages, expected_type=type_hints["version_stages"])
         self._values: typing.Dict[str, typing.Any] = {
             "secret_data": secret_data,
             "secret_name": secret_name,
@@ -1208,7 +1354,7 @@ class Secret(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SecretProps",
+        props: typing.Union["SecretProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::KMS::Secret``.
@@ -1222,6 +1368,12 @@ class Secret(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Secret.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1278,6 +1430,17 @@ class SecretProps:
         :param secret_data_type: Property secretDataType: The type of the secret value. Valid values: text (default value) binary
         :param version_stages: Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SecretProps.__init__)
+            check_type(argname="argument secret_data", value=secret_data, expected_type=type_hints["secret_data"])
+            check_type(argname="argument secret_name", value=secret_name, expected_type=type_hints["secret_name"])
+            check_type(argname="argument version_id", value=version_id, expected_type=type_hints["version_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument encryption_key_id", value=encryption_key_id, expected_type=type_hints["encryption_key_id"])
+            check_type(argname="argument force_delete_without_recovery", value=force_delete_without_recovery, expected_type=type_hints["force_delete_without_recovery"])
+            check_type(argname="argument recovery_window_in_days", value=recovery_window_in_days, expected_type=type_hints["recovery_window_in_days"])
+            check_type(argname="argument secret_data_type", value=secret_data_type, expected_type=type_hints["secret_data_type"])
+            check_type(argname="argument version_stages", value=version_stages, expected_type=type_hints["version_stages"])
         self._values: typing.Dict[str, typing.Any] = {
             "secret_data": secret_data,
             "secret_name": secret_name,

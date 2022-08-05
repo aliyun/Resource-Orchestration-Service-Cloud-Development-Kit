@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Bucket(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "BucketProps",
+        props: typing.Union["BucketProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::OSS::Bucket``.
@@ -47,6 +49,12 @@ class Bucket(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Bucket.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -92,16 +100,16 @@ class BucketProps:
         *,
         bucket_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         access_control: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        cors_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.CORSConfigurationProperty"]] = None,
+        cors_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.CORSConfigurationProperty", typing.Dict[str, typing.Any]]]] = None,
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        lifecycle_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.LifecycleConfigurationProperty"]] = None,
-        logging_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.LoggingConfigurationProperty"]] = None,
+        lifecycle_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.LifecycleConfigurationProperty", typing.Dict[str, typing.Any]]]] = None,
+        logging_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.LoggingConfigurationProperty", typing.Dict[str, typing.Any]]]] = None,
         policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
-        referer_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.RefererConfigurationProperty"]] = None,
-        server_side_encryption_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.ServerSideEncryptionConfigurationProperty"]] = None,
+        referer_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.RefererConfigurationProperty", typing.Dict[str, typing.Any]]]] = None,
+        server_side_encryption_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.ServerSideEncryptionConfigurationProperty", typing.Dict[str, typing.Any]]]] = None,
         storage_class: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         tags: typing.Optional[typing.Mapping[builtins.str, typing.Any]] = None,
-        website_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.WebsiteConfigurationProperty"]] = None,
+        website_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.WebsiteConfigurationProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::OSS::Bucket``.
 
@@ -118,6 +126,20 @@ class BucketProps:
         :param tags: Property tags: Bucket tags in k-v pairs format.
         :param website_configuration: Property websiteConfiguration: The properties of website config.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BucketProps.__init__)
+            check_type(argname="argument bucket_name", value=bucket_name, expected_type=type_hints["bucket_name"])
+            check_type(argname="argument access_control", value=access_control, expected_type=type_hints["access_control"])
+            check_type(argname="argument cors_configuration", value=cors_configuration, expected_type=type_hints["cors_configuration"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument lifecycle_configuration", value=lifecycle_configuration, expected_type=type_hints["lifecycle_configuration"])
+            check_type(argname="argument logging_configuration", value=logging_configuration, expected_type=type_hints["logging_configuration"])
+            check_type(argname="argument policy", value=policy, expected_type=type_hints["policy"])
+            check_type(argname="argument referer_configuration", value=referer_configuration, expected_type=type_hints["referer_configuration"])
+            check_type(argname="argument server_side_encryption_configuration", value=server_side_encryption_configuration, expected_type=type_hints["server_side_encryption_configuration"])
+            check_type(argname="argument storage_class", value=storage_class, expected_type=type_hints["storage_class"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument website_configuration", value=website_configuration, expected_type=type_hints["website_configuration"])
         self._values: typing.Dict[str, typing.Any] = {
             "bucket_name": bucket_name,
         }
@@ -266,7 +288,7 @@ class RosBucket(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosBucketProps",
+        props: typing.Union["RosBucketProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::OSS::Bucket``.
@@ -276,6 +298,12 @@ class RosBucket(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBucket.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -286,6 +314,9 @@ class RosBucket(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBucket._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -336,6 +367,9 @@ class RosBucket(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "bucket_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bucketName", value)
 
     @builtins.property # type: ignore[misc]
@@ -345,6 +379,9 @@ class RosBucket(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -362,6 +399,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "access_control").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accessControl", value)
 
     @builtins.property # type: ignore[misc]
@@ -379,6 +419,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.CORSConfigurationProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "cors_configuration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "corsConfiguration", value)
 
     @builtins.property # type: ignore[misc]
@@ -396,6 +439,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "deletion_force").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionForce", value)
 
     @builtins.property # type: ignore[misc]
@@ -413,6 +459,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.LifecycleConfigurationProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "lifecycle_configuration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "lifecycleConfiguration", value)
 
     @builtins.property # type: ignore[misc]
@@ -430,6 +479,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.LoggingConfigurationProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "logging_configuration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loggingConfiguration", value)
 
     @builtins.property # type: ignore[misc]
@@ -447,6 +499,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policy", value)
 
     @builtins.property # type: ignore[misc]
@@ -464,6 +519,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.RefererConfigurationProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "referer_configuration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "refererConfiguration", value)
 
     @builtins.property # type: ignore[misc]
@@ -481,6 +539,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.ServerSideEncryptionConfigurationProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "server_side_encryption_configuration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serverSideEncryptionConfiguration", value)
 
     @builtins.property # type: ignore[misc]
@@ -498,6 +559,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "storage_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "storageClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -513,6 +577,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Mapping[builtins.str, typing.Any]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -530,6 +597,9 @@ class RosBucket(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.WebsiteConfigurationProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBucket, "website_configuration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "websiteConfiguration", value)
 
     @jsii.data_type(
@@ -548,6 +618,10 @@ class RosBucket(
             :param created_before_date: 
             :param days: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.AbortMultipartUploadProperty.__init__)
+                check_type(argname="argument created_before_date", value=created_before_date, expected_type=type_hints["created_before_date"])
+                check_type(argname="argument days", value=days, expected_type=type_hints["days"])
             self._values: typing.Dict[str, typing.Any] = {}
             if created_before_date is not None:
                 self._values["created_before_date"] = created_before_date
@@ -594,11 +668,14 @@ class RosBucket(
         def __init__(
             self,
             *,
-            cors_rule: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosBucket.CORSRuleProperty"]]]] = None,
+            cors_rule: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.CORSRuleProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param cors_rule: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.CORSConfigurationProperty.__init__)
+                check_type(argname="argument cors_rule", value=cors_rule, expected_type=type_hints["cors_rule"])
             self._values: typing.Dict[str, typing.Any] = {}
             if cors_rule is not None:
                 self._values["cors_rule"] = cors_rule
@@ -652,6 +729,13 @@ class RosBucket(
             :param expose_header: 
             :param max_age_seconds: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.CORSRuleProperty.__init__)
+                check_type(argname="argument allowed_header", value=allowed_header, expected_type=type_hints["allowed_header"])
+                check_type(argname="argument allowed_method", value=allowed_method, expected_type=type_hints["allowed_method"])
+                check_type(argname="argument allowed_origin", value=allowed_origin, expected_type=type_hints["allowed_origin"])
+                check_type(argname="argument expose_header", value=expose_header, expected_type=type_hints["expose_header"])
+                check_type(argname="argument max_age_seconds", value=max_age_seconds, expected_type=type_hints["max_age_seconds"])
             self._values: typing.Dict[str, typing.Any] = {}
             if allowed_header is not None:
                 self._values["allowed_header"] = allowed_header
@@ -741,6 +825,10 @@ class RosBucket(
             :param created_before_date: 
             :param days: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.ExpirationProperty.__init__)
+                check_type(argname="argument created_before_date", value=created_before_date, expected_type=type_hints["created_before_date"])
+                check_type(argname="argument days", value=days, expected_type=type_hints["days"])
             self._values: typing.Dict[str, typing.Any] = {}
             if created_before_date is not None:
                 self._values["created_before_date"] = created_before_date
@@ -787,11 +875,14 @@ class RosBucket(
         def __init__(
             self,
             *,
-            rule: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosBucket.RuleProperty"]]],
+            rule: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.RuleProperty", typing.Dict[str, typing.Any]]]]],
         ) -> None:
             '''
             :param rule: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.LifecycleConfigurationProperty.__init__)
+                check_type(argname="argument rule", value=rule, expected_type=type_hints["rule"])
             self._values: typing.Dict[str, typing.Any] = {
                 "rule": rule,
             }
@@ -837,6 +928,10 @@ class RosBucket(
             :param target_bucket: 
             :param target_prefix: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.LoggingConfigurationProperty.__init__)
+                check_type(argname="argument target_bucket", value=target_bucket, expected_type=type_hints["target_bucket"])
+                check_type(argname="argument target_prefix", value=target_prefix, expected_type=type_hints["target_prefix"])
             self._values: typing.Dict[str, typing.Any] = {}
             if target_bucket is not None:
                 self._values["target_bucket"] = target_bucket
@@ -893,6 +988,10 @@ class RosBucket(
             :param allow_empty_referer: 
             :param referer_list: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.RefererConfigurationProperty.__init__)
+                check_type(argname="argument allow_empty_referer", value=allow_empty_referer, expected_type=type_hints["allow_empty_referer"])
+                check_type(argname="argument referer_list", value=referer_list, expected_type=type_hints["referer_list"])
             self._values: typing.Dict[str, typing.Any] = {}
             if allow_empty_referer is not None:
                 self._values["allow_empty_referer"] = allow_empty_referer
@@ -946,8 +1045,8 @@ class RosBucket(
             self,
             *,
             prefix: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-            abort_multipart_upload: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.AbortMultipartUploadProperty"]] = None,
-            expiration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosBucket.ExpirationProperty"]] = None,
+            abort_multipart_upload: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.AbortMultipartUploadProperty", typing.Dict[str, typing.Any]]]] = None,
+            expiration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBucket.ExpirationProperty", typing.Dict[str, typing.Any]]]] = None,
             id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             status: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
@@ -958,6 +1057,13 @@ class RosBucket(
             :param id: 
             :param status: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.RuleProperty.__init__)
+                check_type(argname="argument prefix", value=prefix, expected_type=type_hints["prefix"])
+                check_type(argname="argument abort_multipart_upload", value=abort_multipart_upload, expected_type=type_hints["abort_multipart_upload"])
+                check_type(argname="argument expiration", value=expiration, expected_type=type_hints["expiration"])
+                check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+                check_type(argname="argument status", value=status, expected_type=type_hints["status"])
             self._values: typing.Dict[str, typing.Any] = {
                 "prefix": prefix,
             }
@@ -1049,6 +1155,10 @@ class RosBucket(
             :param sse_algorithm: 
             :param kms_master_key_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.ServerSideEncryptionConfigurationProperty.__init__)
+                check_type(argname="argument sse_algorithm", value=sse_algorithm, expected_type=type_hints["sse_algorithm"])
+                check_type(argname="argument kms_master_key_id", value=kms_master_key_id, expected_type=type_hints["kms_master_key_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "sse_algorithm": sse_algorithm,
             }
@@ -1104,6 +1214,10 @@ class RosBucket(
             :param error_document: 
             :param index_document: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBucket.WebsiteConfigurationProperty.__init__)
+                check_type(argname="argument error_document", value=error_document, expected_type=type_hints["error_document"])
+                check_type(argname="argument index_document", value=index_document, expected_type=type_hints["index_document"])
             self._values: typing.Dict[str, typing.Any] = {}
             if error_document is not None:
                 self._values["error_document"] = error_document
@@ -1166,16 +1280,16 @@ class RosBucketProps:
         *,
         bucket_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         access_control: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        cors_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosBucket.CORSConfigurationProperty]] = None,
+        cors_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosBucket.CORSConfigurationProperty, typing.Dict[str, typing.Any]]]] = None,
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        lifecycle_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosBucket.LifecycleConfigurationProperty]] = None,
-        logging_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosBucket.LoggingConfigurationProperty]] = None,
+        lifecycle_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosBucket.LifecycleConfigurationProperty, typing.Dict[str, typing.Any]]]] = None,
+        logging_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosBucket.LoggingConfigurationProperty, typing.Dict[str, typing.Any]]]] = None,
         policy: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
-        referer_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosBucket.RefererConfigurationProperty]] = None,
-        server_side_encryption_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosBucket.ServerSideEncryptionConfigurationProperty]] = None,
+        referer_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosBucket.RefererConfigurationProperty, typing.Dict[str, typing.Any]]]] = None,
+        server_side_encryption_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosBucket.ServerSideEncryptionConfigurationProperty, typing.Dict[str, typing.Any]]]] = None,
         storage_class: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         tags: typing.Optional[typing.Mapping[builtins.str, typing.Any]] = None,
-        website_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosBucket.WebsiteConfigurationProperty]] = None,
+        website_configuration: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosBucket.WebsiteConfigurationProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::OSS::Bucket``.
 
@@ -1192,6 +1306,20 @@ class RosBucketProps:
         :param tags: 
         :param website_configuration: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBucketProps.__init__)
+            check_type(argname="argument bucket_name", value=bucket_name, expected_type=type_hints["bucket_name"])
+            check_type(argname="argument access_control", value=access_control, expected_type=type_hints["access_control"])
+            check_type(argname="argument cors_configuration", value=cors_configuration, expected_type=type_hints["cors_configuration"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument lifecycle_configuration", value=lifecycle_configuration, expected_type=type_hints["lifecycle_configuration"])
+            check_type(argname="argument logging_configuration", value=logging_configuration, expected_type=type_hints["logging_configuration"])
+            check_type(argname="argument policy", value=policy, expected_type=type_hints["policy"])
+            check_type(argname="argument referer_configuration", value=referer_configuration, expected_type=type_hints["referer_configuration"])
+            check_type(argname="argument server_side_encryption_configuration", value=server_side_encryption_configuration, expected_type=type_hints["server_side_encryption_configuration"])
+            check_type(argname="argument storage_class", value=storage_class, expected_type=type_hints["storage_class"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument website_configuration", value=website_configuration, expected_type=type_hints["website_configuration"])
         self._values: typing.Dict[str, typing.Any] = {
             "bucket_name": bucket_name,
         }

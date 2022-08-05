@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::BandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:25.549Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(RosBandwidthPackageProps.Jsii$Proxy.class)
 public interface RosBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {

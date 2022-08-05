@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class RosRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRuleProps",
+        props: typing.Union["RosRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EventBridge::Rule``.
@@ -43,6 +45,12 @@ class RosRule(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -53,6 +61,9 @@ class RosRule(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRule._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -97,6 +108,9 @@ class RosRule(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -112,6 +126,9 @@ class RosRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "event_bus_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eventBusName", value)
 
     @builtins.property # type: ignore[misc]
@@ -129,6 +146,9 @@ class RosRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "filter_pattern").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "filterPattern", value)
 
     @builtins.property # type: ignore[misc]
@@ -144,6 +164,9 @@ class RosRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "rule_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -161,6 +184,9 @@ class RosRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosRule.TargetsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "targets").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targets", value)
 
     @builtins.property # type: ignore[misc]
@@ -178,6 +204,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -199,6 +228,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "status").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "status", value)
 
     @jsii.data_type(
@@ -226,6 +258,12 @@ class RosRule(
             :param value: 
             :param template: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.ParamListProperty.__init__)
+                check_type(argname="argument form", value=form, expected_type=type_hints["form"])
+                check_type(argname="argument resource_key", value=resource_key, expected_type=type_hints["resource_key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+                check_type(argname="argument template", value=template, expected_type=type_hints["template"])
             self._values: typing.Dict[str, typing.Any] = {
                 "form": form,
                 "resource_key": resource_key,
@@ -299,7 +337,7 @@ class RosRule(
             *,
             endpoint: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-            param_list: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosRule.ParamListProperty"]]],
+            param_list: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.ParamListProperty", typing.Dict[str, typing.Any]]]]],
             type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             push_retry_strategy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
@@ -310,6 +348,13 @@ class RosRule(
             :param type: 
             :param push_retry_strategy: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.TargetsProperty.__init__)
+                check_type(argname="argument endpoint", value=endpoint, expected_type=type_hints["endpoint"])
+                check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+                check_type(argname="argument param_list", value=param_list, expected_type=type_hints["param_list"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+                check_type(argname="argument push_retry_strategy", value=push_retry_strategy, expected_type=type_hints["push_retry_strategy"])
             self._values: typing.Dict[str, typing.Any] = {
                 "endpoint": endpoint,
                 "id": id,
@@ -398,7 +443,7 @@ class RosRuleProps:
         event_bus_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         filter_pattern: typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]],
         rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        targets: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRule.TargetsProperty]]],
+        targets: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRule.TargetsProperty, typing.Dict[str, typing.Any]]]]],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         status: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -411,6 +456,14 @@ class RosRuleProps:
         :param description: 
         :param status: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRuleProps.__init__)
+            check_type(argname="argument event_bus_name", value=event_bus_name, expected_type=type_hints["event_bus_name"])
+            check_type(argname="argument filter_pattern", value=filter_pattern, expected_type=type_hints["filter_pattern"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument targets", value=targets, expected_type=type_hints["targets"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument status", value=status, expected_type=type_hints["status"])
         self._values: typing.Dict[str, typing.Any] = {
             "event_bus_name": event_bus_name,
             "filter_pattern": filter_pattern,
@@ -509,7 +562,7 @@ class Rule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RuleProps",
+        props: typing.Union["RuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EventBridge::Rule``.
@@ -523,6 +576,12 @@ class Rule(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Rule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -566,7 +625,7 @@ class RuleProps:
         event_bus_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         filter_pattern: typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]],
         rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        targets: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRule.TargetsProperty]]],
+        targets: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRule.TargetsProperty, typing.Dict[str, typing.Any]]]]],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         status: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -579,6 +638,14 @@ class RuleProps:
         :param description: Property description: The description of the event rule.
         :param status: Property status: The status of the event rule. Valid values: ENABLE: The event rule is enabled. It is the default state of the event rule. DISABLE: The event rule is disabled.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RuleProps.__init__)
+            check_type(argname="argument event_bus_name", value=event_bus_name, expected_type=type_hints["event_bus_name"])
+            check_type(argname="argument filter_pattern", value=filter_pattern, expected_type=type_hints["filter_pattern"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument targets", value=targets, expected_type=type_hints["targets"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument status", value=status, expected_type=type_hints["status"])
         self._values: typing.Dict[str, typing.Any] = {
             "event_bus_name": event_bus_name,
             "filter_pattern": filter_pattern,

@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class ContainerGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ContainerGroupProps",
+        props: typing.Union["ContainerGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ECI::ContainerGroup``.
@@ -47,6 +49,12 @@ class ContainerGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ContainerGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -157,33 +165,33 @@ class ContainerGroupProps:
     def __init__(
         self,
         *,
-        container: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union["RosContainerGroup.ContainerProperty", ros_cdk_core.IResolvable]]],
+        container: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[typing.Union["RosContainerGroup.ContainerProperty", typing.Dict[str, typing.Any]], ros_cdk_core.IResolvable]]],
         container_group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         security_group_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         v_switch_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        acr_registry_info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.AcrRegistryInfoProperty"]]]] = None,
+        acr_registry_info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.AcrRegistryInfoProperty", typing.Dict[str, typing.Any]]]]]] = None,
         active_deadline_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         auto_match_image_cache: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         cpu: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        dns_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.DnsConfigProperty"]] = None,
+        dns_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.DnsConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         eip_instance_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        host_aliase: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.HostAliaseProperty"]]]] = None,
-        image_registry_credential: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.ImageRegistryCredentialProperty"]]]] = None,
+        host_aliase: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.HostAliaseProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        image_registry_credential: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.ImageRegistryCredentialProperty", typing.Dict[str, typing.Any]]]]]] = None,
         image_snapshot_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        init_container: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.InitContainerProperty"]]]] = None,
+        init_container: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.InitContainerProperty", typing.Dict[str, typing.Any]]]]]] = None,
         instance_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ipv6_address_count: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         memory: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         ram_role_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         restart_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        security_context_sysctl: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.SecurityContextSysctlProperty"]]]] = None,
+        security_context_sysctl: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.SecurityContextSysctlProperty", typing.Dict[str, typing.Any]]]]]] = None,
         sls_enable: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         spot_price_limit: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         spot_strategy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tag: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, ros_cdk_core.RosTag]]]] = None,
+        tag: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[ros_cdk_core.RosTag, typing.Dict[str, typing.Any]]]]]] = None,
         termination_grace_period_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        volume: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.VolumeProperty"]]]] = None,
+        volume: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.VolumeProperty", typing.Dict[str, typing.Any]]]]]] = None,
         zone_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ECI::ContainerGroup``.
@@ -217,6 +225,36 @@ class ContainerGroupProps:
         :param volume: Property volume: The data volume. You can specify a maximum of 20 data volumes.
         :param zone_id: Property zoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ContainerGroupProps.__init__)
+            check_type(argname="argument container", value=container, expected_type=type_hints["container"])
+            check_type(argname="argument container_group_name", value=container_group_name, expected_type=type_hints["container_group_name"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument acr_registry_info", value=acr_registry_info, expected_type=type_hints["acr_registry_info"])
+            check_type(argname="argument active_deadline_seconds", value=active_deadline_seconds, expected_type=type_hints["active_deadline_seconds"])
+            check_type(argname="argument auto_match_image_cache", value=auto_match_image_cache, expected_type=type_hints["auto_match_image_cache"])
+            check_type(argname="argument cpu", value=cpu, expected_type=type_hints["cpu"])
+            check_type(argname="argument dns_config", value=dns_config, expected_type=type_hints["dns_config"])
+            check_type(argname="argument eip_instance_id", value=eip_instance_id, expected_type=type_hints["eip_instance_id"])
+            check_type(argname="argument host_aliase", value=host_aliase, expected_type=type_hints["host_aliase"])
+            check_type(argname="argument image_registry_credential", value=image_registry_credential, expected_type=type_hints["image_registry_credential"])
+            check_type(argname="argument image_snapshot_id", value=image_snapshot_id, expected_type=type_hints["image_snapshot_id"])
+            check_type(argname="argument init_container", value=init_container, expected_type=type_hints["init_container"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+            check_type(argname="argument ipv6_address_count", value=ipv6_address_count, expected_type=type_hints["ipv6_address_count"])
+            check_type(argname="argument memory", value=memory, expected_type=type_hints["memory"])
+            check_type(argname="argument ram_role_name", value=ram_role_name, expected_type=type_hints["ram_role_name"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument restart_policy", value=restart_policy, expected_type=type_hints["restart_policy"])
+            check_type(argname="argument security_context_sysctl", value=security_context_sysctl, expected_type=type_hints["security_context_sysctl"])
+            check_type(argname="argument sls_enable", value=sls_enable, expected_type=type_hints["sls_enable"])
+            check_type(argname="argument spot_price_limit", value=spot_price_limit, expected_type=type_hints["spot_price_limit"])
+            check_type(argname="argument spot_strategy", value=spot_strategy, expected_type=type_hints["spot_strategy"])
+            check_type(argname="argument tag", value=tag, expected_type=type_hints["tag"])
+            check_type(argname="argument termination_grace_period_seconds", value=termination_grace_period_seconds, expected_type=type_hints["termination_grace_period_seconds"])
+            check_type(argname="argument volume", value=volume, expected_type=type_hints["volume"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "container": container,
             "container_group_name": container_group_name,
@@ -560,7 +598,7 @@ class ImageCache(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ImageCacheProps",
+        props: typing.Union["ImageCacheProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ECI::ImageCache``.
@@ -574,6 +612,12 @@ class ImageCache(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ImageCache.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -618,6 +662,15 @@ class ImageCacheProps:
         :param image_registry_credential: Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
         :param resource_group_id: Property resourceGroupId: Resource group id.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ImageCacheProps.__init__)
+            check_type(argname="argument image", value=image, expected_type=type_hints["image"])
+            check_type(argname="argument image_cache_name", value=image_cache_name, expected_type=type_hints["image_cache_name"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument eip_instance_id", value=eip_instance_id, expected_type=type_hints["eip_instance_id"])
+            check_type(argname="argument image_registry_credential", value=image_registry_credential, expected_type=type_hints["image_registry_credential"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "image": image,
             "image_cache_name": image_cache_name,
@@ -711,7 +764,7 @@ class RosContainerGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosContainerGroupProps",
+        props: typing.Union["RosContainerGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ECI::ContainerGroup``.
@@ -721,6 +774,12 @@ class RosContainerGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContainerGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -731,6 +790,9 @@ class RosContainerGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContainerGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -839,6 +901,9 @@ class RosContainerGroup(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union["RosContainerGroup.ContainerProperty", ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "container").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "container", value)
 
     @builtins.property # type: ignore[misc]
@@ -859,6 +924,9 @@ class RosContainerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "container_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "containerGroupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -868,6 +936,9 @@ class RosContainerGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -883,6 +954,9 @@ class RosContainerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "security_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -898,6 +972,9 @@ class RosContainerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -915,6 +992,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.AcrRegistryInfoProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "acr_registry_info").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "acrRegistryInfo", value)
 
     @builtins.property # type: ignore[misc]
@@ -932,6 +1012,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "active_deadline_seconds").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "activeDeadlineSeconds", value)
 
     @builtins.property # type: ignore[misc]
@@ -949,6 +1032,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "auto_match_image_cache").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoMatchImageCache", value)
 
     @builtins.property # type: ignore[misc]
@@ -966,6 +1052,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "cpu").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cpu", value)
 
     @builtins.property # type: ignore[misc]
@@ -983,6 +1072,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.DnsConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "dns_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dnsConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -1000,6 +1092,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "eip_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eipInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1017,6 +1112,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.HostAliaseProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "host_aliase").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "hostAliase", value)
 
     @builtins.property # type: ignore[misc]
@@ -1034,6 +1132,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.ImageRegistryCredentialProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "image_registry_credential").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageRegistryCredential", value)
 
     @builtins.property # type: ignore[misc]
@@ -1051,6 +1152,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "image_snapshot_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageSnapshotId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1068,6 +1172,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.InitContainerProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "init_container").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "initContainer", value)
 
     @builtins.property # type: ignore[misc]
@@ -1085,6 +1192,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1102,6 +1212,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "ipv6_address_count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipv6AddressCount", value)
 
     @builtins.property # type: ignore[misc]
@@ -1119,6 +1232,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "memory").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "memory", value)
 
     @builtins.property # type: ignore[misc]
@@ -1136,6 +1252,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "ram_role_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ramRoleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1153,6 +1272,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1170,6 +1292,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "restart_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restartPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -1192,6 +1317,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.SecurityContextSysctlProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "security_context_sysctl").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityContextSysctl", value)
 
     @builtins.property # type: ignore[misc]
@@ -1209,6 +1337,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "sls_enable").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slsEnable", value)
 
     @builtins.property # type: ignore[misc]
@@ -1226,6 +1357,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "spot_price_limit").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spotPriceLimit", value)
 
     @builtins.property # type: ignore[misc]
@@ -1249,6 +1383,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "spot_strategy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spotStrategy", value)
 
     @builtins.property # type: ignore[misc]
@@ -1266,6 +1403,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, ros_cdk_core.RosTag]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "tag").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tag", value)
 
     @builtins.property # type: ignore[misc]
@@ -1283,6 +1423,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "termination_grace_period_seconds").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "terminationGracePeriodSeconds", value)
 
     @builtins.property # type: ignore[misc]
@@ -1300,6 +1443,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.VolumeProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "volume").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "volume", value)
 
     @builtins.property # type: ignore[misc]
@@ -1317,6 +1463,9 @@ class RosContainerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosContainerGroup, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @jsii.data_type(
@@ -1344,6 +1493,12 @@ class RosContainerGroup(
             :param instance_name: 
             :param region_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.AcrRegistryInfoProperty.__init__)
+                check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+                check_type(argname="argument domain", value=domain, expected_type=type_hints["domain"])
+                check_type(argname="argument instance_name", value=instance_name, expected_type=type_hints["instance_name"])
+                check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "instance_id": instance_id,
             }
@@ -1420,6 +1575,10 @@ class RosContainerGroup(
             :param path: 
             :param content: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.ConfigFileVolumeConfigFileToPathProperty.__init__)
+                check_type(argname="argument path", value=path, expected_type=type_hints["path"])
+                check_type(argname="argument content", value=content, expected_type=type_hints["content"])
             self._values: typing.Dict[str, typing.Any] = {
                 "path": path,
             }
@@ -1488,17 +1647,17 @@ class RosContainerGroup(
             arg: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
             command: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
             cpu: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-            environment_var: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.EnvironmentVarProperty"]]]] = None,
+            environment_var: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.EnvironmentVarProperty", typing.Dict[str, typing.Any]]]]]] = None,
             image_pull_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            liveness_probe: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.LivenessProbeProperty"]] = None,
+            liveness_probe: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.LivenessProbeProperty", typing.Dict[str, typing.Any]]]] = None,
             memory: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-            port: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.PortProperty"]]]] = None,
-            readiness_probe: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.ReadinessProbeProperty"]] = None,
-            security_context: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.SecurityContextProperty"]] = None,
+            port: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.PortProperty", typing.Dict[str, typing.Any]]]]]] = None,
+            readiness_probe: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.ReadinessProbeProperty", typing.Dict[str, typing.Any]]]] = None,
+            security_context: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.SecurityContextProperty", typing.Dict[str, typing.Any]]]] = None,
             stdin: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
             stdin_once: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
             tty: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-            volume_mount: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.VolumeMountProperty"]]]] = None,
+            volume_mount: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.VolumeMountProperty", typing.Dict[str, typing.Any]]]]]] = None,
             working_dir: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
             '''
@@ -1520,6 +1679,25 @@ class RosContainerGroup(
             :param volume_mount: 
             :param working_dir: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.ContainerProperty.__init__)
+                check_type(argname="argument image", value=image, expected_type=type_hints["image"])
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument arg", value=arg, expected_type=type_hints["arg"])
+                check_type(argname="argument command", value=command, expected_type=type_hints["command"])
+                check_type(argname="argument cpu", value=cpu, expected_type=type_hints["cpu"])
+                check_type(argname="argument environment_var", value=environment_var, expected_type=type_hints["environment_var"])
+                check_type(argname="argument image_pull_policy", value=image_pull_policy, expected_type=type_hints["image_pull_policy"])
+                check_type(argname="argument liveness_probe", value=liveness_probe, expected_type=type_hints["liveness_probe"])
+                check_type(argname="argument memory", value=memory, expected_type=type_hints["memory"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument readiness_probe", value=readiness_probe, expected_type=type_hints["readiness_probe"])
+                check_type(argname="argument security_context", value=security_context, expected_type=type_hints["security_context"])
+                check_type(argname="argument stdin", value=stdin, expected_type=type_hints["stdin"])
+                check_type(argname="argument stdin_once", value=stdin_once, expected_type=type_hints["stdin_once"])
+                check_type(argname="argument tty", value=tty, expected_type=type_hints["tty"])
+                check_type(argname="argument volume_mount", value=volume_mount, expected_type=type_hints["volume_mount"])
+                check_type(argname="argument working_dir", value=working_dir, expected_type=type_hints["working_dir"])
             self._values: typing.Dict[str, typing.Any] = {
                 "image": image,
                 "name": name,
@@ -1748,7 +1926,7 @@ class RosContainerGroup(
             self,
             *,
             name_server: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
-            option: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.OptionProperty"]]]] = None,
+            option: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.OptionProperty", typing.Dict[str, typing.Any]]]]]] = None,
             search: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         ) -> None:
             '''
@@ -1756,6 +1934,11 @@ class RosContainerGroup(
             :param option: 
             :param search: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.DnsConfigProperty.__init__)
+                check_type(argname="argument name_server", value=name_server, expected_type=type_hints["name_server"])
+                check_type(argname="argument option", value=option, expected_type=type_hints["option"])
+                check_type(argname="argument search", value=search, expected_type=type_hints["search"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name_server is not None:
                 self._values["name_server"] = name_server
@@ -1827,6 +2010,11 @@ class RosContainerGroup(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.EnvironmentVarProperty.__init__)
+                check_type(argname="argument field_ref_field_path", value=field_ref_field_path, expected_type=type_hints["field_ref_field_path"])
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if field_ref_field_path is not None:
                 self._values["field_ref_field_path"] = field_ref_field_path
@@ -1892,6 +2080,10 @@ class RosContainerGroup(
             :param hostname: 
             :param ip: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.HostAliaseProperty.__init__)
+                check_type(argname="argument hostname", value=hostname, expected_type=type_hints["hostname"])
+                check_type(argname="argument ip", value=ip, expected_type=type_hints["ip"])
             self._values: typing.Dict[str, typing.Any] = {}
             if hostname is not None:
                 self._values["hostname"] = hostname
@@ -1951,6 +2143,11 @@ class RosContainerGroup(
             :param server: 
             :param user_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.ImageRegistryCredentialProperty.__init__)
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+                check_type(argname="argument server", value=server, expected_type=type_hints["server"])
+                check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
             self._values: typing.Dict[str, typing.Any] = {
                 "password": password,
                 "server": server,
@@ -2017,6 +2214,11 @@ class RosContainerGroup(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.InitContainerEnvironmentVarProperty.__init__)
+                check_type(argname="argument field_ref_field_path", value=field_ref_field_path, expected_type=type_hints["field_ref_field_path"])
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if field_ref_field_path is not None:
                 self._values["field_ref_field_path"] = field_ref_field_path
@@ -2082,6 +2284,10 @@ class RosContainerGroup(
             :param port: 
             :param protocol: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.InitContainerPortProperty.__init__)
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument protocol", value=protocol, expected_type=type_hints["protocol"])
             self._values: typing.Dict[str, typing.Any] = {}
             if port is not None:
                 self._values["port"] = port
@@ -2144,14 +2350,14 @@ class RosContainerGroup(
             arg: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
             command: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
             cpu: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-            environment_var: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.InitContainerEnvironmentVarProperty"]]]] = None,
+            environment_var: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.InitContainerEnvironmentVarProperty", typing.Dict[str, typing.Any]]]]]] = None,
             image: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             image_pull_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             memory: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
             name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            port: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.InitContainerPortProperty"]]]] = None,
-            security_context: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.InitContainerSecurityContextProperty"]] = None,
-            volume_mount: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.InitContainerVolumeMountProperty"]]]] = None,
+            port: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.InitContainerPortProperty", typing.Dict[str, typing.Any]]]]]] = None,
+            security_context: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.InitContainerSecurityContextProperty", typing.Dict[str, typing.Any]]]] = None,
+            volume_mount: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.InitContainerVolumeMountProperty", typing.Dict[str, typing.Any]]]]]] = None,
             working_dir: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
             '''
@@ -2168,6 +2374,20 @@ class RosContainerGroup(
             :param volume_mount: 
             :param working_dir: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.InitContainerProperty.__init__)
+                check_type(argname="argument arg", value=arg, expected_type=type_hints["arg"])
+                check_type(argname="argument command", value=command, expected_type=type_hints["command"])
+                check_type(argname="argument cpu", value=cpu, expected_type=type_hints["cpu"])
+                check_type(argname="argument environment_var", value=environment_var, expected_type=type_hints["environment_var"])
+                check_type(argname="argument image", value=image, expected_type=type_hints["image"])
+                check_type(argname="argument image_pull_policy", value=image_pull_policy, expected_type=type_hints["image_pull_policy"])
+                check_type(argname="argument memory", value=memory, expected_type=type_hints["memory"])
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument security_context", value=security_context, expected_type=type_hints["security_context"])
+                check_type(argname="argument volume_mount", value=volume_mount, expected_type=type_hints["volume_mount"])
+                check_type(argname="argument working_dir", value=working_dir, expected_type=type_hints["working_dir"])
             self._values: typing.Dict[str, typing.Any] = {}
             if arg is not None:
                 self._values["arg"] = arg
@@ -2347,6 +2567,11 @@ class RosContainerGroup(
             :param read_only_root_filesystem: 
             :param run_as_user: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.InitContainerSecurityContextProperty.__init__)
+                check_type(argname="argument capability_add", value=capability_add, expected_type=type_hints["capability_add"])
+                check_type(argname="argument read_only_root_filesystem", value=read_only_root_filesystem, expected_type=type_hints["read_only_root_filesystem"])
+                check_type(argname="argument run_as_user", value=run_as_user, expected_type=type_hints["run_as_user"])
             self._values: typing.Dict[str, typing.Any] = {}
             if capability_add is not None:
                 self._values["capability_add"] = capability_add
@@ -2418,6 +2643,11 @@ class RosContainerGroup(
             :param name: 
             :param read_only: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.InitContainerVolumeMountProperty.__init__)
+                check_type(argname="argument mount_path", value=mount_path, expected_type=type_hints["mount_path"])
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument read_only", value=read_only, expected_type=type_hints["read_only"])
             self._values: typing.Dict[str, typing.Any] = {}
             if mount_path is not None:
                 self._values["mount_path"] = mount_path
@@ -2510,6 +2740,18 @@ class RosContainerGroup(
             :param tcp_socket_port: 
             :param timeout_seconds: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.LivenessProbeProperty.__init__)
+                check_type(argname="argument exec_command", value=exec_command, expected_type=type_hints["exec_command"])
+                check_type(argname="argument failure_threshold", value=failure_threshold, expected_type=type_hints["failure_threshold"])
+                check_type(argname="argument http_get_path", value=http_get_path, expected_type=type_hints["http_get_path"])
+                check_type(argname="argument http_get_port", value=http_get_port, expected_type=type_hints["http_get_port"])
+                check_type(argname="argument http_get_scheme", value=http_get_scheme, expected_type=type_hints["http_get_scheme"])
+                check_type(argname="argument initial_delay_seconds", value=initial_delay_seconds, expected_type=type_hints["initial_delay_seconds"])
+                check_type(argname="argument period_seconds", value=period_seconds, expected_type=type_hints["period_seconds"])
+                check_type(argname="argument success_threshold", value=success_threshold, expected_type=type_hints["success_threshold"])
+                check_type(argname="argument tcp_socket_port", value=tcp_socket_port, expected_type=type_hints["tcp_socket_port"])
+                check_type(argname="argument timeout_seconds", value=timeout_seconds, expected_type=type_hints["timeout_seconds"])
             self._values: typing.Dict[str, typing.Any] = {}
             if exec_command is not None:
                 self._values["exec_command"] = exec_command
@@ -2659,6 +2901,10 @@ class RosContainerGroup(
             :param name: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.OptionProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -2712,6 +2958,10 @@ class RosContainerGroup(
             :param port: 
             :param protocol: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.PortProperty.__init__)
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument protocol", value=protocol, expected_type=type_hints["protocol"])
             self._values: typing.Dict[str, typing.Any] = {}
             if port is not None:
                 self._values["port"] = port
@@ -2792,6 +3042,18 @@ class RosContainerGroup(
             :param tcp_socket_port: 
             :param timeout_seconds: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.ReadinessProbeProperty.__init__)
+                check_type(argname="argument exec_command", value=exec_command, expected_type=type_hints["exec_command"])
+                check_type(argname="argument failure_threshold", value=failure_threshold, expected_type=type_hints["failure_threshold"])
+                check_type(argname="argument http_get_path", value=http_get_path, expected_type=type_hints["http_get_path"])
+                check_type(argname="argument http_get_port", value=http_get_port, expected_type=type_hints["http_get_port"])
+                check_type(argname="argument http_get_scheme", value=http_get_scheme, expected_type=type_hints["http_get_scheme"])
+                check_type(argname="argument initial_delay_seconds", value=initial_delay_seconds, expected_type=type_hints["initial_delay_seconds"])
+                check_type(argname="argument period_seconds", value=period_seconds, expected_type=type_hints["period_seconds"])
+                check_type(argname="argument success_threshold", value=success_threshold, expected_type=type_hints["success_threshold"])
+                check_type(argname="argument tcp_socket_port", value=tcp_socket_port, expected_type=type_hints["tcp_socket_port"])
+                check_type(argname="argument timeout_seconds", value=timeout_seconds, expected_type=type_hints["timeout_seconds"])
             self._values: typing.Dict[str, typing.Any] = {}
             if exec_command is not None:
                 self._values["exec_command"] = exec_command
@@ -2947,6 +3209,11 @@ class RosContainerGroup(
             :param read_only_root_filesystem: 
             :param run_as_user: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.SecurityContextProperty.__init__)
+                check_type(argname="argument capability_add", value=capability_add, expected_type=type_hints["capability_add"])
+                check_type(argname="argument read_only_root_filesystem", value=read_only_root_filesystem, expected_type=type_hints["read_only_root_filesystem"])
+                check_type(argname="argument run_as_user", value=run_as_user, expected_type=type_hints["run_as_user"])
             self._values: typing.Dict[str, typing.Any] = {}
             if capability_add is not None:
                 self._values["capability_add"] = capability_add
@@ -3012,6 +3279,10 @@ class RosContainerGroup(
             :param name: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.SecurityContextSysctlProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -3065,6 +3336,10 @@ class RosContainerGroup(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.TagProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -3123,6 +3398,11 @@ class RosContainerGroup(
             :param name: 
             :param read_only: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.VolumeMountProperty.__init__)
+                check_type(argname="argument mount_path", value=mount_path, expected_type=type_hints["mount_path"])
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument read_only", value=read_only, expected_type=type_hints["read_only"])
             self._values: typing.Dict[str, typing.Any] = {}
             if mount_path is not None:
                 self._values["mount_path"] = mount_path
@@ -3191,7 +3471,7 @@ class RosContainerGroup(
             *,
             name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-            config_file_volume_config_file_to_path: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosContainerGroup.ConfigFileVolumeConfigFileToPathProperty"]]]] = None,
+            config_file_volume_config_file_to_path: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosContainerGroup.ConfigFileVolumeConfigFileToPathProperty", typing.Dict[str, typing.Any]]]]]] = None,
             empty_dir_volume_medium: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             nfs_volume_path: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             nfs_volume_read_only: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -3206,6 +3486,15 @@ class RosContainerGroup(
             :param nfs_volume_read_only: 
             :param nfs_volume_server: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosContainerGroup.VolumeProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+                check_type(argname="argument config_file_volume_config_file_to_path", value=config_file_volume_config_file_to_path, expected_type=type_hints["config_file_volume_config_file_to_path"])
+                check_type(argname="argument empty_dir_volume_medium", value=empty_dir_volume_medium, expected_type=type_hints["empty_dir_volume_medium"])
+                check_type(argname="argument nfs_volume_path", value=nfs_volume_path, expected_type=type_hints["nfs_volume_path"])
+                check_type(argname="argument nfs_volume_read_only", value=nfs_volume_read_only, expected_type=type_hints["nfs_volume_read_only"])
+                check_type(argname="argument nfs_volume_server", value=nfs_volume_server, expected_type=type_hints["nfs_volume_server"])
             self._values: typing.Dict[str, typing.Any] = {
                 "name": name,
                 "type": type,
@@ -3339,33 +3628,33 @@ class RosContainerGroupProps:
     def __init__(
         self,
         *,
-        container: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[RosContainerGroup.ContainerProperty, ros_cdk_core.IResolvable]]],
+        container: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[typing.Union[RosContainerGroup.ContainerProperty, typing.Dict[str, typing.Any]], ros_cdk_core.IResolvable]]],
         container_group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         security_group_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         v_switch_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        acr_registry_info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosContainerGroup.AcrRegistryInfoProperty]]]] = None,
+        acr_registry_info: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosContainerGroup.AcrRegistryInfoProperty, typing.Dict[str, typing.Any]]]]]] = None,
         active_deadline_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         auto_match_image_cache: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         cpu: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        dns_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosContainerGroup.DnsConfigProperty]] = None,
+        dns_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosContainerGroup.DnsConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         eip_instance_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        host_aliase: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosContainerGroup.HostAliaseProperty]]]] = None,
-        image_registry_credential: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosContainerGroup.ImageRegistryCredentialProperty]]]] = None,
+        host_aliase: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosContainerGroup.HostAliaseProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        image_registry_credential: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosContainerGroup.ImageRegistryCredentialProperty, typing.Dict[str, typing.Any]]]]]] = None,
         image_snapshot_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        init_container: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosContainerGroup.InitContainerProperty]]]] = None,
+        init_container: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosContainerGroup.InitContainerProperty, typing.Dict[str, typing.Any]]]]]] = None,
         instance_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ipv6_address_count: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         memory: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         ram_role_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         restart_policy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        security_context_sysctl: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosContainerGroup.SecurityContextSysctlProperty]]]] = None,
+        security_context_sysctl: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosContainerGroup.SecurityContextSysctlProperty, typing.Dict[str, typing.Any]]]]]] = None,
         sls_enable: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         spot_price_limit: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         spot_strategy: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tag: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, ros_cdk_core.RosTag]]]] = None,
+        tag: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[ros_cdk_core.RosTag, typing.Dict[str, typing.Any]]]]]] = None,
         termination_grace_period_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        volume: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosContainerGroup.VolumeProperty]]]] = None,
+        volume: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosContainerGroup.VolumeProperty, typing.Dict[str, typing.Any]]]]]] = None,
         zone_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ECI::ContainerGroup``.
@@ -3399,6 +3688,36 @@ class RosContainerGroupProps:
         :param volume: 
         :param zone_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosContainerGroupProps.__init__)
+            check_type(argname="argument container", value=container, expected_type=type_hints["container"])
+            check_type(argname="argument container_group_name", value=container_group_name, expected_type=type_hints["container_group_name"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument acr_registry_info", value=acr_registry_info, expected_type=type_hints["acr_registry_info"])
+            check_type(argname="argument active_deadline_seconds", value=active_deadline_seconds, expected_type=type_hints["active_deadline_seconds"])
+            check_type(argname="argument auto_match_image_cache", value=auto_match_image_cache, expected_type=type_hints["auto_match_image_cache"])
+            check_type(argname="argument cpu", value=cpu, expected_type=type_hints["cpu"])
+            check_type(argname="argument dns_config", value=dns_config, expected_type=type_hints["dns_config"])
+            check_type(argname="argument eip_instance_id", value=eip_instance_id, expected_type=type_hints["eip_instance_id"])
+            check_type(argname="argument host_aliase", value=host_aliase, expected_type=type_hints["host_aliase"])
+            check_type(argname="argument image_registry_credential", value=image_registry_credential, expected_type=type_hints["image_registry_credential"])
+            check_type(argname="argument image_snapshot_id", value=image_snapshot_id, expected_type=type_hints["image_snapshot_id"])
+            check_type(argname="argument init_container", value=init_container, expected_type=type_hints["init_container"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+            check_type(argname="argument ipv6_address_count", value=ipv6_address_count, expected_type=type_hints["ipv6_address_count"])
+            check_type(argname="argument memory", value=memory, expected_type=type_hints["memory"])
+            check_type(argname="argument ram_role_name", value=ram_role_name, expected_type=type_hints["ram_role_name"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument restart_policy", value=restart_policy, expected_type=type_hints["restart_policy"])
+            check_type(argname="argument security_context_sysctl", value=security_context_sysctl, expected_type=type_hints["security_context_sysctl"])
+            check_type(argname="argument sls_enable", value=sls_enable, expected_type=type_hints["sls_enable"])
+            check_type(argname="argument spot_price_limit", value=spot_price_limit, expected_type=type_hints["spot_price_limit"])
+            check_type(argname="argument spot_strategy", value=spot_strategy, expected_type=type_hints["spot_strategy"])
+            check_type(argname="argument tag", value=tag, expected_type=type_hints["tag"])
+            check_type(argname="argument termination_grace_period_seconds", value=termination_grace_period_seconds, expected_type=type_hints["termination_grace_period_seconds"])
+            check_type(argname="argument volume", value=volume, expected_type=type_hints["volume"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "container": container,
             "container_group_name": container_group_name,
@@ -3771,7 +4090,7 @@ class RosImageCache(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosImageCacheProps",
+        props: typing.Union["RosImageCacheProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ECI::ImageCache``.
@@ -3781,6 +4100,12 @@ class RosImageCache(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosImageCache.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3791,6 +4116,9 @@ class RosImageCache(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosImageCache._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3819,6 +4147,9 @@ class RosImageCache(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosImageCache, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3836,6 +4167,9 @@ class RosImageCache(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosImageCache, "image").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "image", value)
 
     @builtins.property # type: ignore[misc]
@@ -3851,6 +4185,9 @@ class RosImageCache(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosImageCache, "image_cache_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageCacheName", value)
 
     @builtins.property # type: ignore[misc]
@@ -3866,6 +4203,9 @@ class RosImageCache(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosImageCache, "security_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3881,6 +4221,9 @@ class RosImageCache(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosImageCache, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3898,6 +4241,9 @@ class RosImageCache(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosImageCache, "eip_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eipInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3915,6 +4261,9 @@ class RosImageCache(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosImageCache, "image_registry_credential").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageRegistryCredential", value)
 
     @builtins.property # type: ignore[misc]
@@ -3932,6 +4281,9 @@ class RosImageCache(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosImageCache, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
 
@@ -3970,6 +4322,15 @@ class RosImageCacheProps:
         :param image_registry_credential: 
         :param resource_group_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosImageCacheProps.__init__)
+            check_type(argname="argument image", value=image, expected_type=type_hints["image"])
+            check_type(argname="argument image_cache_name", value=image_cache_name, expected_type=type_hints["image_cache_name"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument eip_instance_id", value=eip_instance_id, expected_type=type_hints["eip_instance_id"])
+            check_type(argname="argument image_registry_credential", value=image_registry_credential, expected_type=type_hints["image_registry_credential"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "image": image,
             "image_cache_name": image_cache_name,

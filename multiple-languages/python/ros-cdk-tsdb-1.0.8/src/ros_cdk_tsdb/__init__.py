@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class HiTSDBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "HiTSDBInstanceProps",
+        props: typing.Union["HiTSDBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::TSDB::HiTSDBInstance``.
@@ -47,6 +49,12 @@ class HiTSDBInstance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(HiTSDBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -139,6 +147,19 @@ class HiTSDBInstanceProps:
         :param pricing_cycle: Property pricingCycle: The unit of the validity period. This parameter is valid only when the PayType parameter is set to PREPAY. Default value: Month.
         :param security_ip_list: Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1/24"].
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(HiTSDBInstanceProps.__init__)
+            check_type(argname="argument instance_class", value=instance_class, expected_type=type_hints["instance_class"])
+            check_type(argname="argument instance_storage", value=instance_storage, expected_type=type_hints["instance_storage"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument disk_category", value=disk_category, expected_type=type_hints["disk_category"])
+            check_type(argname="argument duration", value=duration, expected_type=type_hints["duration"])
+            check_type(argname="argument instance_alias", value=instance_alias, expected_type=type_hints["instance_alias"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument security_ip_list", value=security_ip_list, expected_type=type_hints["security_ip_list"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_class": instance_class,
             "instance_storage": instance_storage,
@@ -287,7 +308,7 @@ class InfluxDBDatabase(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "InfluxDBDatabaseProps",
+        props: typing.Union["InfluxDBDatabaseProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::TSDB::InfluxDBDatabase``.
@@ -301,6 +322,12 @@ class InfluxDBDatabase(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InfluxDBDatabase.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -333,6 +360,10 @@ class InfluxDBDatabaseProps:
         :param db_name: Property dbName: The name of database. The name can at most be 64 characters in length and can contain lowercase letters, digits, and underscores (_). It must start with a letter and end with a letter or digit.
         :param instance_id: Property instanceId: The ID of TSDB for InfluxDB.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InfluxDBDatabaseProps.__init__)
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_name": db_name,
             "instance_id": instance_id,
@@ -378,7 +409,7 @@ class InfluxDBUser(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "InfluxDBUserProps",
+        props: typing.Union["InfluxDBUserProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::TSDB::InfluxDBUser``.
@@ -392,6 +423,12 @@ class InfluxDBUser(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InfluxDBUser.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -432,7 +469,7 @@ class InfluxDBUserProps:
         password: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         user_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         user_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        database_permissions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosInfluxDBUser.DatabasePermissionsProperty"]]]] = None,
+        database_permissions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosInfluxDBUser.DatabasePermissionsProperty", typing.Dict[str, typing.Any]]]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::TSDB::InfluxDBUser``.
 
@@ -442,6 +479,13 @@ class InfluxDBUserProps:
         :param user_type: Property userType: The type of user. Valid values: normal: normal user admin: administrator user.
         :param database_permissions: Property databasePermissions: The list of databases that the user can access. If the user type is admin, do not specify this parameter.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InfluxDBUserProps.__init__)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
+            check_type(argname="argument user_type", value=user_type, expected_type=type_hints["user_type"])
+            check_type(argname="argument database_permissions", value=database_permissions, expected_type=type_hints["database_permissions"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_id": instance_id,
             "password": password,
@@ -521,7 +565,7 @@ class RosHiTSDBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosHiTSDBInstanceProps",
+        props: typing.Union["RosHiTSDBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::TSDB::HiTSDBInstance``.
@@ -531,6 +575,12 @@ class RosHiTSDBInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosHiTSDBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -541,6 +591,9 @@ class RosHiTSDBInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosHiTSDBInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -617,6 +670,9 @@ class RosHiTSDBInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -641,6 +697,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "instance_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -656,6 +715,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "instance_storage").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceStorage", value)
 
     @builtins.property # type: ignore[misc]
@@ -671,6 +733,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -686,6 +751,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -701,6 +769,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @builtins.property # type: ignore[misc]
@@ -718,6 +789,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "disk_category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "diskCategory", value)
 
     @builtins.property # type: ignore[misc]
@@ -735,6 +809,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "duration", value)
 
     @builtins.property # type: ignore[misc]
@@ -752,6 +829,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "instance_alias").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceAlias", value)
 
     @builtins.property # type: ignore[misc]
@@ -769,6 +849,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -786,6 +869,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "pricing_cycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pricingCycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -803,6 +889,9 @@ class RosHiTSDBInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHiTSDBInstance, "security_ip_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityIpList", value)
 
 
@@ -853,6 +942,19 @@ class RosHiTSDBInstanceProps:
         :param pricing_cycle: 
         :param security_ip_list: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosHiTSDBInstanceProps.__init__)
+            check_type(argname="argument instance_class", value=instance_class, expected_type=type_hints["instance_class"])
+            check_type(argname="argument instance_storage", value=instance_storage, expected_type=type_hints["instance_storage"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument disk_category", value=disk_category, expected_type=type_hints["disk_category"])
+            check_type(argname="argument duration", value=duration, expected_type=type_hints["duration"])
+            check_type(argname="argument instance_alias", value=instance_alias, expected_type=type_hints["instance_alias"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument security_ip_list", value=security_ip_list, expected_type=type_hints["security_ip_list"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_class": instance_class,
             "instance_storage": instance_storage,
@@ -1010,7 +1112,7 @@ class RosInfluxDBDatabase(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInfluxDBDatabaseProps",
+        props: typing.Union["RosInfluxDBDatabaseProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::TSDB::InfluxDBDatabase``.
@@ -1020,6 +1122,12 @@ class RosInfluxDBDatabase(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInfluxDBDatabase.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1030,6 +1138,9 @@ class RosInfluxDBDatabase(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInfluxDBDatabase._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1072,6 +1183,9 @@ class RosInfluxDBDatabase(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBDatabase, "db_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1081,6 +1195,9 @@ class RosInfluxDBDatabase(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBDatabase, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1096,6 +1213,9 @@ class RosInfluxDBDatabase(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBDatabase, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
 
@@ -1116,6 +1236,10 @@ class RosInfluxDBDatabaseProps:
         :param db_name: 
         :param instance_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInfluxDBDatabaseProps.__init__)
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_name": db_name,
             "instance_id": instance_id,
@@ -1162,7 +1286,7 @@ class RosInfluxDBUser(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInfluxDBUserProps",
+        props: typing.Union["RosInfluxDBUserProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::TSDB::InfluxDBUser``.
@@ -1172,6 +1296,12 @@ class RosInfluxDBUser(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInfluxDBUser.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1182,6 +1312,9 @@ class RosInfluxDBUser(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInfluxDBUser._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1226,6 +1359,9 @@ class RosInfluxDBUser(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBUser, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1241,6 +1377,9 @@ class RosInfluxDBUser(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBUser, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1257,6 +1396,9 @@ class RosInfluxDBUser(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBUser, "password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "password", value)
 
     @builtins.property # type: ignore[misc]
@@ -1272,6 +1414,9 @@ class RosInfluxDBUser(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBUser, "user_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "userName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1291,6 +1436,9 @@ class RosInfluxDBUser(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBUser, "user_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "userType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1308,6 +1456,9 @@ class RosInfluxDBUser(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosInfluxDBUser.DatabasePermissionsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfluxDBUser, "database_permissions").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "databasePermissions", value)
 
     @jsii.data_type(
@@ -1326,6 +1477,10 @@ class RosInfluxDBUser(
             :param db_name: 
             :param permission: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInfluxDBUser.DatabasePermissionsProperty.__init__)
+                check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+                check_type(argname="argument permission", value=permission, expected_type=type_hints["permission"])
             self._values: typing.Dict[str, typing.Any] = {
                 "db_name": db_name,
                 "permission": permission,
@@ -1380,7 +1535,7 @@ class RosInfluxDBUserProps:
         password: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         user_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         user_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        database_permissions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosInfluxDBUser.DatabasePermissionsProperty]]]] = None,
+        database_permissions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosInfluxDBUser.DatabasePermissionsProperty, typing.Dict[str, typing.Any]]]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::TSDB::InfluxDBUser``.
 
@@ -1390,6 +1545,13 @@ class RosInfluxDBUserProps:
         :param user_type: 
         :param database_permissions: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInfluxDBUserProps.__init__)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
+            check_type(argname="argument user_type", value=user_type, expected_type=type_hints["user_type"])
+            check_type(argname="argument database_permissions", value=database_permissions, expected_type=type_hints["database_permissions"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_id": instance_id,
             "password": password,

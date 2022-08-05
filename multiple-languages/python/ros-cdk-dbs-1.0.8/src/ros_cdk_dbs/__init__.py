@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class RestoreTask(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RestoreTaskProps",
+        props: typing.Union["RestoreTaskProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DBS::RestoreTask``.
@@ -47,6 +49,12 @@ class RestoreTask(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RestoreTask.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -127,6 +135,27 @@ class RestoreTaskProps:
         :param restore_time: Property restoreTime: The time when the fault is restored. Set the value to 1554560477000.
         :param start_task: Property startTask: Start restore task after creating a recovery task.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RestoreTaskProps.__init__)
+            check_type(argname="argument backup_plan_id", value=backup_plan_id, expected_type=type_hints["backup_plan_id"])
+            check_type(argname="argument destination_endpoint_instance_type", value=destination_endpoint_instance_type, expected_type=type_hints["destination_endpoint_instance_type"])
+            check_type(argname="argument restore_task_name", value=restore_task_name, expected_type=type_hints["restore_task_name"])
+            check_type(argname="argument backup_gateway_id", value=backup_gateway_id, expected_type=type_hints["backup_gateway_id"])
+            check_type(argname="argument backup_set_id", value=backup_set_id, expected_type=type_hints["backup_set_id"])
+            check_type(argname="argument destination_endpoint_database_name", value=destination_endpoint_database_name, expected_type=type_hints["destination_endpoint_database_name"])
+            check_type(argname="argument destination_endpoint_instance_id", value=destination_endpoint_instance_id, expected_type=type_hints["destination_endpoint_instance_id"])
+            check_type(argname="argument destination_endpoint_ip", value=destination_endpoint_ip, expected_type=type_hints["destination_endpoint_ip"])
+            check_type(argname="argument destination_endpoint_oracle_sid", value=destination_endpoint_oracle_sid, expected_type=type_hints["destination_endpoint_oracle_sid"])
+            check_type(argname="argument destination_endpoint_password", value=destination_endpoint_password, expected_type=type_hints["destination_endpoint_password"])
+            check_type(argname="argument destination_endpoint_port", value=destination_endpoint_port, expected_type=type_hints["destination_endpoint_port"])
+            check_type(argname="argument destination_endpoint_region", value=destination_endpoint_region, expected_type=type_hints["destination_endpoint_region"])
+            check_type(argname="argument destination_endpoint_user_name", value=destination_endpoint_user_name, expected_type=type_hints["destination_endpoint_user_name"])
+            check_type(argname="argument duplicate_conflict", value=duplicate_conflict, expected_type=type_hints["duplicate_conflict"])
+            check_type(argname="argument restore_dir", value=restore_dir, expected_type=type_hints["restore_dir"])
+            check_type(argname="argument restore_home", value=restore_home, expected_type=type_hints["restore_home"])
+            check_type(argname="argument restore_objects", value=restore_objects, expected_type=type_hints["restore_objects"])
+            check_type(argname="argument restore_time", value=restore_time, expected_type=type_hints["restore_time"])
+            check_type(argname="argument start_task", value=start_task, expected_type=type_hints["start_task"])
         self._values: typing.Dict[str, typing.Any] = {
             "backup_plan_id": backup_plan_id,
             "destination_endpoint_instance_type": destination_endpoint_instance_type,
@@ -392,7 +421,7 @@ class RosRestoreTask(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRestoreTaskProps",
+        props: typing.Union["RosRestoreTaskProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DBS::RestoreTask``.
@@ -402,6 +431,12 @@ class RosRestoreTask(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRestoreTask.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -412,6 +447,9 @@ class RosRestoreTask(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRestoreTask._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -446,6 +484,9 @@ class RosRestoreTask(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "backup_plan_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupPlanId", value)
 
     @builtins.property # type: ignore[misc]
@@ -475,6 +516,9 @@ class RosRestoreTask(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointInstanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -484,6 +528,9 @@ class RosRestoreTask(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -499,6 +546,9 @@ class RosRestoreTask(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "restore_task_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restoreTaskName", value)
 
     @builtins.property # type: ignore[misc]
@@ -519,6 +569,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "backup_gateway_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupGatewayId", value)
 
     @builtins.property # type: ignore[misc]
@@ -539,6 +592,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "backup_set_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupSetId", value)
 
     @builtins.property # type: ignore[misc]
@@ -559,6 +615,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_database_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointDatabaseName", value)
 
     @builtins.property # type: ignore[misc]
@@ -579,6 +638,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -599,6 +661,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointIp", value)
 
     @builtins.property # type: ignore[misc]
@@ -619,6 +684,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_oracle_sid").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointOracleSid", value)
 
     @builtins.property # type: ignore[misc]
@@ -640,6 +708,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -660,6 +731,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointPort", value)
 
     @builtins.property # type: ignore[misc]
@@ -680,6 +754,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_region").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointRegion", value)
 
     @builtins.property # type: ignore[misc]
@@ -701,6 +778,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "destination_endpoint_user_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationEndpointUserName", value)
 
     @builtins.property # type: ignore[misc]
@@ -722,6 +802,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "duplicate_conflict").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "duplicateConflict", value)
 
     @builtins.property # type: ignore[misc]
@@ -739,6 +822,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "restore_dir").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restoreDir", value)
 
     @builtins.property # type: ignore[misc]
@@ -756,6 +842,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "restore_home").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restoreHome", value)
 
     @builtins.property # type: ignore[misc]
@@ -776,6 +865,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "restore_objects").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restoreObjects", value)
 
     @builtins.property # type: ignore[misc]
@@ -793,6 +885,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "restore_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restoreTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -810,6 +905,9 @@ class RosRestoreTask(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRestoreTask, "start_task").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "startTask", value)
 
 
@@ -884,6 +982,27 @@ class RosRestoreTaskProps:
         :param restore_time: 
         :param start_task: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRestoreTaskProps.__init__)
+            check_type(argname="argument backup_plan_id", value=backup_plan_id, expected_type=type_hints["backup_plan_id"])
+            check_type(argname="argument destination_endpoint_instance_type", value=destination_endpoint_instance_type, expected_type=type_hints["destination_endpoint_instance_type"])
+            check_type(argname="argument restore_task_name", value=restore_task_name, expected_type=type_hints["restore_task_name"])
+            check_type(argname="argument backup_gateway_id", value=backup_gateway_id, expected_type=type_hints["backup_gateway_id"])
+            check_type(argname="argument backup_set_id", value=backup_set_id, expected_type=type_hints["backup_set_id"])
+            check_type(argname="argument destination_endpoint_database_name", value=destination_endpoint_database_name, expected_type=type_hints["destination_endpoint_database_name"])
+            check_type(argname="argument destination_endpoint_instance_id", value=destination_endpoint_instance_id, expected_type=type_hints["destination_endpoint_instance_id"])
+            check_type(argname="argument destination_endpoint_ip", value=destination_endpoint_ip, expected_type=type_hints["destination_endpoint_ip"])
+            check_type(argname="argument destination_endpoint_oracle_sid", value=destination_endpoint_oracle_sid, expected_type=type_hints["destination_endpoint_oracle_sid"])
+            check_type(argname="argument destination_endpoint_password", value=destination_endpoint_password, expected_type=type_hints["destination_endpoint_password"])
+            check_type(argname="argument destination_endpoint_port", value=destination_endpoint_port, expected_type=type_hints["destination_endpoint_port"])
+            check_type(argname="argument destination_endpoint_region", value=destination_endpoint_region, expected_type=type_hints["destination_endpoint_region"])
+            check_type(argname="argument destination_endpoint_user_name", value=destination_endpoint_user_name, expected_type=type_hints["destination_endpoint_user_name"])
+            check_type(argname="argument duplicate_conflict", value=duplicate_conflict, expected_type=type_hints["duplicate_conflict"])
+            check_type(argname="argument restore_dir", value=restore_dir, expected_type=type_hints["restore_dir"])
+            check_type(argname="argument restore_home", value=restore_home, expected_type=type_hints["restore_home"])
+            check_type(argname="argument restore_objects", value=restore_objects, expected_type=type_hints["restore_objects"])
+            check_type(argname="argument restore_time", value=restore_time, expected_type=type_hints["restore_time"])
+            check_type(argname="argument start_task", value=start_task, expected_type=type_hints["start_task"])
         self._values: typing.Dict[str, typing.Any] = {
             "backup_plan_id": backup_plan_id,
             "destination_endpoint_instance_type": destination_endpoint_instance_type,

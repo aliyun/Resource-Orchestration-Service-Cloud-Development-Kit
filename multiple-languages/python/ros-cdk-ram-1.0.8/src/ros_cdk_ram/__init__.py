@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class AccessKey(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AccessKeyProps",
+        props: typing.Union["AccessKeyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::AccessKey``.
@@ -47,6 +49,12 @@ class AccessKey(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccessKey.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -83,6 +91,9 @@ class AccessKeyProps:
 
         :param user_name: Property userName: Specifies the user name, containing up to 64 characters.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccessKeyProps.__init__)
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "user_name": user_name,
         }
@@ -117,7 +128,7 @@ class AttachPolicyToRole(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AttachPolicyToRoleProps",
+        props: typing.Union["AttachPolicyToRoleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::AttachPolicyToRole``.
@@ -131,6 +142,12 @@ class AttachPolicyToRole(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AttachPolicyToRole.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -157,6 +174,11 @@ class AttachPolicyToRoleProps:
         :param policy_type: Property policyType: Authorization policy type. Value: "System" or "Custom".
         :param role_name: Property roleName: Role name.Example: dev.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AttachPolicyToRoleProps.__init__)
+            check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+            check_type(argname="argument policy_type", value=policy_type, expected_type=type_hints["policy_type"])
+            check_type(argname="argument role_name", value=role_name, expected_type=type_hints["role_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_name": policy_name,
             "policy_type": policy_type,
@@ -210,7 +232,7 @@ class AttachPolicyToUser(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AttachPolicyToUserProps",
+        props: typing.Union["AttachPolicyToUserProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::AttachPolicyToUser``.
@@ -224,6 +246,12 @@ class AttachPolicyToUser(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AttachPolicyToUser.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -250,6 +278,11 @@ class AttachPolicyToUserProps:
         :param policy_type: Property policyType: Authorization policy type. Value: "System" or "Custom".
         :param user_name: Property userName: User name.Example: dev.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AttachPolicyToUserProps.__init__)
+            check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+            check_type(argname="argument policy_type", value=policy_type, expected_type=type_hints["policy_type"])
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_name": policy_name,
             "policy_type": policy_type,
@@ -303,7 +336,7 @@ class Group(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "GroupProps",
+        props: typing.Union["GroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::Group``.
@@ -317,6 +350,12 @@ class Group(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Group.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -344,8 +383,8 @@ class GroupProps:
         group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         comments: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosGroup.PoliciesProperty"]]]] = None,
-        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosGroup.PolicyAttachmentsProperty"]] = None,
+        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosGroup.PoliciesProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosGroup.PolicyAttachmentsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::RAM::Group``.
 
@@ -355,6 +394,13 @@ class GroupProps:
         :param policies: Property policies: Describes what actions are allowed on what resources.
         :param policy_attachments: Property policyAttachments: System and custom policy names to attach.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(GroupProps.__init__)
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument comments", value=comments, expected_type=type_hints["comments"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument policies", value=policies, expected_type=type_hints["policies"])
+            check_type(argname="argument policy_attachments", value=policy_attachments, expected_type=type_hints["policy_attachments"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_name": group_name,
         }
@@ -432,7 +478,7 @@ class ManagedPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ManagedPolicyProps",
+        props: typing.Union["ManagedPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::ManagedPolicy``.
@@ -446,6 +492,12 @@ class ManagedPolicy(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ManagedPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -475,7 +527,7 @@ class ManagedPolicyProps:
         policy_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         groups: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
-        policy_document: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosManagedPolicy.PolicyDocumentProperty"]] = None,
+        policy_document: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosManagedPolicy.PolicyDocumentProperty", typing.Dict[str, typing.Any]]]] = None,
         policy_document_unchecked: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         roles: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         users: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
@@ -490,6 +542,15 @@ class ManagedPolicyProps:
         :param roles: Property roles: The names of roles to attach to this policy.
         :param users: Property users: The names of users to attach to this policy.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ManagedPolicyProps.__init__)
+            check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument groups", value=groups, expected_type=type_hints["groups"])
+            check_type(argname="argument policy_document", value=policy_document, expected_type=type_hints["policy_document"])
+            check_type(argname="argument policy_document_unchecked", value=policy_document_unchecked, expected_type=type_hints["policy_document_unchecked"])
+            check_type(argname="argument roles", value=roles, expected_type=type_hints["roles"])
+            check_type(argname="argument users", value=users, expected_type=type_hints["users"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_name": policy_name,
         }
@@ -587,7 +648,7 @@ class RamAccountAlias(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RamAccountAliasProps",
+        props: typing.Union["RamAccountAliasProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::RamAccountAlias``.
@@ -601,6 +662,12 @@ class RamAccountAlias(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RamAccountAlias.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -625,6 +692,9 @@ class RamAccountAliasProps:
 
         :param account_alias: Property accountAlias: The alias of the Alibaba Cloud account. The alias must be 1 to 50 characters in length, and can contain lowercase letters, digits, hyphens (-), periods (.) and underscores (_). Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a hyphen (-) and cannot have two consecutive hyphens (-).
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RamAccountAliasProps.__init__)
+            check_type(argname="argument account_alias", value=account_alias, expected_type=type_hints["account_alias"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_alias": account_alias,
         }
@@ -665,7 +735,7 @@ class Role(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RoleProps",
+        props: typing.Union["RoleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::Role``.
@@ -679,6 +749,12 @@ class Role(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Role.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -717,13 +793,13 @@ class RoleProps:
     def __init__(
         self,
         *,
-        assume_role_policy_document: typing.Union[ros_cdk_core.IResolvable, "RosRole.AssumeRolePolicyDocumentProperty"],
+        assume_role_policy_document: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRole.AssumeRolePolicyDocumentProperty", typing.Dict[str, typing.Any]]],
         role_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         max_session_duration: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosRole.PoliciesProperty"]]]] = None,
-        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRole.PolicyAttachmentsProperty"]] = None,
+        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRole.PoliciesProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRole.PolicyAttachmentsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::RAM::Role``.
 
@@ -735,6 +811,15 @@ class RoleProps:
         :param policies: Property policies: Describes what actions are allowed on what resources.
         :param policy_attachments: Property policyAttachments: System and custom policy names to attach.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RoleProps.__init__)
+            check_type(argname="argument assume_role_policy_document", value=assume_role_policy_document, expected_type=type_hints["assume_role_policy_document"])
+            check_type(argname="argument role_name", value=role_name, expected_type=type_hints["role_name"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument max_session_duration", value=max_session_duration, expected_type=type_hints["max_session_duration"])
+            check_type(argname="argument policies", value=policies, expected_type=type_hints["policies"])
+            check_type(argname="argument policy_attachments", value=policy_attachments, expected_type=type_hints["policy_attachments"])
         self._values: typing.Dict[str, typing.Any] = {
             "assume_role_policy_document": assume_role_policy_document,
             "role_name": role_name,
@@ -836,7 +921,7 @@ class RosAccessKey(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAccessKeyProps",
+        props: typing.Union["RosAccessKeyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::AccessKey``.
@@ -846,6 +931,12 @@ class RosAccessKey(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccessKey.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -856,6 +947,9 @@ class RosAccessKey(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccessKey._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -900,6 +994,9 @@ class RosAccessKey(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccessKey, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -915,6 +1012,9 @@ class RosAccessKey(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccessKey, "user_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "userName", value)
 
 
@@ -933,6 +1033,9 @@ class RosAccessKeyProps:
 
         :param user_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccessKeyProps.__init__)
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "user_name": user_name,
         }
@@ -969,7 +1072,7 @@ class RosAttachPolicyToRole(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAttachPolicyToRoleProps",
+        props: typing.Union["RosAttachPolicyToRoleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::AttachPolicyToRole``.
@@ -979,6 +1082,12 @@ class RosAttachPolicyToRole(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAttachPolicyToRole.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -989,6 +1098,9 @@ class RosAttachPolicyToRole(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAttachPolicyToRole._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1010,6 +1122,9 @@ class RosAttachPolicyToRole(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAttachPolicyToRole, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1025,6 +1140,9 @@ class RosAttachPolicyToRole(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAttachPolicyToRole, "policy_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1040,6 +1158,9 @@ class RosAttachPolicyToRole(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAttachPolicyToRole, "policy_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1055,6 +1176,9 @@ class RosAttachPolicyToRole(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAttachPolicyToRole, "role_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "roleName", value)
 
 
@@ -1081,6 +1205,11 @@ class RosAttachPolicyToRoleProps:
         :param policy_type: 
         :param role_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAttachPolicyToRoleProps.__init__)
+            check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+            check_type(argname="argument policy_type", value=policy_type, expected_type=type_hints["policy_type"])
+            check_type(argname="argument role_name", value=role_name, expected_type=type_hints["role_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_name": policy_name,
             "policy_type": policy_type,
@@ -1137,7 +1266,7 @@ class RosAttachPolicyToUser(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAttachPolicyToUserProps",
+        props: typing.Union["RosAttachPolicyToUserProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::AttachPolicyToUser``.
@@ -1147,6 +1276,12 @@ class RosAttachPolicyToUser(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAttachPolicyToUser.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1157,6 +1292,9 @@ class RosAttachPolicyToUser(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAttachPolicyToUser._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1178,6 +1316,9 @@ class RosAttachPolicyToUser(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAttachPolicyToUser, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1193,6 +1334,9 @@ class RosAttachPolicyToUser(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAttachPolicyToUser, "policy_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1208,6 +1352,9 @@ class RosAttachPolicyToUser(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAttachPolicyToUser, "policy_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1223,6 +1370,9 @@ class RosAttachPolicyToUser(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAttachPolicyToUser, "user_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "userName", value)
 
 
@@ -1249,6 +1399,11 @@ class RosAttachPolicyToUserProps:
         :param policy_type: 
         :param user_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAttachPolicyToUserProps.__init__)
+            check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+            check_type(argname="argument policy_type", value=policy_type, expected_type=type_hints["policy_type"])
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_name": policy_name,
             "policy_type": policy_type,
@@ -1305,7 +1460,7 @@ class RosGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosGroupProps",
+        props: typing.Union["RosGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::Group``.
@@ -1315,6 +1470,12 @@ class RosGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1325,6 +1486,9 @@ class RosGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1353,6 +1517,9 @@ class RosGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1368,6 +1535,9 @@ class RosGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroup, "group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1385,6 +1555,9 @@ class RosGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroup, "comments").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "comments", value)
 
     @builtins.property # type: ignore[misc]
@@ -1402,6 +1575,9 @@ class RosGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroup, "deletion_force").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionForce", value)
 
     @builtins.property # type: ignore[misc]
@@ -1419,6 +1595,9 @@ class RosGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosGroup.PoliciesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroup, "policies").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policies", value)
 
     @builtins.property # type: ignore[misc]
@@ -1436,6 +1615,9 @@ class RosGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosGroup.PolicyAttachmentsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGroup, "policy_attachments").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyAttachments", value)
 
     @jsii.data_type(
@@ -1451,7 +1633,7 @@ class RosGroup(
         def __init__(
             self,
             *,
-            policy_document: typing.Union[ros_cdk_core.IResolvable, "RosGroup.PolicyDocumentProperty"],
+            policy_document: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosGroup.PolicyDocumentProperty", typing.Dict[str, typing.Any]]],
             policy_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
@@ -1460,6 +1642,11 @@ class RosGroup(
             :param policy_name: 
             :param description: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosGroup.PoliciesProperty.__init__)
+                check_type(argname="argument policy_document", value=policy_document, expected_type=type_hints["policy_document"])
+                check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+                check_type(argname="argument description", value=description, expected_type=type_hints["description"])
             self._values: typing.Dict[str, typing.Any] = {
                 "policy_document": policy_document,
                 "policy_name": policy_name,
@@ -1524,6 +1711,10 @@ class RosGroup(
             :param custom: 
             :param system: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosGroup.PolicyAttachmentsProperty.__init__)
+                check_type(argname="argument custom", value=custom, expected_type=type_hints["custom"])
+                check_type(argname="argument system", value=system, expected_type=type_hints["system"])
             self._values: typing.Dict[str, typing.Any] = {}
             if custom is not None:
                 self._values["custom"] = custom
@@ -1570,13 +1761,17 @@ class RosGroup(
         def __init__(
             self,
             *,
-            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosGroup.StatementProperty"]]],
+            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosGroup.StatementProperty", typing.Dict[str, typing.Any]]]]],
             version: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         ) -> None:
             '''
             :param statement: 
             :param version: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosGroup.PolicyDocumentProperty.__init__)
+                check_type(argname="argument statement", value=statement, expected_type=type_hints["statement"])
+                check_type(argname="argument version", value=version, expected_type=type_hints["version"])
             self._values: typing.Dict[str, typing.Any] = {
                 "statement": statement,
                 "version": version,
@@ -1638,6 +1833,12 @@ class RosGroup(
             :param effect: 
             :param resource: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosGroup.StatementProperty.__init__)
+                check_type(argname="argument action", value=action, expected_type=type_hints["action"])
+                check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
+                check_type(argname="argument effect", value=effect, expected_type=type_hints["effect"])
+                check_type(argname="argument resource", value=resource, expected_type=type_hints["resource"])
             self._values: typing.Dict[str, typing.Any] = {}
             if action is not None:
                 self._values["action"] = action
@@ -1718,8 +1919,8 @@ class RosGroupProps:
         group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         comments: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosGroup.PoliciesProperty]]]] = None,
-        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosGroup.PolicyAttachmentsProperty]] = None,
+        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosGroup.PoliciesProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosGroup.PolicyAttachmentsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::RAM::Group``.
 
@@ -1729,6 +1930,13 @@ class RosGroupProps:
         :param policies: 
         :param policy_attachments: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGroupProps.__init__)
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument comments", value=comments, expected_type=type_hints["comments"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument policies", value=policies, expected_type=type_hints["policies"])
+            check_type(argname="argument policy_attachments", value=policy_attachments, expected_type=type_hints["policy_attachments"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_name": group_name,
         }
@@ -1813,7 +2021,7 @@ class RosManagedPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosManagedPolicyProps",
+        props: typing.Union["RosManagedPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::ManagedPolicy``.
@@ -1823,6 +2031,12 @@ class RosManagedPolicy(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosManagedPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1833,6 +2047,9 @@ class RosManagedPolicy(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosManagedPolicy._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1861,6 +2078,9 @@ class RosManagedPolicy(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosManagedPolicy, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1876,6 +2096,9 @@ class RosManagedPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosManagedPolicy, "policy_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1893,6 +2116,9 @@ class RosManagedPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosManagedPolicy, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -1910,6 +2136,9 @@ class RosManagedPolicy(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosManagedPolicy, "groups").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groups", value)
 
     @builtins.property # type: ignore[misc]
@@ -1927,6 +2156,9 @@ class RosManagedPolicy(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosManagedPolicy.PolicyDocumentProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosManagedPolicy, "policy_document").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyDocument", value)
 
     @builtins.property # type: ignore[misc]
@@ -1944,6 +2176,9 @@ class RosManagedPolicy(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosManagedPolicy, "policy_document_unchecked").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyDocumentUnchecked", value)
 
     @builtins.property # type: ignore[misc]
@@ -1961,6 +2196,9 @@ class RosManagedPolicy(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosManagedPolicy, "roles").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "roles", value)
 
     @builtins.property # type: ignore[misc]
@@ -1978,6 +2216,9 @@ class RosManagedPolicy(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosManagedPolicy, "users").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "users", value)
 
     @jsii.data_type(
@@ -1989,13 +2230,17 @@ class RosManagedPolicy(
         def __init__(
             self,
             *,
-            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosManagedPolicy.StatementProperty"]]],
+            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosManagedPolicy.StatementProperty", typing.Dict[str, typing.Any]]]]],
             version: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         ) -> None:
             '''
             :param statement: 
             :param version: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosManagedPolicy.PolicyDocumentProperty.__init__)
+                check_type(argname="argument statement", value=statement, expected_type=type_hints["statement"])
+                check_type(argname="argument version", value=version, expected_type=type_hints["version"])
             self._values: typing.Dict[str, typing.Any] = {
                 "statement": statement,
                 "version": version,
@@ -2057,6 +2302,12 @@ class RosManagedPolicy(
             :param effect: 
             :param resource: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosManagedPolicy.StatementProperty.__init__)
+                check_type(argname="argument action", value=action, expected_type=type_hints["action"])
+                check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
+                check_type(argname="argument effect", value=effect, expected_type=type_hints["effect"])
+                check_type(argname="argument resource", value=resource, expected_type=type_hints["resource"])
             self._values: typing.Dict[str, typing.Any] = {}
             if action is not None:
                 self._values["action"] = action
@@ -2139,7 +2390,7 @@ class RosManagedPolicyProps:
         policy_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         groups: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
-        policy_document: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosManagedPolicy.PolicyDocumentProperty]] = None,
+        policy_document: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosManagedPolicy.PolicyDocumentProperty, typing.Dict[str, typing.Any]]]] = None,
         policy_document_unchecked: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         roles: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         users: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
@@ -2154,6 +2405,15 @@ class RosManagedPolicyProps:
         :param roles: 
         :param users: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosManagedPolicyProps.__init__)
+            check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument groups", value=groups, expected_type=type_hints["groups"])
+            check_type(argname="argument policy_document", value=policy_document, expected_type=type_hints["policy_document"])
+            check_type(argname="argument policy_document_unchecked", value=policy_document_unchecked, expected_type=type_hints["policy_document_unchecked"])
+            check_type(argname="argument roles", value=roles, expected_type=type_hints["roles"])
+            check_type(argname="argument users", value=users, expected_type=type_hints["users"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_name": policy_name,
         }
@@ -2262,7 +2522,7 @@ class RosRamAccountAlias(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRamAccountAliasProps",
+        props: typing.Union["RosRamAccountAliasProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::RamAccountAlias``.
@@ -2272,6 +2532,12 @@ class RosRamAccountAlias(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRamAccountAlias.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2282,6 +2548,9 @@ class RosRamAccountAlias(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRamAccountAlias._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2322,6 +2591,9 @@ class RosRamAccountAlias(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRamAccountAlias, "account_alias").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountAlias", value)
 
     @builtins.property # type: ignore[misc]
@@ -2331,6 +2603,9 @@ class RosRamAccountAlias(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRamAccountAlias, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -2349,6 +2624,9 @@ class RosRamAccountAliasProps:
 
         :param account_alias: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRamAccountAliasProps.__init__)
+            check_type(argname="argument account_alias", value=account_alias, expected_type=type_hints["account_alias"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_alias": account_alias,
         }
@@ -2391,7 +2669,7 @@ class RosRole(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRoleProps",
+        props: typing.Union["RosRoleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::Role``.
@@ -2401,6 +2679,12 @@ class RosRole(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRole.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2411,6 +2695,9 @@ class RosRole(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRole._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2463,6 +2750,9 @@ class RosRole(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, "RosRole.AssumeRolePolicyDocumentProperty"],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRole, "assume_role_policy_document").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "assumeRolePolicyDocument", value)
 
     @builtins.property # type: ignore[misc]
@@ -2472,6 +2762,9 @@ class RosRole(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRole, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2487,6 +2780,9 @@ class RosRole(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRole, "role_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "roleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2504,6 +2800,9 @@ class RosRole(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRole, "deletion_force").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionForce", value)
 
     @builtins.property # type: ignore[misc]
@@ -2521,6 +2820,9 @@ class RosRole(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRole, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -2542,6 +2844,9 @@ class RosRole(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRole, "max_session_duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maxSessionDuration", value)
 
     @builtins.property # type: ignore[misc]
@@ -2559,6 +2864,9 @@ class RosRole(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosRole.PoliciesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRole, "policies").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policies", value)
 
     @builtins.property # type: ignore[misc]
@@ -2576,6 +2884,9 @@ class RosRole(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRole.PolicyAttachmentsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRole, "policy_attachments").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyAttachments", value)
 
     @jsii.data_type(
@@ -2587,13 +2898,17 @@ class RosRole(
         def __init__(
             self,
             *,
-            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosRole.StatementProperty"]]],
+            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRole.StatementProperty", typing.Dict[str, typing.Any]]]]],
             version: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         ) -> None:
             '''
             :param statement: 
             :param version: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRole.AssumeRolePolicyDocumentProperty.__init__)
+                check_type(argname="argument statement", value=statement, expected_type=type_hints["statement"])
+                check_type(argname="argument version", value=version, expected_type=type_hints["version"])
             self._values: typing.Dict[str, typing.Any] = {
                 "statement": statement,
                 "version": version,
@@ -2706,6 +3021,29 @@ class RosRole(
             :param string_not_equals_ignore_case: 
             :param string_not_like: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRole.ConditionProperty.__init__)
+                check_type(argname="argument bool", value=bool, expected_type=type_hints["bool"])
+                check_type(argname="argument date_equals", value=date_equals, expected_type=type_hints["date_equals"])
+                check_type(argname="argument date_greater_than", value=date_greater_than, expected_type=type_hints["date_greater_than"])
+                check_type(argname="argument date_greater_than_equals", value=date_greater_than_equals, expected_type=type_hints["date_greater_than_equals"])
+                check_type(argname="argument date_less_than", value=date_less_than, expected_type=type_hints["date_less_than"])
+                check_type(argname="argument date_less_than_equals", value=date_less_than_equals, expected_type=type_hints["date_less_than_equals"])
+                check_type(argname="argument date_not_equals", value=date_not_equals, expected_type=type_hints["date_not_equals"])
+                check_type(argname="argument ip_address", value=ip_address, expected_type=type_hints["ip_address"])
+                check_type(argname="argument not_ip_address", value=not_ip_address, expected_type=type_hints["not_ip_address"])
+                check_type(argname="argument numeric_equals", value=numeric_equals, expected_type=type_hints["numeric_equals"])
+                check_type(argname="argument numeric_greater_than", value=numeric_greater_than, expected_type=type_hints["numeric_greater_than"])
+                check_type(argname="argument numeric_greater_than_equals", value=numeric_greater_than_equals, expected_type=type_hints["numeric_greater_than_equals"])
+                check_type(argname="argument numeric_less_than", value=numeric_less_than, expected_type=type_hints["numeric_less_than"])
+                check_type(argname="argument numeric_less_than_equals", value=numeric_less_than_equals, expected_type=type_hints["numeric_less_than_equals"])
+                check_type(argname="argument numeric_not_equals", value=numeric_not_equals, expected_type=type_hints["numeric_not_equals"])
+                check_type(argname="argument string_equals", value=string_equals, expected_type=type_hints["string_equals"])
+                check_type(argname="argument string_equals_ignore_case", value=string_equals_ignore_case, expected_type=type_hints["string_equals_ignore_case"])
+                check_type(argname="argument string_like", value=string_like, expected_type=type_hints["string_like"])
+                check_type(argname="argument string_not_equals", value=string_not_equals, expected_type=type_hints["string_not_equals"])
+                check_type(argname="argument string_not_equals_ignore_case", value=string_not_equals_ignore_case, expected_type=type_hints["string_not_equals_ignore_case"])
+                check_type(argname="argument string_not_like", value=string_not_like, expected_type=type_hints["string_not_like"])
             self._values: typing.Dict[str, typing.Any] = {}
             if bool is not None:
                 self._values["bool"] = bool
@@ -2984,7 +3322,7 @@ class RosRole(
         def __init__(
             self,
             *,
-            policy_document: typing.Union[ros_cdk_core.IResolvable, "RosRole.PolicyDocumentProperty"],
+            policy_document: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRole.PolicyDocumentProperty", typing.Dict[str, typing.Any]]],
             policy_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
@@ -2993,6 +3331,11 @@ class RosRole(
             :param policy_name: 
             :param description: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRole.PoliciesProperty.__init__)
+                check_type(argname="argument policy_document", value=policy_document, expected_type=type_hints["policy_document"])
+                check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+                check_type(argname="argument description", value=description, expected_type=type_hints["description"])
             self._values: typing.Dict[str, typing.Any] = {
                 "policy_document": policy_document,
                 "policy_name": policy_name,
@@ -3057,6 +3400,10 @@ class RosRole(
             :param custom: 
             :param system: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRole.PolicyAttachmentsProperty.__init__)
+                check_type(argname="argument custom", value=custom, expected_type=type_hints["custom"])
+                check_type(argname="argument system", value=system, expected_type=type_hints["system"])
             self._values: typing.Dict[str, typing.Any] = {}
             if custom is not None:
                 self._values["custom"] = custom
@@ -3103,13 +3450,17 @@ class RosRole(
         def __init__(
             self,
             *,
-            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosRole.PolicyDocumentStatementProperty"]]],
+            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRole.PolicyDocumentStatementProperty", typing.Dict[str, typing.Any]]]]],
             version: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         ) -> None:
             '''
             :param statement: 
             :param version: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRole.PolicyDocumentProperty.__init__)
+                check_type(argname="argument statement", value=statement, expected_type=type_hints["statement"])
+                check_type(argname="argument version", value=version, expected_type=type_hints["version"])
             self._values: typing.Dict[str, typing.Any] = {
                 "statement": statement,
                 "version": version,
@@ -3171,6 +3522,12 @@ class RosRole(
             :param effect: 
             :param resource: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRole.PolicyDocumentStatementProperty.__init__)
+                check_type(argname="argument action", value=action, expected_type=type_hints["action"])
+                check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
+                check_type(argname="argument effect", value=effect, expected_type=type_hints["effect"])
+                check_type(argname="argument resource", value=resource, expected_type=type_hints["resource"])
             self._values: typing.Dict[str, typing.Any] = {}
             if action is not None:
                 self._values["action"] = action
@@ -3250,6 +3607,11 @@ class RosRole(
             :param ram: 
             :param service: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRole.PrincipalProperty.__init__)
+                check_type(argname="argument federated", value=federated, expected_type=type_hints["federated"])
+                check_type(argname="argument ram", value=ram, expected_type=type_hints["ram"])
+                check_type(argname="argument service", value=service, expected_type=type_hints["service"])
             self._values: typing.Dict[str, typing.Any] = {}
             if federated is not None:
                 self._values["federated"] = federated
@@ -3314,9 +3676,9 @@ class RosRole(
             self,
             *,
             action: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            condition: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRole.ConditionProperty"]] = None,
+            condition: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRole.ConditionProperty", typing.Dict[str, typing.Any]]]] = None,
             effect: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            principal: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRole.PrincipalProperty"]] = None,
+            principal: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRole.PrincipalProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param action: 
@@ -3324,6 +3686,12 @@ class RosRole(
             :param effect: 
             :param principal: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRole.StatementProperty.__init__)
+                check_type(argname="argument action", value=action, expected_type=type_hints["action"])
+                check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
+                check_type(argname="argument effect", value=effect, expected_type=type_hints["effect"])
+                check_type(argname="argument principal", value=principal, expected_type=type_hints["principal"])
             self._values: typing.Dict[str, typing.Any] = {}
             if action is not None:
                 self._values["action"] = action
@@ -3403,13 +3771,13 @@ class RosRoleProps:
     def __init__(
         self,
         *,
-        assume_role_policy_document: typing.Union[ros_cdk_core.IResolvable, RosRole.AssumeRolePolicyDocumentProperty],
+        assume_role_policy_document: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRole.AssumeRolePolicyDocumentProperty, typing.Dict[str, typing.Any]]],
         role_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         max_session_duration: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRole.PoliciesProperty]]]] = None,
-        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosRole.PolicyAttachmentsProperty]] = None,
+        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRole.PoliciesProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRole.PolicyAttachmentsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::RAM::Role``.
 
@@ -3421,6 +3789,15 @@ class RosRoleProps:
         :param policies: 
         :param policy_attachments: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRoleProps.__init__)
+            check_type(argname="argument assume_role_policy_document", value=assume_role_policy_document, expected_type=type_hints["assume_role_policy_document"])
+            check_type(argname="argument role_name", value=role_name, expected_type=type_hints["role_name"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument max_session_duration", value=max_session_duration, expected_type=type_hints["max_session_duration"])
+            check_type(argname="argument policies", value=policies, expected_type=type_hints["policies"])
+            check_type(argname="argument policy_attachments", value=policy_attachments, expected_type=type_hints["policy_attachments"])
         self._values: typing.Dict[str, typing.Any] = {
             "assume_role_policy_document": assume_role_policy_document,
             "role_name": role_name,
@@ -3533,7 +3910,7 @@ class RosSAMLProvider(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSAMLProviderProps",
+        props: typing.Union["RosSAMLProviderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::SAMLProvider``.
@@ -3543,6 +3920,12 @@ class RosSAMLProvider(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSAMLProvider.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3553,6 +3936,9 @@ class RosSAMLProvider(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSAMLProvider._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3589,6 +3975,9 @@ class RosSAMLProvider(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSAMLProvider, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3606,6 +3995,9 @@ class RosSAMLProvider(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSAMLProvider, "saml_provider_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "samlProviderName", value)
 
     @builtins.property # type: ignore[misc]
@@ -3623,6 +4015,9 @@ class RosSAMLProvider(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSAMLProvider, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -3640,6 +4035,9 @@ class RosSAMLProvider(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSAMLProvider, "saml_metadata_document").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "samlMetadataDocument", value)
 
     @builtins.property # type: ignore[misc]
@@ -3657,6 +4055,9 @@ class RosSAMLProvider(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSAMLProvider, "saml_metadata_document_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "samlMetadataDocumentUrl", value)
 
 
@@ -3686,6 +4087,12 @@ class RosSAMLProviderProps:
         :param saml_metadata_document: 
         :param saml_metadata_document_url: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSAMLProviderProps.__init__)
+            check_type(argname="argument saml_provider_name", value=saml_provider_name, expected_type=type_hints["saml_provider_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument saml_metadata_document", value=saml_metadata_document, expected_type=type_hints["saml_metadata_document"])
+            check_type(argname="argument saml_metadata_document_url", value=saml_metadata_document_url, expected_type=type_hints["saml_metadata_document_url"])
         self._values: typing.Dict[str, typing.Any] = {
             "saml_provider_name": saml_provider_name,
         }
@@ -3760,7 +4167,7 @@ class RosSecurityPreference(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSecurityPreferenceProps",
+        props: typing.Union["RosSecurityPreferenceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::SecurityPreference``.
@@ -3770,6 +4177,12 @@ class RosSecurityPreference(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSecurityPreference.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3780,6 +4193,9 @@ class RosSecurityPreference(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSecurityPreference._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3856,6 +4272,9 @@ class RosSecurityPreference(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecurityPreference, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3877,6 +4296,9 @@ class RosSecurityPreference(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecurityPreference, "allow_user_to_change_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allowUserToChangePassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -3898,6 +4320,9 @@ class RosSecurityPreference(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecurityPreference, "allow_user_to_manage_access_keys").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allowUserToManageAccessKeys", value)
 
     @builtins.property # type: ignore[misc]
@@ -3919,6 +4344,9 @@ class RosSecurityPreference(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecurityPreference, "allow_user_to_manage_mfa_devices").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allowUserToManageMfaDevices", value)
 
     @builtins.property # type: ignore[misc]
@@ -3941,6 +4369,9 @@ class RosSecurityPreference(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecurityPreference, "allow_user_to_manage_public_keys").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allowUserToManagePublicKeys", value)
 
     @builtins.property # type: ignore[misc]
@@ -3964,6 +4395,9 @@ class RosSecurityPreference(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecurityPreference, "enable_save_mfa_ticket").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableSaveMfaTicket", value)
 
     @builtins.property # type: ignore[misc]
@@ -3994,6 +4428,9 @@ class RosSecurityPreference(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecurityPreference, "login_network_masks").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loginNetworkMasks", value)
 
     @builtins.property # type: ignore[misc]
@@ -4014,6 +4451,9 @@ class RosSecurityPreference(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSecurityPreference, "login_session_duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loginSessionDuration", value)
 
 
@@ -4052,6 +4492,15 @@ class RosSecurityPreferenceProps:
         :param login_network_masks: 
         :param login_session_duration: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSecurityPreferenceProps.__init__)
+            check_type(argname="argument allow_user_to_change_password", value=allow_user_to_change_password, expected_type=type_hints["allow_user_to_change_password"])
+            check_type(argname="argument allow_user_to_manage_access_keys", value=allow_user_to_manage_access_keys, expected_type=type_hints["allow_user_to_manage_access_keys"])
+            check_type(argname="argument allow_user_to_manage_mfa_devices", value=allow_user_to_manage_mfa_devices, expected_type=type_hints["allow_user_to_manage_mfa_devices"])
+            check_type(argname="argument allow_user_to_manage_public_keys", value=allow_user_to_manage_public_keys, expected_type=type_hints["allow_user_to_manage_public_keys"])
+            check_type(argname="argument enable_save_mfa_ticket", value=enable_save_mfa_ticket, expected_type=type_hints["enable_save_mfa_ticket"])
+            check_type(argname="argument login_network_masks", value=login_network_masks, expected_type=type_hints["login_network_masks"])
+            check_type(argname="argument login_session_duration", value=login_session_duration, expected_type=type_hints["login_session_duration"])
         self._values: typing.Dict[str, typing.Any] = {}
         if allow_user_to_change_password is not None:
             self._values["allow_user_to_change_password"] = allow_user_to_change_password
@@ -4200,7 +4649,7 @@ class RosUser(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosUserProps",
+        props: typing.Union["RosUserProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::User``.
@@ -4210,6 +4659,12 @@ class RosUser(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUser.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4220,6 +4675,9 @@ class RosUser(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUser._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4272,6 +4730,9 @@ class RosUser(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4287,6 +4748,9 @@ class RosUser(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "user_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "userName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4304,6 +4768,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "comments").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "comments", value)
 
     @builtins.property # type: ignore[misc]
@@ -4321,6 +4788,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "deletion_force").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionForce", value)
 
     @builtins.property # type: ignore[misc]
@@ -4338,6 +4808,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "display_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "displayName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4355,6 +4828,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "email").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "email", value)
 
     @builtins.property # type: ignore[misc]
@@ -4372,6 +4848,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "groups").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groups", value)
 
     @builtins.property # type: ignore[misc]
@@ -4389,6 +4868,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosUser.LoginProfileProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "login_profile").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loginProfile", value)
 
     @builtins.property # type: ignore[misc]
@@ -4406,6 +4888,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "mobile_phone").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mobilePhone", value)
 
     @builtins.property # type: ignore[misc]
@@ -4423,6 +4908,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosUser.PoliciesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "policies").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policies", value)
 
     @builtins.property # type: ignore[misc]
@@ -4440,6 +4928,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosUser.PolicyAttachmentsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "policy_attachments").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyAttachments", value)
 
     @jsii.data_type(
@@ -4464,6 +4955,11 @@ class RosUser(
             :param password: 
             :param password_reset_required: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosUser.LoginProfileProperty.__init__)
+                check_type(argname="argument mfa_bind_required", value=mfa_bind_required, expected_type=type_hints["mfa_bind_required"])
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+                check_type(argname="argument password_reset_required", value=password_reset_required, expected_type=type_hints["password_reset_required"])
             self._values: typing.Dict[str, typing.Any] = {}
             if mfa_bind_required is not None:
                 self._values["mfa_bind_required"] = mfa_bind_required
@@ -4526,7 +5022,7 @@ class RosUser(
         def __init__(
             self,
             *,
-            policy_document: typing.Union[ros_cdk_core.IResolvable, "RosUser.PolicyDocumentProperty"],
+            policy_document: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosUser.PolicyDocumentProperty", typing.Dict[str, typing.Any]]],
             policy_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
             description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
@@ -4535,6 +5031,11 @@ class RosUser(
             :param policy_name: 
             :param description: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosUser.PoliciesProperty.__init__)
+                check_type(argname="argument policy_document", value=policy_document, expected_type=type_hints["policy_document"])
+                check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+                check_type(argname="argument description", value=description, expected_type=type_hints["description"])
             self._values: typing.Dict[str, typing.Any] = {
                 "policy_document": policy_document,
                 "policy_name": policy_name,
@@ -4599,6 +5100,10 @@ class RosUser(
             :param custom: 
             :param system: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosUser.PolicyAttachmentsProperty.__init__)
+                check_type(argname="argument custom", value=custom, expected_type=type_hints["custom"])
+                check_type(argname="argument system", value=system, expected_type=type_hints["system"])
             self._values: typing.Dict[str, typing.Any] = {}
             if custom is not None:
                 self._values["custom"] = custom
@@ -4645,13 +5150,17 @@ class RosUser(
         def __init__(
             self,
             *,
-            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosUser.StatementProperty"]]],
+            statement: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosUser.StatementProperty", typing.Dict[str, typing.Any]]]]],
             version: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         ) -> None:
             '''
             :param statement: 
             :param version: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosUser.PolicyDocumentProperty.__init__)
+                check_type(argname="argument statement", value=statement, expected_type=type_hints["statement"])
+                check_type(argname="argument version", value=version, expected_type=type_hints["version"])
             self._values: typing.Dict[str, typing.Any] = {
                 "statement": statement,
                 "version": version,
@@ -4713,6 +5222,12 @@ class RosUser(
             :param effect: 
             :param resource: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosUser.StatementProperty.__init__)
+                check_type(argname="argument action", value=action, expected_type=type_hints["action"])
+                check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
+                check_type(argname="argument effect", value=effect, expected_type=type_hints["effect"])
+                check_type(argname="argument resource", value=resource, expected_type=type_hints["resource"])
             self._values: typing.Dict[str, typing.Any] = {}
             if action is not None:
                 self._values["action"] = action
@@ -4801,10 +5316,10 @@ class RosUserProps:
         display_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         email: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         groups: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
-        login_profile: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosUser.LoginProfileProperty]] = None,
+        login_profile: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosUser.LoginProfileProperty, typing.Dict[str, typing.Any]]]] = None,
         mobile_phone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosUser.PoliciesProperty]]]] = None,
-        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosUser.PolicyAttachmentsProperty]] = None,
+        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosUser.PoliciesProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosUser.PolicyAttachmentsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::RAM::User``.
 
@@ -4819,6 +5334,18 @@ class RosUserProps:
         :param policies: 
         :param policy_attachments: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserProps.__init__)
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
+            check_type(argname="argument comments", value=comments, expected_type=type_hints["comments"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
+            check_type(argname="argument email", value=email, expected_type=type_hints["email"])
+            check_type(argname="argument groups", value=groups, expected_type=type_hints["groups"])
+            check_type(argname="argument login_profile", value=login_profile, expected_type=type_hints["login_profile"])
+            check_type(argname="argument mobile_phone", value=mobile_phone, expected_type=type_hints["mobile_phone"])
+            check_type(argname="argument policies", value=policies, expected_type=type_hints["policies"])
+            check_type(argname="argument policy_attachments", value=policy_attachments, expected_type=type_hints["policy_attachments"])
         self._values: typing.Dict[str, typing.Any] = {
             "user_name": user_name,
         }
@@ -4963,7 +5490,7 @@ class RosUserToGroupAddition(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosUserToGroupAdditionProps",
+        props: typing.Union["RosUserToGroupAdditionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::UserToGroupAddition``.
@@ -4973,6 +5500,12 @@ class RosUserToGroupAddition(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserToGroupAddition.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4983,6 +5516,9 @@ class RosUserToGroupAddition(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserToGroupAddition._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5004,6 +5540,9 @@ class RosUserToGroupAddition(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserToGroupAddition, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5019,6 +5558,9 @@ class RosUserToGroupAddition(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserToGroupAddition, "group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -5034,6 +5576,9 @@ class RosUserToGroupAddition(
         self,
         value: typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserToGroupAddition, "users").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "users", value)
 
 
@@ -5054,6 +5599,10 @@ class RosUserToGroupAdditionProps:
         :param group_name: 
         :param users: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserToGroupAdditionProps.__init__)
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument users", value=users, expected_type=type_hints["users"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_name": group_name,
             "users": users,
@@ -5100,7 +5649,7 @@ class SAMLProvider(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SAMLProviderProps",
+        props: typing.Union["SAMLProviderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::SAMLProvider``.
@@ -5114,6 +5663,12 @@ class SAMLProvider(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SAMLProvider.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -5155,6 +5710,12 @@ class SAMLProviderProps:
         :param saml_metadata_document: Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
         :param saml_metadata_document_url: Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SAMLProviderProps.__init__)
+            check_type(argname="argument saml_provider_name", value=saml_provider_name, expected_type=type_hints["saml_provider_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument saml_metadata_document", value=saml_metadata_document, expected_type=type_hints["saml_metadata_document"])
+            check_type(argname="argument saml_metadata_document_url", value=saml_metadata_document_url, expected_type=type_hints["saml_metadata_document_url"])
         self._values: typing.Dict[str, typing.Any] = {
             "saml_provider_name": saml_provider_name,
         }
@@ -5230,7 +5791,7 @@ class SecurityPreference(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["SecurityPreferenceProps"] = None,
+        props: typing.Optional[typing.Union["SecurityPreferenceProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::SecurityPreference``.
@@ -5244,6 +5805,12 @@ class SecurityPreference(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SecurityPreference.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -5324,6 +5891,15 @@ class SecurityPreferenceProps:
         :param login_network_masks: Property loginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is allowed. This parameter applies to password-based logon and single sign-on (SSO). However, this parameter does not apply to API calls that are authenticated based on AccessKey pairs. If a subnet mask is specified, RAM users can log on to the console only by using the IP addresses in the subnet. If you do not specify a subnet mask, RAM users can log on to the console by using all IP addresses. If you want to specify multiple subnet masks, separate the subnet masks with semicolons (;). Example: 192.168.0.0/16;10.0.0.0/8. A maximum of 25 subnet masks can be set. The total length of the subnet masks can be 1 to 512 characters.
         :param login_session_duration: Property loginSessionDuration: The validity period of the logon session of the RAM user. Valid values: 6 to 24. Default value: 6. Unit: hours.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SecurityPreferenceProps.__init__)
+            check_type(argname="argument allow_user_to_change_password", value=allow_user_to_change_password, expected_type=type_hints["allow_user_to_change_password"])
+            check_type(argname="argument allow_user_to_manage_access_keys", value=allow_user_to_manage_access_keys, expected_type=type_hints["allow_user_to_manage_access_keys"])
+            check_type(argname="argument allow_user_to_manage_mfa_devices", value=allow_user_to_manage_mfa_devices, expected_type=type_hints["allow_user_to_manage_mfa_devices"])
+            check_type(argname="argument allow_user_to_manage_public_keys", value=allow_user_to_manage_public_keys, expected_type=type_hints["allow_user_to_manage_public_keys"])
+            check_type(argname="argument enable_save_mfa_ticket", value=enable_save_mfa_ticket, expected_type=type_hints["enable_save_mfa_ticket"])
+            check_type(argname="argument login_network_masks", value=login_network_masks, expected_type=type_hints["login_network_masks"])
+            check_type(argname="argument login_session_duration", value=login_session_duration, expected_type=type_hints["login_session_duration"])
         self._values: typing.Dict[str, typing.Any] = {}
         if allow_user_to_change_password is not None:
             self._values["allow_user_to_change_password"] = allow_user_to_change_password
@@ -5462,7 +6038,7 @@ class User(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "UserProps",
+        props: typing.Union["UserProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::User``.
@@ -5476,6 +6052,12 @@ class User(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(User.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -5529,10 +6111,10 @@ class UserProps:
         display_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         email: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         groups: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
-        login_profile: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosUser.LoginProfileProperty]] = None,
+        login_profile: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosUser.LoginProfileProperty, typing.Dict[str, typing.Any]]]] = None,
         mobile_phone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosUser.PoliciesProperty]]]] = None,
-        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosUser.PolicyAttachmentsProperty]] = None,
+        policies: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosUser.PoliciesProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        policy_attachments: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosUser.PolicyAttachmentsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::RAM::User``.
 
@@ -5547,6 +6129,18 @@ class UserProps:
         :param policies: Property policies: Describes what actions are allowed on what resources.
         :param policy_attachments: Property policyAttachments: System and custom policy names to attach.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserProps.__init__)
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
+            check_type(argname="argument comments", value=comments, expected_type=type_hints["comments"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
+            check_type(argname="argument email", value=email, expected_type=type_hints["email"])
+            check_type(argname="argument groups", value=groups, expected_type=type_hints["groups"])
+            check_type(argname="argument login_profile", value=login_profile, expected_type=type_hints["login_profile"])
+            check_type(argname="argument mobile_phone", value=mobile_phone, expected_type=type_hints["mobile_phone"])
+            check_type(argname="argument policies", value=policies, expected_type=type_hints["policies"])
+            check_type(argname="argument policy_attachments", value=policy_attachments, expected_type=type_hints["policy_attachments"])
         self._values: typing.Dict[str, typing.Any] = {
             "user_name": user_name,
         }
@@ -5674,7 +6268,7 @@ class UserToGroupAddition(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "UserToGroupAdditionProps",
+        props: typing.Union["UserToGroupAdditionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RAM::UserToGroupAddition``.
@@ -5688,6 +6282,12 @@ class UserToGroupAddition(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserToGroupAddition.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -5708,6 +6308,10 @@ class UserToGroupAdditionProps:
         :param group_name: Property groupName: Specifies the group name, containing up to 64 characters.
         :param users: Property users: list name of a users to which you want to add the group.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserToGroupAdditionProps.__init__)
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument users", value=users, expected_type=type_hints["users"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_name": group_name,
             "users": users,

@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class AutoEnableService(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AutoEnableServiceProps",
+        props: typing.Union["AutoEnableServiceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::AutoEnableService``.
@@ -47,6 +49,12 @@ class AutoEnableService(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AutoEnableService.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -65,6 +73,9 @@ class AutoEnableServiceProps:
 
         :param service_name: Property serviceName: Which service to enable. Valid values: AHAS: Application High Availability Service ARMS: Realtime Monitoring Service ApiGateway: API Gateway BatchCompute: Batch Compute BrainIndustrial: Brain Industrial CloudStorageGateway: Cloud Storage Gateway CMS: Cloud Monitor Service CR: Container Registry CS: Container Service DataHub: Data Hub DataWorks: DataWorks DCDN: Dynamic Route for CDN EDAS: Enterprise Distributed Application Service EMAS: Enterprise Mobile Application Studio FC: Function Compute FNF: Serverless Workflow MaxCompute: MaxCompute NAS: Network Attached Storage MNS: Message Service (MNS) HBR: Hybrid Backup Recovery IMM: Intelligent Media Management IOT: IoT Platform KMS: Key Management Service NLP: Natural Language Processing OSS: Object Storage Service OTS: Table Store PrivateLink: Private Link PrivateZone: Private Zone RocketMQ: RocketMQ SAE: Serverless App Engine SLS: Log Service TrafficMirror: VPC Traffic Mirroring VS: Video Surveillance Xtrace: Tracing Anlaysis
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AutoEnableServiceProps.__init__)
+            check_type(argname="argument service_name", value=service_name, expected_type=type_hints["service_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "service_name": service_name,
         }
@@ -136,7 +147,7 @@ class CustomResource(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CustomResourceProps",
+        props: typing.Union["CustomResourceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::CustomResource``.
@@ -150,6 +161,12 @@ class CustomResource(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CustomResource.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -175,7 +192,7 @@ class CustomResourceProps:
         *,
         service_token: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         timeout: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
-        http_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosCustomResource.HttpConfigProperty"]] = None,
+        http_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosCustomResource.HttpConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ROS::CustomResource``.
@@ -185,6 +202,12 @@ class CustomResourceProps:
         :param http_config: Property httpConfig: Config for HTTP&HTTPS service provider.
         :param parameters: Property parameters: Parameters to be passed to service provider.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CustomResourceProps.__init__)
+            check_type(argname="argument service_token", value=service_token, expected_type=type_hints["service_token"])
+            check_type(argname="argument timeout", value=timeout, expected_type=type_hints["timeout"])
+            check_type(argname="argument http_config", value=http_config, expected_type=type_hints["http_config"])
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
         self._values: typing.Dict[str, typing.Any] = {
             "service_token": service_token,
             "timeout": timeout,
@@ -272,7 +295,7 @@ class ResourceCleaner(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ResourceCleanerProps",
+        props: typing.Union["ResourceCleanerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::ResourceCleaner``.
@@ -286,6 +309,12 @@ class ResourceCleaner(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceCleaner.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -435,11 +464,11 @@ class ResourceCleanerProps:
         clean_up_retry_count: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         clean_up_timeout: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         disabled_side_effects: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
-        excluded_resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosResourceCleaner.ExcludedResourcesProperty"]]]] = None,
+        excluded_resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceCleaner.ExcludedResourcesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         failure_option: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         mode: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        resource_filters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosResourceCleaner.ResourceFiltersProperty"]]]] = None,
-        resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosResourceCleaner.ResourcesProperty"]]]] = None,
+        resource_filters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceCleaner.ResourceFiltersProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceCleaner.ResourcesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         resource_type_order: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ROS::ResourceCleaner``.
@@ -456,6 +485,19 @@ class ResourceCleanerProps:
         :param resources: Property resources: Resources to be cleaned up. Only one of Resources and ResourceFilters can be specified.
         :param resource_type_order: Property resourceTypeOrder: This property takes effect only when property CleanUpAlgorithm is ResourceTypeOrder. If it takes effect: - Resources will be cleaned up in order from front to back. - Resource with resource type not specified in this property will not be cleaned up.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceCleanerProps.__init__)
+            check_type(argname="argument action", value=action, expected_type=type_hints["action"])
+            check_type(argname="argument clean_up_algorithm", value=clean_up_algorithm, expected_type=type_hints["clean_up_algorithm"])
+            check_type(argname="argument clean_up_retry_count", value=clean_up_retry_count, expected_type=type_hints["clean_up_retry_count"])
+            check_type(argname="argument clean_up_timeout", value=clean_up_timeout, expected_type=type_hints["clean_up_timeout"])
+            check_type(argname="argument disabled_side_effects", value=disabled_side_effects, expected_type=type_hints["disabled_side_effects"])
+            check_type(argname="argument excluded_resources", value=excluded_resources, expected_type=type_hints["excluded_resources"])
+            check_type(argname="argument failure_option", value=failure_option, expected_type=type_hints["failure_option"])
+            check_type(argname="argument mode", value=mode, expected_type=type_hints["mode"])
+            check_type(argname="argument resource_filters", value=resource_filters, expected_type=type_hints["resource_filters"])
+            check_type(argname="argument resources", value=resources, expected_type=type_hints["resources"])
+            check_type(argname="argument resource_type_order", value=resource_type_order, expected_type=type_hints["resource_type_order"])
         self._values: typing.Dict[str, typing.Any] = {
             "action": action,
         }
@@ -638,7 +680,7 @@ class RosAutoEnableService(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAutoEnableServiceProps",
+        props: typing.Union["RosAutoEnableServiceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::AutoEnableService``.
@@ -648,6 +690,12 @@ class RosAutoEnableService(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAutoEnableService.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -658,6 +706,9 @@ class RosAutoEnableService(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAutoEnableService._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -679,6 +730,9 @@ class RosAutoEnableService(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAutoEnableService, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -730,6 +784,9 @@ class RosAutoEnableService(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAutoEnableService, "service_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serviceName", value)
 
 
@@ -748,6 +805,9 @@ class RosAutoEnableServiceProps:
 
         :param service_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAutoEnableServiceProps.__init__)
+            check_type(argname="argument service_name", value=service_name, expected_type=type_hints["service_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "service_name": service_name,
         }
@@ -820,7 +880,7 @@ class RosCustomResource(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCustomResourceProps",
+        props: typing.Union["RosCustomResourceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::CustomResource``.
@@ -830,6 +890,12 @@ class RosCustomResource(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCustomResource.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -840,6 +906,9 @@ class RosCustomResource(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCustomResource._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -868,6 +937,9 @@ class RosCustomResource(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomResource, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -903,6 +975,9 @@ class RosCustomResource(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomResource, "service_token").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serviceToken", value)
 
     @builtins.property # type: ignore[misc]
@@ -922,6 +997,9 @@ class RosCustomResource(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomResource, "timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "timeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -939,6 +1017,9 @@ class RosCustomResource(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosCustomResource.HttpConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomResource, "http_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "httpConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -956,6 +1037,9 @@ class RosCustomResource(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomResource, "parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "parameters", value)
 
     @jsii.data_type(
@@ -980,6 +1064,11 @@ class RosCustomResource(
             :param headers: 
             :param sign_key: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosCustomResource.HttpConfigProperty.__init__)
+                check_type(argname="argument content_type", value=content_type, expected_type=type_hints["content_type"])
+                check_type(argname="argument headers", value=headers, expected_type=type_hints["headers"])
+                check_type(argname="argument sign_key", value=sign_key, expected_type=type_hints["sign_key"])
             self._values: typing.Dict[str, typing.Any] = {}
             if content_type is not None:
                 self._values["content_type"] = content_type
@@ -1064,7 +1153,7 @@ class RosCustomResourceProps:
         *,
         service_token: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         timeout: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
-        http_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosCustomResource.HttpConfigProperty]] = None,
+        http_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosCustomResource.HttpConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ROS::CustomResource``.
@@ -1074,6 +1163,12 @@ class RosCustomResourceProps:
         :param http_config: 
         :param parameters: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCustomResourceProps.__init__)
+            check_type(argname="argument service_token", value=service_token, expected_type=type_hints["service_token"])
+            check_type(argname="argument timeout", value=timeout, expected_type=type_hints["timeout"])
+            check_type(argname="argument http_config", value=http_config, expected_type=type_hints["http_config"])
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
         self._values: typing.Dict[str, typing.Any] = {
             "service_token": service_token,
             "timeout": timeout,
@@ -1168,7 +1263,7 @@ class RosResourceCleaner(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosResourceCleanerProps",
+        props: typing.Union["RosResourceCleanerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::ResourceCleaner``.
@@ -1178,6 +1273,12 @@ class RosResourceCleaner(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceCleaner.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1188,6 +1289,9 @@ class RosResourceCleaner(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceCleaner._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1353,6 +1457,9 @@ class RosResourceCleaner(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "action").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "action", value)
 
     @builtins.property # type: ignore[misc]
@@ -1362,6 +1469,9 @@ class RosResourceCleaner(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1385,6 +1495,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "clean_up_algorithm").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cleanUpAlgorithm", value)
 
     @builtins.property # type: ignore[misc]
@@ -1408,6 +1521,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "clean_up_retry_count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cleanUpRetryCount", value)
 
     @builtins.property # type: ignore[misc]
@@ -1428,6 +1544,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "clean_up_timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cleanUpTimeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -1449,6 +1568,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "disabled_side_effects").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "disabledSideEffects", value)
 
     @builtins.property # type: ignore[misc]
@@ -1466,6 +1588,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosResourceCleaner.ExcludedResourcesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "excluded_resources").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "excludedResources", value)
 
     @builtins.property # type: ignore[misc]
@@ -1489,6 +1614,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "failure_option").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "failureOption", value)
 
     @builtins.property # type: ignore[misc]
@@ -1512,6 +1640,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mode", value)
 
     @builtins.property # type: ignore[misc]
@@ -1536,6 +1667,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosResourceCleaner.ResourceFiltersProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "resource_filters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceFilters", value)
 
     @builtins.property # type: ignore[misc]
@@ -1556,6 +1690,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosResourceCleaner.ResourcesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "resources").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resources", value)
 
     @builtins.property # type: ignore[misc]
@@ -1579,6 +1716,9 @@ class RosResourceCleaner(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceCleaner, "resource_type_order").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceTypeOrder", value)
 
     @jsii.data_type(
@@ -1603,6 +1743,11 @@ class RosResourceCleaner(
             :param region_id: 
             :param resource_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceCleaner.ExcludedResourcesProperty.__init__)
+                check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+                check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+                check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "resource_id": resource_id,
             }
@@ -1679,7 +1824,7 @@ class RosResourceCleaner(
             resource_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
             resource_name_patterns: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
             resource_type_patterns: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
-            tags: typing.Optional[typing.Sequence["RosResourceCleaner.TagsProperty"]] = None,
+            tags: typing.Optional[typing.Sequence[typing.Union["RosResourceCleaner.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param effect: 
@@ -1691,6 +1836,16 @@ class RosResourceCleaner(
             :param resource_type_patterns: 
             :param tags: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceCleaner.ResourceFiltersProperty.__init__)
+                check_type(argname="argument effect", value=effect, expected_type=type_hints["effect"])
+                check_type(argname="argument include_deletion_protection", value=include_deletion_protection, expected_type=type_hints["include_deletion_protection"])
+                check_type(argname="argument region_ids", value=region_ids, expected_type=type_hints["region_ids"])
+                check_type(argname="argument resource_group_ids", value=resource_group_ids, expected_type=type_hints["resource_group_ids"])
+                check_type(argname="argument resource_ids", value=resource_ids, expected_type=type_hints["resource_ids"])
+                check_type(argname="argument resource_name_patterns", value=resource_name_patterns, expected_type=type_hints["resource_name_patterns"])
+                check_type(argname="argument resource_type_patterns", value=resource_type_patterns, expected_type=type_hints["resource_type_patterns"])
+                check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
             self._values: typing.Dict[str, typing.Any] = {}
             if effect is not None:
                 self._values["effect"] = effect
@@ -1848,6 +2003,11 @@ class RosResourceCleaner(
             :param resource_id: 
             :param resource_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceCleaner.ResourcesProperty.__init__)
+                check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+                check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+                check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "region_id": region_id,
                 "resource_id": resource_id,
@@ -1911,6 +2071,10 @@ class RosResourceCleaner(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceCleaner.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -1978,11 +2142,11 @@ class RosResourceCleanerProps:
         clean_up_retry_count: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         clean_up_timeout: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         disabled_side_effects: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
-        excluded_resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosResourceCleaner.ExcludedResourcesProperty]]]] = None,
+        excluded_resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosResourceCleaner.ExcludedResourcesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         failure_option: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         mode: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        resource_filters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosResourceCleaner.ResourceFiltersProperty]]]] = None,
-        resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosResourceCleaner.ResourcesProperty]]]] = None,
+        resource_filters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosResourceCleaner.ResourceFiltersProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosResourceCleaner.ResourcesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         resource_type_order: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ROS::ResourceCleaner``.
@@ -1999,6 +2163,19 @@ class RosResourceCleanerProps:
         :param resources: 
         :param resource_type_order: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceCleanerProps.__init__)
+            check_type(argname="argument action", value=action, expected_type=type_hints["action"])
+            check_type(argname="argument clean_up_algorithm", value=clean_up_algorithm, expected_type=type_hints["clean_up_algorithm"])
+            check_type(argname="argument clean_up_retry_count", value=clean_up_retry_count, expected_type=type_hints["clean_up_retry_count"])
+            check_type(argname="argument clean_up_timeout", value=clean_up_timeout, expected_type=type_hints["clean_up_timeout"])
+            check_type(argname="argument disabled_side_effects", value=disabled_side_effects, expected_type=type_hints["disabled_side_effects"])
+            check_type(argname="argument excluded_resources", value=excluded_resources, expected_type=type_hints["excluded_resources"])
+            check_type(argname="argument failure_option", value=failure_option, expected_type=type_hints["failure_option"])
+            check_type(argname="argument mode", value=mode, expected_type=type_hints["mode"])
+            check_type(argname="argument resource_filters", value=resource_filters, expected_type=type_hints["resource_filters"])
+            check_type(argname="argument resources", value=resources, expected_type=type_hints["resources"])
+            check_type(argname="argument resource_type_order", value=resource_type_order, expected_type=type_hints["resource_type_order"])
         self._values: typing.Dict[str, typing.Any] = {
             "action": action,
         }
@@ -2209,7 +2386,7 @@ class RosSleep(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSleepProps",
+        props: typing.Union["RosSleepProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::Sleep``.
@@ -2219,6 +2396,12 @@ class RosSleep(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSleep.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2229,6 +2412,9 @@ class RosSleep(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSleep._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2250,6 +2436,9 @@ class RosSleep(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSleep, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2267,6 +2456,9 @@ class RosSleep(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSleep, "create_duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "createDuration", value)
 
     @builtins.property # type: ignore[misc]
@@ -2284,6 +2476,9 @@ class RosSleep(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSleep, "delete_duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deleteDuration", value)
 
     @builtins.property # type: ignore[misc]
@@ -2301,6 +2496,9 @@ class RosSleep(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSleep, "triggers").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "triggers", value)
 
     @builtins.property # type: ignore[misc]
@@ -2318,6 +2516,9 @@ class RosSleep(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSleep, "update_duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "updateDuration", value)
 
     @builtins.property # type: ignore[misc]
@@ -2335,6 +2536,9 @@ class RosSleep(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSleep, "update_rollback_duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "updateRollbackDuration", value)
 
 
@@ -2367,6 +2571,13 @@ class RosSleepProps:
         :param update_duration: 
         :param update_rollback_duration: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSleepProps.__init__)
+            check_type(argname="argument create_duration", value=create_duration, expected_type=type_hints["create_duration"])
+            check_type(argname="argument delete_duration", value=delete_duration, expected_type=type_hints["delete_duration"])
+            check_type(argname="argument triggers", value=triggers, expected_type=type_hints["triggers"])
+            check_type(argname="argument update_duration", value=update_duration, expected_type=type_hints["update_duration"])
+            check_type(argname="argument update_rollback_duration", value=update_rollback_duration, expected_type=type_hints["update_rollback_duration"])
         self._values: typing.Dict[str, typing.Any] = {}
         if create_duration is not None:
             self._values["create_duration"] = create_duration
@@ -2452,7 +2663,7 @@ class RosStack(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosStackProps",
+        props: typing.Union["RosStackProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::Stack``.
@@ -2462,6 +2673,12 @@ class RosStack(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStack.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2472,6 +2689,9 @@ class RosStack(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStack._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2493,6 +2713,9 @@ class RosStack(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStack, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2510,6 +2733,9 @@ class RosStack(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStack, "parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "parameters", value)
 
     @builtins.property # type: ignore[misc]
@@ -2527,6 +2753,9 @@ class RosStack(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStack, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2548,6 +2777,9 @@ class RosStack(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStack, "template_body").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateBody", value)
 
     @builtins.property # type: ignore[misc]
@@ -2565,6 +2797,9 @@ class RosStack(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStack, "template_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2585,6 +2820,9 @@ class RosStack(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStack, "template_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -2602,6 +2840,9 @@ class RosStack(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStack, "template_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -2619,6 +2860,9 @@ class RosStack(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStack, "timeout_mins").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "timeoutMins", value)
 
 
@@ -2633,7 +2877,7 @@ class RosStackGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosStackGroupProps",
+        props: typing.Union["RosStackGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::StackGroup``.
@@ -2643,6 +2887,12 @@ class RosStackGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStackGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2653,6 +2903,9 @@ class RosStackGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStackGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2681,6 +2934,9 @@ class RosStackGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2696,6 +2952,9 @@ class RosStackGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "stack_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "stackGroupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2713,6 +2972,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "administration_role_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "administrationRoleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2730,6 +2992,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosStackGroup.AutoDeploymentProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "auto_deployment").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoDeployment", value)
 
     @builtins.property # type: ignore[misc]
@@ -2747,6 +3012,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -2764,6 +3032,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "dynamic_template_body").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dynamicTemplateBody", value)
 
     @builtins.property # type: ignore[misc]
@@ -2781,6 +3052,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "execution_role_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "executionRoleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2798,6 +3072,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "parameters", value)
 
     @builtins.property # type: ignore[misc]
@@ -2815,6 +3092,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "permission_model").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "permissionModel", value)
 
     @builtins.property # type: ignore[misc]
@@ -2832,6 +3112,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2849,6 +3132,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "template_body").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateBody", value)
 
     @builtins.property # type: ignore[misc]
@@ -2866,6 +3152,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "template_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2883,6 +3172,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "template_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -2900,6 +3192,9 @@ class RosStackGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackGroup, "template_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "templateVersion", value)
 
     @jsii.data_type(
@@ -2921,6 +3216,10 @@ class RosStackGroup(
             :param enabled: 
             :param retain_stacks_on_account_removal: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosStackGroup.AutoDeploymentProperty.__init__)
+                check_type(argname="argument enabled", value=enabled, expected_type=type_hints["enabled"])
+                check_type(argname="argument retain_stacks_on_account_removal", value=retain_stacks_on_account_removal, expected_type=type_hints["retain_stacks_on_account_removal"])
             self._values: typing.Dict[str, typing.Any] = {
                 "enabled": enabled,
             }
@@ -2983,7 +3282,7 @@ class RosStackGroupProps:
         *,
         stack_group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         administration_role_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        auto_deployment: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosStackGroup.AutoDeploymentProperty]] = None,
+        auto_deployment: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosStackGroup.AutoDeploymentProperty, typing.Dict[str, typing.Any]]]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         dynamic_template_body: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         execution_role_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -3011,6 +3310,21 @@ class RosStackGroupProps:
         :param template_url: 
         :param template_version: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStackGroupProps.__init__)
+            check_type(argname="argument stack_group_name", value=stack_group_name, expected_type=type_hints["stack_group_name"])
+            check_type(argname="argument administration_role_name", value=administration_role_name, expected_type=type_hints["administration_role_name"])
+            check_type(argname="argument auto_deployment", value=auto_deployment, expected_type=type_hints["auto_deployment"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument dynamic_template_body", value=dynamic_template_body, expected_type=type_hints["dynamic_template_body"])
+            check_type(argname="argument execution_role_name", value=execution_role_name, expected_type=type_hints["execution_role_name"])
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument permission_model", value=permission_model, expected_type=type_hints["permission_model"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument template_body", value=template_body, expected_type=type_hints["template_body"])
+            check_type(argname="argument template_id", value=template_id, expected_type=type_hints["template_id"])
+            check_type(argname="argument template_url", value=template_url, expected_type=type_hints["template_url"])
+            check_type(argname="argument template_version", value=template_version, expected_type=type_hints["template_version"])
         self._values: typing.Dict[str, typing.Any] = {
             "stack_group_name": stack_group_name,
         }
@@ -3191,7 +3505,7 @@ class RosStackInstances(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosStackInstancesProps",
+        props: typing.Union["RosStackInstancesProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::StackInstances``.
@@ -3201,6 +3515,12 @@ class RosStackInstances(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStackInstances.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3211,6 +3531,9 @@ class RosStackInstances(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStackInstances._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3247,6 +3570,9 @@ class RosStackInstances(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3264,6 +3590,9 @@ class RosStackInstances(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "region_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3279,6 +3608,9 @@ class RosStackInstances(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "stack_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "stackGroupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -3296,6 +3628,9 @@ class RosStackInstances(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "account_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3313,6 +3648,9 @@ class RosStackInstances(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosStackInstances.DeploymentTargetsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "deployment_targets").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deploymentTargets", value)
 
     @builtins.property # type: ignore[misc]
@@ -3330,6 +3668,9 @@ class RosStackInstances(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "disable_rollback").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "disableRollback", value)
 
     @builtins.property # type: ignore[misc]
@@ -3347,6 +3688,9 @@ class RosStackInstances(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "operation_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "operationDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -3364,6 +3708,9 @@ class RosStackInstances(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosStackInstances.OperationPreferencesProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "operation_preferences").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "operationPreferences", value)
 
     @builtins.property # type: ignore[misc]
@@ -3381,6 +3728,9 @@ class RosStackInstances(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "parameter_overrides").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "parameterOverrides", value)
 
     @builtins.property # type: ignore[misc]
@@ -3398,6 +3748,9 @@ class RosStackInstances(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "retain_stacks").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "retainStacks", value)
 
     @builtins.property # type: ignore[misc]
@@ -3415,6 +3768,9 @@ class RosStackInstances(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosStackInstances, "timeout_in_minutes").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "timeoutInMinutes", value)
 
     @jsii.data_type(
@@ -3431,6 +3787,9 @@ class RosStackInstances(
             '''
             :param rd_folder_ids: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosStackInstances.DeploymentTargetsProperty.__init__)
+                check_type(argname="argument rd_folder_ids", value=rd_folder_ids, expected_type=type_hints["rd_folder_ids"])
             self._values: typing.Dict[str, typing.Any] = {}
             if rd_folder_ids is not None:
                 self._values["rd_folder_ids"] = rd_folder_ids
@@ -3481,6 +3840,12 @@ class RosStackInstances(
             :param max_concurrent_count: 
             :param max_concurrent_percentage: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosStackInstances.OperationPreferencesProperty.__init__)
+                check_type(argname="argument failure_tolerance_count", value=failure_tolerance_count, expected_type=type_hints["failure_tolerance_count"])
+                check_type(argname="argument failure_tolerance_percentage", value=failure_tolerance_percentage, expected_type=type_hints["failure_tolerance_percentage"])
+                check_type(argname="argument max_concurrent_count", value=max_concurrent_count, expected_type=type_hints["max_concurrent_count"])
+                check_type(argname="argument max_concurrent_percentage", value=max_concurrent_percentage, expected_type=type_hints["max_concurrent_percentage"])
             self._values: typing.Dict[str, typing.Any] = {}
             if failure_tolerance_count is not None:
                 self._values["failure_tolerance_count"] = failure_tolerance_count
@@ -3566,10 +3931,10 @@ class RosStackInstancesProps:
         region_ids: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
         stack_group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         account_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
-        deployment_targets: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosStackInstances.DeploymentTargetsProperty]] = None,
+        deployment_targets: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosStackInstances.DeploymentTargetsProperty, typing.Dict[str, typing.Any]]]] = None,
         disable_rollback: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         operation_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        operation_preferences: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosStackInstances.OperationPreferencesProperty]] = None,
+        operation_preferences: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosStackInstances.OperationPreferencesProperty, typing.Dict[str, typing.Any]]]] = None,
         parameter_overrides: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         retain_stacks: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         timeout_in_minutes: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -3587,6 +3952,18 @@ class RosStackInstancesProps:
         :param retain_stacks: 
         :param timeout_in_minutes: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStackInstancesProps.__init__)
+            check_type(argname="argument region_ids", value=region_ids, expected_type=type_hints["region_ids"])
+            check_type(argname="argument stack_group_name", value=stack_group_name, expected_type=type_hints["stack_group_name"])
+            check_type(argname="argument account_ids", value=account_ids, expected_type=type_hints["account_ids"])
+            check_type(argname="argument deployment_targets", value=deployment_targets, expected_type=type_hints["deployment_targets"])
+            check_type(argname="argument disable_rollback", value=disable_rollback, expected_type=type_hints["disable_rollback"])
+            check_type(argname="argument operation_description", value=operation_description, expected_type=type_hints["operation_description"])
+            check_type(argname="argument operation_preferences", value=operation_preferences, expected_type=type_hints["operation_preferences"])
+            check_type(argname="argument parameter_overrides", value=parameter_overrides, expected_type=type_hints["parameter_overrides"])
+            check_type(argname="argument retain_stacks", value=retain_stacks, expected_type=type_hints["retain_stacks"])
+            check_type(argname="argument timeout_in_minutes", value=timeout_in_minutes, expected_type=type_hints["timeout_in_minutes"])
         self._values: typing.Dict[str, typing.Any] = {
             "region_ids": region_ids,
             "stack_group_name": stack_group_name,
@@ -3755,6 +4132,15 @@ class RosStackProps:
         :param template_version: 
         :param timeout_mins: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStackProps.__init__)
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument template_body", value=template_body, expected_type=type_hints["template_body"])
+            check_type(argname="argument template_id", value=template_id, expected_type=type_hints["template_id"])
+            check_type(argname="argument template_url", value=template_url, expected_type=type_hints["template_url"])
+            check_type(argname="argument template_version", value=template_version, expected_type=type_hints["template_version"])
+            check_type(argname="argument timeout_mins", value=timeout_mins, expected_type=type_hints["timeout_mins"])
         self._values: typing.Dict[str, typing.Any] = {}
         if parameters is not None:
             self._values["parameters"] = parameters
@@ -3871,7 +4257,7 @@ class RosWaitCondition(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosWaitConditionProps",
+        props: typing.Union["RosWaitConditionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::WaitCondition``.
@@ -3881,6 +4267,12 @@ class RosWaitCondition(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitCondition.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3891,6 +4283,9 @@ class RosWaitCondition(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitCondition._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3935,6 +4330,9 @@ class RosWaitCondition(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitCondition, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3950,6 +4348,9 @@ class RosWaitCondition(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitCondition, "handle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "handle", value)
 
     @builtins.property # type: ignore[misc]
@@ -3965,6 +4366,9 @@ class RosWaitCondition(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitCondition, "timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "timeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -3982,6 +4386,9 @@ class RosWaitCondition(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitCondition, "count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "count", value)
 
     @builtins.property # type: ignore[misc]
@@ -3999,6 +4406,9 @@ class RosWaitCondition(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitCondition, "show_progress_event").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "showProgressEvent", value)
 
 
@@ -4013,7 +4423,7 @@ class RosWaitConditionHandle(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosWaitConditionHandleProps",
+        props: typing.Union["RosWaitConditionHandleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::WaitConditionHandle``.
@@ -4023,6 +4433,12 @@ class RosWaitConditionHandle(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitConditionHandle.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4033,6 +4449,9 @@ class RosWaitConditionHandle(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitConditionHandle._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4093,6 +4512,9 @@ class RosWaitConditionHandle(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitConditionHandle, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4119,6 +4541,9 @@ class RosWaitConditionHandle(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitConditionHandle, "count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "count", value)
 
     @builtins.property # type: ignore[misc]
@@ -4142,6 +4567,9 @@ class RosWaitConditionHandle(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitConditionHandle, "mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mode", value)
 
 
@@ -4162,6 +4590,10 @@ class RosWaitConditionHandleProps:
         :param count: 
         :param mode: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitConditionHandleProps.__init__)
+            check_type(argname="argument count", value=count, expected_type=type_hints["count"])
+            check_type(argname="argument mode", value=mode, expected_type=type_hints["mode"])
         self._values: typing.Dict[str, typing.Any] = {}
         if count is not None:
             self._values["count"] = count
@@ -4241,6 +4673,12 @@ class RosWaitConditionProps:
         :param count: 
         :param show_progress_event: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitConditionProps.__init__)
+            check_type(argname="argument handle", value=handle, expected_type=type_hints["handle"])
+            check_type(argname="argument timeout", value=timeout, expected_type=type_hints["timeout"])
+            check_type(argname="argument count", value=count, expected_type=type_hints["count"])
+            check_type(argname="argument show_progress_event", value=show_progress_event, expected_type=type_hints["show_progress_event"])
         self._values: typing.Dict[str, typing.Any] = {
             "handle": handle,
             "timeout": timeout,
@@ -4311,7 +4749,7 @@ class Sleep(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["SleepProps"] = None,
+        props: typing.Optional[typing.Union["SleepProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::Sleep``.
@@ -4325,6 +4763,12 @@ class Sleep(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Sleep.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -4357,6 +4801,13 @@ class SleepProps:
         :param update_duration: Property updateDuration: The number of seconds to wait before resource update. It only triggers when the property Triggers change and the status of stack is UPDATE_IN_PROGRESS.
         :param update_rollback_duration: Property updateRollbackDuration: The number of seconds to wait before resource update rollback. It only triggers when stack update failed and resource was updated.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SleepProps.__init__)
+            check_type(argname="argument create_duration", value=create_duration, expected_type=type_hints["create_duration"])
+            check_type(argname="argument delete_duration", value=delete_duration, expected_type=type_hints["delete_duration"])
+            check_type(argname="argument triggers", value=triggers, expected_type=type_hints["triggers"])
+            check_type(argname="argument update_duration", value=update_duration, expected_type=type_hints["update_duration"])
+            check_type(argname="argument update_rollback_duration", value=update_rollback_duration, expected_type=type_hints["update_rollback_duration"])
         self._values: typing.Dict[str, typing.Any] = {}
         if create_duration is not None:
             self._values["create_duration"] = create_duration
@@ -4438,7 +4889,7 @@ class Stack(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["StackProps"] = None,
+        props: typing.Optional[typing.Union["StackProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::Stack``.
@@ -4452,6 +4903,12 @@ class Stack(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -4466,7 +4923,7 @@ class StackGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "StackGroupProps",
+        props: typing.Union["StackGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::StackGroup``.
@@ -4480,6 +4937,12 @@ class StackGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StackGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -4514,7 +4977,7 @@ class StackGroupProps:
         *,
         stack_group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         administration_role_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        auto_deployment: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosStackGroup.AutoDeploymentProperty]] = None,
+        auto_deployment: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosStackGroup.AutoDeploymentProperty, typing.Dict[str, typing.Any]]]] = None,
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         dynamic_template_body: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         execution_role_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -4542,6 +5005,21 @@ class StackGroupProps:
         :param template_url: Property templateUrl: undefined.
         :param template_version: Property templateVersion: undefined.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StackGroupProps.__init__)
+            check_type(argname="argument stack_group_name", value=stack_group_name, expected_type=type_hints["stack_group_name"])
+            check_type(argname="argument administration_role_name", value=administration_role_name, expected_type=type_hints["administration_role_name"])
+            check_type(argname="argument auto_deployment", value=auto_deployment, expected_type=type_hints["auto_deployment"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument dynamic_template_body", value=dynamic_template_body, expected_type=type_hints["dynamic_template_body"])
+            check_type(argname="argument execution_role_name", value=execution_role_name, expected_type=type_hints["execution_role_name"])
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument permission_model", value=permission_model, expected_type=type_hints["permission_model"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument template_body", value=template_body, expected_type=type_hints["template_body"])
+            check_type(argname="argument template_id", value=template_id, expected_type=type_hints["template_id"])
+            check_type(argname="argument template_url", value=template_url, expected_type=type_hints["template_url"])
+            check_type(argname="argument template_version", value=template_version, expected_type=type_hints["template_version"])
         self._values: typing.Dict[str, typing.Any] = {
             "stack_group_name": stack_group_name,
         }
@@ -4696,7 +5174,7 @@ class StackInstances(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "StackInstancesProps",
+        props: typing.Union["StackInstancesProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::StackInstances``.
@@ -4710,6 +5188,12 @@ class StackInstances(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StackInstances.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -4748,10 +5232,10 @@ class StackInstancesProps:
         region_ids: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
         stack_group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         account_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
-        deployment_targets: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosStackInstances.DeploymentTargetsProperty]] = None,
+        deployment_targets: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosStackInstances.DeploymentTargetsProperty, typing.Dict[str, typing.Any]]]] = None,
         disable_rollback: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         operation_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        operation_preferences: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosStackInstances.OperationPreferencesProperty]] = None,
+        operation_preferences: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosStackInstances.OperationPreferencesProperty, typing.Dict[str, typing.Any]]]] = None,
         parameter_overrides: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         retain_stacks: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         timeout_in_minutes: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -4769,6 +5253,18 @@ class StackInstancesProps:
         :param retain_stacks: Property retainStacks: undefined.
         :param timeout_in_minutes: Property timeoutInMinutes: undefined.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StackInstancesProps.__init__)
+            check_type(argname="argument region_ids", value=region_ids, expected_type=type_hints["region_ids"])
+            check_type(argname="argument stack_group_name", value=stack_group_name, expected_type=type_hints["stack_group_name"])
+            check_type(argname="argument account_ids", value=account_ids, expected_type=type_hints["account_ids"])
+            check_type(argname="argument deployment_targets", value=deployment_targets, expected_type=type_hints["deployment_targets"])
+            check_type(argname="argument disable_rollback", value=disable_rollback, expected_type=type_hints["disable_rollback"])
+            check_type(argname="argument operation_description", value=operation_description, expected_type=type_hints["operation_description"])
+            check_type(argname="argument operation_preferences", value=operation_preferences, expected_type=type_hints["operation_preferences"])
+            check_type(argname="argument parameter_overrides", value=parameter_overrides, expected_type=type_hints["parameter_overrides"])
+            check_type(argname="argument retain_stacks", value=retain_stacks, expected_type=type_hints["retain_stacks"])
+            check_type(argname="argument timeout_in_minutes", value=timeout_in_minutes, expected_type=type_hints["timeout_in_minutes"])
         self._values: typing.Dict[str, typing.Any] = {
             "region_ids": region_ids,
             "stack_group_name": stack_group_name,
@@ -4917,6 +5413,15 @@ class StackProps:
         :param template_version: Property templateVersion: Template version of template containing the template body.
         :param timeout_mins: Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update. Default to 60 minutes.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StackProps.__init__)
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument template_body", value=template_body, expected_type=type_hints["template_body"])
+            check_type(argname="argument template_id", value=template_id, expected_type=type_hints["template_id"])
+            check_type(argname="argument template_url", value=template_url, expected_type=type_hints["template_url"])
+            check_type(argname="argument template_version", value=template_version, expected_type=type_hints["template_version"])
+            check_type(argname="argument timeout_mins", value=timeout_mins, expected_type=type_hints["timeout_mins"])
         self._values: typing.Dict[str, typing.Any] = {}
         if parameters is not None:
             self._values["parameters"] = parameters
@@ -5023,7 +5528,7 @@ class WaitCondition(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "WaitConditionProps",
+        props: typing.Union["WaitConditionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::WaitCondition``.
@@ -5037,6 +5542,12 @@ class WaitCondition(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(WaitCondition.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -5069,7 +5580,7 @@ class WaitConditionHandle(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["WaitConditionHandleProps"] = None,
+        props: typing.Optional[typing.Union["WaitConditionHandleProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ROS::WaitConditionHandle``.
@@ -5083,6 +5594,12 @@ class WaitConditionHandle(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(WaitConditionHandle.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -5142,6 +5659,10 @@ class WaitConditionHandleProps:
         :param count: Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on. If Count takes effect, signals with id > Count will be deleted before update. The default value is -1, which means no effect. It is recommended to quote the same value with WaitCondition.Count.
         :param mode: Property mode: If set to Increment, all old signals will be deleted before update. In this mode, WaitCondition.Count should reference an incremental value instead of a full value, such as ScalingGroupEnable.ScalingRuleArisExecuteResultNumberOfAddedInstances. If set to Full, no old signal will be deleted unless Count is set. In this mode, WaitCondition.Count should reference a full value, such as the same value with InstanceGroup.MaxAmount. It is recommended to use this mode with Count. Default to Full.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(WaitConditionHandleProps.__init__)
+            check_type(argname="argument count", value=count, expected_type=type_hints["count"])
+            check_type(argname="argument mode", value=mode, expected_type=type_hints["mode"])
         self._values: typing.Dict[str, typing.Any] = {}
         if count is not None:
             self._values["count"] = count
@@ -5214,6 +5735,12 @@ class WaitConditionProps:
         :param count: Property count: The number of success signals that must be received before the stack creation process continues.
         :param show_progress_event: Property showProgressEvent: Whether to generate progress changed event. Default to Disabled.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(WaitConditionProps.__init__)
+            check_type(argname="argument handle", value=handle, expected_type=type_hints["handle"])
+            check_type(argname="argument timeout", value=timeout, expected_type=type_hints["timeout"])
+            check_type(argname="argument count", value=count, expected_type=type_hints["count"])
+            check_type(argname="argument show_progress_event", value=show_progress_event, expected_type=type_hints["show_progress_event"])
         self._values: typing.Dict[str, typing.Any] = {
             "handle": handle,
             "timeout": timeout,

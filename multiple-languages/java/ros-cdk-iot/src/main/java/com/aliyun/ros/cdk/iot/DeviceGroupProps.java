@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::DeviceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:25.652Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.708Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.DeviceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DeviceGroupProps.Jsii$Proxy.class)
 public interface DeviceGroupProps extends software.amazon.jsii.JsiiSerializable {

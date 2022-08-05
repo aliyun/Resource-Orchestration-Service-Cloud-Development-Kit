@@ -8,6 +8,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 import ros_cdk_assembly_schema._jsii
 
 __jsii_assembly__ = jsii.JSIIAssembly.load(

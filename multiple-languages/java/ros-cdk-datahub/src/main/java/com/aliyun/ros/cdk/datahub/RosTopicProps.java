@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * Properties for defining a `ALIYUN::DATAHUB::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:24.463Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.427Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {

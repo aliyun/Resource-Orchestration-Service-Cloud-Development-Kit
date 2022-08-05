@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class AddressBook(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AddressBookProps",
+        props: typing.Union["AddressBookProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CLOUDFW::AddressBook``.
@@ -47,6 +49,12 @@ class AddressBook(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AddressBook.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -80,7 +88,7 @@ class AddressBookProps:
         address_list: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         auto_add_tag_ecs: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         region_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tag_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosAddressBook.TagListProperty"]]]] = None,
+        tag_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosAddressBook.TagListProperty", typing.Dict[str, typing.Any]]]]]] = None,
         tag_relation: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CLOUDFW::AddressBook``.
@@ -94,6 +102,16 @@ class AddressBookProps:
         :param tag_list: Property tagList:.
         :param tag_relation: Property tagRelation: The relationship between the labels to be matched more ECS. and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book. or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AddressBookProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument group_type", value=group_type, expected_type=type_hints["group_type"])
+            check_type(argname="argument address_list", value=address_list, expected_type=type_hints["address_list"])
+            check_type(argname="argument auto_add_tag_ecs", value=auto_add_tag_ecs, expected_type=type_hints["auto_add_tag_ecs"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+            check_type(argname="argument tag_list", value=tag_list, expected_type=type_hints["tag_list"])
+            check_type(argname="argument tag_relation", value=tag_relation, expected_type=type_hints["tag_relation"])
         self._values: typing.Dict[str, typing.Any] = {
             "description": description,
             "group_name": group_name,
@@ -210,7 +228,7 @@ class ControlPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ControlPolicyProps",
+        props: typing.Union["ControlPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CLOUDFW::ControlPolicy``.
@@ -224,6 +242,12 @@ class ControlPolicy(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ControlPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -289,6 +313,22 @@ class ControlPolicyProps:
         :param dest_port_type: Property destPortType: Security access control policy access destination port traffic type. port: Port group: port address book
         :param region_id: Property regionId: Region ID. Default to cn-hangzhou.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ControlPolicyProps.__init__)
+            check_type(argname="argument acl_action", value=acl_action, expected_type=type_hints["acl_action"])
+            check_type(argname="argument application_name", value=application_name, expected_type=type_hints["application_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument destination", value=destination, expected_type=type_hints["destination"])
+            check_type(argname="argument destination_type", value=destination_type, expected_type=type_hints["destination_type"])
+            check_type(argname="argument direction", value=direction, expected_type=type_hints["direction"])
+            check_type(argname="argument new_order", value=new_order, expected_type=type_hints["new_order"])
+            check_type(argname="argument proto", value=proto, expected_type=type_hints["proto"])
+            check_type(argname="argument source", value=source, expected_type=type_hints["source"])
+            check_type(argname="argument source_type", value=source_type, expected_type=type_hints["source_type"])
+            check_type(argname="argument dest_port", value=dest_port, expected_type=type_hints["dest_port"])
+            check_type(argname="argument dest_port_group", value=dest_port_group, expected_type=type_hints["dest_port_group"])
+            check_type(argname="argument dest_port_type", value=dest_port_type, expected_type=type_hints["dest_port_type"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "acl_action": acl_action,
             "application_name": application_name,
@@ -491,7 +531,7 @@ class RosAddressBook(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAddressBookProps",
+        props: typing.Union["RosAddressBookProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CLOUDFW::AddressBook``.
@@ -501,6 +541,12 @@ class RosAddressBook(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAddressBook.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -511,6 +557,9 @@ class RosAddressBook(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAddressBook._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -545,6 +594,9 @@ class RosAddressBook(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -554,6 +606,9 @@ class RosAddressBook(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -569,6 +624,9 @@ class RosAddressBook(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -590,6 +648,9 @@ class RosAddressBook(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "group_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupType", value)
 
     @builtins.property # type: ignore[misc]
@@ -613,6 +674,9 @@ class RosAddressBook(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "address_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "addressList", value)
 
     @builtins.property # type: ignore[misc]
@@ -630,6 +694,9 @@ class RosAddressBook(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "auto_add_tag_ecs").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoAddTagEcs", value)
 
     @builtins.property # type: ignore[misc]
@@ -647,6 +714,9 @@ class RosAddressBook(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -664,6 +734,9 @@ class RosAddressBook(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosAddressBook.TagListProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "tag_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tagList", value)
 
     @builtins.property # type: ignore[misc]
@@ -685,6 +758,9 @@ class RosAddressBook(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAddressBook, "tag_relation").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tagRelation", value)
 
     @jsii.data_type(
@@ -703,6 +779,10 @@ class RosAddressBook(
             :param tag_key: 
             :param tag_value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosAddressBook.TagListProperty.__init__)
+                check_type(argname="argument tag_key", value=tag_key, expected_type=type_hints["tag_key"])
+                check_type(argname="argument tag_value", value=tag_value, expected_type=type_hints["tag_value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if tag_key is not None:
                 self._values["tag_key"] = tag_key
@@ -765,7 +845,7 @@ class RosAddressBookProps:
         address_list: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         auto_add_tag_ecs: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         region_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tag_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosAddressBook.TagListProperty]]]] = None,
+        tag_list: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosAddressBook.TagListProperty, typing.Dict[str, typing.Any]]]]]] = None,
         tag_relation: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CLOUDFW::AddressBook``.
@@ -779,6 +859,16 @@ class RosAddressBookProps:
         :param tag_list: 
         :param tag_relation: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAddressBookProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument group_type", value=group_type, expected_type=type_hints["group_type"])
+            check_type(argname="argument address_list", value=address_list, expected_type=type_hints["address_list"])
+            check_type(argname="argument auto_add_tag_ecs", value=auto_add_tag_ecs, expected_type=type_hints["auto_add_tag_ecs"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+            check_type(argname="argument tag_list", value=tag_list, expected_type=type_hints["tag_list"])
+            check_type(argname="argument tag_relation", value=tag_relation, expected_type=type_hints["tag_relation"])
         self._values: typing.Dict[str, typing.Any] = {
             "description": description,
             "group_name": group_name,
@@ -911,7 +1001,7 @@ class RosControlPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosControlPolicyProps",
+        props: typing.Union["RosControlPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CLOUDFW::ControlPolicy``.
@@ -921,6 +1011,12 @@ class RosControlPolicy(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -931,6 +1027,9 @@ class RosControlPolicy(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicy._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -970,6 +1069,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "acl_action").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "aclAction", value)
 
     @builtins.property # type: ignore[misc]
@@ -989,6 +1091,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "application_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "applicationName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1004,6 +1109,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -1025,6 +1133,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "destination").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destination", value)
 
     @builtins.property # type: ignore[misc]
@@ -1046,6 +1157,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "destination_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1065,6 +1179,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "direction").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "direction", value)
 
     @builtins.property # type: ignore[misc]
@@ -1074,6 +1191,9 @@ class RosControlPolicy(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1092,6 +1212,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "new_order").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "newOrder", value)
 
     @builtins.property # type: ignore[misc]
@@ -1110,6 +1233,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "proto").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "proto", value)
 
     @builtins.property # type: ignore[misc]
@@ -1130,6 +1256,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "source").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "source", value)
 
     @builtins.property # type: ignore[misc]
@@ -1150,6 +1279,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "source_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1170,6 +1302,9 @@ class RosControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "dest_port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destPort", value)
 
     @builtins.property # type: ignore[misc]
@@ -1190,6 +1325,9 @@ class RosControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "dest_port_group").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destPortGroup", value)
 
     @builtins.property # type: ignore[misc]
@@ -1211,6 +1349,9 @@ class RosControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "dest_port_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destPortType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1228,6 +1369,9 @@ class RosControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionId", value)
 
 
@@ -1287,6 +1431,22 @@ class RosControlPolicyProps:
         :param dest_port_type: 
         :param region_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicyProps.__init__)
+            check_type(argname="argument acl_action", value=acl_action, expected_type=type_hints["acl_action"])
+            check_type(argname="argument application_name", value=application_name, expected_type=type_hints["application_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument destination", value=destination, expected_type=type_hints["destination"])
+            check_type(argname="argument destination_type", value=destination_type, expected_type=type_hints["destination_type"])
+            check_type(argname="argument direction", value=direction, expected_type=type_hints["direction"])
+            check_type(argname="argument new_order", value=new_order, expected_type=type_hints["new_order"])
+            check_type(argname="argument proto", value=proto, expected_type=type_hints["proto"])
+            check_type(argname="argument source", value=source, expected_type=type_hints["source"])
+            check_type(argname="argument source_type", value=source_type, expected_type=type_hints["source_type"])
+            check_type(argname="argument dest_port", value=dest_port, expected_type=type_hints["dest_port"])
+            check_type(argname="argument dest_port_group", value=dest_port_group, expected_type=type_hints["dest_port_group"])
+            check_type(argname="argument dest_port_type", value=dest_port_type, expected_type=type_hints["dest_port_type"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "acl_action": acl_action,
             "application_name": application_name,
@@ -1512,7 +1672,7 @@ class RosVpcFirewallControlPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpcFirewallControlPolicyProps",
+        props: typing.Union["RosVpcFirewallControlPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CLOUDFW::VpcFirewallControlPolicy``.
@@ -1522,6 +1682,12 @@ class RosVpcFirewallControlPolicy(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcFirewallControlPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1532,6 +1698,9 @@ class RosVpcFirewallControlPolicy(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcFirewallControlPolicy._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1571,6 +1740,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "acl_action").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "aclAction", value)
 
     @builtins.property # type: ignore[misc]
@@ -1604,6 +1776,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "application_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "applicationName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1619,6 +1794,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -1643,6 +1821,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "destination").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destination", value)
 
     @builtins.property # type: ignore[misc]
@@ -1663,6 +1844,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "destination_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1672,6 +1856,9 @@ class RosVpcFirewallControlPolicy(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1691,6 +1878,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "new_order").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "newOrder", value)
 
     @builtins.property # type: ignore[misc]
@@ -1706,6 +1896,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "proto").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "proto", value)
 
     @builtins.property # type: ignore[misc]
@@ -1725,6 +1918,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "source").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "source", value)
 
     @builtins.property # type: ignore[misc]
@@ -1744,6 +1940,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "source_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1766,6 +1965,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "vpc_firewall_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcFirewallId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1786,6 +1988,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "dest_port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destPort", value)
 
     @builtins.property # type: ignore[misc]
@@ -1806,6 +2011,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "dest_port_group").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destPortGroup", value)
 
     @builtins.property # type: ignore[misc]
@@ -1827,6 +2035,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "dest_port_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destPortType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1848,6 +2059,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "lang").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "lang", value)
 
     @builtins.property # type: ignore[misc]
@@ -1865,6 +2079,9 @@ class RosVpcFirewallControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcFirewallControlPolicy, "region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionId", value)
 
 
@@ -1927,6 +2144,23 @@ class RosVpcFirewallControlPolicyProps:
         :param lang: 
         :param region_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcFirewallControlPolicyProps.__init__)
+            check_type(argname="argument acl_action", value=acl_action, expected_type=type_hints["acl_action"])
+            check_type(argname="argument application_name", value=application_name, expected_type=type_hints["application_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument destination", value=destination, expected_type=type_hints["destination"])
+            check_type(argname="argument destination_type", value=destination_type, expected_type=type_hints["destination_type"])
+            check_type(argname="argument new_order", value=new_order, expected_type=type_hints["new_order"])
+            check_type(argname="argument proto", value=proto, expected_type=type_hints["proto"])
+            check_type(argname="argument source", value=source, expected_type=type_hints["source"])
+            check_type(argname="argument source_type", value=source_type, expected_type=type_hints["source_type"])
+            check_type(argname="argument vpc_firewall_id", value=vpc_firewall_id, expected_type=type_hints["vpc_firewall_id"])
+            check_type(argname="argument dest_port", value=dest_port, expected_type=type_hints["dest_port"])
+            check_type(argname="argument dest_port_group", value=dest_port_group, expected_type=type_hints["dest_port_group"])
+            check_type(argname="argument dest_port_type", value=dest_port_type, expected_type=type_hints["dest_port_type"])
+            check_type(argname="argument lang", value=lang, expected_type=type_hints["lang"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "acl_action": acl_action,
             "application_name": application_name,
@@ -2183,7 +2417,7 @@ class VpcFirewallControlPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VpcFirewallControlPolicyProps",
+        props: typing.Union["VpcFirewallControlPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CLOUDFW::VpcFirewallControlPolicy``.
@@ -2197,6 +2431,12 @@ class VpcFirewallControlPolicy(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcFirewallControlPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2265,6 +2505,23 @@ class VpcFirewallControlPolicyProps:
         :param lang: Property lang: The natural language of the request and response. Valid values: zh: Chinese en: English
         :param region_id: Property regionId: Region ID. Default to cn-hangzhou.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcFirewallControlPolicyProps.__init__)
+            check_type(argname="argument acl_action", value=acl_action, expected_type=type_hints["acl_action"])
+            check_type(argname="argument application_name", value=application_name, expected_type=type_hints["application_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument destination", value=destination, expected_type=type_hints["destination"])
+            check_type(argname="argument destination_type", value=destination_type, expected_type=type_hints["destination_type"])
+            check_type(argname="argument new_order", value=new_order, expected_type=type_hints["new_order"])
+            check_type(argname="argument proto", value=proto, expected_type=type_hints["proto"])
+            check_type(argname="argument source", value=source, expected_type=type_hints["source"])
+            check_type(argname="argument source_type", value=source_type, expected_type=type_hints["source_type"])
+            check_type(argname="argument vpc_firewall_id", value=vpc_firewall_id, expected_type=type_hints["vpc_firewall_id"])
+            check_type(argname="argument dest_port", value=dest_port, expected_type=type_hints["dest_port"])
+            check_type(argname="argument dest_port_group", value=dest_port_group, expected_type=type_hints["dest_port_group"])
+            check_type(argname="argument dest_port_type", value=dest_port_type, expected_type=type_hints["dest_port_type"])
+            check_type(argname="argument lang", value=lang, expected_type=type_hints["lang"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "acl_action": acl_action,
             "application_name": application_name,

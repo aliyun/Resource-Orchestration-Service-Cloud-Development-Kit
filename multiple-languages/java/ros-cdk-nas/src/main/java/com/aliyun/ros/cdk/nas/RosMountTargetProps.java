@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::MountTarget`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:25.854Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.933Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosMountTargetProps")
 @software.amazon.jsii.Jsii.Proxy(RosMountTargetProps.Jsii$Proxy.class)
 public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializable {

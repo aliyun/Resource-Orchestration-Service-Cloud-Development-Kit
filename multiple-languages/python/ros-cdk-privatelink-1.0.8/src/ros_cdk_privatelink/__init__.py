@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class RosVpcEndpoint(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpcEndpointProps",
+        props: typing.Union["RosVpcEndpointProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::PrivateLink::VpcEndpoint``.
@@ -43,6 +45,12 @@ class RosVpcEndpoint(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpoint.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -53,6 +61,9 @@ class RosVpcEndpoint(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpoint._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -137,6 +148,9 @@ class RosVpcEndpoint(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpoint, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -154,6 +168,9 @@ class RosVpcEndpoint(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpoint, "security_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -169,6 +186,9 @@ class RosVpcEndpoint(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpoint, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -189,6 +209,9 @@ class RosVpcEndpoint(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpoint, "endpoint_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "endpointDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -210,6 +233,9 @@ class RosVpcEndpoint(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpoint, "endpoint_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "endpointName", value)
 
     @builtins.property # type: ignore[misc]
@@ -227,6 +253,9 @@ class RosVpcEndpoint(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpoint, "service_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serviceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -244,6 +273,9 @@ class RosVpcEndpoint(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpoint, "service_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serviceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -261,6 +293,9 @@ class RosVpcEndpoint(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosVpcEndpoint.ZoneProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpoint, "zone").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zone", value)
 
     @jsii.data_type(
@@ -279,6 +314,10 @@ class RosVpcEndpoint(
             :param v_switch_id: 
             :param zone_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosVpcEndpoint.ZoneProperty.__init__)
+                check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+                check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "v_switch_id": v_switch_id,
                 "zone_id": zone_id,
@@ -337,7 +376,7 @@ class RosVpcEndpointProps:
         endpoint_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         service_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         service_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        zone: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosVpcEndpoint.ZoneProperty]]]] = None,
+        zone: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpcEndpoint.ZoneProperty, typing.Dict[str, typing.Any]]]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::PrivateLink::VpcEndpoint``.
 
@@ -349,6 +388,15 @@ class RosVpcEndpointProps:
         :param service_name: 
         :param zone: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpointProps.__init__)
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument endpoint_description", value=endpoint_description, expected_type=type_hints["endpoint_description"])
+            check_type(argname="argument endpoint_name", value=endpoint_name, expected_type=type_hints["endpoint_name"])
+            check_type(argname="argument service_id", value=service_id, expected_type=type_hints["service_id"])
+            check_type(argname="argument service_name", value=service_name, expected_type=type_hints["service_name"])
+            check_type(argname="argument zone", value=zone, expected_type=type_hints["zone"])
         self._values: typing.Dict[str, typing.Any] = {
             "security_group_id": security_group_id,
             "vpc_id": vpc_id,
@@ -464,7 +512,7 @@ class RosVpcEndpointService(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpcEndpointServiceProps",
+        props: typing.Union["RosVpcEndpointServiceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::PrivateLink::VpcEndpointService``.
@@ -474,6 +522,12 @@ class RosVpcEndpointService(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpointService.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -484,6 +538,9 @@ class RosVpcEndpointService(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpointService._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -552,6 +609,9 @@ class RosVpcEndpointService(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointService, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -573,6 +633,9 @@ class RosVpcEndpointService(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointService, "auto_accept_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoAcceptEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -590,6 +653,9 @@ class RosVpcEndpointService(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointService, "connect_bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectBandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -611,6 +677,9 @@ class RosVpcEndpointService(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointService, "payer").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payer", value)
 
     @builtins.property # type: ignore[misc]
@@ -628,6 +697,9 @@ class RosVpcEndpointService(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosVpcEndpointService.ResourceProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointService, "resource").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resource", value)
 
     @builtins.property # type: ignore[misc]
@@ -645,6 +717,9 @@ class RosVpcEndpointService(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointService, "service_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serviceDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -662,6 +737,9 @@ class RosVpcEndpointService(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointService, "user").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "user", value)
 
     @builtins.property # type: ignore[misc]
@@ -683,6 +761,9 @@ class RosVpcEndpointService(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointService, "zone_affinity_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneAffinityEnabled", value)
 
     @jsii.data_type(
@@ -707,6 +788,11 @@ class RosVpcEndpointService(
             :param resource_type: 
             :param zone_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosVpcEndpointService.ResourceProperty.__init__)
+                check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+                check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
+                check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "resource_id": resource_id,
                 "resource_type": resource_type,
@@ -767,7 +853,7 @@ class RosVpcEndpointServiceAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpcEndpointServiceAttachmentProps",
+        props: typing.Union["RosVpcEndpointServiceAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::PrivateLink::VpcEndpointServiceAttachment``.
@@ -777,6 +863,12 @@ class RosVpcEndpointServiceAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpointServiceAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -787,6 +879,9 @@ class RosVpcEndpointServiceAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpointServiceAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -831,6 +926,9 @@ class RosVpcEndpointServiceAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointServiceAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -846,6 +944,9 @@ class RosVpcEndpointServiceAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointServiceAttachment, "resource_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -861,6 +962,9 @@ class RosVpcEndpointServiceAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointServiceAttachment, "resource_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -876,6 +980,9 @@ class RosVpcEndpointServiceAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpcEndpointServiceAttachment, "service_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serviceId", value)
 
 
@@ -902,6 +1009,11 @@ class RosVpcEndpointServiceAttachmentProps:
         :param resource_type: 
         :param service_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpointServiceAttachmentProps.__init__)
+            check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+            check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
+            check_type(argname="argument service_id", value=service_id, expected_type=type_hints["service_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "resource_id": resource_id,
             "resource_type": resource_type,
@@ -967,7 +1079,7 @@ class RosVpcEndpointServiceProps:
         auto_accept_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         connect_bandwidth: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         payer: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        resource: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosVpcEndpointService.ResourceProperty]]]] = None,
+        resource: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpcEndpointService.ResourceProperty, typing.Dict[str, typing.Any]]]]]] = None,
         service_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         user: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         zone_affinity_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -982,6 +1094,15 @@ class RosVpcEndpointServiceProps:
         :param user: 
         :param zone_affinity_enabled: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpcEndpointServiceProps.__init__)
+            check_type(argname="argument auto_accept_enabled", value=auto_accept_enabled, expected_type=type_hints["auto_accept_enabled"])
+            check_type(argname="argument connect_bandwidth", value=connect_bandwidth, expected_type=type_hints["connect_bandwidth"])
+            check_type(argname="argument payer", value=payer, expected_type=type_hints["payer"])
+            check_type(argname="argument resource", value=resource, expected_type=type_hints["resource"])
+            check_type(argname="argument service_description", value=service_description, expected_type=type_hints["service_description"])
+            check_type(argname="argument user", value=user, expected_type=type_hints["user"])
+            check_type(argname="argument zone_affinity_enabled", value=zone_affinity_enabled, expected_type=type_hints["zone_affinity_enabled"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_accept_enabled is not None:
             self._values["auto_accept_enabled"] = auto_accept_enabled
@@ -1103,7 +1224,7 @@ class VpcEndpoint(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VpcEndpointProps",
+        props: typing.Union["VpcEndpointProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::PrivateLink::VpcEndpoint``.
@@ -1117,6 +1238,12 @@ class VpcEndpoint(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcEndpoint.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1191,7 +1318,7 @@ class VpcEndpointProps:
         endpoint_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         service_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         service_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        zone: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosVpcEndpoint.ZoneProperty]]]] = None,
+        zone: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpcEndpoint.ZoneProperty, typing.Dict[str, typing.Any]]]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::PrivateLink::VpcEndpoint``.
 
@@ -1203,6 +1330,15 @@ class VpcEndpointProps:
         :param service_name: Property serviceName: The name of the endpoint service that is associated with the endpoint. One of ServiceId and ServiceName is required.
         :param zone: Property zone:.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcEndpointProps.__init__)
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument endpoint_description", value=endpoint_description, expected_type=type_hints["endpoint_description"])
+            check_type(argname="argument endpoint_name", value=endpoint_name, expected_type=type_hints["endpoint_name"])
+            check_type(argname="argument service_id", value=service_id, expected_type=type_hints["service_id"])
+            check_type(argname="argument service_name", value=service_name, expected_type=type_hints["service_name"])
+            check_type(argname="argument zone", value=zone, expected_type=type_hints["zone"])
         self._values: typing.Dict[str, typing.Any] = {
             "security_group_id": security_group_id,
             "vpc_id": vpc_id,
@@ -1313,7 +1449,7 @@ class VpcEndpointService(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["VpcEndpointServiceProps"] = None,
+        props: typing.Optional[typing.Union["VpcEndpointServiceProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::PrivateLink::VpcEndpointService``.
@@ -1327,6 +1463,12 @@ class VpcEndpointService(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcEndpointService.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1377,7 +1519,7 @@ class VpcEndpointServiceAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VpcEndpointServiceAttachmentProps",
+        props: typing.Union["VpcEndpointServiceAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::PrivateLink::VpcEndpointServiceAttachment``.
@@ -1391,6 +1533,12 @@ class VpcEndpointServiceAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcEndpointServiceAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1435,6 +1583,11 @@ class VpcEndpointServiceAttachmentProps:
         :param resource_type: Property resourceType: The resource type.
         :param service_id: Property serviceId: The endpoint service that is associated with the endpoint.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcEndpointServiceAttachmentProps.__init__)
+            check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+            check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
+            check_type(argname="argument service_id", value=service_id, expected_type=type_hints["service_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "resource_id": resource_id,
             "resource_type": resource_type,
@@ -1494,7 +1647,7 @@ class VpcEndpointServiceProps:
         auto_accept_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         connect_bandwidth: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         payer: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        resource: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosVpcEndpointService.ResourceProperty]]]] = None,
+        resource: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpcEndpointService.ResourceProperty, typing.Dict[str, typing.Any]]]]]] = None,
         service_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         user: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         zone_affinity_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -1509,6 +1662,15 @@ class VpcEndpointServiceProps:
         :param user: Property user: Account IDs to the whitelist of an endpoint service.
         :param zone_affinity_enabled: Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone. true: yes. false (default): no
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcEndpointServiceProps.__init__)
+            check_type(argname="argument auto_accept_enabled", value=auto_accept_enabled, expected_type=type_hints["auto_accept_enabled"])
+            check_type(argname="argument connect_bandwidth", value=connect_bandwidth, expected_type=type_hints["connect_bandwidth"])
+            check_type(argname="argument payer", value=payer, expected_type=type_hints["payer"])
+            check_type(argname="argument resource", value=resource, expected_type=type_hints["resource"])
+            check_type(argname="argument service_description", value=service_description, expected_type=type_hints["service_description"])
+            check_type(argname="argument user", value=user, expected_type=type_hints["user"])
+            check_type(argname="argument zone_affinity_enabled", value=zone_affinity_enabled, expected_type=type_hints["zone_affinity_enabled"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_accept_enabled is not None:
             self._values["auto_accept_enabled"] = auto_accept_enabled

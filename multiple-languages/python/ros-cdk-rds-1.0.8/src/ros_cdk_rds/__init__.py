@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class ADInfo(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ADInfoProps",
+        props: typing.Union["ADInfoProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::ADInfo``.
@@ -47,6 +49,12 @@ class ADInfo(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ADInfo.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -91,6 +99,13 @@ class ADInfoProps:
         :param ad_server_ip_address: Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.
         :param db_instance_id: Property dbInstanceId: The ID of the instance.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ADInfoProps.__init__)
+            check_type(argname="argument ad_account_name", value=ad_account_name, expected_type=type_hints["ad_account_name"])
+            check_type(argname="argument addns", value=addns, expected_type=type_hints["addns"])
+            check_type(argname="argument ad_password", value=ad_password, expected_type=type_hints["ad_password"])
+            check_type(argname="argument ad_server_ip_address", value=ad_server_ip_address, expected_type=type_hints["ad_server_ip_address"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "ad_account_name": ad_account_name,
             "addns": addns,
@@ -159,7 +174,7 @@ class Account(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AccountProps",
+        props: typing.Union["AccountProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::Account``.
@@ -173,6 +188,12 @@ class Account(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Account.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -193,7 +214,7 @@ class AccountPrivilege(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AccountPrivilegeProps",
+        props: typing.Union["AccountPrivilegeProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::AccountPrivilege``.
@@ -207,6 +228,12 @@ class AccountPrivilege(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccountPrivilege.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -236,6 +263,12 @@ class AccountPrivilegeProps:
         :param db_instance_id: Property dbInstanceId: RDS instance ID.
         :param db_name: Property dbName: RDS database name.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccountPrivilegeProps.__init__)
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_privilege", value=account_privilege, expected_type=type_hints["account_privilege"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_name": account_name,
             "account_privilege": account_privilege,
@@ -312,6 +345,13 @@ class AccountProps:
         :param account_description: Property accountDescription: Account remarks. It cannot begin with http:// or https://. It must start with a Chinese character or English letter. It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits. The length may be 2-256 characters.
         :param account_type: Property accountType: Privilege type of account. Normal: Common privilege. Super: High privilege. And the default value is Normal. This parameter is valid for MySQL 5.5/5.6 only. MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccountProps.__init__)
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_password", value=account_password, expected_type=type_hints["account_password"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument account_description", value=account_description, expected_type=type_hints["account_description"])
+            check_type(argname="argument account_type", value=account_type, expected_type=type_hints["account_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_name": account_name,
             "account_password": account_password,
@@ -402,7 +442,7 @@ class DBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBInstanceProps",
+        props: typing.Union["DBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::DBInstance``.
@@ -416,6 +456,12 @@ class DBInstance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -472,7 +518,7 @@ class DBInstanceClone(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBInstanceCloneProps",
+        props: typing.Union["DBInstanceCloneProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::DBInstanceClone``.
@@ -486,6 +532,12 @@ class DBInstanceClone(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstanceClone.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -594,7 +646,7 @@ class DBInstanceCloneProps:
         db_instance_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_instance_storage: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         db_instance_storage_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosDBInstanceClone.DBMappingsProperty"]]]] = None,
+        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDBInstanceClone.DBMappingsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         db_names: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         dedicated_host_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         instance_network_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -615,7 +667,7 @@ class DBInstanceCloneProps:
         slave_zone_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         sql_collector_status: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ssl_setting: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        table_meta: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosDBInstanceClone.TableMetaProperty"]]]] = None,
+        table_meta: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDBInstanceClone.TableMetaProperty", typing.Dict[str, typing.Any]]]]]] = None,
         tags: typing.Optional[typing.Mapping[builtins.str, typing.Any]] = None,
         timeout_in_minutes: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         vpc_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -665,6 +717,48 @@ class DBInstanceCloneProps:
         :param v_switch_id: Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
         :param zone_id: Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstanceCloneProps.__init__)
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument allocate_public_connection", value=allocate_public_connection, expected_type=type_hints["allocate_public_connection"])
+            check_type(argname="argument backup_id", value=backup_id, expected_type=type_hints["backup_id"])
+            check_type(argname="argument backup_retention_period", value=backup_retention_period, expected_type=type_hints["backup_retention_period"])
+            check_type(argname="argument backup_type", value=backup_type, expected_type=type_hints["backup_type"])
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument connection_string_prefix", value=connection_string_prefix, expected_type=type_hints["connection_string_prefix"])
+            check_type(argname="argument connection_string_type", value=connection_string_type, expected_type=type_hints["connection_string_type"])
+            check_type(argname="argument db_instance_class", value=db_instance_class, expected_type=type_hints["db_instance_class"])
+            check_type(argname="argument db_instance_description", value=db_instance_description, expected_type=type_hints["db_instance_description"])
+            check_type(argname="argument db_instance_storage", value=db_instance_storage, expected_type=type_hints["db_instance_storage"])
+            check_type(argname="argument db_instance_storage_type", value=db_instance_storage_type, expected_type=type_hints["db_instance_storage_type"])
+            check_type(argname="argument db_mappings", value=db_mappings, expected_type=type_hints["db_mappings"])
+            check_type(argname="argument db_names", value=db_names, expected_type=type_hints["db_names"])
+            check_type(argname="argument dedicated_host_group_id", value=dedicated_host_group_id, expected_type=type_hints["dedicated_host_group_id"])
+            check_type(argname="argument instance_network_type", value=instance_network_type, expected_type=type_hints["instance_network_type"])
+            check_type(argname="argument maintain_time", value=maintain_time, expected_type=type_hints["maintain_time"])
+            check_type(argname="argument master_username", value=master_username, expected_type=type_hints["master_username"])
+            check_type(argname="argument master_user_password", value=master_user_password, expected_type=type_hints["master_user_password"])
+            check_type(argname="argument master_user_type", value=master_user_type, expected_type=type_hints["master_user_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_type", value=period_type, expected_type=type_hints["period_type"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument preferred_backup_period", value=preferred_backup_period, expected_type=type_hints["preferred_backup_period"])
+            check_type(argname="argument preferred_backup_time", value=preferred_backup_time, expected_type=type_hints["preferred_backup_time"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument restore_table", value=restore_table, expected_type=type_hints["restore_table"])
+            check_type(argname="argument restore_time", value=restore_time, expected_type=type_hints["restore_time"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument security_ip_list", value=security_ip_list, expected_type=type_hints["security_ip_list"])
+            check_type(argname="argument slave_zone_ids", value=slave_zone_ids, expected_type=type_hints["slave_zone_ids"])
+            check_type(argname="argument sql_collector_status", value=sql_collector_status, expected_type=type_hints["sql_collector_status"])
+            check_type(argname="argument ssl_setting", value=ssl_setting, expected_type=type_hints["ssl_setting"])
+            check_type(argname="argument table_meta", value=table_meta, expected_type=type_hints["table_meta"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument timeout_in_minutes", value=timeout_in_minutes, expected_type=type_hints["timeout_in_minutes"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_id": db_instance_id,
             "pay_type": pay_type,
@@ -1203,7 +1297,7 @@ class DBInstanceParameterGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBInstanceParameterGroupProps",
+        props: typing.Union["DBInstanceParameterGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::DBInstanceParameterGroup``.
@@ -1217,6 +1311,12 @@ class DBInstanceParameterGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstanceParameterGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -1234,7 +1334,7 @@ class DBInstanceParameterGroupProps:
         self,
         *,
         db_instance_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        parameters: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosDBInstanceParameterGroup.ParametersProperty"]]],
+        parameters: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDBInstanceParameterGroup.ParametersProperty", typing.Dict[str, typing.Any]]]]],
         forcerestart: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::RDS::DBInstanceParameterGroup``.
@@ -1243,6 +1343,11 @@ class DBInstanceParameterGroupProps:
         :param parameters: Property parameters: Parameters to update for selected database instance.
         :param forcerestart: Property forcerestart: whether restart database instance.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstanceParameterGroupProps.__init__)
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument forcerestart", value=forcerestart, expected_type=type_hints["forcerestart"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_id": db_instance_id,
             "parameters": parameters,
@@ -1378,7 +1483,7 @@ class DBInstanceProps:
         db_instance_net_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_instance_storage_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_is_ignore_case: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosDBInstance.DBMappingsProperty"]]]] = None,
+        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDBInstance.DBMappingsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         db_param_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_time_zone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         dedicated_host_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -1480,6 +1585,68 @@ class DBInstanceProps:
         :param v_switch_id: Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
         :param zone_id: Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstanceProps.__init__)
+            check_type(argname="argument db_instance_class", value=db_instance_class, expected_type=type_hints["db_instance_class"])
+            check_type(argname="argument db_instance_storage", value=db_instance_storage, expected_type=type_hints["db_instance_storage"])
+            check_type(argname="argument engine", value=engine, expected_type=type_hints["engine"])
+            check_type(argname="argument engine_version", value=engine_version, expected_type=type_hints["engine_version"])
+            check_type(argname="argument security_ip_list", value=security_ip_list, expected_type=type_hints["security_ip_list"])
+            check_type(argname="argument allocate_public_connection", value=allocate_public_connection, expected_type=type_hints["allocate_public_connection"])
+            check_type(argname="argument archive_backup_keep_count", value=archive_backup_keep_count, expected_type=type_hints["archive_backup_keep_count"])
+            check_type(argname="argument archive_backup_keep_policy", value=archive_backup_keep_policy, expected_type=type_hints["archive_backup_keep_policy"])
+            check_type(argname="argument archive_backup_retention_period", value=archive_backup_retention_period, expected_type=type_hints["archive_backup_retention_period"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument back_up_category", value=back_up_category, expected_type=type_hints["back_up_category"])
+            check_type(argname="argument backup_policy_mode", value=backup_policy_mode, expected_type=type_hints["backup_policy_mode"])
+            check_type(argname="argument backup_retention_period", value=backup_retention_period, expected_type=type_hints["backup_retention_period"])
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument compress_type", value=compress_type, expected_type=type_hints["compress_type"])
+            check_type(argname="argument connection_mode", value=connection_mode, expected_type=type_hints["connection_mode"])
+            check_type(argname="argument connection_string_prefix", value=connection_string_prefix, expected_type=type_hints["connection_string_prefix"])
+            check_type(argname="argument connection_string_type", value=connection_string_type, expected_type=type_hints["connection_string_type"])
+            check_type(argname="argument db_instance_description", value=db_instance_description, expected_type=type_hints["db_instance_description"])
+            check_type(argname="argument db_instance_net_type", value=db_instance_net_type, expected_type=type_hints["db_instance_net_type"])
+            check_type(argname="argument db_instance_storage_type", value=db_instance_storage_type, expected_type=type_hints["db_instance_storage_type"])
+            check_type(argname="argument db_is_ignore_case", value=db_is_ignore_case, expected_type=type_hints["db_is_ignore_case"])
+            check_type(argname="argument db_mappings", value=db_mappings, expected_type=type_hints["db_mappings"])
+            check_type(argname="argument db_param_group_id", value=db_param_group_id, expected_type=type_hints["db_param_group_id"])
+            check_type(argname="argument db_time_zone", value=db_time_zone, expected_type=type_hints["db_time_zone"])
+            check_type(argname="argument dedicated_host_group_id", value=dedicated_host_group_id, expected_type=type_hints["dedicated_host_group_id"])
+            check_type(argname="argument enable_backup_log", value=enable_backup_log, expected_type=type_hints["enable_backup_log"])
+            check_type(argname="argument encryption_key", value=encryption_key, expected_type=type_hints["encryption_key"])
+            check_type(argname="argument high_space_usage_protection", value=high_space_usage_protection, expected_type=type_hints["high_space_usage_protection"])
+            check_type(argname="argument local_log_retention_hours", value=local_log_retention_hours, expected_type=type_hints["local_log_retention_hours"])
+            check_type(argname="argument local_log_retention_space", value=local_log_retention_space, expected_type=type_hints["local_log_retention_space"])
+            check_type(argname="argument log_backup_frequency", value=log_backup_frequency, expected_type=type_hints["log_backup_frequency"])
+            check_type(argname="argument log_backup_local_retention_number", value=log_backup_local_retention_number, expected_type=type_hints["log_backup_local_retention_number"])
+            check_type(argname="argument log_backup_retention_period", value=log_backup_retention_period, expected_type=type_hints["log_backup_retention_period"])
+            check_type(argname="argument maintain_time", value=maintain_time, expected_type=type_hints["maintain_time"])
+            check_type(argname="argument master_username", value=master_username, expected_type=type_hints["master_username"])
+            check_type(argname="argument master_user_password", value=master_user_password, expected_type=type_hints["master_user_password"])
+            check_type(argname="argument master_user_type", value=master_user_type, expected_type=type_hints["master_user_type"])
+            check_type(argname="argument multi_az", value=multi_az, expected_type=type_hints["multi_az"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_type", value=period_type, expected_type=type_hints["period_type"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument preferred_backup_period", value=preferred_backup_period, expected_type=type_hints["preferred_backup_period"])
+            check_type(argname="argument preferred_backup_time", value=preferred_backup_time, expected_type=type_hints["preferred_backup_time"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument released_keep_policy", value=released_keep_policy, expected_type=type_hints["released_keep_policy"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument role_arn", value=role_arn, expected_type=type_hints["role_arn"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument slave_zone_ids", value=slave_zone_ids, expected_type=type_hints["slave_zone_ids"])
+            check_type(argname="argument sql_collector_status", value=sql_collector_status, expected_type=type_hints["sql_collector_status"])
+            check_type(argname="argument ssl_setting", value=ssl_setting, expected_type=type_hints["ssl_setting"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument target_dedicated_host_id_for_log", value=target_dedicated_host_id_for_log, expected_type=type_hints["target_dedicated_host_id_for_log"])
+            check_type(argname="argument target_dedicated_host_id_for_master", value=target_dedicated_host_id_for_master, expected_type=type_hints["target_dedicated_host_id_for_master"])
+            check_type(argname="argument target_dedicated_host_id_for_slave", value=target_dedicated_host_id_for_slave, expected_type=type_hints["target_dedicated_host_id_for_slave"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_class": db_instance_class,
             "db_instance_storage": db_instance_storage,
@@ -2289,7 +2456,7 @@ class DBInstanceSecurityIps(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBInstanceSecurityIpsProps",
+        props: typing.Union["DBInstanceSecurityIpsProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::DBInstanceSecurityIps``.
@@ -2303,6 +2470,12 @@ class DBInstanceSecurityIps(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstanceSecurityIps.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2335,6 +2508,11 @@ class DBInstanceSecurityIpsProps:
         :param db_instance_ip_array_attribute: Property dbInstanceIpArrayAttribute: Security ips to add or remove.
         :param db_instance_ip_array_name: Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstanceSecurityIpsProps.__init__)
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument db_instance_ip_array_attribute", value=db_instance_ip_array_attribute, expected_type=type_hints["db_instance_ip_array_attribute"])
+            check_type(argname="argument db_instance_ip_array_name", value=db_instance_ip_array_name, expected_type=type_hints["db_instance_ip_array_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_id": db_instance_id,
             "db_instance_ip_array_attribute": db_instance_ip_array_attribute,
@@ -2392,7 +2570,7 @@ class Database(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DatabaseProps",
+        props: typing.Union["DatabaseProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::Database``.
@@ -2406,6 +2584,12 @@ class Database(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Database.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2447,6 +2631,12 @@ class DatabaseProps:
         :param db_name: Property dbName: The name of the database you want to create. Note The name must be 2 to 64 characters in length. The name must start with a lowercase letter and end with a lowercase letter or digit. The name can contain lowercase letters, digits, underscores (_), and hyphens (-). The name must be unique in the instance. For more information about invalid characters, see Forbidden keywords table.
         :param db_description: Property dbDescription: The description of the database. The description must be 2 to 256 characters in length. The description must start with a letter and can contain letters, digits, underscores (_), and hyphens (-). Note The description cannot start with http:// or https://.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DatabaseProps.__init__)
+            check_type(argname="argument character_set_name", value=character_set_name, expected_type=type_hints["character_set_name"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+            check_type(argname="argument db_description", value=db_description, expected_type=type_hints["db_description"])
         self._values: typing.Dict[str, typing.Any] = {
             "character_set_name": character_set_name,
             "db_instance_id": db_instance_id,
@@ -2534,7 +2724,7 @@ class PrepayDBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "PrepayDBInstanceProps",
+        props: typing.Union["PrepayDBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::PrepayDBInstance``.
@@ -2548,6 +2738,12 @@ class PrepayDBInstance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PrepayDBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2697,7 +2893,7 @@ class PrepayDBInstanceProps:
         db_instance_net_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_instance_storage_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_is_ignore_case: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosPrepayDBInstance.DBMappingsProperty"]]]] = None,
+        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosPrepayDBInstance.DBMappingsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         db_param_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_time_zone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         dedicated_host_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -2799,6 +2995,70 @@ class PrepayDBInstanceProps:
         :param v_switch_id: Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
         :param zone_id: Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PrepayDBInstanceProps.__init__)
+            check_type(argname="argument commodity_code", value=commodity_code, expected_type=type_hints["commodity_code"])
+            check_type(argname="argument db_instance_class", value=db_instance_class, expected_type=type_hints["db_instance_class"])
+            check_type(argname="argument db_instance_storage", value=db_instance_storage, expected_type=type_hints["db_instance_storage"])
+            check_type(argname="argument engine", value=engine, expected_type=type_hints["engine"])
+            check_type(argname="argument engine_version", value=engine_version, expected_type=type_hints["engine_version"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_type", value=period_type, expected_type=type_hints["period_type"])
+            check_type(argname="argument allocate_public_connection", value=allocate_public_connection, expected_type=type_hints["allocate_public_connection"])
+            check_type(argname="argument archive_backup_keep_count", value=archive_backup_keep_count, expected_type=type_hints["archive_backup_keep_count"])
+            check_type(argname="argument archive_backup_keep_policy", value=archive_backup_keep_policy, expected_type=type_hints["archive_backup_keep_policy"])
+            check_type(argname="argument archive_backup_retention_period", value=archive_backup_retention_period, expected_type=type_hints["archive_backup_retention_period"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument back_up_category", value=back_up_category, expected_type=type_hints["back_up_category"])
+            check_type(argname="argument backup_policy_mode", value=backup_policy_mode, expected_type=type_hints["backup_policy_mode"])
+            check_type(argname="argument backup_retention_period", value=backup_retention_period, expected_type=type_hints["backup_retention_period"])
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument compress_type", value=compress_type, expected_type=type_hints["compress_type"])
+            check_type(argname="argument connection_mode", value=connection_mode, expected_type=type_hints["connection_mode"])
+            check_type(argname="argument connection_string_prefix", value=connection_string_prefix, expected_type=type_hints["connection_string_prefix"])
+            check_type(argname="argument connection_string_type", value=connection_string_type, expected_type=type_hints["connection_string_type"])
+            check_type(argname="argument coupon_code", value=coupon_code, expected_type=type_hints["coupon_code"])
+            check_type(argname="argument db_instance_description", value=db_instance_description, expected_type=type_hints["db_instance_description"])
+            check_type(argname="argument db_instance_net_type", value=db_instance_net_type, expected_type=type_hints["db_instance_net_type"])
+            check_type(argname="argument db_instance_storage_type", value=db_instance_storage_type, expected_type=type_hints["db_instance_storage_type"])
+            check_type(argname="argument db_is_ignore_case", value=db_is_ignore_case, expected_type=type_hints["db_is_ignore_case"])
+            check_type(argname="argument db_mappings", value=db_mappings, expected_type=type_hints["db_mappings"])
+            check_type(argname="argument db_param_group_id", value=db_param_group_id, expected_type=type_hints["db_param_group_id"])
+            check_type(argname="argument db_time_zone", value=db_time_zone, expected_type=type_hints["db_time_zone"])
+            check_type(argname="argument dedicated_host_group_id", value=dedicated_host_group_id, expected_type=type_hints["dedicated_host_group_id"])
+            check_type(argname="argument enable_backup_log", value=enable_backup_log, expected_type=type_hints["enable_backup_log"])
+            check_type(argname="argument encryption_key", value=encryption_key, expected_type=type_hints["encryption_key"])
+            check_type(argname="argument high_space_usage_protection", value=high_space_usage_protection, expected_type=type_hints["high_space_usage_protection"])
+            check_type(argname="argument local_log_retention_hours", value=local_log_retention_hours, expected_type=type_hints["local_log_retention_hours"])
+            check_type(argname="argument local_log_retention_space", value=local_log_retention_space, expected_type=type_hints["local_log_retention_space"])
+            check_type(argname="argument log_backup_frequency", value=log_backup_frequency, expected_type=type_hints["log_backup_frequency"])
+            check_type(argname="argument log_backup_local_retention_number", value=log_backup_local_retention_number, expected_type=type_hints["log_backup_local_retention_number"])
+            check_type(argname="argument log_backup_retention_period", value=log_backup_retention_period, expected_type=type_hints["log_backup_retention_period"])
+            check_type(argname="argument maintain_time", value=maintain_time, expected_type=type_hints["maintain_time"])
+            check_type(argname="argument master_username", value=master_username, expected_type=type_hints["master_username"])
+            check_type(argname="argument master_user_password", value=master_user_password, expected_type=type_hints["master_user_password"])
+            check_type(argname="argument master_user_type", value=master_user_type, expected_type=type_hints["master_user_type"])
+            check_type(argname="argument multi_az", value=multi_az, expected_type=type_hints["multi_az"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument preferred_backup_period", value=preferred_backup_period, expected_type=type_hints["preferred_backup_period"])
+            check_type(argname="argument preferred_backup_time", value=preferred_backup_time, expected_type=type_hints["preferred_backup_time"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument quantity", value=quantity, expected_type=type_hints["quantity"])
+            check_type(argname="argument released_keep_policy", value=released_keep_policy, expected_type=type_hints["released_keep_policy"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument role_arn", value=role_arn, expected_type=type_hints["role_arn"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument slave_zone_ids", value=slave_zone_ids, expected_type=type_hints["slave_zone_ids"])
+            check_type(argname="argument sql_collector_status", value=sql_collector_status, expected_type=type_hints["sql_collector_status"])
+            check_type(argname="argument ssl_setting", value=ssl_setting, expected_type=type_hints["ssl_setting"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument target_dedicated_host_id_for_log", value=target_dedicated_host_id_for_log, expected_type=type_hints["target_dedicated_host_id_for_log"])
+            check_type(argname="argument target_dedicated_host_id_for_master", value=target_dedicated_host_id_for_master, expected_type=type_hints["target_dedicated_host_id_for_master"])
+            check_type(argname="argument target_dedicated_host_id_for_slave", value=target_dedicated_host_id_for_slave, expected_type=type_hints["target_dedicated_host_id_for_slave"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "commodity_code": commodity_code,
             "db_instance_class": db_instance_class,
@@ -3623,7 +3883,7 @@ class ReadOnlyDBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ReadOnlyDBInstanceProps",
+        props: typing.Union["ReadOnlyDBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::ReadOnlyDBInstance``.
@@ -3637,6 +3897,12 @@ class ReadOnlyDBInstance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ReadOnlyDBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3723,6 +3989,25 @@ class ReadOnlyDBInstanceProps:
         :param vpc_id: Property vpcId: The ID of the VPC.
         :param v_switch_id: Property vSwitchId: The ID of the VSwitch.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ReadOnlyDBInstanceProps.__init__)
+            check_type(argname="argument db_instance_class", value=db_instance_class, expected_type=type_hints["db_instance_class"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument db_instance_storage", value=db_instance_storage, expected_type=type_hints["db_instance_storage"])
+            check_type(argname="argument engine_version", value=engine_version, expected_type=type_hints["engine_version"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument db_instance_description", value=db_instance_description, expected_type=type_hints["db_instance_description"])
+            check_type(argname="argument db_instance_storage_type", value=db_instance_storage_type, expected_type=type_hints["db_instance_storage_type"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_type", value=period_type, expected_type=type_hints["period_type"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_class": db_instance_class,
             "db_instance_id": db_instance_id,
@@ -3963,7 +4248,7 @@ class RosADInfo(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosADInfoProps",
+        props: typing.Union["RosADInfoProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::ADInfo``.
@@ -3973,6 +4258,12 @@ class RosADInfo(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosADInfo.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3983,6 +4274,9 @@ class RosADInfo(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosADInfo._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4025,6 +4319,9 @@ class RosADInfo(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosADInfo, "ad_account_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "adAccountName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4040,6 +4337,9 @@ class RosADInfo(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosADInfo, "addns").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "addns", value)
 
     @builtins.property # type: ignore[misc]
@@ -4055,6 +4355,9 @@ class RosADInfo(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosADInfo, "ad_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "adPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -4072,6 +4375,9 @@ class RosADInfo(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosADInfo, "ad_server_ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "adServerIpAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -4087,6 +4393,9 @@ class RosADInfo(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosADInfo, "db_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4096,6 +4405,9 @@ class RosADInfo(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosADInfo, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -4128,6 +4440,13 @@ class RosADInfoProps:
         :param ad_server_ip_address: 
         :param db_instance_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosADInfoProps.__init__)
+            check_type(argname="argument ad_account_name", value=ad_account_name, expected_type=type_hints["ad_account_name"])
+            check_type(argname="argument addns", value=addns, expected_type=type_hints["addns"])
+            check_type(argname="argument ad_password", value=ad_password, expected_type=type_hints["ad_password"])
+            check_type(argname="argument ad_server_ip_address", value=ad_server_ip_address, expected_type=type_hints["ad_server_ip_address"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "ad_account_name": ad_account_name,
             "addns": addns,
@@ -4206,7 +4525,7 @@ class RosAccount(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAccountProps",
+        props: typing.Union["RosAccountProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::Account``.
@@ -4216,6 +4535,12 @@ class RosAccount(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccount.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4226,6 +4551,9 @@ class RosAccount(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccount._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4266,6 +4594,9 @@ class RosAccount(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4281,6 +4612,9 @@ class RosAccount(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -4296,6 +4630,9 @@ class RosAccount(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "db_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4305,6 +4642,9 @@ class RosAccount(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4328,6 +4668,9 @@ class RosAccount(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -4351,6 +4694,9 @@ class RosAccount(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountType", value)
 
 
@@ -4365,7 +4711,7 @@ class RosAccountPrivilege(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAccountPrivilegeProps",
+        props: typing.Union["RosAccountPrivilegeProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::AccountPrivilege``.
@@ -4375,6 +4721,12 @@ class RosAccountPrivilege(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountPrivilege.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4385,6 +4737,9 @@ class RosAccountPrivilege(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountPrivilege._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4411,6 +4766,9 @@ class RosAccountPrivilege(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "account_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4426,6 +4784,9 @@ class RosAccountPrivilege(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "account_privilege").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountPrivilege", value)
 
     @builtins.property # type: ignore[misc]
@@ -4441,6 +4802,9 @@ class RosAccountPrivilege(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "db_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4456,6 +4820,9 @@ class RosAccountPrivilege(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "db_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4466,6 +4833,9 @@ class RosAccountPrivilege(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -4495,6 +4865,12 @@ class RosAccountPrivilegeProps:
         :param db_instance_id: 
         :param db_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountPrivilegeProps.__init__)
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_privilege", value=account_privilege, expected_type=type_hints["account_privilege"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_name": account_name,
             "account_privilege": account_privilege,
@@ -4579,6 +4955,13 @@ class RosAccountProps:
         :param account_description: 
         :param account_type: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountProps.__init__)
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_password", value=account_password, expected_type=type_hints["account_password"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument account_description", value=account_description, expected_type=type_hints["account_description"])
+            check_type(argname="argument account_type", value=account_type, expected_type=type_hints["account_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_name": account_name,
             "account_password": account_password,
@@ -4677,7 +5060,7 @@ class RosDBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBInstanceProps",
+        props: typing.Union["RosDBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::DBInstance``.
@@ -4687,6 +5070,12 @@ class RosDBInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4697,6 +5086,9 @@ class RosDBInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4779,6 +5171,9 @@ class RosDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_instance_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -4796,6 +5191,9 @@ class RosDBInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_instance_storage").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceStorage", value)
 
     @builtins.property # type: ignore[misc]
@@ -4805,6 +5203,9 @@ class RosDBInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4820,6 +5221,9 @@ class RosDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "engine").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "engine", value)
 
     @builtins.property # type: ignore[misc]
@@ -4841,6 +5245,9 @@ class RosDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "engine_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "engineVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -4856,6 +5263,9 @@ class RosDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "security_ip_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityIpList", value)
 
     @builtins.property # type: ignore[misc]
@@ -4873,6 +5283,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "allocate_public_connection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allocatePublicConnection", value)
 
     @builtins.property # type: ignore[misc]
@@ -4898,6 +5311,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "archive_backup_keep_count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "archiveBackupKeepCount", value)
 
     @builtins.property # type: ignore[misc]
@@ -4922,6 +5338,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "archive_backup_keep_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "archiveBackupKeepPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -4942,6 +5361,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "archive_backup_retention_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "archiveBackupRetentionPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -4963,6 +5385,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "auto_renew").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenew", value)
 
     @builtins.property # type: ignore[misc]
@@ -4985,6 +5410,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "back_up_category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backUpCategory", value)
 
     @builtins.property # type: ignore[misc]
@@ -5006,6 +5434,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "backup_policy_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupPolicyMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -5023,6 +5454,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "backup_retention_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupRetentionPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -5046,6 +5480,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "category", value)
 
     @builtins.property # type: ignore[misc]
@@ -5072,6 +5509,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "compress_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "compressType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5089,6 +5529,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "connection_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -5110,6 +5553,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "connection_string_prefix").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionStringPrefix", value)
 
     @builtins.property # type: ignore[misc]
@@ -5127,6 +5573,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "connection_string_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionStringType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5144,6 +5593,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_instance_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -5161,6 +5613,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_instance_net_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceNetType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5185,6 +5640,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_instance_storage_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceStorageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5206,6 +5664,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_is_ignore_case").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbIsIgnoreCase", value)
 
     @builtins.property # type: ignore[misc]
@@ -5223,6 +5684,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosDBInstance.DBMappingsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_mappings").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbMappings", value)
 
     @builtins.property # type: ignore[misc]
@@ -5240,6 +5704,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_param_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbParamGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5257,6 +5724,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_time_zone").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbTimeZone", value)
 
     @builtins.property # type: ignore[misc]
@@ -5274,6 +5744,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "dedicated_host_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dedicatedHostGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5296,6 +5769,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "enable_backup_log").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableBackupLog", value)
 
     @builtins.property # type: ignore[misc]
@@ -5313,6 +5789,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "encryption_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "encryptionKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -5335,6 +5814,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "high_space_usage_protection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "highSpaceUsageProtection", value)
 
     @builtins.property # type: ignore[misc]
@@ -5357,6 +5839,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "local_log_retention_hours").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localLogRetentionHours", value)
 
     @builtins.property # type: ignore[misc]
@@ -5380,6 +5865,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "local_log_retention_space").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localLogRetentionSpace", value)
 
     @builtins.property # type: ignore[misc]
@@ -5402,6 +5890,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "log_backup_frequency").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logBackupFrequency", value)
 
     @builtins.property # type: ignore[misc]
@@ -5422,6 +5913,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "log_backup_local_retention_number").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logBackupLocalRetentionNumber", value)
 
     @builtins.property # type: ignore[misc]
@@ -5444,6 +5938,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "log_backup_retention_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logBackupRetentionPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -5461,6 +5958,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "maintain_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maintainTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -5478,6 +5978,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "master_username").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUsername", value)
 
     @builtins.property # type: ignore[misc]
@@ -5495,6 +5998,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "master_user_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUserPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -5518,6 +6024,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "master_user_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUserType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5535,6 +6044,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "multi_az").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "multiAz", value)
 
     @builtins.property # type: ignore[misc]
@@ -5552,6 +6064,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5573,6 +6088,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -5590,6 +6108,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "period_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "periodType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5607,6 +6128,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "port", value)
 
     @builtins.property # type: ignore[misc]
@@ -5624,6 +6148,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "preferred_backup_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preferredBackupPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -5641,6 +6168,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "preferred_backup_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preferredBackupTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -5658,6 +6188,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "private_ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "privateIpAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -5680,6 +6213,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "released_keep_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "releasedKeepPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -5697,6 +6233,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5714,6 +6253,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "role_arn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "roleArn", value)
 
     @builtins.property # type: ignore[misc]
@@ -5736,6 +6278,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "security_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5753,6 +6298,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "slave_zone_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slaveZoneIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -5773,6 +6321,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "sql_collector_status").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sqlCollectorStatus", value)
 
     @builtins.property # type: ignore[misc]
@@ -5796,6 +6347,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "ssl_setting").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sslSetting", value)
 
     @builtins.property # type: ignore[misc]
@@ -5825,6 +6379,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Mapping[builtins.str, typing.Any]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -5842,6 +6399,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "target_dedicated_host_id_for_log").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetDedicatedHostIdForLog", value)
 
     @builtins.property # type: ignore[misc]
@@ -5859,6 +6419,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "target_dedicated_host_id_for_master").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetDedicatedHostIdForMaster", value)
 
     @builtins.property # type: ignore[misc]
@@ -5876,6 +6439,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "target_dedicated_host_id_for_slave").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetDedicatedHostIdForSlave", value)
 
     @builtins.property # type: ignore[misc]
@@ -5893,6 +6459,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5910,6 +6479,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5927,6 +6499,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @jsii.data_type(
@@ -5951,6 +6526,11 @@ class RosDBInstance(
             :param db_name: 
             :param db_description: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDBInstance.DBMappingsProperty.__init__)
+                check_type(argname="argument character_set_name", value=character_set_name, expected_type=type_hints["character_set_name"])
+                check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+                check_type(argname="argument db_description", value=db_description, expected_type=type_hints["db_description"])
             self._values: typing.Dict[str, typing.Any] = {
                 "character_set_name": character_set_name,
                 "db_name": db_name,
@@ -6011,7 +6591,7 @@ class RosDBInstanceClone(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBInstanceCloneProps",
+        props: typing.Union["RosDBInstanceCloneProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::DBInstanceClone``.
@@ -6021,6 +6601,12 @@ class RosDBInstanceClone(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceClone.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6031,6 +6617,9 @@ class RosDBInstanceClone(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceClone._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6113,6 +6702,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "db_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6122,6 +6714,9 @@ class RosDBInstanceClone(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6137,6 +6732,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6154,6 +6752,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "allocate_public_connection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allocatePublicConnection", value)
 
     @builtins.property # type: ignore[misc]
@@ -6175,6 +6776,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "backup_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6192,6 +6796,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "backup_retention_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupRetentionPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -6214,6 +6821,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "backup_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6237,6 +6847,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "category", value)
 
     @builtins.property # type: ignore[misc]
@@ -6258,6 +6871,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "connection_string_prefix").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionStringPrefix", value)
 
     @builtins.property # type: ignore[misc]
@@ -6275,6 +6891,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "connection_string_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionStringType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6292,6 +6911,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "db_instance_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -6309,6 +6931,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "db_instance_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -6326,6 +6951,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "db_instance_storage").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceStorage", value)
 
     @builtins.property # type: ignore[misc]
@@ -6350,6 +6978,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "db_instance_storage_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceStorageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6367,6 +6998,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosDBInstanceClone.DBMappingsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "db_mappings").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbMappings", value)
 
     @builtins.property # type: ignore[misc]
@@ -6384,6 +7018,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "db_names").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbNames", value)
 
     @builtins.property # type: ignore[misc]
@@ -6401,6 +7038,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "dedicated_host_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dedicatedHostGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6424,6 +7064,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "instance_network_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceNetworkType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6441,6 +7084,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "maintain_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maintainTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -6458,6 +7104,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "master_username").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUsername", value)
 
     @builtins.property # type: ignore[misc]
@@ -6475,6 +7124,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "master_user_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUserPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -6498,6 +7150,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "master_user_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUserType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6519,6 +7174,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -6536,6 +7194,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "period_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "periodType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6553,6 +7214,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "port", value)
 
     @builtins.property # type: ignore[misc]
@@ -6570,6 +7234,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "preferred_backup_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preferredBackupPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -6587,6 +7254,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "preferred_backup_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preferredBackupTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -6604,6 +7274,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "private_ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "privateIpAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -6625,6 +7298,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "restore_table").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restoreTable", value)
 
     @builtins.property # type: ignore[misc]
@@ -6647,6 +7323,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "restore_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "restoreTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -6669,6 +7348,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "security_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6686,6 +7368,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "security_ip_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityIpList", value)
 
     @builtins.property # type: ignore[misc]
@@ -6703,6 +7388,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "slave_zone_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slaveZoneIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -6723,6 +7411,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "sql_collector_status").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sqlCollectorStatus", value)
 
     @builtins.property # type: ignore[misc]
@@ -6746,6 +7437,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "ssl_setting").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sslSetting", value)
 
     @builtins.property # type: ignore[misc]
@@ -6763,6 +7457,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosDBInstanceClone.TableMetaProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "table_meta").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tableMeta", value)
 
     @builtins.property # type: ignore[misc]
@@ -6792,6 +7489,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Mapping[builtins.str, typing.Any]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -6809,6 +7509,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "timeout_in_minutes").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "timeoutInMinutes", value)
 
     @builtins.property # type: ignore[misc]
@@ -6826,6 +7529,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6843,6 +7549,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6860,6 +7569,9 @@ class RosDBInstanceClone(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceClone, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @jsii.data_type(
@@ -6884,6 +7596,11 @@ class RosDBInstanceClone(
             :param db_name: 
             :param db_description: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDBInstanceClone.DBMappingsProperty.__init__)
+                check_type(argname="argument character_set_name", value=character_set_name, expected_type=type_hints["character_set_name"])
+                check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+                check_type(argname="argument db_description", value=db_description, expected_type=type_hints["db_description"])
             self._values: typing.Dict[str, typing.Any] = {
                 "character_set_name": character_set_name,
                 "db_name": db_name,
@@ -6948,7 +7665,7 @@ class RosDBInstanceClone(
             *,
             name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             new_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            tables: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosDBInstanceClone.TablesProperty"]]]] = None,
+            tables: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDBInstanceClone.TablesProperty", typing.Dict[str, typing.Any]]]]]] = None,
             type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ) -> None:
             '''
@@ -6957,6 +7674,12 @@ class RosDBInstanceClone(
             :param tables: 
             :param type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDBInstanceClone.TableMetaProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument new_name", value=new_name, expected_type=type_hints["new_name"])
+                check_type(argname="argument tables", value=tables, expected_type=type_hints["tables"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -7036,6 +7759,11 @@ class RosDBInstanceClone(
             :param new_name: 
             :param type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDBInstanceClone.TablesProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument new_name", value=new_name, expected_type=type_hints["new_name"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -7149,7 +7877,7 @@ class RosDBInstanceCloneProps:
         db_instance_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_instance_storage: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         db_instance_storage_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosDBInstanceClone.DBMappingsProperty]]]] = None,
+        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosDBInstanceClone.DBMappingsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         db_names: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         dedicated_host_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         instance_network_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -7170,7 +7898,7 @@ class RosDBInstanceCloneProps:
         slave_zone_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         sql_collector_status: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ssl_setting: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        table_meta: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosDBInstanceClone.TableMetaProperty]]]] = None,
+        table_meta: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosDBInstanceClone.TableMetaProperty, typing.Dict[str, typing.Any]]]]]] = None,
         tags: typing.Optional[typing.Mapping[builtins.str, typing.Any]] = None,
         timeout_in_minutes: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         vpc_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -7220,6 +7948,48 @@ class RosDBInstanceCloneProps:
         :param v_switch_id: 
         :param zone_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceCloneProps.__init__)
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument allocate_public_connection", value=allocate_public_connection, expected_type=type_hints["allocate_public_connection"])
+            check_type(argname="argument backup_id", value=backup_id, expected_type=type_hints["backup_id"])
+            check_type(argname="argument backup_retention_period", value=backup_retention_period, expected_type=type_hints["backup_retention_period"])
+            check_type(argname="argument backup_type", value=backup_type, expected_type=type_hints["backup_type"])
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument connection_string_prefix", value=connection_string_prefix, expected_type=type_hints["connection_string_prefix"])
+            check_type(argname="argument connection_string_type", value=connection_string_type, expected_type=type_hints["connection_string_type"])
+            check_type(argname="argument db_instance_class", value=db_instance_class, expected_type=type_hints["db_instance_class"])
+            check_type(argname="argument db_instance_description", value=db_instance_description, expected_type=type_hints["db_instance_description"])
+            check_type(argname="argument db_instance_storage", value=db_instance_storage, expected_type=type_hints["db_instance_storage"])
+            check_type(argname="argument db_instance_storage_type", value=db_instance_storage_type, expected_type=type_hints["db_instance_storage_type"])
+            check_type(argname="argument db_mappings", value=db_mappings, expected_type=type_hints["db_mappings"])
+            check_type(argname="argument db_names", value=db_names, expected_type=type_hints["db_names"])
+            check_type(argname="argument dedicated_host_group_id", value=dedicated_host_group_id, expected_type=type_hints["dedicated_host_group_id"])
+            check_type(argname="argument instance_network_type", value=instance_network_type, expected_type=type_hints["instance_network_type"])
+            check_type(argname="argument maintain_time", value=maintain_time, expected_type=type_hints["maintain_time"])
+            check_type(argname="argument master_username", value=master_username, expected_type=type_hints["master_username"])
+            check_type(argname="argument master_user_password", value=master_user_password, expected_type=type_hints["master_user_password"])
+            check_type(argname="argument master_user_type", value=master_user_type, expected_type=type_hints["master_user_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_type", value=period_type, expected_type=type_hints["period_type"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument preferred_backup_period", value=preferred_backup_period, expected_type=type_hints["preferred_backup_period"])
+            check_type(argname="argument preferred_backup_time", value=preferred_backup_time, expected_type=type_hints["preferred_backup_time"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument restore_table", value=restore_table, expected_type=type_hints["restore_table"])
+            check_type(argname="argument restore_time", value=restore_time, expected_type=type_hints["restore_time"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument security_ip_list", value=security_ip_list, expected_type=type_hints["security_ip_list"])
+            check_type(argname="argument slave_zone_ids", value=slave_zone_ids, expected_type=type_hints["slave_zone_ids"])
+            check_type(argname="argument sql_collector_status", value=sql_collector_status, expected_type=type_hints["sql_collector_status"])
+            check_type(argname="argument ssl_setting", value=ssl_setting, expected_type=type_hints["ssl_setting"])
+            check_type(argname="argument table_meta", value=table_meta, expected_type=type_hints["table_meta"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument timeout_in_minutes", value=timeout_in_minutes, expected_type=type_hints["timeout_in_minutes"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_id": db_instance_id,
             "pay_type": pay_type,
@@ -7799,7 +8569,7 @@ class RosDBInstanceParameterGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBInstanceParameterGroupProps",
+        props: typing.Union["RosDBInstanceParameterGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::DBInstanceParameterGroup``.
@@ -7809,6 +8579,12 @@ class RosDBInstanceParameterGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceParameterGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -7819,6 +8595,9 @@ class RosDBInstanceParameterGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceParameterGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -7845,6 +8624,9 @@ class RosDBInstanceParameterGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceParameterGroup, "db_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -7855,6 +8637,9 @@ class RosDBInstanceParameterGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceParameterGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -7872,6 +8657,9 @@ class RosDBInstanceParameterGroup(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosDBInstanceParameterGroup.ParametersProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceParameterGroup, "parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "parameters", value)
 
     @builtins.property # type: ignore[misc]
@@ -7889,6 +8677,9 @@ class RosDBInstanceParameterGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceParameterGroup, "forcerestart").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "forcerestart", value)
 
     @jsii.data_type(
@@ -7907,6 +8698,10 @@ class RosDBInstanceParameterGroup(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDBInstanceParameterGroup.ParametersProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
                 "value": value,
@@ -7956,7 +8751,7 @@ class RosDBInstanceParameterGroupProps:
         self,
         *,
         db_instance_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        parameters: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosDBInstanceParameterGroup.ParametersProperty]]],
+        parameters: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosDBInstanceParameterGroup.ParametersProperty, typing.Dict[str, typing.Any]]]]],
         forcerestart: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::RDS::DBInstanceParameterGroup``.
@@ -7965,6 +8760,11 @@ class RosDBInstanceParameterGroupProps:
         :param parameters: 
         :param forcerestart: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceParameterGroupProps.__init__)
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument forcerestart", value=forcerestart, expected_type=type_hints["forcerestart"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_id": db_instance_id,
             "parameters": parameters,
@@ -8106,7 +8906,7 @@ class RosDBInstanceProps:
         db_instance_net_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_instance_storage_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_is_ignore_case: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosDBInstance.DBMappingsProperty]]]] = None,
+        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosDBInstance.DBMappingsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         db_param_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_time_zone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         dedicated_host_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -8208,6 +9008,68 @@ class RosDBInstanceProps:
         :param v_switch_id: 
         :param zone_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceProps.__init__)
+            check_type(argname="argument db_instance_class", value=db_instance_class, expected_type=type_hints["db_instance_class"])
+            check_type(argname="argument db_instance_storage", value=db_instance_storage, expected_type=type_hints["db_instance_storage"])
+            check_type(argname="argument engine", value=engine, expected_type=type_hints["engine"])
+            check_type(argname="argument engine_version", value=engine_version, expected_type=type_hints["engine_version"])
+            check_type(argname="argument security_ip_list", value=security_ip_list, expected_type=type_hints["security_ip_list"])
+            check_type(argname="argument allocate_public_connection", value=allocate_public_connection, expected_type=type_hints["allocate_public_connection"])
+            check_type(argname="argument archive_backup_keep_count", value=archive_backup_keep_count, expected_type=type_hints["archive_backup_keep_count"])
+            check_type(argname="argument archive_backup_keep_policy", value=archive_backup_keep_policy, expected_type=type_hints["archive_backup_keep_policy"])
+            check_type(argname="argument archive_backup_retention_period", value=archive_backup_retention_period, expected_type=type_hints["archive_backup_retention_period"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument back_up_category", value=back_up_category, expected_type=type_hints["back_up_category"])
+            check_type(argname="argument backup_policy_mode", value=backup_policy_mode, expected_type=type_hints["backup_policy_mode"])
+            check_type(argname="argument backup_retention_period", value=backup_retention_period, expected_type=type_hints["backup_retention_period"])
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument compress_type", value=compress_type, expected_type=type_hints["compress_type"])
+            check_type(argname="argument connection_mode", value=connection_mode, expected_type=type_hints["connection_mode"])
+            check_type(argname="argument connection_string_prefix", value=connection_string_prefix, expected_type=type_hints["connection_string_prefix"])
+            check_type(argname="argument connection_string_type", value=connection_string_type, expected_type=type_hints["connection_string_type"])
+            check_type(argname="argument db_instance_description", value=db_instance_description, expected_type=type_hints["db_instance_description"])
+            check_type(argname="argument db_instance_net_type", value=db_instance_net_type, expected_type=type_hints["db_instance_net_type"])
+            check_type(argname="argument db_instance_storage_type", value=db_instance_storage_type, expected_type=type_hints["db_instance_storage_type"])
+            check_type(argname="argument db_is_ignore_case", value=db_is_ignore_case, expected_type=type_hints["db_is_ignore_case"])
+            check_type(argname="argument db_mappings", value=db_mappings, expected_type=type_hints["db_mappings"])
+            check_type(argname="argument db_param_group_id", value=db_param_group_id, expected_type=type_hints["db_param_group_id"])
+            check_type(argname="argument db_time_zone", value=db_time_zone, expected_type=type_hints["db_time_zone"])
+            check_type(argname="argument dedicated_host_group_id", value=dedicated_host_group_id, expected_type=type_hints["dedicated_host_group_id"])
+            check_type(argname="argument enable_backup_log", value=enable_backup_log, expected_type=type_hints["enable_backup_log"])
+            check_type(argname="argument encryption_key", value=encryption_key, expected_type=type_hints["encryption_key"])
+            check_type(argname="argument high_space_usage_protection", value=high_space_usage_protection, expected_type=type_hints["high_space_usage_protection"])
+            check_type(argname="argument local_log_retention_hours", value=local_log_retention_hours, expected_type=type_hints["local_log_retention_hours"])
+            check_type(argname="argument local_log_retention_space", value=local_log_retention_space, expected_type=type_hints["local_log_retention_space"])
+            check_type(argname="argument log_backup_frequency", value=log_backup_frequency, expected_type=type_hints["log_backup_frequency"])
+            check_type(argname="argument log_backup_local_retention_number", value=log_backup_local_retention_number, expected_type=type_hints["log_backup_local_retention_number"])
+            check_type(argname="argument log_backup_retention_period", value=log_backup_retention_period, expected_type=type_hints["log_backup_retention_period"])
+            check_type(argname="argument maintain_time", value=maintain_time, expected_type=type_hints["maintain_time"])
+            check_type(argname="argument master_username", value=master_username, expected_type=type_hints["master_username"])
+            check_type(argname="argument master_user_password", value=master_user_password, expected_type=type_hints["master_user_password"])
+            check_type(argname="argument master_user_type", value=master_user_type, expected_type=type_hints["master_user_type"])
+            check_type(argname="argument multi_az", value=multi_az, expected_type=type_hints["multi_az"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_type", value=period_type, expected_type=type_hints["period_type"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument preferred_backup_period", value=preferred_backup_period, expected_type=type_hints["preferred_backup_period"])
+            check_type(argname="argument preferred_backup_time", value=preferred_backup_time, expected_type=type_hints["preferred_backup_time"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument released_keep_policy", value=released_keep_policy, expected_type=type_hints["released_keep_policy"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument role_arn", value=role_arn, expected_type=type_hints["role_arn"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument slave_zone_ids", value=slave_zone_ids, expected_type=type_hints["slave_zone_ids"])
+            check_type(argname="argument sql_collector_status", value=sql_collector_status, expected_type=type_hints["sql_collector_status"])
+            check_type(argname="argument ssl_setting", value=ssl_setting, expected_type=type_hints["ssl_setting"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument target_dedicated_host_id_for_log", value=target_dedicated_host_id_for_log, expected_type=type_hints["target_dedicated_host_id_for_log"])
+            check_type(argname="argument target_dedicated_host_id_for_master", value=target_dedicated_host_id_for_master, expected_type=type_hints["target_dedicated_host_id_for_master"])
+            check_type(argname="argument target_dedicated_host_id_for_slave", value=target_dedicated_host_id_for_slave, expected_type=type_hints["target_dedicated_host_id_for_slave"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_class": db_instance_class,
             "db_instance_storage": db_instance_storage,
@@ -9088,7 +9950,7 @@ class RosDBInstanceSecurityIps(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBInstanceSecurityIpsProps",
+        props: typing.Union["RosDBInstanceSecurityIpsProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::DBInstanceSecurityIps``.
@@ -9098,6 +9960,12 @@ class RosDBInstanceSecurityIps(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceSecurityIps.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -9108,6 +9976,9 @@ class RosDBInstanceSecurityIps(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceSecurityIps._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -9142,6 +10013,9 @@ class RosDBInstanceSecurityIps(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceSecurityIps, "db_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -9159,6 +10033,9 @@ class RosDBInstanceSecurityIps(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceSecurityIps, "db_instance_ip_array_attribute").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceIpArrayAttribute", value)
 
     @builtins.property # type: ignore[misc]
@@ -9168,6 +10045,9 @@ class RosDBInstanceSecurityIps(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceSecurityIps, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -9185,6 +10065,9 @@ class RosDBInstanceSecurityIps(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstanceSecurityIps, "db_instance_ip_array_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceIpArrayName", value)
 
 
@@ -9211,6 +10094,11 @@ class RosDBInstanceSecurityIpsProps:
         :param db_instance_ip_array_attribute: 
         :param db_instance_ip_array_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceSecurityIpsProps.__init__)
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument db_instance_ip_array_attribute", value=db_instance_ip_array_attribute, expected_type=type_hints["db_instance_ip_array_attribute"])
+            check_type(argname="argument db_instance_ip_array_name", value=db_instance_ip_array_name, expected_type=type_hints["db_instance_ip_array_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_id": db_instance_id,
             "db_instance_ip_array_attribute": db_instance_ip_array_attribute,
@@ -9271,7 +10159,7 @@ class RosDatabase(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDatabaseProps",
+        props: typing.Union["RosDatabaseProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::Database``.
@@ -9281,6 +10169,12 @@ class RosDatabase(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDatabase.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -9291,6 +10185,9 @@ class RosDatabase(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDatabase._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -9345,6 +10242,9 @@ class RosDatabase(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDatabase, "character_set_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "characterSetName", value)
 
     @builtins.property # type: ignore[misc]
@@ -9360,6 +10260,9 @@ class RosDatabase(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDatabase, "db_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -9383,6 +10286,9 @@ class RosDatabase(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDatabase, "db_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbName", value)
 
     @builtins.property # type: ignore[misc]
@@ -9392,6 +10298,9 @@ class RosDatabase(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDatabase, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -9414,6 +10323,9 @@ class RosDatabase(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDatabase, "db_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbDescription", value)
 
 
@@ -9443,6 +10355,12 @@ class RosDatabaseProps:
         :param db_name: 
         :param db_description: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDatabaseProps.__init__)
+            check_type(argname="argument character_set_name", value=character_set_name, expected_type=type_hints["character_set_name"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+            check_type(argname="argument db_description", value=db_description, expected_type=type_hints["db_description"])
         self._values: typing.Dict[str, typing.Any] = {
             "character_set_name": character_set_name,
             "db_instance_id": db_instance_id,
@@ -9536,7 +10454,7 @@ class RosPrepayDBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosPrepayDBInstanceProps",
+        props: typing.Union["RosPrepayDBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::PrepayDBInstance``.
@@ -9546,6 +10464,12 @@ class RosPrepayDBInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPrepayDBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -9556,6 +10480,9 @@ class RosPrepayDBInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPrepayDBInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -9646,6 +10573,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "commodity_code").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "commodityCode", value)
 
     @builtins.property # type: ignore[misc]
@@ -9661,6 +10591,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_instance_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -9678,6 +10611,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_instance_storage").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceStorage", value)
 
     @builtins.property # type: ignore[misc]
@@ -9687,6 +10623,9 @@ class RosPrepayDBInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -9702,6 +10641,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "engine").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "engine", value)
 
     @builtins.property # type: ignore[misc]
@@ -9723,6 +10665,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "engine_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "engineVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -9738,6 +10683,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -9753,6 +10701,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "period_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "periodType", value)
 
     @builtins.property # type: ignore[misc]
@@ -9770,6 +10721,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "allocate_public_connection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allocatePublicConnection", value)
 
     @builtins.property # type: ignore[misc]
@@ -9795,6 +10749,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "archive_backup_keep_count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "archiveBackupKeepCount", value)
 
     @builtins.property # type: ignore[misc]
@@ -9819,6 +10776,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "archive_backup_keep_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "archiveBackupKeepPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -9839,6 +10799,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "archive_backup_retention_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "archiveBackupRetentionPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -9856,6 +10819,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "auto_pay").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPay", value)
 
     @builtins.property # type: ignore[misc]
@@ -9873,6 +10839,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "auto_renew").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenew", value)
 
     @builtins.property # type: ignore[misc]
@@ -9895,6 +10864,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "back_up_category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backUpCategory", value)
 
     @builtins.property # type: ignore[misc]
@@ -9916,6 +10888,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "backup_policy_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupPolicyMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -9933,6 +10908,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "backup_retention_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupRetentionPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -9956,6 +10934,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "category", value)
 
     @builtins.property # type: ignore[misc]
@@ -9982,6 +10963,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "compress_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "compressType", value)
 
     @builtins.property # type: ignore[misc]
@@ -9999,6 +10983,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "connection_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -10020,6 +11007,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "connection_string_prefix").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionStringPrefix", value)
 
     @builtins.property # type: ignore[misc]
@@ -10037,6 +11027,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "connection_string_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionStringType", value)
 
     @builtins.property # type: ignore[misc]
@@ -10054,6 +11047,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "coupon_code").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "couponCode", value)
 
     @builtins.property # type: ignore[misc]
@@ -10071,6 +11067,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_instance_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -10088,6 +11087,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_instance_net_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceNetType", value)
 
     @builtins.property # type: ignore[misc]
@@ -10112,6 +11114,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_instance_storage_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceStorageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -10133,6 +11138,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_is_ignore_case").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbIsIgnoreCase", value)
 
     @builtins.property # type: ignore[misc]
@@ -10150,6 +11158,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosPrepayDBInstance.DBMappingsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_mappings").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbMappings", value)
 
     @builtins.property # type: ignore[misc]
@@ -10167,6 +11178,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_param_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbParamGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -10184,6 +11198,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "db_time_zone").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbTimeZone", value)
 
     @builtins.property # type: ignore[misc]
@@ -10201,6 +11218,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "dedicated_host_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dedicatedHostGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -10223,6 +11243,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "enable_backup_log").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableBackupLog", value)
 
     @builtins.property # type: ignore[misc]
@@ -10240,6 +11263,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "encryption_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "encryptionKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -10262,6 +11288,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "high_space_usage_protection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "highSpaceUsageProtection", value)
 
     @builtins.property # type: ignore[misc]
@@ -10284,6 +11313,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "local_log_retention_hours").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localLogRetentionHours", value)
 
     @builtins.property # type: ignore[misc]
@@ -10307,6 +11339,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "local_log_retention_space").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localLogRetentionSpace", value)
 
     @builtins.property # type: ignore[misc]
@@ -10329,6 +11364,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "log_backup_frequency").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logBackupFrequency", value)
 
     @builtins.property # type: ignore[misc]
@@ -10349,6 +11387,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "log_backup_local_retention_number").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logBackupLocalRetentionNumber", value)
 
     @builtins.property # type: ignore[misc]
@@ -10371,6 +11412,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "log_backup_retention_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logBackupRetentionPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -10388,6 +11432,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "maintain_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maintainTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -10405,6 +11452,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "master_username").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUsername", value)
 
     @builtins.property # type: ignore[misc]
@@ -10422,6 +11472,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "master_user_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUserPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -10445,6 +11498,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "master_user_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterUserType", value)
 
     @builtins.property # type: ignore[misc]
@@ -10462,6 +11518,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "multi_az").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "multiAz", value)
 
     @builtins.property # type: ignore[misc]
@@ -10479,6 +11538,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "port", value)
 
     @builtins.property # type: ignore[misc]
@@ -10496,6 +11558,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "preferred_backup_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preferredBackupPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -10513,6 +11578,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "preferred_backup_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preferredBackupTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -10530,6 +11598,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "private_ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "privateIpAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -10547,6 +11618,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "quantity").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "quantity", value)
 
     @builtins.property # type: ignore[misc]
@@ -10569,6 +11643,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "released_keep_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "releasedKeepPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -10586,6 +11663,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -10603,6 +11683,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "role_arn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "roleArn", value)
 
     @builtins.property # type: ignore[misc]
@@ -10625,6 +11708,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "security_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -10642,6 +11728,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "slave_zone_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slaveZoneIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -10662,6 +11751,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "sql_collector_status").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sqlCollectorStatus", value)
 
     @builtins.property # type: ignore[misc]
@@ -10685,6 +11777,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "ssl_setting").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sslSetting", value)
 
     @builtins.property # type: ignore[misc]
@@ -10714,6 +11809,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Mapping[builtins.str, typing.Any]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -10731,6 +11829,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "target_dedicated_host_id_for_log").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetDedicatedHostIdForLog", value)
 
     @builtins.property # type: ignore[misc]
@@ -10748,6 +11849,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "target_dedicated_host_id_for_master").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetDedicatedHostIdForMaster", value)
 
     @builtins.property # type: ignore[misc]
@@ -10765,6 +11869,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "target_dedicated_host_id_for_slave").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetDedicatedHostIdForSlave", value)
 
     @builtins.property # type: ignore[misc]
@@ -10782,6 +11889,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -10799,6 +11909,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -10816,6 +11929,9 @@ class RosPrepayDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPrepayDBInstance, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @jsii.data_type(
@@ -10840,6 +11956,11 @@ class RosPrepayDBInstance(
             :param db_name: 
             :param db_description: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosPrepayDBInstance.DBMappingsProperty.__init__)
+                check_type(argname="argument character_set_name", value=character_set_name, expected_type=type_hints["character_set_name"])
+                check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+                check_type(argname="argument db_description", value=db_description, expected_type=type_hints["db_description"])
             self._values: typing.Dict[str, typing.Any] = {
                 "character_set_name": character_set_name,
                 "db_name": db_name,
@@ -10987,7 +12108,7 @@ class RosPrepayDBInstanceProps:
         db_instance_net_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_instance_storage_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_is_ignore_case: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosPrepayDBInstance.DBMappingsProperty]]]] = None,
+        db_mappings: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosPrepayDBInstance.DBMappingsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         db_param_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_time_zone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         dedicated_host_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -11089,6 +12210,70 @@ class RosPrepayDBInstanceProps:
         :param v_switch_id: 
         :param zone_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPrepayDBInstanceProps.__init__)
+            check_type(argname="argument commodity_code", value=commodity_code, expected_type=type_hints["commodity_code"])
+            check_type(argname="argument db_instance_class", value=db_instance_class, expected_type=type_hints["db_instance_class"])
+            check_type(argname="argument db_instance_storage", value=db_instance_storage, expected_type=type_hints["db_instance_storage"])
+            check_type(argname="argument engine", value=engine, expected_type=type_hints["engine"])
+            check_type(argname="argument engine_version", value=engine_version, expected_type=type_hints["engine_version"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_type", value=period_type, expected_type=type_hints["period_type"])
+            check_type(argname="argument allocate_public_connection", value=allocate_public_connection, expected_type=type_hints["allocate_public_connection"])
+            check_type(argname="argument archive_backup_keep_count", value=archive_backup_keep_count, expected_type=type_hints["archive_backup_keep_count"])
+            check_type(argname="argument archive_backup_keep_policy", value=archive_backup_keep_policy, expected_type=type_hints["archive_backup_keep_policy"])
+            check_type(argname="argument archive_backup_retention_period", value=archive_backup_retention_period, expected_type=type_hints["archive_backup_retention_period"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument back_up_category", value=back_up_category, expected_type=type_hints["back_up_category"])
+            check_type(argname="argument backup_policy_mode", value=backup_policy_mode, expected_type=type_hints["backup_policy_mode"])
+            check_type(argname="argument backup_retention_period", value=backup_retention_period, expected_type=type_hints["backup_retention_period"])
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument compress_type", value=compress_type, expected_type=type_hints["compress_type"])
+            check_type(argname="argument connection_mode", value=connection_mode, expected_type=type_hints["connection_mode"])
+            check_type(argname="argument connection_string_prefix", value=connection_string_prefix, expected_type=type_hints["connection_string_prefix"])
+            check_type(argname="argument connection_string_type", value=connection_string_type, expected_type=type_hints["connection_string_type"])
+            check_type(argname="argument coupon_code", value=coupon_code, expected_type=type_hints["coupon_code"])
+            check_type(argname="argument db_instance_description", value=db_instance_description, expected_type=type_hints["db_instance_description"])
+            check_type(argname="argument db_instance_net_type", value=db_instance_net_type, expected_type=type_hints["db_instance_net_type"])
+            check_type(argname="argument db_instance_storage_type", value=db_instance_storage_type, expected_type=type_hints["db_instance_storage_type"])
+            check_type(argname="argument db_is_ignore_case", value=db_is_ignore_case, expected_type=type_hints["db_is_ignore_case"])
+            check_type(argname="argument db_mappings", value=db_mappings, expected_type=type_hints["db_mappings"])
+            check_type(argname="argument db_param_group_id", value=db_param_group_id, expected_type=type_hints["db_param_group_id"])
+            check_type(argname="argument db_time_zone", value=db_time_zone, expected_type=type_hints["db_time_zone"])
+            check_type(argname="argument dedicated_host_group_id", value=dedicated_host_group_id, expected_type=type_hints["dedicated_host_group_id"])
+            check_type(argname="argument enable_backup_log", value=enable_backup_log, expected_type=type_hints["enable_backup_log"])
+            check_type(argname="argument encryption_key", value=encryption_key, expected_type=type_hints["encryption_key"])
+            check_type(argname="argument high_space_usage_protection", value=high_space_usage_protection, expected_type=type_hints["high_space_usage_protection"])
+            check_type(argname="argument local_log_retention_hours", value=local_log_retention_hours, expected_type=type_hints["local_log_retention_hours"])
+            check_type(argname="argument local_log_retention_space", value=local_log_retention_space, expected_type=type_hints["local_log_retention_space"])
+            check_type(argname="argument log_backup_frequency", value=log_backup_frequency, expected_type=type_hints["log_backup_frequency"])
+            check_type(argname="argument log_backup_local_retention_number", value=log_backup_local_retention_number, expected_type=type_hints["log_backup_local_retention_number"])
+            check_type(argname="argument log_backup_retention_period", value=log_backup_retention_period, expected_type=type_hints["log_backup_retention_period"])
+            check_type(argname="argument maintain_time", value=maintain_time, expected_type=type_hints["maintain_time"])
+            check_type(argname="argument master_username", value=master_username, expected_type=type_hints["master_username"])
+            check_type(argname="argument master_user_password", value=master_user_password, expected_type=type_hints["master_user_password"])
+            check_type(argname="argument master_user_type", value=master_user_type, expected_type=type_hints["master_user_type"])
+            check_type(argname="argument multi_az", value=multi_az, expected_type=type_hints["multi_az"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument preferred_backup_period", value=preferred_backup_period, expected_type=type_hints["preferred_backup_period"])
+            check_type(argname="argument preferred_backup_time", value=preferred_backup_time, expected_type=type_hints["preferred_backup_time"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument quantity", value=quantity, expected_type=type_hints["quantity"])
+            check_type(argname="argument released_keep_policy", value=released_keep_policy, expected_type=type_hints["released_keep_policy"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument role_arn", value=role_arn, expected_type=type_hints["role_arn"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument slave_zone_ids", value=slave_zone_ids, expected_type=type_hints["slave_zone_ids"])
+            check_type(argname="argument sql_collector_status", value=sql_collector_status, expected_type=type_hints["sql_collector_status"])
+            check_type(argname="argument ssl_setting", value=ssl_setting, expected_type=type_hints["ssl_setting"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument target_dedicated_host_id_for_log", value=target_dedicated_host_id_for_log, expected_type=type_hints["target_dedicated_host_id_for_log"])
+            check_type(argname="argument target_dedicated_host_id_for_master", value=target_dedicated_host_id_for_master, expected_type=type_hints["target_dedicated_host_id_for_master"])
+            check_type(argname="argument target_dedicated_host_id_for_slave", value=target_dedicated_host_id_for_slave, expected_type=type_hints["target_dedicated_host_id_for_slave"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "commodity_code": commodity_code,
             "db_instance_class": db_instance_class,
@@ -11981,7 +13166,7 @@ class RosReadOnlyDBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosReadOnlyDBInstanceProps",
+        props: typing.Union["RosReadOnlyDBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::RDS::ReadOnlyDBInstance``.
@@ -11991,6 +13176,12 @@ class RosReadOnlyDBInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosReadOnlyDBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -12001,6 +13192,9 @@ class RosReadOnlyDBInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosReadOnlyDBInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -12051,6 +13245,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "db_instance_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -12066,6 +13263,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "db_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12083,6 +13283,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "db_instance_storage").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceStorage", value)
 
     @builtins.property # type: ignore[misc]
@@ -12092,6 +13295,9 @@ class RosReadOnlyDBInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -12107,6 +13313,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "engine_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "engineVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -12122,6 +13331,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12143,6 +13355,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "auto_renew").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenew", value)
 
     @builtins.property # type: ignore[misc]
@@ -12166,6 +13381,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "category", value)
 
     @builtins.property # type: ignore[misc]
@@ -12183,6 +13401,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "db_instance_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -12207,6 +13428,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "db_instance_storage_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceStorageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -12224,6 +13448,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -12245,6 +13472,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -12262,6 +13492,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "period_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "periodType", value)
 
     @builtins.property # type: ignore[misc]
@@ -12279,6 +13512,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "private_ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "privateIpAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -12296,6 +13532,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12325,6 +13564,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Mapping[builtins.str, typing.Any]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -12342,6 +13584,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12359,6 +13604,9 @@ class RosReadOnlyDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosReadOnlyDBInstance, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
 
@@ -12427,6 +13675,25 @@ class RosReadOnlyDBInstanceProps:
         :param vpc_id: 
         :param v_switch_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosReadOnlyDBInstanceProps.__init__)
+            check_type(argname="argument db_instance_class", value=db_instance_class, expected_type=type_hints["db_instance_class"])
+            check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+            check_type(argname="argument db_instance_storage", value=db_instance_storage, expected_type=type_hints["db_instance_storage"])
+            check_type(argname="argument engine_version", value=engine_version, expected_type=type_hints["engine_version"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument category", value=category, expected_type=type_hints["category"])
+            check_type(argname="argument db_instance_description", value=db_instance_description, expected_type=type_hints["db_instance_description"])
+            check_type(argname="argument db_instance_storage_type", value=db_instance_storage_type, expected_type=type_hints["db_instance_storage_type"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument period_type", value=period_type, expected_type=type_hints["period_type"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_instance_class": db_instance_class,
             "db_instance_id": db_instance_id,

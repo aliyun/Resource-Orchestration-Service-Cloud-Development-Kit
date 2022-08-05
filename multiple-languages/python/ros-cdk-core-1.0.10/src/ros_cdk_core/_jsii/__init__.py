@@ -8,6 +8,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 import constructs._jsii
 import ros_cdk_assembly_schema._jsii
 import ros_cdk_cxapi._jsii
