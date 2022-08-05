@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Instance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "InstanceProps",
+        props: typing.Union["InstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DMS::Instance``.
@@ -47,6 +49,12 @@ class Instance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Instance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -145,6 +153,29 @@ class InstanceProps:
         :param use_dsql: Property useDsql: Specifies whether to enable cross-database query for the database instance. Valid values: 0: disabled 1: enabled
         :param vpc_id: Property vpcId: The ID of the VPC to which the database instance belongs. Note You must specify this parameter if the InstanceSource parameter is set to VPC_IDC.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InstanceProps.__init__)
+            check_type(argname="argument database_password", value=database_password, expected_type=type_hints["database_password"])
+            check_type(argname="argument database_user", value=database_user, expected_type=type_hints["database_user"])
+            check_type(argname="argument dba_uid", value=dba_uid, expected_type=type_hints["dba_uid"])
+            check_type(argname="argument env_type", value=env_type, expected_type=type_hints["env_type"])
+            check_type(argname="argument export_timeout", value=export_timeout, expected_type=type_hints["export_timeout"])
+            check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+            check_type(argname="argument instance_alias", value=instance_alias, expected_type=type_hints["instance_alias"])
+            check_type(argname="argument instance_source", value=instance_source, expected_type=type_hints["instance_source"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+            check_type(argname="argument network_type", value=network_type, expected_type=type_hints["network_type"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument query_timeout", value=query_timeout, expected_type=type_hints["query_timeout"])
+            check_type(argname="argument safe_rule", value=safe_rule, expected_type=type_hints["safe_rule"])
+            check_type(argname="argument tid", value=tid, expected_type=type_hints["tid"])
+            check_type(argname="argument data_link_name", value=data_link_name, expected_type=type_hints["data_link_name"])
+            check_type(argname="argument ddl_online", value=ddl_online, expected_type=type_hints["ddl_online"])
+            check_type(argname="argument ecs_instance_id", value=ecs_instance_id, expected_type=type_hints["ecs_instance_id"])
+            check_type(argname="argument ecs_region", value=ecs_region, expected_type=type_hints["ecs_region"])
+            check_type(argname="argument sid", value=sid, expected_type=type_hints["sid"])
+            check_type(argname="argument use_dsql", value=use_dsql, expected_type=type_hints["use_dsql"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "database_password": database_password,
             "database_user": database_user,
@@ -428,7 +459,7 @@ class RosInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInstanceProps",
+        props: typing.Union["RosInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DMS::Instance``.
@@ -438,6 +469,12 @@ class RosInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -448,6 +485,9 @@ class RosInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -498,6 +538,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "database_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "databasePassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -513,6 +556,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "database_user").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "databaseUser", value)
 
     @builtins.property # type: ignore[misc]
@@ -535,6 +581,9 @@ class RosInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "dba_uid").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbaUid", value)
 
     @builtins.property # type: ignore[misc]
@@ -544,6 +593,9 @@ class RosInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -563,6 +615,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "env_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "envType", value)
 
     @builtins.property # type: ignore[misc]
@@ -578,6 +633,9 @@ class RosInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "export_timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "exportTimeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -590,6 +648,9 @@ class RosInstance(
 
     @host.setter
     def host(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "host").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "host", value)
 
     @builtins.property # type: ignore[misc]
@@ -608,6 +669,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_alias").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceAlias", value)
 
     @builtins.property # type: ignore[misc]
@@ -630,6 +694,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_source").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceSource", value)
 
     @builtins.property # type: ignore[misc]
@@ -645,6 +712,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -664,6 +734,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "network_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "networkType", value)
 
     @builtins.property # type: ignore[misc]
@@ -676,6 +749,9 @@ class RosInstance(
 
     @port.setter
     def port(self, value: typing.Union[jsii.Number, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "port", value)
 
     @builtins.property # type: ignore[misc]
@@ -691,6 +767,9 @@ class RosInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "query_timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "queryTimeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -712,6 +791,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "safe_rule").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "safeRule", value)
 
     @builtins.property # type: ignore[misc]
@@ -731,6 +813,9 @@ class RosInstance(
 
     @tid.setter
     def tid(self, value: typing.Union[jsii.Number, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "tid").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tid", value)
 
     @builtins.property # type: ignore[misc]
@@ -748,6 +833,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "data_link_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dataLinkName", value)
 
     @builtins.property # type: ignore[misc]
@@ -771,6 +859,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "ddl_online").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ddlOnline", value)
 
     @builtins.property # type: ignore[misc]
@@ -791,6 +882,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "ecs_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ecsInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -811,6 +905,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "ecs_region").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ecsRegion", value)
 
     @builtins.property # type: ignore[misc]
@@ -831,6 +928,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "sid").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sid", value)
 
     @builtins.property # type: ignore[misc]
@@ -853,6 +953,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "use_dsql").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "useDsql", value)
 
     @builtins.property # type: ignore[misc]
@@ -873,6 +976,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
 
@@ -953,6 +1059,29 @@ class RosInstanceProps:
         :param use_dsql: 
         :param vpc_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceProps.__init__)
+            check_type(argname="argument database_password", value=database_password, expected_type=type_hints["database_password"])
+            check_type(argname="argument database_user", value=database_user, expected_type=type_hints["database_user"])
+            check_type(argname="argument dba_uid", value=dba_uid, expected_type=type_hints["dba_uid"])
+            check_type(argname="argument env_type", value=env_type, expected_type=type_hints["env_type"])
+            check_type(argname="argument export_timeout", value=export_timeout, expected_type=type_hints["export_timeout"])
+            check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+            check_type(argname="argument instance_alias", value=instance_alias, expected_type=type_hints["instance_alias"])
+            check_type(argname="argument instance_source", value=instance_source, expected_type=type_hints["instance_source"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
+            check_type(argname="argument network_type", value=network_type, expected_type=type_hints["network_type"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument query_timeout", value=query_timeout, expected_type=type_hints["query_timeout"])
+            check_type(argname="argument safe_rule", value=safe_rule, expected_type=type_hints["safe_rule"])
+            check_type(argname="argument tid", value=tid, expected_type=type_hints["tid"])
+            check_type(argname="argument data_link_name", value=data_link_name, expected_type=type_hints["data_link_name"])
+            check_type(argname="argument ddl_online", value=ddl_online, expected_type=type_hints["ddl_online"])
+            check_type(argname="argument ecs_instance_id", value=ecs_instance_id, expected_type=type_hints["ecs_instance_id"])
+            check_type(argname="argument ecs_region", value=ecs_region, expected_type=type_hints["ecs_region"])
+            check_type(argname="argument sid", value=sid, expected_type=type_hints["sid"])
+            check_type(argname="argument use_dsql", value=use_dsql, expected_type=type_hints["use_dsql"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "database_password": database_password,
             "database_user": database_user,
@@ -1264,7 +1393,7 @@ class RosUser(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosUserProps",
+        props: typing.Union["RosUserProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DMS::User``.
@@ -1274,6 +1403,12 @@ class RosUser(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUser.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1284,6 +1419,9 @@ class RosUser(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUser._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1360,6 +1498,9 @@ class RosUser(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1372,6 +1513,9 @@ class RosUser(
 
     @uid.setter
     def uid(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "uid").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "uid", value)
 
     @builtins.property # type: ignore[misc]
@@ -1389,6 +1533,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "mobile").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mobile", value)
 
     @builtins.property # type: ignore[misc]
@@ -1406,6 +1553,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "role_names").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "roleNames", value)
 
     @builtins.property # type: ignore[misc]
@@ -1423,6 +1573,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "status").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "status", value)
 
     @builtins.property # type: ignore[misc]
@@ -1440,6 +1593,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "tid").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tid", value)
 
     @builtins.property # type: ignore[misc]
@@ -1457,6 +1613,9 @@ class RosUser(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUser, "user_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "userName", value)
 
 
@@ -1492,6 +1651,14 @@ class RosUserProps:
         :param tid: 
         :param user_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserProps.__init__)
+            check_type(argname="argument uid", value=uid, expected_type=type_hints["uid"])
+            check_type(argname="argument mobile", value=mobile, expected_type=type_hints["mobile"])
+            check_type(argname="argument role_names", value=role_names, expected_type=type_hints["role_names"])
+            check_type(argname="argument status", value=status, expected_type=type_hints["status"])
+            check_type(argname="argument tid", value=tid, expected_type=type_hints["tid"])
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "uid": uid,
         }
@@ -1588,7 +1755,7 @@ class User(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "UserProps",
+        props: typing.Union["UserProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DMS::User``.
@@ -1602,6 +1769,12 @@ class User(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(User.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1679,6 +1852,14 @@ class UserProps:
         :param tid: Property tid:.
         :param user_name: Property userName: UserNickName.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserProps.__init__)
+            check_type(argname="argument uid", value=uid, expected_type=type_hints["uid"])
+            check_type(argname="argument mobile", value=mobile, expected_type=type_hints["mobile"])
+            check_type(argname="argument role_names", value=role_names, expected_type=type_hints["role_names"])
+            check_type(argname="argument status", value=status, expected_type=type_hints["status"])
+            check_type(argname="argument tid", value=tid, expected_type=type_hints["tid"])
+            check_type(argname="argument user_name", value=user_name, expected_type=type_hints["user_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "uid": uid,
         }

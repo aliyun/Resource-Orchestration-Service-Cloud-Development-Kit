@@ -21,6 +21,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_assembly_schema
@@ -49,6 +51,11 @@ class AliyunRosStackProperties:
         :param parameters: Values for ROS stack parameters that should be passed when the stack is deployed.
         :param stack_name: The name to use for the ROS stack. Default: - name derived from artifact ID
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AliyunRosStackProperties.__init__)
+            check_type(argname="argument template_file", value=template_file, expected_type=type_hints["template_file"])
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument stack_name", value=stack_name, expected_type=type_hints["stack_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "template_file": template_file,
         }
@@ -97,12 +104,19 @@ class AliyunRosStackProperties:
     name_mapping={"runtime_info": "runtimeInfo"},
 )
 class AssemblyBuildOptions:
-    def __init__(self, *, runtime_info: typing.Optional["RuntimeInfo"] = None) -> None:
+    def __init__(
+        self,
+        *,
+        runtime_info: typing.Optional[typing.Union["RuntimeInfo", typing.Dict[str, typing.Any]]] = None,
+    ) -> None:
         '''
         :param runtime_info: Include the specified runtime information (module versions) in manifest. Default: - if this option is not specified, runtime info will not be included
         '''
         if isinstance(runtime_info, dict):
             runtime_info = RuntimeInfo(**runtime_info)
+        if __debug__:
+            type_hints = typing.get_type_hints(AssemblyBuildOptions.__init__)
+            check_type(argname="argument runtime_info", value=runtime_info, expected_type=type_hints["runtime_info"])
         self._values: typing.Dict[str, typing.Any] = {}
         if runtime_info is not None:
             self._values["runtime_info"] = runtime_info
@@ -141,8 +155,8 @@ class CloudArtifact(
         *,
         type: ros_cdk_assembly_schema.ArtifactType,
         dependencies: typing.Optional[typing.Sequence[builtins.str]] = None,
-        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[ros_cdk_assembly_schema.MetadataEntry]]] = None,
-        properties: typing.Optional[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, ros_cdk_assembly_schema.TreeArtifactProperties, ros_cdk_assembly_schema.NestedCloudAssemblyProperties]] = None,
+        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[typing.Union[ros_cdk_assembly_schema.MetadataEntry, typing.Dict[str, typing.Any]]]]] = None,
+        properties: typing.Optional[typing.Union[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.TreeArtifactProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.NestedCloudAssemblyProperties, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''
         :param assembly: -
@@ -152,6 +166,10 @@ class CloudArtifact(
         :param metadata: Associated metadata. Default: - no metadata.
         :param properties: The set of properties for this artifact (depends on type). Default: - no properties.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudArtifact.__init__)
+            check_type(argname="argument assembly", value=assembly, expected_type=type_hints["assembly"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         manifest = ros_cdk_assembly_schema.ArtifactManifest(
             type=type,
             dependencies=dependencies,
@@ -170,8 +188,8 @@ class CloudArtifact(
         *,
         type: ros_cdk_assembly_schema.ArtifactType,
         dependencies: typing.Optional[typing.Sequence[builtins.str]] = None,
-        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[ros_cdk_assembly_schema.MetadataEntry]]] = None,
-        properties: typing.Optional[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, ros_cdk_assembly_schema.TreeArtifactProperties, ros_cdk_assembly_schema.NestedCloudAssemblyProperties]] = None,
+        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[typing.Union[ros_cdk_assembly_schema.MetadataEntry, typing.Dict[str, typing.Any]]]]] = None,
+        properties: typing.Optional[typing.Union[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.TreeArtifactProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.NestedCloudAssemblyProperties, typing.Dict[str, typing.Any]]]] = None,
     ) -> typing.Optional["CloudArtifact"]:
         '''Returns a subclass of ``CloudArtifact`` based on the artifact type defined in the artifact manifest.
 
@@ -184,6 +202,10 @@ class CloudArtifact(
 
         :return: the ``CloudArtifact`` that matches the artifact type or ``undefined`` if it's an artifact type that is unrecognized by this module.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudArtifact.from_manifest)
+            check_type(argname="argument assembly", value=assembly, expected_type=type_hints["assembly"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         artifact = ros_cdk_assembly_schema.ArtifactManifest(
             type=type,
             dependencies=dependencies,
@@ -203,6 +225,9 @@ class CloudArtifact(
 
         :return: all the metadata entries of a specific type in this artifact.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudArtifact.find_metadata_by_type)
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
         return typing.cast(typing.List["MetadataEntryResult"], jsii.invoke(self, "findMetadataByType", [type]))
 
     @builtins.property # type: ignore[misc]
@@ -245,6 +270,9 @@ class CloudAssembly(
 
         :param directory: The root directory of the assembly.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssembly.__init__)
+            check_type(argname="argument directory", value=directory, expected_type=type_hints["directory"])
         jsii.create(self.__class__, self, [directory])
 
     @jsii.member(jsii_name="getNestedAssembly")
@@ -253,6 +281,9 @@ class CloudAssembly(
 
         :param artifact_id: The artifact ID of the nested assembly.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssembly.get_nested_assembly)
+            check_type(argname="argument artifact_id", value=artifact_id, expected_type=type_hints["artifact_id"])
         return typing.cast("CloudAssembly", jsii.invoke(self, "getNestedAssembly", [artifact_id]))
 
     @jsii.member(jsii_name="getNestedAssemblyArtifact")
@@ -264,6 +295,9 @@ class CloudAssembly(
 
         :param artifact_id: The artifact ID of the nested assembly.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssembly.get_nested_assembly_artifact)
+            check_type(argname="argument artifact_id", value=artifact_id, expected_type=type_hints["artifact_id"])
         return typing.cast("NestedCloudAssemblyArtifact", jsii.invoke(self, "getNestedAssemblyArtifact", [artifact_id]))
 
     @jsii.member(jsii_name="getStack")
@@ -274,6 +308,9 @@ class CloudAssembly(
 
         :param stack_name: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssembly.get_stack)
+            check_type(argname="argument stack_name", value=stack_name, expected_type=type_hints["stack_name"])
         return typing.cast("RosStackArtifact", jsii.invoke(self, "getStack", [stack_name]))
 
     @jsii.member(jsii_name="getStackArtifact")
@@ -286,6 +323,9 @@ class CloudAssembly(
 
         :param artifact_id: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssembly.get_stack_artifact)
+            check_type(argname="argument artifact_id", value=artifact_id, expected_type=type_hints["artifact_id"])
         return typing.cast("RosStackArtifact", jsii.invoke(self, "getStackArtifact", [artifact_id]))
 
     @jsii.member(jsii_name="getStackByName")
@@ -302,6 +342,9 @@ class CloudAssembly(
 
         :param stack_name: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssembly.get_stack_by_name)
+            check_type(argname="argument stack_name", value=stack_name, expected_type=type_hints["stack_name"])
         return typing.cast("RosStackArtifact", jsii.invoke(self, "getStackByName", [stack_name]))
 
     @jsii.member(jsii_name="tree")
@@ -322,6 +365,9 @@ class CloudAssembly(
 
         :param id: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssembly.try_get_artifact)
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         return typing.cast(typing.Optional[CloudArtifact], jsii.invoke(self, "tryGetArtifact", [id]))
 
     @builtins.property # type: ignore[misc]
@@ -374,6 +420,9 @@ class CloudAssemblyBuilder(
 
         :param outdir: The output directory, uses temporary directory if undefined.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssemblyBuilder.__init__)
+            check_type(argname="argument outdir", value=outdir, expected_type=type_hints["outdir"])
         jsii.create(self.__class__, self, [outdir])
 
     @jsii.member(jsii_name="addArtifact")
@@ -383,8 +432,8 @@ class CloudAssemblyBuilder(
         *,
         type: ros_cdk_assembly_schema.ArtifactType,
         dependencies: typing.Optional[typing.Sequence[builtins.str]] = None,
-        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[ros_cdk_assembly_schema.MetadataEntry]]] = None,
-        properties: typing.Optional[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, ros_cdk_assembly_schema.TreeArtifactProperties, ros_cdk_assembly_schema.NestedCloudAssemblyProperties]] = None,
+        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[typing.Union[ros_cdk_assembly_schema.MetadataEntry, typing.Dict[str, typing.Any]]]]] = None,
+        properties: typing.Optional[typing.Union[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.TreeArtifactProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.NestedCloudAssemblyProperties, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Adds an artifact into the cloud assembly.
 
@@ -394,6 +443,9 @@ class CloudAssemblyBuilder(
         :param metadata: Associated metadata. Default: - no metadata.
         :param properties: The set of properties for this artifact (depends on type). Default: - no properties.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssemblyBuilder.add_artifact)
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         manifest = ros_cdk_assembly_schema.ArtifactManifest(
             type=type,
             dependencies=dependencies,
@@ -408,7 +460,7 @@ class CloudAssemblyBuilder(
         self,
         *,
         key: builtins.str,
-        props: typing.Union[ros_cdk_assembly_schema.AmiContextQuery, ros_cdk_assembly_schema.AvailabilityZonesContextQuery, ros_cdk_assembly_schema.HostedZoneContextQuery, ros_cdk_assembly_schema.SSMParameterContextQuery, ros_cdk_assembly_schema.VpcContextQuery, ros_cdk_assembly_schema.EndpointServiceAvailabilityZonesContextQuery],
+        props: typing.Union[typing.Union[ros_cdk_assembly_schema.AmiContextQuery, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.AvailabilityZonesContextQuery, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.HostedZoneContextQuery, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.SSMParameterContextQuery, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.VpcContextQuery, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.EndpointServiceAvailabilityZonesContextQuery, typing.Dict[str, typing.Any]]],
         provider: ros_cdk_assembly_schema.ContextProvider,
     ) -> None:
         '''Reports that some context is missing in order for this cloud assembly to be fully synthesized.
@@ -427,7 +479,7 @@ class CloudAssemblyBuilder(
     def build_assembly(
         self,
         *,
-        runtime_info: typing.Optional["RuntimeInfo"] = None,
+        runtime_info: typing.Optional[typing.Union["RuntimeInfo", typing.Dict[str, typing.Any]]] = None,
     ) -> CloudAssembly:
         '''Finalizes the cloud assembly into the output directory returns a 'CloudAssembly' object that can be used to inspect the assembly.
 
@@ -448,6 +500,10 @@ class CloudAssemblyBuilder(
         :param artifact_id: -
         :param display_name: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CloudAssemblyBuilder.create_nested_assembly)
+            check_type(argname="argument artifact_id", value=artifact_id, expected_type=type_hints["artifact_id"])
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
         return typing.cast("CloudAssemblyBuilder", jsii.invoke(self, "createNestedAssembly", [artifact_id, display_name]))
 
     @builtins.property # type: ignore[misc]
@@ -467,7 +523,7 @@ class MetadataEntry(ros_cdk_assembly_schema.MetadataEntry):
         self,
         *,
         type: builtins.str,
-        data: typing.Optional[typing.Union[builtins.str, typing.Sequence[ros_cdk_assembly_schema.Tag]]] = None,
+        data: typing.Optional[typing.Union[builtins.str, typing.Sequence[typing.Union[ros_cdk_assembly_schema.Tag, typing.Dict[str, typing.Any]]]]] = None,
         trace: typing.Optional[typing.Sequence[builtins.str]] = None,
     ) -> None:
         '''(deprecated) Backwards compatibility for when 'MetadataEntry' was defined here.
@@ -484,6 +540,11 @@ class MetadataEntry(ros_cdk_assembly_schema.MetadataEntry):
         :stability: deprecated
         :alicloud: /ros-cdk-core library.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MetadataEntry.__init__)
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument data", value=data, expected_type=type_hints["data"])
+            check_type(argname="argument trace", value=trace, expected_type=type_hints["trace"])
         self._values: typing.Dict[str, typing.Any] = {
             "type": type,
         }
@@ -541,7 +602,7 @@ class MetadataEntryResult(ros_cdk_assembly_schema.MetadataEntry):
         self,
         *,
         type: builtins.str,
-        data: typing.Optional[typing.Union[builtins.str, typing.Sequence[ros_cdk_assembly_schema.Tag]]] = None,
+        data: typing.Optional[typing.Union[builtins.str, typing.Sequence[typing.Union[ros_cdk_assembly_schema.Tag, typing.Dict[str, typing.Any]]]]] = None,
         trace: typing.Optional[typing.Sequence[builtins.str]] = None,
         path: builtins.str,
     ) -> None:
@@ -551,6 +612,12 @@ class MetadataEntryResult(ros_cdk_assembly_schema.MetadataEntry):
         :param trace: A stack trace for when the entry was created. Default: - no trace.
         :param path: The path in which this entry was defined.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MetadataEntryResult.__init__)
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument data", value=data, expected_type=type_hints["data"])
+            check_type(argname="argument trace", value=trace, expected_type=type_hints["trace"])
+            check_type(argname="argument path", value=path, expected_type=type_hints["path"])
         self._values: typing.Dict[str, typing.Any] = {
             "type": type,
             "path": path,
@@ -633,6 +700,11 @@ class MissingContext:
         :stability: deprecated
         :alicloud: /ros-cdk-core library.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MissingContext.__init__)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument provider", value=provider, expected_type=type_hints["provider"])
         self._values: typing.Dict[str, typing.Any] = {
             "key": key,
             "props": props,
@@ -701,8 +773,8 @@ class NestedCloudAssemblyArtifact(
         *,
         type: ros_cdk_assembly_schema.ArtifactType,
         dependencies: typing.Optional[typing.Sequence[builtins.str]] = None,
-        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[ros_cdk_assembly_schema.MetadataEntry]]] = None,
-        properties: typing.Optional[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, ros_cdk_assembly_schema.TreeArtifactProperties, ros_cdk_assembly_schema.NestedCloudAssemblyProperties]] = None,
+        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[typing.Union[ros_cdk_assembly_schema.MetadataEntry, typing.Dict[str, typing.Any]]]]] = None,
+        properties: typing.Optional[typing.Union[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.TreeArtifactProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.NestedCloudAssemblyProperties, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''
         :param assembly: -
@@ -712,6 +784,10 @@ class NestedCloudAssemblyArtifact(
         :param metadata: Associated metadata. Default: - no metadata.
         :param properties: The set of properties for this artifact (depends on type). Default: - no properties.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NestedCloudAssemblyArtifact.__init__)
+            check_type(argname="argument assembly", value=assembly, expected_type=type_hints["assembly"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         artifact = ros_cdk_assembly_schema.ArtifactManifest(
             type=type,
             dependencies=dependencies,
@@ -758,8 +834,8 @@ class RosStackArtifact(
         *,
         type: ros_cdk_assembly_schema.ArtifactType,
         dependencies: typing.Optional[typing.Sequence[builtins.str]] = None,
-        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[ros_cdk_assembly_schema.MetadataEntry]]] = None,
-        properties: typing.Optional[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, ros_cdk_assembly_schema.TreeArtifactProperties, ros_cdk_assembly_schema.NestedCloudAssemblyProperties]] = None,
+        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[typing.Union[ros_cdk_assembly_schema.MetadataEntry, typing.Dict[str, typing.Any]]]]] = None,
+        properties: typing.Optional[typing.Union[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.TreeArtifactProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.NestedCloudAssemblyProperties, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''
         :param assembly: -
@@ -769,6 +845,10 @@ class RosStackArtifact(
         :param metadata: Associated metadata. Default: - no metadata.
         :param properties: The set of properties for this artifact (depends on type). Default: - no properties.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosStackArtifact.__init__)
+            check_type(argname="argument assembly", value=assembly, expected_type=type_hints["assembly"])
+            check_type(argname="argument artifact_id", value=artifact_id, expected_type=type_hints["artifact_id"])
         artifact = ros_cdk_assembly_schema.ArtifactManifest(
             type=type,
             dependencies=dependencies,
@@ -859,6 +939,9 @@ class RuntimeInfo(ros_cdk_assembly_schema.RuntimeInfo):
         :stability: deprecated
         :alicloud: /ros-cdk-core library.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RuntimeInfo.__init__)
+            check_type(argname="argument libraries", value=libraries, expected_type=type_hints["libraries"])
         self._values: typing.Dict[str, typing.Any] = {
             "libraries": libraries,
         }
@@ -891,7 +974,7 @@ class SynthesisMessage:
     def __init__(
         self,
         *,
-        entry: ros_cdk_assembly_schema.MetadataEntry,
+        entry: typing.Union[ros_cdk_assembly_schema.MetadataEntry, typing.Dict[str, typing.Any]],
         id: builtins.str,
         level: "SynthesisMessageLevel",
     ) -> None:
@@ -902,6 +985,11 @@ class SynthesisMessage:
         '''
         if isinstance(entry, dict):
             entry = ros_cdk_assembly_schema.MetadataEntry(**entry)
+        if __debug__:
+            type_hints = typing.get_type_hints(SynthesisMessage.__init__)
+            check_type(argname="argument entry", value=entry, expected_type=type_hints["entry"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument level", value=level, expected_type=type_hints["level"])
         self._values: typing.Dict[str, typing.Any] = {
             "entry": entry,
             "id": id,
@@ -957,8 +1045,8 @@ class TreeCloudArtifact(
         *,
         type: ros_cdk_assembly_schema.ArtifactType,
         dependencies: typing.Optional[typing.Sequence[builtins.str]] = None,
-        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[ros_cdk_assembly_schema.MetadataEntry]]] = None,
-        properties: typing.Optional[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, ros_cdk_assembly_schema.TreeArtifactProperties, ros_cdk_assembly_schema.NestedCloudAssemblyProperties]] = None,
+        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[typing.Union[ros_cdk_assembly_schema.MetadataEntry, typing.Dict[str, typing.Any]]]]] = None,
+        properties: typing.Optional[typing.Union[typing.Union[ros_cdk_assembly_schema.AliyunRosStackProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.TreeArtifactProperties, typing.Dict[str, typing.Any]], typing.Union[ros_cdk_assembly_schema.NestedCloudAssemblyProperties, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''
         :param assembly: -
@@ -968,6 +1056,10 @@ class TreeCloudArtifact(
         :param metadata: Associated metadata. Default: - no metadata.
         :param properties: The set of properties for this artifact (depends on type). Default: - no properties.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TreeCloudArtifact.__init__)
+            check_type(argname="argument assembly", value=assembly, expected_type=type_hints["assembly"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         artifact = ros_cdk_assembly_schema.ArtifactManifest(
             type=type,
             dependencies=dependencies,

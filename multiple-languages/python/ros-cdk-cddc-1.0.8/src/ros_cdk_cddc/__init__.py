@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class DedicatedHost(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DedicatedHostProps",
+        props: typing.Union["DedicatedHostProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CDDC::DedicatedHost``.
@@ -47,6 +49,12 @@ class DedicatedHost(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DedicatedHost.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -199,7 +207,7 @@ class DedicatedHostGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DedicatedHostGroupProps",
+        props: typing.Union["DedicatedHostGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CDDC::DedicatedHostGroup``.
@@ -213,6 +221,12 @@ class DedicatedHostGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DedicatedHostGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -407,6 +421,17 @@ class DedicatedHostGroupProps:
         :param mem_allocation_ratio: Property memAllocationRatio: Memory Allocation Ratio.
         :param open_permission: Property openPermission: Whether Open OS Permission.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DedicatedHostGroupProps.__init__)
+            check_type(argname="argument engine", value=engine, expected_type=type_hints["engine"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument allocation_policy", value=allocation_policy, expected_type=type_hints["allocation_policy"])
+            check_type(argname="argument cpu_allocation_ratio", value=cpu_allocation_ratio, expected_type=type_hints["cpu_allocation_ratio"])
+            check_type(argname="argument dedicated_host_group_desc", value=dedicated_host_group_desc, expected_type=type_hints["dedicated_host_group_desc"])
+            check_type(argname="argument disk_allocation_ratio", value=disk_allocation_ratio, expected_type=type_hints["disk_allocation_ratio"])
+            check_type(argname="argument host_replace_policy", value=host_replace_policy, expected_type=type_hints["host_replace_policy"])
+            check_type(argname="argument mem_allocation_ratio", value=mem_allocation_ratio, expected_type=type_hints["mem_allocation_ratio"])
+            check_type(argname="argument open_permission", value=open_permission, expected_type=type_hints["open_permission"])
         self._values: typing.Dict[str, typing.Any] = {
             "engine": engine,
             "vpc_id": vpc_id,
@@ -540,7 +565,7 @@ class DedicatedHostProps:
         image_category: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         os_password: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosDedicatedHost.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosDedicatedHost.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
         used_time: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CDDC::DedicatedHost``.
@@ -558,6 +583,20 @@ class DedicatedHostProps:
         :param tags: Property tags: The tag of the resource.
         :param used_time: Property usedTime:.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DedicatedHostProps.__init__)
+            check_type(argname="argument dedicated_host_group_id", value=dedicated_host_group_id, expected_type=type_hints["dedicated_host_group_id"])
+            check_type(argname="argument host_class", value=host_class, expected_type=type_hints["host_class"])
+            check_type(argname="argument payment_type", value=payment_type, expected_type=type_hints["payment_type"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument host_name", value=host_name, expected_type=type_hints["host_name"])
+            check_type(argname="argument image_category", value=image_category, expected_type=type_hints["image_category"])
+            check_type(argname="argument os_password", value=os_password, expected_type=type_hints["os_password"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument used_time", value=used_time, expected_type=type_hints["used_time"])
         self._values: typing.Dict[str, typing.Any] = {
             "dedicated_host_group_id": dedicated_host_group_id,
             "host_class": host_class,
@@ -694,7 +733,7 @@ class RosDedicatedHost(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDedicatedHostProps",
+        props: typing.Union["RosDedicatedHostProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CDDC::DedicatedHost``.
@@ -704,6 +743,12 @@ class RosDedicatedHost(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDedicatedHost.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -714,6 +759,9 @@ class RosDedicatedHost(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDedicatedHost._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -926,6 +974,9 @@ class RosDedicatedHost(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "dedicated_host_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dedicatedHostGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -935,6 +986,9 @@ class RosDedicatedHost(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -950,6 +1004,9 @@ class RosDedicatedHost(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "host_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "hostClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -965,6 +1022,9 @@ class RosDedicatedHost(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "payment_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "paymentType", value)
 
     @builtins.property # type: ignore[misc]
@@ -980,6 +1040,9 @@ class RosDedicatedHost(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -995,6 +1058,9 @@ class RosDedicatedHost(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1012,6 +1078,9 @@ class RosDedicatedHost(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "auto_renew").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenew", value)
 
     @builtins.property # type: ignore[misc]
@@ -1029,6 +1098,9 @@ class RosDedicatedHost(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "host_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "hostName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1046,6 +1118,9 @@ class RosDedicatedHost(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "image_category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageCategory", value)
 
     @builtins.property # type: ignore[misc]
@@ -1063,6 +1138,9 @@ class RosDedicatedHost(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "os_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "osPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -1080,6 +1158,9 @@ class RosDedicatedHost(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -1095,6 +1176,9 @@ class RosDedicatedHost(
         self,
         value: typing.Optional[typing.List["RosDedicatedHost.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -1112,6 +1196,9 @@ class RosDedicatedHost(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHost, "used_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "usedTime", value)
 
     @jsii.data_type(
@@ -1130,6 +1217,10 @@ class RosDedicatedHost(
             :param tag_key: 
             :param tag_value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDedicatedHost.TagsProperty.__init__)
+                check_type(argname="argument tag_key", value=tag_key, expected_type=type_hints["tag_key"])
+                check_type(argname="argument tag_value", value=tag_value, expected_type=type_hints["tag_value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if tag_key is not None:
                 self._values["tag_key"] = tag_key
@@ -1179,7 +1270,7 @@ class RosDedicatedHostGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDedicatedHostGroupProps",
+        props: typing.Union["RosDedicatedHostGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CDDC::DedicatedHostGroup``.
@@ -1189,6 +1280,12 @@ class RosDedicatedHostGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDedicatedHostGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1199,6 +1296,9 @@ class RosDedicatedHostGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDedicatedHostGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1419,6 +1519,9 @@ class RosDedicatedHostGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1434,6 +1537,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "engine").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "engine", value)
 
     @builtins.property # type: ignore[misc]
@@ -1449,6 +1555,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1466,6 +1575,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "allocation_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allocationPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -1483,6 +1595,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "cpu_allocation_ratio").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cpuAllocationRatio", value)
 
     @builtins.property # type: ignore[misc]
@@ -1500,6 +1615,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "dedicated_host_group_desc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dedicatedHostGroupDesc", value)
 
     @builtins.property # type: ignore[misc]
@@ -1517,6 +1635,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "disk_allocation_ratio").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "diskAllocationRatio", value)
 
     @builtins.property # type: ignore[misc]
@@ -1534,6 +1655,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "host_replace_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "hostReplacePolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -1551,6 +1675,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "mem_allocation_ratio").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "memAllocationRatio", value)
 
     @builtins.property # type: ignore[misc]
@@ -1568,6 +1695,9 @@ class RosDedicatedHostGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDedicatedHostGroup, "open_permission").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "openPermission", value)
 
 
@@ -1612,6 +1742,17 @@ class RosDedicatedHostGroupProps:
         :param mem_allocation_ratio: 
         :param open_permission: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDedicatedHostGroupProps.__init__)
+            check_type(argname="argument engine", value=engine, expected_type=type_hints["engine"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument allocation_policy", value=allocation_policy, expected_type=type_hints["allocation_policy"])
+            check_type(argname="argument cpu_allocation_ratio", value=cpu_allocation_ratio, expected_type=type_hints["cpu_allocation_ratio"])
+            check_type(argname="argument dedicated_host_group_desc", value=dedicated_host_group_desc, expected_type=type_hints["dedicated_host_group_desc"])
+            check_type(argname="argument disk_allocation_ratio", value=disk_allocation_ratio, expected_type=type_hints["disk_allocation_ratio"])
+            check_type(argname="argument host_replace_policy", value=host_replace_policy, expected_type=type_hints["host_replace_policy"])
+            check_type(argname="argument mem_allocation_ratio", value=mem_allocation_ratio, expected_type=type_hints["mem_allocation_ratio"])
+            check_type(argname="argument open_permission", value=open_permission, expected_type=type_hints["open_permission"])
         self._values: typing.Dict[str, typing.Any] = {
             "engine": engine,
             "vpc_id": vpc_id,
@@ -1763,7 +1904,7 @@ class RosDedicatedHostProps:
         image_category: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         os_password: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosDedicatedHost.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosDedicatedHost.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         used_time: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CDDC::DedicatedHost``.
@@ -1781,6 +1922,20 @@ class RosDedicatedHostProps:
         :param tags: 
         :param used_time: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDedicatedHostProps.__init__)
+            check_type(argname="argument dedicated_host_group_id", value=dedicated_host_group_id, expected_type=type_hints["dedicated_host_group_id"])
+            check_type(argname="argument host_class", value=host_class, expected_type=type_hints["host_class"])
+            check_type(argname="argument payment_type", value=payment_type, expected_type=type_hints["payment_type"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument host_name", value=host_name, expected_type=type_hints["host_name"])
+            check_type(argname="argument image_category", value=image_category, expected_type=type_hints["image_category"])
+            check_type(argname="argument os_password", value=os_password, expected_type=type_hints["os_password"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument used_time", value=used_time, expected_type=type_hints["used_time"])
         self._values: typing.Dict[str, typing.Any] = {
             "dedicated_host_group_id": dedicated_host_group_id,
             "host_class": host_class,

@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class CenBandwidthLimit(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CenBandwidthLimitProps",
+        props: typing.Union["CenBandwidthLimitProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenBandwidthLimit``.
@@ -47,6 +49,12 @@ class CenBandwidthLimit(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenBandwidthLimit.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -76,6 +84,12 @@ class CenBandwidthLimitProps:
         :param local_region_id: Property localRegionId: The ID of the local region.
         :param opposite_region_id: Property oppositeRegionId: The ID of the other interconnected region.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenBandwidthLimitProps.__init__)
+            check_type(argname="argument bandwidth_limit", value=bandwidth_limit, expected_type=type_hints["bandwidth_limit"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument local_region_id", value=local_region_id, expected_type=type_hints["local_region_id"])
+            check_type(argname="argument opposite_region_id", value=opposite_region_id, expected_type=type_hints["opposite_region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth_limit": bandwidth_limit,
             "cen_id": cen_id,
@@ -139,7 +153,7 @@ class CenBandwidthPackage(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CenBandwidthPackageProps",
+        props: typing.Union["CenBandwidthPackageProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenBandwidthPackage``.
@@ -153,6 +167,12 @@ class CenBandwidthPackage(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenBandwidthPackage.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -173,7 +193,7 @@ class CenBandwidthPackageAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CenBandwidthPackageAssociationProps",
+        props: typing.Union["CenBandwidthPackageAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenBandwidthPackageAssociation``.
@@ -187,6 +207,12 @@ class CenBandwidthPackageAssociation(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenBandwidthPackageAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -210,6 +236,10 @@ class CenBandwidthPackageAssociationProps:
         :param cen_bandwidth_package_id: Property cenBandwidthPackageId: The ID of the bandwidth package.
         :param cen_id: Property cenId: The ID of the CEN instance.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenBandwidthPackageAssociationProps.__init__)
+            check_type(argname="argument cen_bandwidth_package_id", value=cen_bandwidth_package_id, expected_type=type_hints["cen_bandwidth_package_id"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_bandwidth_package_id": cen_bandwidth_package_id,
             "cen_id": cen_id,
@@ -293,6 +323,20 @@ class CenBandwidthPackageProps:
         :param pricing_cycle: Property pricingCycle: The pricing cycle.
         :param resource_group_id: Property resourceGroupId: Resource group id.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenBandwidthPackageProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument geographic_region_a_id", value=geographic_region_a_id, expected_type=type_hints["geographic_region_a_id"])
+            check_type(argname="argument geographic_region_b_id", value=geographic_region_b_id, expected_type=type_hints["geographic_region_b_id"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument auto_renew_duration", value=auto_renew_duration, expected_type=type_hints["auto_renew_duration"])
+            check_type(argname="argument bandwidth_package_charge_type", value=bandwidth_package_charge_type, expected_type=type_hints["bandwidth_package_charge_type"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth": bandwidth,
             "geographic_region_a_id": geographic_region_a_id,
@@ -469,7 +513,7 @@ class CenInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["CenInstanceProps"] = None,
+        props: typing.Optional[typing.Union["CenInstanceProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenInstance``.
@@ -483,6 +527,12 @@ class CenInstance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -503,7 +553,7 @@ class CenInstanceAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CenInstanceAttachmentProps",
+        props: typing.Union["CenInstanceAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenInstanceAttachment``.
@@ -517,6 +567,12 @@ class CenInstanceAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenInstanceAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -549,6 +605,13 @@ class CenInstanceAttachmentProps:
         :param child_instance_type: Property childInstanceType: The type of the network to attach. Support VPC, VBR or CCN.
         :param child_instance_owner_id: Property childInstanceOwnerId: The account ID to which the network belongs.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenInstanceAttachmentProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument child_instance_id", value=child_instance_id, expected_type=type_hints["child_instance_id"])
+            check_type(argname="argument child_instance_region_id", value=child_instance_region_id, expected_type=type_hints["child_instance_region_id"])
+            check_type(argname="argument child_instance_type", value=child_instance_type, expected_type=type_hints["child_instance_type"])
+            check_type(argname="argument child_instance_owner_id", value=child_instance_owner_id, expected_type=type_hints["child_instance_owner_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "child_instance_id": child_instance_id,
@@ -635,7 +698,7 @@ class CenInstanceProps:
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         protection_level: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosCenInstance.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosCenInstance.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CEN::CenInstance``.
 
@@ -645,6 +708,13 @@ class CenInstanceProps:
         :param resource_group_id: Property resourceGroupId: Resource group id.
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenInstanceProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument protection_level", value=protection_level, expected_type=type_hints["protection_level"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {}
         if description is not None:
             self._values["description"] = description
@@ -731,7 +801,7 @@ class CenRouteMap(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CenRouteMapProps",
+        props: typing.Union["CenRouteMapProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenRouteMap``.
@@ -745,6 +815,12 @@ class CenRouteMap(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenRouteMap.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -849,6 +925,35 @@ class CenRouteMapProps:
         :param source_region_ids: Property sourceRegionIds: Match statements are used to match source region IDs of the routes. You can enter at most 32 region IDs.
         :param source_route_table_ids: Property sourceRouteTableIds: Match statements are used to match source route table IDs of the routes. You can enter at most 32 route table IDs.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenRouteMapProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument cen_region_id", value=cen_region_id, expected_type=type_hints["cen_region_id"])
+            check_type(argname="argument map_result", value=map_result, expected_type=type_hints["map_result"])
+            check_type(argname="argument priority", value=priority, expected_type=type_hints["priority"])
+            check_type(argname="argument transmit_direction", value=transmit_direction, expected_type=type_hints["transmit_direction"])
+            check_type(argname="argument as_path_match_mode", value=as_path_match_mode, expected_type=type_hints["as_path_match_mode"])
+            check_type(argname="argument cidr_match_mode", value=cidr_match_mode, expected_type=type_hints["cidr_match_mode"])
+            check_type(argname="argument community_match_mode", value=community_match_mode, expected_type=type_hints["community_match_mode"])
+            check_type(argname="argument community_operate_mode", value=community_operate_mode, expected_type=type_hints["community_operate_mode"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument destination_child_instance_types", value=destination_child_instance_types, expected_type=type_hints["destination_child_instance_types"])
+            check_type(argname="argument destination_cidr_blocks", value=destination_cidr_blocks, expected_type=type_hints["destination_cidr_blocks"])
+            check_type(argname="argument destination_instance_ids", value=destination_instance_ids, expected_type=type_hints["destination_instance_ids"])
+            check_type(argname="argument destination_instance_ids_reverse_match", value=destination_instance_ids_reverse_match, expected_type=type_hints["destination_instance_ids_reverse_match"])
+            check_type(argname="argument destination_route_table_ids", value=destination_route_table_ids, expected_type=type_hints["destination_route_table_ids"])
+            check_type(argname="argument match_asns", value=match_asns, expected_type=type_hints["match_asns"])
+            check_type(argname="argument match_community_set", value=match_community_set, expected_type=type_hints["match_community_set"])
+            check_type(argname="argument next_priority", value=next_priority, expected_type=type_hints["next_priority"])
+            check_type(argname="argument operate_community_set", value=operate_community_set, expected_type=type_hints["operate_community_set"])
+            check_type(argname="argument preference", value=preference, expected_type=type_hints["preference"])
+            check_type(argname="argument prepend_as_path", value=prepend_as_path, expected_type=type_hints["prepend_as_path"])
+            check_type(argname="argument route_types", value=route_types, expected_type=type_hints["route_types"])
+            check_type(argname="argument source_child_instance_types", value=source_child_instance_types, expected_type=type_hints["source_child_instance_types"])
+            check_type(argname="argument source_instance_ids", value=source_instance_ids, expected_type=type_hints["source_instance_ids"])
+            check_type(argname="argument source_instance_ids_reverse_match", value=source_instance_ids_reverse_match, expected_type=type_hints["source_instance_ids_reverse_match"])
+            check_type(argname="argument source_region_ids", value=source_region_ids, expected_type=type_hints["source_region_ids"])
+            check_type(argname="argument source_route_table_ids", value=source_route_table_ids, expected_type=type_hints["source_route_table_ids"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "cen_region_id": cen_region_id,
@@ -1255,7 +1360,7 @@ class CenRouteService(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CenRouteServiceProps",
+        props: typing.Union["CenRouteServiceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenRouteService``.
@@ -1269,6 +1374,12 @@ class CenRouteService(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenRouteService.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1316,6 +1427,15 @@ class CenRouteServiceProps:
         :param conflict_ignore: Property conflictIgnore: Whether to ignore conflict when creating. If true, when the CloudRoute.Conflict error code is encountered during creation, it will be ignored as the creation is successful, and the deletion phase will be skipped. Default false.
         :param description: Property description: The description of the cloud service.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenRouteServiceProps.__init__)
+            check_type(argname="argument access_region_id", value=access_region_id, expected_type=type_hints["access_region_id"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+            check_type(argname="argument host_region_id", value=host_region_id, expected_type=type_hints["host_region_id"])
+            check_type(argname="argument host_vpc_id", value=host_vpc_id, expected_type=type_hints["host_vpc_id"])
+            check_type(argname="argument conflict_ignore", value=conflict_ignore, expected_type=type_hints["conflict_ignore"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
         self._values: typing.Dict[str, typing.Any] = {
             "access_region_id": access_region_id,
             "cen_id": cen_id,
@@ -1410,7 +1530,7 @@ class CenVbrHealthCheck(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CenVbrHealthCheckProps",
+        props: typing.Union["CenVbrHealthCheckProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenVbrHealthCheck``.
@@ -1424,6 +1544,12 @@ class CenVbrHealthCheck(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenVbrHealthCheck.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1528,6 +1654,16 @@ class CenVbrHealthCheckProps:
         :param healthy_threshold: Property healthyThreshold: Specifies the number of probe packets to be sent during the health check. Default value: 8. Valid values: 3 to 8. Unit: packet.
         :param vbr_instance_owner_id: Property vbrInstanceOwnerId: The User ID (UID) of the account to which the VBR instance belongs.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CenVbrHealthCheckProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument health_check_target_ip", value=health_check_target_ip, expected_type=type_hints["health_check_target_ip"])
+            check_type(argname="argument vbr_instance_id", value=vbr_instance_id, expected_type=type_hints["vbr_instance_id"])
+            check_type(argname="argument vbr_instance_region_id", value=vbr_instance_region_id, expected_type=type_hints["vbr_instance_region_id"])
+            check_type(argname="argument health_check_interval", value=health_check_interval, expected_type=type_hints["health_check_interval"])
+            check_type(argname="argument health_check_source_ip", value=health_check_source_ip, expected_type=type_hints["health_check_source_ip"])
+            check_type(argname="argument healthy_threshold", value=healthy_threshold, expected_type=type_hints["healthy_threshold"])
+            check_type(argname="argument vbr_instance_owner_id", value=vbr_instance_owner_id, expected_type=type_hints["vbr_instance_owner_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "health_check_target_ip": health_check_target_ip,
@@ -1645,7 +1781,7 @@ class RosCenBandwidthLimit(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCenBandwidthLimitProps",
+        props: typing.Union["RosCenBandwidthLimitProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenBandwidthLimit``.
@@ -1655,6 +1791,12 @@ class RosCenBandwidthLimit(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthLimit.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1665,6 +1807,9 @@ class RosCenBandwidthLimit(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthLimit._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1691,6 +1836,9 @@ class RosCenBandwidthLimit(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthLimit, "bandwidth_limit").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidthLimit", value)
 
     @builtins.property # type: ignore[misc]
@@ -1706,6 +1854,9 @@ class RosCenBandwidthLimit(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthLimit, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1716,6 +1867,9 @@ class RosCenBandwidthLimit(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthLimit, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1731,6 +1885,9 @@ class RosCenBandwidthLimit(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthLimit, "local_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1748,6 +1905,9 @@ class RosCenBandwidthLimit(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthLimit, "opposite_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeRegionId", value)
 
 
@@ -1777,6 +1937,12 @@ class RosCenBandwidthLimitProps:
         :param local_region_id: 
         :param opposite_region_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthLimitProps.__init__)
+            check_type(argname="argument bandwidth_limit", value=bandwidth_limit, expected_type=type_hints["bandwidth_limit"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument local_region_id", value=local_region_id, expected_type=type_hints["local_region_id"])
+            check_type(argname="argument opposite_region_id", value=opposite_region_id, expected_type=type_hints["opposite_region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth_limit": bandwidth_limit,
             "cen_id": cen_id,
@@ -1845,7 +2011,7 @@ class RosCenBandwidthPackage(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCenBandwidthPackageProps",
+        props: typing.Union["RosCenBandwidthPackageProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenBandwidthPackage``.
@@ -1855,6 +2021,12 @@ class RosCenBandwidthPackage(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthPackage.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1865,6 +2037,9 @@ class RosCenBandwidthPackage(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthPackage._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1899,6 +2074,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -1908,6 +2086,9 @@ class RosCenBandwidthPackage(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1928,6 +2109,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "geographic_region_a_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "geographicRegionAId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1948,6 +2132,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "geographic_region_b_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "geographicRegionBId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1969,6 +2156,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "auto_pay").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPay", value)
 
     @builtins.property # type: ignore[misc]
@@ -1986,6 +2176,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "auto_renew").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenew", value)
 
     @builtins.property # type: ignore[misc]
@@ -2003,6 +2196,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "auto_renew_duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenewDuration", value)
 
     @builtins.property # type: ignore[misc]
@@ -2020,6 +2216,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "bandwidth_package_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidthPackageChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2040,6 +2239,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -2060,6 +2262,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -2077,6 +2282,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -2094,6 +2302,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "pricing_cycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pricingCycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -2111,6 +2322,9 @@ class RosCenBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackage, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
 
@@ -2125,7 +2339,7 @@ class RosCenBandwidthPackageAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCenBandwidthPackageAssociationProps",
+        props: typing.Union["RosCenBandwidthPackageAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenBandwidthPackageAssociation``.
@@ -2135,6 +2349,12 @@ class RosCenBandwidthPackageAssociation(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthPackageAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2145,6 +2365,9 @@ class RosCenBandwidthPackageAssociation(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthPackageAssociation._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2173,6 +2396,9 @@ class RosCenBandwidthPackageAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackageAssociation, "cen_bandwidth_package_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenBandwidthPackageId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2188,6 +2414,9 @@ class RosCenBandwidthPackageAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackageAssociation, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2198,6 +2427,9 @@ class RosCenBandwidthPackageAssociation(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenBandwidthPackageAssociation, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -2221,6 +2453,10 @@ class RosCenBandwidthPackageAssociationProps:
         :param cen_bandwidth_package_id: 
         :param cen_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthPackageAssociationProps.__init__)
+            check_type(argname="argument cen_bandwidth_package_id", value=cen_bandwidth_package_id, expected_type=type_hints["cen_bandwidth_package_id"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_bandwidth_package_id": cen_bandwidth_package_id,
             "cen_id": cen_id,
@@ -2308,6 +2544,20 @@ class RosCenBandwidthPackageProps:
         :param pricing_cycle: 
         :param resource_group_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenBandwidthPackageProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument geographic_region_a_id", value=geographic_region_a_id, expected_type=type_hints["geographic_region_a_id"])
+            check_type(argname="argument geographic_region_b_id", value=geographic_region_b_id, expected_type=type_hints["geographic_region_b_id"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument auto_renew", value=auto_renew, expected_type=type_hints["auto_renew"])
+            check_type(argname="argument auto_renew_duration", value=auto_renew_duration, expected_type=type_hints["auto_renew_duration"])
+            check_type(argname="argument bandwidth_package_charge_type", value=bandwidth_package_charge_type, expected_type=type_hints["bandwidth_package_charge_type"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth": bandwidth,
             "geographic_region_a_id": geographic_region_a_id,
@@ -2492,7 +2742,7 @@ class RosCenInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCenInstanceProps",
+        props: typing.Union["RosCenInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenInstance``.
@@ -2502,6 +2752,12 @@ class RosCenInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2512,6 +2768,9 @@ class RosCenInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2540,6 +2799,9 @@ class RosCenInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2560,6 +2822,9 @@ class RosCenInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstance, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -2580,6 +2845,9 @@ class RosCenInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstance, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -2601,6 +2869,9 @@ class RosCenInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstance, "protection_level").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "protectionLevel", value)
 
     @builtins.property # type: ignore[misc]
@@ -2618,6 +2889,9 @@ class RosCenInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstance, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2633,6 +2907,9 @@ class RosCenInstance(
         self,
         value: typing.Optional[typing.List["RosCenInstance.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -2651,6 +2928,10 @@ class RosCenInstance(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosCenInstance.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -2699,7 +2980,7 @@ class RosCenInstanceAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCenInstanceAttachmentProps",
+        props: typing.Union["RosCenInstanceAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenInstanceAttachment``.
@@ -2709,6 +2990,12 @@ class RosCenInstanceAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenInstanceAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2719,6 +3006,9 @@ class RosCenInstanceAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenInstanceAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2745,6 +3035,9 @@ class RosCenInstanceAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstanceAttachment, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2760,6 +3053,9 @@ class RosCenInstanceAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstanceAttachment, "child_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "childInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2777,6 +3073,9 @@ class RosCenInstanceAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstanceAttachment, "child_instance_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "childInstanceRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2794,6 +3093,9 @@ class RosCenInstanceAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstanceAttachment, "child_instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "childInstanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2804,6 +3106,9 @@ class RosCenInstanceAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstanceAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2821,6 +3126,9 @@ class RosCenInstanceAttachment(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenInstanceAttachment, "child_instance_owner_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "childInstanceOwnerId", value)
 
 
@@ -2853,6 +3161,13 @@ class RosCenInstanceAttachmentProps:
         :param child_instance_type: 
         :param child_instance_owner_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenInstanceAttachmentProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument child_instance_id", value=child_instance_id, expected_type=type_hints["child_instance_id"])
+            check_type(argname="argument child_instance_region_id", value=child_instance_region_id, expected_type=type_hints["child_instance_region_id"])
+            check_type(argname="argument child_instance_type", value=child_instance_type, expected_type=type_hints["child_instance_type"])
+            check_type(argname="argument child_instance_owner_id", value=child_instance_owner_id, expected_type=type_hints["child_instance_owner_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "child_instance_id": child_instance_id,
@@ -2943,7 +3258,7 @@ class RosCenInstanceProps:
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         protection_level: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosCenInstance.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosCenInstance.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CEN::CenInstance``.
 
@@ -2953,6 +3268,13 @@ class RosCenInstanceProps:
         :param resource_group_id: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenInstanceProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument protection_level", value=protection_level, expected_type=type_hints["protection_level"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {}
         if description is not None:
             self._values["description"] = description
@@ -3046,7 +3368,7 @@ class RosCenRouteMap(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCenRouteMapProps",
+        props: typing.Union["RosCenRouteMapProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenRouteMap``.
@@ -3056,6 +3378,12 @@ class RosCenRouteMap(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenRouteMap.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3066,6 +3394,9 @@ class RosCenRouteMap(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenRouteMap._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3100,6 +3431,9 @@ class RosCenRouteMap(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3115,6 +3449,9 @@ class RosCenRouteMap(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "cen_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3124,6 +3461,9 @@ class RosCenRouteMap(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3143,6 +3483,9 @@ class RosCenRouteMap(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "map_result").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mapResult", value)
 
     @builtins.property # type: ignore[misc]
@@ -3161,6 +3504,9 @@ class RosCenRouteMap(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "priority").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "priority", value)
 
     @builtins.property # type: ignore[misc]
@@ -3184,6 +3530,9 @@ class RosCenRouteMap(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "transmit_direction").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transmitDirection", value)
 
     @builtins.property # type: ignore[misc]
@@ -3205,6 +3554,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "as_path_match_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "asPathMatchMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -3228,6 +3580,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "cidr_match_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cidrMatchMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -3249,6 +3604,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "community_match_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "communityMatchMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -3270,6 +3628,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "community_operate_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "communityOperateMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -3287,6 +3648,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -3310,6 +3674,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "destination_child_instance_types").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationChildInstanceTypes", value)
 
     @builtins.property # type: ignore[misc]
@@ -3327,6 +3694,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "destination_cidr_blocks").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationCidrBlocks", value)
 
     @builtins.property # type: ignore[misc]
@@ -3348,6 +3718,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "destination_instance_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationInstanceIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3369,6 +3742,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "destination_instance_ids_reverse_match").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationInstanceIdsReverseMatch", value)
 
     @builtins.property # type: ignore[misc]
@@ -3389,6 +3765,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "destination_route_table_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationRouteTableIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3409,6 +3788,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "match_asns").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "matchAsns", value)
 
     @builtins.property # type: ignore[misc]
@@ -3429,6 +3811,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "match_community_set").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "matchCommunitySet", value)
 
     @builtins.property # type: ignore[misc]
@@ -3452,6 +3837,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "next_priority").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "nextPriority", value)
 
     @builtins.property # type: ignore[misc]
@@ -3472,6 +3860,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "operate_community_set").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "operateCommunitySet", value)
 
     @builtins.property # type: ignore[misc]
@@ -3489,6 +3880,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "preference").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preference", value)
 
     @builtins.property # type: ignore[misc]
@@ -3511,6 +3905,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "prepend_as_path").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "prependAsPath", value)
 
     @builtins.property # type: ignore[misc]
@@ -3534,6 +3931,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "route_types").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routeTypes", value)
 
     @builtins.property # type: ignore[misc]
@@ -3556,6 +3956,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "source_child_instance_types").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceChildInstanceTypes", value)
 
     @builtins.property # type: ignore[misc]
@@ -3576,6 +3979,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "source_instance_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceInstanceIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3597,6 +4003,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "source_instance_ids_reverse_match").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceInstanceIdsReverseMatch", value)
 
     @builtins.property # type: ignore[misc]
@@ -3614,6 +4023,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "source_region_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceRegionIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -3631,6 +4043,9 @@ class RosCenRouteMap(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteMap, "source_route_table_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceRouteTableIds", value)
 
 
@@ -3729,6 +4144,35 @@ class RosCenRouteMapProps:
         :param source_region_ids: 
         :param source_route_table_ids: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenRouteMapProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument cen_region_id", value=cen_region_id, expected_type=type_hints["cen_region_id"])
+            check_type(argname="argument map_result", value=map_result, expected_type=type_hints["map_result"])
+            check_type(argname="argument priority", value=priority, expected_type=type_hints["priority"])
+            check_type(argname="argument transmit_direction", value=transmit_direction, expected_type=type_hints["transmit_direction"])
+            check_type(argname="argument as_path_match_mode", value=as_path_match_mode, expected_type=type_hints["as_path_match_mode"])
+            check_type(argname="argument cidr_match_mode", value=cidr_match_mode, expected_type=type_hints["cidr_match_mode"])
+            check_type(argname="argument community_match_mode", value=community_match_mode, expected_type=type_hints["community_match_mode"])
+            check_type(argname="argument community_operate_mode", value=community_operate_mode, expected_type=type_hints["community_operate_mode"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument destination_child_instance_types", value=destination_child_instance_types, expected_type=type_hints["destination_child_instance_types"])
+            check_type(argname="argument destination_cidr_blocks", value=destination_cidr_blocks, expected_type=type_hints["destination_cidr_blocks"])
+            check_type(argname="argument destination_instance_ids", value=destination_instance_ids, expected_type=type_hints["destination_instance_ids"])
+            check_type(argname="argument destination_instance_ids_reverse_match", value=destination_instance_ids_reverse_match, expected_type=type_hints["destination_instance_ids_reverse_match"])
+            check_type(argname="argument destination_route_table_ids", value=destination_route_table_ids, expected_type=type_hints["destination_route_table_ids"])
+            check_type(argname="argument match_asns", value=match_asns, expected_type=type_hints["match_asns"])
+            check_type(argname="argument match_community_set", value=match_community_set, expected_type=type_hints["match_community_set"])
+            check_type(argname="argument next_priority", value=next_priority, expected_type=type_hints["next_priority"])
+            check_type(argname="argument operate_community_set", value=operate_community_set, expected_type=type_hints["operate_community_set"])
+            check_type(argname="argument preference", value=preference, expected_type=type_hints["preference"])
+            check_type(argname="argument prepend_as_path", value=prepend_as_path, expected_type=type_hints["prepend_as_path"])
+            check_type(argname="argument route_types", value=route_types, expected_type=type_hints["route_types"])
+            check_type(argname="argument source_child_instance_types", value=source_child_instance_types, expected_type=type_hints["source_child_instance_types"])
+            check_type(argname="argument source_instance_ids", value=source_instance_ids, expected_type=type_hints["source_instance_ids"])
+            check_type(argname="argument source_instance_ids_reverse_match", value=source_instance_ids_reverse_match, expected_type=type_hints["source_instance_ids_reverse_match"])
+            check_type(argname="argument source_region_ids", value=source_region_ids, expected_type=type_hints["source_region_ids"])
+            check_type(argname="argument source_route_table_ids", value=source_route_table_ids, expected_type=type_hints["source_route_table_ids"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "cen_region_id": cen_region_id,
@@ -4157,7 +4601,7 @@ class RosCenRouteService(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCenRouteServiceProps",
+        props: typing.Union["RosCenRouteServiceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenRouteService``.
@@ -4167,6 +4611,12 @@ class RosCenRouteService(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenRouteService.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4177,6 +4627,9 @@ class RosCenRouteService(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenRouteService._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4211,6 +4664,9 @@ class RosCenRouteService(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteService, "access_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accessRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4226,6 +4682,9 @@ class RosCenRouteService(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteService, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4235,6 +4694,9 @@ class RosCenRouteService(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteService, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4247,6 +4709,9 @@ class RosCenRouteService(
 
     @host.setter
     def host(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteService, "host").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "host", value)
 
     @builtins.property # type: ignore[misc]
@@ -4266,6 +4731,9 @@ class RosCenRouteService(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteService, "host_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "hostRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4281,6 +4749,9 @@ class RosCenRouteService(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteService, "host_vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "hostVpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4301,6 +4772,9 @@ class RosCenRouteService(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteService, "conflict_ignore").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "conflictIgnore", value)
 
     @builtins.property # type: ignore[misc]
@@ -4318,6 +4792,9 @@ class RosCenRouteService(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenRouteService, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
 
@@ -4356,6 +4833,15 @@ class RosCenRouteServiceProps:
         :param conflict_ignore: 
         :param description: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenRouteServiceProps.__init__)
+            check_type(argname="argument access_region_id", value=access_region_id, expected_type=type_hints["access_region_id"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+            check_type(argname="argument host_region_id", value=host_region_id, expected_type=type_hints["host_region_id"])
+            check_type(argname="argument host_vpc_id", value=host_vpc_id, expected_type=type_hints["host_vpc_id"])
+            check_type(argname="argument conflict_ignore", value=conflict_ignore, expected_type=type_hints["conflict_ignore"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
         self._values: typing.Dict[str, typing.Any] = {
             "access_region_id": access_region_id,
             "cen_id": cen_id,
@@ -4463,7 +4949,7 @@ class RosCenVbrHealthCheck(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCenVbrHealthCheckProps",
+        props: typing.Union["RosCenVbrHealthCheckProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::CenVbrHealthCheck``.
@@ -4473,6 +4959,12 @@ class RosCenVbrHealthCheck(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenVbrHealthCheck.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4483,6 +4975,9 @@ class RosCenVbrHealthCheck(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenVbrHealthCheck._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4573,6 +5068,9 @@ class RosCenVbrHealthCheck(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4582,6 +5080,9 @@ class RosCenVbrHealthCheck(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4599,6 +5100,9 @@ class RosCenVbrHealthCheck(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "health_check_target_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckTargetIp", value)
 
     @builtins.property # type: ignore[misc]
@@ -4614,6 +5118,9 @@ class RosCenVbrHealthCheck(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "vbr_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vbrInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4631,6 +5138,9 @@ class RosCenVbrHealthCheck(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "vbr_instance_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vbrInstanceRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4648,6 +5158,9 @@ class RosCenVbrHealthCheck(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "health_check_interval").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckInterval", value)
 
     @builtins.property # type: ignore[misc]
@@ -4665,6 +5178,9 @@ class RosCenVbrHealthCheck(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "health_check_source_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckSourceIp", value)
 
     @builtins.property # type: ignore[misc]
@@ -4682,6 +5198,9 @@ class RosCenVbrHealthCheck(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "healthy_threshold").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthyThreshold", value)
 
     @builtins.property # type: ignore[misc]
@@ -4699,6 +5218,9 @@ class RosCenVbrHealthCheck(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCenVbrHealthCheck, "vbr_instance_owner_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vbrInstanceOwnerId", value)
 
 
@@ -4740,6 +5262,16 @@ class RosCenVbrHealthCheckProps:
         :param healthy_threshold: 
         :param vbr_instance_owner_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCenVbrHealthCheckProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument health_check_target_ip", value=health_check_target_ip, expected_type=type_hints["health_check_target_ip"])
+            check_type(argname="argument vbr_instance_id", value=vbr_instance_id, expected_type=type_hints["vbr_instance_id"])
+            check_type(argname="argument vbr_instance_region_id", value=vbr_instance_region_id, expected_type=type_hints["vbr_instance_region_id"])
+            check_type(argname="argument health_check_interval", value=health_check_interval, expected_type=type_hints["health_check_interval"])
+            check_type(argname="argument health_check_source_ip", value=health_check_source_ip, expected_type=type_hints["health_check_source_ip"])
+            check_type(argname="argument healthy_threshold", value=healthy_threshold, expected_type=type_hints["healthy_threshold"])
+            check_type(argname="argument vbr_instance_owner_id", value=vbr_instance_owner_id, expected_type=type_hints["vbr_instance_owner_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "health_check_target_ip": health_check_target_ip,
@@ -4858,7 +5390,7 @@ class RosRouteEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRouteEntryProps",
+        props: typing.Union["RosRouteEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::RouteEntry``.
@@ -4868,6 +5400,12 @@ class RosRouteEntry(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4878,6 +5416,9 @@ class RosRouteEntry(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteEntry._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4904,6 +5445,9 @@ class RosRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteEntry, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4919,6 +5463,9 @@ class RosRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteEntry, "child_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "childInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4936,6 +5483,9 @@ class RosRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteEntry, "child_instance_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "childInstanceRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4953,6 +5503,9 @@ class RosRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteEntry, "child_instance_route_table_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "childInstanceRouteTableId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4970,6 +5523,9 @@ class RosRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteEntry, "child_instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "childInstanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -4987,6 +5543,9 @@ class RosRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteEntry, "destination_cidr_block").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "destinationCidrBlock", value)
 
     @builtins.property # type: ignore[misc]
@@ -4997,6 +5556,9 @@ class RosRouteEntry(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteEntry, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -5032,6 +5594,14 @@ class RosRouteEntryProps:
         :param child_instance_type: 
         :param destination_cidr_block: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteEntryProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument child_instance_id", value=child_instance_id, expected_type=type_hints["child_instance_id"])
+            check_type(argname="argument child_instance_region_id", value=child_instance_region_id, expected_type=type_hints["child_instance_region_id"])
+            check_type(argname="argument child_instance_route_table_id", value=child_instance_route_table_id, expected_type=type_hints["child_instance_route_table_id"])
+            check_type(argname="argument child_instance_type", value=child_instance_type, expected_type=type_hints["child_instance_type"])
+            check_type(argname="argument destination_cidr_block", value=destination_cidr_block, expected_type=type_hints["destination_cidr_block"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "child_instance_id": child_instance_id,
@@ -5126,7 +5696,7 @@ class RosTransitRouter(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTransitRouterProps",
+        props: typing.Union["RosTransitRouterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouter``.
@@ -5136,6 +5706,12 @@ class RosTransitRouter(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouter.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5146,6 +5722,9 @@ class RosTransitRouter(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouter._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5228,6 +5807,9 @@ class RosTransitRouter(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouter, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5237,6 +5819,9 @@ class RosTransitRouter(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouter, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5254,6 +5839,9 @@ class RosTransitRouter(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouter, "transit_router_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -5271,6 +5859,9 @@ class RosTransitRouter(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouter, "transit_router_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterName", value)
 
 
@@ -5285,7 +5876,7 @@ class RosTransitRouterPeerAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTransitRouterPeerAttachmentProps",
+        props: typing.Union["RosTransitRouterPeerAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterPeerAttachment``.
@@ -5295,6 +5886,12 @@ class RosTransitRouterPeerAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterPeerAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5305,6 +5902,9 @@ class RosTransitRouterPeerAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterPeerAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5437,6 +6037,9 @@ class RosTransitRouterPeerAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5454,6 +6057,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "peer_transit_router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "peerTransitRouterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5471,6 +6077,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "auto_publish_route_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPublishRouteEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -5488,6 +6097,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -5505,6 +6117,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "cen_bandwidth_package_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenBandwidthPackageId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5522,6 +6137,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5539,6 +6157,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "peer_transit_router_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "peerTransitRouterRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5556,6 +6177,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "transit_router_attachment_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterAttachmentDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -5573,6 +6197,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "transit_router_attachment_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterAttachmentName", value)
 
     @builtins.property # type: ignore[misc]
@@ -5590,6 +6217,9 @@ class RosTransitRouterPeerAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterPeerAttachment, "transit_router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterId", value)
 
 
@@ -5634,6 +6264,17 @@ class RosTransitRouterPeerAttachmentProps:
         :param transit_router_attachment_name: 
         :param transit_router_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterPeerAttachmentProps.__init__)
+            check_type(argname="argument peer_transit_router_id", value=peer_transit_router_id, expected_type=type_hints["peer_transit_router_id"])
+            check_type(argname="argument auto_publish_route_enabled", value=auto_publish_route_enabled, expected_type=type_hints["auto_publish_route_enabled"])
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument cen_bandwidth_package_id", value=cen_bandwidth_package_id, expected_type=type_hints["cen_bandwidth_package_id"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument peer_transit_router_region_id", value=peer_transit_router_region_id, expected_type=type_hints["peer_transit_router_region_id"])
+            check_type(argname="argument transit_router_attachment_description", value=transit_router_attachment_description, expected_type=type_hints["transit_router_attachment_description"])
+            check_type(argname="argument transit_router_attachment_name", value=transit_router_attachment_name, expected_type=type_hints["transit_router_attachment_name"])
+            check_type(argname="argument transit_router_id", value=transit_router_id, expected_type=type_hints["transit_router_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "peer_transit_router_id": peer_transit_router_id,
         }
@@ -5780,6 +6421,11 @@ class RosTransitRouterProps:
         :param transit_router_description: 
         :param transit_router_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument transit_router_description", value=transit_router_description, expected_type=type_hints["transit_router_description"])
+            check_type(argname="argument transit_router_name", value=transit_router_name, expected_type=type_hints["transit_router_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
         }
@@ -5840,7 +6486,7 @@ class RosTransitRouterRouteEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTransitRouterRouteEntryProps",
+        props: typing.Union["RosTransitRouterRouteEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterRouteEntry``.
@@ -5850,6 +6496,12 @@ class RosTransitRouterRouteEntry(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5860,6 +6512,9 @@ class RosTransitRouterRouteEntry(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteEntry._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5946,6 +6601,9 @@ class RosTransitRouterRouteEntry(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteEntry, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5963,6 +6621,9 @@ class RosTransitRouterRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteEntry, "transit_router_route_entry_destination_cidr_block").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteEntryDestinationCidrBlock", value)
 
     @builtins.property # type: ignore[misc]
@@ -5980,6 +6641,9 @@ class RosTransitRouterRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteEntry, "transit_router_route_entry_next_hop_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteEntryNextHopType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5997,6 +6661,9 @@ class RosTransitRouterRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteEntry, "transit_router_route_table_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteTableId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6014,6 +6681,9 @@ class RosTransitRouterRouteEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteEntry, "transit_router_route_entry_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteEntryDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -6031,6 +6701,9 @@ class RosTransitRouterRouteEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteEntry, "transit_router_route_entry_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteEntryName", value)
 
     @builtins.property # type: ignore[misc]
@@ -6048,6 +6721,9 @@ class RosTransitRouterRouteEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteEntry, "transit_router_route_entry_next_hop_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteEntryNextHopId", value)
 
 
@@ -6083,6 +6759,14 @@ class RosTransitRouterRouteEntryProps:
         :param transit_router_route_entry_name: 
         :param transit_router_route_entry_next_hop_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteEntryProps.__init__)
+            check_type(argname="argument transit_router_route_entry_destination_cidr_block", value=transit_router_route_entry_destination_cidr_block, expected_type=type_hints["transit_router_route_entry_destination_cidr_block"])
+            check_type(argname="argument transit_router_route_entry_next_hop_type", value=transit_router_route_entry_next_hop_type, expected_type=type_hints["transit_router_route_entry_next_hop_type"])
+            check_type(argname="argument transit_router_route_table_id", value=transit_router_route_table_id, expected_type=type_hints["transit_router_route_table_id"])
+            check_type(argname="argument transit_router_route_entry_description", value=transit_router_route_entry_description, expected_type=type_hints["transit_router_route_entry_description"])
+            check_type(argname="argument transit_router_route_entry_name", value=transit_router_route_entry_name, expected_type=type_hints["transit_router_route_entry_name"])
+            check_type(argname="argument transit_router_route_entry_next_hop_id", value=transit_router_route_entry_next_hop_id, expected_type=type_hints["transit_router_route_entry_next_hop_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "transit_router_route_entry_destination_cidr_block": transit_router_route_entry_destination_cidr_block,
             "transit_router_route_entry_next_hop_type": transit_router_route_entry_next_hop_type,
@@ -6181,7 +6865,7 @@ class RosTransitRouterRouteTable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTransitRouterRouteTableProps",
+        props: typing.Union["RosTransitRouterRouteTableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterRouteTable``.
@@ -6191,6 +6875,12 @@ class RosTransitRouterRouteTable(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6201,6 +6891,9 @@ class RosTransitRouterRouteTable(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTable._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6269,6 +6962,9 @@ class RosTransitRouterRouteTable(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTable, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6284,6 +6980,9 @@ class RosTransitRouterRouteTable(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTable, "transit_router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6301,6 +7000,9 @@ class RosTransitRouterRouteTable(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTable, "transit_router_route_table_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteTableDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -6318,6 +7020,9 @@ class RosTransitRouterRouteTable(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTable, "transit_router_route_table_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteTableName", value)
 
 
@@ -6332,7 +7037,7 @@ class RosTransitRouterRouteTableAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTransitRouterRouteTableAssociationProps",
+        props: typing.Union["RosTransitRouterRouteTableAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterRouteTableAssociation``.
@@ -6342,6 +7047,12 @@ class RosTransitRouterRouteTableAssociation(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTableAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6352,6 +7063,9 @@ class RosTransitRouterRouteTableAssociation(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTableAssociation._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6404,6 +7118,9 @@ class RosTransitRouterRouteTableAssociation(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTableAssociation, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6421,6 +7138,9 @@ class RosTransitRouterRouteTableAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTableAssociation, "transit_router_attachment_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterAttachmentId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6438,6 +7158,9 @@ class RosTransitRouterRouteTableAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTableAssociation, "transit_router_route_table_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteTableId", value)
 
 
@@ -6461,6 +7184,10 @@ class RosTransitRouterRouteTableAssociationProps:
         :param transit_router_attachment_id: 
         :param transit_router_route_table_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTableAssociationProps.__init__)
+            check_type(argname="argument transit_router_attachment_id", value=transit_router_attachment_id, expected_type=type_hints["transit_router_attachment_id"])
+            check_type(argname="argument transit_router_route_table_id", value=transit_router_route_table_id, expected_type=type_hints["transit_router_route_table_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "transit_router_attachment_id": transit_router_attachment_id,
             "transit_router_route_table_id": transit_router_route_table_id,
@@ -6511,7 +7238,7 @@ class RosTransitRouterRouteTablePropagation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTransitRouterRouteTablePropagationProps",
+        props: typing.Union["RosTransitRouterRouteTablePropagationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterRouteTablePropagation``.
@@ -6521,6 +7248,12 @@ class RosTransitRouterRouteTablePropagation(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTablePropagation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6531,6 +7264,9 @@ class RosTransitRouterRouteTablePropagation(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTablePropagation._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6583,6 +7319,9 @@ class RosTransitRouterRouteTablePropagation(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTablePropagation, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6600,6 +7339,9 @@ class RosTransitRouterRouteTablePropagation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTablePropagation, "transit_router_attachment_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterAttachmentId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6617,6 +7359,9 @@ class RosTransitRouterRouteTablePropagation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterRouteTablePropagation, "transit_router_route_table_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterRouteTableId", value)
 
 
@@ -6640,6 +7385,10 @@ class RosTransitRouterRouteTablePropagationProps:
         :param transit_router_attachment_id: 
         :param transit_router_route_table_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTablePropagationProps.__init__)
+            check_type(argname="argument transit_router_attachment_id", value=transit_router_attachment_id, expected_type=type_hints["transit_router_attachment_id"])
+            check_type(argname="argument transit_router_route_table_id", value=transit_router_route_table_id, expected_type=type_hints["transit_router_route_table_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "transit_router_attachment_id": transit_router_attachment_id,
             "transit_router_route_table_id": transit_router_route_table_id,
@@ -6702,6 +7451,11 @@ class RosTransitRouterRouteTableProps:
         :param transit_router_route_table_description: 
         :param transit_router_route_table_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterRouteTableProps.__init__)
+            check_type(argname="argument transit_router_id", value=transit_router_id, expected_type=type_hints["transit_router_id"])
+            check_type(argname="argument transit_router_route_table_description", value=transit_router_route_table_description, expected_type=type_hints["transit_router_route_table_description"])
+            check_type(argname="argument transit_router_route_table_name", value=transit_router_route_table_name, expected_type=type_hints["transit_router_route_table_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "transit_router_id": transit_router_id,
         }
@@ -6762,7 +7516,7 @@ class RosTransitRouterVbrAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTransitRouterVbrAttachmentProps",
+        props: typing.Union["RosTransitRouterVbrAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterVbrAttachment``.
@@ -6772,6 +7526,12 @@ class RosTransitRouterVbrAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterVbrAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6782,6 +7542,9 @@ class RosTransitRouterVbrAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterVbrAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6882,6 +7645,9 @@ class RosTransitRouterVbrAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVbrAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6897,6 +7663,9 @@ class RosTransitRouterVbrAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVbrAttachment, "vbr_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vbrId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6914,6 +7683,9 @@ class RosTransitRouterVbrAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVbrAttachment, "auto_publish_route_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPublishRouteEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -6931,6 +7703,9 @@ class RosTransitRouterVbrAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVbrAttachment, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6948,6 +7723,9 @@ class RosTransitRouterVbrAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVbrAttachment, "transit_router_attachment_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterAttachmentDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -6965,6 +7743,9 @@ class RosTransitRouterVbrAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVbrAttachment, "transit_router_attachment_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterAttachmentName", value)
 
     @builtins.property # type: ignore[misc]
@@ -6982,6 +7763,9 @@ class RosTransitRouterVbrAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVbrAttachment, "transit_router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6999,6 +7783,9 @@ class RosTransitRouterVbrAttachment(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVbrAttachment, "vbr_owner_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vbrOwnerId", value)
 
 
@@ -7037,6 +7824,15 @@ class RosTransitRouterVbrAttachmentProps:
         :param transit_router_id: 
         :param vbr_owner_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterVbrAttachmentProps.__init__)
+            check_type(argname="argument vbr_id", value=vbr_id, expected_type=type_hints["vbr_id"])
+            check_type(argname="argument auto_publish_route_enabled", value=auto_publish_route_enabled, expected_type=type_hints["auto_publish_route_enabled"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument transit_router_attachment_description", value=transit_router_attachment_description, expected_type=type_hints["transit_router_attachment_description"])
+            check_type(argname="argument transit_router_attachment_name", value=transit_router_attachment_name, expected_type=type_hints["transit_router_attachment_name"])
+            check_type(argname="argument transit_router_id", value=transit_router_id, expected_type=type_hints["transit_router_id"])
+            check_type(argname="argument vbr_owner_id", value=vbr_owner_id, expected_type=type_hints["vbr_owner_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "vbr_id": vbr_id,
         }
@@ -7145,7 +7941,7 @@ class RosTransitRouterVpcAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTransitRouterVpcAttachmentProps",
+        props: typing.Union["RosTransitRouterVpcAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterVpcAttachment``.
@@ -7155,6 +7951,12 @@ class RosTransitRouterVpcAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterVpcAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -7165,6 +7967,9 @@ class RosTransitRouterVpcAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterVpcAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -7257,6 +8062,9 @@ class RosTransitRouterVpcAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -7272,6 +8080,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -7289,6 +8100,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosTransitRouterVpcAttachment.ZoneMappingsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "zone_mappings").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneMappings", value)
 
     @builtins.property # type: ignore[misc]
@@ -7306,6 +8120,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "auto_create_vpc_route").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoCreateVpcRoute", value)
 
     @builtins.property # type: ignore[misc]
@@ -7323,6 +8140,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -7340,6 +8160,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "chargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -7357,6 +8180,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "deletion_force").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionForce", value)
 
     @builtins.property # type: ignore[misc]
@@ -7374,6 +8200,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "route_table_association_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routeTableAssociationEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -7391,6 +8220,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "route_table_propagation_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routeTablePropagationEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -7408,6 +8240,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "transit_router_attachment_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterAttachmentDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -7425,6 +8260,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "transit_router_attachment_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterAttachmentName", value)
 
     @builtins.property # type: ignore[misc]
@@ -7442,6 +8280,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "transit_router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "transitRouterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -7459,6 +8300,9 @@ class RosTransitRouterVpcAttachment(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTransitRouterVpcAttachment, "vpc_owner_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcOwnerId", value)
 
     @jsii.data_type(
@@ -7477,6 +8321,10 @@ class RosTransitRouterVpcAttachment(
             :param v_switch_id: 
             :param zone_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTransitRouterVpcAttachment.ZoneMappingsProperty.__init__)
+                check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+                check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "v_switch_id": v_switch_id,
                 "zone_id": zone_id,
@@ -7535,7 +8383,7 @@ class RosTransitRouterVpcAttachmentProps:
         self,
         *,
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        zone_mappings: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosTransitRouterVpcAttachment.ZoneMappingsProperty]]],
+        zone_mappings: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTransitRouterVpcAttachment.ZoneMappingsProperty, typing.Dict[str, typing.Any]]]]],
         auto_create_vpc_route: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         cen_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -7562,6 +8410,20 @@ class RosTransitRouterVpcAttachmentProps:
         :param transit_router_id: 
         :param vpc_owner_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTransitRouterVpcAttachmentProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument zone_mappings", value=zone_mappings, expected_type=type_hints["zone_mappings"])
+            check_type(argname="argument auto_create_vpc_route", value=auto_create_vpc_route, expected_type=type_hints["auto_create_vpc_route"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument charge_type", value=charge_type, expected_type=type_hints["charge_type"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument route_table_association_enabled", value=route_table_association_enabled, expected_type=type_hints["route_table_association_enabled"])
+            check_type(argname="argument route_table_propagation_enabled", value=route_table_propagation_enabled, expected_type=type_hints["route_table_propagation_enabled"])
+            check_type(argname="argument transit_router_attachment_description", value=transit_router_attachment_description, expected_type=type_hints["transit_router_attachment_description"])
+            check_type(argname="argument transit_router_attachment_name", value=transit_router_attachment_name, expected_type=type_hints["transit_router_attachment_name"])
+            check_type(argname="argument transit_router_id", value=transit_router_id, expected_type=type_hints["transit_router_id"])
+            check_type(argname="argument vpc_owner_id", value=vpc_owner_id, expected_type=type_hints["vpc_owner_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
             "zone_mappings": zone_mappings,
@@ -7730,7 +8592,7 @@ class RouteEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RouteEntryProps",
+        props: typing.Union["RouteEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::RouteEntry``.
@@ -7744,6 +8606,12 @@ class RouteEntry(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RouteEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -7779,6 +8647,14 @@ class RouteEntryProps:
         :param child_instance_type: Property childInstanceType: The type of the network, value: VPC VBR.
         :param destination_cidr_block: Property destinationCidrBlock: The destination CIDR block of the route entry to publish.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RouteEntryProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument child_instance_id", value=child_instance_id, expected_type=type_hints["child_instance_id"])
+            check_type(argname="argument child_instance_region_id", value=child_instance_region_id, expected_type=type_hints["child_instance_region_id"])
+            check_type(argname="argument child_instance_route_table_id", value=child_instance_route_table_id, expected_type=type_hints["child_instance_route_table_id"])
+            check_type(argname="argument child_instance_type", value=child_instance_type, expected_type=type_hints["child_instance_type"])
+            check_type(argname="argument destination_cidr_block", value=destination_cidr_block, expected_type=type_hints["destination_cidr_block"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "child_instance_id": child_instance_id,
@@ -7861,7 +8737,7 @@ class TransitRouter(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TransitRouterProps",
+        props: typing.Union["TransitRouterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouter``.
@@ -7875,6 +8751,12 @@ class TransitRouter(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouter.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -7931,7 +8813,7 @@ class TransitRouterPeerAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TransitRouterPeerAttachmentProps",
+        props: typing.Union["TransitRouterPeerAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterPeerAttachment``.
@@ -7945,6 +8827,12 @@ class TransitRouterPeerAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterPeerAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -8073,6 +8961,17 @@ class TransitRouterPeerAttachmentProps:
         :param transit_router_attachment_name: Property transitRouterAttachmentName: TransitRouterAttachmentName.
         :param transit_router_id: Property transitRouterId: TransitRouterId.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterPeerAttachmentProps.__init__)
+            check_type(argname="argument peer_transit_router_id", value=peer_transit_router_id, expected_type=type_hints["peer_transit_router_id"])
+            check_type(argname="argument auto_publish_route_enabled", value=auto_publish_route_enabled, expected_type=type_hints["auto_publish_route_enabled"])
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument cen_bandwidth_package_id", value=cen_bandwidth_package_id, expected_type=type_hints["cen_bandwidth_package_id"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument peer_transit_router_region_id", value=peer_transit_router_region_id, expected_type=type_hints["peer_transit_router_region_id"])
+            check_type(argname="argument transit_router_attachment_description", value=transit_router_attachment_description, expected_type=type_hints["transit_router_attachment_description"])
+            check_type(argname="argument transit_router_attachment_name", value=transit_router_attachment_name, expected_type=type_hints["transit_router_attachment_name"])
+            check_type(argname="argument transit_router_id", value=transit_router_id, expected_type=type_hints["transit_router_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "peer_transit_router_id": peer_transit_router_id,
         }
@@ -8201,6 +9100,11 @@ class TransitRouterProps:
         :param transit_router_description: Property transitRouterDescription: TransitRouterDescription.
         :param transit_router_name: Property transitRouterName: TransitRouterName.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument transit_router_description", value=transit_router_description, expected_type=type_hints["transit_router_description"])
+            check_type(argname="argument transit_router_name", value=transit_router_name, expected_type=type_hints["transit_router_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
         }
@@ -8255,7 +9159,7 @@ class TransitRouterRouteEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TransitRouterRouteEntryProps",
+        props: typing.Union["TransitRouterRouteEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterRouteEntry``.
@@ -8269,6 +9173,12 @@ class TransitRouterRouteEntry(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterRouteEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -8354,6 +9264,14 @@ class TransitRouterRouteEntryProps:
         :param transit_router_route_entry_name: Property transitRouterRouteEntryName: TransitRouterRouteEntryName.
         :param transit_router_route_entry_next_hop_id: Property transitRouterRouteEntryNextHopId: TransitRouterRouteEntryNextHopId.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterRouteEntryProps.__init__)
+            check_type(argname="argument transit_router_route_entry_destination_cidr_block", value=transit_router_route_entry_destination_cidr_block, expected_type=type_hints["transit_router_route_entry_destination_cidr_block"])
+            check_type(argname="argument transit_router_route_entry_next_hop_type", value=transit_router_route_entry_next_hop_type, expected_type=type_hints["transit_router_route_entry_next_hop_type"])
+            check_type(argname="argument transit_router_route_table_id", value=transit_router_route_table_id, expected_type=type_hints["transit_router_route_table_id"])
+            check_type(argname="argument transit_router_route_entry_description", value=transit_router_route_entry_description, expected_type=type_hints["transit_router_route_entry_description"])
+            check_type(argname="argument transit_router_route_entry_name", value=transit_router_route_entry_name, expected_type=type_hints["transit_router_route_entry_name"])
+            check_type(argname="argument transit_router_route_entry_next_hop_id", value=transit_router_route_entry_next_hop_id, expected_type=type_hints["transit_router_route_entry_next_hop_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "transit_router_route_entry_destination_cidr_block": transit_router_route_entry_destination_cidr_block,
             "transit_router_route_entry_next_hop_type": transit_router_route_entry_next_hop_type,
@@ -8440,7 +9358,7 @@ class TransitRouterRouteTable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TransitRouterRouteTableProps",
+        props: typing.Union["TransitRouterRouteTableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterRouteTable``.
@@ -8454,6 +9372,12 @@ class TransitRouterRouteTable(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterRouteTable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -8504,7 +9428,7 @@ class TransitRouterRouteTableAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TransitRouterRouteTableAssociationProps",
+        props: typing.Union["TransitRouterRouteTableAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterRouteTableAssociation``.
@@ -8518,6 +9442,12 @@ class TransitRouterRouteTableAssociation(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterRouteTableAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -8565,6 +9495,10 @@ class TransitRouterRouteTableAssociationProps:
         :param transit_router_attachment_id: Property transitRouterAttachmentId: TransitRouterAttachmentId.
         :param transit_router_route_table_id: Property transitRouterRouteTableId: TransitRouterRouteTableId.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterRouteTableAssociationProps.__init__)
+            check_type(argname="argument transit_router_attachment_id", value=transit_router_attachment_id, expected_type=type_hints["transit_router_attachment_id"])
+            check_type(argname="argument transit_router_route_table_id", value=transit_router_route_table_id, expected_type=type_hints["transit_router_route_table_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "transit_router_attachment_id": transit_router_attachment_id,
             "transit_router_route_table_id": transit_router_route_table_id,
@@ -8611,7 +9545,7 @@ class TransitRouterRouteTablePropagation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TransitRouterRouteTablePropagationProps",
+        props: typing.Union["TransitRouterRouteTablePropagationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterRouteTablePropagation``.
@@ -8625,6 +9559,12 @@ class TransitRouterRouteTablePropagation(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterRouteTablePropagation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -8672,6 +9612,10 @@ class TransitRouterRouteTablePropagationProps:
         :param transit_router_attachment_id: Property transitRouterAttachmentId: TransitRouterAttachmentId.
         :param transit_router_route_table_id: Property transitRouterRouteTableId: TransitRouterRouteTableId.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterRouteTablePropagationProps.__init__)
+            check_type(argname="argument transit_router_attachment_id", value=transit_router_attachment_id, expected_type=type_hints["transit_router_attachment_id"])
+            check_type(argname="argument transit_router_route_table_id", value=transit_router_route_table_id, expected_type=type_hints["transit_router_route_table_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "transit_router_attachment_id": transit_router_attachment_id,
             "transit_router_route_table_id": transit_router_route_table_id,
@@ -8730,6 +9674,11 @@ class TransitRouterRouteTableProps:
         :param transit_router_route_table_description: Property transitRouterRouteTableDescription: TransitRouterRouteTableDescription.
         :param transit_router_route_table_name: Property transitRouterRouteTableName: TransitRouterRouteTableName.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterRouteTableProps.__init__)
+            check_type(argname="argument transit_router_id", value=transit_router_id, expected_type=type_hints["transit_router_id"])
+            check_type(argname="argument transit_router_route_table_description", value=transit_router_route_table_description, expected_type=type_hints["transit_router_route_table_description"])
+            check_type(argname="argument transit_router_route_table_name", value=transit_router_route_table_name, expected_type=type_hints["transit_router_route_table_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "transit_router_id": transit_router_id,
         }
@@ -8784,7 +9733,7 @@ class TransitRouterVbrAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TransitRouterVbrAttachmentProps",
+        props: typing.Union["TransitRouterVbrAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterVbrAttachment``.
@@ -8798,6 +9747,12 @@ class TransitRouterVbrAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterVbrAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -8896,6 +9851,15 @@ class TransitRouterVbrAttachmentProps:
         :param transit_router_id: Property transitRouterId: TransitRouterId.
         :param vbr_owner_id: Property vbrOwnerId: VbrOwnerId.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterVbrAttachmentProps.__init__)
+            check_type(argname="argument vbr_id", value=vbr_id, expected_type=type_hints["vbr_id"])
+            check_type(argname="argument auto_publish_route_enabled", value=auto_publish_route_enabled, expected_type=type_hints["auto_publish_route_enabled"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument transit_router_attachment_description", value=transit_router_attachment_description, expected_type=type_hints["transit_router_attachment_description"])
+            check_type(argname="argument transit_router_attachment_name", value=transit_router_attachment_name, expected_type=type_hints["transit_router_attachment_name"])
+            check_type(argname="argument transit_router_id", value=transit_router_id, expected_type=type_hints["transit_router_id"])
+            check_type(argname="argument vbr_owner_id", value=vbr_owner_id, expected_type=type_hints["vbr_owner_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "vbr_id": vbr_id,
         }
@@ -8990,7 +9954,7 @@ class TransitRouterVpcAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TransitRouterVpcAttachmentProps",
+        props: typing.Union["TransitRouterVpcAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CEN::TransitRouterVpcAttachment``.
@@ -9004,6 +9968,12 @@ class TransitRouterVpcAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterVpcAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -9084,7 +10054,7 @@ class TransitRouterVpcAttachmentProps:
         self,
         *,
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        zone_mappings: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosTransitRouterVpcAttachment.ZoneMappingsProperty]]],
+        zone_mappings: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTransitRouterVpcAttachment.ZoneMappingsProperty, typing.Dict[str, typing.Any]]]]],
         auto_create_vpc_route: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         cen_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -9111,6 +10081,20 @@ class TransitRouterVpcAttachmentProps:
         :param transit_router_id: Property transitRouterId: TransitRouterId.
         :param vpc_owner_id: Property vpcOwnerId: VpcOwnerId.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TransitRouterVpcAttachmentProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument zone_mappings", value=zone_mappings, expected_type=type_hints["zone_mappings"])
+            check_type(argname="argument auto_create_vpc_route", value=auto_create_vpc_route, expected_type=type_hints["auto_create_vpc_route"])
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument charge_type", value=charge_type, expected_type=type_hints["charge_type"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument route_table_association_enabled", value=route_table_association_enabled, expected_type=type_hints["route_table_association_enabled"])
+            check_type(argname="argument route_table_propagation_enabled", value=route_table_propagation_enabled, expected_type=type_hints["route_table_propagation_enabled"])
+            check_type(argname="argument transit_router_attachment_description", value=transit_router_attachment_description, expected_type=type_hints["transit_router_attachment_description"])
+            check_type(argname="argument transit_router_attachment_name", value=transit_router_attachment_name, expected_type=type_hints["transit_router_attachment_name"])
+            check_type(argname="argument transit_router_id", value=transit_router_id, expected_type=type_hints["transit_router_id"])
+            check_type(argname="argument vpc_owner_id", value=vpc_owner_id, expected_type=type_hints["vpc_owner_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
             "zone_mappings": zone_mappings,

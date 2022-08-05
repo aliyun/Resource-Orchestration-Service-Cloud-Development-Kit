@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Instance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "InstanceProps",
+        props: typing.Union["InstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ElasticSearch::Instance``.
@@ -47,6 +49,12 @@ class Instance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Instance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -143,7 +151,7 @@ class InstanceProps:
     def __init__(
         self,
         *,
-        data_node: typing.Union["RosInstance.DataNodeProperty", ros_cdk_core.IResolvable],
+        data_node: typing.Union[typing.Union["RosInstance.DataNodeProperty", typing.Dict[str, typing.Any]], ros_cdk_core.IResolvable],
         password: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         version: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         v_switch_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
@@ -152,15 +160,15 @@ class InstanceProps:
         enable_kibana_public: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         enable_public: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         instance_charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        kibana_node: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.KibanaNodeProperty"]] = None,
+        kibana_node: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosInstance.KibanaNodeProperty", typing.Dict[str, typing.Any]]]] = None,
         kibana_whitelist: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
-        master_node: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.MasterNodeProperty"]] = None,
+        master_node: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosInstance.MasterNodeProperty", typing.Dict[str, typing.Any]]]] = None,
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         private_whitelist: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         public_whitelist: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosInstance.TagsProperty"]] = None,
-        yml_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.YMLConfigProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosInstance.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
+        yml_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosInstance.YMLConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         zone_count: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         zone_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -187,6 +195,28 @@ class InstanceProps:
         :param zone_count: Property zoneCount: undefined.
         :param zone_id: Property zoneId: The zone id of elasticsearch.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InstanceProps.__init__)
+            check_type(argname="argument data_node", value=data_node, expected_type=type_hints["data_node"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+            check_type(argname="argument version", value=version, expected_type=type_hints["version"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable_kibana_private", value=enable_kibana_private, expected_type=type_hints["enable_kibana_private"])
+            check_type(argname="argument enable_kibana_public", value=enable_kibana_public, expected_type=type_hints["enable_kibana_public"])
+            check_type(argname="argument enable_public", value=enable_public, expected_type=type_hints["enable_public"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument kibana_node", value=kibana_node, expected_type=type_hints["kibana_node"])
+            check_type(argname="argument kibana_whitelist", value=kibana_whitelist, expected_type=type_hints["kibana_whitelist"])
+            check_type(argname="argument master_node", value=master_node, expected_type=type_hints["master_node"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument private_whitelist", value=private_whitelist, expected_type=type_hints["private_whitelist"])
+            check_type(argname="argument public_whitelist", value=public_whitelist, expected_type=type_hints["public_whitelist"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument yml_config", value=yml_config, expected_type=type_hints["yml_config"])
+            check_type(argname="argument zone_count", value=zone_count, expected_type=type_hints["zone_count"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "data_node": data_node,
             "password": password,
@@ -429,7 +459,7 @@ class RosInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInstanceProps",
+        props: typing.Union["RosInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ElasticSearch::Instance``.
@@ -439,6 +469,12 @@ class RosInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -449,6 +485,9 @@ class RosInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -557,6 +596,9 @@ class RosInstance(
         self,
         value: typing.Union["RosInstance.DataNodeProperty", ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "data_node").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dataNode", value)
 
     @builtins.property # type: ignore[misc]
@@ -566,6 +608,9 @@ class RosInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -582,6 +627,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "password", value)
 
     @builtins.property # type: ignore[misc]
@@ -597,6 +645,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "version", value)
 
     @builtins.property # type: ignore[misc]
@@ -612,6 +663,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -629,6 +683,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -646,6 +703,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_kibana_private").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableKibanaPrivate", value)
 
     @builtins.property # type: ignore[misc]
@@ -663,6 +723,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_kibana_public").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableKibanaPublic", value)
 
     @builtins.property # type: ignore[misc]
@@ -680,6 +743,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_public").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enablePublic", value)
 
     @builtins.property # type: ignore[misc]
@@ -697,6 +763,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "instance_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -714,6 +783,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.KibanaNodeProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "kibana_node").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "kibanaNode", value)
 
     @builtins.property # type: ignore[misc]
@@ -731,6 +803,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "kibana_whitelist").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "kibanaWhitelist", value)
 
     @builtins.property # type: ignore[misc]
@@ -748,6 +823,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.MasterNodeProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "master_node").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "masterNode", value)
 
     @builtins.property # type: ignore[misc]
@@ -765,6 +843,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -782,6 +863,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "private_whitelist").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "privateWhitelist", value)
 
     @builtins.property # type: ignore[misc]
@@ -799,6 +883,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "public_whitelist").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "publicWhitelist", value)
 
     @builtins.property # type: ignore[misc]
@@ -816,6 +903,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -831,6 +921,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.List["RosInstance.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -852,6 +945,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.YMLConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "yml_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ymlConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -869,6 +965,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "zone_count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneCount", value)
 
     @builtins.property # type: ignore[misc]
@@ -886,6 +985,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @jsii.data_type(
@@ -919,6 +1021,14 @@ class RosInstance(
             :param disk_encryption: 
             :param performance_level: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.DataNodeProperty.__init__)
+                check_type(argname="argument amount", value=amount, expected_type=type_hints["amount"])
+                check_type(argname="argument disk_size", value=disk_size, expected_type=type_hints["disk_size"])
+                check_type(argname="argument disk_type", value=disk_type, expected_type=type_hints["disk_type"])
+                check_type(argname="argument spec", value=spec, expected_type=type_hints["spec"])
+                check_type(argname="argument disk_encryption", value=disk_encryption, expected_type=type_hints["disk_encryption"])
+                check_type(argname="argument performance_level", value=performance_level, expected_type=type_hints["performance_level"])
             self._values: typing.Dict[str, typing.Any] = {
                 "amount": amount,
                 "disk_size": disk_size,
@@ -1018,6 +1128,9 @@ class RosInstance(
             '''
             :param spec: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.KibanaNodeProperty.__init__)
+                check_type(argname="argument spec", value=spec, expected_type=type_hints["spec"])
             self._values: typing.Dict[str, typing.Any] = {
                 "spec": spec,
             }
@@ -1067,6 +1180,12 @@ class RosInstance(
             :param disk_size: 
             :param disk_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.MasterNodeProperty.__init__)
+                check_type(argname="argument spec", value=spec, expected_type=type_hints["spec"])
+                check_type(argname="argument amount", value=amount, expected_type=type_hints["amount"])
+                check_type(argname="argument disk_size", value=disk_size, expected_type=type_hints["disk_size"])
+                check_type(argname="argument disk_type", value=disk_type, expected_type=type_hints["disk_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "spec": spec,
             }
@@ -1143,6 +1262,10 @@ class RosInstance(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -1207,6 +1330,13 @@ class RosInstance(
             :param other_configs: 
             :param watcher: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.YMLConfigProperty.__init__)
+                check_type(argname="argument audit_log", value=audit_log, expected_type=type_hints["audit_log"])
+                check_type(argname="argument create_index", value=create_index, expected_type=type_hints["create_index"])
+                check_type(argname="argument destructive_requires_name", value=destructive_requires_name, expected_type=type_hints["destructive_requires_name"])
+                check_type(argname="argument other_configs", value=other_configs, expected_type=type_hints["other_configs"])
+                check_type(argname="argument watcher", value=watcher, expected_type=type_hints["watcher"])
             self._values: typing.Dict[str, typing.Any] = {}
             if audit_log is not None:
                 self._values["audit_log"] = audit_log
@@ -1337,7 +1467,7 @@ class RosInstanceProps:
     def __init__(
         self,
         *,
-        data_node: typing.Union[RosInstance.DataNodeProperty, ros_cdk_core.IResolvable],
+        data_node: typing.Union[typing.Union[RosInstance.DataNodeProperty, typing.Dict[str, typing.Any]], ros_cdk_core.IResolvable],
         password: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         version: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         v_switch_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
@@ -1346,15 +1476,15 @@ class RosInstanceProps:
         enable_kibana_public: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         enable_public: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         instance_charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        kibana_node: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosInstance.KibanaNodeProperty]] = None,
+        kibana_node: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosInstance.KibanaNodeProperty, typing.Dict[str, typing.Any]]]] = None,
         kibana_whitelist: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
-        master_node: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosInstance.MasterNodeProperty]] = None,
+        master_node: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosInstance.MasterNodeProperty, typing.Dict[str, typing.Any]]]] = None,
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         private_whitelist: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         public_whitelist: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosInstance.TagsProperty]] = None,
-        yml_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosInstance.YMLConfigProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosInstance.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
+        yml_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosInstance.YMLConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         zone_count: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         zone_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -1381,6 +1511,28 @@ class RosInstanceProps:
         :param zone_count: 
         :param zone_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceProps.__init__)
+            check_type(argname="argument data_node", value=data_node, expected_type=type_hints["data_node"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+            check_type(argname="argument version", value=version, expected_type=type_hints["version"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable_kibana_private", value=enable_kibana_private, expected_type=type_hints["enable_kibana_private"])
+            check_type(argname="argument enable_kibana_public", value=enable_kibana_public, expected_type=type_hints["enable_kibana_public"])
+            check_type(argname="argument enable_public", value=enable_public, expected_type=type_hints["enable_public"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument kibana_node", value=kibana_node, expected_type=type_hints["kibana_node"])
+            check_type(argname="argument kibana_whitelist", value=kibana_whitelist, expected_type=type_hints["kibana_whitelist"])
+            check_type(argname="argument master_node", value=master_node, expected_type=type_hints["master_node"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument private_whitelist", value=private_whitelist, expected_type=type_hints["private_whitelist"])
+            check_type(argname="argument public_whitelist", value=public_whitelist, expected_type=type_hints["public_whitelist"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument yml_config", value=yml_config, expected_type=type_hints["yml_config"])
+            check_type(argname="argument zone_count", value=zone_count, expected_type=type_hints["zone_count"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "data_node": data_node,
             "password": password,

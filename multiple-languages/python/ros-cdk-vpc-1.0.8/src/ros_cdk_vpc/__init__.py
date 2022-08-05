@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class AnycastEIP(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["AnycastEIPProps"] = None,
+        props: typing.Optional[typing.Union["AnycastEIPProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::AnycastEIP``.
@@ -47,6 +49,12 @@ class AnycastEIP(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AnycastEIP.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -85,7 +93,7 @@ class AnycastEIPAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AnycastEIPAssociationProps",
+        props: typing.Union["AnycastEIPAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::AnycastEIPAssociation``.
@@ -99,6 +107,12 @@ class AnycastEIPAssociation(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AnycastEIPAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -152,6 +166,12 @@ class AnycastEIPAssociationProps:
         :param bind_instance_region_id: Property bindInstanceRegionId: The region ID of the cloud resource instance to be bound.
         :param bind_instance_type: Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AnycastEIPAssociationProps.__init__)
+            check_type(argname="argument anycast_id", value=anycast_id, expected_type=type_hints["anycast_id"])
+            check_type(argname="argument bind_instance_id", value=bind_instance_id, expected_type=type_hints["bind_instance_id"])
+            check_type(argname="argument bind_instance_region_id", value=bind_instance_region_id, expected_type=type_hints["bind_instance_region_id"])
+            check_type(argname="argument bind_instance_type", value=bind_instance_type, expected_type=type_hints["bind_instance_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "anycast_id": anycast_id,
             "bind_instance_id": bind_instance_id,
@@ -238,6 +258,14 @@ class AnycastEIPProps:
         :param name: Property name: Anycast EIP instance name.
         :param service_location: Property serviceLocation: Anycast EIP instance access area.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AnycastEIPProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument service_location", value=service_location, expected_type=type_hints["service_location"])
         self._values: typing.Dict[str, typing.Any] = {}
         if bandwidth is not None:
             self._values["bandwidth"] = bandwidth
@@ -323,7 +351,7 @@ class BgpGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "BgpGroupProps",
+        props: typing.Union["BgpGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::BgpGroup``.
@@ -337,6 +365,12 @@ class BgpGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BgpGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -387,6 +421,15 @@ class BgpGroupProps:
         :param local_asn: Property localAsn: The AS number on the Alibaba Cloud side.
         :param name: Property name: The name of the BGP group. The name must be 2 to 128 characters in length and can contain digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:// or https://.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BgpGroupProps.__init__)
+            check_type(argname="argument peer_asn", value=peer_asn, expected_type=type_hints["peer_asn"])
+            check_type(argname="argument router_id", value=router_id, expected_type=type_hints["router_id"])
+            check_type(argname="argument auth_key", value=auth_key, expected_type=type_hints["auth_key"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument is_fake_asn", value=is_fake_asn, expected_type=type_hints["is_fake_asn"])
+            check_type(argname="argument local_asn", value=local_asn, expected_type=type_hints["local_asn"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "peer_asn": peer_asn,
             "router_id": router_id,
@@ -493,7 +536,7 @@ class BgpNetwork(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "BgpNetworkProps",
+        props: typing.Union["BgpNetworkProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::BgpNetwork``.
@@ -507,6 +550,12 @@ class BgpNetwork(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BgpNetwork.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -539,6 +588,10 @@ class BgpNetworkProps:
         :param dst_cidr_block: Property dstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect to a data center.
         :param router_id: Property routerId: The ID of the vRouter associated with the router interface.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BgpNetworkProps.__init__)
+            check_type(argname="argument dst_cidr_block", value=dst_cidr_block, expected_type=type_hints["dst_cidr_block"])
+            check_type(argname="argument router_id", value=router_id, expected_type=type_hints["router_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "dst_cidr_block": dst_cidr_block,
             "router_id": router_id,
@@ -581,7 +634,7 @@ class BgpPeer(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "BgpPeerProps",
+        props: typing.Union["BgpPeerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::BgpPeer``.
@@ -595,6 +648,12 @@ class BgpPeer(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BgpPeer.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -627,6 +686,11 @@ class BgpPeerProps:
         :param enable_bfd: Property enableBfd: Specifies whether to enable the Bidirectional Forwarding Detection (BFD) feature. Valid values: true: enables BFD. false: disables BFD.
         :param peer_ip_address: Property peerIpAddress: The IP address of the BGP peer.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BgpPeerProps.__init__)
+            check_type(argname="argument bgp_group_id", value=bgp_group_id, expected_type=type_hints["bgp_group_id"])
+            check_type(argname="argument enable_bfd", value=enable_bfd, expected_type=type_hints["enable_bfd"])
+            check_type(argname="argument peer_ip_address", value=peer_ip_address, expected_type=type_hints["peer_ip_address"])
         self._values: typing.Dict[str, typing.Any] = {
             "bgp_group_id": bgp_group_id,
         }
@@ -686,7 +750,7 @@ class CommonBandwidthPackage(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CommonBandwidthPackageProps",
+        props: typing.Union["CommonBandwidthPackageProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::CommonBandwidthPackage``.
@@ -700,6 +764,12 @@ class CommonBandwidthPackage(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CommonBandwidthPackage.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -720,7 +790,7 @@ class CommonBandwidthPackageIp(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CommonBandwidthPackageIpProps",
+        props: typing.Union["CommonBandwidthPackageIpProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::CommonBandwidthPackageIp``.
@@ -734,6 +804,12 @@ class CommonBandwidthPackageIp(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CommonBandwidthPackageIp.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -759,13 +835,17 @@ class CommonBandwidthPackageIpProps:
         self,
         *,
         bandwidth_package_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        eips: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosCommonBandwidthPackageIp.EipsProperty"]]],
+        eips: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosCommonBandwidthPackageIp.EipsProperty", typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::CommonBandwidthPackageIp``.
 
         :param bandwidth_package_id: Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
         :param eips: Property eips: List of eip associated with the Internet Shared Bandwidth instance.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CommonBandwidthPackageIpProps.__init__)
+            check_type(argname="argument bandwidth_package_id", value=bandwidth_package_id, expected_type=type_hints["bandwidth_package_id"])
+            check_type(argname="argument eips", value=eips, expected_type=type_hints["eips"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth_package_id": bandwidth_package_id,
             "eips": eips,
@@ -827,7 +907,7 @@ class CommonBandwidthPackageProps:
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ratio: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosCommonBandwidthPackage.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosCommonBandwidthPackage.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
         zone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::CommonBandwidthPackage``.
@@ -842,6 +922,17 @@ class CommonBandwidthPackageProps:
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         :param zone: Property zone: Zone Id.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CommonBandwidthPackageProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument isp", value=isp, expected_type=type_hints["isp"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument ratio", value=ratio, expected_type=type_hints["ratio"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument zone", value=zone, expected_type=type_hints["zone"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth": bandwidth,
         }
@@ -980,7 +1071,7 @@ class CustomerGateway(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CustomerGatewayProps",
+        props: typing.Union["CustomerGatewayProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::CustomerGateway``.
@@ -994,6 +1085,12 @@ class CustomerGateway(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CustomerGateway.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1026,6 +1123,11 @@ class CustomerGatewayProps:
         :param description: Property description: Description of the user gateway. The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
         :param name: Property name: The name of the user gateway. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CustomerGatewayProps.__init__)
+            check_type(argname="argument ip_address", value=ip_address, expected_type=type_hints["ip_address"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "ip_address": ip_address,
         }
@@ -1086,7 +1188,7 @@ class DhcpOptionsSet(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["DhcpOptionsSetProps"] = None,
+        props: typing.Optional[typing.Union["DhcpOptionsSetProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::DhcpOptionsSet``.
@@ -1100,6 +1202,12 @@ class DhcpOptionsSet(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DhcpOptionsSet.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1120,7 +1228,7 @@ class DhcpOptionsSetAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DhcpOptionsSetAttachmentProps",
+        props: typing.Union["DhcpOptionsSetAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::DhcpOptionsSetAttachment``.
@@ -1134,6 +1242,12 @@ class DhcpOptionsSetAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DhcpOptionsSetAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1166,6 +1280,10 @@ class DhcpOptionsSetAttachmentProps:
         :param dhcp_options_set_id: Property dhcpOptionsSetId: The ID of the DHCP options set.
         :param vpc_id: Property vpcId: The ID of the VPC network that is to be associated with the DHCP options set.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DhcpOptionsSetAttachmentProps.__init__)
+            check_type(argname="argument dhcp_options_set_id", value=dhcp_options_set_id, expected_type=type_hints["dhcp_options_set_id"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "dhcp_options_set_id": dhcp_options_set_id,
             "vpc_id": vpc_id,
@@ -1225,6 +1343,12 @@ class DhcpOptionsSetProps:
         :param domain_name: Property domainName: The root domain, for example, example.com. After a DHCP options set is associated with a Virtual Private Cloud (VPC) network, the root domain in the DHCP options set is automatically synchronized to the ECS instances in the VPC network.
         :param domain_name_servers: Property domainNameServers: The DNS server IP addresses. Note Before you specify any DNS server IP address, all ECS instances in the associated VPC network use the IP addresses of the Alibaba Cloud DNS servers, which are 100.100.2.136 and 100.100.2.138.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DhcpOptionsSetProps.__init__)
+            check_type(argname="argument dhcp_options_set_description", value=dhcp_options_set_description, expected_type=type_hints["dhcp_options_set_description"])
+            check_type(argname="argument dhcp_options_set_name", value=dhcp_options_set_name, expected_type=type_hints["dhcp_options_set_name"])
+            check_type(argname="argument domain_name", value=domain_name, expected_type=type_hints["domain_name"])
+            check_type(argname="argument domain_name_servers", value=domain_name_servers, expected_type=type_hints["domain_name_servers"])
         self._values: typing.Dict[str, typing.Any] = {}
         if dhcp_options_set_description is not None:
             self._values["dhcp_options_set_description"] = dhcp_options_set_description
@@ -1299,7 +1423,7 @@ class EIPAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "EIPAssociationProps",
+        props: typing.Union["EIPAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::EIPAssociation``.
@@ -1313,6 +1437,12 @@ class EIPAssociation(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EIPAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1357,6 +1487,12 @@ class EIPAssociationProps:
         :param mode: Property mode: The mode of association. Valid values: NAT(Default): NAT mode. BINDED: Cut-through mode. MULTI_BINDED: Multi-EIP to ENI mode. This is required only when the value of InstanceType is NetworkInterface.
         :param private_ip_address: Property privateIpAddress: An IP address in the CIDR block of the VSwitch. If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EIPAssociationProps.__init__)
+            check_type(argname="argument allocation_id", value=allocation_id, expected_type=type_hints["allocation_id"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument mode", value=mode, expected_type=type_hints["mode"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
         self._values: typing.Dict[str, typing.Any] = {
             "allocation_id": allocation_id,
             "instance_id": instance_id,
@@ -1429,7 +1565,7 @@ class EIPPro(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["EIPProProps"] = None,
+        props: typing.Optional[typing.Union["EIPProProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::EIPPro``.
@@ -1443,6 +1579,12 @@ class EIPPro(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EIPPro.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1512,7 +1654,7 @@ class EIPProProps:
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         pricing_cycle: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosEIPPro.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosEIPPro.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::EIPPro``.
 
@@ -1532,6 +1674,23 @@ class EIPProProps:
         :param resource_group_id: Property resourceGroupId: Resource group id.
         :param tags: Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EIPProProps.__init__)
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument deletion_protection", value=deletion_protection, expected_type=type_hints["deletion_protection"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument ip_address", value=ip_address, expected_type=type_hints["ip_address"])
+            check_type(argname="argument isp", value=isp, expected_type=type_hints["isp"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument netmode", value=netmode, expected_type=type_hints["netmode"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_pay is not None:
             self._values["auto_pay"] = auto_pay
@@ -1768,7 +1927,7 @@ class EIPProps:
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         pricing_cycle: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosEIP.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosEIP.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::EIP``.
 
@@ -1786,6 +1945,21 @@ class EIPProps:
         :param resource_group_id: Property resourceGroupId: Resource group id.
         :param tags: Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EIPProps.__init__)
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument deletion_protection", value=deletion_protection, expected_type=type_hints["deletion_protection"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument isp", value=isp, expected_type=type_hints["isp"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument netmode", value=netmode, expected_type=type_hints["netmode"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_pay is not None:
             self._values["auto_pay"] = auto_pay
@@ -1978,7 +2152,7 @@ class EIPSegment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "EIPSegmentProps",
+        props: typing.Union["EIPSegmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::EIPSegment``.
@@ -1992,6 +2166,12 @@ class EIPSegment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EIPSegment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2039,6 +2219,13 @@ class EIPSegmentProps:
         :param netmode: Property netmode: The network type. Valid values: public: the Internet. This is the default value. After contiguous EIPs are associated with cloud resources, the cloud resources can access the Internet by using the EIPs. hybrid: the hybrid cloud. After contiguous EIPs are associated with cloud resources, the cloud resources can access the hybrid cloud by using the EIPs. Note This network type is available only to users who are added to the whitelist. To use this network type, contact your customer manager.
         :param resource_group_id: Property resourceGroupId: The ID of the resource group to which the EIPs belong.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EIPSegmentProps.__init__)
+            check_type(argname="argument eip_mask", value=eip_mask, expected_type=type_hints["eip_mask"])
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument netmode", value=netmode, expected_type=type_hints["netmode"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "eip_mask": eip_mask,
         }
@@ -2141,7 +2328,7 @@ class Eip(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional[EIPProps] = None,
+        props: typing.Optional[typing.Union[EIPProps, typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::EIP``.
@@ -2155,6 +2342,12 @@ class Eip(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Eip.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2196,7 +2389,7 @@ class FlowLog(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "FlowLogProps",
+        props: typing.Union["FlowLogProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::FlowLog``.
@@ -2210,6 +2403,12 @@ class FlowLog(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FlowLog.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2296,6 +2495,15 @@ class FlowLogProps:
         :param description: Property description: The Description of flow log.
         :param flow_log_name: Property flowLogName: The flow log name.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FlowLogProps.__init__)
+            check_type(argname="argument log_store_name", value=log_store_name, expected_type=type_hints["log_store_name"])
+            check_type(argname="argument project_name", value=project_name, expected_type=type_hints["project_name"])
+            check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+            check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
+            check_type(argname="argument traffic_type", value=traffic_type, expected_type=type_hints["traffic_type"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument flow_log_name", value=flow_log_name, expected_type=type_hints["flow_log_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "log_store_name": log_store_name,
             "project_name": project_name,
@@ -2382,7 +2590,7 @@ class GrantInstanceToCen(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "GrantInstanceToCenProps",
+        props: typing.Union["GrantInstanceToCenProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::GrantInstanceToCen``.
@@ -2396,6 +2604,12 @@ class GrantInstanceToCen(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(GrantInstanceToCen.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2437,6 +2651,12 @@ class GrantInstanceToCenProps:
         :param instance_id: Property instanceId: The ID of the network instance.
         :param instance_type: Property instanceType: The type of the network instance. Valid values: VPC: Virtual Private Cloud (VPC). VBR: Virtual Border Router (VBR). CCN: Cloud Connect Network (CCN).
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(GrantInstanceToCenProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument cen_owner_id", value=cen_owner_id, expected_type=type_hints["cen_owner_id"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "cen_owner_id": cen_owner_id,
@@ -2501,7 +2721,7 @@ class IpsecServer(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "IpsecServerProps",
+        props: typing.Union["IpsecServerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::IpsecServer``.
@@ -2515,6 +2735,12 @@ class IpsecServer(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IpsecServer.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2553,8 +2779,8 @@ class IpsecServerProps:
         local_subnet: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpn_gateway_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         effect_immediately: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        ike_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosIpsecServer.IkeConfigProperty"]] = None,
-        ipsec_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosIpsecServer.IpsecConfigProperty"]] = None,
+        ike_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosIpsecServer.IkeConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+        ipsec_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosIpsecServer.IpsecConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         ipsec_server_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         psk: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         psk_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -2571,6 +2797,17 @@ class IpsecServerProps:
         :param psk: Property psk: Pre-Shared key. Used for identity authentication between the VPN gateway and the client. A 16-bit random string is randomly generated by default, or you can manually specify the key. The length is limited to 100 characters.
         :param psk_enabled: Property pskEnabled: Whether to enable the pre-shared key authentication method. Only the value is true, which means that the pre-shared key authentication mode is enabled.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IpsecServerProps.__init__)
+            check_type(argname="argument client_ip_pool", value=client_ip_pool, expected_type=type_hints["client_ip_pool"])
+            check_type(argname="argument local_subnet", value=local_subnet, expected_type=type_hints["local_subnet"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument effect_immediately", value=effect_immediately, expected_type=type_hints["effect_immediately"])
+            check_type(argname="argument ike_config", value=ike_config, expected_type=type_hints["ike_config"])
+            check_type(argname="argument ipsec_config", value=ipsec_config, expected_type=type_hints["ipsec_config"])
+            check_type(argname="argument ipsec_server_name", value=ipsec_server_name, expected_type=type_hints["ipsec_server_name"])
+            check_type(argname="argument psk", value=psk, expected_type=type_hints["psk"])
+            check_type(argname="argument psk_enabled", value=psk_enabled, expected_type=type_hints["psk_enabled"])
         self._values: typing.Dict[str, typing.Any] = {
             "client_ip_pool": client_ip_pool,
             "local_subnet": local_subnet,
@@ -2699,7 +2936,7 @@ class Ipv6Gateway(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "Ipv6GatewayProps",
+        props: typing.Union["Ipv6GatewayProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::Ipv6Gateway``.
@@ -2713,6 +2950,12 @@ class Ipv6Gateway(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Ipv6Gateway.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2741,7 +2984,7 @@ class Ipv6GatewayProps:
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         spec: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosIpv6Gateway.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosIpv6Gateway.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::Ipv6Gateway``.
 
@@ -2751,6 +2994,13 @@ class Ipv6GatewayProps:
         :param spec: Property spec: Specifications IPv6 gateway, the value: Small (default): Free. Medium: Enterprise Edition. Large: Enterprise Enhanced Edition. Different specifications of the IPv6 forwarding capability of the gateway is different. For more information, see IPv6 gateway specification.
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Ipv6GatewayProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument spec", value=spec, expected_type=type_hints["spec"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
         }
@@ -2837,7 +3087,7 @@ class Ipv6InternetBandwidth(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "Ipv6InternetBandwidthProps",
+        props: typing.Union["Ipv6InternetBandwidthProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::Ipv6InternetBandwidth``.
@@ -2851,6 +3101,12 @@ class Ipv6InternetBandwidth(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Ipv6InternetBandwidth.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2879,7 +3135,7 @@ class Ipv6InternetBandwidthProps:
         ipv6_address_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         ipv6_gateway_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         internet_charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosIpv6InternetBandwidth.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosIpv6InternetBandwidth.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::Ipv6InternetBandwidth``.
 
@@ -2889,6 +3145,13 @@ class Ipv6InternetBandwidthProps:
         :param internet_charge_type: Property internetChargeType: IPv6 public network bandwidth billing, value: PayByTraffic: by using the traffic accounting. PayByBandwidth (default): Bandwidth billing.
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Ipv6InternetBandwidthProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument ipv6_address_id", value=ipv6_address_id, expected_type=type_hints["ipv6_address_id"])
+            check_type(argname="argument ipv6_gateway_id", value=ipv6_gateway_id, expected_type=type_hints["ipv6_gateway_id"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth": bandwidth,
             "ipv6_address_id": ipv6_address_id,
@@ -2972,7 +3235,7 @@ class NatGateway(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "NatGatewayProps",
+        props: typing.Union["NatGatewayProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::NatGateway``.
@@ -2986,6 +3249,12 @@ class NatGateway(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NatGateway.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3044,7 +3313,7 @@ class NatGatewayProps:
         nat_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         network_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         pricing_cycle: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosNatGateway.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosNatGateway.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::NatGateway``.
 
@@ -3063,6 +3332,22 @@ class NatGatewayProps:
         :param pricing_cycle: Property pricingCycle: Price cycle of the resource. This property has no default value.
         :param tags: Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NatGatewayProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument deletion_protection", value=deletion_protection, expected_type=type_hints["deletion_protection"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument duration", value=duration, expected_type=type_hints["duration"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument nat_gateway_name", value=nat_gateway_name, expected_type=type_hints["nat_gateway_name"])
+            check_type(argname="argument nat_type", value=nat_type, expected_type=type_hints["nat_type"])
+            check_type(argname="argument network_type", value=network_type, expected_type=type_hints["network_type"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
             "v_switch_id": v_switch_id,
@@ -3260,7 +3545,7 @@ class NetworkAcl(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "NetworkAclProps",
+        props: typing.Union["NetworkAclProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::NetworkAcl``.
@@ -3274,6 +3559,12 @@ class NetworkAcl(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NetworkAcl.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3300,7 +3591,7 @@ class NetworkAclAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "NetworkAclAssociationProps",
+        props: typing.Union["NetworkAclAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::NetworkAclAssociation``.
@@ -3314,6 +3605,12 @@ class NetworkAclAssociation(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NetworkAclAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3333,13 +3630,17 @@ class NetworkAclAssociationProps:
         self,
         *,
         network_acl_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        resources: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosNetworkAclAssociation.ResourcesProperty"]]],
+        resources: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosNetworkAclAssociation.ResourcesProperty", typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::NetworkAclAssociation``.
 
         :param network_acl_id: Property networkAclId: The ID of the network ACL.
         :param resources: Property resources: The list of resources that need to be associated with network ACL.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NetworkAclAssociationProps.__init__)
+            check_type(argname="argument network_acl_id", value=network_acl_id, expected_type=type_hints["network_acl_id"])
+            check_type(argname="argument resources", value=resources, expected_type=type_hints["resources"])
         self._values: typing.Dict[str, typing.Any] = {
             "network_acl_id": network_acl_id,
             "resources": resources,
@@ -3390,8 +3691,8 @@ class NetworkAclProps:
         *,
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        egress_acl_entries: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosNetworkAcl.EgressAclEntriesProperty"]]]] = None,
-        ingress_acl_entries: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosNetworkAcl.IngressAclEntriesProperty"]]]] = None,
+        egress_acl_entries: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosNetworkAcl.EgressAclEntriesProperty", typing.Dict[str, typing.Any]]]]]] = None,
+        ingress_acl_entries: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosNetworkAcl.IngressAclEntriesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         network_acl_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::NetworkAcl``.
@@ -3402,6 +3703,13 @@ class NetworkAclProps:
         :param ingress_acl_entries: Property ingressAclEntries: The list of ingress network ACL entries.
         :param network_acl_name: Property networkAclName: The name of the network ACL. The name must be 2 to 128 characters in length and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter and cannot start with http:// or https://.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NetworkAclProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument egress_acl_entries", value=egress_acl_entries, expected_type=type_hints["egress_acl_entries"])
+            check_type(argname="argument ingress_acl_entries", value=ingress_acl_entries, expected_type=type_hints["ingress_acl_entries"])
+            check_type(argname="argument network_acl_name", value=network_acl_name, expected_type=type_hints["network_acl_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
         }
@@ -3485,7 +3793,7 @@ class PeeringRouterInterfaceBinding(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "PeeringRouterInterfaceBindingProps",
+        props: typing.Union["PeeringRouterInterfaceBindingProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::PeeringRouterInterfaceBinding``.
@@ -3499,6 +3807,12 @@ class PeeringRouterInterfaceBinding(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PeeringRouterInterfaceBinding.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3534,6 +3848,12 @@ class PeeringRouterInterfaceBindingProps:
         :param opposite_interface_owner_id: Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.
         :param opposite_router_id: Property oppositeRouterId: Router ID of the connection peer RouterInterface.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PeeringRouterInterfaceBindingProps.__init__)
+            check_type(argname="argument opposite_interface_id", value=opposite_interface_id, expected_type=type_hints["opposite_interface_id"])
+            check_type(argname="argument router_interface_id", value=router_interface_id, expected_type=type_hints["router_interface_id"])
+            check_type(argname="argument opposite_interface_owner_id", value=opposite_interface_owner_id, expected_type=type_hints["opposite_interface_owner_id"])
+            check_type(argname="argument opposite_router_id", value=opposite_router_id, expected_type=type_hints["opposite_router_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "opposite_interface_id": opposite_interface_id,
             "router_interface_id": router_interface_id,
@@ -3600,7 +3920,7 @@ class PeeringRouterInterfaceConnection(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "PeeringRouterInterfaceConnectionProps",
+        props: typing.Union["PeeringRouterInterfaceConnectionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::PeeringRouterInterfaceConnection``.
@@ -3614,6 +3934,12 @@ class PeeringRouterInterfaceConnection(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PeeringRouterInterfaceConnection.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3649,6 +3975,10 @@ class PeeringRouterInterfaceConnectionProps:
         :param opposite_interface_id: Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
         :param router_interface_id: Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PeeringRouterInterfaceConnectionProps.__init__)
+            check_type(argname="argument opposite_interface_id", value=opposite_interface_id, expected_type=type_hints["opposite_interface_id"])
+            check_type(argname="argument router_interface_id", value=router_interface_id, expected_type=type_hints["router_interface_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "opposite_interface_id": opposite_interface_id,
             "router_interface_id": router_interface_id,
@@ -3695,7 +4025,7 @@ class RosAnycastEIP(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAnycastEIPProps",
+        props: typing.Union["RosAnycastEIPProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::AnycastEIP``.
@@ -3705,6 +4035,12 @@ class RosAnycastEIP(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAnycastEIP.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3715,6 +4051,9 @@ class RosAnycastEIP(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAnycastEIP._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3767,6 +4106,9 @@ class RosAnycastEIP(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIP, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3784,6 +4126,9 @@ class RosAnycastEIP(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIP, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -3801,6 +4146,9 @@ class RosAnycastEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIP, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -3818,6 +4166,9 @@ class RosAnycastEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIP, "instance_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -3835,6 +4186,9 @@ class RosAnycastEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIP, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -3852,6 +4206,9 @@ class RosAnycastEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIP, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -3869,6 +4226,9 @@ class RosAnycastEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIP, "service_location").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serviceLocation", value)
 
 
@@ -3883,7 +4243,7 @@ class RosAnycastEIPAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAnycastEIPAssociationProps",
+        props: typing.Union["RosAnycastEIPAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::AnycastEIPAssociation``.
@@ -3893,6 +4253,12 @@ class RosAnycastEIPAssociation(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAnycastEIPAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3903,6 +4269,9 @@ class RosAnycastEIPAssociation(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAnycastEIPAssociation._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3961,6 +4330,9 @@ class RosAnycastEIPAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIPAssociation, "anycast_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "anycastId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3976,6 +4348,9 @@ class RosAnycastEIPAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIPAssociation, "bind_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bindInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3993,6 +4368,9 @@ class RosAnycastEIPAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIPAssociation, "bind_instance_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bindInstanceRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4010,6 +4388,9 @@ class RosAnycastEIPAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIPAssociation, "bind_instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bindInstanceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -4019,6 +4400,9 @@ class RosAnycastEIPAssociation(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAnycastEIPAssociation, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -4048,6 +4432,12 @@ class RosAnycastEIPAssociationProps:
         :param bind_instance_region_id: 
         :param bind_instance_type: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAnycastEIPAssociationProps.__init__)
+            check_type(argname="argument anycast_id", value=anycast_id, expected_type=type_hints["anycast_id"])
+            check_type(argname="argument bind_instance_id", value=bind_instance_id, expected_type=type_hints["bind_instance_id"])
+            check_type(argname="argument bind_instance_region_id", value=bind_instance_region_id, expected_type=type_hints["bind_instance_region_id"])
+            check_type(argname="argument bind_instance_type", value=bind_instance_type, expected_type=type_hints["bind_instance_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "anycast_id": anycast_id,
             "bind_instance_id": bind_instance_id,
@@ -4139,6 +4529,14 @@ class RosAnycastEIPProps:
         :param name: 
         :param service_location: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAnycastEIPProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument service_location", value=service_location, expected_type=type_hints["service_location"])
         self._values: typing.Dict[str, typing.Any] = {}
         if bandwidth is not None:
             self._values["bandwidth"] = bandwidth
@@ -4236,7 +4634,7 @@ class RosBgpGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosBgpGroupProps",
+        props: typing.Union["RosBgpGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::BgpGroup``.
@@ -4246,6 +4644,12 @@ class RosBgpGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4256,6 +4660,9 @@ class RosBgpGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4292,6 +4699,9 @@ class RosBgpGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4307,6 +4717,9 @@ class RosBgpGroup(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpGroup, "peer_asn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "peerAsn", value)
 
     @builtins.property # type: ignore[misc]
@@ -4322,6 +4735,9 @@ class RosBgpGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpGroup, "router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4339,6 +4755,9 @@ class RosBgpGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpGroup, "auth_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "authKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -4359,6 +4778,9 @@ class RosBgpGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpGroup, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -4380,6 +4802,9 @@ class RosBgpGroup(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpGroup, "is_fake_asn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "isFakeAsn", value)
 
     @builtins.property # type: ignore[misc]
@@ -4397,6 +4822,9 @@ class RosBgpGroup(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpGroup, "local_asn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localAsn", value)
 
     @builtins.property # type: ignore[misc]
@@ -4418,6 +4846,9 @@ class RosBgpGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpGroup, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
 
@@ -4456,6 +4887,15 @@ class RosBgpGroupProps:
         :param local_asn: 
         :param name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpGroupProps.__init__)
+            check_type(argname="argument peer_asn", value=peer_asn, expected_type=type_hints["peer_asn"])
+            check_type(argname="argument router_id", value=router_id, expected_type=type_hints["router_id"])
+            check_type(argname="argument auth_key", value=auth_key, expected_type=type_hints["auth_key"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument is_fake_asn", value=is_fake_asn, expected_type=type_hints["is_fake_asn"])
+            check_type(argname="argument local_asn", value=local_asn, expected_type=type_hints["local_asn"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "peer_asn": peer_asn,
             "router_id": router_id,
@@ -4573,7 +5013,7 @@ class RosBgpNetwork(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosBgpNetworkProps",
+        props: typing.Union["RosBgpNetworkProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::BgpNetwork``.
@@ -4583,6 +5023,12 @@ class RosBgpNetwork(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpNetwork.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4593,6 +5039,9 @@ class RosBgpNetwork(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpNetwork._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4641,6 +5090,9 @@ class RosBgpNetwork(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpNetwork, "dst_cidr_block").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dstCidrBlock", value)
 
     @builtins.property # type: ignore[misc]
@@ -4650,6 +5102,9 @@ class RosBgpNetwork(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpNetwork, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4665,6 +5120,9 @@ class RosBgpNetwork(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpNetwork, "router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routerId", value)
 
 
@@ -4685,6 +5143,10 @@ class RosBgpNetworkProps:
         :param dst_cidr_block: 
         :param router_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpNetworkProps.__init__)
+            check_type(argname="argument dst_cidr_block", value=dst_cidr_block, expected_type=type_hints["dst_cidr_block"])
+            check_type(argname="argument router_id", value=router_id, expected_type=type_hints["router_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "dst_cidr_block": dst_cidr_block,
             "router_id": router_id,
@@ -4734,7 +5196,7 @@ class RosBgpPeer(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosBgpPeerProps",
+        props: typing.Union["RosBgpPeerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::BgpPeer``.
@@ -4744,6 +5206,12 @@ class RosBgpPeer(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpPeer.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4754,6 +5222,9 @@ class RosBgpPeer(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpPeer._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4788,6 +5259,9 @@ class RosBgpPeer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpPeer, "bgp_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bgpGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4797,6 +5271,9 @@ class RosBgpPeer(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpPeer, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4819,6 +5296,9 @@ class RosBgpPeer(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpPeer, "enable_bfd").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableBfd", value)
 
     @builtins.property # type: ignore[misc]
@@ -4836,6 +5316,9 @@ class RosBgpPeer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBgpPeer, "peer_ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "peerIpAddress", value)
 
 
@@ -4862,6 +5345,11 @@ class RosBgpPeerProps:
         :param enable_bfd: 
         :param peer_ip_address: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBgpPeerProps.__init__)
+            check_type(argname="argument bgp_group_id", value=bgp_group_id, expected_type=type_hints["bgp_group_id"])
+            check_type(argname="argument enable_bfd", value=enable_bfd, expected_type=type_hints["enable_bfd"])
+            check_type(argname="argument peer_ip_address", value=peer_ip_address, expected_type=type_hints["peer_ip_address"])
         self._values: typing.Dict[str, typing.Any] = {
             "bgp_group_id": bgp_group_id,
         }
@@ -4927,7 +5415,7 @@ class RosCommonBandwidthPackage(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCommonBandwidthPackageProps",
+        props: typing.Union["RosCommonBandwidthPackageProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::CommonBandwidthPackage``.
@@ -4937,6 +5425,12 @@ class RosCommonBandwidthPackage(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCommonBandwidthPackage.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4947,6 +5441,9 @@ class RosCommonBandwidthPackage(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCommonBandwidthPackage._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4981,6 +5478,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -4990,6 +5490,9 @@ class RosCommonBandwidthPackage(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5011,6 +5514,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -5032,6 +5538,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -5049,6 +5558,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "isp").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "isp", value)
 
     @builtins.property # type: ignore[misc]
@@ -5071,6 +5583,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -5091,6 +5606,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "ratio").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ratio", value)
 
     @builtins.property # type: ignore[misc]
@@ -5108,6 +5626,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5125,6 +5646,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Optional[typing.List["RosCommonBandwidthPackage.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -5142,6 +5666,9 @@ class RosCommonBandwidthPackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackage, "zone").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zone", value)
 
     @jsii.data_type(
@@ -5160,6 +5687,10 @@ class RosCommonBandwidthPackage(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosCommonBandwidthPackage.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -5208,7 +5739,7 @@ class RosCommonBandwidthPackageIp(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCommonBandwidthPackageIpProps",
+        props: typing.Union["RosCommonBandwidthPackageIpProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::CommonBandwidthPackageIp``.
@@ -5218,6 +5749,12 @@ class RosCommonBandwidthPackageIp(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCommonBandwidthPackageIp.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5228,6 +5765,9 @@ class RosCommonBandwidthPackageIp(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCommonBandwidthPackageIp._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5272,6 +5812,9 @@ class RosCommonBandwidthPackageIp(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackageIp, "bandwidth_package_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidthPackageId", value)
 
     @builtins.property # type: ignore[misc]
@@ -5289,6 +5832,9 @@ class RosCommonBandwidthPackageIp(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosCommonBandwidthPackageIp.EipsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackageIp, "eips").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eips", value)
 
     @builtins.property # type: ignore[misc]
@@ -5298,6 +5844,9 @@ class RosCommonBandwidthPackageIp(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCommonBandwidthPackageIp, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @jsii.data_type(
@@ -5316,6 +5865,10 @@ class RosCommonBandwidthPackageIp(
             :param allocation_id: 
             :param bandwidth: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosCommonBandwidthPackageIp.EipsProperty.__init__)
+                check_type(argname="argument allocation_id", value=allocation_id, expected_type=type_hints["allocation_id"])
+                check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
             self._values: typing.Dict[str, typing.Any] = {
                 "allocation_id": allocation_id,
             }
@@ -5367,13 +5920,17 @@ class RosCommonBandwidthPackageIpProps:
         self,
         *,
         bandwidth_package_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        eips: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosCommonBandwidthPackageIp.EipsProperty]]],
+        eips: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosCommonBandwidthPackageIp.EipsProperty, typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::CommonBandwidthPackageIp``.
 
         :param bandwidth_package_id: 
         :param eips: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCommonBandwidthPackageIpProps.__init__)
+            check_type(argname="argument bandwidth_package_id", value=bandwidth_package_id, expected_type=type_hints["bandwidth_package_id"])
+            check_type(argname="argument eips", value=eips, expected_type=type_hints["eips"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth_package_id": bandwidth_package_id,
             "eips": eips,
@@ -5439,7 +5996,7 @@ class RosCommonBandwidthPackageProps:
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         ratio: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosCommonBandwidthPackage.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosCommonBandwidthPackage.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         zone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::CommonBandwidthPackage``.
@@ -5454,6 +6011,17 @@ class RosCommonBandwidthPackageProps:
         :param tags: 
         :param zone: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCommonBandwidthPackageProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument isp", value=isp, expected_type=type_hints["isp"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument ratio", value=ratio, expected_type=type_hints["ratio"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument zone", value=zone, expected_type=type_hints["zone"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth": bandwidth,
         }
@@ -5602,7 +6170,7 @@ class RosCustomerGateway(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCustomerGatewayProps",
+        props: typing.Union["RosCustomerGatewayProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::CustomerGateway``.
@@ -5612,6 +6180,12 @@ class RosCustomerGateway(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCustomerGateway.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5622,6 +6196,9 @@ class RosCustomerGateway(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCustomerGateway._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5650,6 +6227,9 @@ class RosCustomerGateway(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomerGateway, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5665,6 +6245,9 @@ class RosCustomerGateway(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomerGateway, "ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -5685,6 +6268,9 @@ class RosCustomerGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomerGateway, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -5705,6 +6291,9 @@ class RosCustomerGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCustomerGateway, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
 
@@ -5731,6 +6320,11 @@ class RosCustomerGatewayProps:
         :param description: 
         :param name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCustomerGatewayProps.__init__)
+            check_type(argname="argument ip_address", value=ip_address, expected_type=type_hints["ip_address"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "ip_address": ip_address,
         }
@@ -5797,7 +6391,7 @@ class RosDhcpOptionsSet(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDhcpOptionsSetProps",
+        props: typing.Union["RosDhcpOptionsSetProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::DhcpOptionsSet``.
@@ -5807,6 +6401,12 @@ class RosDhcpOptionsSet(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDhcpOptionsSet.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5817,6 +6417,9 @@ class RosDhcpOptionsSet(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDhcpOptionsSet._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5845,6 +6448,9 @@ class RosDhcpOptionsSet(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDhcpOptionsSet, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -5865,6 +6471,9 @@ class RosDhcpOptionsSet(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDhcpOptionsSet, "dhcp_options_set_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dhcpOptionsSetDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -5885,6 +6494,9 @@ class RosDhcpOptionsSet(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDhcpOptionsSet, "dhcp_options_set_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dhcpOptionsSetName", value)
 
     @builtins.property # type: ignore[misc]
@@ -5905,6 +6517,9 @@ class RosDhcpOptionsSet(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDhcpOptionsSet, "domain_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "domainName", value)
 
     @builtins.property # type: ignore[misc]
@@ -5922,6 +6537,9 @@ class RosDhcpOptionsSet(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDhcpOptionsSet, "domain_name_servers").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "domainNameServers", value)
 
 
@@ -5936,7 +6554,7 @@ class RosDhcpOptionsSetAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDhcpOptionsSetAttachmentProps",
+        props: typing.Union["RosDhcpOptionsSetAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::DhcpOptionsSetAttachment``.
@@ -5946,6 +6564,12 @@ class RosDhcpOptionsSetAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDhcpOptionsSetAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -5956,6 +6580,9 @@ class RosDhcpOptionsSetAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDhcpOptionsSetAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6000,6 +6627,9 @@ class RosDhcpOptionsSetAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDhcpOptionsSetAttachment, "dhcp_options_set_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dhcpOptionsSetId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6009,6 +6639,9 @@ class RosDhcpOptionsSetAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDhcpOptionsSetAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6024,6 +6657,9 @@ class RosDhcpOptionsSetAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDhcpOptionsSetAttachment, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
 
@@ -6044,6 +6680,10 @@ class RosDhcpOptionsSetAttachmentProps:
         :param dhcp_options_set_id: 
         :param vpc_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDhcpOptionsSetAttachmentProps.__init__)
+            check_type(argname="argument dhcp_options_set_id", value=dhcp_options_set_id, expected_type=type_hints["dhcp_options_set_id"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "dhcp_options_set_id": dhcp_options_set_id,
             "vpc_id": vpc_id,
@@ -6107,6 +6747,12 @@ class RosDhcpOptionsSetProps:
         :param domain_name: 
         :param domain_name_servers: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDhcpOptionsSetProps.__init__)
+            check_type(argname="argument dhcp_options_set_description", value=dhcp_options_set_description, expected_type=type_hints["dhcp_options_set_description"])
+            check_type(argname="argument dhcp_options_set_name", value=dhcp_options_set_name, expected_type=type_hints["dhcp_options_set_name"])
+            check_type(argname="argument domain_name", value=domain_name, expected_type=type_hints["domain_name"])
+            check_type(argname="argument domain_name_servers", value=domain_name_servers, expected_type=type_hints["domain_name_servers"])
         self._values: typing.Dict[str, typing.Any] = {}
         if dhcp_options_set_description is not None:
             self._values["dhcp_options_set_description"] = dhcp_options_set_description
@@ -6189,7 +6835,7 @@ class RosEIP(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosEIPProps",
+        props: typing.Union["RosEIPProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::EIP``.
@@ -6199,6 +6845,12 @@ class RosEIP(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIP.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6209,6 +6861,9 @@ class RosEIP(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIP._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6261,6 +6916,9 @@ class RosEIP(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6278,6 +6936,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "auto_pay").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPay", value)
 
     @builtins.property # type: ignore[misc]
@@ -6295,6 +6956,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -6315,6 +6979,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "deletion_protection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionProtection", value)
 
     @builtins.property # type: ignore[misc]
@@ -6332,6 +6999,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -6349,6 +7019,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "instance_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6366,6 +7039,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6387,6 +7063,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "isp").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "isp", value)
 
     @builtins.property # type: ignore[misc]
@@ -6404,6 +7083,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -6421,6 +7103,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "netmode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "netmode", value)
 
     @builtins.property # type: ignore[misc]
@@ -6441,6 +7126,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -6458,6 +7146,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "pricing_cycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pricingCycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -6475,6 +7166,9 @@ class RosEIP(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6487,6 +7181,9 @@ class RosEIP(
 
     @tags.setter
     def tags(self, value: typing.Optional[typing.List["RosEIP.TagsProperty"]]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIP, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -6505,6 +7202,10 @@ class RosEIP(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosEIP.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -6553,7 +7254,7 @@ class RosEIPAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosEIPAssociationProps",
+        props: typing.Union["RosEIPAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::EIPAssociation``.
@@ -6563,6 +7264,12 @@ class RosEIPAssociation(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6573,6 +7280,9 @@ class RosEIPAssociation(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPAssociation._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6615,6 +7325,9 @@ class RosEIPAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPAssociation, "allocation_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "allocationId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6624,6 +7337,9 @@ class RosEIPAssociation(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPAssociation, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6639,6 +7355,9 @@ class RosEIPAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPAssociation, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6662,6 +7381,9 @@ class RosEIPAssociation(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPAssociation, "mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mode", value)
 
     @builtins.property # type: ignore[misc]
@@ -6682,6 +7404,9 @@ class RosEIPAssociation(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPAssociation, "private_ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "privateIpAddress", value)
 
 
@@ -6711,6 +7436,12 @@ class RosEIPAssociationProps:
         :param mode: 
         :param private_ip_address: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPAssociationProps.__init__)
+            check_type(argname="argument allocation_id", value=allocation_id, expected_type=type_hints["allocation_id"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument mode", value=mode, expected_type=type_hints["mode"])
+            check_type(argname="argument private_ip_address", value=private_ip_address, expected_type=type_hints["private_ip_address"])
         self._values: typing.Dict[str, typing.Any] = {
             "allocation_id": allocation_id,
             "instance_id": instance_id,
@@ -6790,7 +7521,7 @@ class RosEIPPro(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosEIPProProps",
+        props: typing.Union["RosEIPProProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::EIPPro``.
@@ -6800,6 +7531,12 @@ class RosEIPPro(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPPro.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -6810,6 +7547,9 @@ class RosEIPPro(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPPro._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -6862,6 +7602,9 @@ class RosEIPPro(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -6879,6 +7622,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "auto_pay").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPay", value)
 
     @builtins.property # type: ignore[misc]
@@ -6896,6 +7642,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -6916,6 +7665,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "deletion_protection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionProtection", value)
 
     @builtins.property # type: ignore[misc]
@@ -6933,6 +7685,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -6950,6 +7705,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "instance_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -6967,6 +7725,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -6984,6 +7745,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -7001,6 +7765,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "ip_address").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipAddress", value)
 
     @builtins.property # type: ignore[misc]
@@ -7022,6 +7789,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "isp").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "isp", value)
 
     @builtins.property # type: ignore[misc]
@@ -7039,6 +7809,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -7056,6 +7829,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "netmode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "netmode", value)
 
     @builtins.property # type: ignore[misc]
@@ -7076,6 +7852,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -7093,6 +7872,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "pricing_cycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pricingCycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -7110,6 +7892,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -7125,6 +7910,9 @@ class RosEIPPro(
         self,
         value: typing.Optional[typing.List["RosEIPPro.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPPro, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -7143,6 +7931,10 @@ class RosEIPPro(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosEIPPro.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -7219,7 +8011,7 @@ class RosEIPProProps:
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         pricing_cycle: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosEIPPro.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosEIPPro.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::EIPPro``.
 
@@ -7239,6 +8031,23 @@ class RosEIPProProps:
         :param resource_group_id: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPProProps.__init__)
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument deletion_protection", value=deletion_protection, expected_type=type_hints["deletion_protection"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument ip_address", value=ip_address, expected_type=type_hints["ip_address"])
+            check_type(argname="argument isp", value=isp, expected_type=type_hints["isp"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument netmode", value=netmode, expected_type=type_hints["netmode"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_pay is not None:
             self._values["auto_pay"] = auto_pay
@@ -7476,7 +8285,7 @@ class RosEIPProps:
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         pricing_cycle: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosEIP.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosEIP.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::EIP``.
 
@@ -7494,6 +8303,21 @@ class RosEIPProps:
         :param resource_group_id: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPProps.__init__)
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument deletion_protection", value=deletion_protection, expected_type=type_hints["deletion_protection"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument isp", value=isp, expected_type=type_hints["isp"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument netmode", value=netmode, expected_type=type_hints["netmode"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_pay is not None:
             self._values["auto_pay"] = auto_pay
@@ -7683,7 +8507,7 @@ class RosEIPSegment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosEIPSegmentProps",
+        props: typing.Union["RosEIPSegmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::EIPSegment``.
@@ -7693,6 +8517,12 @@ class RosEIPSegment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPSegment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -7703,6 +8533,9 @@ class RosEIPSegment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPSegment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -7754,6 +8587,9 @@ class RosEIPSegment(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPSegment, "eip_mask").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eipMask", value)
 
     @builtins.property # type: ignore[misc]
@@ -7763,6 +8599,9 @@ class RosEIPSegment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPSegment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -7780,6 +8619,9 @@ class RosEIPSegment(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPSegment, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -7802,6 +8644,9 @@ class RosEIPSegment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPSegment, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -7827,6 +8672,9 @@ class RosEIPSegment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPSegment, "netmode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "netmode", value)
 
     @builtins.property # type: ignore[misc]
@@ -7844,6 +8692,9 @@ class RosEIPSegment(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosEIPSegment, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
 
@@ -7876,6 +8727,13 @@ class RosEIPSegmentProps:
         :param netmode: 
         :param resource_group_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosEIPSegmentProps.__init__)
+            check_type(argname="argument eip_mask", value=eip_mask, expected_type=type_hints["eip_mask"])
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument netmode", value=netmode, expected_type=type_hints["netmode"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "eip_mask": eip_mask,
         }
@@ -7982,7 +8840,7 @@ class RosFlowLog(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosFlowLogProps",
+        props: typing.Union["RosFlowLogProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::FlowLog``.
@@ -7992,6 +8850,12 @@ class RosFlowLog(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFlowLog.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -8002,6 +8866,9 @@ class RosFlowLog(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFlowLog._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -8086,6 +8953,9 @@ class RosFlowLog(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlowLog, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -8101,6 +8971,9 @@ class RosFlowLog(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlowLog, "log_store_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logStoreName", value)
 
     @builtins.property # type: ignore[misc]
@@ -8116,6 +8989,9 @@ class RosFlowLog(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlowLog, "project_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "projectName", value)
 
     @builtins.property # type: ignore[misc]
@@ -8131,6 +9007,9 @@ class RosFlowLog(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlowLog, "resource_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8146,6 +9025,9 @@ class RosFlowLog(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlowLog, "resource_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceType", value)
 
     @builtins.property # type: ignore[misc]
@@ -8161,6 +9043,9 @@ class RosFlowLog(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlowLog, "traffic_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "trafficType", value)
 
     @builtins.property # type: ignore[misc]
@@ -8178,6 +9063,9 @@ class RosFlowLog(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlowLog, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -8195,6 +9083,9 @@ class RosFlowLog(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlowLog, "flow_log_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "flowLogName", value)
 
 
@@ -8233,6 +9124,15 @@ class RosFlowLogProps:
         :param description: 
         :param flow_log_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFlowLogProps.__init__)
+            check_type(argname="argument log_store_name", value=log_store_name, expected_type=type_hints["log_store_name"])
+            check_type(argname="argument project_name", value=project_name, expected_type=type_hints["project_name"])
+            check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+            check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
+            check_type(argname="argument traffic_type", value=traffic_type, expected_type=type_hints["traffic_type"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument flow_log_name", value=flow_log_name, expected_type=type_hints["flow_log_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "log_store_name": log_store_name,
             "project_name": project_name,
@@ -8333,7 +9233,7 @@ class RosGrantInstanceToCen(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosGrantInstanceToCenProps",
+        props: typing.Union["RosGrantInstanceToCenProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::GrantInstanceToCen``.
@@ -8343,6 +9243,12 @@ class RosGrantInstanceToCen(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGrantInstanceToCen.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -8353,6 +9259,9 @@ class RosGrantInstanceToCen(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGrantInstanceToCen._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -8395,6 +9304,9 @@ class RosGrantInstanceToCen(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGrantInstanceToCen, "cen_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8410,6 +9322,9 @@ class RosGrantInstanceToCen(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGrantInstanceToCen, "cen_owner_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cenOwnerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8419,6 +9334,9 @@ class RosGrantInstanceToCen(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGrantInstanceToCen, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -8434,6 +9352,9 @@ class RosGrantInstanceToCen(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGrantInstanceToCen, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8454,6 +9375,9 @@ class RosGrantInstanceToCen(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosGrantInstanceToCen, "instance_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceType", value)
 
 
@@ -8483,6 +9407,12 @@ class RosGrantInstanceToCenProps:
         :param instance_id: 
         :param instance_type: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosGrantInstanceToCenProps.__init__)
+            check_type(argname="argument cen_id", value=cen_id, expected_type=type_hints["cen_id"])
+            check_type(argname="argument cen_owner_id", value=cen_owner_id, expected_type=type_hints["cen_owner_id"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument instance_type", value=instance_type, expected_type=type_hints["instance_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "cen_id": cen_id,
             "cen_owner_id": cen_owner_id,
@@ -8554,7 +9484,7 @@ class RosIpsecServer(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosIpsecServerProps",
+        props: typing.Union["RosIpsecServerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::IpsecServer``.
@@ -8564,6 +9494,12 @@ class RosIpsecServer(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpsecServer.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -8574,6 +9510,9 @@ class RosIpsecServer(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpsecServer._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -8616,6 +9555,9 @@ class RosIpsecServer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "client_ip_pool").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clientIpPool", value)
 
     @builtins.property # type: ignore[misc]
@@ -8625,6 +9567,9 @@ class RosIpsecServer(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -8640,6 +9585,9 @@ class RosIpsecServer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "local_subnet").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localSubnet", value)
 
     @builtins.property # type: ignore[misc]
@@ -8655,6 +9603,9 @@ class RosIpsecServer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "vpn_gateway_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpnGatewayId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8675,6 +9626,9 @@ class RosIpsecServer(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "effect_immediately").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "effectImmediately", value)
 
     @builtins.property # type: ignore[misc]
@@ -8692,6 +9646,9 @@ class RosIpsecServer(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosIpsecServer.IkeConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "ike_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ikeConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -8709,6 +9666,9 @@ class RosIpsecServer(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosIpsecServer.IpsecConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "ipsec_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipsecConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -8726,6 +9686,9 @@ class RosIpsecServer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "ipsec_server_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipsecServerName", value)
 
     @builtins.property # type: ignore[misc]
@@ -8743,6 +9706,9 @@ class RosIpsecServer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "psk").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "psk", value)
 
     @builtins.property # type: ignore[misc]
@@ -8760,6 +9726,9 @@ class RosIpsecServer(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpsecServer, "psk_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pskEnabled", value)
 
     @jsii.data_type(
@@ -8799,6 +9768,16 @@ class RosIpsecServer(
             :param local_id: 
             :param remote_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosIpsecServer.IkeConfigProperty.__init__)
+                check_type(argname="argument ike_auth_alg", value=ike_auth_alg, expected_type=type_hints["ike_auth_alg"])
+                check_type(argname="argument ike_enc_alg", value=ike_enc_alg, expected_type=type_hints["ike_enc_alg"])
+                check_type(argname="argument ike_lifetime", value=ike_lifetime, expected_type=type_hints["ike_lifetime"])
+                check_type(argname="argument ike_mode", value=ike_mode, expected_type=type_hints["ike_mode"])
+                check_type(argname="argument ike_pfs", value=ike_pfs, expected_type=type_hints["ike_pfs"])
+                check_type(argname="argument ike_version", value=ike_version, expected_type=type_hints["ike_version"])
+                check_type(argname="argument local_id", value=local_id, expected_type=type_hints["local_id"])
+                check_type(argname="argument remote_id", value=remote_id, expected_type=type_hints["remote_id"])
             self._values: typing.Dict[str, typing.Any] = {}
             if ike_auth_alg is not None:
                 self._values["ike_auth_alg"] = ike_auth_alg
@@ -8933,6 +9912,12 @@ class RosIpsecServer(
             :param ipsec_lifetime: 
             :param ipsec_pfs: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosIpsecServer.IpsecConfigProperty.__init__)
+                check_type(argname="argument ipsec_auth_alg", value=ipsec_auth_alg, expected_type=type_hints["ipsec_auth_alg"])
+                check_type(argname="argument ipsec_enc_alg", value=ipsec_enc_alg, expected_type=type_hints["ipsec_enc_alg"])
+                check_type(argname="argument ipsec_lifetime", value=ipsec_lifetime, expected_type=type_hints["ipsec_lifetime"])
+                check_type(argname="argument ipsec_pfs", value=ipsec_pfs, expected_type=type_hints["ipsec_pfs"])
             self._values: typing.Dict[str, typing.Any] = {}
             if ipsec_auth_alg is not None:
                 self._values["ipsec_auth_alg"] = ipsec_auth_alg
@@ -9018,8 +10003,8 @@ class RosIpsecServerProps:
         local_subnet: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpn_gateway_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         effect_immediately: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        ike_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosIpsecServer.IkeConfigProperty]] = None,
-        ipsec_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosIpsecServer.IpsecConfigProperty]] = None,
+        ike_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosIpsecServer.IkeConfigProperty, typing.Dict[str, typing.Any]]]] = None,
+        ipsec_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosIpsecServer.IpsecConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         ipsec_server_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         psk: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         psk_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
@@ -9036,6 +10021,17 @@ class RosIpsecServerProps:
         :param psk: 
         :param psk_enabled: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpsecServerProps.__init__)
+            check_type(argname="argument client_ip_pool", value=client_ip_pool, expected_type=type_hints["client_ip_pool"])
+            check_type(argname="argument local_subnet", value=local_subnet, expected_type=type_hints["local_subnet"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument effect_immediately", value=effect_immediately, expected_type=type_hints["effect_immediately"])
+            check_type(argname="argument ike_config", value=ike_config, expected_type=type_hints["ike_config"])
+            check_type(argname="argument ipsec_config", value=ipsec_config, expected_type=type_hints["ipsec_config"])
+            check_type(argname="argument ipsec_server_name", value=ipsec_server_name, expected_type=type_hints["ipsec_server_name"])
+            check_type(argname="argument psk", value=psk, expected_type=type_hints["psk"])
+            check_type(argname="argument psk_enabled", value=psk_enabled, expected_type=type_hints["psk_enabled"])
         self._values: typing.Dict[str, typing.Any] = {
             "client_ip_pool": client_ip_pool,
             "local_subnet": local_subnet,
@@ -9167,7 +10163,7 @@ class RosIpv6Gateway(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosIpv6GatewayProps",
+        props: typing.Union["RosIpv6GatewayProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::Ipv6Gateway``.
@@ -9177,6 +10173,12 @@ class RosIpv6Gateway(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpv6Gateway.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -9187,6 +10189,9 @@ class RosIpv6Gateway(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpv6Gateway._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -9215,6 +10220,9 @@ class RosIpv6Gateway(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6Gateway, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -9230,6 +10238,9 @@ class RosIpv6Gateway(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6Gateway, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -9250,6 +10261,9 @@ class RosIpv6Gateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6Gateway, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -9270,6 +10284,9 @@ class RosIpv6Gateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6Gateway, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -9293,6 +10310,9 @@ class RosIpv6Gateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6Gateway, "spec").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spec", value)
 
     @builtins.property # type: ignore[misc]
@@ -9308,6 +10328,9 @@ class RosIpv6Gateway(
         self,
         value: typing.Optional[typing.List["RosIpv6Gateway.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6Gateway, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -9326,6 +10349,10 @@ class RosIpv6Gateway(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosIpv6Gateway.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -9382,7 +10409,7 @@ class RosIpv6GatewayProps:
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         spec: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosIpv6Gateway.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosIpv6Gateway.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::Ipv6Gateway``.
 
@@ -9392,6 +10419,13 @@ class RosIpv6GatewayProps:
         :param spec: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpv6GatewayProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument spec", value=spec, expected_type=type_hints["spec"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
         }
@@ -9486,7 +10520,7 @@ class RosIpv6InternetBandwidth(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosIpv6InternetBandwidthProps",
+        props: typing.Union["RosIpv6InternetBandwidthProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::Ipv6InternetBandwidth``.
@@ -9496,6 +10530,12 @@ class RosIpv6InternetBandwidth(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpv6InternetBandwidth.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -9506,6 +10546,9 @@ class RosIpv6InternetBandwidth(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpv6InternetBandwidth._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -9547,6 +10590,9 @@ class RosIpv6InternetBandwidth(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6InternetBandwidth, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -9556,6 +10602,9 @@ class RosIpv6InternetBandwidth(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6InternetBandwidth, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -9571,6 +10620,9 @@ class RosIpv6InternetBandwidth(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6InternetBandwidth, "ipv6_address_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipv6AddressId", value)
 
     @builtins.property # type: ignore[misc]
@@ -9586,6 +10638,9 @@ class RosIpv6InternetBandwidth(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6InternetBandwidth, "ipv6_gateway_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipv6GatewayId", value)
 
     @builtins.property # type: ignore[misc]
@@ -9607,6 +10662,9 @@ class RosIpv6InternetBandwidth(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6InternetBandwidth, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -9624,6 +10682,9 @@ class RosIpv6InternetBandwidth(
         self,
         value: typing.Optional[typing.List["RosIpv6InternetBandwidth.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosIpv6InternetBandwidth, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -9642,6 +10703,10 @@ class RosIpv6InternetBandwidth(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosIpv6InternetBandwidth.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -9698,7 +10763,7 @@ class RosIpv6InternetBandwidthProps:
         ipv6_address_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         ipv6_gateway_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         internet_charge_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosIpv6InternetBandwidth.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosIpv6InternetBandwidth.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::Ipv6InternetBandwidth``.
 
@@ -9708,6 +10773,13 @@ class RosIpv6InternetBandwidthProps:
         :param internet_charge_type: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosIpv6InternetBandwidthProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument ipv6_address_id", value=ipv6_address_id, expected_type=type_hints["ipv6_address_id"])
+            check_type(argname="argument ipv6_gateway_id", value=ipv6_gateway_id, expected_type=type_hints["ipv6_gateway_id"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth": bandwidth,
             "ipv6_address_id": ipv6_address_id,
@@ -9799,7 +10871,7 @@ class RosNatGateway(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosNatGatewayProps",
+        props: typing.Union["RosNatGatewayProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::NatGateway``.
@@ -9809,6 +10881,12 @@ class RosNatGateway(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNatGateway.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -9819,6 +10897,9 @@ class RosNatGateway(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNatGateway._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -9863,6 +10944,9 @@ class RosNatGateway(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -9878,6 +10962,9 @@ class RosNatGateway(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -9893,6 +10980,9 @@ class RosNatGateway(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -9910,6 +11000,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "auto_pay").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPay", value)
 
     @builtins.property # type: ignore[misc]
@@ -9927,6 +11020,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "deletion_force").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionForce", value)
 
     @builtins.property # type: ignore[misc]
@@ -9947,6 +11043,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "deletion_protection").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionProtection", value)
 
     @builtins.property # type: ignore[misc]
@@ -9964,6 +11063,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -9981,6 +11083,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "duration", value)
 
     @builtins.property # type: ignore[misc]
@@ -9998,6 +11103,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "instance_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -10018,6 +11126,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "internet_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -10035,6 +11146,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "nat_gateway_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "natGatewayName", value)
 
     @builtins.property # type: ignore[misc]
@@ -10056,6 +11170,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "nat_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "natType", value)
 
     @builtins.property # type: ignore[misc]
@@ -10077,6 +11194,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "network_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "networkType", value)
 
     @builtins.property # type: ignore[misc]
@@ -10094,6 +11214,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "pricing_cycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pricingCycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -10109,6 +11232,9 @@ class RosNatGateway(
         self,
         value: typing.Optional[typing.List["RosNatGateway.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNatGateway, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -10127,6 +11253,10 @@ class RosNatGateway(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosNatGateway.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -10201,7 +11331,7 @@ class RosNatGatewayProps:
         nat_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         network_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         pricing_cycle: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosNatGateway.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosNatGateway.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::NatGateway``.
 
@@ -10220,6 +11350,22 @@ class RosNatGatewayProps:
         :param pricing_cycle: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNatGatewayProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument deletion_protection", value=deletion_protection, expected_type=type_hints["deletion_protection"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument duration", value=duration, expected_type=type_hints["duration"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument internet_charge_type", value=internet_charge_type, expected_type=type_hints["internet_charge_type"])
+            check_type(argname="argument nat_gateway_name", value=nat_gateway_name, expected_type=type_hints["nat_gateway_name"])
+            check_type(argname="argument nat_type", value=nat_type, expected_type=type_hints["nat_type"])
+            check_type(argname="argument network_type", value=network_type, expected_type=type_hints["network_type"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
             "v_switch_id": v_switch_id,
@@ -10422,7 +11568,7 @@ class RosNetworkAcl(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosNetworkAclProps",
+        props: typing.Union["RosNetworkAclProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::NetworkAcl``.
@@ -10432,6 +11578,12 @@ class RosNetworkAcl(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNetworkAcl.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -10442,6 +11594,9 @@ class RosNetworkAcl(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNetworkAcl._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -10478,6 +11633,9 @@ class RosNetworkAcl(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAcl, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -10493,6 +11651,9 @@ class RosNetworkAcl(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAcl, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -10514,6 +11675,9 @@ class RosNetworkAcl(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAcl, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -10531,6 +11695,9 @@ class RosNetworkAcl(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosNetworkAcl.EgressAclEntriesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAcl, "egress_acl_entries").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "egressAclEntries", value)
 
     @builtins.property # type: ignore[misc]
@@ -10548,6 +11715,9 @@ class RosNetworkAcl(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosNetworkAcl.IngressAclEntriesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAcl, "ingress_acl_entries").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ingressAclEntries", value)
 
     @builtins.property # type: ignore[misc]
@@ -10570,6 +11740,9 @@ class RosNetworkAcl(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAcl, "network_acl_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "networkAclName", value)
 
     @jsii.data_type(
@@ -10606,6 +11779,15 @@ class RosNetworkAcl(
             :param entry_type: 
             :param network_acl_entry_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosNetworkAcl.EgressAclEntriesProperty.__init__)
+                check_type(argname="argument policy", value=policy, expected_type=type_hints["policy"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument protocol", value=protocol, expected_type=type_hints["protocol"])
+                check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+                check_type(argname="argument destination_cidr_ip", value=destination_cidr_ip, expected_type=type_hints["destination_cidr_ip"])
+                check_type(argname="argument entry_type", value=entry_type, expected_type=type_hints["entry_type"])
+                check_type(argname="argument network_acl_entry_name", value=network_acl_entry_name, expected_type=type_hints["network_acl_entry_name"])
             self._values: typing.Dict[str, typing.Any] = {
                 "policy": policy,
                 "port": port,
@@ -10747,6 +11929,15 @@ class RosNetworkAcl(
             :param network_acl_entry_name: 
             :param source_cidr_ip: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosNetworkAcl.IngressAclEntriesProperty.__init__)
+                check_type(argname="argument policy", value=policy, expected_type=type_hints["policy"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument protocol", value=protocol, expected_type=type_hints["protocol"])
+                check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+                check_type(argname="argument entry_type", value=entry_type, expected_type=type_hints["entry_type"])
+                check_type(argname="argument network_acl_entry_name", value=network_acl_entry_name, expected_type=type_hints["network_acl_entry_name"])
+                check_type(argname="argument source_cidr_ip", value=source_cidr_ip, expected_type=type_hints["source_cidr_ip"])
             self._values: typing.Dict[str, typing.Any] = {
                 "policy": policy,
                 "port": port,
@@ -10866,7 +12057,7 @@ class RosNetworkAclAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosNetworkAclAssociationProps",
+        props: typing.Union["RosNetworkAclAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::NetworkAclAssociation``.
@@ -10876,6 +12067,12 @@ class RosNetworkAclAssociation(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNetworkAclAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -10886,6 +12083,9 @@ class RosNetworkAclAssociation(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNetworkAclAssociation._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -10914,6 +12114,9 @@ class RosNetworkAclAssociation(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAclAssociation, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -10929,6 +12132,9 @@ class RosNetworkAclAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAclAssociation, "network_acl_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "networkAclId", value)
 
     @builtins.property # type: ignore[misc]
@@ -10946,6 +12152,9 @@ class RosNetworkAclAssociation(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosNetworkAclAssociation.ResourcesProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNetworkAclAssociation, "resources").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resources", value)
 
     @jsii.data_type(
@@ -10964,6 +12173,10 @@ class RosNetworkAclAssociation(
             :param resource_id: 
             :param resource_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosNetworkAclAssociation.ResourcesProperty.__init__)
+                check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+                check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "resource_id": resource_id,
             }
@@ -11011,13 +12224,17 @@ class RosNetworkAclAssociationProps:
         self,
         *,
         network_acl_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        resources: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosNetworkAclAssociation.ResourcesProperty]]],
+        resources: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosNetworkAclAssociation.ResourcesProperty, typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::NetworkAclAssociation``.
 
         :param network_acl_id: 
         :param resources: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNetworkAclAssociationProps.__init__)
+            check_type(argname="argument network_acl_id", value=network_acl_id, expected_type=type_hints["network_acl_id"])
+            check_type(argname="argument resources", value=resources, expected_type=type_hints["resources"])
         self._values: typing.Dict[str, typing.Any] = {
             "network_acl_id": network_acl_id,
             "resources": resources,
@@ -11072,8 +12289,8 @@ class RosNetworkAclProps:
         *,
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        egress_acl_entries: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosNetworkAcl.EgressAclEntriesProperty]]]] = None,
-        ingress_acl_entries: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosNetworkAcl.IngressAclEntriesProperty]]]] = None,
+        egress_acl_entries: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosNetworkAcl.EgressAclEntriesProperty, typing.Dict[str, typing.Any]]]]]] = None,
+        ingress_acl_entries: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosNetworkAcl.IngressAclEntriesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         network_acl_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::NetworkAcl``.
@@ -11084,6 +12301,13 @@ class RosNetworkAclProps:
         :param ingress_acl_entries: 
         :param network_acl_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNetworkAclProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument egress_acl_entries", value=egress_acl_entries, expected_type=type_hints["egress_acl_entries"])
+            check_type(argname="argument ingress_acl_entries", value=ingress_acl_entries, expected_type=type_hints["ingress_acl_entries"])
+            check_type(argname="argument network_acl_name", value=network_acl_name, expected_type=type_hints["network_acl_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
         }
@@ -11177,7 +12401,7 @@ class RosPeeringRouterInterfaceBinding(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosPeeringRouterInterfaceBindingProps",
+        props: typing.Union["RosPeeringRouterInterfaceBindingProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::PeeringRouterInterfaceBinding``.
@@ -11187,6 +12411,12 @@ class RosPeeringRouterInterfaceBinding(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPeeringRouterInterfaceBinding.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -11197,6 +12427,9 @@ class RosPeeringRouterInterfaceBinding(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPeeringRouterInterfaceBinding._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -11225,6 +12458,9 @@ class RosPeeringRouterInterfaceBinding(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPeeringRouterInterfaceBinding, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -11242,6 +12478,9 @@ class RosPeeringRouterInterfaceBinding(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPeeringRouterInterfaceBinding, "opposite_interface_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeInterfaceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -11259,6 +12498,9 @@ class RosPeeringRouterInterfaceBinding(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPeeringRouterInterfaceBinding, "router_interface_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routerInterfaceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -11276,6 +12518,9 @@ class RosPeeringRouterInterfaceBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPeeringRouterInterfaceBinding, "opposite_interface_owner_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeInterfaceOwnerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -11293,6 +12538,9 @@ class RosPeeringRouterInterfaceBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPeeringRouterInterfaceBinding, "opposite_router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeRouterId", value)
 
 
@@ -11322,6 +12570,12 @@ class RosPeeringRouterInterfaceBindingProps:
         :param opposite_interface_owner_id: 
         :param opposite_router_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPeeringRouterInterfaceBindingProps.__init__)
+            check_type(argname="argument opposite_interface_id", value=opposite_interface_id, expected_type=type_hints["opposite_interface_id"])
+            check_type(argname="argument router_interface_id", value=router_interface_id, expected_type=type_hints["router_interface_id"])
+            check_type(argname="argument opposite_interface_owner_id", value=opposite_interface_owner_id, expected_type=type_hints["opposite_interface_owner_id"])
+            check_type(argname="argument opposite_router_id", value=opposite_router_id, expected_type=type_hints["opposite_router_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "opposite_interface_id": opposite_interface_id,
             "router_interface_id": router_interface_id,
@@ -11396,7 +12650,7 @@ class RosPeeringRouterInterfaceConnection(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosPeeringRouterInterfaceConnectionProps",
+        props: typing.Union["RosPeeringRouterInterfaceConnectionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::PeeringRouterInterfaceConnection``.
@@ -11406,6 +12660,12 @@ class RosPeeringRouterInterfaceConnection(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPeeringRouterInterfaceConnection.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -11416,6 +12676,9 @@ class RosPeeringRouterInterfaceConnection(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPeeringRouterInterfaceConnection._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -11452,6 +12715,9 @@ class RosPeeringRouterInterfaceConnection(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPeeringRouterInterfaceConnection, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -11469,6 +12735,9 @@ class RosPeeringRouterInterfaceConnection(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPeeringRouterInterfaceConnection, "opposite_interface_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeInterfaceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -11486,6 +12755,9 @@ class RosPeeringRouterInterfaceConnection(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPeeringRouterInterfaceConnection, "router_interface_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routerInterfaceId", value)
 
 
@@ -11509,6 +12781,10 @@ class RosPeeringRouterInterfaceConnectionProps:
         :param opposite_interface_id: 
         :param router_interface_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPeeringRouterInterfaceConnectionProps.__init__)
+            check_type(argname="argument opposite_interface_id", value=opposite_interface_id, expected_type=type_hints["opposite_interface_id"])
+            check_type(argname="argument router_interface_id", value=router_interface_id, expected_type=type_hints["router_interface_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "opposite_interface_id": opposite_interface_id,
             "router_interface_id": router_interface_id,
@@ -11559,7 +12835,7 @@ class RosRouteTable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRouteTableProps",
+        props: typing.Union["RosRouteTableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::RouteTable``.
@@ -11569,6 +12845,12 @@ class RosRouteTable(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteTable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -11579,6 +12861,9 @@ class RosRouteTable(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteTable._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -11639,6 +12924,9 @@ class RosRouteTable(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteTable, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -11654,6 +12942,9 @@ class RosRouteTable(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteTable, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -11674,6 +12965,9 @@ class RosRouteTable(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteTable, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -11694,6 +12988,9 @@ class RosRouteTable(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteTable, "route_table_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routeTableName", value)
 
     @builtins.property # type: ignore[misc]
@@ -11709,6 +13006,9 @@ class RosRouteTable(
         self,
         value: typing.Optional[typing.List["RosRouteTable.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteTable, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -11727,6 +13027,10 @@ class RosRouteTable(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRouteTable.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -11775,7 +13079,7 @@ class RosRouteTableAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRouteTableAssociationProps",
+        props: typing.Union["RosRouteTableAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::RouteTableAssociation``.
@@ -11785,6 +13089,12 @@ class RosRouteTableAssociation(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteTableAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -11795,6 +13105,9 @@ class RosRouteTableAssociation(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteTableAssociation._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -11831,6 +13144,9 @@ class RosRouteTableAssociation(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteTableAssociation, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -11846,6 +13162,9 @@ class RosRouteTableAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteTableAssociation, "route_table_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routeTableId", value)
 
     @builtins.property # type: ignore[misc]
@@ -11861,6 +13180,9 @@ class RosRouteTableAssociation(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouteTableAssociation, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
 
@@ -11881,6 +13203,10 @@ class RosRouteTableAssociationProps:
         :param route_table_id: 
         :param v_switch_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteTableAssociationProps.__init__)
+            check_type(argname="argument route_table_id", value=route_table_id, expected_type=type_hints["route_table_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "route_table_id": route_table_id,
             "v_switch_id": v_switch_id,
@@ -11933,7 +13259,7 @@ class RosRouteTableProps:
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         route_table_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosRouteTable.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosRouteTable.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::RouteTable``.
 
@@ -11942,6 +13268,12 @@ class RosRouteTableProps:
         :param route_table_name: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouteTableProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument route_table_name", value=route_table_name, expected_type=type_hints["route_table_name"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
         }
@@ -12018,7 +13350,7 @@ class RosRouterInterface(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRouterInterfaceProps",
+        props: typing.Union["RosRouterInterfaceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::RouterInterface``.
@@ -12028,6 +13360,12 @@ class RosRouterInterface(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouterInterface.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -12038,6 +13376,9 @@ class RosRouterInterface(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouterInterface._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -12066,6 +13407,9 @@ class RosRouterInterface(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -12078,6 +13422,9 @@ class RosRouterInterface(
 
     @role.setter
     def role(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "role").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "role", value)
 
     @builtins.property # type: ignore[misc]
@@ -12093,6 +13440,9 @@ class RosRouterInterface(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12110,6 +13460,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "access_point_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accessPointId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12131,6 +13484,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "auto_pay").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPay", value)
 
     @builtins.property # type: ignore[misc]
@@ -12148,6 +13504,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -12165,6 +13524,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "health_check_source_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckSourceIp", value)
 
     @builtins.property # type: ignore[misc]
@@ -12182,6 +13544,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "health_check_target_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckTargetIp", value)
 
     @builtins.property # type: ignore[misc]
@@ -12199,6 +13564,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "instance_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -12216,6 +13584,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -12233,6 +13604,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "opposite_access_point_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeAccessPointId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12250,6 +13624,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "opposite_interface_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeInterfaceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12267,6 +13644,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "opposite_interface_owner_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeInterfaceOwnerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12284,6 +13664,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "opposite_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12301,6 +13684,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "opposite_router_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeRouterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12318,6 +13704,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "opposite_router_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oppositeRouterType", value)
 
     @builtins.property # type: ignore[misc]
@@ -12335,6 +13724,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -12352,6 +13744,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "pricing_cycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pricingCycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -12369,6 +13764,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "router_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routerType", value)
 
     @builtins.property # type: ignore[misc]
@@ -12386,6 +13784,9 @@ class RosRouterInterface(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRouterInterface, "spec").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "spec", value)
 
 
@@ -12460,6 +13861,27 @@ class RosRouterInterfaceProps:
         :param router_type: 
         :param spec: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRouterInterfaceProps.__init__)
+            check_type(argname="argument role", value=role, expected_type=type_hints["role"])
+            check_type(argname="argument router_id", value=router_id, expected_type=type_hints["router_id"])
+            check_type(argname="argument access_point_id", value=access_point_id, expected_type=type_hints["access_point_id"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument health_check_source_ip", value=health_check_source_ip, expected_type=type_hints["health_check_source_ip"])
+            check_type(argname="argument health_check_target_ip", value=health_check_target_ip, expected_type=type_hints["health_check_target_ip"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument opposite_access_point_id", value=opposite_access_point_id, expected_type=type_hints["opposite_access_point_id"])
+            check_type(argname="argument opposite_interface_id", value=opposite_interface_id, expected_type=type_hints["opposite_interface_id"])
+            check_type(argname="argument opposite_interface_owner_id", value=opposite_interface_owner_id, expected_type=type_hints["opposite_interface_owner_id"])
+            check_type(argname="argument opposite_region_id", value=opposite_region_id, expected_type=type_hints["opposite_region_id"])
+            check_type(argname="argument opposite_router_id", value=opposite_router_id, expected_type=type_hints["opposite_router_id"])
+            check_type(argname="argument opposite_router_type", value=opposite_router_type, expected_type=type_hints["opposite_router_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument router_type", value=router_type, expected_type=type_hints["router_type"])
+            check_type(argname="argument spec", value=spec, expected_type=type_hints["spec"])
         self._values: typing.Dict[str, typing.Any] = {
             "role": role,
             "router_id": router_id,
@@ -12714,7 +14136,7 @@ class RosSnatEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSnatEntryProps",
+        props: typing.Union["RosSnatEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::SnatEntry``.
@@ -12724,6 +14146,12 @@ class RosSnatEntry(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSnatEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -12734,6 +14162,9 @@ class RosSnatEntry(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSnatEntry._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -12762,6 +14193,9 @@ class RosSnatEntry(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSnatEntry, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -12777,6 +14211,9 @@ class RosSnatEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSnatEntry, "snat_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "snatIp", value)
 
     @builtins.property # type: ignore[misc]
@@ -12792,6 +14229,9 @@ class RosSnatEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSnatEntry, "snat_table_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "snatTableId", value)
 
     @builtins.property # type: ignore[misc]
@@ -12809,6 +14249,9 @@ class RosSnatEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSnatEntry, "snat_entry_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "snatEntryName", value)
 
     @builtins.property # type: ignore[misc]
@@ -12826,6 +14269,9 @@ class RosSnatEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSnatEntry, "source_cidr").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceCidr", value)
 
     @builtins.property # type: ignore[misc]
@@ -12843,6 +14289,9 @@ class RosSnatEntry(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSnatEntry, "source_v_switch_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceVSwitchIds", value)
 
 
@@ -12875,6 +14324,13 @@ class RosSnatEntryProps:
         :param source_cidr: 
         :param source_v_switch_ids: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSnatEntryProps.__init__)
+            check_type(argname="argument snat_ip", value=snat_ip, expected_type=type_hints["snat_ip"])
+            check_type(argname="argument snat_table_id", value=snat_table_id, expected_type=type_hints["snat_table_id"])
+            check_type(argname="argument snat_entry_name", value=snat_entry_name, expected_type=type_hints["snat_entry_name"])
+            check_type(argname="argument source_cidr", value=source_cidr, expected_type=type_hints["source_cidr"])
+            check_type(argname="argument source_v_switch_ids", value=source_v_switch_ids, expected_type=type_hints["source_v_switch_ids"])
         self._values: typing.Dict[str, typing.Any] = {
             "snat_ip": snat_ip,
             "snat_table_id": snat_table_id,
@@ -12957,7 +14413,7 @@ class RosSslVpnClientCert(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSslVpnClientCertProps",
+        props: typing.Union["RosSslVpnClientCertProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::SslVpnClientCert``.
@@ -12967,6 +14423,12 @@ class RosSslVpnClientCert(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSslVpnClientCert.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -12977,6 +14439,9 @@ class RosSslVpnClientCert(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSslVpnClientCert._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -13005,6 +14470,9 @@ class RosSslVpnClientCert(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnClientCert, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -13020,6 +14488,9 @@ class RosSslVpnClientCert(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnClientCert, "ssl_vpn_server_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sslVpnServerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -13040,6 +14511,9 @@ class RosSslVpnClientCert(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnClientCert, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
 
@@ -13060,6 +14534,10 @@ class RosSslVpnClientCertProps:
         :param ssl_vpn_server_id: 
         :param name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSslVpnClientCertProps.__init__)
+            check_type(argname="argument ssl_vpn_server_id", value=ssl_vpn_server_id, expected_type=type_hints["ssl_vpn_server_id"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "ssl_vpn_server_id": ssl_vpn_server_id,
         }
@@ -13111,7 +14589,7 @@ class RosSslVpnServer(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSslVpnServerProps",
+        props: typing.Union["RosSslVpnServerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::SslVpnServer``.
@@ -13121,6 +14599,12 @@ class RosSslVpnServer(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSslVpnServer.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -13131,6 +14615,9 @@ class RosSslVpnServer(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSslVpnServer._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -13169,6 +14656,9 @@ class RosSslVpnServer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "client_ip_pool").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clientIpPool", value)
 
     @builtins.property # type: ignore[misc]
@@ -13178,6 +14668,9 @@ class RosSslVpnServer(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -13196,6 +14689,9 @@ class RosSslVpnServer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "local_subnet").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localSubnet", value)
 
     @builtins.property # type: ignore[misc]
@@ -13211,6 +14707,9 @@ class RosSslVpnServer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "vpn_gateway_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpnGatewayId", value)
 
     @builtins.property # type: ignore[misc]
@@ -13231,6 +14730,9 @@ class RosSslVpnServer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "cipher").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cipher", value)
 
     @builtins.property # type: ignore[misc]
@@ -13248,6 +14750,9 @@ class RosSslVpnServer(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "compress").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "compress", value)
 
     @builtins.property # type: ignore[misc]
@@ -13268,6 +14773,9 @@ class RosSslVpnServer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -13288,6 +14796,9 @@ class RosSslVpnServer(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "port", value)
 
     @builtins.property # type: ignore[misc]
@@ -13305,6 +14816,9 @@ class RosSslVpnServer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSslVpnServer, "proto").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "proto", value)
 
 
@@ -13346,6 +14860,16 @@ class RosSslVpnServerProps:
         :param port: 
         :param proto: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSslVpnServerProps.__init__)
+            check_type(argname="argument client_ip_pool", value=client_ip_pool, expected_type=type_hints["client_ip_pool"])
+            check_type(argname="argument local_subnet", value=local_subnet, expected_type=type_hints["local_subnet"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument cipher", value=cipher, expected_type=type_hints["cipher"])
+            check_type(argname="argument compress", value=compress, expected_type=type_hints["compress"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument proto", value=proto, expected_type=type_hints["proto"])
         self._values: typing.Dict[str, typing.Any] = {
             "client_ip_pool": client_ip_pool,
             "local_subnet": local_subnet,
@@ -13478,7 +15002,7 @@ class RosVirtualBorderRouter(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVirtualBorderRouterProps",
+        props: typing.Union["RosVirtualBorderRouterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VirtualBorderRouter``.
@@ -13488,6 +15012,12 @@ class RosVirtualBorderRouter(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVirtualBorderRouter.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -13498,6 +15028,9 @@ class RosVirtualBorderRouter(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVirtualBorderRouter._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -13550,6 +15083,9 @@ class RosVirtualBorderRouter(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -13565,6 +15101,9 @@ class RosVirtualBorderRouter(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "local_gateway_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localGatewayIp", value)
 
     @builtins.property # type: ignore[misc]
@@ -13585,6 +15124,9 @@ class RosVirtualBorderRouter(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "peer_gateway_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "peerGatewayIp", value)
 
     @builtins.property # type: ignore[misc]
@@ -13606,6 +15148,9 @@ class RosVirtualBorderRouter(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "peering_subnet_mask").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "peeringSubnetMask", value)
 
     @builtins.property # type: ignore[misc]
@@ -13623,6 +15168,9 @@ class RosVirtualBorderRouter(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "physical_connection_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "physicalConnectionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -13642,6 +15190,9 @@ class RosVirtualBorderRouter(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "vlan_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vlanId", value)
 
     @builtins.property # type: ignore[misc]
@@ -13663,6 +15214,9 @@ class RosVirtualBorderRouter(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "circuit_code").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "circuitCode", value)
 
     @builtins.property # type: ignore[misc]
@@ -13684,6 +15238,9 @@ class RosVirtualBorderRouter(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -13705,6 +15262,9 @@ class RosVirtualBorderRouter(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVirtualBorderRouter, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
 
@@ -13746,6 +15306,16 @@ class RosVirtualBorderRouterProps:
         :param description: 
         :param name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVirtualBorderRouterProps.__init__)
+            check_type(argname="argument local_gateway_ip", value=local_gateway_ip, expected_type=type_hints["local_gateway_ip"])
+            check_type(argname="argument peer_gateway_ip", value=peer_gateway_ip, expected_type=type_hints["peer_gateway_ip"])
+            check_type(argname="argument peering_subnet_mask", value=peering_subnet_mask, expected_type=type_hints["peering_subnet_mask"])
+            check_type(argname="argument physical_connection_id", value=physical_connection_id, expected_type=type_hints["physical_connection_id"])
+            check_type(argname="argument vlan_id", value=vlan_id, expected_type=type_hints["vlan_id"])
+            check_type(argname="argument circuit_code", value=circuit_code, expected_type=type_hints["circuit_code"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "local_gateway_ip": local_gateway_ip,
             "peer_gateway_ip": peer_gateway_ip,
@@ -13887,7 +15457,7 @@ class RosVpnConnection(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpnConnectionProps",
+        props: typing.Union["RosVpnConnectionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VpnConnection``.
@@ -13897,6 +15467,12 @@ class RosVpnConnection(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnConnection.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -13907,6 +15483,9 @@ class RosVpnConnection(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnConnection._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -13959,6 +15538,9 @@ class RosVpnConnection(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "customer_gateway_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "customerGatewayId", value)
 
     @builtins.property # type: ignore[misc]
@@ -13968,6 +15550,9 @@ class RosVpnConnection(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -13986,6 +15571,9 @@ class RosVpnConnection(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "local_subnet").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localSubnet", value)
 
     @builtins.property # type: ignore[misc]
@@ -14004,6 +15592,9 @@ class RosVpnConnection(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "remote_subnet").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "remoteSubnet", value)
 
     @builtins.property # type: ignore[misc]
@@ -14019,6 +15610,9 @@ class RosVpnConnection(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "vpn_gateway_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpnGatewayId", value)
 
     @builtins.property # type: ignore[misc]
@@ -14040,6 +15634,9 @@ class RosVpnConnection(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "effect_immediately").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "effectImmediately", value)
 
     @builtins.property # type: ignore[misc]
@@ -14057,6 +15654,9 @@ class RosVpnConnection(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosVpnConnection.HealthCheckConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "health_check_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -14074,6 +15674,9 @@ class RosVpnConnection(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosVpnConnection.IkeConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "ike_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ikeConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -14091,6 +15694,9 @@ class RosVpnConnection(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosVpnConnection.IpsecConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "ipsec_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ipsecConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -14111,6 +15717,9 @@ class RosVpnConnection(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnConnection, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @jsii.data_type(
@@ -14141,6 +15750,13 @@ class RosVpnConnection(
             :param retry: 
             :param sip: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosVpnConnection.HealthCheckConfigProperty.__init__)
+                check_type(argname="argument dip", value=dip, expected_type=type_hints["dip"])
+                check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
+                check_type(argname="argument interval", value=interval, expected_type=type_hints["interval"])
+                check_type(argname="argument retry", value=retry, expected_type=type_hints["retry"])
+                check_type(argname="argument sip", value=sip, expected_type=type_hints["sip"])
             self._values: typing.Dict[str, typing.Any] = {}
             if dip is not None:
                 self._values["dip"] = dip
@@ -14254,6 +15870,17 @@ class RosVpnConnection(
             :param psk: 
             :param remote_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosVpnConnection.IkeConfigProperty.__init__)
+                check_type(argname="argument ike_auth_alg", value=ike_auth_alg, expected_type=type_hints["ike_auth_alg"])
+                check_type(argname="argument ike_enc_alg", value=ike_enc_alg, expected_type=type_hints["ike_enc_alg"])
+                check_type(argname="argument ike_lifetime", value=ike_lifetime, expected_type=type_hints["ike_lifetime"])
+                check_type(argname="argument ike_mode", value=ike_mode, expected_type=type_hints["ike_mode"])
+                check_type(argname="argument ike_pfs", value=ike_pfs, expected_type=type_hints["ike_pfs"])
+                check_type(argname="argument ike_version", value=ike_version, expected_type=type_hints["ike_version"])
+                check_type(argname="argument local_id_i_psec", value=local_id_i_psec, expected_type=type_hints["local_id_i_psec"])
+                check_type(argname="argument psk", value=psk, expected_type=type_hints["psk"])
+                check_type(argname="argument remote_id", value=remote_id, expected_type=type_hints["remote_id"])
             self._values: typing.Dict[str, typing.Any] = {}
             if ike_auth_alg is not None:
                 self._values["ike_auth_alg"] = ike_auth_alg
@@ -14400,6 +16027,12 @@ class RosVpnConnection(
             :param ipsec_lifetime: 
             :param ipsec_pfs: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosVpnConnection.IpsecConfigProperty.__init__)
+                check_type(argname="argument ipsec_auth_alg", value=ipsec_auth_alg, expected_type=type_hints["ipsec_auth_alg"])
+                check_type(argname="argument ipsec_enc_alg", value=ipsec_enc_alg, expected_type=type_hints["ipsec_enc_alg"])
+                check_type(argname="argument ipsec_lifetime", value=ipsec_lifetime, expected_type=type_hints["ipsec_lifetime"])
+                check_type(argname="argument ipsec_pfs", value=ipsec_pfs, expected_type=type_hints["ipsec_pfs"])
             self._values: typing.Dict[str, typing.Any] = {}
             if ipsec_auth_alg is not None:
                 self._values["ipsec_auth_alg"] = ipsec_auth_alg
@@ -14486,9 +16119,9 @@ class RosVpnConnectionProps:
         remote_subnet: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpn_gateway_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         effect_immediately: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        health_check_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosVpnConnection.HealthCheckConfigProperty]] = None,
-        ike_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosVpnConnection.IkeConfigProperty]] = None,
-        ipsec_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosVpnConnection.IpsecConfigProperty]] = None,
+        health_check_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpnConnection.HealthCheckConfigProperty, typing.Dict[str, typing.Any]]]] = None,
+        ike_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpnConnection.IkeConfigProperty, typing.Dict[str, typing.Any]]]] = None,
+        ipsec_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpnConnection.IpsecConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::VpnConnection``.
@@ -14503,6 +16136,17 @@ class RosVpnConnectionProps:
         :param ipsec_config: 
         :param name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnConnectionProps.__init__)
+            check_type(argname="argument customer_gateway_id", value=customer_gateway_id, expected_type=type_hints["customer_gateway_id"])
+            check_type(argname="argument local_subnet", value=local_subnet, expected_type=type_hints["local_subnet"])
+            check_type(argname="argument remote_subnet", value=remote_subnet, expected_type=type_hints["remote_subnet"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument effect_immediately", value=effect_immediately, expected_type=type_hints["effect_immediately"])
+            check_type(argname="argument health_check_config", value=health_check_config, expected_type=type_hints["health_check_config"])
+            check_type(argname="argument ike_config", value=ike_config, expected_type=type_hints["ike_config"])
+            check_type(argname="argument ipsec_config", value=ipsec_config, expected_type=type_hints["ipsec_config"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "customer_gateway_id": customer_gateway_id,
             "local_subnet": local_subnet,
@@ -14644,7 +16288,7 @@ class RosVpnGateway(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpnGatewayProps",
+        props: typing.Union["RosVpnGatewayProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VpnGateway``.
@@ -14654,6 +16298,12 @@ class RosVpnGateway(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnGateway.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -14664,6 +16314,9 @@ class RosVpnGateway(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnGateway._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -14733,6 +16386,9 @@ class RosVpnGateway(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "bandwidth").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidth", value)
 
     @builtins.property # type: ignore[misc]
@@ -14742,6 +16398,9 @@ class RosVpnGateway(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -14757,6 +16416,9 @@ class RosVpnGateway(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -14778,6 +16440,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "auto_pay").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoPay", value)
 
     @builtins.property # type: ignore[misc]
@@ -14798,6 +16463,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -14819,6 +16487,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "enable_ipsec").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableIpsec", value)
 
     @builtins.property # type: ignore[misc]
@@ -14840,6 +16511,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "enable_ssl").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableSsl", value)
 
     @builtins.property # type: ignore[misc]
@@ -14860,6 +16534,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "instance_charge_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceChargeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -14880,6 +16557,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -14900,6 +16580,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -14917,6 +16600,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "ssl_connections").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sslConnections", value)
 
     @builtins.property # type: ignore[misc]
@@ -14932,6 +16618,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.List["RosVpnGateway.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -14949,6 +16638,9 @@ class RosVpnGateway(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnGateway, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @jsii.data_type(
@@ -14967,6 +16659,10 @@ class RosVpnGateway(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosVpnGateway.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -15036,7 +16732,7 @@ class RosVpnGatewayProps:
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         ssl_connections: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosVpnGateway.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosVpnGateway.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::VpnGateway``.
@@ -15054,6 +16750,20 @@ class RosVpnGatewayProps:
         :param tags: 
         :param v_switch_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnGatewayProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable_ipsec", value=enable_ipsec, expected_type=type_hints["enable_ipsec"])
+            check_type(argname="argument enable_ssl", value=enable_ssl, expected_type=type_hints["enable_ssl"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument ssl_connections", value=ssl_connections, expected_type=type_hints["ssl_connections"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth": bandwidth,
             "vpc_id": vpc_id,
@@ -15245,7 +16955,7 @@ class RosVpnPbrRouteEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpnPbrRouteEntryProps",
+        props: typing.Union["RosVpnPbrRouteEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VpnPbrRouteEntry``.
@@ -15255,6 +16965,12 @@ class RosVpnPbrRouteEntry(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnPbrRouteEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -15265,6 +16981,9 @@ class RosVpnPbrRouteEntry(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnPbrRouteEntry._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -15317,6 +17036,9 @@ class RosVpnPbrRouteEntry(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -15332,6 +17054,9 @@ class RosVpnPbrRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "next_hop").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "nextHop", value)
 
     @builtins.property # type: ignore[misc]
@@ -15351,6 +17076,9 @@ class RosVpnPbrRouteEntry(
         self,
         value: typing.Union[builtins.bool, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "publish_vpc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "publishVpc", value)
 
     @builtins.property # type: ignore[misc]
@@ -15366,6 +17094,9 @@ class RosVpnPbrRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "route_dest").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routeDest", value)
 
     @builtins.property # type: ignore[misc]
@@ -15381,6 +17112,9 @@ class RosVpnPbrRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "route_source").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routeSource", value)
 
     @builtins.property # type: ignore[misc]
@@ -15396,6 +17130,9 @@ class RosVpnPbrRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "vpn_gateway_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpnGatewayId", value)
 
     @builtins.property # type: ignore[misc]
@@ -15411,6 +17148,9 @@ class RosVpnPbrRouteEntry(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "weight").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "weight", value)
 
     @builtins.property # type: ignore[misc]
@@ -15428,6 +17168,9 @@ class RosVpnPbrRouteEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -15445,6 +17188,9 @@ class RosVpnPbrRouteEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnPbrRouteEntry, "overlay_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "overlayMode", value)
 
 
@@ -15486,6 +17232,16 @@ class RosVpnPbrRouteEntryProps:
         :param description: 
         :param overlay_mode: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnPbrRouteEntryProps.__init__)
+            check_type(argname="argument next_hop", value=next_hop, expected_type=type_hints["next_hop"])
+            check_type(argname="argument publish_vpc", value=publish_vpc, expected_type=type_hints["publish_vpc"])
+            check_type(argname="argument route_dest", value=route_dest, expected_type=type_hints["route_dest"])
+            check_type(argname="argument route_source", value=route_source, expected_type=type_hints["route_source"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument weight", value=weight, expected_type=type_hints["weight"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument overlay_mode", value=overlay_mode, expected_type=type_hints["overlay_mode"])
         self._values: typing.Dict[str, typing.Any] = {
             "next_hop": next_hop,
             "publish_vpc": publish_vpc,
@@ -15600,7 +17356,7 @@ class RosVpnRouteEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosVpnRouteEntryProps",
+        props: typing.Union["RosVpnRouteEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VpnRouteEntry``.
@@ -15610,6 +17366,12 @@ class RosVpnRouteEntry(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnRouteEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -15620,6 +17382,9 @@ class RosVpnRouteEntry(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnRouteEntry._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -15664,6 +17429,9 @@ class RosVpnRouteEntry(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnRouteEntry, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -15679,6 +17447,9 @@ class RosVpnRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnRouteEntry, "next_hop").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "nextHop", value)
 
     @builtins.property # type: ignore[misc]
@@ -15698,6 +17469,9 @@ class RosVpnRouteEntry(
         self,
         value: typing.Union[builtins.bool, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnRouteEntry, "publish_vpc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "publishVpc", value)
 
     @builtins.property # type: ignore[misc]
@@ -15713,6 +17487,9 @@ class RosVpnRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnRouteEntry, "route_dest").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "routeDest", value)
 
     @builtins.property # type: ignore[misc]
@@ -15728,6 +17505,9 @@ class RosVpnRouteEntry(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnRouteEntry, "vpn_gateway_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpnGatewayId", value)
 
     @builtins.property # type: ignore[misc]
@@ -15743,6 +17523,9 @@ class RosVpnRouteEntry(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnRouteEntry, "weight").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "weight", value)
 
     @builtins.property # type: ignore[misc]
@@ -15760,6 +17543,9 @@ class RosVpnRouteEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnRouteEntry, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -15777,6 +17563,9 @@ class RosVpnRouteEntry(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosVpnRouteEntry, "overlay_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "overlayMode", value)
 
 
@@ -15815,6 +17604,15 @@ class RosVpnRouteEntryProps:
         :param description: 
         :param overlay_mode: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosVpnRouteEntryProps.__init__)
+            check_type(argname="argument next_hop", value=next_hop, expected_type=type_hints["next_hop"])
+            check_type(argname="argument publish_vpc", value=publish_vpc, expected_type=type_hints["publish_vpc"])
+            check_type(argname="argument route_dest", value=route_dest, expected_type=type_hints["route_dest"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument weight", value=weight, expected_type=type_hints["weight"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument overlay_mode", value=overlay_mode, expected_type=type_hints["overlay_mode"])
         self._values: typing.Dict[str, typing.Any] = {
             "next_hop": next_hop,
             "publish_vpc": publish_vpc,
@@ -15919,7 +17717,7 @@ class RouteTable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RouteTableProps",
+        props: typing.Union["RouteTableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::RouteTable``.
@@ -15933,6 +17731,12 @@ class RouteTable(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RouteTable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -15977,7 +17781,7 @@ class RouteTableAssociation(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RouteTableAssociationProps",
+        props: typing.Union["RouteTableAssociationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::RouteTableAssociation``.
@@ -15991,6 +17795,12 @@ class RouteTableAssociation(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RouteTableAssociation.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -16023,6 +17833,10 @@ class RouteTableAssociationProps:
         :param route_table_id: Property routeTableId: The ID of the route table.
         :param v_switch_id: Property vSwitchId: The ID of the VSwitch.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RouteTableAssociationProps.__init__)
+            check_type(argname="argument route_table_id", value=route_table_id, expected_type=type_hints["route_table_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "route_table_id": route_table_id,
             "v_switch_id": v_switch_id,
@@ -16071,7 +17885,7 @@ class RouteTableProps:
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         route_table_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosRouteTable.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosRouteTable.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::RouteTable``.
 
@@ -16080,6 +17894,12 @@ class RouteTableProps:
         :param route_table_name: Property routeTableName: The name of the route table. The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
         :param tags: Property tags: Tags to attach to routetable. Max support 20 tags to add during create routetable. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RouteTableProps.__init__)
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument route_table_name", value=route_table_name, expected_type=type_hints["route_table_name"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "vpc_id": vpc_id,
         }
@@ -16151,7 +17971,7 @@ class RouterInterface(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RouterInterfaceProps",
+        props: typing.Union["RouterInterfaceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::RouterInterface``.
@@ -16165,6 +17985,12 @@ class RouterInterface(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RouterInterface.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -16245,6 +18071,27 @@ class RouterInterfaceProps:
         :param router_type: Property routerType: Router type. Now support 'VRouter|VBR'
         :param spec: Property spec: RouterInterface specification. If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RouterInterfaceProps.__init__)
+            check_type(argname="argument role", value=role, expected_type=type_hints["role"])
+            check_type(argname="argument router_id", value=router_id, expected_type=type_hints["router_id"])
+            check_type(argname="argument access_point_id", value=access_point_id, expected_type=type_hints["access_point_id"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument health_check_source_ip", value=health_check_source_ip, expected_type=type_hints["health_check_source_ip"])
+            check_type(argname="argument health_check_target_ip", value=health_check_target_ip, expected_type=type_hints["health_check_target_ip"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument opposite_access_point_id", value=opposite_access_point_id, expected_type=type_hints["opposite_access_point_id"])
+            check_type(argname="argument opposite_interface_id", value=opposite_interface_id, expected_type=type_hints["opposite_interface_id"])
+            check_type(argname="argument opposite_interface_owner_id", value=opposite_interface_owner_id, expected_type=type_hints["opposite_interface_owner_id"])
+            check_type(argname="argument opposite_region_id", value=opposite_region_id, expected_type=type_hints["opposite_region_id"])
+            check_type(argname="argument opposite_router_id", value=opposite_router_id, expected_type=type_hints["opposite_router_id"])
+            check_type(argname="argument opposite_router_type", value=opposite_router_type, expected_type=type_hints["opposite_router_type"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument router_type", value=router_type, expected_type=type_hints["router_type"])
+            check_type(argname="argument spec", value=spec, expected_type=type_hints["spec"])
         self._values: typing.Dict[str, typing.Any] = {
             "role": role,
             "router_id": router_id,
@@ -16504,7 +18351,7 @@ class SnatEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SnatEntryProps",
+        props: typing.Union["SnatEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::SnatEntry``.
@@ -16518,6 +18365,12 @@ class SnatEntry(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SnatEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -16556,6 +18409,13 @@ class SnatEntryProps:
         :param source_cidr: Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
         :param source_v_switch_ids: Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SnatEntryProps.__init__)
+            check_type(argname="argument snat_ip", value=snat_ip, expected_type=type_hints["snat_ip"])
+            check_type(argname="argument snat_table_id", value=snat_table_id, expected_type=type_hints["snat_table_id"])
+            check_type(argname="argument snat_entry_name", value=snat_entry_name, expected_type=type_hints["snat_entry_name"])
+            check_type(argname="argument source_cidr", value=source_cidr, expected_type=type_hints["source_cidr"])
+            check_type(argname="argument source_v_switch_ids", value=source_v_switch_ids, expected_type=type_hints["source_v_switch_ids"])
         self._values: typing.Dict[str, typing.Any] = {
             "snat_ip": snat_ip,
             "snat_table_id": snat_table_id,
@@ -16634,7 +18494,7 @@ class SslVpnClientCert(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SslVpnClientCertProps",
+        props: typing.Union["SslVpnClientCertProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::SslVpnClientCert``.
@@ -16648,6 +18508,12 @@ class SslVpnClientCert(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SslVpnClientCert.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -16674,6 +18540,10 @@ class SslVpnClientCertProps:
         :param ssl_vpn_server_id: Property sslVpnServerId: ID of the SSL-VPN server.
         :param name: Property name: The name of the client certificate. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SslVpnClientCertProps.__init__)
+            check_type(argname="argument ssl_vpn_server_id", value=ssl_vpn_server_id, expected_type=type_hints["ssl_vpn_server_id"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "ssl_vpn_server_id": ssl_vpn_server_id,
         }
@@ -16721,7 +18591,7 @@ class SslVpnServer(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SslVpnServerProps",
+        props: typing.Union["SslVpnServerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::SslVpnServer``.
@@ -16735,6 +18605,12 @@ class SslVpnServer(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SslVpnServer.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -16782,6 +18658,16 @@ class SslVpnServerProps:
         :param port: Property port: The port used by the SSL-VPN server. The default value is 1194. Cannot use the following ports: 22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500
         :param proto: Property proto: The protocol used by the SSL-VPN server. Allowed values: UDP (default) | TCP.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SslVpnServerProps.__init__)
+            check_type(argname="argument client_ip_pool", value=client_ip_pool, expected_type=type_hints["client_ip_pool"])
+            check_type(argname="argument local_subnet", value=local_subnet, expected_type=type_hints["local_subnet"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument cipher", value=cipher, expected_type=type_hints["cipher"])
+            check_type(argname="argument compress", value=compress, expected_type=type_hints["compress"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+            check_type(argname="argument proto", value=proto, expected_type=type_hints["proto"])
         self._values: typing.Dict[str, typing.Any] = {
             "client_ip_pool": client_ip_pool,
             "local_subnet": local_subnet,
@@ -16905,7 +18791,7 @@ class VirtualBorderRouter(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VirtualBorderRouterProps",
+        props: typing.Union["VirtualBorderRouterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VirtualBorderRouter``.
@@ -16919,6 +18805,12 @@ class VirtualBorderRouter(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VirtualBorderRouter.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -16984,6 +18876,16 @@ class VirtualBorderRouterProps:
         :param description: Property description: The description of the VBR. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:// or https://.
         :param name: Property name: The name of the VBR. The name must be 2 to 128 characters in length, and can contain, digits, periods (.), underscores (_), and hyphens (-). The name cannot start with http:// or https://.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VirtualBorderRouterProps.__init__)
+            check_type(argname="argument local_gateway_ip", value=local_gateway_ip, expected_type=type_hints["local_gateway_ip"])
+            check_type(argname="argument peer_gateway_ip", value=peer_gateway_ip, expected_type=type_hints["peer_gateway_ip"])
+            check_type(argname="argument peering_subnet_mask", value=peering_subnet_mask, expected_type=type_hints["peering_subnet_mask"])
+            check_type(argname="argument physical_connection_id", value=physical_connection_id, expected_type=type_hints["physical_connection_id"])
+            check_type(argname="argument vlan_id", value=vlan_id, expected_type=type_hints["vlan_id"])
+            check_type(argname="argument circuit_code", value=circuit_code, expected_type=type_hints["circuit_code"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "local_gateway_ip": local_gateway_ip,
             "peer_gateway_ip": peer_gateway_ip,
@@ -17108,7 +19010,7 @@ class VpnConnection(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VpnConnectionProps",
+        props: typing.Union["VpnConnectionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VpnConnection``.
@@ -17122,6 +19024,12 @@ class VpnConnection(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpnConnection.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -17167,9 +19075,9 @@ class VpnConnectionProps:
         remote_subnet: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpn_gateway_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         effect_immediately: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        health_check_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosVpnConnection.HealthCheckConfigProperty]] = None,
-        ike_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosVpnConnection.IkeConfigProperty]] = None,
-        ipsec_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosVpnConnection.IpsecConfigProperty]] = None,
+        health_check_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpnConnection.HealthCheckConfigProperty, typing.Dict[str, typing.Any]]]] = None,
+        ike_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpnConnection.IkeConfigProperty, typing.Dict[str, typing.Any]]]] = None,
+        ipsec_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosVpnConnection.IpsecConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::VpnConnection``.
@@ -17184,6 +19092,17 @@ class VpnConnectionProps:
         :param ipsec_config: Property ipsecConfig: Configuration information for the second phase negotiation.
         :param name: Property name: The name of the IPsec connection. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpnConnectionProps.__init__)
+            check_type(argname="argument customer_gateway_id", value=customer_gateway_id, expected_type=type_hints["customer_gateway_id"])
+            check_type(argname="argument local_subnet", value=local_subnet, expected_type=type_hints["local_subnet"])
+            check_type(argname="argument remote_subnet", value=remote_subnet, expected_type=type_hints["remote_subnet"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument effect_immediately", value=effect_immediately, expected_type=type_hints["effect_immediately"])
+            check_type(argname="argument health_check_config", value=health_check_config, expected_type=type_hints["health_check_config"])
+            check_type(argname="argument ike_config", value=ike_config, expected_type=type_hints["ike_config"])
+            check_type(argname="argument ipsec_config", value=ipsec_config, expected_type=type_hints["ipsec_config"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "customer_gateway_id": customer_gateway_id,
             "local_subnet": local_subnet,
@@ -17308,7 +19227,7 @@ class VpnGateway(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VpnGatewayProps",
+        props: typing.Union["VpnGatewayProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VpnGateway``.
@@ -17322,6 +19241,12 @@ class VpnGateway(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpnGateway.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -17387,7 +19312,7 @@ class VpnGatewayProps:
         name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         period: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         ssl_connections: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosVpnGateway.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosVpnGateway.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::VPC::VpnGateway``.
@@ -17405,6 +19330,20 @@ class VpnGatewayProps:
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         :param v_switch_id: Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpnGatewayProps.__init__)
+            check_type(argname="argument bandwidth", value=bandwidth, expected_type=type_hints["bandwidth"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument auto_pay", value=auto_pay, expected_type=type_hints["auto_pay"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable_ipsec", value=enable_ipsec, expected_type=type_hints["enable_ipsec"])
+            check_type(argname="argument enable_ssl", value=enable_ssl, expected_type=type_hints["enable_ssl"])
+            check_type(argname="argument instance_charge_type", value=instance_charge_type, expected_type=type_hints["instance_charge_type"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument ssl_connections", value=ssl_connections, expected_type=type_hints["ssl_connections"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "bandwidth": bandwidth,
             "vpc_id": vpc_id,
@@ -17574,7 +19513,7 @@ class VpnPbrRouteEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VpnPbrRouteEntryProps",
+        props: typing.Union["VpnPbrRouteEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VpnPbrRouteEntry``.
@@ -17588,6 +19527,12 @@ class VpnPbrRouteEntry(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpnPbrRouteEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -17653,6 +19598,16 @@ class VpnPbrRouteEntryProps:
         :param description: Property description: The description of the VPN destination route.
         :param overlay_mode: Property overlayMode: The overlay mode.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpnPbrRouteEntryProps.__init__)
+            check_type(argname="argument next_hop", value=next_hop, expected_type=type_hints["next_hop"])
+            check_type(argname="argument publish_vpc", value=publish_vpc, expected_type=type_hints["publish_vpc"])
+            check_type(argname="argument route_dest", value=route_dest, expected_type=type_hints["route_dest"])
+            check_type(argname="argument route_source", value=route_source, expected_type=type_hints["route_source"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument weight", value=weight, expected_type=type_hints["weight"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument overlay_mode", value=overlay_mode, expected_type=type_hints["overlay_mode"])
         self._values: typing.Dict[str, typing.Any] = {
             "next_hop": next_hop,
             "publish_vpc": publish_vpc,
@@ -17755,7 +19710,7 @@ class VpnRouteEntry(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "VpnRouteEntryProps",
+        props: typing.Union["VpnRouteEntryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::VPC::VpnRouteEntry``.
@@ -17769,6 +19724,12 @@ class VpnRouteEntry(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpnRouteEntry.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -17825,6 +19786,15 @@ class VpnRouteEntryProps:
         :param description: Property description: The description of the VPN destination route.
         :param overlay_mode: Property overlayMode: The overlay mode.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpnRouteEntryProps.__init__)
+            check_type(argname="argument next_hop", value=next_hop, expected_type=type_hints["next_hop"])
+            check_type(argname="argument publish_vpc", value=publish_vpc, expected_type=type_hints["publish_vpc"])
+            check_type(argname="argument route_dest", value=route_dest, expected_type=type_hints["route_dest"])
+            check_type(argname="argument vpn_gateway_id", value=vpn_gateway_id, expected_type=type_hints["vpn_gateway_id"])
+            check_type(argname="argument weight", value=weight, expected_type=type_hints["weight"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument overlay_mode", value=overlay_mode, expected_type=type_hints["overlay_mode"])
         self._values: typing.Dict[str, typing.Any] = {
             "next_hop": next_hop,
             "publish_vpc": publish_vpc,

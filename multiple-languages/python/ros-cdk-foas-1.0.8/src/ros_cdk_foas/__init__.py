@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Cluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ClusterProps",
+        props: typing.Union["ClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::FOAS::Cluster``.
@@ -47,6 +49,12 @@ class Cluster(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Cluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -118,7 +126,7 @@ class ClusterProps:
         description: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         oss_bucket: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         v_switch_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        order: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosCluster.OrderProperty"]] = None,
+        order: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosCluster.OrderProperty", typing.Dict[str, typing.Any]]]] = None,
         order_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::FOAS::Cluster``.
@@ -130,6 +138,14 @@ class ClusterProps:
         :param order: Property order: Order detail. Only one of property Order or OrderId can be specified. Order is not suggested. Policy AliyunBSSFullAccess must be granted to StreamDefaultRole in RAM console. The order can not be cancelled.
         :param order_id: Property orderId: Order Id. Only one of property Order or OrderId can be specified. OrderId is suggested.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ClusterProps.__init__)
+            check_type(argname="argument cluster_name", value=cluster_name, expected_type=type_hints["cluster_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument oss_bucket", value=oss_bucket, expected_type=type_hints["oss_bucket"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument order", value=order, expected_type=type_hints["order"])
+            check_type(argname="argument order_id", value=order_id, expected_type=type_hints["order_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_name": cluster_name,
             "description": description,
@@ -221,7 +237,7 @@ class Project(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ProjectProps",
+        props: typing.Union["ProjectProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::FOAS::Project``.
@@ -235,6 +251,12 @@ class Project(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Project.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -276,6 +298,14 @@ class ProjectProps:
         :param description: Property description: Project description.
         :param order_id: Property orderId: Order Id of Shared cluster.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ProjectProps.__init__)
+            check_type(argname="argument deploy_type", value=deploy_type, expected_type=type_hints["deploy_type"])
+            check_type(argname="argument manager_ids", value=manager_ids, expected_type=type_hints["manager_ids"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument order_id", value=order_id, expected_type=type_hints["order_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "deploy_type": deploy_type,
             "manager_ids": manager_ids,
@@ -359,7 +389,7 @@ class RosCluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosClusterProps",
+        props: typing.Union["RosClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::FOAS::Cluster``.
@@ -369,6 +399,12 @@ class RosCluster(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -379,6 +415,9 @@ class RosCluster(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCluster._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -469,6 +508,9 @@ class RosCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "cluster_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterName", value)
 
     @builtins.property # type: ignore[misc]
@@ -484,6 +526,9 @@ class RosCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -493,6 +538,9 @@ class RosCluster(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -508,6 +556,9 @@ class RosCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "oss_bucket").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ossBucket", value)
 
     @builtins.property # type: ignore[misc]
@@ -523,6 +574,9 @@ class RosCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -545,6 +599,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosCluster.OrderProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "order").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "order", value)
 
     @builtins.property # type: ignore[misc]
@@ -565,6 +622,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "order_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "orderId", value)
 
     @jsii.data_type(
@@ -598,6 +658,14 @@ class RosCluster(
             :param period: 
             :param slave_number: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosCluster.OrderProperty.__init__)
+                check_type(argname="argument master_spec", value=master_spec, expected_type=type_hints["master_spec"])
+                check_type(argname="argument slave_spec", value=slave_spec, expected_type=type_hints["slave_spec"])
+                check_type(argname="argument master_number", value=master_number, expected_type=type_hints["master_number"])
+                check_type(argname="argument pay_model", value=pay_model, expected_type=type_hints["pay_model"])
+                check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+                check_type(argname="argument slave_number", value=slave_number, expected_type=type_hints["slave_number"])
             self._values: typing.Dict[str, typing.Any] = {
                 "master_spec": master_spec,
                 "slave_spec": slave_spec,
@@ -701,7 +769,7 @@ class RosClusterProps:
         description: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         oss_bucket: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         v_switch_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        order: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosCluster.OrderProperty]] = None,
+        order: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosCluster.OrderProperty, typing.Dict[str, typing.Any]]]] = None,
         order_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::FOAS::Cluster``.
@@ -713,6 +781,14 @@ class RosClusterProps:
         :param order: 
         :param order_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosClusterProps.__init__)
+            check_type(argname="argument cluster_name", value=cluster_name, expected_type=type_hints["cluster_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument oss_bucket", value=oss_bucket, expected_type=type_hints["oss_bucket"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument order", value=order, expected_type=type_hints["order"])
+            check_type(argname="argument order_id", value=order_id, expected_type=type_hints["order_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_name": cluster_name,
             "description": description,
@@ -811,7 +887,7 @@ class RosProject(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosProjectProps",
+        props: typing.Union["RosProjectProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::FOAS::Project``.
@@ -821,6 +897,12 @@ class RosProject(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProject.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -831,6 +913,9 @@ class RosProject(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProject._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -869,6 +954,9 @@ class RosProject(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "deploy_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deployType", value)
 
     @builtins.property # type: ignore[misc]
@@ -878,6 +966,9 @@ class RosProject(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -893,6 +984,9 @@ class RosProject(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "manager_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "managerIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -905,6 +999,9 @@ class RosProject(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -922,6 +1019,9 @@ class RosProject(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -939,6 +1039,9 @@ class RosProject(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -956,6 +1059,9 @@ class RosProject(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProject, "order_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "orderId", value)
 
 
@@ -991,6 +1097,14 @@ class RosProjectProps:
         :param description: 
         :param order_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProjectProps.__init__)
+            check_type(argname="argument deploy_type", value=deploy_type, expected_type=type_hints["deploy_type"])
+            check_type(argname="argument manager_ids", value=manager_ids, expected_type=type_hints["manager_ids"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument order_id", value=order_id, expected_type=type_hints["order_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "deploy_type": deploy_type,
             "manager_ids": manager_ids,

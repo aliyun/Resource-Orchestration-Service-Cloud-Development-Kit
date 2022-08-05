@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Account(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AccountProps",
+        props: typing.Union["AccountProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::Account``.
@@ -47,6 +49,12 @@ class Account(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Account.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -61,7 +69,7 @@ class AccountPrivilege(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AccountPrivilegeProps",
+        props: typing.Union["AccountPrivilegeProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::AccountPrivilege``.
@@ -75,6 +83,12 @@ class AccountPrivilege(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccountPrivilege.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -104,6 +118,12 @@ class AccountPrivilegeProps:
         :param db_cluster_id: Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
         :param db_name: Property dbName: The name of the database whose access permissions are to be granted to the database account. You can grant access permissions on one or more databases to the database account. Separate multiple databases with a comma (,).
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccountPrivilegeProps.__init__)
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_privilege", value=account_privilege, expected_type=type_hints["account_privilege"])
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_name": account_name,
             "account_privilege": account_privilege,
@@ -200,6 +220,15 @@ class AccountProps:
         :param account_type: Property accountType: The type of the database account. Valid values: - Normal: standard account - Super: privileged account Default value: Super. Currently, POLARDB for PostgreSQL and POLARDB compatible with Oracle do not support standard accounts. You can create only one privileged account for an ApsaraDB for POLARDB cluster.
         :param db_name: Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccountProps.__init__)
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_password", value=account_password, expected_type=type_hints["account_password"])
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument account_description", value=account_description, expected_type=type_hints["account_description"])
+            check_type(argname="argument account_privilege", value=account_privilege, expected_type=type_hints["account_privilege"])
+            check_type(argname="argument account_type", value=account_type, expected_type=type_hints["account_type"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_name": account_name,
             "account_password": account_password,
@@ -330,7 +359,7 @@ class DBCluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBClusterProps",
+        props: typing.Union["DBClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBCluster``.
@@ -344,6 +373,12 @@ class DBCluster(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBCluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -412,7 +447,7 @@ class DBClusterAccessWhiteList(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBClusterAccessWhiteListProps",
+        props: typing.Union["DBClusterAccessWhiteListProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBClusterAccessWhiteList``.
@@ -426,6 +461,12 @@ class DBClusterAccessWhiteList(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBClusterAccessWhiteList.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -458,6 +499,11 @@ class DBClusterAccessWhiteListProps:
         :param security_ips: Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified. Each whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP addresses with a comma (,). The following two formats are supported: IP address: for example, 10.23.12.24. Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the suffix /24 indicates the number of bits for the prefix of the IP address. The suffix ranges from 1 to 32.
         :param db_cluster_ip_array_name: Property dbClusterIpArrayName: The name of the IP address whitelist group. If you do not specify this parameter, the Default whitelist group is modified by default. Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBClusterAccessWhiteListProps.__init__)
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument security_ips", value=security_ips, expected_type=type_hints["security_ips"])
+            check_type(argname="argument db_cluster_ip_array_name", value=db_cluster_ip_array_name, expected_type=type_hints["db_cluster_ip_array_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_cluster_id": db_cluster_id,
             "security_ips": security_ips,
@@ -524,7 +570,7 @@ class DBClusterEndpoint(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBClusterEndpointProps",
+        props: typing.Union["DBClusterEndpointProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBClusterEndpoint``.
@@ -538,6 +584,12 @@ class DBClusterEndpoint(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBClusterEndpoint.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -573,7 +625,7 @@ class DBClusterEndpointAddress(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBClusterEndpointAddressProps",
+        props: typing.Union["DBClusterEndpointAddressProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBClusterEndpointAddress``.
@@ -587,6 +639,12 @@ class DBClusterEndpointAddress(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBClusterEndpointAddress.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -628,6 +686,12 @@ class DBClusterEndpointAddressProps:
         :param connection_string_prefix: Property connectionStringPrefix: The prefix of the connection string. The prefix must comply with the following rules: It must start with a letter and consist of lowercase letters, digits, and hyphens(-), cannot end with a dash. The length is 6~30 characters.
         :param net_type: Property netType: The network type of the connection string. If set to Public, ROS will create, modify and delete Public address for you. If set to Private, ROS will only modify Private address for you. Default to Public.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBClusterEndpointAddressProps.__init__)
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument db_endpoint_id", value=db_endpoint_id, expected_type=type_hints["db_endpoint_id"])
+            check_type(argname="argument connection_string_prefix", value=connection_string_prefix, expected_type=type_hints["connection_string_prefix"])
+            check_type(argname="argument net_type", value=net_type, expected_type=type_hints["net_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_cluster_id": db_cluster_id,
             "db_endpoint_id": db_endpoint_id,
@@ -707,7 +771,7 @@ class DBClusterEndpointProps:
         *,
         db_cluster_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         auto_add_new_nodes: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        endpoint_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosDBClusterEndpoint.EndpointConfigProperty"]] = None,
+        endpoint_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDBClusterEndpoint.EndpointConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         endpoint_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         nodes: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         read_write_mode: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -721,6 +785,14 @@ class DBClusterEndpointProps:
         :param nodes: Property nodes: The nodes to be added to this connection point to process read requests from this connection point. Add at least two nodes. If you do not specify this parameter, all nodes of the cluster are added to this connection point by default.
         :param read_write_mode: Property readWriteMode: The read/write mode of the cluster connection point. Valid values: ReadWrite: receives and forwards read and write requests (automatic read-write splitting). ReadOnly: receives and forwards only read requests. Default value: ReadOnly.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBClusterEndpointProps.__init__)
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument auto_add_new_nodes", value=auto_add_new_nodes, expected_type=type_hints["auto_add_new_nodes"])
+            check_type(argname="argument endpoint_config", value=endpoint_config, expected_type=type_hints["endpoint_config"])
+            check_type(argname="argument endpoint_type", value=endpoint_type, expected_type=type_hints["endpoint_type"])
+            check_type(argname="argument nodes", value=nodes, expected_type=type_hints["nodes"])
+            check_type(argname="argument read_write_mode", value=read_write_mode, expected_type=type_hints["read_write_mode"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_cluster_id": db_cluster_id,
         }
@@ -859,7 +931,7 @@ class DBClusterProps:
         creation_category: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         creation_option: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_cluster_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        db_cluster_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosDBCluster.DBClusterParametersProperty"]] = None,
+        db_cluster_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDBCluster.DBClusterParametersProperty", typing.Dict[str, typing.Any]]]] = None,
         default_time_zone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         gdn_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         lower_case_table_names: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -870,7 +942,7 @@ class DBClusterProps:
         security_group_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         security_ip_list: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         source_resource_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosDBCluster.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosDBCluster.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
         tde_status: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         vpc_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -906,6 +978,35 @@ class DBClusterProps:
         :param v_switch_id: Property vSwitchId: The ID of the VSwitch to connect to.
         :param zone_id: Property zoneId: The zone ID of the cluster. You can call the DescribeRegions operation to query available zones.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBClusterProps.__init__)
+            check_type(argname="argument db_node_class", value=db_node_class, expected_type=type_hints["db_node_class"])
+            check_type(argname="argument db_type", value=db_type, expected_type=type_hints["db_type"])
+            check_type(argname="argument db_version", value=db_version, expected_type=type_hints["db_version"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument auto_renew_period", value=auto_renew_period, expected_type=type_hints["auto_renew_period"])
+            check_type(argname="argument backup_retention_policy_on_cluster_deletion", value=backup_retention_policy_on_cluster_deletion, expected_type=type_hints["backup_retention_policy_on_cluster_deletion"])
+            check_type(argname="argument clone_data_point", value=clone_data_point, expected_type=type_hints["clone_data_point"])
+            check_type(argname="argument cluster_network_type", value=cluster_network_type, expected_type=type_hints["cluster_network_type"])
+            check_type(argname="argument creation_category", value=creation_category, expected_type=type_hints["creation_category"])
+            check_type(argname="argument creation_option", value=creation_option, expected_type=type_hints["creation_option"])
+            check_type(argname="argument db_cluster_description", value=db_cluster_description, expected_type=type_hints["db_cluster_description"])
+            check_type(argname="argument db_cluster_parameters", value=db_cluster_parameters, expected_type=type_hints["db_cluster_parameters"])
+            check_type(argname="argument default_time_zone", value=default_time_zone, expected_type=type_hints["default_time_zone"])
+            check_type(argname="argument gdn_id", value=gdn_id, expected_type=type_hints["gdn_id"])
+            check_type(argname="argument lower_case_table_names", value=lower_case_table_names, expected_type=type_hints["lower_case_table_names"])
+            check_type(argname="argument maintain_time", value=maintain_time, expected_type=type_hints["maintain_time"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument renewal_status", value=renewal_status, expected_type=type_hints["renewal_status"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument security_group_ids", value=security_group_ids, expected_type=type_hints["security_group_ids"])
+            check_type(argname="argument security_ip_list", value=security_ip_list, expected_type=type_hints["security_ip_list"])
+            check_type(argname="argument source_resource_id", value=source_resource_id, expected_type=type_hints["source_resource_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument tde_status", value=tde_status, expected_type=type_hints["tde_status"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_node_class": db_node_class,
             "db_type": db_type,
@@ -1297,7 +1398,7 @@ class DBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBInstanceProps",
+        props: typing.Union["DBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBInstance``.
@@ -1311,6 +1412,12 @@ class DBInstance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -1346,6 +1453,14 @@ class DBInstanceProps:
         :param account_privilege: Property accountPrivilege: The permissions of the database account on the database. Valid values: ReadWrite: has read and write permissions on the database. ReadOnly: has the read-only permission on the database. DMLOnly: runs only data manipulation language (DML) statements. DDLOnly: runs only data definition language (DDL) statements. Default value: ReadWrite.
         :param db_description: Property dbDescription: The description of the database. Valid values: It cannot start with http:// or https://. It must be 2 to 256 characters in length.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBInstanceProps.__init__)
+            check_type(argname="argument character_set_name", value=character_set_name, expected_type=type_hints["character_set_name"])
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_privilege", value=account_privilege, expected_type=type_hints["account_privilege"])
+            check_type(argname="argument db_description", value=db_description, expected_type=type_hints["db_description"])
         self._values: typing.Dict[str, typing.Any] = {
             "character_set_name": character_set_name,
             "db_cluster_id": db_cluster_id,
@@ -1450,7 +1565,7 @@ class DBNodes(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DBNodesProps",
+        props: typing.Union["DBNodesProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBNodes``.
@@ -1464,6 +1579,12 @@ class DBNodes(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBNodes.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1502,6 +1623,11 @@ class DBNodesProps:
         :param db_cluster_id: Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
         :param imci_switch: Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DBNodesProps.__init__)
+            check_type(argname="argument amount", value=amount, expected_type=type_hints["amount"])
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument imci_switch", value=imci_switch, expected_type=type_hints["imci_switch"])
         self._values: typing.Dict[str, typing.Any] = {
             "amount": amount,
             "db_cluster_id": db_cluster_id,
@@ -1554,7 +1680,7 @@ class RosAccount(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAccountProps",
+        props: typing.Union["RosAccountProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::Account``.
@@ -1564,6 +1690,12 @@ class RosAccount(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccount.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1574,6 +1706,9 @@ class RosAccount(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccount._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1605,6 +1740,9 @@ class RosAccount(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1626,6 +1764,9 @@ class RosAccount(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountPassword", value)
 
     @builtins.property # type: ignore[misc]
@@ -1641,6 +1782,9 @@ class RosAccount(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "db_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1651,6 +1795,9 @@ class RosAccount(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1673,6 +1820,9 @@ class RosAccount(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -1698,6 +1848,9 @@ class RosAccount(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_privilege").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountPrivilege", value)
 
     @builtins.property # type: ignore[misc]
@@ -1723,6 +1876,9 @@ class RosAccount(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "account_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1740,6 +1896,9 @@ class RosAccount(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "db_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbName", value)
 
 
@@ -1754,7 +1913,7 @@ class RosAccountPrivilege(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAccountPrivilegeProps",
+        props: typing.Union["RosAccountPrivilegeProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::AccountPrivilege``.
@@ -1764,6 +1923,12 @@ class RosAccountPrivilege(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountPrivilege.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1774,6 +1939,9 @@ class RosAccountPrivilege(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountPrivilege._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1800,6 +1968,9 @@ class RosAccountPrivilege(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "account_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1824,6 +1995,9 @@ class RosAccountPrivilege(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "account_privilege").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountPrivilege", value)
 
     @builtins.property # type: ignore[misc]
@@ -1839,6 +2013,9 @@ class RosAccountPrivilege(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "db_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1858,6 +2035,9 @@ class RosAccountPrivilege(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "db_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1868,6 +2048,9 @@ class RosAccountPrivilege(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccountPrivilege, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -1897,6 +2080,12 @@ class RosAccountPrivilegeProps:
         :param db_cluster_id: 
         :param db_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountPrivilegeProps.__init__)
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_privilege", value=account_privilege, expected_type=type_hints["account_privilege"])
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_name": account_name,
             "account_privilege": account_privilege,
@@ -2000,6 +2189,15 @@ class RosAccountProps:
         :param account_type: 
         :param db_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountProps.__init__)
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_password", value=account_password, expected_type=type_hints["account_password"])
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument account_description", value=account_description, expected_type=type_hints["account_description"])
+            check_type(argname="argument account_privilege", value=account_privilege, expected_type=type_hints["account_privilege"])
+            check_type(argname="argument account_type", value=account_type, expected_type=type_hints["account_type"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "account_name": account_name,
             "account_password": account_password,
@@ -2136,7 +2334,7 @@ class RosDBCluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBClusterProps",
+        props: typing.Union["RosDBClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBCluster``.
@@ -2146,6 +2344,12 @@ class RosDBCluster(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBCluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2156,6 +2360,9 @@ class RosDBCluster(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBCluster._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2254,6 +2461,9 @@ class RosDBCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "db_node_class").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbNodeClass", value)
 
     @builtins.property # type: ignore[misc]
@@ -2274,6 +2484,9 @@ class RosDBCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "db_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2294,6 +2507,9 @@ class RosDBCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "db_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -2303,6 +2519,9 @@ class RosDBCluster(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2322,6 +2541,9 @@ class RosDBCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2339,6 +2561,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "auto_renew_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoRenewPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -2363,6 +2588,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "backup_retention_policy_on_cluster_deletion").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "backupRetentionPolicyOnClusterDeletion", value)
 
     @builtins.property # type: ignore[misc]
@@ -2390,6 +2618,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "clone_data_point").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cloneDataPoint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2407,6 +2638,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "cluster_network_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterNetworkType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2424,6 +2658,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "creation_category").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "creationCategory", value)
 
     @builtins.property # type: ignore[misc]
@@ -2453,6 +2690,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "creation_option").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "creationOption", value)
 
     @builtins.property # type: ignore[misc]
@@ -2476,6 +2716,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "db_cluster_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -2493,6 +2736,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosDBCluster.DBClusterParametersProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "db_cluster_parameters").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterParameters", value)
 
     @builtins.property # type: ignore[misc]
@@ -2515,6 +2761,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "default_time_zone").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "defaultTimeZone", value)
 
     @builtins.property # type: ignore[misc]
@@ -2535,6 +2784,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "gdn_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "gdnId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2557,6 +2809,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "lower_case_table_names").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "lowerCaseTableNames", value)
 
     @builtins.property # type: ignore[misc]
@@ -2578,6 +2833,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "maintain_time").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maintainTime", value)
 
     @builtins.property # type: ignore[misc]
@@ -2595,6 +2853,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "period", value)
 
     @builtins.property # type: ignore[misc]
@@ -2621,6 +2882,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "renewal_status").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "renewalStatus", value)
 
     @builtins.property # type: ignore[misc]
@@ -2638,6 +2902,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2658,6 +2925,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "security_group_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -2675,6 +2945,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "security_ip_list").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityIpList", value)
 
     @builtins.property # type: ignore[misc]
@@ -2697,6 +2970,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "source_resource_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceResourceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2712,6 +2988,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.List["RosDBCluster.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -2734,6 +3013,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "tde_status").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tdeStatus", value)
 
     @builtins.property # type: ignore[misc]
@@ -2751,6 +3033,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2768,6 +3053,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2785,6 +3073,9 @@ class RosDBCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBCluster, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @jsii.data_type(
@@ -2803,6 +3094,10 @@ class RosDBCluster(
             :param effective_time: 
             :param parameters: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDBCluster.DBClusterParametersProperty.__init__)
+                check_type(argname="argument effective_time", value=effective_time, expected_type=type_hints["effective_time"])
+                check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
             self._values: typing.Dict[str, typing.Any] = {}
             if effective_time is not None:
                 self._values["effective_time"] = effective_time
@@ -2877,6 +3172,10 @@ class RosDBCluster(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDBCluster.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -2925,7 +3224,7 @@ class RosDBClusterAccessWhiteList(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBClusterAccessWhiteListProps",
+        props: typing.Union["RosDBClusterAccessWhiteListProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBClusterAccessWhiteList``.
@@ -2935,6 +3234,12 @@ class RosDBClusterAccessWhiteList(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterAccessWhiteList.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2945,6 +3250,9 @@ class RosDBClusterAccessWhiteList(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterAccessWhiteList._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2979,6 +3287,9 @@ class RosDBClusterAccessWhiteList(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterAccessWhiteList, "db_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2988,6 +3299,9 @@ class RosDBClusterAccessWhiteList(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterAccessWhiteList, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3011,6 +3325,9 @@ class RosDBClusterAccessWhiteList(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterAccessWhiteList, "security_ips").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityIps", value)
 
     @builtins.property # type: ignore[misc]
@@ -3032,6 +3349,9 @@ class RosDBClusterAccessWhiteList(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterAccessWhiteList, "db_cluster_ip_array_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterIpArrayName", value)
 
 
@@ -3058,6 +3378,11 @@ class RosDBClusterAccessWhiteListProps:
         :param security_ips: 
         :param db_cluster_ip_array_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterAccessWhiteListProps.__init__)
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument security_ips", value=security_ips, expected_type=type_hints["security_ips"])
+            check_type(argname="argument db_cluster_ip_array_name", value=db_cluster_ip_array_name, expected_type=type_hints["db_cluster_ip_array_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_cluster_id": db_cluster_id,
             "security_ips": security_ips,
@@ -3128,7 +3453,7 @@ class RosDBClusterEndpoint(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBClusterEndpointProps",
+        props: typing.Union["RosDBClusterEndpointProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBClusterEndpoint``.
@@ -3138,6 +3463,12 @@ class RosDBClusterEndpoint(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterEndpoint.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3148,6 +3479,9 @@ class RosDBClusterEndpoint(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterEndpoint._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3198,6 +3532,9 @@ class RosDBClusterEndpoint(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpoint, "db_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3207,6 +3544,9 @@ class RosDBClusterEndpoint(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpoint, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3228,6 +3568,9 @@ class RosDBClusterEndpoint(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpoint, "auto_add_new_nodes").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoAddNewNodes", value)
 
     @builtins.property # type: ignore[misc]
@@ -3245,6 +3588,9 @@ class RosDBClusterEndpoint(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosDBClusterEndpoint.EndpointConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpoint, "endpoint_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "endpointConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -3262,6 +3608,9 @@ class RosDBClusterEndpoint(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpoint, "endpoint_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "endpointType", value)
 
     @builtins.property # type: ignore[misc]
@@ -3282,6 +3631,9 @@ class RosDBClusterEndpoint(
         self,
         value: typing.Optional[typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpoint, "nodes").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "nodes", value)
 
     @builtins.property # type: ignore[misc]
@@ -3304,6 +3656,9 @@ class RosDBClusterEndpoint(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpoint, "read_write_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "readWriteMode", value)
 
     @jsii.data_type(
@@ -3320,6 +3675,9 @@ class RosDBClusterEndpoint(
             '''
             :param consist_level: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDBClusterEndpoint.EndpointConfigProperty.__init__)
+                check_type(argname="argument consist_level", value=consist_level, expected_type=type_hints["consist_level"])
             self._values: typing.Dict[str, typing.Any] = {}
             if consist_level is not None:
                 self._values["consist_level"] = consist_level
@@ -3363,7 +3721,7 @@ class RosDBClusterEndpointAddress(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBClusterEndpointAddressProps",
+        props: typing.Union["RosDBClusterEndpointAddressProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBClusterEndpointAddress``.
@@ -3373,6 +3731,12 @@ class RosDBClusterEndpointAddress(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterEndpointAddress.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -3383,6 +3747,9 @@ class RosDBClusterEndpointAddress(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterEndpointAddress._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -3425,6 +3792,9 @@ class RosDBClusterEndpointAddress(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpointAddress, "db_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3440,6 +3810,9 @@ class RosDBClusterEndpointAddress(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpointAddress, "db_endpoint_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbEndpointId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3449,6 +3822,9 @@ class RosDBClusterEndpointAddress(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpointAddress, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3470,6 +3846,9 @@ class RosDBClusterEndpointAddress(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpointAddress, "connection_string_prefix").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "connectionStringPrefix", value)
 
     @builtins.property # type: ignore[misc]
@@ -3492,6 +3871,9 @@ class RosDBClusterEndpointAddress(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBClusterEndpointAddress, "net_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "netType", value)
 
 
@@ -3521,6 +3903,12 @@ class RosDBClusterEndpointAddressProps:
         :param connection_string_prefix: 
         :param net_type: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterEndpointAddressProps.__init__)
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument db_endpoint_id", value=db_endpoint_id, expected_type=type_hints["db_endpoint_id"])
+            check_type(argname="argument connection_string_prefix", value=connection_string_prefix, expected_type=type_hints["connection_string_prefix"])
+            check_type(argname="argument net_type", value=net_type, expected_type=type_hints["net_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_cluster_id": db_cluster_id,
             "db_endpoint_id": db_endpoint_id,
@@ -3607,7 +3995,7 @@ class RosDBClusterEndpointProps:
         *,
         db_cluster_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         auto_add_new_nodes: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        endpoint_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosDBClusterEndpoint.EndpointConfigProperty]] = None,
+        endpoint_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosDBClusterEndpoint.EndpointConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         endpoint_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         nodes: typing.Optional[typing.Union[typing.Sequence[typing.Any], ros_cdk_core.IResolvable]] = None,
         read_write_mode: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -3621,6 +4009,14 @@ class RosDBClusterEndpointProps:
         :param nodes: 
         :param read_write_mode: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterEndpointProps.__init__)
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument auto_add_new_nodes", value=auto_add_new_nodes, expected_type=type_hints["auto_add_new_nodes"])
+            check_type(argname="argument endpoint_config", value=endpoint_config, expected_type=type_hints["endpoint_config"])
+            check_type(argname="argument endpoint_type", value=endpoint_type, expected_type=type_hints["endpoint_type"])
+            check_type(argname="argument nodes", value=nodes, expected_type=type_hints["nodes"])
+            check_type(argname="argument read_write_mode", value=read_write_mode, expected_type=type_hints["read_write_mode"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_cluster_id": db_cluster_id,
         }
@@ -3766,7 +4162,7 @@ class RosDBClusterProps:
         creation_category: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         creation_option: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_cluster_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        db_cluster_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosDBCluster.DBClusterParametersProperty]] = None,
+        db_cluster_parameters: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosDBCluster.DBClusterParametersProperty, typing.Dict[str, typing.Any]]]] = None,
         default_time_zone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         gdn_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         lower_case_table_names: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -3777,7 +4173,7 @@ class RosDBClusterProps:
         security_group_ids: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         security_ip_list: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         source_resource_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosDBCluster.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosDBCluster.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         tde_status: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         vpc_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -3813,6 +4209,35 @@ class RosDBClusterProps:
         :param v_switch_id: 
         :param zone_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBClusterProps.__init__)
+            check_type(argname="argument db_node_class", value=db_node_class, expected_type=type_hints["db_node_class"])
+            check_type(argname="argument db_type", value=db_type, expected_type=type_hints["db_type"])
+            check_type(argname="argument db_version", value=db_version, expected_type=type_hints["db_version"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument auto_renew_period", value=auto_renew_period, expected_type=type_hints["auto_renew_period"])
+            check_type(argname="argument backup_retention_policy_on_cluster_deletion", value=backup_retention_policy_on_cluster_deletion, expected_type=type_hints["backup_retention_policy_on_cluster_deletion"])
+            check_type(argname="argument clone_data_point", value=clone_data_point, expected_type=type_hints["clone_data_point"])
+            check_type(argname="argument cluster_network_type", value=cluster_network_type, expected_type=type_hints["cluster_network_type"])
+            check_type(argname="argument creation_category", value=creation_category, expected_type=type_hints["creation_category"])
+            check_type(argname="argument creation_option", value=creation_option, expected_type=type_hints["creation_option"])
+            check_type(argname="argument db_cluster_description", value=db_cluster_description, expected_type=type_hints["db_cluster_description"])
+            check_type(argname="argument db_cluster_parameters", value=db_cluster_parameters, expected_type=type_hints["db_cluster_parameters"])
+            check_type(argname="argument default_time_zone", value=default_time_zone, expected_type=type_hints["default_time_zone"])
+            check_type(argname="argument gdn_id", value=gdn_id, expected_type=type_hints["gdn_id"])
+            check_type(argname="argument lower_case_table_names", value=lower_case_table_names, expected_type=type_hints["lower_case_table_names"])
+            check_type(argname="argument maintain_time", value=maintain_time, expected_type=type_hints["maintain_time"])
+            check_type(argname="argument period", value=period, expected_type=type_hints["period"])
+            check_type(argname="argument renewal_status", value=renewal_status, expected_type=type_hints["renewal_status"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument security_group_ids", value=security_group_ids, expected_type=type_hints["security_group_ids"])
+            check_type(argname="argument security_ip_list", value=security_ip_list, expected_type=type_hints["security_ip_list"])
+            check_type(argname="argument source_resource_id", value=source_resource_id, expected_type=type_hints["source_resource_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument tde_status", value=tde_status, expected_type=type_hints["tde_status"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "db_node_class": db_node_class,
             "db_type": db_type,
@@ -4241,7 +4666,7 @@ class RosDBInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBInstanceProps",
+        props: typing.Union["RosDBInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBInstance``.
@@ -4251,6 +4676,12 @@ class RosDBInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4261,6 +4692,9 @@ class RosDBInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4289,6 +4723,9 @@ class RosDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "character_set_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "characterSetName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4304,6 +4741,9 @@ class RosDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4324,6 +4764,9 @@ class RosDBInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4334,6 +4777,9 @@ class RosDBInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4351,6 +4797,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "account_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4375,6 +4824,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "account_privilege").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountPrivilege", value)
 
     @builtins.property # type: ignore[misc]
@@ -4396,6 +4848,9 @@ class RosDBInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBInstance, "db_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbDescription", value)
 
 
@@ -4431,6 +4886,14 @@ class RosDBInstanceProps:
         :param account_privilege: 
         :param db_description: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBInstanceProps.__init__)
+            check_type(argname="argument character_set_name", value=character_set_name, expected_type=type_hints["character_set_name"])
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument account_privilege", value=account_privilege, expected_type=type_hints["account_privilege"])
+            check_type(argname="argument db_description", value=db_description, expected_type=type_hints["db_description"])
         self._values: typing.Dict[str, typing.Any] = {
             "character_set_name": character_set_name,
             "db_cluster_id": db_cluster_id,
@@ -4541,7 +5004,7 @@ class RosDBNodes(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDBNodesProps",
+        props: typing.Union["RosDBNodesProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::POLARDB::DBNodes``.
@@ -4551,6 +5014,12 @@ class RosDBNodes(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBNodes.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4561,6 +5030,9 @@ class RosDBNodes(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBNodes._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4603,6 +5075,9 @@ class RosDBNodes(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBNodes, "amount").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "amount", value)
 
     @builtins.property # type: ignore[misc]
@@ -4618,6 +5093,9 @@ class RosDBNodes(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBNodes, "db_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4627,6 +5105,9 @@ class RosDBNodes(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBNodes, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4644,6 +5125,9 @@ class RosDBNodes(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDBNodes, "imci_switch").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imciSwitch", value)
 
 
@@ -4670,6 +5154,11 @@ class RosDBNodesProps:
         :param db_cluster_id: 
         :param imci_switch: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDBNodesProps.__init__)
+            check_type(argname="argument amount", value=amount, expected_type=type_hints["amount"])
+            check_type(argname="argument db_cluster_id", value=db_cluster_id, expected_type=type_hints["db_cluster_id"])
+            check_type(argname="argument imci_switch", value=imci_switch, expected_type=type_hints["imci_switch"])
         self._values: typing.Dict[str, typing.Any] = {
             "amount": amount,
             "db_cluster_id": db_cluster_id,

@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Application(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ApplicationProps",
+        props: typing.Union["ApplicationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::Application``.
@@ -47,6 +49,12 @@ class Application(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Application.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -106,6 +114,18 @@ class ApplicationProps:
         :param package_type: Property packageType: Application packet format, possible values: war or jar.
         :param resource_group_id: Property resourceGroupId: Resource group id.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ApplicationProps.__init__)
+            check_type(argname="argument application_name", value=application_name, expected_type=type_hints["application_name"])
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument build_pack_id", value=build_pack_id, expected_type=type_hints["build_pack_id"])
+            check_type(argname="argument component_ids", value=component_ids, expected_type=type_hints["component_ids"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument ecu_info", value=ecu_info, expected_type=type_hints["ecu_info"])
+            check_type(argname="argument health_check_url", value=health_check_url, expected_type=type_hints["health_check_url"])
+            check_type(argname="argument logical_region_id", value=logical_region_id, expected_type=type_hints["logical_region_id"])
+            check_type(argname="argument package_type", value=package_type, expected_type=type_hints["package_type"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "application_name": application_name,
             "cluster_id": cluster_id,
@@ -236,7 +256,7 @@ class Cluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ClusterProps",
+        props: typing.Union["ClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::Cluster``.
@@ -250,6 +270,12 @@ class Cluster(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Cluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -288,7 +314,7 @@ class ClusterMember(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ClusterMemberProps",
+        props: typing.Union["ClusterMemberProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::ClusterMember``.
@@ -302,6 +328,12 @@ class ClusterMember(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ClusterMember.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -346,6 +378,11 @@ class ClusterMemberProps:
         :param instance_ids: Property instanceIds: ECS instance ID list to import.
         :param password: Property password: Password ECS hosts need to import (ECS settings can continue to use purchased).
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ClusterMemberProps.__init__)
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument instance_ids", value=instance_ids, expected_type=type_hints["instance_ids"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_id": cluster_id,
             "instance_ids": instance_ids,
@@ -422,6 +459,15 @@ class ClusterProps:
         :param resource_group_id: Property resourceGroupId: Resource group id.
         :param vpc_id: Property vpcId: VPC network ID. If network selection VPC, this parameter Required
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ClusterProps.__init__)
+            check_type(argname="argument cluster_name", value=cluster_name, expected_type=type_hints["cluster_name"])
+            check_type(argname="argument cluster_type", value=cluster_type, expected_type=type_hints["cluster_type"])
+            check_type(argname="argument network_mode", value=network_mode, expected_type=type_hints["network_mode"])
+            check_type(argname="argument logical_region_id", value=logical_region_id, expected_type=type_hints["logical_region_id"])
+            check_type(argname="argument oversold_factor", value=oversold_factor, expected_type=type_hints["oversold_factor"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_name": cluster_name,
             "cluster_type": cluster_type,
@@ -524,7 +570,7 @@ class DeployGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DeployGroupProps",
+        props: typing.Union["DeployGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::DeployGroup``.
@@ -538,6 +584,12 @@ class DeployGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DeployGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -576,6 +628,10 @@ class DeployGroupProps:
         :param app_id: Property appId: Application ID.
         :param group_name: Property groupName: Group name, maximum length of 64.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DeployGroupProps.__init__)
+            check_type(argname="argument app_id", value=app_id, expected_type=type_hints["app_id"])
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_id": app_id,
             "group_name": group_name,
@@ -618,7 +674,7 @@ class K8sApplication(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "K8sApplicationProps",
+        props: typing.Union["K8sApplicationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::K8sApplication``.
@@ -632,6 +688,12 @@ class K8sApplication(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(K8sApplication.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -727,12 +789,12 @@ class K8sApplicationProps:
         cluster_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         application_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         command: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        command_args: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.CommandArgsProperty"]]]] = None,
+        command_args: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.CommandArgsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         deploy_across_nodes: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         deploy_across_zones: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         edas_container_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         enable_ahas: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        envs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.EnvsProperty"]]]] = None,
+        envs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.EnvsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         image_url: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         internet_slb_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         internet_slb_port: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -743,34 +805,34 @@ class K8sApplicationProps:
         intranet_slb_protocol: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         intranet_target_port: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         is_multilingual_app: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        java_start_up_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.JavaStartUpConfigProperty"]] = None,
+        java_start_up_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.JavaStartUpConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         jdk: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         limit_cpu: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         limit_mem: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        liveness: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.LivenessProperty"]] = None,
-        local_volume: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.LocalVolumeProperty"]]]] = None,
+        liveness: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.LivenessProperty", typing.Dict[str, typing.Any]]]] = None,
+        local_volume: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.LocalVolumeProperty", typing.Dict[str, typing.Any]]]]]] = None,
         logical_region_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        mount_descs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.MountDescsProperty"]]]] = None,
+        mount_descs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.MountDescsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         namespace: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         nas_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         package_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         package_url: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         package_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        post_start: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PostStartProperty"]] = None,
-        pre_stop: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PreStopProperty"]] = None,
-        readiness: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ReadinessProperty"]] = None,
+        post_start: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PostStartProperty", typing.Dict[str, typing.Any]]]] = None,
+        pre_stop: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PreStopProperty", typing.Dict[str, typing.Any]]]] = None,
+        readiness: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ReadinessProperty", typing.Dict[str, typing.Any]]]] = None,
         replicas: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         repo_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         requests_cpu: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         requests_mem: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         runtime_class_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        sls_configs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.SlsConfigsProperty"]]]] = None,
+        sls_configs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.SlsConfigsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         storage_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         timeout: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         uri_encoding: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         use_body_encoding: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         web_container: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        web_container_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.WebContainerConfigProperty"]] = None,
+        web_container_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.WebContainerConfigProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::EDAS::K8sApplication``.
 
@@ -823,6 +885,56 @@ class K8sApplicationProps:
         :param web_container: Property webContainer: The version of the Tomcat container on which the deployment package of the application depends. This parameter is applicable to Spring Cloud and Apache Dubbo applications that are deployed by using WAR packages. This parameter is not supported when you deploy an application by using images.
         :param web_container_config: Property webContainerConfig: The Tomcat container configuration.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(K8sApplicationProps.__init__)
+            check_type(argname="argument app_name", value=app_name, expected_type=type_hints["app_name"])
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument application_description", value=application_description, expected_type=type_hints["application_description"])
+            check_type(argname="argument command", value=command, expected_type=type_hints["command"])
+            check_type(argname="argument command_args", value=command_args, expected_type=type_hints["command_args"])
+            check_type(argname="argument deploy_across_nodes", value=deploy_across_nodes, expected_type=type_hints["deploy_across_nodes"])
+            check_type(argname="argument deploy_across_zones", value=deploy_across_zones, expected_type=type_hints["deploy_across_zones"])
+            check_type(argname="argument edas_container_version", value=edas_container_version, expected_type=type_hints["edas_container_version"])
+            check_type(argname="argument enable_ahas", value=enable_ahas, expected_type=type_hints["enable_ahas"])
+            check_type(argname="argument envs", value=envs, expected_type=type_hints["envs"])
+            check_type(argname="argument image_url", value=image_url, expected_type=type_hints["image_url"])
+            check_type(argname="argument internet_slb_id", value=internet_slb_id, expected_type=type_hints["internet_slb_id"])
+            check_type(argname="argument internet_slb_port", value=internet_slb_port, expected_type=type_hints["internet_slb_port"])
+            check_type(argname="argument internet_slb_protocol", value=internet_slb_protocol, expected_type=type_hints["internet_slb_protocol"])
+            check_type(argname="argument internet_target_port", value=internet_target_port, expected_type=type_hints["internet_target_port"])
+            check_type(argname="argument intranet_slb_id", value=intranet_slb_id, expected_type=type_hints["intranet_slb_id"])
+            check_type(argname="argument intranet_slb_port", value=intranet_slb_port, expected_type=type_hints["intranet_slb_port"])
+            check_type(argname="argument intranet_slb_protocol", value=intranet_slb_protocol, expected_type=type_hints["intranet_slb_protocol"])
+            check_type(argname="argument intranet_target_port", value=intranet_target_port, expected_type=type_hints["intranet_target_port"])
+            check_type(argname="argument is_multilingual_app", value=is_multilingual_app, expected_type=type_hints["is_multilingual_app"])
+            check_type(argname="argument java_start_up_config", value=java_start_up_config, expected_type=type_hints["java_start_up_config"])
+            check_type(argname="argument jdk", value=jdk, expected_type=type_hints["jdk"])
+            check_type(argname="argument limit_cpu", value=limit_cpu, expected_type=type_hints["limit_cpu"])
+            check_type(argname="argument limit_mem", value=limit_mem, expected_type=type_hints["limit_mem"])
+            check_type(argname="argument liveness", value=liveness, expected_type=type_hints["liveness"])
+            check_type(argname="argument local_volume", value=local_volume, expected_type=type_hints["local_volume"])
+            check_type(argname="argument logical_region_id", value=logical_region_id, expected_type=type_hints["logical_region_id"])
+            check_type(argname="argument mount_descs", value=mount_descs, expected_type=type_hints["mount_descs"])
+            check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+            check_type(argname="argument nas_id", value=nas_id, expected_type=type_hints["nas_id"])
+            check_type(argname="argument package_type", value=package_type, expected_type=type_hints["package_type"])
+            check_type(argname="argument package_url", value=package_url, expected_type=type_hints["package_url"])
+            check_type(argname="argument package_version", value=package_version, expected_type=type_hints["package_version"])
+            check_type(argname="argument post_start", value=post_start, expected_type=type_hints["post_start"])
+            check_type(argname="argument pre_stop", value=pre_stop, expected_type=type_hints["pre_stop"])
+            check_type(argname="argument readiness", value=readiness, expected_type=type_hints["readiness"])
+            check_type(argname="argument replicas", value=replicas, expected_type=type_hints["replicas"])
+            check_type(argname="argument repo_id", value=repo_id, expected_type=type_hints["repo_id"])
+            check_type(argname="argument requests_cpu", value=requests_cpu, expected_type=type_hints["requests_cpu"])
+            check_type(argname="argument requests_mem", value=requests_mem, expected_type=type_hints["requests_mem"])
+            check_type(argname="argument runtime_class_name", value=runtime_class_name, expected_type=type_hints["runtime_class_name"])
+            check_type(argname="argument sls_configs", value=sls_configs, expected_type=type_hints["sls_configs"])
+            check_type(argname="argument storage_type", value=storage_type, expected_type=type_hints["storage_type"])
+            check_type(argname="argument timeout", value=timeout, expected_type=type_hints["timeout"])
+            check_type(argname="argument uri_encoding", value=uri_encoding, expected_type=type_hints["uri_encoding"])
+            check_type(argname="argument use_body_encoding", value=use_body_encoding, expected_type=type_hints["use_body_encoding"])
+            check_type(argname="argument web_container", value=web_container, expected_type=type_hints["web_container"])
+            check_type(argname="argument web_container_config", value=web_container_config, expected_type=type_hints["web_container_config"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_name": app_name,
             "cluster_id": cluster_id,
@@ -1452,7 +1564,7 @@ class K8sCluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "K8sClusterProps",
+        props: typing.Union["K8sClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::K8sCluster``.
@@ -1466,6 +1578,12 @@ class K8sCluster(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(K8sCluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1546,6 +1664,11 @@ class K8sClusterProps:
         :param enable_asm: Property enableAsm: Whether enable ASM.
         :param namespace_id: Property namespaceId: The ID of the namespace to which the cluster that you want to import belongs.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(K8sClusterProps.__init__)
+            check_type(argname="argument cs_cluster_id", value=cs_cluster_id, expected_type=type_hints["cs_cluster_id"])
+            check_type(argname="argument enable_asm", value=enable_asm, expected_type=type_hints["enable_asm"])
+            check_type(argname="argument namespace_id", value=namespace_id, expected_type=type_hints["namespace_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cs_cluster_id": cs_cluster_id,
         }
@@ -1600,7 +1723,7 @@ class K8sSlbBinding(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "K8sSlbBindingProps",
+        props: typing.Union["K8sSlbBindingProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::K8sSlbBinding``.
@@ -1614,6 +1737,12 @@ class K8sSlbBinding(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(K8sSlbBinding.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1666,7 +1795,7 @@ class K8sSlbBindingProps:
         *,
         app_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         cluster_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        service_port_infos: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sSlbBinding.ServicePortInfosProperty"]]],
+        service_port_infos: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sSlbBinding.ServicePortInfosProperty", typing.Dict[str, typing.Any]]]]],
         type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         load_balancer_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         scheduler: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -1682,6 +1811,15 @@ class K8sSlbBindingProps:
         :param scheduler: Property scheduler: The scheduling algorithm. Valid values: wrr: Backend servers that have higher weights receive more requests than those that have lower weights. rr: Requests are distributed to backend servers in sequence. Default value: rr
         :param specification: Property specification: The specification of the load balancer instance.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(K8sSlbBindingProps.__init__)
+            check_type(argname="argument app_id", value=app_id, expected_type=type_hints["app_id"])
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument service_port_infos", value=service_port_infos, expected_type=type_hints["service_port_infos"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument load_balancer_id", value=load_balancer_id, expected_type=type_hints["load_balancer_id"])
+            check_type(argname="argument scheduler", value=scheduler, expected_type=type_hints["scheduler"])
+            check_type(argname="argument specification", value=specification, expected_type=type_hints["specification"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_id": app_id,
             "cluster_id": cluster_id,
@@ -1784,7 +1922,7 @@ class RosApplication(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosApplicationProps",
+        props: typing.Union["RosApplicationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::Application``.
@@ -1794,6 +1932,12 @@ class RosApplication(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosApplication.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1804,6 +1948,9 @@ class RosApplication(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosApplication._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1846,6 +1993,9 @@ class RosApplication(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "application_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "applicationName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1861,6 +2011,9 @@ class RosApplication(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1870,6 +2023,9 @@ class RosApplication(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1887,6 +2043,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "build_pack_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "buildPackId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1909,6 +2068,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "component_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "componentIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -1926,6 +2088,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -1946,6 +2111,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "ecu_info").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ecuInfo", value)
 
     @builtins.property # type: ignore[misc]
@@ -1963,6 +2131,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "health_check_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -1980,6 +2151,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "logical_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logicalRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1997,6 +2171,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "package_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "packageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2014,6 +2191,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
 
@@ -2061,6 +2241,18 @@ class RosApplicationProps:
         :param package_type: 
         :param resource_group_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosApplicationProps.__init__)
+            check_type(argname="argument application_name", value=application_name, expected_type=type_hints["application_name"])
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument build_pack_id", value=build_pack_id, expected_type=type_hints["build_pack_id"])
+            check_type(argname="argument component_ids", value=component_ids, expected_type=type_hints["component_ids"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument ecu_info", value=ecu_info, expected_type=type_hints["ecu_info"])
+            check_type(argname="argument health_check_url", value=health_check_url, expected_type=type_hints["health_check_url"])
+            check_type(argname="argument logical_region_id", value=logical_region_id, expected_type=type_hints["logical_region_id"])
+            check_type(argname="argument package_type", value=package_type, expected_type=type_hints["package_type"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "application_name": application_name,
             "cluster_id": cluster_id,
@@ -2211,7 +2403,7 @@ class RosCluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosClusterProps",
+        props: typing.Union["RosClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::Cluster``.
@@ -2221,6 +2413,12 @@ class RosCluster(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2231,6 +2429,9 @@ class RosCluster(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCluster._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2289,6 +2490,9 @@ class RosCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "cluster_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2304,6 +2508,9 @@ class RosCluster(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "cluster_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2313,6 +2520,9 @@ class RosCluster(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2328,6 +2538,9 @@ class RosCluster(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "network_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "networkMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -2345,6 +2558,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "logical_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logicalRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2362,6 +2578,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "oversold_factor").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "oversoldFactor", value)
 
     @builtins.property # type: ignore[misc]
@@ -2379,6 +2598,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2396,6 +2618,9 @@ class RosCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCluster, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
 
@@ -2410,7 +2635,7 @@ class RosClusterMember(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosClusterMemberProps",
+        props: typing.Union["RosClusterMemberProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::ClusterMember``.
@@ -2420,6 +2645,12 @@ class RosClusterMember(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosClusterMember.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2430,6 +2661,9 @@ class RosClusterMember(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosClusterMember._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2480,6 +2714,9 @@ class RosClusterMember(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosClusterMember, "cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2489,6 +2726,9 @@ class RosClusterMember(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosClusterMember, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2506,6 +2746,9 @@ class RosClusterMember(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosClusterMember, "instance_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -2521,6 +2764,9 @@ class RosClusterMember(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosClusterMember, "password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "password", value)
 
 
@@ -2547,6 +2793,11 @@ class RosClusterMemberProps:
         :param instance_ids: 
         :param password: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosClusterMemberProps.__init__)
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument instance_ids", value=instance_ids, expected_type=type_hints["instance_ids"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_id": cluster_id,
             "instance_ids": instance_ids,
@@ -2629,6 +2880,15 @@ class RosClusterProps:
         :param resource_group_id: 
         :param vpc_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosClusterProps.__init__)
+            check_type(argname="argument cluster_name", value=cluster_name, expected_type=type_hints["cluster_name"])
+            check_type(argname="argument cluster_type", value=cluster_type, expected_type=type_hints["cluster_type"])
+            check_type(argname="argument network_mode", value=network_mode, expected_type=type_hints["network_mode"])
+            check_type(argname="argument logical_region_id", value=logical_region_id, expected_type=type_hints["logical_region_id"])
+            check_type(argname="argument oversold_factor", value=oversold_factor, expected_type=type_hints["oversold_factor"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cluster_name": cluster_name,
             "cluster_type": cluster_type,
@@ -2733,7 +2993,7 @@ class RosDeployGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDeployGroupProps",
+        props: typing.Union["RosDeployGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::DeployGroup``.
@@ -2743,6 +3003,12 @@ class RosDeployGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDeployGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2753,6 +3019,9 @@ class RosDeployGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDeployGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2803,6 +3072,9 @@ class RosDeployGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDeployGroup, "app_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "appId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2812,6 +3084,9 @@ class RosDeployGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDeployGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2827,6 +3102,9 @@ class RosDeployGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDeployGroup, "group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupName", value)
 
 
@@ -2847,6 +3125,10 @@ class RosDeployGroupProps:
         :param app_id: 
         :param group_name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDeployGroupProps.__init__)
+            check_type(argname="argument app_id", value=app_id, expected_type=type_hints["app_id"])
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_id": app_id,
             "group_name": group_name,
@@ -2893,7 +3175,7 @@ class RosK8sApplication(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosK8sApplicationProps",
+        props: typing.Union["RosK8sApplicationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::K8sApplication``.
@@ -2903,6 +3185,12 @@ class RosK8sApplication(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sApplication.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2913,6 +3201,9 @@ class RosK8sApplication(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sApplication._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2982,6 +3273,9 @@ class RosK8sApplication(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "app_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "appName", value)
 
     @builtins.property # type: ignore[misc]
@@ -3000,6 +3294,9 @@ class RosK8sApplication(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3009,6 +3306,9 @@ class RosK8sApplication(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -3026,6 +3326,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "application_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "applicationDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -3043,6 +3346,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "command").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "command", value)
 
     @builtins.property # type: ignore[misc]
@@ -3060,6 +3366,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.CommandArgsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "command_args").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "commandArgs", value)
 
     @builtins.property # type: ignore[misc]
@@ -3077,6 +3386,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "deploy_across_nodes").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deployAcrossNodes", value)
 
     @builtins.property # type: ignore[misc]
@@ -3094,6 +3406,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "deploy_across_zones").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deployAcrossZones", value)
 
     @builtins.property # type: ignore[misc]
@@ -3114,6 +3429,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "edas_container_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "edasContainerVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -3131,6 +3449,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "enable_ahas").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableAhas", value)
 
     @builtins.property # type: ignore[misc]
@@ -3148,6 +3469,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.EnvsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "envs").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "envs", value)
 
     @builtins.property # type: ignore[misc]
@@ -3165,6 +3489,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "image_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -3182,6 +3509,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "internet_slb_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetSlbId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3199,6 +3529,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "internet_slb_port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetSlbPort", value)
 
     @builtins.property # type: ignore[misc]
@@ -3216,6 +3549,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "internet_slb_protocol").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetSlbProtocol", value)
 
     @builtins.property # type: ignore[misc]
@@ -3236,6 +3572,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "internet_target_port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetTargetPort", value)
 
     @builtins.property # type: ignore[misc]
@@ -3253,6 +3592,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "intranet_slb_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "intranetSlbId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3270,6 +3612,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "intranet_slb_port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "intranetSlbPort", value)
 
     @builtins.property # type: ignore[misc]
@@ -3287,6 +3632,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "intranet_slb_protocol").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "intranetSlbProtocol", value)
 
     @builtins.property # type: ignore[misc]
@@ -3304,6 +3652,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "intranet_target_port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "intranetTargetPort", value)
 
     @builtins.property # type: ignore[misc]
@@ -3321,6 +3672,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "is_multilingual_app").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "isMultilingualApp", value)
 
     @builtins.property # type: ignore[misc]
@@ -3341,6 +3695,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.JavaStartUpConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "java_start_up_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "javaStartUpConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -3361,6 +3718,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "jdk").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "jdk", value)
 
     @builtins.property # type: ignore[misc]
@@ -3381,6 +3741,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "limit_cpu").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "limitCpu", value)
 
     @builtins.property # type: ignore[misc]
@@ -3398,6 +3761,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "limit_mem").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "limitMem", value)
 
     @builtins.property # type: ignore[misc]
@@ -3415,6 +3781,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.LivenessProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "liveness").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "liveness", value)
 
     @builtins.property # type: ignore[misc]
@@ -3432,6 +3801,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.LocalVolumeProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "local_volume").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localVolume", value)
 
     @builtins.property # type: ignore[misc]
@@ -3449,6 +3821,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "logical_region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "logicalRegionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3466,6 +3841,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.MountDescsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "mount_descs").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mountDescs", value)
 
     @builtins.property # type: ignore[misc]
@@ -3483,6 +3861,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "namespace").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespace", value)
 
     @builtins.property # type: ignore[misc]
@@ -3503,6 +3884,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "nas_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "nasId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3520,6 +3904,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "package_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "packageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -3541,6 +3928,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "package_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "packageUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -3561,6 +3951,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "package_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "packageVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -3578,6 +3971,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PostStartProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "post_start").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "postStart", value)
 
     @builtins.property # type: ignore[misc]
@@ -3595,6 +3991,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PreStopProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "pre_stop").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preStop", value)
 
     @builtins.property # type: ignore[misc]
@@ -3612,6 +4011,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ReadinessProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "readiness").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "readiness", value)
 
     @builtins.property # type: ignore[misc]
@@ -3629,6 +4031,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "replicas").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "replicas", value)
 
     @builtins.property # type: ignore[misc]
@@ -3646,6 +4051,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "repo_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "repoId", value)
 
     @builtins.property # type: ignore[misc]
@@ -3663,6 +4071,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "requests_cpu").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "requestsCpu", value)
 
     @builtins.property # type: ignore[misc]
@@ -3683,6 +4094,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "requests_mem").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "requestsMem", value)
 
     @builtins.property # type: ignore[misc]
@@ -3700,6 +4114,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "runtime_class_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "runtimeClassName", value)
 
     @builtins.property # type: ignore[misc]
@@ -3717,6 +4134,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.SlsConfigsProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "sls_configs").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slsConfigs", value)
 
     @builtins.property # type: ignore[misc]
@@ -3734,6 +4154,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "storage_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "storageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -3751,6 +4174,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "timeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -3772,6 +4198,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "uri_encoding").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "uriEncoding", value)
 
     @builtins.property # type: ignore[misc]
@@ -3793,6 +4222,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "use_body_encoding").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "useBodyEncoding", value)
 
     @builtins.property # type: ignore[misc]
@@ -3810,6 +4242,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "web_container").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "webContainer", value)
 
     @builtins.property # type: ignore[misc]
@@ -3827,6 +4262,9 @@ class RosK8sApplication(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.WebContainerConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sApplication, "web_container_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "webContainerConfig", value)
 
     @jsii.data_type(
@@ -3843,6 +4281,9 @@ class RosK8sApplication(
             '''
             :param argument: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.CommandArgsProperty.__init__)
+                check_type(argname="argument argument", value=argument, expected_type=type_hints["argument"])
             self._values: typing.Dict[str, typing.Any] = {}
             if argument is not None:
                 self._values["argument"] = argument
@@ -3884,6 +4325,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ConcGCThreadsProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -3937,6 +4382,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.CustomParamsProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -3990,6 +4439,10 @@ class RosK8sApplication(
             :param name: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.EnvsProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -4041,6 +4494,9 @@ class RosK8sApplication(
             '''
             :param command: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ExecProperty.__init__)
+                check_type(argname="argument command", value=command, expected_type=type_hints["command"])
             self._values: typing.Dict[str, typing.Any] = {}
             if command is not None:
                 self._values["command"] = command
@@ -4082,6 +4538,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.G1HeapRegionSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -4135,6 +4595,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.GCLogFilePathProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -4188,6 +4652,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.GCLogFileSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -4241,6 +4709,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.HeapDumpOnOutOfMemoryErrorProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -4294,6 +4766,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.HeapDumpPathProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -4347,6 +4823,10 @@ class RosK8sApplication(
             :param name: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.HttpGetHttpHeadersProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -4400,7 +4880,7 @@ class RosK8sApplication(
             self,
             *,
             host: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            http_headers: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.HttpHeadersProperty"]]]] = None,
+            http_headers: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.HttpHeadersProperty", typing.Dict[str, typing.Any]]]]]] = None,
             path: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             port: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             scheme: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -4412,6 +4892,13 @@ class RosK8sApplication(
             :param port: 
             :param scheme: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.HttpGetProperty.__init__)
+                check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+                check_type(argname="argument http_headers", value=http_headers, expected_type=type_hints["http_headers"])
+                check_type(argname="argument path", value=path, expected_type=type_hints["path"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument scheme", value=scheme, expected_type=type_hints["scheme"])
             self._values: typing.Dict[str, typing.Any] = {}
             if host is not None:
                 self._values["host"] = host
@@ -4501,6 +4988,10 @@ class RosK8sApplication(
             :param name: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.HttpHeadersProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -4554,6 +5045,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.InitialHeapSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -4626,31 +5121,31 @@ class RosK8sApplication(
         def __init__(
             self,
             *,
-            conc_gc_threads: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ConcGCThreadsProperty"]] = None,
-            custom_params: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.CustomParamsProperty"]] = None,
-            g1_heap_region_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.G1HeapRegionSizeProperty"]] = None,
-            gc_log_file_path: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.GCLogFilePathProperty"]] = None,
-            gc_log_file_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.GCLogFileSizeProperty"]] = None,
-            heap_dump_on_out_of_memory_error: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.HeapDumpOnOutOfMemoryErrorProperty"]] = None,
-            heap_dump_path: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.HeapDumpPathProperty"]] = None,
-            initial_heap_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.InitialHeapSizeProperty"]] = None,
-            max_direct_memory_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.MaxDirectMemorySizeProperty"]] = None,
-            max_heap_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.MaxHeapSizeProperty"]] = None,
-            max_new_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.MaxNewSizeProperty"]] = None,
-            max_perm_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.MaxPermSizeProperty"]] = None,
-            nacos_use_cloud_namespace_parsing: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.NacosUseCloudNamespaceParsingProperty"]] = None,
-            nacos_use_endpoint_parsing_rule: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.NacosUseEndpointParsingRuleProperty"]] = None,
-            new_ratio: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.NewRatioProperty"]] = None,
-            new_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.NewSizeProperty"]] = None,
-            old_garbage_collector: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.OldGarbageCollectorProperty"]] = None,
-            parallel_gc_threads: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ParallelGCThreadsProperty"]] = None,
-            perm_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PermSizeProperty"]] = None,
-            print_gc: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PrintGCProperty"]] = None,
-            print_gc_date_stamps: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PrintGCDateStampsProperty"]] = None,
-            survivor_ratio: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.SurvivorRatioProperty"]] = None,
-            thread_stack_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ThreadStackSizeProperty"]] = None,
-            use_gc_log_file_rotation: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.UseGCLogFileRotationProperty"]] = None,
-            young_garbage_collector: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.YoungGarbageCollectorProperty"]] = None,
+            conc_gc_threads: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ConcGCThreadsProperty", typing.Dict[str, typing.Any]]]] = None,
+            custom_params: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.CustomParamsProperty", typing.Dict[str, typing.Any]]]] = None,
+            g1_heap_region_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.G1HeapRegionSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            gc_log_file_path: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.GCLogFilePathProperty", typing.Dict[str, typing.Any]]]] = None,
+            gc_log_file_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.GCLogFileSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            heap_dump_on_out_of_memory_error: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.HeapDumpOnOutOfMemoryErrorProperty", typing.Dict[str, typing.Any]]]] = None,
+            heap_dump_path: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.HeapDumpPathProperty", typing.Dict[str, typing.Any]]]] = None,
+            initial_heap_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.InitialHeapSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            max_direct_memory_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.MaxDirectMemorySizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            max_heap_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.MaxHeapSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            max_new_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.MaxNewSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            max_perm_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.MaxPermSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            nacos_use_cloud_namespace_parsing: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.NacosUseCloudNamespaceParsingProperty", typing.Dict[str, typing.Any]]]] = None,
+            nacos_use_endpoint_parsing_rule: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.NacosUseEndpointParsingRuleProperty", typing.Dict[str, typing.Any]]]] = None,
+            new_ratio: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.NewRatioProperty", typing.Dict[str, typing.Any]]]] = None,
+            new_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.NewSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            old_garbage_collector: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.OldGarbageCollectorProperty", typing.Dict[str, typing.Any]]]] = None,
+            parallel_gc_threads: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ParallelGCThreadsProperty", typing.Dict[str, typing.Any]]]] = None,
+            perm_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PermSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            print_gc: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PrintGCProperty", typing.Dict[str, typing.Any]]]] = None,
+            print_gc_date_stamps: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PrintGCDateStampsProperty", typing.Dict[str, typing.Any]]]] = None,
+            survivor_ratio: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.SurvivorRatioProperty", typing.Dict[str, typing.Any]]]] = None,
+            thread_stack_size: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ThreadStackSizeProperty", typing.Dict[str, typing.Any]]]] = None,
+            use_gc_log_file_rotation: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.UseGCLogFileRotationProperty", typing.Dict[str, typing.Any]]]] = None,
+            young_garbage_collector: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.YoungGarbageCollectorProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param conc_gc_threads: 
@@ -4679,6 +5174,33 @@ class RosK8sApplication(
             :param use_gc_log_file_rotation: 
             :param young_garbage_collector: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.JavaStartUpConfigProperty.__init__)
+                check_type(argname="argument conc_gc_threads", value=conc_gc_threads, expected_type=type_hints["conc_gc_threads"])
+                check_type(argname="argument custom_params", value=custom_params, expected_type=type_hints["custom_params"])
+                check_type(argname="argument g1_heap_region_size", value=g1_heap_region_size, expected_type=type_hints["g1_heap_region_size"])
+                check_type(argname="argument gc_log_file_path", value=gc_log_file_path, expected_type=type_hints["gc_log_file_path"])
+                check_type(argname="argument gc_log_file_size", value=gc_log_file_size, expected_type=type_hints["gc_log_file_size"])
+                check_type(argname="argument heap_dump_on_out_of_memory_error", value=heap_dump_on_out_of_memory_error, expected_type=type_hints["heap_dump_on_out_of_memory_error"])
+                check_type(argname="argument heap_dump_path", value=heap_dump_path, expected_type=type_hints["heap_dump_path"])
+                check_type(argname="argument initial_heap_size", value=initial_heap_size, expected_type=type_hints["initial_heap_size"])
+                check_type(argname="argument max_direct_memory_size", value=max_direct_memory_size, expected_type=type_hints["max_direct_memory_size"])
+                check_type(argname="argument max_heap_size", value=max_heap_size, expected_type=type_hints["max_heap_size"])
+                check_type(argname="argument max_new_size", value=max_new_size, expected_type=type_hints["max_new_size"])
+                check_type(argname="argument max_perm_size", value=max_perm_size, expected_type=type_hints["max_perm_size"])
+                check_type(argname="argument nacos_use_cloud_namespace_parsing", value=nacos_use_cloud_namespace_parsing, expected_type=type_hints["nacos_use_cloud_namespace_parsing"])
+                check_type(argname="argument nacos_use_endpoint_parsing_rule", value=nacos_use_endpoint_parsing_rule, expected_type=type_hints["nacos_use_endpoint_parsing_rule"])
+                check_type(argname="argument new_ratio", value=new_ratio, expected_type=type_hints["new_ratio"])
+                check_type(argname="argument new_size", value=new_size, expected_type=type_hints["new_size"])
+                check_type(argname="argument old_garbage_collector", value=old_garbage_collector, expected_type=type_hints["old_garbage_collector"])
+                check_type(argname="argument parallel_gc_threads", value=parallel_gc_threads, expected_type=type_hints["parallel_gc_threads"])
+                check_type(argname="argument perm_size", value=perm_size, expected_type=type_hints["perm_size"])
+                check_type(argname="argument print_gc", value=print_gc, expected_type=type_hints["print_gc"])
+                check_type(argname="argument print_gc_date_stamps", value=print_gc_date_stamps, expected_type=type_hints["print_gc_date_stamps"])
+                check_type(argname="argument survivor_ratio", value=survivor_ratio, expected_type=type_hints["survivor_ratio"])
+                check_type(argname="argument thread_stack_size", value=thread_stack_size, expected_type=type_hints["thread_stack_size"])
+                check_type(argname="argument use_gc_log_file_rotation", value=use_gc_log_file_rotation, expected_type=type_hints["use_gc_log_file_rotation"])
+                check_type(argname="argument young_garbage_collector", value=young_garbage_collector, expected_type=type_hints["young_garbage_collector"])
             self._values: typing.Dict[str, typing.Any] = {}
             if conc_gc_threads is not None:
                 self._values["conc_gc_threads"] = conc_gc_threads
@@ -5010,13 +5532,13 @@ class RosK8sApplication(
         def __init__(
             self,
             *,
-            exec: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ExecProperty"]] = None,
+            exec: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ExecProperty", typing.Dict[str, typing.Any]]]] = None,
             failure_threshold: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-            http_get: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.HttpGetProperty"]] = None,
+            http_get: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.HttpGetProperty", typing.Dict[str, typing.Any]]]] = None,
             initial_delay_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
             period_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
             success_threshold: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-            tcp_socket: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.TcpSocketProperty"]] = None,
+            tcp_socket: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.TcpSocketProperty", typing.Dict[str, typing.Any]]]] = None,
             timeout_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         ) -> None:
             '''
@@ -5029,6 +5551,16 @@ class RosK8sApplication(
             :param tcp_socket: 
             :param timeout_seconds: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.LivenessProperty.__init__)
+                check_type(argname="argument exec", value=exec, expected_type=type_hints["exec"])
+                check_type(argname="argument failure_threshold", value=failure_threshold, expected_type=type_hints["failure_threshold"])
+                check_type(argname="argument http_get", value=http_get, expected_type=type_hints["http_get"])
+                check_type(argname="argument initial_delay_seconds", value=initial_delay_seconds, expected_type=type_hints["initial_delay_seconds"])
+                check_type(argname="argument period_seconds", value=period_seconds, expected_type=type_hints["period_seconds"])
+                check_type(argname="argument success_threshold", value=success_threshold, expected_type=type_hints["success_threshold"])
+                check_type(argname="argument tcp_socket", value=tcp_socket, expected_type=type_hints["tcp_socket"])
+                check_type(argname="argument timeout_seconds", value=timeout_seconds, expected_type=type_hints["timeout_seconds"])
             self._values: typing.Dict[str, typing.Any] = {}
             if exec is not None:
                 self._values["exec"] = exec
@@ -5160,6 +5692,11 @@ class RosK8sApplication(
             :param node_path: 
             :param type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.LocalVolumeProperty.__init__)
+                check_type(argname="argument mount_path", value=mount_path, expected_type=type_hints["mount_path"])
+                check_type(argname="argument node_path", value=node_path, expected_type=type_hints["node_path"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
             self._values: typing.Dict[str, typing.Any] = {}
             if mount_path is not None:
                 self._values["mount_path"] = mount_path
@@ -5225,6 +5762,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.MaxDirectMemorySizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5278,6 +5819,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.MaxHeapSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5331,6 +5876,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.MaxNewSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5384,6 +5933,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.MaxPermSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5437,6 +5990,10 @@ class RosK8sApplication(
             :param mount_path: 
             :param nas_path: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.MountDescsProperty.__init__)
+                check_type(argname="argument mount_path", value=mount_path, expected_type=type_hints["mount_path"])
+                check_type(argname="argument nas_path", value=nas_path, expected_type=type_hints["nas_path"])
             self._values: typing.Dict[str, typing.Any] = {}
             if mount_path is not None:
                 self._values["mount_path"] = mount_path
@@ -5490,6 +6047,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.NacosUseCloudNamespaceParsingProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5543,6 +6104,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.NacosUseEndpointParsingRuleProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5596,6 +6161,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.NewRatioProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5649,6 +6218,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.NewSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5702,6 +6275,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.OldGarbageCollectorProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5755,6 +6332,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ParallelGCThreadsProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5808,6 +6389,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PermSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -5859,6 +6444,9 @@ class RosK8sApplication(
             '''
             :param command: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PostStartExecProperty.__init__)
+                check_type(argname="argument command", value=command, expected_type=type_hints["command"])
             self._values: typing.Dict[str, typing.Any] = {}
             if command is not None:
                 self._values["command"] = command
@@ -5900,7 +6488,7 @@ class RosK8sApplication(
             self,
             *,
             host: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            http_headers: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.HttpGetHttpHeadersProperty"]]]] = None,
+            http_headers: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.HttpGetHttpHeadersProperty", typing.Dict[str, typing.Any]]]]]] = None,
             path: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             port: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             scheme: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -5912,6 +6500,13 @@ class RosK8sApplication(
             :param port: 
             :param scheme: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PostStartHttpGetProperty.__init__)
+                check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+                check_type(argname="argument http_headers", value=http_headers, expected_type=type_hints["http_headers"])
+                check_type(argname="argument path", value=path, expected_type=type_hints["path"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument scheme", value=scheme, expected_type=type_hints["scheme"])
             self._values: typing.Dict[str, typing.Any] = {}
             if host is not None:
                 self._values["host"] = host
@@ -5994,13 +6589,17 @@ class RosK8sApplication(
         def __init__(
             self,
             *,
-            exec: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PostStartExecProperty"]] = None,
-            http_get: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PostStartHttpGetProperty"]] = None,
+            exec: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PostStartExecProperty", typing.Dict[str, typing.Any]]]] = None,
+            http_get: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PostStartHttpGetProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param exec: 
             :param http_get: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PostStartProperty.__init__)
+                check_type(argname="argument exec", value=exec, expected_type=type_hints["exec"])
+                check_type(argname="argument http_get", value=http_get, expected_type=type_hints["http_get"])
             self._values: typing.Dict[str, typing.Any] = {}
             if exec is not None:
                 self._values["exec"] = exec
@@ -6052,6 +6651,9 @@ class RosK8sApplication(
             '''
             :param command: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PreStopExecProperty.__init__)
+                check_type(argname="argument command", value=command, expected_type=type_hints["command"])
             self._values: typing.Dict[str, typing.Any] = {}
             if command is not None:
                 self._values["command"] = command
@@ -6093,6 +6695,10 @@ class RosK8sApplication(
             :param name: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PreStopHttpGetHttpHeadersProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -6146,7 +6752,7 @@ class RosK8sApplication(
             self,
             *,
             host: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            http_headers: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PreStopHttpGetHttpHeadersProperty"]]]] = None,
+            http_headers: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PreStopHttpGetHttpHeadersProperty", typing.Dict[str, typing.Any]]]]]] = None,
             path: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             port: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             scheme: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -6158,6 +6764,13 @@ class RosK8sApplication(
             :param port: 
             :param scheme: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PreStopHttpGetProperty.__init__)
+                check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+                check_type(argname="argument http_headers", value=http_headers, expected_type=type_hints["http_headers"])
+                check_type(argname="argument path", value=path, expected_type=type_hints["path"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument scheme", value=scheme, expected_type=type_hints["scheme"])
             self._values: typing.Dict[str, typing.Any] = {}
             if host is not None:
                 self._values["host"] = host
@@ -6240,13 +6853,17 @@ class RosK8sApplication(
         def __init__(
             self,
             *,
-            exec: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PreStopExecProperty"]] = None,
-            http_get: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.PreStopHttpGetProperty"]] = None,
+            exec: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PreStopExecProperty", typing.Dict[str, typing.Any]]]] = None,
+            http_get: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.PreStopHttpGetProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param exec: 
             :param http_get: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PreStopProperty.__init__)
+                check_type(argname="argument exec", value=exec, expected_type=type_hints["exec"])
+                check_type(argname="argument http_get", value=http_get, expected_type=type_hints["http_get"])
             self._values: typing.Dict[str, typing.Any] = {}
             if exec is not None:
                 self._values["exec"] = exec
@@ -6300,6 +6917,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PrintGCDateStampsProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -6353,6 +6974,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.PrintGCProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -6404,6 +7029,9 @@ class RosK8sApplication(
             '''
             :param command: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ReadinessExecProperty.__init__)
+                check_type(argname="argument command", value=command, expected_type=type_hints["command"])
             self._values: typing.Dict[str, typing.Any] = {}
             if command is not None:
                 self._values["command"] = command
@@ -6445,6 +7073,10 @@ class RosK8sApplication(
             :param name: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ReadinessHttpGetHttpHeadersProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if name is not None:
                 self._values["name"] = name
@@ -6498,7 +7130,7 @@ class RosK8sApplication(
             self,
             *,
             host: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-            http_headers: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ReadinessHttpGetHttpHeadersProperty"]]]] = None,
+            http_headers: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ReadinessHttpGetHttpHeadersProperty", typing.Dict[str, typing.Any]]]]]] = None,
             path: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             port: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
             scheme: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -6510,6 +7142,13 @@ class RosK8sApplication(
             :param port: 
             :param scheme: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ReadinessHttpGetProperty.__init__)
+                check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+                check_type(argname="argument http_headers", value=http_headers, expected_type=type_hints["http_headers"])
+                check_type(argname="argument path", value=path, expected_type=type_hints["path"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument scheme", value=scheme, expected_type=type_hints["scheme"])
             self._values: typing.Dict[str, typing.Any] = {}
             if host is not None:
                 self._values["host"] = host
@@ -6601,13 +7240,13 @@ class RosK8sApplication(
         def __init__(
             self,
             *,
-            exec: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ReadinessExecProperty"]] = None,
+            exec: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ReadinessExecProperty", typing.Dict[str, typing.Any]]]] = None,
             failure_threshold: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-            http_get: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ReadinessHttpGetProperty"]] = None,
+            http_get: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ReadinessHttpGetProperty", typing.Dict[str, typing.Any]]]] = None,
             initial_delay_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
             period_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
             success_threshold: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-            tcp_socket: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosK8sApplication.ReadinessTcpSocketProperty"]] = None,
+            tcp_socket: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosK8sApplication.ReadinessTcpSocketProperty", typing.Dict[str, typing.Any]]]] = None,
             timeout_seconds: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         ) -> None:
             '''
@@ -6620,6 +7259,16 @@ class RosK8sApplication(
             :param tcp_socket: 
             :param timeout_seconds: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ReadinessProperty.__init__)
+                check_type(argname="argument exec", value=exec, expected_type=type_hints["exec"])
+                check_type(argname="argument failure_threshold", value=failure_threshold, expected_type=type_hints["failure_threshold"])
+                check_type(argname="argument http_get", value=http_get, expected_type=type_hints["http_get"])
+                check_type(argname="argument initial_delay_seconds", value=initial_delay_seconds, expected_type=type_hints["initial_delay_seconds"])
+                check_type(argname="argument period_seconds", value=period_seconds, expected_type=type_hints["period_seconds"])
+                check_type(argname="argument success_threshold", value=success_threshold, expected_type=type_hints["success_threshold"])
+                check_type(argname="argument tcp_socket", value=tcp_socket, expected_type=type_hints["tcp_socket"])
+                check_type(argname="argument timeout_seconds", value=timeout_seconds, expected_type=type_hints["timeout_seconds"])
             self._values: typing.Dict[str, typing.Any] = {}
             if exec is not None:
                 self._values["exec"] = exec
@@ -6745,6 +7394,10 @@ class RosK8sApplication(
             :param host: 
             :param port: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ReadinessTcpSocketProperty.__init__)
+                check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
             self._values: typing.Dict[str, typing.Any] = {}
             if host is not None:
                 self._values["host"] = host
@@ -6800,6 +7453,11 @@ class RosK8sApplication(
             :param logstore: 
             :param type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.SlsConfigsProperty.__init__)
+                check_type(argname="argument log_dir", value=log_dir, expected_type=type_hints["log_dir"])
+                check_type(argname="argument logstore", value=logstore, expected_type=type_hints["logstore"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
             self._values: typing.Dict[str, typing.Any] = {}
             if log_dir is not None:
                 self._values["log_dir"] = log_dir
@@ -6872,6 +7530,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.SurvivorRatioProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -6925,6 +7587,10 @@ class RosK8sApplication(
             :param host: 
             :param port: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.TcpSocketProperty.__init__)
+                check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
             self._values: typing.Dict[str, typing.Any] = {}
             if host is not None:
                 self._values["host"] = host
@@ -6978,6 +7644,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.ThreadStackSizeProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -7031,6 +7701,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.UseGCLogFileRotationProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -7108,6 +7782,17 @@ class RosK8sApplication(
             :param use_body_encoding: 
             :param use_default_config: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.WebContainerConfigProperty.__init__)
+                check_type(argname="argument context_input_type", value=context_input_type, expected_type=type_hints["context_input_type"])
+                check_type(argname="argument context_path", value=context_path, expected_type=type_hints["context_path"])
+                check_type(argname="argument http_port", value=http_port, expected_type=type_hints["http_port"])
+                check_type(argname="argument max_threads", value=max_threads, expected_type=type_hints["max_threads"])
+                check_type(argname="argument server_xml", value=server_xml, expected_type=type_hints["server_xml"])
+                check_type(argname="argument uri_encoding", value=uri_encoding, expected_type=type_hints["uri_encoding"])
+                check_type(argname="argument use_advanced_server_xml", value=use_advanced_server_xml, expected_type=type_hints["use_advanced_server_xml"])
+                check_type(argname="argument use_body_encoding", value=use_body_encoding, expected_type=type_hints["use_body_encoding"])
+                check_type(argname="argument use_default_config", value=use_default_config, expected_type=type_hints["use_default_config"])
             self._values: typing.Dict[str, typing.Any] = {}
             if context_input_type is not None:
                 self._values["context_input_type"] = context_input_type
@@ -7256,6 +7941,10 @@ class RosK8sApplication(
             :param original: 
             :param startup: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sApplication.YoungGarbageCollectorProperty.__init__)
+                check_type(argname="argument original", value=original, expected_type=type_hints["original"])
+                check_type(argname="argument startup", value=startup, expected_type=type_hints["startup"])
             self._values: typing.Dict[str, typing.Any] = {}
             if original is not None:
                 self._values["original"] = original
@@ -7356,12 +8045,12 @@ class RosK8sApplicationProps:
         cluster_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         application_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         command: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        command_args: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.CommandArgsProperty]]]] = None,
+        command_args: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.CommandArgsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         deploy_across_nodes: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         deploy_across_zones: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         edas_container_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         enable_ahas: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        envs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.EnvsProperty]]]] = None,
+        envs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.EnvsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         image_url: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         internet_slb_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         internet_slb_port: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
@@ -7372,34 +8061,34 @@ class RosK8sApplicationProps:
         intranet_slb_protocol: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         intranet_target_port: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         is_multilingual_app: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        java_start_up_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.JavaStartUpConfigProperty]] = None,
+        java_start_up_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.JavaStartUpConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         jdk: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         limit_cpu: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         limit_mem: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        liveness: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.LivenessProperty]] = None,
-        local_volume: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.LocalVolumeProperty]]]] = None,
+        liveness: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.LivenessProperty, typing.Dict[str, typing.Any]]]] = None,
+        local_volume: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.LocalVolumeProperty, typing.Dict[str, typing.Any]]]]]] = None,
         logical_region_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        mount_descs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.MountDescsProperty]]]] = None,
+        mount_descs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.MountDescsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         namespace: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         nas_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         package_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         package_url: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         package_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        post_start: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.PostStartProperty]] = None,
-        pre_stop: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.PreStopProperty]] = None,
-        readiness: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.ReadinessProperty]] = None,
+        post_start: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.PostStartProperty, typing.Dict[str, typing.Any]]]] = None,
+        pre_stop: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.PreStopProperty, typing.Dict[str, typing.Any]]]] = None,
+        readiness: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.ReadinessProperty, typing.Dict[str, typing.Any]]]] = None,
         replicas: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         repo_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         requests_cpu: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         requests_mem: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         runtime_class_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        sls_configs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.SlsConfigsProperty]]]] = None,
+        sls_configs: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.SlsConfigsProperty, typing.Dict[str, typing.Any]]]]]] = None,
         storage_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         timeout: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         uri_encoding: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         use_body_encoding: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         web_container: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        web_container_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosK8sApplication.WebContainerConfigProperty]] = None,
+        web_container_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sApplication.WebContainerConfigProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::EDAS::K8sApplication``.
 
@@ -7452,6 +8141,56 @@ class RosK8sApplicationProps:
         :param web_container: 
         :param web_container_config: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sApplicationProps.__init__)
+            check_type(argname="argument app_name", value=app_name, expected_type=type_hints["app_name"])
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument application_description", value=application_description, expected_type=type_hints["application_description"])
+            check_type(argname="argument command", value=command, expected_type=type_hints["command"])
+            check_type(argname="argument command_args", value=command_args, expected_type=type_hints["command_args"])
+            check_type(argname="argument deploy_across_nodes", value=deploy_across_nodes, expected_type=type_hints["deploy_across_nodes"])
+            check_type(argname="argument deploy_across_zones", value=deploy_across_zones, expected_type=type_hints["deploy_across_zones"])
+            check_type(argname="argument edas_container_version", value=edas_container_version, expected_type=type_hints["edas_container_version"])
+            check_type(argname="argument enable_ahas", value=enable_ahas, expected_type=type_hints["enable_ahas"])
+            check_type(argname="argument envs", value=envs, expected_type=type_hints["envs"])
+            check_type(argname="argument image_url", value=image_url, expected_type=type_hints["image_url"])
+            check_type(argname="argument internet_slb_id", value=internet_slb_id, expected_type=type_hints["internet_slb_id"])
+            check_type(argname="argument internet_slb_port", value=internet_slb_port, expected_type=type_hints["internet_slb_port"])
+            check_type(argname="argument internet_slb_protocol", value=internet_slb_protocol, expected_type=type_hints["internet_slb_protocol"])
+            check_type(argname="argument internet_target_port", value=internet_target_port, expected_type=type_hints["internet_target_port"])
+            check_type(argname="argument intranet_slb_id", value=intranet_slb_id, expected_type=type_hints["intranet_slb_id"])
+            check_type(argname="argument intranet_slb_port", value=intranet_slb_port, expected_type=type_hints["intranet_slb_port"])
+            check_type(argname="argument intranet_slb_protocol", value=intranet_slb_protocol, expected_type=type_hints["intranet_slb_protocol"])
+            check_type(argname="argument intranet_target_port", value=intranet_target_port, expected_type=type_hints["intranet_target_port"])
+            check_type(argname="argument is_multilingual_app", value=is_multilingual_app, expected_type=type_hints["is_multilingual_app"])
+            check_type(argname="argument java_start_up_config", value=java_start_up_config, expected_type=type_hints["java_start_up_config"])
+            check_type(argname="argument jdk", value=jdk, expected_type=type_hints["jdk"])
+            check_type(argname="argument limit_cpu", value=limit_cpu, expected_type=type_hints["limit_cpu"])
+            check_type(argname="argument limit_mem", value=limit_mem, expected_type=type_hints["limit_mem"])
+            check_type(argname="argument liveness", value=liveness, expected_type=type_hints["liveness"])
+            check_type(argname="argument local_volume", value=local_volume, expected_type=type_hints["local_volume"])
+            check_type(argname="argument logical_region_id", value=logical_region_id, expected_type=type_hints["logical_region_id"])
+            check_type(argname="argument mount_descs", value=mount_descs, expected_type=type_hints["mount_descs"])
+            check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+            check_type(argname="argument nas_id", value=nas_id, expected_type=type_hints["nas_id"])
+            check_type(argname="argument package_type", value=package_type, expected_type=type_hints["package_type"])
+            check_type(argname="argument package_url", value=package_url, expected_type=type_hints["package_url"])
+            check_type(argname="argument package_version", value=package_version, expected_type=type_hints["package_version"])
+            check_type(argname="argument post_start", value=post_start, expected_type=type_hints["post_start"])
+            check_type(argname="argument pre_stop", value=pre_stop, expected_type=type_hints["pre_stop"])
+            check_type(argname="argument readiness", value=readiness, expected_type=type_hints["readiness"])
+            check_type(argname="argument replicas", value=replicas, expected_type=type_hints["replicas"])
+            check_type(argname="argument repo_id", value=repo_id, expected_type=type_hints["repo_id"])
+            check_type(argname="argument requests_cpu", value=requests_cpu, expected_type=type_hints["requests_cpu"])
+            check_type(argname="argument requests_mem", value=requests_mem, expected_type=type_hints["requests_mem"])
+            check_type(argname="argument runtime_class_name", value=runtime_class_name, expected_type=type_hints["runtime_class_name"])
+            check_type(argname="argument sls_configs", value=sls_configs, expected_type=type_hints["sls_configs"])
+            check_type(argname="argument storage_type", value=storage_type, expected_type=type_hints["storage_type"])
+            check_type(argname="argument timeout", value=timeout, expected_type=type_hints["timeout"])
+            check_type(argname="argument uri_encoding", value=uri_encoding, expected_type=type_hints["uri_encoding"])
+            check_type(argname="argument use_body_encoding", value=use_body_encoding, expected_type=type_hints["use_body_encoding"])
+            check_type(argname="argument web_container", value=web_container, expected_type=type_hints["web_container"])
+            check_type(argname="argument web_container_config", value=web_container_config, expected_type=type_hints["web_container_config"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_name": app_name,
             "cluster_id": cluster_id,
@@ -8092,7 +8831,7 @@ class RosK8sCluster(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosK8sClusterProps",
+        props: typing.Union["RosK8sClusterProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::K8sCluster``.
@@ -8102,6 +8841,12 @@ class RosK8sCluster(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sCluster.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -8112,6 +8857,9 @@ class RosK8sCluster(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sCluster._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -8218,6 +8966,9 @@ class RosK8sCluster(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sCluster, "cs_cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "csClusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8227,6 +8978,9 @@ class RosK8sCluster(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sCluster, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -8244,6 +8998,9 @@ class RosK8sCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sCluster, "enable_asm").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableAsm", value)
 
     @builtins.property # type: ignore[misc]
@@ -8261,6 +9018,9 @@ class RosK8sCluster(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sCluster, "namespace_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespaceId", value)
 
 
@@ -8287,6 +9047,11 @@ class RosK8sClusterProps:
         :param enable_asm: 
         :param namespace_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sClusterProps.__init__)
+            check_type(argname="argument cs_cluster_id", value=cs_cluster_id, expected_type=type_hints["cs_cluster_id"])
+            check_type(argname="argument enable_asm", value=enable_asm, expected_type=type_hints["enable_asm"])
+            check_type(argname="argument namespace_id", value=namespace_id, expected_type=type_hints["namespace_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "cs_cluster_id": cs_cluster_id,
         }
@@ -8347,7 +9112,7 @@ class RosK8sSlbBinding(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosK8sSlbBindingProps",
+        props: typing.Union["RosK8sSlbBindingProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::K8sSlbBinding``.
@@ -8357,6 +9122,12 @@ class RosK8sSlbBinding(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sSlbBinding.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -8367,6 +9138,9 @@ class RosK8sSlbBinding(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sSlbBinding._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -8433,6 +9207,9 @@ class RosK8sSlbBinding(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sSlbBinding, "app_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "appId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8448,6 +9225,9 @@ class RosK8sSlbBinding(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sSlbBinding, "cluster_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "clusterId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8457,6 +9237,9 @@ class RosK8sSlbBinding(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sSlbBinding, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -8474,6 +9257,9 @@ class RosK8sSlbBinding(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosK8sSlbBinding.ServicePortInfosProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sSlbBinding, "service_port_infos").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "servicePortInfos", value)
 
     @builtins.property # type: ignore[misc]
@@ -8486,6 +9272,9 @@ class RosK8sSlbBinding(
 
     @type.setter
     def type(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sSlbBinding, "type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "type", value)
 
     @builtins.property # type: ignore[misc]
@@ -8503,6 +9292,9 @@ class RosK8sSlbBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sSlbBinding, "load_balancer_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loadBalancerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -8525,6 +9317,9 @@ class RosK8sSlbBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sSlbBinding, "scheduler").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scheduler", value)
 
     @builtins.property # type: ignore[misc]
@@ -8542,6 +9337,9 @@ class RosK8sSlbBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosK8sSlbBinding, "specification").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "specification", value)
 
     @jsii.data_type(
@@ -8569,6 +9367,12 @@ class RosK8sSlbBinding(
             :param target_port: 
             :param cert_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosK8sSlbBinding.ServicePortInfosProperty.__init__)
+                check_type(argname="argument load_balancer_protocol", value=load_balancer_protocol, expected_type=type_hints["load_balancer_protocol"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument target_port", value=target_port, expected_type=type_hints["target_port"])
+                check_type(argname="argument cert_id", value=cert_id, expected_type=type_hints["cert_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "load_balancer_protocol": load_balancer_protocol,
                 "port": port,
@@ -8647,7 +9451,7 @@ class RosK8sSlbBindingProps:
         *,
         app_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         cluster_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        service_port_infos: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosK8sSlbBinding.ServicePortInfosProperty]]],
+        service_port_infos: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosK8sSlbBinding.ServicePortInfosProperty, typing.Dict[str, typing.Any]]]]],
         type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         load_balancer_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         scheduler: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -8663,6 +9467,15 @@ class RosK8sSlbBindingProps:
         :param scheduler: 
         :param specification: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosK8sSlbBindingProps.__init__)
+            check_type(argname="argument app_id", value=app_id, expected_type=type_hints["app_id"])
+            check_type(argname="argument cluster_id", value=cluster_id, expected_type=type_hints["cluster_id"])
+            check_type(argname="argument service_port_infos", value=service_port_infos, expected_type=type_hints["service_port_infos"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument load_balancer_id", value=load_balancer_id, expected_type=type_hints["load_balancer_id"])
+            check_type(argname="argument scheduler", value=scheduler, expected_type=type_hints["scheduler"])
+            check_type(argname="argument specification", value=specification, expected_type=type_hints["specification"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_id": app_id,
             "cluster_id": cluster_id,
@@ -8772,7 +9585,7 @@ class RosUserDefineRegion(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosUserDefineRegionProps",
+        props: typing.Union["RosUserDefineRegionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::UserDefineRegion``.
@@ -8782,6 +9595,12 @@ class RosUserDefineRegion(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserDefineRegion.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -8792,6 +9611,9 @@ class RosUserDefineRegion(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserDefineRegion._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -8852,6 +9674,9 @@ class RosUserDefineRegion(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserDefineRegion, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -8867,6 +9692,9 @@ class RosUserDefineRegion(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserDefineRegion, "region_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionName", value)
 
     @builtins.property # type: ignore[misc]
@@ -8882,6 +9710,9 @@ class RosUserDefineRegion(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserDefineRegion, "region_tag").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionTag", value)
 
     @builtins.property # type: ignore[misc]
@@ -8899,6 +9730,9 @@ class RosUserDefineRegion(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserDefineRegion, "debug_enable").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "debugEnable", value)
 
     @builtins.property # type: ignore[misc]
@@ -8916,6 +9750,9 @@ class RosUserDefineRegion(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserDefineRegion, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
 
@@ -8945,6 +9782,12 @@ class RosUserDefineRegionProps:
         :param debug_enable: 
         :param description: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserDefineRegionProps.__init__)
+            check_type(argname="argument region_name", value=region_name, expected_type=type_hints["region_name"])
+            check_type(argname="argument region_tag", value=region_tag, expected_type=type_hints["region_tag"])
+            check_type(argname="argument debug_enable", value=debug_enable, expected_type=type_hints["debug_enable"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
         self._values: typing.Dict[str, typing.Any] = {
             "region_name": region_name,
             "region_tag": region_tag,
@@ -9015,7 +9858,7 @@ class UserDefineRegion(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "UserDefineRegionProps",
+        props: typing.Union["UserDefineRegionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::EDAS::UserDefineRegion``.
@@ -9029,6 +9872,12 @@ class UserDefineRegion(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserDefineRegion.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -9088,6 +9937,12 @@ class UserDefineRegionProps:
         :param debug_enable: Property debugEnable: Whether debug is enable.
         :param description: Property description: Logic region (or namespace) description.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserDefineRegionProps.__init__)
+            check_type(argname="argument region_name", value=region_name, expected_type=type_hints["region_name"])
+            check_type(argname="argument region_tag", value=region_tag, expected_type=type_hints["region_tag"])
+            check_type(argname="argument debug_enable", value=debug_enable, expected_type=type_hints["debug_enable"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
         self._values: typing.Dict[str, typing.Any] = {
             "region_name": region_name,
             "region_tag": region_tag,

@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class InstanceEndpointAclPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "InstanceEndpointAclPolicyProps",
+        props: typing.Union["InstanceEndpointAclPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CR::InstanceEndpointAclPolicy``.
@@ -47,6 +49,12 @@ class InstanceEndpointAclPolicy(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InstanceEndpointAclPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -94,6 +102,14 @@ class InstanceEndpointAclPolicyProps:
         :param module_name: Property moduleName: The name of the module in the instance for which a whitelist is configured. Valid values: Registry and Chart.
         :param region_id: Property regionId: Region ID of instance. Default is current region.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InstanceEndpointAclPolicyProps.__init__)
+            check_type(argname="argument entry", value=entry, expected_type=type_hints["entry"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
+            check_type(argname="argument endpoint_type", value=endpoint_type, expected_type=type_hints["endpoint_type"])
+            check_type(argname="argument module_name", value=module_name, expected_type=type_hints["module_name"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "entry": entry,
             "instance_id": instance_id,
@@ -183,7 +199,7 @@ class Namespace(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "NamespaceProps",
+        props: typing.Union["NamespaceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CR::Namespace``.
@@ -197,6 +213,12 @@ class Namespace(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Namespace.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -244,6 +266,12 @@ class NamespaceProps:
         :param default_visibility: Property defaultVisibility: The default type of the repository that is automatically created. Valid values: PUBLIC, PRIVATE.
         :param instance_id: Property instanceId: The ID of the enterprise edition instance which namespace belongs to. If not provided, will use personal edition instance as default.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NamespaceProps.__init__)
+            check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+            check_type(argname="argument auto_create", value=auto_create, expected_type=type_hints["auto_create"])
+            check_type(argname="argument default_visibility", value=default_visibility, expected_type=type_hints["default_visibility"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "namespace": namespace,
         }
@@ -314,7 +342,7 @@ class Repository(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RepositoryProps",
+        props: typing.Union["RepositoryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CR::Repository``.
@@ -328,6 +356,12 @@ class Repository(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Repository.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -385,7 +419,7 @@ class RepositoryProps:
         summary: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         detail: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         instance_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        repo_source: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRepository.RepoSourceProperty"]] = None,
+        repo_source: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRepository.RepoSourceProperty", typing.Dict[str, typing.Any]]]] = None,
         tag_immutability: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CR::Repository``.
@@ -399,6 +433,16 @@ class RepositoryProps:
         :param repo_source: Property repoSource: Code Source message.
         :param tag_immutability: Property tagImmutability: Specifies whether the repository is immutable. Only takes effect when InstanceId is specified.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RepositoryProps.__init__)
+            check_type(argname="argument repo_name", value=repo_name, expected_type=type_hints["repo_name"])
+            check_type(argname="argument repo_namespace", value=repo_namespace, expected_type=type_hints["repo_namespace"])
+            check_type(argname="argument repo_type", value=repo_type, expected_type=type_hints["repo_type"])
+            check_type(argname="argument summary", value=summary, expected_type=type_hints["summary"])
+            check_type(argname="argument detail", value=detail, expected_type=type_hints["detail"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument repo_source", value=repo_source, expected_type=type_hints["repo_source"])
+            check_type(argname="argument tag_immutability", value=tag_immutability, expected_type=type_hints["tag_immutability"])
         self._values: typing.Dict[str, typing.Any] = {
             "repo_name": repo_name,
             "repo_namespace": repo_namespace,
@@ -506,7 +550,7 @@ class RosInstanceEndpointAclPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInstanceEndpointAclPolicyProps",
+        props: typing.Union["RosInstanceEndpointAclPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CR::InstanceEndpointAclPolicy``.
@@ -516,6 +560,12 @@ class RosInstanceEndpointAclPolicy(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceEndpointAclPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -526,6 +576,9 @@ class RosInstanceEndpointAclPolicy(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceEndpointAclPolicy._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -562,6 +615,9 @@ class RosInstanceEndpointAclPolicy(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstanceEndpointAclPolicy, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -577,6 +633,9 @@ class RosInstanceEndpointAclPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstanceEndpointAclPolicy, "entry").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "entry", value)
 
     @builtins.property # type: ignore[misc]
@@ -592,6 +651,9 @@ class RosInstanceEndpointAclPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstanceEndpointAclPolicy, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -609,6 +671,9 @@ class RosInstanceEndpointAclPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstanceEndpointAclPolicy, "comment").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "comment", value)
 
     @builtins.property # type: ignore[misc]
@@ -626,6 +691,9 @@ class RosInstanceEndpointAclPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstanceEndpointAclPolicy, "endpoint_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "endpointType", value)
 
     @builtins.property # type: ignore[misc]
@@ -646,6 +714,9 @@ class RosInstanceEndpointAclPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstanceEndpointAclPolicy, "module_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "moduleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -663,6 +734,9 @@ class RosInstanceEndpointAclPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstanceEndpointAclPolicy, "region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionId", value)
 
 
@@ -698,6 +772,14 @@ class RosInstanceEndpointAclPolicyProps:
         :param module_name: 
         :param region_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceEndpointAclPolicyProps.__init__)
+            check_type(argname="argument entry", value=entry, expected_type=type_hints["entry"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
+            check_type(argname="argument endpoint_type", value=endpoint_type, expected_type=type_hints["endpoint_type"])
+            check_type(argname="argument module_name", value=module_name, expected_type=type_hints["module_name"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "entry": entry,
             "instance_id": instance_id,
@@ -795,7 +877,7 @@ class RosNamespace(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosNamespaceProps",
+        props: typing.Union["RosNamespaceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CR::Namespace``.
@@ -805,6 +887,12 @@ class RosNamespace(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNamespace.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -815,6 +903,9 @@ class RosNamespace(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNamespace._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -859,6 +950,9 @@ class RosNamespace(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -874,6 +968,9 @@ class RosNamespace(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "namespace").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespace", value)
 
     @builtins.property # type: ignore[misc]
@@ -891,6 +988,9 @@ class RosNamespace(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "auto_create").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "autoCreate", value)
 
     @builtins.property # type: ignore[misc]
@@ -908,6 +1008,9 @@ class RosNamespace(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "default_visibility").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "defaultVisibility", value)
 
     @builtins.property # type: ignore[misc]
@@ -925,6 +1028,9 @@ class RosNamespace(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
 
@@ -954,6 +1060,12 @@ class RosNamespaceProps:
         :param default_visibility: 
         :param instance_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNamespaceProps.__init__)
+            check_type(argname="argument namespace", value=namespace, expected_type=type_hints["namespace"])
+            check_type(argname="argument auto_create", value=auto_create, expected_type=type_hints["auto_create"])
+            check_type(argname="argument default_visibility", value=default_visibility, expected_type=type_hints["default_visibility"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "namespace": namespace,
         }
@@ -1026,7 +1138,7 @@ class RosRepository(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRepositoryProps",
+        props: typing.Union["RosRepositoryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CR::Repository``.
@@ -1036,6 +1148,12 @@ class RosRepository(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRepository.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1046,6 +1164,9 @@ class RosRepository(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRepository._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1106,6 +1227,9 @@ class RosRepository(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1121,6 +1245,9 @@ class RosRepository(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "repo_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "repoName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1136,6 +1263,9 @@ class RosRepository(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "repo_namespace").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "repoNamespace", value)
 
     @builtins.property # type: ignore[misc]
@@ -1151,6 +1281,9 @@ class RosRepository(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "repo_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "repoType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1166,6 +1299,9 @@ class RosRepository(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "summary").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "summary", value)
 
     @builtins.property # type: ignore[misc]
@@ -1183,6 +1319,9 @@ class RosRepository(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "detail").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "detail", value)
 
     @builtins.property # type: ignore[misc]
@@ -1200,6 +1339,9 @@ class RosRepository(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1217,6 +1359,9 @@ class RosRepository(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRepository.RepoSourceProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "repo_source").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "repoSource", value)
 
     @builtins.property # type: ignore[misc]
@@ -1234,6 +1379,9 @@ class RosRepository(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRepository, "tag_immutability").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tagImmutability", value)
 
     @jsii.data_type(
@@ -1267,6 +1415,14 @@ class RosRepository(
             :param source_repo_namespace: 
             :param source_repo_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRepository.RepoSourceProperty.__init__)
+                check_type(argname="argument is_auto_build", value=is_auto_build, expected_type=type_hints["is_auto_build"])
+                check_type(argname="argument is_disable_cache", value=is_disable_cache, expected_type=type_hints["is_disable_cache"])
+                check_type(argname="argument is_oversea", value=is_oversea, expected_type=type_hints["is_oversea"])
+                check_type(argname="argument source_repo_name", value=source_repo_name, expected_type=type_hints["source_repo_name"])
+                check_type(argname="argument source_repo_namespace", value=source_repo_namespace, expected_type=type_hints["source_repo_namespace"])
+                check_type(argname="argument source_repo_type", value=source_repo_type, expected_type=type_hints["source_repo_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "is_auto_build": is_auto_build,
                 "is_disable_cache": is_disable_cache,
@@ -1379,7 +1535,7 @@ class RosRepositoryProps:
         summary: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         detail: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         instance_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        repo_source: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosRepository.RepoSourceProperty]] = None,
+        repo_source: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRepository.RepoSourceProperty, typing.Dict[str, typing.Any]]]] = None,
         tag_immutability: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::CR::Repository``.
@@ -1393,6 +1549,16 @@ class RosRepositoryProps:
         :param repo_source: 
         :param tag_immutability: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRepositoryProps.__init__)
+            check_type(argname="argument repo_name", value=repo_name, expected_type=type_hints["repo_name"])
+            check_type(argname="argument repo_namespace", value=repo_namespace, expected_type=type_hints["repo_namespace"])
+            check_type(argname="argument repo_type", value=repo_type, expected_type=type_hints["repo_type"])
+            check_type(argname="argument summary", value=summary, expected_type=type_hints["summary"])
+            check_type(argname="argument detail", value=detail, expected_type=type_hints["detail"])
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument repo_source", value=repo_source, expected_type=type_hints["repo_source"])
+            check_type(argname="argument tag_immutability", value=tag_immutability, expected_type=type_hints["tag_immutability"])
         self._values: typing.Dict[str, typing.Any] = {
             "repo_name": repo_name,
             "repo_namespace": repo_namespace,
@@ -1507,7 +1673,7 @@ class RosUserInfo(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosUserInfoProps",
+        props: typing.Union["RosUserInfoProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CR::UserInfo``.
@@ -1517,6 +1683,12 @@ class RosUserInfo(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserInfo.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1527,6 +1699,9 @@ class RosUserInfo(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserInfo._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1563,6 +1738,9 @@ class RosUserInfo(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserInfo, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1580,6 +1758,9 @@ class RosUserInfo(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, "RosUserInfo.UserProperty"],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosUserInfo, "user").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "user", value)
 
     @jsii.data_type(
@@ -1596,6 +1777,9 @@ class RosUserInfo(
             '''
             :param password: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosUserInfo.UserProperty.__init__)
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
             self._values: typing.Dict[str, typing.Any] = {
                 "password": password,
             }
@@ -1630,12 +1814,15 @@ class RosUserInfoProps:
     def __init__(
         self,
         *,
-        user: typing.Union[ros_cdk_core.IResolvable, RosUserInfo.UserProperty],
+        user: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosUserInfo.UserProperty, typing.Dict[str, typing.Any]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::CR::UserInfo``.
 
         :param user: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosUserInfoProps.__init__)
+            check_type(argname="argument user", value=user, expected_type=type_hints["user"])
         self._values: typing.Dict[str, typing.Any] = {
             "user": user,
         }
@@ -1672,7 +1859,7 @@ class UserInfo(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "UserInfoProps",
+        props: typing.Union["UserInfoProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CR::UserInfo``.
@@ -1686,6 +1873,12 @@ class UserInfo(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserInfo.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1710,12 +1903,15 @@ class UserInfoProps:
     def __init__(
         self,
         *,
-        user: typing.Union[ros_cdk_core.IResolvable, RosUserInfo.UserProperty],
+        user: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosUserInfo.UserProperty, typing.Dict[str, typing.Any]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::CR::UserInfo``.
 
         :param user: Property user: User info. If user exists, will update user info.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(UserInfoProps.__init__)
+            check_type(argname="argument user", value=user, expected_type=type_hints["user"])
         self._values: typing.Dict[str, typing.Any] = {
             "user": user,
         }

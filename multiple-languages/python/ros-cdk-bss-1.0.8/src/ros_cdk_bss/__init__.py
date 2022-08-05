@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class ResourcePackage(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ResourcePackageProps",
+        props: typing.Union["ResourcePackageProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::BSS::ResourcePackage``.
@@ -47,6 +49,12 @@ class ResourcePackage(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourcePackage.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -94,6 +102,14 @@ class ResourcePackageProps:
         :param effective_date: Property effectiveDate: The effective date of the specified resource package. The resource package will take effect immediately if the effective date is unspecified. The date format follows the ISO8601 standard and uses UTC time. Format: yyyy-MM-ddTHH:mm:ssZ
         :param pricing_cycle: Property pricingCycle: The validity of the specified resource package. Default value: Month. Valid values: Month, Year
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourcePackageProps.__init__)
+            check_type(argname="argument duration", value=duration, expected_type=type_hints["duration"])
+            check_type(argname="argument package_type", value=package_type, expected_type=type_hints["package_type"])
+            check_type(argname="argument product_code", value=product_code, expected_type=type_hints["product_code"])
+            check_type(argname="argument specification", value=specification, expected_type=type_hints["specification"])
+            check_type(argname="argument effective_date", value=effective_date, expected_type=type_hints["effective_date"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
         self._values: typing.Dict[str, typing.Any] = {
             "duration": duration,
             "package_type": package_type,
@@ -190,7 +206,7 @@ class RosResourcePackage(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosResourcePackageProps",
+        props: typing.Union["RosResourcePackageProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::BSS::ResourcePackage``.
@@ -200,6 +216,12 @@ class RosResourcePackage(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourcePackage.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -210,6 +232,9 @@ class RosResourcePackage(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourcePackage._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -252,6 +277,9 @@ class RosResourcePackage(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourcePackage, "duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "duration", value)
 
     @builtins.property # type: ignore[misc]
@@ -261,6 +289,9 @@ class RosResourcePackage(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourcePackage, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -276,6 +307,9 @@ class RosResourcePackage(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourcePackage, "package_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "packageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -291,6 +325,9 @@ class RosResourcePackage(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourcePackage, "product_code").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "productCode", value)
 
     @builtins.property # type: ignore[misc]
@@ -306,6 +343,9 @@ class RosResourcePackage(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourcePackage, "specification").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "specification", value)
 
     @builtins.property # type: ignore[misc]
@@ -323,6 +363,9 @@ class RosResourcePackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourcePackage, "effective_date").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "effectiveDate", value)
 
     @builtins.property # type: ignore[misc]
@@ -340,6 +383,9 @@ class RosResourcePackage(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourcePackage, "pricing_cycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pricingCycle", value)
 
 
@@ -375,6 +421,14 @@ class RosResourcePackageProps:
         :param effective_date: 
         :param pricing_cycle: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourcePackageProps.__init__)
+            check_type(argname="argument duration", value=duration, expected_type=type_hints["duration"])
+            check_type(argname="argument package_type", value=package_type, expected_type=type_hints["package_type"])
+            check_type(argname="argument product_code", value=product_code, expected_type=type_hints["product_code"])
+            check_type(argname="argument specification", value=specification, expected_type=type_hints["specification"])
+            check_type(argname="argument effective_date", value=effective_date, expected_type=type_hints["effective_date"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
         self._values: typing.Dict[str, typing.Any] = {
             "duration": duration,
             "package_type": package_type,
@@ -465,7 +519,7 @@ class RosWaitOrder(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosWaitOrderProps",
+        props: typing.Union["RosWaitOrderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::BSS::WaitOrder``.
@@ -475,6 +529,12 @@ class RosWaitOrder(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitOrder.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -485,6 +545,9 @@ class RosWaitOrder(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitOrder._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -506,6 +569,9 @@ class RosWaitOrder(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitOrder, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -523,6 +589,9 @@ class RosWaitOrder(
         self,
         value: typing.Union[typing.List[typing.Any], ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitOrder, "order_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "orderIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -540,6 +609,9 @@ class RosWaitOrder(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitOrder, "cancel_on_delete").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cancelOnDelete", value)
 
     @builtins.property # type: ignore[misc]
@@ -560,6 +632,9 @@ class RosWaitOrder(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosWaitOrder, "wait_for_order_produced").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "waitForOrderProduced", value)
 
 
@@ -586,6 +661,11 @@ class RosWaitOrderProps:
         :param cancel_on_delete: 
         :param wait_for_order_produced: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosWaitOrderProps.__init__)
+            check_type(argname="argument order_ids", value=order_ids, expected_type=type_hints["order_ids"])
+            check_type(argname="argument cancel_on_delete", value=cancel_on_delete, expected_type=type_hints["cancel_on_delete"])
+            check_type(argname="argument wait_for_order_produced", value=wait_for_order_produced, expected_type=type_hints["wait_for_order_produced"])
         self._values: typing.Dict[str, typing.Any] = {
             "order_ids": order_ids,
         }
@@ -651,7 +731,7 @@ class WaitOrder(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "WaitOrderProps",
+        props: typing.Union["WaitOrderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::BSS::WaitOrder``.
@@ -665,6 +745,12 @@ class WaitOrder(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(WaitOrder.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -691,6 +777,11 @@ class WaitOrderProps:
         :param cancel_on_delete: Property cancelOnDelete: Cancel order where delete the resource. Ignore the paid order. Default true
         :param wait_for_order_produced: Property waitForOrderProduced: Wait util all orders related ROS resources are produced. Support ALIYUN::ECS::PrepayInstance, ALIYUN::RDS::PrepayDBInstance, ALIYUN::REDIS::PrepayInstance, ALIYUN::SLB::LoadBalancer, ALIYUN::VPC::EIP, ALIYUN::VPC::VpnGateway.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(WaitOrderProps.__init__)
+            check_type(argname="argument order_ids", value=order_ids, expected_type=type_hints["order_ids"])
+            check_type(argname="argument cancel_on_delete", value=cancel_on_delete, expected_type=type_hints["cancel_on_delete"])
+            check_type(argname="argument wait_for_order_produced", value=wait_for_order_produced, expected_type=type_hints["wait_for_order_produced"])
         self._values: typing.Dict[str, typing.Any] = {
             "order_ids": order_ids,
         }

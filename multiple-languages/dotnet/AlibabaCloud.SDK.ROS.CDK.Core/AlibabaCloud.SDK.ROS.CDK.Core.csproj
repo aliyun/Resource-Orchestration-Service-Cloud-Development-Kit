@@ -79,7 +79,7 @@
 	<ItemGroup>
 		
     
-		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.62.0,2.0.0)"/>
+		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.63.2,2.0.0)"/>
 		
     
 		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Assembly.Schema" Version="[1.0.10,2.0.0)"/>

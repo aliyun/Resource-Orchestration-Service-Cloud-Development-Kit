@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * How to resolve tokens.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.62.0 (build 293ac17)", date = "2022-07-21T02:24:23.432Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.565Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ITokenResolver")
 @software.amazon.jsii.Jsii.Proxy(ITokenResolver.Jsii$Proxy.class)
 public interface ITokenResolver extends software.amazon.jsii.JsiiSerializable {

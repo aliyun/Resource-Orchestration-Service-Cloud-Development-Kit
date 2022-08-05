@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Application(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ApplicationProps",
+        props: typing.Union["ApplicationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::SAE::Application``.
@@ -47,6 +49,12 @@ class Application(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Application.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -134,7 +142,7 @@ class ApplicationProps:
         readiness: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         security_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         sls_configs: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosApplication.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosApplication.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
         timezone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         vpc_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -178,6 +186,42 @@ class ApplicationProps:
         :param war_start_options: Property warStartOptions: War Start the application package option. Apply the default startup command: java $ JAVA_OPTS $ CATALINA_OPTS -Options org.apache.catalina.startup.Bootstrap "$ @" start
         :param web_container: Property webContainer: Tomcat deployment of the package depends on the version. Mirroring not supported.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ApplicationProps.__init__)
+            check_type(argname="argument app_name", value=app_name, expected_type=type_hints["app_name"])
+            check_type(argname="argument cpu", value=cpu, expected_type=type_hints["cpu"])
+            check_type(argname="argument memory", value=memory, expected_type=type_hints["memory"])
+            check_type(argname="argument namespace_id", value=namespace_id, expected_type=type_hints["namespace_id"])
+            check_type(argname="argument package_type", value=package_type, expected_type=type_hints["package_type"])
+            check_type(argname="argument replicas", value=replicas, expected_type=type_hints["replicas"])
+            check_type(argname="argument app_description", value=app_description, expected_type=type_hints["app_description"])
+            check_type(argname="argument command", value=command, expected_type=type_hints["command"])
+            check_type(argname="argument command_args", value=command_args, expected_type=type_hints["command_args"])
+            check_type(argname="argument custom_host_alias", value=custom_host_alias, expected_type=type_hints["custom_host_alias"])
+            check_type(argname="argument deploy", value=deploy, expected_type=type_hints["deploy"])
+            check_type(argname="argument edas_container_version", value=edas_container_version, expected_type=type_hints["edas_container_version"])
+            check_type(argname="argument envs", value=envs, expected_type=type_hints["envs"])
+            check_type(argname="argument image_url", value=image_url, expected_type=type_hints["image_url"])
+            check_type(argname="argument jar_start_args", value=jar_start_args, expected_type=type_hints["jar_start_args"])
+            check_type(argname="argument jar_start_options", value=jar_start_options, expected_type=type_hints["jar_start_options"])
+            check_type(argname="argument jdk", value=jdk, expected_type=type_hints["jdk"])
+            check_type(argname="argument liveness", value=liveness, expected_type=type_hints["liveness"])
+            check_type(argname="argument mount_desc", value=mount_desc, expected_type=type_hints["mount_desc"])
+            check_type(argname="argument mount_host", value=mount_host, expected_type=type_hints["mount_host"])
+            check_type(argname="argument nas_id", value=nas_id, expected_type=type_hints["nas_id"])
+            check_type(argname="argument package_url", value=package_url, expected_type=type_hints["package_url"])
+            check_type(argname="argument package_version", value=package_version, expected_type=type_hints["package_version"])
+            check_type(argname="argument post_start", value=post_start, expected_type=type_hints["post_start"])
+            check_type(argname="argument pre_stop", value=pre_stop, expected_type=type_hints["pre_stop"])
+            check_type(argname="argument readiness", value=readiness, expected_type=type_hints["readiness"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument sls_configs", value=sls_configs, expected_type=type_hints["sls_configs"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument timezone", value=timezone, expected_type=type_hints["timezone"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument war_start_options", value=war_start_options, expected_type=type_hints["war_start_options"])
+            check_type(argname="argument web_container", value=web_container, expected_type=type_hints["web_container"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_name": app_name,
             "cpu": cpu,
@@ -608,7 +652,7 @@ class Namespace(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "NamespaceProps",
+        props: typing.Union["NamespaceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::SAE::Namespace``.
@@ -622,6 +666,12 @@ class Namespace(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Namespace.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -654,6 +704,11 @@ class NamespaceProps:
         :param namespace_name: Property namespaceName: Namespace name.
         :param namespace_description: Property namespaceDescription: Namespace description.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NamespaceProps.__init__)
+            check_type(argname="argument namespace_id", value=namespace_id, expected_type=type_hints["namespace_id"])
+            check_type(argname="argument namespace_name", value=namespace_name, expected_type=type_hints["namespace_name"])
+            check_type(argname="argument namespace_description", value=namespace_description, expected_type=type_hints["namespace_description"])
         self._values: typing.Dict[str, typing.Any] = {
             "namespace_id": namespace_id,
             "namespace_name": namespace_name,
@@ -709,7 +764,7 @@ class RosApplication(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosApplicationProps",
+        props: typing.Union["RosApplicationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::SAE::Application``.
@@ -719,6 +774,12 @@ class RosApplication(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosApplication.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -729,6 +790,9 @@ class RosApplication(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosApplication._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -771,6 +835,9 @@ class RosApplication(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "app_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "appName", value)
 
     @builtins.property # type: ignore[misc]
@@ -783,6 +850,9 @@ class RosApplication(
 
     @cpu.setter
     def cpu(self, value: typing.Union[jsii.Number, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "cpu").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cpu", value)
 
     @builtins.property # type: ignore[misc]
@@ -792,6 +862,9 @@ class RosApplication(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -807,6 +880,9 @@ class RosApplication(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "memory").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "memory", value)
 
     @builtins.property # type: ignore[misc]
@@ -825,6 +901,9 @@ class RosApplication(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "namespace_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespaceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -840,6 +919,9 @@ class RosApplication(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "package_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "packageType", value)
 
     @builtins.property # type: ignore[misc]
@@ -855,6 +937,9 @@ class RosApplication(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "replicas").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "replicas", value)
 
     @builtins.property # type: ignore[misc]
@@ -872,6 +957,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "app_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "appDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -889,6 +977,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "command").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "command", value)
 
     @builtins.property # type: ignore[misc]
@@ -906,6 +997,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "command_args").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "commandArgs", value)
 
     @builtins.property # type: ignore[misc]
@@ -923,6 +1017,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "custom_host_alias").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "customHostAlias", value)
 
     @builtins.property # type: ignore[misc]
@@ -940,6 +1037,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "deploy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deploy", value)
 
     @builtins.property # type: ignore[misc]
@@ -957,6 +1057,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "edas_container_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "edasContainerVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -974,6 +1077,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "envs").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "envs", value)
 
     @builtins.property # type: ignore[misc]
@@ -991,6 +1097,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "image_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "imageUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -1011,6 +1120,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "jar_start_args").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "jarStartArgs", value)
 
     @builtins.property # type: ignore[misc]
@@ -1031,6 +1143,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "jar_start_options").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "jarStartOptions", value)
 
     @builtins.property # type: ignore[misc]
@@ -1048,6 +1163,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "jdk").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "jdk", value)
 
     @builtins.property # type: ignore[misc]
@@ -1065,6 +1183,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "liveness").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "liveness", value)
 
     @builtins.property # type: ignore[misc]
@@ -1082,6 +1203,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "mount_desc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mountDesc", value)
 
     @builtins.property # type: ignore[misc]
@@ -1099,6 +1223,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "mount_host").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mountHost", value)
 
     @builtins.property # type: ignore[misc]
@@ -1116,6 +1243,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "nas_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "nasId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1133,6 +1263,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "package_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "packageUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -1150,6 +1283,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "package_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "packageVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -1167,6 +1303,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "post_start").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "postStart", value)
 
     @builtins.property # type: ignore[misc]
@@ -1184,6 +1323,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "pre_stop").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "preStop", value)
 
     @builtins.property # type: ignore[misc]
@@ -1201,6 +1343,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "readiness").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "readiness", value)
 
     @builtins.property # type: ignore[misc]
@@ -1218,6 +1363,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "security_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1235,6 +1383,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "sls_configs").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "slsConfigs", value)
 
     @builtins.property # type: ignore[misc]
@@ -1250,6 +1401,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.List["RosApplication.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -1267,6 +1421,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "timezone").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "timezone", value)
 
     @builtins.property # type: ignore[misc]
@@ -1284,6 +1441,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1301,6 +1461,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "v_switch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vSwitchId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1319,6 +1482,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "war_start_options").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "warStartOptions", value)
 
     @builtins.property # type: ignore[misc]
@@ -1336,6 +1502,9 @@ class RosApplication(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosApplication, "web_container").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "webContainer", value)
 
     @jsii.data_type(
@@ -1354,6 +1523,10 @@ class RosApplication(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosApplication.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -1463,7 +1636,7 @@ class RosApplicationProps:
         readiness: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         security_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         sls_configs: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosApplication.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosApplication.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         timezone: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         vpc_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         v_switch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -1507,6 +1680,42 @@ class RosApplicationProps:
         :param war_start_options: 
         :param web_container: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosApplicationProps.__init__)
+            check_type(argname="argument app_name", value=app_name, expected_type=type_hints["app_name"])
+            check_type(argname="argument cpu", value=cpu, expected_type=type_hints["cpu"])
+            check_type(argname="argument memory", value=memory, expected_type=type_hints["memory"])
+            check_type(argname="argument namespace_id", value=namespace_id, expected_type=type_hints["namespace_id"])
+            check_type(argname="argument package_type", value=package_type, expected_type=type_hints["package_type"])
+            check_type(argname="argument replicas", value=replicas, expected_type=type_hints["replicas"])
+            check_type(argname="argument app_description", value=app_description, expected_type=type_hints["app_description"])
+            check_type(argname="argument command", value=command, expected_type=type_hints["command"])
+            check_type(argname="argument command_args", value=command_args, expected_type=type_hints["command_args"])
+            check_type(argname="argument custom_host_alias", value=custom_host_alias, expected_type=type_hints["custom_host_alias"])
+            check_type(argname="argument deploy", value=deploy, expected_type=type_hints["deploy"])
+            check_type(argname="argument edas_container_version", value=edas_container_version, expected_type=type_hints["edas_container_version"])
+            check_type(argname="argument envs", value=envs, expected_type=type_hints["envs"])
+            check_type(argname="argument image_url", value=image_url, expected_type=type_hints["image_url"])
+            check_type(argname="argument jar_start_args", value=jar_start_args, expected_type=type_hints["jar_start_args"])
+            check_type(argname="argument jar_start_options", value=jar_start_options, expected_type=type_hints["jar_start_options"])
+            check_type(argname="argument jdk", value=jdk, expected_type=type_hints["jdk"])
+            check_type(argname="argument liveness", value=liveness, expected_type=type_hints["liveness"])
+            check_type(argname="argument mount_desc", value=mount_desc, expected_type=type_hints["mount_desc"])
+            check_type(argname="argument mount_host", value=mount_host, expected_type=type_hints["mount_host"])
+            check_type(argname="argument nas_id", value=nas_id, expected_type=type_hints["nas_id"])
+            check_type(argname="argument package_url", value=package_url, expected_type=type_hints["package_url"])
+            check_type(argname="argument package_version", value=package_version, expected_type=type_hints["package_version"])
+            check_type(argname="argument post_start", value=post_start, expected_type=type_hints["post_start"])
+            check_type(argname="argument pre_stop", value=pre_stop, expected_type=type_hints["pre_stop"])
+            check_type(argname="argument readiness", value=readiness, expected_type=type_hints["readiness"])
+            check_type(argname="argument security_group_id", value=security_group_id, expected_type=type_hints["security_group_id"])
+            check_type(argname="argument sls_configs", value=sls_configs, expected_type=type_hints["sls_configs"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument timezone", value=timezone, expected_type=type_hints["timezone"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+            check_type(argname="argument war_start_options", value=war_start_options, expected_type=type_hints["war_start_options"])
+            check_type(argname="argument web_container", value=web_container, expected_type=type_hints["web_container"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_name": app_name,
             "cpu": cpu,
@@ -1937,7 +2146,7 @@ class RosNamespace(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosNamespaceProps",
+        props: typing.Union["RosNamespaceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::SAE::Namespace``.
@@ -1947,6 +2156,12 @@ class RosNamespace(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNamespace.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1957,6 +2172,9 @@ class RosNamespace(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNamespace._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1985,6 +2203,9 @@ class RosNamespace(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2000,6 +2221,9 @@ class RosNamespace(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "namespace_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespaceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2015,6 +2239,9 @@ class RosNamespace(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "namespace_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespaceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2032,6 +2259,9 @@ class RosNamespace(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosNamespace, "namespace_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "namespaceDescription", value)
 
 
@@ -2058,6 +2288,11 @@ class RosNamespaceProps:
         :param namespace_name: 
         :param namespace_description: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosNamespaceProps.__init__)
+            check_type(argname="argument namespace_id", value=namespace_id, expected_type=type_hints["namespace_id"])
+            check_type(argname="argument namespace_name", value=namespace_name, expected_type=type_hints["namespace_name"])
+            check_type(argname="argument namespace_description", value=namespace_description, expected_type=type_hints["namespace_description"])
         self._values: typing.Dict[str, typing.Any] = {
             "namespace_id": namespace_id,
             "namespace_name": namespace_name,
@@ -2116,7 +2351,7 @@ class RosSlbBinding(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSlbBindingProps",
+        props: typing.Union["RosSlbBindingProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::SAE::SlbBinding``.
@@ -2126,6 +2361,12 @@ class RosSlbBinding(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSlbBinding.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2136,6 +2377,9 @@ class RosSlbBinding(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSlbBinding._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2178,6 +2422,9 @@ class RosSlbBinding(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSlbBinding, "app_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "appId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2187,6 +2434,9 @@ class RosSlbBinding(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSlbBinding, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2204,6 +2454,9 @@ class RosSlbBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSlbBinding, "internet").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internet", value)
 
     @builtins.property # type: ignore[misc]
@@ -2221,6 +2474,9 @@ class RosSlbBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSlbBinding, "internet_slb_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "internetSlbId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2238,6 +2494,9 @@ class RosSlbBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSlbBinding, "intranet").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "intranet", value)
 
     @builtins.property # type: ignore[misc]
@@ -2255,6 +2514,9 @@ class RosSlbBinding(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSlbBinding, "intranet_slb_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "intranetSlbId", value)
 
 
@@ -2287,6 +2549,13 @@ class RosSlbBindingProps:
         :param intranet: 
         :param intranet_slb_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSlbBindingProps.__init__)
+            check_type(argname="argument app_id", value=app_id, expected_type=type_hints["app_id"])
+            check_type(argname="argument internet", value=internet, expected_type=type_hints["internet"])
+            check_type(argname="argument internet_slb_id", value=internet_slb_id, expected_type=type_hints["internet_slb_id"])
+            check_type(argname="argument intranet", value=intranet, expected_type=type_hints["intranet"])
+            check_type(argname="argument intranet_slb_id", value=intranet_slb_id, expected_type=type_hints["intranet_slb_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_id": app_id,
         }
@@ -2371,7 +2640,7 @@ class SlbBinding(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SlbBindingProps",
+        props: typing.Union["SlbBindingProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::SAE::SlbBinding``.
@@ -2385,6 +2654,12 @@ class SlbBinding(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SlbBinding.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -2429,6 +2704,13 @@ class SlbBindingProps:
         :param intranet: Property intranet: Bind private SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
         :param intranet_slb_id: Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SlbBindingProps.__init__)
+            check_type(argname="argument app_id", value=app_id, expected_type=type_hints["app_id"])
+            check_type(argname="argument internet", value=internet, expected_type=type_hints["internet"])
+            check_type(argname="argument internet_slb_id", value=internet_slb_id, expected_type=type_hints["internet_slb_id"])
+            check_type(argname="argument intranet", value=intranet, expected_type=type_hints["intranet"])
+            check_type(argname="argument intranet_slb_id", value=intranet_slb_id, expected_type=type_hints["intranet_slb_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "app_id": app_id,
         }

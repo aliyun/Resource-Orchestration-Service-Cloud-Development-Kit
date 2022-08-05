@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class RosTable(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTableProps",
+        props: typing.Union["RosTableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::MaxCompute::Table``.
@@ -43,6 +45,12 @@ class RosTable(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTable.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -53,6 +61,9 @@ class RosTable(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTable._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -89,6 +100,9 @@ class RosTable(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -101,6 +115,9 @@ class RosTable(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -116,6 +133,9 @@ class RosTable(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "project").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "project", value)
 
     @builtins.property # type: ignore[misc]
@@ -133,6 +153,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "comment").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "comment", value)
 
     @builtins.property # type: ignore[misc]
@@ -159,6 +182,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "if_not_exists").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ifNotExists", value)
 
     @builtins.property # type: ignore[misc]
@@ -176,6 +202,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "lifecycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "lifecycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -193,6 +222,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosTable.SchemaProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "schema").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "schema", value)
 
     @builtins.property # type: ignore[misc]
@@ -213,6 +245,9 @@ class RosTable(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTable, "string_schema").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "stringSchema", value)
 
     @jsii.data_type(
@@ -233,6 +268,11 @@ class RosTable(
             :param type: 
             :param comment: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTable.ColumnsProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+                check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
             self._values: typing.Dict[str, typing.Any] = {
                 "name": name,
                 "type": type,
@@ -297,6 +337,11 @@ class RosTable(
             :param type: 
             :param comment: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTable.PartitionsProperty.__init__)
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+                check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
             self._values: typing.Dict[str, typing.Any] = {
                 "name": name,
                 "type": type,
@@ -352,13 +397,17 @@ class RosTable(
         def __init__(
             self,
             *,
-            columns: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosTable.ColumnsProperty"]]],
-            partitions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosTable.PartitionsProperty"]]]] = None,
+            columns: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosTable.ColumnsProperty", typing.Dict[str, typing.Any]]]]],
+            partitions: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosTable.PartitionsProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param columns: 
             :param partitions: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTable.SchemaProperty.__init__)
+                check_type(argname="argument columns", value=columns, expected_type=type_hints["columns"])
+                check_type(argname="argument partitions", value=partitions, expected_type=type_hints["partitions"])
             self._values: typing.Dict[str, typing.Any] = {
                 "columns": columns,
             }
@@ -420,7 +469,7 @@ class RosTableProps:
         comment: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         if_not_exists: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         lifecycle: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        schema: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosTable.SchemaProperty]] = None,
+        schema: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.SchemaProperty, typing.Dict[str, typing.Any]]]] = None,
         string_schema: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::MaxCompute::Table``.
@@ -433,6 +482,15 @@ class RosTableProps:
         :param schema: 
         :param string_schema: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTableProps.__init__)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument project", value=project, expected_type=type_hints["project"])
+            check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
+            check_type(argname="argument if_not_exists", value=if_not_exists, expected_type=type_hints["if_not_exists"])
+            check_type(argname="argument lifecycle", value=lifecycle, expected_type=type_hints["lifecycle"])
+            check_type(argname="argument schema", value=schema, expected_type=type_hints["schema"])
+            check_type(argname="argument string_schema", value=string_schema, expected_type=type_hints["string_schema"])
         self._values: typing.Dict[str, typing.Any] = {
             "name": name,
             "project": project,
@@ -551,7 +609,7 @@ class Table(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TableProps",
+        props: typing.Union["TableProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::MaxCompute::Table``.
@@ -565,6 +623,12 @@ class Table(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Table.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -602,7 +666,7 @@ class TableProps:
         comment: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         if_not_exists: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         lifecycle: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        schema: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosTable.SchemaProperty]] = None,
+        schema: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosTable.SchemaProperty, typing.Dict[str, typing.Any]]]] = None,
         string_schema: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::MaxCompute::Table``.
@@ -615,6 +679,15 @@ class TableProps:
         :param schema: Property schema: Table schema.
         :param string_schema: Property stringSchema: Create a table with field names and field type strings. Example: 'num bigint, num2 double', 'pt string'
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TableProps.__init__)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument project", value=project, expected_type=type_hints["project"])
+            check_type(argname="argument comment", value=comment, expected_type=type_hints["comment"])
+            check_type(argname="argument if_not_exists", value=if_not_exists, expected_type=type_hints["if_not_exists"])
+            check_type(argname="argument lifecycle", value=lifecycle, expected_type=type_hints["lifecycle"])
+            check_type(argname="argument schema", value=schema, expected_type=type_hints["schema"])
+            check_type(argname="argument string_schema", value=string_schema, expected_type=type_hints["string_schema"])
         self._values: typing.Dict[str, typing.Any] = {
             "name": name,
             "project": project,

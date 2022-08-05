@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class BackendServerAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "BackendServerAttachmentProps",
+        props: typing.Union["BackendServerAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::BackendServerAttachment``.
@@ -47,6 +49,12 @@ class BackendServerAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BackendServerAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -66,13 +74,17 @@ class BackendServerAttachmentProps:
         self,
         *,
         server_group_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        servers: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosBackendServerAttachment.ServersProperty"]]],
+        servers: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosBackendServerAttachment.ServersProperty", typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::ALB::BackendServerAttachment``.
 
         :param server_group_id: Property serverGroupId: The ID of the server group.
         :param servers: Property servers: The backend servers that you want to add to the server group. You can specify up to 40 servers in each call.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(BackendServerAttachmentProps.__init__)
+            check_type(argname="argument server_group_id", value=server_group_id, expected_type=type_hints["server_group_id"])
+            check_type(argname="argument servers", value=servers, expected_type=type_hints["servers"])
         self._values: typing.Dict[str, typing.Any] = {
             "server_group_id": server_group_id,
             "servers": servers,
@@ -121,7 +133,7 @@ class Listener(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ListenerProps",
+        props: typing.Union["ListenerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::Listener``.
@@ -135,6 +147,12 @@ class Listener(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Listener.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -167,19 +185,19 @@ class ListenerProps:
     def __init__(
         self,
         *,
-        default_actions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosListener.DefaultActionsProperty"]]],
+        default_actions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosListener.DefaultActionsProperty", typing.Dict[str, typing.Any]]]]],
         listener_port: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
         listener_protocol: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         load_balancer_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        certificates: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosListener.CertificatesProperty"]]]] = None,
+        certificates: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosListener.CertificatesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         gzip_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         http2_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         idle_timeout: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         listener_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        quic_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosListener.QuicConfigProperty"]] = None,
+        quic_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosListener.QuicConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         request_timeout: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         security_policy_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        x_forwarded_for_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosListener.XForwardedForConfigProperty"]] = None,
+        x_forwarded_for_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosListener.XForwardedForConfigProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ALB::Listener``.
 
@@ -197,6 +215,21 @@ class ListenerProps:
         :param security_policy_id: Property securityPolicyId: The ID of the security policy. System security policies and custom security policies are supported. Default value: tls_cipher_policy_1_0. This value indicates a system security policy. Note Only HTTPS listeners support this parameter.
         :param x_forwarded_for_config: Property xForwardedForConfig: The configuration of the XForward field.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ListenerProps.__init__)
+            check_type(argname="argument default_actions", value=default_actions, expected_type=type_hints["default_actions"])
+            check_type(argname="argument listener_port", value=listener_port, expected_type=type_hints["listener_port"])
+            check_type(argname="argument listener_protocol", value=listener_protocol, expected_type=type_hints["listener_protocol"])
+            check_type(argname="argument load_balancer_id", value=load_balancer_id, expected_type=type_hints["load_balancer_id"])
+            check_type(argname="argument certificates", value=certificates, expected_type=type_hints["certificates"])
+            check_type(argname="argument gzip_enabled", value=gzip_enabled, expected_type=type_hints["gzip_enabled"])
+            check_type(argname="argument http2_enabled", value=http2_enabled, expected_type=type_hints["http2_enabled"])
+            check_type(argname="argument idle_timeout", value=idle_timeout, expected_type=type_hints["idle_timeout"])
+            check_type(argname="argument listener_description", value=listener_description, expected_type=type_hints["listener_description"])
+            check_type(argname="argument quic_config", value=quic_config, expected_type=type_hints["quic_config"])
+            check_type(argname="argument request_timeout", value=request_timeout, expected_type=type_hints["request_timeout"])
+            check_type(argname="argument security_policy_id", value=security_policy_id, expected_type=type_hints["security_policy_id"])
+            check_type(argname="argument x_forwarded_for_config", value=x_forwarded_for_config, expected_type=type_hints["x_forwarded_for_config"])
         self._values: typing.Dict[str, typing.Any] = {
             "default_actions": default_actions,
             "listener_port": listener_port,
@@ -384,7 +417,7 @@ class LoadBalancer(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "LoadBalancerProps",
+        props: typing.Union["LoadBalancerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::LoadBalancer``.
@@ -398,6 +431,12 @@ class LoadBalancer(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(LoadBalancer.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -460,17 +499,17 @@ class LoadBalancerProps:
         self,
         *,
         address_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        load_balancer_billing_config: typing.Union[ros_cdk_core.IResolvable, "RosLoadBalancer.LoadBalancerBillingConfigProperty"],
+        load_balancer_billing_config: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosLoadBalancer.LoadBalancerBillingConfigProperty", typing.Dict[str, typing.Any]]],
         load_balancer_edition: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         load_balancer_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        zone_mappings: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosLoadBalancer.ZoneMappingsProperty"]]],
+        zone_mappings: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosLoadBalancer.ZoneMappingsProperty", typing.Dict[str, typing.Any]]]]],
         address_allocated_mode: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         bandwidth_package_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         deletion_protection_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        modification_protection_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosLoadBalancer.ModificationProtectionConfigProperty"]] = None,
+        modification_protection_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosLoadBalancer.ModificationProtectionConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosLoadBalancer.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosLoadBalancer.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ALB::LoadBalancer``.
 
@@ -487,6 +526,20 @@ class LoadBalancerProps:
         :param resource_group_id: Property resourceGroupId: The ID of the resource group.
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(LoadBalancerProps.__init__)
+            check_type(argname="argument address_type", value=address_type, expected_type=type_hints["address_type"])
+            check_type(argname="argument load_balancer_billing_config", value=load_balancer_billing_config, expected_type=type_hints["load_balancer_billing_config"])
+            check_type(argname="argument load_balancer_edition", value=load_balancer_edition, expected_type=type_hints["load_balancer_edition"])
+            check_type(argname="argument load_balancer_name", value=load_balancer_name, expected_type=type_hints["load_balancer_name"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument zone_mappings", value=zone_mappings, expected_type=type_hints["zone_mappings"])
+            check_type(argname="argument address_allocated_mode", value=address_allocated_mode, expected_type=type_hints["address_allocated_mode"])
+            check_type(argname="argument bandwidth_package_id", value=bandwidth_package_id, expected_type=type_hints["bandwidth_package_id"])
+            check_type(argname="argument deletion_protection_enabled", value=deletion_protection_enabled, expected_type=type_hints["deletion_protection_enabled"])
+            check_type(argname="argument modification_protection_config", value=modification_protection_config, expected_type=type_hints["modification_protection_config"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "address_type": address_type,
             "load_balancer_billing_config": load_balancer_billing_config,
@@ -657,7 +710,7 @@ class RosBackendServerAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosBackendServerAttachmentProps",
+        props: typing.Union["RosBackendServerAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::BackendServerAttachment``.
@@ -667,6 +720,12 @@ class RosBackendServerAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBackendServerAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -677,6 +736,9 @@ class RosBackendServerAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBackendServerAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -705,6 +767,9 @@ class RosBackendServerAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBackendServerAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -720,6 +785,9 @@ class RosBackendServerAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBackendServerAttachment, "server_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serverGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -740,6 +808,9 @@ class RosBackendServerAttachment(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosBackendServerAttachment.ServersProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosBackendServerAttachment, "servers").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "servers", value)
 
     @jsii.data_type(
@@ -773,6 +844,14 @@ class RosBackendServerAttachment(
             :param server_ip: 
             :param weight: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosBackendServerAttachment.ServersProperty.__init__)
+                check_type(argname="argument server_id", value=server_id, expected_type=type_hints["server_id"])
+                check_type(argname="argument server_type", value=server_type, expected_type=type_hints["server_type"])
+                check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument server_ip", value=server_ip, expected_type=type_hints["server_ip"])
+                check_type(argname="argument weight", value=weight, expected_type=type_hints["weight"])
             self._values: typing.Dict[str, typing.Any] = {
                 "server_id": server_id,
                 "server_type": server_type,
@@ -886,13 +965,17 @@ class RosBackendServerAttachmentProps:
         self,
         *,
         server_group_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        servers: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosBackendServerAttachment.ServersProperty]]],
+        servers: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosBackendServerAttachment.ServersProperty, typing.Dict[str, typing.Any]]]]],
     ) -> None:
         '''Properties for defining a ``ALIYUN::ALB::BackendServerAttachment``.
 
         :param server_group_id: 
         :param servers: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosBackendServerAttachmentProps.__init__)
+            check_type(argname="argument server_group_id", value=server_group_id, expected_type=type_hints["server_group_id"])
+            check_type(argname="argument servers", value=servers, expected_type=type_hints["servers"])
         self._values: typing.Dict[str, typing.Any] = {
             "server_group_id": server_group_id,
             "servers": servers,
@@ -944,7 +1027,7 @@ class RosListener(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosListenerProps",
+        props: typing.Union["RosListenerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::Listener``.
@@ -954,6 +1037,12 @@ class RosListener(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosListener.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -964,6 +1053,9 @@ class RosListener(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosListener._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1000,6 +1092,9 @@ class RosListener(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosListener.DefaultActionsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "default_actions").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "defaultActions", value)
 
     @builtins.property # type: ignore[misc]
@@ -1009,6 +1104,9 @@ class RosListener(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1027,6 +1125,9 @@ class RosListener(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "listener_port").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "listenerPort", value)
 
     @builtins.property # type: ignore[misc]
@@ -1045,6 +1146,9 @@ class RosListener(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "listener_protocol").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "listenerProtocol", value)
 
     @builtins.property # type: ignore[misc]
@@ -1060,6 +1164,9 @@ class RosListener(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "load_balancer_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loadBalancerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1077,6 +1184,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosListener.CertificatesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "certificates").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "certificates", value)
 
     @builtins.property # type: ignore[misc]
@@ -1098,6 +1208,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "gzip_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "gzipEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -1120,6 +1233,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "http2_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "http2Enabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -1143,6 +1259,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "idle_timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "idleTimeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -1163,6 +1282,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "listener_description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "listenerDescription", value)
 
     @builtins.property # type: ignore[misc]
@@ -1180,6 +1302,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosListener.QuicConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "quic_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "quicConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -1203,6 +1328,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "request_timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "requestTimeout", value)
 
     @builtins.property # type: ignore[misc]
@@ -1225,6 +1353,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "security_policy_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "securityPolicyId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1242,6 +1373,9 @@ class RosListener(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosListener.XForwardedForConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosListener, "x_forwarded_for_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "xForwardedForConfig", value)
 
     @jsii.data_type(
@@ -1258,6 +1392,9 @@ class RosListener(
             '''
             :param certificate_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosListener.CertificatesProperty.__init__)
+                check_type(argname="argument certificate_id", value=certificate_id, expected_type=type_hints["certificate_id"])
             self._values: typing.Dict[str, typing.Any] = {}
             if certificate_id is not None:
                 self._values["certificate_id"] = certificate_id
@@ -1292,13 +1429,17 @@ class RosListener(
         def __init__(
             self,
             *,
-            forward_group_config: typing.Union[ros_cdk_core.IResolvable, "RosListener.ForwardGroupConfigProperty"],
+            forward_group_config: typing.Union[ros_cdk_core.IResolvable, typing.Union["RosListener.ForwardGroupConfigProperty", typing.Dict[str, typing.Any]]],
             type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         ) -> None:
             '''
             :param forward_group_config: 
             :param type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosListener.DefaultActionsProperty.__init__)
+                check_type(argname="argument forward_group_config", value=forward_group_config, expected_type=type_hints["forward_group_config"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "forward_group_config": forward_group_config,
                 "type": type,
@@ -1347,11 +1488,14 @@ class RosListener(
         def __init__(
             self,
             *,
-            server_group_tuples: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosListener.ServerGroupTuplesProperty"]]],
+            server_group_tuples: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosListener.ServerGroupTuplesProperty", typing.Dict[str, typing.Any]]]]],
         ) -> None:
             '''
             :param server_group_tuples: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosListener.ForwardGroupConfigProperty.__init__)
+                check_type(argname="argument server_group_tuples", value=server_group_tuples, expected_type=type_hints["server_group_tuples"])
             self._values: typing.Dict[str, typing.Any] = {
                 "server_group_tuples": server_group_tuples,
             }
@@ -1397,6 +1541,10 @@ class RosListener(
             :param quic_listener_id: 
             :param quic_upgrade_enabled: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosListener.QuicConfigProperty.__init__)
+                check_type(argname="argument quic_listener_id", value=quic_listener_id, expected_type=type_hints["quic_listener_id"])
+                check_type(argname="argument quic_upgrade_enabled", value=quic_upgrade_enabled, expected_type=type_hints["quic_upgrade_enabled"])
             self._values: typing.Dict[str, typing.Any] = {}
             if quic_listener_id is not None:
                 self._values["quic_listener_id"] = quic_listener_id
@@ -1457,6 +1605,9 @@ class RosListener(
             '''
             :param server_group_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosListener.ServerGroupTuplesProperty.__init__)
+                check_type(argname="argument server_group_id", value=server_group_id, expected_type=type_hints["server_group_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "server_group_id": server_group_id,
             }
@@ -1535,6 +1686,21 @@ class RosListener(
             :param x_forwarded_for_slb_id_enabled: 
             :param x_forwarded_for_slb_port_enabled: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosListener.XForwardedForConfigProperty.__init__)
+                check_type(argname="argument x_forwarded_for_client_cert_client_verify_alias", value=x_forwarded_for_client_cert_client_verify_alias, expected_type=type_hints["x_forwarded_for_client_cert_client_verify_alias"])
+                check_type(argname="argument x_forwarded_for_client_cert_client_verify_enabled", value=x_forwarded_for_client_cert_client_verify_enabled, expected_type=type_hints["x_forwarded_for_client_cert_client_verify_enabled"])
+                check_type(argname="argument x_forwarded_for_client_cert_fingerprint_alias", value=x_forwarded_for_client_cert_fingerprint_alias, expected_type=type_hints["x_forwarded_for_client_cert_fingerprint_alias"])
+                check_type(argname="argument x_forwarded_for_client_cert_fingerprint_enabled", value=x_forwarded_for_client_cert_fingerprint_enabled, expected_type=type_hints["x_forwarded_for_client_cert_fingerprint_enabled"])
+                check_type(argname="argument x_forwarded_for_client_cert_issuer_dn_alias", value=x_forwarded_for_client_cert_issuer_dn_alias, expected_type=type_hints["x_forwarded_for_client_cert_issuer_dn_alias"])
+                check_type(argname="argument x_forwarded_for_client_cert_issuer_dn_enabled", value=x_forwarded_for_client_cert_issuer_dn_enabled, expected_type=type_hints["x_forwarded_for_client_cert_issuer_dn_enabled"])
+                check_type(argname="argument x_forwarded_for_client_cert_subject_dn_alias", value=x_forwarded_for_client_cert_subject_dn_alias, expected_type=type_hints["x_forwarded_for_client_cert_subject_dn_alias"])
+                check_type(argname="argument x_forwarded_for_client_cert_subject_dn_enabled", value=x_forwarded_for_client_cert_subject_dn_enabled, expected_type=type_hints["x_forwarded_for_client_cert_subject_dn_enabled"])
+                check_type(argname="argument x_forwarded_for_client_src_port_enabled", value=x_forwarded_for_client_src_port_enabled, expected_type=type_hints["x_forwarded_for_client_src_port_enabled"])
+                check_type(argname="argument x_forwarded_for_enabled", value=x_forwarded_for_enabled, expected_type=type_hints["x_forwarded_for_enabled"])
+                check_type(argname="argument x_forwarded_for_proto_enabled", value=x_forwarded_for_proto_enabled, expected_type=type_hints["x_forwarded_for_proto_enabled"])
+                check_type(argname="argument x_forwarded_for_slb_id_enabled", value=x_forwarded_for_slb_id_enabled, expected_type=type_hints["x_forwarded_for_slb_id_enabled"])
+                check_type(argname="argument x_forwarded_for_slb_port_enabled", value=x_forwarded_for_slb_port_enabled, expected_type=type_hints["x_forwarded_for_slb_port_enabled"])
             self._values: typing.Dict[str, typing.Any] = {}
             if x_forwarded_for_client_cert_client_verify_alias is not None:
                 self._values["x_forwarded_for_client_cert_client_verify_alias"] = x_forwarded_for_client_cert_client_verify_alias
@@ -1795,19 +1961,19 @@ class RosListenerProps:
     def __init__(
         self,
         *,
-        default_actions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosListener.DefaultActionsProperty]]],
+        default_actions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosListener.DefaultActionsProperty, typing.Dict[str, typing.Any]]]]],
         listener_port: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
         listener_protocol: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         load_balancer_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        certificates: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosListener.CertificatesProperty]]]] = None,
+        certificates: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosListener.CertificatesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         gzip_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         http2_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         idle_timeout: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         listener_description: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        quic_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosListener.QuicConfigProperty]] = None,
+        quic_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosListener.QuicConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         request_timeout: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         security_policy_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        x_forwarded_for_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosListener.XForwardedForConfigProperty]] = None,
+        x_forwarded_for_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosListener.XForwardedForConfigProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ALB::Listener``.
 
@@ -1825,6 +1991,21 @@ class RosListenerProps:
         :param security_policy_id: 
         :param x_forwarded_for_config: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosListenerProps.__init__)
+            check_type(argname="argument default_actions", value=default_actions, expected_type=type_hints["default_actions"])
+            check_type(argname="argument listener_port", value=listener_port, expected_type=type_hints["listener_port"])
+            check_type(argname="argument listener_protocol", value=listener_protocol, expected_type=type_hints["listener_protocol"])
+            check_type(argname="argument load_balancer_id", value=load_balancer_id, expected_type=type_hints["load_balancer_id"])
+            check_type(argname="argument certificates", value=certificates, expected_type=type_hints["certificates"])
+            check_type(argname="argument gzip_enabled", value=gzip_enabled, expected_type=type_hints["gzip_enabled"])
+            check_type(argname="argument http2_enabled", value=http2_enabled, expected_type=type_hints["http2_enabled"])
+            check_type(argname="argument idle_timeout", value=idle_timeout, expected_type=type_hints["idle_timeout"])
+            check_type(argname="argument listener_description", value=listener_description, expected_type=type_hints["listener_description"])
+            check_type(argname="argument quic_config", value=quic_config, expected_type=type_hints["quic_config"])
+            check_type(argname="argument request_timeout", value=request_timeout, expected_type=type_hints["request_timeout"])
+            check_type(argname="argument security_policy_id", value=security_policy_id, expected_type=type_hints["security_policy_id"])
+            check_type(argname="argument x_forwarded_for_config", value=x_forwarded_for_config, expected_type=type_hints["x_forwarded_for_config"])
         self._values: typing.Dict[str, typing.Any] = {
             "default_actions": default_actions,
             "listener_port": listener_port,
@@ -2036,7 +2217,7 @@ class RosLoadBalancer(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosLoadBalancerProps",
+        props: typing.Union["RosLoadBalancerProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::LoadBalancer``.
@@ -2046,6 +2227,12 @@ class RosLoadBalancer(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosLoadBalancer.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2056,6 +2243,9 @@ class RosLoadBalancer(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosLoadBalancer._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2134,6 +2324,9 @@ class RosLoadBalancer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "address_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "addressType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2143,6 +2336,9 @@ class RosLoadBalancer(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2160,6 +2356,9 @@ class RosLoadBalancer(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, "RosLoadBalancer.LoadBalancerBillingConfigProperty"],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "load_balancer_billing_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loadBalancerBillingConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -2181,6 +2380,9 @@ class RosLoadBalancer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "load_balancer_edition").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loadBalancerEdition", value)
 
     @builtins.property # type: ignore[misc]
@@ -2201,6 +2403,9 @@ class RosLoadBalancer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "load_balancer_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loadBalancerName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2216,6 +2421,9 @@ class RosLoadBalancer(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2233,6 +2441,9 @@ class RosLoadBalancer(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosLoadBalancer.ZoneMappingsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "zone_mappings").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneMappings", value)
 
     @builtins.property # type: ignore[misc]
@@ -2254,6 +2465,9 @@ class RosLoadBalancer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "address_allocated_mode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "addressAllocatedMode", value)
 
     @builtins.property # type: ignore[misc]
@@ -2271,6 +2485,9 @@ class RosLoadBalancer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "bandwidth_package_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "bandwidthPackageId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2288,6 +2505,9 @@ class RosLoadBalancer(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "deletion_protection_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionProtectionEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -2305,6 +2525,9 @@ class RosLoadBalancer(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosLoadBalancer.ModificationProtectionConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "modification_protection_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "modificationProtectionConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -2322,6 +2545,9 @@ class RosLoadBalancer(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2337,6 +2563,9 @@ class RosLoadBalancer(
         self,
         value: typing.Optional[typing.List["RosLoadBalancer.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosLoadBalancer, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -2353,6 +2582,9 @@ class RosLoadBalancer(
             '''
             :param pay_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosLoadBalancer.LoadBalancerBillingConfigProperty.__init__)
+                check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "pay_type": pay_type,
             }
@@ -2393,6 +2625,10 @@ class RosLoadBalancer(
             :param status: 
             :param reason: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosLoadBalancer.ModificationProtectionConfigProperty.__init__)
+                check_type(argname="argument status", value=status, expected_type=type_hints["status"])
+                check_type(argname="argument reason", value=reason, expected_type=type_hints["reason"])
             self._values: typing.Dict[str, typing.Any] = {
                 "status": status,
             }
@@ -2454,6 +2690,10 @@ class RosLoadBalancer(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosLoadBalancer.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -2506,6 +2746,10 @@ class RosLoadBalancer(
             :param v_switch_id: 
             :param zone_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosLoadBalancer.ZoneMappingsProperty.__init__)
+                check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+                check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "v_switch_id": v_switch_id,
                 "zone_id": zone_id,
@@ -2564,17 +2808,17 @@ class RosLoadBalancerProps:
         self,
         *,
         address_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        load_balancer_billing_config: typing.Union[ros_cdk_core.IResolvable, RosLoadBalancer.LoadBalancerBillingConfigProperty],
+        load_balancer_billing_config: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosLoadBalancer.LoadBalancerBillingConfigProperty, typing.Dict[str, typing.Any]]],
         load_balancer_edition: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         load_balancer_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        zone_mappings: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosLoadBalancer.ZoneMappingsProperty]]],
+        zone_mappings: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosLoadBalancer.ZoneMappingsProperty, typing.Dict[str, typing.Any]]]]],
         address_allocated_mode: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         bandwidth_package_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         deletion_protection_enabled: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        modification_protection_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosLoadBalancer.ModificationProtectionConfigProperty]] = None,
+        modification_protection_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosLoadBalancer.ModificationProtectionConfigProperty, typing.Dict[str, typing.Any]]]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosLoadBalancer.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosLoadBalancer.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ALB::LoadBalancer``.
 
@@ -2591,6 +2835,20 @@ class RosLoadBalancerProps:
         :param resource_group_id: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosLoadBalancerProps.__init__)
+            check_type(argname="argument address_type", value=address_type, expected_type=type_hints["address_type"])
+            check_type(argname="argument load_balancer_billing_config", value=load_balancer_billing_config, expected_type=type_hints["load_balancer_billing_config"])
+            check_type(argname="argument load_balancer_edition", value=load_balancer_edition, expected_type=type_hints["load_balancer_edition"])
+            check_type(argname="argument load_balancer_name", value=load_balancer_name, expected_type=type_hints["load_balancer_name"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument zone_mappings", value=zone_mappings, expected_type=type_hints["zone_mappings"])
+            check_type(argname="argument address_allocated_mode", value=address_allocated_mode, expected_type=type_hints["address_allocated_mode"])
+            check_type(argname="argument bandwidth_package_id", value=bandwidth_package_id, expected_type=type_hints["bandwidth_package_id"])
+            check_type(argname="argument deletion_protection_enabled", value=deletion_protection_enabled, expected_type=type_hints["deletion_protection_enabled"])
+            check_type(argname="argument modification_protection_config", value=modification_protection_config, expected_type=type_hints["modification_protection_config"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "address_type": address_type,
             "load_balancer_billing_config": load_balancer_billing_config,
@@ -2770,7 +3028,7 @@ class RosRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRuleProps",
+        props: typing.Union["RosRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::Rule``.
@@ -2780,6 +3038,12 @@ class RosRule(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2790,6 +3054,9 @@ class RosRule(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRule._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2818,6 +3085,9 @@ class RosRule(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2836,6 +3106,9 @@ class RosRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "listener_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "listenerId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2854,6 +3127,9 @@ class RosRule(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "priority").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "priority", value)
 
     @builtins.property # type: ignore[misc]
@@ -2871,6 +3147,9 @@ class RosRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosRule.RuleActionsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "rule_actions").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleActions", value)
 
     @builtins.property # type: ignore[misc]
@@ -2888,6 +3167,9 @@ class RosRule(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosRule.RuleConditionsProperty"]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "rule_conditions").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleConditions", value)
 
     @builtins.property # type: ignore[misc]
@@ -2908,6 +3190,9 @@ class RosRule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "rule_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2925,6 +3210,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "direction").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "direction", value)
 
     @jsii.data_type(
@@ -2936,11 +3224,14 @@ class RosRule(
         def __init__(
             self,
             *,
-            values: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosRule.ValuesProperty"]]]] = None,
+            values: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.ValuesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param values: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.CookieConfigProperty.__init__)
+                check_type(argname="argument values", value=values, expected_type=type_hints["values"])
             self._values: typing.Dict[str, typing.Any] = {}
             if values is not None:
                 self._values["values"] = values
@@ -2988,6 +3279,11 @@ class RosRule(
             :param content_type: 
             :param http_code: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.FixedResponseConfigProperty.__init__)
+                check_type(argname="argument content", value=content, expected_type=type_hints["content"])
+                check_type(argname="argument content_type", value=content_type, expected_type=type_hints["content_type"])
+                check_type(argname="argument http_code", value=http_code, expected_type=type_hints["http_code"])
             self._values: typing.Dict[str, typing.Any] = {}
             if content is not None:
                 self._values["content"] = content
@@ -3052,11 +3348,14 @@ class RosRule(
         def __init__(
             self,
             *,
-            server_group_tuples: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosRule.ServerGroupTuplesProperty"]]]] = None,
+            server_group_tuples: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.ServerGroupTuplesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param server_group_tuples: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.ForwardGroupConfigProperty.__init__)
+                check_type(argname="argument server_group_tuples", value=server_group_tuples, expected_type=type_hints["server_group_tuples"])
             self._values: typing.Dict[str, typing.Any] = {}
             if server_group_tuples is not None:
                 self._values["server_group_tuples"] = server_group_tuples
@@ -3098,6 +3397,10 @@ class RosRule(
             :param key: 
             :param values: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.HeaderConfigProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument values", value=values, expected_type=type_hints["values"])
             self._values: typing.Dict[str, typing.Any] = {}
             if key is not None:
                 self._values["key"] = key
@@ -3159,6 +3462,9 @@ class RosRule(
             '''
             :param values: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.HostConfigProperty.__init__)
+                check_type(argname="argument values", value=values, expected_type=type_hints["values"])
             self._values: typing.Dict[str, typing.Any] = {}
             if values is not None:
                 self._values["values"] = values
@@ -3208,6 +3514,11 @@ class RosRule(
             :param value: 
             :param value_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.InsertHeaderConfigProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+                check_type(argname="argument value_type", value=value_type, expected_type=type_hints["value_type"])
             self._values: typing.Dict[str, typing.Any] = {}
             if key is not None:
                 self._values["key"] = key
@@ -3295,6 +3606,9 @@ class RosRule(
             '''
             :param values: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.MethodConfigProperty.__init__)
+                check_type(argname="argument values", value=values, expected_type=type_hints["values"])
             self._values: typing.Dict[str, typing.Any] = {}
             if values is not None:
                 self._values["values"] = values
@@ -3334,6 +3648,9 @@ class RosRule(
             '''
             :param values: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.PathConfigProperty.__init__)
+                check_type(argname="argument values", value=values, expected_type=type_hints["values"])
             self._values: typing.Dict[str, typing.Any] = {}
             if values is not None:
                 self._values["values"] = values
@@ -3368,11 +3685,14 @@ class RosRule(
         def __init__(
             self,
             *,
-            values: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosRule.QueryStringConfigValuesProperty"]]]] = None,
+            values: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.QueryStringConfigValuesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         ) -> None:
             '''
             :param values: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.QueryStringConfigProperty.__init__)
+                check_type(argname="argument values", value=values, expected_type=type_hints["values"])
             self._values: typing.Dict[str, typing.Any] = {}
             if values is not None:
                 self._values["values"] = values
@@ -3414,6 +3734,10 @@ class RosRule(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.QueryStringConfigValuesProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if key is not None:
                 self._values["key"] = key
@@ -3491,6 +3815,14 @@ class RosRule(
             :param protocol: 
             :param query: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.RedirectConfigProperty.__init__)
+                check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+                check_type(argname="argument http_code", value=http_code, expected_type=type_hints["http_code"])
+                check_type(argname="argument path", value=path, expected_type=type_hints["path"])
+                check_type(argname="argument port", value=port, expected_type=type_hints["port"])
+                check_type(argname="argument protocol", value=protocol, expected_type=type_hints["protocol"])
+                check_type(argname="argument query", value=query, expected_type=type_hints["query"])
             self._values: typing.Dict[str, typing.Any] = {}
             if host is not None:
                 self._values["host"] = host
@@ -3638,6 +3970,10 @@ class RosRule(
             :param key: 
             :param values: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.ResponseHeaderConfigProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument values", value=values, expected_type=type_hints["values"])
             self._values: typing.Dict[str, typing.Any] = {}
             if key is not None:
                 self._values["key"] = key
@@ -3698,6 +4034,11 @@ class RosRule(
             :param path: 
             :param query: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.RewriteConfigProperty.__init__)
+                check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+                check_type(argname="argument path", value=path, expected_type=type_hints["path"])
+                check_type(argname="argument query", value=query, expected_type=type_hints["query"])
             self._values: typing.Dict[str, typing.Any] = {}
             if host is not None:
                 self._values["host"] = host
@@ -3801,11 +4142,11 @@ class RosRule(
             *,
             order: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
             type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-            fixed_response_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.FixedResponseConfigProperty"]] = None,
-            forward_group_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.ForwardGroupConfigProperty"]] = None,
-            insert_header_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.InsertHeaderConfigProperty"]] = None,
-            redirect_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.RedirectConfigProperty"]] = None,
-            rewrite_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.RewriteConfigProperty"]] = None,
+            fixed_response_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.FixedResponseConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            forward_group_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.ForwardGroupConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            insert_header_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.InsertHeaderConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            redirect_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.RedirectConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            rewrite_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.RewriteConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param order: 
@@ -3816,6 +4157,15 @@ class RosRule(
             :param redirect_config: 
             :param rewrite_config: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.RuleActionsProperty.__init__)
+                check_type(argname="argument order", value=order, expected_type=type_hints["order"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+                check_type(argname="argument fixed_response_config", value=fixed_response_config, expected_type=type_hints["fixed_response_config"])
+                check_type(argname="argument forward_group_config", value=forward_group_config, expected_type=type_hints["forward_group_config"])
+                check_type(argname="argument insert_header_config", value=insert_header_config, expected_type=type_hints["insert_header_config"])
+                check_type(argname="argument redirect_config", value=redirect_config, expected_type=type_hints["redirect_config"])
+                check_type(argname="argument rewrite_config", value=rewrite_config, expected_type=type_hints["rewrite_config"])
             self._values: typing.Dict[str, typing.Any] = {
                 "order": order,
                 "type": type,
@@ -3946,13 +4296,13 @@ class RosRule(
             self,
             *,
             type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-            cookie_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.CookieConfigProperty"]] = None,
-            header_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.HeaderConfigProperty"]] = None,
-            host_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.HostConfigProperty"]] = None,
-            method_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.MethodConfigProperty"]] = None,
-            path_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.PathConfigProperty"]] = None,
-            query_string_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.QueryStringConfigProperty"]] = None,
-            response_header_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosRule.ResponseHeaderConfigProperty"]] = None,
+            cookie_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.CookieConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            header_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.HeaderConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            host_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.HostConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            method_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.MethodConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            path_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.PathConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            query_string_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.QueryStringConfigProperty", typing.Dict[str, typing.Any]]]] = None,
+            response_header_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosRule.ResponseHeaderConfigProperty", typing.Dict[str, typing.Any]]]] = None,
         ) -> None:
             '''
             :param type: 
@@ -3964,6 +4314,16 @@ class RosRule(
             :param query_string_config: 
             :param response_header_config: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.RuleConditionsProperty.__init__)
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+                check_type(argname="argument cookie_config", value=cookie_config, expected_type=type_hints["cookie_config"])
+                check_type(argname="argument header_config", value=header_config, expected_type=type_hints["header_config"])
+                check_type(argname="argument host_config", value=host_config, expected_type=type_hints["host_config"])
+                check_type(argname="argument method_config", value=method_config, expected_type=type_hints["method_config"])
+                check_type(argname="argument path_config", value=path_config, expected_type=type_hints["path_config"])
+                check_type(argname="argument query_string_config", value=query_string_config, expected_type=type_hints["query_string_config"])
+                check_type(argname="argument response_header_config", value=response_header_config, expected_type=type_hints["response_header_config"])
             self._values: typing.Dict[str, typing.Any] = {
                 "type": type,
             }
@@ -4094,6 +4454,9 @@ class RosRule(
             '''
             :param server_group_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.ServerGroupTuplesProperty.__init__)
+                check_type(argname="argument server_group_id", value=server_group_id, expected_type=type_hints["server_group_id"])
             self._values: typing.Dict[str, typing.Any] = {}
             if server_group_id is not None:
                 self._values["server_group_id"] = server_group_id
@@ -4135,6 +4498,10 @@ class RosRule(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.ValuesProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {}
             if key is not None:
                 self._values["key"] = key
@@ -4201,8 +4568,8 @@ class RosRuleProps:
         *,
         listener_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         priority: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
-        rule_actions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRule.RuleActionsProperty]]],
-        rule_conditions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRule.RuleConditionsProperty]]],
+        rule_actions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRule.RuleActionsProperty, typing.Dict[str, typing.Any]]]]],
+        rule_conditions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRule.RuleConditionsProperty, typing.Dict[str, typing.Any]]]]],
         rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         direction: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -4215,6 +4582,14 @@ class RosRuleProps:
         :param rule_name: 
         :param direction: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRuleProps.__init__)
+            check_type(argname="argument listener_id", value=listener_id, expected_type=type_hints["listener_id"])
+            check_type(argname="argument priority", value=priority, expected_type=type_hints["priority"])
+            check_type(argname="argument rule_actions", value=rule_actions, expected_type=type_hints["rule_actions"])
+            check_type(argname="argument rule_conditions", value=rule_conditions, expected_type=type_hints["rule_conditions"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument direction", value=direction, expected_type=type_hints["direction"])
         self._values: typing.Dict[str, typing.Any] = {
             "listener_id": listener_id,
             "priority": priority,
@@ -4318,7 +4693,7 @@ class RosServerGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosServerGroupProps",
+        props: typing.Union["RosServerGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::ServerGroup``.
@@ -4328,6 +4703,12 @@ class RosServerGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosServerGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -4338,6 +4719,9 @@ class RosServerGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosServerGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4366,6 +4750,9 @@ class RosServerGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -4383,6 +4770,9 @@ class RosServerGroup(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, "RosServerGroup.HealthCheckConfigProperty"],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "health_check_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "healthCheckConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -4402,6 +4792,9 @@ class RosServerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "server_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serverGroupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -4421,6 +4814,9 @@ class RosServerGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4443,6 +4839,9 @@ class RosServerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "protocol").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "protocol", value)
 
     @builtins.property # type: ignore[misc]
@@ -4460,6 +4859,9 @@ class RosServerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -4486,6 +4888,9 @@ class RosServerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "scheduler").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scheduler", value)
 
     @builtins.property # type: ignore[misc]
@@ -4510,6 +4915,9 @@ class RosServerGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "server_group_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "serverGroupType", value)
 
     @builtins.property # type: ignore[misc]
@@ -4530,6 +4938,9 @@ class RosServerGroup(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosServerGroup.StickySessionConfigProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "sticky_session_config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "stickySessionConfig", value)
 
     @builtins.property # type: ignore[misc]
@@ -4545,6 +4956,9 @@ class RosServerGroup(
         self,
         value: typing.Optional[typing.List["RosServerGroup.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosServerGroup, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -4596,6 +5010,20 @@ class RosServerGroup(
             :param healthy_threshold: 
             :param unhealthy_threshold: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosServerGroup.HealthCheckConfigProperty.__init__)
+                check_type(argname="argument health_check_enabled", value=health_check_enabled, expected_type=type_hints["health_check_enabled"])
+                check_type(argname="argument health_check_codes", value=health_check_codes, expected_type=type_hints["health_check_codes"])
+                check_type(argname="argument health_check_connect_port", value=health_check_connect_port, expected_type=type_hints["health_check_connect_port"])
+                check_type(argname="argument health_check_host", value=health_check_host, expected_type=type_hints["health_check_host"])
+                check_type(argname="argument health_check_http_version", value=health_check_http_version, expected_type=type_hints["health_check_http_version"])
+                check_type(argname="argument health_check_interval", value=health_check_interval, expected_type=type_hints["health_check_interval"])
+                check_type(argname="argument health_check_method", value=health_check_method, expected_type=type_hints["health_check_method"])
+                check_type(argname="argument health_check_path", value=health_check_path, expected_type=type_hints["health_check_path"])
+                check_type(argname="argument health_check_protocol", value=health_check_protocol, expected_type=type_hints["health_check_protocol"])
+                check_type(argname="argument health_check_timeout", value=health_check_timeout, expected_type=type_hints["health_check_timeout"])
+                check_type(argname="argument healthy_threshold", value=healthy_threshold, expected_type=type_hints["healthy_threshold"])
+                check_type(argname="argument unhealthy_threshold", value=unhealthy_threshold, expected_type=type_hints["unhealthy_threshold"])
             self._values: typing.Dict[str, typing.Any] = {
                 "health_check_enabled": health_check_enabled,
             }
@@ -4839,6 +5267,12 @@ class RosServerGroup(
             :param sticky_session_enabled: 
             :param sticky_session_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosServerGroup.StickySessionConfigProperty.__init__)
+                check_type(argname="argument cookie", value=cookie, expected_type=type_hints["cookie"])
+                check_type(argname="argument cookie_timeout", value=cookie_timeout, expected_type=type_hints["cookie_timeout"])
+                check_type(argname="argument sticky_session_enabled", value=sticky_session_enabled, expected_type=type_hints["sticky_session_enabled"])
+                check_type(argname="argument sticky_session_type", value=sticky_session_type, expected_type=type_hints["sticky_session_type"])
             self._values: typing.Dict[str, typing.Any] = {}
             if cookie is not None:
                 self._values["cookie"] = cookie
@@ -4942,6 +5376,10 @@ class RosServerGroup(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosServerGroup.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -4998,15 +5436,15 @@ class RosServerGroupProps:
     def __init__(
         self,
         *,
-        health_check_config: typing.Union[ros_cdk_core.IResolvable, RosServerGroup.HealthCheckConfigProperty],
+        health_check_config: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosServerGroup.HealthCheckConfigProperty, typing.Dict[str, typing.Any]]],
         server_group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         protocol: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         scheduler: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         server_group_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        sticky_session_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosServerGroup.StickySessionConfigProperty]] = None,
-        tags: typing.Optional[typing.Sequence[RosServerGroup.TagsProperty]] = None,
+        sticky_session_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosServerGroup.StickySessionConfigProperty, typing.Dict[str, typing.Any]]]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosServerGroup.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ALB::ServerGroup``.
 
@@ -5020,6 +5458,17 @@ class RosServerGroupProps:
         :param sticky_session_config: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosServerGroupProps.__init__)
+            check_type(argname="argument health_check_config", value=health_check_config, expected_type=type_hints["health_check_config"])
+            check_type(argname="argument server_group_name", value=server_group_name, expected_type=type_hints["server_group_name"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument protocol", value=protocol, expected_type=type_hints["protocol"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument scheduler", value=scheduler, expected_type=type_hints["scheduler"])
+            check_type(argname="argument server_group_type", value=server_group_type, expected_type=type_hints["server_group_type"])
+            check_type(argname="argument sticky_session_config", value=sticky_session_config, expected_type=type_hints["sticky_session_config"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "health_check_config": health_check_config,
             "server_group_name": server_group_name,
@@ -5180,7 +5629,7 @@ class Rule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RuleProps",
+        props: typing.Union["RuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::Rule``.
@@ -5194,6 +5643,12 @@ class Rule(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Rule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -5221,8 +5676,8 @@ class RuleProps:
         *,
         listener_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         priority: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
-        rule_actions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRule.RuleActionsProperty]]],
-        rule_conditions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRule.RuleConditionsProperty]]],
+        rule_actions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRule.RuleActionsProperty, typing.Dict[str, typing.Any]]]]],
+        rule_conditions: typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRule.RuleConditionsProperty, typing.Dict[str, typing.Any]]]]],
         rule_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         direction: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -5235,6 +5690,14 @@ class RuleProps:
         :param rule_name: Property ruleName: The name of the forwarding rule. The name must be 2 to 128 characters in length. It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It must start with a letter.
         :param direction: Property direction: Rule direction. Valid values: Request or Response.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RuleProps.__init__)
+            check_type(argname="argument listener_id", value=listener_id, expected_type=type_hints["listener_id"])
+            check_type(argname="argument priority", value=priority, expected_type=type_hints["priority"])
+            check_type(argname="argument rule_actions", value=rule_actions, expected_type=type_hints["rule_actions"])
+            check_type(argname="argument rule_conditions", value=rule_conditions, expected_type=type_hints["rule_conditions"])
+            check_type(argname="argument rule_name", value=rule_name, expected_type=type_hints["rule_name"])
+            check_type(argname="argument direction", value=direction, expected_type=type_hints["direction"])
         self._values: typing.Dict[str, typing.Any] = {
             "listener_id": listener_id,
             "priority": priority,
@@ -5327,7 +5790,7 @@ class ServerGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ServerGroupProps",
+        props: typing.Union["ServerGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ALB::ServerGroup``.
@@ -5341,6 +5804,12 @@ class ServerGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ServerGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -5369,15 +5838,15 @@ class ServerGroupProps:
     def __init__(
         self,
         *,
-        health_check_config: typing.Union[ros_cdk_core.IResolvable, RosServerGroup.HealthCheckConfigProperty],
+        health_check_config: typing.Union[ros_cdk_core.IResolvable, typing.Union[RosServerGroup.HealthCheckConfigProperty, typing.Dict[str, typing.Any]]],
         server_group_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         vpc_id: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         protocol: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         scheduler: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         server_group_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        sticky_session_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosServerGroup.StickySessionConfigProperty]] = None,
-        tags: typing.Optional[typing.Sequence[RosServerGroup.TagsProperty]] = None,
+        sticky_session_config: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosServerGroup.StickySessionConfigProperty, typing.Dict[str, typing.Any]]]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosServerGroup.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ALB::ServerGroup``.
 
@@ -5391,6 +5860,17 @@ class ServerGroupProps:
         :param sticky_session_config: Property stickySessionConfig: The configuration of session persistence. Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ServerGroupProps.__init__)
+            check_type(argname="argument health_check_config", value=health_check_config, expected_type=type_hints["health_check_config"])
+            check_type(argname="argument server_group_name", value=server_group_name, expected_type=type_hints["server_group_name"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument protocol", value=protocol, expected_type=type_hints["protocol"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument scheduler", value=scheduler, expected_type=type_hints["scheduler"])
+            check_type(argname="argument server_group_type", value=server_group_type, expected_type=type_hints["server_group_type"])
+            check_type(argname="argument sticky_session_config", value=sticky_session_config, expected_type=type_hints["sticky_session_config"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "health_check_config": health_check_config,
             "server_group_name": server_group_name,

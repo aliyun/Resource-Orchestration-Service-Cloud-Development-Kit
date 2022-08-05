@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Certificate(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "CertificateProps",
+        props: typing.Union["CertificateProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::CAS::Certificate``.
@@ -47,6 +49,12 @@ class Certificate(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Certificate.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -85,6 +93,13 @@ class CertificateProps:
         :param lang: Property lang: Specifies the language type for requesting and receiving messages.
         :param source_ip: Property sourceIp: Specifies the source IP address of the request.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(CertificateProps.__init__)
+            check_type(argname="argument cert", value=cert, expected_type=type_hints["cert"])
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument lang", value=lang, expected_type=type_hints["lang"])
+            check_type(argname="argument source_ip", value=source_ip, expected_type=type_hints["source_ip"])
         self._values: typing.Dict[str, typing.Any] = {
             "cert": cert,
             "key": key,
@@ -164,7 +179,7 @@ class RosCertificate(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosCertificateProps",
+        props: typing.Union["RosCertificateProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::CAS::Certificate``.
@@ -174,6 +189,12 @@ class RosCertificate(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCertificate.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -184,6 +205,9 @@ class RosCertificate(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCertificate._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -215,6 +239,9 @@ class RosCertificate(
 
     @cert.setter
     def cert(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCertificate, "cert").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cert", value)
 
     @builtins.property # type: ignore[misc]
@@ -224,6 +251,9 @@ class RosCertificate(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCertificate, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -236,6 +266,9 @@ class RosCertificate(
 
     @key.setter
     def key(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCertificate, "key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "key", value)
 
     @builtins.property # type: ignore[misc]
@@ -248,6 +281,9 @@ class RosCertificate(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCertificate, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -265,6 +301,9 @@ class RosCertificate(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCertificate, "lang").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "lang", value)
 
     @builtins.property # type: ignore[misc]
@@ -282,6 +321,9 @@ class RosCertificate(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCertificate, "source_ip").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "sourceIp", value)
 
 
@@ -314,6 +356,13 @@ class RosCertificateProps:
         :param lang: 
         :param source_ip: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCertificateProps.__init__)
+            check_type(argname="argument cert", value=cert, expected_type=type_hints["cert"])
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument lang", value=lang, expected_type=type_hints["lang"])
+            check_type(argname="argument source_ip", value=source_ip, expected_type=type_hints["source_ip"])
         self._values: typing.Dict[str, typing.Any] = {
             "cert": cert,
             "key": key,

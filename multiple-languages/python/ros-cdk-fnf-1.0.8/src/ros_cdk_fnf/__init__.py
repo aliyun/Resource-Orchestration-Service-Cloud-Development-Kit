@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Flow(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "FlowProps",
+        props: typing.Union["FlowProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::FNF::Flow``.
@@ -47,6 +49,12 @@ class Flow(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Flow.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -103,6 +111,13 @@ class FlowProps:
         :param request_id: Property requestId: The specified Request ID for this request. If not specified, our system will help you generate a random one.
         :param role_arn: Property roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FlowProps.__init__)
+            check_type(argname="argument definition", value=definition, expected_type=type_hints["definition"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument request_id", value=request_id, expected_type=type_hints["request_id"])
+            check_type(argname="argument role_arn", value=role_arn, expected_type=type_hints["role_arn"])
         self._values: typing.Dict[str, typing.Any] = {
             "definition": definition,
             "name": name,
@@ -181,7 +196,7 @@ class RosFlow(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosFlowProps",
+        props: typing.Union["RosFlowProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::FNF::Flow``.
@@ -191,6 +206,12 @@ class RosFlow(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFlow.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -201,6 +222,9 @@ class RosFlow(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFlow._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -259,6 +283,9 @@ class RosFlow(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlow, "definition").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "definition", value)
 
     @builtins.property # type: ignore[misc]
@@ -268,6 +295,9 @@ class RosFlow(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlow, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -280,6 +310,9 @@ class RosFlow(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlow, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -297,6 +330,9 @@ class RosFlow(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlow, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -314,6 +350,9 @@ class RosFlow(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlow, "request_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "requestId", value)
 
     @builtins.property # type: ignore[misc]
@@ -331,6 +370,9 @@ class RosFlow(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFlow, "role_arn").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "roleArn", value)
 
 
@@ -363,6 +405,13 @@ class RosFlowProps:
         :param request_id: 
         :param role_arn: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFlowProps.__init__)
+            check_type(argname="argument definition", value=definition, expected_type=type_hints["definition"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument request_id", value=request_id, expected_type=type_hints["request_id"])
+            check_type(argname="argument role_arn", value=role_arn, expected_type=type_hints["role_arn"])
         self._values: typing.Dict[str, typing.Any] = {
             "definition": definition,
             "name": name,
@@ -445,7 +494,7 @@ class RosSchedule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosScheduleProps",
+        props: typing.Union["RosScheduleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::FNF::Schedule``.
@@ -455,6 +504,12 @@ class RosSchedule(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSchedule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -465,6 +520,9 @@ class RosSchedule(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSchedule._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -515,6 +573,9 @@ class RosSchedule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSchedule, "cron_expression").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "cronExpression", value)
 
     @builtins.property # type: ignore[misc]
@@ -524,6 +585,9 @@ class RosSchedule(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSchedule, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -539,6 +603,9 @@ class RosSchedule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSchedule, "flow_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "flowName", value)
 
     @builtins.property # type: ignore[misc]
@@ -554,6 +621,9 @@ class RosSchedule(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSchedule, "schedule_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "scheduleName", value)
 
     @builtins.property # type: ignore[misc]
@@ -571,6 +641,9 @@ class RosSchedule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSchedule, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -588,6 +661,9 @@ class RosSchedule(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSchedule, "enable").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enable", value)
 
     @builtins.property # type: ignore[misc]
@@ -605,6 +681,9 @@ class RosSchedule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSchedule, "payload").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payload", value)
 
 
@@ -640,6 +719,14 @@ class RosScheduleProps:
         :param enable: 
         :param payload: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosScheduleProps.__init__)
+            check_type(argname="argument cron_expression", value=cron_expression, expected_type=type_hints["cron_expression"])
+            check_type(argname="argument flow_name", value=flow_name, expected_type=type_hints["flow_name"])
+            check_type(argname="argument schedule_name", value=schedule_name, expected_type=type_hints["schedule_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
+            check_type(argname="argument payload", value=payload, expected_type=type_hints["payload"])
         self._values: typing.Dict[str, typing.Any] = {
             "cron_expression": cron_expression,
             "flow_name": flow_name,
@@ -732,7 +819,7 @@ class Schedule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ScheduleProps",
+        props: typing.Union["ScheduleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::FNF::Schedule``.
@@ -746,6 +833,12 @@ class Schedule(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Schedule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -799,6 +892,14 @@ class ScheduleProps:
         :param enable: Property enable: Whether enable schedule.
         :param payload: Property payload: Payload.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ScheduleProps.__init__)
+            check_type(argname="argument cron_expression", value=cron_expression, expected_type=type_hints["cron_expression"])
+            check_type(argname="argument flow_name", value=flow_name, expected_type=type_hints["flow_name"])
+            check_type(argname="argument schedule_name", value=schedule_name, expected_type=type_hints["schedule_name"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable", value=enable, expected_type=type_hints["enable"])
+            check_type(argname="argument payload", value=payload, expected_type=type_hints["payload"])
         self._values: typing.Dict[str, typing.Any] = {
             "cron_expression": cron_expression,
             "flow_name": flow_name,

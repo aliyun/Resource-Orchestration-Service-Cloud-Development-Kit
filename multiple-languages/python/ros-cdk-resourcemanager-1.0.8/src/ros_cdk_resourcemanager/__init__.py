@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Account(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AccountProps",
+        props: typing.Union["AccountProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::Account``.
@@ -47,6 +49,12 @@ class Account(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Account.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -115,6 +123,11 @@ class AccountProps:
         :param folder_id: Property folderId: The ID of the parent folder.
         :param payer_account_id: Property payerAccountId:.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AccountProps.__init__)
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
+            check_type(argname="argument folder_id", value=folder_id, expected_type=type_hints["folder_id"])
+            check_type(argname="argument payer_account_id", value=payer_account_id, expected_type=type_hints["payer_account_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "display_name": display_name,
         }
@@ -169,7 +182,7 @@ class ControlPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ControlPolicyProps",
+        props: typing.Union["ControlPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ControlPolicy``.
@@ -183,6 +196,12 @@ class ControlPolicy(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ControlPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -239,7 +258,7 @@ class ControlPolicyAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ControlPolicyAttachmentProps",
+        props: typing.Union["ControlPolicyAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ControlPolicyAttachment``.
@@ -253,6 +272,12 @@ class ControlPolicyAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ControlPolicyAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -309,6 +334,10 @@ class ControlPolicyAttachmentProps:
         :param policy_id: Property policyId: PolicyId.
         :param target_id: Property targetId: TargetId.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ControlPolicyAttachmentProps.__init__)
+            check_type(argname="argument policy_id", value=policy_id, expected_type=type_hints["policy_id"])
+            check_type(argname="argument target_id", value=target_id, expected_type=type_hints["target_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_id": policy_id,
             "target_id": target_id,
@@ -366,6 +395,12 @@ class ControlPolicyProps:
         :param policy_document: Property policyDocument: PolicyDocument.
         :param description: Property description: Description.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ControlPolicyProps.__init__)
+            check_type(argname="argument control_policy_name", value=control_policy_name, expected_type=type_hints["control_policy_name"])
+            check_type(argname="argument effect_scope", value=effect_scope, expected_type=type_hints["effect_scope"])
+            check_type(argname="argument policy_document", value=policy_document, expected_type=type_hints["policy_document"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
         self._values: typing.Dict[str, typing.Any] = {
             "control_policy_name": control_policy_name,
             "effect_scope": effect_scope,
@@ -428,7 +463,7 @@ class Folder(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "FolderProps",
+        props: typing.Union["FolderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::Folder``.
@@ -442,6 +477,12 @@ class Folder(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Folder.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -483,6 +524,10 @@ class FolderProps:
         :param folder_name: Property folderName: The name of the folder.
         :param parent_folder_id: Property parentFolderId: The ID of the parent folder. If not set, the system default value will be used
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FolderProps.__init__)
+            check_type(argname="argument folder_name", value=folder_name, expected_type=type_hints["folder_name"])
+            check_type(argname="argument parent_folder_id", value=parent_folder_id, expected_type=type_hints["parent_folder_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "folder_name": folder_name,
         }
@@ -530,7 +575,7 @@ class Handshake(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "HandshakeProps",
+        props: typing.Union["HandshakeProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::Handshake``.
@@ -544,6 +589,12 @@ class Handshake(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Handshake.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -615,6 +666,11 @@ class HandshakeProps:
         :param target_type: Property targetType: Type of account being invited. Valid values: Account, Email
         :param note: Property note: Remarks.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(HandshakeProps.__init__)
+            check_type(argname="argument target_entity", value=target_entity, expected_type=type_hints["target_entity"])
+            check_type(argname="argument target_type", value=target_type, expected_type=type_hints["target_type"])
+            check_type(argname="argument note", value=note, expected_type=type_hints["note"])
         self._values: typing.Dict[str, typing.Any] = {
             "target_entity": target_entity,
             "target_type": target_type,
@@ -670,7 +726,7 @@ class PolicyAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "PolicyAttachmentProps",
+        props: typing.Union["PolicyAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::PolicyAttachment``.
@@ -684,6 +740,12 @@ class PolicyAttachment(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PolicyAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -761,6 +823,13 @@ class PolicyAttachmentProps:
         :param principal_type: Property principalType: The type of the object to which you want to attach the policy. Valid values: IMSUser: RAM user, IMSGroup: RAM user group, ServiceRole: RAM role
         :param resource_group_id: Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PolicyAttachmentProps.__init__)
+            check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+            check_type(argname="argument policy_type", value=policy_type, expected_type=type_hints["policy_type"])
+            check_type(argname="argument principal_name", value=principal_name, expected_type=type_hints["principal_name"])
+            check_type(argname="argument principal_type", value=principal_type, expected_type=type_hints["principal_type"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_name": policy_name,
             "policy_type": policy_type,
@@ -830,7 +899,7 @@ class ResourceDirectory(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: typing.Optional["ResourceDirectoryProps"] = None,
+        props: typing.Optional[typing.Union["ResourceDirectoryProps", typing.Dict[str, typing.Any]]] = None,
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ResourceDirectory``.
@@ -844,6 +913,12 @@ class ResourceDirectory(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceDirectory.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -904,7 +979,7 @@ class ResourceGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ResourceGroupProps",
+        props: typing.Union["ResourceGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ResourceGroup``.
@@ -918,6 +993,12 @@ class ResourceGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -968,6 +1049,10 @@ class ResourceGroupProps:
         :param display_name: Property displayName: The display name of the resource group.
         :param name: Property name: The unique identifier of the resource group.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceGroupProps.__init__)
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "display_name": display_name,
             "name": name,
@@ -1010,7 +1095,7 @@ class ResourceShare(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ResourceShareProps",
+        props: typing.Union["ResourceShareProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ResourceShare``.
@@ -1024,6 +1109,12 @@ class ResourceShare(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceShare.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1047,7 +1138,7 @@ class ResourceShareProps:
         self,
         *,
         resource_share_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosResourceShare.ResourcesProperty"]]]] = None,
+        resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosResourceShare.ResourcesProperty", typing.Dict[str, typing.Any]]]]]] = None,
         targets: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ResourceManager::ResourceShare``.
@@ -1056,6 +1147,11 @@ class ResourceShareProps:
         :param resources: Property resources:.
         :param targets: Property targets: The shared target. A shared target shares the resources of resource owners. You can share your resources only with the member accounts in your resource directory. A shared target is indicated by its account ID. For more information about how to obtain the ID, see View the basic information of a member account.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceShareProps.__init__)
+            check_type(argname="argument resource_share_name", value=resource_share_name, expected_type=type_hints["resource_share_name"])
+            check_type(argname="argument resources", value=resources, expected_type=type_hints["resources"])
+            check_type(argname="argument targets", value=targets, expected_type=type_hints["targets"])
         self._values: typing.Dict[str, typing.Any] = {
             "resource_share_name": resource_share_name,
         }
@@ -1121,7 +1217,7 @@ class RosAccount(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAccountProps",
+        props: typing.Union["RosAccountProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::Account``.
@@ -1131,6 +1227,12 @@ class RosAccount(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccount.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1141,6 +1243,9 @@ class RosAccount(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccount._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1215,6 +1320,9 @@ class RosAccount(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "display_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "displayName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1224,6 +1332,9 @@ class RosAccount(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1241,6 +1352,9 @@ class RosAccount(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "folder_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "folderId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1258,6 +1372,9 @@ class RosAccount(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAccount, "payer_account_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payerAccountId", value)
 
 
@@ -1284,6 +1401,11 @@ class RosAccountProps:
         :param folder_id: 
         :param payer_account_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAccountProps.__init__)
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
+            check_type(argname="argument folder_id", value=folder_id, expected_type=type_hints["folder_id"])
+            check_type(argname="argument payer_account_id", value=payer_account_id, expected_type=type_hints["payer_account_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "display_name": display_name,
         }
@@ -1344,7 +1466,7 @@ class RosControlPolicy(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosControlPolicyProps",
+        props: typing.Union["RosControlPolicyProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ControlPolicy``.
@@ -1354,6 +1476,12 @@ class RosControlPolicy(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicy.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1364,6 +1492,9 @@ class RosControlPolicy(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicy._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1448,6 +1579,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "control_policy_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "controlPolicyName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1463,6 +1597,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "effect_scope").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "effectScope", value)
 
     @builtins.property # type: ignore[misc]
@@ -1472,6 +1609,9 @@ class RosControlPolicy(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1487,6 +1627,9 @@ class RosControlPolicy(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "policy_document").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyDocument", value)
 
     @builtins.property # type: ignore[misc]
@@ -1504,6 +1647,9 @@ class RosControlPolicy(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicy, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
 
@@ -1518,7 +1664,7 @@ class RosControlPolicyAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosControlPolicyAttachmentProps",
+        props: typing.Union["RosControlPolicyAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ControlPolicyAttachment``.
@@ -1528,6 +1674,12 @@ class RosControlPolicyAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicyAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1538,6 +1690,9 @@ class RosControlPolicyAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicyAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1606,6 +1761,9 @@ class RosControlPolicyAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicyAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1621,6 +1779,9 @@ class RosControlPolicyAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicyAttachment, "policy_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1636,6 +1797,9 @@ class RosControlPolicyAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosControlPolicyAttachment, "target_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetId", value)
 
 
@@ -1656,6 +1820,10 @@ class RosControlPolicyAttachmentProps:
         :param policy_id: 
         :param target_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicyAttachmentProps.__init__)
+            check_type(argname="argument policy_id", value=policy_id, expected_type=type_hints["policy_id"])
+            check_type(argname="argument target_id", value=target_id, expected_type=type_hints["target_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_id": policy_id,
             "target_id": target_id,
@@ -1717,6 +1885,12 @@ class RosControlPolicyProps:
         :param policy_document: 
         :param description: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosControlPolicyProps.__init__)
+            check_type(argname="argument control_policy_name", value=control_policy_name, expected_type=type_hints["control_policy_name"])
+            check_type(argname="argument effect_scope", value=effect_scope, expected_type=type_hints["effect_scope"])
+            check_type(argname="argument policy_document", value=policy_document, expected_type=type_hints["policy_document"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
         self._values: typing.Dict[str, typing.Any] = {
             "control_policy_name": control_policy_name,
             "effect_scope": effect_scope,
@@ -1787,7 +1961,7 @@ class RosFolder(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosFolderProps",
+        props: typing.Union["RosFolderProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::Folder``.
@@ -1797,6 +1971,12 @@ class RosFolder(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFolder.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1807,6 +1987,9 @@ class RosFolder(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFolder._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1851,6 +2034,9 @@ class RosFolder(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFolder, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1866,6 +2052,9 @@ class RosFolder(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFolder, "folder_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "folderName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1883,6 +2072,9 @@ class RosFolder(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosFolder, "parent_folder_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "parentFolderId", value)
 
 
@@ -1903,6 +2095,10 @@ class RosFolderProps:
         :param folder_name: 
         :param parent_folder_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosFolderProps.__init__)
+            check_type(argname="argument folder_name", value=folder_name, expected_type=type_hints["folder_name"])
+            check_type(argname="argument parent_folder_id", value=parent_folder_id, expected_type=type_hints["parent_folder_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "folder_name": folder_name,
         }
@@ -1951,7 +2147,7 @@ class RosHandshake(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosHandshakeProps",
+        props: typing.Union["RosHandshakeProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::Handshake``.
@@ -1961,6 +2157,12 @@ class RosHandshake(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosHandshake.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1971,6 +2173,9 @@ class RosHandshake(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosHandshake._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2047,6 +2252,9 @@ class RosHandshake(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHandshake, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2062,6 +2270,9 @@ class RosHandshake(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHandshake, "target_entity").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetEntity", value)
 
     @builtins.property # type: ignore[misc]
@@ -2077,6 +2288,9 @@ class RosHandshake(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHandshake, "target_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targetType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2094,6 +2308,9 @@ class RosHandshake(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosHandshake, "note").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "note", value)
 
 
@@ -2120,6 +2337,11 @@ class RosHandshakeProps:
         :param target_type: 
         :param note: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosHandshakeProps.__init__)
+            check_type(argname="argument target_entity", value=target_entity, expected_type=type_hints["target_entity"])
+            check_type(argname="argument target_type", value=target_type, expected_type=type_hints["target_type"])
+            check_type(argname="argument note", value=note, expected_type=type_hints["note"])
         self._values: typing.Dict[str, typing.Any] = {
             "target_entity": target_entity,
             "target_type": target_type,
@@ -2178,7 +2400,7 @@ class RosPolicyAttachment(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosPolicyAttachmentProps",
+        props: typing.Union["RosPolicyAttachmentProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::PolicyAttachment``.
@@ -2188,6 +2410,12 @@ class RosPolicyAttachment(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPolicyAttachment.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2198,6 +2426,9 @@ class RosPolicyAttachment(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPolicyAttachment._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2274,6 +2505,9 @@ class RosPolicyAttachment(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPolicyAttachment, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2289,6 +2523,9 @@ class RosPolicyAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPolicyAttachment, "policy_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2304,6 +2541,9 @@ class RosPolicyAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPolicyAttachment, "policy_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "policyType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2319,6 +2559,9 @@ class RosPolicyAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPolicyAttachment, "principal_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "principalName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2334,6 +2577,9 @@ class RosPolicyAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPolicyAttachment, "principal_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "principalType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2349,6 +2595,9 @@ class RosPolicyAttachment(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPolicyAttachment, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
 
@@ -2381,6 +2630,13 @@ class RosPolicyAttachmentProps:
         :param principal_type: 
         :param resource_group_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPolicyAttachmentProps.__init__)
+            check_type(argname="argument policy_name", value=policy_name, expected_type=type_hints["policy_name"])
+            check_type(argname="argument policy_type", value=policy_type, expected_type=type_hints["policy_type"])
+            check_type(argname="argument principal_name", value=principal_name, expected_type=type_hints["principal_name"])
+            check_type(argname="argument principal_type", value=principal_type, expected_type=type_hints["principal_type"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "policy_name": policy_name,
             "policy_type": policy_type,
@@ -2457,7 +2713,7 @@ class RosResourceDirectory(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosResourceDirectoryProps",
+        props: typing.Union["RosResourceDirectoryProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ResourceDirectory``.
@@ -2467,6 +2723,12 @@ class RosResourceDirectory(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceDirectory.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2477,6 +2739,9 @@ class RosResourceDirectory(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceDirectory._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2529,6 +2794,9 @@ class RosResourceDirectory(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceDirectory, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
 
@@ -2565,7 +2833,7 @@ class RosResourceGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosResourceGroupProps",
+        props: typing.Union["RosResourceGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ResourceGroup``.
@@ -2575,6 +2843,12 @@ class RosResourceGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2585,6 +2859,9 @@ class RosResourceGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2651,6 +2928,9 @@ class RosResourceGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceGroup, "display_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "displayName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2660,6 +2940,9 @@ class RosResourceGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2672,6 +2955,9 @@ class RosResourceGroup(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceGroup, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
 
@@ -2692,6 +2978,10 @@ class RosResourceGroupProps:
         :param display_name: 
         :param name: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceGroupProps.__init__)
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         self._values: typing.Dict[str, typing.Any] = {
             "display_name": display_name,
             "name": name,
@@ -2738,7 +3028,7 @@ class RosResourceShare(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosResourceShareProps",
+        props: typing.Union["RosResourceShareProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ResourceManager::ResourceShare``.
@@ -2748,6 +3038,12 @@ class RosResourceShare(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceShare.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2758,6 +3054,9 @@ class RosResourceShare(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceShare._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2786,6 +3085,9 @@ class RosResourceShare(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceShare, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2807,6 +3109,9 @@ class RosResourceShare(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceShare, "resource_share_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceShareName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2824,6 +3129,9 @@ class RosResourceShare(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosResourceShare.ResourcesProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceShare, "resources").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resources", value)
 
     @builtins.property # type: ignore[misc]
@@ -2846,6 +3154,9 @@ class RosResourceShare(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosResourceShare, "targets").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "targets", value)
 
     @jsii.data_type(
@@ -2864,6 +3175,10 @@ class RosResourceShare(
             :param resource_id: 
             :param resource_type: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosResourceShare.ResourcesProperty.__init__)
+                check_type(argname="argument resource_id", value=resource_id, expected_type=type_hints["resource_id"])
+                check_type(argname="argument resource_type", value=resource_type, expected_type=type_hints["resource_type"])
             self._values: typing.Dict[str, typing.Any] = {
                 "resource_id": resource_id,
                 "resource_type": resource_type,
@@ -2917,7 +3232,7 @@ class RosResourceShareProps:
         self,
         *,
         resource_share_name: typing.Union[builtins.str, ros_cdk_core.IResolvable],
-        resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosResourceShare.ResourcesProperty]]]] = None,
+        resources: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosResourceShare.ResourcesProperty, typing.Dict[str, typing.Any]]]]]] = None,
         targets: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::ResourceManager::ResourceShare``.
@@ -2926,6 +3241,11 @@ class RosResourceShareProps:
         :param resources: 
         :param targets: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceShareProps.__init__)
+            check_type(argname="argument resource_share_name", value=resource_share_name, expected_type=type_hints["resource_share_name"])
+            check_type(argname="argument resources", value=resources, expected_type=type_hints["resources"])
+            check_type(argname="argument targets", value=targets, expected_type=type_hints["targets"])
         self._values: typing.Dict[str, typing.Any] = {
             "resource_share_name": resource_share_name,
         }

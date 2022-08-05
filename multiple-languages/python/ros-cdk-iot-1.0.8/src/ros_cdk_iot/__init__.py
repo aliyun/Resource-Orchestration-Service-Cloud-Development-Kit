@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Device(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DeviceProps",
+        props: typing.Union["DeviceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::Device``.
@@ -47,6 +49,12 @@ class Device(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Device.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -118,7 +126,7 @@ class DeviceGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DeviceGroupProps",
+        props: typing.Union["DeviceGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::DeviceGroup``.
@@ -132,6 +140,12 @@ class DeviceGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DeviceGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -173,6 +187,12 @@ class DeviceGroupProps:
         :param iot_instance_id: Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
         :param super_group_id: Property superGroupId: The ID of the parent group. If you want to create a first-level group, do not enter this parameter.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DeviceGroupProps.__init__)
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument group_desc", value=group_desc, expected_type=type_hints["group_desc"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
+            check_type(argname="argument super_group_id", value=super_group_id, expected_type=type_hints["super_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_name": group_name,
         }
@@ -270,6 +290,14 @@ class DeviceProps:
         :param nickname: Property nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can contain Chinese characters, English letters, numbers and underscores (_). A Chinese character counts as two characters.
         :param pin_code: Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI. When you create a LoRaWAN devices, this will pass.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DeviceProps.__init__)
+            check_type(argname="argument product_key", value=product_key, expected_type=type_hints["product_key"])
+            check_type(argname="argument dev_eui", value=dev_eui, expected_type=type_hints["dev_eui"])
+            check_type(argname="argument device_name", value=device_name, expected_type=type_hints["device_name"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
+            check_type(argname="argument nickname", value=nickname, expected_type=type_hints["nickname"])
+            check_type(argname="argument pin_code", value=pin_code, expected_type=type_hints["pin_code"])
         self._values: typing.Dict[str, typing.Any] = {
             "product_key": product_key,
         }
@@ -375,7 +403,7 @@ class Product(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ProductProps",
+        props: typing.Union["ProductProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::Product``.
@@ -389,6 +417,12 @@ class Product(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Product.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -460,6 +494,22 @@ class ProductProps:
         :param publish_auto: Property publishAuto: Whether to automatically model publication after the product is created. true: publishing. false: not released. This parameter is not passed, the default value true.
         :param resource_group_id: Property resourceGroupId: Resource group ID (group ID to view the resource in the resource management console), specify the product is classified as a resource group. If this parameter is passed, the product will be classified as a default resource group.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ProductProps.__init__)
+            check_type(argname="argument node_type", value=node_type, expected_type=type_hints["node_type"])
+            check_type(argname="argument product_name", value=product_name, expected_type=type_hints["product_name"])
+            check_type(argname="argument aliyun_commodity_code", value=aliyun_commodity_code, expected_type=type_hints["aliyun_commodity_code"])
+            check_type(argname="argument auth_type", value=auth_type, expected_type=type_hints["auth_type"])
+            check_type(argname="argument category_key", value=category_key, expected_type=type_hints["category_key"])
+            check_type(argname="argument data_format", value=data_format, expected_type=type_hints["data_format"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument id2", value=id2, expected_type=type_hints["id2"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
+            check_type(argname="argument join_permission_id", value=join_permission_id, expected_type=type_hints["join_permission_id"])
+            check_type(argname="argument net_type", value=net_type, expected_type=type_hints["net_type"])
+            check_type(argname="argument protocol_type", value=protocol_type, expected_type=type_hints["protocol_type"])
+            check_type(argname="argument publish_auto", value=publish_auto, expected_type=type_hints["publish_auto"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "node_type": node_type,
             "product_name": product_name,
@@ -710,7 +760,7 @@ class ProductTopic(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "ProductTopicProps",
+        props: typing.Union["ProductTopicProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::ProductTopic``.
@@ -724,6 +774,12 @@ class ProductTopic(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ProductTopic.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -762,6 +818,13 @@ class ProductTopicProps:
         :param desc: Property desc: The description of the topic category. You can enter a description with up to 100 characters.
         :param iot_instance_id: Property iotInstanceId: Instance ID you purchased. Public instances do not need pass this property.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ProductTopicProps.__init__)
+            check_type(argname="argument operation", value=operation, expected_type=type_hints["operation"])
+            check_type(argname="argument product_key", value=product_key, expected_type=type_hints["product_key"])
+            check_type(argname="argument topic_short_name", value=topic_short_name, expected_type=type_hints["topic_short_name"])
+            check_type(argname="argument desc", value=desc, expected_type=type_hints["desc"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "operation": operation,
             "product_key": product_key,
@@ -848,7 +911,7 @@ class RosDevice(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDeviceProps",
+        props: typing.Union["RosDeviceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::Device``.
@@ -858,6 +921,12 @@ class RosDevice(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDevice.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -868,6 +937,9 @@ class RosDevice(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDevice._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -963,6 +1035,9 @@ class RosDevice(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDevice, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -978,6 +1053,9 @@ class RosDevice(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDevice, "product_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "productKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -998,6 +1076,9 @@ class RosDevice(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDevice, "dev_eui").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "devEui", value)
 
     @builtins.property # type: ignore[misc]
@@ -1024,6 +1105,9 @@ class RosDevice(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDevice, "device_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deviceName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1041,6 +1125,9 @@ class RosDevice(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDevice, "iot_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "iotInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1062,6 +1149,9 @@ class RosDevice(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDevice, "nickname").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "nickname", value)
 
     @builtins.property # type: ignore[misc]
@@ -1082,6 +1172,9 @@ class RosDevice(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDevice, "pin_code").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pinCode", value)
 
 
@@ -1096,7 +1189,7 @@ class RosDeviceGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDeviceGroupProps",
+        props: typing.Union["RosDeviceGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::DeviceGroup``.
@@ -1106,6 +1199,12 @@ class RosDeviceGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDeviceGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1116,6 +1215,9 @@ class RosDeviceGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDeviceGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1152,6 +1254,9 @@ class RosDeviceGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDeviceGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1167,6 +1272,9 @@ class RosDeviceGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDeviceGroup, "group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1184,6 +1292,9 @@ class RosDeviceGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDeviceGroup, "group_desc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "groupDesc", value)
 
     @builtins.property # type: ignore[misc]
@@ -1201,6 +1312,9 @@ class RosDeviceGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDeviceGroup, "iot_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "iotInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1221,6 +1335,9 @@ class RosDeviceGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDeviceGroup, "super_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "superGroupId", value)
 
 
@@ -1250,6 +1367,12 @@ class RosDeviceGroupProps:
         :param iot_instance_id: 
         :param super_group_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDeviceGroupProps.__init__)
+            check_type(argname="argument group_name", value=group_name, expected_type=type_hints["group_name"])
+            check_type(argname="argument group_desc", value=group_desc, expected_type=type_hints["group_desc"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
+            check_type(argname="argument super_group_id", value=super_group_id, expected_type=type_hints["super_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "group_name": group_name,
         }
@@ -1346,6 +1469,14 @@ class RosDeviceProps:
         :param nickname: 
         :param pin_code: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDeviceProps.__init__)
+            check_type(argname="argument product_key", value=product_key, expected_type=type_hints["product_key"])
+            check_type(argname="argument dev_eui", value=dev_eui, expected_type=type_hints["dev_eui"])
+            check_type(argname="argument device_name", value=device_name, expected_type=type_hints["device_name"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
+            check_type(argname="argument nickname", value=nickname, expected_type=type_hints["nickname"])
+            check_type(argname="argument pin_code", value=pin_code, expected_type=type_hints["pin_code"])
         self._values: typing.Dict[str, typing.Any] = {
             "product_key": product_key,
         }
@@ -1461,7 +1592,7 @@ class RosProduct(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosProductProps",
+        props: typing.Union["RosProductProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::Product``.
@@ -1471,6 +1602,12 @@ class RosProduct(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProduct.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1481,6 +1618,9 @@ class RosProduct(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProduct._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1517,6 +1657,9 @@ class RosProduct(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1539,6 +1682,9 @@ class RosProduct(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "node_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "nodeType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1558,6 +1704,9 @@ class RosProduct(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "product_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "productName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1581,6 +1730,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "aliyun_commodity_code").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "aliyunCommodityCode", value)
 
     @builtins.property # type: ignore[misc]
@@ -1606,6 +1758,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "auth_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "authType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1626,6 +1781,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "category_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "categoryKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -1649,6 +1807,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "data_format").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dataFormat", value)
 
     @builtins.property # type: ignore[misc]
@@ -1669,6 +1830,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -1695,6 +1859,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "id2").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "id2", value)
 
     @builtins.property # type: ignore[misc]
@@ -1712,6 +1879,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "iot_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "iotInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1733,6 +1903,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "join_permission_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "joinPermissionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1760,6 +1933,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "net_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "netType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1787,6 +1963,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "protocol_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "protocolType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1809,6 +1988,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "publish_auto").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "publishAuto", value)
 
     @builtins.property # type: ignore[misc]
@@ -1829,6 +2011,9 @@ class RosProduct(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProduct, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
 
@@ -1888,6 +2073,22 @@ class RosProductProps:
         :param publish_auto: 
         :param resource_group_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProductProps.__init__)
+            check_type(argname="argument node_type", value=node_type, expected_type=type_hints["node_type"])
+            check_type(argname="argument product_name", value=product_name, expected_type=type_hints["product_name"])
+            check_type(argname="argument aliyun_commodity_code", value=aliyun_commodity_code, expected_type=type_hints["aliyun_commodity_code"])
+            check_type(argname="argument auth_type", value=auth_type, expected_type=type_hints["auth_type"])
+            check_type(argname="argument category_key", value=category_key, expected_type=type_hints["category_key"])
+            check_type(argname="argument data_format", value=data_format, expected_type=type_hints["data_format"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument id2", value=id2, expected_type=type_hints["id2"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
+            check_type(argname="argument join_permission_id", value=join_permission_id, expected_type=type_hints["join_permission_id"])
+            check_type(argname="argument net_type", value=net_type, expected_type=type_hints["net_type"])
+            check_type(argname="argument protocol_type", value=protocol_type, expected_type=type_hints["protocol_type"])
+            check_type(argname="argument publish_auto", value=publish_auto, expected_type=type_hints["publish_auto"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "node_type": node_type,
             "product_name": product_name,
@@ -2156,7 +2357,7 @@ class RosProductTopic(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosProductTopicProps",
+        props: typing.Union["RosProductTopicProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::ProductTopic``.
@@ -2166,6 +2367,12 @@ class RosProductTopic(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProductTopic.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2176,6 +2383,9 @@ class RosProductTopic(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProductTopic._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2204,6 +2414,9 @@ class RosProductTopic(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProductTopic, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2224,6 +2437,9 @@ class RosProductTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProductTopic, "operation").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "operation", value)
 
     @builtins.property # type: ignore[misc]
@@ -2239,6 +2455,9 @@ class RosProductTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProductTopic, "product_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "productKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -2257,6 +2476,9 @@ class RosProductTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProductTopic, "topic_short_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topicShortName", value)
 
     @builtins.property # type: ignore[misc]
@@ -2274,6 +2496,9 @@ class RosProductTopic(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProductTopic, "desc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "desc", value)
 
     @builtins.property # type: ignore[misc]
@@ -2291,6 +2516,9 @@ class RosProductTopic(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosProductTopic, "iot_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "iotInstanceId", value)
 
 
@@ -2323,6 +2551,13 @@ class RosProductTopicProps:
         :param desc: 
         :param iot_instance_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosProductTopicProps.__init__)
+            check_type(argname="argument operation", value=operation, expected_type=type_hints["operation"])
+            check_type(argname="argument product_key", value=product_key, expected_type=type_hints["product_key"])
+            check_type(argname="argument topic_short_name", value=topic_short_name, expected_type=type_hints["topic_short_name"])
+            check_type(argname="argument desc", value=desc, expected_type=type_hints["desc"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "operation": operation,
             "product_key": product_key,
@@ -2411,7 +2646,7 @@ class RosRule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRuleProps",
+        props: typing.Union["RosRuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::Rule``.
@@ -2421,6 +2656,12 @@ class RosRule(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2431,6 +2672,9 @@ class RosRule(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRule._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2467,6 +2711,9 @@ class RosRule(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2483,6 +2730,9 @@ class RosRule(
 
     @name.setter
     def name(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "name", value)
 
     @builtins.property # type: ignore[misc]
@@ -2508,6 +2758,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "data_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dataType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2528,6 +2781,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "iot_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "iotInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2545,6 +2801,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "product_key").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "productKey", value)
 
     @builtins.property # type: ignore[misc]
@@ -2567,6 +2826,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2584,6 +2846,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosRule.RuleActionProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "rule_action").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleAction", value)
 
     @builtins.property # type: ignore[misc]
@@ -2604,6 +2869,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "rule_desc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleDesc", value)
 
     @builtins.property # type: ignore[misc]
@@ -2624,6 +2892,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "select").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "select", value)
 
     @builtins.property # type: ignore[misc]
@@ -2670,6 +2941,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "short_topic").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "shortTopic", value)
 
     @builtins.property # type: ignore[misc]
@@ -2687,6 +2961,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "start_rule").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "startRule", value)
 
     @builtins.property # type: ignore[misc]
@@ -2708,6 +2985,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "topic_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topicType", value)
 
     @builtins.property # type: ignore[misc]
@@ -2728,6 +3008,9 @@ class RosRule(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRule, "where").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "where", value)
 
     @jsii.data_type(
@@ -2752,6 +3035,11 @@ class RosRule(
             :param type: 
             :param error_action_flag: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosRule.RuleActionProperty.__init__)
+                check_type(argname="argument configuration", value=configuration, expected_type=type_hints["configuration"])
+                check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+                check_type(argname="argument error_action_flag", value=error_action_flag, expected_type=type_hints["error_action_flag"])
             self._values: typing.Dict[str, typing.Any] = {
                 "configuration": configuration,
                 "type": type,
@@ -2838,7 +3126,7 @@ class RosRuleAction(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRuleActionProps",
+        props: typing.Union["RosRuleActionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::RuleAction``.
@@ -2848,6 +3136,12 @@ class RosRuleAction(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRuleAction.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -2858,6 +3152,9 @@ class RosRuleAction(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRuleAction._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -2896,6 +3193,9 @@ class RosRuleAction(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRuleAction, "configuration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "configuration", value)
 
     @builtins.property # type: ignore[misc]
@@ -2905,6 +3205,9 @@ class RosRuleAction(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRuleAction, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -2923,6 +3226,9 @@ class RosRuleAction(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRuleAction, "rule_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ruleId", value)
 
     @builtins.property # type: ignore[misc]
@@ -2951,6 +3257,9 @@ class RosRuleAction(
 
     @type.setter
     def type(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRuleAction, "type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "type", value)
 
     @builtins.property # type: ignore[misc]
@@ -2976,6 +3285,9 @@ class RosRuleAction(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRuleAction, "error_action_flag").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "errorActionFlag", value)
 
     @builtins.property # type: ignore[misc]
@@ -2996,6 +3308,9 @@ class RosRuleAction(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRuleAction, "iot_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "iotInstanceId", value)
 
 
@@ -3028,6 +3343,13 @@ class RosRuleActionProps:
         :param error_action_flag: 
         :param iot_instance_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRuleActionProps.__init__)
+            check_type(argname="argument configuration", value=configuration, expected_type=type_hints["configuration"])
+            check_type(argname="argument rule_id", value=rule_id, expected_type=type_hints["rule_id"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument error_action_flag", value=error_action_flag, expected_type=type_hints["error_action_flag"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "configuration": configuration,
             "rule_id": rule_id,
@@ -3158,7 +3480,7 @@ class RosRuleProps:
         iot_instance_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         product_key: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        rule_action: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRule.RuleActionProperty]]]] = None,
+        rule_action: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRule.RuleActionProperty, typing.Dict[str, typing.Any]]]]]] = None,
         rule_desc: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         select: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         short_topic: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -3181,6 +3503,20 @@ class RosRuleProps:
         :param topic_type: 
         :param where: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRuleProps.__init__)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument data_type", value=data_type, expected_type=type_hints["data_type"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
+            check_type(argname="argument product_key", value=product_key, expected_type=type_hints["product_key"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument rule_action", value=rule_action, expected_type=type_hints["rule_action"])
+            check_type(argname="argument rule_desc", value=rule_desc, expected_type=type_hints["rule_desc"])
+            check_type(argname="argument select", value=select, expected_type=type_hints["select"])
+            check_type(argname="argument short_topic", value=short_topic, expected_type=type_hints["short_topic"])
+            check_type(argname="argument start_rule", value=start_rule, expected_type=type_hints["start_rule"])
+            check_type(argname="argument topic_type", value=topic_type, expected_type=type_hints["topic_type"])
+            check_type(argname="argument where", value=where, expected_type=type_hints["where"])
         self._values: typing.Dict[str, typing.Any] = {
             "name": name,
         }
@@ -3411,7 +3747,7 @@ class Rule(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RuleProps",
+        props: typing.Union["RuleProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::Rule``.
@@ -3425,6 +3761,12 @@ class Rule(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Rule.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3451,7 +3793,7 @@ class RuleAction(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RuleActionProps",
+        props: typing.Union["RuleActionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::IOT::RuleAction``.
@@ -3465,6 +3807,12 @@ class RuleAction(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RuleAction.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -3503,6 +3851,13 @@ class RuleActionProps:
         :param error_action_flag: Property errorActionFlag: Indicates whether the rule action forwarded error operation data. Error operation data indicates that the rule engine failed to forward data from the IoT Platform topic to the destination cloud service. A data forwarding failure indicates that forwarding retries also failed. Valid values: true: forwards error operation data. false: forwards normal data instead of error operation data. Default value: false.
         :param iot_instance_id: Property iotInstanceId: The ID of the instance. This parameter is not required for public instances. However, the parameter is required for the instances that you have purchased.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RuleActionProps.__init__)
+            check_type(argname="argument configuration", value=configuration, expected_type=type_hints["configuration"])
+            check_type(argname="argument rule_id", value=rule_id, expected_type=type_hints["rule_id"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument error_action_flag", value=error_action_flag, expected_type=type_hints["error_action_flag"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "configuration": configuration,
             "rule_id": rule_id,
@@ -3628,7 +3983,7 @@ class RuleProps:
         iot_instance_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         product_key: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        rule_action: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosRule.RuleActionProperty]]]] = None,
+        rule_action: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosRule.RuleActionProperty, typing.Dict[str, typing.Any]]]]]] = None,
         rule_desc: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         select: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         short_topic: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -3651,6 +4006,20 @@ class RuleProps:
         :param topic_type: Property topicType: 0: The topic is a basic communication topic or TSL-based communication topic. 1: The topic is a custom topic. 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
         :param where: Property where: The condition that is used to trigger the rule. For more information, seeSQL expressions. Note Specify the fields that follow theWherekeyword for this parameter. For example, if the Where statement is Where a>10, specify a>10 for this parameter.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RuleProps.__init__)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument data_type", value=data_type, expected_type=type_hints["data_type"])
+            check_type(argname="argument iot_instance_id", value=iot_instance_id, expected_type=type_hints["iot_instance_id"])
+            check_type(argname="argument product_key", value=product_key, expected_type=type_hints["product_key"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument rule_action", value=rule_action, expected_type=type_hints["rule_action"])
+            check_type(argname="argument rule_desc", value=rule_desc, expected_type=type_hints["rule_desc"])
+            check_type(argname="argument select", value=select, expected_type=type_hints["select"])
+            check_type(argname="argument short_topic", value=short_topic, expected_type=type_hints["short_topic"])
+            check_type(argname="argument start_rule", value=start_rule, expected_type=type_hints["start_rule"])
+            check_type(argname="argument topic_type", value=topic_type, expected_type=type_hints["topic_type"])
+            check_type(argname="argument where", value=where, expected_type=type_hints["where"])
         self._values: typing.Dict[str, typing.Any] = {
             "name": name,
         }

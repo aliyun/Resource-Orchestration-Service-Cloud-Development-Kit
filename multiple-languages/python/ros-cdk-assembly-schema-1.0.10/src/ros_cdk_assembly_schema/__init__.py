@@ -21,6 +21,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 
@@ -50,6 +52,12 @@ class AliyunRosStackProperties:
         :param stack_name: The name to use for the ROS stack. Default: - name derived from artifact ID
         :param tags: Values for ROS stack tags that should be passed when the stack is deployed. Default: - No tags
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AliyunRosStackProperties.__init__)
+            check_type(argname="argument template_file", value=template_file, expected_type=type_hints["template_file"])
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument stack_name", value=stack_name, expected_type=type_hints["stack_name"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "template_file": template_file,
         }
@@ -132,6 +140,12 @@ class AmiContextQuery:
         :param region: Region to query.
         :param owners: Owners to DescribeImages call. Default: - All owners
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AmiContextQuery.__init__)
+            check_type(argname="argument account", value=account, expected_type=type_hints["account"])
+            check_type(argname="argument filters", value=filters, expected_type=type_hints["filters"])
+            check_type(argname="argument region", value=region, expected_type=type_hints["region"])
+            check_type(argname="argument owners", value=owners, expected_type=type_hints["owners"])
         self._values: typing.Dict[str, typing.Any] = {
             "account": account,
             "filters": filters,
@@ -198,8 +212,8 @@ class ArtifactManifest:
         *,
         type: "ArtifactType",
         dependencies: typing.Optional[typing.Sequence[builtins.str]] = None,
-        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence["MetadataEntry"]]] = None,
-        properties: typing.Optional[typing.Union[AliyunRosStackProperties, "TreeArtifactProperties", "NestedCloudAssemblyProperties"]] = None,
+        metadata: typing.Optional[typing.Mapping[builtins.str, typing.Sequence[typing.Union["MetadataEntry", typing.Dict[str, typing.Any]]]]] = None,
+        properties: typing.Optional[typing.Union[typing.Union[AliyunRosStackProperties, typing.Dict[str, typing.Any]], typing.Union["TreeArtifactProperties", typing.Dict[str, typing.Any]], typing.Union["NestedCloudAssemblyProperties", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''A manifest for a single artifact within the cloud assembly.
 
@@ -208,6 +222,12 @@ class ArtifactManifest:
         :param metadata: Associated metadata. Default: - no metadata.
         :param properties: The set of properties for this artifact (depends on type). Default: - no properties.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ArtifactManifest.__init__)
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument dependencies", value=dependencies, expected_type=type_hints["dependencies"])
+            check_type(argname="argument metadata", value=metadata, expected_type=type_hints["metadata"])
+            check_type(argname="argument properties", value=properties, expected_type=type_hints["properties"])
         self._values: typing.Dict[str, typing.Any] = {
             "type": type,
         }
@@ -315,9 +335,9 @@ class AssemblyManifest:
         self,
         *,
         version: builtins.str,
-        artifacts: typing.Optional[typing.Mapping[builtins.str, ArtifactManifest]] = None,
-        missing: typing.Optional[typing.Sequence["MissingContext"]] = None,
-        runtime: typing.Optional["RuntimeInfo"] = None,
+        artifacts: typing.Optional[typing.Mapping[builtins.str, typing.Union[ArtifactManifest, typing.Dict[str, typing.Any]]]] = None,
+        missing: typing.Optional[typing.Sequence[typing.Union["MissingContext", typing.Dict[str, typing.Any]]]] = None,
+        runtime: typing.Optional[typing.Union["RuntimeInfo", typing.Dict[str, typing.Any]]] = None,
     ) -> None:
         '''A manifest which describes the cloud assembly.
 
@@ -328,6 +348,12 @@ class AssemblyManifest:
         '''
         if isinstance(runtime, dict):
             runtime = RuntimeInfo(**runtime)
+        if __debug__:
+            type_hints = typing.get_type_hints(AssemblyManifest.__init__)
+            check_type(argname="argument version", value=version, expected_type=type_hints["version"])
+            check_type(argname="argument artifacts", value=artifacts, expected_type=type_hints["artifacts"])
+            check_type(argname="argument missing", value=missing, expected_type=type_hints["missing"])
+            check_type(argname="argument runtime", value=runtime, expected_type=type_hints["runtime"])
         self._values: typing.Dict[str, typing.Any] = {
             "version": version,
         }
@@ -401,6 +427,10 @@ class AvailabilityZonesContextQuery:
         :param account: Query account.
         :param region: Query region.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AvailabilityZonesContextQuery.__init__)
+            check_type(argname="argument account", value=account, expected_type=type_hints["account"])
+            check_type(argname="argument region", value=region, expected_type=type_hints["region"])
         self._values: typing.Dict[str, typing.Any] = {
             "account": account,
             "region": region,
@@ -473,6 +503,11 @@ class EndpointServiceAvailabilityZonesContextQuery:
         :param region: Query region.
         :param service_name: Query service name.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EndpointServiceAvailabilityZonesContextQuery.__init__)
+            check_type(argname="argument account", value=account, expected_type=type_hints["account"])
+            check_type(argname="argument region", value=region, expected_type=type_hints["region"])
+            check_type(argname="argument service_name", value=service_name, expected_type=type_hints["service_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "account": account,
             "region": region,
@@ -541,6 +576,13 @@ class HostedZoneContextQuery:
         :param private_zone: True if the zone you want to find is a private hosted zone. Default: false
         :param vpc_id: The VPC ID to that the private zone must be associated with. If you provide VPC ID and privateZone is false, this will return no results and raise an error. Default: - Required if privateZone=true
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(HostedZoneContextQuery.__init__)
+            check_type(argname="argument account", value=account, expected_type=type_hints["account"])
+            check_type(argname="argument domain_name", value=domain_name, expected_type=type_hints["domain_name"])
+            check_type(argname="argument region", value=region, expected_type=type_hints["region"])
+            check_type(argname="argument private_zone", value=private_zone, expected_type=type_hints["private_zone"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "account": account,
             "domain_name": domain_name,
@@ -622,6 +664,9 @@ class Manifest(
 
         :stability: deprecated
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Manifest.load)
+            check_type(argname="argument file_path", value=file_path, expected_type=type_hints["file_path"])
         return typing.cast(AssemblyManifest, jsii.sinvoke(cls, "load", [file_path]))
 
     @jsii.member(jsii_name="loadAssemblyManifest") # type: ignore[misc]
@@ -631,11 +676,18 @@ class Manifest(
 
         :param file_path: - path to the manifest file.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Manifest.load_assembly_manifest)
+            check_type(argname="argument file_path", value=file_path, expected_type=type_hints["file_path"])
         return typing.cast(AssemblyManifest, jsii.sinvoke(cls, "loadAssemblyManifest", [file_path]))
 
     @jsii.member(jsii_name="save") # type: ignore[misc]
     @builtins.classmethod
-    def save(cls, manifest: AssemblyManifest, file_path: builtins.str) -> None:
+    def save(
+        cls,
+        manifest: typing.Union[AssemblyManifest, typing.Dict[str, typing.Any]],
+        file_path: builtins.str,
+    ) -> None:
         '''(deprecated) Deprecated.
 
         :param manifest: -
@@ -645,13 +697,17 @@ class Manifest(
 
         :stability: deprecated
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Manifest.save)
+            check_type(argname="argument manifest", value=manifest, expected_type=type_hints["manifest"])
+            check_type(argname="argument file_path", value=file_path, expected_type=type_hints["file_path"])
         return typing.cast(None, jsii.sinvoke(cls, "save", [manifest, file_path]))
 
     @jsii.member(jsii_name="saveAssemblyManifest") # type: ignore[misc]
     @builtins.classmethod
     def save_assembly_manifest(
         cls,
-        manifest: AssemblyManifest,
+        manifest: typing.Union[AssemblyManifest, typing.Dict[str, typing.Any]],
         file_path: builtins.str,
     ) -> None:
         '''Validates and saves the cloud assembly manifest to file.
@@ -659,6 +715,10 @@ class Manifest(
         :param manifest: - manifest.
         :param file_path: - output file path.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Manifest.save_assembly_manifest)
+            check_type(argname="argument manifest", value=manifest, expected_type=type_hints["manifest"])
+            check_type(argname="argument file_path", value=file_path, expected_type=type_hints["file_path"])
         return typing.cast(None, jsii.sinvoke(cls, "saveAssemblyManifest", [manifest, file_path]))
 
     @jsii.member(jsii_name="version") # type: ignore[misc]
@@ -678,7 +738,7 @@ class MetadataEntry:
         self,
         *,
         type: builtins.str,
-        data: typing.Optional[typing.Union[builtins.str, typing.Sequence["Tag"]]] = None,
+        data: typing.Optional[typing.Union[builtins.str, typing.Sequence[typing.Union["Tag", typing.Dict[str, typing.Any]]]]] = None,
         trace: typing.Optional[typing.Sequence[builtins.str]] = None,
     ) -> None:
         '''A metadata entry in a cloud assembly artifact.
@@ -687,6 +747,11 @@ class MetadataEntry:
         :param data: The data. Default: - no data.
         :param trace: A stack trace for when the entry was created. Default: - no trace.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MetadataEntry.__init__)
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument data", value=data, expected_type=type_hints["data"])
+            check_type(argname="argument trace", value=trace, expected_type=type_hints["trace"])
         self._values: typing.Dict[str, typing.Any] = {
             "type": type,
         }
@@ -742,7 +807,7 @@ class MissingContext:
         self,
         *,
         key: builtins.str,
-        props: typing.Union[AmiContextQuery, AvailabilityZonesContextQuery, HostedZoneContextQuery, "SSMParameterContextQuery", "VpcContextQuery", EndpointServiceAvailabilityZonesContextQuery],
+        props: typing.Union[typing.Union[AmiContextQuery, typing.Dict[str, typing.Any]], typing.Union[AvailabilityZonesContextQuery, typing.Dict[str, typing.Any]], typing.Union[HostedZoneContextQuery, typing.Dict[str, typing.Any]], typing.Union["SSMParameterContextQuery", typing.Dict[str, typing.Any]], typing.Union["VpcContextQuery", typing.Dict[str, typing.Any]], typing.Union[EndpointServiceAvailabilityZonesContextQuery, typing.Dict[str, typing.Any]]],
         provider: ContextProvider,
     ) -> None:
         '''Represents a missing piece of context.
@@ -751,6 +816,11 @@ class MissingContext:
         :param props: A set of provider-specific options.
         :param provider: The provider from which we expect this context key to be obtained.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(MissingContext.__init__)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument provider", value=provider, expected_type=type_hints["provider"])
         self._values: typing.Dict[str, typing.Any] = {
             "key": key,
             "props": props,
@@ -809,6 +879,10 @@ class NestedCloudAssemblyProperties:
         :param directory_name: Relative path to the nested cloud assembly.
         :param display_name: Display name for the cloud assembly. Default: - The artifact ID
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NestedCloudAssemblyProperties.__init__)
+            check_type(argname="argument directory_name", value=directory_name, expected_type=type_hints["directory_name"])
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "directory_name": directory_name,
         }
@@ -858,6 +932,9 @@ class RuntimeInfo:
 
         :param libraries: The list of libraries loaded in the application, associated with their versions.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RuntimeInfo.__init__)
+            check_type(argname="argument libraries", value=libraries, expected_type=type_hints["libraries"])
         self._values: typing.Dict[str, typing.Any] = {
             "libraries": libraries,
         }
@@ -904,6 +981,11 @@ class SSMParameterContextQuery:
         :param parameter_name: Parameter name to query.
         :param region: Query region.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SSMParameterContextQuery.__init__)
+            check_type(argname="argument account", value=account, expected_type=type_hints["account"])
+            check_type(argname="argument parameter_name", value=parameter_name, expected_type=type_hints["parameter_name"])
+            check_type(argname="argument region", value=region, expected_type=type_hints["region"])
         self._values: typing.Dict[str, typing.Any] = {
             "account": account,
             "parameter_name": parameter_name,
@@ -955,6 +1037,10 @@ class Tag:
         :param key: Tag key.
         :param value: Tag value.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Tag.__init__)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         self._values: typing.Dict[str, typing.Any] = {
             "key": key,
             "value": value,
@@ -997,6 +1083,9 @@ class TreeArtifactProperties:
 
         :param file: Filename of the tree artifact.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TreeArtifactProperties.__init__)
+            check_type(argname="argument file", value=file, expected_type=type_hints["file"])
         self._values: typing.Dict[str, typing.Any] = {
             "file": file,
         }
@@ -1049,6 +1138,13 @@ class VpcContextQuery:
         :param return_asymmetric_subnets: Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups. Default: false
         :param subnet_group_name_tag: Optional tag for subnet group name. If not provided, we'll look at the ros-cdk:subnet-name tag. If the subnet does not have the specified tag, we'll use its type as the name. Default: 'ros-cdk:subnet-name'
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(VpcContextQuery.__init__)
+            check_type(argname="argument account", value=account, expected_type=type_hints["account"])
+            check_type(argname="argument filter", value=filter, expected_type=type_hints["filter"])
+            check_type(argname="argument region", value=region, expected_type=type_hints["region"])
+            check_type(argname="argument return_asymmetric_subnets", value=return_asymmetric_subnets, expected_type=type_hints["return_asymmetric_subnets"])
+            check_type(argname="argument subnet_group_name_tag", value=subnet_group_name_tag, expected_type=type_hints["subnet_group_name_tag"])
         self._values: typing.Dict[str, typing.Any] = {
             "account": account,
             "filter": filter,

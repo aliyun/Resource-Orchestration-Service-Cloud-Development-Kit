@@ -1,4 +1,15 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
+## [ros-cdk-cli 1.0.31] (2022-08-05)
+
+### Bug Fixes
+
+-  Fix ros-cdk-cli --skip-if-no-changes unable to take effect issue.
+
+## [ros-cdk-cli 1.0.30] (2022-07-20)
+
+### Features
+
+-  ros-cdk-cli adding ros-cdk deploy --detail-log When stack deploy error, set this params to show more error information
 
 ## [ros-cdk-cli 1.0.29] (2022-07-13)
 

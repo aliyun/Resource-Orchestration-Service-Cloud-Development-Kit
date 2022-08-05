@@ -553,7 +553,7 @@ export class CdkToolkit {
                                 print('%s: deploying...', colors.bold(stackName));
                                 await this.syncUpdateStack(client, content, requestOptions, outputs, skipIfNoChanges, stackName, localStackInfo, stackUpdateTime, detailLog)
                             }
-                            await this.rosUpdateStack(client, content, requestOptions, stackName, localStackInfo, stackUpdateTime, detailLog)
+                            await this.rosUpdateStack(client, content, requestOptions, stackName, localStackInfo, stackUpdateTime, detailLog, skipIfNoChanges)
                             exit(0)
                         } catch (e) {
                             if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
@@ -1300,6 +1300,11 @@ export class CdkToolkit {
                 if (detailLog) {
                     error('sync update stack error info is %s', e);
                 }
+                if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
+                    await this.updateStackInfo(content['StackName'], content['StackId']);
+                    success('The stack is completely the same, there is no need to update.')
+                    exit(0)
+                }
                 updateErrorRequestId = e.data.RequestId
                 if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
                     networkErrorException = true;
@@ -1324,6 +1329,11 @@ export class CdkToolkit {
                     } catch (e) {
                         if (detailLog) {
                             error('retry sync update stack error info is %s', e);
+                        }
+                        if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
+                            await this.updateStackInfo(content['StackName'], content['StackId']);
+                            success('The stack is completely the same, there is no need to update.')
+                            exit(0)
                         }
                         updateErrorRequestId = e.data.RequestId
                         if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
@@ -1434,6 +1444,11 @@ export class CdkToolkit {
                     if (detailLog) {
                         error('retry sync update stack error info is %s', e);
                     }
+                    if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
+                        await this.updateStackInfo(content['StackName'], content['StackId']);
+                        success('The stack is completely the same, there is no need to update.')
+                        exit(0)
+                    }
                     if (e.code == 'Throttling.User' || e.code == 'Throttling' || e.code == 'Throttling.API') {
                         await sleep(30000)
                     } else {
@@ -1447,6 +1462,11 @@ export class CdkToolkit {
         } catch (e) {
             if (detailLog) {
                 error('sync update stack error info is %s', e);
+            }
+            if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
+                await this.updateStackInfo(content['StackName'], content['StackId']);
+                success('The stack is completely the same, there is no need to update.')
+                exit(0)
             }
             if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
                 await this.updateStackInfo(content['StackName'], content['StackId']);
@@ -1514,7 +1534,7 @@ export class CdkToolkit {
         }
     }
 
-    private async rosUpdateStack(client: any, content: any, requestOptions: any, stackName: any, localStackInfo: any, stackUpdateTime: any, detailLog: any) {
+    private async rosUpdateStack(client: any, content: any, requestOptions: any, stackName: any, localStackInfo: any, stackUpdateTime: any, detailLog: any, skipIfNoChanges: any) {
         let updateResultRequestId: any;
         let updateErrorRequestId: any;
         let networkErrorException: any;
@@ -1525,6 +1545,11 @@ export class CdkToolkit {
         } catch (e) {
             if (detailLog) {
                 error('update stack error info is %s', e);
+            }
+            if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
+                await this.updateStackInfo(content['StackName'], content['StackId']);
+                success('The stack is completely the same, there is no need to update.')
+                exit(0)
             }
             updateErrorRequestId = e.data.RequestId
             if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
@@ -1549,6 +1574,11 @@ export class CdkToolkit {
                 } catch (e) {
                     if (detailLog) {
                         error('retry update stack error info is %s', e);
+                    }
+                    if (e.code == 'NotSupported' && e.message.startsWith('Update the completely same stack') && skipIfNoChanges) {
+                        await this.updateStackInfo(content['StackName'], content['StackId']);
+                        success('The stack is completely the same, there is no need to update.')
+                        exit(0)
                     }
                     updateErrorRequestId = e.data.RequestId
                     if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
@@ -1622,7 +1652,7 @@ export class CdkToolkit {
             if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
                 networkErrorException = true;
             } else if (createErrorRequestId) {
-                error('fail to sync update stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, createErrorRequestId, e.message)
+                error('fail to create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, createErrorRequestId, e.message)
                 exit(1)
             }
         }
@@ -1646,7 +1676,7 @@ export class CdkToolkit {
                     if (e.code == 'ServiceUnavailable' || e.code == 'LastTokenProcessing') {
                         networkErrorException = true;
                     } else if (createErrorRequestId) {
-                        error('fail to sync update stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, createErrorRequestId, e.message)
+                        error('fail to create stack: ErrorCode: %s\nRequestedId: %s\nErrorMessage:%s', e.code, createErrorRequestId, e.message)
                         exit(1)
                     }
                 }

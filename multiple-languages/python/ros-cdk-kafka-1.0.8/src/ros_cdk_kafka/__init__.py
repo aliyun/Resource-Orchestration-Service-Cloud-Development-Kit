@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Instance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "InstanceProps",
+        props: typing.Union["InstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::KAFKA::Instance``.
@@ -47,6 +49,12 @@ class Instance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Instance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -126,14 +134,14 @@ class InstanceProps:
         disk_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         topic_quota: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        deploy_option: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.DeployOptionProperty"]] = None,
+        deploy_option: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosInstance.DeployOptionProperty", typing.Dict[str, typing.Any]]]] = None,
         eip_max: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         io_max: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         io_max_spec: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         open_connector: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         pay_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         spec_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosInstance.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosInstance.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::KAFKA::Instance``.
 
@@ -151,6 +159,21 @@ class InstanceProps:
         :param spec_type: Property specType: The edition of the Message Queue for Apache Kafka instance. Valid values: professional: Professional Edition normal: Normal version
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(InstanceProps.__init__)
+            check_type(argname="argument deploy_type", value=deploy_type, expected_type=type_hints["deploy_type"])
+            check_type(argname="argument disk_size", value=disk_size, expected_type=type_hints["disk_size"])
+            check_type(argname="argument disk_type", value=disk_type, expected_type=type_hints["disk_type"])
+            check_type(argname="argument topic_quota", value=topic_quota, expected_type=type_hints["topic_quota"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument deploy_option", value=deploy_option, expected_type=type_hints["deploy_option"])
+            check_type(argname="argument eip_max", value=eip_max, expected_type=type_hints["eip_max"])
+            check_type(argname="argument io_max", value=io_max, expected_type=type_hints["io_max"])
+            check_type(argname="argument io_max_spec", value=io_max_spec, expected_type=type_hints["io_max_spec"])
+            check_type(argname="argument open_connector", value=open_connector, expected_type=type_hints["open_connector"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument spec_type", value=spec_type, expected_type=type_hints["spec_type"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "deploy_type": deploy_type,
             "disk_size": disk_size,
@@ -334,7 +357,7 @@ class RosInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosInstanceProps",
+        props: typing.Union["RosInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::KAFKA::Instance``.
@@ -344,6 +367,12 @@ class RosInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -354,6 +383,9 @@ class RosInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -448,6 +480,9 @@ class RosInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "deploy_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deployType", value)
 
     @builtins.property # type: ignore[misc]
@@ -463,6 +498,9 @@ class RosInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "disk_size").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "diskSize", value)
 
     @builtins.property # type: ignore[misc]
@@ -482,6 +520,9 @@ class RosInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "disk_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "diskType", value)
 
     @builtins.property # type: ignore[misc]
@@ -491,6 +532,9 @@ class RosInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -512,6 +556,9 @@ class RosInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "topic_quota").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topicQuota", value)
 
     @builtins.property # type: ignore[misc]
@@ -529,6 +576,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "deletion_force").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionForce", value)
 
     @builtins.property # type: ignore[misc]
@@ -546,6 +596,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, "RosInstance.DeployOptionProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "deploy_option").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deployOption", value)
 
     @builtins.property # type: ignore[misc]
@@ -566,6 +619,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "eip_max").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "eipMax", value)
 
     @builtins.property # type: ignore[misc]
@@ -586,6 +642,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "io_max").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ioMax", value)
 
     @builtins.property # type: ignore[misc]
@@ -608,6 +667,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "io_max_spec").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "ioMaxSpec", value)
 
     @builtins.property # type: ignore[misc]
@@ -625,6 +687,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "open_connector").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "openConnector", value)
 
     @builtins.property # type: ignore[misc]
@@ -642,6 +707,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -663,6 +731,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "spec_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "specType", value)
 
     @builtins.property # type: ignore[misc]
@@ -678,6 +749,9 @@ class RosInstance(
         self,
         value: typing.Optional[typing.List["RosInstance.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -729,6 +803,20 @@ class RosInstance(
             :param vpc_id: 
             :param zone_id: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.DeployOptionProperty.__init__)
+                check_type(argname="argument deploy_module", value=deploy_module, expected_type=type_hints["deploy_module"])
+                check_type(argname="argument v_switch_id", value=v_switch_id, expected_type=type_hints["v_switch_id"])
+                check_type(argname="argument config", value=config, expected_type=type_hints["config"])
+                check_type(argname="argument is_eip_inner", value=is_eip_inner, expected_type=type_hints["is_eip_inner"])
+                check_type(argname="argument is_set_user_and_password", value=is_set_user_and_password, expected_type=type_hints["is_set_user_and_password"])
+                check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+                check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+                check_type(argname="argument security_group", value=security_group, expected_type=type_hints["security_group"])
+                check_type(argname="argument service_version", value=service_version, expected_type=type_hints["service_version"])
+                check_type(argname="argument username", value=username, expected_type=type_hints["username"])
+                check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+                check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
             self._values: typing.Dict[str, typing.Any] = {
                 "deploy_module": deploy_module,
                 "v_switch_id": v_switch_id,
@@ -948,6 +1036,10 @@ class RosInstance(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosInstance.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -1013,14 +1105,14 @@ class RosInstanceProps:
         disk_type: typing.Union[builtins.str, ros_cdk_core.IResolvable],
         topic_quota: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
         deletion_force: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
-        deploy_option: typing.Optional[typing.Union[ros_cdk_core.IResolvable, RosInstance.DeployOptionProperty]] = None,
+        deploy_option: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosInstance.DeployOptionProperty, typing.Dict[str, typing.Any]]]] = None,
         eip_max: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         io_max: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         io_max_spec: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         open_connector: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]] = None,
         pay_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         spec_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosInstance.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosInstance.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::KAFKA::Instance``.
 
@@ -1038,6 +1130,21 @@ class RosInstanceProps:
         :param spec_type: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInstanceProps.__init__)
+            check_type(argname="argument deploy_type", value=deploy_type, expected_type=type_hints["deploy_type"])
+            check_type(argname="argument disk_size", value=disk_size, expected_type=type_hints["disk_size"])
+            check_type(argname="argument disk_type", value=disk_type, expected_type=type_hints["disk_type"])
+            check_type(argname="argument topic_quota", value=topic_quota, expected_type=type_hints["topic_quota"])
+            check_type(argname="argument deletion_force", value=deletion_force, expected_type=type_hints["deletion_force"])
+            check_type(argname="argument deploy_option", value=deploy_option, expected_type=type_hints["deploy_option"])
+            check_type(argname="argument eip_max", value=eip_max, expected_type=type_hints["eip_max"])
+            check_type(argname="argument io_max", value=io_max, expected_type=type_hints["io_max"])
+            check_type(argname="argument io_max_spec", value=io_max_spec, expected_type=type_hints["io_max_spec"])
+            check_type(argname="argument open_connector", value=open_connector, expected_type=type_hints["open_connector"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument spec_type", value=spec_type, expected_type=type_hints["spec_type"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "deploy_type": deploy_type,
             "disk_size": disk_size,
@@ -1239,7 +1346,7 @@ class RosTopic(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTopicProps",
+        props: typing.Union["RosTopicProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::KAFKA::Topic``.
@@ -1249,6 +1356,12 @@ class RosTopic(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopic.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -1259,6 +1372,9 @@ class RosTopic(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopic._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1298,6 +1414,9 @@ class RosTopic(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1316,6 +1435,9 @@ class RosTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1336,6 +1458,9 @@ class RosTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "remark").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "remark", value)
 
     @builtins.property # type: ignore[misc]
@@ -1357,6 +1482,9 @@ class RosTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "topic").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topic", value)
 
     @builtins.property # type: ignore[misc]
@@ -1378,6 +1506,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "compact_topic").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "compactTopic", value)
 
     @builtins.property # type: ignore[misc]
@@ -1400,6 +1531,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Mapping[builtins.str, typing.Any]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "config").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "config", value)
 
     @builtins.property # type: ignore[misc]
@@ -1421,6 +1555,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "local_topic").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "localTopic", value)
 
     @builtins.property # type: ignore[misc]
@@ -1443,6 +1580,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "min_insync_replicas").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "minInsyncReplicas", value)
 
     @builtins.property # type: ignore[misc]
@@ -1465,6 +1605,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "partition_num").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "partitionNum", value)
 
     @builtins.property # type: ignore[misc]
@@ -1487,6 +1630,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "replication_factor").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "replicationFactor", value)
 
     @builtins.property # type: ignore[misc]
@@ -1502,6 +1648,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.List["RosTopic.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @jsii.data_type(
@@ -1520,6 +1669,10 @@ class RosTopic(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosTopic.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -1586,7 +1739,7 @@ class RosTopicProps:
         min_insync_replicas: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         partition_num: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         replication_factor: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosTopic.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosTopic.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::KAFKA::Topic``.
 
@@ -1601,6 +1754,18 @@ class RosTopicProps:
         :param replication_factor: 
         :param tags: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopicProps.__init__)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument remark", value=remark, expected_type=type_hints["remark"])
+            check_type(argname="argument topic", value=topic, expected_type=type_hints["topic"])
+            check_type(argname="argument compact_topic", value=compact_topic, expected_type=type_hints["compact_topic"])
+            check_type(argname="argument config", value=config, expected_type=type_hints["config"])
+            check_type(argname="argument local_topic", value=local_topic, expected_type=type_hints["local_topic"])
+            check_type(argname="argument min_insync_replicas", value=min_insync_replicas, expected_type=type_hints["min_insync_replicas"])
+            check_type(argname="argument partition_num", value=partition_num, expected_type=type_hints["partition_num"])
+            check_type(argname="argument replication_factor", value=replication_factor, expected_type=type_hints["replication_factor"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_id": instance_id,
             "remark": remark,
@@ -1781,7 +1946,7 @@ class Topic(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TopicProps",
+        props: typing.Union["TopicProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::KAFKA::Topic``.
@@ -1795,6 +1960,12 @@ class Topic(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Topic.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1842,7 +2013,7 @@ class TopicProps:
         min_insync_replicas: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         partition_num: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
         replication_factor: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosTopic.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosTopic.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
     ) -> None:
         '''Properties for defining a ``ALIYUN::KAFKA::Topic``.
 
@@ -1857,6 +2028,18 @@ class TopicProps:
         :param replication_factor: Property replicationFactor: The number of copies of the topic. This parameter can only be specified if the LocalTopic value is true. The number of copies is limited to 1~3. Note When the number of replicas is 1, there is a risk of data loss. Please set it carefully.
         :param tags: Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TopicProps.__init__)
+            check_type(argname="argument instance_id", value=instance_id, expected_type=type_hints["instance_id"])
+            check_type(argname="argument remark", value=remark, expected_type=type_hints["remark"])
+            check_type(argname="argument topic", value=topic, expected_type=type_hints["topic"])
+            check_type(argname="argument compact_topic", value=compact_topic, expected_type=type_hints["compact_topic"])
+            check_type(argname="argument config", value=config, expected_type=type_hints["config"])
+            check_type(argname="argument local_topic", value=local_topic, expected_type=type_hints["local_topic"])
+            check_type(argname="argument min_insync_replicas", value=min_insync_replicas, expected_type=type_hints["min_insync_replicas"])
+            check_type(argname="argument partition_num", value=partition_num, expected_type=type_hints["partition_num"])
+            check_type(argname="argument replication_factor", value=replication_factor, expected_type=type_hints["replication_factor"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
         self._values: typing.Dict[str, typing.Any] = {
             "instance_id": instance_id,
             "remark": remark,

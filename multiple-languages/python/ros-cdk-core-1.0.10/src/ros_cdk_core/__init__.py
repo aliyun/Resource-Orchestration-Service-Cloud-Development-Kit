@@ -21,6 +21,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import constructs
@@ -59,6 +61,14 @@ class AppProps:
         :param stack_traces: Include construct creation stack trace. Default: true stack traces are included unless related context is set.
         :param tree_metadata: Include construct tree metadata as part of the Cloud Assembly. Default: true
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AppProps.__init__)
+            check_type(argname="argument auto_synth", value=auto_synth, expected_type=type_hints["auto_synth"])
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
+            check_type(argname="argument outdir", value=outdir, expected_type=type_hints["outdir"])
+            check_type(argname="argument runtime_info", value=runtime_info, expected_type=type_hints["runtime_info"])
+            check_type(argname="argument stack_traces", value=stack_traces, expected_type=type_hints["stack_traces"])
+            check_type(argname="argument tree_metadata", value=tree_metadata, expected_type=type_hints["tree_metadata"])
         self._values: typing.Dict[str, typing.Any] = {}
         if auto_synth is not None:
             self._values["auto_synth"] = auto_synth
@@ -166,6 +176,11 @@ class ConstructNode(
         :param scope: -
         :param id: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.__init__)
+            check_type(argname="argument host", value=host, expected_type=type_hints["host"])
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         jsii.create(self.__class__, self, [host, scope, id])
 
     @jsii.member(jsii_name="prepare") # type: ignore[misc]
@@ -179,6 +194,9 @@ class ConstructNode(
 
         :stability: deprecated
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.prepare)
+            check_type(argname="argument node", value=node, expected_type=type_hints["node"])
         return typing.cast(None, jsii.sinvoke(cls, "prepare", [node]))
 
     @jsii.member(jsii_name="synth") # type: ignore[misc]
@@ -189,7 +207,7 @@ class ConstructNode(
         *,
         outdir: typing.Optional[builtins.str] = None,
         skip_validation: typing.Optional[builtins.bool] = None,
-        runtime_info: typing.Optional[ros_cdk_cxapi.RuntimeInfo] = None,
+        runtime_info: typing.Optional[typing.Union[ros_cdk_cxapi.RuntimeInfo, typing.Dict[str, typing.Any]]] = None,
     ) -> ros_cdk_cxapi.CloudAssembly:
         '''(deprecated) Synthesizes a CloudAssembly from a construct tree.
 
@@ -202,6 +220,9 @@ class ConstructNode(
 
         :stability: deprecated
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.synth)
+            check_type(argname="argument node", value=node, expected_type=type_hints["node"])
         options = SynthesisOptions(
             outdir=outdir, skip_validation=skip_validation, runtime_info=runtime_info
         )
@@ -217,6 +238,9 @@ class ConstructNode(
 
         :param node: The root node.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.validate)
+            check_type(argname="argument node", value=node, expected_type=type_hints["node"])
         return typing.cast(typing.List["ValidationError"], jsii.sinvoke(cls, "validate", [node]))
 
     @jsii.member(jsii_name="addDependency")
@@ -228,6 +252,9 @@ class ConstructNode(
 
         :param dependencies: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.add_dependency)
+            check_type(argname="argument dependencies", value=dependencies, expected_type=typing.Tuple[type_hints["dependencies"], ...])
         return typing.cast(None, jsii.invoke(self, "addDependency", [*dependencies]))
 
     @jsii.member(jsii_name="addError")
@@ -238,6 +265,9 @@ class ConstructNode(
 
         :param message: The error message.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.add_error)
+            check_type(argname="argument message", value=message, expected_type=type_hints["message"])
         return typing.cast(None, jsii.invoke(self, "addError", [message]))
 
     @jsii.member(jsii_name="addInfo")
@@ -248,6 +278,9 @@ class ConstructNode(
 
         :param message: The info message.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.add_info)
+            check_type(argname="argument message", value=message, expected_type=type_hints["message"])
         return typing.cast(None, jsii.invoke(self, "addInfo", [message]))
 
     @jsii.member(jsii_name="addMetadata")
@@ -267,6 +300,11 @@ class ConstructNode(
         :param data: the value of the metadata (can be a Token). If null/undefined, metadata will not be added.
         :param from_function: a function under which to restrict the metadata entry's stack trace (defaults to this.addMetadata).
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.add_metadata)
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument data", value=data, expected_type=type_hints["data"])
+            check_type(argname="argument from_function", value=from_function, expected_type=type_hints["from_function"])
         return typing.cast(None, jsii.invoke(self, "addMetadata", [type, data, from_function]))
 
     @jsii.member(jsii_name="addWarning")
@@ -278,6 +316,9 @@ class ConstructNode(
 
         :param message: The warning message.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.add_warning)
+            check_type(argname="argument message", value=message, expected_type=type_hints["message"])
         return typing.cast(None, jsii.invoke(self, "addWarning", [message]))
 
     @jsii.member(jsii_name="findAll")
@@ -289,6 +330,9 @@ class ConstructNode(
 
         :param order: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.find_all)
+            check_type(argname="argument order", value=order, expected_type=type_hints["order"])
         return typing.cast(typing.List["IConstruct"], jsii.invoke(self, "findAll", [order]))
 
     @jsii.member(jsii_name="findChild")
@@ -301,6 +345,9 @@ class ConstructNode(
 
         :return: Child with the given id.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.find_child)
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         return typing.cast("IConstruct", jsii.invoke(self, "findChild", [id]))
 
     @jsii.member(jsii_name="setContext")
@@ -313,6 +360,10 @@ class ConstructNode(
         :param key: The context key.
         :param value: The context value.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.set_context)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "setContext", [key, value]))
 
     @jsii.member(jsii_name="tryFindChild")
@@ -323,6 +374,9 @@ class ConstructNode(
 
         :return: the child if found, or undefined
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.try_find_child)
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         return typing.cast(typing.Optional["IConstruct"], jsii.invoke(self, "tryFindChild", [id]))
 
     @jsii.member(jsii_name="tryGetContext")
@@ -335,6 +389,9 @@ class ConstructNode(
 
         :return: The context value or ``undefined`` if there is no context value for thie key.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.try_get_context)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
         return typing.cast(typing.Any, jsii.invoke(self, "tryGetContext", [key]))
 
     @jsii.member(jsii_name="tryRemoveChild")
@@ -347,6 +404,9 @@ class ConstructNode(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConstructNode.try_remove_child)
+            check_type(argname="argument child_name", value=child_name, expected_type=type_hints["child_name"])
         return typing.cast(builtins.bool, jsii.invoke(self, "tryRemoveChild", [child_name]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -463,6 +523,9 @@ class ConstructNode(
 
     @default_child.setter
     def default_child(self, value: typing.Optional["IConstruct"]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(ConstructNode, "default_child").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "defaultChild", value)
 
 
@@ -487,6 +550,9 @@ class DefaultStackSynthesizerProps:
 
         :param qualifier: Qualifier to disambiguate multiple environments in the same account. You can use this and leave the other naming properties empty if you have deployed the bootstrap environment with standard names but only differnet qualifiers.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DefaultStackSynthesizerProps.__init__)
+            check_type(argname="argument qualifier", value=qualifier, expected_type=type_hints["qualifier"])
         self._values: typing.Dict[str, typing.Any] = {}
         if qualifier is not None:
             self._values["qualifier"] = qualifier
@@ -550,6 +616,9 @@ class DependableTrait(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DependableTrait.get)
+            check_type(argname="argument instance", value=instance, expected_type=type_hints["instance"])
         return typing.cast("DependableTrait", jsii.sinvoke(cls, "get", [instance]))
 
     @jsii.member(jsii_name="implement") # type: ignore[misc]
@@ -564,6 +633,10 @@ class DependableTrait(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DependableTrait.implement)
+            check_type(argname="argument instance", value=instance, expected_type=type_hints["instance"])
+            check_type(argname="argument trait", value=trait, expected_type=type_hints["trait"])
         return typing.cast(None, jsii.sinvoke(cls, "implement", [instance, trait]))
 
     @builtins.property # type: ignore[misc]
@@ -609,6 +682,10 @@ class Dependency:
         :param source: Source the dependency.
         :param target: Target of the dependency.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Dependency.__init__)
+            check_type(argname="argument source", value=source, expected_type=type_hints["source"])
+            check_type(argname="argument target", value=target, expected_type=type_hints["target"])
         self._values: typing.Dict[str, typing.Any] = {
             "source": source,
             "target": target,
@@ -651,6 +728,9 @@ class EncodingOptions:
 
         :param display_hint: A hint for the Token's purpose when stringifying it.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(EncodingOptions.__init__)
+            check_type(argname="argument display_hint", value=display_hint, expected_type=type_hints["display_hint"])
         self._values: typing.Dict[str, typing.Any] = {}
         if display_hint is not None:
             self._values["display_hint"] = display_hint
@@ -688,6 +768,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         '''
         :param values: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.add)
+            check_type(argname="argument values", value=values, expected_type=type_hints["values"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "add", [values]))
 
     @jsii.member(jsii_name="avg") # type: ignore[misc]
@@ -701,6 +784,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         :param ndigits: -
         :param values: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.avg)
+            check_type(argname="argument ndigits", value=ndigits, expected_type=type_hints["ndigits"])
+            check_type(argname="argument values", value=values, expected_type=type_hints["values"])
         return typing.cast(jsii.Number, jsii.sinvoke(cls, "avg", [ndigits, values]))
 
     @jsii.member(jsii_name="base64Decode") # type: ignore[misc]
@@ -709,6 +796,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         '''
         :param data: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.base64_decode)
+            check_type(argname="argument data", value=data, expected_type=type_hints["data"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "base64Decode", [data]))
 
     @jsii.member(jsii_name="base64Encode") # type: ignore[misc]
@@ -720,6 +810,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: a token represented as a string
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.base64_encode)
+            check_type(argname="argument data", value=data, expected_type=type_hints["data"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "base64Encode", [data]))
 
     @jsii.member(jsii_name="calculate") # type: ignore[misc]
@@ -735,6 +828,11 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         :param ndigits: -
         :param para: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.calculate)
+            check_type(argname="argument values", value=values, expected_type=type_hints["values"])
+            check_type(argname="argument ndigits", value=ndigits, expected_type=type_hints["ndigits"])
+            check_type(argname="argument para", value=para, expected_type=type_hints["para"])
         return typing.cast(jsii.Number, jsii.sinvoke(cls, "calculate", [values, ndigits, para]))
 
     @jsii.member(jsii_name="conditionAnd") # type: ignore[misc]
@@ -753,6 +851,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: an FnCondition token
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.condition_and)
+            check_type(argname="argument conditions", value=conditions, expected_type=typing.Tuple[type_hints["conditions"], ...])
         return typing.cast("IRosConditionExpression", jsii.sinvoke(cls, "conditionAnd", [*conditions]))
 
     @jsii.member(jsii_name="conditionEquals") # type: ignore[misc]
@@ -772,6 +873,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: an FnCondition token
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.condition_equals)
+            check_type(argname="argument lhs", value=lhs, expected_type=type_hints["lhs"])
+            check_type(argname="argument rhs", value=rhs, expected_type=type_hints["rhs"])
         return typing.cast("IRosConditionExpression", jsii.sinvoke(cls, "conditionEquals", [lhs, rhs]))
 
     @jsii.member(jsii_name="conditionIf") # type: ignore[misc]
@@ -790,6 +895,11 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: an FnCondition token
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.condition_if)
+            check_type(argname="argument condition_id", value=condition_id, expected_type=type_hints["condition_id"])
+            check_type(argname="argument value_if_true", value=value_if_true, expected_type=type_hints["value_if_true"])
+            check_type(argname="argument value_if_false", value=value_if_false, expected_type=type_hints["value_if_false"])
         return typing.cast(typing.Any, jsii.sinvoke(cls, "conditionIf", [condition_id, value_if_true, value_if_false]))
 
     @jsii.member(jsii_name="conditionNot") # type: ignore[misc]
@@ -806,6 +916,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: an FnCondition token
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.condition_not)
+            check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
         return typing.cast("IRosConditionExpression", jsii.sinvoke(cls, "conditionNot", [condition]))
 
     @jsii.member(jsii_name="conditionOr") # type: ignore[misc]
@@ -824,6 +937,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: an FnCondition token
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.condition_or)
+            check_type(argname="argument conditions", value=conditions, expected_type=typing.Tuple[type_hints["conditions"], ...])
         return typing.cast("IRosConditionExpression", jsii.sinvoke(cls, "conditionOr", [*conditions]))
 
     @jsii.member(jsii_name="findInMap") # type: ignore[misc]
@@ -842,6 +958,11 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: a token represented as a string
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.find_in_map)
+            check_type(argname="argument map_name", value=map_name, expected_type=type_hints["map_name"])
+            check_type(argname="argument top_level_key", value=top_level_key, expected_type=type_hints["top_level_key"])
+            check_type(argname="argument second_level_key", value=second_level_key, expected_type=type_hints["second_level_key"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "findInMap", [map_name, top_level_key, second_level_key]))
 
     @jsii.member(jsii_name="getAtt") # type: ignore[misc]
@@ -858,6 +979,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: an IResolvable object
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.get_att)
+            check_type(argname="argument logical_name_of_resource", value=logical_name_of_resource, expected_type=type_hints["logical_name_of_resource"])
+            check_type(argname="argument attribute_name", value=attribute_name, expected_type=type_hints["attribute_name"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "getAtt", [logical_name_of_resource, attribute_name]))
 
     @jsii.member(jsii_name="getAzs") # type: ignore[misc]
@@ -875,6 +1000,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: a token represented as a string array
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.get_azs)
+            check_type(argname="argument region", value=region, expected_type=type_hints["region"])
         return typing.cast(typing.List[builtins.str], jsii.sinvoke(cls, "getAzs", [region]))
 
     @jsii.member(jsii_name="getJsonValue") # type: ignore[misc]
@@ -884,6 +1012,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         :param key: -
         :param json_data: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.get_json_value)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument json_data", value=json_data, expected_type=type_hints["json_data"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "getJsonValue", [key, json_data]))
 
     @jsii.member(jsii_name="getStackOutput") # type: ignore[misc]
@@ -902,6 +1034,11 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: a token represented as a string
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.get_stack_output)
+            check_type(argname="argument stack_id", value=stack_id, expected_type=type_hints["stack_id"])
+            check_type(argname="argument output_key", value=output_key, expected_type=type_hints["output_key"])
+            check_type(argname="argument stack_region", value=stack_region, expected_type=type_hints["stack_region"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "getStackOutput", [stack_id, output_key, stack_region]))
 
     @jsii.member(jsii_name="join") # type: ignore[misc]
@@ -921,6 +1058,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: a token represented as a string
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.join)
+            check_type(argname="argument delimiter", value=delimiter, expected_type=type_hints["delimiter"])
+            check_type(argname="argument list_of_values", value=list_of_values, expected_type=type_hints["list_of_values"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "join", [delimiter, list_of_values]))
 
     @jsii.member(jsii_name="jq") # type: ignore[misc]
@@ -936,6 +1077,11 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         :param script: -
         :param input_string: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.jq)
+            check_type(argname="argument method", value=method, expected_type=type_hints["method"])
+            check_type(argname="argument script", value=script, expected_type=type_hints["script"])
+            check_type(argname="argument input_string", value=input_string, expected_type=type_hints["input_string"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "jq", [method, script, input_string]))
 
     @jsii.member(jsii_name="listMerge") # type: ignore[misc]
@@ -947,6 +1093,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         '''
         :param value_list: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.list_merge)
+            check_type(argname="argument value_list", value=value_list, expected_type=type_hints["value_list"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "listMerge", [value_list]))
 
     @jsii.member(jsii_name="max") # type: ignore[misc]
@@ -955,6 +1104,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         '''
         :param values: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.max)
+            check_type(argname="argument values", value=values, expected_type=type_hints["values"])
         return typing.cast(jsii.Number, jsii.sinvoke(cls, "max", [values]))
 
     @jsii.member(jsii_name="mergeMapToList") # type: ignore[misc]
@@ -966,6 +1118,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         '''
         :param map_list: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.merge_map_to_list)
+            check_type(argname="argument map_list", value=map_list, expected_type=type_hints["map_list"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "mergeMapToList", [map_list]))
 
     @jsii.member(jsii_name="min") # type: ignore[misc]
@@ -974,6 +1129,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         '''
         :param values: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.min)
+            check_type(argname="argument values", value=values, expected_type=type_hints["values"])
         return typing.cast(jsii.Number, jsii.sinvoke(cls, "min", [values]))
 
     @jsii.member(jsii_name="ref") # type: ignore[misc]
@@ -985,6 +1143,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :param logical_name: The logical name of a parameter/resource for which you want to retrieve its value.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.ref)
+            check_type(argname="argument logical_name", value=logical_name, expected_type=type_hints["logical_name"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "ref", [logical_name]))
 
     @jsii.member(jsii_name="replace") # type: ignore[misc]
@@ -998,6 +1159,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         :param replace_data: -
         :param content: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.replace)
+            check_type(argname="argument replace_data", value=replace_data, expected_type=type_hints["replace_data"])
+            check_type(argname="argument content", value=content, expected_type=type_hints["content"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "replace", [replace_data, content]))
 
     @jsii.member(jsii_name="select") # type: ignore[misc]
@@ -1014,6 +1179,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: a token represented as a string
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.select)
+            check_type(argname="argument index", value=index, expected_type=type_hints["index"])
+            check_type(argname="argument array", value=array, expected_type=type_hints["array"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "select", [index, array]))
 
     @jsii.member(jsii_name="selectMapList") # type: ignore[misc]
@@ -1027,6 +1196,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         :param key: -
         :param map_list: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.select_map_list)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument map_list", value=map_list, expected_type=type_hints["map_list"])
         return typing.cast("IResolvable", jsii.sinvoke(cls, "selectMapList", [key, map_list]))
 
     @jsii.member(jsii_name="split") # type: ignore[misc]
@@ -1047,6 +1220,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: a token represented as a string array
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.split)
+            check_type(argname="argument delimiter", value=delimiter, expected_type=type_hints["delimiter"])
+            check_type(argname="argument source", value=source, expected_type=type_hints["source"])
         return typing.cast(typing.List[builtins.str], jsii.sinvoke(cls, "split", [delimiter, source]))
 
     @jsii.member(jsii_name="str") # type: ignore[misc]
@@ -1055,6 +1232,9 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
         '''
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.str)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "str", [value]))
 
     @jsii.member(jsii_name="sub") # type: ignore[misc]
@@ -1075,6 +1255,10 @@ class Fn(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Fn"):
 
         :return: a token represented as a string
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Fn.sub)
+            check_type(argname="argument body", value=body, expected_type=type_hints["body"])
+            check_type(argname="argument variables", value=variables, expected_type=type_hints["variables"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "sub", [body, variables]))
 
 
@@ -1102,6 +1286,9 @@ class _IAnyProducerProxy:
 
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IAnyProducer.produce)
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Any, jsii.invoke(self, "produce", [context]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1183,6 +1370,10 @@ class _IFragmentConcatenatorProxy:
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IFragmentConcatenator.join)
+            check_type(argname="argument left", value=left, expected_type=type_hints["left"])
+            check_type(argname="argument right", value=right, expected_type=type_hints["right"])
         return typing.cast(typing.Any, jsii.invoke(self, "join", [left, right]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1213,6 +1404,9 @@ class _IInspectableProxy:
 
         :param inspector: - tree inspector to collect and process attributes.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IInspectable.inspect)
+            check_type(argname="argument inspector", value=inspector, expected_type=type_hints["inspector"])
         return typing.cast(None, jsii.invoke(self, "inspect", [inspector]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1249,6 +1443,9 @@ class _IListProducerProxy:
 
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IListProducer.produce)
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Optional[typing.List[builtins.str]], jsii.invoke(self, "produce", [context]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1279,6 +1476,9 @@ class _INumberProducerProxy:
 
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(INumberProducer.produce)
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Optional[jsii.Number], jsii.invoke(self, "produce", [context]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1311,6 +1511,10 @@ class _IPostProcessorProxy:
         :param input: -
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IPostProcessor.post_process)
+            check_type(argname="argument input", value=input, expected_type=type_hints["input"])
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Any, jsii.invoke(self, "postProcess", [input, context]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1373,6 +1577,9 @@ class _IResolvableProxy:
 
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IResolvable.resolve)
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolve", [context]))
 
     @jsii.member(jsii_name="toString")
@@ -1443,6 +1650,9 @@ class _IResolveContextProxy:
 
         :param post_processor: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IResolveContext.register_post_processor)
+            check_type(argname="argument post_processor", value=post_processor, expected_type=type_hints["post_processor"])
         return typing.cast(None, jsii.invoke(self, "registerPostProcessor", [post_processor]))
 
     @jsii.member(jsii_name="resolve")
@@ -1451,6 +1661,9 @@ class _IResolveContextProxy:
 
         :param x: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IResolveContext.resolve)
+            check_type(argname="argument x", value=x, expected_type=type_hints["x"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolve", [x]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1579,6 +1792,9 @@ class _IRosResourceOptionsProxy:
 
     @condition.setter
     def condition(self, value: typing.Optional["RosCondition"]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(IRosResourceOptions, "condition").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "condition", value)
 
     @builtins.property # type: ignore[misc]
@@ -1591,6 +1807,9 @@ class _IRosResourceOptionsProxy:
         self,
         value: typing.Optional[typing.Union[jsii.Number, IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(IRosResourceOptions, "count").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "count", value)
 
     @builtins.property # type: ignore[misc]
@@ -1606,6 +1825,9 @@ class _IRosResourceOptionsProxy:
 
     @deletion_policy.setter
     def deletion_policy(self, value: typing.Optional["RosDeletionPolicy"]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(IRosResourceOptions, "deletion_policy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "deletionPolicy", value)
 
     @builtins.property # type: ignore[misc]
@@ -1615,6 +1837,9 @@ class _IRosResourceOptionsProxy:
 
     @description.setter
     def description(self, value: typing.Optional[builtins.str]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(IRosResourceOptions, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -1632,6 +1857,9 @@ class _IRosResourceOptionsProxy:
         self,
         value: typing.Optional[typing.Mapping[builtins.str, typing.Any]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(IRosResourceOptions, "metadata").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "metadata", value)
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1676,6 +1904,9 @@ class _IStackSynthesizerProxy:
 
         :param stack: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IStackSynthesizer.bind)
+            check_type(argname="argument stack", value=stack, expected_type=type_hints["stack"])
         return typing.cast(None, jsii.invoke(self, "bind", [stack]))
 
     @jsii.member(jsii_name="synthesizeStackArtifacts")
@@ -1686,6 +1917,9 @@ class _IStackSynthesizerProxy:
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IStackSynthesizer.synthesize_stack_artifacts)
+            check_type(argname="argument session", value=session, expected_type=type_hints["session"])
         return typing.cast(None, jsii.invoke(self, "synthesizeStackArtifacts", [session]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1716,6 +1950,9 @@ class _IStringProducerProxy:
 
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(IStringProducer.produce)
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Optional[builtins.str], jsii.invoke(self, "produce", [context]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1766,6 +2003,9 @@ class _ISynthesisSessionProxy:
 
     @assembly.setter
     def assembly(self, value: ros_cdk_cxapi.CloudAssemblyBuilder) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(ISynthesisSession, "assembly").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "assembly", value)
 
     @builtins.property # type: ignore[misc]
@@ -1776,6 +2016,9 @@ class _ISynthesisSessionProxy:
 
     @outdir.setter
     def outdir(self, value: builtins.str) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(ISynthesisSession, "outdir").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "outdir", value)
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1855,6 +2098,9 @@ class _ITemplateOptionsProxy:
 
     @description.setter
     def description(self, value: typing.Optional[builtins.str]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(ITemplateOptions, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -1868,6 +2114,9 @@ class _ITemplateOptionsProxy:
         self,
         value: typing.Optional[typing.Mapping[builtins.str, typing.Any]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(ITemplateOptions, "metadata").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "metadata", value)
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1904,6 +2153,9 @@ class _ITokenMapperProxy:
 
         :param t: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ITokenMapper.map_token)
+            check_type(argname="argument t", value=t, expected_type=type_hints["t"])
         return typing.cast(typing.Any, jsii.invoke(self, "mapToken", [t]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -1974,6 +2226,10 @@ class _ITokenResolverProxy:
         :param l: -
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ITokenResolver.resolve_list)
+            check_type(argname="argument l", value=l, expected_type=type_hints["l"])
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolveList", [l, context]))
 
     @jsii.member(jsii_name="resolveString")
@@ -1989,6 +2245,10 @@ class _ITokenResolverProxy:
         :param s: -
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ITokenResolver.resolve_string)
+            check_type(argname="argument s", value=s, expected_type=type_hints["s"])
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolveString", [s, context]))
 
     @jsii.member(jsii_name="resolveToken")
@@ -2004,6 +2264,11 @@ class _ITokenResolverProxy:
         :param context: -
         :param post_processor: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ITokenResolver.resolve_token)
+            check_type(argname="argument t", value=t, expected_type=type_hints["t"])
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
+            check_type(argname="argument post_processor", value=post_processor, expected_type=type_hints["post_processor"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolveToken", [t, context, post_processor]))
 
 # Adding a "__jsii_proxy_class__(): typing.Type" function to the interface
@@ -2025,6 +2290,9 @@ class Intrinsic(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Intri
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Intrinsic.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
     @jsii.member(jsii_name="newError")
@@ -2035,6 +2303,9 @@ class Intrinsic(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Intri
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Intrinsic._new_error)
+            check_type(argname="argument message", value=message, expected_type=type_hints["message"])
         return typing.cast(typing.Any, jsii.invoke(self, "newError", [message]))
 
     @jsii.member(jsii_name="resolve")
@@ -2045,6 +2316,9 @@ class Intrinsic(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Intri
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Intrinsic.resolve)
+            check_type(argname="argument _context", value=_context, expected_type=type_hints["_context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolve", [_context]))
 
     @jsii.member(jsii_name="toJSON")
@@ -2100,6 +2374,9 @@ class Lazy(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Lazy"):
         :param display_hint: Use the given name as a display hint. Default: - No hint
         :param omit_empty_array: If the produced value is an array and it is empty, return 'undefined' instead. Default: false
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Lazy.any_value)
+            check_type(argname="argument producer", value=producer, expected_type=type_hints["producer"])
         options = LazyAnyValueOptions(
             display_hint=display_hint, omit_empty_array=omit_empty_array
         )
@@ -2120,6 +2397,9 @@ class Lazy(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Lazy"):
         :param display_hint: Use the given name as a display hint. Default: - No hint
         :param omit_empty: If the produced list is empty, return 'undefined' instead. Default: false
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Lazy.list_value)
+            check_type(argname="argument producer", value=producer, expected_type=type_hints["producer"])
         options = LazyListValueOptions(
             display_hint=display_hint, omit_empty=omit_empty
         )
@@ -2132,6 +2412,9 @@ class Lazy(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Lazy"):
         '''
         :param producer: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Lazy.number_value)
+            check_type(argname="argument producer", value=producer, expected_type=type_hints["producer"])
         return typing.cast(jsii.Number, jsii.sinvoke(cls, "numberValue", [producer]))
 
     @jsii.member(jsii_name="stringValue") # type: ignore[misc]
@@ -2146,6 +2429,9 @@ class Lazy(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Lazy"):
         :param producer: -
         :param display_hint: Use the given name as a display hint. Default: - No hint
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Lazy.string_value)
+            check_type(argname="argument producer", value=producer, expected_type=type_hints["producer"])
         options = LazyStringValueOptions(display_hint=display_hint)
 
         return typing.cast(builtins.str, jsii.sinvoke(cls, "stringValue", [producer, options]))
@@ -2168,6 +2454,10 @@ class LazyAnyValueOptions:
         :param display_hint: Use the given name as a display hint. Default: - No hint
         :param omit_empty_array: If the produced value is an array and it is empty, return 'undefined' instead. Default: false
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(LazyAnyValueOptions.__init__)
+            check_type(argname="argument display_hint", value=display_hint, expected_type=type_hints["display_hint"])
+            check_type(argname="argument omit_empty_array", value=omit_empty_array, expected_type=type_hints["omit_empty_array"])
         self._values: typing.Dict[str, typing.Any] = {}
         if display_hint is not None:
             self._values["display_hint"] = display_hint
@@ -2221,6 +2511,10 @@ class LazyListValueOptions:
         :param display_hint: Use the given name as a display hint. Default: - No hint
         :param omit_empty: If the produced list is empty, return 'undefined' instead. Default: false
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(LazyListValueOptions.__init__)
+            check_type(argname="argument display_hint", value=display_hint, expected_type=type_hints["display_hint"])
+            check_type(argname="argument omit_empty", value=omit_empty, expected_type=type_hints["omit_empty"])
         self._values: typing.Dict[str, typing.Any] = {}
         if display_hint is not None:
             self._values["display_hint"] = display_hint
@@ -2268,6 +2562,9 @@ class LazyStringValueOptions:
 
         :param display_hint: Use the given name as a display hint. Default: - No hint
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(LazyStringValueOptions.__init__)
+            check_type(argname="argument display_hint", value=display_hint, expected_type=type_hints["display_hint"])
         self._values: typing.Dict[str, typing.Any] = {}
         if display_hint is not None:
             self._values["display_hint"] = display_hint
@@ -2318,6 +2615,12 @@ class NestedStackProps:
         :param template_url: -
         :param timeout: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NestedStackProps.__init__)
+            check_type(argname="argument parameters", value=parameters, expected_type=type_hints["parameters"])
+            check_type(argname="argument template_body", value=template_body, expected_type=type_hints["template_body"])
+            check_type(argname="argument template_url", value=template_url, expected_type=type_hints["template_url"])
+            check_type(argname="argument timeout", value=timeout, expected_type=type_hints["timeout"])
         self._values: typing.Dict[str, typing.Any] = {}
         if parameters is not None:
             self._values["parameters"] = parameters
@@ -2381,6 +2684,11 @@ class Reference(
         :param target: -
         :param display_name: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Reference.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+            check_type(argname="argument target", value=target, expected_type=type_hints["target"])
+            check_type(argname="argument display_name", value=display_name, expected_type=type_hints["display_name"])
         jsii.create(self.__class__, self, [value, target, display_name])
 
     @jsii.member(jsii_name="isReference") # type: ignore[misc]
@@ -2390,6 +2698,9 @@ class Reference(
 
         :param x: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Reference.is_reference)
+            check_type(argname="argument x", value=x, expected_type=type_hints["x"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isReference", [x]))
 
     @builtins.property # type: ignore[misc]
@@ -2435,6 +2746,10 @@ class RemovalPolicyOptions:
         :param apply_to_update_replace_policy: -
         :param default_policy: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RemovalPolicyOptions.__init__)
+            check_type(argname="argument apply_to_update_replace_policy", value=apply_to_update_replace_policy, expected_type=type_hints["apply_to_update_replace_policy"])
+            check_type(argname="argument default_policy", value=default_policy, expected_type=type_hints["default_policy"])
         self._values: typing.Dict[str, typing.Any] = {}
         if apply_to_update_replace_policy is not None:
             self._values["apply_to_update_replace_policy"] = apply_to_update_replace_policy
@@ -2487,6 +2802,11 @@ class ResolveOptions:
         :param scope: The scope from which resolution is performed.
         :param preparing: Whether the resolution is being executed during the prepare phase or not. Default: false
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResolveOptions.__init__)
+            check_type(argname="argument resolver", value=resolver, expected_type=type_hints["resolver"])
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument preparing", value=preparing, expected_type=type_hints["preparing"])
         self._values: typing.Dict[str, typing.Any] = {
             "resolver": resolver,
             "scope": scope,
@@ -2540,6 +2860,9 @@ class ResourceProps:
 
         :param physical_name: The value passed in by users to the physical name prop of the resource. - ``undefined`` implies that a physical name will be allocated during deployment. - a concrete value implies a specific physical name - ``PhysicalName.GENERATE_IF_NEEDED`` is a marker that indicates that a physical will only be generated by the CDK if it is needed for cross-environment references. Otherwise, it will be allocated. Default: - The physical name will be allocated at deployment time
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ResourceProps.__init__)
+            check_type(argname="argument physical_name", value=physical_name, expected_type=type_hints["physical_name"])
         self._values: typing.Dict[str, typing.Any] = {}
         if physical_name is not None:
             self._values["physical_name"] = physical_name
@@ -2584,6 +2907,9 @@ class RosConditionProps:
         '''
         :param expression: The expression that the condition will evaluate. Default: - None.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosConditionProps.__init__)
+            check_type(argname="argument expression", value=expression, expected_type=type_hints["expression"])
         self._values: typing.Dict[str, typing.Any] = {}
         if expression is not None:
             self._values["expression"] = expression
@@ -2643,6 +2969,9 @@ class RosMappingProps:
         '''
         :param mapping: Mapping of key to a set of corresponding set of named values. The key identifies a map of name-value pairs and must be unique within the mapping. For example, if you want to set values based on a region, you can create a mapping that uses the region name as a key and contains the values you want to specify for each specific region. Default: - No mapping.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMappingProps.__init__)
+            check_type(argname="argument mapping", value=mapping, expected_type=type_hints["mapping"])
         self._values: typing.Dict[str, typing.Any] = {}
         if mapping is not None:
             self._values["mapping"] = mapping
@@ -2701,6 +3030,12 @@ class RosOutputProps:
         :param description: A String type that describes the output value. The description can be a maximum of 4 K in length. Default: - No description.
         :param export_name: The name used to export the value of this output across stacks. To import the value from another stack, use ``Fn.importValue(exportName)``. Default: - the output is not exported
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosOutputProps.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+            check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument export_name", value=export_name, expected_type=type_hints["export_name"])
         self._values: typing.Dict[str, typing.Any] = {
             "value": value,
         }
@@ -2829,6 +3164,24 @@ class RosParameterProps:
         :param text_area: -
         :param type: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosParameterProps.__init__)
+            check_type(argname="argument allowed_pattern", value=allowed_pattern, expected_type=type_hints["allowed_pattern"])
+            check_type(argname="argument allowed_values", value=allowed_values, expected_type=type_hints["allowed_values"])
+            check_type(argname="argument association_property", value=association_property, expected_type=type_hints["association_property"])
+            check_type(argname="argument association_property_metadata", value=association_property_metadata, expected_type=type_hints["association_property_metadata"])
+            check_type(argname="argument confirm", value=confirm, expected_type=type_hints["confirm"])
+            check_type(argname="argument constraint_description", value=constraint_description, expected_type=type_hints["constraint_description"])
+            check_type(argname="argument default_value", value=default_value, expected_type=type_hints["default_value"])
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument label", value=label, expected_type=type_hints["label"])
+            check_type(argname="argument max_length", value=max_length, expected_type=type_hints["max_length"])
+            check_type(argname="argument max_value", value=max_value, expected_type=type_hints["max_value"])
+            check_type(argname="argument min_length", value=min_length, expected_type=type_hints["min_length"])
+            check_type(argname="argument min_value", value=min_value, expected_type=type_hints["min_value"])
+            check_type(argname="argument no_echo", value=no_echo, expected_type=type_hints["no_echo"])
+            check_type(argname="argument text_area", value=text_area, expected_type=type_hints["text_area"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
         self._values: typing.Dict[str, typing.Any] = {}
         if allowed_pattern is not None:
             self._values["allowed_pattern"] = allowed_pattern
@@ -3027,6 +3380,10 @@ class RosResourceProps:
         :param type: ROS template resource type (e.g. ``ALIYUN::ECS::Instance``).
         :param properties: Resource properties. Default: - No resource properties.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResourceProps.__init__)
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument properties", value=properties, expected_type=type_hints["properties"])
         self._values: typing.Dict[str, typing.Any] = {
             "type": type,
         }
@@ -3077,6 +3434,10 @@ class RosTag:
         :param key: -
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTag.__init__)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         self._values: typing.Dict[str, typing.Any] = {
             "key": key,
         }
@@ -3140,6 +3501,15 @@ class StackProps:
         :param tags: Stack tags that will be applied to all the taggable resources and the stack itself. Default: {}
         :param version: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StackProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
+            check_type(argname="argument metadata", value=metadata, expected_type=type_hints["metadata"])
+            check_type(argname="argument stack_name", value=stack_name, expected_type=type_hints["stack_name"])
+            check_type(argname="argument synthesizer", value=synthesizer, expected_type=type_hints["synthesizer"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument version", value=version, expected_type=type_hints["version"])
         self._values: typing.Dict[str, typing.Any] = {}
         if description is not None:
             self._values["description"] = description
@@ -3230,6 +3600,9 @@ class StageProps:
 
         :param outdir: The output directory into which to emit synthesized artifacts. Can only be specified if this stage is the root stage the app. If this is specified and this stage is nested within another stage, an error will be thrown. Default - for nested stages, outdir will be determined as a relative directory to the outdir of the app. For apps, if outdir is not specified, a temporary directory will be created.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StageProps.__init__)
+            check_type(argname="argument outdir", value=outdir, expected_type=type_hints["outdir"])
         self._values: typing.Dict[str, typing.Any] = {}
         if outdir is not None:
             self._values["outdir"] = outdir
@@ -3276,6 +3649,9 @@ class StageSynthesisOptions:
 
         :param skip_validation: Should we skip construct validation. Default: - false
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StageSynthesisOptions.__init__)
+            check_type(argname="argument skip_validation", value=skip_validation, expected_type=type_hints["skip_validation"])
         self._values: typing.Dict[str, typing.Any] = {}
         if skip_validation is not None:
             self._values["skip_validation"] = skip_validation
@@ -3321,6 +3697,10 @@ class StringConcat(
         :param left: -
         :param right: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(StringConcat.join)
+            check_type(argname="argument left", value=left, expected_type=type_hints["left"])
+            check_type(argname="argument right", value=right, expected_type=type_hints["right"])
         return typing.cast(typing.Any, jsii.invoke(self, "join", [left, right]))
 
 
@@ -3337,7 +3717,7 @@ class SynthesisOptions(ros_cdk_cxapi.AssemblyBuildOptions):
     def __init__(
         self,
         *,
-        runtime_info: typing.Optional[ros_cdk_cxapi.RuntimeInfo] = None,
+        runtime_info: typing.Optional[typing.Union[ros_cdk_cxapi.RuntimeInfo, typing.Dict[str, typing.Any]]] = None,
         outdir: typing.Optional[builtins.str] = None,
         skip_validation: typing.Optional[builtins.bool] = None,
     ) -> None:
@@ -3353,6 +3733,11 @@ class SynthesisOptions(ros_cdk_cxapi.AssemblyBuildOptions):
         '''
         if isinstance(runtime_info, dict):
             runtime_info = ros_cdk_cxapi.RuntimeInfo(**runtime_info)
+        if __debug__:
+            type_hints = typing.get_type_hints(SynthesisOptions.__init__)
+            check_type(argname="argument runtime_info", value=runtime_info, expected_type=type_hints["runtime_info"])
+            check_type(argname="argument outdir", value=outdir, expected_type=type_hints["outdir"])
+            check_type(argname="argument skip_validation", value=skip_validation, expected_type=type_hints["skip_validation"])
         self._values: typing.Dict[str, typing.Any] = {}
         if runtime_info is not None:
             self._values["runtime_info"] = runtime_info
@@ -3424,6 +3809,11 @@ class TagManager(
         :param tag_structure: -
         :param tag_property_name: The name of the property in ROS for these tags. Normally this is ``tags``, but Cognito UserPool uses UserPoolTags Default: "tags"
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TagManager.__init__)
+            check_type(argname="argument tag_type", value=tag_type, expected_type=type_hints["tag_type"])
+            check_type(argname="argument resource_type_name", value=resource_type_name, expected_type=type_hints["resource_type_name"])
+            check_type(argname="argument tag_structure", value=tag_structure, expected_type=type_hints["tag_structure"])
         options = TagManagerOptions(tag_property_name=tag_property_name)
 
         jsii.create(self.__class__, self, [tag_type, resource_type_name, tag_structure, options])
@@ -3435,6 +3825,9 @@ class TagManager(
 
         :param construct: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TagManager.is_taggable)
+            check_type(argname="argument construct", value=construct, expected_type=type_hints["construct"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isTaggable", [construct]))
 
     @jsii.member(jsii_name="applyTagAspectHere")
@@ -3451,6 +3844,10 @@ class TagManager(
         :param include: -
         :param exclude: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TagManager.apply_tag_aspect_here)
+            check_type(argname="argument include", value=include, expected_type=type_hints["include"])
+            check_type(argname="argument exclude", value=exclude, expected_type=type_hints["exclude"])
         return typing.cast(builtins.bool, jsii.invoke(self, "applyTagAspectHere", [include, exclude]))
 
     @jsii.member(jsii_name="hasTags")
@@ -3465,6 +3862,10 @@ class TagManager(
         :param key: The tag to remove.
         :param priority: The priority of the remove operation.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TagManager.remove_tag)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument priority", value=priority, expected_type=type_hints["priority"])
         return typing.cast(None, jsii.invoke(self, "removeTag", [key, priority]))
 
     @jsii.member(jsii_name="renderTags")
@@ -3487,6 +3888,12 @@ class TagManager(
         :param priority: -
         :param apply_to_launched_instances: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TagManager.set_tag)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
+            check_type(argname="argument priority", value=priority, expected_type=type_hints["priority"])
+            check_type(argname="argument apply_to_launched_instances", value=apply_to_launched_instances, expected_type=type_hints["apply_to_launched_instances"])
         return typing.cast(None, jsii.invoke(self, "setTag", [key, value, priority, apply_to_launched_instances]))
 
     @jsii.member(jsii_name="tagValues")
@@ -3520,6 +3927,9 @@ class TagManagerOptions:
 
         :param tag_property_name: The name of the property in ROS for these tags. Normally this is ``tags``, but Cognito UserPool uses UserPoolTags Default: "tags"
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TagManagerOptions.__init__)
+            check_type(argname="argument tag_property_name", value=tag_property_name, expected_type=type_hints["tag_property_name"])
         self._values: typing.Dict[str, typing.Any] = {}
         if tag_property_name is not None:
             self._values["tag_property_name"] = tag_property_name
@@ -3574,6 +3984,9 @@ class Token(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Token"):
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Token.as_any)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(IResolvable, jsii.sinvoke(cls, "asAny", [value]))
 
     @jsii.member(jsii_name="asList") # type: ignore[misc]
@@ -3589,6 +4002,9 @@ class Token(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Token"):
         :param value: -
         :param display_hint: A hint for the Token's purpose when stringifying it.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Token.as_list)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         options = EncodingOptions(display_hint=display_hint)
 
         return typing.cast(typing.List[builtins.str], jsii.sinvoke(cls, "asList", [value, options]))
@@ -3600,6 +4016,9 @@ class Token(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Token"):
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Token.as_number)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(jsii.Number, jsii.sinvoke(cls, "asNumber", [value]))
 
     @jsii.member(jsii_name="asString") # type: ignore[misc]
@@ -3623,6 +4042,9 @@ class Token(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Token"):
         :param value: -
         :param display_hint: A hint for the Token's purpose when stringifying it.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Token.as_string)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         options = EncodingOptions(display_hint=display_hint)
 
         return typing.cast(builtins.str, jsii.sinvoke(cls, "asString", [value, options]))
@@ -3643,6 +4065,9 @@ class Token(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.Token"):
 
         :param obj: The object to test.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Token.is_unresolved)
+            check_type(argname="argument obj", value=obj, expected_type=type_hints["obj"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isUnresolved", [obj]))
 
 
@@ -3663,6 +4088,9 @@ class Tokenization(
 
         :param obj: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Tokenization.is_resolvable)
+            check_type(argname="argument obj", value=obj, expected_type=type_hints["obj"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isResolvable", [obj]))
 
     @jsii.member(jsii_name="resolve") # type: ignore[misc]
@@ -3684,6 +4112,9 @@ class Tokenization(
         :param scope: The scope from which resolution is performed.
         :param preparing: Whether the resolution is being executed during the prepare phase or not. Default: false
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Tokenization.resolve)
+            check_type(argname="argument obj", value=obj, expected_type=type_hints["obj"])
         options = ResolveOptions(resolver=resolver, scope=scope, preparing=preparing)
 
         return typing.cast(typing.Any, jsii.sinvoke(cls, "resolve", [obj, options]))
@@ -3698,6 +4129,9 @@ class Tokenization(
 
         :param l: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Tokenization.reverse_list)
+            check_type(argname="argument l", value=l, expected_type=type_hints["l"])
         return typing.cast(typing.Optional[IResolvable], jsii.sinvoke(cls, "reverseList", [l]))
 
     @jsii.member(jsii_name="reverseNumber") # type: ignore[misc]
@@ -3707,6 +4141,9 @@ class Tokenization(
 
         :param n: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Tokenization.reverse_number)
+            check_type(argname="argument n", value=n, expected_type=type_hints["n"])
         return typing.cast(typing.Optional[IResolvable], jsii.sinvoke(cls, "reverseNumber", [n]))
 
     @jsii.member(jsii_name="reverseString") # type: ignore[misc]
@@ -3716,6 +4153,9 @@ class Tokenization(
 
         :param s: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Tokenization.reverse_string)
+            check_type(argname="argument s", value=s, expected_type=type_hints["s"])
         return typing.cast("TokenizedStringFragments", jsii.sinvoke(cls, "reverseString", [s]))
 
     @jsii.member(jsii_name="stringifyNumber") # type: ignore[misc]
@@ -3727,6 +4167,9 @@ class Tokenization(
 
         :param x: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Tokenization.stringify_number)
+            check_type(argname="argument x", value=x, expected_type=type_hints["x"])
         return typing.cast(builtins.str, jsii.sinvoke(cls, "stringifyNumber", [x]))
 
 
@@ -3744,6 +4187,9 @@ class TokenizedStringFragments(
         '''
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TokenizedStringFragments.add_intrinsic)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "addIntrinsic", [value]))
 
     @jsii.member(jsii_name="addLiteral")
@@ -3751,6 +4197,9 @@ class TokenizedStringFragments(
         '''
         :param lit: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TokenizedStringFragments.add_literal)
+            check_type(argname="argument lit", value=lit, expected_type=type_hints["lit"])
         return typing.cast(None, jsii.invoke(self, "addLiteral", [lit]))
 
     @jsii.member(jsii_name="addToken")
@@ -3758,6 +4207,9 @@ class TokenizedStringFragments(
         '''
         :param token: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TokenizedStringFragments.add_token)
+            check_type(argname="argument token", value=token, expected_type=type_hints["token"])
         return typing.cast(None, jsii.invoke(self, "addToken", [token]))
 
     @jsii.member(jsii_name="join")
@@ -3768,6 +4220,9 @@ class TokenizedStringFragments(
 
         :param concat: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TokenizedStringFragments.join)
+            check_type(argname="argument concat", value=concat, expected_type=type_hints["concat"])
         return typing.cast(typing.Any, jsii.invoke(self, "join", [concat]))
 
     @jsii.member(jsii_name="mapTokens")
@@ -3776,6 +4231,9 @@ class TokenizedStringFragments(
 
         :param mapper: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TokenizedStringFragments.map_tokens)
+            check_type(argname="argument mapper", value=mapper, expected_type=type_hints["mapper"])
         return typing.cast("TokenizedStringFragments", jsii.invoke(self, "mapTokens", [mapper]))
 
     @builtins.property # type: ignore[misc]
@@ -3818,6 +4276,10 @@ class TreeInspector(
         :param key: - key for metadata.
         :param value: - value of metadata.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TreeInspector.add_attribute)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "addAttribute", [key, value]))
 
     @builtins.property # type: ignore[misc]
@@ -3839,6 +4301,10 @@ class ValidationError:
         :param message: The error message.
         :param source: The construct which emitted the error.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ValidationError.__init__)
+            check_type(argname="argument message", value=message, expected_type=type_hints["message"])
+            check_type(argname="argument source", value=source, expected_type=type_hints["source"])
         self._values: typing.Dict[str, typing.Any] = {
             "message": message,
             "source": source,
@@ -3889,6 +4355,10 @@ class ValidationResult(
         :param error_message: -
         :param results: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ValidationResult.__init__)
+            check_type(argname="argument error_message", value=error_message, expected_type=type_hints["error_message"])
+            check_type(argname="argument results", value=results, expected_type=type_hints["results"])
         jsii.create(self.__class__, self, [error_message, results])
 
     @jsii.member(jsii_name="assertSuccess")
@@ -3907,6 +4377,9 @@ class ValidationResult(
 
         :param message: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ValidationResult.prefix)
+            check_type(argname="argument message", value=message, expected_type=type_hints["message"])
         return typing.cast("ValidationResult", jsii.invoke(self, "prefix", [message]))
 
     @builtins.property # type: ignore[misc]
@@ -3938,6 +4411,9 @@ class ValidationResults(
         '''
         :param results: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ValidationResults.__init__)
+            check_type(argname="argument results", value=results, expected_type=type_hints["results"])
         jsii.create(self.__class__, self, [results])
 
     @jsii.member(jsii_name="collect")
@@ -3945,6 +4421,9 @@ class ValidationResults(
         '''
         :param result: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ValidationResults.collect)
+            check_type(argname="argument result", value=result, expected_type=type_hints["result"])
         return typing.cast(None, jsii.invoke(self, "collect", [result]))
 
     @jsii.member(jsii_name="errorTreeList")
@@ -3960,6 +4439,9 @@ class ValidationResults(
 
         :param message: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ValidationResults.wrap)
+            check_type(argname="argument message", value=message, expected_type=type_hints["message"])
         return typing.cast(ValidationResult, jsii.invoke(self, "wrap", [message]))
 
     @builtins.property # type: ignore[misc]
@@ -3974,6 +4456,9 @@ class ValidationResults(
 
     @results.setter
     def results(self, value: typing.List[ValidationResult]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(ValidationResults, "results").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "results", value)
 
 
@@ -4004,6 +4489,9 @@ class ConcreteDependable(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(ConcreteDependable.add)
+            check_type(argname="argument construct", value=construct, expected_type=type_hints["construct"])
         return typing.cast(None, jsii.invoke(self, "add", [construct]))
 
 
@@ -4025,6 +4513,9 @@ class DefaultStackSynthesizer(
 
         :param stack: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DefaultStackSynthesizer.bind)
+            check_type(argname="argument stack", value=stack, expected_type=type_hints["stack"])
         return typing.cast(None, jsii.invoke(self, "bind", [stack]))
 
     @jsii.member(jsii_name="synthesizeStackArtifacts")
@@ -4033,6 +4524,9 @@ class DefaultStackSynthesizer(
 
         :param session: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DefaultStackSynthesizer.synthesize_stack_artifacts)
+            check_type(argname="argument session", value=session, expected_type=type_hints["session"])
         return typing.cast(None, jsii.invoke(self, "synthesizeStackArtifacts", [session]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4063,6 +4557,9 @@ class DefaultTokenResolver(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DefaultTokenResolver.__init__)
+            check_type(argname="argument concat", value=concat, expected_type=type_hints["concat"])
         jsii.create(self.__class__, self, [concat])
 
     @jsii.member(jsii_name="resolveList")
@@ -4078,6 +4575,10 @@ class DefaultTokenResolver(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DefaultTokenResolver.resolve_list)
+            check_type(argname="argument xs", value=xs, expected_type=type_hints["xs"])
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolveList", [xs, context]))
 
     @jsii.member(jsii_name="resolveString")
@@ -4093,6 +4594,10 @@ class DefaultTokenResolver(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DefaultTokenResolver.resolve_string)
+            check_type(argname="argument fragments", value=fragments, expected_type=type_hints["fragments"])
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolveString", [fragments, context]))
 
     @jsii.member(jsii_name="resolveToken")
@@ -4113,6 +4618,11 @@ class DefaultTokenResolver(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DefaultTokenResolver.resolve_token)
+            check_type(argname="argument t", value=t, expected_type=type_hints["t"])
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
+            check_type(argname="argument post_processor", value=post_processor, expected_type=type_hints["post_processor"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolveToken", [t, context, post_processor]))
 
 
@@ -4126,6 +4636,9 @@ class FnAdd(
 
         :param values: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnAdd.__init__)
+            check_type(argname="argument values", value=values, expected_type=type_hints["values"])
         jsii.create(self.__class__, self, [values])
 
 
@@ -4148,6 +4661,9 @@ class FnAnd(
         '''
         :param condition: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnAnd.__init__)
+            check_type(argname="argument condition", value=condition, expected_type=typing.Tuple[type_hints["condition"], ...])
         jsii.create(self.__class__, self, [*condition])
 
 
@@ -4161,6 +4677,9 @@ class FnAvg(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnAvg.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4173,6 +4692,9 @@ class FnBase64Decode(
         '''
         :param data: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnBase64Decode.__init__)
+            check_type(argname="argument data", value=data, expected_type=type_hints["data"])
         jsii.create(self.__class__, self, [data])
 
 
@@ -4188,6 +4710,9 @@ class FnBase64Encode(
 
         :param data: The string value you want to convert to Base64.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnBase64Encode.__init__)
+            check_type(argname="argument data", value=data, expected_type=type_hints["data"])
         jsii.create(self.__class__, self, [data])
 
 
@@ -4201,6 +4726,9 @@ class FnCalculate(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnCalculate.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4222,6 +4750,10 @@ class FnEquals(
         :param lhs: A value of any type that you want to compare.
         :param rhs: A value of any type that you want to compare.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnEquals.__init__)
+            check_type(argname="argument lhs", value=lhs, expected_type=type_hints["lhs"])
+            check_type(argname="argument rhs", value=rhs, expected_type=type_hints["rhs"])
         jsii.create(self.__class__, self, [lhs, rhs])
 
 
@@ -4241,6 +4773,9 @@ class FnFindInMap(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnFindInMap.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4262,6 +4797,9 @@ class FnGetAZs(
 
         :param region: The name of the region for which you want to get the Availability Zones.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnGetAZs.__init__)
+            check_type(argname="argument region", value=region, expected_type=type_hints["region"])
         jsii.create(self.__class__, self, [region])
 
 
@@ -4282,6 +4820,10 @@ class FnGetAtt(
         :param logical_name_of_resource: The logical name (also called logical ID) of the resource that contains the attribute that you want.
         :param attribute_name: The name of the resource-specific attribute whose value you want. See the resource's reference page for details about the attributes available for that resource type.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnGetAtt.__init__)
+            check_type(argname="argument logical_name_of_resource", value=logical_name_of_resource, expected_type=type_hints["logical_name_of_resource"])
+            check_type(argname="argument attribute_name", value=attribute_name, expected_type=type_hints["attribute_name"])
         jsii.create(self.__class__, self, [logical_name_of_resource, attribute_name])
 
 
@@ -4295,6 +4837,9 @@ class FnGetJsonValue(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnGetJsonValue.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4308,6 +4853,9 @@ class FnGetStackOutput(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnGetStackOutput.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4327,6 +4875,11 @@ class FnIf(Intrinsic, metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core
         :param value_if_true: A value to be returned if the specified condition evaluates to true.
         :param value_if_false: A value to be returned if the specified condition evaluates to false.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnIf.__init__)
+            check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
+            check_type(argname="argument value_if_true", value=value_if_true, expected_type=type_hints["value_if_true"])
+            check_type(argname="argument value_if_false", value=value_if_false, expected_type=type_hints["value_if_false"])
         jsii.create(self.__class__, self, [condition, value_if_true, value_if_false])
 
 
@@ -4348,6 +4901,10 @@ class FnJoin(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.FnJoin")
         :param delimiter: The value you want to occur between fragments. The delimiter will occur between fragments only. It will not terminate the final value.
         :param list_of_values: The list of values you want combined.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnJoin.__init__)
+            check_type(argname="argument delimiter", value=delimiter, expected_type=type_hints["delimiter"])
+            check_type(argname="argument list_of_values", value=list_of_values, expected_type=type_hints["list_of_values"])
         jsii.create(self.__class__, self, [delimiter, list_of_values])
 
     @jsii.member(jsii_name="resolve")
@@ -4356,6 +4913,9 @@ class FnJoin(metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.FnJoin")
 
         :param context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnJoin.resolve)
+            check_type(argname="argument context", value=context, expected_type=type_hints["context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolve", [context]))
 
     @jsii.member(jsii_name="toJSON")
@@ -4386,6 +4946,9 @@ class FnJq(Intrinsic, metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnJq.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4399,6 +4962,9 @@ class FnListMerge(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnListMerge.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4412,6 +4978,9 @@ class FnMax(
 
         :param values: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnMax.__init__)
+            check_type(argname="argument values", value=values, expected_type=type_hints["values"])
         jsii.create(self.__class__, self, [values])
 
 
@@ -4425,6 +4994,9 @@ class FnMergeMapToList(
 
         :param map_list: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnMergeMapToList.__init__)
+            check_type(argname="argument map_list", value=map_list, expected_type=type_hints["map_list"])
         jsii.create(self.__class__, self, [map_list])
 
 
@@ -4438,6 +5010,9 @@ class FnMin(
 
         :param values: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnMin.__init__)
+            check_type(argname="argument values", value=values, expected_type=type_hints["values"])
         jsii.create(self.__class__, self, [values])
 
 
@@ -4460,6 +5035,9 @@ class FnNot(
 
         :param condition: A condition such as ``Fn::Equals`` that evaluates to true or false.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnNot.__init__)
+            check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
         jsii.create(self.__class__, self, [condition])
 
 
@@ -4479,6 +5057,9 @@ class FnOr(Intrinsic, metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core
 
         :param condition: A condition that evaluates to true or false.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnOr.__init__)
+            check_type(argname="argument condition", value=condition, expected_type=typing.Tuple[type_hints["condition"], ...])
         jsii.create(self.__class__, self, [*condition])
 
 
@@ -4498,6 +5079,9 @@ class FnRef(
 
         :param logical_name: The logical name of a parameter/resource for which you want to retrieve its value.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnRef.__init__)
+            check_type(argname="argument logical_name", value=logical_name, expected_type=type_hints["logical_name"])
         jsii.create(self.__class__, self, [logical_name])
 
 
@@ -4511,6 +5095,9 @@ class FnReplace(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnReplace.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4529,6 +5116,9 @@ class FnSelect(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnSelect.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4542,6 +5132,9 @@ class FnSelectMapList(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnSelectMapList.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4565,6 +5158,9 @@ class FnSplit(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnSplit.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4578,6 +5174,9 @@ class FnStr(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnStr.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4605,6 +5204,9 @@ class FnSub(
 
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(FnSub.__init__)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.create(self.__class__, self, [value])
 
 
@@ -4682,6 +5284,10 @@ class Construct(
         :param scope: -
         :param id: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Construct.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         jsii.create(self.__class__, self, [scope, id])
 
     @jsii.member(jsii_name="isConstruct") # type: ignore[misc]
@@ -4691,6 +5297,9 @@ class Construct(
 
         :param x: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Construct.is_construct)
+            check_type(argname="argument x", value=x, expected_type=type_hints["x"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isConstruct", [x]))
 
     @jsii.member(jsii_name="onPrepare")
@@ -4715,6 +5324,9 @@ class Construct(
 
         :param session: The synthesis session.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Construct._on_synthesize)
+            check_type(argname="argument session", value=session, expected_type=type_hints["session"])
         return typing.cast(None, jsii.invoke(self, "onSynthesize", [session]))
 
     @jsii.member(jsii_name="onValidate")
@@ -4750,6 +5362,9 @@ class Construct(
 
         :param session: The synthesis session.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Construct._synthesize)
+            check_type(argname="argument session", value=session, expected_type=type_hints["session"])
         return typing.cast(None, jsii.invoke(self, "synthesize", [session]))
 
     @jsii.member(jsii_name="validate")
@@ -4790,6 +5405,10 @@ class Resource(
         :param id: -
         :param physical_name: The value passed in by users to the physical name prop of the resource. - ``undefined`` implies that a physical name will be allocated during deployment. - a concrete value implies a specific physical name - ``PhysicalName.GENERATE_IF_NEEDED`` is a marker that indicates that a physical will only be generated by the CDK if it is needed for cross-environment references. Otherwise, it will be allocated. Default: - The physical name will be allocated at deployment time
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Resource.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = ResourceProps(physical_name=physical_name)
 
         jsii.create(self.__class__, self, [scope, id, props])
@@ -4799,6 +5418,9 @@ class Resource(
         '''
         :param condition: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Resource.add_condition)
+            check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
         return typing.cast(None, jsii.invoke(self, "addCondition", [condition]))
 
     @jsii.member(jsii_name="addCount")
@@ -4806,6 +5428,9 @@ class Resource(
         '''
         :param count: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Resource.add_count)
+            check_type(argname="argument count", value=count, expected_type=type_hints["count"])
         return typing.cast(None, jsii.invoke(self, "addCount", [count]))
 
     @jsii.member(jsii_name="addDependency")
@@ -4813,6 +5438,9 @@ class Resource(
         '''
         :param resource: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Resource.add_dependency)
+            check_type(argname="argument resource", value=resource, expected_type=type_hints["resource"])
         return typing.cast(None, jsii.invoke(self, "addDependency", [resource]))
 
     @jsii.member(jsii_name="addResourceDesc")
@@ -4820,6 +5448,9 @@ class Resource(
         '''
         :param desc: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Resource.add_resource_desc)
+            check_type(argname="argument desc", value=desc, expected_type=type_hints["desc"])
         return typing.cast(None, jsii.invoke(self, "addResourceDesc", [desc]))
 
     @jsii.member(jsii_name="applyRemovalPolicy")
@@ -4827,6 +5458,9 @@ class Resource(
         '''
         :param policy: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Resource.apply_removal_policy)
+            check_type(argname="argument policy", value=policy, expected_type=type_hints["policy"])
         return typing.cast(None, jsii.invoke(self, "applyRemovalPolicy", [policy]))
 
     @jsii.member(jsii_name="generatePhysicalName")
@@ -4838,6 +5472,9 @@ class Resource(
         '''
         :param name: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Resource.get_att)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
         return typing.cast(IResolvable, jsii.invoke(self, "getAtt", [name]))
 
     @jsii.member(jsii_name="setMetadata")
@@ -4846,6 +5483,10 @@ class Resource(
         :param key: -
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Resource.set_metadata)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "setMetadata", [key, value]))
 
     @builtins.property # type: ignore[misc]
@@ -4877,6 +5518,9 @@ class Resource(
 
     @resource.setter
     def resource(self, value: typing.Optional["RosResource"]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(Resource, "resource").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resource", value)
 
 
@@ -4902,6 +5546,10 @@ class RosElement(
         :param scope: The parent construct.
         :param id: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosElement.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         jsii.create(self.__class__, self, [scope, id])
 
     @jsii.member(jsii_name="isRosElement") # type: ignore[misc]
@@ -4916,6 +5564,9 @@ class RosElement(
 
         :return: The construct as a stack element or undefined if it is not a stack element.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosElement.is_ros_element)
+            check_type(argname="argument x", value=x, expected_type=type_hints["x"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isRosElement", [x]))
 
     @jsii.member(jsii_name="overrideLogicalId")
@@ -4924,6 +5575,9 @@ class RosElement(
 
         :param new_logical_id: The new logical ID to use for this stack element.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosElement.override_logical_id)
+            check_type(argname="argument new_logical_id", value=new_logical_id, expected_type=type_hints["new_logical_id"])
         return typing.cast(None, jsii.invoke(self, "overrideLogicalId", [new_logical_id]))
 
     @builtins.property # type: ignore[misc]
@@ -4989,6 +5643,11 @@ class RosInfo(
         :param id: -
         :param info: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosInfo.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument info", value=info, expected_type=type_hints["info"])
         jsii.create(self.__class__, self, [scope, id, info])
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -4998,6 +5657,9 @@ class RosInfo(
 
     @description.setter # type: ignore[no-redef]
     def description(cls, value: builtins.str) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfo, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.sset(cls, "description", value)
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5007,6 +5669,9 @@ class RosInfo(
 
     @format_version.setter # type: ignore[no-redef]
     def format_version(cls, value: builtins.str) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfo, "format_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.sset(cls, "formatVersion", value)
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5016,6 +5681,9 @@ class RosInfo(
 
     @metadata.setter # type: ignore[no-redef]
     def metadata(cls, value: builtins.str) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfo, "metadata").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.sset(cls, "metadata", value)
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -5025,6 +5693,9 @@ class RosInfo(
 
     @v20150901.setter # type: ignore[no-redef]
     def v20150901(cls, value: builtins.str) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosInfo, "v20150901").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.sset(cls, "v20150901", value)
 
 
@@ -5052,6 +5723,10 @@ class RosOutput(
         :param description: A String type that describes the output value. The description can be a maximum of 4 K in length. Default: - No description.
         :param export_name: The name used to export the value of this output across stacks. To import the value from another stack, use ``Fn.importValue(exportName)``. Default: - the output is not exported
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosOutput.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = RosOutputProps(
             value=value,
             condition=condition,
@@ -5066,6 +5741,9 @@ class RosOutput(
         '''
         :param condition: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosOutput.add_condition)
+            check_type(argname="argument condition", value=condition, expected_type=type_hints["condition"])
         return typing.cast(None, jsii.invoke(self, "addCondition", [condition]))
 
 
@@ -5122,6 +5800,10 @@ class RosParameter(
         :param text_area: -
         :param type: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosParameter.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = RosParameterProps(
             allowed_pattern=allowed_pattern,
             allowed_values=allowed_values,
@@ -5148,6 +5830,9 @@ class RosParameter(
         '''
         :param _context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosParameter.resolve)
+            check_type(argname="argument _context", value=_context, expected_type=type_hints["_context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolve", [_context]))
 
     @jsii.member(jsii_name="validateProperties")
@@ -5338,6 +6023,10 @@ class RosRefElement(
         :param scope: The parent construct.
         :param id: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRefElement.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         jsii.create(self.__class__, self, [scope, id])
 
     @builtins.property # type: ignore[misc]
@@ -5382,6 +6071,10 @@ class RosResource(
         :param type: ROS template resource type (e.g. ``ALIYUN::ECS::Instance``).
         :param properties: Resource properties. Default: - No resource properties.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = RosResourceProps(type=type, properties=properties)
 
         jsii.create(self.__class__, self, [scope, id, props])
@@ -5393,6 +6086,9 @@ class RosResource(
 
         :param construct: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.is_ros_resource)
+            check_type(argname="argument construct", value=construct, expected_type=type_hints["construct"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isRosResource", [construct]))
 
     @jsii.member(jsii_name="addCondition")
@@ -5400,6 +6096,9 @@ class RosResource(
         '''
         :param con: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_condition)
+            check_type(argname="argument con", value=con, expected_type=type_hints["con"])
         return typing.cast(None, jsii.invoke(self, "addCondition", [con]))
 
     @jsii.member(jsii_name="addCount")
@@ -5407,6 +6106,9 @@ class RosResource(
         '''
         :param count: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_count)
+            check_type(argname="argument count", value=count, expected_type=type_hints["count"])
         return typing.cast(None, jsii.invoke(self, "addCount", [count]))
 
     @jsii.member(jsii_name="addDeletionOverride")
@@ -5415,6 +6117,9 @@ class RosResource(
 
         :param path: The path of the value to delete.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_deletion_override)
+            check_type(argname="argument path", value=path, expected_type=type_hints["path"])
         return typing.cast(None, jsii.invoke(self, "addDeletionOverride", [path]))
 
     @jsii.member(jsii_name="addDependsOn")
@@ -5426,6 +6131,9 @@ class RosResource(
 
         :param target: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_depends_on)
+            check_type(argname="argument target", value=target, expected_type=type_hints["target"])
         return typing.cast(None, jsii.invoke(self, "addDependsOn", [target]))
 
     @jsii.member(jsii_name="addDesc")
@@ -5433,6 +6141,9 @@ class RosResource(
         '''
         :param desc: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_desc)
+            check_type(argname="argument desc", value=desc, expected_type=type_hints["desc"])
         return typing.cast(None, jsii.invoke(self, "addDesc", [desc]))
 
     @jsii.member(jsii_name="addMetaData")
@@ -5441,6 +6152,10 @@ class RosResource(
         :param key: -
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_meta_data)
+            check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "addMetaData", [key, value]))
 
     @jsii.member(jsii_name="addOverride")
@@ -5481,6 +6196,10 @@ class RosResource(
         :param path: - The path of the property, you can use dot notation to override values in complex types. Any intermdediate keys will be created as needed.
         :param value: - The value. Could be primitive or complex.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_override)
+            check_type(argname="argument path", value=path, expected_type=type_hints["path"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "addOverride", [path, value]))
 
     @jsii.member(jsii_name="addPropertyDeletionOverride")
@@ -5489,6 +6208,9 @@ class RosResource(
 
         :param property_path: The path to the property.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_property_deletion_override)
+            check_type(argname="argument property_path", value=property_path, expected_type=type_hints["property_path"])
         return typing.cast(None, jsii.invoke(self, "addPropertyDeletionOverride", [property_path]))
 
     @jsii.member(jsii_name="addPropertyOverride")
@@ -5504,6 +6226,10 @@ class RosResource(
         :param property_path: The path of the property.
         :param value: The value.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_property_override)
+            check_type(argname="argument property_path", value=property_path, expected_type=type_hints["property_path"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "addPropertyOverride", [property_path, value]))
 
     @jsii.member(jsii_name="addRosDependency")
@@ -5511,6 +6237,9 @@ class RosResource(
         '''
         :param target: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.add_ros_dependency)
+            check_type(argname="argument target", value=target, expected_type=type_hints["target"])
         return typing.cast(None, jsii.invoke(self, "addRosDependency", [target]))
 
     @jsii.member(jsii_name="applyRemovalPolicy")
@@ -5527,6 +6256,9 @@ class RosResource(
         :param apply_to_update_replace_policy: -
         :param default_policy: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.apply_removal_policy)
+            check_type(argname="argument policy", value=policy, expected_type=type_hints["policy"])
         options = RemovalPolicyOptions(
             apply_to_update_replace_policy=apply_to_update_replace_policy,
             default_policy=default_policy,
@@ -5543,6 +6275,9 @@ class RosResource(
 
         :param attribute_name: The name of the attribute.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource.get_att)
+            check_type(argname="argument attribute_name", value=attribute_name, expected_type=type_hints["attribute_name"])
         return typing.cast(Reference, jsii.invoke(self, "getAtt", [attribute_name]))
 
     @jsii.member(jsii_name="renderProperties")
@@ -5553,6 +6288,9 @@ class RosResource(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.member(jsii_name="toString")
@@ -5568,6 +6306,9 @@ class RosResource(
         '''
         :param _properties: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosResource._validate_properties)
+            check_type(argname="argument _properties", value=_properties, expected_type=type_hints["_properties"])
         return typing.cast(None, jsii.invoke(self, "validateProperties", [_properties]))
 
     @builtins.property # type: ignore[misc]
@@ -5631,6 +6372,10 @@ class Stack(
         :param tags: Stack tags that will be applied to all the taggable resources and the stack itself. Default: {}
         :param version: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = StackProps(
             description=description,
             enable_resource_property_constraint=enable_resource_property_constraint,
@@ -5652,6 +6397,9 @@ class Stack(
 
         :param x: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.is_stack)
+            check_type(argname="argument x", value=x, expected_type=type_hints["x"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isStack", [x]))
 
     @jsii.member(jsii_name="of") # type: ignore[misc]
@@ -5663,6 +6411,9 @@ class Stack(
 
         :param construct: The construct to start the search from.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.of)
+            check_type(argname="argument construct", value=construct, expected_type=type_hints["construct"])
         return typing.cast("Stack", jsii.sinvoke(cls, "of", [construct]))
 
     @jsii.member(jsii_name="addDependency")
@@ -5679,6 +6430,10 @@ class Stack(
         :param target: -
         :param reason: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.add_dependency)
+            check_type(argname="argument target", value=target, expected_type=type_hints["target"])
+            check_type(argname="argument reason", value=reason, expected_type=type_hints["reason"])
         return typing.cast(None, jsii.invoke(self, "addDependency", [target, reason]))
 
     @jsii.member(jsii_name="allocateLogicalId")
@@ -5724,6 +6479,9 @@ class Stack(
 
         :param ros_element: The element for which the logical ID is allocated.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack._allocate_logical_id)
+            check_type(argname="argument ros_element", value=ros_element, expected_type=type_hints["ros_element"])
         return typing.cast(builtins.str, jsii.invoke(self, "allocateLogicalId", [ros_element]))
 
     @jsii.member(jsii_name="getLogicalId")
@@ -5740,6 +6498,9 @@ class Stack(
 
         :param element: The ROS element for which a logical identity is needed.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.get_logical_id)
+            check_type(argname="argument element", value=element, expected_type=type_hints["element"])
         return typing.cast(builtins.str, jsii.invoke(self, "getLogicalId", [element]))
 
     @jsii.member(jsii_name="prepareCrossReference")
@@ -5759,6 +6520,10 @@ class Stack(
 
         :stability: deprecated
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack._prepare_cross_reference)
+            check_type(argname="argument _source_stack", value=_source_stack, expected_type=type_hints["_source_stack"])
+            check_type(argname="argument reference", value=reference, expected_type=type_hints["reference"])
         return typing.cast(IResolvable, jsii.invoke(self, "prepareCrossReference", [_source_stack, reference]))
 
     @jsii.member(jsii_name="renameLogicalId")
@@ -5771,6 +6536,10 @@ class Stack(
         :param old_id: -
         :param new_id: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.rename_logical_id)
+            check_type(argname="argument old_id", value=old_id, expected_type=type_hints["old_id"])
+            check_type(argname="argument new_id", value=new_id, expected_type=type_hints["new_id"])
         return typing.cast(None, jsii.invoke(self, "renameLogicalId", [old_id, new_id]))
 
     @jsii.member(jsii_name="resolve")
@@ -5779,6 +6548,9 @@ class Stack(
 
         :param obj: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.resolve)
+            check_type(argname="argument obj", value=obj, expected_type=type_hints["obj"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolve", [obj]))
 
     @jsii.member(jsii_name="synthesize")
@@ -5790,6 +6562,9 @@ class Stack(
 
         :param session: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack._synthesize)
+            check_type(argname="argument session", value=session, expected_type=type_hints["session"])
         return typing.cast(None, jsii.invoke(self, "synthesize", [session]))
 
     @jsii.member(jsii_name="toJsonString")
@@ -5803,6 +6578,10 @@ class Stack(
         :param obj: -
         :param space: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stack.to_json_string)
+            check_type(argname="argument obj", value=obj, expected_type=type_hints["obj"])
+            check_type(argname="argument space", value=space, expected_type=type_hints["space"])
         return typing.cast(builtins.str, jsii.invoke(self, "toJsonString", [obj, space]))
 
     @builtins.property # type: ignore[misc]
@@ -5935,6 +6714,10 @@ class Stage(
         :param id: -
         :param outdir: The output directory into which to emit synthesized artifacts. Can only be specified if this stage is the root stage the app. If this is specified and this stage is nested within another stage, an error will be thrown. Default - for nested stages, outdir will be determined as a relative directory to the outdir of the app. For apps, if outdir is not specified, a temporary directory will be created.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stage.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = StageProps(outdir=outdir)
 
         jsii.create(self.__class__, self, [scope, id, props])
@@ -5948,6 +6731,9 @@ class Stage(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stage.is_stage)
+            check_type(argname="argument x", value=x, expected_type=type_hints["x"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isStage", [x]))
 
     @jsii.member(jsii_name="of") # type: ignore[misc]
@@ -5962,6 +6748,9 @@ class Stage(
 
         :stability: experimental
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Stage.of)
+            check_type(argname="argument construct", value=construct, expected_type=type_hints["construct"])
         return typing.cast(typing.Optional["Stage"], jsii.sinvoke(cls, "of", [construct]))
 
     @jsii.member(jsii_name="synth")
@@ -6067,6 +6856,9 @@ class App(Stage, metaclass=jsii.JSIIMeta, jsii_type="@alicloud/ros-cdk-core.App"
 
         :param obj: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(App.is_app)
+            check_type(argname="argument obj", value=obj, expected_type=type_hints["obj"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isApp", [obj]))
 
 
@@ -6093,6 +6885,10 @@ class NestedStack(
         :param template_url: -
         :param timeout: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NestedStack.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = NestedStackProps(
             parameters=parameters,
             template_body=template_body,
@@ -6108,6 +6904,9 @@ class NestedStack(
         '''
         :param x: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NestedStack.is_nested_stack)
+            check_type(argname="argument x", value=x, expected_type=type_hints["x"])
         return typing.cast(builtins.bool, jsii.sinvoke(cls, "isNestedStack", [x]))
 
     @jsii.member(jsii_name="getAtt")
@@ -6115,6 +6914,9 @@ class NestedStack(
         '''
         :param attribute_name: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NestedStack.get_att)
+            check_type(argname="argument attribute_name", value=attribute_name, expected_type=type_hints["attribute_name"])
         return typing.cast(builtins.str, jsii.invoke(self, "getAtt", [attribute_name]))
 
     @jsii.member(jsii_name="setParameter")
@@ -6123,6 +6925,10 @@ class NestedStack(
         :param name: -
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(NestedStack.set_parameter)
+            check_type(argname="argument name", value=name, expected_type=type_hints["name"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "setParameter", [name, value]))
 
     @builtins.property # type: ignore[misc]
@@ -6169,6 +6975,10 @@ class RosCondition(
         :param id: -
         :param expression: The expression that the condition will evaluate. Default: - None.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCondition.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = RosConditionProps(expression=expression)
 
         jsii.create(self.__class__, self, [scope, id, props])
@@ -6179,6 +6989,9 @@ class RosCondition(
 
         :param _context: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosCondition.resolve)
+            check_type(argname="argument _context", value=_context, expected_type=type_hints["_context"])
         return typing.cast(typing.Any, jsii.invoke(self, "resolve", [_context]))
 
     @builtins.property # type: ignore[misc]
@@ -6189,6 +7002,9 @@ class RosCondition(
 
     @expression.setter
     def expression(self, value: typing.Optional[IRosConditionExpression]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosCondition, "expression").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "expression", value)
 
 
@@ -6211,6 +7027,10 @@ class RosMapping(
         :param id: -
         :param mapping: Mapping of key to a set of corresponding set of named values. The key identifies a map of name-value pairs and must be unique within the mapping. For example, if you want to set values based on a region, you can create a mapping that uses the region name as a key and contains the values you want to specify for each specific region. Default: - No mapping.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMapping.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
         props = RosMappingProps(mapping=mapping)
 
         jsii.create(self.__class__, self, [scope, id, props])
@@ -6223,6 +7043,10 @@ class RosMapping(
 
         :return: A reference to a value in the map based on the two keys.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMapping.find_in_map)
+            check_type(argname="argument key1", value=key1, expected_type=type_hints["key1"])
+            check_type(argname="argument key2", value=key2, expected_type=type_hints["key2"])
         return typing.cast(IResolvable, jsii.invoke(self, "findInMap", [key1, key2]))
 
     @jsii.member(jsii_name="setValue")
@@ -6238,6 +7062,11 @@ class RosMapping(
         :param key2: -
         :param value: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosMapping.set_value)
+            check_type(argname="argument key1", value=key1, expected_type=type_hints["key1"])
+            check_type(argname="argument key2", value=key2, expected_type=type_hints["key2"])
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         return typing.cast(None, jsii.invoke(self, "setValue", [key1, key2, value]))
 
 

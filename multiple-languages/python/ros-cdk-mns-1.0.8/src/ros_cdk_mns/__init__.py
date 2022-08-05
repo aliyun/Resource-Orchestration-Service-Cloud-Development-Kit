@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class Queue(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "QueueProps",
+        props: typing.Union["QueueProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::MNS::Queue``.
@@ -47,6 +49,12 @@ class Queue(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Queue.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -103,6 +111,15 @@ class QueueProps:
         :param polling_wait_seconds: Property pollingWaitSeconds: It is the maximum time that a ReceiveMessage request could be waiting for any incoming messages, while there are no message in the queue. Measured in seconds. An integer between 0 and 30 seconds. The default value is 0 (seconds)
         :param visibility_timeout: Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue. Measured in seconds. An integer between 1 and 43200 (12 hours). The default value is 30 (seconds)
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(QueueProps.__init__)
+            check_type(argname="argument queue_name", value=queue_name, expected_type=type_hints["queue_name"])
+            check_type(argname="argument delay_seconds", value=delay_seconds, expected_type=type_hints["delay_seconds"])
+            check_type(argname="argument logging_enabled", value=logging_enabled, expected_type=type_hints["logging_enabled"])
+            check_type(argname="argument maximum_message_size", value=maximum_message_size, expected_type=type_hints["maximum_message_size"])
+            check_type(argname="argument message_retention_period", value=message_retention_period, expected_type=type_hints["message_retention_period"])
+            check_type(argname="argument polling_wait_seconds", value=polling_wait_seconds, expected_type=type_hints["polling_wait_seconds"])
+            check_type(argname="argument visibility_timeout", value=visibility_timeout, expected_type=type_hints["visibility_timeout"])
         self._values: typing.Dict[str, typing.Any] = {
             "queue_name": queue_name,
         }
@@ -220,7 +237,7 @@ class RosQueue(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosQueueProps",
+        props: typing.Union["RosQueueProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::MNS::Queue``.
@@ -230,6 +247,12 @@ class RosQueue(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosQueue.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -240,6 +263,9 @@ class RosQueue(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosQueue._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -284,6 +310,9 @@ class RosQueue(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosQueue, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -299,6 +328,9 @@ class RosQueue(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosQueue, "queue_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "queueName", value)
 
     @builtins.property # type: ignore[misc]
@@ -319,6 +351,9 @@ class RosQueue(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosQueue, "delay_seconds").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "delaySeconds", value)
 
     @builtins.property # type: ignore[misc]
@@ -339,6 +374,9 @@ class RosQueue(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosQueue, "logging_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loggingEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -359,6 +397,9 @@ class RosQueue(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosQueue, "maximum_message_size").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maximumMessageSize", value)
 
     @builtins.property # type: ignore[misc]
@@ -379,6 +420,9 @@ class RosQueue(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosQueue, "message_retention_period").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "messageRetentionPeriod", value)
 
     @builtins.property # type: ignore[misc]
@@ -399,6 +443,9 @@ class RosQueue(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosQueue, "polling_wait_seconds").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pollingWaitSeconds", value)
 
     @builtins.property # type: ignore[misc]
@@ -419,6 +466,9 @@ class RosQueue(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosQueue, "visibility_timeout").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "visibilityTimeout", value)
 
 
@@ -457,6 +507,15 @@ class RosQueueProps:
         :param polling_wait_seconds: 
         :param visibility_timeout: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosQueueProps.__init__)
+            check_type(argname="argument queue_name", value=queue_name, expected_type=type_hints["queue_name"])
+            check_type(argname="argument delay_seconds", value=delay_seconds, expected_type=type_hints["delay_seconds"])
+            check_type(argname="argument logging_enabled", value=logging_enabled, expected_type=type_hints["logging_enabled"])
+            check_type(argname="argument maximum_message_size", value=maximum_message_size, expected_type=type_hints["maximum_message_size"])
+            check_type(argname="argument message_retention_period", value=message_retention_period, expected_type=type_hints["message_retention_period"])
+            check_type(argname="argument polling_wait_seconds", value=polling_wait_seconds, expected_type=type_hints["polling_wait_seconds"])
+            check_type(argname="argument visibility_timeout", value=visibility_timeout, expected_type=type_hints["visibility_timeout"])
         self._values: typing.Dict[str, typing.Any] = {
             "queue_name": queue_name,
         }
@@ -583,7 +642,7 @@ class RosSubscription(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosSubscriptionProps",
+        props: typing.Union["RosSubscriptionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::MNS::Subscription``.
@@ -593,6 +652,12 @@ class RosSubscription(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSubscription.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -603,6 +668,9 @@ class RosSubscription(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSubscription._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -647,6 +715,9 @@ class RosSubscription(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscription, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -670,6 +741,9 @@ class RosSubscription(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscription, "endpoint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "endpoint", value)
 
     @builtins.property # type: ignore[misc]
@@ -685,6 +759,9 @@ class RosSubscription(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscription, "subscription_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "subscriptionName", value)
 
     @builtins.property # type: ignore[misc]
@@ -700,6 +777,9 @@ class RosSubscription(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscription, "topic_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topicName", value)
 
     @builtins.property # type: ignore[misc]
@@ -720,6 +800,9 @@ class RosSubscription(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscription, "filter_tag").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "filterTag", value)
 
     @builtins.property # type: ignore[misc]
@@ -740,6 +823,9 @@ class RosSubscription(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscription, "notify_content_format").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "notifyContentFormat", value)
 
     @builtins.property # type: ignore[misc]
@@ -760,6 +846,9 @@ class RosSubscription(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosSubscription, "notify_strategy").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "notifyStrategy", value)
 
 
@@ -795,6 +884,14 @@ class RosSubscriptionProps:
         :param notify_content_format: 
         :param notify_strategy: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosSubscriptionProps.__init__)
+            check_type(argname="argument endpoint", value=endpoint, expected_type=type_hints["endpoint"])
+            check_type(argname="argument subscription_name", value=subscription_name, expected_type=type_hints["subscription_name"])
+            check_type(argname="argument topic_name", value=topic_name, expected_type=type_hints["topic_name"])
+            check_type(argname="argument filter_tag", value=filter_tag, expected_type=type_hints["filter_tag"])
+            check_type(argname="argument notify_content_format", value=notify_content_format, expected_type=type_hints["notify_content_format"])
+            check_type(argname="argument notify_strategy", value=notify_strategy, expected_type=type_hints["notify_strategy"])
         self._values: typing.Dict[str, typing.Any] = {
             "endpoint": endpoint,
             "subscription_name": subscription_name,
@@ -904,7 +1001,7 @@ class RosTopic(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosTopicProps",
+        props: typing.Union["RosTopicProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::MNS::Topic``.
@@ -914,6 +1011,12 @@ class RosTopic(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopic.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -924,6 +1027,9 @@ class RosTopic(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopic._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -968,6 +1074,9 @@ class RosTopic(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -983,6 +1092,9 @@ class RosTopic(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "topic_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "topicName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1003,6 +1115,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "logging_enabled").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "loggingEnabled", value)
 
     @builtins.property # type: ignore[misc]
@@ -1023,6 +1138,9 @@ class RosTopic(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosTopic, "maximum_message_size").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "maximumMessageSize", value)
 
 
@@ -1049,6 +1167,11 @@ class RosTopicProps:
         :param logging_enabled: 
         :param maximum_message_size: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosTopicProps.__init__)
+            check_type(argname="argument topic_name", value=topic_name, expected_type=type_hints["topic_name"])
+            check_type(argname="argument logging_enabled", value=logging_enabled, expected_type=type_hints["logging_enabled"])
+            check_type(argname="argument maximum_message_size", value=maximum_message_size, expected_type=type_hints["maximum_message_size"])
         self._values: typing.Dict[str, typing.Any] = {
             "topic_name": topic_name,
         }
@@ -1115,7 +1238,7 @@ class Subscription(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "SubscriptionProps",
+        props: typing.Union["SubscriptionProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::MNS::Subscription``.
@@ -1129,6 +1252,12 @@ class Subscription(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Subscription.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1182,6 +1311,14 @@ class SubscriptionProps:
         :param notify_content_format: Property notifyContentFormat: Format of the message content pushed to the endpoint. XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
         :param notify_strategy: Property notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint. BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(SubscriptionProps.__init__)
+            check_type(argname="argument endpoint", value=endpoint, expected_type=type_hints["endpoint"])
+            check_type(argname="argument subscription_name", value=subscription_name, expected_type=type_hints["subscription_name"])
+            check_type(argname="argument topic_name", value=topic_name, expected_type=type_hints["topic_name"])
+            check_type(argname="argument filter_tag", value=filter_tag, expected_type=type_hints["filter_tag"])
+            check_type(argname="argument notify_content_format", value=notify_content_format, expected_type=type_hints["notify_content_format"])
+            check_type(argname="argument notify_strategy", value=notify_strategy, expected_type=type_hints["notify_strategy"])
         self._values: typing.Dict[str, typing.Any] = {
             "endpoint": endpoint,
             "subscription_name": subscription_name,
@@ -1276,7 +1413,7 @@ class Topic(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "TopicProps",
+        props: typing.Union["TopicProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::MNS::Topic``.
@@ -1290,6 +1427,12 @@ class Topic(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(Topic.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -1334,6 +1477,11 @@ class TopicProps:
         :param logging_enabled: Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. The default value is false
         :param maximum_message_size: Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes. An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(TopicProps.__init__)
+            check_type(argname="argument topic_name", value=topic_name, expected_type=type_hints["topic_name"])
+            check_type(argname="argument logging_enabled", value=logging_enabled, expected_type=type_hints["logging_enabled"])
+            check_type(argname="argument maximum_message_size", value=maximum_message_size, expected_type=type_hints["maximum_message_size"])
         self._values: typing.Dict[str, typing.Any] = {
             "topic_name": topic_name,
         }

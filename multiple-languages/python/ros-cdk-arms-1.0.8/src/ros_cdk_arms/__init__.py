@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class AlertContact(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AlertContactProps",
+        props: typing.Union["AlertContactProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ARMS::AlertContact``.
@@ -47,6 +49,12 @@ class AlertContact(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AlertContact.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -67,7 +75,7 @@ class AlertContactGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "AlertContactGroupProps",
+        props: typing.Union["AlertContactGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ARMS::AlertContactGroup``.
@@ -81,6 +89,12 @@ class AlertContactGroup(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AlertContactGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -116,6 +130,12 @@ class AlertContactGroupProps:
         :param proxy_user_id: Property proxyUserId: Internal parameters.
         :param region_id: Property regionId: Region ID. Default to region of stack.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AlertContactGroupProps.__init__)
+            check_type(argname="argument contact_group_name", value=contact_group_name, expected_type=type_hints["contact_group_name"])
+            check_type(argname="argument contact_ids", value=contact_ids, expected_type=type_hints["contact_ids"])
+            check_type(argname="argument proxy_user_id", value=proxy_user_id, expected_type=type_hints["proxy_user_id"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_group_name": contact_group_name,
             "contact_ids": contact_ids,
@@ -209,6 +229,15 @@ class AlertContactProps:
         :param region_id: Property regionId: Region ID. Default to region of stack.
         :param system_noc: Property systemNoc: Specifies whether to receive system alerts.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(AlertContactProps.__init__)
+            check_type(argname="argument contact_name", value=contact_name, expected_type=type_hints["contact_name"])
+            check_type(argname="argument ding_robot_webhook_url", value=ding_robot_webhook_url, expected_type=type_hints["ding_robot_webhook_url"])
+            check_type(argname="argument email", value=email, expected_type=type_hints["email"])
+            check_type(argname="argument phone_num", value=phone_num, expected_type=type_hints["phone_num"])
+            check_type(argname="argument proxy_user_id", value=proxy_user_id, expected_type=type_hints["proxy_user_id"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+            check_type(argname="argument system_noc", value=system_noc, expected_type=type_hints["system_noc"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_name": contact_name,
         }
@@ -306,7 +335,7 @@ class RetcodeApp(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RetcodeAppProps",
+        props: typing.Union["RetcodeAppProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::ARMS::RetcodeApp``.
@@ -320,6 +349,12 @@ class RetcodeApp(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RetcodeApp.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -358,6 +393,11 @@ class RetcodeAppProps:
         :param retcode_app_name: Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.
         :param retcode_app_type: Property retcodeAppType: The type of the application for which you want to create the browser monitoring job. Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RetcodeAppProps.__init__)
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+            check_type(argname="argument retcode_app_name", value=retcode_app_name, expected_type=type_hints["retcode_app_name"])
+            check_type(argname="argument retcode_app_type", value=retcode_app_type, expected_type=type_hints["retcode_app_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "region_id": region_id,
             "retcode_app_name": retcode_app_name,
@@ -414,7 +454,7 @@ class RosAlertContact(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAlertContactProps",
+        props: typing.Union["RosAlertContactProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ARMS::AlertContact``.
@@ -424,6 +464,12 @@ class RosAlertContact(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlertContact.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -434,6 +480,9 @@ class RosAlertContact(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlertContact._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -468,6 +517,9 @@ class RosAlertContact(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContact, "contact_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactName", value)
 
     @builtins.property # type: ignore[misc]
@@ -477,6 +529,9 @@ class RosAlertContact(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContact, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -494,6 +549,9 @@ class RosAlertContact(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContact, "ding_robot_webhook_url").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dingRobotWebhookUrl", value)
 
     @builtins.property # type: ignore[misc]
@@ -511,6 +569,9 @@ class RosAlertContact(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContact, "email").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "email", value)
 
     @builtins.property # type: ignore[misc]
@@ -528,6 +589,9 @@ class RosAlertContact(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContact, "phone_num").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "phoneNum", value)
 
     @builtins.property # type: ignore[misc]
@@ -545,6 +609,9 @@ class RosAlertContact(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContact, "proxy_user_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "proxyUserId", value)
 
     @builtins.property # type: ignore[misc]
@@ -562,6 +629,9 @@ class RosAlertContact(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContact, "region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -579,6 +649,9 @@ class RosAlertContact(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContact, "system_noc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "systemNoc", value)
 
 
@@ -593,7 +666,7 @@ class RosAlertContactGroup(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosAlertContactGroupProps",
+        props: typing.Union["RosAlertContactGroupProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ARMS::AlertContactGroup``.
@@ -603,6 +676,12 @@ class RosAlertContactGroup(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlertContactGroup.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -613,6 +692,9 @@ class RosAlertContactGroup(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlertContactGroup._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -649,6 +731,9 @@ class RosAlertContactGroup(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContactGroup, "contact_group_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactGroupName", value)
 
     @builtins.property # type: ignore[misc]
@@ -666,6 +751,9 @@ class RosAlertContactGroup(
         self,
         value: typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[jsii.Number, ros_cdk_core.IResolvable]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContactGroup, "contact_ids").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "contactIds", value)
 
     @builtins.property # type: ignore[misc]
@@ -675,6 +763,9 @@ class RosAlertContactGroup(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContactGroup, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -692,6 +783,9 @@ class RosAlertContactGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContactGroup, "proxy_user_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "proxyUserId", value)
 
     @builtins.property # type: ignore[misc]
@@ -709,6 +803,9 @@ class RosAlertContactGroup(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosAlertContactGroup, "region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionId", value)
 
 
@@ -738,6 +835,12 @@ class RosAlertContactGroupProps:
         :param proxy_user_id: 
         :param region_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlertContactGroupProps.__init__)
+            check_type(argname="argument contact_group_name", value=contact_group_name, expected_type=type_hints["contact_group_name"])
+            check_type(argname="argument contact_ids", value=contact_ids, expected_type=type_hints["contact_ids"])
+            check_type(argname="argument proxy_user_id", value=proxy_user_id, expected_type=type_hints["proxy_user_id"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_group_name": contact_group_name,
             "contact_ids": contact_ids,
@@ -836,6 +939,15 @@ class RosAlertContactProps:
         :param region_id: 
         :param system_noc: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosAlertContactProps.__init__)
+            check_type(argname="argument contact_name", value=contact_name, expected_type=type_hints["contact_name"])
+            check_type(argname="argument ding_robot_webhook_url", value=ding_robot_webhook_url, expected_type=type_hints["ding_robot_webhook_url"])
+            check_type(argname="argument email", value=email, expected_type=type_hints["email"])
+            check_type(argname="argument phone_num", value=phone_num, expected_type=type_hints["phone_num"])
+            check_type(argname="argument proxy_user_id", value=proxy_user_id, expected_type=type_hints["proxy_user_id"])
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+            check_type(argname="argument system_noc", value=system_noc, expected_type=type_hints["system_noc"])
         self._values: typing.Dict[str, typing.Any] = {
             "contact_name": contact_name,
         }
@@ -944,7 +1056,7 @@ class RosRetcodeApp(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosRetcodeAppProps",
+        props: typing.Union["RosRetcodeAppProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::ARMS::RetcodeApp``.
@@ -954,6 +1066,12 @@ class RosRetcodeApp(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRetcodeApp.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -964,6 +1082,9 @@ class RosRetcodeApp(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRetcodeApp._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1000,6 +1121,9 @@ class RosRetcodeApp(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRetcodeApp, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1015,6 +1139,9 @@ class RosRetcodeApp(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRetcodeApp, "region_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "regionId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1030,6 +1157,9 @@ class RosRetcodeApp(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRetcodeApp, "retcode_app_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "retcodeAppName", value)
 
     @builtins.property # type: ignore[misc]
@@ -1045,6 +1175,9 @@ class RosRetcodeApp(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosRetcodeApp, "retcode_app_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "retcodeAppType", value)
 
 
@@ -1071,6 +1204,11 @@ class RosRetcodeAppProps:
         :param retcode_app_name: 
         :param retcode_app_type: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosRetcodeAppProps.__init__)
+            check_type(argname="argument region_id", value=region_id, expected_type=type_hints["region_id"])
+            check_type(argname="argument retcode_app_name", value=retcode_app_name, expected_type=type_hints["retcode_app_name"])
+            check_type(argname="argument retcode_app_type", value=retcode_app_type, expected_type=type_hints["retcode_app_type"])
         self._values: typing.Dict[str, typing.Any] = {
             "region_id": region_id,
             "retcode_app_name": retcode_app_name,

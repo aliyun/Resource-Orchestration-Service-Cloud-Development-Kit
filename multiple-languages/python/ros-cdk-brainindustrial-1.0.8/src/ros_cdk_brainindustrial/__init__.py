@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class PidOrganization(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "PidOrganizationProps",
+        props: typing.Union["PidOrganizationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::BrainIndustrial::PidOrganization``.
@@ -47,6 +49,12 @@ class PidOrganization(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PidOrganization.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -94,6 +102,10 @@ class PidOrganizationProps:
         :param pid_organization_name: Property pidOrganizationName: PidOrganizationName.
         :param parent_pid_organization_id: Property parentPidOrganizationId: ParentPidOrganizationId.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PidOrganizationProps.__init__)
+            check_type(argname="argument pid_organization_name", value=pid_organization_name, expected_type=type_hints["pid_organization_name"])
+            check_type(argname="argument parent_pid_organization_id", value=parent_pid_organization_id, expected_type=type_hints["parent_pid_organization_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "pid_organization_name": pid_organization_name,
         }
@@ -140,7 +152,7 @@ class PidProject(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "PidProjectProps",
+        props: typing.Union["PidProjectProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::BrainIndustrial::PidProject``.
@@ -154,6 +166,12 @@ class PidProject(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PidProject.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -204,6 +222,11 @@ class PidProjectProps:
         :param pid_project_name: Property pidProjectName: PidProjectName.
         :param pid_project_desc: Property pidProjectDesc: PidProjectDesc.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(PidProjectProps.__init__)
+            check_type(argname="argument pid_organization_id", value=pid_organization_id, expected_type=type_hints["pid_organization_id"])
+            check_type(argname="argument pid_project_name", value=pid_project_name, expected_type=type_hints["pid_project_name"])
+            check_type(argname="argument pid_project_desc", value=pid_project_desc, expected_type=type_hints["pid_project_desc"])
         self._values: typing.Dict[str, typing.Any] = {
             "pid_organization_id": pid_organization_id,
             "pid_project_name": pid_project_name,
@@ -258,7 +281,7 @@ class RosPidOrganization(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosPidOrganizationProps",
+        props: typing.Union["RosPidOrganizationProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::BrainIndustrial::PidOrganization``.
@@ -268,6 +291,12 @@ class RosPidOrganization(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPidOrganization.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -278,6 +307,9 @@ class RosPidOrganization(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPidOrganization._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -330,6 +362,9 @@ class RosPidOrganization(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPidOrganization, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -347,6 +382,9 @@ class RosPidOrganization(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPidOrganization, "pid_organization_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pidOrganizationName", value)
 
     @builtins.property # type: ignore[misc]
@@ -364,6 +402,9 @@ class RosPidOrganization(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPidOrganization, "parent_pid_organization_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "parentPidOrganizationId", value)
 
 
@@ -387,6 +428,10 @@ class RosPidOrganizationProps:
         :param pid_organization_name: 
         :param parent_pid_organization_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPidOrganizationProps.__init__)
+            check_type(argname="argument pid_organization_name", value=pid_organization_name, expected_type=type_hints["pid_organization_name"])
+            check_type(argname="argument parent_pid_organization_id", value=parent_pid_organization_id, expected_type=type_hints["parent_pid_organization_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "pid_organization_name": pid_organization_name,
         }
@@ -437,7 +482,7 @@ class RosPidProject(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosPidProjectProps",
+        props: typing.Union["RosPidProjectProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::BrainIndustrial::PidProject``.
@@ -447,6 +492,12 @@ class RosPidProject(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPidProject.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -457,6 +508,9 @@ class RosPidProject(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPidProject._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -509,6 +563,9 @@ class RosPidProject(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPidProject, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -526,6 +583,9 @@ class RosPidProject(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPidProject, "pid_organization_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pidOrganizationId", value)
 
     @builtins.property # type: ignore[misc]
@@ -541,6 +601,9 @@ class RosPidProject(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPidProject, "pid_project_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pidProjectName", value)
 
     @builtins.property # type: ignore[misc]
@@ -558,6 +621,9 @@ class RosPidProject(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosPidProject, "pid_project_desc").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pidProjectDesc", value)
 
 
@@ -584,6 +650,11 @@ class RosPidProjectProps:
         :param pid_project_name: 
         :param pid_project_desc: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosPidProjectProps.__init__)
+            check_type(argname="argument pid_organization_id", value=pid_organization_id, expected_type=type_hints["pid_organization_id"])
+            check_type(argname="argument pid_project_name", value=pid_project_name, expected_type=type_hints["pid_project_name"])
+            check_type(argname="argument pid_project_desc", value=pid_project_desc, expected_type=type_hints["pid_project_desc"])
         self._values: typing.Dict[str, typing.Any] = {
             "pid_organization_id": pid_organization_id,
             "pid_project_name": pid_project_name,

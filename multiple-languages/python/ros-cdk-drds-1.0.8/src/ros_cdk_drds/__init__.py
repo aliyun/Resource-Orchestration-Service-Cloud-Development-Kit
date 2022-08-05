@@ -17,6 +17,8 @@ import jsii
 import publication
 import typing_extensions
 
+from typeguard import check_type
+
 from ._jsii import *
 
 import ros_cdk_core
@@ -33,7 +35,7 @@ class DrdsDB(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DrdsDBProps",
+        props: typing.Union["DrdsDBProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DRDS::DrdsDB``.
@@ -47,6 +49,12 @@ class DrdsDB(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DrdsDB.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
 
@@ -76,7 +84,7 @@ class DrdsDBProps:
         db_inst_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         encode: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        inst_db_name: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, "RosDrdsDB.InstDbNameProperty"]]]] = None,
+        inst_db_name: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union["RosDrdsDB.InstDbNameProperty", typing.Dict[str, typing.Any]]]]]] = None,
         password: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         rds_instance: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -94,6 +102,18 @@ class DrdsDBProps:
         :param rds_instance: Property rdsInstance: This property is required only for vertical partitioning.
         :param type: Property type: Database Sharding method. For more information, see scalability principle. Valid values: HORIZONTAL: indicates HORIZONTAL partitioning, which is commonly known as database and table sharding. VERTICAL: indicates VERTICAL partitioning.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DrdsDBProps.__init__)
+            check_type(argname="argument drds_instance_id", value=drds_instance_id, expected_type=type_hints["drds_instance_id"])
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument db_instance_is_creating", value=db_instance_is_creating, expected_type=type_hints["db_instance_is_creating"])
+            check_type(argname="argument db_inst_type", value=db_inst_type, expected_type=type_hints["db_inst_type"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+            check_type(argname="argument encode", value=encode, expected_type=type_hints["encode"])
+            check_type(argname="argument inst_db_name", value=inst_db_name, expected_type=type_hints["inst_db_name"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+            check_type(argname="argument rds_instance", value=rds_instance, expected_type=type_hints["rds_instance"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
         self._values: typing.Dict[str, typing.Any] = {
             "drds_instance_id": drds_instance_id,
         }
@@ -228,7 +248,7 @@ class DrdsInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "DrdsInstanceProps",
+        props: typing.Union["DrdsInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: typing.Optional[builtins.bool] = None,
     ) -> None:
         '''Create a new ``ALIYUN::DRDS::DrdsInstance``.
@@ -242,6 +262,12 @@ class DrdsInstance(
         :param props: -
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DrdsInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @builtins.property # type: ignore[misc]
@@ -306,7 +332,7 @@ class DrdsInstanceProps:
         my_sql_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         pricing_cycle: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence["RosDrdsInstance.TagsProperty"]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union["RosDrdsInstance.TagsProperty", typing.Dict[str, typing.Any]]]] = None,
         vpc_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         vswitch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -328,6 +354,23 @@ class DrdsInstanceProps:
         :param vpc_id: Property vpcId: Virtual private network ID, must be specified when creating a DRDS for VPC network type.
         :param vswitch_id: Property vswitchId: Virtual switch ID, must be specified when creating a DRDS for VPC network type.
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(DrdsInstanceProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument instance_series", value=instance_series, expected_type=type_hints["instance_series"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument quantity", value=quantity, expected_type=type_hints["quantity"])
+            check_type(argname="argument specification", value=specification, expected_type=type_hints["specification"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument duration", value=duration, expected_type=type_hints["duration"])
+            check_type(argname="argument is_auto_renew", value=is_auto_renew, expected_type=type_hints["is_auto_renew"])
+            check_type(argname="argument my_sql_version", value=my_sql_version, expected_type=type_hints["my_sql_version"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument vswitch_id", value=vswitch_id, expected_type=type_hints["vswitch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "description": description,
             "instance_series": instance_series,
@@ -503,7 +546,7 @@ class RosDrdsDB(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDrdsDBProps",
+        props: typing.Union["RosDrdsDBProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DRDS::DrdsDB``.
@@ -513,6 +556,12 @@ class RosDrdsDB(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDrdsDB.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -523,6 +572,9 @@ class RosDrdsDB(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDrdsDB._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -549,6 +601,9 @@ class RosDrdsDB(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "drds_instance_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "drdsInstanceId", value)
 
     @builtins.property # type: ignore[misc]
@@ -559,6 +614,9 @@ class RosDrdsDB(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -576,6 +634,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "account_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "accountName", value)
 
     @builtins.property # type: ignore[misc]
@@ -593,6 +654,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "db_instance_is_creating").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstanceIsCreating", value)
 
     @builtins.property # type: ignore[misc]
@@ -613,6 +677,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "db_inst_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbInstType", value)
 
     @builtins.property # type: ignore[misc]
@@ -630,6 +697,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "db_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "dbName", value)
 
     @builtins.property # type: ignore[misc]
@@ -647,6 +717,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "encode").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "encode", value)
 
     @builtins.property # type: ignore[misc]
@@ -664,6 +737,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[ros_cdk_core.IResolvable, "RosDrdsDB.InstDbNameProperty"]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "inst_db_name").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instDbName", value)
 
     @builtins.property # type: ignore[misc]
@@ -681,6 +757,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "password").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "password", value)
 
     @builtins.property # type: ignore[misc]
@@ -698,6 +777,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.List[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "rds_instance").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "rdsInstance", value)
 
     @builtins.property # type: ignore[misc]
@@ -720,6 +802,9 @@ class RosDrdsDB(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsDB, "type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "type", value)
 
     @jsii.data_type(
@@ -741,6 +826,10 @@ class RosDrdsDB(
             :param db_instance_id: 
             :param shard_db_name: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDrdsDB.InstDbNameProperty.__init__)
+                check_type(argname="argument db_instance_id", value=db_instance_id, expected_type=type_hints["db_instance_id"])
+                check_type(argname="argument shard_db_name", value=shard_db_name, expected_type=type_hints["shard_db_name"])
             self._values: typing.Dict[str, typing.Any] = {
                 "db_instance_id": db_instance_id,
                 "shard_db_name": shard_db_name,
@@ -806,7 +895,7 @@ class RosDrdsDBProps:
         db_inst_type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         db_name: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         encode: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        inst_db_name: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, RosDrdsDB.InstDbNameProperty]]]] = None,
+        inst_db_name: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[ros_cdk_core.IResolvable, typing.Union[RosDrdsDB.InstDbNameProperty, typing.Dict[str, typing.Any]]]]]] = None,
         password: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         rds_instance: typing.Optional[typing.Union[ros_cdk_core.IResolvable, typing.Sequence[typing.Union[builtins.str, ros_cdk_core.IResolvable]]]] = None,
         type: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
@@ -824,6 +913,18 @@ class RosDrdsDBProps:
         :param rds_instance: 
         :param type: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDrdsDBProps.__init__)
+            check_type(argname="argument drds_instance_id", value=drds_instance_id, expected_type=type_hints["drds_instance_id"])
+            check_type(argname="argument account_name", value=account_name, expected_type=type_hints["account_name"])
+            check_type(argname="argument db_instance_is_creating", value=db_instance_is_creating, expected_type=type_hints["db_instance_is_creating"])
+            check_type(argname="argument db_inst_type", value=db_inst_type, expected_type=type_hints["db_inst_type"])
+            check_type(argname="argument db_name", value=db_name, expected_type=type_hints["db_name"])
+            check_type(argname="argument encode", value=encode, expected_type=type_hints["encode"])
+            check_type(argname="argument inst_db_name", value=inst_db_name, expected_type=type_hints["inst_db_name"])
+            check_type(argname="argument password", value=password, expected_type=type_hints["password"])
+            check_type(argname="argument rds_instance", value=rds_instance, expected_type=type_hints["rds_instance"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
         self._values: typing.Dict[str, typing.Any] = {
             "drds_instance_id": drds_instance_id,
         }
@@ -976,7 +1077,7 @@ class RosDrdsInstance(
         self,
         scope: ros_cdk_core.Construct,
         id: builtins.str,
-        props: "RosDrdsInstanceProps",
+        props: typing.Union["RosDrdsInstanceProps", typing.Dict[str, typing.Any]],
         enable_resource_property_constraint: builtins.bool,
     ) -> None:
         '''Create a new ``ALIYUN::DRDS::DrdsInstance``.
@@ -986,6 +1087,12 @@ class RosDrdsInstance(
         :param props: - resource properties.
         :param enable_resource_property_constraint: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDrdsInstance.__init__)
+            check_type(argname="argument scope", value=scope, expected_type=type_hints["scope"])
+            check_type(argname="argument id", value=id, expected_type=type_hints["id"])
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
+            check_type(argname="argument enable_resource_property_constraint", value=enable_resource_property_constraint, expected_type=type_hints["enable_resource_property_constraint"])
         jsii.create(self.__class__, self, [scope, id, props, enable_resource_property_constraint])
 
     @jsii.member(jsii_name="renderProperties")
@@ -996,6 +1103,9 @@ class RosDrdsInstance(
         '''
         :param props: -
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDrdsInstance._render_properties)
+            check_type(argname="argument props", value=props, expected_type=type_hints["props"])
         return typing.cast(typing.Mapping[builtins.str, typing.Any], jsii.invoke(self, "renderProperties", [props]))
 
     @jsii.python.classproperty # type: ignore[misc]
@@ -1054,6 +1164,9 @@ class RosDrdsInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "description").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "description", value)
 
     @builtins.property # type: ignore[misc]
@@ -1063,6 +1176,9 @@ class RosDrdsInstance(
 
     @enable_resource_property_constraint.setter
     def enable_resource_property_constraint(self, value: builtins.bool) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "enable_resource_property_constraint").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "enableResourcePropertyConstraint", value)
 
     @builtins.property # type: ignore[misc]
@@ -1078,6 +1194,9 @@ class RosDrdsInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "instance_series").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "instanceSeries", value)
 
     @builtins.property # type: ignore[misc]
@@ -1093,6 +1212,9 @@ class RosDrdsInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "pay_type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "payType", value)
 
     @builtins.property # type: ignore[misc]
@@ -1108,6 +1230,9 @@ class RosDrdsInstance(
         self,
         value: typing.Union[jsii.Number, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "quantity").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "quantity", value)
 
     @builtins.property # type: ignore[misc]
@@ -1123,6 +1248,9 @@ class RosDrdsInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "specification").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "specification", value)
 
     @builtins.property # type: ignore[misc]
@@ -1135,6 +1263,9 @@ class RosDrdsInstance(
 
     @type.setter
     def type(self, value: typing.Union[builtins.str, ros_cdk_core.IResolvable]) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "type").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "type", value)
 
     @builtins.property # type: ignore[misc]
@@ -1150,6 +1281,9 @@ class RosDrdsInstance(
         self,
         value: typing.Union[builtins.str, ros_cdk_core.IResolvable],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "zone_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "zoneId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1167,6 +1301,9 @@ class RosDrdsInstance(
         self,
         value: typing.Optional[typing.Union[jsii.Number, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "duration").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "duration", value)
 
     @builtins.property # type: ignore[misc]
@@ -1184,6 +1321,9 @@ class RosDrdsInstance(
         self,
         value: typing.Optional[typing.Union[builtins.bool, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "is_auto_renew").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "isAutoRenew", value)
 
     @builtins.property # type: ignore[misc]
@@ -1201,6 +1341,9 @@ class RosDrdsInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "my_sql_version").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "mySqlVersion", value)
 
     @builtins.property # type: ignore[misc]
@@ -1218,6 +1361,9 @@ class RosDrdsInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "pricing_cycle").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "pricingCycle", value)
 
     @builtins.property # type: ignore[misc]
@@ -1235,6 +1381,9 @@ class RosDrdsInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "resource_group_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "resourceGroupId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1250,6 +1399,9 @@ class RosDrdsInstance(
         self,
         value: typing.Optional[typing.List["RosDrdsInstance.TagsProperty"]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "tags").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "tags", value)
 
     @builtins.property # type: ignore[misc]
@@ -1267,6 +1419,9 @@ class RosDrdsInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "vpc_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vpcId", value)
 
     @builtins.property # type: ignore[misc]
@@ -1284,6 +1439,9 @@ class RosDrdsInstance(
         self,
         value: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]],
     ) -> None:
+        if __debug__:
+            type_hints = typing.get_type_hints(getattr(RosDrdsInstance, "vswitch_id").fset)
+            check_type(argname="argument value", value=value, expected_type=type_hints["value"])
         jsii.set(self, "vswitchId", value)
 
     @jsii.data_type(
@@ -1302,6 +1460,10 @@ class RosDrdsInstance(
             :param key: 
             :param value: 
             '''
+            if __debug__:
+                type_hints = typing.get_type_hints(RosDrdsInstance.TagsProperty.__init__)
+                check_type(argname="argument key", value=key, expected_type=type_hints["key"])
+                check_type(argname="argument value", value=value, expected_type=type_hints["value"])
             self._values: typing.Dict[str, typing.Any] = {
                 "key": key,
             }
@@ -1376,7 +1538,7 @@ class RosDrdsInstanceProps:
         my_sql_version: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         pricing_cycle: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         resource_group_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
-        tags: typing.Optional[typing.Sequence[RosDrdsInstance.TagsProperty]] = None,
+        tags: typing.Optional[typing.Sequence[typing.Union[RosDrdsInstance.TagsProperty, typing.Dict[str, typing.Any]]]] = None,
         vpc_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
         vswitch_id: typing.Optional[typing.Union[builtins.str, ros_cdk_core.IResolvable]] = None,
     ) -> None:
@@ -1398,6 +1560,23 @@ class RosDrdsInstanceProps:
         :param vpc_id: 
         :param vswitch_id: 
         '''
+        if __debug__:
+            type_hints = typing.get_type_hints(RosDrdsInstanceProps.__init__)
+            check_type(argname="argument description", value=description, expected_type=type_hints["description"])
+            check_type(argname="argument instance_series", value=instance_series, expected_type=type_hints["instance_series"])
+            check_type(argname="argument pay_type", value=pay_type, expected_type=type_hints["pay_type"])
+            check_type(argname="argument quantity", value=quantity, expected_type=type_hints["quantity"])
+            check_type(argname="argument specification", value=specification, expected_type=type_hints["specification"])
+            check_type(argname="argument type", value=type, expected_type=type_hints["type"])
+            check_type(argname="argument zone_id", value=zone_id, expected_type=type_hints["zone_id"])
+            check_type(argname="argument duration", value=duration, expected_type=type_hints["duration"])
+            check_type(argname="argument is_auto_renew", value=is_auto_renew, expected_type=type_hints["is_auto_renew"])
+            check_type(argname="argument my_sql_version", value=my_sql_version, expected_type=type_hints["my_sql_version"])
+            check_type(argname="argument pricing_cycle", value=pricing_cycle, expected_type=type_hints["pricing_cycle"])
+            check_type(argname="argument resource_group_id", value=resource_group_id, expected_type=type_hints["resource_group_id"])
+            check_type(argname="argument tags", value=tags, expected_type=type_hints["tags"])
+            check_type(argname="argument vpc_id", value=vpc_id, expected_type=type_hints["vpc_id"])
+            check_type(argname="argument vswitch_id", value=vswitch_id, expected_type=type_hints["vswitch_id"])
         self._values: typing.Dict[str, typing.Any] = {
             "description": description,
             "instance_series": instance_series,
