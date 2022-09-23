@@ -47,12 +47,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             set;
         }
 
+        private object? _constraintDescription;
+
         [JsiiOptional]
         [JsiiProperty(name: "constraintDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? ConstraintDescription
         {
-            get;
-            set;
+            get => _constraintDescription;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case System.Collections.Generic.IDictionary<string, string> cast_cd4240:
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, System.Collections.Generic.IDictionary<string, string>; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _constraintDescription = value;
+            }
         }
 
         [JsiiOptional]
@@ -63,12 +82,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             set;
         }
 
+        private object? _description;
+
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         public object? Description
         {
-            get;
-            set;
+            get => _description;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case System.Collections.Generic.IDictionary<string, string> cast_cd4240:
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, System.Collections.Generic.IDictionary<string, string>; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _description = value;
+            }
         }
 
         [JsiiOptional]

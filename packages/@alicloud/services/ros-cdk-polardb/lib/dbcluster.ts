@@ -133,9 +133,18 @@ export interface DBClusterProps {
     readonly maintainTime?: string | ros.IResolvable;
 
     /**
-     * Property period: The subscription period of the cluster in month. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
+     * Property period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36
+     * If periodUnit is year, the valid range is 1, 2, 3
      */
     readonly period?: number | ros.IResolvable;
+
+    /**
+     * Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * Property renewalStatus: The auto renewal status of the cluster Valid values:
@@ -296,6 +305,7 @@ export class DBCluster extends ros.Resource {
             dbNodeClass: props.dbNodeClass,
             creationOption: props.creationOption === undefined || props.creationOption === null ? 'Normal' : props.creationOption,
             vpcId: props.vpcId,
+            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
         this.attrClusterConnectionString = rosDBCluster.attrClusterConnectionString;

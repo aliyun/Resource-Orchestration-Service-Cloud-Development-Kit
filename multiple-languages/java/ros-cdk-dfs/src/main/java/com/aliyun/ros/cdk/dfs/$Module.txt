@@ -1,0 +1,16 @@
+@alicloud/ros-cdk-dfs.AccessGroup=com.aliyun.ros.cdk.dfs.AccessGroup
+@alicloud/ros-cdk-dfs.AccessGroupProps=com.aliyun.ros.cdk.dfs.AccessGroupProps
+@alicloud/ros-cdk-dfs.AccessRule=com.aliyun.ros.cdk.dfs.AccessRule
+@alicloud/ros-cdk-dfs.AccessRuleProps=com.aliyun.ros.cdk.dfs.AccessRuleProps
+@alicloud/ros-cdk-dfs.FileSystem=com.aliyun.ros.cdk.dfs.FileSystem
+@alicloud/ros-cdk-dfs.FileSystemProps=com.aliyun.ros.cdk.dfs.FileSystemProps
+@alicloud/ros-cdk-dfs.MountPoint=com.aliyun.ros.cdk.dfs.MountPoint
+@alicloud/ros-cdk-dfs.MountPointProps=com.aliyun.ros.cdk.dfs.MountPointProps
+@alicloud/ros-cdk-dfs.RosAccessGroup=com.aliyun.ros.cdk.dfs.RosAccessGroup
+@alicloud/ros-cdk-dfs.RosAccessGroupProps=com.aliyun.ros.cdk.dfs.RosAccessGroupProps
+@alicloud/ros-cdk-dfs.RosAccessRule=com.aliyun.ros.cdk.dfs.RosAccessRule
+@alicloud/ros-cdk-dfs.RosAccessRuleProps=com.aliyun.ros.cdk.dfs.RosAccessRuleProps
+@alicloud/ros-cdk-dfs.RosFileSystem=com.aliyun.ros.cdk.dfs.RosFileSystem
+@alicloud/ros-cdk-dfs.RosFileSystemProps=com.aliyun.ros.cdk.dfs.RosFileSystemProps
+@alicloud/ros-cdk-dfs.RosMountPoint=com.aliyun.ros.cdk.dfs.RosMountPoint
+@alicloud/ros-cdk-dfs.RosMountPointProps=com.aliyun.ros.cdk.dfs.RosMountPointProps

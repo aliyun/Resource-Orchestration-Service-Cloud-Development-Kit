@@ -10,8 +10,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
     {
         /// <summary>Reads a cloud assembly from the specified directory.</summary>
         /// <param name="directory">The root directory of the assembly.</param>
-        public CloudAssembly(string directory): base(new DeputyProps(new object?[]{directory}))
+        public CloudAssembly(string directory): base(_MakeDeputyProps(directory))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(string directory)
+        {
+            return new DeputyProps(new object?[]{directory});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

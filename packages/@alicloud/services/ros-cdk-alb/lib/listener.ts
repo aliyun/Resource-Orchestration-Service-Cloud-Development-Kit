@@ -31,7 +31,17 @@ export interface ListenerProps {
     readonly loadBalancerId: string | ros.IResolvable;
 
     /**
-     * Property certificates: The content of the SSL certificate.
+     * Property caCertificates: List of configured CA certificates for listener.
+     */
+    readonly caCertificates?: Array<RosListener.CaCertificatesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property caEnabled: Specifies whether to enable mutual authentication. Default false.
+     */
+    readonly caEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property certificates: The list of SSL certificates for listener.
      */
     readonly certificates?: Array<RosListener.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -119,8 +129,9 @@ export class Listener extends ros.Resource {
         super(scope, id);
 
         const rosListener = new RosListener(this, id,  {
-            requestTimeout: props.requestTimeout,
+            caEnabled: props.caEnabled,
             listenerPort: props.listenerPort,
+            requestTimeout: props.requestTimeout,
             http2Enabled: props.http2Enabled,
             defaultActions: props.defaultActions,
             certificates: props.certificates,
@@ -132,6 +143,7 @@ export class Listener extends ros.Resource {
             securityPolicyId: props.securityPolicyId,
             listenerDescription: props.listenerDescription,
             xForwardedForConfig: props.xForwardedForConfig,
+            caCertificates: props.caCertificates,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosListener;
         this.attrListenerId = rosListener.attrListenerId;

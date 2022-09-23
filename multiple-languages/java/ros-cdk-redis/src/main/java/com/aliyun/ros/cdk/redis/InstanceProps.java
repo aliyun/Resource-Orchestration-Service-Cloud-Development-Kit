@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Properties for defining a `ALIYUN::REDIS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.292Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.398Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -100,6 +100,18 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return null;
+    }
+
+    /**
+     * Property periodUnit: The unit of the subscription duration.
+     * <p>
+     * Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
@@ -213,6 +225,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object instanceName;
         java.lang.Object password;
         java.lang.Object period;
+        java.lang.Object periodUnit;
         java.lang.Object productType;
         java.lang.Object resourceGroupId;
         java.lang.Object secondaryZoneId;
@@ -479,6 +492,34 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration.
+         *                   Valid values:
+         *                   Month
+         *                   Year
+         *                   Default value: Month.
+         * @return {@code this}
+         */
+        public Builder periodUnit(java.lang.String periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration.
+         *                   Valid values:
+         *                   Month
+         *                   Year
+         *                   Default value: Month.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getProductType}
          * @param productType Property productType: Product type.
          *                    Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
@@ -722,6 +763,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object instanceName;
         private final java.lang.Object password;
         private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
         private final java.lang.Object productType;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object secondaryZoneId;
@@ -751,6 +793,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.productType = software.amazon.jsii.Kernel.get(this, "productType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryZoneId = software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -781,6 +824,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceName = builder.instanceName;
             this.password = builder.password;
             this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
             this.productType = builder.productType;
             this.resourceGroupId = builder.resourceGroupId;
             this.secondaryZoneId = builder.secondaryZoneId;
@@ -851,6 +895,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getPeriod() {
             return this.period;
+        }
+
+        @Override
+        public final java.lang.Object getPeriodUnit() {
+            return this.periodUnit;
         }
 
         @Override
@@ -945,6 +994,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
+            if (this.getPeriodUnit() != null) {
+                data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            }
             if (this.getProductType() != null) {
                 data.set("productType", om.valueToTree(this.getProductType()));
             }
@@ -1005,6 +1057,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.productType != null ? !this.productType.equals(that.productType) : that.productType != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.secondaryZoneId != null ? !this.secondaryZoneId.equals(that.secondaryZoneId) : that.secondaryZoneId != null) return false;
@@ -1031,6 +1084,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.productType != null ? this.productType.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.secondaryZoneId != null ? this.secondaryZoneId.hashCode() : 0);

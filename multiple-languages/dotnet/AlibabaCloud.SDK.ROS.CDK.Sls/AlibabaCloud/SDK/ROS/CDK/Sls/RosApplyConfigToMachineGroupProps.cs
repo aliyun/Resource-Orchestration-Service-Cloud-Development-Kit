@@ -8,6 +8,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosApplyConfigToMachineGroupProps")]
     public class RosApplyConfigToMachineGroupProps : AlibabaCloud.SDK.ROS.CDK.Sls.IRosApplyConfigToMachineGroupProps
     {
+        private object? _configName;
+
         /// <remarks>
         /// <strong>Property</strong>: configName: Apply config to the config name
         /// </remarks>
@@ -15,9 +17,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         [JsiiProperty(name: "configName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ConfigName
         {
-            get;
-            set;
+            get => _configName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _configName = value;
+            }
         }
+
+        private object? _groupName;
 
         /// <remarks>
         /// <strong>Property</strong>: groupName: Apply config to the group name
@@ -26,9 +50,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? GroupName
         {
-            get;
-            set;
+            get => _groupName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _groupName = value;
+            }
         }
+
+        private object? _projectName;
 
         /// <remarks>
         /// <strong>Property</strong>: projectName: Apply config to the project name.
@@ -37,8 +83,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ProjectName
         {
-            get;
-            set;
+            get => _projectName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _projectName = value;
+            }
         }
     }
 }

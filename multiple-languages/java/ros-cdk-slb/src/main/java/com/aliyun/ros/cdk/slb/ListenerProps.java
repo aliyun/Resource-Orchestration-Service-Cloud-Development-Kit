@@ -3,15 +3,10 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.587Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
-
-    /**
-     * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getBackendServerPort();
 
     /**
      * Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second).
@@ -71,6 +66,13 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAclType() {
+        return null;
+    }
+
+    /**
+     * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackendServerPort() {
         return null;
     }
 
@@ -202,7 +204,6 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ListenerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ListenerProps> {
-        java.lang.Object backendServerPort;
         java.lang.Object bandwidth;
         java.lang.Object listenerPort;
         java.lang.Object loadBalancerId;
@@ -210,6 +211,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object aclId;
         java.lang.Object aclStatus;
         java.lang.Object aclType;
+        java.lang.Object backendServerPort;
         java.lang.Object caCertificateId;
         java.lang.Object description;
         java.lang.Object enableHttp2;
@@ -224,26 +226,6 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object serverCertificateId;
         java.lang.Object startListener;
         java.lang.Object vServerGroupId;
-
-        /**
-         * Sets the value of {@link ListenerProps#getBackendServerPort}
-         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder backendServerPort(java.lang.Number backendServerPort) {
-            this.backendServerPort = backendServerPort;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ListenerProps#getBackendServerPort}
-         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder backendServerPort(com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
-            this.backendServerPort = backendServerPort;
-            return this;
-        }
 
         /**
          * Sets the value of {@link ListenerProps#getBandwidth}
@@ -412,6 +394,26 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder aclType(com.aliyun.ros.cdk.core.IResolvable aclType) {
             this.aclType = aclType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getBackendServerPort}
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+         * @return {@code this}
+         */
+        public Builder backendServerPort(java.lang.Number backendServerPort) {
+            this.backendServerPort = backendServerPort;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getBackendServerPort}
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+         * @return {@code this}
+         */
+        public Builder backendServerPort(com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
+            this.backendServerPort = backendServerPort;
             return this;
         }
 
@@ -739,7 +741,6 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ListenerProps {
-        private final java.lang.Object backendServerPort;
         private final java.lang.Object bandwidth;
         private final java.lang.Object listenerPort;
         private final java.lang.Object loadBalancerId;
@@ -747,6 +748,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object aclId;
         private final java.lang.Object aclStatus;
         private final java.lang.Object aclType;
+        private final java.lang.Object backendServerPort;
         private final java.lang.Object caCertificateId;
         private final java.lang.Object description;
         private final java.lang.Object enableHttp2;
@@ -768,7 +770,6 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.backendServerPort = software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -776,6 +777,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclStatus = software.amazon.jsii.Kernel.get(this, "aclStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclType = software.amazon.jsii.Kernel.get(this, "aclType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backendServerPort = software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.caCertificateId = software.amazon.jsii.Kernel.get(this, "caCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableHttp2 = software.amazon.jsii.Kernel.get(this, "enableHttp2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -797,7 +799,6 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.backendServerPort = java.util.Objects.requireNonNull(builder.backendServerPort, "backendServerPort is required");
             this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
             this.listenerPort = java.util.Objects.requireNonNull(builder.listenerPort, "listenerPort is required");
             this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
@@ -805,6 +806,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.aclId = builder.aclId;
             this.aclStatus = builder.aclStatus;
             this.aclType = builder.aclType;
+            this.backendServerPort = builder.backendServerPort;
             this.caCertificateId = builder.caCertificateId;
             this.description = builder.description;
             this.enableHttp2 = builder.enableHttp2;
@@ -819,11 +821,6 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.serverCertificateId = builder.serverCertificateId;
             this.startListener = builder.startListener;
             this.vServerGroupId = builder.vServerGroupId;
-        }
-
-        @Override
-        public final java.lang.Object getBackendServerPort() {
-            return this.backendServerPort;
         }
 
         @Override
@@ -859,6 +856,11 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getAclType() {
             return this.aclType;
+        }
+
+        @Override
+        public final java.lang.Object getBackendServerPort() {
+            return this.backendServerPort;
         }
 
         @Override
@@ -937,7 +939,6 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("backendServerPort", om.valueToTree(this.getBackendServerPort()));
             data.set("bandwidth", om.valueToTree(this.getBandwidth()));
             data.set("listenerPort", om.valueToTree(this.getListenerPort()));
             data.set("loadBalancerId", om.valueToTree(this.getLoadBalancerId()));
@@ -950,6 +951,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getAclType() != null) {
                 data.set("aclType", om.valueToTree(this.getAclType()));
+            }
+            if (this.getBackendServerPort() != null) {
+                data.set("backendServerPort", om.valueToTree(this.getBackendServerPort()));
             }
             if (this.getCaCertificateId() != null) {
                 data.set("caCertificateId", om.valueToTree(this.getCaCertificateId()));
@@ -1011,7 +1015,6 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
             ListenerProps.Jsii$Proxy that = (ListenerProps.Jsii$Proxy) o;
 
-            if (!backendServerPort.equals(that.backendServerPort)) return false;
             if (!bandwidth.equals(that.bandwidth)) return false;
             if (!listenerPort.equals(that.listenerPort)) return false;
             if (!loadBalancerId.equals(that.loadBalancerId)) return false;
@@ -1019,6 +1022,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.aclId != null ? !this.aclId.equals(that.aclId) : that.aclId != null) return false;
             if (this.aclStatus != null ? !this.aclStatus.equals(that.aclStatus) : that.aclStatus != null) return false;
             if (this.aclType != null ? !this.aclType.equals(that.aclType) : that.aclType != null) return false;
+            if (this.backendServerPort != null ? !this.backendServerPort.equals(that.backendServerPort) : that.backendServerPort != null) return false;
             if (this.caCertificateId != null ? !this.caCertificateId.equals(that.caCertificateId) : that.caCertificateId != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.enableHttp2 != null ? !this.enableHttp2.equals(that.enableHttp2) : that.enableHttp2 != null) return false;
@@ -1037,14 +1041,14 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         @Override
         public final int hashCode() {
-            int result = this.backendServerPort.hashCode();
-            result = 31 * result + (this.bandwidth.hashCode());
+            int result = this.bandwidth.hashCode();
             result = 31 * result + (this.listenerPort.hashCode());
             result = 31 * result + (this.loadBalancerId.hashCode());
             result = 31 * result + (this.protocol.hashCode());
             result = 31 * result + (this.aclId != null ? this.aclId.hashCode() : 0);
             result = 31 * result + (this.aclStatus != null ? this.aclStatus.hashCode() : 0);
             result = 31 * result + (this.aclType != null ? this.aclType.hashCode() : 0);
+            result = 31 * result + (this.backendServerPort != null ? this.backendServerPort.hashCode() : 0);
             result = 31 * result + (this.caCertificateId != null ? this.caCertificateId.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.enableHttp2 != null ? this.enableHttp2.hashCode() : 0);

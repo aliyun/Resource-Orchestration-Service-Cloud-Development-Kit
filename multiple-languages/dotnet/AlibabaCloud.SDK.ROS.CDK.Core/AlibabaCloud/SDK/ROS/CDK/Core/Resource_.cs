@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.Resource_), fullyQualifiedName: "@alicloud/ros-cdk-core.Resource", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ResourceProps\"}}]")]
     public abstract class Resource_ : AlibabaCloud.SDK.ROS.CDK.Core.Construct, AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
-        protected Resource_(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IResourceProps? props = null): base(new DeputyProps(new object?[]{scope, id, props}))
+        protected Resource_(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IResourceProps? props = null): base(_MakeDeputyProps(scope, id, props))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IResourceProps? props = null)
+        {
+            return new DeputyProps(new object?[]{scope, id, props});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
@@ -35,6 +41,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "addCount", parametersJson: "[{\"name\":\"count\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}}]")]
         public virtual void AddCount(object count)
         {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                switch (count)
+                {
+                    case double cast_6c3549:
+                        break;
+                    case byte cast_6c3549:
+                        break;
+                    case decimal cast_6c3549:
+                        break;
+                    case float cast_6c3549:
+                        break;
+                    case int cast_6c3549:
+                        break;
+                    case long cast_6c3549:
+                        break;
+                    case sbyte cast_6c3549:
+                        break;
+                    case short cast_6c3549:
+                        break;
+                    case uint cast_6c3549:
+                        break;
+                    case ulong cast_6c3549:
+                        break;
+                    case ushort cast_6c3549:
+                        break;
+                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_6c3549:
+                        break;
+                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_6c3549:
+                        // Not enough information to type-check...
+                        break;
+                    case null:
+                        throw new System.ArgumentException($"Expected argument {nameof(count)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(count));
+                    default:
+                        throw new System.ArgumentException($"Expected argument {nameof(count)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {count.GetType().FullName}", nameof(count));
+                }
+            }
             InvokeInstanceVoidMethod(new System.Type[]{typeof(object)}, new object[]{count});
         }
 

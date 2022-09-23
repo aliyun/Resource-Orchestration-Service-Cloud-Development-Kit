@@ -45,6 +45,17 @@ export interface NatGatewayProps {
     readonly duration?: number | ros.IResolvable;
 
     /**
+     * Property eipBindMode: The mode in which the EIP is associated with the NAT gateway. Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
+     * NAT: NAT mode. IPv4 gateways are supported.
+     * Note If the EIP is associated with the NAT gateway in NAT mode, 
+     * the EIP occupies a private IP address of the vSwitch to which the NAT gateway belongs. 
+     * Make sure that the vSwitch has sufficient private IP addresses. 
+     * Otherwise, the EIP cannot be associated with the NAT gateway. 
+     * In NAT mode, a maximum number of 50 EIPs can be associated with each NAT gateway.
+     */
+    readonly eipBindMode?: string | ros.IResolvable;
+
+    /**
      * Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
@@ -124,6 +135,7 @@ export class NatGateway extends ros.Resource {
             natGatewayName: props.natGatewayName,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             pricingCycle: props.pricingCycle,
+            eipBindMode: props.eipBindMode,
             vSwitchId: props.vSwitchId,
             duration: props.duration === undefined || props.duration === null ? 1 : props.duration,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,

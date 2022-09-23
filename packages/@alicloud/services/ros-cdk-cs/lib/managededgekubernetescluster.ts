@@ -123,6 +123,7 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     readonly period?: number | ros.IResolvable;
@@ -131,6 +132,7 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     readonly periodUnit?: string | ros.IResolvable;
@@ -198,6 +200,11 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Property workerDataDiskCategory: Data disk type.
      */
     readonly workerDataDiskCategory?: string | ros.IResolvable;
+
+    /**
+     * Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
+     */
+    readonly workerDataDisks?: Array<RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property workerDataDiskSize: Data disk size in GiB.
@@ -321,6 +328,7 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
             keyPair: props.keyPair,
             nodeCidrMask: props.nodeCidrMask,
             vSwitchIds: props.vSwitchIds,
+            workerDataDisks: props.workerDataDisks,
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             period: props.period,
             clusterSpec: props.clusterSpec,

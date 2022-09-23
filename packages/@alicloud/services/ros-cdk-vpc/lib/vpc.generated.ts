@@ -4093,6 +4093,17 @@ export interface RosNatGatewayProps {
     readonly duration?: number | ros.IResolvable;
 
     /**
+     * @Property eipBindMode: The mode in which the EIP is associated with the NAT gateway. Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
+     * NAT: NAT mode. IPv4 gateways are supported.
+     * Note If the EIP is associated with the NAT gateway in NAT mode, 
+     * the EIP occupies a private IP address of the vSwitch to which the NAT gateway belongs. 
+     * Make sure that the vSwitch has sufficient private IP addresses. 
+     * Otherwise, the EIP cannot be associated with the NAT gateway. 
+     * In NAT mode, a maximum number of 50 EIPs can be associated with each NAT gateway.
+     */
+    readonly eipBindMode?: string | ros.IResolvable;
+
+    /**
      * @Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
@@ -4147,7 +4158,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -4158,6 +4169,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    errors.collect(ros.propertyValidator('eipBindMode', ros.validateString)(properties.eipBindMode));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.duration && (typeof properties.duration) !== 'object') {
@@ -4225,6 +4237,7 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
       DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       Description: ros.stringToRosTemplate(properties.description),
       Duration: ros.numberToRosTemplate(properties.duration),
+      EipBindMode: ros.stringToRosTemplate(properties.eipBindMode),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
       NatGatewayName: ros.stringToRosTemplate(properties.natGatewayName),
@@ -4304,6 +4317,17 @@ export class RosNatGateway extends ros.RosResource {
     public duration: number | ros.IResolvable | undefined;
 
     /**
+     * @Property eipBindMode: The mode in which the EIP is associated with the NAT gateway. Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
+     * NAT: NAT mode. IPv4 gateways are supported.
+     * Note If the EIP is associated with the NAT gateway in NAT mode, 
+     * the EIP occupies a private IP address of the vSwitch to which the NAT gateway belongs. 
+     * Make sure that the vSwitch has sufficient private IP addresses. 
+     * Otherwise, the EIP cannot be associated with the NAT gateway. 
+     * In NAT mode, a maximum number of 50 EIPs can be associated with each NAT gateway.
+     */
+    public eipBindMode: string | ros.IResolvable | undefined;
+
+    /**
      * @Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
@@ -4363,6 +4387,7 @@ export class RosNatGateway extends ros.RosResource {
         this.deletionProtection = props.deletionProtection;
         this.description = props.description;
         this.duration = props.duration;
+        this.eipBindMode = props.eipBindMode;
         this.instanceChargeType = props.instanceChargeType;
         this.internetChargeType = props.internetChargeType;
         this.natGatewayName = props.natGatewayName;
@@ -4382,6 +4407,7 @@ export class RosNatGateway extends ros.RosResource {
             deletionProtection: this.deletionProtection,
             description: this.description,
             duration: this.duration,
+            eipBindMode: this.eipBindMode,
             instanceChargeType: this.instanceChargeType,
             internetChargeType: this.internetChargeType,
             natGatewayName: this.natGatewayName,
@@ -5618,7 +5644,7 @@ export class RosRouteTableAssociation extends ros.RosResource {
 export interface RosRouterInterfaceProps {
 
     /**
-     * @Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+     * @Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'.
      */
     readonly role: string | ros.IResolvable;
 
@@ -5695,7 +5721,7 @@ export interface RosRouterInterfaceProps {
     readonly oppositeRouterType?: string | ros.IResolvable;
 
     /**
-     * @Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     * @Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -5740,7 +5766,7 @@ function RosRouterInterfacePropsValidator(properties: any): ros.ValidationResult
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -5844,7 +5870,7 @@ export class RosRouterInterface extends ros.RosResource {
 
 
     /**
-     * @Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+     * @Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'.
      */
     public role: string | ros.IResolvable;
 
@@ -5921,7 +5947,7 @@ export class RosRouterInterface extends ros.RosResource {
     public oppositeRouterType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     * @Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
      */
     public period: number | ros.IResolvable | undefined;
 
@@ -6751,6 +6777,220 @@ export class RosVirtualBorderRouter extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosVirtualBorderRouterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::VpcPeerConnection`
+ */
+export interface RosVpcPeerConnectionProps {
+
+    /**
+     * @Property acceptingVpcId: The ID of the acceptor VPC.
+     */
+    readonly acceptingVpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the requester VPC.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property acceptingAliUid: The ID of the Alibaba Cloud account to which the acceptor VPC belongs.
+     * To create a VPC peering connection within your Alibaba Cloud account, enter the ID
+     * of your Alibaba Cloud account.
+     * To create a VPC peering connection between your Alibaba Cloud account and another
+     * Alibaba Cloud account, enter the ID of the peer Alibaba Cloud account.
+     * Note If the acceptor VPC belongs to a Resource Access Management (RAM) user, you must set
+     * the value of AcceptingAliUid to the ID of the corresponding Alibaba Cloud account.
+     * Default current account ID.
+     */
+    readonly acceptingAliUid?: number | ros.IResolvable;
+
+    /**
+     * @Property acceptingRegionId: The region ID of the acceptor VPC of the VPC peering connection that you want to create.
+     * To create an intra-region VPC peering connection, enter a region ID that is the same
+     * as that of the requester VPC.
+     * To create an inter-region VPC peering connection, enter a region ID that is different
+     * from that of the requester VPC.
+     * Default current region.
+     */
+    readonly acceptingRegionId?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Specifies whether to forcefully delete the VPC peering connection. Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the VPC peering connection.
+     * The description must be 2 to 256 characters in length. It must start with a letter
+     * but cannot start with http:// or https://.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the VPC peering connection.
+     * The name must be 2 to 128 characters in length and can contain digits, underscores
+     * (_), and hyphens (-). It must start with a letter.
+     */
+    readonly name?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpcPeerConnectionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpcPeerConnectionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcPeerConnectionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('acceptingVpcId', ros.requiredValidator)(properties.acceptingVpcId));
+    errors.collect(ros.propertyValidator('acceptingVpcId', ros.validateString)(properties.acceptingVpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('acceptingRegionId', ros.validateString)(properties.acceptingRegionId));
+    errors.collect(ros.propertyValidator('acceptingAliUid', ros.validateNumber)(properties.acceptingAliUid));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosVpcPeerConnectionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpcPeerConnection` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpcPeerConnectionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpcPeerConnection` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcPeerConnectionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpcPeerConnectionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AcceptingVpcId: ros.stringToRosTemplate(properties.acceptingVpcId),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      AcceptingAliUid: ros.numberToRosTemplate(properties.acceptingAliUid),
+      AcceptingRegionId: ros.stringToRosTemplate(properties.acceptingRegionId),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
+      Description: ros.stringToRosTemplate(properties.description),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::VpcPeerConnection`
+ */
+export class RosVpcPeerConnection extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpcPeerConnection";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute InstanceId: The ID of the VPC peering connection.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property acceptingVpcId: The ID of the acceptor VPC.
+     */
+    public acceptingVpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the requester VPC.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property acceptingAliUid: The ID of the Alibaba Cloud account to which the acceptor VPC belongs.
+     * To create a VPC peering connection within your Alibaba Cloud account, enter the ID
+     * of your Alibaba Cloud account.
+     * To create a VPC peering connection between your Alibaba Cloud account and another
+     * Alibaba Cloud account, enter the ID of the peer Alibaba Cloud account.
+     * Note If the acceptor VPC belongs to a Resource Access Management (RAM) user, you must set
+     * the value of AcceptingAliUid to the ID of the corresponding Alibaba Cloud account.
+     * Default current account ID.
+     */
+    public acceptingAliUid: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property acceptingRegionId: The region ID of the acceptor VPC of the VPC peering connection that you want to create.
+     * To create an intra-region VPC peering connection, enter a region ID that is the same
+     * as that of the requester VPC.
+     * To create an inter-region VPC peering connection, enter a region ID that is different
+     * from that of the requester VPC.
+     * Default current region.
+     */
+    public acceptingRegionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionForce: Specifies whether to forcefully delete the VPC peering connection. Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the VPC peering connection.
+     * The description must be 2 to 256 characters in length. It must start with a letter
+     * but cannot start with http:// or https://.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the VPC peering connection.
+     * The name must be 2 to 128 characters in length and can contain digits, underscores
+     * (_), and hyphens (-). It must start with a letter.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::VpcPeerConnection`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpcPeerConnectionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpcPeerConnection.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.acceptingVpcId = props.acceptingVpcId;
+        this.vpcId = props.vpcId;
+        this.acceptingAliUid = props.acceptingAliUid;
+        this.acceptingRegionId = props.acceptingRegionId;
+        this.deletionForce = props.deletionForce;
+        this.description = props.description;
+        this.name = props.name;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            acceptingVpcId: this.acceptingVpcId,
+            vpcId: this.vpcId,
+            acceptingAliUid: this.acceptingAliUid,
+            acceptingRegionId: this.acceptingRegionId,
+            deletionForce: this.deletionForce,
+            description: this.description,
+            name: this.name,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpcPeerConnectionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

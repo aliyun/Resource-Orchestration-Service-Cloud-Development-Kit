@@ -7,8 +7,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.FnBase64Decode), fullyQualifiedName: "@alicloud/ros-cdk-core.FnBase64Decode", parametersJson: "[{\"name\":\"data\",\"type\":{\"primitive\":\"any\"}}]")]
     public class FnBase64Decode : AlibabaCloud.SDK.ROS.CDK.Core.Intrinsic
     {
-        public FnBase64Decode(object data): base(new DeputyProps(new object?[]{data}))
+        public FnBase64Decode(object data): base(_MakeDeputyProps(data))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object data)
+        {
+            return new DeputyProps(new object?[]{data});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

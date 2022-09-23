@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * A ROS template type:  `ALIYUN::DRDS::DrdsInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.493Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.805Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.RosDrdsInstance")
 public class RosDrdsInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -131,24 +131,6 @@ public class RosDrdsInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPayType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "payType", java.util.Objects.requireNonNull(value, "payType is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getQuantity() {
-        return software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setQuantity(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "quantity", java.util.Objects.requireNonNull(value, "quantity is required"));
-    }
-
-    /**
-     */
-    public void setQuantity(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "quantity", java.util.Objects.requireNonNull(value, "quantity is required"));
     }
 
     /**
@@ -585,23 +567,6 @@ public class RosDrdsInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
             this.props.payType(payType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param quantity This parameter is required.
-         */
-        public Builder quantity(final java.lang.Number quantity) {
-            this.props.quantity(quantity);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param quantity This parameter is required.
-         */
-        public Builder quantity(final com.aliyun.ros.cdk.core.IResolvable quantity) {
-            this.props.quantity(quantity);
             return this;
         }
 

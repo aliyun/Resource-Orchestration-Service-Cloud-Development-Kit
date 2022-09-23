@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS resource type:  `ALIYUN::KMS::Key`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.788Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Key")
 public class Key extends com.aliyun.ros.cdk.core.Resource {
 
@@ -231,7 +231,7 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property pendingWindowInDays: The waiting period, specified in number of days.
          * <p>
-         * During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 30. Default value is 30.
+         * During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 366. Default value is 30.
          * <p>
          * @return {@code this}
          * @param pendingWindowInDays Property pendingWindowInDays: The waiting period, specified in number of days. This parameter is required.
@@ -243,7 +243,7 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property pendingWindowInDays: The waiting period, specified in number of days.
          * <p>
-         * During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 30. Default value is 30.
+         * During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 366. Default value is 30.
          * <p>
          * @return {@code this}
          * @param pendingWindowInDays Property pendingWindowInDays: The waiting period, specified in number of days. This parameter is required.

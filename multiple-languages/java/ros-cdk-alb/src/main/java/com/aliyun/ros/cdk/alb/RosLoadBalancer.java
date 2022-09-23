@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS template type:  `ALIYUN::ALB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.689Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.931Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -196,7 +196,41 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setZoneMappings(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.alb.RosLoadBalancer.ZoneMappingsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.alb.RosLoadBalancer.ZoneMappingsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "zoneMappings", java.util.Objects.requireNonNull(value, "zoneMappings is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAccessLogConfig() {
+        return software.amazon.jsii.Kernel.get(this, "accessLogConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAccessLogConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accessLogConfig", value);
+    }
+
+    /**
+     */
+    public void setAccessLogConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.alb.RosLoadBalancer.AccessLogConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "accessLogConfig", value);
     }
 
     /**
@@ -215,6 +249,24 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAddressAllocatedMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "addressAllocatedMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAddressIpVersion() {
+        return software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAddressIpVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "addressIpVersion", value);
+    }
+
+    /**
+     */
+    public void setAddressIpVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "addressIpVersion", value);
     }
 
     /**
@@ -299,6 +351,213 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.alb.RosLoadBalancer.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosLoadBalancer.AccessLogConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(AccessLogConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AccessLogConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getLogProject();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getLogStore();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnable() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link AccessLogConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AccessLogConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AccessLogConfigProperty> {
+            java.lang.Object logProject;
+            java.lang.Object logStore;
+            java.lang.Object enable;
+
+            /**
+             * Sets the value of {@link AccessLogConfigProperty#getLogProject}
+             * @param logProject the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logProject(java.lang.String logProject) {
+                this.logProject = logProject;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogConfigProperty#getLogProject}
+             * @param logProject the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logProject(com.aliyun.ros.cdk.core.IResolvable logProject) {
+                this.logProject = logProject;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogConfigProperty#getLogStore}
+             * @param logStore the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logStore(java.lang.String logStore) {
+                this.logStore = logStore;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogConfigProperty#getLogStore}
+             * @param logStore the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logStore(com.aliyun.ros.cdk.core.IResolvable logStore) {
+                this.logStore = logStore;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogConfigProperty#getEnable}
+             * @param enable the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(java.lang.Boolean enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogConfigProperty#getEnable}
+             * @param enable the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(com.aliyun.ros.cdk.core.IResolvable enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AccessLogConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AccessLogConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AccessLogConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AccessLogConfigProperty {
+            private final java.lang.Object logProject;
+            private final java.lang.Object logStore;
+            private final java.lang.Object enable;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.logProject = software.amazon.jsii.Kernel.get(this, "logProject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.logStore = software.amazon.jsii.Kernel.get(this, "logStore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.logProject = java.util.Objects.requireNonNull(builder.logProject, "logProject is required");
+                this.logStore = java.util.Objects.requireNonNull(builder.logStore, "logStore is required");
+                this.enable = builder.enable;
+            }
+
+            @Override
+            public final java.lang.Object getLogProject() {
+                return this.logProject;
+            }
+
+            @Override
+            public final java.lang.Object getLogStore() {
+                return this.logStore;
+            }
+
+            @Override
+            public final java.lang.Object getEnable() {
+                return this.enable;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("logProject", om.valueToTree(this.getLogProject()));
+                data.set("logStore", om.valueToTree(this.getLogStore()));
+                if (this.getEnable() != null) {
+                    data.set("enable", om.valueToTree(this.getEnable()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosLoadBalancer.AccessLogConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AccessLogConfigProperty.Jsii$Proxy that = (AccessLogConfigProperty.Jsii$Proxy) o;
+
+                if (!logProject.equals(that.logProject)) return false;
+                if (!logStore.equals(that.logStore)) return false;
+                return this.enable != null ? this.enable.equals(that.enable) : that.enable == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.logProject.hashCode();
+                result = 31 * result + (this.logStore.hashCode());
+                result = 31 * result + (this.enable != null ? this.enable.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -1056,6 +1315,23 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param accessLogConfig This parameter is required.
+         */
+        public Builder accessLogConfig(final com.aliyun.ros.cdk.core.IResolvable accessLogConfig) {
+            this.props.accessLogConfig(accessLogConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param accessLogConfig This parameter is required.
+         */
+        public Builder accessLogConfig(final com.aliyun.ros.cdk.alb.RosLoadBalancer.AccessLogConfigProperty accessLogConfig) {
+            this.props.accessLogConfig(accessLogConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param addressAllocatedMode This parameter is required.
          */
         public Builder addressAllocatedMode(final java.lang.String addressAllocatedMode) {
@@ -1068,6 +1344,23 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder addressAllocatedMode(final com.aliyun.ros.cdk.core.IResolvable addressAllocatedMode) {
             this.props.addressAllocatedMode(addressAllocatedMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param addressIpVersion This parameter is required.
+         */
+        public Builder addressIpVersion(final java.lang.String addressIpVersion) {
+            this.props.addressIpVersion(addressIpVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param addressIpVersion This parameter is required.
+         */
+        public Builder addressIpVersion(final com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
+            this.props.addressIpVersion(addressIpVersion);
             return this;
         }
 

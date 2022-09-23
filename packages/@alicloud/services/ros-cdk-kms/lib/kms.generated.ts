@@ -146,7 +146,7 @@ export interface RosKeyProps {
     readonly keyUsage?: string | ros.IResolvable;
 
     /**
-     * @Property pendingWindowInDays: The waiting period, specified in number of days. During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 30. Default value is 30.
+     * @Property pendingWindowInDays: The waiting period, specified in number of days. During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 366. Default value is 30.
      */
     readonly pendingWindowInDays?: number | ros.IResolvable;
 
@@ -188,7 +188,7 @@ function RosKeyPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('pendingWindowInDays', ros.validateRange)({
             data: properties.pendingWindowInDays,
             min: 7,
-            max: 30,
+            max: 366,
           }));
     }
     errors.collect(ros.propertyValidator('pendingWindowInDays', ros.validateNumber)(properties.pendingWindowInDays));
@@ -271,7 +271,7 @@ export class RosKey extends ros.RosResource {
     public keyUsage: string | ros.IResolvable | undefined;
 
     /**
-     * @Property pendingWindowInDays: The waiting period, specified in number of days. During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 30. Default value is 30.
+     * @Property pendingWindowInDays: The waiting period, specified in number of days. During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 366. Default value is 30.
      */
     public pendingWindowInDays: number | ros.IResolvable | undefined;
 

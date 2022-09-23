@@ -11,8 +11,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.Reference), fullyQualifiedName: "@alicloud/ros-cdk-core.Reference", parametersJson: "[{\"name\":\"value\",\"type\":{\"primitive\":\"any\"}},{\"name\":\"target\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}},{\"name\":\"displayName\",\"optional\":true,\"type\":{\"primitive\":\"string\"}}]")]
     public abstract class Reference : AlibabaCloud.SDK.ROS.CDK.Core.Intrinsic
     {
-        protected Reference(object @value, AlibabaCloud.SDK.ROS.CDK.Core.IConstruct target, string? displayName = null): base(new DeputyProps(new object?[]{@value, target, displayName}))
+        protected Reference(object @value, AlibabaCloud.SDK.ROS.CDK.Core.IConstruct target, string? displayName = null): base(_MakeDeputyProps(@value, target, displayName))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object @value, AlibabaCloud.SDK.ROS.CDK.Core.IConstruct target, string? displayName = null)
+        {
+            return new DeputyProps(new object?[]{@value, target, displayName});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

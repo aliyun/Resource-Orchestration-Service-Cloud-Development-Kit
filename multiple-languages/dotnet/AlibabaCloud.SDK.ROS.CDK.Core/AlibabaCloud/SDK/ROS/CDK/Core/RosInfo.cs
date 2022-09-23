@@ -9,8 +9,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     {
         /// <summary>Creates properties for this stack.</summary>
         /// <param name="scope">The parent construct.</param>
-        public RosInfo(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, object info): base(new DeputyProps(new object?[]{scope, id, info}))
+        public RosInfo(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, object info): base(_MakeDeputyProps(scope, id, info))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, object info)
+        {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                switch (info)
+                {
+                    case string cast_06271b:
+                        break;
+                    case System.Collections.Generic.IDictionary<string, object> cast_06271b:
+                        break;
+                    case null:
+                        throw new System.ArgumentException($"Expected argument {nameof(info)} to be one of: string, System.Collections.Generic.IDictionary<string, object>; received null", nameof(info));
+                    default:
+                        throw new System.ArgumentException($"Expected argument {nameof(info)} to be one of: string, System.Collections.Generic.IDictionary<string, object>; received {info.GetType().FullName}", nameof(info));
+                }
+            }
+            return new DeputyProps(new object?[]{scope, id, info});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

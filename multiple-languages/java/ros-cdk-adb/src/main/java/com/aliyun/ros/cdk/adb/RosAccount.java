@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * A ROS template type:  `ALIYUN::ADB::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.638Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.869Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosAccount")
 public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 

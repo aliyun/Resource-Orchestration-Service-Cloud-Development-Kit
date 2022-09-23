@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::RouterInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.932Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.968Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouterInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(RouterInterfaceProps.Jsii$Proxy.class)
 public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,7 +11,7 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
     /**
      * Property role: RouterInterface role.
      * <p>
-     * Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+     * Now support 'InitiatingSide|AcceptingSide'.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRole();
 
@@ -136,7 +136,7 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
     /**
      * Property period: Prepaid time period.
      * <p>
-     * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -202,7 +202,7 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link RouterInterfaceProps#getRole}
          * @param role Property role: RouterInterface role. This parameter is required.
-         *             Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+         *             Now support 'InitiatingSide|AcceptingSide'.
          * @return {@code this}
          */
         public Builder role(java.lang.String role) {
@@ -213,7 +213,7 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link RouterInterfaceProps#getRole}
          * @param role Property role: RouterInterface role. This parameter is required.
-         *             Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+         *             Now support 'InitiatingSide|AcceptingSide'.
          * @return {@code this}
          */
         public Builder role(com.aliyun.ros.cdk.core.IResolvable role) {
@@ -528,7 +528,7 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link RouterInterfaceProps#getPeriod}
          * @param period Property period: Prepaid time period.
-         *               It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         *               It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -539,7 +539,7 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link RouterInterfaceProps#getPeriod}
          * @param period Property period: Prepaid time period.
-         *               It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         *               It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {

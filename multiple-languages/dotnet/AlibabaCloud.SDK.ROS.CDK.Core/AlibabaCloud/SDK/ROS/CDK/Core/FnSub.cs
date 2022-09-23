@@ -22,8 +22,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// param variables The name of a variable that you included in the String parameter.
         /// The value that Ros Template substitutes for the associated variable name at runtime.
         /// </remarks>
-        public FnSub(object @value): base(new DeputyProps(new object?[]{@value}))
+        public FnSub(object @value): base(_MakeDeputyProps(@value))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object @value)
+        {
+            return new DeputyProps(new object?[]{@value});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

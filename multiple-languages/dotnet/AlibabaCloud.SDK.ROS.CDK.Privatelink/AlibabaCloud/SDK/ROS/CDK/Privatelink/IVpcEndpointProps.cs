@@ -54,6 +54,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
         }
 
+        /// <summary>Property endpointType: Endpoint type.</summary>
+        [JsiiProperty(name: "endpointType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EndpointType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property protectedEnabled: Specifies whether to enable user authentication.</summary>
+        /// <remarks>
+        /// This parameter is available in Security Token Service (STS) mode. Valid values:
+        /// true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+        /// false (default): no
+        /// </remarks>
+        [JsiiProperty(name: "protectedEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProtectedEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property serviceId: The endpoint service that is associated with the endpoint.</summary>
         /// <remarks>
         /// One of ServiceId and ServiceName is required.
@@ -86,6 +113,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpoint.ZoneProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Zone
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone.</summary>
+        /// <remarks>
+        /// Set the value to 1.
+        /// </remarks>
+        [JsiiProperty(name: "zonePrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZonePrivateIpAddressCount
         {
             get
             {
@@ -141,6 +182,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property endpointType: Endpoint type.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "endpointType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EndpointType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property protectedEnabled: Specifies whether to enable user authentication.</summary>
+            /// <remarks>
+            /// This parameter is available in Security Token Service (STS) mode. Valid values:
+            /// true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+            /// false (default): no
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "protectedEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProtectedEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property serviceId: The endpoint service that is associated with the endpoint.</summary>
             /// <remarks>
             /// One of ServiceId and ServiceName is required.
@@ -167,6 +229,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             [JsiiOptional]
             [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpoint.ZoneProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Zone
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone.</summary>
+            /// <remarks>
+            /// Set the value to 1.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zonePrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZonePrivateIpAddressCount
             {
                 get => GetInstanceProperty<object?>();
             }

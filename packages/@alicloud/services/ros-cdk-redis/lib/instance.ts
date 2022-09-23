@@ -72,6 +72,14 @@ export interface InstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
      * Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     readonly productType?: string | ros.IResolvable;
@@ -325,6 +333,7 @@ export class Instance extends ros.Resource {
             tags: props.tags,
             backupPolicy: props.backupPolicy,
             password: props.password,
+            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrArchitectureType = rosInstance.attrArchitectureType;

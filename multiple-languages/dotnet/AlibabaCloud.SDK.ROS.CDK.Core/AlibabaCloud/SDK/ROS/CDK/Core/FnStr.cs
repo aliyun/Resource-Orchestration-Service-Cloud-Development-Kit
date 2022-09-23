@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class FnStr : AlibabaCloud.SDK.ROS.CDK.Core.Intrinsic
     {
         /// <summary>Creates an ``Str`` function.</summary>
-        public FnStr(object @value): base(new DeputyProps(new object?[]{@value}))
+        public FnStr(object @value): base(_MakeDeputyProps(@value))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object @value)
+        {
+            return new DeputyProps(new object?[]{@value});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

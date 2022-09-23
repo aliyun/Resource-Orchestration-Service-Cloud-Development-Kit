@@ -207,6 +207,7 @@ export interface ManagedKubernetesClusterProps {
      * Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     readonly period?: number | ros.IResolvable;
@@ -215,6 +216,7 @@ export interface ManagedKubernetesClusterProps {
      * Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     readonly periodUnit?: string | ros.IResolvable;

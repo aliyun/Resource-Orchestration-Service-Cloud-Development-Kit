@@ -21,8 +21,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// Note that the root of the tree must be a Stack object (not just any Root).
         /// </remarks>
-        protected RosRefElement(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id): base(new DeputyProps(new object?[]{scope, id}))
+        protected RosRefElement(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id): base(_MakeDeputyProps(scope, id))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id)
+        {
+            return new DeputyProps(new object?[]{scope, id});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

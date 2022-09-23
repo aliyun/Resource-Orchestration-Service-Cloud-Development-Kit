@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS resource type:  `ALIYUN::ALB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.653Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.893Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -182,20 +182,66 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property certificates: The content of the SSL certificate.
+         * Property caCertificates: List of configured CA certificates for listener.
          * <p>
          * @return {@code this}
-         * @param certificates Property certificates: The content of the SSL certificate. This parameter is required.
+         * @param caCertificates Property caCertificates: List of configured CA certificates for listener. This parameter is required.
+         */
+        public Builder caCertificates(final com.aliyun.ros.cdk.core.IResolvable caCertificates) {
+            this.props.caCertificates(caCertificates);
+            return this;
+        }
+        /**
+         * Property caCertificates: List of configured CA certificates for listener.
+         * <p>
+         * @return {@code this}
+         * @param caCertificates Property caCertificates: List of configured CA certificates for listener. This parameter is required.
+         */
+        public Builder caCertificates(final java.util.List<? extends java.lang.Object> caCertificates) {
+            this.props.caCertificates(caCertificates);
+            return this;
+        }
+
+        /**
+         * Property caEnabled: Specifies whether to enable mutual authentication.
+         * <p>
+         * Default false.
+         * <p>
+         * @return {@code this}
+         * @param caEnabled Property caEnabled: Specifies whether to enable mutual authentication. This parameter is required.
+         */
+        public Builder caEnabled(final java.lang.Boolean caEnabled) {
+            this.props.caEnabled(caEnabled);
+            return this;
+        }
+        /**
+         * Property caEnabled: Specifies whether to enable mutual authentication.
+         * <p>
+         * Default false.
+         * <p>
+         * @return {@code this}
+         * @param caEnabled Property caEnabled: Specifies whether to enable mutual authentication. This parameter is required.
+         */
+        public Builder caEnabled(final com.aliyun.ros.cdk.core.IResolvable caEnabled) {
+            this.props.caEnabled(caEnabled);
+            return this;
+        }
+
+        /**
+         * Property certificates: The list of SSL certificates for listener.
+         * <p>
+         * @return {@code this}
+         * @param certificates Property certificates: The list of SSL certificates for listener. This parameter is required.
          */
         public Builder certificates(final com.aliyun.ros.cdk.core.IResolvable certificates) {
             this.props.certificates(certificates);
             return this;
         }
         /**
-         * Property certificates: The content of the SSL certificate.
+         * Property certificates: The list of SSL certificates for listener.
          * <p>
          * @return {@code this}
-         * @param certificates Property certificates: The content of the SSL certificate. This parameter is required.
+         * @param certificates Property certificates: The list of SSL certificates for listener. This parameter is required.
          */
         public Builder certificates(final java.util.List<? extends java.lang.Object> certificates) {
             this.props.certificates(certificates);

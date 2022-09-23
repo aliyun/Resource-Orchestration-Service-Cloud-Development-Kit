@@ -46,15 +46,18 @@ function getPropertyTypeName(type: string, propertyName: string, path: Array<str
 export function specGenerator() {
     let spec: any = {};
     let allTypes: Set<string> = new Set();
+    let codeMappingTypesArray = new Array();
     let resourceTypes: any = {};
     let propertyTypes: any = {};
-    let file = fs.readFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/specification_origin.json')).toString();
-    let fileContent = JSON.parse(file);
-    for (let [type] of Object.entries(fileContent['ResourceTypes'])) {
+    let codeMappingFile = fs.readFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/code_mapping.json')).toString();
+    let codeMappingFileContent = JSON.parse(codeMappingFile);
+    let specificationOriginFile = fs.readFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/specification_origin.json')).toString();
+    let specificationOriginFileContent = JSON.parse(specificationOriginFile);
+    for (let [type] of Object.entries(specificationOriginFileContent['ResourceTypes'])) {
         let category: string[] = type.split('::');
         allTypes.add(category[0] + '::' + category[1]);
         // e.g. ALIYUN::ECS::VPC
-        let typeDetail = fileContent['ResourceTypes'][type];
+        let typeDetail = specificationOriginFileContent['ResourceTypes'][type];
 
         // handle properties
         // string, integer, number, boolean -> PrimitiveType
@@ -142,7 +145,15 @@ export function specGenerator() {
             Properties: typeDetail.Properties ? typeDetail.Properties : {},
         };
     }
-    fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/types.json'), JSON.stringify(Array.from(allTypes), null, '\t'));
+    for (let [rosCode] of Object.entries(codeMappingFileContent['CodeMapping'])) {
+        codeMappingTypesArray.push('ALIYUN::' + rosCode)
+    }
+    let allTypesArray = Array.from(allTypes)
+    let diffArr = getArrDifference(allTypesArray, codeMappingTypesArray)
+    if(diffArr){
+        throw new Error(`code_mapping file diff with types file "${diffArr}", please add information with code_mapping file.`);
+    }
+    fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/types.json'), JSON.stringify(allTypesArray, null, '\t'));
     spec['PropertyTypes'] = propertyTypes;
     spec['ResourceTypes'] = resourceTypes;
 
@@ -174,4 +185,14 @@ const sleep = function (ms: number) {
 
 function initialToUpperCase(str: string): string {
     return str.substring(0, 1).toUpperCase() + str.substring(1);
+}
+
+function getArrDifference(arr1: any, arr2: any) {
+    let newArr = [];
+    let arr3 = arr1.concat(arr2);
+    function isContain(value: any) {
+        return arr1.indexOf(value) == -1 || arr2.indexOf(value) == -1;
+    }
+    newArr = arr3.filter(isContain);
+    return newArr;
 }

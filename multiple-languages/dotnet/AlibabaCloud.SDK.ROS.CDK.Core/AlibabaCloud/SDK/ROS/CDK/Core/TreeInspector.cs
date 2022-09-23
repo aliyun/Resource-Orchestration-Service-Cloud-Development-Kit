@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.TreeInspector), fullyQualifiedName: "@alicloud/ros-cdk-core.TreeInspector")]
     public class TreeInspector : DeputyBase
     {
-        public TreeInspector(): base(new DeputyProps(System.Array.Empty<object?>()))
+        public TreeInspector(): base(_MakeDeputyProps())
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps()
+        {
+            return new DeputyProps(System.Array.Empty<object?>());
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.070Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.128Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointProps.Jsii$Proxy.class)
 public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,6 +40,24 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property endpointType: Endpoint type.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointType() {
+        return null;
+    }
+
+    /**
+     * Property protectedEnabled: Specifies whether to enable user authentication.
+     * <p>
+     * This parameter is available in Security Token Service (STS) mode. Valid values:
+     * true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+     * false (default): no
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProtectedEnabled() {
+        return null;
+    }
+
+    /**
      * Property serviceId: The endpoint service that is associated with the endpoint.
      * <p>
      * One of ServiceId and ServiceName is required.
@@ -65,6 +83,15 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone.
+     * <p>
+     * Set the value to 1.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZonePrivateIpAddressCount() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link VpcEndpointProps}
      */
     static Builder builder() {
@@ -78,9 +105,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object vpcId;
         java.lang.Object endpointDescription;
         java.lang.Object endpointName;
+        java.lang.Object endpointType;
+        java.lang.Object protectedEnabled;
         java.lang.Object serviceId;
         java.lang.Object serviceName;
         java.lang.Object zone;
+        java.lang.Object zonePrivateIpAddressCount;
 
         /**
          * Sets the value of {@link VpcEndpointProps#getSecurityGroupId}
@@ -171,6 +201,52 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link VpcEndpointProps#getEndpointType}
+         * @param endpointType Property endpointType: Endpoint type.
+         * @return {@code this}
+         */
+        public Builder endpointType(java.lang.String endpointType) {
+            this.endpointType = endpointType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointProps#getEndpointType}
+         * @param endpointType Property endpointType: Endpoint type.
+         * @return {@code this}
+         */
+        public Builder endpointType(com.aliyun.ros.cdk.core.IResolvable endpointType) {
+            this.endpointType = endpointType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointProps#getProtectedEnabled}
+         * @param protectedEnabled Property protectedEnabled: Specifies whether to enable user authentication.
+         *                         This parameter is available in Security Token Service (STS) mode. Valid values:
+         *                         true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+         *                         false (default): no
+         * @return {@code this}
+         */
+        public Builder protectedEnabled(java.lang.Boolean protectedEnabled) {
+            this.protectedEnabled = protectedEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointProps#getProtectedEnabled}
+         * @param protectedEnabled Property protectedEnabled: Specifies whether to enable user authentication.
+         *                         This parameter is available in Security Token Service (STS) mode. Valid values:
+         *                         true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+         *                         false (default): no
+         * @return {@code this}
+         */
+        public Builder protectedEnabled(com.aliyun.ros.cdk.core.IResolvable protectedEnabled) {
+            this.protectedEnabled = protectedEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpcEndpointProps#getServiceId}
          * @param serviceId Property serviceId: The endpoint service that is associated with the endpoint.
          *                  One of ServiceId and ServiceName is required.
@@ -235,6 +311,28 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link VpcEndpointProps#getZonePrivateIpAddressCount}
+         * @param zonePrivateIpAddressCount Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone.
+         *                                  Set the value to 1.
+         * @return {@code this}
+         */
+        public Builder zonePrivateIpAddressCount(java.lang.Number zonePrivateIpAddressCount) {
+            this.zonePrivateIpAddressCount = zonePrivateIpAddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcEndpointProps#getZonePrivateIpAddressCount}
+         * @param zonePrivateIpAddressCount Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone.
+         *                                  Set the value to 1.
+         * @return {@code this}
+         */
+        public Builder zonePrivateIpAddressCount(com.aliyun.ros.cdk.core.IResolvable zonePrivateIpAddressCount) {
+            this.zonePrivateIpAddressCount = zonePrivateIpAddressCount;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link VpcEndpointProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -254,9 +352,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object vpcId;
         private final java.lang.Object endpointDescription;
         private final java.lang.Object endpointName;
+        private final java.lang.Object endpointType;
+        private final java.lang.Object protectedEnabled;
         private final java.lang.Object serviceId;
         private final java.lang.Object serviceName;
         private final java.lang.Object zone;
+        private final java.lang.Object zonePrivateIpAddressCount;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -268,9 +369,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointDescription = software.amazon.jsii.Kernel.get(this, "endpointDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointName = software.amazon.jsii.Kernel.get(this, "endpointName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.protectedEnabled = software.amazon.jsii.Kernel.get(this, "protectedEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceId = software.amazon.jsii.Kernel.get(this, "serviceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zone = software.amazon.jsii.Kernel.get(this, "zone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zonePrivateIpAddressCount = software.amazon.jsii.Kernel.get(this, "zonePrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -282,9 +386,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.endpointDescription = builder.endpointDescription;
             this.endpointName = builder.endpointName;
+            this.endpointType = builder.endpointType;
+            this.protectedEnabled = builder.protectedEnabled;
             this.serviceId = builder.serviceId;
             this.serviceName = builder.serviceName;
             this.zone = builder.zone;
+            this.zonePrivateIpAddressCount = builder.zonePrivateIpAddressCount;
         }
 
         @Override
@@ -308,6 +415,16 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getEndpointType() {
+            return this.endpointType;
+        }
+
+        @Override
+        public final java.lang.Object getProtectedEnabled() {
+            return this.protectedEnabled;
+        }
+
+        @Override
         public final java.lang.Object getServiceId() {
             return this.serviceId;
         }
@@ -320,6 +437,11 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getZone() {
             return this.zone;
+        }
+
+        @Override
+        public final java.lang.Object getZonePrivateIpAddressCount() {
+            return this.zonePrivateIpAddressCount;
         }
 
         @Override
@@ -336,6 +458,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getEndpointName() != null) {
                 data.set("endpointName", om.valueToTree(this.getEndpointName()));
             }
+            if (this.getEndpointType() != null) {
+                data.set("endpointType", om.valueToTree(this.getEndpointType()));
+            }
+            if (this.getProtectedEnabled() != null) {
+                data.set("protectedEnabled", om.valueToTree(this.getProtectedEnabled()));
+            }
             if (this.getServiceId() != null) {
                 data.set("serviceId", om.valueToTree(this.getServiceId()));
             }
@@ -344,6 +472,9 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getZone() != null) {
                 data.set("zone", om.valueToTree(this.getZone()));
+            }
+            if (this.getZonePrivateIpAddressCount() != null) {
+                data.set("zonePrivateIpAddressCount", om.valueToTree(this.getZonePrivateIpAddressCount()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -367,9 +498,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.endpointDescription != null ? !this.endpointDescription.equals(that.endpointDescription) : that.endpointDescription != null) return false;
             if (this.endpointName != null ? !this.endpointName.equals(that.endpointName) : that.endpointName != null) return false;
+            if (this.endpointType != null ? !this.endpointType.equals(that.endpointType) : that.endpointType != null) return false;
+            if (this.protectedEnabled != null ? !this.protectedEnabled.equals(that.protectedEnabled) : that.protectedEnabled != null) return false;
             if (this.serviceId != null ? !this.serviceId.equals(that.serviceId) : that.serviceId != null) return false;
             if (this.serviceName != null ? !this.serviceName.equals(that.serviceName) : that.serviceName != null) return false;
-            return this.zone != null ? this.zone.equals(that.zone) : that.zone == null;
+            if (this.zone != null ? !this.zone.equals(that.zone) : that.zone != null) return false;
+            return this.zonePrivateIpAddressCount != null ? this.zonePrivateIpAddressCount.equals(that.zonePrivateIpAddressCount) : that.zonePrivateIpAddressCount == null;
         }
 
         @Override
@@ -378,9 +512,12 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.endpointDescription != null ? this.endpointDescription.hashCode() : 0);
             result = 31 * result + (this.endpointName != null ? this.endpointName.hashCode() : 0);
+            result = 31 * result + (this.endpointType != null ? this.endpointType.hashCode() : 0);
+            result = 31 * result + (this.protectedEnabled != null ? this.protectedEnabled.hashCode() : 0);
             result = 31 * result + (this.serviceId != null ? this.serviceId.hashCode() : 0);
             result = 31 * result + (this.serviceName != null ? this.serviceName.hashCode() : 0);
             result = 31 * result + (this.zone != null ? this.zone.hashCode() : 0);
+            result = 31 * result + (this.zonePrivateIpAddressCount != null ? this.zonePrivateIpAddressCount.hashCode() : 0);
             return result;
         }
     }

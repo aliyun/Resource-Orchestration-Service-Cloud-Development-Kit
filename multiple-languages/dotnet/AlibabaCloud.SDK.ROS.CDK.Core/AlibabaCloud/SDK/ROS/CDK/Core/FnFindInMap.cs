@@ -14,8 +14,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// param topLevelKey The top-level key name. Its value is a list of key-value pairs.
         /// param secondLevelKey The second-level key name, which is set to one of the keys from the list assigned to TopLevelKey.
         /// </remarks>
-        public FnFindInMap(object @value): base(new DeputyProps(new object?[]{@value}))
+        public FnFindInMap(object @value): base(_MakeDeputyProps(@value))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object @value)
+        {
+            return new DeputyProps(new object?[]{@value});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

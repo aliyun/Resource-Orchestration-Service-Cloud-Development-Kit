@@ -28,6 +28,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "add", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}}", parametersJson: "[{\"name\":\"values\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}}]")]
         public static AlibabaCloud.SDK.ROS.CDK.Core.IResolvable Add(object values)
         {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                switch (values)
+                {
+                    case double cast_89445e:
+                        break;
+                    case byte cast_89445e:
+                        break;
+                    case decimal cast_89445e:
+                        break;
+                    case float cast_89445e:
+                        break;
+                    case int cast_89445e:
+                        break;
+                    case long cast_89445e:
+                        break;
+                    case sbyte cast_89445e:
+                        break;
+                    case short cast_89445e:
+                        break;
+                    case uint cast_89445e:
+                        break;
+                    case ulong cast_89445e:
+                        break;
+                    case ushort cast_89445e:
+                        break;
+                    case object[] cast_89445e:
+                        break;
+                    case System.Collections.Generic.IDictionary<string, object> cast_89445e:
+                        break;
+                    case null:
+                        throw new System.ArgumentException($"Expected argument {nameof(values)} to be one of: double, object[], System.Collections.Generic.IDictionary<string, object>; received null", nameof(values));
+                    default:
+                        throw new System.ArgumentException($"Expected argument {nameof(values)} to be one of: double, object[], System.Collections.Generic.IDictionary<string, object>; received {values.GetType().FullName}", nameof(values));
+                }
+            }
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(object)}, new object[]{values})!;
         }
 
@@ -69,6 +105,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "conditionAnd", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}}", parametersJson: "[{\"docs\":{\"summary\":\"conditions to AND.\"},\"name\":\"conditions\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}]}},\"variadic\":true}]")]
         public static AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression ConditionAnd(params object[] conditions)
         {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                for (var __idx_562a77 = 0 ; __idx_562a77 < conditions.Length ; __idx_562a77++)
+                {
+                    switch (conditions[__idx_562a77])
+                    {
+                        case string cast_656354:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression cast_656354:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_656354:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected argument {nameof(conditions)}[{__idx_562a77}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression).FullName}; received null", nameof(conditions));
+                        default:
+                            throw new System.ArgumentException($"Expected argument {nameof(conditions)}[{__idx_562a77}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression).FullName}; received {conditions[__idx_562a77].GetType().FullName}", nameof(conditions));
+                    }
+                }
+            }
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(object[])}, new object[]{conditions})!;
         }
 
@@ -94,6 +150,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "conditionIf", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"docs\":{\"remarks\":\"Use\nthe condition's name to reference it.\",\"summary\":\"A reference to a condition in the Conditions section.\"},\"name\":\"conditionId\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}]}}},{\"docs\":{\"summary\":\"A value to be returned if the specified condition evaluates to true.\"},\"name\":\"valueIfTrue\",\"type\":{\"primitive\":\"any\"}},{\"docs\":{\"summary\":\"A value to be returned if the specified condition evaluates to false.\"},\"name\":\"valueIfFalse\",\"type\":{\"primitive\":\"any\"}}]")]
         public static object ConditionIf(object conditionId, object valueIfTrue, object valueIfFalse)
         {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                switch (conditionId)
+                {
+                    case string cast_0a6e28:
+                        break;
+                    case AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression cast_0a6e28:
+                        break;
+                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_0a6e28:
+                        // Not enough information to type-check...
+                        break;
+                    case null:
+                        throw new System.ArgumentException($"Expected argument {nameof(conditionId)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression).FullName}; received null", nameof(conditionId));
+                    default:
+                        throw new System.ArgumentException($"Expected argument {nameof(conditionId)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression).FullName}; received {conditionId.GetType().FullName}", nameof(conditionId));
+                }
+            }
             return InvokeStaticMethod<object>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(object), typeof(object), typeof(object)}, new object[]{conditionId, valueIfTrue, valueIfFalse})!;
         }
 
@@ -106,6 +179,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "conditionNot", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}}", parametersJson: "[{\"docs\":{\"summary\":\"A condition such as ``Fn::Equals`` that evaluates to true or false.\"},\"name\":\"condition\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}]}}}]")]
         public static AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression ConditionNot(object condition)
         {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                switch (condition)
+                {
+                    case string cast_596d40:
+                        break;
+                    case AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression cast_596d40:
+                        break;
+                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_596d40:
+                        // Not enough information to type-check...
+                        break;
+                    case null:
+                        throw new System.ArgumentException($"Expected argument {nameof(condition)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression).FullName}; received null", nameof(condition));
+                    default:
+                        throw new System.ArgumentException($"Expected argument {nameof(condition)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression).FullName}; received {condition.GetType().FullName}", nameof(condition));
+                }
+            }
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(object)}, new object[]{condition})!;
         }
 
@@ -120,6 +210,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "conditionOr", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}}", parametersJson: "[{\"docs\":{\"summary\":\"conditions that evaluates to true or false.\"},\"name\":\"conditions\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IRosConditionExpression\"}]}},\"variadic\":true}]")]
         public static AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression ConditionOr(params object[] conditions)
         {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                for (var __idx_562a77 = 0 ; __idx_562a77 < conditions.Length ; __idx_562a77++)
+                {
+                    switch (conditions[__idx_562a77])
+                    {
+                        case string cast_656354:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression cast_656354:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_656354:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected argument {nameof(conditions)}[{__idx_562a77}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression).FullName}; received null", nameof(conditions));
+                        default:
+                            throw new System.ArgumentException($"Expected argument {nameof(conditions)}[{__idx_562a77}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression).FullName}; received {conditions[__idx_562a77].GetType().FullName}", nameof(conditions));
+                    }
+                }
+            }
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(object[])}, new object[]{conditions})!;
         }
 
@@ -188,6 +298,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "jq", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}}", parametersJson: "[{\"name\":\"method\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"script\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"inputString\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}}]")]
         public static AlibabaCloud.SDK.ROS.CDK.Core.IResolvable Jq(string method, string script, object inputString)
         {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                switch (inputString)
+                {
+                    case string cast_cad069:
+                        break;
+                    case System.Collections.Generic.IDictionary<string, object> cast_cad069:
+                        break;
+                    case null:
+                        throw new System.ArgumentException($"Expected argument {nameof(inputString)} to be one of: string, System.Collections.Generic.IDictionary<string, object>; received null", nameof(inputString));
+                    default:
+                        throw new System.ArgumentException($"Expected argument {nameof(inputString)} to be one of: string, System.Collections.Generic.IDictionary<string, object>; received {inputString.GetType().FullName}", nameof(inputString));
+                }
+            }
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(string), typeof(string), typeof(object)}, new object[]{method, script, inputString})!;
         }
 
@@ -239,6 +363,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "select", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}}", parametersJson: "[{\"docs\":{\"remarks\":\"This must be a value from zero to N-1, where N represents the number of elements in the array.\",\"summary\":\"The index of the object to retrieve.\"},\"name\":\"index\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"primitive\":\"number\"}]}}},{\"docs\":{\"remarks\":\"This list must not be null, nor can it have null entries.\",\"summary\":\"The list of objects to select from.\"},\"name\":\"array\",\"type\":{\"primitive\":\"any\"}}]")]
         public static AlibabaCloud.SDK.ROS.CDK.Core.IResolvable Select(object index, object array)
         {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                switch (index)
+                {
+                    case string cast_1bc04b:
+                        break;
+                    case double cast_1bc04b:
+                        break;
+                    case byte cast_1bc04b:
+                        break;
+                    case decimal cast_1bc04b:
+                        break;
+                    case float cast_1bc04b:
+                        break;
+                    case int cast_1bc04b:
+                        break;
+                    case long cast_1bc04b:
+                        break;
+                    case sbyte cast_1bc04b:
+                        break;
+                    case short cast_1bc04b:
+                        break;
+                    case uint cast_1bc04b:
+                        break;
+                    case ulong cast_1bc04b:
+                        break;
+                    case ushort cast_1bc04b:
+                        break;
+                    case null:
+                        throw new System.ArgumentException($"Expected argument {nameof(index)} to be one of: string, double; received null", nameof(index));
+                    default:
+                        throw new System.ArgumentException($"Expected argument {nameof(index)} to be one of: string, double; received {index.GetType().FullName}", nameof(index));
+                }
+            }
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Fn), new System.Type[]{typeof(object), typeof(object)}, new object[]{index, array})!;
         }
 

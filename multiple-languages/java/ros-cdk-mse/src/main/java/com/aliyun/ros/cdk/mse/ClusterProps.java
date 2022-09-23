@@ -3,13 +3,21 @@ package com.aliyun.ros.cdk.mse;
 /**
  * Properties for defining a `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.909Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c.
+     * Property clusterSpecification: Cluster specifications.
+     * <p>
+     * Note the msversion requirements of the version parameter,
+     * Optional parameters:
+     * "MSE_ SC <em>1_2_60_c",
+     * "MSE</em> SC <em>2_4_60_c",
+     * "MSE</em> SC <em>4_8_60_c",
+     * "MSE</em> SC <em>8_16_60_c",
+     * "MSE</em> SC _16_32_60_c"
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterSpecification();
 
@@ -19,7 +27,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
     /**
-     * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.
+     * Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterVersion();
 
@@ -29,7 +37,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceCount();
 
     /**
-     * Property netType: network type, Enum: privatenet,pubnet.
+     * Property netType: Network type (whether private network is enabled or not).
+     * <p>
+     * privatenet indicates that private network is enabled.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getNetType();
 
@@ -41,7 +51,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property aclEntryList: acl entry list.
+     * Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAclEntryList() {
         return null;
@@ -69,10 +79,10 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.
+     * Property mseVersion: Required, the value is as follows:.
      * <p>
-     * -'mse_basic': indicates the basic version (default value).
-     * -'mse_pro': means professional version.
+     * -'mse_dev': indicates the development version.
+     * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMseVersion() {
         return null;
@@ -86,7 +96,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property pubNetworkFlow: pub network flow.
+     * Property pubNetworkFlow: Public network bandwidth.
+     * <p>
+     * If the bandwidth is greater than 0, the public network is enabled.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPubNetworkFlow() {
         return null;
@@ -150,7 +162,14 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterSpecification}
-         * @param clusterSpecification Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c. This parameter is required.
+         * @param clusterSpecification Property clusterSpecification: Cluster specifications. This parameter is required.
+         *                             Note the msversion requirements of the version parameter,
+         *                             Optional parameters:
+         *                             "MSE_ SC <em>1_2_60_c",
+         *                             "MSE</em> SC <em>2_4_60_c",
+         *                             "MSE</em> SC <em>4_8_60_c",
+         *                             "MSE</em> SC <em>8_16_60_c",
+         *                             "MSE</em> SC _16_32_60_c"
          * @return {@code this}
          */
         public Builder clusterSpecification(java.lang.String clusterSpecification) {
@@ -160,7 +179,14 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterSpecification}
-         * @param clusterSpecification Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c. This parameter is required.
+         * @param clusterSpecification Property clusterSpecification: Cluster specifications. This parameter is required.
+         *                             Note the msversion requirements of the version parameter,
+         *                             Optional parameters:
+         *                             "MSE_ SC <em>1_2_60_c",
+         *                             "MSE</em> SC <em>2_4_60_c",
+         *                             "MSE</em> SC <em>4_8_60_c",
+         *                             "MSE</em> SC <em>8_16_60_c",
+         *                             "MSE</em> SC _16_32_60_c"
          * @return {@code this}
          */
         public Builder clusterSpecification(com.aliyun.ros.cdk.core.IResolvable clusterSpecification) {
@@ -190,7 +216,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterVersion}
-         * @param clusterVersion Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0. This parameter is required.
+         * @param clusterVersion Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterVersion(java.lang.String clusterVersion) {
@@ -200,7 +226,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getClusterVersion}
-         * @param clusterVersion Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0. This parameter is required.
+         * @param clusterVersion Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterVersion(com.aliyun.ros.cdk.core.IResolvable clusterVersion) {
@@ -230,7 +256,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getNetType}
-         * @param netType Property netType: network type, Enum: privatenet,pubnet. This parameter is required.
+         * @param netType Property netType: Network type (whether private network is enabled or not). This parameter is required.
+         *                privatenet indicates that private network is enabled.
          * @return {@code this}
          */
         public Builder netType(java.lang.String netType) {
@@ -240,7 +267,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getNetType}
-         * @param netType Property netType: network type, Enum: privatenet,pubnet. This parameter is required.
+         * @param netType Property netType: Network type (whether private network is enabled or not). This parameter is required.
+         *                privatenet indicates that private network is enabled.
          * @return {@code this}
          */
         public Builder netType(com.aliyun.ros.cdk.core.IResolvable netType) {
@@ -270,7 +298,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAclEntryList}
-         * @param aclEntryList Property aclEntryList: acl entry list.
+         * @param aclEntryList Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
          * @return {@code this}
          */
         public Builder aclEntryList(com.aliyun.ros.cdk.core.IResolvable aclEntryList) {
@@ -280,7 +308,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getAclEntryList}
-         * @param aclEntryList Property aclEntryList: acl entry list.
+         * @param aclEntryList Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
          * @return {@code this}
          */
         public Builder aclEntryList(java.util.List<? extends java.lang.Object> aclEntryList) {
@@ -350,9 +378,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getMseVersion}
-         * @param mseVersion Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.
-         *                   -'mse_basic': indicates the basic version (default value).
-         *                   -'mse_pro': means professional version.
+         * @param mseVersion Property mseVersion: Required, the value is as follows:.
+         *                   -'mse_dev': indicates the development version.
+         *                   -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
          * @return {@code this}
          */
         public Builder mseVersion(java.lang.String mseVersion) {
@@ -362,9 +390,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getMseVersion}
-         * @param mseVersion Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.
-         *                   -'mse_basic': indicates the basic version (default value).
-         *                   -'mse_pro': means professional version.
+         * @param mseVersion Property mseVersion: Required, the value is as follows:.
+         *                   -'mse_dev': indicates the development version.
+         *                   -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
          * @return {@code this}
          */
         public Builder mseVersion(com.aliyun.ros.cdk.core.IResolvable mseVersion) {
@@ -394,7 +422,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPubNetworkFlow}
-         * @param pubNetworkFlow Property pubNetworkFlow: pub network flow.
+         * @param pubNetworkFlow Property pubNetworkFlow: Public network bandwidth.
+         *                       If the bandwidth is greater than 0, the public network is enabled.
          * @return {@code this}
          */
         public Builder pubNetworkFlow(java.lang.String pubNetworkFlow) {
@@ -404,7 +433,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getPubNetworkFlow}
-         * @param pubNetworkFlow Property pubNetworkFlow: pub network flow.
+         * @param pubNetworkFlow Property pubNetworkFlow: Public network bandwidth.
+         *                       If the bandwidth is greater than 0, the public network is enabled.
          * @return {@code this}
          */
         public Builder pubNetworkFlow(com.aliyun.ros.cdk.core.IResolvable pubNetworkFlow) {

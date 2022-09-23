@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.311Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.571Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -165,6 +165,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
@@ -177,6 +178,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
@@ -283,6 +285,15 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
     }
 
     /**
+     * Property workerDataDisks: A combination of configurations such as worker data disk type and size.
+     * <p>
+     * This parameter is valid only when the worker node data disk is mounted.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDisks() {
+        return null;
+    }
+
+    /**
      * Property workerDataDiskSize: Data disk size in GiB.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDiskSize() {
@@ -362,6 +373,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         java.lang.Object vSwitchIds;
         java.lang.Object workerDataDisk;
         java.lang.Object workerDataDiskCategory;
+        java.lang.Object workerDataDisks;
         java.lang.Object workerDataDiskSize;
         java.lang.Object workerInstanceTypes;
         java.lang.Object workerSystemDiskCategory;
@@ -754,6 +766,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *               It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
          *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         *               When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
          *               Default to 1.
          * @return {@code this}
          */
@@ -768,6 +781,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *               It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
          *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         *               When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
          *               Default to 1.
          * @return {@code this}
          */
@@ -782,6 +796,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *                   The options are:
          *                   Week: Time is measured in weeks
          *                   Month: time in months
+         *                   Year: time in years
          *                   Default to Month
          * @return {@code this}
          */
@@ -796,6 +811,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *                   The options are:
          *                   Week: Time is measured in weeks
          *                   Month: time in months
+         *                   Year: time in years
          *                   Default to Month
          * @return {@code this}
          */
@@ -1046,6 +1062,28 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         }
 
         /**
+         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDisks}
+         * @param workerDataDisks Property workerDataDisks: A combination of configurations such as worker data disk type and size.
+         *                        This parameter is valid only when the worker node data disk is mounted.
+         * @return {@code this}
+         */
+        public Builder workerDataDisks(com.aliyun.ros.cdk.core.IResolvable workerDataDisks) {
+            this.workerDataDisks = workerDataDisks;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDisks}
+         * @param workerDataDisks Property workerDataDisks: A combination of configurations such as worker data disk type and size.
+         *                        This parameter is valid only when the worker node data disk is mounted.
+         * @return {@code this}
+         */
+        public Builder workerDataDisks(java.util.List<? extends java.lang.Object> workerDataDisks) {
+            this.workerDataDisks = workerDataDisks;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDiskSize}
          * @param workerDataDiskSize Property workerDataDiskSize: Data disk size in GiB.
          * @return {@code this}
@@ -1196,6 +1234,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         private final java.lang.Object vSwitchIds;
         private final java.lang.Object workerDataDisk;
         private final java.lang.Object workerDataDiskCategory;
+        private final java.lang.Object workerDataDisks;
         private final java.lang.Object workerDataDiskSize;
         private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object workerSystemDiskCategory;
@@ -1237,6 +1276,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisk = software.amazon.jsii.Kernel.get(this, "workerDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDiskCategory = software.amazon.jsii.Kernel.get(this, "workerDataDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDiskSize = software.amazon.jsii.Kernel.get(this, "workerDataDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1279,6 +1319,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.vSwitchIds = builder.vSwitchIds;
             this.workerDataDisk = builder.workerDataDisk;
             this.workerDataDiskCategory = builder.workerDataDiskCategory;
+            this.workerDataDisks = builder.workerDataDisks;
             this.workerDataDiskSize = builder.workerDataDiskSize;
             this.workerInstanceTypes = builder.workerInstanceTypes;
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
@@ -1432,6 +1473,11 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         }
 
         @Override
+        public final java.lang.Object getWorkerDataDisks() {
+            return this.workerDataDisks;
+        }
+
+        @Override
         public final java.lang.Object getWorkerDataDiskSize() {
             return this.workerDataDiskSize;
         }
@@ -1545,6 +1591,9 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.getWorkerDataDiskCategory() != null) {
                 data.set("workerDataDiskCategory", om.valueToTree(this.getWorkerDataDiskCategory()));
             }
+            if (this.getWorkerDataDisks() != null) {
+                data.set("workerDataDisks", om.valueToTree(this.getWorkerDataDisks()));
+            }
             if (this.getWorkerDataDiskSize() != null) {
                 data.set("workerDataDiskSize", om.valueToTree(this.getWorkerDataDiskSize()));
             }
@@ -1607,6 +1656,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.vSwitchIds != null ? !this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds != null) return false;
             if (this.workerDataDisk != null ? !this.workerDataDisk.equals(that.workerDataDisk) : that.workerDataDisk != null) return false;
             if (this.workerDataDiskCategory != null ? !this.workerDataDiskCategory.equals(that.workerDataDiskCategory) : that.workerDataDiskCategory != null) return false;
+            if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
             if (this.workerDataDiskSize != null ? !this.workerDataDiskSize.equals(that.workerDataDiskSize) : that.workerDataDiskSize != null) return false;
             if (this.workerInstanceTypes != null ? !this.workerInstanceTypes.equals(that.workerInstanceTypes) : that.workerInstanceTypes != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
@@ -1645,6 +1695,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
             result = 31 * result + (this.workerDataDisk != null ? this.workerDataDisk.hashCode() : 0);
             result = 31 * result + (this.workerDataDiskCategory != null ? this.workerDataDiskCategory.hashCode() : 0);
+            result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
             result = 31 * result + (this.workerDataDiskSize != null ? this.workerDataDiskSize.hashCode() : 0);
             result = 31 * result + (this.workerInstanceTypes != null ? this.workerInstanceTypes.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);

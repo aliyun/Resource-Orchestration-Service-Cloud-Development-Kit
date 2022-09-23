@@ -8,13 +8,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     [JsiiInterface(nativeType: typeof(IListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.ListenerProps")]
     public interface IListenerProps
     {
-        /// <summary>Property backendServerPort: Backend server can listen on ports from 1 to 65535.</summary>
-        [JsiiProperty(name: "backendServerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object BackendServerPort
-        {
-            get;
-        }
-
         /// <summary>Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second).</summary>
         /// <remarks>
         /// If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
@@ -94,6 +87,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         [JsiiProperty(name: "aclType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AclType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property backendServerPort: Backend server can listen on ports from 1 to 65535.</summary>
+        [JsiiProperty(name: "backendServerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BackendServerPort
         {
             get
             {
@@ -289,13 +293,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             {
             }
 
-            /// <summary>Property backendServerPort: Backend server can listen on ports from 1 to 65535.</summary>
-            [JsiiProperty(name: "backendServerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object BackendServerPort
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second).</summary>
             /// <remarks>
             /// If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
@@ -369,6 +366,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "aclType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AclType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property backendServerPort: Backend server can listen on ports from 1 to 65535.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "backendServerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BackendServerPort
             {
                 get => GetInstanceProperty<object?>();
             }

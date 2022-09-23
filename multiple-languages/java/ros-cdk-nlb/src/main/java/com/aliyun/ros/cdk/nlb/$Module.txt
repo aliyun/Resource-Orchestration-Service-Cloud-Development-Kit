@@ -1,0 +1,16 @@
+@alicloud/ros-cdk-nlb.Listener=com.aliyun.ros.cdk.nlb.Listener
+@alicloud/ros-cdk-nlb.ListenerProps=com.aliyun.ros.cdk.nlb.ListenerProps
+@alicloud/ros-cdk-nlb.LoadBalancer=com.aliyun.ros.cdk.nlb.LoadBalancer
+@alicloud/ros-cdk-nlb.LoadBalancerProps=com.aliyun.ros.cdk.nlb.LoadBalancerProps
+@alicloud/ros-cdk-nlb.RosListener=com.aliyun.ros.cdk.nlb.RosListener
+@alicloud/ros-cdk-nlb.RosListenerProps=com.aliyun.ros.cdk.nlb.RosListenerProps
+@alicloud/ros-cdk-nlb.RosLoadBalancer=com.aliyun.ros.cdk.nlb.RosLoadBalancer
+@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerBillingConfigProperty=com.aliyun.ros.cdk.nlb.RosLoadBalancer$LoadBalancerBillingConfigProperty
+@alicloud/ros-cdk-nlb.RosLoadBalancer.ZoneMappingsProperty=com.aliyun.ros.cdk.nlb.RosLoadBalancer$ZoneMappingsProperty
+@alicloud/ros-cdk-nlb.RosLoadBalancerProps=com.aliyun.ros.cdk.nlb.RosLoadBalancerProps
+@alicloud/ros-cdk-nlb.RosServerGroup=com.aliyun.ros.cdk.nlb.RosServerGroup
+@alicloud/ros-cdk-nlb.RosServerGroup.HealthCheckConfigProperty=com.aliyun.ros.cdk.nlb.RosServerGroup$HealthCheckConfigProperty
+@alicloud/ros-cdk-nlb.RosServerGroup.ServersProperty=com.aliyun.ros.cdk.nlb.RosServerGroup$ServersProperty
+@alicloud/ros-cdk-nlb.RosServerGroupProps=com.aliyun.ros.cdk.nlb.RosServerGroupProps
+@alicloud/ros-cdk-nlb.ServerGroup=com.aliyun.ros.cdk.nlb.ServerGroup
+@alicloud/ros-cdk-nlb.ServerGroupProps=com.aliyun.ros.cdk.nlb.ServerGroupProps

@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.ValidationResults), fullyQualifiedName: "@alicloud/ros-cdk-core.ValidationResults", parametersJson: "[{\"name\":\"results\",\"optional\":true,\"type\":{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.ValidationResult\"},\"kind\":\"array\"}}}]")]
     public class ValidationResults : DeputyBase
     {
-        public ValidationResults(AlibabaCloud.SDK.ROS.CDK.Core.ValidationResult[]? results = null): base(new DeputyProps(new object?[]{results}))
+        public ValidationResults(AlibabaCloud.SDK.ROS.CDK.Core.ValidationResult[]? results = null): base(_MakeDeputyProps(results))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.ValidationResult[]? results = null)
+        {
+            return new DeputyProps(new object?[]{results});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

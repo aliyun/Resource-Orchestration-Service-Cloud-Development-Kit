@@ -8,6 +8,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.SecurityPreferenceProps")]
     public class SecurityPreferenceProps : AlibabaCloud.SDK.ROS.CDK.Ram.ISecurityPreferenceProps
     {
+        private object? _allowUserToChangePassword;
+
         /// <summary>Property allowUserToChangePassword: Specifies whether RAM users can change their passwords.</summary>
         /// <remarks>
         /// Valid values:
@@ -18,9 +20,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         [JsiiProperty(name: "allowUserToChangePassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AllowUserToChangePassword
         {
-            get;
-            set;
+            get => _allowUserToChangePassword;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _allowUserToChangePassword = value;
+            }
         }
+
+        private object? _allowUserToManageAccessKeys;
 
         /// <summary>Property allowUserToManageAccessKeys: Specifies whether RAM users can manage their AccessKey pairs.</summary>
         /// <remarks>
@@ -32,9 +56,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         [JsiiProperty(name: "allowUserToManageAccessKeys", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AllowUserToManageAccessKeys
         {
-            get;
-            set;
+            get => _allowUserToManageAccessKeys;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _allowUserToManageAccessKeys = value;
+            }
         }
+
+        private object? _allowUserToManageMfaDevices;
 
         /// <summary>Property allowUserToManageMfaDevices: Specifies whether RAM users can manage their MFA devices.</summary>
         /// <remarks>
@@ -46,9 +92,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         [JsiiProperty(name: "allowUserToManageMfaDevices", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AllowUserToManageMfaDevices
         {
-            get;
-            set;
+            get => _allowUserToManageMfaDevices;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _allowUserToManageMfaDevices = value;
+            }
         }
+
+        private object? _allowUserToManagePublicKeys;
 
         /// <summary>Property allowUserToManagePublicKeys: Specifies whether RAM users can manage their public keys.</summary>
         /// <remarks>
@@ -61,9 +129,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         [JsiiProperty(name: "allowUserToManagePublicKeys", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AllowUserToManagePublicKeys
         {
-            get;
-            set;
+            get => _allowUserToManagePublicKeys;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _allowUserToManagePublicKeys = value;
+            }
         }
+
+        private object? _enableSaveMfaTicket;
 
         /// <summary>Property enableSaveMfaTicket: Specifies whether RAM users can save multi-factor authentication (MFA) security codes during logon.</summary>
         /// <remarks>
@@ -76,9 +166,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         [JsiiProperty(name: "enableSaveMfaTicket", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? EnableSaveMfaTicket
         {
-            get;
-            set;
+            get => _enableSaveMfaTicket;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _enableSaveMfaTicket = value;
+            }
         }
+
+        private object? _loginNetworkMasks;
 
         /// <summary>Property loginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is allowed.</summary>
         /// <remarks>
@@ -98,9 +210,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         [JsiiProperty(name: "loginNetworkMasks", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? LoginNetworkMasks
         {
-            get;
-            set;
+            get => _loginNetworkMasks;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _loginNetworkMasks = value;
+            }
         }
+
+        private object? _loginSessionDuration;
 
         /// <summary>Property loginSessionDuration: The validity period of the logon session of the RAM user.</summary>
         /// <remarks>
@@ -110,8 +244,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         [JsiiProperty(name: "loginSessionDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? LoginSessionDuration
         {
-            get;
-            set;
+            get => _loginSessionDuration;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _loginSessionDuration = value;
+            }
         }
     }
 }

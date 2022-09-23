@@ -16,8 +16,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     {
         /// <summary>Creates an ``Fn::GetAZs`` function.</summary>
         /// <param name="region">The name of the region for which you want to get the Availability Zones.</param>
-        public FnGetAZs(object region): base(new DeputyProps(new object?[]{region}))
+        public FnGetAZs(object region): base(_MakeDeputyProps(region))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object region)
+        {
+            return new DeputyProps(new object?[]{region});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

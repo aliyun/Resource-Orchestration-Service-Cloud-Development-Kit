@@ -10,15 +10,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.RosTransitRouterRouteTableAssociationProps")]
     public class RosTransitRouterRouteTableAssociationProps : AlibabaCloud.SDK.ROS.CDK.Cen.IRosTransitRouterRouteTableAssociationProps
     {
+        private object _transitRouterAttachmentId;
+
         /// <remarks>
         /// <strong>Property</strong>: transitRouterAttachmentId: TransitRouterAttachmentId
         /// </remarks>
         [JsiiProperty(name: "transitRouterAttachmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TransitRouterAttachmentId
         {
-            get;
-            set;
+            get => _transitRouterAttachmentId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _transitRouterAttachmentId = value;
+            }
         }
+
+        private object _transitRouterRouteTableId;
 
         /// <remarks>
         /// <strong>Property</strong>: transitRouterRouteTableId: TransitRouterRouteTableId
@@ -26,8 +50,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         [JsiiProperty(name: "transitRouterRouteTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TransitRouterRouteTableId
         {
-            get;
-            set;
+            get => _transitRouterRouteTableId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _transitRouterRouteTableId = value;
+            }
         }
     }
 }

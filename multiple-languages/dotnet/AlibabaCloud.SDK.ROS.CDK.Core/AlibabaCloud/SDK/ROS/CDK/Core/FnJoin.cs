@@ -15,8 +15,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>Creates an ``Fn::Join`` function.</summary>
         /// <param name="delimiter">The value you want to occur between fragments.</param>
         /// <param name="listOfValues">The list of values you want combined.</param>
-        public FnJoin(string delimiter, object[] listOfValues): base(new DeputyProps(new object?[]{delimiter, listOfValues}))
+        public FnJoin(string delimiter, object[] listOfValues): base(_MakeDeputyProps(delimiter, listOfValues))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(string delimiter, object[] listOfValues)
+        {
+            return new DeputyProps(new object?[]{delimiter, listOfValues});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

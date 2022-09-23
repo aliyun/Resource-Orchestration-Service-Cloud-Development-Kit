@@ -38,6 +38,11 @@ export interface VpcEndpointServiceProps {
     readonly serviceDescription?: string | ros.IResolvable;
 
     /**
+     * Property serviceResourceType: Service resource type.
+     */
+    readonly serviceResourceType?: string | ros.IResolvable;
+
+    /**
      * Property user: Account IDs to the whitelist of an endpoint service.
      */
     readonly user?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -106,6 +111,7 @@ export class VpcEndpointService extends ros.Resource {
             serviceDescription: props.serviceDescription,
             resource: props.resource,
             connectBandwidth: props.connectBandwidth,
+            serviceResourceType: props.serviceResourceType,
             zoneAffinityEnabled: props.zoneAffinityEnabled,
             autoAcceptEnabled: props.autoAcceptEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

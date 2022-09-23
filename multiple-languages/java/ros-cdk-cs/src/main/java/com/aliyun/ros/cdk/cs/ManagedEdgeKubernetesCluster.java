@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.306Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.566Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster")
 public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -582,6 +582,7 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
          * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
          * Default to 1.
          * <p>
          * @return {@code this}
@@ -597,6 +598,7 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
          * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
          * Default to 1.
          * <p>
          * @return {@code this}
@@ -613,6 +615,7 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          * The options are:
          * Week: Time is measured in weeks
          * Month: time in months
+         * Year: time in years
          * Default to Month
          * <p>
          * @return {@code this}
@@ -628,6 +631,7 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          * The options are:
          * Week: Time is measured in weeks
          * Month: time in months
+         * Year: time in years
          * Default to Month
          * <p>
          * @return {@code this}
@@ -900,6 +904,31 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
          */
         public Builder workerDataDiskCategory(final com.aliyun.ros.cdk.core.IResolvable workerDataDiskCategory) {
             this.props.workerDataDiskCategory(workerDataDiskCategory);
+            return this;
+        }
+
+        /**
+         * Property workerDataDisks: A combination of configurations such as worker data disk type and size.
+         * <p>
+         * This parameter is valid only when the worker node data disk is mounted.
+         * <p>
+         * @return {@code this}
+         * @param workerDataDisks Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is required.
+         */
+        public Builder workerDataDisks(final com.aliyun.ros.cdk.core.IResolvable workerDataDisks) {
+            this.props.workerDataDisks(workerDataDisks);
+            return this;
+        }
+        /**
+         * Property workerDataDisks: A combination of configurations such as worker data disk type and size.
+         * <p>
+         * This parameter is valid only when the worker node data disk is mounted.
+         * <p>
+         * @return {@code this}
+         * @param workerDataDisks Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is required.
+         */
+        public Builder workerDataDisks(final java.util.List<? extends java.lang.Object> workerDataDisks) {
+            this.props.workerDataDisks(workerDataDisks);
             return this;
         }
 

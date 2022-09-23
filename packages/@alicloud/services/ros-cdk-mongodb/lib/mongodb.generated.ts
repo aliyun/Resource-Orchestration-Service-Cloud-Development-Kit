@@ -226,7 +226,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -723,7 +723,7 @@ function RosServerlessInstancePropsValidator(properties: any): ros.ValidationRes
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -1190,7 +1190,7 @@ function RosShardingInstancePropsValidator(properties: any): ros.ValidationResul
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -1206,7 +1206,7 @@ function RosShardingInstancePropsValidator(properties: any): ros.ValidationResul
         errors.collect(ros.propertyValidator('configServer', ros.validateLength)({
             data: properties.configServer.length,
             min: 1,
-            max: 1,
+            max: 3,
           }));
     }
     errors.collect(ros.propertyValidator('configServer', ros.listValidator(RosShardingInstance_ConfigServerPropertyValidator))(properties.configServer));
@@ -1581,6 +1581,10 @@ export namespace RosShardingInstance {
          */
         readonly storage: number | ros.IResolvable;
         /**
+         * @Property readonlyReplicas: The number of read-only nodes in shard node.
+         */
+        readonly readonlyReplicas?: number | ros.IResolvable;
+        /**
          * @Property class: The specification of shard.
          */
         readonly class: string | ros.IResolvable;
@@ -1598,6 +1602,14 @@ function RosShardingInstance_ReplicaSetPropertyValidator(properties: any): ros.V
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('storage', ros.requiredValidator)(properties.storage));
     errors.collect(ros.propertyValidator('storage', ros.validateNumber)(properties.storage));
+    if(properties.readonlyReplicas && (typeof properties.readonlyReplicas) !== 'object') {
+        errors.collect(ros.propertyValidator('readonlyReplicas', ros.validateRange)({
+            data: properties.readonlyReplicas,
+            min: 0,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('readonlyReplicas', ros.validateNumber)(properties.readonlyReplicas));
     errors.collect(ros.propertyValidator('class', ros.requiredValidator)(properties.class));
     errors.collect(ros.propertyValidator('class', ros.validateString)(properties.class));
     return errors.wrap('supplied properties not correct for "ReplicaSetProperty"');
@@ -1616,6 +1628,7 @@ function rosShardingInstanceReplicaSetPropertyToRosTemplate(properties: any): an
     RosShardingInstance_ReplicaSetPropertyValidator(properties).assertSuccess();
     return {
       Storage: ros.numberToRosTemplate(properties.storage),
+      ReadonlyReplicas: ros.numberToRosTemplate(properties.readonlyReplicas),
       Class: ros.stringToRosTemplate(properties.class),
     };
 }

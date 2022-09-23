@@ -14,8 +14,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
-        public DefaultTokenResolver(AlibabaCloud.SDK.ROS.CDK.Core.IFragmentConcatenator concat): base(new DeputyProps(new object?[]{concat}))
+        public DefaultTokenResolver(AlibabaCloud.SDK.ROS.CDK.Core.IFragmentConcatenator concat): base(_MakeDeputyProps(concat))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.IFragmentConcatenator concat)
+        {
+            return new DeputyProps(new object?[]{concat});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

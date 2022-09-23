@@ -9,7 +9,7 @@ export { RosRouterInterface as RouterInterfaceProperty };
 export interface RouterInterfaceProps {
 
     /**
-     * Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+     * Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'.
      */
     readonly role: string | ros.IResolvable;
 
@@ -86,7 +86,7 @@ export interface RouterInterfaceProps {
     readonly oppositeRouterType?: string | ros.IResolvable;
 
     /**
-     * Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     * Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
      */
     readonly period?: number | ros.IResolvable;
 

@@ -1454,12 +1454,6 @@ function RosScalingConfiguration_DiskMappingsPropertyValidator(properties: any):
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));

@@ -278,6 +278,14 @@ export interface RosInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
      * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     readonly productType?: string | ros.IResolvable;
@@ -395,7 +403,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -409,6 +417,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["month","year","Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -438,6 +453,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       ProductType: ros.stringToRosTemplate(properties.productType),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecondaryZoneId: ros.stringToRosTemplate(properties.secondaryZoneId),
@@ -687,6 +703,14 @@ export class RosInstance extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
      * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     public productType: string | ros.IResolvable | undefined;
@@ -795,6 +819,7 @@ export class RosInstance extends ros.RosResource {
         this.instanceName = props.instanceName;
         this.password = props.password;
         this.period = props.period;
+        this.periodUnit = props.periodUnit;
         this.productType = props.productType;
         this.resourceGroupId = props.resourceGroupId;
         this.secondaryZoneId = props.secondaryZoneId;
@@ -822,6 +847,7 @@ export class RosInstance extends ros.RosResource {
             instanceName: this.instanceName,
             password: this.password,
             period: this.period,
+            periodUnit: this.periodUnit,
             productType: this.productType,
             resourceGroupId: this.resourceGroupId,
             secondaryZoneId: this.secondaryZoneId,
@@ -1401,6 +1427,14 @@ export interface RosPrepayInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
      * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     readonly productType?: string | ros.IResolvable;
@@ -1508,7 +1542,6 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
         errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
           data: properties.sslEnabled,
@@ -1516,6 +1549,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1524,6 +1558,13 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPrepayInstance_TagsPropertyValidator))(properties.tags));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["month","year","Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     errors.collect(ros.propertyValidator('backupPolicy', RosPrepayInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosPrepayInstanceProps"');
@@ -1555,6 +1596,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       ProductType: ros.stringToRosTemplate(properties.productType),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecondaryZoneId: ros.stringToRosTemplate(properties.secondaryZoneId),
@@ -1807,6 +1849,14 @@ export class RosPrepayInstance extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
      * @Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     public productType: string | ros.IResolvable | undefined;
@@ -1915,6 +1965,7 @@ export class RosPrepayInstance extends ros.RosResource {
         this.instanceName = props.instanceName;
         this.password = props.password;
         this.period = props.period;
+        this.periodUnit = props.periodUnit;
         this.productType = props.productType;
         this.resourceGroupId = props.resourceGroupId;
         this.secondaryZoneId = props.secondaryZoneId;
@@ -1942,6 +1993,7 @@ export class RosPrepayInstance extends ros.RosResource {
             instanceName: this.instanceName,
             password: this.password,
             period: this.period,
+            periodUnit: this.periodUnit,
             productType: this.productType,
             resourceGroupId: this.resourceGroupId,
             secondaryZoneId: this.secondaryZoneId,

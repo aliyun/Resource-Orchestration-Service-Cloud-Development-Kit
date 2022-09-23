@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.TagManager), fullyQualifiedName: "@alicloud/ros-cdk-core.TagManager", parametersJson: "[{\"name\":\"tagType\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.TagType\"}},{\"name\":\"resourceTypeName\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"tagStructure\",\"optional\":true,\"type\":{\"primitive\":\"any\"}},{\"name\":\"options\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.TagManagerOptions\"}}]")]
     public class TagManager : DeputyBase
     {
-        public TagManager(AlibabaCloud.SDK.ROS.CDK.Core.TagType tagType, string resourceTypeName, object? tagStructure = null, AlibabaCloud.SDK.ROS.CDK.Core.ITagManagerOptions? options = null): base(new DeputyProps(new object?[]{tagType, resourceTypeName, tagStructure, options}))
+        public TagManager(AlibabaCloud.SDK.ROS.CDK.Core.TagType tagType, string resourceTypeName, object? tagStructure = null, AlibabaCloud.SDK.ROS.CDK.Core.ITagManagerOptions? options = null): base(_MakeDeputyProps(tagType, resourceTypeName, tagStructure, options))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.TagType tagType, string resourceTypeName, object? tagStructure = null, AlibabaCloud.SDK.ROS.CDK.Core.ITagManagerOptions? options = null)
+        {
+            return new DeputyProps(new object?[]{tagType, resourceTypeName, tagStructure, options});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

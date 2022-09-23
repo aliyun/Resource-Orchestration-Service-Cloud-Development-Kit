@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::ServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.710Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.965Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ServerGroupProps.Jsii$Proxy.class)
 public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -81,6 +81,15 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property serviceName: This parameter is available only if the ALB Ingress controller is used.
+     * <p>
+     * In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceName() {
+        return null;
+    }
+
+    /**
      * Property stickySessionConfig: The configuration of session persistence.
      * <p>
      * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
@@ -115,6 +124,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object resourceGroupId;
         java.lang.Object scheduler;
         java.lang.Object serverGroupType;
+        java.lang.Object serviceName;
         java.lang.Object stickySessionConfig;
         java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags;
 
@@ -307,6 +317,28 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ServerGroupProps#getServiceName}
+         * @param serviceName Property serviceName: This parameter is available only if the ALB Ingress controller is used.
+         *                    In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
+         * @return {@code this}
+         */
+        public Builder serviceName(java.lang.String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServerGroupProps#getServiceName}
+         * @param serviceName Property serviceName: This parameter is available only if the ALB Ingress controller is used.
+         *                    In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerGroupProps#getStickySessionConfig}
          * @param stickySessionConfig Property stickySessionConfig: The configuration of session persistence.
          *                            Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
@@ -363,6 +395,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object scheduler;
         private final java.lang.Object serverGroupType;
+        private final java.lang.Object serviceName;
         private final java.lang.Object stickySessionConfig;
         private final java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags;
 
@@ -379,6 +412,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverGroupType = software.amazon.jsii.Kernel.get(this, "serverGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stickySessionConfig = software.amazon.jsii.Kernel.get(this, "stickySessionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty.class)));
         }
@@ -396,6 +430,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             this.resourceGroupId = builder.resourceGroupId;
             this.scheduler = builder.scheduler;
             this.serverGroupType = builder.serverGroupType;
+            this.serviceName = builder.serviceName;
             this.stickySessionConfig = builder.stickySessionConfig;
             this.tags = (java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty>)builder.tags;
         }
@@ -436,6 +471,11 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getServiceName() {
+            return this.serviceName;
+        }
+
+        @Override
         public final java.lang.Object getStickySessionConfig() {
             return this.stickySessionConfig;
         }
@@ -465,6 +505,9 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getServerGroupType() != null) {
                 data.set("serverGroupType", om.valueToTree(this.getServerGroupType()));
+            }
+            if (this.getServiceName() != null) {
+                data.set("serviceName", om.valueToTree(this.getServiceName()));
             }
             if (this.getStickySessionConfig() != null) {
                 data.set("stickySessionConfig", om.valueToTree(this.getStickySessionConfig()));
@@ -497,6 +540,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
             if (this.serverGroupType != null ? !this.serverGroupType.equals(that.serverGroupType) : that.serverGroupType != null) return false;
+            if (this.serviceName != null ? !this.serviceName.equals(that.serviceName) : that.serviceName != null) return false;
             if (this.stickySessionConfig != null ? !this.stickySessionConfig.equals(that.stickySessionConfig) : that.stickySessionConfig != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -510,6 +554,7 @@ public interface ServerGroupProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
             result = 31 * result + (this.serverGroupType != null ? this.serverGroupType.hashCode() : 0);
+            result = 31 * result + (this.serviceName != null ? this.serviceName.hashCode() : 0);
             result = 31 * result + (this.stickySessionConfig != null ? this.stickySessionConfig.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

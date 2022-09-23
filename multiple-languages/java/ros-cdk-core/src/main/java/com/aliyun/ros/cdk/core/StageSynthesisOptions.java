@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options for assemly synthesis.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.598Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StageSynthesisOptions")
 @software.amazon.jsii.Jsii.Proxy(StageSynthesisOptions.Jsii$Proxy.class)
 public interface StageSynthesisOptions extends software.amazon.jsii.JsiiSerializable {

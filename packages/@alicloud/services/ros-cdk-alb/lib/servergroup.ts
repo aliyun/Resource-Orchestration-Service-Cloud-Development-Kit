@@ -63,6 +63,11 @@ export interface ServerGroupProps {
     readonly serverGroupType?: string | ros.IResolvable;
 
     /**
+     * Property serviceName: This parameter is available only if the ALB Ingress controller is used. In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
+     */
+    readonly serviceName?: string | ros.IResolvable;
+
+    /**
      * Property stickySessionConfig: The configuration of session persistence.
      * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
      */
@@ -102,6 +107,7 @@ export class ServerGroup extends ros.Resource {
         const rosServerGroup = new RosServerGroup(this, id,  {
             vpcId: props.vpcId,
             resourceGroupId: props.resourceGroupId,
+            serviceName: props.serviceName,
             scheduler: props.scheduler,
             stickySessionConfig: props.stickySessionConfig,
             healthCheckConfig: props.healthCheckConfig,

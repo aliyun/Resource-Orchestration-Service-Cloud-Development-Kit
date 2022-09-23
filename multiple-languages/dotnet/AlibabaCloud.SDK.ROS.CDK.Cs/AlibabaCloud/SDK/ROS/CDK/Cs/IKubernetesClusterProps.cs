@@ -531,6 +531,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
         /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
         /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+        /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
         /// Default to 1.
         /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -548,6 +549,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// The options are:
         /// Week: Time is measured in weeks
         /// Month: time in months
+        /// Year: time in years
         /// Default to Month
         /// </remarks>
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1317,6 +1319,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
             /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
             /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+            /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
             /// Default to 1.
             /// </remarks>
             [JsiiOptional]
@@ -1331,6 +1334,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// The options are:
             /// Week: Time is measured in weeks
             /// Month: time in months
+            /// Year: time in years
             /// Default to Month
             /// </remarks>
             [JsiiOptional]

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.021Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.099Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -173,11 +173,21 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property period: The subscription period of the cluster in month.
-     * <p>
-     * Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
+     * Property period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36 If periodUnit is year, the valid range is 1, 2, 3.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return null;
+    }
+
+    /**
+     * Property periodUnit: The unit of the subscription duration.
+     * <p>
+     * Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
@@ -300,6 +310,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object lowerCaseTableNames;
         java.lang.Object maintainTime;
         java.lang.Object period;
+        java.lang.Object periodUnit;
         java.lang.Object renewalStatus;
         java.lang.Object resourceGroupId;
         java.lang.Object securityGroupIds;
@@ -725,8 +736,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPeriod}
-         * @param period Property period: The subscription period of the cluster in month.
-         *               Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
+         * @param period Property period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36 If periodUnit is year, the valid range is 1, 2, 3.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -736,12 +746,39 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPeriod}
-         * @param period Property period: The subscription period of the cluster in month.
-         *               Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
+         * @param period Property period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36 If periodUnit is year, the valid range is 1, 2, 3.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
             this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration.
+         *                   Valid values:
+         *                   Month
+         *                   Year
+         *                   Default value: Month.
+         * @return {@code this}
+         */
+        public Builder periodUnit(java.lang.String periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration.
+         *                   Valid values:
+         *                   Month
+         *                   Year
+         *                   Default value: Month.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
             return this;
         }
 
@@ -1000,6 +1037,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object lowerCaseTableNames;
         private final java.lang.Object maintainTime;
         private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
         private final java.lang.Object renewalStatus;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupIds;
@@ -1034,6 +1072,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.lowerCaseTableNames = software.amazon.jsii.Kernel.get(this, "lowerCaseTableNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maintainTime = software.amazon.jsii.Kernel.get(this, "maintainTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1069,6 +1108,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.lowerCaseTableNames = builder.lowerCaseTableNames;
             this.maintainTime = builder.maintainTime;
             this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
             this.renewalStatus = builder.renewalStatus;
             this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupIds = builder.securityGroupIds;
@@ -1164,6 +1204,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getPeriod() {
             return this.period;
+        }
+
+        @Override
+        public final java.lang.Object getPeriodUnit() {
+            return this.periodUnit;
         }
 
         @Override
@@ -1265,6 +1310,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
+            if (this.getPeriodUnit() != null) {
+                data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            }
             if (this.getRenewalStatus() != null) {
                 data.set("renewalStatus", om.valueToTree(this.getRenewalStatus()));
             }
@@ -1330,6 +1378,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.lowerCaseTableNames != null ? !this.lowerCaseTableNames.equals(that.lowerCaseTableNames) : that.lowerCaseTableNames != null) return false;
             if (this.maintainTime != null ? !this.maintainTime.equals(that.maintainTime) : that.maintainTime != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.renewalStatus != null ? !this.renewalStatus.equals(that.renewalStatus) : that.renewalStatus != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
@@ -1361,6 +1410,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.lowerCaseTableNames != null ? this.lowerCaseTableNames.hashCode() : 0);
             result = 31 * result + (this.maintainTime != null ? this.maintainTime.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.renewalStatus != null ? this.renewalStatus.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);

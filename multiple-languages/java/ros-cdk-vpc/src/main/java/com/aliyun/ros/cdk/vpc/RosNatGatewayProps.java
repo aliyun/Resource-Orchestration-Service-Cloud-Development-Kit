@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.896Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.914Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosNatGatewayProps.Jsii$Proxy.class)
 public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,6 +43,12 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEipBindMode() {
         return null;
     }
 
@@ -105,6 +111,7 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object deletionProtection;
         java.lang.Object description;
         java.lang.Object duration;
+        java.lang.Object eipBindMode;
         java.lang.Object instanceChargeType;
         java.lang.Object internetChargeType;
         java.lang.Object natGatewayName;
@@ -250,6 +257,26 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
             this.duration = duration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNatGatewayProps#getEipBindMode}
+         * @param eipBindMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder eipBindMode(java.lang.String eipBindMode) {
+            this.eipBindMode = eipBindMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNatGatewayProps#getEipBindMode}
+         * @param eipBindMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder eipBindMode(com.aliyun.ros.cdk.core.IResolvable eipBindMode) {
+            this.eipBindMode = eipBindMode;
             return this;
         }
 
@@ -407,6 +434,7 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object deletionProtection;
         private final java.lang.Object description;
         private final java.lang.Object duration;
+        private final java.lang.Object eipBindMode;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object internetChargeType;
         private final java.lang.Object natGatewayName;
@@ -428,6 +456,7 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.eipBindMode = software.amazon.jsii.Kernel.get(this, "eipBindMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natGatewayName = software.amazon.jsii.Kernel.get(this, "natGatewayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -450,6 +479,7 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.deletionProtection = builder.deletionProtection;
             this.description = builder.description;
             this.duration = builder.duration;
+            this.eipBindMode = builder.eipBindMode;
             this.instanceChargeType = builder.instanceChargeType;
             this.internetChargeType = builder.internetChargeType;
             this.natGatewayName = builder.natGatewayName;
@@ -492,6 +522,11 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getDuration() {
             return this.duration;
+        }
+
+        @Override
+        public final java.lang.Object getEipBindMode() {
+            return this.eipBindMode;
         }
 
         @Override
@@ -552,6 +587,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getDuration() != null) {
                 data.set("duration", om.valueToTree(this.getDuration()));
             }
+            if (this.getEipBindMode() != null) {
+                data.set("eipBindMode", om.valueToTree(this.getEipBindMode()));
+            }
             if (this.getInstanceChargeType() != null) {
                 data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
             }
@@ -598,6 +636,7 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
+            if (this.eipBindMode != null ? !this.eipBindMode.equals(that.eipBindMode) : that.eipBindMode != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
             if (this.natGatewayName != null ? !this.natGatewayName.equals(that.natGatewayName) : that.natGatewayName != null) return false;
@@ -616,6 +655,7 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
+            result = 31 * result + (this.eipBindMode != null ? this.eipBindMode.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
             result = 31 * result + (this.natGatewayName != null ? this.natGatewayName.hashCode() : 0);

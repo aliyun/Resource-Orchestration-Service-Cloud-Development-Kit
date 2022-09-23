@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpointService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.071Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.130Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointService")
 public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -260,6 +260,27 @@ public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder serviceDescription(final com.aliyun.ros.cdk.core.IResolvable serviceDescription) {
             this.props().serviceDescription(serviceDescription);
+            return this;
+        }
+
+        /**
+         * Property serviceResourceType: Service resource type.
+         * <p>
+         * @return {@code this}
+         * @param serviceResourceType Property serviceResourceType: Service resource type. This parameter is required.
+         */
+        public Builder serviceResourceType(final java.lang.String serviceResourceType) {
+            this.props().serviceResourceType(serviceResourceType);
+            return this;
+        }
+        /**
+         * Property serviceResourceType: Service resource type.
+         * <p>
+         * @return {@code this}
+         * @param serviceResourceType Property serviceResourceType: Service resource type. This parameter is required.
+         */
+        public Builder serviceResourceType(final com.aliyun.ros.cdk.core.IResolvable serviceResourceType) {
+            this.props().serviceResourceType(serviceResourceType);
             return this;
         }
 

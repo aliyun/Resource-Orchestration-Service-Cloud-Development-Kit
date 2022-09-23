@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS template type:  `ALIYUN::ALB::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.693Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.937Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -112,6 +112,22 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setRuleActions(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.alb.RosRule.RuleActionsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.alb.RosRule.RuleActionsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "ruleActions", java.util.Objects.requireNonNull(value, "ruleActions is required"));
     }
 
@@ -130,6 +146,22 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setRuleConditions(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.alb.RosRule.RuleConditionsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.alb.RosRule.RuleConditionsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "ruleConditions", java.util.Objects.requireNonNull(value, "ruleConditions is required"));
     }
 
@@ -522,6 +554,13 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServerGroupStickySession() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getServerGroupTuples() {
             return null;
         }
@@ -538,7 +577,30 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ForwardGroupConfigProperty> {
+            java.lang.Object serverGroupStickySession;
             java.lang.Object serverGroupTuples;
+
+            /**
+             * Sets the value of {@link ForwardGroupConfigProperty#getServerGroupStickySession}
+             * @param serverGroupStickySession the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverGroupStickySession(com.aliyun.ros.cdk.core.IResolvable serverGroupStickySession) {
+                this.serverGroupStickySession = serverGroupStickySession;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ForwardGroupConfigProperty#getServerGroupStickySession}
+             * @param serverGroupStickySession the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverGroupStickySession(com.aliyun.ros.cdk.alb.RosRule.ServerGroupStickySessionProperty serverGroupStickySession) {
+                this.serverGroupStickySession = serverGroupStickySession;
+                return this;
+            }
 
             /**
              * Sets the value of {@link ForwardGroupConfigProperty#getServerGroupTuples}
@@ -580,6 +642,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ForwardGroupConfigProperty {
+            private final java.lang.Object serverGroupStickySession;
             private final java.lang.Object serverGroupTuples;
 
             /**
@@ -588,6 +651,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
+                this.serverGroupStickySession = software.amazon.jsii.Kernel.get(this, "serverGroupStickySession", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.serverGroupTuples = software.amazon.jsii.Kernel.get(this, "serverGroupTuples", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -596,7 +660,13 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.serverGroupStickySession = builder.serverGroupStickySession;
                 this.serverGroupTuples = builder.serverGroupTuples;
+            }
+
+            @Override
+            public final java.lang.Object getServerGroupStickySession() {
+                return this.serverGroupStickySession;
             }
 
             @Override
@@ -610,6 +680,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+                if (this.getServerGroupStickySession() != null) {
+                    data.set("serverGroupStickySession", om.valueToTree(this.getServerGroupStickySession()));
+                }
                 if (this.getServerGroupTuples() != null) {
                     data.set("serverGroupTuples", om.valueToTree(this.getServerGroupTuples()));
                 }
@@ -631,12 +704,14 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 ForwardGroupConfigProperty.Jsii$Proxy that = (ForwardGroupConfigProperty.Jsii$Proxy) o;
 
+                if (this.serverGroupStickySession != null ? !this.serverGroupStickySession.equals(that.serverGroupStickySession) : that.serverGroupStickySession != null) return false;
                 return this.serverGroupTuples != null ? this.serverGroupTuples.equals(that.serverGroupTuples) : that.serverGroupTuples == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.serverGroupTuples != null ? this.serverGroupTuples.hashCode() : 0;
+                int result = this.serverGroupStickySession != null ? this.serverGroupStickySession.hashCode() : 0;
+                result = 31 * result + (this.serverGroupTuples != null ? this.serverGroupTuples.hashCode() : 0);
                 return result;
             }
         }
@@ -1282,6 +1357,256 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.values != null ? this.values.hashCode() : 0;
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(MirrorGroupConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface MirrorGroupConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getServerGroupTuples();
+
+        /**
+         * @return a {@link Builder} of {@link MirrorGroupConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link MirrorGroupConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<MirrorGroupConfigProperty> {
+            java.lang.Object serverGroupTuples;
+
+            /**
+             * Sets the value of {@link MirrorGroupConfigProperty#getServerGroupTuples}
+             * @param serverGroupTuples the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverGroupTuples(com.aliyun.ros.cdk.core.IResolvable serverGroupTuples) {
+                this.serverGroupTuples = serverGroupTuples;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MirrorGroupConfigProperty#getServerGroupTuples}
+             * @param serverGroupTuples the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverGroupTuples(java.util.List<? extends java.lang.Object> serverGroupTuples) {
+                this.serverGroupTuples = serverGroupTuples;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link MirrorGroupConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public MirrorGroupConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link MirrorGroupConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MirrorGroupConfigProperty {
+            private final java.lang.Object serverGroupTuples;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.serverGroupTuples = software.amazon.jsii.Kernel.get(this, "serverGroupTuples", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.serverGroupTuples = java.util.Objects.requireNonNull(builder.serverGroupTuples, "serverGroupTuples is required");
+            }
+
+            @Override
+            public final java.lang.Object getServerGroupTuples() {
+                return this.serverGroupTuples;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("serverGroupTuples", om.valueToTree(this.getServerGroupTuples()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                MirrorGroupConfigProperty.Jsii$Proxy that = (MirrorGroupConfigProperty.Jsii$Proxy) o;
+
+                return this.serverGroupTuples.equals(that.serverGroupTuples);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.serverGroupTuples.hashCode();
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigServerGroupTuplesProperty")
+    @software.amazon.jsii.Jsii.Proxy(MirrorGroupConfigServerGroupTuplesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface MirrorGroupConfigServerGroupTuplesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getServerGroupId();
+
+        /**
+         * @return a {@link Builder} of {@link MirrorGroupConfigServerGroupTuplesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link MirrorGroupConfigServerGroupTuplesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<MirrorGroupConfigServerGroupTuplesProperty> {
+            java.lang.Object serverGroupId;
+
+            /**
+             * Sets the value of {@link MirrorGroupConfigServerGroupTuplesProperty#getServerGroupId}
+             * @param serverGroupId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverGroupId(java.lang.String serverGroupId) {
+                this.serverGroupId = serverGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MirrorGroupConfigServerGroupTuplesProperty#getServerGroupId}
+             * @param serverGroupId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverGroupId(com.aliyun.ros.cdk.core.IResolvable serverGroupId) {
+                this.serverGroupId = serverGroupId;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link MirrorGroupConfigServerGroupTuplesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public MirrorGroupConfigServerGroupTuplesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link MirrorGroupConfigServerGroupTuplesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MirrorGroupConfigServerGroupTuplesProperty {
+            private final java.lang.Object serverGroupId;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.serverGroupId = software.amazon.jsii.Kernel.get(this, "serverGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.serverGroupId = java.util.Objects.requireNonNull(builder.serverGroupId, "serverGroupId is required");
+            }
+
+            @Override
+            public final java.lang.Object getServerGroupId() {
+                return this.serverGroupId;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("serverGroupId", om.valueToTree(this.getServerGroupId()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigServerGroupTuplesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                MirrorGroupConfigServerGroupTuplesProperty.Jsii$Proxy that = (MirrorGroupConfigServerGroupTuplesProperty.Jsii$Proxy) o;
+
+                return this.serverGroupId.equals(that.serverGroupId);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.serverGroupId.hashCode();
                 return result;
             }
         }
@@ -2062,10 +2387,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty")
-    @software.amazon.jsii.Jsii.Proxy(ResponseHeaderConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(RemoveHeaderConfigProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface ResponseHeaderConfigProperty extends software.amazon.jsii.JsiiSerializable {
+    public static interface RemoveHeaderConfigProperty extends software.amazon.jsii.JsiiSerializable {
 
         /**
          */
@@ -2075,29 +2400,21 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getValues() {
-            return null;
-        }
-
-        /**
-         * @return a {@link Builder} of {@link ResponseHeaderConfigProperty}
+         * @return a {@link Builder} of {@link RemoveHeaderConfigProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         static Builder builder() {
             return new Builder();
         }
         /**
-         * A builder for {@link ResponseHeaderConfigProperty}
+         * A builder for {@link RemoveHeaderConfigProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<ResponseHeaderConfigProperty> {
+        public static final class Builder implements software.amazon.jsii.Builder<RemoveHeaderConfigProperty> {
             java.lang.Object key;
-            java.lang.Object values;
 
             /**
-             * Sets the value of {@link ResponseHeaderConfigProperty#getKey}
+             * Sets the value of {@link RemoveHeaderConfigProperty#getKey}
              * @param key the value to be set.
              * @return {@code this}
              */
@@ -2108,7 +2425,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link ResponseHeaderConfigProperty#getKey}
+             * Sets the value of {@link RemoveHeaderConfigProperty#getKey}
              * @param key the value to be set.
              * @return {@code this}
              */
@@ -2119,47 +2436,24 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link ResponseHeaderConfigProperty#getValues}
-             * @param values the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder values(com.aliyun.ros.cdk.core.IResolvable values) {
-                this.values = values;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ResponseHeaderConfigProperty#getValues}
-             * @param values the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder values(java.util.List<? extends java.lang.Object> values) {
-                this.values = values;
-                return this;
-            }
-
-            /**
              * Builds the configured instance.
-             * @return a new instance of {@link ResponseHeaderConfigProperty}
+             * @return a new instance of {@link RemoveHeaderConfigProperty}
              * @throws NullPointerException if any required attribute was not provided
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
-            public ResponseHeaderConfigProperty build() {
+            public RemoveHeaderConfigProperty build() {
                 return new Jsii$Proxy(this);
             }
         }
 
         /**
-         * An implementation for {@link ResponseHeaderConfigProperty}
+         * An implementation for {@link RemoveHeaderConfigProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ResponseHeaderConfigProperty {
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RemoveHeaderConfigProperty {
             private final java.lang.Object key;
-            private final java.lang.Object values;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -2168,7 +2462,6 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.values = software.amazon.jsii.Kernel.get(this, "values", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -2177,17 +2470,11 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.key = builder.key;
-                this.values = builder.values;
             }
 
             @Override
             public final java.lang.Object getKey() {
                 return this.key;
-            }
-
-            @Override
-            public final java.lang.Object getValues() {
-                return this.values;
             }
 
             @Override
@@ -2199,12 +2486,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getKey() != null) {
                     data.set("key", om.valueToTree(this.getKey()));
                 }
-                if (this.getValues() != null) {
-                    data.set("values", om.valueToTree(this.getValues()));
-                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty"));
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty"));
                 struct.set("data", data);
 
                 final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -2218,16 +2502,14 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                ResponseHeaderConfigProperty.Jsii$Proxy that = (ResponseHeaderConfigProperty.Jsii$Proxy) o;
+                RemoveHeaderConfigProperty.Jsii$Proxy that = (RemoveHeaderConfigProperty.Jsii$Proxy) o;
 
-                if (this.key != null ? !this.key.equals(that.key) : that.key != null) return false;
-                return this.values != null ? this.values.equals(that.values) : that.values == null;
+                return this.key != null ? this.key.equals(that.key) : that.key == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.key != null ? this.key.hashCode() : 0;
-                result = 31 * result + (this.values != null ? this.values.hashCode() : 0);
                 return result;
             }
         }
@@ -2495,7 +2777,28 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRemoveHeaderConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getRewriteConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTrafficLimitConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTrafficMirrorConfig() {
             return null;
         }
 
@@ -2517,7 +2820,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object forwardGroupConfig;
             java.lang.Object insertHeaderConfig;
             java.lang.Object redirectConfig;
+            java.lang.Object removeHeaderConfig;
             java.lang.Object rewriteConfig;
+            java.lang.Object trafficLimitConfig;
+            java.lang.Object trafficMirrorConfig;
 
             /**
              * Sets the value of {@link RuleActionsProperty#getOrder}
@@ -2652,6 +2958,28 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link RuleActionsProperty#getRemoveHeaderConfig}
+             * @param removeHeaderConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder removeHeaderConfig(com.aliyun.ros.cdk.core.IResolvable removeHeaderConfig) {
+                this.removeHeaderConfig = removeHeaderConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleActionsProperty#getRemoveHeaderConfig}
+             * @param removeHeaderConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder removeHeaderConfig(com.aliyun.ros.cdk.alb.RosRule.RemoveHeaderConfigProperty removeHeaderConfig) {
+                this.removeHeaderConfig = removeHeaderConfig;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link RuleActionsProperty#getRewriteConfig}
              * @param rewriteConfig the value to be set.
              * @return {@code this}
@@ -2670,6 +2998,50 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder rewriteConfig(com.aliyun.ros.cdk.alb.RosRule.RewriteConfigProperty rewriteConfig) {
                 this.rewriteConfig = rewriteConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleActionsProperty#getTrafficLimitConfig}
+             * @param trafficLimitConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder trafficLimitConfig(com.aliyun.ros.cdk.core.IResolvable trafficLimitConfig) {
+                this.trafficLimitConfig = trafficLimitConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleActionsProperty#getTrafficLimitConfig}
+             * @param trafficLimitConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder trafficLimitConfig(com.aliyun.ros.cdk.alb.RosRule.TrafficLimitConfigProperty trafficLimitConfig) {
+                this.trafficLimitConfig = trafficLimitConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleActionsProperty#getTrafficMirrorConfig}
+             * @param trafficMirrorConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder trafficMirrorConfig(com.aliyun.ros.cdk.core.IResolvable trafficMirrorConfig) {
+                this.trafficMirrorConfig = trafficMirrorConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleActionsProperty#getTrafficMirrorConfig}
+             * @param trafficMirrorConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder trafficMirrorConfig(com.aliyun.ros.cdk.alb.RosRule.TrafficMirrorConfigProperty trafficMirrorConfig) {
+                this.trafficMirrorConfig = trafficMirrorConfig;
                 return this;
             }
 
@@ -2697,7 +3069,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object forwardGroupConfig;
             private final java.lang.Object insertHeaderConfig;
             private final java.lang.Object redirectConfig;
+            private final java.lang.Object removeHeaderConfig;
             private final java.lang.Object rewriteConfig;
+            private final java.lang.Object trafficLimitConfig;
+            private final java.lang.Object trafficMirrorConfig;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -2711,7 +3086,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.forwardGroupConfig = software.amazon.jsii.Kernel.get(this, "forwardGroupConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.insertHeaderConfig = software.amazon.jsii.Kernel.get(this, "insertHeaderConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.redirectConfig = software.amazon.jsii.Kernel.get(this, "redirectConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.removeHeaderConfig = software.amazon.jsii.Kernel.get(this, "removeHeaderConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.rewriteConfig = software.amazon.jsii.Kernel.get(this, "rewriteConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.trafficLimitConfig = software.amazon.jsii.Kernel.get(this, "trafficLimitConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.trafficMirrorConfig = software.amazon.jsii.Kernel.get(this, "trafficMirrorConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -2725,7 +3103,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.forwardGroupConfig = builder.forwardGroupConfig;
                 this.insertHeaderConfig = builder.insertHeaderConfig;
                 this.redirectConfig = builder.redirectConfig;
+                this.removeHeaderConfig = builder.removeHeaderConfig;
                 this.rewriteConfig = builder.rewriteConfig;
+                this.trafficLimitConfig = builder.trafficLimitConfig;
+                this.trafficMirrorConfig = builder.trafficMirrorConfig;
             }
 
             @Override
@@ -2759,8 +3140,23 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getRemoveHeaderConfig() {
+                return this.removeHeaderConfig;
+            }
+
+            @Override
             public final java.lang.Object getRewriteConfig() {
                 return this.rewriteConfig;
+            }
+
+            @Override
+            public final java.lang.Object getTrafficLimitConfig() {
+                return this.trafficLimitConfig;
+            }
+
+            @Override
+            public final java.lang.Object getTrafficMirrorConfig() {
+                return this.trafficMirrorConfig;
             }
 
             @Override
@@ -2783,8 +3179,17 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getRedirectConfig() != null) {
                     data.set("redirectConfig", om.valueToTree(this.getRedirectConfig()));
                 }
+                if (this.getRemoveHeaderConfig() != null) {
+                    data.set("removeHeaderConfig", om.valueToTree(this.getRemoveHeaderConfig()));
+                }
                 if (this.getRewriteConfig() != null) {
                     data.set("rewriteConfig", om.valueToTree(this.getRewriteConfig()));
+                }
+                if (this.getTrafficLimitConfig() != null) {
+                    data.set("trafficLimitConfig", om.valueToTree(this.getTrafficLimitConfig()));
+                }
+                if (this.getTrafficMirrorConfig() != null) {
+                    data.set("trafficMirrorConfig", om.valueToTree(this.getTrafficMirrorConfig()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -2810,7 +3215,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.forwardGroupConfig != null ? !this.forwardGroupConfig.equals(that.forwardGroupConfig) : that.forwardGroupConfig != null) return false;
                 if (this.insertHeaderConfig != null ? !this.insertHeaderConfig.equals(that.insertHeaderConfig) : that.insertHeaderConfig != null) return false;
                 if (this.redirectConfig != null ? !this.redirectConfig.equals(that.redirectConfig) : that.redirectConfig != null) return false;
-                return this.rewriteConfig != null ? this.rewriteConfig.equals(that.rewriteConfig) : that.rewriteConfig == null;
+                if (this.removeHeaderConfig != null ? !this.removeHeaderConfig.equals(that.removeHeaderConfig) : that.removeHeaderConfig != null) return false;
+                if (this.rewriteConfig != null ? !this.rewriteConfig.equals(that.rewriteConfig) : that.rewriteConfig != null) return false;
+                if (this.trafficLimitConfig != null ? !this.trafficLimitConfig.equals(that.trafficLimitConfig) : that.trafficLimitConfig != null) return false;
+                return this.trafficMirrorConfig != null ? this.trafficMirrorConfig.equals(that.trafficMirrorConfig) : that.trafficMirrorConfig == null;
             }
 
             @Override
@@ -2821,7 +3229,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.forwardGroupConfig != null ? this.forwardGroupConfig.hashCode() : 0);
                 result = 31 * result + (this.insertHeaderConfig != null ? this.insertHeaderConfig.hashCode() : 0);
                 result = 31 * result + (this.redirectConfig != null ? this.redirectConfig.hashCode() : 0);
+                result = 31 * result + (this.removeHeaderConfig != null ? this.removeHeaderConfig.hashCode() : 0);
                 result = 31 * result + (this.rewriteConfig != null ? this.rewriteConfig.hashCode() : 0);
+                result = 31 * result + (this.trafficLimitConfig != null ? this.trafficLimitConfig.hashCode() : 0);
+                result = 31 * result + (this.trafficMirrorConfig != null ? this.trafficMirrorConfig.hashCode() : 0);
                 return result;
             }
         }
@@ -2883,7 +3294,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getResponseHeaderConfig() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSourceIpConfig() {
             return null;
         }
 
@@ -2906,7 +3317,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object methodConfig;
             java.lang.Object pathConfig;
             java.lang.Object queryStringConfig;
-            java.lang.Object responseHeaderConfig;
+            java.lang.Object sourceIpConfig;
 
             /**
              * Sets the value of {@link RuleConditionsProperty#getType}
@@ -3063,24 +3474,24 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link RuleConditionsProperty#getResponseHeaderConfig}
-             * @param responseHeaderConfig the value to be set.
+             * Sets the value of {@link RuleConditionsProperty#getSourceIpConfig}
+             * @param sourceIpConfig the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder responseHeaderConfig(com.aliyun.ros.cdk.core.IResolvable responseHeaderConfig) {
-                this.responseHeaderConfig = responseHeaderConfig;
+            public Builder sourceIpConfig(com.aliyun.ros.cdk.core.IResolvable sourceIpConfig) {
+                this.sourceIpConfig = sourceIpConfig;
                 return this;
             }
 
             /**
-             * Sets the value of {@link RuleConditionsProperty#getResponseHeaderConfig}
-             * @param responseHeaderConfig the value to be set.
+             * Sets the value of {@link RuleConditionsProperty#getSourceIpConfig}
+             * @param sourceIpConfig the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder responseHeaderConfig(com.aliyun.ros.cdk.alb.RosRule.ResponseHeaderConfigProperty responseHeaderConfig) {
-                this.responseHeaderConfig = responseHeaderConfig;
+            public Builder sourceIpConfig(com.aliyun.ros.cdk.alb.RosRule.SourceIpConfigProperty sourceIpConfig) {
+                this.sourceIpConfig = sourceIpConfig;
                 return this;
             }
 
@@ -3109,7 +3520,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object methodConfig;
             private final java.lang.Object pathConfig;
             private final java.lang.Object queryStringConfig;
-            private final java.lang.Object responseHeaderConfig;
+            private final java.lang.Object sourceIpConfig;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -3124,7 +3535,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.methodConfig = software.amazon.jsii.Kernel.get(this, "methodConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.pathConfig = software.amazon.jsii.Kernel.get(this, "pathConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.queryStringConfig = software.amazon.jsii.Kernel.get(this, "queryStringConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.responseHeaderConfig = software.amazon.jsii.Kernel.get(this, "responseHeaderConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sourceIpConfig = software.amazon.jsii.Kernel.get(this, "sourceIpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -3139,7 +3550,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.methodConfig = builder.methodConfig;
                 this.pathConfig = builder.pathConfig;
                 this.queryStringConfig = builder.queryStringConfig;
-                this.responseHeaderConfig = builder.responseHeaderConfig;
+                this.sourceIpConfig = builder.sourceIpConfig;
             }
 
             @Override
@@ -3178,8 +3589,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getResponseHeaderConfig() {
-                return this.responseHeaderConfig;
+            public final java.lang.Object getSourceIpConfig() {
+                return this.sourceIpConfig;
             }
 
             @Override
@@ -3207,8 +3618,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getQueryStringConfig() != null) {
                     data.set("queryStringConfig", om.valueToTree(this.getQueryStringConfig()));
                 }
-                if (this.getResponseHeaderConfig() != null) {
-                    data.set("responseHeaderConfig", om.valueToTree(this.getResponseHeaderConfig()));
+                if (this.getSourceIpConfig() != null) {
+                    data.set("sourceIpConfig", om.valueToTree(this.getSourceIpConfig()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -3235,7 +3646,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.methodConfig != null ? !this.methodConfig.equals(that.methodConfig) : that.methodConfig != null) return false;
                 if (this.pathConfig != null ? !this.pathConfig.equals(that.pathConfig) : that.pathConfig != null) return false;
                 if (this.queryStringConfig != null ? !this.queryStringConfig.equals(that.queryStringConfig) : that.queryStringConfig != null) return false;
-                return this.responseHeaderConfig != null ? this.responseHeaderConfig.equals(that.responseHeaderConfig) : that.responseHeaderConfig == null;
+                return this.sourceIpConfig != null ? this.sourceIpConfig.equals(that.sourceIpConfig) : that.sourceIpConfig == null;
             }
 
             @Override
@@ -3247,7 +3658,179 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.methodConfig != null ? this.methodConfig.hashCode() : 0);
                 result = 31 * result + (this.pathConfig != null ? this.pathConfig.hashCode() : 0);
                 result = 31 * result + (this.queryStringConfig != null ? this.queryStringConfig.hashCode() : 0);
-                result = 31 * result + (this.responseHeaderConfig != null ? this.responseHeaderConfig.hashCode() : 0);
+                result = 31 * result + (this.sourceIpConfig != null ? this.sourceIpConfig.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.ServerGroupStickySessionProperty")
+    @software.amazon.jsii.Jsii.Proxy(ServerGroupStickySessionProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ServerGroupStickySessionProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ServerGroupStickySessionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ServerGroupStickySessionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ServerGroupStickySessionProperty> {
+            java.lang.Object enabled;
+            java.lang.Object timeout;
+
+            /**
+             * Sets the value of {@link ServerGroupStickySessionProperty#getEnabled}
+             * @param enabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enabled(java.lang.Boolean enabled) {
+                this.enabled = enabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerGroupStickySessionProperty#getEnabled}
+             * @param enabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enabled(com.aliyun.ros.cdk.core.IResolvable enabled) {
+                this.enabled = enabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerGroupStickySessionProperty#getTimeout}
+             * @param timeout the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder timeout(java.lang.Number timeout) {
+                this.timeout = timeout;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerGroupStickySessionProperty#getTimeout}
+             * @param timeout the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+                this.timeout = timeout;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ServerGroupStickySessionProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ServerGroupStickySessionProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ServerGroupStickySessionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServerGroupStickySessionProperty {
+            private final java.lang.Object enabled;
+            private final java.lang.Object timeout;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.enabled = software.amazon.jsii.Kernel.get(this, "enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.enabled = builder.enabled;
+                this.timeout = builder.timeout;
+            }
+
+            @Override
+            public final java.lang.Object getEnabled() {
+                return this.enabled;
+            }
+
+            @Override
+            public final java.lang.Object getTimeout() {
+                return this.timeout;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getEnabled() != null) {
+                    data.set("enabled", om.valueToTree(this.getEnabled()));
+                }
+                if (this.getTimeout() != null) {
+                    data.set("timeout", om.valueToTree(this.getTimeout()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.ServerGroupStickySessionProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ServerGroupStickySessionProperty.Jsii$Proxy that = (ServerGroupStickySessionProperty.Jsii$Proxy) o;
+
+                if (this.enabled != null ? !this.enabled.equals(that.enabled) : that.enabled != null) return false;
+                return this.timeout != null ? this.timeout.equals(that.timeout) : that.timeout == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.enabled != null ? this.enabled.hashCode() : 0;
+                result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
                 return result;
             }
         }
@@ -3267,6 +3850,13 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWeight() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link ServerGroupTuplesProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -3279,6 +3869,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ServerGroupTuplesProperty> {
             java.lang.Object serverGroupId;
+            java.lang.Object weight;
 
             /**
              * Sets the value of {@link ServerGroupTuplesProperty#getServerGroupId}
@@ -3303,6 +3894,28 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ServerGroupTuplesProperty#getWeight}
+             * @param weight the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(java.lang.Number weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerGroupTuplesProperty#getWeight}
+             * @param weight the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(com.aliyun.ros.cdk.core.IResolvable weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link ServerGroupTuplesProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -3321,6 +3934,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServerGroupTuplesProperty {
             private final java.lang.Object serverGroupId;
+            private final java.lang.Object weight;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -3329,6 +3943,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.serverGroupId = software.amazon.jsii.Kernel.get(this, "serverGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -3337,11 +3952,17 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.serverGroupId = builder.serverGroupId;
+                this.weight = builder.weight;
             }
 
             @Override
             public final java.lang.Object getServerGroupId() {
                 return this.serverGroupId;
+            }
+
+            @Override
+            public final java.lang.Object getWeight() {
+                return this.weight;
             }
 
             @Override
@@ -3352,6 +3973,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (this.getServerGroupId() != null) {
                     data.set("serverGroupId", om.valueToTree(this.getServerGroupId()));
+                }
+                if (this.getWeight() != null) {
+                    data.set("weight", om.valueToTree(this.getWeight()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -3371,12 +3995,475 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 ServerGroupTuplesProperty.Jsii$Proxy that = (ServerGroupTuplesProperty.Jsii$Proxy) o;
 
-                return this.serverGroupId != null ? this.serverGroupId.equals(that.serverGroupId) : that.serverGroupId == null;
+                if (this.serverGroupId != null ? !this.serverGroupId.equals(that.serverGroupId) : that.serverGroupId != null) return false;
+                return this.weight != null ? this.weight.equals(that.weight) : that.weight == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.serverGroupId != null ? this.serverGroupId.hashCode() : 0;
+                result = 31 * result + (this.weight != null ? this.weight.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.SourceIpConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(SourceIpConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface SourceIpConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValues() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link SourceIpConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link SourceIpConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<SourceIpConfigProperty> {
+            java.lang.Object values;
+
+            /**
+             * Sets the value of {@link SourceIpConfigProperty#getValues}
+             * @param values the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder values(com.aliyun.ros.cdk.core.IResolvable values) {
+                this.values = values;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SourceIpConfigProperty#getValues}
+             * @param values the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder values(java.util.List<? extends java.lang.Object> values) {
+                this.values = values;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link SourceIpConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public SourceIpConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link SourceIpConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SourceIpConfigProperty {
+            private final java.lang.Object values;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.values = software.amazon.jsii.Kernel.get(this, "values", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.values = builder.values;
+            }
+
+            @Override
+            public final java.lang.Object getValues() {
+                return this.values;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getValues() != null) {
+                    data.set("values", om.valueToTree(this.getValues()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.SourceIpConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                SourceIpConfigProperty.Jsii$Proxy that = (SourceIpConfigProperty.Jsii$Proxy) o;
+
+                return this.values != null ? this.values.equals(that.values) : that.values == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.values != null ? this.values.hashCode() : 0;
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(TrafficLimitConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TrafficLimitConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getQps();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPerIpQps() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TrafficLimitConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TrafficLimitConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TrafficLimitConfigProperty> {
+            java.lang.Object qps;
+            java.lang.Object perIpQps;
+
+            /**
+             * Sets the value of {@link TrafficLimitConfigProperty#getQps}
+             * @param qps the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder qps(java.lang.Number qps) {
+                this.qps = qps;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TrafficLimitConfigProperty#getQps}
+             * @param qps the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder qps(com.aliyun.ros.cdk.core.IResolvable qps) {
+                this.qps = qps;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TrafficLimitConfigProperty#getPerIpQps}
+             * @param perIpQps the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder perIpQps(java.lang.Number perIpQps) {
+                this.perIpQps = perIpQps;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TrafficLimitConfigProperty#getPerIpQps}
+             * @param perIpQps the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder perIpQps(com.aliyun.ros.cdk.core.IResolvable perIpQps) {
+                this.perIpQps = perIpQps;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TrafficLimitConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TrafficLimitConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link TrafficLimitConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TrafficLimitConfigProperty {
+            private final java.lang.Object qps;
+            private final java.lang.Object perIpQps;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.qps = software.amazon.jsii.Kernel.get(this, "qps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.perIpQps = software.amazon.jsii.Kernel.get(this, "perIpQps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.qps = java.util.Objects.requireNonNull(builder.qps, "qps is required");
+                this.perIpQps = builder.perIpQps;
+            }
+
+            @Override
+            public final java.lang.Object getQps() {
+                return this.qps;
+            }
+
+            @Override
+            public final java.lang.Object getPerIpQps() {
+                return this.perIpQps;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("qps", om.valueToTree(this.getQps()));
+                if (this.getPerIpQps() != null) {
+                    data.set("perIpQps", om.valueToTree(this.getPerIpQps()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TrafficLimitConfigProperty.Jsii$Proxy that = (TrafficLimitConfigProperty.Jsii$Proxy) o;
+
+                if (!qps.equals(that.qps)) return false;
+                return this.perIpQps != null ? this.perIpQps.equals(that.perIpQps) : that.perIpQps == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.qps.hashCode();
+                result = 31 * result + (this.perIpQps != null ? this.perIpQps.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(TrafficMirrorConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TrafficMirrorConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getMirrorGroupConfig();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getTargetType();
+
+        /**
+         * @return a {@link Builder} of {@link TrafficMirrorConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TrafficMirrorConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TrafficMirrorConfigProperty> {
+            java.lang.Object mirrorGroupConfig;
+            java.lang.Object targetType;
+
+            /**
+             * Sets the value of {@link TrafficMirrorConfigProperty#getMirrorGroupConfig}
+             * @param mirrorGroupConfig the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mirrorGroupConfig(com.aliyun.ros.cdk.core.IResolvable mirrorGroupConfig) {
+                this.mirrorGroupConfig = mirrorGroupConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TrafficMirrorConfigProperty#getMirrorGroupConfig}
+             * @param mirrorGroupConfig the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mirrorGroupConfig(com.aliyun.ros.cdk.alb.RosRule.MirrorGroupConfigProperty mirrorGroupConfig) {
+                this.mirrorGroupConfig = mirrorGroupConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TrafficMirrorConfigProperty#getTargetType}
+             * @param targetType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder targetType(java.lang.String targetType) {
+                this.targetType = targetType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TrafficMirrorConfigProperty#getTargetType}
+             * @param targetType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder targetType(com.aliyun.ros.cdk.core.IResolvable targetType) {
+                this.targetType = targetType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TrafficMirrorConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TrafficMirrorConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link TrafficMirrorConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TrafficMirrorConfigProperty {
+            private final java.lang.Object mirrorGroupConfig;
+            private final java.lang.Object targetType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.mirrorGroupConfig = software.amazon.jsii.Kernel.get(this, "mirrorGroupConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.targetType = software.amazon.jsii.Kernel.get(this, "targetType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.mirrorGroupConfig = java.util.Objects.requireNonNull(builder.mirrorGroupConfig, "mirrorGroupConfig is required");
+                this.targetType = java.util.Objects.requireNonNull(builder.targetType, "targetType is required");
+            }
+
+            @Override
+            public final java.lang.Object getMirrorGroupConfig() {
+                return this.mirrorGroupConfig;
+            }
+
+            @Override
+            public final java.lang.Object getTargetType() {
+                return this.targetType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("mirrorGroupConfig", om.valueToTree(this.getMirrorGroupConfig()));
+                data.set("targetType", om.valueToTree(this.getTargetType()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TrafficMirrorConfigProperty.Jsii$Proxy that = (TrafficMirrorConfigProperty.Jsii$Proxy) o;
+
+                if (!mirrorGroupConfig.equals(that.mirrorGroupConfig)) return false;
+                return this.targetType.equals(that.targetType);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.mirrorGroupConfig.hashCode();
+                result = 31 * result + (this.targetType.hashCode());
                 return result;
             }
         }

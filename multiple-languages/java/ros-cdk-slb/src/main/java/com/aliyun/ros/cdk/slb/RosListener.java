@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.615Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.684Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -57,24 +57,6 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
     @Override
     protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getRosProperties() {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "rosProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getBackendServerPort() {
-        return software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setBackendServerPort(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "backendServerPort", java.util.Objects.requireNonNull(value, "backendServerPort is required"));
-    }
-
-    /**
-     */
-    public void setBackendServerPort(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "backendServerPort", java.util.Objects.requireNonNull(value, "backendServerPort is required"));
     }
 
     /**
@@ -209,6 +191,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAclType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "aclType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBackendServerPort() {
+        return software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBackendServerPort(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "backendServerPort", value);
+    }
+
+    /**
+     */
+    public void setBackendServerPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backendServerPort", value);
     }
 
     /**
@@ -370,6 +370,22 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setPortRange(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.slb.RosListener.PortRangeProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.slb.RosListener.PortRangeProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "portRange", value);
     }
 
@@ -1945,23 +1961,6 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param backendServerPort This parameter is required.
-         */
-        public Builder backendServerPort(final java.lang.Number backendServerPort) {
-            this.props.backendServerPort(backendServerPort);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param backendServerPort This parameter is required.
-         */
-        public Builder backendServerPort(final com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
-            this.props.backendServerPort(backendServerPort);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param bandwidth This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
@@ -2076,6 +2075,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder aclType(final com.aliyun.ros.cdk.core.IResolvable aclType) {
             this.props.aclType(aclType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param backendServerPort This parameter is required.
+         */
+        public Builder backendServerPort(final java.lang.Number backendServerPort) {
+            this.props.backendServerPort(backendServerPort);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param backendServerPort This parameter is required.
+         */
+        public Builder backendServerPort(final com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
+            this.props.backendServerPort(backendServerPort);
             return this;
         }
 

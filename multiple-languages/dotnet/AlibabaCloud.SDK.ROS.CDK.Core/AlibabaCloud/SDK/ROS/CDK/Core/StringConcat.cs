@@ -11,8 +11,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.StringConcat), fullyQualifiedName: "@alicloud/ros-cdk-core.StringConcat")]
     public class StringConcat : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Core.IFragmentConcatenator
     {
-        public StringConcat(): base(new DeputyProps(System.Array.Empty<object?>()))
+        public StringConcat(): base(_MakeDeputyProps())
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps()
+        {
+            return new DeputyProps(System.Array.Empty<object?>());
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

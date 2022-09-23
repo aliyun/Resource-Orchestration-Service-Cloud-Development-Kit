@@ -42,6 +42,7 @@
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.AddonsProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$AddonsProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.TagsProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$TagsProperty
+@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$WorkerDataDisksProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesClusterProps
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AddonsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$AddonsProperty

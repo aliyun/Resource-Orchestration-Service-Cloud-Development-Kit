@@ -14,6 +14,8 @@
 @alicloud/ros-cdk-cen.CenRouteServiceProps=com.aliyun.ros.cdk.cen.CenRouteServiceProps
 @alicloud/ros-cdk-cen.CenVbrHealthCheck=com.aliyun.ros.cdk.cen.CenVbrHealthCheck
 @alicloud/ros-cdk-cen.CenVbrHealthCheckProps=com.aliyun.ros.cdk.cen.CenVbrHealthCheckProps
+@alicloud/ros-cdk-cen.ChildInstanceRouteEntryToAttachment=com.aliyun.ros.cdk.cen.ChildInstanceRouteEntryToAttachment
+@alicloud/ros-cdk-cen.ChildInstanceRouteEntryToAttachmentProps=com.aliyun.ros.cdk.cen.ChildInstanceRouteEntryToAttachmentProps
 @alicloud/ros-cdk-cen.RosCenBandwidthLimit=com.aliyun.ros.cdk.cen.RosCenBandwidthLimit
 @alicloud/ros-cdk-cen.RosCenBandwidthLimitProps=com.aliyun.ros.cdk.cen.RosCenBandwidthLimitProps
 @alicloud/ros-cdk-cen.RosCenBandwidthPackage=com.aliyun.ros.cdk.cen.RosCenBandwidthPackage
@@ -31,6 +33,8 @@
 @alicloud/ros-cdk-cen.RosCenRouteServiceProps=com.aliyun.ros.cdk.cen.RosCenRouteServiceProps
 @alicloud/ros-cdk-cen.RosCenVbrHealthCheck=com.aliyun.ros.cdk.cen.RosCenVbrHealthCheck
 @alicloud/ros-cdk-cen.RosCenVbrHealthCheckProps=com.aliyun.ros.cdk.cen.RosCenVbrHealthCheckProps
+@alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachment=com.aliyun.ros.cdk.cen.RosChildInstanceRouteEntryToAttachment
+@alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachmentProps=com.aliyun.ros.cdk.cen.RosChildInstanceRouteEntryToAttachmentProps
 @alicloud/ros-cdk-cen.RosRouteEntry=com.aliyun.ros.cdk.cen.RosRouteEntry
 @alicloud/ros-cdk-cen.RosRouteEntryProps=com.aliyun.ros.cdk.cen.RosRouteEntryProps
 @alicloud/ros-cdk-cen.RosTransitRouter=com.aliyun.ros.cdk.cen.RosTransitRouter

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ClusterNodePool`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.351Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.610Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterNodePool")
 public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -2101,6 +2101,13 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link ScalingGroupProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2141,6 +2148,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object systemDiskCategory;
             java.lang.Object systemDiskPerformanceLevel;
             java.util.List<com.aliyun.ros.cdk.cs.RosClusterNodePool.TagsProperty> tags;
+            java.lang.Object zoneIds;
 
             /**
              * Sets the value of {@link ScalingGroupProperty#getInstanceTypes}
@@ -2771,6 +2779,28 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ScalingGroupProperty#getZoneIds}
+             * @param zoneIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder zoneIds(com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+                this.zoneIds = zoneIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getZoneIds}
+             * @param zoneIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder zoneIds(java.util.List<? extends java.lang.Object> zoneIds) {
+                this.zoneIds = zoneIds;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link ScalingGroupProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -2817,6 +2847,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object systemDiskCategory;
             private final java.lang.Object systemDiskPerformanceLevel;
             private final java.util.List<com.aliyun.ros.cdk.cs.RosClusterNodePool.TagsProperty> tags;
+            private final java.lang.Object zoneIds;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -2853,6 +2884,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosClusterNodePool.TagsProperty.class)));
+                this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -2890,6 +2922,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 this.systemDiskCategory = builder.systemDiskCategory;
                 this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
                 this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosClusterNodePool.TagsProperty>)builder.tags;
+                this.zoneIds = builder.zoneIds;
             }
 
             @Override
@@ -3038,6 +3071,11 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getZoneIds() {
+                return this.zoneIds;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -3124,6 +3162,9 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getTags() != null) {
                     data.set("tags", om.valueToTree(this.getTags()));
                 }
+                if (this.getZoneIds() != null) {
+                    data.set("zoneIds", om.valueToTree(this.getZoneIds()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosClusterNodePool.ScalingGroupProperty"));
@@ -3170,7 +3211,8 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
                 if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
                 if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
-                return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
+                if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+                return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
             }
 
             @Override
@@ -3204,6 +3246,7 @@ public class RosClusterNodePool extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
                 result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
                 result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+                result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
                 return result;
             }
         }

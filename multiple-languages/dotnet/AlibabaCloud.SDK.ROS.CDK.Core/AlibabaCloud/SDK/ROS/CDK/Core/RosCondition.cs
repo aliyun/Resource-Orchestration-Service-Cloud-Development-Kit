@@ -13,8 +13,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// The condition must be constructed with a condition token,
         /// that the condition is based on.
         /// </remarks>
-        public RosCondition(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionProps? props = null): base(new DeputyProps(new object?[]{scope, id, props}))
+        public RosCondition(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionProps? props = null): base(_MakeDeputyProps(scope, id, props))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionProps? props = null)
+        {
+            return new DeputyProps(new object?[]{scope, id, props});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

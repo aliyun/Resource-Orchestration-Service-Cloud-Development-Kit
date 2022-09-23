@@ -107,6 +107,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        /// <summary>Property serviceName: This parameter is available only if the ALB Ingress controller is used.</summary>
+        /// <remarks>
+        /// In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
+        /// </remarks>
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ServiceName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property stickySessionConfig: The configuration of session persistence.</summary>
         /// <remarks>
         /// Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
@@ -226,6 +240,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiOptional]
             [JsiiProperty(name: "serverGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServerGroupType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property serviceName: This parameter is available only if the ALB Ingress controller is used.</summary>
+            /// <remarks>
+            /// In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServiceName
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::JoinSecurityGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.907Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.158Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosJoinSecurityGroup")
 public class RosJoinSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -106,6 +106,11 @@ public class RosJoinSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setInstanceIdList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "instanceIdList", value);
     }
 
@@ -124,6 +129,11 @@ public class RosJoinSecurityGroup extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setNetworkInterfaceList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "networkInterfaceList", value);
     }
 

@@ -2548,7 +2548,7 @@ function RosDedicatedHostPropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -3093,12 +3093,6 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
     errors.collect(ros.propertyValidator('deleteAutoSnapshot', ros.validateBoolean)(properties.deleteAutoSnapshot));
-    if(properties.diskCategory && (typeof properties.diskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('diskCategory', ros.validateAllowedValues)({
-          data: properties.diskCategory,
-          allowedValues: ["cloud","cloud_ssd","cloud_essd","cloud_efficiency","san_ssd","san_efficiency","cloud_auto","cloud_plx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
     errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
     errors.collect(ros.propertyValidator('storageSetPartitionNumber', ros.validateNumber)(properties.storageSetPartitionNumber));
@@ -4127,7 +4121,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -4752,12 +4746,6 @@ function RosInstance_DiskMappingsPropertyValidator(properties: any): ros.Validat
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
@@ -4980,7 +4968,7 @@ function RosInstanceClonePropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -5347,12 +5335,6 @@ function RosInstanceClone_DiskMappingsPropertyValidator(properties: any): ros.Va
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
@@ -5760,7 +5742,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -6600,12 +6582,6 @@ function RosInstanceGroup_DiskMappingsPropertyValidator(properties: any): ros.Va
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
@@ -7689,12 +7665,6 @@ function RosInstanceGroupClone_DiskMappingsPropertyValidator(properties: any): r
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
@@ -8543,12 +8513,6 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
-    if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
-          data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
@@ -9070,12 +9034,6 @@ function RosLaunchTemplate_DiskMappingsPropertyValidator(properties: any): ros.V
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto","cloud_plx"],
-        }));
-    }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));

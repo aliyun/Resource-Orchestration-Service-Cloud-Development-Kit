@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eventbridge;
 /**
  * A ROS template type:  `ALIYUN::EventBridge::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.376Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.529Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -106,6 +106,18 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setFilterPattern(final @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (!(value.keySet().toArray()[0] instanceof String)) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value").append(".keySet()")
+                        .append(" to contain class String; received ")
+                        .append(value.keySet().toArray()[0].getClass()).toString());
+            }
+            for (final java.util.Map.Entry<String, java.lang.Object> __item_ac66f0: value.entrySet()) {
+                final java.lang.Object __val_ac66f0 = __item_ac66f0.getValue();
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "filterPattern", java.util.Objects.requireNonNull(value, "filterPattern is required"));
     }
 
@@ -142,6 +154,22 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setTargets(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.eventbridge.RosRule.TargetsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.eventbridge.RosRule.TargetsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "targets", java.util.Objects.requireNonNull(value, "targets is required"));
     }
 

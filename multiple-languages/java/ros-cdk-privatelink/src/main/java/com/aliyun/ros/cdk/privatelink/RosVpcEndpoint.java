@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS template type:  `ALIYUN::PrivateLink::VpcEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.062Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.120Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpoint")
 public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -118,6 +118,22 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setSecurityGroupId(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "securityGroupId", java.util.Objects.requireNonNull(value, "securityGroupId is required"));
     }
 
@@ -177,6 +193,42 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEndpointType() {
+        return software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEndpointType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "endpointType", value);
+    }
+
+    /**
+     */
+    public void setEndpointType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "endpointType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProtectedEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "protectedEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProtectedEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "protectedEnabled", value);
+    }
+
+    /**
+     */
+    public void setProtectedEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "protectedEnabled", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getServiceId() {
         return software.amazon.jsii.Kernel.get(this, "serviceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -226,7 +278,41 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setZone(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.ZoneProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.ZoneProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "zone", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZonePrivateIpAddressCount() {
+        return software.amazon.jsii.Kernel.get(this, "zonePrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZonePrivateIpAddressCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "zonePrivateIpAddressCount", value);
+    }
+
+    /**
+     */
+    public void setZonePrivateIpAddressCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zonePrivateIpAddressCount", value);
     }
     /**
      */
@@ -238,12 +324,23 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIp() {
+            return null;
+        }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link ZoneProperty}
@@ -257,12 +354,35 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ZoneProperty> {
+            java.lang.Object ip;
             java.lang.Object vSwitchId;
             java.lang.Object zoneId;
 
             /**
+             * Sets the value of {@link ZoneProperty#getIp}
+             * @param ip the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ip(java.lang.String ip) {
+                this.ip = ip;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ZoneProperty#getIp}
+             * @param ip the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ip(com.aliyun.ros.cdk.core.IResolvable ip) {
+                this.ip = ip;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ZoneProperty#getVSwitchId}
-             * @param vSwitchId the value to be set. This parameter is required.
+             * @param vSwitchId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -273,7 +393,7 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link ZoneProperty#getVSwitchId}
-             * @param vSwitchId the value to be set. This parameter is required.
+             * @param vSwitchId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -284,7 +404,7 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link ZoneProperty#getZoneId}
-             * @param zoneId the value to be set. This parameter is required.
+             * @param zoneId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -295,7 +415,7 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link ZoneProperty#getZoneId}
-             * @param zoneId the value to be set. This parameter is required.
+             * @param zoneId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -322,6 +442,7 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ZoneProperty {
+            private final java.lang.Object ip;
             private final java.lang.Object vSwitchId;
             private final java.lang.Object zoneId;
 
@@ -331,6 +452,7 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
+                this.ip = software.amazon.jsii.Kernel.get(this, "ip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -340,8 +462,14 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
-                this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+                this.ip = builder.ip;
+                this.vSwitchId = builder.vSwitchId;
+                this.zoneId = builder.zoneId;
+            }
+
+            @Override
+            public final java.lang.Object getIp() {
+                return this.ip;
             }
 
             @Override
@@ -360,8 +488,15 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
-                data.set("zoneId", om.valueToTree(this.getZoneId()));
+                if (this.getIp() != null) {
+                    data.set("ip", om.valueToTree(this.getIp()));
+                }
+                if (this.getVSwitchId() != null) {
+                    data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+                }
+                if (this.getZoneId() != null) {
+                    data.set("zoneId", om.valueToTree(this.getZoneId()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-privatelink.RosVpcEndpoint.ZoneProperty"));
@@ -380,14 +515,16 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
                 ZoneProperty.Jsii$Proxy that = (ZoneProperty.Jsii$Proxy) o;
 
-                if (!vSwitchId.equals(that.vSwitchId)) return false;
-                return this.zoneId.equals(that.zoneId);
+                if (this.ip != null ? !this.ip.equals(that.ip) : that.ip != null) return false;
+                if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
+                return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.vSwitchId.hashCode();
-                result = 31 * result + (this.zoneId.hashCode());
+                int result = this.ip != null ? this.ip.hashCode() : 0;
+                result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
+                result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
                 return result;
             }
         }
@@ -489,6 +626,40 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param endpointType This parameter is required.
+         */
+        public Builder endpointType(final java.lang.String endpointType) {
+            this.props.endpointType(endpointType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param endpointType This parameter is required.
+         */
+        public Builder endpointType(final com.aliyun.ros.cdk.core.IResolvable endpointType) {
+            this.props.endpointType(endpointType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param protectedEnabled This parameter is required.
+         */
+        public Builder protectedEnabled(final java.lang.Boolean protectedEnabled) {
+            this.props.protectedEnabled(protectedEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param protectedEnabled This parameter is required.
+         */
+        public Builder protectedEnabled(final com.aliyun.ros.cdk.core.IResolvable protectedEnabled) {
+            this.props.protectedEnabled(protectedEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param serviceId This parameter is required.
          */
         public Builder serviceId(final java.lang.String serviceId) {
@@ -535,6 +706,23 @@ public class RosVpcEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder zone(final java.util.List<? extends java.lang.Object> zone) {
             this.props.zone(zone);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zonePrivateIpAddressCount This parameter is required.
+         */
+        public Builder zonePrivateIpAddressCount(final java.lang.Number zonePrivateIpAddressCount) {
+            this.props.zonePrivateIpAddressCount(zonePrivateIpAddressCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zonePrivateIpAddressCount This parameter is required.
+         */
+        public Builder zonePrivateIpAddressCount(final com.aliyun.ros.cdk.core.IResolvable zonePrivateIpAddressCount) {
+            this.props.zonePrivateIpAddressCount(zonePrivateIpAddressCount);
             return this;
         }
 

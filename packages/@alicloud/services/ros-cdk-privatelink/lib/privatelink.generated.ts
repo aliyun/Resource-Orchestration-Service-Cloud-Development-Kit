@@ -31,6 +31,18 @@ export interface RosVpcEndpointProps {
     readonly endpointName?: string | ros.IResolvable;
 
     /**
+     * @Property endpointType: Endpoint type.
+     */
+    readonly endpointType?: string | ros.IResolvable;
+
+    /**
+     * @Property protectedEnabled: Specifies whether to enable user authentication. This parameter is available in Security Token Service (STS) mode. Valid values:
+     * true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+     * false (default): no
+     */
+    readonly protectedEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property serviceId: The endpoint service that is associated with the endpoint. One of ServiceId and ServiceName is required.
      */
     readonly serviceId?: string | ros.IResolvable;
@@ -44,6 +56,11 @@ export interface RosVpcEndpointProps {
      * @Property zone:
      */
     readonly zone?: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone. Set the value to 1.
+     */
+    readonly zonePrivateIpAddressCount?: number | ros.IResolvable;
 }
 
 /**
@@ -56,6 +73,7 @@ export interface RosVpcEndpointProps {
 function RosVpcEndpointPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('protectedEnabled', ros.validateBoolean)(properties.protectedEnabled));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.endpointName && (Array.isArray(properties.endpointName) || (typeof properties.endpointName) === 'string')) {
@@ -84,6 +102,8 @@ function RosVpcEndpointPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('securityGroupId', ros.listValidator(ros.validateString))(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('endpointType', ros.validateString)(properties.endpointType));
+    errors.collect(ros.propertyValidator('zonePrivateIpAddressCount', ros.validateNumber)(properties.zonePrivateIpAddressCount));
     if(properties.endpointDescription && (Array.isArray(properties.endpointDescription) || (typeof properties.endpointDescription) === 'string')) {
         errors.collect(ros.propertyValidator('endpointDescription', ros.validateLength)({
             data: properties.endpointDescription.length,
@@ -114,9 +134,12 @@ function rosVpcEndpointPropsToRosTemplate(properties: any, enableResourcePropert
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       EndpointDescription: ros.stringToRosTemplate(properties.endpointDescription),
       EndpointName: ros.stringToRosTemplate(properties.endpointName),
+      EndpointType: ros.stringToRosTemplate(properties.endpointType),
+      ProtectedEnabled: ros.booleanToRosTemplate(properties.protectedEnabled),
       ServiceId: ros.stringToRosTemplate(properties.serviceId),
       ServiceName: ros.stringToRosTemplate(properties.serviceName),
       Zone: ros.listMapper(rosVpcEndpointZonePropertyToRosTemplate)(properties.zone),
+      ZonePrivateIpAddressCount: ros.numberToRosTemplate(properties.zonePrivateIpAddressCount),
     };
 }
 
@@ -201,6 +224,18 @@ export class RosVpcEndpoint extends ros.RosResource {
     public endpointName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property endpointType: Endpoint type.
+     */
+    public endpointType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property protectedEnabled: Specifies whether to enable user authentication. This parameter is available in Security Token Service (STS) mode. Valid values:
+     * true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+     * false (default): no
+     */
+    public protectedEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property serviceId: The endpoint service that is associated with the endpoint. One of ServiceId and ServiceName is required.
      */
     public serviceId: string | ros.IResolvable | undefined;
@@ -214,6 +249,11 @@ export class RosVpcEndpoint extends ros.RosResource {
      * @Property zone:
      */
     public zone: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone. Set the value to 1.
+     */
+    public zonePrivateIpAddressCount: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::PrivateLink::VpcEndpoint`.
@@ -238,9 +278,12 @@ export class RosVpcEndpoint extends ros.RosResource {
         this.vpcId = props.vpcId;
         this.endpointDescription = props.endpointDescription;
         this.endpointName = props.endpointName;
+        this.endpointType = props.endpointType;
+        this.protectedEnabled = props.protectedEnabled;
         this.serviceId = props.serviceId;
         this.serviceName = props.serviceName;
         this.zone = props.zone;
+        this.zonePrivateIpAddressCount = props.zonePrivateIpAddressCount;
     }
 
 
@@ -250,9 +293,12 @@ export class RosVpcEndpoint extends ros.RosResource {
             vpcId: this.vpcId,
             endpointDescription: this.endpointDescription,
             endpointName: this.endpointName,
+            endpointType: this.endpointType,
+            protectedEnabled: this.protectedEnabled,
             serviceId: this.serviceId,
             serviceName: this.serviceName,
             zone: this.zone,
+            zonePrivateIpAddressCount: this.zonePrivateIpAddressCount,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -268,11 +314,15 @@ export namespace RosVpcEndpoint {
         /**
          * @Property zoneId: The zone of the associated endpoint service.
          */
-        readonly zoneId: string | ros.IResolvable;
+        readonly zoneId?: string | ros.IResolvable;
+        /**
+         * @Property ip: The IP address of the zone in which the endpoint is deployed.
+         */
+        readonly ip?: string | ros.IResolvable;
         /**
          * @Property vSwitchId: The switch of the endpoint network interface in the given zone.
          */
-        readonly vSwitchId: string | ros.IResolvable;
+        readonly vSwitchId?: string | ros.IResolvable;
     }
 }
 /**
@@ -285,9 +335,8 @@ export namespace RosVpcEndpoint {
 function RosVpcEndpoint_ZonePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     return errors.wrap('supplied properties not correct for "ZoneProperty"');
 }
@@ -305,6 +354,7 @@ function rosVpcEndpointZonePropertyToRosTemplate(properties: any): any {
     RosVpcEndpoint_ZonePropertyValidator(properties).assertSuccess();
     return {
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      Ip: ros.stringToRosTemplate(properties.ip),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
@@ -342,6 +392,11 @@ export interface RosVpcEndpointServiceProps {
      * @Property serviceDescription: The description for the endpoint service.
      */
     readonly serviceDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceResourceType: Service resource type.
+     */
+    readonly serviceResourceType?: string | ros.IResolvable;
 
     /**
      * @Property user: Account IDs to the whitelist of an endpoint service.
@@ -393,7 +448,7 @@ function RosVpcEndpointServicePropsValidator(properties: any): ros.ValidationRes
         errors.collect(ros.propertyValidator('resource', ros.validateLength)({
             data: properties.resource.length,
             min: 1,
-            max: 20,
+            max: 500,
           }));
     }
     errors.collect(ros.propertyValidator('resource', ros.listValidator(RosVpcEndpointService_ResourcePropertyValidator))(properties.resource));
@@ -405,6 +460,7 @@ function RosVpcEndpointServicePropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('connectBandwidth', ros.validateNumber)(properties.connectBandwidth));
+    errors.collect(ros.propertyValidator('serviceResourceType', ros.validateString)(properties.serviceResourceType));
     errors.collect(ros.propertyValidator('zoneAffinityEnabled', ros.validateBoolean)(properties.zoneAffinityEnabled));
     errors.collect(ros.propertyValidator('autoAcceptEnabled', ros.validateBoolean)(properties.autoAcceptEnabled));
     return errors.wrap('supplied properties not correct for "RosVpcEndpointServiceProps"');
@@ -429,6 +485,7 @@ function rosVpcEndpointServicePropsToRosTemplate(properties: any, enableResource
       Payer: ros.stringToRosTemplate(properties.payer),
       Resource: ros.listMapper(rosVpcEndpointServiceResourcePropertyToRosTemplate)(properties.resource),
       ServiceDescription: ros.stringToRosTemplate(properties.serviceDescription),
+      ServiceResourceType: ros.stringToRosTemplate(properties.serviceResourceType),
       User: ros.listMapper(ros.stringToRosTemplate)(properties.user),
       ZoneAffinityEnabled: ros.booleanToRosTemplate(properties.zoneAffinityEnabled),
     };
@@ -511,6 +568,11 @@ export class RosVpcEndpointService extends ros.RosResource {
     public serviceDescription: string | ros.IResolvable | undefined;
 
     /**
+     * @Property serviceResourceType: Service resource type.
+     */
+    public serviceResourceType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property user: Account IDs to the whitelist of an endpoint service.
      */
     public user: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -544,6 +606,7 @@ export class RosVpcEndpointService extends ros.RosResource {
         this.payer = props.payer;
         this.resource = props.resource;
         this.serviceDescription = props.serviceDescription;
+        this.serviceResourceType = props.serviceResourceType;
         this.user = props.user;
         this.zoneAffinityEnabled = props.zoneAffinityEnabled;
     }
@@ -556,6 +619,7 @@ export class RosVpcEndpointService extends ros.RosResource {
             payer: this.payer,
             resource: this.resource,
             serviceDescription: this.serviceDescription,
+            serviceResourceType: this.serviceResourceType,
             user: this.user,
             zoneAffinityEnabled: this.zoneAffinityEnabled,
         };
@@ -579,9 +643,7 @@ export namespace RosVpcEndpointService {
          */
         readonly resourceId: string | ros.IResolvable;
         /**
-         * @Property resourceType: The type of service resource. Set the value to slb (SLB instances that support PrivateLink and are deployed in a VPC).
-     * Note Only Server Load Balancer (SLB) instances that support PrivateLink can serve as service
-     * resources for endpoint services.
+         * @Property resourceType: The type of service resource. Supports slb, nlb, vpcNat.
          */
         readonly resourceType: string | ros.IResolvable;
     }

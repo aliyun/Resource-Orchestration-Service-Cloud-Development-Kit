@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.575Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.793Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosInfo")
 public class RosInfo extends com.aliyun.ros.cdk.core.RosElement {
 
@@ -21,6 +21,32 @@ public class RosInfo extends com.aliyun.ros.cdk.core.RosElement {
      */
     public RosInfo(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull java.lang.Object info) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(info instanceof java.lang.String)
+                && !(info instanceof java.util.Map)
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("info")
+                        .append(" to be one of: java.lang.String, java.util.Map<java.lang.String, java.lang.Object>; received ")
+                        .append(info.getClass()).toString());
+            }
+            if (info instanceof java.util.Map) {
+                @SuppressWarnings("unchecked")
+                final java.util.Map<java.lang.String, java.lang.Object> __cast_06271b = (java.util.Map<java.lang.String, java.lang.Object>)info;
+                if (!(__cast_06271b.keySet().toArray()[0] instanceof String)) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("info").append(".keySet()")
+                            .append(" to contain class String; received ")
+                            .append(__cast_06271b.keySet().toArray()[0].getClass()).toString());
+                }
+                for (final java.util.Map.Entry<String, java.lang.Object> __item_2a4470: __cast_06271b.entrySet()) {
+                    final java.lang.Object __val_2a4470 = __item_2a4470.getValue();
+                }
+            }
+        }
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(info, "info is required") });
     }
 

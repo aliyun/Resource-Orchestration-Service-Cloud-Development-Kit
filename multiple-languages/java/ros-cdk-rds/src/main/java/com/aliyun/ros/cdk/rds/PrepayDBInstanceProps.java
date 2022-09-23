@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::PrepayDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.222Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.311Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayDBInstanceProps.Jsii$Proxy.class)
 public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,7 +35,13 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
     @org.jetbrains.annotations.NotNull java.lang.Object getEngine();
 
     /**
-     * Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0; SQLServer: 2008r2/2012/2012_ent_ha/2012_std_ha/2012_web/2016_ent_ha/2016_std_ha/2016_web/2017_std_ha/2017_ent; PostgreSQL: 9.4/10.0/11.0/12.0; PPAS: 9.3/10.0; MariaDB: 10.3.
+     * Property engineVersion: Database instance version of the relative engine type.
+     * <p>
+     * Support:
+     * Valid values when you set the Engine parameter to MySQL: 5.5, 5.6, 5.7, and 8.0
+     * Valid values when you set the Engine parameter to SQL Server: 2008r2, 08r2_ent_ha, 2012, 2012_ent_ha, 2012_std_ha, 2012_web, 2014_std_ha, 2016_ent_ha, 2016_std_ha, 2016_web, 2017_std_ha, 2017_ent, 2019_std_ha, and 2019_ent
+     * Valid values when you set the Engine parameter to PostgreSQL: 10.0, 11.0, 12.0, 13.0, and 14.0
+     * Valid values when you set the Engine parameter to MariaDB: 10.3
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEngineVersion();
 
@@ -741,7 +747,12 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0; SQLServer: 2008r2/2012/2012_ent_ha/2012_std_ha/2012_web/2016_ent_ha/2016_std_ha/2016_web/2017_std_ha/2017_ent; PostgreSQL: 9.4/10.0/11.0/12.0; PPAS: 9.3/10.0; MariaDB: 10.3. This parameter is required.
+         * @param engineVersion Property engineVersion: Database instance version of the relative engine type. This parameter is required.
+         *                      Support:
+         *                      Valid values when you set the Engine parameter to MySQL: 5.5, 5.6, 5.7, and 8.0
+         *                      Valid values when you set the Engine parameter to SQL Server: 2008r2, 08r2_ent_ha, 2012, 2012_ent_ha, 2012_std_ha, 2012_web, 2014_std_ha, 2016_ent_ha, 2016_std_ha, 2016_web, 2017_std_ha, 2017_ent, 2019_std_ha, and 2019_ent
+         *                      Valid values when you set the Engine parameter to PostgreSQL: 10.0, 11.0, 12.0, 13.0, and 14.0
+         *                      Valid values when you set the Engine parameter to MariaDB: 10.3
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -751,7 +762,12 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0; SQLServer: 2008r2/2012/2012_ent_ha/2012_std_ha/2012_web/2016_ent_ha/2016_std_ha/2016_web/2017_std_ha/2017_ent; PostgreSQL: 9.4/10.0/11.0/12.0; PPAS: 9.3/10.0; MariaDB: 10.3. This parameter is required.
+         * @param engineVersion Property engineVersion: Database instance version of the relative engine type. This parameter is required.
+         *                      Support:
+         *                      Valid values when you set the Engine parameter to MySQL: 5.5, 5.6, 5.7, and 8.0
+         *                      Valid values when you set the Engine parameter to SQL Server: 2008r2, 08r2_ent_ha, 2012, 2012_ent_ha, 2012_std_ha, 2012_web, 2014_std_ha, 2016_ent_ha, 2016_std_ha, 2016_web, 2017_std_ha, 2017_ent, 2019_std_ha, and 2019_ent
+         *                      Valid values when you set the Engine parameter to PostgreSQL: 10.0, 11.0, 12.0, 13.0, and 14.0
+         *                      Valid values when you set the Engine parameter to MariaDB: 10.3
          * @return {@code this}
          */
         public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {

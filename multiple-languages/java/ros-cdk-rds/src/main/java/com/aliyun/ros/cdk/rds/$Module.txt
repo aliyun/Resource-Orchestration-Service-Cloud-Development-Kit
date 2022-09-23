@@ -14,6 +14,8 @@
 @alicloud/ros-cdk-rds.DBInstanceSecurityIpsProps=com.aliyun.ros.cdk.rds.DBInstanceSecurityIpsProps
 @alicloud/ros-cdk-rds.Database=com.aliyun.ros.cdk.rds.Database
 @alicloud/ros-cdk-rds.DatabaseProps=com.aliyun.ros.cdk.rds.DatabaseProps
+@alicloud/ros-cdk-rds.MigrateTask=com.aliyun.ros.cdk.rds.MigrateTask
+@alicloud/ros-cdk-rds.MigrateTaskProps=com.aliyun.ros.cdk.rds.MigrateTaskProps
 @alicloud/ros-cdk-rds.PrepayDBInstance=com.aliyun.ros.cdk.rds.PrepayDBInstance
 @alicloud/ros-cdk-rds.PrepayDBInstanceProps=com.aliyun.ros.cdk.rds.PrepayDBInstanceProps
 @alicloud/ros-cdk-rds.ReadOnlyDBInstance=com.aliyun.ros.cdk.rds.ReadOnlyDBInstance
@@ -39,6 +41,8 @@
 @alicloud/ros-cdk-rds.RosDBInstanceSecurityIpsProps=com.aliyun.ros.cdk.rds.RosDBInstanceSecurityIpsProps
 @alicloud/ros-cdk-rds.RosDatabase=com.aliyun.ros.cdk.rds.RosDatabase
 @alicloud/ros-cdk-rds.RosDatabaseProps=com.aliyun.ros.cdk.rds.RosDatabaseProps
+@alicloud/ros-cdk-rds.RosMigrateTask=com.aliyun.ros.cdk.rds.RosMigrateTask
+@alicloud/ros-cdk-rds.RosMigrateTaskProps=com.aliyun.ros.cdk.rds.RosMigrateTaskProps
 @alicloud/ros-cdk-rds.RosPrepayDBInstance=com.aliyun.ros.cdk.rds.RosPrepayDBInstance
 @alicloud/ros-cdk-rds.RosPrepayDBInstance.DBMappingsProperty=com.aliyun.ros.cdk.rds.RosPrepayDBInstance$DBMappingsProperty
 @alicloud/ros-cdk-rds.RosPrepayDBInstanceProps=com.aliyun.ros.cdk.rds.RosPrepayDBInstanceProps

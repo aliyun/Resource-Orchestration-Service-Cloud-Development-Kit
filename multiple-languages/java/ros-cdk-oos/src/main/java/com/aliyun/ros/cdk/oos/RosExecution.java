@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * A ROS template type:  `ALIYUN::OOS::Execution`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.940Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.014Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecution")
 public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -154,6 +154,18 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setParameters(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (!(value.keySet().toArray()[0] instanceof String)) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value").append(".keySet()")
+                        .append(" to contain class String; received ")
+                        .append(value.keySet().toArray()[0].getClass()).toString());
+            }
+            for (final java.util.Map.Entry<String, java.lang.Object> __item_ac66f0: value.entrySet()) {
+                final java.lang.Object __val_ac66f0 = __item_ac66f0.getValue();
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "parameters", value);
     }
 

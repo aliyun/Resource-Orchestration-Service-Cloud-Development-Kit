@@ -14,8 +14,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     {
         /// <summary>Creates an ``Ref`` function.</summary>
         /// <param name="logicalName">The logical name of a parameter/resource for which you want to retrieve its value.</param>
-        public FnRef(string logicalName): base(new DeputyProps(new object?[]{logicalName}))
+        public FnRef(string logicalName): base(_MakeDeputyProps(logicalName))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(string logicalName)
+        {
+            return new DeputyProps(new object?[]{logicalName});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

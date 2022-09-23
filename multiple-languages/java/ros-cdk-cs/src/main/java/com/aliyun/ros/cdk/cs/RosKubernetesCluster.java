@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.360Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.619Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesCluster")
 public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -124,6 +124,11 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setMasterInstanceTypes(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "masterInstanceTypes", java.util.Objects.requireNonNull(value, "masterInstanceTypes is required"));
     }
 
@@ -142,6 +147,11 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setMasterVSwitchIds(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "masterVSwitchIds", java.util.Objects.requireNonNull(value, "masterVSwitchIds is required"));
     }
 
@@ -196,6 +206,11 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setWorkerVSwitchIds(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "workerVSwitchIds", java.util.Objects.requireNonNull(value, "workerVSwitchIds is required"));
     }
 
@@ -220,6 +235,22 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setAddons(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.cs.RosKubernetesCluster.AddonsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.cs.RosKubernetesCluster.AddonsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "addons", value);
     }
 
@@ -580,6 +611,22 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setMasterDataDisks(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.cs.RosKubernetesCluster.MasterDataDisksProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.cs.RosKubernetesCluster.MasterDataDisksProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "masterDataDisks", value);
     }
 
@@ -670,6 +717,22 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setMasterZoneIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "masterZoneIds", value);
     }
 
@@ -724,6 +787,22 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setNodePools(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.cs.RosKubernetesCluster.NodePoolsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.cs.RosKubernetesCluster.NodePoolsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "nodePools", value);
     }
 
@@ -850,6 +929,22 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setPodVswitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "podVswitchIds", value);
     }
 
@@ -1024,6 +1119,21 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setTaint(final @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.util.Map<java.lang.String, java.lang.Object> __val_ac66f0 = value.get(__idx_ac66f0);
+                if (!(__val_ac66f0.keySet().toArray()[0] instanceof String)) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")").append(".keySet()")
+                            .append(" to contain class String; received ")
+                            .append(__val_ac66f0.keySet().toArray()[0].getClass()).toString());
+                }
+                for (final java.util.Map.Entry<String, java.lang.Object> __item_58ec25: __val_ac66f0.entrySet()) {
+                    final java.lang.Object __val_58ec25 = __item_58ec25.getValue();
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "taint", value);
     }
 
@@ -1132,6 +1242,22 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setWorkerDataDisks(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.cs.RosKubernetesCluster.WorkerDataDisksProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.cs.RosKubernetesCluster.WorkerDataDisksProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "workerDataDisks", value);
     }
 
@@ -1150,6 +1276,22 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setWorkerInstanceTypes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "workerInstanceTypes", value);
     }
 
@@ -1222,6 +1364,22 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setWorkerZoneIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "workerZoneIds", value);
     }
     /**
@@ -3075,6 +3233,13 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link ScalingGroupProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -3104,6 +3269,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object systemDiskCategory;
             java.lang.Object systemDiskPerformanceLevel;
             java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.ScalingGroupTagsProperty> tags;
+            java.lang.Object zoneIds;
 
             /**
              * Sets the value of {@link ScalingGroupProperty#getInstanceTypes}
@@ -3492,6 +3658,28 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ScalingGroupProperty#getZoneIds}
+             * @param zoneIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder zoneIds(com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+                this.zoneIds = zoneIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScalingGroupProperty#getZoneIds}
+             * @param zoneIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder zoneIds(java.util.List<? extends java.lang.Object> zoneIds) {
+                this.zoneIds = zoneIds;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link ScalingGroupProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -3527,6 +3715,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object systemDiskCategory;
             private final java.lang.Object systemDiskPerformanceLevel;
             private final java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.ScalingGroupTagsProperty> tags;
+            private final java.lang.Object zoneIds;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -3552,6 +3741,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
                 this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosKubernetesCluster.ScalingGroupTagsProperty.class)));
+                this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -3578,6 +3768,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
                 this.systemDiskCategory = builder.systemDiskCategory;
                 this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
                 this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.ScalingGroupTagsProperty>)builder.tags;
+                this.zoneIds = builder.zoneIds;
             }
 
             @Override
@@ -3671,6 +3862,11 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getZoneIds() {
+                return this.zoneIds;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -3724,6 +3920,9 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getTags() != null) {
                     data.set("tags", om.valueToTree(this.getTags()));
                 }
+                if (this.getZoneIds() != null) {
+                    data.set("zoneIds", om.valueToTree(this.getZoneIds()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty"));
@@ -3759,7 +3958,8 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.rdsInstances != null ? !this.rdsInstances.equals(that.rdsInstances) : that.rdsInstances != null) return false;
                 if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
                 if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
-                return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
+                if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+                return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
             }
 
             @Override
@@ -3782,6 +3982,7 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
                 result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
                 result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+                result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
                 return result;
             }
         }

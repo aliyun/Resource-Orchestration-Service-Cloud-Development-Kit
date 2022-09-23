@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.067Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.126Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcEndpointServiceProps.Jsii$Proxy.class)
 public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,6 +40,12 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceResourceType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUser() {
         return null;
     }
@@ -65,6 +71,7 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
         java.lang.Object payer;
         java.lang.Object resource;
         java.lang.Object serviceDescription;
+        java.lang.Object serviceResourceType;
         java.lang.Object user;
         java.lang.Object zoneAffinityEnabled;
 
@@ -169,6 +176,26 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosVpcEndpointServiceProps#getServiceResourceType}
+         * @param serviceResourceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder serviceResourceType(java.lang.String serviceResourceType) {
+            this.serviceResourceType = serviceResourceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcEndpointServiceProps#getServiceResourceType}
+         * @param serviceResourceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder serviceResourceType(com.aliyun.ros.cdk.core.IResolvable serviceResourceType) {
+            this.serviceResourceType = serviceResourceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpcEndpointServiceProps#getUser}
          * @param user the value to be set.
          * @return {@code this}
@@ -229,6 +256,7 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object payer;
         private final java.lang.Object resource;
         private final java.lang.Object serviceDescription;
+        private final java.lang.Object serviceResourceType;
         private final java.lang.Object user;
         private final java.lang.Object zoneAffinityEnabled;
 
@@ -243,6 +271,7 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
             this.payer = software.amazon.jsii.Kernel.get(this, "payer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceDescription = software.amazon.jsii.Kernel.get(this, "serviceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceResourceType = software.amazon.jsii.Kernel.get(this, "serviceResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.user = software.amazon.jsii.Kernel.get(this, "user", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneAffinityEnabled = software.amazon.jsii.Kernel.get(this, "zoneAffinityEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -257,6 +286,7 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
             this.payer = builder.payer;
             this.resource = builder.resource;
             this.serviceDescription = builder.serviceDescription;
+            this.serviceResourceType = builder.serviceResourceType;
             this.user = builder.user;
             this.zoneAffinityEnabled = builder.zoneAffinityEnabled;
         }
@@ -284,6 +314,11 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
         @Override
         public final java.lang.Object getServiceDescription() {
             return this.serviceDescription;
+        }
+
+        @Override
+        public final java.lang.Object getServiceResourceType() {
+            return this.serviceResourceType;
         }
 
         @Override
@@ -317,6 +352,9 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
             if (this.getServiceDescription() != null) {
                 data.set("serviceDescription", om.valueToTree(this.getServiceDescription()));
             }
+            if (this.getServiceResourceType() != null) {
+                data.set("serviceResourceType", om.valueToTree(this.getServiceResourceType()));
+            }
             if (this.getUser() != null) {
                 data.set("user", om.valueToTree(this.getUser()));
             }
@@ -346,6 +384,7 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
             if (this.payer != null ? !this.payer.equals(that.payer) : that.payer != null) return false;
             if (this.resource != null ? !this.resource.equals(that.resource) : that.resource != null) return false;
             if (this.serviceDescription != null ? !this.serviceDescription.equals(that.serviceDescription) : that.serviceDescription != null) return false;
+            if (this.serviceResourceType != null ? !this.serviceResourceType.equals(that.serviceResourceType) : that.serviceResourceType != null) return false;
             if (this.user != null ? !this.user.equals(that.user) : that.user != null) return false;
             return this.zoneAffinityEnabled != null ? this.zoneAffinityEnabled.equals(that.zoneAffinityEnabled) : that.zoneAffinityEnabled == null;
         }
@@ -357,6 +396,7 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
             result = 31 * result + (this.payer != null ? this.payer.hashCode() : 0);
             result = 31 * result + (this.resource != null ? this.resource.hashCode() : 0);
             result = 31 * result + (this.serviceDescription != null ? this.serviceDescription.hashCode() : 0);
+            result = 31 * result + (this.serviceResourceType != null ? this.serviceResourceType.hashCode() : 0);
             result = 31 * result + (this.user != null ? this.user.hashCode() : 0);
             result = 31 * result + (this.zoneAffinityEnabled != null ? this.zoneAffinityEnabled.hashCode() : 0);
             return result;
