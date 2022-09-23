@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS resource type:  `ALIYUN::REDIS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.289Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.395Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -588,6 +588,37 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props().period(period);
+            return this;
+        }
+
+        /**
+         * Property periodUnit: The unit of the subscription duration.
+         * <p>
+         * Valid values:
+         * Month
+         * Year
+         * Default value: Month.
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
+         */
+        public Builder periodUnit(final java.lang.String periodUnit) {
+            this.props().periodUnit(periodUnit);
+            return this;
+        }
+        /**
+         * Property periodUnit: The unit of the subscription duration.
+         * <p>
+         * Valid values:
+         * Month
+         * Year
+         * Default value: Month.
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: The unit of the subscription duration. This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props().periodUnit(periodUnit);
             return this;
         }
 

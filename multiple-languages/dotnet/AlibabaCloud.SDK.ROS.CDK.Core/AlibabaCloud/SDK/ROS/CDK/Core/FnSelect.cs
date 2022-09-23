@@ -13,8 +13,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// param index The index of the object to retrieve. This must be a value from zero to N-1, where N represents the number of elements in the array.
         /// param array The list of objects to select from. This list must not be null, nor can it have null entries.
         /// </remarks>
-        public FnSelect(object @value): base(new DeputyProps(new object?[]{@value}))
+        public FnSelect(object @value): base(_MakeDeputyProps(@value))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object @value)
+        {
+            return new DeputyProps(new object?[]{@value});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.068Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.127Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpoint")
 public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
 
@@ -237,6 +237,56 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property endpointType: Endpoint type.
+         * <p>
+         * @return {@code this}
+         * @param endpointType Property endpointType: Endpoint type. This parameter is required.
+         */
+        public Builder endpointType(final java.lang.String endpointType) {
+            this.props.endpointType(endpointType);
+            return this;
+        }
+        /**
+         * Property endpointType: Endpoint type.
+         * <p>
+         * @return {@code this}
+         * @param endpointType Property endpointType: Endpoint type. This parameter is required.
+         */
+        public Builder endpointType(final com.aliyun.ros.cdk.core.IResolvable endpointType) {
+            this.props.endpointType(endpointType);
+            return this;
+        }
+
+        /**
+         * Property protectedEnabled: Specifies whether to enable user authentication.
+         * <p>
+         * This parameter is available in Security Token Service (STS) mode. Valid values:
+         * true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+         * false (default): no
+         * <p>
+         * @return {@code this}
+         * @param protectedEnabled Property protectedEnabled: Specifies whether to enable user authentication. This parameter is required.
+         */
+        public Builder protectedEnabled(final java.lang.Boolean protectedEnabled) {
+            this.props.protectedEnabled(protectedEnabled);
+            return this;
+        }
+        /**
+         * Property protectedEnabled: Specifies whether to enable user authentication.
+         * <p>
+         * This parameter is available in Security Token Service (STS) mode. Valid values:
+         * true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+         * false (default): no
+         * <p>
+         * @return {@code this}
+         * @param protectedEnabled Property protectedEnabled: Specifies whether to enable user authentication. This parameter is required.
+         */
+        public Builder protectedEnabled(final com.aliyun.ros.cdk.core.IResolvable protectedEnabled) {
+            this.props.protectedEnabled(protectedEnabled);
+            return this;
+        }
+
+        /**
          * Property serviceId: The endpoint service that is associated with the endpoint.
          * <p>
          * One of ServiceId and ServiceName is required.
@@ -304,6 +354,31 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder zone(final java.util.List<? extends java.lang.Object> zone) {
             this.props.zone(zone);
+            return this;
+        }
+
+        /**
+         * Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone.
+         * <p>
+         * Set the value to 1.
+         * <p>
+         * @return {@code this}
+         * @param zonePrivateIpAddressCount Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone. This parameter is required.
+         */
+        public Builder zonePrivateIpAddressCount(final java.lang.Number zonePrivateIpAddressCount) {
+            this.props.zonePrivateIpAddressCount(zonePrivateIpAddressCount);
+            return this;
+        }
+        /**
+         * Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone.
+         * <p>
+         * Set the value to 1.
+         * <p>
+         * @return {@code this}
+         * @param zonePrivateIpAddressCount Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone. This parameter is required.
+         */
+        public Builder zonePrivateIpAddressCount(final com.aliyun.ros.cdk.core.IResolvable zonePrivateIpAddressCount) {
+            this.props.zonePrivateIpAddressCount(zonePrivateIpAddressCount);
             return this;
         }
 

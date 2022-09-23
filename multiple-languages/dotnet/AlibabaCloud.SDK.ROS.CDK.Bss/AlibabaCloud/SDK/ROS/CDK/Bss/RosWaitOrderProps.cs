@@ -10,15 +10,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
     [JsiiByValue(fqn: "@alicloud/ros-cdk-bss.RosWaitOrderProps")]
     public class RosWaitOrderProps : AlibabaCloud.SDK.ROS.CDK.Bss.IRosWaitOrderProps
     {
+        private object _orderIds;
+
         /// <remarks>
         /// <strong>Property</strong>: orderIds: A list of order ids.
         /// </remarks>
         [JsiiProperty(name: "orderIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object OrderIds
         {
-            get;
-            set;
+            get => _orderIds;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case object[] cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _orderIds = value;
+            }
         }
+
+        private object? _cancelOnDelete;
 
         /// <remarks>
         /// <strong>Property</strong>: cancelOnDelete: Cancel order where delete the resource. Ignore the paid order. Default true
@@ -27,9 +51,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
         [JsiiProperty(name: "cancelOnDelete", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? CancelOnDelete
         {
-            get;
-            set;
+            get => _cancelOnDelete;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _cancelOnDelete = value;
+            }
         }
+
+        private object? _waitForOrderProduced;
 
         /// <remarks>
         /// <strong>Property</strong>: waitForOrderProduced: Wait util all orders related ROS resources are produced.
@@ -39,8 +85,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
         [JsiiProperty(name: "waitForOrderProduced", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? WaitForOrderProduced
         {
-            get;
-            set;
+            get => _waitForOrderProduced;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _waitForOrderProduced = value;
+            }
         }
     }
 }

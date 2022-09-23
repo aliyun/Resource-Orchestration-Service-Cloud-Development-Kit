@@ -237,6 +237,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
         /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
         /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+        /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
         /// Default to 1.
         /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -254,6 +255,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// The options are:
         /// Week: Time is measured in weeks
         /// Month: time in months
+        /// Year: time in years
         /// Default to Month
         /// </remarks>
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -409,6 +411,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "workerDataDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? WorkerDataDiskCategory
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property workerDataDisks: A combination of configurations such as worker data disk type and size.</summary>
+        /// <remarks>
+        /// This parameter is valid only when the worker node data disk is mounted.
+        /// </remarks>
+        [JsiiProperty(name: "workerDataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? WorkerDataDisks
         {
             get
             {
@@ -675,6 +691,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
             /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
             /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+            /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
             /// Default to 1.
             /// </remarks>
             [JsiiOptional]
@@ -689,6 +706,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// The options are:
             /// Week: Time is measured in weeks
             /// Month: time in months
+            /// Year: time in years
             /// Default to Month
             /// </remarks>
             [JsiiOptional]
@@ -811,6 +829,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "workerDataDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? WorkerDataDiskCategory
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property workerDataDisks: A combination of configurations such as worker data disk type and size.</summary>
+            /// <remarks>
+            /// This parameter is valid only when the worker node data disk is mounted.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "workerDataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? WorkerDataDisks
             {
                 get => GetInstanceProperty<object?>();
             }

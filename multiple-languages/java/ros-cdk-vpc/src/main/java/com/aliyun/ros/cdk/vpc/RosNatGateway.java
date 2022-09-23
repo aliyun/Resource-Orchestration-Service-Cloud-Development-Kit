@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.895Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.912Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGateway")
 public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -197,6 +197,24 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "duration", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEipBindMode() {
+        return software.amazon.jsii.Kernel.get(this, "eipBindMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEipBindMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "eipBindMode", value);
+    }
+
+    /**
+     */
+    public void setEipBindMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "eipBindMode", value);
     }
 
     /**
@@ -629,6 +647,23 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
             this.props.duration(duration);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param eipBindMode This parameter is required.
+         */
+        public Builder eipBindMode(final java.lang.String eipBindMode) {
+            this.props.eipBindMode(eipBindMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param eipBindMode This parameter is required.
+         */
+        public Builder eipBindMode(final com.aliyun.ros.cdk.core.IResolvable eipBindMode) {
+            this.props.eipBindMode(eipBindMode);
             return this;
         }
 

@@ -76,6 +76,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
         }
 
+        /// <summary>Property serviceResourceType: Service resource type.</summary>
+        [JsiiProperty(name: "serviceResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ServiceResourceType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property user: Account IDs to the whitelist of an endpoint service.</summary>
         [JsiiProperty(name: "user", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -159,6 +170,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             [JsiiOptional]
             [JsiiProperty(name: "serviceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServiceDescription
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property serviceResourceType: Service resource type.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "serviceResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServiceResourceType
             {
                 get => GetInstanceProperty<object?>();
             }

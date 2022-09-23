@@ -10,8 +10,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>Creates an RosOutput value for this stack.</summary>
         /// <param name="scope">The parent construct.</param>
         /// <param name="props">RosOutput properties.</param>
-        public RosOutput(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosOutputProps props): base(new DeputyProps(new object?[]{scope, id, props}))
+        public RosOutput(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosOutputProps props): base(_MakeDeputyProps(scope, id, props))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosOutputProps props)
+        {
+            return new DeputyProps(new object?[]{scope, id, props});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

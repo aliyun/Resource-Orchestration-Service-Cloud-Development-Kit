@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * A ROS template type:  `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.869Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.926Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosShardingInstance")
 public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -80,6 +80,22 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setConfigServer(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.mongodb.RosShardingInstance.ConfigServerProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.mongodb.RosShardingInstance.ConfigServerProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "configServer", java.util.Objects.requireNonNull(value, "configServer is required"));
     }
 
@@ -106,6 +122,22 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setMongos(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.mongodb.RosShardingInstance.MongosProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.mongodb.RosShardingInstance.MongosProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "mongos", java.util.Objects.requireNonNull(value, "mongos is required"));
     }
 
@@ -124,6 +156,22 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setReplicaSet(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.mongodb.RosShardingInstance.ReplicaSetProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.mongodb.RosShardingInstance.ReplicaSetProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "replicaSet", java.util.Objects.requireNonNull(value, "replicaSet is required"));
     }
 
@@ -751,6 +799,13 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
         @org.jetbrains.annotations.NotNull java.lang.Object getStorage();
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReadonlyReplicas() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link ReplicaSetProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -764,6 +819,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<ReplicaSetProperty> {
             java.lang.Object classValue;
             java.lang.Object storage;
+            java.lang.Object readonlyReplicas;
 
             /**
              * Sets the value of {@link ReplicaSetProperty#getClassValue}
@@ -810,6 +866,28 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ReplicaSetProperty#getReadonlyReplicas}
+             * @param readonlyReplicas the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readonlyReplicas(java.lang.Number readonlyReplicas) {
+                this.readonlyReplicas = readonlyReplicas;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ReplicaSetProperty#getReadonlyReplicas}
+             * @param readonlyReplicas the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readonlyReplicas(com.aliyun.ros.cdk.core.IResolvable readonlyReplicas) {
+                this.readonlyReplicas = readonlyReplicas;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link ReplicaSetProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -829,6 +907,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ReplicaSetProperty {
             private final java.lang.Object classValue;
             private final java.lang.Object storage;
+            private final java.lang.Object readonlyReplicas;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -838,6 +917,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.classValue = software.amazon.jsii.Kernel.get(this, "class", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.storage = software.amazon.jsii.Kernel.get(this, "storage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.readonlyReplicas = software.amazon.jsii.Kernel.get(this, "readonlyReplicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -847,6 +927,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.classValue = java.util.Objects.requireNonNull(builder.classValue, "classValue is required");
                 this.storage = java.util.Objects.requireNonNull(builder.storage, "storage is required");
+                this.readonlyReplicas = builder.readonlyReplicas;
             }
 
             @Override
@@ -860,6 +941,11 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getReadonlyReplicas() {
+                return this.readonlyReplicas;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -867,6 +953,9 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
                 data.set("class", om.valueToTree(this.getClassValue()));
                 data.set("storage", om.valueToTree(this.getStorage()));
+                if (this.getReadonlyReplicas() != null) {
+                    data.set("readonlyReplicas", om.valueToTree(this.getReadonlyReplicas()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-mongodb.RosShardingInstance.ReplicaSetProperty"));
@@ -886,13 +975,15 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
                 ReplicaSetProperty.Jsii$Proxy that = (ReplicaSetProperty.Jsii$Proxy) o;
 
                 if (!classValue.equals(that.classValue)) return false;
-                return this.storage.equals(that.storage);
+                if (!storage.equals(that.storage)) return false;
+                return this.readonlyReplicas != null ? this.readonlyReplicas.equals(that.readonlyReplicas) : that.readonlyReplicas == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.classValue.hashCode();
                 result = 31 * result + (this.storage.hashCode());
+                result = 31 * result + (this.readonlyReplicas != null ? this.readonlyReplicas.hashCode() : 0);
                 return result;
             }
         }

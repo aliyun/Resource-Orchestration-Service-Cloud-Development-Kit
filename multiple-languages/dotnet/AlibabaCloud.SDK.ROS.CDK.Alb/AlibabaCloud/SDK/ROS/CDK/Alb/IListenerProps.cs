@@ -42,7 +42,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             get;
         }
 
-        /// <summary>Property certificates: The content of the SSL certificate.</summary>
+        /// <summary>Property caCertificates: List of configured CA certificates for listener.</summary>
+        [JsiiProperty(name: "caCertificates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.CaCertificatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CaCertificates
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property caEnabled: Specifies whether to enable mutual authentication.</summary>
+        /// <remarks>
+        /// Default false.
+        /// </remarks>
+        [JsiiProperty(name: "caEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CaEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property certificates: The list of SSL certificates for listener.</summary>
         [JsiiProperty(name: "certificates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.CertificatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Certificates
@@ -214,7 +239,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property certificates: The content of the SSL certificate.</summary>
+            /// <summary>Property caCertificates: List of configured CA certificates for listener.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "caCertificates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.CaCertificatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? CaCertificates
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property caEnabled: Specifies whether to enable mutual authentication.</summary>
+            /// <remarks>
+            /// Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "caEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CaEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property certificates: The list of SSL certificates for listener.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "certificates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.CertificatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Certificates

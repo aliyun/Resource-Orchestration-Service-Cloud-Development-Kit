@@ -12,8 +12,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
-        public RosRule(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Alb.IRosRuleProps props, bool enableResourcePropertyConstraint): base(new DeputyProps(new object?[]{scope, id, props, enableResourcePropertyConstraint}))
+        public RosRule(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Alb.IRosRuleProps props, bool enableResourcePropertyConstraint): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Alb.IRosRuleProps props, bool enableResourcePropertyConstraint)
+        {
+            return new DeputyProps(new object?[]{scope, id, props, enableResourcePropertyConstraint});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
@@ -74,7 +80,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         public virtual object ListenerId
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -85,7 +111,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         public virtual object Priority
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -95,7 +161,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         public virtual object RuleActions
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRuleActionsProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRuleActionsProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRuleActionsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -105,7 +208,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         public virtual object RuleConditions
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRuleConditionsProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRuleConditionsProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRuleConditionsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -118,7 +258,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         public virtual object RuleName
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -129,7 +289,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         public virtual object? Direction
         {
             get => GetInstanceProperty<object?>();
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
         [JsiiInterface(nativeType: typeof(ICookieConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.CookieConfigProperty")]
         public interface ICookieConfigProperty
@@ -168,6 +348,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.CookieConfigProperty")]
         public class CookieConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ICookieConfigProperty
         {
+            private object? _values;
+
             /// <remarks>
             /// <strong>Property</strong>: values: Cookie values
             /// </remarks>
@@ -175,8 +357,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ValuesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Values
             {
-                get;
-                set;
+                get => _values;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IValuesProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IValuesProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IValuesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _values = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IFixedResponseConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.FixedResponseConfigProperty")]
@@ -266,6 +485,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.FixedResponseConfigProperty")]
         public class FixedResponseConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IFixedResponseConfigProperty
         {
+            private object? _content;
+
             /// <remarks>
             /// <strong>Property</strong>: content: The content of the fixed response. The content cannot exceed 1 KB in size, and can
             /// contain only ASCII characters.
@@ -274,9 +495,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Content
             {
-                get;
-                set;
+                get => _content;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _content = value;
+                }
             }
+
+            private object? _contentType;
 
             /// <remarks>
             /// <strong>Property</strong>: contentType: The format of the content.
@@ -286,9 +529,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "contentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContentType
             {
-                get;
-                set;
+                get => _contentType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _contentType = value;
+                }
             }
+
+            private object? _httpCode;
 
             /// <remarks>
             /// <strong>Property</strong>: httpCode: The HTTP status code of the response. Valid values: HTTP_2xx, HTTP_4xx, and HTTP_5xx. x is a digit.
@@ -297,13 +562,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "httpCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? HttpCode
             {
-                get;
-                set;
+                get => _httpCode;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _httpCode = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IForwardGroupConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.ForwardGroupConfigProperty")]
         public interface IForwardGroupConfigProperty
         {
+            /// <remarks>
+            /// <strong>Property</strong>: serverGroupStickySession: The list of session persistence of server group.
+            /// </remarks>
+            [JsiiProperty(name: "serverGroupStickySession", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ServerGroupStickySessionProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ServerGroupStickySession
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             /// <remarks>
             /// <strong>Property</strong>: serverGroupTuples: The list of server groups to which requests are forwarded.
             /// </remarks>
@@ -325,6 +623,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: serverGroupStickySession: The list of session persistence of server group.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "serverGroupStickySession", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ServerGroupStickySessionProperty\"}]}}", isOptional: true)]
+                public object? ServerGroupStickySession
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: serverGroupTuples: The list of server groups to which requests are forwarded.
                 /// </remarks>
                 [JsiiOptional]
@@ -338,6 +646,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.ForwardGroupConfigProperty")]
         public class ForwardGroupConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IForwardGroupConfigProperty
         {
+            private object? _serverGroupStickySession;
+
+            /// <remarks>
+            /// <strong>Property</strong>: serverGroupStickySession: The list of session persistence of server group.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "serverGroupStickySession", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ServerGroupStickySessionProperty\"}]}}", isOptional: true)]
+            public object? ServerGroupStickySession
+            {
+                get => _serverGroupStickySession;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IServerGroupStickySessionProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IServerGroupStickySessionProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _serverGroupStickySession = value;
+                }
+            }
+
+            private object? _serverGroupTuples;
+
             /// <remarks>
             /// <strong>Property</strong>: serverGroupTuples: The list of server groups to which requests are forwarded.
             /// </remarks>
@@ -345,8 +688,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "serverGroupTuples", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ServerGroupTuplesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? ServerGroupTuples
             {
-                get;
-                set;
+                get => _serverGroupTuples;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IServerGroupTuplesProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IServerGroupTuplesProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IServerGroupTuplesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _serverGroupTuples = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IHeaderConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.HeaderConfigProperty")]
@@ -421,6 +801,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.HeaderConfigProperty")]
         public class HeaderConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IHeaderConfigProperty
         {
+            private object? _key;
+
             /// <remarks>
             /// <strong>Property</strong>: key: The key of the header.
             /// The key must be 1 to 40 characters in length
@@ -431,9 +813,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Key
             {
-                get;
-                set;
+                get => _key;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _key = value;
+                }
             }
+
+            private object? _values;
 
             /// <remarks>
             /// <strong>Property</strong>: values: The values of the header. The header values within a forwarding rule must be unique.
@@ -445,8 +849,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Values
             {
-                get;
-                set;
+                get => _values;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case string cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _values = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IHostConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.HostConfigProperty")]
@@ -494,6 +935,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.HostConfigProperty")]
         public class HostConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IHostConfigProperty
         {
+            private object? _values;
+
             /// <remarks>
             /// <strong>Property</strong>: values: The host name. A forwarding rule can contain only one host name. The host names must be unique.
             /// The host name must be 3 to 128 characters in length, and can contain lowercase letters, digits, hyphens (-), periods (.), asterisks (*), and question marks (?).
@@ -505,8 +948,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Values
             {
-                get;
-                set;
+                get => _values;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case string cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _values = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IInsertHeaderConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.InsertHeaderConfigProperty")]
@@ -628,6 +1108,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.InsertHeaderConfigProperty")]
         public class InsertHeaderConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IInsertHeaderConfigProperty
         {
+            private object? _key;
+
             /// <remarks>
             /// <strong>Property</strong>: key: The key of the response header.
             /// The key must be 1 to 40 characters in length.
@@ -640,9 +1122,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Key
             {
-                get;
-                set;
+                get => _key;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _key = value;
+                }
             }
+
+            private object? _value;
 
             /// <remarks>
             /// <strong>Property</strong>: value: The content of the header to be inserted.
@@ -661,9 +1165,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Value
             {
-                get;
-                set;
+                get => _value;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _value = value;
+                }
             }
+
+            private object? _valueType;
 
             /// <remarks>
             /// <strong>Property</strong>: valueType: The type of the content. Valid values:
@@ -675,8 +1201,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "valueType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ValueType
             {
-                get;
-                set;
+                get => _valueType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _valueType = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IMethodConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.MethodConfigProperty")]
@@ -716,6 +1262,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.MethodConfigProperty")]
         public class MethodConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMethodConfigProperty
         {
+            private object? _values;
+
             /// <remarks>
             /// <strong>Property</strong>: values: The request method.
             /// </remarks>
@@ -723,8 +1271,194 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Values
             {
+                get => _values;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case string cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _values = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IMirrorGroupConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty")]
+        public interface IMirrorGroupConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: serverGroupTuples:
+            /// </remarks>
+            [JsiiProperty(name: "serverGroupTuples", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigServerGroupTuplesProperty\"}]}},\"kind\":\"array\"}}]}}")]
+            object ServerGroupTuples
+            {
                 get;
-                set;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IMirrorGroupConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: serverGroupTuples:
+                /// </remarks>
+                [JsiiProperty(name: "serverGroupTuples", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigServerGroupTuplesProperty\"}]}},\"kind\":\"array\"}}]}}")]
+                public object ServerGroupTuples
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty")]
+        public class MirrorGroupConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigProperty
+        {
+            private object _serverGroupTuples;
+
+            /// <remarks>
+            /// <strong>Property</strong>: serverGroupTuples:
+            /// </remarks>
+            [JsiiProperty(name: "serverGroupTuples", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigServerGroupTuplesProperty\"}]}},\"kind\":\"array\"}}]}}")]
+            public object ServerGroupTuples
+            {
+                get => _serverGroupTuples;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigServerGroupTuplesProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigServerGroupTuplesProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigServerGroupTuplesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _serverGroupTuples = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IMirrorGroupConfigServerGroupTuplesProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigServerGroupTuplesProperty")]
+        public interface IMirrorGroupConfigServerGroupTuplesProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: serverGroupId: The ID of server group.
+            /// </remarks>
+            [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ServerGroupId
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IMirrorGroupConfigServerGroupTuplesProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigServerGroupTuplesProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigServerGroupTuplesProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: serverGroupId: The ID of server group.
+                /// </remarks>
+                [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ServerGroupId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigServerGroupTuplesProperty")]
+        public class MirrorGroupConfigServerGroupTuplesProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigServerGroupTuplesProperty
+        {
+            private object _serverGroupId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: serverGroupId: The ID of server group.
+            /// </remarks>
+            [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ServerGroupId
+            {
+                get => _serverGroupId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _serverGroupId = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IPathConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.PathConfigProperty")]
@@ -764,6 +1498,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.PathConfigProperty")]
         public class PathConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IPathConfigProperty
         {
+            private object? _values;
+
             /// <remarks>
             /// <strong>Property</strong>: values: The path of the URL.
             /// </remarks>
@@ -771,8 +1507,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Values
             {
-                get;
-                set;
+                get => _values;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case string cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _values = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IQueryStringConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.QueryStringConfigProperty")]
@@ -812,6 +1585,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.QueryStringConfigProperty")]
         public class QueryStringConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IQueryStringConfigProperty
         {
+            private object? _values;
+
             /// <remarks>
             /// <strong>Property</strong>: values: The list of query strings.
             /// </remarks>
@@ -819,8 +1594,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.QueryStringConfigValuesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Values
             {
-                get;
-                set;
+                get => _values;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IQueryStringConfigValuesProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IQueryStringConfigValuesProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IQueryStringConfigValuesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _values = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IQueryStringConfigValuesProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.QueryStringConfigValuesProperty")]
@@ -893,6 +1705,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.QueryStringConfigValuesProperty")]
         public class QueryStringConfigValuesProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IQueryStringConfigValuesProperty
         {
+            private object? _key;
+
             /// <remarks>
             /// <strong>Property</strong>: key: They key of the query string.
             /// The key must be 1 to 100 characters in length
@@ -903,9 +1717,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Key
             {
-                get;
-                set;
+                get => _key;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _key = value;
+                }
             }
+
+            private object? _value;
 
             /// <remarks>
             /// <strong>Property</strong>: value: The value of the cookie.
@@ -916,8 +1752,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Value
             {
-                get;
-                set;
+                get => _value;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _value = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IRedirectConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.RedirectConfigProperty")]
@@ -1142,6 +1998,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.RedirectConfigProperty")]
         public class RedirectConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRedirectConfigProperty
         {
+            private object? _host;
+
             /// <remarks>
             /// <strong>Property</strong>: host: The host name to which requests are redirected. Valid values:
             /// ${host} (default): If you set the value to ${host}, you cannot add other characters to the
@@ -1160,9 +2018,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "host", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Host
             {
-                get;
-                set;
+                get => _host;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _host = value;
+                }
             }
+
+            private object? _httpCode;
 
             /// <remarks>
             /// <strong>Property</strong>: httpCode: The redirect type. Valid values: 301, 302, 303, 307, and 308.
@@ -1171,9 +2051,51 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "httpCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? HttpCode
             {
-                get;
-                set;
+                get => _httpCode;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _httpCode = value;
+                }
             }
+
+            private object? _path;
 
             /// <remarks>
             /// <strong></strong>: :. It cannot contain the following special characters: " % # ; ! ( ) [ ]^ , ". It can also contain asterisks (*) and question marks (?) as wildcard characters.
@@ -1192,9 +2114,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Path
             {
-                get;
-                set;
+                get => _path;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _path = value;
+                }
             }
+
+            private object? _port;
 
             /// <remarks>
             /// <strong>Property</strong>: port: The port to which requests are redirected.
@@ -1206,9 +2150,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Port
             {
-                get;
-                set;
+                get => _port;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _port = value;
+                }
             }
+
+            private object? _protocol;
 
             /// <remarks>
             /// <strong>Property</strong>: protocol: The redirect protocol.
@@ -1221,9 +2187,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Protocol
             {
-                get;
-                set;
+                get => _protocol;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _protocol = value;
+                }
             }
+
+            private object? _query;
 
             /// <remarks>
             /// <strong>Property</strong>: query: The query string of the URL to which requests are redirected.
@@ -1239,18 +2227,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "query", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Query
             {
-                get;
-                set;
+                get => _query;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _query = value;
+                }
             }
         }
-        [JsiiInterface(nativeType: typeof(IResponseHeaderConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty")]
-        public interface IResponseHeaderConfigProperty
+        [JsiiInterface(nativeType: typeof(IRemoveHeaderConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty")]
+        public interface IRemoveHeaderConfigProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: key: The key of the header.
-            /// The key must be 1 to 40 characters in length
-            /// It can contain letters, digits, hyphens (-), and underscores (_).
-            /// Cookie or Host is not supported.
+            /// <strong>Property</strong>: key: The key of the response header.
+            /// The key must be 1 to 40 characters in length.
+            /// It can contain letters, digits, underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1262,31 +2269,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
             }
 
-            /// <remarks>
-            /// <strong>Property</strong>: values: The values of the header.
-            /// </remarks>
-            [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Values
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            [JsiiTypeProxy(nativeType: typeof(IResponseHeaderConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty")]
-            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IResponseHeaderConfigProperty
+            [JsiiTypeProxy(nativeType: typeof(IRemoveHeaderConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRemoveHeaderConfigProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: key: The key of the header.
-                /// The key must be 1 to 40 characters in length
-                /// It can contain letters, digits, hyphens (-), and underscores (_).
-                /// Cookie or Host is not supported.
+                /// <strong>Property</strong>: key: The key of the response header.
+                /// The key must be 1 to 40 characters in length.
+                /// It can contain letters, digits, underscores (_), and hyphens (-).
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1294,44 +2287,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 {
                     get => GetInstanceProperty<object?>();
                 }
-
-                /// <remarks>
-                /// <strong>Property</strong>: values: The values of the header.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-                public object? Values
-                {
-                    get => GetInstanceProperty<object?>();
-                }
             }
         }
-        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty")]
-        public class ResponseHeaderConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IResponseHeaderConfigProperty
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty")]
+        public class RemoveHeaderConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRemoveHeaderConfigProperty
         {
+            private object? _key;
+
             /// <remarks>
-            /// <strong>Property</strong>: key: The key of the header.
-            /// The key must be 1 to 40 characters in length
-            /// It can contain letters, digits, hyphens (-), and underscores (_).
-            /// Cookie or Host is not supported.
+            /// <strong>Property</strong>: key: The key of the response header.
+            /// The key must be 1 to 40 characters in length.
+            /// It can contain letters, digits, underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Key
             {
-                get;
-                set;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: values: The values of the header.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? Values
-            {
-                get;
-                set;
+                get => _key;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _key = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IRewriteConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.RewriteConfigProperty")]
@@ -1473,6 +2466,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.RewriteConfigProperty")]
         public class RewriteConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRewriteConfigProperty
         {
+            private object? _host;
+
             /// <remarks>
             /// <strong>Property</strong>: host: Destination host address of internal jump. Valid values:
             /// ${host} (default): If you set the value to ${host}, you cannot add other characters to the
@@ -1491,9 +2486,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "host", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Host
             {
-                get;
-                set;
+                get => _host;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _host = value;
+                }
             }
+
+            private object? _path;
 
             /// <remarks>
             /// <strong></strong>: :. It cannot contain the following special characters: " % # ; ! ( ) [ ]^ , ". It can also contain asterisks (*) and question marks (?) as wildcard characters.
@@ -1512,9 +2529,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Path
             {
-                get;
-                set;
+                get => _path;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _path = value;
+                }
             }
+
+            private object? _query;
 
             /// <remarks>
             /// <strong>Property</strong>: query: Query string for internal jump.
@@ -1530,8 +2569,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "query", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Query
             {
-                get;
-                set;
+                get => _query;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _query = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IRuleActionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.RuleActionsProperty")]
@@ -1621,11 +2680,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: removeHeaderConfig: The configuration of the header to be removed.
+            /// </remarks>
+            [JsiiProperty(name: "removeHeaderConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RemoveHeaderConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: rewriteConfig: The configuration of the internal redirect action.
             /// </remarks>
             [JsiiProperty(name: "rewriteConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.RewriteConfigProperty\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? RewriteConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: trafficLimitConfig: The configuration of the traffic limit.
+            /// </remarks>
+            [JsiiProperty(name: "trafficLimitConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TrafficLimitConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: trafficMirrorConfig: The configuration of the traffic mirror.
+            /// </remarks>
+            [JsiiProperty(name: "trafficMirrorConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TrafficMirrorConfig
             {
                 get
                 {
@@ -1712,11 +2810,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: removeHeaderConfig: The configuration of the header to be removed.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "removeHeaderConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty\"}]}}", isOptional: true)]
+                public object? RemoveHeaderConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: rewriteConfig: The configuration of the internal redirect action.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "rewriteConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.RewriteConfigProperty\"}]}}", isOptional: true)]
                 public object? RewriteConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: trafficLimitConfig: The configuration of the traffic limit.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "trafficLimitConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty\"}]}}", isOptional: true)]
+                public object? TrafficLimitConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: trafficMirrorConfig: The configuration of the traffic mirror.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "trafficMirrorConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty\"}]}}", isOptional: true)]
+                public object? TrafficMirrorConfig
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1727,6 +2855,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.RuleActionsProperty")]
         public class RuleActionsProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRuleActionsProperty
         {
+            private object _order;
+
             /// <remarks>
             /// <strong>Property</strong>: order: The priority of the action. Valid values: 1 to 50000. A lower value specifies a higher priority. The actions specified in a forwarding
             /// rule are applied in descending order of priority. This parameter is required. The
@@ -1735,9 +2865,51 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "order", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Order
             {
-                get;
-                set;
+                get => _order;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _order = value;
+                }
             }
+
+            private object _type;
 
             /// <remarks>
             /// <strong>Property</strong>: type: The action. Valid values:
@@ -1756,9 +2928,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Type
             {
-                get;
-                set;
+                get => _type;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _type = value;
+                }
             }
+
+            private object? _fixedResponseConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: fixedResponseConfig: The configuration of the fixed response.
@@ -1767,9 +2961,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "fixedResponseConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.FixedResponseConfigProperty\"}]}}", isOptional: true)]
             public object? FixedResponseConfig
             {
-                get;
-                set;
+                get => _fixedResponseConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IFixedResponseConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IFixedResponseConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _fixedResponseConfig = value;
+                }
             }
+
+            private object? _forwardGroupConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: forwardGroupConfig: The configuration of the server group.
@@ -1778,9 +2994,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "forwardGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ForwardGroupConfigProperty\"}]}}", isOptional: true)]
             public object? ForwardGroupConfig
             {
-                get;
-                set;
+                get => _forwardGroupConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IForwardGroupConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IForwardGroupConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _forwardGroupConfig = value;
+                }
             }
+
+            private object? _insertHeaderConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: insertHeaderConfig: The configuration of the header to be inserted.
@@ -1789,9 +3027,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "insertHeaderConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.InsertHeaderConfigProperty\"}]}}", isOptional: true)]
             public object? InsertHeaderConfig
             {
-                get;
-                set;
+                get => _insertHeaderConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IInsertHeaderConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IInsertHeaderConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _insertHeaderConfig = value;
+                }
             }
+
+            private object? _redirectConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: redirectConfig: The configuration of the external redirect action.
@@ -1800,9 +3060,64 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "redirectConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.RedirectConfigProperty\"}]}}", isOptional: true)]
             public object? RedirectConfig
             {
-                get;
-                set;
+                get => _redirectConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRedirectConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRedirectConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _redirectConfig = value;
+                }
             }
+
+            private object? _removeHeaderConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: removeHeaderConfig: The configuration of the header to be removed.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "removeHeaderConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.RemoveHeaderConfigProperty\"}]}}", isOptional: true)]
+            public object? RemoveHeaderConfig
+            {
+                get => _removeHeaderConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRemoveHeaderConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRemoveHeaderConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _removeHeaderConfig = value;
+                }
+            }
+
+            private object? _rewriteConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: rewriteConfig: The configuration of the internal redirect action.
@@ -1811,8 +3126,94 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "rewriteConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.RewriteConfigProperty\"}]}}", isOptional: true)]
             public object? RewriteConfig
             {
-                get;
-                set;
+                get => _rewriteConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRewriteConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRewriteConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _rewriteConfig = value;
+                }
+            }
+
+            private object? _trafficLimitConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: trafficLimitConfig: The configuration of the traffic limit.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "trafficLimitConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty\"}]}}", isOptional: true)]
+            public object? TrafficLimitConfig
+            {
+                get => _trafficLimitConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficLimitConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficLimitConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _trafficLimitConfig = value;
+                }
+            }
+
+            private object? _trafficMirrorConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: trafficMirrorConfig: The configuration of the traffic mirror.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "trafficMirrorConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty\"}]}}", isOptional: true)]
+            public object? TrafficMirrorConfig
+            {
+                get => _trafficMirrorConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficMirrorConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficMirrorConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _trafficMirrorConfig = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IRuleConditionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.RuleConditionsProperty")]
@@ -1912,11 +3313,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: responseHeaderConfig: The configuration of header.
+            /// <strong>Property</strong>: sourceIpConfig: Service traffic matching based on source IP. Required and valid when Type is SourceIP.
             /// </remarks>
-            [JsiiProperty(name: "responseHeaderConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "sourceIpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.SourceIpConfigProperty\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? ResponseHeaderConfig
+            object? SourceIpConfig
             {
                 get
                 {
@@ -2007,11 +3408,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: responseHeaderConfig: The configuration of header.
+                /// <strong>Property</strong>: sourceIpConfig: Service traffic matching based on source IP. Required and valid when Type is SourceIP.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "responseHeaderConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty\"}]}}", isOptional: true)]
-                public object? ResponseHeaderConfig
+                [JsiiProperty(name: "sourceIpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.SourceIpConfigProperty\"}]}}", isOptional: true)]
+                public object? SourceIpConfig
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -2022,6 +3423,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.RuleConditionsProperty")]
         public class RuleConditionsProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IRuleConditionsProperty
         {
+            private object _type;
+
             /// <remarks>
             /// <strong>Property</strong>: type: The type of the forwarding rule. Valid values:
             /// Host: Requests are forwarded based on hosts.
@@ -2034,9 +3437,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Type
             {
-                get;
-                set;
+                get => _type;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _type = value;
+                }
             }
+
+            private object? _cookieConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: cookieConfig: The configuration of the cookie.
@@ -2045,9 +3470,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "cookieConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.CookieConfigProperty\"}]}}", isOptional: true)]
             public object? CookieConfig
             {
-                get;
-                set;
+                get => _cookieConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ICookieConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ICookieConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _cookieConfig = value;
+                }
             }
+
+            private object? _headerConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: headerConfig: The configuration of the header.
@@ -2056,9 +3503,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "headerConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.HeaderConfigProperty\"}]}}", isOptional: true)]
             public object? HeaderConfig
             {
-                get;
-                set;
+                get => _headerConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IHeaderConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IHeaderConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _headerConfig = value;
+                }
             }
+
+            private object? _hostConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: hostConfig: The configuration of the host.
@@ -2067,9 +3536,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "hostConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.HostConfigProperty\"}]}}", isOptional: true)]
             public object? HostConfig
             {
-                get;
-                set;
+                get => _hostConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IHostConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IHostConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _hostConfig = value;
+                }
             }
+
+            private object? _methodConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: methodConfig: The configuration of the request method.
@@ -2078,9 +3569,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "methodConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MethodConfigProperty\"}]}}", isOptional: true)]
             public object? MethodConfig
             {
-                get;
-                set;
+                get => _methodConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMethodConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMethodConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _methodConfig = value;
+                }
             }
+
+            private object? _pathConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: pathConfig: The configuration of the URL.
@@ -2089,9 +3602,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "pathConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.PathConfigProperty\"}]}}", isOptional: true)]
             public object? PathConfig
             {
-                get;
-                set;
+                get => _pathConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IPathConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IPathConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _pathConfig = value;
+                }
             }
+
+            private object? _queryStringConfig;
 
             /// <remarks>
             /// <strong>Property</strong>: queryStringConfig: The configuration of the query string.
@@ -2100,19 +3635,213 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "queryStringConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.QueryStringConfigProperty\"}]}}", isOptional: true)]
             public object? QueryStringConfig
             {
-                get;
-                set;
+                get => _queryStringConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IQueryStringConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IQueryStringConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _queryStringConfig = value;
+                }
+            }
+
+            private object? _sourceIpConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: sourceIpConfig: Service traffic matching based on source IP. Required and valid when Type is SourceIP.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sourceIpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.SourceIpConfigProperty\"}]}}", isOptional: true)]
+            public object? SourceIpConfig
+            {
+                get => _sourceIpConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ISourceIpConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ISourceIpConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sourceIpConfig = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IServerGroupStickySessionProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.ServerGroupStickySessionProperty")]
+        public interface IServerGroupStickySessionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: enabled: Specifies whether to enable session persistence. Valid values:
+            /// true: enables session persistence.
+            /// false (default): disables session persistence.
+            /// </remarks>
+            [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Enabled
+            {
+                get
+                {
+                    return null;
+                }
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: responseHeaderConfig: The configuration of header.
+            /// <strong>Property</strong>: timeout: The timeout period. Unit: seconds. Default value: 1000.
+            /// </remarks>
+            [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Timeout
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IServerGroupStickySessionProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.ServerGroupStickySessionProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IServerGroupStickySessionProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enabled: Specifies whether to enable session persistence. Valid values:
+                /// true: enables session persistence.
+                /// false (default): disables session persistence.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Enabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: timeout: The timeout period. Unit: seconds. Default value: 1000.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Timeout
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.ServerGroupStickySessionProperty")]
+        public class ServerGroupStickySessionProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IServerGroupStickySessionProperty
+        {
+            private object? _enabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enabled: Specifies whether to enable session persistence. Valid values:
+            /// true: enables session persistence.
+            /// false (default): disables session persistence.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "responseHeaderConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty\"}]}}", isOptional: true)]
-            public object? ResponseHeaderConfig
+            [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Enabled
             {
-                get;
-                set;
+                get => _enabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enabled = value;
+                }
+            }
+
+            private object? _timeout;
+
+            /// <remarks>
+            /// <strong>Property</strong>: timeout: The timeout period. Unit: seconds. Default value: 1000.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Timeout
+            {
+                get => _timeout;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _timeout = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IServerGroupTuplesProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.ServerGroupTuplesProperty")]
@@ -2124,6 +3853,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? ServerGroupId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Default value: 100.
+            /// </remarks>
+            [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Weight
             {
                 get
                 {
@@ -2147,11 +3889,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 {
                     get => GetInstanceProperty<object?>();
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Default value: 100.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Weight
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.ServerGroupTuplesProperty")]
         public class ServerGroupTuplesProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IServerGroupTuplesProperty
         {
+            private object? _serverGroupId;
+
             /// <remarks>
             /// <strong>Property</strong>: serverGroupId: The server group to which requests are forwarded.
             /// </remarks>
@@ -2159,8 +3913,458 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServerGroupId
             {
+                get => _serverGroupId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _serverGroupId = value;
+                }
+            }
+
+            private object? _weight;
+
+            /// <remarks>
+            /// <strong>Property</strong>: weight: The weight of the server group. A larger value specifies a higher weight. A server group with a higher weight receives more requests. Default value: 100.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Weight
+            {
+                get => _weight;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _weight = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ISourceIpConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.SourceIpConfigProperty")]
+        public interface ISourceIpConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: values: The IP addresses or CIDR blocks.
+            /// You can specify at most five values for SourceIp.
+            /// </remarks>
+            [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Values
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ISourceIpConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.SourceIpConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ISourceIpConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: values: The IP addresses or CIDR blocks.
+                /// You can specify at most five values for SourceIp.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? Values
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.SourceIpConfigProperty")]
+        public class SourceIpConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ISourceIpConfigProperty
+        {
+            private object? _values;
+
+            /// <remarks>
+            /// <strong>Property</strong>: values: The IP addresses or CIDR blocks.
+            /// You can specify at most five values for SourceIp.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "values", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Values
+            {
+                get => _values;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case string cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _values = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITrafficLimitConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty")]
+        public interface ITrafficLimitConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: qps: Queries per second (QPS).
+            /// </remarks>
+            [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Qps
+            {
                 get;
-                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: perIpQps: QPS per IP address.
+            /// Note If both QPS and PerIpQps are set, make sure that the PerIpQps is smaller than the QPS.
+            /// </remarks>
+            [JsiiProperty(name: "perIpQps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PerIpQps
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITrafficLimitConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficLimitConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: qps: Queries per second (QPS).
+                /// </remarks>
+                [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Qps
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: perIpQps: QPS per IP address.
+                /// Note If both QPS and PerIpQps are set, make sure that the PerIpQps is smaller than the QPS.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "perIpQps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PerIpQps
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.TrafficLimitConfigProperty")]
+        public class TrafficLimitConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficLimitConfigProperty
+        {
+            private object _qps;
+
+            /// <remarks>
+            /// <strong>Property</strong>: qps: Queries per second (QPS).
+            /// </remarks>
+            [JsiiProperty(name: "qps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Qps
+            {
+                get => _qps;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _qps = value;
+                }
+            }
+
+            private object? _perIpQps;
+
+            /// <remarks>
+            /// <strong>Property</strong>: perIpQps: QPS per IP address.
+            /// Note If both QPS and PerIpQps are set, make sure that the PerIpQps is smaller than the QPS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "perIpQps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PerIpQps
+            {
+                get => _perIpQps;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _perIpQps = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITrafficMirrorConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty")]
+        public interface ITrafficMirrorConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: mirrorGroupConfig: Traffic mirroring to server groups.
+            /// </remarks>
+            [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}")]
+            object MirrorGroupConfig
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: targetType: The type of destination to which network traffic is mirrored. Valid values:
+            /// ForwardGroupMirror: a server group
+            /// SlsMirror: Log Service
+            /// </remarks>
+            [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object TargetType
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITrafficMirrorConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficMirrorConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: mirrorGroupConfig: Traffic mirroring to server groups.
+                /// </remarks>
+                [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}")]
+                public object MirrorGroupConfig
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: targetType: The type of destination to which network traffic is mirrored. Valid values:
+                /// ForwardGroupMirror: a server group
+                /// SlsMirror: Log Service
+                /// </remarks>
+                [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object TargetType
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.TrafficMirrorConfigProperty")]
+        public class TrafficMirrorConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.ITrafficMirrorConfigProperty
+        {
+            private object _mirrorGroupConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: mirrorGroupConfig: Traffic mirroring to server groups.
+            /// </remarks>
+            [JsiiProperty(name: "mirrorGroupConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosRule.MirrorGroupConfigProperty\"}]}}")]
+            public object MirrorGroupConfig
+            {
+                get => _mirrorGroupConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigProperty).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IMirrorGroupConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _mirrorGroupConfig = value;
+                }
+            }
+
+            private object _targetType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: targetType: The type of destination to which network traffic is mirrored. Valid values:
+            /// ForwardGroupMirror: a server group
+            /// SlsMirror: Log Service
+            /// </remarks>
+            [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TargetType
+            {
+                get => _targetType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _targetType = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IValuesProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosRule.ValuesProperty")]
@@ -2235,6 +4439,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosRule.ValuesProperty")]
         public class ValuesProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosRule.IValuesProperty
         {
+            private object? _key;
+
             /// <remarks>
             /// <strong>Property</strong>: key: The key of the cookie.
             /// The key must be 1 to 100 characters in length
@@ -2245,9 +4451,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Key
             {
-                get;
-                set;
+                get => _key;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _key = value;
+                }
             }
+
+            private object? _value;
 
             /// <remarks>
             /// <strong>Property</strong>: value: The value of the cookie.
@@ -2259,8 +4487,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Value
             {
-                get;
-                set;
+                get => _value;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _value = value;
+                }
             }
         }
     }

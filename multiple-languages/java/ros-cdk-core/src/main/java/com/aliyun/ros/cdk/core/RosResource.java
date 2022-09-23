@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a ROS resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.590Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.801Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosResource")
 public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
 
@@ -41,6 +41,19 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
     }
 
     public void addCount(final @org.jetbrains.annotations.NotNull java.lang.Object count) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(count instanceof java.lang.Number)
+                && !(count instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(count.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("count")
+                        .append(" to be one of: java.lang.Number, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(count.getClass()).toString());
+            }
+        }
         software.amazon.jsii.Kernel.call(this, "addCount", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(count, "count is required") });
     }
 

@@ -29,6 +29,7 @@ export * from './snatentry';
 export * from './sslvpnclientcert';
 export * from './sslvpnserver';
 export * from './virtualborderrouter';
+export * from './vpcpeerconnection';
 export * from './vpnconnection';
 export * from './vpngateway';
 export * from './vpnpbrrouteentry';

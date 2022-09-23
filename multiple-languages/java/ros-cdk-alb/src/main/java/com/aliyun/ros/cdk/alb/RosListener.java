@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS template type:  `ALIYUN::ALB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.683Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.912Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -68,6 +68,22 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setDefaultActions(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.alb.RosListener.DefaultActionsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.alb.RosListener.DefaultActionsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "defaultActions", java.util.Objects.requireNonNull(value, "defaultActions is required"));
     }
 
@@ -135,6 +151,58 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCaCertificates() {
+        return software.amazon.jsii.Kernel.get(this, "caCertificates", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCaCertificates(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "caCertificates", value);
+    }
+
+    /**
+     */
+    public void setCaCertificates(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.alb.RosListener.CaCertificatesProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.alb.RosListener.CaCertificatesProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "caCertificates", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCaEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "caEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCaEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "caEnabled", value);
+    }
+
+    /**
+     */
+    public void setCaEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "caEnabled", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getCertificates() {
         return software.amazon.jsii.Kernel.get(this, "certificates", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -148,6 +216,22 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
     /**
      */
     public void setCertificates(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.alb.RosListener.CertificatesProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.alb.RosListener.CertificatesProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "certificates", value);
     }
 
@@ -293,6 +377,135 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setXForwardedForConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.alb.RosListener.XForwardedForConfigProperty value) {
         software.amazon.jsii.Kernel.set(this, "xForwardedForConfig", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosListener.CaCertificatesProperty")
+    @software.amazon.jsii.Jsii.Proxy(CaCertificatesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CaCertificatesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCertificateId() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link CaCertificatesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CaCertificatesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CaCertificatesProperty> {
+            java.lang.Object certificateId;
+
+            /**
+             * Sets the value of {@link CaCertificatesProperty#getCertificateId}
+             * @param certificateId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder certificateId(java.lang.String certificateId) {
+                this.certificateId = certificateId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CaCertificatesProperty#getCertificateId}
+             * @param certificateId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder certificateId(com.aliyun.ros.cdk.core.IResolvable certificateId) {
+                this.certificateId = certificateId;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CaCertificatesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CaCertificatesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CaCertificatesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CaCertificatesProperty {
+            private final java.lang.Object certificateId;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.certificateId = software.amazon.jsii.Kernel.get(this, "certificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.certificateId = builder.certificateId;
+            }
+
+            @Override
+            public final java.lang.Object getCertificateId() {
+                return this.certificateId;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getCertificateId() != null) {
+                    data.set("certificateId", om.valueToTree(this.getCertificateId()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosListener.CaCertificatesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CaCertificatesProperty.Jsii$Proxy that = (CaCertificatesProperty.Jsii$Proxy) o;
+
+                return this.certificateId != null ? this.certificateId.equals(that.certificateId) : that.certificateId == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.certificateId != null ? this.certificateId.hashCode() : 0;
+                return result;
+            }
+        }
     }
     /**
      */
@@ -1075,6 +1288,20 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForClientSourceIpsEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForClientSourceIpsTrusted() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForClientSrcPortEnabled() {
             return null;
         }
@@ -1127,6 +1354,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object xForwardedForClientCertIssuerDnEnabled;
             java.lang.Object xForwardedForClientCertSubjectDnAlias;
             java.lang.Object xForwardedForClientCertSubjectDnEnabled;
+            java.lang.Object xForwardedForClientSourceIpsEnabled;
+            java.lang.Object xForwardedForClientSourceIpsTrusted;
             java.lang.Object xForwardedForClientSrcPortEnabled;
             java.lang.Object xForwardedForEnabled;
             java.lang.Object xForwardedForProtoEnabled;
@@ -1310,6 +1539,50 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForClientSourceIpsEnabled}
+             * @param xForwardedForClientSourceIpsEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForClientSourceIpsEnabled(java.lang.Boolean xForwardedForClientSourceIpsEnabled) {
+                this.xForwardedForClientSourceIpsEnabled = xForwardedForClientSourceIpsEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForClientSourceIpsEnabled}
+             * @param xForwardedForClientSourceIpsEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForClientSourceIpsEnabled(com.aliyun.ros.cdk.core.IResolvable xForwardedForClientSourceIpsEnabled) {
+                this.xForwardedForClientSourceIpsEnabled = xForwardedForClientSourceIpsEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForClientSourceIpsTrusted}
+             * @param xForwardedForClientSourceIpsTrusted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForClientSourceIpsTrusted(java.lang.String xForwardedForClientSourceIpsTrusted) {
+                this.xForwardedForClientSourceIpsTrusted = xForwardedForClientSourceIpsTrusted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForClientSourceIpsTrusted}
+             * @param xForwardedForClientSourceIpsTrusted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForClientSourceIpsTrusted(com.aliyun.ros.cdk.core.IResolvable xForwardedForClientSourceIpsTrusted) {
+                this.xForwardedForClientSourceIpsTrusted = xForwardedForClientSourceIpsTrusted;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForClientSrcPortEnabled}
              * @param xForwardedForClientSrcPortEnabled the value to be set.
              * @return {@code this}
@@ -1445,6 +1718,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object xForwardedForClientCertIssuerDnEnabled;
             private final java.lang.Object xForwardedForClientCertSubjectDnAlias;
             private final java.lang.Object xForwardedForClientCertSubjectDnEnabled;
+            private final java.lang.Object xForwardedForClientSourceIpsEnabled;
+            private final java.lang.Object xForwardedForClientSourceIpsTrusted;
             private final java.lang.Object xForwardedForClientSrcPortEnabled;
             private final java.lang.Object xForwardedForEnabled;
             private final java.lang.Object xForwardedForProtoEnabled;
@@ -1465,6 +1740,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 this.xForwardedForClientCertIssuerDnEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForClientCertIssuerDnEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForClientCertSubjectDnAlias = software.amazon.jsii.Kernel.get(this, "xForwardedForClientCertSubjectDnAlias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForClientCertSubjectDnEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForClientCertSubjectDnEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForClientSourceIpsEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForClientSourceIpsEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForClientSourceIpsTrusted = software.amazon.jsii.Kernel.get(this, "xForwardedForClientSourceIpsTrusted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForClientSrcPortEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForClientSrcPortEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForProtoEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForProtoEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1485,6 +1762,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 this.xForwardedForClientCertIssuerDnEnabled = builder.xForwardedForClientCertIssuerDnEnabled;
                 this.xForwardedForClientCertSubjectDnAlias = builder.xForwardedForClientCertSubjectDnAlias;
                 this.xForwardedForClientCertSubjectDnEnabled = builder.xForwardedForClientCertSubjectDnEnabled;
+                this.xForwardedForClientSourceIpsEnabled = builder.xForwardedForClientSourceIpsEnabled;
+                this.xForwardedForClientSourceIpsTrusted = builder.xForwardedForClientSourceIpsTrusted;
                 this.xForwardedForClientSrcPortEnabled = builder.xForwardedForClientSrcPortEnabled;
                 this.xForwardedForEnabled = builder.xForwardedForEnabled;
                 this.xForwardedForProtoEnabled = builder.xForwardedForProtoEnabled;
@@ -1530,6 +1809,16 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getXForwardedForClientCertSubjectDnEnabled() {
                 return this.xForwardedForClientCertSubjectDnEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getXForwardedForClientSourceIpsEnabled() {
+                return this.xForwardedForClientSourceIpsEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getXForwardedForClientSourceIpsTrusted() {
+                return this.xForwardedForClientSourceIpsTrusted;
             }
 
             @Override
@@ -1587,6 +1876,12 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getXForwardedForClientCertSubjectDnEnabled() != null) {
                     data.set("xForwardedForClientCertSubjectDnEnabled", om.valueToTree(this.getXForwardedForClientCertSubjectDnEnabled()));
                 }
+                if (this.getXForwardedForClientSourceIpsEnabled() != null) {
+                    data.set("xForwardedForClientSourceIpsEnabled", om.valueToTree(this.getXForwardedForClientSourceIpsEnabled()));
+                }
+                if (this.getXForwardedForClientSourceIpsTrusted() != null) {
+                    data.set("xForwardedForClientSourceIpsTrusted", om.valueToTree(this.getXForwardedForClientSourceIpsTrusted()));
+                }
                 if (this.getXForwardedForClientSrcPortEnabled() != null) {
                     data.set("xForwardedForClientSrcPortEnabled", om.valueToTree(this.getXForwardedForClientSrcPortEnabled()));
                 }
@@ -1628,6 +1923,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.xForwardedForClientCertIssuerDnEnabled != null ? !this.xForwardedForClientCertIssuerDnEnabled.equals(that.xForwardedForClientCertIssuerDnEnabled) : that.xForwardedForClientCertIssuerDnEnabled != null) return false;
                 if (this.xForwardedForClientCertSubjectDnAlias != null ? !this.xForwardedForClientCertSubjectDnAlias.equals(that.xForwardedForClientCertSubjectDnAlias) : that.xForwardedForClientCertSubjectDnAlias != null) return false;
                 if (this.xForwardedForClientCertSubjectDnEnabled != null ? !this.xForwardedForClientCertSubjectDnEnabled.equals(that.xForwardedForClientCertSubjectDnEnabled) : that.xForwardedForClientCertSubjectDnEnabled != null) return false;
+                if (this.xForwardedForClientSourceIpsEnabled != null ? !this.xForwardedForClientSourceIpsEnabled.equals(that.xForwardedForClientSourceIpsEnabled) : that.xForwardedForClientSourceIpsEnabled != null) return false;
+                if (this.xForwardedForClientSourceIpsTrusted != null ? !this.xForwardedForClientSourceIpsTrusted.equals(that.xForwardedForClientSourceIpsTrusted) : that.xForwardedForClientSourceIpsTrusted != null) return false;
                 if (this.xForwardedForClientSrcPortEnabled != null ? !this.xForwardedForClientSrcPortEnabled.equals(that.xForwardedForClientSrcPortEnabled) : that.xForwardedForClientSrcPortEnabled != null) return false;
                 if (this.xForwardedForEnabled != null ? !this.xForwardedForEnabled.equals(that.xForwardedForEnabled) : that.xForwardedForEnabled != null) return false;
                 if (this.xForwardedForProtoEnabled != null ? !this.xForwardedForProtoEnabled.equals(that.xForwardedForProtoEnabled) : that.xForwardedForProtoEnabled != null) return false;
@@ -1645,6 +1942,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.xForwardedForClientCertIssuerDnEnabled != null ? this.xForwardedForClientCertIssuerDnEnabled.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForClientCertSubjectDnAlias != null ? this.xForwardedForClientCertSubjectDnAlias.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForClientCertSubjectDnEnabled != null ? this.xForwardedForClientCertSubjectDnEnabled.hashCode() : 0);
+                result = 31 * result + (this.xForwardedForClientSourceIpsEnabled != null ? this.xForwardedForClientSourceIpsEnabled.hashCode() : 0);
+                result = 31 * result + (this.xForwardedForClientSourceIpsTrusted != null ? this.xForwardedForClientSourceIpsTrusted.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForClientSrcPortEnabled != null ? this.xForwardedForClientSrcPortEnabled.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForEnabled != null ? this.xForwardedForEnabled.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForProtoEnabled != null ? this.xForwardedForProtoEnabled.hashCode() : 0);
@@ -1746,6 +2045,40 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
             this.props.loadBalancerId(loadBalancerId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param caCertificates This parameter is required.
+         */
+        public Builder caCertificates(final com.aliyun.ros.cdk.core.IResolvable caCertificates) {
+            this.props.caCertificates(caCertificates);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param caCertificates This parameter is required.
+         */
+        public Builder caCertificates(final java.util.List<? extends java.lang.Object> caCertificates) {
+            this.props.caCertificates(caCertificates);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param caEnabled This parameter is required.
+         */
+        public Builder caEnabled(final java.lang.Boolean caEnabled) {
+            this.props.caEnabled(caEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param caEnabled This parameter is required.
+         */
+        public Builder caEnabled(final com.aliyun.ros.cdk.core.IResolvable caEnabled) {
+            this.props.caEnabled(caEnabled);
             return this;
         }
 

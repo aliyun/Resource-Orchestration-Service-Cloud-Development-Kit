@@ -6,6 +6,7 @@ export * from './dbinstanceclone';
 export * from './dbinstanceparametergroup';
 export * from './dbinstancesecurityips';
 export * from './database';
+export * from './migratetask';
 export * from './prepaydbinstance';
 export * from './readonlydbinstance';
 

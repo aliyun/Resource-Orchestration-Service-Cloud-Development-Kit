@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.584Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.636Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -94,27 +94,6 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
             this.props = new com.aliyun.ros.cdk.slb.ListenerProps.Builder();
-        }
-
-        /**
-         * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
-         * <p>
-         * @return {@code this}
-         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
-         */
-        public Builder backendServerPort(final java.lang.Number backendServerPort) {
-            this.props.backendServerPort(backendServerPort);
-            return this;
-        }
-        /**
-         * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
-         * <p>
-         * @return {@code this}
-         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
-         */
-        public Builder backendServerPort(final com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
-            this.props.backendServerPort(backendServerPort);
-            return this;
         }
 
         /**
@@ -301,6 +280,27 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder aclType(final com.aliyun.ros.cdk.core.IResolvable aclType) {
             this.props.aclType(aclType);
+            return this;
+        }
+
+        /**
+         * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+         * <p>
+         * @return {@code this}
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
+         */
+        public Builder backendServerPort(final java.lang.Number backendServerPort) {
+            this.props.backendServerPort(backendServerPort);
+            return this;
+        }
+        /**
+         * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+         * <p>
+         * @return {@code this}
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
+         */
+        public Builder backendServerPort(final com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
+            this.props.backendServerPort(backendServerPort);
             return this;
         }
 

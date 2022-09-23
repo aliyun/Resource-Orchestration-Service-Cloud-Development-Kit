@@ -18,6 +18,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             set;
         }
 
+        private object? _data;
+
         /// <summary>The data.</summary>
         /// <remarks>
         /// <strong>Default</strong>: - no data.
@@ -26,8 +28,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         [JsiiProperty(name: "data", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.Tag\"},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? Data
         {
-            get;
-            set;
+            get => _data;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.ITag[] cast_cd4240:
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.ITag).FullName}[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _data = value;
+            }
         }
 
         /// <summary>A stack trace for when the entry was created.</summary>

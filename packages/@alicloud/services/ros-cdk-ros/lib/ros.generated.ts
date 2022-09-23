@@ -621,7 +621,7 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
     if(properties.disabledSideEffects && (Array.isArray(properties.disabledSideEffects) || (typeof properties.disabledSideEffects) === 'string')) {
         errors.collect(ros.propertyValidator('disabledSideEffects', ros.validateLength)({
             data: properties.disabledSideEffects.length,
-            min: 1,
+            min: undefined,
             max: 50,
           }));
     }
@@ -629,7 +629,7 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
     if(properties.excludedResources && (Array.isArray(properties.excludedResources) || (typeof properties.excludedResources) === 'string')) {
         errors.collect(ros.propertyValidator('excludedResources', ros.validateLength)({
             data: properties.excludedResources.length,
-            min: 1,
+            min: undefined,
             max: 1000,
           }));
     }
@@ -952,7 +952,7 @@ function RosResourceCleaner_ExcludedResourcesPropertyValidator(properties: any):
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ADB:DBCluster","ALB:LoadBalancer","ALB:ServerGroup","CDN:Domain","DCDN:Domain","DNS:Domain","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","NAS:AccessGroup","NAS:FileSystem","OOS:Template","POLARDB:DBCluster","RDS:DBInstance","ROCKETMQ:Instance","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EipSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","EMR:Cluster","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","MONGODB:Instance","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","OOS:Execution","OOS:Template","OSS:Bucket","POLARDB:DBCluster","PVTZ:Zone","RDS:DBInstance","REDIS:Instance","ROCKETMQ:Instance","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -1047,7 +1047,7 @@ function RosResourceCleaner_ResourceFiltersPropertyValidator(properties: any): r
     if(properties.resourceTypePatterns && (Array.isArray(properties.resourceTypePatterns) || (typeof properties.resourceTypePatterns) === 'string')) {
         errors.collect(ros.propertyValidator('resourceTypePatterns', ros.validateLength)({
             data: properties.resourceTypePatterns.length,
-            min: 1,
+            min: undefined,
             max: 100,
           }));
     }
@@ -1055,7 +1055,7 @@ function RosResourceCleaner_ResourceFiltersPropertyValidator(properties: any): r
     if(properties.resourceIds && (Array.isArray(properties.resourceIds) || (typeof properties.resourceIds) === 'string')) {
         errors.collect(ros.propertyValidator('resourceIds', ros.validateLength)({
             data: properties.resourceIds.length,
-            min: 1,
+            min: undefined,
             max: 100,
           }));
     }
@@ -1063,7 +1063,7 @@ function RosResourceCleaner_ResourceFiltersPropertyValidator(properties: any): r
     if(properties.regionIds && (Array.isArray(properties.regionIds) || (typeof properties.regionIds) === 'string')) {
         errors.collect(ros.propertyValidator('regionIds', ros.validateLength)({
             data: properties.regionIds.length,
-            min: 1,
+            min: undefined,
             max: 100,
           }));
     }
@@ -1071,7 +1071,7 @@ function RosResourceCleaner_ResourceFiltersPropertyValidator(properties: any): r
     if(properties.resourceGroupIds && (Array.isArray(properties.resourceGroupIds) || (typeof properties.resourceGroupIds) === 'string')) {
         errors.collect(ros.propertyValidator('resourceGroupIds', ros.validateLength)({
             data: properties.resourceGroupIds.length,
-            min: 1,
+            min: undefined,
             max: 100,
           }));
     }
@@ -1086,7 +1086,7 @@ function RosResourceCleaner_ResourceFiltersPropertyValidator(properties: any): r
     if(properties.resourceNamePatterns && (Array.isArray(properties.resourceNamePatterns) || (typeof properties.resourceNamePatterns) === 'string')) {
         errors.collect(ros.propertyValidator('resourceNamePatterns', ros.validateLength)({
             data: properties.resourceNamePatterns.length,
-            min: 1,
+            min: undefined,
             max: 100,
           }));
     }
@@ -1094,7 +1094,7 @@ function RosResourceCleaner_ResourceFiltersPropertyValidator(properties: any): r
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
-            min: 1,
+            min: undefined,
             max: 100,
           }));
     }
@@ -1168,7 +1168,7 @@ function RosResourceCleaner_ResourcesPropertyValidator(properties: any): ros.Val
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ADB:DBCluster","ALB:LoadBalancer","ALB:ServerGroup","CDN:Domain","DCDN:Domain","DNS:Domain","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","NAS:AccessGroup","NAS:FileSystem","OOS:Template","POLARDB:DBCluster","RDS:DBInstance","ROCKETMQ:Instance","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EipSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","EMR:Cluster","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","MONGODB:Instance","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","OOS:Execution","OOS:Template","OSS:Bucket","POLARDB:DBCluster","PVTZ:Zone","RDS:DBInstance","REDIS:Instance","ROCKETMQ:Instance","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));

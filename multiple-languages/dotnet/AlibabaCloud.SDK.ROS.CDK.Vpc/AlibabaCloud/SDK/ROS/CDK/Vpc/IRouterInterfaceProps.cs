@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     {
         /// <summary>Property role: RouterInterface role.</summary>
         /// <remarks>
-        /// Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+        /// Now support 'InitiatingSide|AcceptingSide'.
         /// </remarks>
         [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Role
@@ -202,7 +202,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property period: Prepaid time period.</summary>
         /// <remarks>
-        /// It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+        /// It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
         /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -266,7 +266,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <summary>Property role: RouterInterface role.</summary>
             /// <remarks>
-            /// Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+            /// Now support 'InitiatingSide|AcceptingSide'.
             /// </remarks>
             [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Role
@@ -419,7 +419,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <summary>Property period: Prepaid time period.</summary>
             /// <remarks>
-            /// It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+            /// It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

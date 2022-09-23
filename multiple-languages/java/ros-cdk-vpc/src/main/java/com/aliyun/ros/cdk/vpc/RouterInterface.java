@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::RouterInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.966Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouterInterface")
 public class RouterInterface extends com.aliyun.ros.cdk.core.Resource {
 
@@ -92,7 +92,7 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property role: RouterInterface role.
          * <p>
-         * Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+         * Now support 'InitiatingSide|AcceptingSide'.
          * <p>
          * @return {@code this}
          * @param role Property role: RouterInterface role. This parameter is required.
@@ -104,7 +104,7 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property role: RouterInterface role.
          * <p>
-         * Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+         * Now support 'InitiatingSide|AcceptingSide'.
          * <p>
          * @return {@code this}
          * @param role Property role: RouterInterface role. This parameter is required.
@@ -455,7 +455,7 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property period: Prepaid time period.
          * <p>
-         * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
          * <p>
          * @return {@code this}
          * @param period Property period: Prepaid time period. This parameter is required.
@@ -467,7 +467,7 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property period: Prepaid time period.
          * <p>
-         * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year.
          * <p>
          * @return {@code this}
          * @param period Property period: Prepaid time period. This parameter is required.

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * <code>Fn::Not</code> acts as a NOT operator.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.550Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.767Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnNot")
 public class FnNot extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliyun.ros.cdk.core.IRosConditionExpression {
 
@@ -24,6 +24,19 @@ public class FnNot extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliy
      */
     public FnNot(final @org.jetbrains.annotations.NotNull java.lang.Object condition) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(condition instanceof java.lang.String)
+                && !(condition instanceof com.aliyun.ros.cdk.core.IRosConditionExpression)
+                && !(condition.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("condition")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IRosConditionExpression; received ")
+                        .append(condition.getClass()).toString());
+            }
+        }
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(condition, "condition is required") });
     }
 }

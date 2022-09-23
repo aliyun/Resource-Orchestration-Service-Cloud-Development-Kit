@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-ebs.DiskReplicaPairAddition=com.aliyun.ros.cdk.ebs.DiskReplicaPairAddition
+@alicloud/ros-cdk-ebs.DiskReplicaPairAdditionProps=com.aliyun.ros.cdk.ebs.DiskReplicaPairAdditionProps
+@alicloud/ros-cdk-ebs.RosDiskReplicaPairAddition=com.aliyun.ros.cdk.ebs.RosDiskReplicaPairAddition
+@alicloud/ros-cdk-ebs.RosDiskReplicaPairAdditionProps=com.aliyun.ros.cdk.ebs.RosDiskReplicaPairAdditionProps

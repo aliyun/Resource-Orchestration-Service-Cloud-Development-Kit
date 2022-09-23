@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * A ROS resource type:  `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:04.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.944Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -49,7 +49,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute AclEntryList: acl entry list.
+     * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAclEntryList() {
         return software.amazon.jsii.Kernel.get(this, "attrAclEntryList", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -91,7 +91,15 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute ClusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c.
+     * Attribute ClusterSpecification: Cluster specifications.
+     * <p>
+     * Note the msversion requirements of the version parameter,
+     * Optional parameters:
+     * "MSE_ SC <em>1_2_60_c",
+     * "MSE</em> SC <em>2_4_60_c",
+     * "MSE</em> SC <em>4_8_60_c",
+     * "MSE</em> SC <em>8_16_60_c",
+     * "MSE</em> SC _16_32_60_c"
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterSpecification() {
         return software.amazon.jsii.Kernel.get(this, "attrClusterSpecification", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -105,10 +113,28 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.
+     * Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterVersion() {
         return software.amazon.jsii.Kernel.get(this, "attrClusterVersion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ConfigAuthEnabled: Whether the configuration supports it.
+     * <p>
+     * Valid values: true: false: not supported
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConfigAuthEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "attrConfigAuthEnabled", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ConfigSecretEnabled: Whether the configuration password takes effect.
+     * <p>
+     * The value is as follows: true: valid false: not valid
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConfigSecretEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "attrConfigSecretEnabled", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -203,6 +229,13 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMcpEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "attrMcpEnabled", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute MemoryCapacity: memory capacity.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMemoryCapacity() {
@@ -210,17 +243,19 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute MseVersion: This parameter is required when creating a professional version. The value is as follows:.
+     * Attribute MseVersion: Required, the value is as follows:.
      * <p>
-     * -'mse_basic': indicates the basic version (default value).
-     * -'mse_pro': means professional version.
+     * -'mse_dev': indicates the development version.
+     * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMseVersion() {
         return software.amazon.jsii.Kernel.get(this, "attrMseVersion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
-     * Attribute NetType: network type, Enum: privatenet,pubnet.
+     * Attribute NetType: Network type (whether private network is enabled or not).
+     * <p>
+     * privatenet indicates that private network is enabled.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetType() {
         return software.amazon.jsii.Kernel.get(this, "attrNetType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -234,7 +269,9 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute PubNetworkFlow: pub network flow.
+     * Attribute PubNetworkFlow: Public network bandwidth.
+     * <p>
+     * If the bandwidth is greater than 0, the public network is enabled.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPubNetworkFlow() {
         return software.amazon.jsii.Kernel.get(this, "attrPubNetworkFlow", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -289,20 +326,36 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c.
+         * Property clusterSpecification: Cluster specifications.
+         * <p>
+         * Note the msversion requirements of the version parameter,
+         * Optional parameters:
+         * "MSE_ SC <em>1_2_60_c",
+         * "MSE</em> SC <em>2_4_60_c",
+         * "MSE</em> SC <em>4_8_60_c",
+         * "MSE</em> SC <em>8_16_60_c",
+         * "MSE</em> SC _16_32_60_c"
          * <p>
          * @return {@code this}
-         * @param clusterSpecification Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c. This parameter is required.
+         * @param clusterSpecification Property clusterSpecification: Cluster specifications. This parameter is required.
          */
         public Builder clusterSpecification(final java.lang.String clusterSpecification) {
             this.props.clusterSpecification(clusterSpecification);
             return this;
         }
         /**
-         * Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c.
+         * Property clusterSpecification: Cluster specifications.
+         * <p>
+         * Note the msversion requirements of the version parameter,
+         * Optional parameters:
+         * "MSE_ SC <em>1_2_60_c",
+         * "MSE</em> SC <em>2_4_60_c",
+         * "MSE</em> SC <em>4_8_60_c",
+         * "MSE</em> SC <em>8_16_60_c",
+         * "MSE</em> SC _16_32_60_c"
          * <p>
          * @return {@code this}
-         * @param clusterSpecification Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c. This parameter is required.
+         * @param clusterSpecification Property clusterSpecification: Cluster specifications. This parameter is required.
          */
         public Builder clusterSpecification(final com.aliyun.ros.cdk.core.IResolvable clusterSpecification) {
             this.props.clusterSpecification(clusterSpecification);
@@ -331,20 +384,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.
+         * Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
          * <p>
          * @return {@code this}
-         * @param clusterVersion Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0. This parameter is required.
+         * @param clusterVersion Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0. This parameter is required.
          */
         public Builder clusterVersion(final java.lang.String clusterVersion) {
             this.props.clusterVersion(clusterVersion);
             return this;
         }
         /**
-         * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.
+         * Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.
          * <p>
          * @return {@code this}
-         * @param clusterVersion Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0. This parameter is required.
+         * @param clusterVersion Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0. This parameter is required.
          */
         public Builder clusterVersion(final com.aliyun.ros.cdk.core.IResolvable clusterVersion) {
             this.props.clusterVersion(clusterVersion);
@@ -373,20 +426,24 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property netType: network type, Enum: privatenet,pubnet.
+         * Property netType: Network type (whether private network is enabled or not).
+         * <p>
+         * privatenet indicates that private network is enabled.
          * <p>
          * @return {@code this}
-         * @param netType Property netType: network type, Enum: privatenet,pubnet. This parameter is required.
+         * @param netType Property netType: Network type (whether private network is enabled or not). This parameter is required.
          */
         public Builder netType(final java.lang.String netType) {
             this.props.netType(netType);
             return this;
         }
         /**
-         * Property netType: network type, Enum: privatenet,pubnet.
+         * Property netType: Network type (whether private network is enabled or not).
+         * <p>
+         * privatenet indicates that private network is enabled.
          * <p>
          * @return {@code this}
-         * @param netType Property netType: network type, Enum: privatenet,pubnet. This parameter is required.
+         * @param netType Property netType: Network type (whether private network is enabled or not). This parameter is required.
          */
         public Builder netType(final com.aliyun.ros.cdk.core.IResolvable netType) {
             this.props.netType(netType);
@@ -415,20 +472,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property aclEntryList: acl entry list.
+         * Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
          * <p>
          * @return {@code this}
-         * @param aclEntryList Property aclEntryList: acl entry list. This parameter is required.
+         * @param aclEntryList Property aclEntryList: The public network whitelist list is used only when the public network is enabled. This parameter is required.
          */
         public Builder aclEntryList(final com.aliyun.ros.cdk.core.IResolvable aclEntryList) {
             this.props.aclEntryList(aclEntryList);
             return this;
         }
         /**
-         * Property aclEntryList: acl entry list.
+         * Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
          * <p>
          * @return {@code this}
-         * @param aclEntryList Property aclEntryList: acl entry list. This parameter is required.
+         * @param aclEntryList Property aclEntryList: The public network whitelist list is used only when the public network is enabled. This parameter is required.
          */
         public Builder aclEntryList(final java.util.List<? extends java.lang.Object> aclEntryList) {
             this.props.aclEntryList(aclEntryList);
@@ -499,26 +556,26 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.
+         * Property mseVersion: Required, the value is as follows:.
          * <p>
-         * -'mse_basic': indicates the basic version (default value).
-         * -'mse_pro': means professional version.
+         * -'mse_dev': indicates the development version.
+         * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
          * <p>
          * @return {@code this}
-         * @param mseVersion Property mseVersion: This parameter is required when creating a professional version. The value is as follows:. This parameter is required.
+         * @param mseVersion Property mseVersion: Required, the value is as follows:. This parameter is required.
          */
         public Builder mseVersion(final java.lang.String mseVersion) {
             this.props.mseVersion(mseVersion);
             return this;
         }
         /**
-         * Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.
+         * Property mseVersion: Required, the value is as follows:.
          * <p>
-         * -'mse_basic': indicates the basic version (default value).
-         * -'mse_pro': means professional version.
+         * -'mse_dev': indicates the development version.
+         * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
          * <p>
          * @return {@code this}
-         * @param mseVersion Property mseVersion: This parameter is required when creating a professional version. The value is as follows:. This parameter is required.
+         * @param mseVersion Property mseVersion: Required, the value is as follows:. This parameter is required.
          */
         public Builder mseVersion(final com.aliyun.ros.cdk.core.IResolvable mseVersion) {
             this.props.mseVersion(mseVersion);
@@ -547,20 +604,24 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property pubNetworkFlow: pub network flow.
+         * Property pubNetworkFlow: Public network bandwidth.
+         * <p>
+         * If the bandwidth is greater than 0, the public network is enabled.
          * <p>
          * @return {@code this}
-         * @param pubNetworkFlow Property pubNetworkFlow: pub network flow. This parameter is required.
+         * @param pubNetworkFlow Property pubNetworkFlow: Public network bandwidth. This parameter is required.
          */
         public Builder pubNetworkFlow(final java.lang.String pubNetworkFlow) {
             this.props.pubNetworkFlow(pubNetworkFlow);
             return this;
         }
         /**
-         * Property pubNetworkFlow: pub network flow.
+         * Property pubNetworkFlow: Public network bandwidth.
+         * <p>
+         * If the bandwidth is greater than 0, the public network is enabled.
          * <p>
          * @return {@code this}
-         * @param pubNetworkFlow Property pubNetworkFlow: pub network flow. This parameter is required.
+         * @param pubNetworkFlow Property pubNetworkFlow: Public network bandwidth. This parameter is required.
          */
         public Builder pubNetworkFlow(final com.aliyun.ros.cdk.core.IResolvable pubNetworkFlow) {
             this.props.pubNetworkFlow(pubNetworkFlow);

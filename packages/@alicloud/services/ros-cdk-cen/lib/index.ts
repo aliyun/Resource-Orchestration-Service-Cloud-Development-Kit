@@ -6,6 +6,7 @@ export * from './ceninstanceattachment';
 export * from './cenroutemap';
 export * from './cenrouteservice';
 export * from './cenvbrhealthcheck';
+export * from './childinstancerouteentrytoattachment';
 export * from './routeentry';
 export * from './transitrouter';
 export * from './transitrouterpeerattachment';

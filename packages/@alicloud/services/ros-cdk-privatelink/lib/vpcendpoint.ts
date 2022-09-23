@@ -32,6 +32,18 @@ export interface VpcEndpointProps {
     readonly endpointName?: string | ros.IResolvable;
 
     /**
+     * Property endpointType: Endpoint type.
+     */
+    readonly endpointType?: string | ros.IResolvable;
+
+    /**
+     * Property protectedEnabled: Specifies whether to enable user authentication. This parameter is available in Security Token Service (STS) mode. Valid values:
+     * true: yes After user authentication is enabled, only the user who creates the endpoint can modify or delete the endpoint in STS mode.
+     * false (default): no
+     */
+    readonly protectedEnabled?: boolean | ros.IResolvable;
+
+    /**
      * Property serviceId: The endpoint service that is associated with the endpoint. One of ServiceId and ServiceName is required.
      */
     readonly serviceId?: string | ros.IResolvable;
@@ -45,6 +57,11 @@ export interface VpcEndpointProps {
      * Property zone:
      */
     readonly zone?: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property zonePrivateIpAddressCount: The number of private IP addresses that can be used by an elastic network interface (ENI) in each zone. Set the value to 1.
+     */
+    readonly zonePrivateIpAddressCount?: number | ros.IResolvable;
 }
 
 /**
@@ -108,11 +125,14 @@ export class VpcEndpoint extends ros.Resource {
         super(scope, id);
 
         const rosVpcEndpoint = new RosVpcEndpoint(this, id,  {
+            protectedEnabled: props.protectedEnabled,
             vpcId: props.vpcId,
             endpointName: props.endpointName,
             serviceName: props.serviceName,
             zone: props.zone,
             securityGroupId: props.securityGroupId,
+            endpointType: props.endpointType,
+            zonePrivateIpAddressCount: props.zonePrivateIpAddressCount,
             endpointDescription: props.endpointDescription,
             serviceId: props.serviceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

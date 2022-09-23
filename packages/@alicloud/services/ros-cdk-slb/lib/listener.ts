@@ -9,11 +9,6 @@ export { RosListener as ListenerProperty };
 export interface ListenerProps {
 
     /**
-     * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
-     */
-    readonly backendServerPort: number | ros.IResolvable;
-
-    /**
      * Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second). If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
      */
     readonly bandwidth: number | ros.IResolvable;
@@ -57,6 +52,11 @@ export interface ListenerProps {
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
     readonly aclType?: string | ros.IResolvable;
+
+    /**
+     * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+     */
+    readonly backendServerPort?: number | ros.IResolvable;
 
     /**
      * Property caCertificateId: CA server certificate id, for https listener only.

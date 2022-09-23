@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.668Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.895Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,7 +33,23 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
-     * Property certificates: The content of the SSL certificate.
+     * Property caCertificates: List of configured CA certificates for listener.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCaCertificates() {
+        return null;
+    }
+
+    /**
+     * Property caEnabled: Specifies whether to enable mutual authentication.
+     * <p>
+     * Default false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCaEnabled() {
+        return null;
+    }
+
+    /**
+     * Property certificates: The list of SSL certificates for listener.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCertificates() {
         return null;
@@ -134,6 +150,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object listenerPort;
         java.lang.Object listenerProtocol;
         java.lang.Object loadBalancerId;
+        java.lang.Object caCertificates;
+        java.lang.Object caEnabled;
         java.lang.Object certificates;
         java.lang.Object gzipEnabled;
         java.lang.Object http2Enabled;
@@ -229,8 +247,50 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getCaCertificates}
+         * @param caCertificates Property caCertificates: List of configured CA certificates for listener.
+         * @return {@code this}
+         */
+        public Builder caCertificates(com.aliyun.ros.cdk.core.IResolvable caCertificates) {
+            this.caCertificates = caCertificates;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getCaCertificates}
+         * @param caCertificates Property caCertificates: List of configured CA certificates for listener.
+         * @return {@code this}
+         */
+        public Builder caCertificates(java.util.List<? extends java.lang.Object> caCertificates) {
+            this.caCertificates = caCertificates;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getCaEnabled}
+         * @param caEnabled Property caEnabled: Specifies whether to enable mutual authentication.
+         *                  Default false.
+         * @return {@code this}
+         */
+        public Builder caEnabled(java.lang.Boolean caEnabled) {
+            this.caEnabled = caEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getCaEnabled}
+         * @param caEnabled Property caEnabled: Specifies whether to enable mutual authentication.
+         *                  Default false.
+         * @return {@code this}
+         */
+        public Builder caEnabled(com.aliyun.ros.cdk.core.IResolvable caEnabled) {
+            this.caEnabled = caEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getCertificates}
-         * @param certificates Property certificates: The content of the SSL certificate.
+         * @param certificates Property certificates: The list of SSL certificates for listener.
          * @return {@code this}
          */
         public Builder certificates(com.aliyun.ros.cdk.core.IResolvable certificates) {
@@ -240,7 +300,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getCertificates}
-         * @param certificates Property certificates: The content of the SSL certificate.
+         * @param certificates Property certificates: The list of SSL certificates for listener.
          * @return {@code this}
          */
         public Builder certificates(java.util.List<? extends java.lang.Object> certificates) {
@@ -466,6 +526,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object listenerPort;
         private final java.lang.Object listenerProtocol;
         private final java.lang.Object loadBalancerId;
+        private final java.lang.Object caCertificates;
+        private final java.lang.Object caEnabled;
         private final java.lang.Object certificates;
         private final java.lang.Object gzipEnabled;
         private final java.lang.Object http2Enabled;
@@ -486,6 +548,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerProtocol = software.amazon.jsii.Kernel.get(this, "listenerProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.caCertificates = software.amazon.jsii.Kernel.get(this, "caCertificates", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.caEnabled = software.amazon.jsii.Kernel.get(this, "caEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certificates = software.amazon.jsii.Kernel.get(this, "certificates", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.gzipEnabled = software.amazon.jsii.Kernel.get(this, "gzipEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.http2Enabled = software.amazon.jsii.Kernel.get(this, "http2Enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -506,6 +570,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.listenerPort = java.util.Objects.requireNonNull(builder.listenerPort, "listenerPort is required");
             this.listenerProtocol = java.util.Objects.requireNonNull(builder.listenerProtocol, "listenerProtocol is required");
             this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
+            this.caCertificates = builder.caCertificates;
+            this.caEnabled = builder.caEnabled;
             this.certificates = builder.certificates;
             this.gzipEnabled = builder.gzipEnabled;
             this.http2Enabled = builder.http2Enabled;
@@ -535,6 +601,16 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
+        }
+
+        @Override
+        public final java.lang.Object getCaCertificates() {
+            return this.caCertificates;
+        }
+
+        @Override
+        public final java.lang.Object getCaEnabled() {
+            return this.caEnabled;
         }
 
         @Override
@@ -592,6 +668,12 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             data.set("listenerPort", om.valueToTree(this.getListenerPort()));
             data.set("listenerProtocol", om.valueToTree(this.getListenerProtocol()));
             data.set("loadBalancerId", om.valueToTree(this.getLoadBalancerId()));
+            if (this.getCaCertificates() != null) {
+                data.set("caCertificates", om.valueToTree(this.getCaCertificates()));
+            }
+            if (this.getCaEnabled() != null) {
+                data.set("caEnabled", om.valueToTree(this.getCaEnabled()));
+            }
             if (this.getCertificates() != null) {
                 data.set("certificates", om.valueToTree(this.getCertificates()));
             }
@@ -641,6 +723,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (!listenerPort.equals(that.listenerPort)) return false;
             if (!listenerProtocol.equals(that.listenerProtocol)) return false;
             if (!loadBalancerId.equals(that.loadBalancerId)) return false;
+            if (this.caCertificates != null ? !this.caCertificates.equals(that.caCertificates) : that.caCertificates != null) return false;
+            if (this.caEnabled != null ? !this.caEnabled.equals(that.caEnabled) : that.caEnabled != null) return false;
             if (this.certificates != null ? !this.certificates.equals(that.certificates) : that.certificates != null) return false;
             if (this.gzipEnabled != null ? !this.gzipEnabled.equals(that.gzipEnabled) : that.gzipEnabled != null) return false;
             if (this.http2Enabled != null ? !this.http2Enabled.equals(that.http2Enabled) : that.http2Enabled != null) return false;
@@ -658,6 +742,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.listenerPort.hashCode());
             result = 31 * result + (this.listenerProtocol.hashCode());
             result = 31 * result + (this.loadBalancerId.hashCode());
+            result = 31 * result + (this.caCertificates != null ? this.caCertificates.hashCode() : 0);
+            result = 31 * result + (this.caEnabled != null ? this.caEnabled.hashCode() : 0);
             result = 31 * result + (this.certificates != null ? this.certificates.hashCode() : 0);
             result = 31 * result + (this.gzipEnabled != null ? this.gzipEnabled.hashCode() : 0);
             result = 31 * result + (this.http2Enabled != null ? this.http2Enabled.hashCode() : 0);

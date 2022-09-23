@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.330Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.577Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -901,6 +901,7 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
          * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
          * Default to 1.
          * <p>
          * @return {@code this}
@@ -916,6 +917,7 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
          * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
          * Default to 1.
          * <p>
          * @return {@code this}
@@ -932,6 +934,7 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * The options are:
          * Week: Time is measured in weeks
          * Month: time in months
+         * Year: time in years
          * Default to Month
          * <p>
          * @return {@code this}
@@ -947,6 +950,7 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * The options are:
          * Week: Time is measured in weeks
          * Month: time in months
+         * Year: time in years
          * Default to Month
          * <p>
          * @return {@code this}

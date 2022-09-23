@@ -12,8 +12,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
-        public RosSearchIndex(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Ots.IRosSearchIndexProps props, bool enableResourcePropertyConstraint): base(new DeputyProps(new object?[]{scope, id, props, enableResourcePropertyConstraint}))
+        public RosSearchIndex(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Ots.IRosSearchIndexProps props, bool enableResourcePropertyConstraint): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Ots.IRosSearchIndexProps props, bool enableResourcePropertyConstraint)
+        {
+            return new DeputyProps(new object?[]{scope, id, props, enableResourcePropertyConstraint});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
@@ -73,7 +79,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         public virtual object FieldSchemas
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IFieldSchemasProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IFieldSchemasProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IFieldSchemasProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -83,7 +126,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         public virtual object IndexName
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -93,7 +156,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         public virtual object InstanceName
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -103,7 +186,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         public virtual object TableName
         {
             get => GetInstanceProperty<object>()!;
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -114,7 +217,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         public virtual object? IndexSetting
         {
             get => GetInstanceProperty<object?>();
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IIndexSettingProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IIndexSettingProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -127,7 +250,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         public virtual object? IndexSort
         {
             get => GetInstanceProperty<object?>();
-            set => SetInstanceProperty(value);
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IIndexSortProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IIndexSortProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
         [JsiiInterface(nativeType: typeof(IFieldSchemasProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.FieldSchemasProperty")]
         public interface IFieldSchemasProperty
@@ -337,6 +480,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.FieldSchemasProperty")]
         public class FieldSchemasProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IFieldSchemasProperty
         {
+            private object _fieldName;
+
             /// <remarks>
             /// <strong>Property</strong>: fieldName: This parameter specifies the name of the field (column) to index.
             /// The field can be a primary key column or an attribute column.
@@ -344,9 +489,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldName
             {
-                get;
-                set;
+                get => _fieldName;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _fieldName = value;
+                }
             }
+
+            private object _fieldType;
 
             /// <remarks>
             /// <strong>Property</strong>: fieldType: This parameter specifies the type of the field. Type: FieldType.
@@ -355,9 +522,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "fieldType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldType
             {
-                get;
-                set;
+                get => _fieldType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _fieldType = value;
+                }
             }
+
+            private object? _analyzer;
 
             /// <remarks>
             /// <strong>Property</strong>: analyzer: This parameter specifies the tokenizer.
@@ -367,9 +556,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "analyzer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Analyzer
             {
-                get;
-                set;
+                get => _analyzer;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _analyzer = value;
+                }
             }
+
+            private object? _enableSortAndAgg;
 
             /// <remarks>
             /// <strong>Property</strong>: enableSortAndAgg: This parameter specifies whether to enable sorting and aggregation for the column.
@@ -378,9 +589,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "enableSortAndAgg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableSortAndAgg
             {
-                get;
-                set;
+                get => _enableSortAndAgg;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enableSortAndAgg = value;
+                }
             }
+
+            private object? _index;
 
             /// <remarks>
             /// <strong>Property</strong>: index: This parameter specifies whether to index the column.
@@ -390,9 +623,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "index", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Index
             {
-                get;
-                set;
+                get => _index;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _index = value;
+                }
             }
+
+            private object? _isArray;
 
             /// <remarks>
             /// <strong>Property</strong>: isArray: This parameter specifies whether the column is an array.
@@ -403,9 +658,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "isArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IsArray
             {
-                get;
-                set;
+                get => _isArray;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _isArray = value;
+                }
             }
+
+            private object? _store;
 
             /// <remarks>
             /// <strong>Property</strong>: store: This parameter specifies whether to store the values of the field in the search index.
@@ -416,9 +693,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Store
             {
-                get;
-                set;
+                get => _store;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _store = value;
+                }
             }
+
+            private object? _subFieldSchemas;
 
             /// <remarks>
             /// <strong>Property</strong>: subFieldSchemas: This parameter specifies the list of field schemas for subfields.
@@ -428,8 +727,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "subFieldSchemas", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.SubFieldSchemasProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? SubFieldSchemas
             {
-                get;
-                set;
+                get => _subFieldSchemas;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.ISubFieldSchemasProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.ISubFieldSchemasProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.ISubFieldSchemasProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _subFieldSchemas = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IFieldSortProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.FieldSortProperty")]
@@ -512,15 +848,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.FieldSortProperty")]
         public class FieldSortProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IFieldSortProperty
         {
+            private object _fieldName;
+
             /// <remarks>
             /// <strong>Property</strong>: fieldName: Sorted field name.
             /// </remarks>
             [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldName
             {
-                get;
-                set;
+                get => _fieldName;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _fieldName = value;
+                }
             }
+
+            private object? _sortMode;
 
             /// <remarks>
             /// <strong>Property</strong>: sortMode: Sorting method when there are multiple values in the field.
@@ -529,9 +889,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "sortMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortMode
             {
-                get;
-                set;
+                get => _sortMode;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sortMode = value;
+                }
             }
+
+            private object? _sortOrder;
 
             /// <remarks>
             /// <strong>Property</strong>: sortOrder: The sort order can be sorted in ascending or descending order, the default is ascending(SortOrder.ASC).
@@ -540,8 +922,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortOrder
             {
-                get;
-                set;
+                get => _sortOrder;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sortOrder = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IGeoDistanceSortProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.GeoDistanceSortProperty")]
@@ -642,15 +1044,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.GeoDistanceSortProperty")]
         public class GeoDistanceSortProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IGeoDistanceSortProperty
         {
+            private object _fieldName;
+
             /// <remarks>
             /// <strong>Property</strong>: fieldName: Sorted field name.
             /// </remarks>
             [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldName
             {
-                get;
-                set;
+                get => _fieldName;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _fieldName = value;
+                }
             }
+
+            private object _points;
 
             /// <remarks>
             /// <strong>Property</strong>: points: The parameter of GeoDistanceSort
@@ -658,9 +1084,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "points", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Points
             {
-                get;
-                set;
+                get => _points;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case object[] cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _points = value;
+                }
             }
+
+            private object? _sortMode;
 
             /// <remarks>
             /// <strong>Property</strong>: sortMode: Sorting method when there are multiple values in the field.
@@ -669,9 +1117,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "sortMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortMode
             {
-                get;
-                set;
+                get => _sortMode;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sortMode = value;
+                }
             }
+
+            private object? _sortOrder;
 
             /// <remarks>
             /// <strong>Property</strong>: sortOrder: The sort order can be sorted in ascending or descending order
@@ -680,8 +1150,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortOrder
             {
-                get;
-                set;
+                get => _sortOrder;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sortOrder = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IIndexSettingProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.IndexSettingProperty")]
@@ -727,6 +1217,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.IndexSettingProperty")]
         public class IndexSettingProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IIndexSettingProperty
         {
+            private object? _routingFields;
+
             /// <remarks>
             /// <strong>Property</strong>: routingFields: You can use this advanced feature to customize routing fields.
             /// You can specify some primary key columns as routing fields.
@@ -737,8 +1229,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "routingFields", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RoutingFields
             {
-                get;
-                set;
+                get => _routingFields;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case object[] cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _routingFields = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IIndexSortProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.IndexSortProperty")]
@@ -779,6 +1291,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.IndexSortProperty")]
         public class IndexSortProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IIndexSortProperty
         {
+            private object _sorters;
+
             /// <remarks>
             /// <strong>Property</strong>: sorters: This parameter specifies the sorting methods.  Valid values:
             /// - PrimaryKeySort: The index is sorted by primary key in ascending or descending order.
@@ -787,8 +1301,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "sorters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.SortersProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Sorters
             {
-                get;
-                set;
+                get => _sorters;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.ISortersProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.ISortersProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.ISortersProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sorters = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IPrimaryKeySortProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.PrimaryKeySortProperty")]
@@ -828,6 +1379,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.PrimaryKeySortProperty")]
         public class PrimaryKeySortProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IPrimaryKeySortProperty
         {
+            private object? _sortOrder;
+
             /// <remarks>
             /// <strong>Property</strong>: sortOrder: The sort order can be sorted in ascending or descending order, the default is ascending(SortOrder.ASC).
             /// </remarks>
@@ -835,8 +1388,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortOrder
             {
-                get;
-                set;
+                get => _sortOrder;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sortOrder = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IScoreSortProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.ScoreSortProperty")]
@@ -876,6 +1449,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.ScoreSortProperty")]
         public class ScoreSortProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IScoreSortProperty
         {
+            private object? _sortOrder;
+
             /// <remarks>
             /// <strong>Property</strong>: sortOrder: The sort order can be sorted in ascending or descending order
             /// </remarks>
@@ -883,8 +1458,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "sortOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SortOrder
             {
-                get;
-                set;
+                get => _sortOrder;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sortOrder = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(ISortersProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.SortersProperty")]
@@ -999,6 +1594,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.SortersProperty")]
         public class SortersProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.ISortersProperty
         {
+            private object? _fieldSort;
+
             /// <remarks>
             /// <strong>Property</strong>: fieldSort: Sort by field value.
             /// Only fields that are indexed and have sorting and statistical aggregation functions enabled can be pre-sorted
@@ -1007,9 +1604,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "fieldSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.FieldSortProperty\"}]}}", isOptional: true)]
             public object? FieldSort
             {
-                get;
-                set;
+                get => _fieldSort;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IFieldSortProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IFieldSortProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _fieldSort = value;
+                }
             }
+
+            private object? _geoDistanceSort;
 
             /// <remarks>
             /// <strong>Property</strong>: geoDistanceSort: You can use GeoDistanceSort to sort the query result based on distances of geographical locations.
@@ -1018,9 +1637,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "geoDistanceSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.GeoDistanceSortProperty\"}]}}", isOptional: true)]
             public object? GeoDistanceSort
             {
-                get;
-                set;
+                get => _geoDistanceSort;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IGeoDistanceSortProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IGeoDistanceSortProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _geoDistanceSort = value;
+                }
             }
+
+            private object? _primaryKeySort;
 
             /// <remarks>
             /// <strong>Property</strong>: primaryKeySort: You can use PrimaryKeySort to sort the query result based on the order of primary key columns.
@@ -1029,9 +1670,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "primaryKeySort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.PrimaryKeySortProperty\"}]}}", isOptional: true)]
             public object? PrimaryKeySort
             {
-                get;
-                set;
+                get => _primaryKeySort;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IPrimaryKeySortProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IPrimaryKeySortProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _primaryKeySort = value;
+                }
             }
+
+            private object? _scoreSort;
 
             /// <remarks>
             /// <strong>Property</strong>: scoreSort: You can use ScoreSort to sort the query result by keyword relevance score.
@@ -1042,8 +1705,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "scoreSort", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.ScoreSortProperty\"}]}}", isOptional: true)]
             public object? ScoreSort
             {
-                get;
-                set;
+                get => _scoreSort;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IScoreSortProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.IScoreSortProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _scoreSort = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(ISubFieldSchemasProperty), fullyQualifiedName: "@alicloud/ros-cdk-ots.RosSearchIndex.SubFieldSchemasProperty")]
@@ -1229,6 +1912,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndex.SubFieldSchemasProperty")]
         public class SubFieldSchemasProperty : AlibabaCloud.SDK.ROS.CDK.Ots.RosSearchIndex.ISubFieldSchemasProperty
         {
+            private object _fieldName;
+
             /// <remarks>
             /// <strong>Property</strong>: fieldName: This parameter specifies the name of the field (column) to index.
             /// The field can be a primary key column or an attribute column.
@@ -1236,9 +1921,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "fieldName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldName
             {
-                get;
-                set;
+                get => _fieldName;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _fieldName = value;
+                }
             }
+
+            private object _fieldType;
 
             /// <remarks>
             /// <strong>Property</strong>: fieldType: This parameter specifies the type of the field. Type: FieldType.
@@ -1247,9 +1954,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "fieldType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FieldType
             {
-                get;
-                set;
+                get => _fieldType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _fieldType = value;
+                }
             }
+
+            private object? _analyzer;
 
             /// <remarks>
             /// <strong>Property</strong>: analyzer: This parameter specifies the tokenizer.
@@ -1259,9 +1988,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "analyzer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Analyzer
             {
-                get;
-                set;
+                get => _analyzer;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _analyzer = value;
+                }
             }
+
+            private object? _enableSortAndAgg;
 
             /// <remarks>
             /// <strong>Property</strong>: enableSortAndAgg: This parameter specifies whether to enable sorting and aggregation for the column.
@@ -1270,9 +2021,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "enableSortAndAgg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableSortAndAgg
             {
-                get;
-                set;
+                get => _enableSortAndAgg;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enableSortAndAgg = value;
+                }
             }
+
+            private object? _index;
 
             /// <remarks>
             /// <strong>Property</strong>: index: This parameter specifies whether to index the column.
@@ -1282,9 +2055,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "index", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Index
             {
-                get;
-                set;
+                get => _index;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _index = value;
+                }
             }
+
+            private object? _isArray;
 
             /// <remarks>
             /// <strong>Property</strong>: isArray: This parameter specifies whether the column is an array.
@@ -1295,9 +2090,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "isArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IsArray
             {
-                get;
-                set;
+                get => _isArray;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _isArray = value;
+                }
             }
+
+            private object? _store;
 
             /// <remarks>
             /// <strong>Property</strong>: store: This parameter specifies whether to store the values of the field in the search index.
@@ -1308,8 +2125,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             [JsiiProperty(name: "store", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Store
             {
-                get;
-                set;
+                get => _store;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _store = value;
+                }
             }
         }
     }

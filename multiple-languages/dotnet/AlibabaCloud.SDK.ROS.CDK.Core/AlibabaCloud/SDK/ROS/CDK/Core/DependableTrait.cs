@@ -26,8 +26,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait), fullyQualifiedName: "@alicloud/ros-cdk-core.DependableTrait")]
     public abstract class DependableTrait : DeputyBase
     {
-        protected DependableTrait(): base(new DeputyProps(System.Array.Empty<object?>()))
+        protected DependableTrait(): base(_MakeDeputyProps())
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps()
+        {
+            return new DeputyProps(System.Array.Empty<object?>());
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

@@ -8,7 +8,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
     [JsiiInterface(nativeType: typeof(IClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.ClusterProps")]
     public interface IClusterProps
     {
-        /// <summary>Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c.</summary>
+        /// <summary>Property clusterSpecification: Cluster specifications.</summary>
+        /// <remarks>
+        /// Note the msversion requirements of the version parameter,
+        /// Optional parameters:
+        /// "MSE_ SC <em>1_2_60_c",
+        /// "MSE</em> SC <em>2_4_60_c",
+        /// "MSE</em> SC <em>4_8_60_c",
+        /// "MSE</em> SC <em>8_16_60_c",
+        /// "MSE</em> SC _16_32_60_c"
+        /// </remarks>
         [JsiiProperty(name: "clusterSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ClusterSpecification
         {
@@ -22,7 +31,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             get;
         }
 
-        /// <summary>Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.</summary>
+        /// <summary>Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.</summary>
         [JsiiProperty(name: "clusterVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ClusterVersion
         {
@@ -36,7 +45,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             get;
         }
 
-        /// <summary>Property netType: network type, Enum: privatenet,pubnet.</summary>
+        /// <summary>Property netType: Network type (whether private network is enabled or not).</summary>
+        /// <remarks>
+        /// privatenet indicates that private network is enabled.
+        /// </remarks>
         [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object NetType
         {
@@ -54,7 +66,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property aclEntryList: acl entry list.</summary>
+        /// <summary>Property aclEntryList: The public network whitelist list is used only when the public network is enabled.</summary>
         [JsiiProperty(name: "aclEntryList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AclEntryList
@@ -98,10 +110,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.</summary>
+        /// <summary>Property mseVersion: Required, the value is as follows:.</summary>
         /// <remarks>
-        /// -'mse_basic': indicates the basic version (default value).
-        /// -'mse_pro': means professional version.
+        /// -'mse_dev': indicates the development version.
+        /// -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
         /// </remarks>
         [JsiiProperty(name: "mseVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -124,7 +136,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property pubNetworkFlow: pub network flow.</summary>
+        /// <summary>Property pubNetworkFlow: Public network bandwidth.</summary>
+        /// <remarks>
+        /// If the bandwidth is greater than 0, the public network is enabled.
+        /// </remarks>
         [JsiiProperty(name: "pubNetworkFlow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PubNetworkFlow
@@ -187,7 +202,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             {
             }
 
-            /// <summary>Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c.</summary>
+            /// <summary>Property clusterSpecification: Cluster specifications.</summary>
+            /// <remarks>
+            /// Note the msversion requirements of the version parameter,
+            /// Optional parameters:
+            /// "MSE_ SC <em>1_2_60_c",
+            /// "MSE</em> SC <em>2_4_60_c",
+            /// "MSE</em> SC <em>4_8_60_c",
+            /// "MSE</em> SC <em>8_16_60_c",
+            /// "MSE</em> SC _16_32_60_c"
+            /// </remarks>
             [JsiiProperty(name: "clusterSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ClusterSpecification
             {
@@ -201,7 +225,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0.</summary>
+            /// <summary>Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0.</summary>
             [JsiiProperty(name: "clusterVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ClusterVersion
             {
@@ -215,7 +239,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property netType: network type, Enum: privatenet,pubnet.</summary>
+            /// <summary>Property netType: Network type (whether private network is enabled or not).</summary>
+            /// <remarks>
+            /// privatenet indicates that private network is enabled.
+            /// </remarks>
             [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object NetType
             {
@@ -230,7 +257,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property aclEntryList: acl entry list.</summary>
+            /// <summary>Property aclEntryList: The public network whitelist list is used only when the public network is enabled.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "aclEntryList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? AclEntryList
@@ -262,10 +289,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property mseVersion: This parameter is required when creating a professional version. The value is as follows:.</summary>
+            /// <summary>Property mseVersion: Required, the value is as follows:.</summary>
             /// <remarks>
-            /// -'mse_basic': indicates the basic version (default value).
-            /// -'mse_pro': means professional version.
+            /// -'mse_dev': indicates the development version.
+            /// -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "mseVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -282,7 +309,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property pubNetworkFlow: pub network flow.</summary>
+            /// <summary>Property pubNetworkFlow: Public network bandwidth.</summary>
+            /// <remarks>
+            /// If the bandwidth is greater than 0, the public network is enabled.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "pubNetworkFlow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PubNetworkFlow

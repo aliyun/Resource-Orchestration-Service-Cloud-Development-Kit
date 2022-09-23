@@ -7,8 +7,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cxapi.RosStackArtifact), fullyQualifiedName: "@alicloud/ros-cdk-cxapi.RosStackArtifact", parametersJson: "[{\"name\":\"assembly\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cxapi.CloudAssembly\"}},{\"name\":\"artifactId\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"artifact\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.ArtifactManifest\"}}]")]
     public class RosStackArtifact : AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudArtifact
     {
-        public RosStackArtifact(AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssembly assembly, string artifactId, AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IArtifactManifest artifact): base(new DeputyProps(new object?[]{assembly, artifactId, artifact}))
+        public RosStackArtifact(AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssembly assembly, string artifactId, AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IArtifactManifest artifact): base(_MakeDeputyProps(assembly, artifactId, artifact))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssembly assembly, string artifactId, AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IArtifactManifest artifact)
+        {
+            return new DeputyProps(new object?[]{assembly, artifactId, artifact});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

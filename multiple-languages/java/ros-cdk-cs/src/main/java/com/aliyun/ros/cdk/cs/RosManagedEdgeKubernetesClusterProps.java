@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.395Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -180,6 +180,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDisks() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDiskSize() {
         return null;
     }
@@ -247,6 +253,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         java.lang.Object vSwitchIds;
         java.lang.Object workerDataDisk;
         java.lang.Object workerDataDiskCategory;
+        java.lang.Object workerDataDisks;
         java.lang.Object workerDataDiskSize;
         java.lang.Object workerInstanceTypes;
         java.lang.Object workerSystemDiskCategory;
@@ -825,6 +832,26 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDisks}
+         * @param workerDataDisks the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerDataDisks(com.aliyun.ros.cdk.core.IResolvable workerDataDisks) {
+            this.workerDataDisks = workerDataDisks;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDisks}
+         * @param workerDataDisks the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerDataDisks(java.util.List<? extends java.lang.Object> workerDataDisks) {
+            this.workerDataDisks = workerDataDisks;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDiskSize}
          * @param workerDataDiskSize the value to be set.
          * @return {@code this}
@@ -969,6 +996,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         private final java.lang.Object vSwitchIds;
         private final java.lang.Object workerDataDisk;
         private final java.lang.Object workerDataDiskCategory;
+        private final java.lang.Object workerDataDisks;
         private final java.lang.Object workerDataDiskSize;
         private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object workerSystemDiskCategory;
@@ -1010,6 +1038,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisk = software.amazon.jsii.Kernel.get(this, "workerDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDiskCategory = software.amazon.jsii.Kernel.get(this, "workerDataDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDiskSize = software.amazon.jsii.Kernel.get(this, "workerDataDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1052,6 +1081,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.vSwitchIds = builder.vSwitchIds;
             this.workerDataDisk = builder.workerDataDisk;
             this.workerDataDiskCategory = builder.workerDataDiskCategory;
+            this.workerDataDisks = builder.workerDataDisks;
             this.workerDataDiskSize = builder.workerDataDiskSize;
             this.workerInstanceTypes = builder.workerInstanceTypes;
             this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
@@ -1205,6 +1235,11 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         @Override
+        public final java.lang.Object getWorkerDataDisks() {
+            return this.workerDataDisks;
+        }
+
+        @Override
         public final java.lang.Object getWorkerDataDiskSize() {
             return this.workerDataDiskSize;
         }
@@ -1318,6 +1353,9 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.getWorkerDataDiskCategory() != null) {
                 data.set("workerDataDiskCategory", om.valueToTree(this.getWorkerDataDiskCategory()));
             }
+            if (this.getWorkerDataDisks() != null) {
+                data.set("workerDataDisks", om.valueToTree(this.getWorkerDataDisks()));
+            }
             if (this.getWorkerDataDiskSize() != null) {
                 data.set("workerDataDiskSize", om.valueToTree(this.getWorkerDataDiskSize()));
             }
@@ -1380,6 +1418,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.vSwitchIds != null ? !this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds != null) return false;
             if (this.workerDataDisk != null ? !this.workerDataDisk.equals(that.workerDataDisk) : that.workerDataDisk != null) return false;
             if (this.workerDataDiskCategory != null ? !this.workerDataDiskCategory.equals(that.workerDataDiskCategory) : that.workerDataDiskCategory != null) return false;
+            if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
             if (this.workerDataDiskSize != null ? !this.workerDataDiskSize.equals(that.workerDataDiskSize) : that.workerDataDiskSize != null) return false;
             if (this.workerInstanceTypes != null ? !this.workerInstanceTypes.equals(that.workerInstanceTypes) : that.workerInstanceTypes != null) return false;
             if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
@@ -1418,6 +1457,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
             result = 31 * result + (this.workerDataDisk != null ? this.workerDataDisk.hashCode() : 0);
             result = 31 * result + (this.workerDataDiskCategory != null ? this.workerDataDiskCategory.hashCode() : 0);
+            result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
             result = 31 * result + (this.workerDataDiskSize != null ? this.workerDataDiskSize.hashCode() : 0);
             result = 31 * result + (this.workerInstanceTypes != null ? this.workerInstanceTypes.hashCode() : 0);
             result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);

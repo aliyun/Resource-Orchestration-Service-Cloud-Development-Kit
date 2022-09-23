@@ -1111,11 +1111,6 @@ export class RosDomainExtension extends ros.RosResource {
 export interface RosListenerProps {
 
     /**
-     * @Property backendServerPort: Backend server can listen on ports from 1 to 65535.
-     */
-    readonly backendServerPort: number | ros.IResolvable;
-
-    /**
      * @Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second). If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
      */
     readonly bandwidth: number | ros.IResolvable;
@@ -1159,6 +1154,11 @@ export interface RosListenerProps {
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
     readonly aclType?: string | ros.IResolvable;
+
+    /**
+     * @Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+     */
+    readonly backendServerPort?: number | ros.IResolvable;
 
     /**
      * @Property caCertificateId: CA server certificate id, for https listener only.
@@ -1295,7 +1295,6 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('idleTimeout', ros.validateNumber)(properties.idleTimeout));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
-    errors.collect(ros.propertyValidator('backendServerPort', ros.requiredValidator)(properties.backendServerPort));
     if(properties.backendServerPort && (typeof properties.backendServerPort) !== 'object') {
         errors.collect(ros.propertyValidator('backendServerPort', ros.validateRange)({
             data: properties.backendServerPort,
@@ -1366,7 +1365,6 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosListenerPropsValidator(properties).assertSuccess();
     }
     return {
-      BackendServerPort: ros.numberToRosTemplate(properties.backendServerPort),
       Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
       ListenerPort: ros.numberToRosTemplate(properties.listenerPort),
       LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
@@ -1374,6 +1372,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       AclId: ros.stringToRosTemplate(properties.aclId),
       AclStatus: ros.stringToRosTemplate(properties.aclStatus),
       AclType: ros.stringToRosTemplate(properties.aclType),
+      BackendServerPort: ros.numberToRosTemplate(properties.backendServerPort),
       CACertificateId: ros.stringToRosTemplate(properties.caCertificateId),
       Description: ros.stringToRosTemplate(properties.description),
       EnableHttp2: ros.stringToRosTemplate(properties.enableHttp2),
@@ -1419,11 +1418,6 @@ export class RosListener extends ros.RosResource {
 
 
     /**
-     * @Property backendServerPort: Backend server can listen on ports from 1 to 65535.
-     */
-    public backendServerPort: number | ros.IResolvable;
-
-    /**
      * @Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second). If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
      */
     public bandwidth: number | ros.IResolvable;
@@ -1467,6 +1461,11 @@ export class RosListener extends ros.RosResource {
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
     public aclType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+     */
+    public backendServerPort: number | ros.IResolvable | undefined;
 
     /**
      * @Property caCertificateId: CA server certificate id, for https listener only.
@@ -1559,7 +1558,6 @@ export class RosListener extends ros.RosResource {
         this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.backendServerPort = props.backendServerPort;
         this.bandwidth = props.bandwidth;
         this.listenerPort = props.listenerPort;
         this.loadBalancerId = props.loadBalancerId;
@@ -1567,6 +1565,7 @@ export class RosListener extends ros.RosResource {
         this.aclId = props.aclId;
         this.aclStatus = props.aclStatus;
         this.aclType = props.aclType;
+        this.backendServerPort = props.backendServerPort;
         this.caCertificateId = props.caCertificateId;
         this.description = props.description;
         this.enableHttp2 = props.enableHttp2;
@@ -1586,7 +1585,6 @@ export class RosListener extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            backendServerPort: this.backendServerPort,
             bandwidth: this.bandwidth,
             listenerPort: this.listenerPort,
             loadBalancerId: this.loadBalancerId,
@@ -1594,6 +1592,7 @@ export class RosListener extends ros.RosResource {
             aclId: this.aclId,
             aclStatus: this.aclStatus,
             aclType: this.aclType,
+            backendServerPort: this.backendServerPort,
             caCertificateId: this.caCertificateId,
             description: this.description,
             enableHttp2: this.enableHttp2,
@@ -2227,7 +2226,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));

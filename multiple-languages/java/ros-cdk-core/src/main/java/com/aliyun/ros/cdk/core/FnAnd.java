@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * <code>Fn::And</code> acts as an AND operator. The minimum number of
  * conditions that you can include is 2, and the maximum is 10.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.547Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.764Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnAnd")
 public class FnAnd extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliyun.ros.cdk.core.IRosConditionExpression {
 
@@ -20,6 +20,23 @@ public class FnAnd extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliy
 
     public FnAnd(final @org.jetbrains.annotations.NotNull java.lang.Object... condition) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            final java.util.List<java.lang.Object> __condition__asList = java.util.Arrays.asList(condition);
+            for (int __idx_24648a = 0; __idx_24648a < __condition__asList.size(); __idx_24648a++) {
+                final java.lang.Object __val_24648a = __condition__asList.get(__idx_24648a);
+                if (
+                     !(__val_24648a instanceof java.lang.String)
+                    && !(__val_24648a instanceof com.aliyun.ros.cdk.core.IRosConditionExpression)
+                    && !(__val_24648a.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("condition").append("[").append(__idx_24648a).append("]")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IRosConditionExpression; received ")
+                            .append(__val_24648a.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, java.util.Arrays.<Object>stream(condition).toArray(Object[]::new));
     }
 }

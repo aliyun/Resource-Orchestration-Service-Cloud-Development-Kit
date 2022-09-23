@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * A ROS resource type:  `ALIYUN::DRDS::DrdsInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.487Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.773Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsInstance")
 public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -170,27 +170,6 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
             this.props.payType(payType);
-            return this;
-        }
-
-        /**
-         * Property quantity: Purchase quantity.
-         * <p>
-         * @return {@code this}
-         * @param quantity Property quantity: Purchase quantity. This parameter is required.
-         */
-        public Builder quantity(final java.lang.Number quantity) {
-            this.props.quantity(quantity);
-            return this;
-        }
-        /**
-         * Property quantity: Purchase quantity.
-         * <p>
-         * @return {@code this}
-         * @param quantity Property quantity: Purchase quantity. This parameter is required.
-         */
-        public Builder quantity(final com.aliyun.ros.cdk.core.IResolvable quantity) {
-            this.props.quantity(quantity);
             return this;
         }
 

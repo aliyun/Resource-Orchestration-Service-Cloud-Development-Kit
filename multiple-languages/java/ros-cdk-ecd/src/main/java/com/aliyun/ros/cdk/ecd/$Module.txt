@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-ecd.Desktops=com.aliyun.ros.cdk.ecd.Desktops
+@alicloud/ros-cdk-ecd.DesktopsProps=com.aliyun.ros.cdk.ecd.DesktopsProps
+@alicloud/ros-cdk-ecd.RosDesktops=com.aliyun.ros.cdk.ecd.RosDesktops
+@alicloud/ros-cdk-ecd.RosDesktops.TagsProperty=com.aliyun.ros.cdk.ecd.RosDesktops$TagsProperty
+@alicloud/ros-cdk-ecd.RosDesktopsProps=com.aliyun.ros.cdk.ecd.RosDesktopsProps

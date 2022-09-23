@@ -520,11 +520,11 @@ export interface RosDBInstanceProps {
     readonly engine: string | ros.IResolvable;
 
     /**
-     * @Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0;
-     * SQLServer: 2008r2/2012/2012_ent_ha/2012_std_ha/2012_web/2016_ent_ha/2016_std_ha/2016_web/2017_std_ha/2017_ent;
-     * PostgreSQL: 9.4/10.0/11.0/12.0;
-     * PPAS: 9.3/10.0;
-     * MariaDB: 10.3.
+     * @Property engineVersion: Database instance version of the relative engine type. Support:
+     * Valid values when you set the Engine parameter to MySQL: 5.5, 5.6, 5.7, and 8.0
+     * Valid values when you set the Engine parameter to SQL Server: 2008r2, 08r2_ent_ha, 2012, 2012_ent_ha, 2012_std_ha, 2012_web, 2014_std_ha, 2016_ent_ha, 2016_std_ha, 2016_web, 2017_std_ha, 2017_ent, 2019_std_ha, and 2019_ent
+     * Valid values when you set the Engine parameter to PostgreSQL: 10.0, 11.0, 12.0, 13.0, and 14.0
+     * Valid values when you set the Engine parameter to MariaDB: 10.3
      */
     readonly engineVersion: string | ros.IResolvable;
 
@@ -1008,7 +1008,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1280,11 +1280,11 @@ export class RosDBInstance extends ros.RosResource {
     public engine: string | ros.IResolvable;
 
     /**
-     * @Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0;
-     * SQLServer: 2008r2/2012/2012_ent_ha/2012_std_ha/2012_web/2016_ent_ha/2016_std_ha/2016_web/2017_std_ha/2017_ent;
-     * PostgreSQL: 9.4/10.0/11.0/12.0;
-     * PPAS: 9.3/10.0;
-     * MariaDB: 10.3.
+     * @Property engineVersion: Database instance version of the relative engine type. Support:
+     * Valid values when you set the Engine parameter to MySQL: 5.5, 5.6, 5.7, and 8.0
+     * Valid values when you set the Engine parameter to SQL Server: 2008r2, 08r2_ent_ha, 2012, 2012_ent_ha, 2012_std_ha, 2012_web, 2014_std_ha, 2016_ent_ha, 2016_std_ha, 2016_web, 2017_std_ha, 2017_ent, 2019_std_ha, and 2019_ent
+     * Valid values when you set the Engine parameter to PostgreSQL: 10.0, 11.0, 12.0, 13.0, and 14.0
+     * Valid values when you set the Engine parameter to MariaDB: 10.3
      */
     public engineVersion: string | ros.IResolvable;
 
@@ -2211,7 +2211,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -3393,6 +3393,236 @@ export class RosDatabase extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::RDS::MigrateTask`
+ */
+export interface RosMigrateTaskProps {
+
+    /**
+     * @Property backupMode: The type of the migration task. Valid values:
+     * FULL: specifies that full backup files are used to restore data.
+     * UPDF: specifies that incremental backup files or log files are used to restore incremental data.
+     */
+    readonly backupMode: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property dbName: The name of the database that you want to restore.
+     */
+    readonly dbName: string | ros.IResolvable;
+
+    /**
+     * @Property isOnlineDb: Specifies whether to bring the restored database online for user access. Note The value for SQL Server 2008 R2 is fixed to True.
+     */
+    readonly isOnlineDb: boolean | ros.IResolvable;
+
+    /**
+     * @Property checkDbMode: The consistency check method of the database. Valid values:
+     * SyncExecuteDBCheck: synchronous database check
+     * AsyncExecuteDBCheck: asynchronous database check
+     * Default value: AsyncExecuteDBCheck (compatible with SQL Server 2008 R2).
+     * Note When IsOnlineDB is set to True, this value is valid.
+     */
+    readonly checkDbMode?: string | ros.IResolvable;
+
+    /**
+     * @Property ossObjectPositions: The information of the backup file in the OSS bucket.
+     * The values consist of three parts that are separated by colons (:):
+     * The endpoint of the OSS bucket: oss-ap-southeast-1.aliyuncs.com.
+     * The name of the OSS bucket: rdsmssqlsingapore.
+     * The key of the backup file in the OSS bucket: autotest_2008R2_TestMigration_FULL.bak.
+     * Note
+     * This parameter is optional for instances that run SQL Server 2008 R2.
+     * This parameter is required for instances that run a database engine later than SQL
+     * Server 2008 R2.
+     */
+    readonly ossObjectPositions?: string | ros.IResolvable;
+
+    /**
+     * @Property ossUrls: The shared URL of the backup file in the OSS bucket. The URL must be encoded.
+     * If you specify multiple URLs, separate them with vertical bars (|) and then encode
+     * them.
+     * Note This parameter must be entered for instances that run SQL Server 2008 R2.
+     */
+    readonly ossUrls?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMigrateTaskProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMigrateTaskProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMigrateTaskPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('isOnlineDb', ros.requiredValidator)(properties.isOnlineDb));
+    errors.collect(ros.propertyValidator('isOnlineDb', ros.validateBoolean)(properties.isOnlineDb));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('ossObjectPositions', ros.validateString)(properties.ossObjectPositions));
+    if(properties.checkDbMode && (typeof properties.checkDbMode) !== 'object') {
+        errors.collect(ros.propertyValidator('checkDbMode', ros.validateAllowedValues)({
+          data: properties.checkDbMode,
+          allowedValues: ["AsyncExecuteDBCheck","SyncExecuteDBCheck"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('checkDbMode', ros.validateString)(properties.checkDbMode));
+    errors.collect(ros.propertyValidator('backupMode', ros.requiredValidator)(properties.backupMode));
+    if(properties.backupMode && (typeof properties.backupMode) !== 'object') {
+        errors.collect(ros.propertyValidator('backupMode', ros.validateAllowedValues)({
+          data: properties.backupMode,
+          allowedValues: ["FULL","UPDF"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupMode', ros.validateString)(properties.backupMode));
+    errors.collect(ros.propertyValidator('dbName', ros.requiredValidator)(properties.dbName));
+    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
+    errors.collect(ros.propertyValidator('ossUrls', ros.validateString)(properties.ossUrls));
+    return errors.wrap('supplied properties not correct for "RosMigrateTaskProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RDS::MigrateTask` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMigrateTaskProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RDS::MigrateTask` resource.
+ */
+// @ts-ignore TS6133
+function rosMigrateTaskPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMigrateTaskPropsValidator(properties).assertSuccess();
+    }
+    return {
+      BackupMode: ros.stringToRosTemplate(properties.backupMode),
+      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      DBName: ros.stringToRosTemplate(properties.dbName),
+      IsOnlineDB: ros.booleanToRosTemplate(properties.isOnlineDb),
+      CheckDBMode: ros.stringToRosTemplate(properties.checkDbMode),
+      OssObjectPositions: ros.stringToRosTemplate(properties.ossObjectPositions),
+      OSSUrls: ros.stringToRosTemplate(properties.ossUrls),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::RDS::MigrateTask`
+ */
+export class RosMigrateTask extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::MigrateTask";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute MigrateTaskId: The ID of the migrate task.
+     */
+    public readonly attrMigrateTaskId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property backupMode: The type of the migration task. Valid values:
+     * FULL: specifies that full backup files are used to restore data.
+     * UPDF: specifies that incremental backup files or log files are used to restore incremental data.
+     */
+    public backupMode: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property dbName: The name of the database that you want to restore.
+     */
+    public dbName: string | ros.IResolvable;
+
+    /**
+     * @Property isOnlineDb: Specifies whether to bring the restored database online for user access. Note The value for SQL Server 2008 R2 is fixed to True.
+     */
+    public isOnlineDb: boolean | ros.IResolvable;
+
+    /**
+     * @Property checkDbMode: The consistency check method of the database. Valid values:
+     * SyncExecuteDBCheck: synchronous database check
+     * AsyncExecuteDBCheck: asynchronous database check
+     * Default value: AsyncExecuteDBCheck (compatible with SQL Server 2008 R2).
+     * Note When IsOnlineDB is set to True, this value is valid.
+     */
+    public checkDbMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ossObjectPositions: The information of the backup file in the OSS bucket.
+     * The values consist of three parts that are separated by colons (:):
+     * The endpoint of the OSS bucket: oss-ap-southeast-1.aliyuncs.com.
+     * The name of the OSS bucket: rdsmssqlsingapore.
+     * The key of the backup file in the OSS bucket: autotest_2008R2_TestMigration_FULL.bak.
+     * Note
+     * This parameter is optional for instances that run SQL Server 2008 R2.
+     * This parameter is required for instances that run a database engine later than SQL
+     * Server 2008 R2.
+     */
+    public ossObjectPositions: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ossUrls: The shared URL of the backup file in the OSS bucket. The URL must be encoded.
+     * If you specify multiple URLs, separate them with vertical bars (|) and then encode
+     * them.
+     * Note This parameter must be entered for instances that run SQL Server 2008 R2.
+     */
+    public ossUrls: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::RDS::MigrateTask`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMigrateTaskProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMigrateTask.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrMigrateTaskId = this.getAtt('MigrateTaskId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.backupMode = props.backupMode;
+        this.dbInstanceId = props.dbInstanceId;
+        this.dbName = props.dbName;
+        this.isOnlineDb = props.isOnlineDb;
+        this.checkDbMode = props.checkDbMode;
+        this.ossObjectPositions = props.ossObjectPositions;
+        this.ossUrls = props.ossUrls;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            backupMode: this.backupMode,
+            dbInstanceId: this.dbInstanceId,
+            dbName: this.dbName,
+            isOnlineDb: this.isOnlineDb,
+            checkDbMode: this.checkDbMode,
+            ossObjectPositions: this.ossObjectPositions,
+            ossUrls: this.ossUrls,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMigrateTaskPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::RDS::PrepayDBInstance`
  */
 export interface RosPrepayDBInstanceProps {
@@ -3418,11 +3648,11 @@ export interface RosPrepayDBInstanceProps {
     readonly engine: string | ros.IResolvable;
 
     /**
-     * @Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0;
-     * SQLServer: 2008r2/2012/2012_ent_ha/2012_std_ha/2012_web/2016_ent_ha/2016_std_ha/2016_web/2017_std_ha/2017_ent;
-     * PostgreSQL: 9.4/10.0/11.0/12.0;
-     * PPAS: 9.3/10.0;
-     * MariaDB: 10.3.
+     * @Property engineVersion: Database instance version of the relative engine type. Support:
+     * Valid values when you set the Engine parameter to MySQL: 5.5, 5.6, 5.7, and 8.0
+     * Valid values when you set the Engine parameter to SQL Server: 2008r2, 08r2_ent_ha, 2012, 2012_ent_ha, 2012_std_ha, 2012_web, 2014_std_ha, 2016_ent_ha, 2016_std_ha, 2016_web, 2017_std_ha, 2017_ent, 2019_std_ha, and 2019_ent
+     * Valid values when you set the Engine parameter to PostgreSQL: 10.0, 11.0, 12.0, 13.0, and 14.0
+     * Valid values when you set the Engine parameter to MariaDB: 10.3
      */
     readonly engineVersion: string | ros.IResolvable;
 
@@ -4203,11 +4433,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public engine: string | ros.IResolvable;
 
     /**
-     * @Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0;
-     * SQLServer: 2008r2/2012/2012_ent_ha/2012_std_ha/2012_web/2016_ent_ha/2016_std_ha/2016_web/2017_std_ha/2017_ent;
-     * PostgreSQL: 9.4/10.0/11.0/12.0;
-     * PPAS: 9.3/10.0;
-     * MariaDB: 10.3.
+     * @Property engineVersion: Database instance version of the relative engine type. Support:
+     * Valid values when you set the Engine parameter to MySQL: 5.5, 5.6, 5.7, and 8.0
+     * Valid values when you set the Engine parameter to SQL Server: 2008r2, 08r2_ent_ha, 2012, 2012_ent_ha, 2012_std_ha, 2012_web, 2014_std_ha, 2016_ent_ha, 2016_std_ha, 2016_web, 2017_std_ha, 2017_ent, 2019_std_ha, and 2019_ent
+     * Valid values when you set the Engine parameter to PostgreSQL: 10.0, 11.0, 12.0, 13.0, and 14.0
+     * Valid values when you set the Engine parameter to MariaDB: 10.3
      */
     public engineVersion: string | ros.IResolvable;
 
@@ -4959,7 +5189,7 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));

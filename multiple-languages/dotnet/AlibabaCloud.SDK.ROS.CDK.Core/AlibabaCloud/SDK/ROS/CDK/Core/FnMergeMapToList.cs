@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class FnMergeMapToList : AlibabaCloud.SDK.ROS.CDK.Core.Intrinsic
     {
         /// <summary>Creates an ``FnMergeMapToList`` function.</summary>
-        public FnMergeMapToList(object mapList): base(new DeputyProps(new object?[]{mapList}))
+        public FnMergeMapToList(object mapList): base(_MakeDeputyProps(mapList))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object mapList)
+        {
+            return new DeputyProps(new object?[]{mapList});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

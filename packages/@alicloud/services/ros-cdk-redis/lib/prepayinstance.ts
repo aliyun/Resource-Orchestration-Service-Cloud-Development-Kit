@@ -75,6 +75,14 @@ export interface PrepayInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
      * Property productType: Product type. Valid values:Local: Community Edition(Local) or Enhanced Edition(Local)Tair_rdb: Performance Enhanced(Cloud Disk)Tair_scm: Persistent Memory(Cloud Disk)Tair_essd: Capacity Storage(Cloud Disk)OnECS: Community Edition(Cloud Disk)
      */
     readonly productType?: string | ros.IResolvable;
@@ -323,9 +331,10 @@ export class PrepayInstance extends ros.Resource {
             autoRenewDuration: props.autoRenewDuration,
             instanceName: props.instanceName,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            vpcId: props.vpcId,
             sslEnabled: props.sslEnabled,
+            vpcId: props.vpcId,
             tags: props.tags,
+            periodUnit: props.periodUnit,
             backupPolicy: props.backupPolicy,
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

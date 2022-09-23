@@ -24,11 +24,6 @@ export interface DrdsInstanceProps {
     readonly payType: string | ros.IResolvable;
 
     /**
-     * Property quantity: Purchase quantity
-     */
-    readonly quantity: number | ros.IResolvable;
-
-    /**
      * Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing
      */
     readonly specification: string | ros.IResolvable;
@@ -130,7 +125,6 @@ export class DrdsInstance extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             pricingCycle: props.pricingCycle,
             instanceSeries: props.instanceSeries,
-            quantity: props.quantity,
             specification: props.specification,
             duration: props.duration,
             payType: props.payType,

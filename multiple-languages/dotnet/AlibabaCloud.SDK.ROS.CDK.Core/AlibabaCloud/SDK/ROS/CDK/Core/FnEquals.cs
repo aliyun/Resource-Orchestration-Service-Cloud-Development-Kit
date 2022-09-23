@@ -15,8 +15,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>Creates an ``Fn::Equals`` condition function.</summary>
         /// <param name="lhs">A value of any type that you want to compare.</param>
         /// <param name="rhs">A value of any type that you want to compare.</param>
-        public FnEquals(object lhs, object rhs): base(new DeputyProps(new object?[]{lhs, rhs}))
+        public FnEquals(object lhs, object rhs): base(_MakeDeputyProps(lhs, rhs))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object lhs, object rhs)
+        {
+            return new DeputyProps(new object?[]{lhs, rhs});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

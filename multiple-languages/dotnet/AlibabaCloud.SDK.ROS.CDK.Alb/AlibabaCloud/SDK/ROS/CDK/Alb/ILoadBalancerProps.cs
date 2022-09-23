@@ -66,6 +66,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             get;
         }
 
+        /// <summary>Property accessLogConfig:.</summary>
+        [JsiiProperty(name: "accessLogConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosLoadBalancer.AccessLogConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AccessLogConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property addressAllocatedMode: The mode in which IP addresses are assigned.</summary>
         /// <remarks>
         /// Valid values:
@@ -75,6 +86,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiProperty(name: "addressAllocatedMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AddressAllocatedMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property addressIpVersion: The protocol version.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// IPv4: IPv4
+        /// DualStack: dual stack
+        /// </remarks>
+        [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AddressIpVersion
         {
             get
             {
@@ -212,6 +239,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property accessLogConfig:.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "accessLogConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosLoadBalancer.AccessLogConfigProperty\"}]}}", isOptional: true)]
+            public object? AccessLogConfig
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property addressAllocatedMode: The mode in which IP addresses are assigned.</summary>
             /// <remarks>
             /// Valid values:
@@ -221,6 +256,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiOptional]
             [JsiiProperty(name: "addressAllocatedMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AddressAllocatedMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property addressIpVersion: The protocol version.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// IPv4: IPv4
+            /// DualStack: dual stack
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AddressIpVersion
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.338Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.586Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -284,6 +284,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
@@ -296,6 +297,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
@@ -1226,6 +1228,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          *               It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
          *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         *               When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
          *               Default to 1.
          * @return {@code this}
          */
@@ -1240,6 +1243,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          *               It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
          *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+         *               When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
          *               Default to 1.
          * @return {@code this}
          */
@@ -1254,6 +1258,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          *                   The options are:
          *                   Week: Time is measured in weeks
          *                   Month: time in months
+         *                   Year: time in years
          *                   Default to Month
          * @return {@code this}
          */
@@ -1268,6 +1273,7 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          *                   The options are:
          *                   Week: Time is measured in weeks
          *                   Month: time in months
+         *                   Year: time in years
          *                   Default to Month
          * @return {@code this}
          */

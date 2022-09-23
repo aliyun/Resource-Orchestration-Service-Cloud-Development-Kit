@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS resource type:  `ALIYUN::ALB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.676Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.898Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -275,6 +275,27 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property accessLogConfig:.
+         * <p>
+         * @return {@code this}
+         * @param accessLogConfig Property accessLogConfig:. This parameter is required.
+         */
+        public Builder accessLogConfig(final com.aliyun.ros.cdk.core.IResolvable accessLogConfig) {
+            this.props.accessLogConfig(accessLogConfig);
+            return this;
+        }
+        /**
+         * Property accessLogConfig:.
+         * <p>
+         * @return {@code this}
+         * @param accessLogConfig Property accessLogConfig:. This parameter is required.
+         */
+        public Builder accessLogConfig(final com.aliyun.ros.cdk.alb.RosLoadBalancer.AccessLogConfigProperty accessLogConfig) {
+            this.props.accessLogConfig(accessLogConfig);
+            return this;
+        }
+
+        /**
          * Property addressAllocatedMode: The mode in which IP addresses are assigned.
          * <p>
          * Valid values:
@@ -300,6 +321,35 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder addressAllocatedMode(final com.aliyun.ros.cdk.core.IResolvable addressAllocatedMode) {
             this.props.addressAllocatedMode(addressAllocatedMode);
+            return this;
+        }
+
+        /**
+         * Property addressIpVersion: The protocol version.
+         * <p>
+         * Valid values:
+         * IPv4: IPv4
+         * DualStack: dual stack
+         * <p>
+         * @return {@code this}
+         * @param addressIpVersion Property addressIpVersion: The protocol version. This parameter is required.
+         */
+        public Builder addressIpVersion(final java.lang.String addressIpVersion) {
+            this.props.addressIpVersion(addressIpVersion);
+            return this;
+        }
+        /**
+         * Property addressIpVersion: The protocol version.
+         * <p>
+         * Valid values:
+         * IPv4: IPv4
+         * DualStack: dual stack
+         * <p>
+         * @return {@code this}
+         * @param addressIpVersion Property addressIpVersion: The protocol version. This parameter is required.
+         */
+        public Builder addressIpVersion(final com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
+            this.props.addressIpVersion(addressIpVersion);
             return this;
         }
 

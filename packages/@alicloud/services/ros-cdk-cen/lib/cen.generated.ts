@@ -1913,6 +1913,166 @@ export class RosCenVbrHealthCheck extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`
+ */
+export interface RosChildInstanceRouteEntryToAttachmentProps {
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    readonly cenId: string | ros.IResolvable;
+
+    /**
+     * @Property destinationCidrBlock: The destination CIDR block of the route.
+     */
+    readonly destinationCidrBlock: string | ros.IResolvable;
+
+    /**
+     * @Property routeTableId: The ID of the route table configured on the network instance.
+     */
+    readonly routeTableId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the network instance connection.
+     */
+    readonly transitRouterAttachmentId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosChildInstanceRouteEntryToAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosChildInstanceRouteEntryToAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosChildInstanceRouteEntryToAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.requiredValidator)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('routeTableId', ros.requiredValidator)(properties.routeTableId));
+    errors.collect(ros.propertyValidator('routeTableId', ros.validateString)(properties.routeTableId));
+    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('destinationCidrBlock', ros.requiredValidator)(properties.destinationCidrBlock));
+    errors.collect(ros.propertyValidator('destinationCidrBlock', ros.validateString)(properties.destinationCidrBlock));
+    return errors.wrap('supplied properties not correct for "RosChildInstanceRouteEntryToAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosChildInstanceRouteEntryToAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosChildInstanceRouteEntryToAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosChildInstanceRouteEntryToAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      CenId: ros.stringToRosTemplate(properties.cenId),
+      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
+      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
+      TransitRouterAttachmentId: ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`
+ */
+export class RosChildInstanceRouteEntryToAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::ChildInstanceRouteEntryToAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CenId: The ID of the CEN instance.
+     */
+    public readonly attrCenId: ros.IResolvable;
+
+    /**
+     * @Attribute DestinationCidrBlock: The destination CIDR block of the route.
+     */
+    public readonly attrDestinationCidrBlock: ros.IResolvable;
+
+    /**
+     * @Attribute RouteTableId: The ID of the route table configured on the network instance.
+     */
+    public readonly attrRouteTableId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentId: The ID of the network instance connection.
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    public cenId: string | ros.IResolvable;
+
+    /**
+     * @Property destinationCidrBlock: The destination CIDR block of the route.
+     */
+    public destinationCidrBlock: string | ros.IResolvable;
+
+    /**
+     * @Property routeTableId: The ID of the route table configured on the network instance.
+     */
+    public routeTableId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the network instance connection.
+     */
+    public transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosChildInstanceRouteEntryToAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosChildInstanceRouteEntryToAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCenId = this.getAtt('CenId');
+        this.attrDestinationCidrBlock = this.getAtt('DestinationCidrBlock');
+        this.attrRouteTableId = this.getAtt('RouteTableId');
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cenId = props.cenId;
+        this.destinationCidrBlock = props.destinationCidrBlock;
+        this.routeTableId = props.routeTableId;
+        this.transitRouterAttachmentId = props.transitRouterAttachmentId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cenId: this.cenId,
+            destinationCidrBlock: this.destinationCidrBlock,
+            routeTableId: this.routeTableId,
+            transitRouterAttachmentId: this.transitRouterAttachmentId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosChildInstanceRouteEntryToAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::CEN::RouteEntry`
  */
 export interface RosRouteEntryProps {

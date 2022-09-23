@@ -36,15 +36,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: quantity: Purchase quantity
-        /// </remarks>
-        [JsiiProperty(name: "quantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Quantity
-        {
-            get;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing
         /// </remarks>
         [JsiiProperty(name: "specification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -206,15 +197,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             /// </remarks>
             [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PayType
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: quantity: Purchase quantity
-            /// </remarks>
-            [JsiiProperty(name: "quantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Quantity
             {
                 get => GetInstanceProperty<object>()!;
             }

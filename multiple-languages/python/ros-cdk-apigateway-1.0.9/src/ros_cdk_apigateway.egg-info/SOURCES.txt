@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+pyproject.toml
+setup.py
+src/ros_cdk_apigateway/__init__.py
+src/ros_cdk_apigateway/py.typed
+src/ros_cdk_apigateway.egg-info/PKG-INFO
+src/ros_cdk_apigateway.egg-info/SOURCES.txt
+src/ros_cdk_apigateway.egg-info/dependency_links.txt
+src/ros_cdk_apigateway.egg-info/requires.txt
+src/ros_cdk_apigateway.egg-info/top_level.txt
+src/ros_cdk_apigateway/_jsii/__init__.py
+src/ros_cdk_apigateway/_jsii/ros-cdk-apigateway@1.0.9.jsii.tgz

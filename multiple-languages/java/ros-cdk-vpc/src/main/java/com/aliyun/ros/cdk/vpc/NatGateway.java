@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:05.829Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.860Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGateway")
 public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
 
@@ -267,6 +267,43 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
             this.props.duration(duration);
+            return this;
+        }
+
+        /**
+         * Property eipBindMode: The mode in which the EIP is associated with the NAT gateway.
+         * <p>
+         * Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
+         * NAT: NAT mode. IPv4 gateways are supported.
+         * Note If the EIP is associated with the NAT gateway in NAT mode,
+         * the EIP occupies a private IP address of the vSwitch to which the NAT gateway belongs.
+         * Make sure that the vSwitch has sufficient private IP addresses.
+         * Otherwise, the EIP cannot be associated with the NAT gateway.
+         * In NAT mode, a maximum number of 50 EIPs can be associated with each NAT gateway.
+         * <p>
+         * @return {@code this}
+         * @param eipBindMode Property eipBindMode: The mode in which the EIP is associated with the NAT gateway. This parameter is required.
+         */
+        public Builder eipBindMode(final java.lang.String eipBindMode) {
+            this.props.eipBindMode(eipBindMode);
+            return this;
+        }
+        /**
+         * Property eipBindMode: The mode in which the EIP is associated with the NAT gateway.
+         * <p>
+         * Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
+         * NAT: NAT mode. IPv4 gateways are supported.
+         * Note If the EIP is associated with the NAT gateway in NAT mode,
+         * the EIP occupies a private IP address of the vSwitch to which the NAT gateway belongs.
+         * Make sure that the vSwitch has sufficient private IP addresses.
+         * Otherwise, the EIP cannot be associated with the NAT gateway.
+         * In NAT mode, a maximum number of 50 EIPs can be associated with each NAT gateway.
+         * <p>
+         * @return {@code this}
+         * @param eipBindMode Property eipBindMode: The mode in which the EIP is associated with the NAT gateway. This parameter is required.
+         */
+        public Builder eipBindMode(final com.aliyun.ros.cdk.core.IResolvable eipBindMode) {
+            this.props.eipBindMode(eipBindMode);
             return this;
         }
 

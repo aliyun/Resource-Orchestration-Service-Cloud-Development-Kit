@@ -44,11 +44,23 @@ export interface LoadBalancerProps {
     readonly zoneMappings: Array<RosLoadBalancer.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property accessLogConfig:
+     */
+    readonly accessLogConfig?: RosLoadBalancer.AccessLogConfigProperty | ros.IResolvable;
+
+    /**
      * Property addressAllocatedMode: The mode in which IP addresses are assigned. Valid values:
      * Fixed: The ALB instance uses a static IP address.
      * Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
      */
     readonly addressAllocatedMode?: string | ros.IResolvable;
+
+    /**
+     * Property addressIpVersion: The protocol version. Valid values:
+     * IPv4: IPv4
+     * DualStack: dual stack
+     */
+    readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
      * Property bandwidthPackageId: Attach common bandwidth package to load balancer. It only takes effect when AddressType=Internet.
@@ -127,16 +139,18 @@ export class LoadBalancer extends ros.Resource {
         super(scope, id);
 
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
-            loadBalancerName: props.loadBalancerName,
+            addressIpVersion: props.addressIpVersion,
             loadBalancerEdition: props.loadBalancerEdition,
             resourceGroupId: props.resourceGroupId,
-            vpcId: props.vpcId,
             loadBalancerBillingConfig: props.loadBalancerBillingConfig,
+            zoneMappings: props.zoneMappings,
+            modificationProtectionConfig: props.modificationProtectionConfig,
+            loadBalancerName: props.loadBalancerName,
+            accessLogConfig: props.accessLogConfig,
+            vpcId: props.vpcId,
             bandwidthPackageId: props.bandwidthPackageId,
             addressType: props.addressType,
             addressAllocatedMode: props.addressAllocatedMode,
-            zoneMappings: props.zoneMappings,
-            modificationProtectionConfig: props.modificationProtectionConfig,
             deletionProtectionEnabled: props.deletionProtectionEnabled,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

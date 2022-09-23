@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public class FnMax : AlibabaCloud.SDK.ROS.CDK.Core.Intrinsic
     {
         /// <summary>Creates an ``Max`` function.</summary>
-        public FnMax(object values): base(new DeputyProps(new object?[]{values}))
+        public FnMax(object values): base(_MakeDeputyProps(values))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object values)
+        {
+            return new DeputyProps(new object?[]{values});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

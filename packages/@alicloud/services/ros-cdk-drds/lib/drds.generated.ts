@@ -330,11 +330,6 @@ export interface RosDrdsInstanceProps {
     readonly payType: string | ros.IResolvable;
 
     /**
-     * @Property quantity: Purchase quantity
-     */
-    readonly quantity: number | ros.IResolvable;
-
-    /**
      * @Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing
      */
     readonly specification: string | ros.IResolvable;
@@ -414,15 +409,6 @@ function RosDrdsInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     errors.collect(ros.propertyValidator('instanceSeries', ros.requiredValidator)(properties.instanceSeries));
     errors.collect(ros.propertyValidator('instanceSeries', ros.validateString)(properties.instanceSeries));
-    errors.collect(ros.propertyValidator('quantity', ros.requiredValidator)(properties.quantity));
-    if(properties.quantity && (typeof properties.quantity) !== 'object') {
-        errors.collect(ros.propertyValidator('quantity', ros.validateRange)({
-            data: properties.quantity,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('quantity', ros.validateNumber)(properties.quantity));
     errors.collect(ros.propertyValidator('specification', ros.requiredValidator)(properties.specification));
     errors.collect(ros.propertyValidator('specification', ros.validateString)(properties.specification));
     if(properties.duration && (typeof properties.duration) !== 'object') {
@@ -481,7 +467,6 @@ function rosDrdsInstancePropsToRosTemplate(properties: any, enableResourceProper
       Description: ros.stringToRosTemplate(properties.description),
       InstanceSeries: ros.stringToRosTemplate(properties.instanceSeries),
       PayType: ros.stringToRosTemplate(properties.payType),
-      Quantity: ros.numberToRosTemplate(properties.quantity),
       Specification: ros.stringToRosTemplate(properties.specification),
       Type: ros.stringToRosTemplate(properties.type),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -547,11 +532,6 @@ export class RosDrdsInstance extends ros.RosResource {
      * @Property payType: For the type of payment, see "Payment Type Parameter Table"
      */
     public payType: string | ros.IResolvable;
-
-    /**
-     * @Property quantity: Purchase quantity
-     */
-    public quantity: number | ros.IResolvable;
 
     /**
      * @Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing
@@ -626,7 +606,6 @@ export class RosDrdsInstance extends ros.RosResource {
         this.description = props.description;
         this.instanceSeries = props.instanceSeries;
         this.payType = props.payType;
-        this.quantity = props.quantity;
         this.specification = props.specification;
         this.type = props.type;
         this.zoneId = props.zoneId;
@@ -646,7 +625,6 @@ export class RosDrdsInstance extends ros.RosResource {
             description: this.description,
             instanceSeries: this.instanceSeries,
             payType: this.payType,
-            quantity: this.quantity,
             specification: this.specification,
             type: this.type,
             zoneId: this.zoneId,

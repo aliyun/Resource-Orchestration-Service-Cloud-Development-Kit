@@ -10,8 +10,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     {
         /// <summary>Creates an ``Fn::Base64`` function.</summary>
         /// <param name="data">The string value you want to convert to Base64.</param>
-        public FnBase64Encode(object data): base(new DeputyProps(new object?[]{data}))
+        public FnBase64Encode(object data): base(_MakeDeputyProps(data))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(object data)
+        {
+            return new DeputyProps(new object?[]{data});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

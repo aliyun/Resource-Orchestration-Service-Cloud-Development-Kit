@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS template type:  `ALIYUN::ALB::ServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.701Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosServerGroup")
 public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -185,6 +185,24 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setServerGroupType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "serverGroupType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServiceName() {
+        return software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServiceName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "serviceName", value);
+    }
+
+    /**
+     */
+    public void setServiceName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serviceName", value);
     }
 
     /**
@@ -1383,6 +1401,23 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder serverGroupType(final com.aliyun.ros.cdk.core.IResolvable serverGroupType) {
             this.props.serverGroupType(serverGroupType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serviceName This parameter is required.
+         */
+        public Builder serviceName(final java.lang.String serviceName) {
+            this.props.serviceName(serviceName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serviceName This parameter is required.
+         */
+        public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.props.serviceName(serviceName);
             return this;
         }
 

@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.TokenizedStringFragments), fullyQualifiedName: "@alicloud/ros-cdk-core.TokenizedStringFragments")]
     public class TokenizedStringFragments : DeputyBase
     {
-        public TokenizedStringFragments(): base(new DeputyProps(System.Array.Empty<object?>()))
+        public TokenizedStringFragments(): base(_MakeDeputyProps())
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps()
+        {
+            return new DeputyProps(System.Array.Empty<object?>());
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

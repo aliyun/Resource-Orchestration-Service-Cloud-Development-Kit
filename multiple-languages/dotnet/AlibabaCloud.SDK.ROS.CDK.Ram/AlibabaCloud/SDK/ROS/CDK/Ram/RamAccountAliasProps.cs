@@ -10,6 +10,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RamAccountAliasProps")]
     public class RamAccountAliasProps : AlibabaCloud.SDK.ROS.CDK.Ram.IRamAccountAliasProps
     {
+        private object _accountAlias;
+
         /// <summary>Property accountAlias: The alias of the Alibaba Cloud account.</summary>
         /// <remarks>
         /// The alias must be 1 to 50 characters in length, and can contain lowercase letters,
@@ -20,8 +22,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         [JsiiProperty(name: "accountAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AccountAlias
         {
-            get;
-            set;
+            get => _accountAlias;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _accountAlias = value;
+            }
         }
     }
 }

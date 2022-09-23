@@ -8,7 +8,13 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosClusterProps {
 
     /**
-     * @Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
+     * @Property clusterSpecification: Cluster specifications. Note the msversion requirements of the version parameter,
+     * Optional parameters:
+     * "MSE_ SC _1_2_60_c",
+     * "MSE_ SC _2_4_60_c",
+     * "MSE_ SC _4_8_60_c",
+     * "MSE_ SC _8_16_60_c",
+     * "MSE_ SC _16_32_60_c"
      */
     readonly clusterSpecification: string | ros.IResolvable;
 
@@ -18,7 +24,7 @@ export interface RosClusterProps {
     readonly clusterType: string | ros.IResolvable;
 
     /**
-     * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0
+     * @Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0
      */
     readonly clusterVersion: string | ros.IResolvable;
 
@@ -28,7 +34,7 @@ export interface RosClusterProps {
     readonly instanceCount: number | ros.IResolvable;
 
     /**
-     * @Property netType: network type, Enum: privatenet,pubnet
+     * @Property netType: Network type (whether private network is enabled or not). privatenet indicates that private network is enabled.
      */
     readonly netType: string | ros.IResolvable;
 
@@ -38,7 +44,7 @@ export interface RosClusterProps {
     readonly acceptLanguage?: string | ros.IResolvable;
 
     /**
-     * @Property aclEntryList: acl entry list
+     * @Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
      */
     readonly aclEntryList?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -58,10 +64,10 @@ export interface RosClusterProps {
     readonly diskType?: string | ros.IResolvable;
 
     /**
-     * @Property mseVersion: This parameter is required when creating a professional version. The value is as follows:
+     * @Property mseVersion: Required, the value is as follows:
      * 
-     * -'mse_basic': indicates the basic version (default value).
-     * -'mse_pro': means professional version.
+     * -'mse_dev': indicates the development version.
+     * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
      */
     readonly mseVersion?: string | ros.IResolvable;
 
@@ -71,7 +77,7 @@ export interface RosClusterProps {
     readonly privateSlbSpecification?: string | ros.IResolvable;
 
     /**
-     * @Property pubNetworkFlow: pub network flow
+     * @Property pubNetworkFlow: Public network bandwidth. If the bandwidth is greater than 0, the public network is enabled.
      */
     readonly pubNetworkFlow?: string | ros.IResolvable;
 
@@ -106,21 +112,9 @@ export interface RosClusterProps {
 function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.mseVersion && (typeof properties.mseVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('mseVersion', ros.validateAllowedValues)({
-          data: properties.mseVersion,
-          allowedValues: ["mse_pro","mse_basic"],
-        }));
-    }
     errors.collect(ros.propertyValidator('mseVersion', ros.validateString)(properties.mseVersion));
     errors.collect(ros.propertyValidator('privateSlbSpecification', ros.validateString)(properties.privateSlbSpecification));
     errors.collect(ros.propertyValidator('clusterVersion', ros.requiredValidator)(properties.clusterVersion));
-    if(properties.clusterVersion && (typeof properties.clusterVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('clusterVersion', ros.validateAllowedValues)({
-          data: properties.clusterVersion,
-          allowedValues: ["ZooKeeper_3_5_5","ZooKeeper_3_4_14","NACOS_2_0_0","NACOS_ANS_1_2_1"],
-        }));
-    }
     if(properties.clusterVersion && (typeof properties.clusterVersion) !== 'object') {
         errors.collect(ros.propertyValidator('clusterVersion', ros.validateAllowedPattern)({
           data: properties.clusterVersion,
@@ -143,12 +137,6 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('connectionType', ros.validateString)(properties.connectionType));
     errors.collect(ros.propertyValidator('aclEntryList', ros.listValidator(ros.validateString))(properties.aclEntryList));
     errors.collect(ros.propertyValidator('clusterSpecification', ros.requiredValidator)(properties.clusterSpecification));
-    if(properties.clusterSpecification && (typeof properties.clusterSpecification) !== 'object') {
-        errors.collect(ros.propertyValidator('clusterSpecification', ros.validateAllowedValues)({
-          data: properties.clusterSpecification,
-          allowedValues: ["MSE_SC_1_2_200_c","MSE_SC_2_4_200_c","MSE_SC_4_8_200_c","MSE_SC_8_16_200_c","MSE_SC_16_32_200_c"],
-        }));
-    }
     if(properties.clusterSpecification && (typeof properties.clusterSpecification) !== 'object') {
         errors.collect(ros.propertyValidator('clusterSpecification', ros.validateAllowedPattern)({
           data: properties.clusterSpecification,
@@ -282,7 +270,7 @@ export class RosCluster extends ros.RosResource {
      */
 
     /**
-     * @Attribute AclEntryList: acl entry list
+     * @Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
      */
     public readonly attrAclEntryList: ros.IResolvable;
 
@@ -312,7 +300,13 @@ export class RosCluster extends ros.RosResource {
     public readonly attrClusterName: ros.IResolvable;
 
     /**
-     * @Attribute ClusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
+     * @Attribute ClusterSpecification: Cluster specifications. Note the msversion requirements of the version parameter,
+Optional parameters:
+"MSE_ SC _1_2_60_c",
+"MSE_ SC _2_4_60_c",
+"MSE_ SC _4_8_60_c",
+"MSE_ SC _8_16_60_c",
+"MSE_ SC _16_32_60_c"
      */
     public readonly attrClusterSpecification: ros.IResolvable;
 
@@ -322,9 +316,19 @@ export class RosCluster extends ros.RosResource {
     public readonly attrClusterType: ros.IResolvable;
 
     /**
-     * @Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0
+     * @Attribute ClusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0
      */
     public readonly attrClusterVersion: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigAuthEnabled: Whether the configuration supports it. Valid values: true: false: not supported
+     */
+    public readonly attrConfigAuthEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute ConfigSecretEnabled: Whether the configuration password takes effect. The value is as follows: true: valid false: not valid
+     */
+    public readonly attrConfigSecretEnabled: ros.IResolvable;
 
     /**
      * @Attribute ConnectionType: network connect type
@@ -392,20 +396,25 @@ export class RosCluster extends ros.RosResource {
     public readonly attrIntranetPort: ros.IResolvable;
 
     /**
+     * @Attribute MCPEnabled: Whether MCP takes effect, the value is as follows: true: valid false: not valid
+     */
+    public readonly attrMcpEnabled: ros.IResolvable;
+
+    /**
      * @Attribute MemoryCapacity: memory capacity
      */
     public readonly attrMemoryCapacity: ros.IResolvable;
 
     /**
-     * @Attribute MseVersion: This parameter is required when creating a professional version. The value is as follows:
+     * @Attribute MseVersion: Required, the value is as follows:
 
--'mse_basic': indicates the basic version (default value).
--'mse_pro': means professional version.
+-'mse_dev': indicates the development version.
+-'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
      */
     public readonly attrMseVersion: ros.IResolvable;
 
     /**
-     * @Attribute NetType: network type, Enum: privatenet,pubnet
+     * @Attribute NetType: Network type (whether private network is enabled or not). privatenet indicates that private network is enabled.
      */
     public readonly attrNetType: ros.IResolvable;
 
@@ -415,7 +424,7 @@ export class RosCluster extends ros.RosResource {
     public readonly attrPayInfo: ros.IResolvable;
 
     /**
-     * @Attribute PubNetworkFlow: pub network flow
+     * @Attribute PubNetworkFlow: Public network bandwidth. If the bandwidth is greater than 0, the public network is enabled.
      */
     public readonly attrPubNetworkFlow: ros.IResolvable;
 
@@ -433,7 +442,13 @@ export class RosCluster extends ros.RosResource {
 
 
     /**
-     * @Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
+     * @Property clusterSpecification: Cluster specifications. Note the msversion requirements of the version parameter,
+     * Optional parameters:
+     * "MSE_ SC _1_2_60_c",
+     * "MSE_ SC _2_4_60_c",
+     * "MSE_ SC _4_8_60_c",
+     * "MSE_ SC _8_16_60_c",
+     * "MSE_ SC _16_32_60_c"
      */
     public clusterSpecification: string | ros.IResolvable;
 
@@ -443,7 +458,7 @@ export class RosCluster extends ros.RosResource {
     public clusterType: string | ros.IResolvable;
 
     /**
-     * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_2_1,NACOS_2_0_0
+     * @Property clusterVersion: Cluster version, such as ZooKeeper_3_8_0,NACOS_2_0_0
      */
     public clusterVersion: string | ros.IResolvable;
 
@@ -453,7 +468,7 @@ export class RosCluster extends ros.RosResource {
     public instanceCount: number | ros.IResolvable;
 
     /**
-     * @Property netType: network type, Enum: privatenet,pubnet
+     * @Property netType: Network type (whether private network is enabled or not). privatenet indicates that private network is enabled.
      */
     public netType: string | ros.IResolvable;
 
@@ -463,7 +478,7 @@ export class RosCluster extends ros.RosResource {
     public acceptLanguage: string | ros.IResolvable | undefined;
 
     /**
-     * @Property aclEntryList: acl entry list
+     * @Property aclEntryList: The public network whitelist list is used only when the public network is enabled.
      */
     public aclEntryList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -483,10 +498,10 @@ export class RosCluster extends ros.RosResource {
     public diskType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property mseVersion: This parameter is required when creating a professional version. The value is as follows:
+     * @Property mseVersion: Required, the value is as follows:
      * 
-     * -'mse_basic': indicates the basic version (default value).
-     * -'mse_pro': means professional version.
+     * -'mse_dev': indicates the development version.
+     * -'Mse_pro': means professional version. When this version is selected, the specification is 2c4g or above, and the specification is 3 nodes or above.
      */
     public mseVersion: string | ros.IResolvable | undefined;
 
@@ -496,7 +511,7 @@ export class RosCluster extends ros.RosResource {
     public privateSlbSpecification: string | ros.IResolvable | undefined;
 
     /**
-     * @Property pubNetworkFlow: pub network flow
+     * @Property pubNetworkFlow: Public network bandwidth. If the bandwidth is greater than 0, the public network is enabled.
      */
     public pubNetworkFlow: string | ros.IResolvable | undefined;
 
@@ -538,6 +553,8 @@ export class RosCluster extends ros.RosResource {
         this.attrClusterSpecification = this.getAtt('ClusterSpecification');
         this.attrClusterType = this.getAtt('ClusterType');
         this.attrClusterVersion = this.getAtt('ClusterVersion');
+        this.attrConfigAuthEnabled = this.getAtt('ConfigAuthEnabled');
+        this.attrConfigSecretEnabled = this.getAtt('ConfigSecretEnabled');
         this.attrConnectionType = this.getAtt('ConnectionType');
         this.attrCpu = this.getAtt('Cpu');
         this.attrDiskCapacity = this.getAtt('DiskCapacity');
@@ -551,6 +568,7 @@ export class RosCluster extends ros.RosResource {
         this.attrIntranetAddress = this.getAtt('IntranetAddress');
         this.attrIntranetDomain = this.getAtt('IntranetDomain');
         this.attrIntranetPort = this.getAtt('IntranetPort');
+        this.attrMcpEnabled = this.getAtt('MCPEnabled');
         this.attrMemoryCapacity = this.getAtt('MemoryCapacity');
         this.attrMseVersion = this.getAtt('MseVersion');
         this.attrNetType = this.getAtt('NetType');

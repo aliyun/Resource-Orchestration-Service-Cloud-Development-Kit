@@ -8,8 +8,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.ConstructNode), fullyQualifiedName: "@alicloud/ros-cdk-core.ConstructNode", parametersJson: "[{\"name\":\"host\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}}]")]
     public class ConstructNode : DeputyBase
     {
-        public ConstructNode(AlibabaCloud.SDK.ROS.CDK.Core.Construct host, AlibabaCloud.SDK.ROS.CDK.Core.IConstruct scope, string id): base(new DeputyProps(new object?[]{host, scope, id}))
+        public ConstructNode(AlibabaCloud.SDK.ROS.CDK.Core.Construct host, AlibabaCloud.SDK.ROS.CDK.Core.IConstruct scope, string id): base(_MakeDeputyProps(host, scope, id))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct host, AlibabaCloud.SDK.ROS.CDK.Core.IConstruct scope, string id)
+        {
+            return new DeputyProps(new object?[]{host, scope, id});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

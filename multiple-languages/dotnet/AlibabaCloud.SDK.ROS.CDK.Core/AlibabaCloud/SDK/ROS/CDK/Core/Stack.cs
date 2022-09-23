@@ -12,8 +12,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <param name="scope">Parent of this stack, usually a Program instance.</param>
         /// <param name="id">The construct ID of this stack.</param>
         /// <param name="props">Stack properties.</param>
-        public Stack(AlibabaCloud.SDK.ROS.CDK.Core.Construct? scope = null, string? id = null, AlibabaCloud.SDK.ROS.CDK.Core.IStackProps? props = null): base(new DeputyProps(new object?[]{scope, id, props}))
+        public Stack(AlibabaCloud.SDK.ROS.CDK.Core.Construct? scope = null, string? id = null, AlibabaCloud.SDK.ROS.CDK.Core.IStackProps? props = null): base(_MakeDeputyProps(scope, id, props))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct? scope = null, string? id = null, AlibabaCloud.SDK.ROS.CDK.Core.IStackProps? props = null)
+        {
+            return new DeputyProps(new object?[]{scope, id, props});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

@@ -18,8 +18,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     {
         /// <summary>Initializes a CDK application.</summary>
         /// <param name="props">initialization properties.</param>
-        public App(AlibabaCloud.SDK.ROS.CDK.Core.IAppProps? props = null): base(new DeputyProps(new object?[]{props}))
+        public App(AlibabaCloud.SDK.ROS.CDK.Core.IAppProps? props = null): base(_MakeDeputyProps(props))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.IAppProps? props = null)
+        {
+            return new DeputyProps(new object?[]{props});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

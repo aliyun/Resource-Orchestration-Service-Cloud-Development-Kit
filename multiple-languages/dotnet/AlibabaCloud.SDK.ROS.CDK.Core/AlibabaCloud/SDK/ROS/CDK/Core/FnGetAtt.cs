@@ -11,8 +11,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>Creates a ``Fn::GetAtt`` function.</summary>
         /// <param name="logicalNameOfResource">The logical name (also called logical ID) of the resource that contains the attribute that you want.</param>
         /// <param name="attributeName">The name of the resource-specific attribute whose value you want.</param>
-        public FnGetAtt(string logicalNameOfResource, string attributeName): base(new DeputyProps(new object?[]{logicalNameOfResource, attributeName}))
+        public FnGetAtt(string logicalNameOfResource, string attributeName): base(_MakeDeputyProps(logicalNameOfResource, attributeName))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(string logicalNameOfResource, string attributeName)
+        {
+            return new DeputyProps(new object?[]{logicalNameOfResource, attributeName});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

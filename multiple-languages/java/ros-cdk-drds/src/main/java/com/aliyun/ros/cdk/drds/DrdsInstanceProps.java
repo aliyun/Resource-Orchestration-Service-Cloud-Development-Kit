@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * Properties for defining a `ALIYUN::DRDS::DrdsInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:03.489Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.785Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DrdsInstanceProps.Jsii$Proxy.class)
 public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -22,11 +22,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
      * Property payType: For the type of payment, see "Payment Type Parameter Table".
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPayType();
-
-    /**
-     * Property quantity: Purchase quantity.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getQuantity();
 
     /**
      * Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing.
@@ -122,7 +117,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object description;
         java.lang.Object instanceSeries;
         java.lang.Object payType;
-        java.lang.Object quantity;
         java.lang.Object specification;
         java.lang.Object type;
         java.lang.Object zoneId;
@@ -192,26 +186,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
             this.payType = payType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link DrdsInstanceProps#getQuantity}
-         * @param quantity Property quantity: Purchase quantity. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder quantity(java.lang.Number quantity) {
-            this.quantity = quantity;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link DrdsInstanceProps#getQuantity}
-         * @param quantity Property quantity: Purchase quantity. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder quantity(com.aliyun.ros.cdk.core.IResolvable quantity) {
-            this.quantity = quantity;
             return this;
         }
 
@@ -454,7 +428,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object description;
         private final java.lang.Object instanceSeries;
         private final java.lang.Object payType;
-        private final java.lang.Object quantity;
         private final java.lang.Object specification;
         private final java.lang.Object type;
         private final java.lang.Object zoneId;
@@ -476,7 +449,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceSeries = software.amazon.jsii.Kernel.get(this, "instanceSeries", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.specification = software.amazon.jsii.Kernel.get(this, "specification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -499,7 +471,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
             this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
             this.instanceSeries = java.util.Objects.requireNonNull(builder.instanceSeries, "instanceSeries is required");
             this.payType = java.util.Objects.requireNonNull(builder.payType, "payType is required");
-            this.quantity = java.util.Objects.requireNonNull(builder.quantity, "quantity is required");
             this.specification = java.util.Objects.requireNonNull(builder.specification, "specification is required");
             this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
@@ -526,11 +497,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getPayType() {
             return this.payType;
-        }
-
-        @Override
-        public final java.lang.Object getQuantity() {
-            return this.quantity;
         }
 
         @Override
@@ -597,7 +563,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
             data.set("description", om.valueToTree(this.getDescription()));
             data.set("instanceSeries", om.valueToTree(this.getInstanceSeries()));
             data.set("payType", om.valueToTree(this.getPayType()));
-            data.set("quantity", om.valueToTree(this.getQuantity()));
             data.set("specification", om.valueToTree(this.getSpecification()));
             data.set("type", om.valueToTree(this.getType()));
             data.set("zoneId", om.valueToTree(this.getZoneId()));
@@ -646,7 +611,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
             if (!description.equals(that.description)) return false;
             if (!instanceSeries.equals(that.instanceSeries)) return false;
             if (!payType.equals(that.payType)) return false;
-            if (!quantity.equals(that.quantity)) return false;
             if (!specification.equals(that.specification)) return false;
             if (!type.equals(that.type)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
@@ -665,7 +629,6 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
             int result = this.description.hashCode();
             result = 31 * result + (this.instanceSeries.hashCode());
             result = 31 * result + (this.payType.hashCode());
-            result = 31 * result + (this.quantity.hashCode());
             result = 31 * result + (this.specification.hashCode());
             result = 31 * result + (this.type.hashCode());
             result = 31 * result + (this.zoneId.hashCode());

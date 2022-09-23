@@ -92,6 +92,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property eipBindMode: The mode in which the EIP is associated with the NAT gateway.</summary>
+        /// <remarks>
+        /// Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
+        /// NAT: NAT mode. IPv4 gateways are supported.
+        /// Note If the EIP is associated with the NAT gateway in NAT mode,
+        /// the EIP occupies a private IP address of the vSwitch to which the NAT gateway belongs.
+        /// Make sure that the vSwitch has sufficient private IP addresses.
+        /// Otherwise, the EIP cannot be associated with the NAT gateway.
+        /// In NAT mode, a maximum number of 50 EIPs can be associated with each NAT gateway.
+        /// </remarks>
+        [JsiiProperty(name: "eipBindMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EipBindMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property instanceChargeType: The billing method.</summary>
         /// <remarks>
         /// The default value is PostPaid (which means pay-as-you-go).
@@ -266,6 +286,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Duration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property eipBindMode: The mode in which the EIP is associated with the NAT gateway.</summary>
+            /// <remarks>
+            /// Valid values:MULTI_BINDED (default): the multi-EIP-to-ENI mode.
+            /// NAT: NAT mode. IPv4 gateways are supported.
+            /// Note If the EIP is associated with the NAT gateway in NAT mode,
+            /// the EIP occupies a private IP address of the vSwitch to which the NAT gateway belongs.
+            /// Make sure that the vSwitch has sufficient private IP addresses.
+            /// Otherwise, the EIP cannot be associated with the NAT gateway.
+            /// In NAT mode, a maximum number of 50 EIPs can be associated with each NAT gateway.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "eipBindMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EipBindMode
             {
                 get => GetInstanceProperty<object?>();
             }

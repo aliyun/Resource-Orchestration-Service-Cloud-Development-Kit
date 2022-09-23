@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS resource type:  `ALIYUN::ALB::ServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.708Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.963Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ServerGroup")
 public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -291,6 +291,31 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder serverGroupType(final com.aliyun.ros.cdk.core.IResolvable serverGroupType) {
             this.props.serverGroupType(serverGroupType);
+            return this;
+        }
+
+        /**
+         * Property serviceName: This parameter is available only if the ALB Ingress controller is used.
+         * <p>
+         * In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
+         * <p>
+         * @return {@code this}
+         * @param serviceName Property serviceName: This parameter is available only if the ALB Ingress controller is used. This parameter is required.
+         */
+        public Builder serviceName(final java.lang.String serviceName) {
+            this.props.serviceName(serviceName);
+            return this;
+        }
+        /**
+         * Property serviceName: This parameter is available only if the ALB Ingress controller is used.
+         * <p>
+         * In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
+         * <p>
+         * @return {@code this}
+         * @param serviceName Property serviceName: This parameter is available only if the ALB Ingress controller is used. This parameter is required.
+         */
+        public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.props.serviceName(serviceName);
             return this;
         }
 

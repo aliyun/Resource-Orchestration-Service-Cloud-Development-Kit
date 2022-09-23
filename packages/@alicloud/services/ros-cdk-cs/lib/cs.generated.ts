@@ -875,6 +875,10 @@ export namespace RosClusterNodePool {
          */
         readonly instanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property zoneIds: Zone ids of virtual switches belongs to.
+         */
+        readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property tags: Adds labels only to ECS instances.
      * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
          */
@@ -1019,6 +1023,7 @@ function RosClusterNodePool_ScalingGroupPropertyValidator(properties: any): ros.
           }));
     }
     errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1099,6 +1104,7 @@ function rosClusterNodePoolScalingGroupPropertyToRosTemplate(properties: any): a
       ImageId: ros.stringToRosTemplate(properties.imageId),
       SpotPriceLimit: ros.listMapper(rosClusterNodePoolSpotPriceLimitPropertyToRosTemplate)(properties.spotPriceLimit),
       InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
+      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
       Tags: ros.listMapper(rosClusterNodePoolTagsPropertyToRosTemplate)(properties.tags),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
@@ -1647,6 +1653,7 @@ export interface RosKubernetesClusterProps {
      * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     readonly period?: number | ros.IResolvable;
@@ -1655,6 +1662,7 @@ export interface RosKubernetesClusterProps {
      * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     readonly periodUnit?: string | ros.IResolvable;
@@ -1878,7 +1886,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
-          allowedValues: ["Week","Month"],
+          allowedValues: ["Week","Month","Year"],
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
@@ -1960,7 +1968,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -2378,6 +2386,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     public period: number | ros.IResolvable | undefined;
@@ -2386,6 +2395,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     public periodUnit: string | ros.IResolvable | undefined;
@@ -3195,13 +3205,13 @@ export namespace RosKubernetesCluster {
          */
         readonly dataDisks?: Array<RosKubernetesCluster.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property vSwitchIds: The IDs of vSwitches.
-         */
-        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property systemDiskSize: The system disk size of a node. Unit: GiB. Valid values: 40 to 500.
          */
         readonly systemDiskSize: number | ros.IResolvable;
+        /**
+         * @Property vSwitchIds: The IDs of vSwitches.
+         */
+        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property instanceChargeType: The billing method of nodes in the node pool. Valid values:
      * PrePaid: subscription.
@@ -3262,6 +3272,10 @@ export namespace RosKubernetesCluster {
          */
         readonly instanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property zoneIds: Zone ids of virtual switches belongs to.
+         */
+        readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property tags: Adds labels only to ECS instances.
      * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
          */
@@ -3296,6 +3310,8 @@ function RosKubernetesCluster_ScalingGroupPropertyValidator(properties: any): ro
           }));
     }
     errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosKubernetesCluster_DataDisksPropertyValidator))(properties.dataDisks));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
@@ -3305,8 +3321,6 @@ function RosKubernetesCluster_ScalingGroupPropertyValidator(properties: any): ro
           }));
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
-    errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
-    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateRange)({
@@ -3339,6 +3353,7 @@ function RosKubernetesCluster_ScalingGroupPropertyValidator(properties: any): ro
           }));
     }
     errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -3367,8 +3382,8 @@ function rosKubernetesClusterScalingGroupPropertyToRosTemplate(properties: any):
       KeyPair: ros.stringToRosTemplate(properties.keyPair),
       Platform: ros.stringToRosTemplate(properties.platform),
       DataDisks: ros.listMapper(rosKubernetesClusterDataDisksPropertyToRosTemplate)(properties.dataDisks),
-      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       Period: ros.numberToRosTemplate(properties.period),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
@@ -3379,6 +3394,7 @@ function rosKubernetesClusterScalingGroupPropertyToRosTemplate(properties: any):
       RdsInstances: ros.listMapper(ros.stringToRosTemplate)(properties.rdsInstances),
       ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
+      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
       Tags: ros.listMapper(rosKubernetesClusterScalingGroupTagsPropertyToRosTemplate)(properties.tags),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
@@ -3726,6 +3742,7 @@ export interface RosManagedEdgeKubernetesClusterProps {
      * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     readonly period?: number | ros.IResolvable;
@@ -3734,6 +3751,7 @@ export interface RosManagedEdgeKubernetesClusterProps {
      * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     readonly periodUnit?: string | ros.IResolvable;
@@ -3801,6 +3819,11 @@ export interface RosManagedEdgeKubernetesClusterProps {
      * @Property workerDataDiskCategory: Data disk type.
      */
     readonly workerDataDiskCategory?: string | ros.IResolvable;
+
+    /**
+     * @Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
+     */
+    readonly workerDataDisks?: Array<RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property workerDataDiskSize: Data disk size in GiB.
@@ -3898,6 +3921,7 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('workerDataDisks', ros.listValidator(RosManagedEdgeKubernetesCluster_WorkerDataDisksPropertyValidator))(properties.workerDataDisks));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -3922,7 +3946,7 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -3931,7 +3955,7 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
-          allowedValues: ["Week","Month"],
+          allowedValues: ["Week","Month","Year"],
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
@@ -3981,6 +4005,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
       WorkerDataDisk: ros.booleanToRosTemplate(properties.workerDataDisk),
       WorkerDataDiskCategory: ros.stringToRosTemplate(properties.workerDataDiskCategory),
+      WorkerDataDisks: ros.listMapper(rosManagedEdgeKubernetesClusterWorkerDataDisksPropertyToRosTemplate)(properties.workerDataDisks),
       WorkerDataDiskSize: ros.numberToRosTemplate(properties.workerDataDiskSize),
       WorkerInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.workerInstanceTypes),
       WorkerSystemDiskCategory: ros.stringToRosTemplate(properties.workerSystemDiskCategory),
@@ -4171,6 +4196,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     public period: number | ros.IResolvable | undefined;
@@ -4179,6 +4205,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     public periodUnit: string | ros.IResolvable | undefined;
@@ -4246,6 +4273,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      * @Property workerDataDiskCategory: Data disk type.
      */
     public workerDataDiskCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
+     */
+    public workerDataDisks: Array<RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property workerDataDiskSize: Data disk size in GiB.
@@ -4324,6 +4356,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.vSwitchIds = props.vSwitchIds;
         this.workerDataDisk = props.workerDataDisk;
         this.workerDataDiskCategory = props.workerDataDiskCategory;
+        this.workerDataDisks = props.workerDataDisks;
         this.workerDataDiskSize = props.workerDataDiskSize;
         this.workerInstanceTypes = props.workerInstanceTypes;
         this.workerSystemDiskCategory = props.workerSystemDiskCategory;
@@ -4363,6 +4396,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             vSwitchIds: this.vSwitchIds,
             workerDataDisk: this.workerDataDisk,
             workerDataDiskCategory: this.workerDataDiskCategory,
+            workerDataDisks: this.workerDataDisks,
             workerDataDiskSize: this.workerDataDiskSize,
             workerInstanceTypes: this.workerInstanceTypes,
             workerSystemDiskCategory: this.workerSystemDiskCategory,
@@ -4474,6 +4508,65 @@ function rosManagedEdgeKubernetesClusterTagsPropertyToRosTemplate(properties: an
     return {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosManagedEdgeKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface WorkerDataDisksProperty {
+        /**
+         * @Property category: Data disk type. Value includes:
+     * cloud: ordinary cloud disk
+     * cloud_efficiency: efficient cloud disk
+     * cloud_ssd: SSD cloud disk
+         */
+        readonly category: string | ros.IResolvable;
+        /**
+         * @Property size: Data disk size in GiB.
+         */
+        readonly size: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `WorkerDataDisksProperty`
+ *
+ * @param properties - the TypeScript properties of a `WorkerDataDisksProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedEdgeKubernetesCluster_WorkerDataDisksPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.requiredValidator)(properties.category));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
+    if(properties.size && (typeof properties.size) !== 'object') {
+        errors.collect(ros.propertyValidator('size', ros.validateRange)({
+            data: properties.size,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    return errors.wrap('supplied properties not correct for "WorkerDataDisksProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.WorkerDataDisks` resource
+ *
+ * @param properties - the TypeScript properties of a `WorkerDataDisksProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.WorkerDataDisks` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedEdgeKubernetesClusterWorkerDataDisksPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedEdgeKubernetesCluster_WorkerDataDisksPropertyValidator(properties).assertSuccess();
+    return {
+      Category: ros.stringToRosTemplate(properties.category),
+      Size: ros.numberToRosTemplate(properties.size),
     };
 }
 
@@ -4681,6 +4774,7 @@ export interface RosManagedKubernetesClusterProps {
      * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     readonly period?: number | ros.IResolvable;
@@ -4689,6 +4783,7 @@ export interface RosManagedKubernetesClusterProps {
      * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     readonly periodUnit?: string | ros.IResolvable;
@@ -4930,7 +5025,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -4939,7 +5034,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
-          allowedValues: ["Week","Month"],
+          allowedValues: ["Week","Month","Year"],
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
@@ -5277,6 +5372,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
+     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
      * Default to 1.
      */
     public period: number | ros.IResolvable | undefined;
@@ -5285,6 +5381,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
      * Week: Time is measured in weeks
      * Month: time in months
+     * Year: time in years
      * Default to Month
      */
     public periodUnit: string | ros.IResolvable | undefined;
@@ -5991,13 +6088,13 @@ export namespace RosManagedKubernetesCluster {
          */
         readonly dataDisks?: Array<RosManagedKubernetesCluster.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property vSwitchIds: The IDs of vSwitches.
-         */
-        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property systemDiskSize: The system disk size of a node. Unit: GiB. Valid values: 40 to 500.
          */
         readonly systemDiskSize: number | ros.IResolvable;
+        /**
+         * @Property vSwitchIds: The IDs of vSwitches.
+         */
+        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property instanceChargeType: The billing method of nodes in the node pool. Valid values:
      * PrePaid: subscription.
@@ -6058,6 +6155,10 @@ export namespace RosManagedKubernetesCluster {
          */
         readonly instanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property zoneIds: Zone ids of virtual switches belongs to.
+         */
+        readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property tags: Adds labels only to ECS instances.
      * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
          */
@@ -6092,6 +6193,8 @@ function RosManagedKubernetesCluster_ScalingGroupPropertyValidator(properties: a
           }));
     }
     errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosManagedKubernetesCluster_DataDisksPropertyValidator))(properties.dataDisks));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
@@ -6101,8 +6204,6 @@ function RosManagedKubernetesCluster_ScalingGroupPropertyValidator(properties: a
           }));
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
-    errors.collect(ros.propertyValidator('systemDiskSize', ros.requiredValidator)(properties.systemDiskSize));
-    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateRange)({
@@ -6135,6 +6236,7 @@ function RosManagedKubernetesCluster_ScalingGroupPropertyValidator(properties: a
           }));
     }
     errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateString))(properties.instanceTypes));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -6163,8 +6265,8 @@ function rosManagedKubernetesClusterScalingGroupPropertyToRosTemplate(properties
       KeyPair: ros.stringToRosTemplate(properties.keyPair),
       Platform: ros.stringToRosTemplate(properties.platform),
       DataDisks: ros.listMapper(rosManagedKubernetesClusterDataDisksPropertyToRosTemplate)(properties.dataDisks),
-      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
+      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       Period: ros.numberToRosTemplate(properties.period),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
@@ -6175,6 +6277,7 @@ function rosManagedKubernetesClusterScalingGroupPropertyToRosTemplate(properties
       RdsInstances: ros.listMapper(ros.stringToRosTemplate)(properties.rdsInstances),
       ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
+      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
       Tags: ros.listMapper(rosManagedKubernetesClusterScalingGroupTagsPropertyToRosTemplate)(properties.tags),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       LoginPassword: ros.stringToRosTemplate(properties.loginPassword),

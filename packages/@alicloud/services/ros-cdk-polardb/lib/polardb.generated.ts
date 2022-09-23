@@ -545,9 +545,18 @@ export interface RosDBClusterProps {
     readonly maintainTime?: string | ros.IResolvable;
 
     /**
-     * @Property period: The subscription period of the cluster in month. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
+     * @Property period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36
+     * If periodUnit is year, the valid range is 1, 2, 3
      */
     readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * @Property renewalStatus: The auto renewal status of the cluster Valid values:
@@ -708,7 +717,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Postpaid","Prepaid"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -724,6 +733,13 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('creationOption', ros.validateString)(properties.creationOption));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["month","year","Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosDBClusterProps"');
 }
 
@@ -758,6 +774,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       LowerCaseTableNames: ros.numberToRosTemplate(properties.lowerCaseTableNames),
       MaintainTime: ros.stringToRosTemplate(properties.maintainTime),
       Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
@@ -958,9 +975,18 @@ export class RosDBCluster extends ros.RosResource {
     public maintainTime: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The subscription period of the cluster in month. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
+     * @Property period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36
+     * If periodUnit is year, the valid range is 1, 2, 3
      */
     public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: The unit of the subscription duration. Valid values:
+     * Month
+     * Year
+     * Default value: Month.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property renewalStatus: The auto renewal status of the cluster Valid values:
@@ -1064,6 +1090,7 @@ export class RosDBCluster extends ros.RosResource {
         this.lowerCaseTableNames = props.lowerCaseTableNames;
         this.maintainTime = props.maintainTime;
         this.period = props.period;
+        this.periodUnit = props.periodUnit;
         this.renewalStatus = props.renewalStatus;
         this.resourceGroupId = props.resourceGroupId;
         this.securityGroupIds = props.securityGroupIds;
@@ -1096,6 +1123,7 @@ export class RosDBCluster extends ros.RosResource {
             lowerCaseTableNames: this.lowerCaseTableNames,
             maintainTime: this.maintainTime,
             period: this.period,
+            periodUnit: this.periodUnit,
             renewalStatus: this.renewalStatus,
             resourceGroupId: this.resourceGroupId,
             securityGroupIds: this.securityGroupIds,

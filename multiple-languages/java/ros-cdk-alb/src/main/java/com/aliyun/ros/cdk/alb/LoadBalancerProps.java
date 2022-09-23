@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.63.2 (build a8a8833)", date = "2022-08-05T07:29:02.679Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.900Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -51,6 +51,13 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneMappings();
 
     /**
+     * Property accessLogConfig:.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccessLogConfig() {
+        return null;
+    }
+
+    /**
      * Property addressAllocatedMode: The mode in which IP addresses are assigned.
      * <p>
      * Valid values:
@@ -58,6 +65,17 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddressAllocatedMode() {
+        return null;
+    }
+
+    /**
+     * Property addressIpVersion: The protocol version.
+     * <p>
+     * Valid values:
+     * IPv4: IPv4
+     * DualStack: dual stack
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAddressIpVersion() {
         return null;
     }
 
@@ -118,7 +136,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object loadBalancerName;
         java.lang.Object vpcId;
         java.lang.Object zoneMappings;
+        java.lang.Object accessLogConfig;
         java.lang.Object addressAllocatedMode;
+        java.lang.Object addressIpVersion;
         java.lang.Object bandwidthPackageId;
         java.lang.Object deletionProtectionEnabled;
         java.lang.Object modificationProtectionConfig;
@@ -262,6 +282,26 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getAccessLogConfig}
+         * @param accessLogConfig Property accessLogConfig:.
+         * @return {@code this}
+         */
+        public Builder accessLogConfig(com.aliyun.ros.cdk.core.IResolvable accessLogConfig) {
+            this.accessLogConfig = accessLogConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getAccessLogConfig}
+         * @param accessLogConfig Property accessLogConfig:.
+         * @return {@code this}
+         */
+        public Builder accessLogConfig(com.aliyun.ros.cdk.alb.RosLoadBalancer.AccessLogConfigProperty accessLogConfig) {
+            this.accessLogConfig = accessLogConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getAddressAllocatedMode}
          * @param addressAllocatedMode Property addressAllocatedMode: The mode in which IP addresses are assigned.
          *                             Valid values:
@@ -284,6 +324,32 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder addressAllocatedMode(com.aliyun.ros.cdk.core.IResolvable addressAllocatedMode) {
             this.addressAllocatedMode = addressAllocatedMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getAddressIpVersion}
+         * @param addressIpVersion Property addressIpVersion: The protocol version.
+         *                         Valid values:
+         *                         IPv4: IPv4
+         *                         DualStack: dual stack
+         * @return {@code this}
+         */
+        public Builder addressIpVersion(java.lang.String addressIpVersion) {
+            this.addressIpVersion = addressIpVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getAddressIpVersion}
+         * @param addressIpVersion Property addressIpVersion: The protocol version.
+         *                         Valid values:
+         *                         IPv4: IPv4
+         *                         DualStack: dual stack
+         * @return {@code this}
+         */
+        public Builder addressIpVersion(com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
+            this.addressIpVersion = addressIpVersion;
             return this;
         }
 
@@ -405,7 +471,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object loadBalancerName;
         private final java.lang.Object vpcId;
         private final java.lang.Object zoneMappings;
+        private final java.lang.Object accessLogConfig;
         private final java.lang.Object addressAllocatedMode;
+        private final java.lang.Object addressIpVersion;
         private final java.lang.Object bandwidthPackageId;
         private final java.lang.Object deletionProtectionEnabled;
         private final java.lang.Object modificationProtectionConfig;
@@ -424,7 +492,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneMappings = software.amazon.jsii.Kernel.get(this, "zoneMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessLogConfig = software.amazon.jsii.Kernel.get(this, "accessLogConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressAllocatedMode = software.amazon.jsii.Kernel.get(this, "addressAllocatedMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidthPackageId = software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtectionEnabled = software.amazon.jsii.Kernel.get(this, "deletionProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.modificationProtectionConfig = software.amazon.jsii.Kernel.get(this, "modificationProtectionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -444,7 +514,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.loadBalancerName = java.util.Objects.requireNonNull(builder.loadBalancerName, "loadBalancerName is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.zoneMappings = java.util.Objects.requireNonNull(builder.zoneMappings, "zoneMappings is required");
+            this.accessLogConfig = builder.accessLogConfig;
             this.addressAllocatedMode = builder.addressAllocatedMode;
+            this.addressIpVersion = builder.addressIpVersion;
             this.bandwidthPackageId = builder.bandwidthPackageId;
             this.deletionProtectionEnabled = builder.deletionProtectionEnabled;
             this.modificationProtectionConfig = builder.modificationProtectionConfig;
@@ -483,8 +555,18 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getAccessLogConfig() {
+            return this.accessLogConfig;
+        }
+
+        @Override
         public final java.lang.Object getAddressAllocatedMode() {
             return this.addressAllocatedMode;
+        }
+
+        @Override
+        public final java.lang.Object getAddressIpVersion() {
+            return this.addressIpVersion;
         }
 
         @Override
@@ -524,8 +606,14 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             data.set("loadBalancerName", om.valueToTree(this.getLoadBalancerName()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("zoneMappings", om.valueToTree(this.getZoneMappings()));
+            if (this.getAccessLogConfig() != null) {
+                data.set("accessLogConfig", om.valueToTree(this.getAccessLogConfig()));
+            }
             if (this.getAddressAllocatedMode() != null) {
                 data.set("addressAllocatedMode", om.valueToTree(this.getAddressAllocatedMode()));
+            }
+            if (this.getAddressIpVersion() != null) {
+                data.set("addressIpVersion", om.valueToTree(this.getAddressIpVersion()));
             }
             if (this.getBandwidthPackageId() != null) {
                 data.set("bandwidthPackageId", om.valueToTree(this.getBandwidthPackageId()));
@@ -566,7 +654,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (!loadBalancerName.equals(that.loadBalancerName)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
             if (!zoneMappings.equals(that.zoneMappings)) return false;
+            if (this.accessLogConfig != null ? !this.accessLogConfig.equals(that.accessLogConfig) : that.accessLogConfig != null) return false;
             if (this.addressAllocatedMode != null ? !this.addressAllocatedMode.equals(that.addressAllocatedMode) : that.addressAllocatedMode != null) return false;
+            if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
             if (this.bandwidthPackageId != null ? !this.bandwidthPackageId.equals(that.bandwidthPackageId) : that.bandwidthPackageId != null) return false;
             if (this.deletionProtectionEnabled != null ? !this.deletionProtectionEnabled.equals(that.deletionProtectionEnabled) : that.deletionProtectionEnabled != null) return false;
             if (this.modificationProtectionConfig != null ? !this.modificationProtectionConfig.equals(that.modificationProtectionConfig) : that.modificationProtectionConfig != null) return false;
@@ -582,7 +672,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.loadBalancerName.hashCode());
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.zoneMappings.hashCode());
+            result = 31 * result + (this.accessLogConfig != null ? this.accessLogConfig.hashCode() : 0);
             result = 31 * result + (this.addressAllocatedMode != null ? this.addressAllocatedMode.hashCode() : 0);
+            result = 31 * result + (this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0);
             result = 31 * result + (this.bandwidthPackageId != null ? this.bandwidthPackageId.hashCode() : 0);
             result = 31 * result + (this.deletionProtectionEnabled != null ? this.deletionProtectionEnabled.hashCode() : 0);
             result = 31 * result + (this.modificationProtectionConfig != null ? this.modificationProtectionConfig.hashCode() : 0);

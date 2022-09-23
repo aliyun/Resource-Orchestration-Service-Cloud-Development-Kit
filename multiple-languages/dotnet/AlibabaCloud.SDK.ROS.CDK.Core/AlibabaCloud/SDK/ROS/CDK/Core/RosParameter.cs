@@ -12,8 +12,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter), fullyQualifiedName: "@alicloud/ros-cdk-core.RosParameter", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.RosParameterProps\"}}]")]
     public class RosParameter : AlibabaCloud.SDK.ROS.CDK.Core.RosElement
     {
-        public RosParameter(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosParameterProps? props = null): base(new DeputyProps(new object?[]{scope, id, props}))
+        public RosParameter(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosParameterProps? props = null): base(_MakeDeputyProps(scope, id, props))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Core.IRosParameterProps? props = null)
+        {
+            return new DeputyProps(new object?[]{scope, id, props});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
@@ -107,8 +113,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty), fullyQualifiedName: "@alicloud/ros-cdk-core.RosParameter.AssociationProperty")]
         public class AssociationProperty : DeputyBase
         {
-            public AssociationProperty(): base(new DeputyProps(System.Array.Empty<object?>()))
+            public AssociationProperty(): base(_MakeDeputyProps())
             {
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+            private static DeputyProps _MakeDeputyProps()
+            {
+                return new DeputyProps(System.Array.Empty<object?>());
             }
 
             /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

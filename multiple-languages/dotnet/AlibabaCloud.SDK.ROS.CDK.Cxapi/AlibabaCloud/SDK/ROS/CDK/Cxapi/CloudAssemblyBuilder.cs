@@ -10,8 +10,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
     {
         /// <summary>Initializes a cloud assembly builder.</summary>
         /// <param name="outdir">The output directory, uses temporary directory if undefined.</param>
-        public CloudAssemblyBuilder(string? outdir = null): base(new DeputyProps(new object?[]{outdir}))
+        public CloudAssemblyBuilder(string? outdir = null): base(_MakeDeputyProps(outdir))
         {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(string? outdir = null)
+        {
+            return new DeputyProps(new object?[]{outdir});
         }
 
         /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>

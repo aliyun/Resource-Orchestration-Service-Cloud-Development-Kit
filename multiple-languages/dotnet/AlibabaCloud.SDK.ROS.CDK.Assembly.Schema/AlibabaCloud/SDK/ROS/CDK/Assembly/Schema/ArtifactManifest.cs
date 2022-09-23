@@ -42,6 +42,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             set;
         }
 
+        private object? _properties;
+
         /// <summary>The set of properties for this artifact (depends on type).</summary>
         /// <remarks>
         /// <strong>Default</strong>: - no properties.
@@ -50,8 +52,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         [JsiiProperty(name: "properties", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.AliyunRosStackProperties\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.TreeArtifactProperties\"},{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.NestedCloudAssemblyProperties\"}]}}", isOptional: true)]
         public object? Properties
         {
-            get;
-            set;
+            get => _properties;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IAliyunRosStackProperties cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.ITreeArtifactProperties cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.INestedCloudAssemblyProperties cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IAliyunRosStackProperties).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.ITreeArtifactProperties).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.INestedCloudAssemblyProperties).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _properties = value;
+            }
         }
     }
 }
